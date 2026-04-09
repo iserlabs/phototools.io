@@ -20,6 +20,7 @@ interface RichTextBlockProps {
 export const RichTextBlock = forwardRef<HTMLDivElement, RichTextBlockProps>(
   function RichTextBlock({ config, isActive, onSelect, onContentChange }, ref) {
     const editor = useEditor({
+      immediatelyRender: false,
       extensions: [
         StarterKit.configure({
           heading: false,
