@@ -26,10 +26,30 @@
   color: var(--accent);
 }
 
-.modeSection,
 .modePanel,
 .gridSection {
   /* Layout-only wrappers */
+}
+
+/* Override ModeToggle to fit 6 modes: 3 per row */
+.modeSection [class*="toggle"] {
+  flex-wrap: wrap;
+}
+
+.modeSection [class*="indicator"] {
+  display: none;
+}
+
+.modeSection [class*="toggle"] > button {
+  flex: 1 1 30%;
+  padding: 6px 4px;
+  min-height: 36px;
+  font-size: 12px;
+}
+
+.modeSection [class*="btnActive"] {
+  background: var(--accent);
+  border-radius: 6px;
 }
 
 .actionGroup {
