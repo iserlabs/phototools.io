@@ -108,3 +108,23 @@ export const COMMON_MP: Record<string, MpEntry[]> = {
     { mp: 200, models: 'Samsung S23 Ultra / S24 Ultra' },
   ],
 }
+
+export type SensorSpec = {
+  isoRange: string
+  dynamicRange: number
+  typicalUse: string
+  notableFeature: string
+}
+
+export const SENSOR_SPECS: Record<string, SensorSpec> = {
+  mf_645:   { isoRange: '64–25600',    dynamicRange: 15.0, typicalUse: 'Studio / landscape',     notableFeature: 'Highest resolving power' },
+  mf:       { isoRange: '64–102400',   dynamicRange: 14.8, typicalUse: 'Studio / landscape',     notableFeature: 'Wide dynamic range' },
+  mf_leica: { isoRange: '50–100000',   dynamicRange: 14.5, typicalUse: 'Reportage / landscape',  notableFeature: '3:2 medium format' },
+  ff:       { isoRange: '50–204800',   dynamicRange: 14.7, typicalUse: 'General / professional',  notableFeature: 'Best low-light balance' },
+  apsh:     { isoRange: '100–51200',   dynamicRange: 13.5, typicalUse: 'Cinema / hybrid',        notableFeature: 'Super 35 cine standard' },
+  apsc_n:   { isoRange: '100–51200',   dynamicRange: 13.8, typicalUse: 'Enthusiast / travel',    notableFeature: 'Reach advantage (1.5×)' },
+  apsc_c:   { isoRange: '100–51200',   dynamicRange: 13.5, typicalUse: 'Enthusiast / video',     notableFeature: '1.6× crop factor' },
+  m43:      { isoRange: '200–25600',   dynamicRange: 12.8, typicalUse: 'Travel / wildlife',      notableFeature: 'Compact system, 2× reach' },
+  '1in':    { isoRange: '125–12800',   dynamicRange: 12.0, typicalUse: 'Compact / drone',        notableFeature: 'Pocketable quality' },
+  phone:    { isoRange: '50–6400',     dynamicRange: 10.5, typicalUse: 'Everyday / social',      notableFeature: 'Computational HDR' },
+}
