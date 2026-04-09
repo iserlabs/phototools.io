@@ -28,6 +28,13 @@
       "tableCropFactor": "Crop Factor",
       "tableAspectCrop": "Aspect Crop",
       "canvasAriaLabel": "Sensor size comparison in {mode} mode",
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models",
       "faq": {
         "what-is-crop-factor": {
           "question": "What is crop factor and why does it matter?",
