@@ -25,6 +25,7 @@ export function SensorSizeV2() {
   const { trackParam } = useToolSession()
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const specCardRef = useRef<HTMLDivElement>(null)
+  const debugLoggedRef = useRef(false)
   const [hoveredSensor, setHoveredSensor] = useState<string | null>(null)
 
   const [isSupported, setIsSupported] = useState<boolean | null>(null)
@@ -107,13 +108,31 @@ export function SensorSizeV2() {
         let cardX = hRect.x + hRect.w + 12
         if (cardX + cardW > cssWidth - padding) cardX = hRect.x - cardW - 12
         const cardY = Math.max(padding, hRect.y)
+
+        // Diagnostic: log available element-drawing APIs (once)
+        if (!debugLoggedRef.current) {
+          debugLoggedRef.current = true
+          const ctxMethods = Object.getOwnPropertyNames(Object.getPrototypeOf(ctx)).filter(m => m.toLowerCase().includes('element') || m.toLowerCase().includes('draw'))
+          const canvasMethods = Object.getOwnPropertyNames(Object.getPrototypeOf(canvas)).filter(m => m.toLowerCase().includes('element') || m.toLowerCase().includes('draw') || m.toLowerCase().includes('paint') || m.toLowerCase().includes('layout'))
+          console.log('[v2 debug] ctx methods with "element" or "draw":', ctxMethods)
+          console.log('[v2 debug] canvas methods with "element/draw/paint/layout":', canvasMethods)
+          console.log('[v2 debug] canvas.layoutSubtree:', (canvas as unknown as Record<string, unknown>).layoutSubtree)
+          console.log('[v2 debug] specCard offsetWidth:', cardW, 'offsetHeight:', cardEl.offsetHeight)
+        }
+
         try {
-          const ctxAny = ctx as CanvasRenderingContext2D & { drawElementImage?: (el: Element, dx: number, dy: number) => void }
+          /* eslint-disable @typescript-eslint/no-explicit-any */
+          const ctxAny = ctx as any
+          const canvasAny = canvas as any
           if (ctxAny.drawElementImage) {
             ctxAny.drawElementImage(cardEl, cardX, cardY)
+          } else if (canvasAny.drawElementImage) {
+            // Some implementations put it on the canvas, not the context
+            canvasAny.drawElementImage(cardEl, cardX, cardY)
           } else {
-            console.warn('[v2] drawElementImage not available on context')
+            console.warn('[v2] drawElementImage not found on ctx or canvas')
           }
+          /* eslint-enable @typescript-eslint/no-explicit-any */
         } catch (err) { console.warn('[v2] drawElementImage failed:', err) }
       }
     }
