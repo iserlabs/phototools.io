@@ -5,15 +5,19 @@
   animation: fadeIn var(--duration-normal) var(--ease-out);
 }
 
+.toolSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .toolGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 4px;
-  flex: 1;
 }
 
 .toolBtn {
-  aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;

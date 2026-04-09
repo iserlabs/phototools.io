@@ -35,7 +35,7 @@ export function AnnotationToolbar({
   return (
     <div className={s.panel}>
       {/* Tool selector */}
-      <div className={s.field}>
+      <div className={s.toolSection}>
         <span className={s.fieldLabel}>{t('annotationTool')}</span>
         <div className={s.toolGrid}>
           {ANNOTATION_TOOLS.map((tool) => (
