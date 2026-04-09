@@ -73,6 +73,18 @@
       "cancel": "Cancel",
       "exporting": "Exporting...",
       "download": "Download",
+      "addText": "Add Text",
+      "removeText": "Remove",
+      "addTextHint": "Add a text block to begin",
+      "selectTextHint": "Select a text block to edit",
+      "font": "Font",
+      "fontSize": "Size",
+      "textColor": "Color",
+      "textOpacity": "Opacity",
+      "textShadow": "Shadow",
+      "textStyle": "Style",
+      "textAlign": "Align",
+      "letterSpacing": "Spacing",
       "faq": {
         "what-is-rule-of-thirds": {
           "question": "What is the rule of thirds in photography?",
