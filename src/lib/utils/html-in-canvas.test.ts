@@ -12,7 +12,7 @@ describe('supportsHtmlInCanvas', () => {
     })
     supportsHtmlInCanvas.reset()
     expect(supportsHtmlInCanvas()).toBe(true)
-    delete (HTMLCanvasElement.prototype as Record<string, unknown>).layoutSubtree
+    delete (HTMLCanvasElement.prototype as unknown as Record<string, unknown>).layoutSubtree
     supportsHtmlInCanvas.reset()
   })
 })
