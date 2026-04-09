@@ -104,6 +104,12 @@
       "ogTemplate": "OG Image",
       "templateTitle": "Title text",
       "templateSubtitle": "Subtitle text",
+      "exportV2": "Export",
+      "exportMode": "Export mode:",
+      "exportStandard": "Photo + overlays",
+      "exportTemplate": "Social template",
+      "includeAnnotations": "Include annotations",
+      "includeText": "Include text overlays",
       "faq": {
         "what-is-rule-of-thirds": {
           "question": "What is the rule of thirds in photography?",
