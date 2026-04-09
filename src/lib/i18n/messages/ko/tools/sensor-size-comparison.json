@@ -41,7 +41,14 @@
           "question": "센서 크기는 피사계 심도에 어떤 영향을 미치나요?",
           "answer": "더 큰 센서는 동일한 프레이밍에서 더 얕은 피사계 심도를 만듭니다. 더 작은 센서로 같은 프레이밍을 얻으려면 더 짧은 초점 거리(더 깊은 피사계 심도)를 사용하거나 더 멀리 이동(더 깊은 피사계 심도)해야 하며, 두 경우 모두 배경 흐림이 줄어듭니다."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

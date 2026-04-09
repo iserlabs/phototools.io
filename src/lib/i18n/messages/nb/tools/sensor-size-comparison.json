@@ -41,7 +41,14 @@
           "question": "Hvordan påvirker sensorstørrelse dybdeskarpheten?",
           "answer": "Større sensorer gir grunnere dybdeskarphet ved samme utsnitt. For å få samme utsnitt med en mindre sensor må du enten bruke kortere brennvidde eller gå lenger unna — begge deler gir dypere dybdeskarphet og mindre bakgrunnsuskarphet."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

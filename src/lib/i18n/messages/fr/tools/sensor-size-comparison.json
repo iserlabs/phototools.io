@@ -41,7 +41,14 @@
           "question": "Comment la taille du capteur joue-t-elle sur la profondeur de champ ?",
           "answer": "Les grands capteurs donnent une profondeur de champ plus faible à cadrage équivalent. Pour obtenir le même cadrage avec un capteur plus petit, on prend une focale plus courte ou on recule — les deux augmentent la profondeur de champ et réduisent le flou d'arrière-plan."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

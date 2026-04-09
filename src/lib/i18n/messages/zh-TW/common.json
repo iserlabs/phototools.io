@@ -124,6 +124,12 @@
       "1in": "1 吋感光元件",
       "phone": "旗艦智慧型手機 (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "本頁為方便閱讀之翻譯版本。具法律效力者為英文版本，請參閱 /en/privacy。"
+    "legalTranslationDisclaimer": "本頁為方便閱讀之翻譯版本。具法律效力者為英文版本，請參閱 /en/privacy。",
+    "v2NotSupported": "HTML-in-Canvas Required",
+    "v2NotSupportedBody": "This experimental v2 page uses the HTML-in-Canvas API, which requires a Chrome flag to be enabled.",
+    "v2Step1": "Open Chrome and navigate to chrome://flags/#canvas-draw-element",
+    "v2Step2": "Set \"Canvas draw element\" to Enabled",
+    "v2Step3": "Relaunch Chrome and revisit this page",
+    "v2BackToV1": "← Back to standard version"
   }
 }

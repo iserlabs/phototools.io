@@ -41,7 +41,14 @@
           "question": "Come influiscono le dimensioni del sensore sulla profondità di campo?",
           "answer": "Sensori più grandi producono una profondità di campo più ridotta a inquadratura equivalente. Per ottenere la stessa inquadratura con un sensore più piccolo, si usa una lunghezza focale più corta (maggiore profondità) o ci si allontana (maggiore profondità), entrambi riducendo la sfocatura dello sfondo."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

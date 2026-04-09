@@ -41,7 +41,14 @@
           "question": "传感器尺寸如何影响景深？",
           "answer": "在等效构图下，较大的传感器产生更浅的景深。要用较小的传感器获得相同构图，需要使用较短的焦距（景深更深）或站得更远（景深更深），两者都会减少背景虚化。"
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

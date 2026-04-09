@@ -41,7 +41,14 @@
           "question": "सेंसर साइज़ डेप्थ ऑफ़ फ़ील्ड को कैसे प्रभावित करता है?",
           "answer": "बड़े सेंसर समकक्ष फ़्रेमिंग पर कम डेप्थ ऑफ़ फ़ील्ड उत्पन्न करते हैं। छोटे सेंसर से समान फ़्रेमिंग प्राप्त करने के लिए, आप या तो छोटी फ़ोकल लेंथ (अधिक फील्ड की गहराई) का उपयोग करते हैं या दूर जाते हैं (अधिक फील्ड की गहराई), दोनों ही बैकग्राउंड ब्लर को कम करते हैं।"
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

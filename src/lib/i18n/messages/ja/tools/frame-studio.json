@@ -76,7 +76,7 @@
       "faq": {
         "what-is-rule-of-thirds": {
           "question": "写真における三分割法とは何ですか？",
-          "answer": "三分割法は画像を3\u00d73のグリッドに分割します。主要な被写体をグリッドの線上やその交点に配置することで、被写体を中央に置くよりもダイナミックでバランスの取れた構図が作れます。"
+          "answer": "三分割法は画像を3×3のグリッドに分割します。主要な被写体をグリッドの線上やその交点に配置することで、被写体を中央に置くよりもダイナミックでバランスの取れた構図が作れます。"
         },
         "best-aspect-ratio-for-instagram": {
           "question": "Instagramの投稿に最適なアスペクト比は？",
@@ -86,7 +86,47 @@
           "question": "写真構図で黄金比をどう使えばいいですか？",
           "answer": "黄金比（約1.618:1）は、見る人の視線を画像内に導くスパイラルパターンを作ります。スパイラルの最も狭い点にメインの被写体を配置し、リーディングラインがカーブに沿って外側に向かうようにします。"
         }
-      }
+      },
+      "modeText": "Text",
+      "modeAnnotate": "Annotate",
+      "modeTemplate": "Template",
+      "addText": "Add Text",
+      "removeText": "Remove",
+      "addTextHint": "Add a text block to begin",
+      "selectTextHint": "Select a text block to edit",
+      "font": "Font",
+      "fontSize": "Size",
+      "textColor": "Color",
+      "textOpacity": "Opacity",
+      "textShadow": "Shadow",
+      "textStyle": "Style",
+      "textAlign": "Align",
+      "letterSpacing": "Spacing",
+      "annotationTool": "Tool",
+      "strokeColor": "Color",
+      "strokeWidth": "Stroke",
+      "undo": "Undo",
+      "clearAll": "Clear All",
+      "toolArrow": "Arrow",
+      "toolCircle": "Circle",
+      "toolRect": "Rect",
+      "toolHighlight": "Highlight",
+      "toolCallout": "Callout",
+      "templateSelect": "Template",
+      "templateNone": "None",
+      "storyTemplate": "Story",
+      "postTemplate": "Post",
+      "squareTemplate": "Square",
+      "pinterestTemplate": "Pinterest",
+      "ogTemplate": "OG Image",
+      "templateTitle": "Title text",
+      "templateSubtitle": "Subtitle text",
+      "exportV2": "Export",
+      "exportMode": "Export mode:",
+      "exportStandard": "Photo + overlays",
+      "exportTemplate": "Social template",
+      "includeAnnotations": "Include annotations",
+      "includeText": "Include text overlays"
     }
   }
 }

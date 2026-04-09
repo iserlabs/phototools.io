@@ -124,6 +124,12 @@
       "1in": "1型センサー",
       "phone": "スマートフォン (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "これは便宜上の翻訳です。法的に有効なのは英語版です。/en/privacy をご覧ください。"
+    "legalTranslationDisclaimer": "これは便宜上の翻訳です。法的に有効なのは英語版です。/en/privacy をご覧ください。",
+    "v2NotSupported": "HTML-in-Canvas Required",
+    "v2NotSupportedBody": "This experimental v2 page uses the HTML-in-Canvas API, which requires a Chrome flag to be enabled.",
+    "v2Step1": "Open Chrome and navigate to chrome://flags/#canvas-draw-element",
+    "v2Step2": "Set \"Canvas draw element\" to Enabled",
+    "v2Step3": "Relaunch Chrome and revisit this page",
+    "v2BackToV1": "← Back to standard version"
   }
 }

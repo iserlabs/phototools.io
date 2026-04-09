@@ -41,7 +41,14 @@
           "question": "Bagaimanakah saiz sensor mempengaruhi kedalaman medan?",
           "answer": "Sensor lebih besar menghasilkan kedalaman medan lebih cetek pada bingkai setara. Untuk mendapatkan bingkai yang sama dengan sensor lebih kecil, anda sama ada menggunakan panjang fokus lebih pendek (kedalaman medan lebih dalam) atau bergerak lebih jauh (kedalaman medan lebih dalam), kedua-duanya mengurangkan kekaburan latar belakang."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

@@ -41,7 +41,14 @@
           "question": "সেন্সর সাইজ কীভাবে ক্ষেত্রের গভীরতাকে প্রভাবিত করে?",
           "answer": "একই ফ্রেমিংয়ে বড় সেন্সর কম গভীরতার ক্ষেত্র তৈরি করে। ছোট সেন্সর দিয়ে একই ফ্রেমিং পেতে হলে তোমাকে হয় ছোট ফোকাল দৈর্ঘ্য ব্যবহার করতে হবে (বেশি ক্ষেত্রের গভীরতা), অথবা আরও দূরে সরতে হবে (বেশি ক্ষেত্রের গভীরতা) — দুটোই ব্যাকগ্রাউন্ড ব্লার কমিয়ে দেয়।"
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

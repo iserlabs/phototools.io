@@ -41,7 +41,14 @@
           "question": "Как размер матрицы влияет на глубину резкости?",
           "answer": "Чем больше матрица, тем меньше глубина резкости при эквивалентном кадре. Чтобы получить тот же кадр с маленькой матрицы, берут более короткое фокусное (больше ГРИП) или отходят дальше (тоже больше ГРИП) — в обоих случаях размытие фона уменьшается."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

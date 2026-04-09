@@ -41,7 +41,14 @@
           "question": "Hogyan hat az érzékelőméret a mélységélességre?",
           "answer": "A nagyobb érzékelők ekvivalens kompozíción kisebb mélységélességet adnak. Ha ugyanazt a kompozíciót kisebb érzékelővel akarod elérni, vagy rövidebb gyújtótávolságot használsz (nagyobb mélységélesség), vagy hátrébb lépsz (nagyobb mélységélesség) — mindkettő csökkenti a háttérelmosódást."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

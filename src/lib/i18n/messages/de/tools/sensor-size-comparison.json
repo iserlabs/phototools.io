@@ -41,7 +41,14 @@
           "question": "Wie wirkt sich die Sensorgröße auf die Schärfentiefe aus?",
           "answer": "Größere Sensoren erzeugen bei gleichem Bildausschnitt eine geringere Schärfentiefe. Um mit einem kleineren Sensor denselben Bildausschnitt zu erhalten, nimmst du entweder eine kürzere Brennweite oder gehst weiter weg — beides vergrößert die Schärfentiefe und reduziert die Hintergrundunschärfe."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

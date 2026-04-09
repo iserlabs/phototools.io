@@ -41,7 +41,14 @@
           "question": "Cum afectează dimensiunea senzorului adâncimea câmpului?",
           "answer": "Senzorii mai mari produc o adâncime a câmpului mai mică la încadrare echivalentă. Ca să obții aceeași încadrare cu un senzor mai mic, fie folosești o distanță focală mai scurtă, fie te îndepărtezi — ambele variante măresc profunzime de câmp-ul și reduc blurul de fundal."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

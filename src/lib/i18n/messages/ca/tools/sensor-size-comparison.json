@@ -41,7 +41,14 @@
           "question": "Com afecta la mida del sensor la profunditat de camp?",
           "answer": "Els sensors més grans produeixen menys profunditat de camp amb enquadrament equivalent. Per obtenir el mateix enquadrament amb un sensor més petit, fas servir una distància focal més curta (més profunditat de camp) o t'allunyes (més profunditat de camp), reduint el desenfocament del fons."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

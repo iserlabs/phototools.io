@@ -41,7 +41,14 @@
           "question": "Como o tamanho do sensor afeta a profundidade de campo?",
           "answer": "Sensores maiores produzem profundidade de campo mais rasa com enquadramento equivalente. Para obter o mesmo enquadramento com um sensor menor, você usa uma distância focal mais curta (maior profundidade) ou se afasta mais (maior profundidade), ambos reduzindo o desfoque de fundo."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

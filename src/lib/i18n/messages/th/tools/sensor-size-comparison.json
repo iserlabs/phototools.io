@@ -41,7 +41,14 @@
           "question": "ขนาดเซ็นเซอร์ส่งผลต่อความชัดลึกอย่างไร?",
           "answer": "เซ็นเซอร์ที่ใหญ่กว่าสร้างความชัดลึกที่ตื้นกว่าที่เฟรมมิ่งเทียบเท่ากัน เพื่อให้ได้เฟรมมิ่งเดียวกันกับเซ็นเซอร์ที่เล็กกว่า คุณใช้ทางยาวโฟกัสสั้นกว่า (ระยะชัดลึก ลึกกว่า) หรือถอยห่างออก (ระยะชัดลึก ลึกกว่า) ทั้งสองทำให้ฉากหลังเบลอน้อยลง"
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

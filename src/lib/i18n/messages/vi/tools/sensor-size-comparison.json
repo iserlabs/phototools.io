@@ -41,7 +41,14 @@
           "question": "Kích thước cảm biến ảnh hưởng đến độ sâu trường ảnh như thế nào?",
           "answer": "Cảm biến lớn hơn tạo ra độ sâu trường ảnh nông hơn ở cùng một khung hình. Để có cùng khung hình với cảm biến nhỏ hơn, bạn dùng tiêu cự ngắn hơn (chiều sâu trường ảnh sâu hơn) hoặc lùi xa hơn (chiều sâu trường ảnh sâu hơn), cả hai đều giảm mờ hậu cảnh."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

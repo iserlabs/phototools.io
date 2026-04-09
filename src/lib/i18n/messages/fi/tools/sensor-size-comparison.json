@@ -41,7 +41,14 @@
           "question": "Miten kennokoko vaikuttaa syväterävyyteen?",
           "answer": "Suurempi kenno tuottaa matalamman syväterävyyden samassa rajauksessa. Jotta saat saman rajauksen pienemmällä kennolla, joudut joko lyhentämään polttoväliä tai siirtymään kauemmas — molemmat kasvattavat syväterävyyttä ja vähentävät taustan sumennusta."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

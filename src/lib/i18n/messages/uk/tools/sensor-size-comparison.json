@@ -41,7 +41,14 @@
           "question": "Як розмір матриці впливає на глибину різкості?",
           "answer": "Більші матриці дають меншу глибину різкості при еквівалентному кадруванні. Щоб отримати те саме кадрування на меншій матриці, треба або взяти коротшу фокусну (більша глибина різкості), або відійти далі (більша глибина різкості) — і те, й те зменшує розмиття фону."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

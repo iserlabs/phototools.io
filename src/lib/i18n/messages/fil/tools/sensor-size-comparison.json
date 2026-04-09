@@ -41,7 +41,14 @@
           "question": "Paano apektado ng sensor size ang depth of field?",
           "answer": "Mas malaki ang sensor, mas shallow ang depth of field sa equivalent framing. Para makuha ang parehong framing gamit ang mas maliit na sensor, kailangan mo ng mas maikling focal length (mas deep ang depth of field) o lumayo (mas deep din ang depth of field) — parehong nagpapababa sa background blur."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

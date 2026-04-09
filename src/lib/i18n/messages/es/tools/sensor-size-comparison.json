@@ -30,18 +30,25 @@
       "canvasAriaLabel": "Comparación de tamaños de sensor en modo {mode}",
       "faq": {
         "what-is-crop-factor": {
-          "question": "\u00bfQu\u00e9 es el factor de recorte y por qu\u00e9 importa?",
-          "answer": "El factor de recorte describe la diferencia de tama\u00f1o entre el sensor de una c\u00e1mara y un sensor de formato completo (35mm). Afecta la distancia focal efectiva, la profundidad de campo y el rendimiento con poca luz. Un factor de recorte de 1.5x significa que el sensor es 1.5 veces m\u00e1s peque\u00f1o que el formato completo."
+          "question": "¿Qué es el factor de recorte y por qué importa?",
+          "answer": "El factor de recorte describe la diferencia de tamaño entre el sensor de una cámara y un sensor de formato completo (35mm). Afecta la distancia focal efectiva, la profundidad de campo y el rendimiento con poca luz. Un factor de recorte de 1.5x significa que el sensor es 1.5 veces más pequeño que el formato completo."
         },
         "full-frame-vs-aps-c": {
-          "question": "\u00bfCu\u00e1les son las ventajas de formato completo vs sensores APS-C?",
-          "answer": "Los sensores de formato completo ofrecen mejor rendimiento con poca luz, menor profundidad de campo y un campo de visi\u00f3n m\u00e1s amplio a cualquier distancia focal. Los sensores APS-C son m\u00e1s econ\u00f3micos, m\u00e1s ligeros y proporcionan alcance extra para fotograf\u00eda de vida silvestre y deportes."
+          "question": "¿Cuáles son las ventajas de formato completo vs sensores APS-C?",
+          "answer": "Los sensores de formato completo ofrecen mejor rendimiento con poca luz, menor profundidad de campo y un campo de visión más amplio a cualquier distancia focal. Los sensores APS-C son más económicos, más ligeros y proporcionan alcance extra para fotografía de vida silvestre y deportes."
         },
         "sensor-size-and-depth-of-field": {
-          "question": "\u00bfC\u00f3mo afecta el tama\u00f1o del sensor a la profundidad de campo?",
-          "answer": "Los sensores m\u00e1s grandes producen una profundidad de campo m\u00e1s reducida con el mismo encuadre. Para conseguir el mismo encuadre con un sensor m\u00e1s peque\u00f1o, hay que usar una distancia focal m\u00e1s corta o alejarse del sujeto, y ambas cosas aumentan la profundidad de campo y reducen el desenfoque del fondo."
+          "question": "¿Cómo afecta el tamaño del sensor a la profundidad de campo?",
+          "answer": "Los sensores más grandes producen una profundidad de campo más reducida con el mismo encuadre. Para conseguir el mismo encuadre con un sensor más pequeño, hay que usar una distancia focal más corta o alejarse del sujeto, y ambas cosas aumentan la profundidad de campo y reducen el desenfoque del fondo."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

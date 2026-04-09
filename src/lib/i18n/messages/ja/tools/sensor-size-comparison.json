@@ -41,7 +41,14 @@
           "question": "センサーサイズは被写界深度にどう影響しますか？",
           "answer": "大きいセンサーは同等のフレーミングでより浅い被写界深度を生み出します。小さいセンサーで同じフレーミングを得るには、より短い焦点距離（深い被写界深度）を使うか、より遠くに離れる（深い被写界深度）必要があり、どちらも背景ボケが減少します。"
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

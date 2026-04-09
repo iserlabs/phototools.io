@@ -75,18 +75,58 @@
       "download": "Descargar",
       "faq": {
         "what-is-rule-of-thirds": {
-          "question": "\u00bfQu\u00e9 es la regla de los tercios en fotograf\u00eda?",
-          "answer": "La regla de los tercios divide tu imagen en una cuadr\u00edcula de 3\u00d73. Colocar los sujetos clave a lo largo de las l\u00edneas de la cuadr\u00edcula o en sus intersecciones crea composiciones m\u00e1s din\u00e1micas y equilibradas que centrar el sujeto."
+          "question": "¿Qué es la regla de los tercios en fotografía?",
+          "answer": "La regla de los tercios divide tu imagen en una cuadrícula de 3×3. Colocar los sujetos clave a lo largo de las líneas de la cuadrícula o en sus intersecciones crea composiciones más dinámicas y equilibradas que centrar el sujeto."
         },
         "best-aspect-ratio-for-instagram": {
-          "question": "\u00bfCu\u00e1l es la mejor relaci\u00f3n de aspecto para publicaciones de Instagram?",
-          "answer": "Instagram admite 1:1 (cuadrado), 4:5 (retrato) y 1.91:1 (paisaje). La relaci\u00f3n de retrato 4:5 ocupa m\u00e1s espacio en pantalla en el feed y normalmente obtiene el mayor engagement."
+          "question": "¿Cuál es la mejor relación de aspecto para publicaciones de Instagram?",
+          "answer": "Instagram admite 1:1 (cuadrado), 4:5 (retrato) y 1.91:1 (paisaje). La relación de retrato 4:5 ocupa más espacio en pantalla en el feed y normalmente obtiene el mayor engagement."
         },
         "how-to-use-golden-ratio": {
-          "question": "\u00bfC\u00f3mo uso la proporci\u00f3n \u00e1urea para la composici\u00f3n fotogr\u00e1fica?",
-          "answer": "La proporci\u00f3n \u00e1urea (aproximadamente 1.618:1) crea un patr\u00f3n en espiral que gu\u00eda la mirada del espectador a trav\u00e9s de la imagen. Coloca tu sujeto principal en el punto m\u00e1s cerrado de la espiral y deja que las l\u00edneas conductoras sigan la curva hacia afuera."
+          "question": "¿Cómo uso la proporción áurea para la composición fotográfica?",
+          "answer": "La proporción áurea (aproximadamente 1.618:1) crea un patrón en espiral que guía la mirada del espectador a través de la imagen. Coloca tu sujeto principal en el punto más cerrado de la espiral y deja que las líneas conductoras sigan la curva hacia afuera."
         }
-      }
+      },
+      "modeText": "Text",
+      "modeAnnotate": "Annotate",
+      "modeTemplate": "Template",
+      "addText": "Add Text",
+      "removeText": "Remove",
+      "addTextHint": "Add a text block to begin",
+      "selectTextHint": "Select a text block to edit",
+      "font": "Font",
+      "fontSize": "Size",
+      "textColor": "Color",
+      "textOpacity": "Opacity",
+      "textShadow": "Shadow",
+      "textStyle": "Style",
+      "textAlign": "Align",
+      "letterSpacing": "Spacing",
+      "annotationTool": "Tool",
+      "strokeColor": "Color",
+      "strokeWidth": "Stroke",
+      "undo": "Undo",
+      "clearAll": "Clear All",
+      "toolArrow": "Arrow",
+      "toolCircle": "Circle",
+      "toolRect": "Rect",
+      "toolHighlight": "Highlight",
+      "toolCallout": "Callout",
+      "templateSelect": "Template",
+      "templateNone": "None",
+      "storyTemplate": "Story",
+      "postTemplate": "Post",
+      "squareTemplate": "Square",
+      "pinterestTemplate": "Pinterest",
+      "ogTemplate": "OG Image",
+      "templateTitle": "Title text",
+      "templateSubtitle": "Subtitle text",
+      "exportV2": "Export",
+      "exportMode": "Export mode:",
+      "exportStandard": "Photo + overlays",
+      "exportTemplate": "Social template",
+      "includeAnnotations": "Include annotations",
+      "includeText": "Include text overlays"
     }
   }
 }

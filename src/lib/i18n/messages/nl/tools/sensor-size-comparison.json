@@ -41,7 +41,14 @@
           "question": "Hoe beïnvloedt sensorformaat de scherptediepte?",
           "answer": "Grotere sensoren produceren een geringere scherptediepte bij gelijkwaardige kadrering. Om dezelfde kadrering te krijgen met een kleinere sensor, gebruik je een kortere brandpuntsafstand (diepere scherptediepte) of ga je verder weg staan (diepere scherptediepte), wat beide de achtergrondvervaging vermindert."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }

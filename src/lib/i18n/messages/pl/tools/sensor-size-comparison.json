@@ -41,7 +41,14 @@
           "question": "Jak rozmiar matrycy wpływa na głębię ostrości?",
           "answer": "Większe matrycze dają płytszą głębię ostrości przy równoważnym kadrowaniu. Aby uzyskać ten sam kadr z mniejszą matrycą, używasz krótszej ogniskowej (głębsza głębia ostrości) lub odsuwasz się dalej (głębsza głębia ostrości), co w obu przypadkach zmniejsza rozmycie tła."
         }
-      }
+      },
+      "specDimensions": "Dimensions",
+      "specArea": "Sensor area",
+      "specIsoRange": "ISO range",
+      "specDynamicRange": "Dynamic range",
+      "specTypicalUse": "Typical use",
+      "specResolutions": "Common resolutions",
+      "specModels": "Popular models"
     }
   }
 }
