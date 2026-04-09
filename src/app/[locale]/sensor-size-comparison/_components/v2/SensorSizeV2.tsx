@@ -114,17 +114,22 @@ export function SensorSizeV2() {
       const hRect = overlayRects.find(r => r.id === hoveredSensor)
       if (hRect) {
         const cardEl = specCardRef.current
-        const cardW = cardEl.offsetWidth
+        const naturalW = cardEl.offsetWidth
+        const naturalH = cardEl.offsetHeight
+        // Scale card to ~180px wide (fits beside sensor rects)
+        const targetW = 180
+        const cardScale = targetW / naturalW
+        const drawW = targetW
+        const drawH = Math.round(naturalH * cardScale)
         let cardX = hRect.x + hRect.w + 12
-        if (cardX + cardW > cssWidth - padding) cardX = hRect.x - cardW - 12
+        if (cardX + drawW > cssWidth - padding) cardX = hRect.x - drawW - 12
         const cardY = Math.max(padding, hRect.y)
         try {
           /* eslint-disable @typescript-eslint/no-explicit-any */
           const ctxAny = ctx as any
-          // Must re-apply DPR scale after canvas.height reset
           ctx.save()
           ctx.scale(dpr, dpr)
-          ctxAny.drawElementImage(cardEl, cardX, cardY)
+          ctxAny.drawElementImage(cardEl, cardX, cardY, drawW, drawH)
           ctx.restore()
           /* eslint-enable @typescript-eslint/no-explicit-any */
         } catch (err) {
