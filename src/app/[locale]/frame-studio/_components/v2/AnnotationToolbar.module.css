@@ -1,0 +1,133 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn var(--duration-normal) var(--ease-out);
+}
+
+.toolGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  flex: 1;
+}
+
+.toolBtn {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-1);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+}
+
+.toolBtn:hover {
+  color: var(--text-primary);
+}
+
+.toolBtn.active {
+  background: var(--accent);
+  color: var(--text-on-accent, #000);
+  border-color: var(--accent);
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 11px;
+  color: var(--text-secondary);
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.fieldValue {
+  font-size: 11px;
+  color: var(--text-secondary);
+  min-width: 36px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.colorInput {
+  width: 32px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+  padding: 2px;
+}
+
+.slider {
+  flex: 1;
+  accent-color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.undoBtn {
+  flex: 1;
+  padding: 6px 10px;
+  background: var(--surface-1);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
+}
+
+.undoBtn:hover:not(:disabled) {
+  color: var(--text-primary);
+}
+
+.undoBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.clearBtn {
+  flex: 1;
+  padding: 6px 10px;
+  background: transparent;
+  color: var(--danger, #ef4444);
+  border: 1px solid color-mix(in srgb, var(--danger, #ef4444) 30%, transparent);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+}
+
+.clearBtn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--danger, #ef4444) 10%, transparent);
+  border-color: color-mix(in srgb, var(--danger, #ef4444) 50%, transparent);
+}
+
+.clearBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .toolBtn { min-height: 36px; }
+  .undoBtn, .clearBtn { padding: 10px 8px; min-height: 36px; }
+}
