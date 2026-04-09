@@ -123,7 +123,8 @@ export function SensorSizeV2() {
         const drawH = Math.round(naturalH * cardScale)
         let cardX = hRect.x + hRect.w + 12
         if (cardX + drawW > cssWidth - padding) cardX = hRect.x - drawW - 12
-        const cardY = Math.max(padding, hRect.y)
+        let cardY = Math.max(padding, hRect.y)
+        if (cardY + drawH > finalH - padding) cardY = Math.max(padding, finalH - padding - drawH)
         try {
           /* eslint-disable @typescript-eslint/no-explicit-any */
           const ctxAny = ctx as any
