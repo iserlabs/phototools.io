@@ -99,7 +99,17 @@ export function SensorSizeV2() {
     else if (mode === 'side-by-side') contentH = drawSideBySide(ctx, cssWidth, maxHeight, padding, sensors, alphaMap)
     else contentH = drawPixelDensity(ctx, cssWidth, maxHeight, padding, sensors, resolution, alphaMap)
 
-    // v2: Draw spec card via drawElementImage
+    // Crop canvas to content height first (setting canvas.height clears it,
+    // so we snapshot, resize, restore, THEN draw the v2 spec card on top)
+    const finalH = Math.max(contentH, 200)
+    canvas.style.height = `${finalH}px`
+    if (finalH < maxHeight) {
+      const imageData = ctx.getImageData(0, 0, canvas.width, Math.ceil(finalH * dpr))
+      canvas.height = Math.ceil(finalH * dpr)
+      ctx.putImageData(imageData, 0, 0)
+    }
+
+    // v2: Draw spec card via drawElementImage AFTER canvas is finalized
     if (hoveredSensor && specCardRef.current && mode === 'overlay') {
       const hRect = overlayRects.find(r => r.id === hoveredSensor)
       if (hRect) {
@@ -108,41 +118,22 @@ export function SensorSizeV2() {
         let cardX = hRect.x + hRect.w + 12
         if (cardX + cardW > cssWidth - padding) cardX = hRect.x - cardW - 12
         const cardY = Math.max(padding, hRect.y)
-
-        // Diagnostic: log available element-drawing APIs (once)
-        if (!debugLoggedRef.current) {
-          debugLoggedRef.current = true
-          const ctxMethods = Object.getOwnPropertyNames(Object.getPrototypeOf(ctx)).filter(m => m.toLowerCase().includes('element') || m.toLowerCase().includes('draw'))
-          const canvasMethods = Object.getOwnPropertyNames(Object.getPrototypeOf(canvas)).filter(m => m.toLowerCase().includes('element') || m.toLowerCase().includes('draw') || m.toLowerCase().includes('paint') || m.toLowerCase().includes('layout'))
-          console.log('[v2 debug] ctx methods with "element" or "draw":', ctxMethods)
-          console.log('[v2 debug] canvas methods with "element/draw/paint/layout":', canvasMethods)
-          console.log('[v2 debug] canvas.layoutSubtree:', (canvas as unknown as Record<string, unknown>).layoutSubtree)
-          console.log('[v2 debug] specCard offsetWidth:', cardW, 'offsetHeight:', cardEl.offsetHeight)
-        }
-
         try {
           /* eslint-disable @typescript-eslint/no-explicit-any */
           const ctxAny = ctx as any
-          const canvasAny = canvas as any
-          if (ctxAny.drawElementImage) {
-            ctxAny.drawElementImage(cardEl, cardX, cardY)
-          } else if (canvasAny.drawElementImage) {
-            // Some implementations put it on the canvas, not the context
-            canvasAny.drawElementImage(cardEl, cardX, cardY)
-          } else {
-            console.warn('[v2] drawElementImage not found on ctx or canvas')
-          }
+          // Must re-apply DPR scale after canvas.height reset
+          ctx.save()
+          ctx.scale(dpr, dpr)
+          ctxAny.drawElementImage(cardEl, cardX, cardY)
+          ctx.restore()
           /* eslint-enable @typescript-eslint/no-explicit-any */
-        } catch (err) { console.warn('[v2] drawElementImage failed:', err) }
+        } catch (err) {
+          if (!debugLoggedRef.current) {
+            debugLoggedRef.current = true
+            console.warn('[v2] drawElementImage error:', err)
+          }
+        }
       }
-    }
-
-    const finalH = Math.max(contentH, 200)
-    canvas.style.height = `${finalH}px`
-    if (finalH < maxHeight) {
-      const imageData = ctx.getImageData(0, 0, canvas.width, Math.ceil(finalH * dpr))
-      canvas.height = Math.ceil(finalH * dpr)
-      ctx.putImageData(imageData, 0, 0)
     }
     if (animating) rafRef.current = requestAnimationFrame(drawFrame)
   }, [mode, resolution, getRenderSensors, hoveredSensor])
