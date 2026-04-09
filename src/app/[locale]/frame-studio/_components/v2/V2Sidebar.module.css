@@ -45,6 +45,11 @@
   padding: 6px 4px;
   min-height: 36px;
   font-size: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modeSection [class*="toggle"] > button:nth-child(n+5) {
+  border-bottom: none;
 }
 
 .modeSection [class*="btnActive"] {
