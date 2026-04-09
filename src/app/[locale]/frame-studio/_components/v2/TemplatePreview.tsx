@@ -66,7 +66,7 @@ export function TemplatePreview({ image, config, crop }: TemplatePreviewProps) {
     } catch {
       // Not supported — silent fallback
     }
-  }, [image, crop, config, template])
+  }, [image, crop, template])
 
   useEffect(() => {
     draw()
