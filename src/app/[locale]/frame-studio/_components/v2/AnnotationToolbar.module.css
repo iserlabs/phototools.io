@@ -66,9 +66,15 @@
   border: 1px solid var(--border);
   border-radius: 4px;
   cursor: pointer;
-  background: none;
+  background: var(--surface-1);
   padding: 2px;
+  appearance: none;
+  -webkit-appearance: none;
 }
+
+.colorInput::-webkit-color-swatch-wrapper { padding: 1px; }
+.colorInput::-webkit-color-swatch { border: none; border-radius: 2px; }
+.colorInput::-moz-color-swatch { border: none; border-radius: 2px; }
 
 .slider {
   flex: 1;

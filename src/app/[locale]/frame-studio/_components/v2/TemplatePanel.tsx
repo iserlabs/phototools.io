@@ -57,6 +57,7 @@ export function TemplatePanel({ config, onChange }: TemplatePanelProps) {
             <label className={styles.fieldLabel}>{t('textColor')}</label>
             <input
               type="color"
+              className={styles.colorPicker}
               value={config.textColor}
               onChange={(e) =>
                 onChange({ ...config, textColor: e.target.value })
