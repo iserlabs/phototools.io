@@ -1,0 +1,35 @@
+.block {
+  position: absolute;
+  cursor: text;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  min-width: 40px;
+  min-height: 1.4em;
+  transition: border-color 0.15s ease;
+}
+
+.block:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.block.active {
+  border-color: var(--accent, #6d9eff);
+  box-shadow: 0 0 0 1px var(--accent, #6d9eff);
+}
+
+.editor {
+  outline: none;
+}
+
+.editor p {
+  margin: 0;
+}
+
+.editor .is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
