@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 24px;
+}
+
+.card {
+  max-width: 480px;
+  background: var(--surface-1, #1a1a1a);
+  border: 1px solid var(--border, #333);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.body {
+  font-size: 14px;
+  color: var(--text-secondary, #888);
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.steps {
+  font-size: 13px;
+  color: var(--text-secondary, #aaa);
+  padding-left: 20px;
+  margin: 0 0 20px;
+  line-height: 1.8;
+}
+
+.steps code {
+  background: var(--surface-2, #252525);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.link {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--accent, #6d9eff);
+  color: white;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
