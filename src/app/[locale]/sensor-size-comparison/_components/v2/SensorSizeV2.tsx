@@ -108,9 +108,13 @@ export function SensorSizeV2() {
         if (cardX + cardW > cssWidth - padding) cardX = hRect.x - cardW - 12
         const cardY = Math.max(padding, hRect.y)
         try {
-          (ctx as CanvasRenderingContext2D & { drawElementImage: (el: Element, dx: number, dy: number) => void })
-            .drawElementImage(cardEl, cardX, cardY)
-        } catch { /* API not available */ }
+          const ctxAny = ctx as CanvasRenderingContext2D & { drawElementImage?: (el: Element, dx: number, dy: number) => void }
+          if (ctxAny.drawElementImage) {
+            ctxAny.drawElementImage(cardEl, cardX, cardY)
+          } else {
+            console.warn('[v2] drawElementImage not available on context')
+          }
+        } catch (err) { console.warn('[v2] drawElementImage failed:', err) }
       }
     }
 
@@ -144,6 +148,20 @@ export function SensorSizeV2() {
     })
     observer.observe(canvas)
     return () => observer.disconnect()
+  }, [drawFrame])
+
+  // v2: Listen for paint events and trigger initial snapshot
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const onPaint = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      rafRef.current = requestAnimationFrame(drawFrame)
+    }
+    canvas.addEventListener('paint', onPaint)
+    // Request initial paint snapshot so drawElementImage works
+    try { (canvas as HTMLCanvasElement & { requestPaint?: () => void }).requestPaint?.() } catch { /* not supported */ }
+    return () => canvas.removeEventListener('paint', onPaint)
   }, [drawFrame])
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
