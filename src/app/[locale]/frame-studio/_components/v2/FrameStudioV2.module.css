@@ -1,0 +1,20 @@
+/* v2-specific overlay layers — layout comes from v1 FrameStudio.module.css */
+.textLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.textLayer.interactive {
+  pointer-events: auto;
+}
+
+.annotationLayer {
+  position: absolute;
+  pointer-events: none;
+}
+
+.annotationLayer.interactive {
+  pointer-events: auto;
+}
