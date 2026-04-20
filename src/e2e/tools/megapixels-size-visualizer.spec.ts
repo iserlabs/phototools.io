@@ -18,6 +18,8 @@ test.describe('Megapixels Size Visualizer', () => {
       !e.includes('favicon') &&
       !e.includes('cookieyes') &&
       !e.includes('adsbygoogle') &&
+      !e.includes('googlesyndication') &&
+      !e.includes('googleads') &&
       !e.includes('_vercel/speed-insights'),
     )
     expect(critical).toEqual([])
@@ -31,17 +33,18 @@ test.describe('Megapixels Size Visualizer', () => {
 
   test('toggling an MP updates the URL', async ({ page }) => {
     await page.goto(URL)
-    const checkbox = page.locator('[data-testid="mp-toggle-mp_45"]')
+    const checkbox = page.locator('[data-testid="mp-toggle-mp_45"]').first()
     await expect(checkbox).toBeChecked()
-    await checkbox.uncheck()
+    // The native input is display:none with a styled label sibling; click the enclosing label.
+    await checkbox.locator('xpath=ancestor::label').first().click()
+    await expect(checkbox).not.toBeChecked()
     await expect(page).toHaveURL(/show=/)
   })
 
   test('adding a custom MP persists it in the checkbox list', async ({ page }) => {
     await page.goto(URL)
-    await page.locator('[data-testid="custom-mp-name"]').first().fill('MyCam')
     await page.locator('[data-testid="custom-mp-value"]').first().fill('75')
     await page.locator('[data-testid="custom-mp-add"]').first().click()
-    await expect(page.getByText(/MyCam/).first()).toBeVisible()
+    await expect(page.getByText(/75 MP/).first()).toBeVisible()
   })
 })

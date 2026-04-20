@@ -87,20 +87,24 @@ function stateToQueryString(state: State): string {
 export function useQuerySync(state: State): void {
   const isFirstRender = useRef(true)
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const qs = stateToQueryString(state)
+  const qsRef = useRef(qs)
+  qsRef.current = qs
 
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false
       return
     }
-    if (timerRef.current) clearTimeout(timerRef.current)
+    if (timerRef.current) return
     timerRef.current = setTimeout(() => {
-      const qs = stateToQueryString(state)
-      const newUrl = `${window.location.pathname}?${qs}`
+      const newUrl = `${window.location.pathname}?${qsRef.current}`
       window.history.replaceState(null, '', newUrl)
+      timerRef.current = null
     }, 200)
-    return () => { if (timerRef.current) clearTimeout(timerRef.current) }
-  }, [state])
+  }, [qs])
+
+  useEffect(() => () => { if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null } }, [])
 }
 
 export const LOG_MIN = Math.log(14)
