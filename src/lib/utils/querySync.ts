@@ -52,14 +52,19 @@ export function stateToQuery<S extends Record<string, unknown>>(state: S, schema
   return parts.join('&')
 }
 
-/** Sync state to URL query params (replaceState). Skips first render. */
+/** Sync state to URL query params (replaceState). Skips first render. Debounced to stay under browser throttling limits (Safari: 100 calls / 10s). */
 export function useToolQuerySync<S extends Record<string, unknown>>(state: S, schema: { [K in keyof S]: ParamDef<S[K]> }): void {
   const isFirst = useRef(true)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   useEffect(() => {
     if (isFirst.current) { isFirst.current = false; return }
-    const qs = stateToQuery(state, schema)
-    const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname
-    window.history.replaceState(null, '', url)
+    if (timerRef.current) clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => {
+      const qs = stateToQuery(state, schema)
+      const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname
+      window.history.replaceState(null, '', url)
+    }, 200)
+    return () => { if (timerRef.current) clearTimeout(timerRef.current) }
   })
 }
 

@@ -59,14 +59,19 @@ export function stateToQueryString(state: FovSimulatorState): string {
 
 export function useQuerySync(state: FovSimulatorState): void {
   const isFirstRender = useRef(true)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false
       return
     }
-    const qs = stateToQueryString(state)
-    const newUrl = `${window.location.pathname}?${qs}`
-    window.history.replaceState(null, '', newUrl)
+    if (timerRef.current) clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => {
+      const qs = stateToQueryString(state)
+      const newUrl = `${window.location.pathname}?${qs}`
+      window.history.replaceState(null, '', newUrl)
+    }, 200)
+    return () => { if (timerRef.current) clearTimeout(timerRef.current) }
   }, [state])
 }
