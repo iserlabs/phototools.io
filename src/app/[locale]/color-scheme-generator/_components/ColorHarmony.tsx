@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { hslToRgb, rgbToHsl } from '@/lib/math/color'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import { useQueryInit, useToolQuerySync, intParam, strParam } from '@/lib/utils/querySync'
 import styles from './ColorHarmony.module.css'
 import { ColorWheel, type ColorWheelHandle } from './ColorWheel'
@@ -105,6 +106,7 @@ export function ColorHarmony() {
 
   return (
     <div className={styles.wrapper}>
+      <ToolHeading slug="color-scheme-generator" />
       <ColorSidebar
         harmony={harmony} setHarmony={(v) => { trackParam({ param_name: 'harmony', param_value: v, input_type: 'select' }); setHarmony(v) }} suggestion={suggestion}
         baseHex={baseHex} displayedHex={displayedHex} applyHex={applyHex} setHexDraft={setHexDraft}

@@ -61,9 +61,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     twitter: { card: 'summary_large_image', title: ogTitle, description },
     alternates: {
       canonical: `/${locale}`,
-      languages: Object.fromEntries(
-        routing.locales.map((l) => [l, `/${l}`])
-      ),
+      languages: Object.fromEntries([
+        ...routing.locales.map((l) => [l, `/${l}`]),
+        ['x-default', `/${routing.defaultLocale}`],
+      ]),
     },
   }
 }

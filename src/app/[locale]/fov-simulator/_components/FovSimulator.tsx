@@ -9,6 +9,7 @@ import { useTheme } from '@/components/layout/ThemeProvider'
 import { ThemeToggle } from '@/components/layout/ThemeToggle'
 import { LearnPanel } from '@/components/shared/LearnPanel'
 import { ToolActions } from '@/components/shared/ToolActions'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import { Sidebar } from './Sidebar'
 import { LensPanel } from './LensPanel'
 import { SCENES } from '@/lib/data/scenes'
@@ -98,6 +99,7 @@ export function FovSimulator() {
 
   return (
     <div className={styles.app}>
+      <ToolHeading slug="fov-simulator" />
       <div className={styles.appBody}>
         <Sidebar>{lensControls()}</Sidebar>
 

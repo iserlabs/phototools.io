@@ -32,7 +32,6 @@
     "@vercel/speed-insights": "^2.0.0",
     "advanced-cropper": "~0.17.1",
     "exifreader": "^4.37.0",
-    "framer-motion": "^12.38.0",
     "jpeg-js": "^0.4.4",
     "next": "^16.2.2",
     "next-intl": "^4.9.0",

@@ -6,6 +6,7 @@ import ExifReader from 'exifreader'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 import { PhotoUploadPanel } from '@/components/shared/PhotoUploadPanel'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { SAMPLE_PHOTO } from './exifTypes'
 import type { ExifResult } from './exifTypes'
@@ -84,6 +85,7 @@ export function ExifViewer() {
 
   return (
     <div className={styles.app}>
+      <ToolHeading slug="exif-viewer" />
       <div className={styles.appBody}>
         <div className={styles.sidebar}>
           <ToolActions toolSlug="exif-viewer" canvasRef={exportCanvasRef} imageFilename="exif-data.png" onBeforeCopyImage={handleBuildExport} />

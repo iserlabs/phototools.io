@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 import type { DisplayMode } from './sensorSizeTypes'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import type { SensorPreset } from '@/lib/types'
 import ss from './SensorSize.module.css'
@@ -146,6 +147,7 @@ export function SensorSize() {
 
   return (
     <div className={ss.app}>
+      <ToolHeading slug="sensor-size-comparison" />
       <div className={ss.appBody}>
         <div className={ss.sidebar}>
           <ToolActions toolSlug="sensor-size-comparison" canvasRef={canvasRef} imageFilename="sensor-comparison.png" onReset={() => {

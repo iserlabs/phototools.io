@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useCallback } from 'react'
+import * as Sentry from '@sentry/nextjs'
 import { calcFOV } from '@/lib/math/fov'
 import { getSensor } from '@/lib/data/sensors'
 import { compressionVertexShader } from './shaders/compression.vert'
@@ -36,7 +37,7 @@ export function CompressionScene({ focalLength, sensorId, distance }: Compressio
     try {
       program = createProgram(gl, compressionVertexShader, compressionFragmentShader)
     } catch (e) {
-      console.error('[CompressionScene] WebGL program creation failed:', e)
+      Sentry.captureException(e, { tags: { module: 'compression-scene', op: 'createProgram' } })
       return
     }
     programRef.current = program

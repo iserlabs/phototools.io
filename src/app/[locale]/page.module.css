@@ -69,7 +69,6 @@
               background var(--duration-fast) var(--ease-out),
               transform var(--duration-normal) var(--ease-out),
               box-shadow var(--duration-normal) var(--ease-out);
-  animation: fadeInUp var(--duration-slow) var(--ease-out) both;
 }
 
 .card:hover {

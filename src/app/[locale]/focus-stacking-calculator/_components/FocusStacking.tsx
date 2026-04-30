@@ -10,6 +10,7 @@ import { StackingSettingsPanel } from './StackingSettingsPanel'
 import { StackingResultsPanel } from './StackingResultsPanel'
 import { StackingDiagram } from './StackingDiagram'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import s from './FocusStacking.module.css'
 
@@ -71,6 +72,7 @@ export function FocusStacking() {
 
   return (
     <div className={s.app}>
+      <ToolHeading slug="focus-stacking-calculator" />
       <div className={s.appBody}>
         {/* -- Sidebar -- */}
         <div className={s.sidebar}>

@@ -1,14 +1,16 @@
 import type { Metadata } from 'next'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { getAlternates } from '@/lib/i18n/metadata'
+import type { Locale } from '@/lib/i18n/routing'
 import { Glossary } from './_components/Glossary'
 import { GLOSSARY } from '@/lib/data/glossary'
 import { AdUnit } from '@/components/shared/AdUnit'
 import styles from './page.module.css'
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
   const t = await getTranslations('metadata.glossary')
-  return { title: t('title'), description: t('description'), alternates: getAlternates('/learn/glossary') }
+  return { title: t('title'), description: t('description'), alternates: getAlternates('/learn/glossary', locale as Locale) }
 }
 
 export default async function GlossaryPage({ params }: { params: Promise<{ locale: string }> }) {

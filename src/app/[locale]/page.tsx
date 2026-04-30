@@ -45,11 +45,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <section key={group.key} className={styles.category}>
           <h2 className={styles.categoryLabel}>{group.label}</h2>
           <AnimatedGrid className={styles.grid}>
-            {group.tools.map((tool) => {
+            {group.tools.map((tool, idx) => {
               const isLive = getToolStatus(tool) === 'live'
               if (isLive) {
                 return (
-                  <AnimatedItem key={tool.slug}>
+                  <AnimatedItem key={tool.slug} index={idx}>
                     {/* prefetch={false}: the homepage lists every tool as a
                         card. Default prefetch causes Next.js to emit
                         <link rel="preload" as="style"> for each tool's unique
@@ -76,7 +76,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 )
               }
               return (
-                <AnimatedItem key={tool.slug}>
+                <AnimatedItem key={tool.slug} index={idx}>
                   <div className={`${styles.card} ${styles.cardDisabled}`}>
                     <div className={styles.cardHeader}>
                       <ToolIcon slug={tool.slug} className={styles.cardIcon} />

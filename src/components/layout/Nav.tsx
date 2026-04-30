@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Link, usePathname } from '@/lib/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { getVisibleTools, getToolStatus } from '@/lib/data/tools'
@@ -116,16 +115,11 @@ export function Nav({ theme, onThemeChange }: NavProps) {
           >
             {t('tools')} {toolsOpen ? '\u25B2' : '\u25BC'}
           </button>
-          <AnimatePresence>
-            {toolsOpen && (
-              <motion.div
-                className={`${styles.megaMenu} ${styles.megaMenuOpen}`}
-                style={{ '--mega-cols': grouped.length } as React.CSSProperties}
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.18, ease: 'easeOut' }}
-              >
+          {toolsOpen && (
+            <div
+              className={`${styles.megaMenu} ${styles.megaMenuOpen} ${styles.megaMenuAnimated}`}
+              style={{ '--mega-cols': grouped.length } as React.CSSProperties}
+            >
                 <button
                   className={styles.megaCloseBtn}
                   onClick={() => setToolsOpen(false)}
@@ -172,10 +166,9 @@ export function Nav({ theme, onThemeChange }: NavProps) {
                       )
                     })}
                   </div>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
+              ))}
+            </div>
+          )}
         </div>
         <Link
           href="/learn/glossary"

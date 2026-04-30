@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
+import * as Sentry from '@sentry/nextjs'
 import { useTranslations } from 'next-intl'
 import { computeExportDimensions, drawSolidBorder, drawGradientBorder, drawTextureBorder, drawInnerMat, drawShadow } from '@/lib/math/frame'
 import { transferExif } from '@/lib/utils/exif'
@@ -129,7 +130,13 @@ export function ExportDialog({
         drawScene(ctx)
         blob = await new Promise<Blob | null>((r) => canvas.toBlob(r, originalMimeType, 1))
       }
-      if (!blob) { console.error('Export failed: could not create image blob'); return }
+      if (!blob) {
+        Sentry.captureMessage('Frame Studio export: canvas.toBlob returned null', {
+          level: 'error',
+          tags: { module: 'frame-studio', op: 'export' },
+        })
+        return
+      }
 
       const originalBuffer = await originalFile.arrayBuffer()
       blob = await transferExif(originalBuffer, blob, originalMimeType)

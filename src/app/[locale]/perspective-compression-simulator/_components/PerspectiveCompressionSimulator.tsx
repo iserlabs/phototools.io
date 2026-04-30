@@ -3,6 +3,7 @@
 import { useReducer, useState, useEffect, useCallback } from 'react'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 import { reducer, DEFAULT_STATE, parseQueryParams, useQuerySync } from './compressionState'
 import type { Action } from './compressionState'
@@ -37,6 +38,7 @@ export function PerspectiveCompressionSimulator() {
 
   return (
     <div className={styles.app}>
+      <ToolHeading slug="perspective-compression-simulator" />
       <div className={styles.appBody}>
         <aside className={styles.sidebar}>
           <ToolActions

@@ -7,6 +7,7 @@ import { calcDoF } from '@/lib/math/dof'
 import { SENSORS } from '@/lib/data/sensors'
 import { useQueryInit, useToolQuerySync, intParam, numParam, strParam, sensorParam } from '@/lib/utils/querySync'
 import { ToolActions } from '@/components/shared/ToolActions'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import { DoFDiagram } from '@/components/shared/DoFDiagram'
 import { DoFCanvas } from '@/components/shared/DoFCanvas'
 import type { SceneKey } from '@/components/shared/DoFCanvas'
@@ -85,6 +86,7 @@ export function HyperfocalSimulator() {
 
   return (
     <div className={s.app}>
+      <ToolHeading slug="hyperfocal-simulator" />
       <div className={s.appBody}>
         <div className={s.sidebar}>
           <ToolActions toolSlug="hyperfocal-simulator" />

@@ -72,15 +72,27 @@ export function ScenePicker({
       {onCustomFile && (
         <>
           {customSrc && (
-            <button
-              className={`${styles.thumb} ${styles.customThumb} ${selectedIndex === -1 ? styles.thumbActive : ''}`}
-              onClick={() => onSelect(-1)}
-              title={t('yourPhoto')}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={customSrc} alt={t('yourPhoto')} />
-              <span className={styles.removeBtn} onClick={handleRemove} title={t('removePhoto')}>×</span>
-            </button>
+            <div className={`${styles.thumb} ${styles.customThumb} ${selectedIndex === -1 ? styles.thumbActive : ''}`}>
+              <button
+                type="button"
+                className={styles.thumbInner}
+                onClick={() => onSelect(-1)}
+                title={t('yourPhoto')}
+                aria-pressed={selectedIndex === -1}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={customSrc} alt={t('yourPhoto')} />
+              </button>
+              <button
+                type="button"
+                className={styles.removeBtn}
+                onClick={handleRemove}
+                title={t('removePhoto')}
+                aria-label={t('removePhoto')}
+              >
+                ×
+              </button>
+            </div>
           )}
           <button
             className={`${styles.thumb} ${styles.uploadThumb}`}

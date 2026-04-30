@@ -11,6 +11,7 @@ import { SourceSettingsPanel } from './SourceSettingsPanel'
 import { TargetSensorPanel } from './TargetSensorPanel'
 import { EquivalenceCard } from './EquivalenceCard'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import s from './EquivalentSettings.module.css'
 
@@ -83,6 +84,7 @@ export function EquivalentSettings() {
 
   return (
     <div className={s.app}>
+      <ToolHeading slug="equivalent-settings-calculator" />
       <div className={s.appBody}>
         {/* -- Sidebar -- */}
         <div className={s.sidebar}>

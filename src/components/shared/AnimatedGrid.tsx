@@ -1,42 +1,36 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
+import styles from './AnimatedGrid.module.css'
 
 interface AnimatedGridProps {
   children: ReactNode
   className?: string
 }
 
-const container = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.05 },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' as const } },
-}
-
 export function AnimatedGrid({ children, className }: AnimatedGridProps) {
   return (
-    <motion.div
-      className={className}
-      variants={container}
-      initial="hidden"
-      animate="show"
-    >
+    <div className={`${styles.grid} ${className ?? ''}`}>
       {children}
-    </motion.div>
+    </div>
   )
 }
 
-export function AnimatedItem({ children, className }: { children: ReactNode; className?: string }) {
+const STAGGER_MS = 50
+const MAX_STAGGER_INDEX = 24
+
+export function AnimatedItem({
+  children,
+  className,
+  index = 0,
+}: {
+  children: ReactNode
+  className?: string
+  index?: number
+}) {
+  const safeIndex = Math.min(index, MAX_STAGGER_INDEX)
+  const style: CSSProperties = { animationDelay: `${safeIndex * STAGGER_MS}ms` }
   return (
-    <motion.div variants={item} className={className} style={{ height: '100%' }}>
+    <div className={`${styles.item} ${className ?? ''}`} style={style}>
       {children}
-    </motion.div>
+    </div>
   )
 }

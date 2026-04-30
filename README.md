@@ -58,7 +58,7 @@ These tools are functional in the dev environment but not yet published to produ
 | UI | React 19, TypeScript 6, CSS Modules |
 | Rendering | Canvas API, WebGL2 + GLSL shaders |
 | i18n | next-intl |
-| Unit tests | Vitest + Testing Library (781 tests, 56 files) |
+| Unit tests | Vitest + Testing Library (869 tests, 67 files) |
 | E2E tests | Playwright (Chromium + Firefox) |
 | Deployment | Vercel (auto-deploy from `main`) |
 | Analytics | Vercel Speed Insights, Google Analytics |

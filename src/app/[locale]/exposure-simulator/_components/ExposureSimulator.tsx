@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from 'react'
 import { calcEV } from '@/lib/math/exposure'
 import { useQueryInit, useToolQuerySync, intParam, strParam } from '@/lib/utils/querySync'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { APERTURES, SHUTTER_SPEEDS, ISOS } from '@/lib/data/camera'
 import { ExposurePreview } from './ExposurePreview'
@@ -99,6 +100,7 @@ export function ExposureSimulator() {
 
   return (
     <div className={sim.app}>
+      <ToolHeading slug="exposure-simulator" />
       <div className={sim.appBody}>
         <div className={sim.sidebar}>
           <ToolActions toolSlug="exposure-simulator" />

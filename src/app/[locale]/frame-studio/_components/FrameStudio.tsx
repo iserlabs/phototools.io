@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useCallback, useEffect, useRef } from 'react'
+import dynamic from 'next/dynamic'
+import * as Sentry from '@sentry/nextjs'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 import { DraftBanner } from '@/components/shared/DraftBanner'
 import { ToolActions } from '@/components/shared/ToolActions'
@@ -8,9 +10,18 @@ import { getToolBySlug, getToolStatus } from '@/lib/data/tools'
 import { ImageCanvas } from './ImageCanvas'
 import { GridCanvas } from './GridCanvas'
 import { CropView } from './CropView'
-import { ExportDialog } from './ExportDialog'
 import { FrameSidebar } from './FrameSidebar'
+
+// ExportDialog pulls upng-js + jpeg-js (~80KB combined) plus EXIF transfer
+// helpers. The dialog is only rendered after the user clicks Export, so we
+// defer the bundle until that interaction to keep the initial Frame Studio
+// page lighter.
+const ExportDialog = dynamic(
+  () => import('./ExportDialog').then((m) => ({ default: m.ExportDialog })),
+  { ssr: false },
+)
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import type { EditorMode, GridType, GridOptions, FrameConfig, CropState, AspectRatioType } from './types'
 import { DEFAULT_GRID_OPTIONS, DEFAULT_FRAME_CONFIG } from '@/lib/data/frameStudio'
 import styles from './FrameStudio.module.css'
@@ -71,7 +82,9 @@ export function FrameStudio() {
         const file = new File([blob], 'wildlife.jpg', { type: 'image/jpeg' })
         handleFile(file)
       })
-      .catch((err) => console.error('Failed to load default photo', err))
+      .catch((err) => {
+        Sentry.captureException(err, { tags: { module: 'frame-studio', op: 'load-default-photo' } })
+      })
   }, [handleFile])
 
   const handleActiveGridsChange = useCallback((grids: GridType[]) => {
@@ -99,7 +112,9 @@ export function FrameStudio() {
     fetch(DEFAULT_PHOTO_URL)
       .then((res) => res.blob())
       .then((blob) => handleFile(new File([blob], 'wildlife.jpg', { type: 'image/jpeg' })))
-      .catch((err) => console.error('Failed to load default photo', err))
+      .catch((err) => {
+        Sentry.captureException(err, { tags: { module: 'frame-studio', op: 'load-default-photo' } })
+      })
   }, [handleResetEdits, handleFile])
 
   const handleDeletePhoto = useCallback(() => {
@@ -123,6 +138,7 @@ export function FrameStudio() {
 
   return (
     <>
+      <ToolHeading slug={SLUG} />
       {isDraft && <DraftBanner />}
       <div className={styles.app}>
         <div className={styles.appBody}>

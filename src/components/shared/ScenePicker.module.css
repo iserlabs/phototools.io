@@ -42,6 +42,20 @@
   object-fit: cover;
 }
 
+/* Inner clickable area used inside .customThumb (which is a <div>, not a
+   <button>, so the X overlay can be a sibling button without nesting). */
+.thumbInner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
 .uploadThumb {
   display: flex;
   align-items: center;

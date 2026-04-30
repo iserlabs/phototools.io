@@ -13,6 +13,7 @@ import { ABComparison } from './ABComparison'
 import { SubjectFigure } from './SubjectFigure'
 import { FocusTarget } from './FocusTarget'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { ModeToggle } from '@/components/shared/ModeToggle'
 import s from './DofSimulator.module.css'
@@ -38,6 +39,7 @@ export function DofSimulator() {
 
   return (
     <div className={s.app}>
+      <ToolHeading slug="dof-simulator" />
       <div className={s.appBody}>
         {/* ── Sidebar ── */}
         <div className={s.sidebar}>

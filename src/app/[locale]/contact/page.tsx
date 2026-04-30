@@ -1,16 +1,18 @@
 import type { Metadata } from 'next'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { getAlternates } from '@/lib/i18n/metadata'
+import type { Locale } from '@/lib/i18n/routing'
 import { Link } from '@/lib/i18n/navigation'
 import { ContactForm } from './_components/ContactForm'
 import styles from './ContactPage.module.css'
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
   const t = await getTranslations('metadata.contact')
   return {
     title: t('title'),
     description: t('description'),
-    alternates: getAlternates('/contact'),
+    alternates: getAlternates('/contact', locale as Locale),
   }
 }
 

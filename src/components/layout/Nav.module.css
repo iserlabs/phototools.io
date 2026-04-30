@@ -136,6 +136,23 @@
   display: grid;
 }
 
+/* Fade/slide-down enter animation when JS toggles the menu open. Replaces
+   framer-motion to keep the homepage bundle lean. */
+.megaMenuAnimated {
+  animation: megaMenuEnter 0.18s ease-out;
+}
+
+@keyframes megaMenuEnter {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .megaMenuAnimated {
+    animation: none;
+  }
+}
+
 .megaColumn {
   padding: var(--space-sm);
   min-width: 0;

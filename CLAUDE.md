@@ -23,7 +23,7 @@ PhotoTools is an educational photography application — free calculators, simul
 - `npm run dev` — start dev server with Turbopack at `http://localhost:3200`
 - `npm run build` — production build via `next build`
 - `npm run start` — serve production build locally
-- `npm test` — run Vitest tests (781 tests across 56 files)
+- `npm test` — run Vitest tests (869 tests across 67 files)
 - `npm run test:coverage` — run tests with coverage report
 - `npm run type-check` — run TypeScript compiler in noEmit mode
 - `npm run test:watch` — run tests in watch mode
@@ -72,7 +72,7 @@ src/
       navigation.ts       Locale-aware Link, usePathname, useRouter, redirect
       request.ts          Message loader — merges all JSON files per locale
       redirects.ts        Centralized redirect rules (consumed by next.config.ts)
-      metadata.ts         getAlternates() helper for hreflang in page metadata
+      metadata.ts         getAlternates() helper for canonical + hreflang in page metadata
       messages/en/        English translations (source of truth, 41 files)
       messages/es/        Spanish translations (41 files)
       messages/ja/        Japanese translations (41 files)
@@ -243,7 +243,7 @@ Three external services provide production monitoring:
 - **DRY**: Avoid duplicating logic, styles, constants, or markup. Extract shared utilities, components, and data modules. When adding a feature, check if similar patterns already exist in the codebase and reuse them.
 - **200-line file limit**: Keep all `.ts`/`.tsx` files under 200 lines (test files exempt). If a file grows beyond this, break it into smaller focused modules (e.g. extract hooks, sub-components, helpers, constants, or types into separate files).
 - **Test files** co-located next to source files (`*.test.ts`)
-- **56 test files, 780 tests** covering math, data, education, ads, i18n (including all 31 locales), observability, and component integration
+- **67 test files, 869 tests** covering math, data, education, ads, i18n (including all 31 locales), sitemap, metadata helpers, observability, and component integration
 - **After file changes in `src/app/`**, clear `.next` cache (`rm -rf .next`) and restart dev server to avoid stale MIME type and 404 errors
 - **i18n strings required**: Whenever a new user-facing string is added or an existing one is modified, create or update the corresponding translation in the appropriate JSON file under `src/lib/i18n/messages/en/`. Never hardcode user-facing text directly in components — always use `useTranslations` (client) or `getTranslations` (server) to reference translation keys.
 - **Privacy Sandbox is deprecated** — do not discuss, recommend, or implement any Privacy Sandbox APIs (Topics, Attribution Reporting, Protected Audience, etc.)
