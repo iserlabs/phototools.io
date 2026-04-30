@@ -33,16 +33,20 @@
     "advanced-cropper": "~0.17.1",
     "exifreader": "^4.37.0",
     "jpeg-js": "^0.4.4",
-    "next": "^16.2.2",
+    "next": "^16.2.4",
     "next-intl": "^4.9.0",
     "posthog-js": "^1.365.0",
     "react": "^19.0.0",
     "react-advanced-cropper": "^0.20.1",
     "react-dom": "^19.0.0",
-    "resend": "^6.10.0",
+    "resend": "^6.12.2",
     "server-only": "^0.0.1",
     "sonner": "^2.0.7",
     "upng-js": "^2.1.0"
+  },
+  "overrides": {
+    "postcss": "^8.5.10",
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
