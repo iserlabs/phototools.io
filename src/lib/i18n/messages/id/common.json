@@ -124,6 +124,11 @@
       "1in": "Sensor 1\"",
       "phone": "Smartphone Flagship (1/1,3\")"
     },
-    "legalTranslationDisclaimer": "Ini adalah terjemahan untuk kenyamanan. Versi bahasa Inggris adalah versi yang mengikat secara hukum. Lihat /en/privacy."
+    "legalTranslationDisclaimer": "Ini adalah terjemahan untuk kenyamanan. Versi bahasa Inggris adalah versi yang mengikat secara hukum. Lihat /en/privacy.",
+    "error": {
+      "title": "Ada yang salah",
+      "message": "Terjadi kesalahan yang tidak terduga. Silakan coba lagi.",
+      "tryAgain": "Coba lagi"
+    }
   }
 }

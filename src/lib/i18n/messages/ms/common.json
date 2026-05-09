@@ -124,6 +124,11 @@
       "1in": "Sensor 1\"",
       "phone": "Telefon Pintar Unggulan (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "Ini adalah terjemahan untuk kemudahan rujukan. Versi Bahasa Inggeris adalah versi yang mengikat dari segi undang-undang. Lihat /en/privacy."
+    "legalTranslationDisclaimer": "Ini adalah terjemahan untuk kemudahan rujukan. Versi Bahasa Inggeris adalah versi yang mengikat dari segi undang-undang. Lihat /en/privacy.",
+    "error": {
+      "title": "Sesuatu telah salah",
+      "message": "Ralat yang tidak dijangka berlaku. Sila cuba lagi.",
+      "tryAgain": "Cuba lagi"
+    }
   }
 }

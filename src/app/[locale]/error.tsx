@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react'
 import * as Sentry from '@sentry/nextjs'
+import { useTranslations } from 'next-intl'
+import styles from './error.module.css'
 
 export default function GlobalError({
   error,
@@ -10,29 +12,18 @@ export default function GlobalError({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  const t = useTranslations('common.error')
+
   useEffect(() => {
     Sentry.captureException(error)
   }, [error])
 
   return (
-    <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-primary, #e0e0e0)' }}>
-      <h2>Something went wrong</h2>
-      <p style={{ color: 'var(--text-secondary, #999)', marginBottom: '1rem' }}>
-        An unexpected error occurred. Please try again.
-      </p>
-      <button
-        onClick={reset}
-        style={{
-          padding: '0.5rem 1.5rem',
-          background: 'var(--accent, #3b82f6)',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '6px',
-          cursor: 'pointer',
-          fontSize: '0.9rem',
-        }}
-      >
-        Try again
+    <div className={styles.container} role="alert" aria-live="assertive">
+      <h2 className={styles.title}>{t('title')}</h2>
+      <p className={styles.message}>{t('message')}</p>
+      <button type="button" onClick={reset} className={styles.button}>
+        {t('tryAgain')}
       </button>
     </div>
   )

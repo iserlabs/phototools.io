@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { trackThemeToggle } from '@/lib/analytics'
+import styles from './ThemeToggle.module.css'
 
 interface ThemeToggleProps {
   theme: string
@@ -14,6 +15,7 @@ export function ThemeToggle({ theme, onChange }: ThemeToggleProps) {
 
   return (
     <button
+      type="button"
       onClick={() => {
         const newTheme = theme === 'dark' ? 'light' : 'dark'
         trackThemeToggle({ new_theme: newTheme })
@@ -21,23 +23,9 @@ export function ThemeToggle({ theme, onChange }: ThemeToggleProps) {
       }}
       title={label}
       aria-label={label}
-      style={{
-        background: 'none',
-        border: 'none',
-        cursor: 'pointer',
-        fontSize: 'var(--text-md)',
-        color: 'var(--text-secondary)',
-        padding: '8px',
-        minWidth: '36px',
-        minHeight: '36px',
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 'var(--radius-sm)',
-        transition: 'background var(--duration-fast)',
-      }}
+      className={styles.toggle}
     >
-      {theme === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF19'}
+      <span aria-hidden="true">{theme === 'dark' ? '☀️' : '🌙'}</span>
     </button>
   )
 }

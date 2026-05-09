@@ -1,0 +1,54 @@
+.page {
+  padding: var(--space-xl) var(--space-md);
+  max-width: 800px;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+.disclaimer {
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  border-left: 3px solid var(--accent);
+  background: var(--bg-secondary);
+  font-size: 14px;
+  color: var(--text-secondary);
+  border-radius: 4px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.effectiveDate {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.section {
+  margin-bottom: var(--space-xl);
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.sectionParagraph {
+  margin-top: var(--space-sm);
+}
+
+.link {
+  color: var(--accent);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.list {
+  margin-top: var(--space-sm);
+  padding-left: var(--space-lg);
+}

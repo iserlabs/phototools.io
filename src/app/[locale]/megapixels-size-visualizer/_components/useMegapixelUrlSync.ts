@@ -39,8 +39,7 @@ export function useMegapixelUrlSync(state: SyncableState, setters: Setters) {
     depth: strParam<BitDepth>('raw14', ['jpeg8', 'raw14', 'tiff16']),
   }), [allAspectIds, state.units])
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const hydrated = useQueryInit(schema as any, {
+  const hydrated = useQueryInit(schema, {
     show: setters.setVisible,
     mode: setters.setMode,
     aspect: setters.setAspectId,
@@ -57,8 +56,7 @@ export function useMegapixelUrlSync(state: SyncableState, setters: Setters) {
     dist: state.viewingDistance,
     depth: state.bitDepth,
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  useToolQuerySync(stateForSync as any, schema as any)
+  useToolQuerySync(stateForSync, schema)
 
   return hydrated
 }

@@ -124,6 +124,11 @@
       "1in": "1\" Sensor",
       "phone": "Smartphone Flagship (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "This page is shown in its original language."
+    "legalTranslationDisclaimer": "This page is shown in its original language.",
+    "error": {
+      "title": "Something went wrong",
+      "message": "An unexpected error occurred. Please try again.",
+      "tryAgain": "Try again"
+    }
   }
 }

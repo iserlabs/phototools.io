@@ -38,6 +38,8 @@ test-results/
 .claude/
 .superpowers/
 .worktrees/
+.agents/
+skills-lock.json
 docs/superpowers/
 
 # Internal business docs

@@ -124,6 +124,11 @@
       "1in": "1인치 센서",
       "phone": "스마트폰 플래그십 (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "이는 편의를 위한 번역입니다. 법적 효력은 영문 버전이 갖습니다. /en/privacy를 참조하세요."
+    "legalTranslationDisclaimer": "이는 편의를 위한 번역입니다. 법적 효력은 영문 버전이 갖습니다. /en/privacy를 참조하세요.",
+    "error": {
+      "title": "문제가 발생했습니다",
+      "message": "예기치 않은 오류가 발생했습니다. 다시 시도해 주세요.",
+      "tryAgain": "다시 시도"
+    }
   }
 }

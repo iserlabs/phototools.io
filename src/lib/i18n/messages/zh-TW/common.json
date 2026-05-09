@@ -124,6 +124,11 @@
       "1in": "1 吋感光元件",
       "phone": "旗艦智慧型手機 (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "本頁為方便閱讀之翻譯版本。具法律效力者為英文版本，請參閱 /en/privacy。"
+    "legalTranslationDisclaimer": "本頁為方便閱讀之翻譯版本。具法律效力者為英文版本，請參閱 /en/privacy。",
+    "error": {
+      "title": "出了點問題",
+      "message": "發生了意外錯誤。請重試。",
+      "tryAgain": "重試"
+    }
   }
 }

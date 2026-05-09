@@ -124,6 +124,11 @@
       "1in": "Matryca 1\"",
       "phone": "Flagowy smartfon (1/1,3\")"
     },
-    "legalTranslationDisclaimer": "To tłumaczenie wykonano dla wygody użytkowników. Wersja angielska jest wiążąca prawnie. Zobacz /en/privacy."
+    "legalTranslationDisclaimer": "To tłumaczenie wykonano dla wygody użytkowników. Wersja angielska jest wiążąca prawnie. Zobacz /en/privacy.",
+    "error": {
+      "title": "Coś poszło nie tak",
+      "message": "Wystąpił nieoczekiwany błąd. Spróbuj ponownie.",
+      "tryAgain": "Spróbuj ponownie"
+    }
   }
 }

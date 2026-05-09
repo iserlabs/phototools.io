@@ -32,6 +32,7 @@ export function EditCustomMegapixelRow({ mp, onSave, onCancel }: Props) {
       />
       <input
         type="number"
+        inputMode="decimal"
         value={mpValue}
         onChange={(e) => setMpValue(e.target.value)}
         className={ss.numberInput}

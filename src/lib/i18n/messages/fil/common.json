@@ -124,6 +124,11 @@
       "1in": "1\" Sensor",
       "phone": "Smartphone Flagship (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "Convenience translation lang ito. Ang English version ang legal na may bisa. Tingnan ang /en/privacy."
+    "legalTranslationDisclaimer": "Convenience translation lang ito. Ang English version ang legal na may bisa. Tingnan ang /en/privacy.",
+    "error": {
+      "title": "May nangyaring mali",
+      "message": "May hindi inaasahang error. Pakisubukan muli.",
+      "tryAgain": "Subukan muli"
+    }
   }
 }

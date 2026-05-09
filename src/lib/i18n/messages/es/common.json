@@ -124,6 +124,11 @@
       "1in": "Sensor de 1\"",
       "phone": "Smartphone gama alta (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "Esta es una traducción de cortesía. La versión en inglés es la versión legalmente vinculante. Consulta /en/privacy."
+    "legalTranslationDisclaimer": "Esta es una traducción de cortesía. La versión en inglés es la versión legalmente vinculante. Consulta /en/privacy.",
+    "error": {
+      "title": "Algo salió mal",
+      "message": "Ha ocurrido un error inesperado. Inténtalo de nuevo.",
+      "tryAgain": "Reintentar"
+    }
   }
 }

@@ -124,6 +124,11 @@
       "1in": "1\" kenno",
       "phone": "Huippupuhelin (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "Tämä sivu näytetään alkuperäisellä kielellään."
+    "legalTranslationDisclaimer": "Tämä sivu näytetään alkuperäisellä kielellään.",
+    "error": {
+      "title": "Jokin meni pieleen",
+      "message": "Odottamaton virhe tapahtui. Yritä uudelleen.",
+      "tryAgain": "Yritä uudelleen"
+    }
   }
 }

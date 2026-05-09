@@ -124,6 +124,11 @@
       "1in": "1型センサー",
       "phone": "スマートフォン (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "これは便宜上の翻訳です。法的に有効なのは英語版です。/en/privacy をご覧ください。"
+    "legalTranslationDisclaimer": "これは便宜上の翻訳です。法的に有効なのは英語版です。/en/privacy をご覧ください。",
+    "error": {
+      "title": "エラーが発生しました",
+      "message": "予期しないエラーが発生しました。もう一度お試しください。",
+      "tryAgain": "再試行"
+    }
   }
 }

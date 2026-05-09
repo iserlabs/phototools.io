@@ -124,6 +124,11 @@
       "1in": "1\"-sensor",
       "phone": "Smartphone-flagskib (1/1,3\")"
     },
-    "legalTranslationDisclaimer": "Den her oversættelse er kun til vejledende brug. Den engelske version er den juridisk bindende. Se /en/privacy."
+    "legalTranslationDisclaimer": "Den her oversættelse er kun til vejledende brug. Den engelske version er den juridisk bindende. Se /en/privacy.",
+    "error": {
+      "title": "Noget gik galt",
+      "message": "Der opstod en uventet fejl. Prøv igen.",
+      "tryAgain": "Prøv igen"
+    }
   }
 }

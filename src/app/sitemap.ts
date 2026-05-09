@@ -3,7 +3,7 @@ import { getLiveTools } from '@/lib/data/tools'
 import { locales, defaultLocale } from '@/lib/i18n/routing'
 
 // Update this date when tools are added or site content changes significantly
-const LAST_CONTENT_UPDATE = new Date('2026-04-05')
+const LAST_CONTENT_UPDATE = new Date('2026-05-08')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.phototools.io'

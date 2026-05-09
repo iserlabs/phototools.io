@@ -124,6 +124,11 @@
       "1in": "1\"-Sensor",
       "phone": "Smartphone Flagship (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "Dies ist eine Übersetzung zu deiner Information. Die englische Fassung ist rechtsverbindlich. Siehe /en/privacy."
+    "legalTranslationDisclaimer": "Dies ist eine Übersetzung zu deiner Information. Die englische Fassung ist rechtsverbindlich. Siehe /en/privacy.",
+    "error": {
+      "title": "Etwas ist schiefgelaufen",
+      "message": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuche es erneut.",
+      "tryAgain": "Erneut versuchen"
+    }
   }
 }

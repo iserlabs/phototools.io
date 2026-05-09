@@ -124,6 +124,11 @@
       "1in": "Senzor 1\"",
       "phone": "Smartphone flagship (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "Aceasta este o traducere de conveniență. Versiunea în limba engleză este cea obligatorie din punct de vedere juridic. Vezi /en/privacy."
+    "legalTranslationDisclaimer": "Aceasta este o traducere de conveniență. Versiunea în limba engleză este cea obligatorie din punct de vedere juridic. Vezi /en/privacy.",
+    "error": {
+      "title": "Ceva nu a mers bine",
+      "message": "A apărut o eroare neașteptată. Încercați din nou.",
+      "tryAgain": "Încercați din nou"
+    }
   }
 }

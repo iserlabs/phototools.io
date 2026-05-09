@@ -102,7 +102,7 @@ export function ExifViewer() {
           {imageUrl && (
             <div className={styles.imagePreview}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img ref={photoImgRef} src={imageUrl} alt={t('uploadedPhoto')} className={styles.previewImg} />
+              <img ref={photoImgRef} src={imageUrl} alt={t('uploadedPhoto')} className={styles.previewImg} decoding="async" />
             </div>
           )}
 

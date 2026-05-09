@@ -23,6 +23,7 @@ All image processing happens client-side. Photos you load into the EXIF Viewer, 
 | **[Star Trail Calculator](https://www.phototools.io/star-trail-calculator)** | Calculate maximum exposure for pinpoint stars (500 Rule and NPF Rule). Plan star trail stacking sessions with frame count and duration estimates. Animated sky preview. |
 | **[White Balance Visualizer](https://www.phototools.io/white-balance-visualizer)** | See how color temperature (1000K–12000K) shifts the look of scenes. Compare presets from Candle to Blue Sky, or upload your own photo for a live WebGL preview. |
 | **[Sensor Size Comparison](https://www.phototools.io/sensor-size-comparison)** | Visually compare sensor sizes from medium format to smartphone. Overlay, side-by-side, and pixel density modes with resolution data and popular camera models. |
+| **[Megapixels Size Visualizer](https://www.phototools.io/megapixels-size-visualizer)** | Compare megapixel counts side by side, visualize print sizes at common DPIs, and estimate file sizes across aspect ratios and bit depths. |
 
 ### File Tools
 
@@ -58,7 +59,7 @@ These tools are functional in the dev environment but not yet published to produ
 | UI | React 19, TypeScript 6, CSS Modules |
 | Rendering | Canvas API, WebGL2 + GLSL shaders |
 | i18n | next-intl |
-| Unit tests | Vitest + Testing Library (869 tests, 67 files) |
+| Unit tests | Vitest + Testing Library (870+ tests, 68 files) |
 | E2E tests | Playwright (Chromium + Firefox) |
 | Deployment | Vercel (auto-deploy from `main`) |
 | Analytics | Vercel Speed Insights, Google Analytics |

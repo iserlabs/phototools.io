@@ -82,26 +82,30 @@ export function CropPanel({ selectedRatio, onRatioChange, onApply }: CropPanelPr
         <div className={styles.customRow}>
           <input
             type="number"
+            inputMode="numeric"
             className={styles.input}
             placeholder={t('placeholderW')}
             value={customW}
             onChange={(e) => setCustomW(e.target.value)}
             min={1}
+            aria-label={t('placeholderW')}
           />
-          <span className={styles.separator}>:</span>
+          <span className={styles.separator} aria-hidden="true">:</span>
           <input
             type="number"
+            inputMode="numeric"
             className={styles.input}
             placeholder={t('placeholderH')}
             value={customH}
             onChange={(e) => setCustomH(e.target.value)}
             min={1}
+            aria-label={t('placeholderH')}
           />
-          <button className={styles.applyBtn} onClick={handleCustomApply}>{t('set')}</button>
+          <button type="button" className={styles.applyBtn} onClick={handleCustomApply}>{t('set')}</button>
         </div>
       </div>
 
-      <button className={styles.doneBtn} onClick={onApply}>
+      <button type="button" className={styles.doneBtn} onClick={onApply}>
         {t('applyCrop')}
       </button>
     </div>

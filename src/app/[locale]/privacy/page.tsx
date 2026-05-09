@@ -4,6 +4,7 @@ import { Link } from '@/lib/i18n/navigation'
 import { getAlternates } from '@/lib/i18n/metadata'
 import type { Locale } from '@/lib/i18n/routing'
 import { PrivacySection, SectionParagraph } from './PrivacySection'
+import styles from './legal-page.module.css'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -29,32 +30,21 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   }
 
   const contactLink = (chunks: React.ReactNode) => (
-    <Link href="/contact" style={{ color: 'var(--accent)' }}>{chunks}</Link>
+    <Link href="/contact" className={styles.link}>{chunks}</Link>
   )
 
   const strong = (chunks: React.ReactNode) => <strong>{chunks}</strong>
 
   return (
-    <div style={{ padding: 'var(--space-xl) var(--space-md)', maxWidth: 800, margin: '0 auto', overflowY: 'auto' }}>
+    <div className={styles.page}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {locale !== 'en' && (
-        <aside
-          role="note"
-          style={{
-            padding: 'var(--space-md)',
-            marginBottom: 'var(--space-lg)',
-            borderLeft: '3px solid var(--accent)',
-            background: 'var(--bg-secondary)',
-            fontSize: 14,
-            color: 'var(--text-secondary)',
-            borderRadius: 4,
-          }}
-        >
+        <aside role="note" className={styles.disclaimer}>
           {commonT('legalTranslationDisclaimer')}
         </aside>
       )}
-      <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 'var(--space-sm)' }}>{t('title')}</h1>
-      <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-xl)' }}>{t('effectiveDate')}</p>
+      <h1 className={styles.title}>{t('title')}</h1>
+      <p className={styles.effectiveDate}>{t('effectiveDate')}</p>
 
       <PrivacySection title={t('sections.overview.title')}>
         <p>{t('sections.overview.body')}</p>
@@ -77,7 +67,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
       <PrivacySection title={t('sections.thirdPartyAdvertising.title')}>
         <p>{t.rich('sections.thirdPartyAdvertising.body', {
           naiLink: (chunks) => (
-            <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>{chunks}</a>
+            <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener noreferrer" className={styles.link}>{chunks}</a>
           ),
         })}</p>
       </PrivacySection>
@@ -86,10 +76,10 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
         <p>{t('sections.googleAdSense.body1')}</p>
         <SectionParagraph>{t.rich('sections.googleAdSense.body2', {
           adsSettingsLink: (chunks) => (
-            <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>{chunks}</a>
+            <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className={styles.link}>{chunks}</a>
           ),
           partnerSitesLink: (chunks) => (
-            <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>{chunks}</a>
+            <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className={styles.link}>{chunks}</a>
           ),
         })}</SectionParagraph>
       </PrivacySection>

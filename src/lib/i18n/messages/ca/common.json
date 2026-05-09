@@ -124,6 +124,11 @@
       "1in": "Sensor d'1\"",
       "phone": "Mòbil de gamma alta (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "Aquesta és una traducció de cortesia. La versió en anglès és la jurídicament vinculant. Consulta /en/privacy."
+    "legalTranslationDisclaimer": "Aquesta és una traducció de cortesia. La versió en anglès és la jurídicament vinculant. Consulta /en/privacy.",
+    "error": {
+      "title": "Alguna cosa ha anat malament",
+      "message": "S'ha produït un error inesperat. Si us plau, torna-ho a provar.",
+      "tryAgain": "Torna-ho a provar"
+    }
   }
 }

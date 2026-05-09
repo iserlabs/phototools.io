@@ -43,26 +43,10 @@ export function ContactForm() {
 
   if (sent) {
     return (
-      <div style={{ textAlign: 'center', padding: 'var(--space-xl) 0' }}>
-        <p style={{ fontSize: 'var(--text-md)', fontWeight: 600, marginBottom: 'var(--space-sm)' }}>
-          {t('sentTitle')}
-        </p>
-        <p style={{ color: 'var(--text-secondary)' }}>
-          {t('sentMessage')}
-        </p>
-        <button
-          onClick={() => setSent(false)}
-          style={{
-            marginTop: 'var(--space-lg)',
-            background: 'none',
-            border: '1px solid var(--border)',
-            borderRadius: 'var(--radius-sm)',
-            padding: 'var(--space-sm) var(--space-md)',
-            color: 'var(--text-secondary)',
-            cursor: 'pointer',
-            fontSize: 'var(--text-sm)',
-          }}
-        >
+      <div className={styles.sent} role="status" aria-live="polite">
+        <p className={styles.sentTitle}>{t('sentTitle')}</p>
+        <p className={styles.sentMessage}>{t('sentMessage')}</p>
+        <button type="button" onClick={() => setSent(false)} className={styles.sendAnother}>
           {t('sendAnother')}
         </button>
       </div>

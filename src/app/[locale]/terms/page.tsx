@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { Link } from '@/lib/i18n/navigation'
 import { getAlternates } from '@/lib/i18n/metadata'
 import type { Locale } from '@/lib/i18n/routing'
+import styles from '../privacy/legal-page.module.css'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -12,6 +13,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t('description'),
     alternates: getAlternates('/terms', locale as Locale),
   }
+}
+
+function TermsSection({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className={styles.section}>
+      <h2 className={styles.sectionTitle}>{title}</h2>
+      {children}
+    </section>
+  )
 }
 
 export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -28,132 +38,65 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
   }
 
   const contactLink = (chunks: React.ReactNode) => (
-    <Link href="/contact" style={{ color: 'var(--accent)' }}>
-      {chunks}
-    </Link>
+    <Link href="/contact" className={styles.link}>{chunks}</Link>
   )
 
   return (
-    <div
-      style={{
-        padding: 'var(--space-xl) var(--space-md)',
-        maxWidth: 800,
-        margin: '0 auto',
-        overflowY: 'auto',
-      }}
-    >
+    <div className={styles.page}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {locale !== 'en' && (
-        <aside
-          role="note"
-          style={{
-            padding: 'var(--space-md)',
-            marginBottom: 'var(--space-lg)',
-            borderLeft: '3px solid var(--accent)',
-            background: 'var(--bg-secondary)',
-            fontSize: 14,
-            color: 'var(--text-secondary)',
-            borderRadius: 4,
-          }}
-        >
+        <aside role="note" className={styles.disclaimer}>
           {commonT('legalTranslationDisclaimer')}
         </aside>
       )}
-      <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 'var(--space-sm)' }}>
-        {t('title')}
-      </h1>
-      <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-xl)' }}>
-        {t('effectiveDate')}
-      </p>
+      <h1 className={styles.title}>{t('title')}</h1>
+      <p className={styles.effectiveDate}>{t('effectiveDate')}</p>
 
-      <section style={{ marginBottom: 'var(--space-xl)' }}>
-        <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 'var(--space-sm)' }}>
-          {t('sections.acceptance.title')}
-        </h2>
-        <p>
-          {t('sections.acceptance.body')}
-        </p>
-      </section>
+      <TermsSection title={t('sections.acceptance.title')}>
+        <p>{t('sections.acceptance.body')}</p>
+      </TermsSection>
 
-      <section style={{ marginBottom: 'var(--space-xl)' }}>
-        <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 'var(--space-sm)' }}>
-          {t('sections.descriptionOfService.title')}
-        </h2>
-        <p>
-          {t('sections.descriptionOfService.body')}
-        </p>
-      </section>
+      <TermsSection title={t('sections.descriptionOfService.title')}>
+        <p>{t('sections.descriptionOfService.body')}</p>
+      </TermsSection>
 
-      <section style={{ marginBottom: 'var(--space-xl)' }}>
-        <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 'var(--space-sm)' }}>
-          {t('sections.noWarranty.title')}
-        </h2>
-        <p>
-          {t('sections.noWarranty.body')}
-        </p>
-      </section>
+      <TermsSection title={t('sections.noWarranty.title')}>
+        <p>{t('sections.noWarranty.body')}</p>
+      </TermsSection>
 
-      <section style={{ marginBottom: 'var(--space-xl)' }}>
-        <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 'var(--space-sm)' }}>
-          {t('sections.intellectualProperty.title')}
-        </h2>
-        <p>
-          {t('sections.intellectualProperty.body')}
-        </p>
-      </section>
+      <TermsSection title={t('sections.intellectualProperty.title')}>
+        <p>{t('sections.intellectualProperty.body')}</p>
+      </TermsSection>
 
-      <section style={{ marginBottom: 'var(--space-xl)' }}>
-        <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 'var(--space-sm)' }}>
-          {t('sections.acceptableUse.title')}
-        </h2>
+      <TermsSection title={t('sections.acceptableUse.title')}>
         <p>{t('sections.acceptableUse.intro')}</p>
-        <ul style={{ marginTop: 'var(--space-sm)', paddingLeft: 'var(--space-lg)' }}>
+        <ul className={styles.list}>
           <li>{t('sections.acceptableUse.items.laws')}</li>
           <li>{t('sections.acceptableUse.items.disrupt')}</li>
           <li>{t('sections.acceptableUse.items.scrape')}</li>
           <li>{t('sections.acceptableUse.items.misrepresent')}</li>
           <li>{t('sections.acceptableUse.items.commercial')}</li>
         </ul>
-      </section>
+      </TermsSection>
 
-      <section style={{ marginBottom: 'var(--space-xl)' }}>
-        <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 'var(--space-sm)' }}>
-          {t('sections.thirdPartyContent.title')}
-        </h2>
-        <p>
-          {t('sections.thirdPartyContent.body')}
-        </p>
-      </section>
+      <TermsSection title={t('sections.thirdPartyContent.title')}>
+        <p>{t('sections.thirdPartyContent.body')}</p>
+      </TermsSection>
 
-      <section style={{ marginBottom: 'var(--space-xl)' }}>
-        <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 'var(--space-sm)' }}>
-          {t('sections.limitationOfLiability.title')}
-        </h2>
-        <p>
-          {t('sections.limitationOfLiability.body')}
-        </p>
-      </section>
+      <TermsSection title={t('sections.limitationOfLiability.title')}>
+        <p>{t('sections.limitationOfLiability.body')}</p>
+      </TermsSection>
 
-      <section style={{ marginBottom: 'var(--space-xl)' }}>
-        <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 'var(--space-sm)' }}>
-          {t('sections.changesToTerms.title')}
-        </h2>
-        <p>
-          {t('sections.changesToTerms.body')}
-        </p>
-      </section>
+      <TermsSection title={t('sections.changesToTerms.title')}>
+        <p>{t('sections.changesToTerms.body')}</p>
+      </TermsSection>
 
-      <section style={{ marginBottom: 'var(--space-xl)' }}>
-        <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 'var(--space-sm)' }}>
-          {t('sections.contact.title')}
-        </h2>
-        <p>
-          {t.rich('sections.contact.body', { contactLink })}
-        </p>
-      </section>
+      <TermsSection title={t('sections.contact.title')}>
+        <p>{t.rich('sections.contact.body', { contactLink })}</p>
+      </TermsSection>
     </div>
   )
 }

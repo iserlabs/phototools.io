@@ -104,3 +104,34 @@
   color: var(--text-secondary);
   text-align: right;
 }
+
+.sent {
+  text-align: center;
+  padding: var(--space-xl) 0;
+}
+
+.sentTitle {
+  font-size: var(--text-md);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.sentMessage {
+  color: var(--text-secondary);
+}
+
+.sendAnother {
+  margin-top: var(--space-lg);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: var(--text-sm);
+}
+
+.sendAnother:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+}

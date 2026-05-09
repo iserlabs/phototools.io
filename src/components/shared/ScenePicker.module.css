@@ -122,3 +122,7 @@
   border-color: var(--danger, #ef4444);
   color: #fff;
 }
+
+.hiddenInput {
+  display: none;
+}

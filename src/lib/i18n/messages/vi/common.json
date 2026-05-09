@@ -124,6 +124,11 @@
       "1in": "Cảm biến 1\"",
       "phone": "Smartphone cao cấp (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "Đây là bản dịch để tiện tham khảo. Phiên bản tiếng Anh là phiên bản có hiệu lực pháp lý. Xem /en/privacy."
+    "legalTranslationDisclaimer": "Đây là bản dịch để tiện tham khảo. Phiên bản tiếng Anh là phiên bản có hiệu lực pháp lý. Xem /en/privacy.",
+    "error": {
+      "title": "Đã xảy ra lỗi",
+      "message": "Đã xảy ra lỗi không mong muốn. Vui lòng thử lại.",
+      "tryAgain": "Thử lại"
+    }
   }
 }

@@ -124,6 +124,11 @@
       "1in": "1\"-sensor",
       "phone": "Smartphone-flaggskepp (1/1,3\")"
     },
-    "legalTranslationDisclaimer": "Det här är en översättning som ska göra texten mer tillgänglig. Den engelska versionen är den juridiskt bindande. Se /en/privacy."
+    "legalTranslationDisclaimer": "Det här är en översättning som ska göra texten mer tillgänglig. Den engelska versionen är den juridiskt bindande. Se /en/privacy.",
+    "error": {
+      "title": "Något gick fel",
+      "message": "Ett oväntat fel uppstod. Försök igen.",
+      "tryAgain": "Försök igen"
+    }
   }
 }

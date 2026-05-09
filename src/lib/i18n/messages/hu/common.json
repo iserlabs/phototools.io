@@ -124,6 +124,11 @@
       "1in": "1\" érzékelő",
       "phone": "Csúcskategóriás okostelefon (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "Ez egy tájékoztató jellegű fordítás. A jogilag kötelező erejű változat az angol. Lásd: /en/privacy."
+    "legalTranslationDisclaimer": "Ez egy tájékoztató jellegű fordítás. A jogilag kötelező erejű változat az angol. Lásd: /en/privacy.",
+    "error": {
+      "title": "Valami elromlott",
+      "message": "Váratlan hiba történt. Kérjük, próbálkozz újra.",
+      "tryAgain": "Újra"
+    }
   }
 }

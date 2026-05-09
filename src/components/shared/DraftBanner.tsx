@@ -1,19 +1,13 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import styles from './DraftBanner.module.css'
 
 export function DraftBanner() {
   const t = useTranslations('common.draft')
 
   return (
-    <div style={{
-      background: '#f59e0b',
-      color: '#000',
-      textAlign: 'center',
-      padding: '4px 8px',
-      fontSize: 'var(--text-xs)',
-      fontWeight: 600,
-    }}>
+    <div className={styles.banner} role="status">
       {t('banner')}
     </div>
   )

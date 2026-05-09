@@ -71,15 +71,21 @@ export function useToolQuerySync<S extends Record<string, unknown>>(state: S, sc
   useEffect(() => () => { if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null } }, [])
 }
 
+type SchemaShape<S> = { [K in keyof S]: S[K] extends ParamDef<infer T> ? T : never }
+// Generic schema bag — ParamDef<T> is invariant, so we can't constrain to ParamDef<unknown>
+// without bivariant tricks. Use Record<string, ParamDef<any>> as the structural bound.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnySchema = Record<string, ParamDef<any>>
+
 /**
  * Hook that parses URL params after hydration and applies them via setters.
  * Returns true once hydration is complete.
  * Call this ONCE in each tool component, passing a map of param key → setter.
  */
-// Schema types and React setState types (Dispatch<SetStateAction<T>>) can't be
-// unified generically — schema infers T while setState accepts T | (prev => T).
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function useQueryInit(schema: Record<string, ParamDef<any>>, setters: Record<string, (val: any) => void>): boolean {
+export function useQueryInit<S extends AnySchema>(
+  schema: S,
+  setters: { [K in keyof S]: (val: SchemaShape<S>[K]) => void },
+): boolean {
   const [hydrated, setHydrated] = useState(false)
   useEffect(() => {
     if (hydrated) return
@@ -89,7 +95,7 @@ export function useQueryInit(schema: Record<string, ParamDef<any>>, setters: Rec
       if (raw === null) continue
       const val = schema[key].parse(raw)
       if (val !== undefined) {
-        setters[key](val)
+        setters[key](val as SchemaShape<S>[Extract<keyof S, string>])
       }
     }
     setHydrated(true)

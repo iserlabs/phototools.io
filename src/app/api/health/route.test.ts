@@ -42,4 +42,9 @@ describe('/api/health', () => {
     const body = await response.json()
     expect(body.version).toBe('unknown')
   })
+
+  it('disables caching so monitors always see fresh status', async () => {
+    const response = await GET()
+    expect(response.headers.get('Cache-Control')).toBe('no-store, max-age=0')
+  })
 })

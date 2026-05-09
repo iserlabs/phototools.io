@@ -77,7 +77,7 @@ export function FileDropZone({ onFile, prompt: promptText }: FileDropZoneProps) 
         ref={inputRef}
         type="file"
         accept="image/*"
-        style={{ display: 'none' }}
+        className={styles.hiddenInput}
         onChange={handleInputChange}
       />
       {fileName ? (

@@ -29,14 +29,14 @@ export function EditSensorRow({ sensor, onSave, onCancel }: {
     <div className={ss.editForm}>
       <input className={ss.customInput} value={name} onChange={e => setName(e.target.value)} placeholder={t('placeholderName')} />
       <div className={ss.customRow}>
-        <input className={ss.customInput} value={w} onChange={e => setW(e.target.value.slice(0, 5))} type="number" step="0.1" min="0.1" placeholder={t('placeholderW')} />
-        <span className={ss.customX}>×</span>
-        <input className={ss.customInput} value={h} onChange={e => setH(e.target.value.slice(0, 5))} type="number" step="0.1" min="0.1" placeholder={t('placeholderH')} />
+        <input className={ss.customInput} value={w} onChange={e => setW(e.target.value.slice(0, 5))} type="number" inputMode="decimal" step="0.1" min="0.1" placeholder={t('placeholderW')} />
+        <span className={ss.customX} aria-hidden="true">×</span>
+        <input className={ss.customInput} value={h} onChange={e => setH(e.target.value.slice(0, 5))} type="number" inputMode="decimal" step="0.1" min="0.1" placeholder={t('placeholderH')} />
       </div>
-      <input className={ss.customInput} value={mpVal} onChange={e => setMpVal(e.target.value)} type="number" step="1" min="1" placeholder={t('placeholderMPShort')} />
+      <input className={ss.customInput} value={mpVal} onChange={e => setMpVal(e.target.value)} type="number" inputMode="numeric" step="1" min="1" placeholder={t('placeholderMPShort')} />
       <div className={ss.editActions}>
-        <button className={ss.customAddBtn} onClick={handleSave}>{t('save')}</button>
-        <button className={ss.editCancelBtn} onClick={onCancel}>{t('cancelEdit')}</button>
+        <button type="button" className={ss.customAddBtn} onClick={handleSave}>{t('save')}</button>
+        <button type="button" className={ss.editCancelBtn} onClick={onCancel}>{t('cancelEdit')}</button>
       </div>
     </div>
   )

@@ -58,15 +58,17 @@ export function ScenePicker({
       {scenes.map((scene, i) => (
         <button
           key={scene.id}
+          type="button"
           className={`${styles.thumb} ${i === selectedIndex ? styles.thumbActive : ''}`}
           onClick={() => {
             trackToolInteraction({ param_name: 'scene', param_value: `scene-${i}`, input_type: 'scene-picker' })
             onSelect(i)
           }}
           title={scene.name}
+          aria-pressed={i === selectedIndex}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={scene.src} alt={scene.name} />
+          <img src={scene.src} alt={scene.name} loading="lazy" decoding="async" />
         </button>
       ))}
       {onCustomFile && (
@@ -81,7 +83,7 @@ export function ScenePicker({
                 aria-pressed={selectedIndex === -1}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={customSrc} alt={t('yourPhoto')} />
+                <img src={customSrc} alt={t('yourPhoto')} decoding="async" />
               </button>
               <button
                 type="button"
@@ -95,18 +97,20 @@ export function ScenePicker({
             </div>
           )}
           <button
+            type="button"
             className={`${styles.thumb} ${styles.uploadThumb}`}
             onClick={() => fileRef.current?.click()}
             title={t('uploadPhoto')}
+            aria-label={t('uploadPhoto')}
           >
-            <span className={styles.uploadIcon}>+</span>
+            <span className={styles.uploadIcon} aria-hidden="true">+</span>
           </button>
           <input
             ref={fileRef}
             type="file"
             accept="image/*"
             onChange={handleFileInput}
-            style={{ display: 'none' }}
+            className={styles.hiddenInput}
           />
         </>
       )}

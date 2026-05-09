@@ -124,6 +124,11 @@
       "1in": "Capteur 1\"",
       "phone": "Smartphone Flagship (1/1.3\")"
     },
-    "legalTranslationDisclaimer": "Ceci est une traduction de courtoisie. La version anglaise fait foi sur le plan juridique. Voir /en/privacy."
+    "legalTranslationDisclaimer": "Ceci est une traduction de courtoisie. La version anglaise fait foi sur le plan juridique. Voir /en/privacy.",
+    "error": {
+      "title": "Une erreur s'est produite",
+      "message": "Une erreur inattendue est survenue. Veuillez réessayer.",
+      "tryAgain": "Réessayer"
+    }
   }
 }

@@ -1,0 +1,58 @@
+.container {
+  padding: var(--space-xl) var(--space-md);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.code {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.message {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.homeLink {
+  color: var(--accent);
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: var(--space-xl);
+}
+
+.homeLink:hover {
+  text-decoration: underline;
+}
+
+.popularLabel {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+}
+
+.toolList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toolLink {
+  color: var(--text-primary);
+}
+
+.toolLink:hover {
+  color: var(--accent);
+}
