@@ -87,9 +87,14 @@
       "focalLength": "Gyújtótávolság",
       "aperture": "Rekesz",
       "distance": "Távolság",
+      "sensor": "Érzékelő",
       "clickToEnterValue": "Kattints érték megadásához",
       "decrease": "Csökkentés",
-      "increase": "Növelés"
+      "increase": "Növelés",
+      "apertureValue": "Rekesz: {value}",
+      "focalLengthValue": "Gyújtótávolság: {value}",
+      "subjectDistanceValue": "Témavtávolság: {value}",
+      "sweetSpotValue": "Optimális rekesz: {value}"
     },
     "dof": {
       "depthOfField": "Mélységélesség: {totalDoF}, {nearFocus}-tól {farFocus}-ig",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Hirdetés bezárása"
+    },
+    "language": {
+      "change": "Nyelv váltása",
+      "select": "Nyelv kiválasztása"
     },
     "tooltip": {
       "infoLabel": "Infó: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Kapcsolódó eszközök"
     },
+    "faq": {
+      "heading": "Gyakran ismételt kérdések"
+    },
     "sensors": {
       "mf_645": "Közepes formátum (54x40)",
       "mf": "Közepes formátum (44x33)",
       "mf_leica": "Közepes formátum (45x30)",
       "ff": "Full Frame",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1,5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

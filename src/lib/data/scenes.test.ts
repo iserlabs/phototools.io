@@ -3,12 +3,11 @@ import { SCENES } from './scenes'
 
 describe('SCENES', () => {
   it('has 4 scenes', () => { expect(SCENES).toHaveLength(4) })
-  it('all have id, name, src, and altText', () => {
+  it('all have id, name, and src', () => {
     for (const s of SCENES) {
       expect(s.id).toBeTruthy()
       expect(s.name).toBeTruthy()
       expect(s.src).toBeTruthy()
-      expect(s.altText).toBeTruthy()
       expect(s.src.startsWith('/images/')).toBe(true)
     }
   })

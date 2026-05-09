@@ -87,9 +87,14 @@
       "focalLength": "Odak uzaklığı",
       "aperture": "Diyafram",
       "distance": "Mesafe",
+      "sensor": "Sensör",
       "clickToEnterValue": "Değer girmek için tıklayın",
       "decrease": "Azalt",
-      "increase": "Artır"
+      "increase": "Artır",
+      "apertureValue": "Diyafram: {value}",
+      "focalLengthValue": "Odak uzaklığı: {value}",
+      "subjectDistanceValue": "Özne mesafesi: {value}",
+      "sweetSpotValue": "En iyi nokta: {value}"
     },
     "dof": {
       "depthOfField": "Alan derinliği: {totalDoF} — {nearFocus} ile {farFocus} arası",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Reklamı kapat"
+    },
+    "language": {
+      "change": "Dili değiştir",
+      "select": "Dil seç"
     },
     "tooltip": {
       "infoLabel": "Bilgi: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "İlgili Araçlar"
     },
+    "faq": {
+      "heading": "Sık sorulan sorular"
+    },
     "sensors": {
       "mf_645": "Orta Format (54x40)",
       "mf": "Orta Format (44x33)",
       "mf_leica": "Orta Format (45x30)",
       "ff": "Tam Kare",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1,5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Mikro Dört Üçlü",

@@ -6,6 +6,7 @@
     "searchAriaLabel": "Zoek in de woordenlijst",
     "noResults": "Geen termen komen overeen met je zoekopdracht.",
     "tryTool": "Probeer de {toolName}",
+    "questionTemplate": "Wat is {term} in fotografie?",
     "entries": {
       "aperture": {
         "term": "Diafragma",

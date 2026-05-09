@@ -8,13 +8,14 @@ interface FaqSectionProps {
 
 export function FaqSection({ slug }: FaqSectionProps) {
   const t = useTranslations(`toolUI.${slug}`)
+  const headingT = useTranslations('common.faq')
   const faqs = getFaqsBySlug(slug)
 
   if (!faqs || faqs.questions.length === 0) return null
 
   return (
     <section className={styles.faqSection}>
-      <h3 className={styles.faqTitle}>Frequently Asked Questions</h3>
+      <h3 className={styles.faqTitle}>{headingT('heading')}</h3>
       <div className={styles.faqList}>
         {faqs.questions.map((q) => (
           <details key={q.id} className={styles.faqItem}>

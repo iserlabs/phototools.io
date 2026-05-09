@@ -6,6 +6,7 @@
     "searchAriaLabel": "Пошук термінів у глосарії",
     "noResults": "Немає термінів, що відповідають пошуку.",
     "tryTool": "Спробуй інструмент {toolName}",
+    "questionTemplate": "Що таке {term} у фотографії?",
     "entries": {
       "aperture": {
         "term": "Діафрагма",

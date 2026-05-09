@@ -87,9 +87,14 @@
       "focalLength": "Polttoväli",
       "aperture": "Aukko",
       "distance": "Etäisyys",
+      "sensor": "Kenno",
       "clickToEnterValue": "Syötä arvo klikkaamalla",
       "decrease": "Vähennä",
-      "increase": "Lisää"
+      "increase": "Lisää",
+      "apertureValue": "Aukko: {value}",
+      "focalLengthValue": "Polttoväli: {value}",
+      "subjectDistanceValue": "Etäisyys kohteeseen: {value}",
+      "sweetSpotValue": "Optimipiste: {value}"
     },
     "dof": {
       "depthOfField": "Syväterävyys: {totalDoF} välillä {nearFocus}–{farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Sulje mainos"
+    },
+    "language": {
+      "change": "Vaihda kieli",
+      "select": "Valitse kieli"
     },
     "tooltip": {
       "infoLabel": "Tiedot: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Aiheeseen liittyvät työkalut"
     },
+    "faq": {
+      "heading": "Usein kysytyt kysymykset"
+    },
     "sensors": {
       "mf_645": "Keskiformaatti (54x40)",
       "mf": "Keskiformaatti (44x33)",
       "mf_leica": "Keskiformaatti (45x30)",
       "ff": "Täyskenno",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

@@ -87,9 +87,14 @@
       "focalLength": "Tiêu cự",
       "aperture": "Khẩu độ",
       "distance": "Khoảng cách",
+      "sensor": "Cảm biến",
       "clickToEnterValue": "Nhấn để nhập giá trị",
       "decrease": "Giảm",
-      "increase": "Tăng"
+      "increase": "Tăng",
+      "apertureValue": "Khẩu độ: {value}",
+      "focalLengthValue": "Tiêu cự: {value}",
+      "subjectDistanceValue": "Khoảng cách đến chủ thể: {value}",
+      "sweetSpotValue": "Điểm tối ưu: {value}"
     },
     "dof": {
       "depthOfField": "Chiều sâu trường ảnh: {totalDoF} từ {nearFocus} đến {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Đóng quảng cáo"
+    },
+    "language": {
+      "change": "Đổi ngôn ngữ",
+      "select": "Chọn ngôn ngữ"
     },
     "tooltip": {
       "infoLabel": "Thông tin: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Công cụ liên quan"
     },
+    "faq": {
+      "heading": "Câu hỏi thường gặp"
+    },
     "sensors": {
       "mf_645": "Medium Format (54x40)",
       "mf": "Medium Format (44x33)",
       "mf_leica": "Medium Format (45x30)",
       "ff": "Full Frame",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

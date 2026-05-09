@@ -87,9 +87,14 @@
       "focalLength": "फ़ोकल लेंथ",
       "aperture": "अपर्चर",
       "distance": "दूरी",
+      "sensor": "सेंसर",
       "clickToEnterValue": "वैल्यू दर्ज करने के लिए क्लिक करें",
       "decrease": "घटाएँ",
-      "increase": "बढ़ाएँ"
+      "increase": "बढ़ाएँ",
+      "apertureValue": "अपर्चर: {value}",
+      "focalLengthValue": "फोकल लंबाई: {value}",
+      "subjectDistanceValue": "विषय से दूरी: {value}",
+      "sweetSpotValue": "स्वीट स्पॉट: {value}"
     },
     "dof": {
       "depthOfField": "डेप्थ ऑफ़ फ़ील्ड: {totalDoF}, {nearFocus} से {farFocus} तक",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "विज्ञापन बंद करें"
+    },
+    "language": {
+      "change": "भाषा बदलें",
+      "select": "भाषा चुनें"
     },
     "tooltip": {
       "infoLabel": "जानकारी: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "संबंधित टूल"
     },
+    "faq": {
+      "heading": "अक्सर पूछे जाने वाले प्रश्न"
+    },
     "sensors": {
       "mf_645": "मीडियम फ़ॉर्मेट (54x40)",
       "mf": "मीडियम फ़ॉर्मेट (44x33)",
       "mf_leica": "मीडियम फ़ॉर्मेट (45x30)",
       "ff": "फ़ुल फ़्रेम",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "माइक्रो फ़ोर थर्ड्स",

@@ -6,6 +6,7 @@
     "searchAriaLabel": "搜尋術語表",
     "noResults": "沒有符合的術語。",
     "tryTool": "試試看「{toolName}」",
+    "questionTemplate": "攝影中的{term}是什麼？",
     "entries": {
       "aperture": {
         "term": "光圈",

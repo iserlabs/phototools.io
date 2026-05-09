@@ -33,8 +33,9 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Terms of Service',
-    url: 'https://www.phototools.io/terms',
+    name: t('title'),
+    url: `https://www.phototools.io/${locale}/terms`,
+    inLanguage: locale,
   }
 
   const contactLink = (chunks: React.ReactNode) => (

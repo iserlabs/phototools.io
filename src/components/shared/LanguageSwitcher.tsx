@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { usePathname, useRouter } from '@/lib/i18n/navigation'
 import { locales, localeNames, localeFlags } from '@/lib/i18n/routing'
 import type { Locale } from '@/lib/i18n/routing'
@@ -12,6 +12,7 @@ export function LanguageSwitcher() {
   const locale = useLocale() as Locale
   const pathname = usePathname()
   const router = useRouter()
+  const t = useTranslations('common.language')
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   const sortedLocales = [...locales].sort((a, b) => localeNames[a].localeCompare(localeNames[b]))
@@ -48,7 +49,7 @@ export function LanguageSwitcher() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-haspopup="listbox"
-        aria-label="Change language"
+        aria-label={t('change')}
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="10" />
@@ -61,7 +62,7 @@ export function LanguageSwitcher() {
         <ul
           className={styles.dropdown}
           role="listbox"
-          aria-label="Select language"
+          aria-label={t('select')}
           style={{ gridTemplateRows: `repeat(${rowsPerColumn}, 36px)` }}
         >
           {sortedLocales.map((l) => (

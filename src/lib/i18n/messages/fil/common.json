@@ -87,9 +87,14 @@
       "focalLength": "Focal length",
       "aperture": "Aperture",
       "distance": "Distance",
+      "sensor": "Sensor",
       "clickToEnterValue": "I-click para mag-enter ng value",
       "decrease": "Bawasan",
-      "increase": "Dagdagan"
+      "increase": "Dagdagan",
+      "apertureValue": "Aperture: {value}",
+      "focalLengthValue": "Focal length: {value}",
+      "subjectDistanceValue": "Distansya ng subject: {value}",
+      "sweetSpotValue": "Sweet spot: {value}"
     },
     "dof": {
       "depthOfField": "Depth of field: {totalDoF} mula {nearFocus} hanggang {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Isara ang ad"
+    },
+    "language": {
+      "change": "Baguhin ang wika",
+      "select": "Pumili ng wika"
     },
     "tooltip": {
       "infoLabel": "Info: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Related Tools"
     },
+    "faq": {
+      "heading": "Mga madalas itanong"
+    },
     "sensors": {
       "mf_645": "Medium Format (54x40)",
       "mf": "Medium Format (44x33)",
       "mf_leica": "Medium Format (45x30)",
       "ff": "Full Frame",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

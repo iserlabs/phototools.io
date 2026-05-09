@@ -47,6 +47,8 @@ export function ExposurePreview({ aperture, shutterSpeed, iso }: ExposurePreview
                 alt={label}
                 width={48}
                 height={32}
+                loading="lazy"
+                decoding="async"
               />
             </button>
             )
@@ -62,6 +64,7 @@ export function ExposurePreview({ aperture, shutterSpeed, iso }: ExposurePreview
               src={currentScene.assets.photo}
               alt={t(currentScene.labelKey as Parameters<typeof t>[0])}
               className={styles.fallbackImg}
+              decoding="async"
             />
             <p>{error}. {t('imageEffectsUnavailable')}</p>
           </div>

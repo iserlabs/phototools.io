@@ -6,6 +6,7 @@
     "searchAriaLabel": "Sözlük terimlerini ara",
     "noResults": "Aramanızla eşleşen terim bulunamadı.",
     "tryTool": "{toolName} aracını deneyin",
+    "questionTemplate": "Fotoğrafçılıkta {term} nedir?",
     "entries": {
       "aperture": {
         "term": "Diyafram",

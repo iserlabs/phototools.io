@@ -6,6 +6,7 @@
     "searchAriaLabel": "Cari istilah glosarium",
     "noResults": "Tidak ada istilah yang cocok dengan pencarian Anda.",
     "tryTool": "Coba {toolName}",
+    "questionTemplate": "Apa itu {term} dalam fotografi?",
     "entries": {
       "aperture": {
         "term": "Apertur",

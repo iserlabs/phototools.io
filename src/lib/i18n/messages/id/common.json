@@ -87,9 +87,14 @@
       "focalLength": "Panjang fokus",
       "aperture": "Apertur",
       "distance": "Jarak",
+      "sensor": "Sensor",
       "clickToEnterValue": "Klik untuk memasukkan nilai",
       "decrease": "Kurangi",
-      "increase": "Tambah"
+      "increase": "Tambah",
+      "apertureValue": "Aperture: {value}",
+      "focalLengthValue": "Panjang fokus: {value}",
+      "subjectDistanceValue": "Jarak subjek: {value}",
+      "sweetSpotValue": "Titik optimal: {value}"
     },
     "dof": {
       "depthOfField": "Kedalaman bidang: {totalDoF} dari {nearFocus} hingga {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Tutup iklan"
+    },
+    "language": {
+      "change": "Ubah bahasa",
+      "select": "Pilih bahasa"
     },
     "tooltip": {
       "infoLabel": "Info: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Alat Terkait"
     },
+    "faq": {
+      "heading": "Pertanyaan yang sering diajukan"
+    },
     "sensors": {
       "mf_645": "Medium Format (54x40)",
       "mf": "Medium Format (44x33)",
       "mf_leica": "Medium Format (45x30)",
       "ff": "Full Frame",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1,5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

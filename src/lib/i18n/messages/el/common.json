@@ -87,9 +87,14 @@
       "focalLength": "Εστιακή απόσταση",
       "aperture": "Διάφραγμα",
       "distance": "Απόσταση",
+      "sensor": "Αισθητήρας",
       "clickToEnterValue": "Κάνε κλικ για εισαγωγή τιμής",
       "decrease": "Μείωση",
-      "increase": "Αύξηση"
+      "increase": "Αύξηση",
+      "apertureValue": "Διάφραγμα: {value}",
+      "focalLengthValue": "Εστιακή απόσταση: {value}",
+      "subjectDistanceValue": "Απόσταση θέματος: {value}",
+      "sweetSpotValue": "Ιδανικό σημείο: {value}"
     },
     "dof": {
       "depthOfField": "Βάθος πεδίου: {totalDoF} από {nearFocus} έως {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Κλείσιμο διαφήμισης"
+    },
+    "language": {
+      "change": "Αλλαγή γλώσσας",
+      "select": "Επιλέξτε γλώσσα"
     },
     "tooltip": {
       "infoLabel": "Πληροφορίες: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Σχετικά εργαλεία"
     },
+    "faq": {
+      "heading": "Συχνές ερωτήσεις"
+    },
     "sensors": {
       "mf_645": "Medium Format (54x40)",
       "mf": "Medium Format (44x33)",
       "mf_leica": "Medium Format (45x30)",
       "ff": "Full Frame",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

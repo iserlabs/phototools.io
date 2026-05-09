@@ -25,7 +25,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: t('title'),
-    url: 'https://www.phototools.io/contact',
+    url: `https://www.phototools.io/${locale}/contact`,
+    inLanguage: locale,
   }
 
   return (

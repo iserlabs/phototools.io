@@ -6,6 +6,7 @@
     "searchAriaLabel": "Αναζήτηση στο γλωσσάρι",
     "noResults": "Κανένας όρος δεν ταιριάζει στην αναζήτησή σου.",
     "tryTool": "Δοκίμασε το {toolName}",
+    "questionTemplate": "Τι είναι το {term} στη φωτογραφία;",
     "entries": {
       "aperture": {
         "term": "Διάφραγμα",

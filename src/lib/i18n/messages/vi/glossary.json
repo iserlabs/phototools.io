@@ -6,6 +6,7 @@
     "searchAriaLabel": "Tìm kiếm thuật ngữ",
     "noResults": "Không có thuật ngữ nào phù hợp với tìm kiếm của bạn.",
     "tryTool": "Thử {toolName}",
+    "questionTemplate": "{term} trong nhiếp ảnh là gì?",
     "entries": {
       "aperture": {
         "term": "Khẩu độ",

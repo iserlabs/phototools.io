@@ -87,9 +87,14 @@
       "focalLength": "Brændvidde",
       "aperture": "Blænde",
       "distance": "Afstand",
+      "sensor": "Sensor",
       "clickToEnterValue": "Klik for at indtaste værdi",
       "decrease": "Formindsk",
-      "increase": "Forøg"
+      "increase": "Forøg",
+      "apertureValue": "Blænde: {value}",
+      "focalLengthValue": "Brændvidde: {value}",
+      "subjectDistanceValue": "Motivafstand: {value}",
+      "sweetSpotValue": "Sweet spot: {value}"
     },
     "dof": {
       "depthOfField": "Dybdeskarphed: {totalDoF} fra {nearFocus} til {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Luk annonce"
+    },
+    "language": {
+      "change": "Skift sprog",
+      "select": "Vælg sprog"
     },
     "tooltip": {
       "infoLabel": "Info: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Relaterede værktøjer"
     },
+    "faq": {
+      "heading": "Ofte stillede spørgsmål"
+    },
     "sensors": {
       "mf_645": "Mellemformat (54x40)",
       "mf": "Mellemformat (44x33)",
       "mf_leica": "Mellemformat (45x30)",
       "ff": "Fuldformat",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1,5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

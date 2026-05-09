@@ -6,6 +6,7 @@
     "searchAriaLabel": "Cari istilah glosari",
     "noResults": "Tiada istilah yang sepadan dengan carian anda.",
     "tryTool": "Cuba {toolName}",
+    "questionTemplate": "Apa itu {term} dalam fotografi?",
     "entries": {
       "aperture": {
         "term": "Aperture",

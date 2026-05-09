@@ -6,6 +6,7 @@
     "searchAriaLabel": "Maghanap sa mga termino ng glossary",
     "noResults": "Walang terminong tumutugma sa paghahanap mo.",
     "tryTool": "Subukan ang {toolName}",
+    "questionTemplate": "Ano ang {term} sa photography?",
     "entries": {
       "aperture": {
         "term": "Aperture",

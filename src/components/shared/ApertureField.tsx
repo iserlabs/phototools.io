@@ -159,13 +159,13 @@ export function ApertureField({
           step={1}
           value={sliderVal}
           onChange={handleSlider}
-          aria-label={`Aperture: ${formatAperture(value)}`}
+          aria-label={t('apertureValue', { value: formatAperture(value) })}
         />
         {sweetSpotPct != null && (
           <div
             className={styles.sweetSpot}
             style={{ left: `${sweetSpotPct}%` }}
-            title={`Sweet spot: ${formatAperture(sweetSpot!)}`}
+            title={t('sweetSpotValue', { value: formatAperture(sweetSpot!) })}
           />
         )}
       </div>

@@ -6,6 +6,7 @@
     "searchAriaLabel": "Поиск по глоссарию",
     "noResults": "По запросу ничего не найдено.",
     "tryTool": "Попробуй «{toolName}»",
+    "questionTemplate": "Что такое {term} в фотографии?",
     "entries": {
       "aperture": {
         "term": "Диафрагма",

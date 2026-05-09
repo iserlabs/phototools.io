@@ -6,6 +6,7 @@
     "searchAriaLabel": "Sök i ordlistan",
     "noResults": "Inga termer matchar din sökning.",
     "tryTool": "Prova {toolName}",
+    "questionTemplate": "Vad är {term} inom fotografi?",
     "entries": {
       "aperture": {
         "term": "Bländare",

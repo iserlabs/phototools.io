@@ -87,9 +87,14 @@
       "focalLength": "Brännvidd",
       "aperture": "Bländare",
       "distance": "Avstånd",
+      "sensor": "Sensor",
       "clickToEnterValue": "Klicka för att skriva in ett värde",
       "decrease": "Minska",
-      "increase": "Öka"
+      "increase": "Öka",
+      "apertureValue": "Bländare: {value}",
+      "focalLengthValue": "Brännvidd: {value}",
+      "subjectDistanceValue": "Motivavstånd: {value}",
+      "sweetSpotValue": "Sweet spot: {value}"
     },
     "dof": {
       "depthOfField": "Skärpedjup: {totalDoF} från {nearFocus} till {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Stäng annons"
+    },
+    "language": {
+      "change": "Ändra språk",
+      "select": "Välj språk"
     },
     "tooltip": {
       "infoLabel": "Info: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Relaterade verktyg"
     },
+    "faq": {
+      "heading": "Vanliga frågor"
+    },
     "sensors": {
       "mf_645": "Mellanformat (54x40)",
       "mf": "Mellanformat (44x33)",
       "mf_leica": "Mellanformat (45x30)",
       "ff": "Fullformat",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1,5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

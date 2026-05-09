@@ -87,9 +87,14 @@
       "focalLength": "焦距",
       "aperture": "光圈",
       "distance": "距離",
+      "sensor": "感光元件",
       "clickToEnterValue": "點擊輸入數值",
       "decrease": "減少",
-      "increase": "增加"
+      "increase": "增加",
+      "apertureValue": "光圈：{value}",
+      "focalLengthValue": "焦距：{value}",
+      "subjectDistanceValue": "主體距離：{value}",
+      "sweetSpotValue": "最佳光圈：{value}"
     },
     "dof": {
       "depthOfField": "景深：{totalDoF}，從 {nearFocus} 至 {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "關閉廣告"
+    },
+    "language": {
+      "change": "更改語言",
+      "select": "選擇語言"
     },
     "tooltip": {
       "infoLabel": "資訊：{term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "相關工具"
     },
+    "faq": {
+      "heading": "常見問題"
+    },
     "sensors": {
       "mf_645": "中片幅 (54x40)",
       "mf": "中片幅 (44x33)",
       "mf_leica": "中片幅 (45x30)",
       "ff": "全片幅",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "M4/3 微型四三",

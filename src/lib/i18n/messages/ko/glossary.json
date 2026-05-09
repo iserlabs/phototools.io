@@ -6,6 +6,7 @@
     "searchAriaLabel": "사진 용어 검색",
     "noResults": "검색어와 일치하는 용어가 없습니다.",
     "tryTool": "{toolName} 사용해 보기",
+    "questionTemplate": "사진에서 {term}은(는) 무엇인가요?",
     "entries": {
       "aperture": {
         "term": "조리개",

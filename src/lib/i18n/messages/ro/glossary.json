@@ -6,6 +6,7 @@
     "searchAriaLabel": "Caută termeni în glosar",
     "noResults": "Niciun termen nu se potrivește cu căutarea ta.",
     "tryTool": "Încearcă {toolName}",
+    "questionTemplate": "Ce este {term} în fotografie?",
     "entries": {
       "aperture": {
         "term": "Diafragmă",

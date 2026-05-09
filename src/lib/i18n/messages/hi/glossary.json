@@ -6,6 +6,7 @@
     "searchAriaLabel": "शब्दावली शब्दों की खोज करें",
     "noResults": "आपकी खोज से कोई शब्द मेल नहीं खाता।",
     "tryTool": "{toolName} आज़माएँ",
+    "questionTemplate": "फोटोग्राफी में {term} क्या है?",
     "entries": {
       "aperture": {
         "term": "अपर्चर",

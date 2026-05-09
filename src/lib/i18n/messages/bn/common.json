@@ -87,9 +87,14 @@
       "focalLength": "ফোকাল দৈর্ঘ্য",
       "aperture": "অ্যাপারচার",
       "distance": "দূরত্ব",
+      "sensor": "সেন্সর",
       "clickToEnterValue": "মান লিখতে ক্লিক করো",
       "decrease": "কমাও",
-      "increase": "বাড়াও"
+      "increase": "বাড়াও",
+      "apertureValue": "অ্যাপারচার: {value}",
+      "focalLengthValue": "ফোকাল দৈর্ঘ্য: {value}",
+      "subjectDistanceValue": "বিষয়ের দূরত্ব: {value}",
+      "sweetSpotValue": "সুইট স্পট: {value}"
     },
     "dof": {
       "depthOfField": "ক্ষেত্রের গভীরতা: {totalDoF}, {nearFocus} থেকে {farFocus} পর্যন্ত",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "বিজ্ঞাপন বন্ধ করো"
+    },
+    "language": {
+      "change": "ভাষা পরিবর্তন করুন",
+      "select": "ভাষা নির্বাচন করুন"
     },
     "tooltip": {
       "infoLabel": "তথ্য: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "সম্পর্কিত টুলস"
     },
+    "faq": {
+      "heading": "প্রায়শই জিজ্ঞাসিত প্রশ্ন"
+    },
     "sensors": {
       "mf_645": "মিডিয়াম ফরম্যাট (54x40)",
       "mf": "মিডিয়াম ফরম্যাট (44x33)",
       "mf_leica": "মিডিয়াম ফরম্যাট (45x30)",
       "ff": "ফুল ফ্রেম",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

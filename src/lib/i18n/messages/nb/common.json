@@ -87,9 +87,14 @@
       "focalLength": "Brennvidde",
       "aperture": "Blender",
       "distance": "Avstand",
+      "sensor": "Sensor",
       "clickToEnterValue": "Klikk for å skrive inn en verdi",
       "decrease": "Reduser",
-      "increase": "Øk"
+      "increase": "Øk",
+      "apertureValue": "Blender: {value}",
+      "focalLengthValue": "Brennvidde: {value}",
+      "subjectDistanceValue": "Motivavstand: {value}",
+      "sweetSpotValue": "Sweet spot: {value}"
     },
     "dof": {
       "depthOfField": "Dybdeskarphet: {totalDoF} fra {nearFocus} til {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Lukk annonse"
+    },
+    "language": {
+      "change": "Endre språk",
+      "select": "Velg språk"
     },
     "tooltip": {
       "infoLabel": "Info: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Relaterte verktøy"
     },
+    "faq": {
+      "heading": "Ofte stilte spørsmål"
+    },
     "sensors": {
       "mf_645": "Mellomformat (54x40)",
       "mf": "Mellomformat (44x33)",
       "mf_leica": "Mellomformat (45x30)",
       "ff": "Fullformat",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1,5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

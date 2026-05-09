@@ -25,8 +25,9 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Privacy Policy',
-    url: 'https://www.phototools.io/privacy',
+    name: t('title'),
+    url: `https://www.phototools.io/${locale}/privacy`,
+    inLanguage: locale,
   }
 
   const contactLink = (chunks: React.ReactNode) => (

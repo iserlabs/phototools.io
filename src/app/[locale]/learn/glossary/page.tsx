@@ -21,9 +21,10 @@ export default async function GlossaryPage({ params }: { params: Promise<{ local
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    inLanguage: locale,
     mainEntity: GLOSSARY.map((entry) => ({
       '@type': 'Question',
-      name: `What is ${t(`entries.${entry.id}.term` as Parameters<typeof t>[0])} in photography?`,
+      name: t('questionTemplate', { term: t(`entries.${entry.id}.term` as Parameters<typeof t>[0]) }),
       acceptedAnswer: {
         '@type': 'Answer',
         text: t(`entries.${entry.id}.definition` as Parameters<typeof t>[0]),

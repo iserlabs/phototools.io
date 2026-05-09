@@ -87,9 +87,14 @@
       "focalLength": "Ohnisková vzdálenost",
       "aperture": "Clona",
       "distance": "Vzdálenost",
+      "sensor": "Snímač",
       "clickToEnterValue": "Klikni pro zadání hodnoty",
       "decrease": "Snížit",
-      "increase": "Zvýšit"
+      "increase": "Zvýšit",
+      "apertureValue": "Clona: {value}",
+      "focalLengthValue": "Ohnisková vzdálenost: {value}",
+      "subjectDistanceValue": "Vzdálenost od objektu: {value}",
+      "sweetSpotValue": "Optimální clona: {value}"
     },
     "dof": {
       "depthOfField": "Hloubka ostrosti: {totalDoF} od {nearFocus} do {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Zavřít reklamu"
+    },
+    "language": {
+      "change": "Změnit jazyk",
+      "select": "Vyberte jazyk"
     },
     "tooltip": {
       "infoLabel": "Info: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Související nástroje"
     },
+    "faq": {
+      "heading": "Často kladené otázky"
+    },
     "sensors": {
       "mf_645": "Střední formát (54×40)",
       "mf": "Střední formát (44×33)",
       "mf_leica": "Střední formát (45×30)",
       "ff": "Full Frame",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1,5×)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

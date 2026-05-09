@@ -87,9 +87,14 @@
       "focalLength": "焦点距離",
       "aperture": "Aperture",
       "distance": "Distance",
+      "sensor": "センサー",
       "clickToEnterValue": "クリックして値を入力",
       "decrease": "減少",
-      "increase": "増加"
+      "increase": "増加",
+      "apertureValue": "絞り: {value}",
+      "focalLengthValue": "焦点距離: {value}",
+      "subjectDistanceValue": "被写体距離: {value}",
+      "sweetSpotValue": "スイートスポット: {value}"
     },
     "dof": {
       "depthOfField": "被写界深度: {totalDoF}（{nearFocus} から {farFocus} まで）",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "広告を閉じる"
+    },
+    "language": {
+      "change": "言語を変更",
+      "select": "言語を選択"
     },
     "tooltip": {
       "infoLabel": "情報: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "関連ツール"
     },
+    "faq": {
+      "heading": "よくある質問"
+    },
     "sensors": {
       "mf_645": "中判 (54x40)",
       "mf": "中判 (44x33)",
       "mf_leica": "中判 (45x30)",
       "ff": "フルサイズ",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "マイクロフォーサーズ",

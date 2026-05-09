@@ -22,6 +22,7 @@ export function CompressionControls({ state, dispatch }: ControlsProps) {
   const t = useTranslations('toolUI.perspective-compression-simulator')
   const sensorsT = useTranslations('common.sensors')
   const et = useTranslations('education.perspective-compression-simulator')
+  const ctrlT = useTranslations('common.controls')
   const skel = getSkeletonBySlug('perspective-compression-simulator')
   const tooltips = skel
     ? Object.fromEntries(
@@ -90,7 +91,7 @@ export function CompressionControls({ state, dispatch }: ControlsProps) {
             step={1}
             value={sliderVal}
             onChange={handleFocalSlider}
-            aria-label={`Focal length: ${state.focalLength}mm`}
+            aria-label={ctrlT('focalLengthValue', { value: `${state.focalLength}mm` })}
           />
         </div>
 
@@ -110,7 +111,7 @@ export function CompressionControls({ state, dispatch }: ControlsProps) {
           <select
             className={styles.select}
             value={state.sensorId}
-            aria-label="Sensor"
+            aria-label={ctrlT('sensor')}
             onChange={(e) => {
               const newSensor = getSensor(e.target.value)
               const newMin = newSensor.cropFactor > 1 ? FOCAL_MIN : 14
@@ -149,7 +150,7 @@ export function CompressionControls({ state, dispatch }: ControlsProps) {
             step={1}
             value={distToSlider(state.distance)}
             onChange={handleDistSlider}
-            aria-label={`Subject distance: ${state.distance.toFixed(1)} ft`}
+            aria-label={ctrlT('subjectDistanceValue', { value: `${state.distance.toFixed(1)} ft` })}
           />
         </div>
 

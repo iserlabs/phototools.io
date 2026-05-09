@@ -6,6 +6,7 @@
     "searchAriaLabel": "Hledat ve slovníčku",
     "noResults": "Žádné výrazy neodpovídají hledání.",
     "tryTool": "Vyzkoušej nástroj {toolName}",
+    "questionTemplate": "Co je {term} ve fotografii?",
     "entries": {
       "aperture": {
         "term": "Clona",

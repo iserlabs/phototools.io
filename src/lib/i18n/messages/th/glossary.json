@@ -6,6 +6,7 @@
     "searchAriaLabel": "ค้นหาคำศัพท์ในอภิธานศัพท์",
     "noResults": "ไม่มีคำศัพท์ที่ตรงกับการค้นหาของคุณ",
     "tryTool": "ลองใช้ {toolName}",
+    "questionTemplate": "{term} ในการถ่ายภาพคืออะไร?",
     "entries": {
       "aperture": {
         "term": "รูรับแสง",

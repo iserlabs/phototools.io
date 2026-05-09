@@ -6,6 +6,7 @@
     "searchAriaLabel": "用語集の検索",
     "noResults": "検索に一致する用語はありません。",
     "tryTool": "{toolName}を試す",
+    "questionTemplate": "写真における{term}とは何ですか？",
     "entries": {
       "aperture": {
         "term": "絞り（アパチャー）",

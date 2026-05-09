@@ -6,6 +6,7 @@
     "searchAriaLabel": "Szukaj terminów w słowniku",
     "noResults": "Żadne terminy nie pasują do wyszukiwania.",
     "tryTool": "Wypróbuj {toolName}",
+    "questionTemplate": "Czym jest {term} w fotografii?",
     "entries": {
       "aperture": {
         "term": "Przysłona",

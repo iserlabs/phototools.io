@@ -87,9 +87,14 @@
       "focalLength": "초점 거리",
       "aperture": "조리개",
       "distance": "거리",
+      "sensor": "센서",
       "clickToEnterValue": "클릭하여 값 입력",
       "decrease": "감소",
-      "increase": "증가"
+      "increase": "증가",
+      "apertureValue": "조리개: {value}",
+      "focalLengthValue": "초점 거리: {value}",
+      "subjectDistanceValue": "피사체 거리: {value}",
+      "sweetSpotValue": "최적 지점: {value}"
     },
     "dof": {
       "depthOfField": "피사계 심도: {totalDoF} — {nearFocus}에서 {farFocus}까지",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "광고 닫기"
+    },
+    "language": {
+      "change": "언어 변경",
+      "select": "언어 선택"
     },
     "tooltip": {
       "infoLabel": "정보: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "관련 도구"
     },
+    "faq": {
+      "heading": "자주 묻는 질문"
+    },
     "sensors": {
       "mf_645": "중형 포맷 (54x40)",
       "mf": "중형 포맷 (44x33)",
       "mf_leica": "중형 포맷 (45x30)",
       "ff": "풀프레임",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "마이크로 포서드",

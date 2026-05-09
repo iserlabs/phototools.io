@@ -6,6 +6,7 @@
     "searchAriaLabel": "Hae sanaston termejä",
     "noResults": "Hakuasi vastaavia termejä ei löytynyt.",
     "tryTool": "Kokeile työkalua {toolName}",
+    "questionTemplate": "Mitä on {term} valokuvauksessa?",
     "entries": {
       "aperture": {
         "term": "Aukko",

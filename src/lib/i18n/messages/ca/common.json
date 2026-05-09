@@ -87,9 +87,14 @@
       "focalLength": "Distància focal",
       "aperture": "Diafragma",
       "distance": "Distància",
+      "sensor": "Sensor",
       "clickToEnterValue": "Fes clic per introduir un valor",
       "decrease": "Disminueix",
-      "increase": "Augmenta"
+      "increase": "Augmenta",
+      "apertureValue": "Obertura: {value}",
+      "focalLengthValue": "Distància focal: {value}",
+      "subjectDistanceValue": "Distància al subjecte: {value}",
+      "sweetSpotValue": "Punt òptim: {value}"
     },
     "dof": {
       "depthOfField": "Profunditat de camp: {totalDoF} des de {nearFocus} fins a {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Tanca l'anunci"
+    },
+    "language": {
+      "change": "Canviar idioma",
+      "select": "Seleccionar idioma"
     },
     "tooltip": {
       "infoLabel": "Informació: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Eines relacionades"
     },
+    "faq": {
+      "heading": "Preguntes freqüents"
+    },
     "sensors": {
       "mf_645": "Mitjà format (54x40)",
       "mf": "Mitjà format (44x33)",
       "mf_leica": "Mitjà format (45x30)",
       "ff": "Full Frame",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Quatre Terços",

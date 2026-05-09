@@ -6,6 +6,7 @@
     "searchAriaLabel": "শব্দকোষে শব্দ খোঁজো",
     "noResults": "তোমার সার্চের সাথে কোনো শব্দ মেলেনি।",
     "tryTool": "{toolName} ব্যবহার করে দেখো",
+    "questionTemplate": "ফটোগ্রাফিতে {term} কী?",
     "entries": {
       "aperture": {
         "term": "অ্যাপারচার",

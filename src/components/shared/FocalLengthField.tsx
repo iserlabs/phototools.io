@@ -112,7 +112,7 @@ export function FocalLengthField({ value, onChange, color, minFocal = FOCAL_MIN 
           value={sliderVal}
           onChange={handleSlider}
           style={color ? { accentColor: color } : undefined}
-          aria-label={`Focal length: ${value}mm`}
+          aria-label={t('focalLengthValue', { value: `${value}mm` })}
         />
         <div className={styles.ticks}>
           {tickPositions.map((p) => (

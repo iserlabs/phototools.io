@@ -6,6 +6,7 @@
     "searchAriaLabel": "Buscar términos del glosario",
     "noResults": "Ningún término coincide con tu búsqueda.",
     "tryTool": "Prueba el {toolName}",
+    "questionTemplate": "¿Qué es {term} en fotografía?",
     "entries": {
       "aperture": {
         "term": "Apertura",

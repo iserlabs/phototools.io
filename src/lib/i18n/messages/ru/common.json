@@ -87,9 +87,14 @@
       "focalLength": "Фокусное расстояние",
       "aperture": "Диафрагма",
       "distance": "Дистанция",
+      "sensor": "Сенсор",
       "clickToEnterValue": "Нажми, чтобы ввести значение",
       "decrease": "Уменьшить",
-      "increase": "Увеличить"
+      "increase": "Увеличить",
+      "apertureValue": "Диафрагма: {value}",
+      "focalLengthValue": "Фокусное расстояние: {value}",
+      "subjectDistanceValue": "Расстояние до объекта: {value}",
+      "sweetSpotValue": "Оптимальная точка: {value}"
     },
     "dof": {
       "depthOfField": "Глубина резкости: {totalDoF}, от {nearFocus} до {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Закрыть рекламу"
+    },
+    "language": {
+      "change": "Сменить язык",
+      "select": "Выберите язык"
     },
     "tooltip": {
       "infoLabel": "Подробнее: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Похожие инструменты"
     },
+    "faq": {
+      "heading": "Часто задаваемые вопросы"
+    },
     "sensors": {
       "mf_645": "Средний формат (54×40)",
       "mf": "Средний формат (44×33)",
       "mf_leica": "Средний формат (45×30)",
       "ff": "Полный кадр",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5×)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

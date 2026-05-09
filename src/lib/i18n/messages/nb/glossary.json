@@ -6,6 +6,7 @@
     "searchAriaLabel": "Søk i ordlisten",
     "noResults": "Ingen begreper matcher søket ditt.",
     "tryTool": "Prøv {toolName}",
+    "questionTemplate": "Hva er {term} i fotografi?",
     "entries": {
       "aperture": {
         "term": "Blender",

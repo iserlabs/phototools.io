@@ -6,6 +6,7 @@
     "searchAriaLabel": "Glossarbegriffe durchsuchen",
     "noResults": "Keine Begriffe entsprechen deiner Suche.",
     "tryTool": "{toolName} ausprobieren",
+    "questionTemplate": "Was ist {term} in der Fotografie?",
     "entries": {
       "aperture": {
         "term": "Blende",

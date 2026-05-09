@@ -87,9 +87,14 @@
       "focalLength": "Distanță focală",
       "aperture": "Diafragmă",
       "distance": "Distanță",
+      "sensor": "Senzor",
       "clickToEnterValue": "Apasă pentru a introduce o valoare",
       "decrease": "Scade",
-      "increase": "Crește"
+      "increase": "Crește",
+      "apertureValue": "Diafragmă: {value}",
+      "focalLengthValue": "Distanță focală: {value}",
+      "subjectDistanceValue": "Distanță față de subiect: {value}",
+      "sweetSpotValue": "Punct optim: {value}"
     },
     "dof": {
       "depthOfField": "Adâncimea câmpului: {totalDoF} de la {nearFocus} până la {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Închide reclama"
+    },
+    "language": {
+      "change": "Schimbați limba",
+      "select": "Selectați limba"
     },
     "tooltip": {
       "infoLabel": "Info: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Unelte înrudite"
     },
+    "faq": {
+      "heading": "Întrebări frecvente"
+    },
     "sensors": {
       "mf_645": "Format mediu (54x40)",
       "mf": "Format mediu (44x33)",
       "mf_leica": "Format mediu (45x30)",
       "ff": "Full Frame",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

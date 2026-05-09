@@ -79,7 +79,7 @@ export function AdUnit({ slot, format, className, channel, testId }: AdUnitProps
       },
       { threshold: 0.5 },
     )
-    if (ins) visibilityObserver.observe(ins)
+    visibilityObserver.observe(ins)
 
     // If no ad fills within 5s (adblocker, no inventory, consent denied),
     // collapse the container to avoid an empty gap in the layout.

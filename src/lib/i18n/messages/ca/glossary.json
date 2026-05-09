@@ -6,6 +6,7 @@
     "searchAriaLabel": "Cerca termes del glossari",
     "noResults": "Cap terme coincideix amb la teva cerca.",
     "tryTool": "Prova {toolName}",
+    "questionTemplate": "Què és {term} en fotografia?",
     "entries": {
       "aperture": {
         "term": "Diafragma",

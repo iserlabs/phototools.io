@@ -87,9 +87,14 @@
       "focalLength": "Brandpuntsafstand",
       "aperture": "Aperture",
       "distance": "Distance",
+      "sensor": "Sensor",
       "clickToEnterValue": "Klik om een waarde in te voeren",
       "decrease": "Verlagen",
-      "increase": "Verhogen"
+      "increase": "Verhogen",
+      "apertureValue": "Diafragma: {value}",
+      "focalLengthValue": "Brandpuntsafstand: {value}",
+      "subjectDistanceValue": "Onderwerpafstand: {value}",
+      "sweetSpotValue": "Sweet spot: {value}"
     },
     "dof": {
       "depthOfField": "Scherptediepte: {totalDoF} van {nearFocus} tot {farFocus}",
@@ -97,6 +102,10 @@
     },
     "ad": {
       "closeAd": "Advertentie sluiten"
+    },
+    "language": {
+      "change": "Taal wijzigen",
+      "select": "Selecteer taal"
     },
     "tooltip": {
       "infoLabel": "Info: {term}"
@@ -113,11 +122,15 @@
     "relatedTools": {
       "title": "Gerelateerde tools"
     },
+    "faq": {
+      "heading": "Veelgestelde vragen"
+    },
     "sensors": {
       "mf_645": "Middenformaat (54x40)",
       "mf": "Middenformaat (44x33)",
       "mf_leica": "Middenformaat (45x30)",
       "ff": "Full Frame",
+      "apsh": "APS-H",
       "apsc_n": "APS-C (1.5x)",
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",

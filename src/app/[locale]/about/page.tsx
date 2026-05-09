@@ -33,7 +33,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     name: t('title'),
-    url: 'https://www.phototools.io/about',
+    url: `https://www.phototools.io/${locale}/about`,
+    inLanguage: locale,
   }
 
   return (

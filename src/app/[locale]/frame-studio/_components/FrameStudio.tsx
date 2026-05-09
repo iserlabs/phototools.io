@@ -52,8 +52,15 @@ export function FrameStudio() {
     setOriginalFile(file)
     setOriginalMimeType(file.type || 'image/jpeg')
     const img = new Image()
-    img.onload = () => setOriginalImage(img)
-    img.src = URL.createObjectURL(file)
+    const url = URL.createObjectURL(file)
+    img.onload = () => {
+      setOriginalImage(img)
+      // Decode is complete; the browser holds the bitmap on the Image
+      // element, so the blob URL is no longer needed.
+      URL.revokeObjectURL(url)
+    }
+    img.onerror = () => URL.revokeObjectURL(url)
+    img.src = url
   }, [])
 
   const dragRef = useRef<{ startX: number; startY: number; ox: number; oy: number } | null>(null)

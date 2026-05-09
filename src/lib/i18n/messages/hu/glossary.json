@@ -6,6 +6,7 @@
     "searchAriaLabel": "Keresés a fogalomtárban",
     "noResults": "Nincs találat.",
     "tryTool": "Próbáld ki: {toolName}",
+    "questionTemplate": "Mi az a {term} a fotográfiában?",
     "entries": {
       "aperture": {
         "term": "Rekesz",
