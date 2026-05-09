@@ -20,8 +20,6 @@ interface ParamDef<T> {
   equals?: (a: T, b: T) => boolean
 }
 
-export type ParamSchema = Record<string, ParamDef<unknown>>
-
 /** Parse URL search params using a schema. Returns partial state with only valid overrides. */
 export function parseQueryState<S extends Record<string, unknown>>(schema: { [K in keyof S]: ParamDef<S[K]> }): Partial<S> {
   if (typeof window === 'undefined') return {}

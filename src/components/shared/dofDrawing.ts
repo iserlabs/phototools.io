@@ -1,7 +1,7 @@
 import { calcCircleOfConfusion } from '@/lib/math/exposure'
 import { SCENES, type SceneKey } from './dofScenes'
 
-export function lighten(hex: string, amount: number): string {
+function lighten(hex: string, amount: number): string {
   const num = parseInt(hex.replace('#', ''), 16)
   const r = Math.min(255, ((num >> 16) & 0xff) + amount)
   const g = Math.min(255, ((num >> 8) & 0xff) + amount)

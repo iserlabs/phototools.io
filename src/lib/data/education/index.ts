@@ -14,7 +14,7 @@ export function getAllSkeletons(): ToolEducationSkeleton[] {
 
 const PROGRESS_KEY = 'phototools-challenge-progress'
 
-export function getChallengeProgress(): ChallengeProgress {
+function getChallengeProgress(): ChallengeProgress {
   if (typeof window === 'undefined') return {}
   try {
     const raw = localStorage.getItem(PROGRESS_KEY)

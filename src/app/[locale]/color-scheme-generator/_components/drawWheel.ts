@@ -72,7 +72,7 @@ export function drawWheelPixels(
   return imageData
 }
 
-export function drawDot(ctx: CanvasRenderingContext2D, x: number, y: number, hex: string, isBase: boolean, dpr: number) {
+function drawDot(ctx: CanvasRenderingContext2D, x: number, y: number, hex: string, isBase: boolean, dpr: number) {
   const dotRadius = (isBase ? 11 : 8) * dpr
 
   ctx.beginPath()

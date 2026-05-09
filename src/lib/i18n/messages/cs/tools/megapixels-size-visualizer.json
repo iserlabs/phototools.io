@@ -49,9 +49,6 @@
       "bitDepthJpeg": "JPEG",
       "bitDepthRaw14": "RAW 14-bit",
       "bitDepthTiff": "TIFF 16-bit",
-      "fileSizeJpeg": "JPEG",
-      "fileSizeRaw": "RAW",
-      "fileSizeTiff": "TIFF",
       "fileSizeByteUnitMB": "MB",
       "fileSizeByteUnitGB": "GB",
       "printPreset": "Tisková předvolba",
@@ -95,11 +92,11 @@
         },
         "why-phone-48mp-shows-12mp": {
           "question": "Proč můj telefon uvádí 48 MP, ale fotky mají jen 12 MP?",
-          "answer": "Pixel binning: telefon sloučí čtyři sousední pixely snímače do jednoho výstupního pixelu, čímž zlepší výkon za šera a sníží šum. Uváděných 48 MP většinou zpřístupníš přes režim \u201Eplné rozlišení\u201C nebo RAW — ale za cenu většího šumu při slabém osvětlení."
+          "answer": "Pixel binning: telefon sloučí čtyři sousední pixely snímače do jednoho výstupního pixelu, čímž zlepší výkon za šera a sníží šum. Uváděných 48 MP většinou zpřístupníš přes režim „plné rozlišení“ nebo RAW — ale za cenu většího šumu při slabém osvětlení."
         },
         "difference-300-dpi-vs-240-dpi": {
           "question": "Jaký je rozdíl mezi 300 DPI a 240 DPI pro fototisk?",
-          "answer": "Pro tisky prohlížené na délku paže je 300 DPI tradiční práh ostrosti a 240 DPI je \u201Edostatečně dobré\u201C — rozdíl je viditelný jen při bližším zkoumání. Pro tisky prohlížené z větší vzdálenosti (zarámovaný obraz na zdi) je 240 DPI pro většinu lidí nerozeznatelné od 300 DPI."
+          "answer": "Pro tisky prohlížené na délku paže je 300 DPI tradiční práh ostrosti a 240 DPI je „dostatečně dobré“ — rozdíl je viditelný jen při bližším zkoumání. Pro tisky prohlížené z větší vzdálenosti (zarámovaný obraz na zdi) je 240 DPI pro většinu lidí nerozeznatelné od 300 DPI."
         }
       }
     }

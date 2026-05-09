@@ -166,11 +166,6 @@ export type AnalyticsEvent =
   | { name: 'mobile_ad_dismiss'; properties: MobileAdDismissEvent }
   | { name: 'page_view'; properties: PageViewEvent }
 
-export type EventProperties<N extends AnalyticsEvent['name']> =
-  Extract<AnalyticsEvent, { name: N }>['properties']
-
-export type ProviderTarget = 'posthog' | 'ga4' | 'meta'
-
 export const META_EVENT_MAP: Partial<Record<AnalyticsEvent['name'], { type: 'standard' | 'custom'; fbqName: string }>> = {
   page_view: { type: 'standard', fbqName: 'PageView' },
   share_click: { type: 'custom', fbqName: 'ShareClick' },

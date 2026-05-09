@@ -3,13 +3,13 @@ import {
   drawSky, drawTerrain, drawStarGlow, drawPolaris, drawPolarisSmall,
 } from './starDrawing'
 
-export function getPolePosition(w: number, h: number, latitude: number) {
+function getPolePosition(w: number, h: number, latitude: number) {
   const cx = w / 2
   const cy = h - (latitude / 90) * (h / 2)
   return { cx, cy }
 }
 
-export function getHorizonY(h: number, latitude: number) {
+function getHorizonY(h: number, latitude: number) {
   if (latitude >= 70) return h + 10
   const t = latitude / 70
   return h * (0.75 + t * 0.3)

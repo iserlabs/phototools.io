@@ -15,7 +15,7 @@ export interface GLResources {
   height: number
 }
 
-export function compileShader(gl: WebGL2RenderingContext, type: number, source: string): WebGLShader {
+function compileShader(gl: WebGL2RenderingContext, type: number, source: string): WebGLShader {
   const shader = gl.createShader(type)
   if (!shader) throw new Error('Failed to create shader')
   gl.shaderSource(shader, source)

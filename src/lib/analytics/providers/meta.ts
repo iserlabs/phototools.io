@@ -40,6 +40,7 @@ export function getMetaPixelId(): string | null {
   return process.env.NEXT_PUBLIC_META_PIXEL_ID || null
 }
 
+/** @internal Test helper — resets module-level state for test isolation. */
 export function resetMeta(): void {
   ready = false
   enabled = true

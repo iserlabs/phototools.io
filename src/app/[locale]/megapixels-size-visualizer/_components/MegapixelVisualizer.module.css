@@ -566,38 +566,6 @@
   color: #ef4444;
 }
 
-.editForm {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 8px;
-  background: var(--bg-surface);
-  border: 1px solid var(--accent);
-  border-radius: 6px;
-}
-
-.editActions {
-  display: flex;
-  gap: 6px;
-}
-
-.editCancelBtn {
-  flex: 1;
-  padding: 6px 10px;
-  background: none;
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  font-size: 12px;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color var(--duration-fast);
-}
-
-.editCancelBtn:hover {
-  border-color: var(--text-secondary);
-}
-
 .deleteAllBtn {
   padding: 6px 10px;
   background: none;
@@ -784,29 +752,6 @@
   text-align: center;
   color: var(--text-secondary);
   font-size: 13px;
-}
-
-/* ── File Size Display ── */
-.fileSizeRow {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 8px;
-  background: var(--bg-surface);
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  font-size: 12px;
-}
-
-.fileSizeLabel {
-  font-weight: 600;
-  color: var(--accent);
-}
-
-.fileSizeItem {
-  display: flex;
-  justify-content: space-between;
-  color: var(--text-secondary);
 }
 
 /* ── Disclosure toggle (collapsible panel header) ── */

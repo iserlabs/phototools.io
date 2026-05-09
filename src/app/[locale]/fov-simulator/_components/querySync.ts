@@ -45,7 +45,7 @@ export function parseQueryParams(): Partial<FovSimulatorState> {
   return state
 }
 
-export function stateToQueryString(state: FovSimulatorState): string {
+function stateToQueryString(state: FovSimulatorState): string {
   const params = new URLSearchParams()
   state.lenses.forEach((lens, i) => {
     params.set(LENS_KEYS[i], String(lens.focalLength))

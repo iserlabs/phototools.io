@@ -54,8 +54,7 @@ export function useSensorState() {
       const url = new URL(window.location.href)
       const showVal = Array.from(visible).filter(id => ALL_SENSOR_ID_SET.has(id) || customSensors.some(s => s.id === id)).join('+')
       if (showVal && showVal !== DEFAULT_VISIBLE) url.searchParams.set('show', showVal)
-      else if (showVal === DEFAULT_VISIBLE) url.searchParams.delete('show')
-      else url.searchParams.set('show', showVal)
+      else url.searchParams.delete('show')
       if (mode !== 'overlay') url.searchParams.set('mode', mode); else url.searchParams.delete('mode')
       if (resolution !== 24) url.searchParams.set('mp', String(resolution)); else url.searchParams.delete('mp')
       const cp = customSensors.length > 0 ? encodeCustomParam(customSensors) : ''

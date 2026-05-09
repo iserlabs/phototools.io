@@ -39,10 +39,6 @@ export function useMegapixelCustomStorage() {
     setCustomMps(prev => [...prev, { id, name, mp, color }])
   }, [])
 
-  const editCustomMp = useCallback((id: string, name: string, mp: number) => {
-    setCustomMps(prev => prev.map(c => c.id === id ? { ...c, name, mp } : c))
-  }, [])
-
   const removeCustomMp = useCallback((id: string) => {
     setCustomMps(prev => prev.filter(c => c.id !== id))
   }, [])
@@ -52,5 +48,5 @@ export function useMegapixelCustomStorage() {
     colorIdxRef.current = 0
   }, [])
 
-  return { customMps, hydrated, addCustomMp, editCustomMp, removeCustomMp, removeAllCustomMps }
+  return { customMps, hydrated, addCustomMp, removeCustomMp, removeAllCustomMps }
 }

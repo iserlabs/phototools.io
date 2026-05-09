@@ -27,7 +27,6 @@ export type MegapixelControlsProps = {
   onAspectChange: (id: string) => void
   onUnitsChange: (u: UnitSystem) => void
   onAddCustomMp: (name: string, mp: number) => void
-  onEditCustomMp: (id: string, name: string, mp: number) => void
   onRemoveCustomMp: (id: string) => void
   onRemoveAllCustom: () => void
 }

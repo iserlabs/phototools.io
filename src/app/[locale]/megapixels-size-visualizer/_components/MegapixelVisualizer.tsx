@@ -104,7 +104,6 @@ export function MegapixelVisualizer() {
             onAspectChange={(a) => { trackParam({ param_name: 'aspect', param_value: a, input_type: 'toggle' }); state.setAspectId(a) }}
             onUnitsChange={(u) => { trackParam({ param_name: 'units', param_value: u, input_type: 'toggle' }); state.setUnits(u) }}
             onAddCustomMp={(name, mp) => { trackParam({ param_name: 'custom-mp-add', param_value: String(mp), input_type: 'button' }); state.addCustomMp(name, mp) }}
-            onEditCustomMp={(id, name, mp) => { trackParam({ param_name: 'custom-mp-edit', param_value: String(mp), input_type: 'button' }); state.editCustomMp(id, name, mp) }}
             onRemoveCustomMp={(id) => { trackParam({ param_name: 'custom-mp-remove', param_value: id, input_type: 'button' }); state.removeCustomMp(id) }}
             onRemoveAllCustom={state.removeAllCustomMps}
           />

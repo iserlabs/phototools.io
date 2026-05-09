@@ -22,7 +22,7 @@ export function useMegapixelState() {
   const [bitDepth, setBitDepth] = useState<BitDepth>('raw14')
   const [hoveredMpId, setHoveredMpId] = useState<string | null>(null)
 
-  const { customMps, addCustomMp, editCustomMp, removeCustomMp, removeAllCustomMps } = useMegapixelCustomStorage()
+  const { customMps, addCustomMp, removeCustomMp, removeAllCustomMps } = useMegapixelCustomStorage()
 
   const allMps = useMemo<MegapixelPreset[]>(
     () => [...MP_PRESETS, ...customMps.map(c => ({
@@ -57,6 +57,6 @@ export function useMegapixelState() {
     allMps, visibleMps, allMpIdSet,
     setVisible, setMode, setAspectId, setUnits, setViewingDistance, setBitDepth,
     setHoveredMpId,
-    toggleMp, addCustomMp, editCustomMp, removeCustomMp, removeAllCustomMps,
+    toggleMp, addCustomMp, removeCustomMp, removeAllCustomMps,
   }
 }

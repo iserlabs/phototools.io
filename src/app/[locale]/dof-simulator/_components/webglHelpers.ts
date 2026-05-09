@@ -14,7 +14,7 @@ export interface GLResources {
   height: number
 }
 
-export function compileShader(
+function compileShader(
   gl: WebGL2RenderingContext,
   type: number,
   source: string,

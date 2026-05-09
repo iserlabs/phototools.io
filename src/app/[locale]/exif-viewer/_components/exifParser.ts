@@ -66,7 +66,7 @@ function formatAspectRatio(w: number, h: number): string {
   return `${w / d}:${h / d}`
 }
 
-export function evDescriptionKey(ev: number): string {
+function evDescriptionKey(ev: number): string {
   if (ev >= 15) return 'evBrightSunlight'
   if (ev >= 13) return 'evOvercast'
   if (ev >= 11) return 'evOpenShade'

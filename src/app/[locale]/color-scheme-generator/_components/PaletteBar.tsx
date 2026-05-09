@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import styles from './ColorHarmony.module.css'
 
@@ -19,12 +19,20 @@ export function PaletteBar({ swatches, baseIndex }: PaletteBarProps) {
   const t = useTranslations('toolUI.color-scheme-generator')
   const [copiedHex, setCopiedHex] = useState<string | null>(null)
   const [copiedFormat, setCopiedFormat] = useState<string | null>(null)
+  const hexTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const fmtTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => () => {
+    if (hexTimerRef.current) clearTimeout(hexTimerRef.current)
+    if (fmtTimerRef.current) clearTimeout(fmtTimerRef.current)
+  }, [])
 
   const copyHex = useCallback(async (hex: string) => {
     try {
       await navigator.clipboard.writeText(hex)
       setCopiedHex(hex)
-      setTimeout(() => setCopiedHex(null), 1500)
+      if (hexTimerRef.current) clearTimeout(hexTimerRef.current)
+      hexTimerRef.current = setTimeout(() => setCopiedHex(null), 1500)
     } catch {
       // ignore
     }
@@ -42,7 +50,8 @@ export function PaletteBar({ swatches, baseIndex }: PaletteBarProps) {
     try {
       await navigator.clipboard.writeText(text)
       setCopiedFormat(format)
-      setTimeout(() => setCopiedFormat(null), 1500)
+      if (fmtTimerRef.current) clearTimeout(fmtTimerRef.current)
+      fmtTimerRef.current = setTimeout(() => setCopiedFormat(null), 1500)
     } catch {
       // ignore
     }

@@ -45,10 +45,7 @@ export function downgradePostHog(): void {
   posthog.stopSessionRecording()
 }
 
-export function getPostHogInstance() {
-  return initialized ? posthog : null
-}
-
+/** @internal Test helper — resets the module-level `initialized` flag. */
 export function resetPostHog(): void {
   initialized = false
 }

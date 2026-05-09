@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { toast } from 'sonner'
 import { useTranslations } from 'next-intl'
 import * as Dialog from '@radix-ui/react-dialog'
@@ -17,6 +17,10 @@ export function ShareModal({ toolName, toolSlug, onClose }: ShareModalProps) {
   const t = useTranslations('common.share')
   const tToast = useTranslations('common.toast')
   const [copied, setCopied] = useState<string | null>(null)
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  useEffect(() => () => {
+    if (copyTimerRef.current) clearTimeout(copyTimerRef.current)
+  }, [])
 
   const baseUrl = 'https://www.phototools.io'
   const search = typeof window !== 'undefined' ? window.location.search : ''
@@ -43,7 +47,8 @@ export function ShareModal({ toolName, toolSlug, onClose }: ShareModalProps) {
     navigator.clipboard.writeText(text).then(() => {
       setCopied(key)
       toast(tToast('copied'))
-      setTimeout(() => setCopied(null), 2000)
+      if (copyTimerRef.current) clearTimeout(copyTimerRef.current)
+      copyTimerRef.current = setTimeout(() => setCopied(null), 2000)
     })
   }, [tToast])
 

@@ -49,9 +49,6 @@
       "bitDepthJpeg": "JPEG",
       "bitDepthRaw14": "RAW 14-bit",
       "bitDepthTiff": "TIFF 16-bit",
-      "fileSizeJpeg": "JPEG",
-      "fileSizeRaw": "RAW",
-      "fileSizeTiff": "TIFF",
       "fileSizeByteUnitMB": "MB",
       "fileSizeByteUnitGB": "GB",
       "printPreset": "Presetare tipărire",
@@ -95,11 +92,11 @@
         },
         "why-phone-48mp-shows-12mp": {
           "question": "De ce telefonul meu anunță 48 MP, dar fotografiile arată doar 12 MP?",
-          "answer": "Pixel binning: telefoanele combină patru pixeli adiacenți ai senzorului într-un singur pixel de ieșire, îmbunătățind performanța pe lumină slabă și reducând zgomotul. De obicei, poți accesa cei 48 MP anunțați prin modul \u201Erezoluție înaltă\u201D sau RAW, dar cu prețul mai mult zgomot pe lumină slabă."
+          "answer": "Pixel binning: telefoanele combină patru pixeli adiacenți ai senzorului într-un singur pixel de ieșire, îmbunătățind performanța pe lumină slabă și reducând zgomotul. De obicei, poți accesa cei 48 MP anunțați prin modul „rezoluție înaltă” sau RAW, dar cu prețul mai mult zgomot pe lumină slabă."
         },
         "difference-300-dpi-vs-240-dpi": {
           "question": "Care e diferența dintre 300 DPI și 240 DPI pentru fotografii tipărite?",
-          "answer": "Pentru printuri vizualizate la lungimea brațului, 300 DPI este pragul tradițional de claritate, iar 240 DPI este \u201Esuficient de bun\u201D — diferența se vede doar la inspecție atentă. Pentru printuri vizualizate de la distanță mai mare (artă înrămată pe perete), 240 DPI este imposibil de distins de 300 DPI pentru majoritatea oamenilor."
+          "answer": "Pentru printuri vizualizate la lungimea brațului, 300 DPI este pragul tradițional de claritate, iar 240 DPI este „suficient de bun” — diferența se vede doar la inspecție atentă. Pentru printuri vizualizate de la distanță mai mare (artă înrămată pe perete), 240 DPI este imposibil de distins de 300 DPI pentru majoritatea oamenilor."
         }
       }
     }
