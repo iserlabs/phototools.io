@@ -47,8 +47,7 @@ export const MP_PRESETS: MegapixelPreset[] = (() => {
   }))
 })()
 
-export const ALL_MP_IDS = MP_PRESETS.map(m => m.id)
-export const ALL_MP_ID_SET = new Set(ALL_MP_IDS)
+export const ALL_MP_ID_SET = new Set(MP_PRESETS.map(m => m.id))
 export const DEFAULT_VISIBLE_MP_IDS = ['mp_12', 'mp_24', 'mp_45', 'mp_100']
 
 /** Advertised MP → typical output after pixel binning. */

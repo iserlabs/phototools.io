@@ -37,7 +37,7 @@ export const BOKEH_SHAPES: { key: BokehShape; name: string }[] = [
   { key: 'cata', name: 'Catadioptric' },
 ]
 
-export interface FramingPreset {
+interface FramingPreset {
   key: string
   name: string
   heightMm: number
@@ -57,14 +57,4 @@ export const FIGURE_DEPTH_ZONES = [
   { key: 'eyes', offsetMm: 0, label: 'Eyes (focus)' },
   { key: 'ears', offsetMm: 70, label: 'Ears' },
   { key: 'body', offsetMm: 100, label: 'Body' },
-]
-
-// Backward-compat alias for existing DoF Calculator component (until Task 8 renames it)
-import type { SceneKey } from '@/components/shared/DoFCanvas'
-
-export const DOF_SCENE_PRESETS: { key: SceneKey; labelKey: string }[] = [
-  { key: 'portrait', labelKey: 'scenePortrait' },
-  { key: 'landscape', labelKey: 'sceneLandscape' },
-  { key: 'street', labelKey: 'sceneStreet' },
-  { key: 'macro', labelKey: 'sceneMacro' },
 ]

@@ -38,4 +38,3 @@ export type PrintTableControlsProps = {
   onBitDepthChange: (b: BitDepth) => void
 }
 
-export { type UnitSystem, type CustomMegapixel, type ViewingDistance, type BitDepth }

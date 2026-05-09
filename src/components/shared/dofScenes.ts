@@ -1,6 +1,6 @@
 export type SceneKey = 'portrait' | 'landscape' | 'street' | 'macro'
 
-export interface SceneObject {
+interface SceneObject {
   depth: number
   type: 'circle' | 'rect' | 'person' | 'tree' | 'flower'
   x: number
@@ -10,7 +10,7 @@ export interface SceneObject {
   label?: string
 }
 
-export interface SceneDef {
+interface SceneDef {
   background: string
   groundColor: string
   skyColor: string

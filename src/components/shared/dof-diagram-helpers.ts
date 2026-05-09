@@ -7,8 +7,8 @@ export const STRIP_H = 52
 export const LABEL_Y = STRIP_Y + STRIP_H + 16
 export const AXIS_Y = LABEL_Y + 18
 
-export const MIN_DIST = 0.3
-export const MAX_DIST = 100
+const MIN_DIST = 0.3
+const MAX_DIST = 100
 const MIN_LOG = Math.log(0.2)
 const MAX_LOG = Math.log(150)
 
@@ -38,7 +38,7 @@ export function formatDistShort(m: number): string {
   return `${m.toFixed(0)}m`
 }
 
-export interface BokehCircle {
+interface BokehCircle {
   cx: number
   cy: number
   r: number

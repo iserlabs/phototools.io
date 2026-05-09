@@ -3,16 +3,12 @@
 import { useTranslations } from 'next-intl'
 import { calcHyperfocal } from '@/lib/math/dof'
 import { APERTURES } from '@/lib/data/camera'
+import { formatDist } from '@/components/shared/dof-diagram-helpers'
 
 interface HyperfocalMiniTableProps {
   focalLength: number
   aperture: number
   coc: number
-}
-
-function formatDist(m: number): string {
-  if (m < 1) return `${(m * 100).toFixed(0)} cm`
-  return `${m.toFixed(2)} m`
 }
 
 export function HyperfocalMiniTable({ focalLength, aperture, coc }: HyperfocalMiniTableProps) {

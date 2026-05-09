@@ -1,6 +1,6 @@
 import type { LensConfig } from '@/lib/types'
 
-export interface PillBounds {
+interface PillBounds {
   x: number
   y: number
   w: number

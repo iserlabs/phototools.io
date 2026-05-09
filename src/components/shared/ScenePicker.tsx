@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import { trackToolInteraction } from '@/lib/analytics'
 import styles from './ScenePicker.module.css'
 
-export interface ScenePickerScene {
+interface ScenePickerScene {
   id: string
   name: string
   src: string

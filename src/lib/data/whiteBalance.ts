@@ -1,4 +1,4 @@
-export interface WbPreset {
+interface WbPreset {
   name: string
   kelvin: number
 }
@@ -14,7 +14,7 @@ export const WB_PRESETS: WbPreset[] = [
   { name: 'Blue Sky', kelvin: 10000 },
 ]
 
-export interface WbScene {
+interface WbScene {
   id: string
   label: string
   src: string

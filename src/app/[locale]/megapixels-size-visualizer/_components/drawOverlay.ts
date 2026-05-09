@@ -3,9 +3,6 @@ import { mpToPixelDimensions } from '@/lib/math/resolution'
 import { printSizeMm } from '@/lib/math/megapixel'
 import { drawRect, rgba, roundRect } from './drawHelpers'
 
-export type OverlayRect = { id: string; x: number; y: number; w: number; h: number }
-export let overlayRects: OverlayRect[] = []
-
 export function drawOverlay(
   ctx: CanvasRenderingContext2D,
   canvasWidth: number,
@@ -17,7 +14,6 @@ export function drawOverlay(
   _units: UnitSystem,
   hoveredId: string | null,
 ): { contentHeight: number; pxPerMm: number } {
-  overlayRects = []
   if (visibleMps.length === 0) {
     return { contentHeight: 300, pxPerMm: 0 }
   }
@@ -64,8 +60,6 @@ export function drawOverlay(
 
     const alpha = hoveredId && hoveredId !== mp.id ? 0.3 : 1
     drawRect(ctx, x, y, w, h, mp.color, alpha)
-
-    overlayRects.push({ id: mp.id, x, y, w, h })
   }
 
   // Labels: pills in a column to the left of the largest rectangle, with leader lines

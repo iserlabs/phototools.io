@@ -47,14 +47,6 @@ export interface MegapixelPreset {
   color: string
 }
 
-export interface PrintSizePreset {
-  id: string
-  label: string
-  wMm: number
-  hMm: number
-  system: UnitSystem
-}
-
 export interface CustomMegapixel {
   id: string
   name: string

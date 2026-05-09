@@ -1,8 +1,8 @@
-export interface FaqSkeleton {
+interface FaqSkeleton {
   id: string
 }
 
-export interface ToolFaqs {
+interface ToolFaqs {
   slug: string
   questions: FaqSkeleton[]
 }

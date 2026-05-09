@@ -6,8 +6,7 @@ import type { StoredCustomSensor } from './sensorSizeTypes'
 export let customColorIdx = 0
 export function setCustomColorIdx(n: number) { customColorIdx = n }
 
-export const ALL_SENSOR_IDS = SENSORS.map((s) => s.id)
-export const ALL_SENSOR_ID_SET = new Set(ALL_SENSOR_IDS)
+export const ALL_SENSOR_ID_SET = new Set(SENSORS.map((s) => s.id))
 
 export function rgba(hex: string, a: number): string {
   const n = parseInt(hex.replace('#', ''), 16)
@@ -64,7 +63,9 @@ export function loadCustomSensors(): Required<SensorPreset>[] {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (!raw) return []
-    const stored: StoredCustomSensor[] = JSON.parse(raw)
+    const parsed = JSON.parse(raw)
+    if (!Array.isArray(parsed)) return []
+    const stored = parsed as StoredCustomSensor[]
     for (const s of stored) {
       if (s.mp && s.mp > 0) {
         COMMON_MP[s.id] = [{ mp: s.mp, models: s.name }]

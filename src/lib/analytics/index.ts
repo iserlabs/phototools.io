@@ -7,9 +7,6 @@ import {
   POSTHOG_ONLY_EVENTS,
   type GlobalProperties,
   type ToolInteractionEvent,
-  type ToolEngagedEvent,
-  type ToolSessionSummaryEvent,
-  type ScrollDepthEvent,
   type LearnPanelSectionViewEvent,
   type ChallengeStartEvent,
   type ChallengeCompleteEvent,
@@ -17,16 +14,10 @@ import {
   type ShareClickEvent,
   type LanguageSwitchEvent,
   type ThemeToggleEvent,
-  type OutboundClickEvent,
   type MobileMenuToggleEvent,
-  type MobileControlsToggleEvent,
   type GlossarySearchEvent,
   type GlossaryEntryViewEvent,
   type FileUploadEvent,
-  type FileUploadErrorEvent,
-  type JsErrorEvent,
-  type WebGLErrorEvent,
-  type CapabilityCheckEvent,
   type AdSlotVisibleEvent,
   type MobileAdDismissEvent,
   type PageViewEvent,
@@ -50,10 +41,6 @@ let globalProps: GlobalProperties = {
 
 export function setGlobalProperties(props: GlobalProperties): void {
   globalProps = props
-}
-
-export function getGlobalProperties(): GlobalProperties {
-  return globalProps
 }
 
 export function dispatch(eventName: string, properties: Record<string, unknown>): void {
@@ -87,22 +74,6 @@ export function dispatch(eventName: string, properties: Record<string, unknown>)
 
 export function trackToolInteraction(props: ToolInteractionEvent): void {
   dispatch('tool_interaction', props)
-}
-
-export function trackToolEngaged(props: ToolEngagedEvent): void {
-  dispatch('tool_engaged', props)
-}
-
-export function trackToolSessionSummary(props: ToolSessionSummaryEvent): void {
-  dispatch('tool_session_summary', props)
-}
-
-export function trackPageScrollDepth(props: ScrollDepthEvent): void {
-  dispatch('page_scroll_depth', props)
-}
-
-export function trackLearnPanelScrollDepth(props: ScrollDepthEvent): void {
-  dispatch('learn_panel_scroll_depth', props)
 }
 
 export function trackLearnPanelOpen(_props?: Record<string, never> | { tool_slug?: string }): void {
@@ -145,16 +116,8 @@ export function trackThemeToggle(props: ThemeToggleEvent): void {
   dispatch('theme_toggle', props)
 }
 
-export function trackOutboundClick(props: OutboundClickEvent): void {
-  dispatch('outbound_click', props)
-}
-
 export function trackMobileMenuToggle(props: MobileMenuToggleEvent): void {
   dispatch('mobile_menu_toggle', props)
-}
-
-export function trackMobileControlsToggle(props: MobileControlsToggleEvent): void {
-  dispatch('mobile_controls_toggle', props)
 }
 
 export function trackGlossarySearch(props: GlossarySearchEvent): void {
@@ -171,22 +134,6 @@ export function trackContactFormSubmit(): void {
 
 export function trackFileUpload(props: FileUploadEvent): void {
   dispatch('file_upload', props)
-}
-
-export function trackFileUploadError(props: FileUploadErrorEvent): void {
-  dispatch('file_upload_error', props)
-}
-
-export function trackJsError(props: JsErrorEvent): void {
-  dispatch('js_error', props)
-}
-
-export function trackWebGLError(props: WebGLErrorEvent): void {
-  dispatch('webgl_error', props)
-}
-
-export function trackCapabilityCheck(props: CapabilityCheckEvent): void {
-  dispatch('capability_check', props)
 }
 
 export function trackAdSlotVisible(props: AdSlotVisibleEvent): void {

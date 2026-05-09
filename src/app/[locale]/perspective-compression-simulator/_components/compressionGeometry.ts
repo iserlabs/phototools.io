@@ -1,6 +1,6 @@
 import { GROUND_COLOR, GRID_COLOR } from './compressionConstants'
 
-export interface GeoArrays {
+interface GeoArrays {
   positions: number[]
   normals: number[]
   colors: number[]

@@ -11,7 +11,7 @@ import {
 } from './webglHelpers'
 import { runRenderPipeline, cleanupResources } from './renderPipeline'
 
-export interface SceneAssets {
+interface SceneAssets {
   photo: string
   depthMap: string
   motionMask: string

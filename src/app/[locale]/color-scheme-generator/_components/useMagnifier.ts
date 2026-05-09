@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback } from 'react'
 
-export interface MagnifierState {
+interface MagnifierState {
   vpX: number
   vpY: number
   hex: string

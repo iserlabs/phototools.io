@@ -1,4 +1,4 @@
-export interface ExposureScene {
+interface ExposureScene {
   id: string
   labelKey: string
   assets: {

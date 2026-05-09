@@ -1,4 +1,4 @@
-export interface GlossaryEntry {
+interface GlossaryEntry {
   /** Slug key matching the i18n entry, e.g. 'aperture' → glossary.entries.aperture.term */
   id: string
   relatedTool?: string

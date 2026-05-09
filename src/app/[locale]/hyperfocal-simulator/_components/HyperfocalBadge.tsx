@@ -1,15 +1,11 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { formatDist } from '@/components/shared/dof-diagram-helpers'
 
 interface HyperfocalBadgeProps {
   isAtHyperfocal: boolean
   nearLimit: number
-}
-
-function formatDist(m: number): string {
-  if (m < 1) return `${(m * 100).toFixed(0)} cm`
-  return `${m.toFixed(2)} m`
 }
 
 export function HyperfocalBadge({ isAtHyperfocal, nearLimit }: HyperfocalBadgeProps) {
