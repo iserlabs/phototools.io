@@ -16,6 +16,10 @@ Sentry.init({
   // Session replay disabled — PostHog covers this (5K/month free)
   replaysSessionSampleRate: 0,
   replaysOnErrorSampleRate: 0,
+
+  // Browser-extension content scripts that hit our production CSP raise an
+  // unactionable error here. The CSP is working as intended; drop the noise.
+  ignoreErrors: [/unsafe-eval is not an allowed source of script/],
 })
 
 // Instrument App Router navigations
