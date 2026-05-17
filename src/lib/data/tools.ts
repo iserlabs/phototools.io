@@ -9,7 +9,7 @@ export const TOOLS: ToolDef[] = [
   { slug: 'color-scheme-generator', name: 'Color Scheme Generator', description: 'Build color palettes for photography shoots', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'exposure-simulator', name: 'Exposure Triangle Simulator', description: 'See how aperture, shutter speed, and ISO interact', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'dof-simulator', name: 'Depth-of-Field Simulator', description: 'Visualize how aperture, focal length, and distance affect background blur', dev: 'live', prod: 'live', category: 'visualizer' },
-  { slug: 'focus-stacking-calculator', name: 'Focus Stacking Calculator', description: 'Calculate optimal focus distances for front-to-back sharpness', dev: 'live', prod: 'disabled', category: 'calculator' },
+  { slug: 'focus-stacking-calculator', name: 'Focus Stacking Calculator', description: 'Calculate optimal focus distances for front-to-back sharpness', dev: 'live', prod: 'live', category: 'calculator' },
   { slug: 'equivalent-settings-calculator', name: 'Equivalent Settings Calculator', description: 'Find equivalent aperture and focal length across sensor formats', dev: 'live', prod: 'live', category: 'calculator' },
   { slug: 'hyperfocal-simulator', name: 'Hyperfocal Distance Simulator', description: 'Learn where to focus for maximum sharpness from foreground to infinity', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'shutter-speed-visualizer', name: 'Shutter Speed Visualizer', description: 'Find the minimum safe shutter speed for sharp handheld shots', dev: 'live', prod: 'disabled', category: 'visualizer' },
