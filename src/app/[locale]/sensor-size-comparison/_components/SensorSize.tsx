@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 import type { DisplayMode } from './sensorSizeTypes'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import type { SensorPreset } from '@/lib/types'
@@ -166,6 +167,7 @@ export function SensorSize() {
         <SensorControlsPanel {...controlsProps} />
         <div className={ss.tableWrap}><SensorTable sensors={visibleSensors} /></div>
       </div>
+      <RelatedTools variant="inline" currentSlug="sensor-size-comparison" />
       <div className={ss.mobileOnly}><LearnPanel slug="sensor-size-comparison" /></div>
     </div>
   )

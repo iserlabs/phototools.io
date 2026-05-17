@@ -6,6 +6,7 @@ import ExifReader from 'exifreader'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 import { PhotoUploadPanel } from '@/components/shared/PhotoUploadPanel'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { SAMPLE_PHOTO } from './exifTypes'
@@ -120,6 +121,7 @@ export function ExifViewer() {
         </div>
       </div>
 
+      <RelatedTools variant="inline" currentSlug="exif-viewer" />
       <div className={styles.mobileOnly}>
         <LearnPanel slug="exif-viewer" />
       </div>

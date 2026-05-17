@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { hslToRgb, rgbToHsl } from '@/lib/math/color'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import { useQueryInit, useToolQuerySync, intParam, strParam } from '@/lib/utils/querySync'
 import styles from './ColorHarmony.module.css'
@@ -135,6 +136,7 @@ export function ColorHarmony() {
           onColorPick={(hex) => { applyHex(hex); setShowPhotoPicker(false); setPhotoFile(undefined) }}
           onClose={() => { setShowPhotoPicker(false); setPhotoFile(undefined) }} />
       )}
+      <RelatedTools variant="inline" currentSlug="color-scheme-generator" />
       <div className={styles.mobileOnly}><LearnPanel slug="color-scheme-generator" /></div>
       <canvas ref={exportCanvasRef} style={{ display: 'none' }} />
     </div>

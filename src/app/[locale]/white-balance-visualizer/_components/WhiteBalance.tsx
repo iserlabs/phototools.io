@@ -8,6 +8,7 @@ import { getToolBySlug } from '@/lib/data/tools'
 import { WB_PRESETS, WB_SCENES } from '@/lib/data/whiteBalance'
 import { useQueryInit, useToolQuerySync, intParam, strParam } from '@/lib/utils/querySync'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { PhotoUploadPanel } from '@/components/shared/PhotoUploadPanel'
 import { WbPreview } from './WbPreview'
@@ -164,6 +165,7 @@ export function WhiteBalance() {
         <ControlsPanel {...controlsProps} />
       </div>
 
+      <RelatedTools variant="inline" currentSlug="white-balance-visualizer" />
       <div className={wb.mobileOnly}>
         <LearnPanel slug="white-balance-visualizer" />
       </div>

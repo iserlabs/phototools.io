@@ -1,3 +1,4 @@
+/* Block variant — used inside sidebars / panels (vertical list) */
 .section {
   margin-top: var(--space-lg);
   padding-top: var(--space-md);
@@ -34,6 +35,10 @@
   background: var(--bg-secondary);
 }
 
+.cardBody {
+  min-width: 0;
+}
+
 .icon {
   flex-shrink: 0;
   margin-top: 2px;
@@ -48,4 +53,57 @@
   font-size: 11px;
   color: var(--text-secondary);
   line-height: 1.4;
+}
+
+/* Inline variant — mobile-only. Desktop uses the LearnPanel sidebar's block variant
+ * (CLAUDE.md design rule: no page scroll at desktop viewport, so we cannot push content below 100vh). */
+.inlineSection {
+  display: none;
+  margin: var(--space-md) 0;
+  padding: var(--space-md);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 1023px) {
+  .inlineSection {
+    display: block;
+  }
+}
+
+.inlineList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 8px;
+  margin-top: var(--space-sm);
+}
+
+.inlineCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.inlineCard:hover {
+  border-color: var(--accent);
+  background: var(--bg-tertiary, var(--bg-secondary));
+}
+
+.inlineCard:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .inlineList {
+    grid-template-columns: 1fr;
+  }
 }

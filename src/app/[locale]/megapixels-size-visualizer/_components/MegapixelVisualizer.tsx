@@ -4,6 +4,7 @@ import { useRef, useCallback, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { useMegapixelState } from './useMegapixelState'
 import { useMegapixelUrlSync } from './useMegapixelUrlSync'
@@ -139,6 +140,7 @@ export function MegapixelVisualizer() {
           <LearnPanel slug="megapixels-size-visualizer" />
         </div>
       </div>
+      <RelatedTools variant="inline" currentSlug="megapixels-size-visualizer" />
       <div className={ss.mobileOnly}>
         <LearnPanel slug="megapixels-size-visualizer" />
       </div>

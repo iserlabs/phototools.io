@@ -10,6 +10,7 @@ import { StackingSettingsPanel } from './StackingSettingsPanel'
 import { StackingResultsPanel } from './StackingResultsPanel'
 import { StackingDiagram } from './StackingDiagram'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import s from './FocusStacking.module.css'
@@ -102,6 +103,7 @@ export function FocusStacking() {
         <StackingResultsPanel {...resultsProps} />
       </div>
 
+      <RelatedTools variant="inline" currentSlug="focus-stacking-calculator" />
       <div className={s.mobileOnly}>
         <LearnPanel slug="focus-stacking-calculator" />
       </div>

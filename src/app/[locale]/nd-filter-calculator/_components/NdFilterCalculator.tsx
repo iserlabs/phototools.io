@@ -7,6 +7,7 @@ import { shutterWithNd, formatShutterSpeed } from '@/lib/math/exposure'
 import { getToolBySlug } from '@/lib/data/tools'
 import { useQueryInit, useToolQuerySync, intParam } from '@/lib/utils/querySync'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolActions } from '@/components/shared/ToolActions'
 import calc from '@/components/shared/Calculator.module.css'
 import nd from './NdFilterCalculator.module.css'
@@ -146,6 +147,7 @@ export function NdFilterCalculator() {
         <ControlsPanel {...controlsProps} />
       </div>
 
+      <RelatedTools variant="inline" currentSlug="nd-filter-calculator" />
       <div className={nd.mobileOnly}>
         <LearnPanel slug="nd-filter-calculator" />
       </div>

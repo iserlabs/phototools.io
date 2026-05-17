@@ -8,6 +8,7 @@ import { fovReducer } from './fovReducer'
 import { useTheme } from '@/components/layout/ThemeProvider'
 import { ThemeToggle } from '@/components/layout/ThemeToggle'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import { Sidebar } from './Sidebar'
@@ -139,6 +140,7 @@ export function FovSimulator() {
       </div>
 
       <div className={styles.mobileControls}>{lensControls(true)}</div>
+      <RelatedTools variant="inline" currentSlug="fov-simulator" />
       <div className={styles.mobileOnly}><LearnPanel slug="fov-simulator" /></div>
       <canvas ref={cleanCanvasRef} style={{ display: 'none' }} />
     </div>

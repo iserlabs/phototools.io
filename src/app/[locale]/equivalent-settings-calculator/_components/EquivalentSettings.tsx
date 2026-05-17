@@ -11,6 +11,7 @@ import { SourceSettingsPanel } from './SourceSettingsPanel'
 import { TargetSensorPanel } from './TargetSensorPanel'
 import { EquivalenceCard } from './EquivalenceCard'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import s from './EquivalentSettings.module.css'
@@ -126,6 +127,7 @@ export function EquivalentSettings() {
         <TargetSensorPanel {...targetProps} />
       </div>
 
+      <RelatedTools variant="inline" currentSlug="equivalent-settings-calculator" />
       <div className={s.mobileOnly}>
         <LearnPanel slug="equivalent-settings-calculator" />
       </div>

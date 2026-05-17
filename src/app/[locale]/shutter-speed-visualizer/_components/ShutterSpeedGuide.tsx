@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { SHUTTER_PRESETS } from './shutter-data'
 import { MotionCanvas } from './MotionCanvas'
@@ -39,6 +40,7 @@ export function ShutterSpeedGuide() {
         <ShutterControlsPanel shutterIdx={shutterIdx} onShutterChange={handleShutterChange} />
       </div>
 
+      <RelatedTools variant="inline" currentSlug="shutter-speed-visualizer" />
       <div className={ss.mobileOnly}>
         <LearnPanel slug="shutter-speed-visualizer" />
       </div>

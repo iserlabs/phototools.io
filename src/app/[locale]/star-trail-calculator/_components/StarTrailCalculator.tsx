@@ -9,6 +9,7 @@ import { SENSORS } from '@/lib/data/sensors'
 import { useQueryInit, useToolQuerySync, intParam, numParam, strParam, sensorParam } from '@/lib/utils/querySync'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import { StarTrailCanvas, type StarTrailCanvasHandle } from './StarTrailCanvas'
 import { LATITUDE_PRESETS } from '@/lib/data/starTrailCalculator'
@@ -164,6 +165,7 @@ export function StarTrailCalculator() {
         <StarTrailControls {...controlsProps} />
       </div>
 
+      <RelatedTools variant="inline" currentSlug="star-trail-calculator" />
       <div className={css.mobileOnly}>
         <LearnPanel slug="star-trail-calculator" />
       </div>

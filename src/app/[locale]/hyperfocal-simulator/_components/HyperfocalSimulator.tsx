@@ -8,6 +8,7 @@ import { SENSORS } from '@/lib/data/sensors'
 import { useQueryInit, useToolQuerySync, intParam, numParam, strParam, sensorParam } from '@/lib/utils/querySync'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { ToolHeading } from '@/components/shared/ToolHeading'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { DoFDiagram } from '@/components/shared/DoFDiagram'
 import { DoFCanvas } from '@/components/shared/DoFCanvas'
 import type { SceneKey } from '@/components/shared/DoFCanvas'
@@ -126,6 +127,7 @@ export function HyperfocalSimulator() {
           <HyperfocalResults result={result} distance={distance} isAtHyperfocal={isAtHyperfocal} />
         </div>
       </div>
+      <RelatedTools variant="inline" currentSlug="hyperfocal-simulator" />
     </div>
   )
 }

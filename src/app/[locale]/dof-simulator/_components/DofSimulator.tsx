@@ -13,6 +13,7 @@ import { ABComparison } from './ABComparison'
 import { SubjectFigure } from './SubjectFigure'
 import { FocusTarget } from './FocusTarget'
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { ModeToggle } from '@/components/shared/ModeToggle'
@@ -158,6 +159,7 @@ export function DofSimulator() {
         <DofResultsPanel {...resultsProps} />
       </div>
 
+      <RelatedTools variant="inline" currentSlug="dof-simulator" />
       <div className={s.mobileOnly}>
         <LearnPanel slug="dof-simulator" />
       </div>

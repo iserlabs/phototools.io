@@ -21,6 +21,7 @@ const ExportDialog = dynamic(
   { ssr: false },
 )
 import { LearnPanel } from '@/components/shared/LearnPanel'
+import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import type { EditorMode, GridType, GridOptions, FrameConfig, CropState, AspectRatioType } from './types'
 import { DEFAULT_GRID_OPTIONS, DEFAULT_FRAME_CONFIG } from '@/lib/data/frameStudio'
@@ -197,6 +198,7 @@ export function FrameStudio() {
           <FrameSidebar {...sidebarProps} />
         </div>
       </div>
+      <RelatedTools variant="inline" currentSlug="frame-studio" />
       <div className={styles.mobileOnly}><LearnPanel slug={SLUG} /></div>
 
       {showExport && originalImage && originalFile && (
