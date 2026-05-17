@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "next dev --turbopack -p 3200",
+    "prebuild": "node scripts/generate-llms-txt.mjs",
     "build": "next build",
     "postbuild": "node scripts/indexnow-push.mjs || echo 'IndexNow push skipped (INDEXNOW_KEY not set or non-prod env)'",
     "start": "next start -p 3200",

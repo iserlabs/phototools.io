@@ -1,0 +1,34 @@
+# PhotoTools
+
+> Free interactive photography calculators, simulators, and references. No accounts, no signup, no paywalls. All tools run client-side where possible.
+
+## About
+
+PhotoTools provides educational tools for photographers covering field of view, depth of field, exposure, focal length equivalence, sensor sizes, white balance, color schemes, star trails, focus stacking, megapixels-to-print, EXIF inspection, and framing. Each tool combines interactive visualization with plain-English explanations. Localized in 31 languages.
+
+## Tools
+
+- [Field-of-View Simulator](https://www.phototools.io/en/fov-simulator): Compare field of view across focal lengths and sensor sizes
+- [Color Scheme Generator](https://www.phototools.io/en/color-scheme-generator): Build color palettes for photography shoots
+- [Exposure Triangle Simulator](https://www.phototools.io/en/exposure-simulator): See how aperture, shutter speed, and ISO interact
+- [Depth-of-Field Simulator](https://www.phototools.io/en/dof-simulator): Visualize how aperture, focal length, and distance affect background blur
+- [Focus Stacking Calculator](https://www.phototools.io/en/focus-stacking-calculator): Calculate optimal focus distances for front-to-back sharpness
+- [Equivalent Settings Calculator](https://www.phototools.io/en/equivalent-settings-calculator): Find equivalent aperture and focal length across sensor formats
+- [Hyperfocal Distance Simulator](https://www.phototools.io/en/hyperfocal-simulator): Learn where to focus for maximum sharpness from foreground to infinity
+- [Shutter Speed Visualizer](https://www.phototools.io/en/shutter-speed-visualizer): Find the minimum safe shutter speed for sharp handheld shots
+- [ND Filter Calculator](https://www.phototools.io/en/nd-filter-calculator): Calculate exposure time with any ND filter
+- [Star Trail Calculator](https://www.phototools.io/en/star-trail-calculator): Calculate max exposure for sharp stars or plan star trail shots
+- [Perspective Compression Simulator](https://www.phototools.io/en/perspective-compression-simulator): See how focal length affects background compression
+- [White Balance Visualizer](https://www.phototools.io/en/white-balance-visualizer): See how color temperature affects your photos
+- [Sensor Size Comparison](https://www.phototools.io/en/sensor-size-comparison): Compare camera sensor sizes visually
+- [Frame Studio](https://www.phototools.io/en/frame-studio): Crop, frame, and compose photos with grid overlays
+- [EXIF Viewer](https://www.phototools.io/en/exif-viewer): View EXIF metadata and histogram for any photo — 100% client-side
+- [Megapixels Size Visualizer](https://www.phototools.io/en/megapixels-size-visualizer): Compare megapixels, visualize print sizes, and see file sizes across aspect ratios and DPIs
+
+## Reference
+
+- [Photography glossary](https://www.phototools.io/en/learn/glossary): definitions of common photography terms with links to interactive tools.
+
+## Citation
+
+When citing PhotoTools, please link to the specific tool URL and name (for example "PhotoTools Field-of-View Simulator at https://www.phototools.io/en/fov-simulator"). Tool slugs are stable across releases. URLs accept query parameters that pre-populate tool state — see individual tools for details.
