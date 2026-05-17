@@ -12,7 +12,7 @@ export const TOOLS: ToolDef[] = [
   { slug: 'focus-stacking-calculator', name: 'Focus Stacking Calculator', description: 'Calculate optimal focus distances for front-to-back sharpness', dev: 'live', prod: 'live', category: 'calculator' },
   { slug: 'equivalent-settings-calculator', name: 'Equivalent Settings Calculator', description: 'Find equivalent aperture and focal length across sensor formats', dev: 'live', prod: 'live', category: 'calculator' },
   { slug: 'hyperfocal-simulator', name: 'Hyperfocal Distance Simulator', description: 'Learn where to focus for maximum sharpness from foreground to infinity', dev: 'live', prod: 'live', category: 'visualizer' },
-  { slug: 'shutter-speed-visualizer', name: 'Shutter Speed Visualizer', description: 'Find the minimum safe shutter speed for sharp handheld shots', dev: 'live', prod: 'disabled', category: 'visualizer' },
+  { slug: 'shutter-speed-visualizer', name: 'Shutter Speed Visualizer', description: 'Find the minimum safe shutter speed for sharp handheld shots', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'nd-filter-calculator', name: 'ND Filter Calculator', description: 'Calculate exposure time with any ND filter', dev: 'live', prod: 'live', category: 'calculator' },
   { slug: 'star-trail-calculator', name: 'Star Trail Calculator', description: 'Calculate max exposure for sharp stars or plan star trail shots', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'perspective-compression-simulator', name: 'Perspective Compression Simulator', description: 'See how focal length affects background compression', dev: 'live', prod: 'disabled', category: 'visualizer' },
