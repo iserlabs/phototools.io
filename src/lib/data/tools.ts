@@ -15,7 +15,7 @@ export const TOOLS: ToolDef[] = [
   { slug: 'shutter-speed-visualizer', name: 'Shutter Speed Visualizer', description: 'Find the minimum safe shutter speed for sharp handheld shots', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'nd-filter-calculator', name: 'ND Filter Calculator', description: 'Calculate exposure time with any ND filter', dev: 'live', prod: 'live', category: 'calculator' },
   { slug: 'star-trail-calculator', name: 'Star Trail Calculator', description: 'Calculate max exposure for sharp stars or plan star trail shots', dev: 'live', prod: 'live', category: 'visualizer' },
-  { slug: 'perspective-compression-simulator', name: 'Perspective Compression Simulator', description: 'See how focal length affects background compression', dev: 'live', prod: 'disabled', category: 'visualizer' },
+  { slug: 'perspective-compression-simulator', name: 'Perspective Compression Simulator', description: 'See how focal length affects background compression', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'white-balance-visualizer', name: 'White Balance Visualizer', description: 'See how color temperature affects your photos', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'sensor-size-comparison', name: 'Sensor Size Comparison', description: 'Compare camera sensor sizes visually', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'frame-studio', name: 'Frame Studio', description: 'Crop, frame, and compose photos with grid overlays', dev: 'live', prod: 'live', category: 'file-tool' },
