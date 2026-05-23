@@ -1,0 +1,90 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+import { useEffect, useRef, useState } from 'react'
+import { useAnalyzer } from '../analyzer/AnalyzerContext'
+import { drawHeatmap, type HeatmapHitBox } from './Heatmap.canvas'
+
+export interface HeatmapProps {
+  onDayClick?: (date: string) => void
+}
+
+export function Heatmap({ onDayClick }: HeatmapProps = {}) {
+  const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.heatmap')
+  const { insightBlob } = useAnalyzer()
+  const block = insightBlob?.heatmap ?? null
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const hitsRef = useRef<HeatmapHitBox[]>([])
+  const [tip, setTip] = useState<{ x: number; y: number; box: HeatmapHitBox } | null>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas || !block) return
+    const dpr = Math.min(window.devicePixelRatio || 1, 2)
+    const rect = canvas.getBoundingClientRect()
+    canvas.width = rect.width * dpr
+    canvas.height = rect.height * dpr
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+    ctx.scale(dpr, dpr)
+    hitsRef.current = drawHeatmap(ctx, block, { width: rect.width, height: rect.height })
+  }, [block])
+
+  if (!block) return null
+
+  function pick(e: React.MouseEvent<HTMLCanvasElement>): HeatmapHitBox | null {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    for (const box of hitsRef.current) {
+      if (x >= box.x && x < box.x + box.w && y >= box.y && y < box.y + box.h) return box
+    }
+    return null
+  }
+
+  return (
+    <section aria-labelledby="heatmap-heading">
+      <h2 id="heatmap-heading">{t('title')}</h2>
+      <figure style={{ position: 'relative' }}>
+        <canvas
+          ref={canvasRef}
+          role="img"
+          aria-label={t('aria')}
+          style={{ width: '100%', height: 220 * block.years.length, display: 'block', cursor: 'pointer' }}
+          onMouseMove={(e) => {
+            const box = pick(e)
+            setTip(box ? { x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY, box } : null)
+          }}
+          onMouseLeave={() => setTip(null)}
+          onClick={(e) => {
+            const box = pick(e)
+            if (box && onDayClick) onDayClick(box.date)
+          }}
+        />
+        {tip && (
+          <div
+            role="tooltip"
+            style={{
+              position: 'absolute',
+              left: tip.x + 12,
+              top: tip.y + 12,
+              background: 'var(--bg-surface)',
+              padding: '6px 10px',
+              borderRadius: 6,
+              pointerEvents: 'none',
+              fontSize: 12,
+            }}
+          >
+            {t('tooltip', { date: tip.box.date, count: tip.box.count, topLens: tip.box.topLens ?? '—' })}
+          </div>
+        )}
+        <figcaption className="sr-only">{t('caption', { years: block.years.length })}</figcaption>
+      </figure>
+      <div style={{ display: 'flex', gap: 12, marginTop: 8, fontSize: 12, color: 'var(--text-muted)' }}>
+        {block.years.map((y) => (
+          <span key={y}>{y}</span>
+        ))}
+      </div>
+    </section>
+  )
+}
