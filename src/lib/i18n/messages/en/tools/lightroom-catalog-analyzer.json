@@ -98,6 +98,207 @@
       "dashboard": {
         "sectionLoadingLabel": "Loading {section}…",
         "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+      },
+      "sections": {
+        "year-in-review": {
+          "title": "Year in Review",
+          "yearLabel": "Year",
+          "tiles": {
+            "totalPhotos": "Total photos",
+            "daysShot": "Days shot",
+            "topBody": "Most-used body",
+            "topLens": "Most-used lens",
+            "topFocalLength": "Top focal length",
+            "topAperture": "Top aperture",
+            "mostProlificMonth": "Most prolific month",
+            "avgShotsPerDay": "Avg shots / day"
+          },
+          "sparklines": {
+            "monthlyVolume": "Monthly volume",
+            "topGearShare": "Top gear share",
+            "timeOfDayShare": "Time-of-day share"
+          },
+          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
+          "empty": "No year-in-review data for this catalog yet.",
+          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+        },
+        "year-to-year": {
+          "title": "Year-to-Year",
+          "yearCountLabel": "Show last",
+          "yearCountOptions": { "2": "2 years", "3": "3 years", "5": "5 years" },
+          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
+          "stat": "Stat",
+          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
+          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+        },
+        "overview": {
+          "title": "Overview",
+          "tiles": {
+            "totalPhotos": "Total photos",
+            "dateRange": "Date range",
+            "daysShot": "Days shot",
+            "photosPerDay": "Photos / day",
+            "bodyCount": "Bodies",
+            "lensCount": "Lenses",
+            "topBody": "Top body",
+            "topLens": "Top lens",
+            "topFocalLength": "Top focal length"
+          },
+          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+        },
+        "gear": {
+          "title": "Gear",
+          "bodiesOverTime": "Bodies over time",
+          "topLenses": "Top lenses",
+          "topCombos": "Top body + lens combos",
+          "retired": "Retired (12 months no use)",
+          "tableHeaders": { "body": "Body", "lens": "Lens", "count": "Photos", "firstUsed": "First used", "lastUsed": "Last used" },
+          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+        },
+        "focal-length": {
+          "title": "Focal Length",
+          "histogramTitle": "Focal length distribution (35mm-equivalent)",
+          "histogramAria": "Focal length histogram",
+          "topPeaks": "Top peaks",
+          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
+          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
+          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+        },
+        "focal-length-per-zoom": {
+          "title": "Focal Length per Zoom",
+          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
+          "empty": "No zoom lenses detected in this catalog.",
+          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+        },
+        "apertures": {
+          "title": "Aperture Sweet Spot",
+          "callout": "You shoot the {lens} wide open {pct}% of the time.",
+          "empty": "Not enough data — need at least one lens with 100+ photos.",
+          "caption": "{n} lens aperture histograms."
+        },
+        "time-of-day": {
+          "title": "Time of Day",
+          "modes": { "clock": "Clock hour", "sun": "Sun angle" },
+          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "buckets": { "goldenHour": "Golden hour", "blueHour": "Blue hour", "midday": "Midday", "night": "Night" },
+          "perGear": "By body",
+          "perGearPeak": "{gear} — peak hour {hour}:00",
+          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+        },
+        "heatmap": {
+          "title": "Shooting Heatmap",
+          "aria": "Shooting heatmap — contribution calendar",
+          "tooltip": "{date}: {count} photos, top lens {topLens}",
+          "caption": "Year-by-year contribution calendar across {years} years."
+        },
+        "gps-map": {
+          "title": "GPS Locations",
+          "aria": "GPS map of catalog photo clusters",
+          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
+          "topRegions": "Top regions",
+          "empty": "No GPS data found in this catalog.",
+          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+        },
+        "curation-funnel": {
+          "title": "Curation Funnel",
+          "steps": { "total": "Total", "notRejected": "Not rejected", "rated1Plus": "1+ star", "rated4Plus": "4+ star" },
+          "perGear": "Pick rate by gear",
+          "tableHeaders": { "name": "Name", "total": "Total", "rated4Plus": "4+ star", "pickRate": "Pick rate" },
+          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+        },
+        "edit-intensity": {
+          "title": "Edit Intensity",
+          "tiles": {
+            "avgExposure": "Avg exposure shift",
+            "avgCrop": "Avg crop %",
+            "pctLocal": "% with local adjustments",
+            "pctPresets": "% with presets"
+          },
+          "scoreOverTime": "Edit intensity score over time",
+          "topPresets": "Top presets",
+          "perGear": "Score by gear",
+          "sampled": "Estimate based on 5% sample of {n} photos.",
+          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+        },
+        "ratings": {
+          "title": "Ratings & Picks",
+          "distribution": "Rating distribution",
+          "colorLabels": "Color labels",
+          "perGear": "Pick rate by gear",
+          "tableHeaders": { "name": "Name", "total": "Total", "rated4Plus": "4+ star", "pickRate": "Pick rate" },
+          "axes": { "rating": "Rating", "count": "Photos" },
+          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+        },
+        "keywords": {
+          "title": "Keyword Coverage",
+          "tiles": {
+            "tagged": "Tagged photos",
+            "untagged": "Untagged photos",
+            "uniqueKeywords": "Unique keywords",
+            "avgPerPhoto": "Avg keywords / tagged photo",
+            "orphans": "Orphan keywords"
+          },
+          "topKeywords": "Top keywords",
+          "blindSpots": "Largest blind spots",
+          "blindSpotItem": "{yearMonth} — {pct}% coverage",
+          "blindSpotsEmpty": "Coverage looks even across months.",
+          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+        },
+        "bursts": {
+          "title": "Burst Detection",
+          "tiles": {
+            "totalBursts": "Total bursts",
+            "photosInBursts": "Photos in bursts",
+            "pctInBursts": "% of catalog in bursts",
+            "longestBurst": "Longest burst"
+          },
+          "lengthHistogram": "Burst length distribution",
+          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
+          "moreOften": "more often",
+          "lessOften": "less often",
+          "caption": "{n} bursts detected; keeper rate {burstRate}% vs {singleRate}% for single shots."
+        },
+        "drilldown": {
+          "title": "Drilldown Explorer",
+          "stub": "Drilldown form — wired in Plan 1g."
+        },
+        "period-comparison": {
+          "title": "Period Comparison",
+          "periodA": "Period A",
+          "periodB": "Period B",
+          "start": "Start",
+          "end": "End",
+          "apply": "Apply",
+          "headers": {
+            "stat": "Stat",
+            "delta": "Δ"
+          },
+          "stats": {
+            "totalPhotos": "Total photos",
+            "daysShot": "Days shot",
+            "topBody": "Top body",
+            "topLens": "Top lens",
+            "topFocalLength": "Top focal length"
+          },
+          "empty": "Choose a date range for each period and click Apply.",
+          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+        },
+        "catalog-health": {
+          "title": "Catalog Health",
+          "tiles": {
+            "missingOriginals": "Missing originals",
+            "missingPreviews": "Missing previews",
+            "brokenPaths": "Broken paths",
+            "likelyDuplicates": "Likely duplicates"
+          },
+          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesHeaders": { "captureTime": "Capture time", "size": "Cluster size", "firstPath": "First path", "lastPath": "Last path" },
+          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
+          "missingByRootFolder": "Missing originals by root folder",
+          "missingHeaders": { "folder": "Root folder", "count": "Missing" },
+          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
+          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+        }
       }
     }
   }
