@@ -1,0 +1,103 @@
+{
+  "toolUI": {
+    "lightroom-catalog-analyzer": {
+      "privacyBadge": "100% Local · No Upload",
+      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
+      "desktop": {
+        "headline": "Analyze your Lightroom Classic catalog",
+        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
+        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
+        "tryDemo": "Try the demo catalog"
+      },
+      "mobile": {
+        "headline": "This one needs a desktop",
+        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
+        "tryDemoCta": "Try the demo here",
+        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
+        "copyLink": "Copy link",
+        "copyLinkSuccess": "Link copied",
+        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+      },
+      "filePicker": {
+        "dropPrompt": "Drop your .lrcat file here, or click to browse",
+        "tapPrompt": "Tap to choose a .lrcat file",
+        "browseButton": "Browse for catalog",
+        "selectedFile": "Selected: {fileName}",
+        "ariaLabel": "Lightroom Classic catalog file picker",
+        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
+        "errorReadFailed": "Could not read that file. Try again."
+      },
+      "largeFileWarning": {
+        "title": "Large catalog — heads up",
+        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
+        "continue": "Continue",
+        "cancel": "Cancel"
+      },
+      "parseProgress": {
+        "title": "Analyzing your catalog",
+        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "stage": {
+          "reading": "Reading file…",
+          "opening": "Opening catalog…",
+          "schema": "Checking schema…",
+          "hashing": "Computing hash…",
+          "aggregating": "Computing statistics…",
+          "finalizing": "Finalizing…"
+        },
+        "pctLabel": "{pct}%"
+      },
+      "cacheBadge": {
+        "label": "Loaded from cache",
+        "reanalyze": "Re-analyze",
+        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+      },
+      "errors": {
+        "title": "We couldn't analyze that catalog",
+        "retry": "Try another catalog",
+        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
+        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
+        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
+        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
+        "tooLarge": "This catalog is too large to analyze in the browser.",
+        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
+        "notLightroom": "That file is not a Lightroom Classic catalog database.",
+        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+      },
+      "sectionNav": {
+        "ariaLabel": "Dashboard sections",
+        "jumpToSection": "Jump to section",
+        "group": {
+          "highlights": "Highlights",
+          "whatYouShoot": "What you shoot",
+          "howYouCurate": "How you curate",
+          "exploreCompare": "Explore & compare",
+          "catalog": "Catalog"
+        },
+        "section": {
+          "year-in-review": "Year in Review",
+          "year-to-year": "Year to Year",
+          "overview": "Overview",
+          "gear": "Gear Breakdown",
+          "focal-length": "Focal Length",
+          "focal-length-per-zoom": "Focal Length per Zoom",
+          "apertures": "Aperture Sweet Spot",
+          "time-of-day": "Time of Day",
+          "heatmap": "Shooting Heatmap",
+          "gps": "GPS Locations",
+          "curation": "Curation Funnel",
+          "edit-intensity": "Edit Intensity",
+          "ratings": "Ratings & Picks",
+          "keywords": "Keyword Coverage",
+          "bursts": "Burst Detection",
+          "drilldown": "Drilldown Explorer",
+          "period-comparison": "Period Comparison",
+          "catalog-health": "Catalog Health"
+        }
+      },
+      "dashboard": {
+        "sectionLoadingLabel": "Loading {section}…",
+        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+      }
+    }
+  }
+}

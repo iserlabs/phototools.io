@@ -4,6 +4,7 @@ import { routing } from './routing'
 
 const CORE_FILES = ['common', 'home', 'tools', 'glossary', 'about', 'contact', 'privacy', 'terms', 'metadata'] as const
 
+/** Tools that have BOTH education and toolUI message files. */
 const TOOL_SLUGS = [
   'dof-simulator', 'fov-simulator', 'exposure-simulator', 'frame-studio',
   'star-trail-calculator', 'white-balance-visualizer', 'hyperfocal-simulator',
@@ -13,16 +14,22 @@ const TOOL_SLUGS = [
   'megapixels-size-visualizer',
 ] as const
 
+/** Tools that have toolUI messages only (no LearnPanel / education). */
+const TOOL_UI_ONLY_SLUGS = [
+  'lightroom-catalog-analyzer',
+] as const
+
 export default getRequestConfig(async ({ requestLocale }) => {
   const requested = await requestLocale
   const locale = hasLocale(routing.locales, requested)
     ? requested
     : routing.defaultLocale
 
-  const [coreModules, eduModules, toolModules] = await Promise.all([
+  const [coreModules, eduModules, toolModules, toolUiOnlyModules] = await Promise.all([
     Promise.all(CORE_FILES.map(f => import(`./messages/${locale}/${f}.json`))),
     Promise.all(TOOL_SLUGS.map(s => import(`./messages/${locale}/education/${s}.json`))),
     Promise.all(TOOL_SLUGS.map(s => import(`./messages/${locale}/tools/${s}.json`))),
+    Promise.all(TOOL_UI_ONLY_SLUGS.map(s => import(`./messages/${locale}/tools/${s}.json`))),
   ])
 
   const coreMessages = Object.assign({}, ...coreModules.map(m => m.default))
@@ -34,7 +41,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     return acc
   }, { education: {} } as { education: Record<string, unknown> })
 
-  const toolUIMessages = toolModules.reduce((acc, mod) => {
+  const toolUIMessages = [...toolModules, ...toolUiOnlyModules].reduce((acc, mod) => {
     if (mod.default.toolUI) {
       acc.toolUI = { ...acc.toolUI, ...mod.default.toolUI }
     }
