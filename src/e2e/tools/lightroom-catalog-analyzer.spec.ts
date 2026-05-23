@@ -231,12 +231,14 @@ test.describe('Lightroom Catalog Analyzer — export bar', () => {
     expect(clip.startsWith('# Lightroom Catalog Analysis')).toBe(true)
   })
 
-  test('the Share button is present but disabled (Plan 3 wires it)', async ({ page }) => {
+  test('the Share button is interactive and opens the disclosure modal (Plan 3)', async ({ page }) => {
     await page.goto(DEMO_PATH)
     await expect(page.locator(SEC('overview')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
     const share = page.getByRole('button', { name: /Share via URL/i }).first()
     await share.scrollIntoViewIfNeeded()
-    await expect(share).toBeDisabled()
+    await expect(share).toBeEnabled()
+    await share.click()
+    await expect(page.getByRole('dialog')).toBeVisible()
   })
 })
 
