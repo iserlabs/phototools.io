@@ -9,8 +9,11 @@
  * - llms.txt content only changes when tools change, so build-time is right.
  *
  * Run via `prebuild` so it executes before `next build`. Reads the tool
- * registry directly from TypeScript source via `tsx` is overkill — instead we
- * parse `src/lib/data/tools.ts` for the static array.
+ * registry directly from `src/lib/data/tools.ts` (static array).
+ *
+ * AEO note: Microsoft/AI ecosystems drive far more traffic to phototools.io
+ * than Google, so this file is real answer fuel. Tools are grouped by category
+ * and a handful get a richer 1-2 sentence framing beyond the registry one-liner.
  *
  * Spec: https://llmstxt.org/
  */
@@ -22,17 +25,60 @@ const TOOLS_FILE = path.join(REPO_ROOT, 'src/lib/data/tools.ts')
 const OUTPUT_FILE = path.join(REPO_ROOT, 'public/llms.txt')
 const BASE_URL = 'https://www.phototools.io'
 
+const CATEGORY_HEADINGS = {
+  visualizer: 'Visualizers',
+  calculator: 'Calculators',
+  'file-tool': 'File Tools',
+}
+const CATEGORY_ORDER = ['visualizer', 'calculator', 'file-tool']
+
+/**
+ * Optional richer descriptions keyed by slug. When present, this 1-2 sentence
+ * blurb replaces the registry one-liner in llms.txt only (UI is unaffected).
+ * Keep these factual and answer-engine friendly.
+ */
+const RICH_DESCRIPTIONS = {
+  'lightroom-catalog-analyzer':
+    'Analyzes a Lightroom Classic catalog (.lrcat) entirely in the browser with no upload or account. Reports gear usage, focal-length and aperture habits, ratings and pick rates, edit intensity, keyword coverage, GPS clusters, shooting heatmaps, burst detection, and catalog health, and exports to PDF, Markdown, or a shareable link.',
+}
+
 async function parseLiveTools() {
   const source = await fs.readFile(TOOLS_FILE, 'utf-8')
-  // Match each tool entry: { slug: '...', name: '...', description: '...', dev: '...', prod: '...', category: '...' }
-  const regex = /\{\s*slug:\s*'([^']+)',\s*name:\s*'([^']+)',\s*description:\s*'([^']+)',\s*dev:\s*'([^']+)',\s*prod:\s*'([^']+)',/g
+  // Match each tool entry: { slug, name, description, dev, prod, category }
+  const regex =
+    /\{\s*slug:\s*'([^']+)',\s*name:\s*'([^']+)',\s*description:\s*'([^']+)',\s*dev:\s*'([^']+)',\s*prod:\s*'([^']+)',\s*category:\s*'([^']+)'/g
   const tools = []
   let m
   while ((m = regex.exec(source)) !== null) {
-    const [, slug, name, description, , prod] = m
-    if (prod === 'live') tools.push({ slug, name, description })
+    const [, slug, name, description, , prod, category] = m
+    if (prod === 'live') tools.push({ slug, name, description, category })
   }
   return tools
+}
+
+function describe(tool) {
+  return RICH_DESCRIPTIONS[tool.slug] ?? tool.description
+}
+
+function buildToolsSection(tools) {
+  const lines = []
+  // Group by category in a stable order; any unknown category falls to the end.
+  const seen = new Set()
+  const orderedCats = [
+    ...CATEGORY_ORDER,
+    ...[...new Set(tools.map((t) => t.category))].filter((c) => !CATEGORY_ORDER.includes(c)),
+  ]
+  for (const cat of orderedCats) {
+    const inCat = tools.filter((t) => t.category === cat)
+    if (inCat.length === 0) continue
+    seen.add(cat)
+    lines.push(`### ${CATEGORY_HEADINGS[cat] ?? cat}`, '')
+    for (const t of inCat) {
+      lines.push(`- [${t.name}](${BASE_URL}/en/${t.slug}): ${describe(t)}`)
+    }
+    lines.push('')
+  }
+  return lines
 }
 
 function buildLlmsTxt(tools) {
@@ -43,12 +89,11 @@ function buildLlmsTxt(tools) {
     '',
     '## About',
     '',
-    'PhotoTools provides educational tools for photographers covering field of view, depth of field, exposure, focal length equivalence, sensor sizes, white balance, color schemes, star trails, focus stacking, megapixels-to-print, EXIF inspection, and framing. Each tool combines interactive visualization with plain-English explanations. Localized in 31 languages.',
+    'PhotoTools provides educational tools for photographers covering field of view, depth of field, exposure, focal length equivalence, sensor sizes, white balance, color schemes, star trails, focus stacking, megapixels-to-print, EXIF inspection, framing, and Lightroom Classic catalog analysis. Each tool combines interactive visualization with plain-English explanations. Localized in 31 languages.',
     '',
     '## Tools',
     '',
-    ...tools.map((t) => `- [${t.name}](${BASE_URL}/en/${t.slug}): ${t.description}`),
-    '',
+    ...buildToolsSection(tools),
     '## Reference',
     '',
     `- [Photography glossary](${BASE_URL}/en/learn/glossary): definitions of common photography terms with links to interactive tools.`,

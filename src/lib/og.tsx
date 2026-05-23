@@ -16,6 +16,7 @@ const TOOL_EMOJIS: Record<string, string> = {
   'exif-viewer': '🗂️',
   'perspective-compression-simulator': '🏔️',
   'megapixels-size-visualizer': '🖼️',
+  'lightroom-catalog-analyzer': '📊',
 }
 
 const CATEGORY_LABELS: Record<string, string> = {

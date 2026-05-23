@@ -207,6 +207,22 @@ function MegapixelVisualizerIcon(p: IconProps) {
   )
 }
 
+/** Lightroom Catalog Analyzer — bar chart inspected by a magnifying glass */
+function LightroomCatalogAnalyzerIcon(p: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={s} height={s}
+         fill="none" stroke="currentColor" strokeWidth={1.5}
+         strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M3 21h18" />
+      <path d="M5 21v-6" />
+      <path d="M9.5 21v-9" />
+      <path d="M14 21v-4" />
+      <circle cx="16.5" cy="8.5" r="4" />
+      <path d="M19.5 11.5L22 14" />
+    </svg>
+  )
+}
+
 const ICON_MAP: Record<string, (props: IconProps) => React.JSX.Element> = {
   'fov-simulator': FovSimulator,
   'color-scheme-generator': ColorHarmony,
@@ -225,6 +241,7 @@ const ICON_MAP: Record<string, (props: IconProps) => React.JSX.Element> = {
   'perspective-compression-simulator': PerspectiveCompression,
   'frame-studio': FrameStudioIcon,
   'megapixels-size-visualizer': MegapixelVisualizerIcon,
+  'lightroom-catalog-analyzer': LightroomCatalogAnalyzerIcon,
 }
 
 interface ToolIconProps extends IconProps {
