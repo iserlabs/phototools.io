@@ -147,12 +147,14 @@ test.describe('Lightroom Catalog Analyzer — demo flow', () => {
     await page.goto(DEMO_PATH)
     await expect(page.locator(SEC('heatmap')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
 
-    // The heatmap is a <canvas>. Click near its center — a 3-year synthetic
-    // catalog reliably has data in the middle of the grid.
+    // The heatmap is a <canvas>. Use an element-relative click (auto-scrolls and
+    // is viewport-correct, unlike raw page.mouse.click on absolute coords). y=100
+    // lands in the first year's grid, which reliably has data in the 3-year demo
+    // catalog; pick() also snaps to the nearest cell if it lands in a gap.
     const heatmapCanvas = page.locator(`${SEC('heatmap')} canvas`).first()
     const box = await heatmapCanvas.boundingBox()
     expect(box).not.toBeNull()
-    await page.mouse.click(box!.x + box!.width / 2, box!.y + box!.height / 2)
+    await heatmapCanvas.click({ position: { x: box!.width / 2, y: 100 } })
 
     // The one-day filter yields a Date pill with equal (or near-equal) bounds.
     await expect(page.getByText(/^Date \d{4}-\d{2}-\d{2} – \d{4}-\d{2}-\d{2}$/).first())

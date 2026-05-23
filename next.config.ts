@@ -60,7 +60,7 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://cdn-cookieyes.com https://va.vercel-scripts.com https://us-assets.i.posthog.com https://static.cloudflareinsights.com https://connect.facebook.net https://vercel.live`,
+              `script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://cdn-cookieyes.com https://va.vercel-scripts.com https://us-assets.i.posthog.com https://static.cloudflareinsights.com https://connect.facebook.net https://vercel.live`,
               "style-src 'self' 'unsafe-inline' https://vercel.live",
               "img-src 'self' blob: data: https://pagead2.googlesyndication.com https://www.google.com https://www.googletagmanager.com https://*.google-analytics.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://cdn-cookieyes.com https://www.facebook.com https://vercel.live https://vercel.com",
               "font-src 'self' https://vercel.live https://assets.vercel.com",

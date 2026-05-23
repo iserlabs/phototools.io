@@ -125,20 +125,24 @@ export function deserializeFilter(qs: string): AnalysisFilter {
 export function useFilterUrlSync(
   filter: AnalysisFilter | undefined,
   onHydrate: (initial: AnalysisFilter) => void,
+  ready = true,
 ): void {
   const hydratedRef = useRef(false)
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  // One-time hydrate from URL.
+  // One-time hydrate from URL — deferred until `ready` (the worker/data are
+  // loaded) so applyFilter doesn't no-op against a not-yet-ready worker and
+  // silently drop a filter that arrived in the URL (e.g. ?demo=true&start=...).
   useEffect(() => {
     if (hydratedRef.current) return
+    if (!ready) return
     hydratedRef.current = true
     if (typeof window === 'undefined') return
     const initial = deserializeFilter(window.location.search)
     if (Object.keys(initial).length > 0) {
       onHydrate(initial)
     }
-  }, [onHydrate])
+  }, [onHydrate, ready])
 
   // Push filter changes to the URL (replaceState, throttled to 200ms).
   useEffect(() => {

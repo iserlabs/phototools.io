@@ -56,10 +56,21 @@ export function Heatmap({ onDayClick }: HeatmapProps = {}) {
     const rect = e.currentTarget.getBoundingClientRect()
     const x = e.clientX - rect.left
     const y = e.clientY - rect.top
+    // Prefer an exact hit; otherwise snap to the nearest cell within ~one cell so
+    // clicks landing in the thin inter-cell gaps still select the intended day.
+    let nearest: HeatmapHitBox | null = null
+    let nearestDist = Infinity
     for (const box of hitsRef.current) {
       if (x >= box.x && x < box.x + box.w && y >= box.y && y < box.y + box.h) return box
+      const cx = box.x + box.w / 2
+      const cy = box.y + box.h / 2
+      const d = Math.hypot(x - cx, y - cy)
+      if (d < nearestDist) {
+        nearestDist = d
+        nearest = box
+      }
     }
-    return null
+    return nearestDist <= 16 ? nearest : null
   }
 
   return (

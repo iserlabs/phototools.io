@@ -37,7 +37,7 @@ function AnalyzerBody() {
   // Bidirectional URL sync for the global filter (Task 12.3). On mount it
   // restores any filter encoded in the URL by calling applyFilter; thereafter
   // it replaceState-pushes serialized filter changes back to the URL.
-  useFilterUrlSync(filter, applyFilter)
+  useFilterUrlSync(filter, applyFilter, status === 'loaded')
 
   const onFile = useCallback(
     (buffer: ArrayBuffer, meta: OpenCatalogMeta) => {
