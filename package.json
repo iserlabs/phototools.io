@@ -20,6 +20,7 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "npx playwright test",
     "test:e2e:ui": "npx playwright test --ui",
+    "demo:build": "tsx scripts/build-demo-catalog.ts",
     "analyze": "ANALYZE=true next build",
     "prepare": "husky"
   },
@@ -77,6 +78,7 @@
     "husky": "^9.1.7",
     "jsdom": "^29.1.1",
     "lint-staged": "^16.4.0",
+    "tsx": "^4.22.3",
     "typescript": "~6.0.0",
     "typescript-eslint": "^8.59.2",
     "vitest": "^4.1.5"
