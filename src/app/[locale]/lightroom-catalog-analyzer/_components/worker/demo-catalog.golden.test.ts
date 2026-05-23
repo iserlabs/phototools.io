@@ -60,5 +60,6 @@ describe.skipIf(!hasDemo)('demo catalog golden stats', () => {
     expect(blob.yearInReview?.year).toBe(2025)     // most-recent year default
 
     await api.close()
-  })
+  }, 30_000) // 3000-photo catalog through sqlite-wasm + 16 aggregators is
+             // heavyweight; give it headroom under full-suite CPU/memory load.
 })
