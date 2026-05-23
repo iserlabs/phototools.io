@@ -77,3 +77,8 @@ export function useAnalyzerContextValue(): AnalyzerContextValue {
   if (!ctx) throw new Error('useAnalyzer must be used inside <AnalyzerProvider>')
   return ctx
 }
+
+// Canonical hook. Plan 1f section components import `useAnalyzer` directly from
+// this module; `./useAnalyzer` also re-exports an identical delegate. Both paths
+// return the same flattened AnalyzerContextValue.
+export const useAnalyzer = useAnalyzerContextValue
