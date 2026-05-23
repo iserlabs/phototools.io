@@ -23,6 +23,7 @@ import { DrilldownForm } from '../sections/DrilldownForm'
 import { ActiveFilterPills } from '../sections/ActiveFilterPills'
 import { PeriodComparison } from '../sections/PeriodComparison'
 import { CatalogHealth } from '../sections/CatalogHealth'
+import { ExportBar } from './ExportBar'
 
 // Per-section skeleton minimum height in px. Keeps anchor scroll-into-view
 // landing on the right region even while async chart libraries hydrate, and
@@ -91,6 +92,8 @@ export function Dashboard() {
           {SECTION_BODIES[id]}
         </section>
       ))}
+
+      <ExportBar />
 
       <footer className={styles.dashboardFooter}>
         {t('dashboard.footerNote')}
