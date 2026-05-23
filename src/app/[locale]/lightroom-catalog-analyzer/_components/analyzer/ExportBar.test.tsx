@@ -19,12 +19,12 @@ describe('ExportBar', () => {
     Object.assign(navigator, { clipboard: { writeText: vi.fn().mockResolvedValue(undefined) } })
   })
 
-  it('renders all three buttons; Share is disabled', () => {
+  it('renders all three buttons; Share is interactive', () => {
     renderBar()
     expect(screen.getByRole('button', { name: /export pdf/i })).toBeEnabled()
     expect(screen.getByRole('button', { name: /copy markdown/i })).toBeEnabled()
     const share = screen.getByRole('button', { name: /share via url/i })
-    expect(share).toBeDisabled()
+    expect(share).toBeEnabled()
   })
 
   it('copies the Markdown report to the clipboard on click', async () => {

@@ -7,6 +7,7 @@ import { toast } from 'sonner'
 import { useAnalyzer } from './AnalyzerContext'
 import { markdownReport } from '../export/markdown'
 import { downloadMarkdown, exportFilename } from '../export/download-markdown'
+import { ShareButton } from './ShareButton'
 import type { PdfPhase } from './usePdfExport'
 import styles from './ExportBar.module.css'
 
@@ -63,9 +64,7 @@ export function ExportBar() {
       <button type="button" className={styles.button} onClick={onMarkdown}>
         {t('markdown.button')}
       </button>
-      <button type="button" className={styles.button} disabled title={t('share.placeholderTitle')}>
-        {t('share.button')}
-      </button>
+      <ShareButton blob={insightBlob} className={styles.button} />
 
       {pdfActive && <PdfExportStage blob={insightBlob} onPhase={setPhase} onDone={onPdfDone} />}
     </div>
