@@ -28,6 +28,24 @@
   overflow-y: auto;
 }
 
+/* ---- Skip-to-main-content link (m-7 / spec §14) ---- */
+.skipLink {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-radius: 0 0 var(--radius-md) 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.skipLink:focus {
+  left: 0;
+}
+
 @media (max-width: 1024px) {
   .shellBody { grid-template-columns: 1fr; }
   .shellSidebar { display: none; }

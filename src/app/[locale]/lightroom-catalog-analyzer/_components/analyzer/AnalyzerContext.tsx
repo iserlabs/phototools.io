@@ -47,7 +47,7 @@ export interface AnalyzerContextValue {
   error: string | null
   loadedFromCache: boolean
   lastProgress: ProgressEvent | null
-  open: (buffer: ArrayBuffer, meta: OpenCatalogMeta) => Promise<void>
+  open: (buffer: ArrayBuffer, meta: OpenCatalogMeta, opts?: OpenOptions) => Promise<void>
   applyFilter: (filter: AnalysisFilter) => Promise<void>
   setFilter: (filter: AnalysisFilter) => void
   reset: () => void
@@ -59,6 +59,11 @@ export interface OpenCatalogMeta {
   name: string
   size: number
   lastModified: number
+}
+
+export interface OpenOptions {
+  /** Skip the IDB cache and re-parse from the original buffer (m-10 re-analyze). */
+  forceFresh?: boolean
 }
 
 export const AnalyzerContext = createContext<AnalyzerContextValue | null>(null)

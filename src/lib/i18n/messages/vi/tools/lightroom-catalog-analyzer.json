@@ -3,6 +3,7 @@
     "lightroom-catalog-analyzer": {
       "privacyBadge": "100% Local · No Upload",
       "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
+      "skipToMain": "Skip to main content",
       "desktop": {
         "headline": "Analyze your Lightroom Classic catalog",
         "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",

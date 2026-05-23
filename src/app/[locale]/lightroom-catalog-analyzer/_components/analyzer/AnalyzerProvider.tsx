@@ -9,6 +9,7 @@ import {
   type AnalyzerStatus,
   type AnalyzerWorker,
   type OpenCatalogMeta,
+  type OpenOptions,
 } from './AnalyzerContext'
 import { createAnalyzerApi, type AnalyzerHandle } from './workerFactory'
 import { getCachedInsights, setCachedInsights } from './cache'
@@ -101,15 +102,16 @@ export function AnalyzerProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const open = useCallback(
-    async (buffer: ArrayBuffer, meta: OpenCatalogMeta) => {
+    async (buffer: ArrayBuffer, meta: OpenCatalogMeta, opts?: OpenOptions) => {
       dispatch({ type: 'parse-start' })
       const size = meta.size
       let catalogVersion: number | undefined
       try {
         // Try IDB cache first using a non-destructive hash (the buffer is needed
         // for the worker; we deliberately do not transfer it until after hashing).
+        // A forced re-analyze (m-10) skips the cache read.
         const hash = await computeCatalogHash(buffer, size, meta.lastModified)
-        const cached = await getCachedInsights(hash)
+        const cached = opts?.forceFresh ? null : await getCachedInsights(hash)
         if (cached) {
           catalogVersion = cached.meta.catalogVersion
           dispatch({ type: 'parse-progress', ev: { stage: 'finalizing', pct: 100 } })
