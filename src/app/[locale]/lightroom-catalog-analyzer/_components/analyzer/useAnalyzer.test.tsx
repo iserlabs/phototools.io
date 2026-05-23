@@ -126,8 +126,31 @@ describe('useAnalyzer (flattened contract)', () => {
     const { result } = renderHook(() => useAnalyzer(), { wrapper })
     await act(async () => { result.current.setFilter({ ratings: [4, 5] }) })
     expect(result.current.filter).toEqual({ ratings: [4, 5] })
-    await act(async () => { result.current.reset() })
+    await act(async () => { await result.current.reset() })
     expect(result.current.filter).toBeUndefined()
+  })
+
+  it('reset() re-aggregates UNFILTERED when loaded (not just clearing the accessor)', async () => {
+    // Regression guard: reset must re-run the worker with an empty filter, else
+    // the dashboard keeps showing stale filtered charts after Reset.
+    const { result } = renderHook(() => useAnalyzer(), { wrapper })
+    const buf = new ArrayBuffer(1024)
+    await act(async () => {
+      await result.current.open(buf, { name: 'demo.lrcat', size: 1024, lastModified: 1 })
+    })
+    await waitFor(() => expect(result.current.status).toBe('loaded'))
+    await act(async () => { await result.current.applyFilter({ cameras: ['A'] }) })
+    expect(result.current.filter).toEqual({ cameras: ['A'] })
+
+    const { createAnalyzerApi } = await import('./workerFactory')
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const api = (vi.mocked(createAnalyzerApi).mock.results.at(-1)!.value as any).api
+    api.applyFilter.mockClear()
+
+    await act(async () => { await result.current.reset() })
+    expect(result.current.filter).toBeUndefined()
+    expect(result.current.insightBlob).not.toBeNull()
+    expect(api.applyFilter).toHaveBeenCalledWith({})
   })
 
   it('records error status with a localized error key on failure', async () => {

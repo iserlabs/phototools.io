@@ -39,6 +39,7 @@ type Action =
   | { type: 'parse-success'; blob: InsightBlob; loadedFromCache: boolean }
   | { type: 'parse-failure'; kind: string }
   | { type: 'filter-applied'; blob: InsightBlob; filter: AnalysisFilter }
+  | { type: 'reset-filter'; blob: InsightBlob }
   | { type: 'set-filter'; filter: AnalysisFilter | undefined }
   | { type: 'patch-blob'; partial: Partial<InsightBlob> }
   | { type: 'reset' }
@@ -67,6 +68,8 @@ function reducer(state: ReducerState, action: Action): ReducerState {
       return { ...state, status: 'error', errorKind: action.kind }
     case 'filter-applied':
       return { ...state, blob: action.blob, filter: action.filter }
+    case 'reset-filter':
+      return { ...state, blob: action.blob, filter: undefined }
     case 'set-filter':
       return { ...state, filter: action.filter }
     case 'patch-blob':
@@ -161,8 +164,16 @@ export function AnalyzerProvider({ children }: { children: ReactNode }) {
     dispatch({ type: 'set-filter', filter })
   }, [])
 
-  const reset = useCallback(() => {
-    dispatch({ type: 'set-filter', filter: undefined })
+  const reset = useCallback(async () => {
+    const handle = handleRef.current
+    if (handle) {
+      // Re-aggregate UNFILTERED so the dashboard reflects the cleared filter —
+      // clearing the filter accessor alone would leave stale filtered charts.
+      const blob = await handle.api.applyFilter({})
+      dispatch({ type: 'reset-filter', blob })
+    } else {
+      dispatch({ type: 'set-filter', filter: undefined })
+    }
   }, [])
 
   const setYearInReview = useCallback((block: YearInReviewBlock) => {

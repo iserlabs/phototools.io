@@ -50,9 +50,9 @@ describe('aggregateGps', () => {
     const r = aggregateGps(db)
     expect(r.clusters).toHaveLength(1)
     expect(r.clusters[0].count).toBe(5)
-    // 3-decimal-place rounding lands the cluster center on the rounded coords.
-    expect(r.clusters[0].lat).toBeCloseTo(40.713, 3)
-    expect(r.clusters[0].lng).toBeCloseTo(-74.006, 3)
+    // ~5 km grid (0.05°) snaps the near-identical coords to one cell center.
+    expect(r.clusters[0].lat).toBeCloseTo(40.7, 2)
+    expect(r.clusters[0].lng).toBeCloseTo(-74.0, 2)
   })
 
   it('caps at top 200 clusters by count', () => {
@@ -88,7 +88,7 @@ describe('aggregateGps', () => {
     const db = adaptForAggregators(createTestCatalog(photos))
     const r = aggregateGps(db, { cameras: ['A'] })
     expect(r.clusters).toHaveLength(1)
-    expect(r.clusters[0].lat).toBeCloseTo(40.713, 3)
+    expect(r.clusters[0].lat).toBeCloseTo(40.7, 2)
   })
 
   // AUDIT M-3: topRegions must NOT ship permanently empty. The offline

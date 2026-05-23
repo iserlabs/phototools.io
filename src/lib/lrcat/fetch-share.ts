@@ -8,6 +8,11 @@ import type { InsightBlob } from './types'
 /** Highest InsightBlob schemaVersion this viewer build understands. */
 export const VIEWER_SCHEMA_VERSION = 1
 const ID_RE = /^[A-Za-z0-9_-]{16}$/
+// Defense-in-depth: cap the decompressed size on the recipient read path too,
+// mirroring the POST guard in api/share/decode.ts. The only writer today is our
+// own (already-capped) server, but a planted/oversized blob must never inflate
+// unbounded during a recipient render.
+const MAX_DECOMPRESSED_BYTES = 256 * 1024
 
 export type FetchShareResult =
   | { status: 'found'; blob: InsightBlob; expiresAtIso: string }
@@ -34,7 +39,9 @@ export async function fetchShare(id: string): Promise<FetchShareResult> {
 
   let parsed: { meta?: { schemaVersion?: number } }
   try {
-    parsed = JSON.parse(gunzipSync(Buffer.from(found.bytes)).toString('utf8'))
+    parsed = JSON.parse(
+      gunzipSync(Buffer.from(found.bytes), { maxOutputLength: MAX_DECOMPRESSED_BYTES }).toString('utf8'),
+    )
   } catch (err) {
     logger.error('share', 'Recipient gunzip/parse failed', { id, error: err instanceof Error ? err : String(err) })
     return { status: 'not-found' }

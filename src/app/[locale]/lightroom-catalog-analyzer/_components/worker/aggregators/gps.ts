@@ -7,18 +7,23 @@ interface DbLike {
   selectObjects: (sql: string, params?: unknown[]) => unknown[]
 }
 
-const GRID_DECIMALS = 3 // ~111 m at the equator → effectively ~5 km when snapped
+// Privacy guard: snap coordinates to a ~5 km grid before clustering. 0.05° is
+// ~5.5 km of latitude (and ≤5.5 km of longitude, shrinking toward the poles),
+// so a kept cluster never pinpoints finer than a multi-km cell — matching the
+// "~5 km grid" promise in the spec, JSON-LD, and share disclosure. (A previous
+// 3-decimal rounding was only ~110 m, far finer than documented.)
+const GRID_STEP_DEG = 0.05
 const MIN_PHOTOS_PER_CLUSTER = 5
 const TOP_CLUSTERS_LIMIT = 200
 
 function snapToGrid(value: number): number {
-  // Round to GRID_DECIMALS decimal places. Number(...) handles -0 cleanup.
-  return Number(value.toFixed(GRID_DECIMALS))
+  // Snap to the nearest GRID_STEP_DEG; toFixed(2) cleans float drift and -0.
+  return Number((Math.round(value / GRID_STEP_DEG) * GRID_STEP_DEG).toFixed(2))
 }
 
 /**
  * GPS locations aggregator. PII-guarded by construction:
- *   1. Coordinates are rounded to GRID_DECIMALS (~5 km grid).
+ *   1. Coordinates are snapped to a ~5 km grid (GRID_STEP_DEG).
  *   2. Clusters with fewer than MIN_PHOTOS_PER_CLUSTER photos are dropped.
  *   3. The output is capped to TOP_CLUSTERS_LIMIT clusters by count.
  *
@@ -53,10 +58,12 @@ export function aggregateGps(db: DbLike, filter?: AnalysisFilter): GPSBlock {
     return { totalPhotosWithGps: 0, pctWithGps: 0, clusters: [], topRegions: [] }
   }
 
-  // Snap coordinates to the grid in SQL, then group.
+  // Snap coordinates to the ~5 km grid in SQL (round to the nearest GRID_STEP_DEG,
+  // then to 2 decimals so float drift doesn't split a cell), GROUP at that grid,
+  // and apply the MIN_PHOTOS_PER_CLUSTER threshold at the SAME ~5 km granularity.
   const clusterRows = db.selectObjects(
-    `SELECT ROUND(exif.gpsLatitude, ${GRID_DECIMALS}) AS lat,
-            ROUND(exif.gpsLongitude, ${GRID_DECIMALS}) AS lng,
+    `SELECT ROUND(ROUND(exif.gpsLatitude / ${GRID_STEP_DEG}) * ${GRID_STEP_DEG}, 2) AS lat,
+            ROUND(ROUND(exif.gpsLongitude / ${GRID_STEP_DEG}) * ${GRID_STEP_DEG}, 2) AS lng,
             COUNT(*) AS n
        FROM Adobe_images img
        JOIN AgHarvestedExifMetadata exif ON exif.image = img.id_local
