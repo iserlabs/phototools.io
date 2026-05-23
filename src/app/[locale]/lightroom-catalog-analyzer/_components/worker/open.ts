@@ -54,20 +54,30 @@ export async function openCatalog(buf: ArrayBuffer): Promise<{ db: Database; cat
   const sqlite3 = await getSqlite()
 
   // 3. Allocate WASM-side memory and copy bytes in.
+  //
+  // We over-allocate (data length + headroom) so the deserialized DB has room
+  // to grow when the worker adds the derived `AgSensorCropFactor` table below.
+  // Combined with SQLITE_DESERIALIZE_RESIZEABLE, SQLite can also realloc past
+  // this capacity if it needs to.
   const len = buf.byteLength
-  const ptr = sqlite3.wasm.alloc(len)
+  const HEADROOM = 1024 * 1024 // 1 MB spare pages for the derived crop-factor table
+  const cap = len + HEADROOM
+  const ptr = sqlite3.wasm.alloc(cap)
   sqlite3.wasm.heap8u().set(new Uint8Array(buf), ptr)
 
   // 4. Open an empty in-memory DB, then deserialize the bytes into it.
   //
   // NOTE: we deliberately do NOT pass SQLITE_DESERIALIZE_READONLY. The worker
   // (Plan 1d, Audit M-2) needs to CREATE a derived `AgSensorCropFactor` table
-  // in this handle to drive the focal-length 35mm-equivalent normalization.
-  // This only mutates the in-memory deserialized copy — SQLITE_DESERIALIZE_FREEONCLOSE
-  // frees it on close and the user's original .lrcat file is never written to.
+  // in this handle to drive the focal-length 35mm-equivalent normalization, so
+  // we pass SQLITE_DESERIALIZE_RESIZEABLE to let the in-memory DB grow. This
+  // only mutates the deserialized copy — SQLITE_DESERIALIZE_FREEONCLOSE frees
+  // it on close and the user's original .lrcat file is never written to.
   const db = new sqlite3.oo1.DB(':memory:', 'c')
-  const flags = sqlite3.capi.SQLITE_DESERIALIZE_FREEONCLOSE
-  const rc = sqlite3.capi.sqlite3_deserialize(db.pointer!, 'main', ptr, len, len, flags)
+  const flags =
+    sqlite3.capi.SQLITE_DESERIALIZE_FREEONCLOSE |
+    sqlite3.capi.SQLITE_DESERIALIZE_RESIZEABLE
+  const rc = sqlite3.capi.sqlite3_deserialize(db.pointer!, 'main', ptr, len, cap, flags)
   if (rc !== sqlite3.capi.SQLITE_OK) {
     sqlite3.wasm.dealloc(ptr)
     db.close()

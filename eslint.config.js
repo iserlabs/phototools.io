@@ -45,6 +45,7 @@ export default tseslint.config(
           '**/*.test.{ts,tsx}',
           '**/*.spec.{ts,tsx}',
           '**/__test-helpers__.{ts,tsx}',
+          '**/test-fixtures/**',
           'src/e2e/**',
           'scripts/**',
           'test-setup*.ts',

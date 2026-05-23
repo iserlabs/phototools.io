@@ -41,9 +41,14 @@ interface AggregatorDb {
 }
 
 function adaptDatabase(db: Database): AggregatorDb {
+  // sqlite-wasm throws "This statement has no bindable parameters" if you pass
+  // a (non-undefined) bind to a parameterless query — so coerce empty arrays
+  // to `undefined`. better-sqlite3 (tests) tolerates `[]`, hence the split.
+  const bind = (params?: unknown[]) =>
+    params && params.length > 0 ? (params as never) : undefined
   return {
-    selectObject: (sql, params = []) => db.selectObject(sql, params as never),
-    selectObjects: (sql, params = []) => db.selectObjects(sql, params as never),
+    selectObject: (sql, params) => db.selectObject(sql, bind(params)),
+    selectObjects: (sql, params) => db.selectObjects(sql, bind(params)),
     exec: (sql) => { db.exec(sql) },
   }
 }
