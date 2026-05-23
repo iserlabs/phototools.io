@@ -11,16 +11,16 @@ describe('exportFilename', () => {
 })
 
 describe('downloadMarkdown', () => {
-  let clickSpy: ReturnType<typeof vi.fn>
+  let clickSpy: ReturnType<typeof vi.fn<() => void>>
 
   beforeEach(() => {
-    clickSpy = vi.fn()
+    clickSpy = vi.fn<() => void>()
     vi.stubGlobal('URL', {
       createObjectURL: vi.fn(() => 'blob:mock'),
       revokeObjectURL: vi.fn(),
     })
     // Intercept anchor clicks so jsdom doesn't try to navigate.
-    vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(clickSpy)
+    vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => clickSpy())
   })
 
   afterEach(() => {

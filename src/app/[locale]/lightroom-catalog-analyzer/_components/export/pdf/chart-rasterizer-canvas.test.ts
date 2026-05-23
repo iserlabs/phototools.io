@@ -20,12 +20,12 @@ beforeAll(() => {
       fill() {}
       fillText() {}
       scale() {}
-      set fillStyle(_v) {}
-      set strokeStyle(_v) {}
-      set font(_v) {}
-      set textAlign(_v) {}
-      set lineWidth(_v) {}
-      set globalAlpha(_v) {}
+      set fillStyle(_v: unknown) {}
+      set strokeStyle(_v: unknown) {}
+      set font(_v: unknown) {}
+      set textAlign(_v: unknown) {}
+      set lineWidth(_v: unknown) {}
+      set globalAlpha(_v: unknown) {}
     }
     class FakeOffscreen {
       width = 0
