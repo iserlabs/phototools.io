@@ -1,0 +1,1 @@
+-- LrC v9 schema snapshot — populate by running: sqlite3 path/to/catalog.lrcat '.schema' > this file
