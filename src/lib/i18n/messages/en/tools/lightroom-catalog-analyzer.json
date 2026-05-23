@@ -256,7 +256,7 @@
           "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
           "moreOften": "more often",
           "lessOften": "less often",
-          "caption": "{n} bursts detected; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
         },
         "drilldown": {
           "title": "Drilldown Explorer",
