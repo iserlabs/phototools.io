@@ -1,50 +1,20 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import * as Comlink from 'comlink'
-import type { AnalyzerWorker } from '../worker/analyzer.worker'
+// Plan 1e (Audit B-3): this OVERWRITES the Plan 1d throwaway worker stub.
+//
+// `useAnalyzer()` returns the canonical FLATTENED context surface from
+// EXECUTION-NOTES §2 — `{ status, insightBlob, worker, filter, error,
+// loadedFromCache, lastProgress, open, applyFilter, setFilter, reset,
+// setYearInReview, close }` — NOT a `{ state, dispatch }` pair. The lifecycle
+// (lazy worker creation, IDB cache hydration, progress, error mapping, Sentry
+// capture) lives in `AnalyzerProvider`; this hook is the thin accessor that
+// all Plan 1f section components consume.
 
-// ⚠ THROWAWAY STUB (Plan 1d / Audit B-3).
-// Plan 1e OVERWRITES this file wholesale with the store-integrated,
-// flattened-context version described in EXECUTION-NOTES §2
-// (status / insightBlob / worker / filter / open / applyFilter / ...).
-// Do NOT invest in this version — it exists only so the file path is in place
-// and the worker can be smoke-instantiated before Plan 1e lands.
+import { useAnalyzerContextValue } from './AnalyzerContext'
+import type { AnalyzerContextValue } from './AnalyzerContext'
 
-export interface AnalyzerHandle {
-  api: Comlink.Remote<AnalyzerWorker>
-  terminate: () => void
-}
+export type { AnalyzerContextValue, AnalyzerWorker, OpenCatalogMeta } from './AnalyzerContext'
 
-/**
- * Stub hook — Plan 1d.
- * Instantiates the analyzer worker and exposes the Comlink-wrapped API.
- * Plan 1e replaces this with a store-integrated version that handles
- * progress, error states, IDB cache hydration, and lifecycle.
- */
-export function useAnalyzer(): AnalyzerHandle | null {
-  const ref = useRef<AnalyzerHandle | null>(null)
-
-  if (ref.current === null && typeof window !== 'undefined') {
-    const worker = new Worker(
-      new URL('../worker/analyzer.worker.ts', import.meta.url),
-      { type: 'module' },
-    )
-    const api = Comlink.wrap<AnalyzerWorker>(worker)
-    ref.current = {
-      api,
-      terminate: () => {
-        worker.terminate()
-      },
-    }
-  }
-
-  useEffect(() => {
-    return () => {
-      ref.current?.terminate()
-      ref.current = null
-    }
-  }, [])
-
-  return ref.current
+export function useAnalyzer(): AnalyzerContextValue {
+  return useAnalyzerContextValue()
 }
