@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { FilePicker, type FilePickerMeta } from './FilePicker'
 import { PrivacyBadge } from './PrivacyBadge'
+import { RecentSharesList } from './RecentSharesList'
 import styles from './LightroomCatalogAnalyzer.module.css'
 
 interface DesktopEmptyStateProps {
@@ -24,6 +25,7 @@ export function DesktopEmptyState({ onFile, onDemo }: DesktopEmptyStateProps) {
       <button type="button" className={styles.demoButton} onClick={onDemo}>
         {t('desktop.tryDemo')}
       </button>
+      <RecentSharesList />
     </section>
   )
 }
