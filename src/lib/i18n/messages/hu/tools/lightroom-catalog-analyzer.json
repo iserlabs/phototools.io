@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% helyi · Nincs feltöltés",
+      "privacyBadgeAria": "Adatvédelmi garancia: ez az eszköz teljes egészében a böngészőjében fut. A katalógusa soha nem kerül feltöltésre.",
+      "skipToMain": "Ugrás a fő tartalomra",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Elemezze a Lightroom Classic katalógusát",
+        "subhead": "Felszerelés, gyújtótávolságok, rekeszhasználati szokások, értékelések, GPS, szerkesztési intenzitás és még több — mindez a böngészőjében. A katalógusa soha nem hagyja el az eszközét.",
+        "explainer": "Válasszon ki egy .lrcat fájlt a számítógépéről. Megnyitjuk egy SQLite WebAssembly munkaszálban, kiszámítjuk az összesített statisztikákat, és interaktív műszerfalat jelenítünk meg. Semmi nem kerül feltöltésre.",
+        "tryDemo": "Próbálja ki a demó katalógust"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Ehhez asztali gép kell",
+        "body": "A Lightroom Katalóguselemzőnek szüksége van a Lightroom Classic katalógusfájljára (.lrcat), amely a számítógépén található — nem a telefonján.",
+        "tryDemoCta": "Próbálja ki itt a demót",
+        "openOnDesktop": "Nyissa meg ezt az oldalt a számítógépén, hogy elemezze a saját katalógusát.",
+        "copyLink": "Hivatkozás másolása",
+        "copyLinkSuccess": "Hivatkozás másolva",
+        "screenshotAlt": "A Lightroom Katalóguselemző műszerfalának előnézete"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "Húzza ide a .lrcat fájlt, vagy kattintson a tallózáshoz",
+        "tapPrompt": "Koppintson egy .lrcat fájl kiválasztásához",
+        "browseButton": "Katalógus tallózása",
+        "selectedFile": "Kiválasztva: {fileName}",
+        "ariaLabel": "Lightroom Classic katalógusfájl-választó",
+        "errorNotLrcat": "Ez a fájl nem tűnik Lightroom Classic katalógusnak (.lrcat).",
+        "errorReadFailed": "Nem sikerült beolvasni ezt a fájlt. Próbálja újra."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Nagy katalógus — figyelem",
+        "body": "A(z) {fileName} mérete {sizeGb} GB. A feldolgozás 30 másodpercig vagy tovább tarthat, és sok memóriát használhat. Folytatja?",
+        "continue": "Folytatás",
+        "cancel": "Mégse"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "A katalógus elemzése",
+        "subtitle": "Ez teljes egészében a böngészőjében fut. Semmi nem kerül feltöltésre.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Fájl beolvasása…",
+          "opening": "Katalógus megnyitása…",
+          "schema": "Séma ellenőrzése…",
+          "hashing": "Hash kiszámítása…",
+          "aggregating": "Statisztikák kiszámítása…",
+          "finalizing": "Befejezés…"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Gyorsítótárból betöltve",
+        "reanalyze": "Újraelemzés",
+        "reanalyzeAria": "A gyorsítótárazott eredmény elvetése, és a katalógus újraelemzése az eredeti fájlból."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "Nem sikerült elemezni ezt a katalógust",
+        "retry": "Másik katalógus kipróbálása",
+        "parseFailed": "Nem sikerült feldolgozni ezt a katalógust. Lehet, hogy meg van nyitva a Lightroomban, részlegesen lett kiírva, vagy váratlan formátumú.",
+        "workerFailed": "Az elemzőmotor nem indult el. Töltse újra az oldalt, és próbálja újra.",
+        "schemaTooNew": "Ezt a katalógust a Lightroom Classic egy újabb verziójával hozták létre, mint amit ez az eszköz egyelőre támogat.",
+        "schemaTooOld": "Ezt a katalógust a Lightroom Classic egy túl régi verziójával hozták létre ehhez az eszközhöz.",
+        "tooLarge": "Ez a katalógus túl nagy ahhoz, hogy a böngészőben elemezzük.",
+        "corrupt": "Ez a katalógus sérültnek vagy hiányosnak tűnik, és nem volt beolvasható.",
+        "notLightroom": "Ez a fájl nem Lightroom Classic katalógus-adatbázis.",
+        "unknown": "Hiba történt a katalógus elemzése közben. Kérjük, próbálja újra."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Műszerfal szakaszai",
+        "jumpToSection": "Ugrás a szakaszhoz",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "Kiemelések",
+          "whatYouShoot": "Mit fényképez",
+          "howYouCurate": "Hogyan válogat",
+          "exploreCompare": "Felfedezés és összehasonlítás",
+          "catalog": "Katalógus"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "Az év összegzése",
+          "year-to-year": "Évről évre",
+          "overview": "Áttekintés",
+          "gear": "Felszerelés lebontása",
+          "focal-length": "Gyújtótávolság",
+          "focal-length-per-zoom": "Gyújtótávolság zoomonként",
+          "apertures": "Optimális rekesz",
+          "time-of-day": "Napszak",
+          "heatmap": "Fényképezési hőtérkép",
+          "gps": "GPS-helyek",
+          "curation": "Válogatási tölcsér",
+          "edit-intensity": "Szerkesztési intenzitás",
+          "ratings": "Értékelések és kiválasztások",
+          "keywords": "Kulcsszó-lefedettség",
+          "bursts": "Sorozatfelvétel-észlelés",
+          "drilldown": "Részletes felfedező",
+          "period-comparison": "Időszak-összehasonlítás",
+          "catalog-health": "Katalógus állapota"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "{section} betöltése…",
+        "footerNote": "A böngészőjében számítva a helyi katalógusfájlból. Semmi nem került feltöltésre."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Az év összegzése",
+          "yearLabel": "Év",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Összes fénykép",
+            "daysShot": "Fényképezett napok",
+            "topBody": "Legtöbbet használt váz",
+            "topLens": "Legtöbbet használt objektív",
+            "topFocalLength": "Leggyakoribb gyújtótávolság",
+            "topAperture": "Leggyakoribb rekesz",
+            "mostProlificMonth": "Legtermékenyebb hónap",
+            "avgShotsPerDay": "Átl. felvétel / nap"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Havi mennyiség",
+            "topGearShare": "Fő felszerelés aránya",
+            "timeOfDayShare": "Napszak aránya"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "A legtermékenyebb hónapja a(z) {month} volt ({count} fénykép). Az adott hónap leggyakoribb objektíve: {lens}.",
+          "empty": "Ehhez a katalógushoz még nincs évösszegző adat.",
+          "caption": "A(z) {year} fő statisztikái és minidiagramjai: {totalPhotos} fénykép {daysShot} nap alatt, leggyakoribb váz {topBody}, leggyakoribb objektív {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "Évről évre",
+          "yearCountLabel": "Utolsó megjelenítése",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 év",
+            "3": "3 év",
+            "5": "5 év"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Legnagyobb változás: {label} a(z) {year} évben ({delta}).",
+          "stat": "Statisztika",
+          "empty": "Az évről évre összehasonlításhoz legalább 2 teljes év katalógusadat szükséges.",
+          "caption": "Éves statisztikák egymás mellett, az előző évhez viszonyított eltéréssel {n} évre."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Áttekintés",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Összes fénykép",
+            "dateRange": "Dátumtartomány",
+            "daysShot": "Fényképezett napok",
+            "photosPerDay": "Fénykép / nap",
+            "bodyCount": "Vázak",
+            "lensCount": "Objektívek",
+            "topBody": "Leggyakoribb váz",
+            "topLens": "Leggyakoribb objektív",
+            "topFocalLength": "Leggyakoribb gyújtótávolság"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Katalógus-áttekintés: {totalPhotos} fénykép {daysShot} nap alatt, {bodyCount} váz, {lensCount} objektív."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "Felszerelés",
+          "bodiesOverTime": "Vázak az idő során",
+          "topLenses": "Leggyakoribb objektívek",
+          "topCombos": "Leggyakoribb váz + objektív párosítások",
+          "retired": "Nyugdíjazott (12 hónapja nem használt)",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "Váz",
+            "lens": "Objektív",
+            "count": "Fényképek",
+            "firstUsed": "Először használva",
+            "lastUsed": "Utoljára használva"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Felszerelés lebontása: leggyakoribb objektív {topLens}, {topLensCount} fényképpel; {comboCount} fő párosítás megjelenítve."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "Gyújtótávolság",
+          "histogramTitle": "Gyújtótávolság-eloszlás (35mm-es megfelelő)",
+          "histogramAria": "Gyújtótávolság-hisztogram",
+          "topPeaks": "Fő csúcsok",
+          "onePrime": "Egy {mm}mm-es fix objektív a felvételeinek {pct}%-át lefedné ±25%-on belül.",
+          "noPrime": "A gyújtótávolság-használata túl szétszórt ahhoz, hogy egyetlen fix objektív domináljon.",
+          "caption": "1mm-es rekeszekkel készült hisztogram {min}mm-től {max}mm-ig; {peakCount} fő csúcs felcímkézve."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Gyújtótávolság zoomonként",
+          "callout": "A(z) {lens} objektíven a felvételek {pct}%-a {mm}mm-en készült.",
+          "empty": "Nem észleltünk zoomobjektíveket ebben a katalógusban.",
+          "caption": "{n} zoomobjektív-hisztogram a domináns gyújtótávolság kiemelésével."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Optimális rekesz",
+          "callout": "A(z) {lens} objektívet az idő {pct}%-ában teljesen nyitott rekesszel fényképezi.",
+          "empty": "Nincs elég adat — legalább egy objektív szükséges 100+ fényképpel.",
+          "caption": "{n} objektív rekesz-hisztogramja."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Napszak",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Óra szerint",
+            "sun": "Napszög"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "A katalógusának {pct}%-a tartalmaz GPS-t — a napszög szerinti lebontás csak ezeket a fényképeket tükrözi.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "Aranyóra",
+            "blueHour": "Kék óra",
+            "midday": "Dél",
+            "night": "Éjszaka"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "Váz szerint",
+          "perGearPeak": "{gear} — csúcsóra {hour}:00",
+          "caption": "Fényképszámok 24 órán át, opcionális napszög szerinti lebontással."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Fényképezési hőtérkép",
+          "aria": "Fényképezési hőtérkép — tevékenységnaptár",
+          "tooltip": "{date}: {count} fénykép, leggyakoribb objektív {topLens}",
+          "caption": "Évről évre tevékenységnaptár {years} éven át."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "GPS-helyek",
+          "aria": "A katalógus fényképklasztereinek GPS-térképe",
+          "coverage": "A katalógusának {pct}%-a tartalmaz GPS-adatot ({count} fénykép).",
+          "topRegions": "Fő régiók",
+          "empty": "Nem található GPS-adat ebben a katalógusban.",
+          "caption": "Egyközepű hengeres világtérkép {clusters} összesített klaszterrel; a PII-védelem kihagyja az 5-nél kevesebb fényképet tartalmazó rácscellákat."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Válogatási tölcsér",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "Összes",
+            "notRejected": "Nem elutasított",
+            "rated1Plus": "1+ csillag",
+            "rated4Plus": "4+ csillag"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Kiválasztási arány felszerelés szerint",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Név",
+            "total": "Összes",
+            "rated4Plus": "4+ csillag",
+            "pickRate": "Kiválasztási arány"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Tölcsér {total} összes fényképtől {rated4Plus} darab 4+ értékelésű fényképig ({pickRate}% kiválasztási arány)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Szerkesztési intenzitás",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "Átl. expozíciós eltolás",
+            "avgCrop": "Átl. levágás %",
+            "pctLocal": "Helyi korrekciókkal %",
+            "pctPresets": "Előbeállításokkal %"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Szerkesztési intenzitáspontszám az idő során",
+          "topPresets": "Leggyakoribb előbeállítások",
+          "perGear": "Pontszám felszerelés szerint",
+          "sampled": "Becslés {n} fénykép 5%-os mintája alapján.",
+          "caption": "Átlagos szerkesztési pontszám a teljes katalógusra, havi trenddel és felszerelés szerinti lebontással."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Értékelések és kiválasztások",
+          "distribution": "Értékelés-eloszlás",
+          "colorLabels": "Színcímkék",
+          "perGear": "Kiválasztási arány felszerelés szerint",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Név",
+            "total": "Összes",
+            "rated4Plus": "4+ csillag",
+            "pickRate": "Kiválasztási arány"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "Értékelés",
+            "count": "Fényképek"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Értékelés-eloszlás {colorLabelCount} színcímkével és felszerelés szerinti kiválasztási arányokkal."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Kulcsszó-lefedettség",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Címkézett fényképek",
+            "untagged": "Címkézetlen fényképek",
+            "uniqueKeywords": "Egyedi kulcsszavak",
+            "avgPerPhoto": "Átl. kulcsszó / címkézett fénykép",
+            "orphans": "Árva kulcsszavak"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Leggyakoribb kulcsszavak",
+          "blindSpots": "Legnagyobb vakfoltok",
+          "blindSpotItem": "{yearMonth} — {pct}% lefedettség",
+          "blindSpotsEmpty": "A lefedettség egyenletesnek tűnik a hónapok között.",
+          "caption": "Címke-lefedettségi statisztikák és a {n} leggyakoribb kulcsszó (PII-védelem: csak a 3+ fényképen szereplő kulcsszavak)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Sorozatfelvétel-észlelés",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Összes sorozat",
+            "photosInBursts": "Fényképek sorozatokban",
+            "pctInBursts": "A katalógus sorozatokban lévő %-a",
+            "longestBurst": "Leghosszabb sorozat"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Sorozathossz-eloszlás",
+          "keeperRate": "A sorozatfényképek {burstRate}%-ban kapnak 4+ értékelést — {delta}%-kal {direction}, mint az egyedi felvételek ({singleRate}%).",
+          "moreOften": "gyakrabban",
+          "lessOften": "ritkábban",
+          "caption": "Sorozathossz-eloszlás; megtartási arány {burstRate}% az egyedi felvételek {singleRate}%-ával szemben."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
+          "title": "Részletes felfedező",
+          "description": "Szűrje a műszerfalat dátum, felszerelés, gyújtótávolság, rekesz, ISO, értékelés vagy kiválasztási állapot szerint. Alkalmazza a változtatásokat egyszerre.",
+          "dateRange": "Dátumtartomány",
+          "dateStart": "Ettől",
+          "dateEnd": "Eddig",
+          "cameras": "Fényképezőgépek",
+          "lenses": "Objektívek",
+          "focalLength": "Gyújtótávolság (mm, 35mm-es megfelelő)",
           "focalLengthMin": "Min mm",
           "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "aperture": "Rekesz (f-szám)",
+          "apertureMin": "Min f-szám",
+          "apertureMax": "Max f-szám",
           "iso": "ISO",
           "isoMin": "Min ISO",
           "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "ratings": "Értékelések",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "Kiválasztási állapot",
+          "pickAny": "Bármely",
+          "pickFlagged": "Megjelölt",
+          "pickRejected": "Elutasított",
+          "pickNone": "Megjelöletlen",
+          "apply": "Alkalmaz",
+          "reset": "Visszaállítás",
+          "activeFilters": "Aktív szűrők",
+          "removeFilter": "{label} szűrő eltávolítása",
+          "filterDateRange": "Dátum {start} – {end}",
+          "filterCameras": "Fényképezőgép: {names}",
+          "filterLenses": "Objektív: {names}",
+          "filterFocalLength": "Gyújtótávolság {min}–{max}mm",
+          "filterAperture": "Rekesz f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "Értékelés: {ratings}",
+          "filterPicks": "Kiválasztás: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "Időszak-összehasonlítás",
+          "periodA": "A időszak",
+          "periodB": "B időszak",
+          "start": "Kezdet",
+          "end": "Vég",
+          "apply": "Alkalmaz",
           "headers": {
-            "stat": "Stat",
+            "stat": "Statisztika",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Összes fénykép",
+            "daysShot": "Fényképezett napok",
+            "topBody": "Leggyakoribb váz",
+            "topLens": "Leggyakoribb objektív",
+            "topFocalLength": "Leggyakoribb gyújtótávolság"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Válasszon dátumtartományt minden időszakhoz, és kattintson az Alkalmaz gombra.",
+          "caption": "Két tetszőleges dátumtartomány egymás melletti összehasonlítása eltéréses oszloppal."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Katalógus állapota",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Hiányzó eredetik",
+            "missingPreviews": "Hiányzó előnézetek",
+            "brokenPaths": "Hibás útvonalak",
+            "likelyDuplicates": "Valószínű duplikátumok"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Valószínű duplikátum-klaszterek",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Felvétel ideje",
+            "size": "Klaszterméret",
+            "firstPath": "Első útvonal",
+            "lastPath": "Utolsó útvonal"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Sorozatexpozíciós sorozatok jelenhetnek meg itt; ellenőrizze törlés előtt.",
+          "missingByRootFolder": "Hiányzó eredetik gyökérmappa szerint",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "Gyökérmappa",
+            "count": "Hiányzó"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "A Lightroom Classicban: Könyvtár → Hiányzó fényképek keresése feloldhatja a hibás útvonalakat.",
+          "caption": "Katalógus-állapot összegzése: {missing} hiányzó eredeti, {duplicates} valószínű duplikátum."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "Az elemzés exportálása",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Markdown másolása",
+          "copied": "Markdown jelentés másolva. ~{kb} KB.",
+          "downloaded": "A vágólap nem érhető el — a jelentés helyette .md fájlként lett letöltve."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "PDF exportálása",
+          "loadingEngine": "PDF-motor betöltése…",
+          "generating": "Jelentés generálása…",
+          "success": "PDF-jelentés letöltve.",
+          "error": "Nem sikerült létrehozni a PDF-et. Próbálja helyette a Markdownt vagy a Megosztást.",
+          "title": "Lightroom katalóguselemzés",
+          "filteredSuffix": " (Szűrt nézet)",
+          "localFooter": "A katalógusa soha nem került feltöltésre — csak ezek az összesített statisztikák.",
+          "generatedBy": "Generálta a phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Összes fénykép",
+          "dateRange": "Dátumtartomány",
+          "catalogVersion": "Katalógus verziója",
+          "filterTitle": "Alkalmazott szűrő",
+          "page": "Oldal",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Az év összegzése",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Összes fénykép",
+                "daysShot": "Fényképezett napok",
+                "topBody": "Legtöbbet használt váz",
+                "topLens": "Legtöbbet használt objektív"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Legtermékenyebb hónap: {month} ({count} fénykép)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "Évről évre",
+              "stat": "Statisztika",
+              "biggestShift": "Legnagyobb változás: {label} a(z) {year} évben ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Áttekintés",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Összes fénykép",
+                "daysShot": "Fényképezett napok",
+                "topBody": "Leggyakoribb váz",
+                "topLens": "Leggyakoribb objektív"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "Felszerelés",
+              "bodiesOverTime": "Vázak az idő során",
+              "topLenses": "Leggyakoribb objektívek",
+              "retired": "Nyugdíjazott",
+              "lensHeader": "Objektív",
+              "photosHeader": "Fényképek"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "Gyújtótávolság",
+              "histogramTitle": "Gyújtótávolság-eloszlás (35mm-es megfelelő)",
+              "topPeaks": "Fő csúcsok",
+              "onePrime": "Egy {mm}mm-es fix objektív a felvételeinek {pct}%-át lefedné ±25%-on belül.",
+              "noPrime": "A gyújtótávolság-használata túl szétszórt ahhoz, hogy egyetlen fix objektív domináljon."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Gyújtótávolság zoomonként",
+              "perLens": "{lens}: a felvételek {pct}%-a {mm}mm-en"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Optimális rekesz",
+              "perLens": "{lens}: teljesen nyitott rekesszel fényképezve az idő {pct}%-ában"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Napszak",
+              "gpsNote": "A katalógusának {pct}%-a tartalmaz GPS-t — a napszög szerinti lebontás csak ezeket a fényképeket tükrözi."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Fényképezési hőtérkép",
+              "daysWithPhotos": "Fényképes napok",
+              "yearsCovered": "Lefedett évek"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "GPS-helyek",
+              "coverage": "A katalógus {pct}%-a tartalmaz GPS-t",
+              "topRegions": "Fő régiók",
+              "regionHeader": "Régió",
+              "photosHeader": "Fényképek"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Válogatási tölcsér",
+              "stageHeader": "Szakasz",
+              "photosHeader": "Fényképek"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Szerkesztési intenzitás",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "Átl. expozíciós eltolás",
+                "crop": "Átl. levágás",
+                "local": "Helyi korrekciókkal",
+                "presets": "Előbeállításokkal"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Becslés a katalógus egy mintája alapján."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "Értékelések és kiválasztások",
+              "ratingHeader": "Értékelés",
+              "photosHeader": "Fényképek"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Kulcsszó-lefedettség",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Címkézett",
+                "untagged": "Címkézetlen",
+                "unique": "Egyedi kulcsszavak",
+                "orphans": "Árva kulcsszavak"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "Kulcsszó",
+              "photosHeader": "Fényképek"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Sorozatfelvétel-észlelés",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Összes sorozat",
+                "inBursts": "Fényképek sorozatokban",
+                "longest": "Leghosszabb sorozat"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "A sorozatfényképek ≥4 értékelést kapnak: {a}% az egyedi felvételek {b}%-ával szemben."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "Időszak-összehasonlítás",
+              "notExported": "Az Időszak-összehasonlítás interaktív az alkalmazásban, és nem kerül exportálásra."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Katalógus állapota",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Hiányzó eredetik",
+                "previews": "Hiányzó előnézetek",
+                "broken": "Hibás útvonalak",
+                "dupes": "Valószínű duplikátumok"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Könyvtár → Hiányzó fényképek keresése feloldhatja a hibás útvonalakat."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Megosztás URL-en",
+          "placeholderTitle": "A 3. terv ezt összeköti."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Megosztás URL-en",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Ossza meg az elemzéséhez vezető hivatkozást",
+          "uploadedHeading": "Mi kerül feltöltésre",
+          "uploaded": "Számok, top-N listák és hisztogramok — pontosan a fent megjelenített adatok.",
+          "notUploadedHeading": "Mi NEM kerül feltöltésre",
+          "notUploaded": "Fájlnevek, képfájlok, mappa-útvonalak, a ~5 km-es rácscelláknál pontosabb GPS-koordináták, valamint a 3-nál kevesebbszer használt kulcsszavak.",
+          "expiresLabel": "A hivatkozás lejár",
+          "expires24h": "24 óra",
+          "expires7d": "7 nap",
+          "expires30d": "30 nap",
+          "cancel": "Mégse",
+          "create": "Hivatkozás létrehozása",
+          "creating": "Hivatkozás létrehozása…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Elérte a megosztási korlátot. Próbálja újra egy óra múlva.",
+          "storage-unavailable": "A tároló átmenetileg nem érhető el. Próbálja újra egy pillanat múlva.",
+          "invalid": "Nem sikerült megosztani ezt az elemzést — az adatok hibásnak tűnnek.",
+          "unknown": "Hiba történt a hivatkozás létrehozása közben. Próbálja újra."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "A hivatkozása készen áll",
+          "expiresOn": "Lejár: {date}",
+          "copy": "Másolás",
+          "copied": "Hivatkozás másolva",
+          "openNewTab": "Megnyitás új lapon",
+          "delete": "Megosztás törlése",
+          "deleted": "Megosztás törölve",
+          "urlLabel": "Megosztható URL"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "Legutóbbi megosztásai",
+          "subtitle": "Az ezen az eszközön létrehozott hivatkozások. Nyisson meg egyet a megtekintéshez, vagy törölje a hozzáférés visszavonásához.",
+          "idLabel": "Megosztás …{last4}",
+          "created": "Létrehozva: {date}",
+          "expires": "Lejár: {date}",
+          "filtered": "Szűrve: {summary}",
+          "open": "Megnyitás",
+          "delete": "Törlés"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Alkalmazott szűrő",
+          "summaryShort": "Ez a nézet szűrve van: {summary}",
+          "showAll": "Összes szűrő megjelenítése",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "Dátumok",
+            "cameras": "Fényképezőgépek",
+            "lenses": "Objektívek",
+            "focalLengthRange": "Gyújtótávolság",
+            "apertureRange": "Rekesz",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Értékelések",
+            "keywords": "Kulcsszavak",
+            "picks": "Kiválasztások"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Ez egy megosztott elemzés. Az eredeti katalógus soha nem került feltöltésre — csak ezek az összesített statisztikák.",
+          "cta": "Próbálja ki az eszközt a saját katalógusával",
+          "expiredTitle": "Ez a megosztás lejárt vagy törölve lett.",
+          "expiredBody": "A hivatkozás elérhette a lejárati dátumát, vagy a létrehozó törölte.",
+          "schemaNewerTitle": "Újabb verzióval létrehozva",
+          "schemaNewerBody": "Ez az elemzés az eszköz egy újabb verziójával készült. Próbálja meg frissíteni az oldalt.",
+          "pageTitle": "Megosztott Lightroom katalóguselemzés"
         }
       }
     }

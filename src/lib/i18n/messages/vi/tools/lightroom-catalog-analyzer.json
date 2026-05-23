@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% Cục bộ · Không tải lên",
+      "privacyBadgeAria": "Đảm bảo quyền riêng tư: công cụ này chạy hoàn toàn trong trình duyệt của bạn. Catalog của bạn không bao giờ được tải lên.",
+      "skipToMain": "Chuyển đến nội dung chính",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Phân tích catalog Lightroom Classic của bạn",
+        "subhead": "Thiết bị, tiêu cự, thói quen khẩu độ, xếp hạng, GPS, cường độ chỉnh sửa và hơn thế nữa — hoàn toàn trong trình duyệt của bạn. Catalog của bạn không bao giờ rời khỏi thiết bị.",
+        "explainer": "Chọn một tệp .lrcat từ máy tính của bạn. Chúng tôi mở nó trong một worker SQLite WebAssembly, tính toán thống kê tổng hợp và hiển thị một bảng điều khiển tương tác. Không có gì được tải lên.",
+        "tryDemo": "Thử catalog demo"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Cái này cần máy tính để bàn",
+        "body": "Lightroom Catalog Analyzer cần tệp catalog Lightroom Classic (.lrcat) của bạn, vốn nằm trên máy tính — không phải trên điện thoại.",
+        "tryDemoCta": "Thử demo tại đây",
+        "openOnDesktop": "Mở trang này trên máy tính của bạn để phân tích catalog của riêng bạn.",
+        "copyLink": "Sao chép liên kết",
+        "copyLinkSuccess": "Đã sao chép liên kết",
+        "screenshotAlt": "Bản xem trước bảng điều khiển Lightroom Catalog Analyzer"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "Thả tệp .lrcat của bạn vào đây, hoặc nhấp để duyệt",
+        "tapPrompt": "Chạm để chọn một tệp .lrcat",
+        "browseButton": "Duyệt catalog",
+        "selectedFile": "Đã chọn: {fileName}",
+        "ariaLabel": "Bộ chọn tệp catalog Lightroom Classic",
+        "errorNotLrcat": "Tệp đó không giống một catalog Lightroom Classic (.lrcat).",
+        "errorReadFailed": "Không thể đọc tệp đó. Hãy thử lại."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Catalog lớn — lưu ý",
+        "body": "{fileName} là {sizeGb} GB. Việc phân tích có thể mất 30 giây trở lên và sử dụng nhiều bộ nhớ. Tiếp tục?",
+        "continue": "Tiếp tục",
+        "cancel": "Hủy"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "Đang phân tích catalog của bạn",
+        "subtitle": "Việc này chạy hoàn toàn trong trình duyệt của bạn. Không có gì được tải lên.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Đang đọc tệp…",
+          "opening": "Đang mở catalog…",
+          "schema": "Đang kiểm tra schema…",
+          "hashing": "Đang tính toán hash…",
+          "aggregating": "Đang tính toán thống kê…",
+          "finalizing": "Đang hoàn tất…"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Đã tải từ bộ nhớ đệm",
+        "reanalyze": "Phân tích lại",
+        "reanalyzeAria": "Loại bỏ kết quả đã lưu trong bộ nhớ đệm và phân tích lại catalog này từ tệp gốc."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "Chúng tôi không thể phân tích catalog đó",
+        "retry": "Thử catalog khác",
+        "parseFailed": "Chúng tôi không thể phân tích catalog đó. Nó có thể đang mở trong Lightroom, được ghi một phần, hoặc ở định dạng không mong đợi.",
+        "workerFailed": "Công cụ phân tích không khởi động được. Tải lại trang và thử lại.",
+        "schemaTooNew": "Catalog này được tạo bởi một phiên bản Lightroom Classic mới hơn so với những gì công cụ này hỗ trợ.",
+        "schemaTooOld": "Catalog này được tạo bởi một phiên bản Lightroom Classic quá cũ đối với công cụ này.",
+        "tooLarge": "Catalog này quá lớn để phân tích trong trình duyệt.",
+        "corrupt": "Catalog này dường như bị hỏng hoặc không hoàn chỉnh và không thể đọc được.",
+        "notLightroom": "Tệp đó không phải là cơ sở dữ liệu catalog Lightroom Classic.",
+        "unknown": "Đã xảy ra lỗi khi phân tích catalog đó. Vui lòng thử lại."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Các phần bảng điều khiển",
+        "jumpToSection": "Nhảy đến phần",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
+          "highlights": "Điểm nổi bật",
+          "whatYouShoot": "Bạn chụp gì",
+          "howYouCurate": "Cách bạn chọn lọc",
+          "exploreCompare": "Khám phá & so sánh",
           "catalog": "Catalog"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "Tổng kết năm",
+          "year-to-year": "Năm qua năm",
+          "overview": "Tổng quan",
+          "gear": "Phân tích thiết bị",
+          "focal-length": "Tiêu cự",
+          "focal-length-per-zoom": "Tiêu cự theo ống kính zoom",
+          "apertures": "Điểm khẩu độ tối ưu",
+          "time-of-day": "Thời điểm trong ngày",
+          "heatmap": "Bản đồ nhiệt chụp ảnh",
+          "gps": "Vị trí GPS",
+          "curation": "Phễu chọn lọc",
+          "edit-intensity": "Cường độ chỉnh sửa",
+          "ratings": "Xếp hạng & lựa chọn",
+          "keywords": "Mức độ phủ từ khóa",
+          "bursts": "Phát hiện chụp liên tục",
+          "drilldown": "Trình khám phá chi tiết",
+          "period-comparison": "So sánh giai đoạn",
+          "catalog-health": "Tình trạng catalog"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "Đang tải {section}…",
+        "footerNote": "Được tính toán trong trình duyệt của bạn từ tệp catalog cục bộ. Không có gì được tải lên."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Tổng kết năm",
+          "yearLabel": "Năm",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Tổng số ảnh",
+            "daysShot": "Số ngày chụp",
+            "topBody": "Thân máy dùng nhiều nhất",
+            "topLens": "Ống kính dùng nhiều nhất",
+            "topFocalLength": "Tiêu cự hàng đầu",
+            "topAperture": "Khẩu độ hàng đầu",
+            "mostProlificMonth": "Tháng năng suất nhất",
+            "avgShotsPerDay": "TB ảnh / ngày"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Số lượng hàng tháng",
+            "topGearShare": "Tỷ lệ thiết bị hàng đầu",
+            "timeOfDayShare": "Tỷ lệ theo thời điểm trong ngày"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "Tháng năng suất nhất của bạn là {month} ({count} ảnh). Ống kính hàng đầu tháng đó: {lens}.",
+          "empty": "Chưa có dữ liệu tổng kết năm cho catalog này.",
+          "caption": "Thống kê chính và biểu đồ nhỏ cho {year}: {totalPhotos} ảnh trong {daysShot} ngày, thân máy hàng đầu {topBody}, ống kính hàng đầu {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "Năm qua năm",
+          "yearCountLabel": "Hiển thị gần đây nhất",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 năm",
+            "3": "3 năm",
+            "5": "5 năm"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Thay đổi lớn nhất: {label} vào năm {year} ({delta}).",
+          "stat": "Chỉ số",
+          "empty": "Cần ít nhất 2 năm dữ liệu catalog đầy đủ để so sánh năm qua năm.",
+          "caption": "Thống kê hàng năm song song với chênh lệch so với năm trước cho {n} năm."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Tổng quan",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Tổng số ảnh",
+            "dateRange": "Khoảng thời gian",
+            "daysShot": "Số ngày chụp",
+            "photosPerDay": "Ảnh / ngày",
+            "bodyCount": "Thân máy",
+            "lensCount": "Ống kính",
+            "topBody": "Thân máy hàng đầu",
+            "topLens": "Ống kính hàng đầu",
+            "topFocalLength": "Tiêu cự hàng đầu"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Tổng quan catalog: {totalPhotos} ảnh trong {daysShot} ngày, {bodyCount} thân máy, {lensCount} ống kính."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "Thiết bị",
+          "bodiesOverTime": "Thân máy theo thời gian",
+          "topLenses": "Ống kính hàng đầu",
+          "topCombos": "Kết hợp thân máy + ống kính hàng đầu",
+          "retired": "Đã ngừng dùng (12 tháng không sử dụng)",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "Thân máy",
+            "lens": "Ống kính",
+            "count": "Ảnh",
+            "firstUsed": "Dùng lần đầu",
+            "lastUsed": "Dùng lần cuối"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Phân tích thiết bị: ống kính hàng đầu {topLens} với {topLensCount} ảnh; {comboCount} kết hợp hàng đầu được hiển thị."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "Tiêu cự",
+          "histogramTitle": "Phân bố tiêu cự (tương đương 35mm)",
+          "histogramAria": "Biểu đồ tiêu cự",
+          "topPeaks": "Đỉnh hàng đầu",
+          "onePrime": "Một ống kính fix {mm}mm sẽ bao phủ {pct}% số ảnh của bạn trong khoảng ±25%.",
+          "noPrime": "Việc sử dụng tiêu cự của bạn quá phân tán để một ống kính fix duy nhất chiếm ưu thế.",
+          "caption": "Biểu đồ với khoảng chia 1mm từ {min}mm đến {max}mm; {peakCount} đỉnh hàng đầu được gắn nhãn."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Tiêu cự theo ống kính zoom",
+          "callout": "Trên {lens} của bạn, {pct}% số ảnh ở {mm}mm.",
+          "empty": "Không phát hiện ống kính zoom nào trong catalog này.",
+          "caption": "{n} biểu đồ ống kính zoom với tiêu cự chủ đạo được làm nổi bật."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Điểm khẩu độ tối ưu",
+          "callout": "Bạn chụp {lens} mở khẩu tối đa {pct}% thời gian.",
+          "empty": "Không đủ dữ liệu — cần ít nhất một ống kính có 100+ ảnh.",
+          "caption": "{n} biểu đồ khẩu độ ống kính."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Thời điểm trong ngày",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Giờ đồng hồ",
+            "sun": "Góc mặt trời"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "{pct}% catalog của bạn có GPS — phân tích góc mặt trời chỉ phản ánh những ảnh đó.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "Giờ vàng",
+            "blueHour": "Giờ xanh",
+            "midday": "Giữa trưa",
+            "night": "Ban đêm"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "Theo thân máy",
+          "perGearPeak": "{gear} — giờ cao điểm {hour}:00",
+          "caption": "Số lượng ảnh trong 24 giờ với phân tích góc mặt trời tùy chọn."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Bản đồ nhiệt chụp ảnh",
+          "aria": "Bản đồ nhiệt chụp ảnh — lịch đóng góp",
+          "tooltip": "{date}: {count} ảnh, ống kính hàng đầu {topLens}",
+          "caption": "Lịch đóng góp theo từng năm trong {years} năm."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "Vị trí GPS",
+          "aria": "Bản đồ GPS của các cụm ảnh trong catalog",
+          "coverage": "{pct}% catalog của bạn có dữ liệu GPS ({count} ảnh).",
+          "topRegions": "Khu vực hàng đầu",
+          "empty": "Không tìm thấy dữ liệu GPS nào trong catalog này.",
+          "caption": "Bản đồ thế giới chiếu hình chữ nhật với {clusters} cụm tổng hợp; biện pháp bảo vệ PII loại bỏ các ô lưới có ít hơn 5 ảnh."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Phễu chọn lọc",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "Tổng cộng",
+            "notRejected": "Không bị từ chối",
+            "rated1Plus": "1+ sao",
+            "rated4Plus": "4+ sao"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Tỷ lệ chọn theo thiết bị",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Tên",
+            "total": "Tổng cộng",
+            "rated4Plus": "4+ sao",
+            "pickRate": "Tỷ lệ chọn"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Phễu từ {total} tổng số ảnh đến {rated4Plus} được xếp hạng 4+ ({pickRate}% tỷ lệ chọn)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Cường độ chỉnh sửa",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "TB thay đổi phơi sáng",
+            "avgCrop": "TB cắt %",
+            "pctLocal": "% có điều chỉnh cục bộ",
+            "pctPresets": "% có preset"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Điểm cường độ chỉnh sửa theo thời gian",
+          "topPresets": "Preset hàng đầu",
+          "perGear": "Điểm theo thiết bị",
+          "sampled": "Ước tính dựa trên mẫu 5% của {n} ảnh.",
+          "caption": "Điểm chỉnh sửa trung bình trên toàn catalog với xu hướng hàng tháng và phân tích theo từng thiết bị."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Xếp hạng & lựa chọn",
+          "distribution": "Phân bố xếp hạng",
+          "colorLabels": "Nhãn màu",
+          "perGear": "Tỷ lệ chọn theo thiết bị",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Tên",
+            "total": "Tổng cộng",
+            "rated4Plus": "4+ sao",
+            "pickRate": "Tỷ lệ chọn"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "Xếp hạng",
+            "count": "Ảnh"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Phân bố xếp hạng với {colorLabelCount} nhãn màu và tỷ lệ chọn theo từng thiết bị."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Mức độ phủ từ khóa",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Ảnh có thẻ",
+            "untagged": "Ảnh không thẻ",
+            "uniqueKeywords": "Từ khóa duy nhất",
+            "avgPerPhoto": "TB từ khóa / ảnh có thẻ",
+            "orphans": "Từ khóa mồ côi"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Từ khóa hàng đầu",
+          "blindSpots": "Điểm mù lớn nhất",
+          "blindSpotItem": "{yearMonth} — {pct}% độ phủ",
+          "blindSpotsEmpty": "Độ phủ trông đồng đều qua các tháng.",
+          "caption": "Thống kê độ phủ thẻ và {n} từ khóa hàng đầu (bảo vệ PII: chỉ các từ khóa trên 3+ ảnh)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Phát hiện chụp liên tục",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Tổng số loạt chụp",
+            "photosInBursts": "Ảnh trong loạt chụp",
+            "pctInBursts": "% catalog trong loạt chụp",
+            "longestBurst": "Loạt chụp dài nhất"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Phân bố độ dài loạt chụp",
+          "keeperRate": "Ảnh loạt chụp đạt xếp hạng 4+ là {burstRate}% — {delta}% {direction} so với ảnh đơn lẻ ({singleRate}%).",
+          "moreOften": "thường xuyên hơn",
+          "lessOften": "ít thường xuyên hơn",
+          "caption": "Phân bố độ dài loạt chụp; tỷ lệ giữ lại {burstRate}% so với {singleRate}% đối với ảnh đơn lẻ."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
-          "focalLengthMin": "Min mm",
-          "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "title": "Trình khám phá chi tiết",
+          "description": "Lọc bảng điều khiển theo ngày, thiết bị, tiêu cự, khẩu độ, ISO, xếp hạng, hoặc trạng thái lựa chọn. Áp dụng tất cả thay đổi cùng một lúc.",
+          "dateRange": "Khoảng thời gian",
+          "dateStart": "Từ",
+          "dateEnd": "Đến",
+          "cameras": "Máy ảnh",
+          "lenses": "Ống kính",
+          "focalLength": "Tiêu cự (mm, tương đương 35mm)",
+          "focalLengthMin": "mm tối thiểu",
+          "focalLengthMax": "mm tối đa",
+          "aperture": "Khẩu độ (số f)",
+          "apertureMin": "Số f tối thiểu",
+          "apertureMax": "Số f tối đa",
           "iso": "ISO",
-          "isoMin": "Min ISO",
-          "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "isoMin": "ISO tối thiểu",
+          "isoMax": "ISO tối đa",
+          "ratings": "Xếp hạng",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "Trạng thái lựa chọn",
+          "pickAny": "Bất kỳ",
+          "pickFlagged": "Đã gắn cờ",
+          "pickRejected": "Bị từ chối",
+          "pickNone": "Chưa gắn cờ",
+          "apply": "Áp dụng",
+          "reset": "Đặt lại",
+          "activeFilters": "Bộ lọc đang hoạt động",
+          "removeFilter": "Xóa bộ lọc {label}",
+          "filterDateRange": "Ngày {start} – {end}",
+          "filterCameras": "Máy ảnh: {names}",
+          "filterLenses": "Ống kính: {names}",
+          "filterFocalLength": "Tiêu cự {min}–{max}mm",
+          "filterAperture": "Khẩu độ f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "Xếp hạng: {ratings}",
+          "filterPicks": "Lựa chọn: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "So sánh giai đoạn",
+          "periodA": "Giai đoạn A",
+          "periodB": "Giai đoạn B",
+          "start": "Bắt đầu",
+          "end": "Kết thúc",
+          "apply": "Áp dụng",
           "headers": {
-            "stat": "Stat",
+            "stat": "Chỉ số",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Tổng số ảnh",
+            "daysShot": "Số ngày chụp",
+            "topBody": "Thân máy hàng đầu",
+            "topLens": "Ống kính hàng đầu",
+            "topFocalLength": "Tiêu cự hàng đầu"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Chọn một khoảng thời gian cho mỗi giai đoạn và nhấp Áp dụng.",
+          "caption": "So sánh song song hai khoảng thời gian tùy ý với cột chênh lệch."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Tình trạng catalog",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Tệp gốc bị thiếu",
+            "missingPreviews": "Bản xem trước bị thiếu",
+            "brokenPaths": "Đường dẫn bị hỏng",
+            "likelyDuplicates": "Có thể trùng lặp"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Các cụm có thể trùng lặp",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Thời gian chụp",
+            "size": "Kích thước cụm",
+            "firstPath": "Đường dẫn đầu",
+            "lastPath": "Đường dẫn cuối"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Các chuỗi chụp bracket có thể xuất hiện ở đây; hãy xem lại trước khi xóa.",
+          "missingByRootFolder": "Tệp gốc bị thiếu theo thư mục gốc",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "Thư mục gốc",
+            "count": "Bị thiếu"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "Trong Lightroom Classic: Library → Find Missing Photos có thể giải quyết các đường dẫn bị hỏng.",
+          "caption": "Tóm tắt tình trạng catalog: {missing} tệp gốc bị thiếu, {duplicates} có thể trùng lặp."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "Xuất bản phân tích này",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Sao chép Markdown",
+          "copied": "Đã sao chép báo cáo Markdown. ~{kb} KB.",
+          "downloaded": "Bộ nhớ tạm không khả dụng — đã tải báo cáo xuống dưới dạng tệp .md thay thế."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "Xuất PDF",
+          "loadingEngine": "Đang tải công cụ PDF…",
+          "generating": "Đang tạo báo cáo…",
+          "success": "Đã tải xuống báo cáo PDF.",
+          "error": "Không thể tạo PDF. Hãy thử Markdown hoặc Chia sẻ thay thế.",
+          "title": "Phân tích catalog Lightroom",
+          "filteredSuffix": " (Chế độ xem đã lọc)",
+          "localFooter": "Catalog của bạn không bao giờ được tải lên — chỉ những thống kê tổng hợp này.",
+          "generatedBy": "Được tạo bởi phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Tổng số ảnh",
+          "dateRange": "Khoảng thời gian",
+          "catalogVersion": "Phiên bản catalog",
+          "filterTitle": "Bộ lọc đã áp dụng",
+          "page": "Trang",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Tổng kết năm",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Tổng số ảnh",
+                "daysShot": "Số ngày chụp",
+                "topBody": "Thân máy dùng nhiều nhất",
+                "topLens": "Ống kính dùng nhiều nhất"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Tháng năng suất nhất: {month} ({count} ảnh)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "Năm qua năm",
+              "stat": "Chỉ số",
+              "biggestShift": "Thay đổi lớn nhất: {label} vào năm {year} ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Tổng quan",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Tổng số ảnh",
+                "daysShot": "Số ngày chụp",
+                "topBody": "Thân máy hàng đầu",
+                "topLens": "Ống kính hàng đầu"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "Thiết bị",
+              "bodiesOverTime": "Thân máy theo thời gian",
+              "topLenses": "Ống kính hàng đầu",
+              "retired": "Đã ngừng dùng",
+              "lensHeader": "Ống kính",
+              "photosHeader": "Ảnh"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "Tiêu cự",
+              "histogramTitle": "Phân bố tiêu cự (tương đương 35mm)",
+              "topPeaks": "Đỉnh hàng đầu",
+              "onePrime": "Một ống kính fix {mm}mm sẽ bao phủ {pct}% số ảnh của bạn trong khoảng ±25%.",
+              "noPrime": "Việc sử dụng tiêu cự của bạn quá phân tán để một ống kính fix duy nhất chiếm ưu thế."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Tiêu cự theo ống kính zoom",
+              "perLens": "{lens}: {pct}% số ảnh ở {mm}mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Điểm khẩu độ tối ưu",
+              "perLens": "{lens}: chụp mở khẩu tối đa {pct}% thời gian"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Thời điểm trong ngày",
+              "gpsNote": "{pct}% catalog của bạn có GPS — phân tích góc mặt trời chỉ phản ánh những ảnh đó."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Bản đồ nhiệt chụp ảnh",
+              "daysWithPhotos": "Số ngày có ảnh",
+              "yearsCovered": "Số năm bao phủ"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "Vị trí GPS",
+              "coverage": "{pct}% catalog có GPS",
+              "topRegions": "Khu vực hàng đầu",
+              "regionHeader": "Khu vực",
+              "photosHeader": "Ảnh"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Phễu chọn lọc",
+              "stageHeader": "Giai đoạn",
+              "photosHeader": "Ảnh"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Cường độ chỉnh sửa",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "TB thay đổi phơi sáng",
+                "crop": "TB cắt",
+                "local": "Có điều chỉnh cục bộ",
+                "presets": "Có preset"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Ước tính dựa trên một mẫu của catalog."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "Xếp hạng & lựa chọn",
+              "ratingHeader": "Xếp hạng",
+              "photosHeader": "Ảnh"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Mức độ phủ từ khóa",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Có thẻ",
+                "untagged": "Không thẻ",
+                "unique": "Từ khóa duy nhất",
+                "orphans": "Từ khóa mồ côi"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "Từ khóa",
+              "photosHeader": "Ảnh"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Phát hiện chụp liên tục",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Tổng số loạt chụp",
+                "inBursts": "Ảnh trong loạt chụp",
+                "longest": "Loạt chụp dài nhất"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "Ảnh loạt chụp đạt xếp hạng ≥4: {a}% so với {b}% đối với ảnh đơn lẻ."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "So sánh giai đoạn",
+              "notExported": "So sánh giai đoạn mang tính tương tác trong ứng dụng và không được xuất ra."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Tình trạng catalog",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Tệp gốc bị thiếu",
+                "previews": "Bản xem trước bị thiếu",
+                "broken": "Đường dẫn bị hỏng",
+                "dupes": "Có thể trùng lặp"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Library → Find Missing Photos có thể giải quyết các đường dẫn bị hỏng."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Chia sẻ qua URL",
+          "placeholderTitle": "Plan 3 kết nối phần này."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Chia sẻ qua URL",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Chia sẻ một liên kết đến phân tích của bạn",
+          "uploadedHeading": "Những gì được tải lên",
+          "uploaded": "Số lượng, danh sách top-N, và biểu đồ — chính xác là dữ liệu được hiển thị ở trên.",
+          "notUploadedHeading": "Những gì KHÔNG được tải lên",
+          "notUploaded": "Tên tệp, tệp ảnh, đường dẫn thư mục, tọa độ GPS chi tiết hơn ô lưới ~5 km, và các từ khóa được dùng ít hơn 3 lần.",
+          "expiresLabel": "Liên kết hết hạn sau",
+          "expires24h": "24 giờ",
+          "expires7d": "7 ngày",
+          "expires30d": "30 ngày",
+          "cancel": "Hủy",
+          "create": "Tạo liên kết",
+          "creating": "Đang tạo liên kết…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Bạn đã đạt giới hạn chia sẻ. Hãy thử lại sau một giờ.",
+          "storage-unavailable": "Bộ nhớ tạm thời không khả dụng. Hãy thử lại sau giây lát.",
+          "invalid": "Không thể chia sẻ phân tích này — dữ liệu có vẻ bị lỗi.",
+          "unknown": "Đã xảy ra lỗi khi tạo liên kết. Hãy thử lại."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "Liên kết của bạn đã sẵn sàng",
+          "expiresOn": "Hết hạn {date}",
+          "copy": "Sao chép",
+          "copied": "Đã sao chép liên kết",
+          "openNewTab": "Mở trong tab mới",
+          "delete": "Xóa chia sẻ này",
+          "deleted": "Đã xóa chia sẻ",
+          "urlLabel": "URL có thể chia sẻ"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "Các chia sẻ gần đây của bạn",
+          "subtitle": "Các liên kết bạn đã tạo trên thiết bị này. Mở một liên kết để xem, hoặc xóa để thu hồi quyền truy cập.",
+          "idLabel": "Chia sẻ …{last4}",
+          "created": "Đã tạo {date}",
+          "expires": "Hết hạn {date}",
+          "filtered": "Đã lọc: {summary}",
+          "open": "Mở",
+          "delete": "Xóa"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Bộ lọc đã áp dụng",
+          "summaryShort": "Chế độ xem này đã được lọc: {summary}",
+          "showAll": "Hiển thị tất cả bộ lọc",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "Ngày",
+            "cameras": "Máy ảnh",
+            "lenses": "Ống kính",
+            "focalLengthRange": "Tiêu cự",
+            "apertureRange": "Khẩu độ",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Xếp hạng",
+            "keywords": "Từ khóa",
+            "picks": "Lựa chọn"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Đây là một phân tích được chia sẻ. Catalog gốc không bao giờ được tải lên — chỉ những thống kê tổng hợp này.",
+          "cta": "Thử công cụ với catalog của riêng bạn",
+          "expiredTitle": "Chia sẻ này đã hết hạn hoặc bị xóa.",
+          "expiredBody": "Liên kết có thể đã đến ngày hết hạn, hoặc người tạo đã xóa nó.",
+          "schemaNewerTitle": "Được tạo bằng phiên bản mới hơn",
+          "schemaNewerBody": "Phân tích này được tạo bằng một phiên bản mới hơn của công cụ. Hãy thử làm mới trang.",
+          "pageTitle": "Phân tích catalog Lightroom được chia sẻ"
         }
       }
     }

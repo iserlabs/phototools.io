@@ -65,8 +65,8 @@
       "description": "Jämför megapixlar, visualisera utskriftsstorlekar och se filstorlekar för olika bildformat och DPI-värden"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Lightroom-kataloganalysator",
+      "description": "Analysera din Lightroom Classic-katalog — utrustning, brännvidd, bländare, betyg och mer — 100 % i din webbläsare"
     }
   }
 }

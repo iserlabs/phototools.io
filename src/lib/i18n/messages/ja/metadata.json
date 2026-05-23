@@ -91,8 +91,8 @@
       "description": "メガピクセルが72〜300 DPIでどのような印刷サイズになるかを各アスペクト比で視覚化。カメラ比較、ファイルサイズ、ピクセルビニング、クロップリーチを品質別プリント表で確認。"
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Lightroom カタログアナライザー — ブラウザだけで使える無料統計",
+      "description": "Lightroom Classic のカタログをブラウザ内でローカルに分析。機材、焦点距離、絞りの傾向、レーティングなどを確認できます。100% ローカル — カタログがアップロードされることはありません。"
     }
   }
 }

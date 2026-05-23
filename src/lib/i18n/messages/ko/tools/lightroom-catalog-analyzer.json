@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% 로컬 · 업로드 없음",
+      "privacyBadgeAria": "개인정보 보장: 이 도구는 전적으로 브라우저에서 실행됩니다. 카탈로그는 절대 업로드되지 않습니다.",
+      "skipToMain": "본문으로 건너뛰기",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Lightroom Classic 카탈로그 분석",
+        "subhead": "장비, 초점 거리, 조리개 사용 습관, 별점, GPS, 편집 강도 등 — 모두 브라우저에서 처리됩니다. 카탈로그는 기기를 벗어나지 않습니다.",
+        "explainer": "컴퓨터에서 .lrcat 파일을 선택하세요. SQLite WebAssembly 워커에서 열고 집계 통계를 계산해 대화형 대시보드를 렌더링합니다. 업로드되는 것은 없습니다.",
+        "tryDemo": "데모 카탈로그 사용해 보기"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "데스크톱이 필요합니다",
+        "body": "Lightroom 카탈로그 분석기에는 Lightroom Classic 카탈로그 파일(.lrcat)이 필요하며, 이는 휴대폰이 아니라 컴퓨터에 저장되어 있습니다.",
+        "tryDemoCta": "여기서 데모 사용해 보기",
+        "openOnDesktop": "직접 카탈로그를 분석하려면 이 페이지를 컴퓨터에서 여세요.",
+        "copyLink": "링크 복사",
+        "copyLinkSuccess": "링크가 복사되었습니다",
+        "screenshotAlt": "Lightroom 카탈로그 분석기 대시보드 미리보기"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "여기에 .lrcat 파일을 끌어다 놓거나 클릭하여 찾아보기",
+        "tapPrompt": "탭하여 .lrcat 파일 선택",
+        "browseButton": "카탈로그 찾아보기",
+        "selectedFile": "선택됨: {fileName}",
+        "ariaLabel": "Lightroom Classic 카탈로그 파일 선택",
+        "errorNotLrcat": "이 파일은 Lightroom Classic 카탈로그(.lrcat)가 아닌 것 같습니다.",
+        "errorReadFailed": "그 파일을 읽을 수 없습니다. 다시 시도하세요."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "대용량 카탈로그 — 주의",
+        "body": "{fileName}은(는) {sizeGb} GB입니다. 분석에 30초 이상 걸릴 수 있고 메모리를 많이 사용합니다. 계속하시겠습니까?",
+        "continue": "계속",
+        "cancel": "취소"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "카탈로그 분석 중",
+        "subtitle": "이 작업은 전적으로 브라우저에서 실행됩니다. 업로드되는 것은 없습니다.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "파일 읽는 중…",
+          "opening": "카탈로그 여는 중…",
+          "schema": "스키마 확인 중…",
+          "hashing": "해시 계산 중…",
+          "aggregating": "통계 계산 중…",
+          "finalizing": "마무리 중…"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "캐시에서 불러옴",
+        "reanalyze": "다시 분석",
+        "reanalyzeAria": "캐시된 결과를 버리고 원본 파일에서 이 카탈로그를 다시 분석합니다."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "그 카탈로그를 분석할 수 없습니다",
+        "retry": "다른 카탈로그 시도",
+        "parseFailed": "그 카탈로그를 분석할 수 없습니다. Lightroom에서 열려 있거나, 일부만 기록되었거나, 예상치 못한 형식일 수 있습니다.",
+        "workerFailed": "분석 엔진을 시작하지 못했습니다. 페이지를 새로 고치고 다시 시도하세요.",
+        "schemaTooNew": "이 카탈로그는 이 도구가 아직 지원하지 않는 더 새로운 버전의 Lightroom Classic으로 만들어졌습니다.",
+        "schemaTooOld": "이 카탈로그는 이 도구에 비해 너무 오래된 버전의 Lightroom Classic으로 만들어졌습니다.",
+        "tooLarge": "이 카탈로그는 브라우저에서 분석하기에 너무 큽니다.",
+        "corrupt": "이 카탈로그는 손상되었거나 불완전한 것으로 보이며 읽을 수 없습니다.",
+        "notLightroom": "그 파일은 Lightroom Classic 카탈로그 데이터베이스가 아닙니다.",
+        "unknown": "그 카탈로그를 분석하는 중 문제가 발생했습니다. 다시 시도하세요."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "대시보드 섹션",
+        "jumpToSection": "섹션으로 이동",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "하이라이트",
+          "whatYouShoot": "무엇을 찍는가",
+          "howYouCurate": "어떻게 선별하는가",
+          "exploreCompare": "탐색 및 비교",
+          "catalog": "카탈로그"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "올해의 정리",
+          "year-to-year": "연도별 추이",
+          "overview": "개요",
+          "gear": "장비 분석",
+          "focal-length": "초점 거리",
+          "focal-length-per-zoom": "줌별 초점 거리",
+          "apertures": "조리개 스위트 스팟",
+          "time-of-day": "시간대",
+          "heatmap": "촬영 히트맵",
+          "gps": "GPS 위치",
+          "curation": "선별 퍼널",
+          "edit-intensity": "편집 강도",
+          "ratings": "별점 및 채택",
+          "keywords": "키워드 커버리지",
+          "bursts": "연사 감지",
+          "drilldown": "드릴다운 탐색기",
+          "period-comparison": "기간 비교",
+          "catalog-health": "카탈로그 상태"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "{section} 불러오는 중…",
+        "footerNote": "로컬 카탈로그 파일에서 브라우저로 계산되었습니다. 업로드된 것은 없습니다."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "올해의 정리",
+          "yearLabel": "연도",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "전체 사진",
+            "daysShot": "촬영 일수",
+            "topBody": "가장 많이 쓴 바디",
+            "topLens": "가장 많이 쓴 렌즈",
+            "topFocalLength": "가장 많은 초점 거리",
+            "topAperture": "가장 많은 조리개",
+            "mostProlificMonth": "가장 많이 찍은 달",
+            "avgShotsPerDay": "하루 평균 컷"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "월별 사진 수",
+            "topGearShare": "주요 장비 비중",
+            "timeOfDayShare": "시간대 비중"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "가장 많이 찍은 달은 {month}({count}장)였습니다. 그 달의 최다 렌즈: {lens}.",
+          "empty": "이 카탈로그에는 아직 올해의 정리 데이터가 없습니다.",
+          "caption": "{year}의 주요 통계와 미니 차트: {daysShot}일 동안 {totalPhotos}장, 최다 바디 {topBody}, 최다 렌즈 {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "연도별 추이",
+          "yearCountLabel": "표시 기간",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2년",
+            "3": "3년",
+            "5": "5년"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "가장 큰 변화: {year}의 {label}({delta}).",
+          "stat": "통계",
+          "empty": "연도별 비교에는 최소 2년의 전체 카탈로그 데이터가 필요합니다.",
+          "caption": "{n}년의 연간 통계를 전년 대비 변화와 함께 나란히 표시."
         },
         "overview": {
-          "title": "Overview",
+          "title": "개요",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "전체 사진",
+            "dateRange": "기간",
+            "daysShot": "촬영 일수",
+            "photosPerDay": "하루당 사진",
+            "bodyCount": "바디",
+            "lensCount": "렌즈",
+            "topBody": "최다 바디",
+            "topLens": "최다 렌즈",
+            "topFocalLength": "가장 많은 초점 거리"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "카탈로그 개요: {daysShot}일 동안 {totalPhotos}장, 바디 {bodyCount}대, 렌즈 {lensCount}개."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "장비",
+          "bodiesOverTime": "시간에 따른 바디",
+          "topLenses": "최다 렌즈",
+          "topCombos": "최다 바디 + 렌즈 조합",
+          "retired": "은퇴(12개월 미사용)",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "바디",
+            "lens": "렌즈",
+            "count": "사진",
+            "firstUsed": "최초 사용",
+            "lastUsed": "최종 사용"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "장비 분석: 최다 렌즈 {topLens}({topLensCount}장); 상위 {comboCount}개 조합 표시."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "초점 거리",
+          "histogramTitle": "초점 거리 분포(35mm 환산)",
+          "histogramAria": "초점 거리 히스토그램",
+          "topPeaks": "주요 피크",
+          "onePrime": "{mm}mm 단렌즈라면 당신의 사진 중 {pct}%를 ±25% 이내로 커버할 수 있습니다.",
+          "noPrime": "당신의 초점 거리 사용은 너무 분산되어 있어 단렌즈 하나로 지배적이지 않습니다.",
+          "caption": "{min}mm부터 {max}mm까지 1mm 단위 히스토그램; 상위 {peakCount}개 피크에 레이블 표시."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "줌별 초점 거리",
+          "callout": "{lens}에서는 사진의 {pct}%가 {mm}mm에서 촬영되었습니다.",
+          "empty": "이 카탈로그에서 줌 렌즈가 감지되지 않았습니다.",
+          "caption": "지배적인 초점 거리를 강조한 {n}개 줌 렌즈 히스토그램."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "조리개 스위트 스팟",
+          "callout": "{lens}을(를) 개방으로 촬영하는 비율은 {pct}%입니다.",
+          "empty": "데이터 부족 — 사진이 100장 이상인 렌즈가 최소 하나 필요합니다.",
+          "caption": "{n}개 렌즈의 조리개 히스토그램."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "시간대",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "시각",
+            "sun": "태양 고도"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "카탈로그의 {pct}%에 GPS가 있습니다 — 태양 고도별 분석은 해당 사진만 반영합니다.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "골든아워",
+            "blueHour": "블루아워",
+            "midday": "한낮",
+            "night": "밤"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "바디별",
+          "perGearPeak": "{gear} — 피크 시각 {hour}:00",
+          "caption": "24시간 동안의 사진 수(선택적 태양 고도별 분석 포함)."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "촬영 히트맵",
+          "aria": "촬영 히트맵 — 기여 달력",
+          "tooltip": "{date}: {count}장, 최다 렌즈 {topLens}",
+          "caption": "{years}년에 걸친 연도별 기여 달력."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "GPS 위치",
+          "aria": "카탈로그 사진 클러스터의 GPS 지도",
+          "coverage": "카탈로그의 {pct}%에 GPS 데이터가 있습니다({count}장).",
+          "topRegions": "주요 지역",
+          "empty": "이 카탈로그에서 GPS 데이터를 찾을 수 없습니다.",
+          "caption": "정거 원통 도법 세계 지도에 {clusters}개의 집계 클러스터; PII 보호로 사진이 5장 미만인 격자 셀은 제외."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "선별 퍼널",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "전체",
+            "notRejected": "거부되지 않음",
+            "rated1Plus": "1점 이상",
+            "rated4Plus": "4점 이상"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "장비별 채택률",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "이름",
+            "total": "전체",
+            "rated4Plus": "4점 이상",
+            "pickRate": "채택률"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "전체 {total}장에서 4점 이상 {rated4Plus}장으로의 퍼널(채택률 {pickRate}%)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "편집 강도",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "평균 노출 보정",
+            "avgCrop": "평균 자르기 %",
+            "pctLocal": "부분 보정 비율",
+            "pctPresets": "프리셋 사용 비율"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "시간에 따른 편집 강도 점수",
+          "topPresets": "최다 프리셋",
+          "perGear": "장비별 점수",
+          "sampled": "{n}장의 5% 표본에 기반한 추정.",
+          "caption": "카탈로그 전체의 평균 편집 점수(월별 추세 및 장비별 분석 포함)."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "별점 및 채택",
+          "distribution": "별점 분포",
+          "colorLabels": "색상 레이블",
+          "perGear": "장비별 채택률",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "이름",
+            "total": "전체",
+            "rated4Plus": "4점 이상",
+            "pickRate": "채택률"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "별점",
+            "count": "사진"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "{colorLabelCount}개 색상 레이블과 장비별 채택률을 포함한 별점 분포."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "키워드 커버리지",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "태그된 사진",
+            "untagged": "태그되지 않은 사진",
+            "uniqueKeywords": "고유 키워드",
+            "avgPerPhoto": "태그된 사진당 평균 키워드",
+            "orphans": "고아 키워드"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "최다 키워드",
+          "blindSpots": "가장 큰 사각지대",
+          "blindSpotItem": "{yearMonth} — 커버리지 {pct}%",
+          "blindSpotsEmpty": "커버리지가 월별로 고르게 보입니다.",
+          "caption": "태그 커버리지 통계와 최다 키워드 상위 {n}개(PII 보호: 3장 이상에 달린 키워드만)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "연사 감지",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "전체 연사",
+            "photosInBursts": "연사 내 사진",
+            "pctInBursts": "연사가 차지하는 비율",
+            "longestBurst": "가장 긴 연사"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "연사 길이 분포",
+          "keeperRate": "연사 사진이 4점 이상을 받는 비율은 {burstRate}%로 — 단일 컷({singleRate}%)보다 {delta}% {direction}.",
+          "moreOften": "높습니다",
+          "lessOften": "낮습니다",
+          "caption": "연사 길이 분포; 채택률은 연사 {burstRate}% 대 단일 컷 {singleRate}%."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
-          "focalLengthMin": "Min mm",
-          "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "title": "드릴다운 탐색기",
+          "description": "날짜, 장비, 초점 거리, 조리개, ISO, 별점, 채택 상태로 대시보드를 필터링하세요. 변경 사항을 한꺼번에 적용합니다.",
+          "dateRange": "기간",
+          "dateStart": "시작",
+          "dateEnd": "끝",
+          "cameras": "카메라",
+          "lenses": "렌즈",
+          "focalLength": "초점 거리(mm, 35mm 환산)",
+          "focalLengthMin": "최소 mm",
+          "focalLengthMax": "최대 mm",
+          "aperture": "조리개(F값)",
+          "apertureMin": "최소 F값",
+          "apertureMax": "최대 F값",
           "iso": "ISO",
-          "isoMin": "Min ISO",
-          "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "isoMin": "최소 ISO",
+          "isoMax": "최대 ISO",
+          "ratings": "별점",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "채택 상태",
+          "pickAny": "전체",
+          "pickFlagged": "채택 플래그",
+          "pickRejected": "거부",
+          "pickNone": "플래그 없음",
+          "apply": "적용",
+          "reset": "재설정",
+          "activeFilters": "적용된 필터",
+          "removeFilter": "{label} 필터 제거",
+          "filterDateRange": "날짜 {start} – {end}",
+          "filterCameras": "카메라: {names}",
+          "filterLenses": "렌즈: {names}",
+          "filterFocalLength": "초점 거리 {min}–{max}mm",
+          "filterAperture": "조리개 f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "별점: {ratings}",
+          "filterPicks": "채택: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "기간 비교",
+          "periodA": "기간 A",
+          "periodB": "기간 B",
+          "start": "시작",
+          "end": "끝",
+          "apply": "적용",
           "headers": {
-            "stat": "Stat",
+            "stat": "통계",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "전체 사진",
+            "daysShot": "촬영 일수",
+            "topBody": "최다 바디",
+            "topLens": "최다 렌즈",
+            "topFocalLength": "가장 많은 초점 거리"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "각 기간의 날짜 범위를 선택하고 적용을 클릭하세요.",
+          "caption": "임의의 두 날짜 범위를 변화 열과 함께 나란히 비교."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "카탈로그 상태",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "원본 누락",
+            "missingPreviews": "미리보기 누락",
+            "brokenPaths": "끊어진 경로",
+            "likelyDuplicates": "중복 가능성"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "중복 가능성이 있는 클러스터",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "촬영 시각",
+            "size": "클러스터 크기",
+            "firstPath": "첫 번째 경로",
+            "lastPath": "마지막 경로"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "브래킷 시퀀스가 여기에 나타날 수 있습니다. 삭제 전에 확인하세요.",
+          "missingByRootFolder": "루트 폴더별 누락 원본",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "루트 폴더",
+            "count": "누락"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "Lightroom Classic에서: 라이브러리 → 누락된 사진 찾기로 끊어진 경로를 해결할 수 있습니다.",
+          "caption": "카탈로그 상태 요약: 원본 누락 {missing}건, 중복 가능성 {duplicates}건."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "이 분석 내보내기",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Markdown 복사",
+          "copied": "Markdown 보고서를 복사했습니다. 약 {kb} KB.",
+          "downloaded": "클립보드를 사용할 수 없습니다 — 대신 보고서를 .md 파일로 다운로드했습니다."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "PDF 내보내기",
+          "loadingEngine": "PDF 엔진 불러오는 중…",
+          "generating": "보고서 생성 중…",
+          "success": "PDF 보고서를 다운로드했습니다.",
+          "error": "PDF를 생성할 수 없습니다. 대신 Markdown 또는 공유를 사용해 보세요.",
+          "title": "Lightroom 카탈로그 분석",
+          "filteredSuffix": " (필터링된 보기)",
+          "localFooter": "카탈로그는 절대 업로드되지 않았습니다 — 이 집계 통계만 포함됩니다.",
+          "generatedBy": "phototools.io/lightroom-catalog-analyzer에서 생성",
+          "totalPhotos": "전체 사진",
+          "dateRange": "기간",
+          "catalogVersion": "카탈로그 버전",
+          "filterTitle": "적용된 필터",
+          "page": "페이지",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "올해의 정리",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "전체 사진",
+                "daysShot": "촬영 일수",
+                "topBody": "가장 많이 쓴 바디",
+                "topLens": "가장 많이 쓴 렌즈"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "가장 많이 찍은 달: {month}({count}장)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "연도별 추이",
+              "stat": "통계",
+              "biggestShift": "가장 큰 변화: {year}의 {label}({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "개요",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "전체 사진",
+                "daysShot": "촬영 일수",
+                "topBody": "최다 바디",
+                "topLens": "최다 렌즈"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "장비",
+              "bodiesOverTime": "시간에 따른 바디",
+              "topLenses": "최다 렌즈",
+              "retired": "은퇴",
+              "lensHeader": "렌즈",
+              "photosHeader": "사진"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "초점 거리",
+              "histogramTitle": "초점 거리 분포(35mm 환산)",
+              "topPeaks": "주요 피크",
+              "onePrime": "{mm}mm 단렌즈라면 당신의 사진 중 {pct}%를 ±25% 이내로 커버할 수 있습니다.",
+              "noPrime": "당신의 초점 거리 사용은 너무 분산되어 있어 단렌즈 하나로 지배적이지 않습니다."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "줌별 초점 거리",
+              "perLens": "{lens}: 사진의 {pct}%가 {mm}mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "조리개 스위트 스팟",
+              "perLens": "{lens}: 개방으로 촬영한 비율 {pct}%"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "시간대",
+              "gpsNote": "카탈로그의 {pct}%에 GPS가 있습니다 — 태양 고도별 분석은 해당 사진만 반영합니다."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "촬영 히트맵",
+              "daysWithPhotos": "사진이 있는 일수",
+              "yearsCovered": "포함된 연도 수"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "GPS 위치",
+              "coverage": "카탈로그의 {pct}%에 GPS 있음",
+              "topRegions": "주요 지역",
+              "regionHeader": "지역",
+              "photosHeader": "사진"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "선별 퍼널",
+              "stageHeader": "단계",
+              "photosHeader": "사진"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "편집 강도",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "평균 노출 보정",
+                "crop": "평균 자르기",
+                "local": "부분 보정 포함",
+                "presets": "프리셋 포함"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "카탈로그 표본에 기반한 추정."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "별점 및 채택",
+              "ratingHeader": "별점",
+              "photosHeader": "사진"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "키워드 커버리지",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "태그됨",
+                "untagged": "태그 안 됨",
+                "unique": "고유 키워드",
+                "orphans": "고아 키워드"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "키워드",
+              "photosHeader": "사진"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "연사 감지",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "전체 연사",
+                "inBursts": "연사 내 사진",
+                "longest": "가장 긴 연사"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "연사 사진이 ≥4점을 받는 비율: {a}% 대 단일 컷 {b}%."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "기간 비교",
+              "notExported": "기간 비교는 앱에서 대화형으로 작동하며 내보내지지 않습니다."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "카탈로그 상태",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "원본 누락",
+                "previews": "미리보기 누락",
+                "broken": "끊어진 경로",
+                "dupes": "중복 가능성"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → 라이브러리 → 누락된 사진 찾기로 끊어진 경로를 해결할 수 있습니다."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "URL로 공유",
+          "placeholderTitle": "플랜 3에서 이를 연결합니다."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "URL로 공유",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "분석 링크 공유",
+          "uploadedHeading": "업로드되는 것",
+          "uploaded": "개수, 상위 N 목록, 히스토그램 — 위에 표시된 데이터 그대로입니다.",
+          "notUploadedHeading": "업로드되지 않는 것",
+          "notUploaded": "파일 이름, 이미지 파일, 폴더 경로, 약 5km 격자 셀보다 정밀한 GPS 좌표, 3회 미만으로 사용된 키워드.",
+          "expiresLabel": "링크 만료",
+          "expires24h": "24시간",
+          "expires7d": "7일",
+          "expires30d": "30일",
+          "cancel": "취소",
+          "create": "링크 만들기",
+          "creating": "링크 만드는 중…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "공유 한도에 도달했습니다. 한 시간 후 다시 시도하세요.",
+          "storage-unavailable": "저장소를 일시적으로 사용할 수 없습니다. 잠시 후 다시 시도하세요.",
+          "invalid": "이 분석을 공유할 수 없습니다 — 데이터가 잘못된 것 같습니다.",
+          "unknown": "링크를 만드는 중 문제가 발생했습니다. 다시 시도하세요."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "링크가 준비되었습니다",
+          "expiresOn": "{date} 만료",
+          "copy": "복사",
+          "copied": "링크가 복사되었습니다",
+          "openNewTab": "새 탭에서 열기",
+          "delete": "이 공유 삭제",
+          "deleted": "공유가 삭제되었습니다",
+          "urlLabel": "공유용 URL"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "최근 공유",
+          "subtitle": "이 기기에서 만든 링크입니다. 하나를 열어 보거나 삭제하여 접근을 취소하세요.",
+          "idLabel": "공유 …{last4}",
+          "created": "{date} 생성",
+          "expires": "{date} 만료",
+          "filtered": "필터링됨: {summary}",
+          "open": "열기",
+          "delete": "삭제"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "적용된 필터",
+          "summaryShort": "이 보기는 필터링되었습니다: {summary}",
+          "showAll": "모든 필터 표시",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "날짜",
+            "cameras": "카메라",
+            "lenses": "렌즈",
+            "focalLengthRange": "초점 거리",
+            "apertureRange": "조리개",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "별점",
+            "keywords": "키워드",
+            "picks": "채택"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "이것은 공유된 분석입니다. 원본 카탈로그는 절대 업로드되지 않았습니다 — 이 집계 통계만 포함됩니다.",
+          "cta": "직접 카탈로그로 이 도구 사용해 보기",
+          "expiredTitle": "이 공유는 만료되었거나 삭제되었습니다.",
+          "expiredBody": "링크가 만료일에 도달했거나 작성자가 삭제했을 수 있습니다.",
+          "schemaNewerTitle": "더 새로운 버전으로 생성됨",
+          "schemaNewerBody": "이 분석은 더 새로운 버전의 도구로 만들어졌습니다. 페이지를 새로 고쳐 보세요.",
+          "pageTitle": "공유된 Lightroom 카탈로그 분석"
         }
       }
     }

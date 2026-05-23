@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% ローカル・アップロードなし",
+      "privacyBadgeAria": "プライバシー保証: このツールは完全にブラウザ内で動作します。カタログがアップロードされることはありません。",
+      "skipToMain": "メインコンテンツへスキップ",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Lightroom Classic のカタログを分析",
+        "subhead": "機材、焦点距離、絞りの傾向、レーティング、GPS、編集の度合いなど — すべてブラウザ内で完結します。カタログがデバイスから外に出ることはありません。",
+        "explainer": "コンピューターから .lrcat ファイルを選択してください。SQLite WebAssembly ワーカーで開き、集計統計を計算してインタラクティブなダッシュボードを描画します。アップロードは一切ありません。",
+        "tryDemo": "デモカタログを試す"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "これにはデスクトップが必要です",
+        "body": "Lightroom カタログアナライザーには Lightroom Classic のカタログファイル（.lrcat）が必要です。これはスマホではなくコンピューターに保存されています。",
+        "tryDemoCta": "ここでデモを試す",
+        "openOnDesktop": "自分のカタログを分析するには、このページをコンピューターで開いてください。",
+        "copyLink": "リンクをコピー",
+        "copyLinkSuccess": "リンクをコピーしました",
+        "screenshotAlt": "Lightroom カタログアナライザーのダッシュボードプレビュー"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "ここに .lrcat ファイルをドロップするか、クリックして選択",
+        "tapPrompt": "タップして .lrcat ファイルを選択",
+        "browseButton": "カタログを参照",
+        "selectedFile": "選択中: {fileName}",
+        "ariaLabel": "Lightroom Classic カタログファイルの選択",
+        "errorNotLrcat": "このファイルは Lightroom Classic カタログ（.lrcat）ではないようです。",
+        "errorReadFailed": "そのファイルを読み込めませんでした。もう一度お試しください。"
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "大きなカタログ — ご注意ください",
+        "body": "{fileName} は {sizeGb} GB です。解析に30秒以上かかり、多くのメモリを使用する場合があります。続行しますか？",
+        "continue": "続行",
+        "cancel": "キャンセル"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "カタログを分析中",
+        "subtitle": "これは完全にブラウザ内で実行されます。アップロードは一切ありません。",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "ファイルを読み込み中…",
+          "opening": "カタログを開いています…",
+          "schema": "スキーマを確認中…",
+          "hashing": "ハッシュを計算中…",
+          "aggregating": "統計を計算中…",
+          "finalizing": "仕上げ中…"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "キャッシュから読み込み",
+        "reanalyze": "再分析",
+        "reanalyzeAria": "キャッシュされた結果を破棄し、元のファイルからこのカタログを再度解析します。"
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "このカタログを分析できませんでした",
+        "retry": "別のカタログを試す",
+        "parseFailed": "このカタログを解析できませんでした。Lightroom で開いている、書き込みが途中、または予期しない形式の可能性があります。",
+        "workerFailed": "分析エンジンの起動に失敗しました。ページを再読み込みして、もう一度お試しください。",
+        "schemaTooNew": "このカタログは、このツールがまだ対応していない新しいバージョンの Lightroom Classic で作成されています。",
+        "schemaTooOld": "このカタログは、このツールには古すぎるバージョンの Lightroom Classic で作成されています。",
+        "tooLarge": "このカタログはブラウザで分析するには大きすぎます。",
+        "corrupt": "このカタログは破損または不完全なようで、読み込めませんでした。",
+        "notLightroom": "このファイルは Lightroom Classic カタログのデータベースではありません。",
+        "unknown": "このカタログの分析中に問題が発生しました。もう一度お試しください。"
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "ダッシュボードのセクション",
+        "jumpToSection": "セクションへ移動",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "ハイライト",
+          "whatYouShoot": "何を撮るか",
+          "howYouCurate": "選別の仕方",
+          "exploreCompare": "探索と比較",
+          "catalog": "カタログ"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "年間まとめ",
+          "year-to-year": "年ごとの推移",
+          "overview": "概要",
+          "gear": "機材の内訳",
+          "focal-length": "焦点距離",
+          "focal-length-per-zoom": "ズームごとの焦点距離",
+          "apertures": "絞りのスイートスポット",
+          "time-of-day": "時間帯",
+          "heatmap": "撮影ヒートマップ",
+          "gps": "GPS の場所",
+          "curation": "選別ファネル",
+          "edit-intensity": "編集の度合い",
+          "ratings": "レーティングと採用",
+          "keywords": "キーワードの網羅率",
+          "bursts": "連写の検出",
+          "drilldown": "ドリルダウン エクスプローラー",
+          "period-comparison": "期間比較",
+          "catalog-health": "カタログの健全性"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "{section} を読み込み中…",
+        "footerNote": "ローカルのカタログファイルからブラウザ内で計算されました。アップロードされたものはありません。"
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "年間まとめ",
+          "yearLabel": "年",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "総写真数",
+            "daysShot": "撮影日数",
+            "topBody": "最も使ったボディ",
+            "topLens": "最も使ったレンズ",
+            "topFocalLength": "最も多い焦点距離",
+            "topAperture": "最も多い絞り",
+            "mostProlificMonth": "最も多く撮った月",
+            "avgShotsPerDay": "1日平均枚数"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "月別の枚数",
+            "topGearShare": "主要機材のシェア",
+            "timeOfDayShare": "時間帯のシェア"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "最も多く撮った月は {month}（{count} 枚）でした。その月の最多レンズ: {lens}。",
+          "empty": "このカタログにはまだ年間まとめのデータがありません。",
+          "caption": "{year} の主要統計とミニチャート: {daysShot} 日間で {totalPhotos} 枚、最多ボディ {topBody}、最多レンズ {topLens}。"
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "年ごとの推移",
+          "yearCountLabel": "表示する期間",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2年",
+            "3": "3年",
+            "5": "5年"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "最大の変化: {year} の {label}（{delta}）。",
+          "stat": "統計",
+          "empty": "年ごとの比較には、少なくとも2年分の完全なカタログデータが必要です。",
+          "caption": "{n} 年分の年間統計を前年との差分とともに並べて表示。"
         },
         "overview": {
-          "title": "Overview",
+          "title": "概要",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "総写真数",
+            "dateRange": "期間",
+            "daysShot": "撮影日数",
+            "photosPerDay": "1日あたり枚数",
+            "bodyCount": "ボディ数",
+            "lensCount": "レンズ数",
+            "topBody": "最多ボディ",
+            "topLens": "最多レンズ",
+            "topFocalLength": "最も多い焦点距離"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "カタログ概要: {daysShot} 日間で {totalPhotos} 枚、ボディ {bodyCount} 台、レンズ {lensCount} 本。"
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "機材",
+          "bodiesOverTime": "時系列のボディ",
+          "topLenses": "最多レンズ",
+          "topCombos": "最多のボディ + レンズの組み合わせ",
+          "retired": "引退（12か月使用なし）",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "ボディ",
+            "lens": "レンズ",
+            "count": "写真",
+            "firstUsed": "初回使用",
+            "lastUsed": "最終使用"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "機材の内訳: 最多レンズ {topLens}（{topLensCount} 枚）；上位 {comboCount} 件の組み合わせを表示。"
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "焦点距離",
+          "histogramTitle": "焦点距離の分布（35mm 換算）",
+          "histogramAria": "焦点距離のヒストグラム",
+          "topPeaks": "主要ピーク",
+          "onePrime": "{mm}mm の単焦点なら、あなたの写真の {pct}% を ±25% 以内でカバーできます。",
+          "noPrime": "あなたの焦点距離の使い方は分散しすぎており、1本の単焦点では支配的になりません。",
+          "caption": "{min}mm から {max}mm までの 1mm 刻みヒストグラム；上位 {peakCount} 件のピークにラベル付け。"
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "ズームごとの焦点距離",
+          "callout": "{lens} では、{pct}% の写真が {mm}mm で撮影されています。",
+          "empty": "このカタログにズームレンズは検出されませんでした。",
+          "caption": "支配的な焦点距離を強調した {n} 本のズームレンズのヒストグラム。"
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "絞りのスイートスポット",
+          "callout": "{lens} を開放で撮影する割合は {pct}% です。",
+          "empty": "データ不足 — 100 枚以上の写真があるレンズが少なくとも1本必要です。",
+          "caption": "{n} 本のレンズの絞りのヒストグラム。"
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "時間帯",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "時計の時刻",
+            "sun": "太陽の角度"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "カタログの {pct}% に GPS があります — 太陽の角度による分類はそれらの写真のみを反映します。",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "ゴールデンアワー",
+            "blueHour": "ブルーアワー",
+            "midday": "正午",
+            "night": "夜"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "ボディ別",
+          "perGearPeak": "{gear} — ピーク時刻 {hour}:00",
+          "caption": "24時間の写真枚数（任意で太陽の角度による分類）。"
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "撮影ヒートマップ",
+          "aria": "撮影ヒートマップ — 貢献カレンダー",
+          "tooltip": "{date}: {count} 枚、最多レンズ {topLens}",
+          "caption": "{years} 年分の年ごとの貢献カレンダー。"
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "GPS の場所",
+          "aria": "カタログ写真クラスターの GPS マップ",
+          "coverage": "カタログの {pct}% に GPS データがあります（{count} 枚）。",
+          "topRegions": "主要地域",
+          "empty": "このカタログに GPS データは見つかりませんでした。",
+          "caption": "正距円筒図法の世界地図に {clusters} 個の集約クラスター；PII 保護により写真が5枚未満のグリッドセルは除外。"
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "選別ファネル",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "合計",
+            "notRejected": "除外なし",
+            "rated1Plus": "1つ星以上",
+            "rated4Plus": "4つ星以上"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "機材別の採用率",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "名称",
+            "total": "合計",
+            "rated4Plus": "4つ星以上",
+            "pickRate": "採用率"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "合計 {total} 枚から 4つ星以上 {rated4Plus} 枚へのファネル（採用率 {pickRate}%）。"
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "編集の度合い",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "平均露出補正",
+            "avgCrop": "平均クロップ率",
+            "pctLocal": "部分補正ありの割合",
+            "pctPresets": "プリセットありの割合"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "時系列の編集度合いスコア",
+          "topPresets": "最多プリセット",
+          "perGear": "機材別スコア",
+          "sampled": "{n} 枚の5%サンプルに基づく推定。",
+          "caption": "カタログ全体の平均編集スコア（月次トレンドと機材別の内訳付き）。"
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "レーティングと採用",
+          "distribution": "レーティング分布",
+          "colorLabels": "カラーラベル",
+          "perGear": "機材別の採用率",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "名称",
+            "total": "合計",
+            "rated4Plus": "4つ星以上",
+            "pickRate": "採用率"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "レーティング",
+            "count": "写真"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "{colorLabelCount} 個のカラーラベルと機材別採用率を含むレーティング分布。"
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "キーワードの網羅率",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "タグ付き写真",
+            "untagged": "タグなし写真",
+            "uniqueKeywords": "ユニークキーワード",
+            "avgPerPhoto": "タグ付き写真あたりの平均キーワード数",
+            "orphans": "孤立キーワード"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "最多キーワード",
+          "blindSpots": "最大の盲点",
+          "blindSpotItem": "{yearMonth} — 網羅率 {pct}%",
+          "blindSpotsEmpty": "網羅率は月ごとに均等のようです。",
+          "caption": "タグ網羅率の統計と最多キーワード上位 {n} 件（PII 保護: 3枚以上に付くキーワードのみ）。"
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "連写の検出",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "総連写数",
+            "photosInBursts": "連写内の写真数",
+            "pctInBursts": "連写の占める割合",
+            "longestBurst": "最長の連写"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "連写の長さの分布",
+          "keeperRate": "連写の写真が4つ星以上を獲得する割合は {burstRate}% — 単写（{singleRate}%）より {delta}% {direction}。",
+          "moreOften": "高い",
+          "lessOften": "低い",
+          "caption": "連写の長さの分布；採用率は連写 {burstRate}% に対して単写 {singleRate}%。"
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
-          "focalLengthMin": "Min mm",
-          "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "title": "ドリルダウン エクスプローラー",
+          "description": "日付、機材、焦点距離、絞り、ISO、レーティング、採用状態でダッシュボードをフィルタリング。変更は一括で適用します。",
+          "dateRange": "期間",
+          "dateStart": "開始",
+          "dateEnd": "終了",
+          "cameras": "カメラ",
+          "lenses": "レンズ",
+          "focalLength": "焦点距離（mm、35mm 換算）",
+          "focalLengthMin": "最小 mm",
+          "focalLengthMax": "最大 mm",
+          "aperture": "絞り（F値）",
+          "apertureMin": "最小 F値",
+          "apertureMax": "最大 F値",
           "iso": "ISO",
-          "isoMin": "Min ISO",
-          "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "isoMin": "最小 ISO",
+          "isoMax": "最大 ISO",
+          "ratings": "レーティング",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "採用状態",
+          "pickAny": "すべて",
+          "pickFlagged": "採用フラグ",
+          "pickRejected": "除外",
+          "pickNone": "フラグなし",
+          "apply": "適用",
+          "reset": "リセット",
+          "activeFilters": "適用中のフィルター",
+          "removeFilter": "{label} フィルターを削除",
+          "filterDateRange": "日付 {start} – {end}",
+          "filterCameras": "カメラ: {names}",
+          "filterLenses": "レンズ: {names}",
+          "filterFocalLength": "焦点距離 {min}–{max}mm",
+          "filterAperture": "絞り f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "レーティング: {ratings}",
+          "filterPicks": "採用: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "期間比較",
+          "periodA": "期間 A",
+          "periodB": "期間 B",
+          "start": "開始",
+          "end": "終了",
+          "apply": "適用",
           "headers": {
-            "stat": "Stat",
+            "stat": "統計",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "総写真数",
+            "daysShot": "撮影日数",
+            "topBody": "最多ボディ",
+            "topLens": "最多レンズ",
+            "topFocalLength": "最も多い焦点距離"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "各期間の日付範囲を選択して「適用」をクリックしてください。",
+          "caption": "任意の2つの日付範囲を差分列付きで並べて比較。"
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "カタログの健全性",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "オリジナルが見つからない",
+            "missingPreviews": "プレビューが見つからない",
+            "brokenPaths": "壊れたパス",
+            "likelyDuplicates": "重複の可能性"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "重複の可能性があるクラスター",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "撮影日時",
+            "size": "クラスターのサイズ",
+            "firstPath": "最初のパス",
+            "lastPath": "最後のパス"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "ブラケット撮影のシーケンスがここに表示される場合があります。削除前にご確認ください。",
+          "missingByRootFolder": "ルートフォルダー別の見つからないオリジナル",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "ルートフォルダー",
+            "count": "見つからない"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "Lightroom Classic で: ライブラリ → 見つからない写真を検索 で壊れたパスを解決できます。",
+          "caption": "カタログの健全性概要: オリジナル不明 {missing} 件、重複の可能性 {duplicates} 件。"
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "この分析をエクスポート",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Markdown をコピー",
+          "copied": "Markdown レポートをコピーしました。約 {kb} KB。",
+          "downloaded": "クリップボードが利用できません — 代わりにレポートを .md ファイルとしてダウンロードしました。"
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "PDF をエクスポート",
+          "loadingEngine": "PDF エンジンを読み込み中…",
+          "generating": "レポートを生成中…",
+          "success": "PDF レポートをダウンロードしました。",
+          "error": "PDF を生成できませんでした。代わりに Markdown または共有をお試しください。",
+          "title": "Lightroom カタログ分析",
+          "filteredSuffix": "（フィルター済みビュー）",
+          "localFooter": "カタログはアップロードされていません — これらの集計統計のみです。",
+          "generatedBy": "phototools.io/lightroom-catalog-analyzer により生成",
+          "totalPhotos": "総写真数",
+          "dateRange": "期間",
+          "catalogVersion": "カタログのバージョン",
+          "filterTitle": "適用されたフィルター",
+          "page": "ページ",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "年間まとめ",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "総写真数",
+                "daysShot": "撮影日数",
+                "topBody": "最も使ったボディ",
+                "topLens": "最も使ったレンズ"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "最も多く撮った月: {month}（{count} 枚）。"
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "年ごとの推移",
+              "stat": "統計",
+              "biggestShift": "最大の変化: {year} の {label}（{delta}）。"
             },
             "overview": {
-              "title": "Overview",
+              "title": "概要",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "総写真数",
+                "daysShot": "撮影日数",
+                "topBody": "最多ボディ",
+                "topLens": "最多レンズ"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "機材",
+              "bodiesOverTime": "時系列のボディ",
+              "topLenses": "最多レンズ",
+              "retired": "引退",
+              "lensHeader": "レンズ",
+              "photosHeader": "写真"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "焦点距離",
+              "histogramTitle": "焦点距離の分布（35mm 換算）",
+              "topPeaks": "主要ピーク",
+              "onePrime": "{mm}mm の単焦点なら、あなたの写真の {pct}% を ±25% 以内でカバーできます。",
+              "noPrime": "あなたの焦点距離の使い方は分散しすぎており、1本の単焦点では支配的になりません。"
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "ズームごとの焦点距離",
+              "perLens": "{lens}: 写真の {pct}% が {mm}mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "絞りのスイートスポット",
+              "perLens": "{lens}: 開放で撮影する割合 {pct}%"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "時間帯",
+              "gpsNote": "カタログの {pct}% に GPS があります — 太陽の角度による分類はそれらの写真のみを反映します。"
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "撮影ヒートマップ",
+              "daysWithPhotos": "写真のある日数",
+              "yearsCovered": "対象年数"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "GPS の場所",
+              "coverage": "カタログの {pct}% に GPS あり",
+              "topRegions": "主要地域",
+              "regionHeader": "地域",
+              "photosHeader": "写真"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "選別ファネル",
+              "stageHeader": "段階",
+              "photosHeader": "写真"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "編集の度合い",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "平均露出補正",
+                "crop": "平均クロップ",
+                "local": "部分補正あり",
+                "presets": "プリセットあり"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "カタログのサンプルに基づく推定。"
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "レーティングと採用",
+              "ratingHeader": "レーティング",
+              "photosHeader": "写真"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "キーワードの網羅率",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "タグ付き",
+                "untagged": "タグなし",
+                "unique": "ユニークキーワード",
+                "orphans": "孤立キーワード"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "キーワード",
+              "photosHeader": "写真"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "連写の検出",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "総連写数",
+                "inBursts": "連写内の写真数",
+                "longest": "最長の連写"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "連写の写真が4つ星以上を獲得する割合: {a}% に対して単写は {b}%。"
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "期間比較",
+              "notExported": "期間比較はアプリ内でインタラクティブに動作し、エクスポートされません。"
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "カタログの健全性",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "オリジナルが見つからない",
+                "previews": "プレビューが見つからない",
+                "broken": "壊れたパス",
+                "dupes": "重複の可能性"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → ライブラリ → 見つからない写真を検索 で壊れたパスを解決できます。"
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "URL で共有",
+          "placeholderTitle": "プラン 3 でこれを接続します。"
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "URL で共有",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "分析へのリンクを共有",
+          "uploadedHeading": "アップロードされるもの",
+          "uploaded": "件数、上位 N のリスト、ヒストグラム — 上に表示されているデータそのものです。",
+          "notUploadedHeading": "アップロードされないもの",
+          "notUploaded": "ファイル名、画像ファイル、フォルダーのパス、約5kmのグリッドセルより詳細な GPS 座標、3回未満しか使用されていないキーワード。",
+          "expiresLabel": "リンクの有効期限",
+          "expires24h": "24時間",
+          "expires7d": "7日間",
+          "expires30d": "30日間",
+          "cancel": "キャンセル",
+          "create": "リンクを作成",
+          "creating": "リンクを作成中…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "共有の上限に達しました。1時間後にもう一度お試しください。",
+          "storage-unavailable": "ストレージが一時的に利用できません。しばらくしてからもう一度お試しください。",
+          "invalid": "この分析を共有できませんでした — データが不正なようです。",
+          "unknown": "リンクの作成中に問題が発生しました。もう一度お試しください。"
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "リンクの準備ができました",
+          "expiresOn": "有効期限 {date}",
+          "copy": "コピー",
+          "copied": "リンクをコピーしました",
+          "openNewTab": "新しいタブで開く",
+          "delete": "この共有を削除",
+          "deleted": "共有を削除しました",
+          "urlLabel": "共有用 URL"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "最近の共有",
+          "subtitle": "このデバイスで作成したリンク。開いて表示するか、削除してアクセスを取り消せます。",
+          "idLabel": "共有 …{last4}",
+          "created": "作成 {date}",
+          "expires": "有効期限 {date}",
+          "filtered": "フィルター済み: {summary}",
+          "open": "開く",
+          "delete": "削除"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "適用されたフィルター",
+          "summaryShort": "このビューはフィルター済みです: {summary}",
+          "showAll": "すべてのフィルターを表示",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "日付",
+            "cameras": "カメラ",
+            "lenses": "レンズ",
+            "focalLengthRange": "焦点距離",
+            "apertureRange": "絞り",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "レーティング",
+            "keywords": "キーワード",
+            "picks": "採用"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "これは共有された分析です。元のカタログはアップロードされていません — これらの集計統計のみです。",
+          "cta": "自分のカタログでこのツールを試す",
+          "expiredTitle": "この共有は期限切れか、削除されました。",
+          "expiredBody": "リンクが有効期限に達したか、作成者が削除した可能性があります。",
+          "schemaNewerTitle": "新しいバージョンで作成",
+          "schemaNewerBody": "この分析は新しいバージョンのツールで作成されました。ページを再読み込みしてみてください。",
+          "pageTitle": "共有された Lightroom カタログ分析"
         }
       }
     }

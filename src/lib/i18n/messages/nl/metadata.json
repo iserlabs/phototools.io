@@ -91,8 +91,8 @@
       "description": "Visualiseer hoe megapixels zich vertalen naar afdrukformaten bij 72-300 DPI en verschillende beeldverhoudingen. Vergelijk camera's, bestandsgroottes, pixel binning en crop-bereik — met een kwaliteitsgerangschikte afdruktabel."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Lightroom-catalogusanalyzer — Gratis statistieken, alleen in de browser",
+      "description": "Analyseer je Lightroom Classic-catalogus lokaal in je browser. Bekijk uitrusting, brandpuntsafstanden, diafragmagewoonten, beoordelingen en meer. 100% lokaal — je catalogus wordt nooit geüpload."
     }
   }
 }

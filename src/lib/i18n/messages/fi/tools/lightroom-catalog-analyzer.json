@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100 % paikallinen · Ei latauksia",
+      "privacyBadgeAria": "Yksityisyystakuu: tämä työkalu toimii kokonaan selaimessasi. Luetteloasi ei koskaan ladata palvelimelle.",
+      "skipToMain": "Siirry pääsisältöön",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Analysoi Lightroom Classic -luettelosi",
+        "subhead": "Kalusto, polttovälit, aukkotottumukset, arvioinnit, GPS, muokkauksen voimakkuus ja paljon muuta — kokonaan selaimessasi. Luettelosi ei koskaan poistu laitteeltasi.",
+        "explainer": "Valitse .lrcat-tiedosto tietokoneeltasi. Avaamme sen SQLite-WebAssembly-workerissa, laskemme koostetilastot ja näytämme interaktiivisen koontinäytön. Mitään ei ladata palvelimelle.",
+        "tryDemo": "Kokeile esittelyluetteloa"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Tähän tarvitaan tietokone",
+        "body": "Lightroom-luettelon analysaattori tarvitsee Lightroom Classic -luettelotiedostosi (.lrcat), joka sijaitsee tietokoneellasi — ei puhelimessasi.",
+        "tryDemoCta": "Kokeile esittelyä täällä",
+        "openOnDesktop": "Avaa tämä sivu tietokoneellasi analysoidaksesi oman luettelosi.",
+        "copyLink": "Kopioi linkki",
+        "copyLinkSuccess": "Linkki kopioitu",
+        "screenshotAlt": "Esikatselu Lightroom-luettelon analysaattorin koontinäytöstä"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "Pudota .lrcat-tiedostosi tähän tai napsauta selataksesi",
+        "tapPrompt": "Napauta valitaksesi .lrcat-tiedoston",
+        "browseButton": "Selaa luetteloa",
+        "selectedFile": "Valittu: {fileName}",
+        "ariaLabel": "Lightroom Classic -luettelon tiedostovalitsin",
+        "errorNotLrcat": "Tuo tiedosto ei näytä Lightroom Classic -luettelolta (.lrcat).",
+        "errorReadFailed": "Tuota tiedostoa ei voitu lukea. Yritä uudelleen."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Suuri luettelo — huomaa",
+        "body": "{fileName} on {sizeGb} Gt. Jäsentäminen voi kestää 30 sekuntia tai kauemmin ja käyttää paljon muistia. Jatketaanko?",
+        "continue": "Jatka",
+        "cancel": "Peruuta"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "Analysoidaan luetteloasi",
+        "subtitle": "Tämä toimii kokonaan selaimessasi. Mitään ei ladata palvelimelle.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Luetaan tiedostoa…",
+          "opening": "Avataan luetteloa…",
+          "schema": "Tarkistetaan skeemaa…",
+          "hashing": "Lasketaan tiivistettä…",
+          "aggregating": "Lasketaan tilastoja…",
+          "finalizing": "Viimeistellään…"
         },
-        "pctLabel": "{pct}%"
+        "pctLabel": "{pct} %"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Ladattu välimuistista",
+        "reanalyze": "Analysoi uudelleen",
+        "reanalyzeAria": "Hylkää välimuistissa oleva tulos ja analysoi tämä luettelo uudelleen alkuperäisestä tiedostosta."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "Emme voineet analysoida tuota luetteloa",
+        "retry": "Kokeile toista luetteloa",
+        "parseFailed": "Emme voineet jäsentää tuota luetteloa. Se voi olla avoinna Lightroomissa, vain osittain kirjoitettu tai odottamattomassa muodossa.",
+        "workerFailed": "Analyysimoottoria ei voitu käynnistää. Lataa sivu uudelleen ja yritä uudelleen.",
+        "schemaTooNew": "Tämä luettelo on luotu uudemmalla Lightroom Classic -versiolla kuin tämä työkalu vielä tukee.",
+        "schemaTooOld": "Tämä luettelo on luotu Lightroom Classic -versiolla, joka on liian vanha tälle työkalulle.",
+        "tooLarge": "Tämä luettelo on liian suuri analysoitavaksi selaimessa.",
+        "corrupt": "Tämä luettelo vaikuttaa vioittuneelta tai keskeneräiseltä, eikä sitä voitu lukea.",
+        "notLightroom": "Tuo tiedosto ei ole Lightroom Classic -luettelotietokanta.",
+        "unknown": "Jokin meni vikaan tuota luetteloa analysoitaessa. Yritä uudelleen."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Koontinäytön osiot",
+        "jumpToSection": "Siirry osioon",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "Kohokohdat",
+          "whatYouShoot": "Mitä kuvaat",
+          "howYouCurate": "Miten valikoit",
+          "exploreCompare": "Tutki ja vertaa",
+          "catalog": "Luettelo"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "Vuosikatsaus",
+          "year-to-year": "Vuosi vuodelta",
+          "overview": "Yleiskatsaus",
+          "gear": "Kaluston erittely",
+          "focal-length": "Polttoväli",
+          "focal-length-per-zoom": "Polttoväli zoomia kohden",
+          "apertures": "Optimaalinen aukko",
+          "time-of-day": "Vuorokaudenaika",
+          "heatmap": "Kuvauslämpökartta",
+          "gps": "GPS-sijainnit",
+          "curation": "Valikointisuppilo",
+          "edit-intensity": "Muokkauksen voimakkuus",
+          "ratings": "Arvioinnit ja valinnat",
+          "keywords": "Avainsanakattavuus",
+          "bursts": "Sarjakuvauksen tunnistus",
+          "drilldown": "Yksityiskohtainen tutkija",
+          "period-comparison": "Jaksojen vertailu",
+          "catalog-health": "Luettelon kunto"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "Ladataan {section}…",
+        "footerNote": "Laskettu selaimessasi paikallisesta luettelotiedostostasi. Mitään ei ole ladattu palvelimelle."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Vuosikatsaus",
+          "yearLabel": "Vuosi",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Kuvia yhteensä",
+            "daysShot": "Kuvauspäiviä",
+            "topBody": "Käytetyin runko",
+            "topLens": "Käytetyin objektiivi",
+            "topFocalLength": "Tärkein polttoväli",
+            "topAperture": "Tärkein aukko",
+            "mostProlificMonth": "Tuotteliain kuukausi",
+            "avgShotsPerDay": "Kuvia keskimäärin / päivä"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Kuukausittainen määrä",
+            "topGearShare": "Tärkeimmän kaluston osuus",
+            "timeOfDayShare": "Osuus vuorokaudenajan mukaan"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "Tuotteliain kuukautesi oli {month} ({count} kuvaa). Tärkein objektiivi kyseisenä kuukautena: {lens}.",
+          "empty": "Tälle luettelolle ei ole vielä vuosikatsaustietoja.",
+          "caption": "Avainluvut ja minikaaviot vuodelle {year}: {totalPhotos} kuvaa {daysShot} päivän aikana, tärkein runko {topBody}, tärkein objektiivi {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "Vuosi vuodelta",
+          "yearCountLabel": "Näytä viimeiset",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 vuotta",
+            "3": "3 vuotta",
+            "5": "5 vuotta"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Suurin muutos: {label} vuonna {year} ({delta}).",
+          "stat": "Tilasto",
+          "empty": "Vuosi vuodelta -vertailuun tarvitaan vähintään 2 täyttä vuotta luettelotietoja.",
+          "caption": "Vuosittaiset tilastot rinnakkain edellisvuoteen verrattuna {n} vuoden ajalta."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Yleiskatsaus",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Kuvia yhteensä",
+            "dateRange": "Päivämääräväli",
+            "daysShot": "Kuvauspäiviä",
+            "photosPerDay": "Kuvia / päivä",
+            "bodyCount": "Runkoja",
+            "lensCount": "Objektiiveja",
+            "topBody": "Tärkein runko",
+            "topLens": "Tärkein objektiivi",
+            "topFocalLength": "Tärkein polttoväli"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Luettelon yleiskatsaus: {totalPhotos} kuvaa {daysShot} päivän aikana, {bodyCount} runkoa, {lensCount} objektiivia."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "Kalusto",
+          "bodiesOverTime": "Rungot ajan myötä",
+          "topLenses": "Tärkeimmät objektiivit",
+          "topCombos": "Tärkeimmät runko- + objektiiviyhdistelmät",
+          "retired": "Pois käytöstä (12 kuukautta käyttämättä)",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "Runko",
+            "lens": "Objektiivi",
+            "count": "Kuvia",
+            "firstUsed": "Ensimmäinen käyttö",
+            "lastUsed": "Viimeisin käyttö"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Kaluston erittely: tärkein objektiivi {topLens}, jolla {topLensCount} kuvaa; {comboCount} tärkeintä yhdistelmää näytetään."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "Polttoväli",
+          "histogramTitle": "Polttovälien jakauma (35 mm:n vastaavuus)",
+          "histogramAria": "Polttovälien histogrammi",
+          "topPeaks": "Tärkeimmät huiput",
+          "onePrime": "Yksi {mm} mm:n kiinteäpolttovälinen objektiivi kattaisi {pct} % kuvistasi ±25 %:n sisällä.",
+          "noPrime": "Polttovälien käyttösi on liian hajanaista, jotta yksi kiinteäpolttovälinen objektiivi voisi hallita.",
+          "caption": "Histogrammi 1 mm:n välein {min} mm:stä {max} mm:iin; {peakCount} tärkeintä huippua merkitty."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Polttoväli zoomia kohden",
+          "callout": "Objektiivilla {lens} {pct} % kuvista on otettu polttovälillä {mm} mm.",
+          "empty": "Tästä luettelosta ei havaittu zoomobjektiiveja.",
+          "caption": "{n} zoomobjektiivin histogrammia, joissa hallitseva polttoväli on korostettu."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Optimaalinen aukko",
+          "callout": "Kuvaat objektiivilla {lens} täysin aukaistuna {pct} % ajasta.",
+          "empty": "Tietoja ei ole tarpeeksi — tarvitaan vähintään yksi objektiivi, jolla on yli 100 kuvaa.",
+          "caption": "{n} objektiivin aukkohistogrammia."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Vuorokaudenaika",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Kellonaika",
+            "sun": "Auringon kulma"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "{pct} %:lla luettelostasi on GPS — auringon kulman mukainen erittely heijastaa vain näitä kuvia.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "Kultainen hetki",
+            "blueHour": "Sininen hetki",
+            "midday": "Keskipäivä",
+            "night": "Yö"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "Rungon mukaan",
+          "perGearPeak": "{gear} — huipputunti {hour}:00",
+          "caption": "Kuvamäärät 24 tunnin aikana valinnaisella auringon kulman mukaisella erittelyllä."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Kuvauslämpökartta",
+          "aria": "Kuvauslämpökartta — aktiivisuuskalenteri",
+          "tooltip": "{date}: {count} kuvaa, tärkein objektiivi {topLens}",
+          "caption": "Aktiivisuuskalenteri vuosi vuodelta {years} vuoden ajalta."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "GPS-sijainnit",
+          "aria": "GPS-kartta luettelon kuvaryhmistä",
+          "coverage": "{pct} %:lla luettelostasi on GPS-tietoja ({count} kuvaa).",
+          "topRegions": "Tärkeimmät alueet",
+          "empty": "Tästä luettelosta ei löytynyt GPS-tietoja.",
+          "caption": "Suorakulmainen maailmankartta, jossa {clusters} koottua ryhmää; henkilötietojen suojaus poistaa ruudukon solut, joissa on alle 5 kuvaa."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Valikointisuppilo",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "Yhteensä",
+            "notRejected": "Ei hylätyt",
+            "rated1Plus": "1+ tähti",
+            "rated4Plus": "4+ tähteä"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Valintaprosentti kaluston mukaan",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Nimi",
+            "total": "Yhteensä",
+            "rated4Plus": "4+ tähteä",
+            "pickRate": "Valintaprosentti"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Suppilo {total} kuvasta yhteensä {rated4Plus} kuvaan, joiden arvio on 4+ ({pickRate} %:n valintaprosentti)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Muokkauksen voimakkuus",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "Keskim. valotuksen muutos",
+            "avgCrop": "Keskim. rajaus-%",
+            "pctLocal": "% paikallisilla säädöillä",
+            "pctPresets": "% esiasetuksilla"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Muokkauksen voimakkuuspisteet ajan myötä",
+          "topPresets": "Tärkeimmät esiasetukset",
+          "perGear": "Pisteet kaluston mukaan",
+          "sampled": "Arvio perustuu 5 %:n otokseen {n} kuvasta.",
+          "caption": "Koko luettelon keskimääräiset muokkauspisteet kuukausittaisen trendin ja kalustokohtaisen erittelyn kanssa."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Arvioinnit ja valinnat",
+          "distribution": "Arviointien jakauma",
+          "colorLabels": "Värimerkinnät",
+          "perGear": "Valintaprosentti kaluston mukaan",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Nimi",
+            "total": "Yhteensä",
+            "rated4Plus": "4+ tähteä",
+            "pickRate": "Valintaprosentti"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "Arvio",
+            "count": "Kuvia"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Arviointien jakauma {colorLabelCount} värimerkinnällä ja kalustokohtaisilla valintaprosenteilla."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Avainsanakattavuus",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Merkityt kuvat",
+            "untagged": "Merkitsemättömät kuvat",
+            "uniqueKeywords": "Yksilölliset avainsanat",
+            "avgPerPhoto": "Keskim. avainsanoja / merkitty kuva",
+            "orphans": "Orpoavainsanat"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Tärkeimmät avainsanat",
+          "blindSpots": "Suurimmat katvealueet",
+          "blindSpotItem": "{yearMonth} — {pct} %:n kattavuus",
+          "blindSpotsEmpty": "Kattavuus näyttää tasaiselta kuukausien välillä.",
+          "caption": "Merkkaustilastot ja {n} tärkeintä avainsanaa (henkilötietojen suojaus: vain avainsanat 3+ kuvassa)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Sarjakuvauksen tunnistus",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Sarjoja yhteensä",
+            "photosInBursts": "Kuvia sarjoissa",
+            "pctInBursts": "% luettelosta sarjoissa",
+            "longestBurst": "Pisin sarja"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Sarjan pituuden jakauma",
+          "keeperRate": "Sarjakuvat saavat arvion 4+ {burstRate} %:ssa — {delta} % {direction} kuin yksittäiskuvat ({singleRate} %).",
+          "moreOften": "useammin",
+          "lessOften": "harvemmin",
+          "caption": "Sarjan pituuden jakauma; säilytysprosentti {burstRate} % verrattuna {singleRate} %:iin yksittäiskuvilla."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
-          "focalLengthMin": "Min mm",
-          "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "title": "Yksityiskohtainen tutkija",
+          "description": "Suodata koontinäyttöä päivämäärän, kaluston, polttovälin, aukon, ISO:n, arvion tai valintatilan mukaan. Ota kaikki muutokset käyttöön kerralla.",
+          "dateRange": "Päivämääräväli",
+          "dateStart": "Alkaen",
+          "dateEnd": "Päättyen",
+          "cameras": "Kamerat",
+          "lenses": "Objektiivit",
+          "focalLength": "Polttoväli (mm, 35 mm:n vastaavuus)",
+          "focalLengthMin": "Pienin mm",
+          "focalLengthMax": "Suurin mm",
+          "aperture": "Aukko (f-luku)",
+          "apertureMin": "Pienin f-luku",
+          "apertureMax": "Suurin f-luku",
           "iso": "ISO",
-          "isoMin": "Min ISO",
-          "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "isoMin": "Pienin ISO",
+          "isoMax": "Suurin ISO",
+          "ratings": "Arvioinnit",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "Valintatila",
+          "pickAny": "Mikä tahansa",
+          "pickFlagged": "Merkityt",
+          "pickRejected": "Hylätyt",
+          "pickNone": "Merkitsemättömät",
+          "apply": "Ota käyttöön",
+          "reset": "Nollaa",
+          "activeFilters": "Aktiiviset suodattimet",
+          "removeFilter": "Poista suodatin {label}",
+          "filterDateRange": "Päivämäärä {start} – {end}",
+          "filterCameras": "Kamera: {names}",
+          "filterLenses": "Objektiivi: {names}",
+          "filterFocalLength": "Polttoväli {min}–{max} mm",
+          "filterAperture": "Aukko f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "Arvio: {ratings}",
+          "filterPicks": "Valinta: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "Jaksojen vertailu",
+          "periodA": "Jakso A",
+          "periodB": "Jakso B",
+          "start": "Alku",
+          "end": "Loppu",
+          "apply": "Ota käyttöön",
           "headers": {
-            "stat": "Stat",
+            "stat": "Tilasto",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Kuvia yhteensä",
+            "daysShot": "Kuvauspäiviä",
+            "topBody": "Tärkein runko",
+            "topLens": "Tärkein objektiivi",
+            "topFocalLength": "Tärkein polttoväli"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Valitse kullekin jaksolle päivämääräväli ja napsauta Ota käyttöön.",
+          "caption": "Kahden mielivaltaisen päivämäärävälin rinnakkaisvertailu erotuserolla."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Luettelon kunto",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Puuttuvat alkuperäiset",
+            "missingPreviews": "Puuttuvat esikatselut",
+            "brokenPaths": "Rikkinäiset polut",
+            "likelyDuplicates": "Todennäköiset kaksoiskappaleet"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Todennäköiset kaksoiskappaleryhmät",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Kuvausaika",
+            "size": "Ryhmän koko",
+            "firstPath": "Ensimmäinen polku",
+            "lastPath": "Viimeinen polku"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Haarukointisarjat saattavat näkyä täällä; tarkista ennen poistamista.",
+          "missingByRootFolder": "Puuttuvat alkuperäiset juurikansion mukaan",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "Juurikansio",
+            "count": "Puuttuu"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "Lightroom Classicissa: Kirjasto → Etsi puuttuvat kuvat voi korjata rikkinäiset polut.",
+          "caption": "Yhteenveto luettelon kunnosta: {missing} puuttuvaa alkuperäistä, {duplicates} todennäköistä kaksoiskappaletta."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "Vie tämä analyysi",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Kopioi Markdown",
+          "copied": "Markdown-raportti kopioitu. ~{kb} kt.",
+          "downloaded": "Leikepöytä ei käytettävissä — raportti ladattiin sen sijaan .md-tiedostona."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "Vie PDF",
+          "loadingEngine": "Ladataan PDF-moottoria…",
+          "generating": "Luodaan raporttia…",
+          "success": "PDF-raportti ladattu.",
+          "error": "PDF:n luominen ei onnistunut. Kokeile sen sijaan Markdownia tai Jaa-toimintoa.",
+          "title": "Lightroom-luettelon analyysi",
+          "filteredSuffix": " (Suodatettu näkymä)",
+          "localFooter": "Luetteloasi ei koskaan ladattu palvelimelle — vain nämä koostetilastot.",
+          "generatedBy": "Luonut phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Kuvia yhteensä",
+          "dateRange": "Päivämääräväli",
+          "catalogVersion": "Luettelon versio",
+          "filterTitle": "Suodatin käytössä",
+          "page": "Sivu",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Vuosikatsaus",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Kuvia yhteensä",
+                "daysShot": "Kuvauspäiviä",
+                "topBody": "Käytetyin runko",
+                "topLens": "Käytetyin objektiivi"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Tuotteliain kuukausi: {month} ({count} kuvaa)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "Vuosi vuodelta",
+              "stat": "Tilasto",
+              "biggestShift": "Suurin muutos: {label} vuonna {year} ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Yleiskatsaus",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Kuvia yhteensä",
+                "daysShot": "Kuvauspäiviä",
+                "topBody": "Tärkein runko",
+                "topLens": "Tärkein objektiivi"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "Kalusto",
+              "bodiesOverTime": "Rungot ajan myötä",
+              "topLenses": "Tärkeimmät objektiivit",
+              "retired": "Pois käytöstä",
+              "lensHeader": "Objektiivi",
+              "photosHeader": "Kuvia"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "Polttoväli",
+              "histogramTitle": "Polttovälien jakauma (35 mm:n vastaavuus)",
+              "topPeaks": "Tärkeimmät huiput",
+              "onePrime": "Yksi {mm} mm:n kiinteäpolttovälinen objektiivi kattaisi {pct} % kuvistasi ±25 %:n sisällä.",
+              "noPrime": "Polttovälien käyttösi on liian hajanaista, jotta yksi kiinteäpolttovälinen objektiivi voisi hallita."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Polttoväli zoomia kohden",
+              "perLens": "{lens}: {pct} % kuvista polttovälillä {mm} mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Optimaalinen aukko",
+              "perLens": "{lens}: kuvattu täysin aukaistuna {pct} % ajasta"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Vuorokaudenaika",
+              "gpsNote": "{pct} %:lla luettelostasi on GPS — auringon kulman mukainen erittely heijastaa vain näitä kuvia."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Kuvauslämpökartta",
+              "daysWithPhotos": "Päiviä, joissa on kuvia",
+              "yearsCovered": "Katetut vuodet"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "GPS-sijainnit",
+              "coverage": "{pct} %:lla luettelosta on GPS",
+              "topRegions": "Tärkeimmät alueet",
+              "regionHeader": "Alue",
+              "photosHeader": "Kuvia"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Valikointisuppilo",
+              "stageHeader": "Vaihe",
+              "photosHeader": "Kuvia"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Muokkauksen voimakkuus",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "Keskim. valotuksen muutos",
+                "crop": "Keskim. rajaus",
+                "local": "Paikallisilla säädöillä",
+                "presets": "Esiasetuksilla"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Arvio perustuu luettelon otokseen."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "Arvioinnit ja valinnat",
+              "ratingHeader": "Arvio",
+              "photosHeader": "Kuvia"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Avainsanakattavuus",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Merkityt",
+                "untagged": "Merkitsemättömät",
+                "unique": "Yksilölliset avainsanat",
+                "orphans": "Orpoavainsanat"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "Avainsana",
+              "photosHeader": "Kuvia"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Sarjakuvauksen tunnistus",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Sarjoja yhteensä",
+                "inBursts": "Kuvia sarjoissa",
+                "longest": "Pisin sarja"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "Sarjakuvat saavat arvion ≥4: {a} % verrattuna {b} %:iin yksittäiskuvilla."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "Jaksojen vertailu",
+              "notExported": "Jaksojen vertailu on interaktiivinen sovelluksessa eikä sitä viedä."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Luettelon kunto",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Puuttuvat alkuperäiset",
+                "previews": "Puuttuvat esikatselut",
+                "broken": "Rikkinäiset polut",
+                "dupes": "Todennäköiset kaksoiskappaleet"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Kirjasto → Etsi puuttuvat kuvat voi korjata rikkinäiset polut."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Jaa URL-osoitteella",
+          "placeholderTitle": "Suunnitelma 3 yhdistää tämän."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Jaa URL-osoitteella",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Jaa linkki analyysiisi",
+          "uploadedHeading": "Mitä ladataan palvelimelle",
+          "uploaded": "Lukumäärät, top-N-luettelot ja histogrammit — täsmälleen yllä näkyvät tiedot.",
+          "notUploadedHeading": "Mitä EI ladata palvelimelle",
+          "notUploaded": "Tiedostonimet, kuvatiedostot, kansiopolut, GPS-koordinaatit tarkemmin kuin noin 5 km:n ruudukon solut sekä avainsanat, joita on käytetty alle 3 kertaa.",
+          "expiresLabel": "Linkki vanhenee",
+          "expires24h": "24 tunnissa",
+          "expires7d": "7 päivässä",
+          "expires30d": "30 päivässä",
+          "cancel": "Peruuta",
+          "create": "Luo linkki",
+          "creating": "Luodaan linkkiä…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Olet saavuttanut jakorajan. Yritä uudelleen tunnin kuluttua.",
+          "storage-unavailable": "Tallennustila tilapäisesti pois käytöstä. Yritä uudelleen hetken kuluttua.",
+          "invalid": "Tämän analyysin jakaminen ei onnistunut — tiedot vaikuttavat virheellisiltä.",
+          "unknown": "Jokin meni vikaan linkkiä luotaessa. Yritä uudelleen."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "Linkkisi on valmis",
+          "expiresOn": "Vanhenee {date}",
+          "copy": "Kopioi",
+          "copied": "Linkki kopioitu",
+          "openNewTab": "Avaa uudessa välilehdessä",
+          "delete": "Poista tämä jako",
+          "deleted": "Jako poistettu",
+          "urlLabel": "Jaettava URL-osoite"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "Viimeisimmät jakosi",
+          "subtitle": "Linkit, jotka loit tällä laitteella. Avaa jokin nähdäksesi sen tai poista se peruuttaaksesi käyttöoikeuden.",
+          "idLabel": "Jako …{last4}",
+          "created": "Luotu {date}",
+          "expires": "Vanhenee {date}",
+          "filtered": "Suodatettu: {summary}",
+          "open": "Avaa",
+          "delete": "Poista"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Suodatin käytössä",
+          "summaryShort": "Tämä näkymä on suodatettu: {summary}",
+          "showAll": "Näytä kaikki suodattimet",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "Päivämäärät",
+            "cameras": "Kamerat",
+            "lenses": "Objektiivit",
+            "focalLengthRange": "Polttoväli",
+            "apertureRange": "Aukko",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Arvioinnit",
+            "keywords": "Avainsanat",
+            "picks": "Valinnat"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Tämä on jaettu analyysi. Alkuperäistä luetteloa ei koskaan ladattu palvelimelle — vain nämä koostetilastot.",
+          "cta": "Kokeile työkalua omalla luettelollasi",
+          "expiredTitle": "Tämä jako on vanhentunut tai poistettu.",
+          "expiredBody": "Linkki on saattanut saavuttaa vanhenemispäivänsä tai luoja on poistanut sen.",
+          "schemaNewerTitle": "Luotu uudemmalla versiolla",
+          "schemaNewerBody": "Tämä analyysi tehtiin uudemmalla työkalun versiolla. Kokeile ladata sivu uudelleen.",
+          "pageTitle": "Jaettu Lightroom-luettelon analyysi"
         }
       }
     }

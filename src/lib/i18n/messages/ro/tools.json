@@ -65,8 +65,8 @@
       "description": "Compară megapixelii, vizualizează dimensiunile de tipărire și vezi dimensiunile fișierelor pentru diferite rapoarte de aspect și DPI"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Analizor de Cataloage Lightroom",
+      "description": "Analizează-ți catalogul Lightroom Classic — echipament, distanță focală, diafragme, evaluări și multe altele — 100% în browserul tău"
     }
   }
 }

@@ -91,8 +91,8 @@
       "description": "Sprawdź, jak megapiksele przekładają się na rozmiary wydruków przy 72-300 DPI i różnych proporcjach. Porównaj aparaty, rozmiary plików, binning pikseli i zasięg kadrowania — z tabelą jakości wydruków."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Analizator katalogu Lightroom — bezpłatne statystyki w przeglądarce",
+      "description": "Przeanalizuj swój katalog Lightroom Classic lokalnie w przeglądarce. Zobacz sprzęt, ogniskowe, nawyki dotyczące przysłony, oceny i więcej. W 100% lokalnie — Twój katalog nigdy nie jest przesyłany."
     }
   }
 }

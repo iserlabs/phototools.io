@@ -65,8 +65,8 @@
       "description": "Sammenlign megapixel, visualisér printstørrelser og se filstørrelser på tværs af billedformater og DPI-værdier"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Lightroom-kataloganalysator",
+      "description": "Analyser dit Lightroom Classic-katalog — udstyr, brændvidde, blænder, bedømmelser og mere — 100 % i din browser"
     }
   }
 }

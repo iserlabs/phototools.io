@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% локально · Без завантаження",
+      "privacyBadgeAria": "Гарантія конфіденційності: цей інструмент працює повністю у вашому браузері. Ваш каталог ніколи не завантажується.",
+      "skipToMain": "Перейти до основного вмісту",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Проаналізуйте свій каталог Lightroom Classic",
+        "subhead": "Техніка, фокусні відстані, звички роботи з діафрагмою, рейтинги, GPS, інтенсивність обробки та інше — повністю у вашому браузері. Ваш каталог ніколи не залишає ваш пристрій.",
+        "explainer": "Виберіть файл .lrcat на своєму комп'ютері. Ми відкриваємо його у воркері SQLite WebAssembly, обчислюємо зведену статистику та будуємо інтерактивну панель. Нічого не завантажується.",
+        "tryDemo": "Спробувати демонстраційний каталог"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Для цього потрібен комп'ютер",
+        "body": "Аналізатору каталогу Lightroom потрібен файл каталогу Lightroom Classic (.lrcat), який знаходиться на вашому комп'ютері, а не на телефоні.",
+        "tryDemoCta": "Спробувати демо тут",
+        "openOnDesktop": "Відкрийте цю сторінку на комп'ютері, щоб проаналізувати власний каталог.",
+        "copyLink": "Копіювати посилання",
+        "copyLinkSuccess": "Посилання скопійовано",
+        "screenshotAlt": "Попередній перегляд панелі Аналізатора каталогу Lightroom"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "Перетягніть сюди файл .lrcat або натисніть для вибору",
+        "tapPrompt": "Торкніться, щоб вибрати файл .lrcat",
+        "browseButton": "Вибрати каталог",
+        "selectedFile": "Вибрано: {fileName}",
+        "ariaLabel": "Вибір файлу каталогу Lightroom Classic",
+        "errorNotLrcat": "Цей файл не схожий на каталог Lightroom Classic (.lrcat).",
+        "errorReadFailed": "Не вдалося прочитати цей файл. Спробуйте ще раз."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Великий каталог — увага",
+        "body": "{fileName} має розмір {sizeGb} ГБ. Обробка може зайняти 30 секунд або більше і використати багато пам'яті. Продовжити?",
+        "continue": "Продовжити",
+        "cancel": "Скасувати"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "Аналіз каталогу",
+        "subtitle": "Це працює повністю у вашому браузері. Нічого не завантажується.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Читання файлу…",
+          "opening": "Відкриття каталогу…",
+          "schema": "Перевірка схеми…",
+          "hashing": "Обчислення хешу…",
+          "aggregating": "Обчислення статистики…",
+          "finalizing": "Завершення…"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Завантажено з кешу",
+        "reanalyze": "Проаналізувати заново",
+        "reanalyzeAria": "Відкинути збережений результат і проаналізувати цей каталог заново з вихідного файлу."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "Не вдалося проаналізувати цей каталог",
+        "retry": "Спробувати інший каталог",
+        "parseFailed": "Не вдалося обробити цей каталог. Можливо, він відкритий у Lightroom, записаний частково або має неочікуваний формат.",
+        "workerFailed": "Не вдалося запустити рушій аналізу. Перезавантажте сторінку та спробуйте ще раз.",
+        "schemaTooNew": "Цей каталог був створений новішою версією Lightroom Classic, ніж поки що підтримує цей інструмент.",
+        "schemaTooOld": "Цей каталог був створений версією Lightroom Classic, яка занадто стара для цього інструмента.",
+        "tooLarge": "Цей каталог занадто великий для аналізу в браузері.",
+        "corrupt": "Цей каталог, схоже, пошкоджений або неповний, і його не вдалося прочитати.",
+        "notLightroom": "Цей файл не є базою даних каталогу Lightroom Classic.",
+        "unknown": "Щось пішло не так під час аналізу цього каталогу. Будь ласка, спробуйте ще раз."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Розділи панелі",
+        "jumpToSection": "Перейти до розділу",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "Головне",
+          "whatYouShoot": "Що ви знімаєте",
+          "howYouCurate": "Як ви відбираєте",
+          "exploreCompare": "Дослідження та порівняння",
+          "catalog": "Каталог"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "Підсумки року",
+          "year-to-year": "Рік до року",
+          "overview": "Огляд",
+          "gear": "Розподіл техніки",
+          "focal-length": "Фокусна відстань",
+          "focal-length-per-zoom": "Фокусна відстань за зумом",
+          "apertures": "Оптимальна діафрагма",
+          "time-of-day": "Час доби",
+          "heatmap": "Теплова карта зйомки",
+          "gps": "GPS-локації",
+          "curation": "Воронка відбору",
+          "edit-intensity": "Інтенсивність обробки",
+          "ratings": "Рейтинги та позначки",
+          "keywords": "Покриття ключовими словами",
+          "bursts": "Виявлення серій",
+          "drilldown": "Детальний огляд",
+          "period-comparison": "Порівняння періодів",
+          "catalog-health": "Стан каталогу"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "Завантаження: {section}…",
+        "footerNote": "Обчислено у вашому браузері з локального файлу каталогу. Нічого не було завантажено."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Підсумки року",
+          "yearLabel": "Рік",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Усього фотографій",
+            "daysShot": "Днів зйомки",
+            "topBody": "Найвживаніша камера",
+            "topLens": "Найвживаніший об'єктив",
+            "topFocalLength": "Найчастіша фокусна відстань",
+            "topAperture": "Найчастіша діафрагма",
+            "mostProlificMonth": "Найпродуктивніший місяць",
+            "avgShotsPerDay": "Сер. кадрів / день"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Обсяг за місяцями",
+            "topGearShare": "Частка основної техніки",
+            "timeOfDayShare": "Частка часу доби"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "Вашим найпродуктивнішим місяцем був {month} ({count} фотографій). Найчастіший об'єктив у цьому місяці: {lens}.",
+          "empty": "Поки немає даних підсумків року для цього каталогу.",
+          "caption": "Ключова статистика та міні-графіки за {year}: {totalPhotos} фотографій за {daysShot} днів, найчастіша камера {topBody}, найчастіший об'єктив {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "Рік до року",
+          "yearCountLabel": "Показати останні",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 роки",
+            "3": "3 роки",
+            "5": "5 років"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Найбільша зміна: {label} у {year} році ({delta}).",
+          "stat": "Показник",
+          "empty": "Для порівняння рік до року потрібно щонайменше 2 повні роки даних каталогу.",
+          "caption": "Річна статистика поруч зі зміною відносно попереднього року за {n} років."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Огляд",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Усього фотографій",
+            "dateRange": "Діапазон дат",
+            "daysShot": "Днів зйомки",
+            "photosPerDay": "Фотографій / день",
+            "bodyCount": "Камери",
+            "lensCount": "Об'єктиви",
+            "topBody": "Найчастіша камера",
+            "topLens": "Найчастіший об'єктив",
+            "topFocalLength": "Найчастіша фокусна відстань"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Огляд каталогу: {totalPhotos} фотографій за {daysShot} днів, камер: {bodyCount}, об'єктивів: {lensCount}."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "Техніка",
+          "bodiesOverTime": "Камери за часом",
+          "topLenses": "Найчастіші об'єктиви",
+          "topCombos": "Найчастіші зв'язки камера + об'єктив",
+          "retired": "Виведені з використання (12 місяців без використання)",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "Камера",
+            "lens": "Об'єктив",
+            "count": "Фотографії",
+            "firstUsed": "Перше використання",
+            "lastUsed": "Останнє використання"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Розподіл техніки: найчастіший об'єктив {topLens} з {topLensCount} фотографіями; показано {comboCount} основних зв'язок."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "Фокусна відстань",
+          "histogramTitle": "Розподіл фокусних відстаней (еквівалент 35 мм)",
+          "histogramAria": "Гістограма фокусних відстаней",
+          "topPeaks": "Основні піки",
+          "onePrime": "Фікс {mm}мм покрив би {pct}% ваших кадрів у межах ±25%.",
+          "noPrime": "Ваше використання фокусних відстаней занадто розпорошене, щоб один фікс домінував.",
+          "caption": "Гістограма з кроком 1 мм від {min}мм до {max}мм; позначено {peakCount} основних піків."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Фокусна відстань за зумом",
+          "callout": "На об'єктиві {lens} {pct}% кадрів зняті на {mm}мм.",
+          "empty": "У цьому каталозі не виявлено зум-об'єктивів.",
+          "caption": "{n} гістограм зум-об'єктивів із виділеною домінуючою фокусною відстанню."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Оптимальна діафрагма",
+          "callout": "Ви знімаєте об'єктивом {lens} на повністю відкритій діафрагмі у {pct}% випадків.",
+          "empty": "Недостатньо даних — потрібен щонайменше один об'єктив зі 100+ фотографіями.",
+          "caption": "{n} гістограм діафрагми об'єктивів."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Час доби",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Година за годинником",
+            "sun": "Кут сонця"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "{pct}% вашого каталогу має GPS — розподіл за кутом сонця відображає лише ці фотографії.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "Золота година",
+            "blueHour": "Синя година",
+            "midday": "Полудень",
+            "night": "Ніч"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "За камерою",
+          "perGearPeak": "{gear} — пікова година {hour}:00",
+          "caption": "Кількість фотографій за 24 години з додатковим розподілом за кутом сонця."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Теплова карта зйомки",
+          "aria": "Теплова карта зйомки — календар активності",
+          "tooltip": "{date}: {count} фотографій, найчастіший об'єктив {topLens}",
+          "caption": "Календар активності рік за роком за {years} років."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "GPS-локації",
+          "aria": "GPS-карта кластерів фотографій каталогу",
+          "coverage": "{pct}% вашого каталогу має дані GPS ({count} фотографій).",
+          "topRegions": "Основні регіони",
+          "empty": "У цьому каталозі не знайдено даних GPS.",
+          "caption": "Прямокутна карта світу з {clusters} агрегованими кластерами; захист PII відкидає клітинки сітки з менш ніж 5 фотографіями."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Воронка відбору",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "Усього",
+            "notRejected": "Не відхилені",
+            "rated1Plus": "1+ зірка",
+            "rated4Plus": "4+ зірки"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Частка відбору за технікою",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Назва",
+            "total": "Усього",
+            "rated4Plus": "4+ зірки",
+            "pickRate": "Частка відбору"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Воронка від {total} усіх фотографій до {rated4Plus} з рейтингом 4+ ({pickRate}% частка відбору)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Інтенсивність обробки",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "Сер. зсув експозиції",
+            "avgCrop": "Сер. % кадрування",
+            "pctLocal": "% з локальними корекціями",
+            "pctPresets": "% з пресетами"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Оцінка інтенсивності обробки за часом",
+          "topPresets": "Найчастіші пресети",
+          "perGear": "Оцінка за технікою",
+          "sampled": "Оцінка на основі 5% вибірки з {n} фотографій.",
+          "caption": "Середня оцінка обробки по всьому каталогу з місячним трендом і розподілом за технікою."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Рейтинги та позначки",
+          "distribution": "Розподіл рейтингів",
+          "colorLabels": "Кольорові мітки",
+          "perGear": "Частка відбору за технікою",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Назва",
+            "total": "Усього",
+            "rated4Plus": "4+ зірки",
+            "pickRate": "Частка відбору"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "Рейтинг",
+            "count": "Фотографії"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Розподіл рейтингів з {colorLabelCount} кольоровими мітками та частками відбору за технікою."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Покриття ключовими словами",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Позначені фотографії",
+            "untagged": "Непозначені фотографії",
+            "uniqueKeywords": "Унікальні ключові слова",
+            "avgPerPhoto": "Сер. ключових слів / позначену фотографію",
+            "orphans": "Осиротілі ключові слова"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Найчастіші ключові слова",
+          "blindSpots": "Найбільші прогалини",
+          "blindSpotItem": "{yearMonth} — {pct}% покриття",
+          "blindSpotsEmpty": "Покриття виглядає рівномірним по місяцях.",
+          "caption": "Статистика покриття тегами та {n} найчастіших ключових слів (захист PII: лише ключові слова на 3+ фотографіях)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Виявлення серій",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Усього серій",
+            "photosInBursts": "Фотографій у серіях",
+            "pctInBursts": "% каталогу в серіях",
+            "longestBurst": "Найдовша серія"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Розподіл довжини серій",
+          "keeperRate": "Фотографії із серій отримують рейтинг 4+ у {burstRate}% — на {delta}% {direction}, ніж поодинокі кадри ({singleRate}%).",
+          "moreOften": "частіше",
+          "lessOften": "рідше",
+          "caption": "Розподіл довжини серій; частка вдалих {burstRate}% проти {singleRate}% для поодиноких кадрів."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
-          "focalLengthMin": "Min mm",
-          "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "title": "Детальний огляд",
+          "description": "Фільтруйте панель за датою, технікою, фокусною відстанню, діафрагмою, ISO, рейтингом або статусом позначки. Застосовуйте всі зміни одразу.",
+          "dateRange": "Діапазон дат",
+          "dateStart": "Від",
+          "dateEnd": "До",
+          "cameras": "Камери",
+          "lenses": "Об'єктиви",
+          "focalLength": "Фокусна відстань (мм, еквівалент 35 мм)",
+          "focalLengthMin": "Мін мм",
+          "focalLengthMax": "Макс мм",
+          "aperture": "Діафрагма (число f)",
+          "apertureMin": "Мін число f",
+          "apertureMax": "Макс число f",
           "iso": "ISO",
-          "isoMin": "Min ISO",
-          "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "isoMin": "Мін ISO",
+          "isoMax": "Макс ISO",
+          "ratings": "Рейтинги",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "Статус позначки",
+          "pickAny": "Будь-який",
+          "pickFlagged": "Позначені",
+          "pickRejected": "Відхилені",
+          "pickNone": "Без позначки",
+          "apply": "Застосувати",
+          "reset": "Скинути",
+          "activeFilters": "Активні фільтри",
+          "removeFilter": "Видалити фільтр {label}",
+          "filterDateRange": "Дата {start} – {end}",
+          "filterCameras": "Камера: {names}",
+          "filterLenses": "Об'єктив: {names}",
+          "filterFocalLength": "Фокусна відстань {min}–{max}мм",
+          "filterAperture": "Діафрагма f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "Рейтинг: {ratings}",
+          "filterPicks": "Позначка: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "Порівняння періодів",
+          "periodA": "Період A",
+          "periodB": "Період B",
+          "start": "Початок",
+          "end": "Кінець",
+          "apply": "Застосувати",
           "headers": {
-            "stat": "Stat",
+            "stat": "Показник",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Усього фотографій",
+            "daysShot": "Днів зйомки",
+            "topBody": "Найчастіша камера",
+            "topLens": "Найчастіший об'єктив",
+            "topFocalLength": "Найчастіша фокусна відстань"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Виберіть діапазон дат для кожного періоду та натисніть Застосувати.",
+          "caption": "Порівняння двох довільних діапазонів дат поруч зі стовпцем зміни."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Стан каталогу",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Відсутні оригінали",
+            "missingPreviews": "Відсутні прев'ю",
+            "brokenPaths": "Пошкоджені шляхи",
+            "likelyDuplicates": "Імовірні дублікати"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Імовірні кластери дублікатів",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Час зйомки",
+            "size": "Розмір кластера",
+            "firstPath": "Перший шлях",
+            "lastPath": "Останній шлях"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Тут можуть з'явитися серії брекетингу; перевірте перед видаленням.",
+          "missingByRootFolder": "Відсутні оригінали за кореневою папкою",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "Коренева папка",
+            "count": "Відсутні"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "У Lightroom Classic: Бібліотека → Знайти відсутні фотографії може усунути пошкоджені шляхи.",
+          "caption": "Зведення стану каталогу: {missing} відсутніх оригіналів, {duplicates} імовірних дублікатів."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "Експортувати цей аналіз",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Копіювати Markdown",
+          "copied": "Звіт Markdown скопійовано. ~{kb} КБ.",
+          "downloaded": "Буфер обміну недоступний — звіт завантажено як файл .md."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "Експорт у PDF",
+          "loadingEngine": "Завантаження рушія PDF…",
+          "generating": "Створення звіту…",
+          "success": "Звіт PDF завантажено.",
+          "error": "Не вдалося створити PDF. Спробуйте Markdown або Поділитися.",
+          "title": "Аналіз каталогу Lightroom",
+          "filteredSuffix": " (Відфільтрований вигляд)",
+          "localFooter": "Ваш каталог ніколи не завантажувався — лише ця зведена статистика.",
+          "generatedBy": "Створено на phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Усього фотографій",
+          "dateRange": "Діапазон дат",
+          "catalogVersion": "Версія каталогу",
+          "filterTitle": "Застосований фільтр",
+          "page": "Сторінка",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Підсумки року",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Усього фотографій",
+                "daysShot": "Днів зйомки",
+                "topBody": "Найвживаніша камера",
+                "topLens": "Найвживаніший об'єктив"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Найпродуктивніший місяць: {month} ({count} фотографій)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "Рік до року",
+              "stat": "Показник",
+              "biggestShift": "Найбільша зміна: {label} у {year} році ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Огляд",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Усього фотографій",
+                "daysShot": "Днів зйомки",
+                "topBody": "Найчастіша камера",
+                "topLens": "Найчастіший об'єктив"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "Техніка",
+              "bodiesOverTime": "Камери за часом",
+              "topLenses": "Найчастіші об'єктиви",
+              "retired": "Виведені з використання",
+              "lensHeader": "Об'єктив",
+              "photosHeader": "Фотографії"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "Фокусна відстань",
+              "histogramTitle": "Розподіл фокусних відстаней (еквівалент 35 мм)",
+              "topPeaks": "Основні піки",
+              "onePrime": "Фікс {mm}мм покрив би {pct}% ваших кадрів у межах ±25%.",
+              "noPrime": "Ваше використання фокусних відстаней занадто розпорошене, щоб один фікс домінував."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Фокусна відстань за зумом",
+              "perLens": "{lens}: {pct}% кадрів на {mm}мм"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Оптимальна діафрагма",
+              "perLens": "{lens}: знято на повністю відкритій діафрагмі у {pct}% випадків"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Час доби",
+              "gpsNote": "{pct}% вашого каталогу має GPS — розподіл за кутом сонця відображає лише ці фотографії."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Теплова карта зйомки",
+              "daysWithPhotos": "Днів із фотографіями",
+              "yearsCovered": "Охоплені роки"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "GPS-локації",
+              "coverage": "{pct}% каталогу має GPS",
+              "topRegions": "Основні регіони",
+              "regionHeader": "Регіон",
+              "photosHeader": "Фотографії"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Воронка відбору",
+              "stageHeader": "Етап",
+              "photosHeader": "Фотографії"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Інтенсивність обробки",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "Сер. зсув експозиції",
+                "crop": "Сер. кадрування",
+                "local": "З локальними корекціями",
+                "presets": "З пресетами"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Оцінка на основі вибірки з каталогу."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "Рейтинги та позначки",
+              "ratingHeader": "Рейтинг",
+              "photosHeader": "Фотографії"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Покриття ключовими словами",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Позначені",
+                "untagged": "Непозначені",
+                "unique": "Унікальні ключові слова",
+                "orphans": "Осиротілі ключові слова"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "Ключове слово",
+              "photosHeader": "Фотографії"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Виявлення серій",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Усього серій",
+                "inBursts": "Фотографій у серіях",
+                "longest": "Найдовша серія"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "Фотографії із серій отримують рейтинг ≥4: {a}% проти {b}% для поодиноких кадрів."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "Порівняння періодів",
+              "notExported": "Порівняння періодів інтерактивне в застосунку і не експортується."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Стан каталогу",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Відсутні оригінали",
+                "previews": "Відсутні прев'ю",
+                "broken": "Пошкоджені шляхи",
+                "dupes": "Імовірні дублікати"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Бібліотека → Знайти відсутні фотографії може усунути пошкоджені шляхи."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Поділитися через URL",
+          "placeholderTitle": "План 3 підключить це."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Поділитися через URL",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Поділитися посиланням на ваш аналіз",
+          "uploadedHeading": "Що завантажується",
+          "uploaded": "Кількості, списки топ-N та гістограми — саме ті дані, що показані вище.",
+          "notUploadedHeading": "Що НЕ завантажується",
+          "notUploaded": "Імена файлів, файли зображень, шляхи до папок, координати GPS точніші за клітинки сітки ~5 км та ключові слова, використані менш ніж 3 рази.",
+          "expiresLabel": "Посилання спливає через",
+          "expires24h": "24 години",
+          "expires7d": "7 днів",
+          "expires30d": "30 днів",
+          "cancel": "Скасувати",
+          "create": "Створити посилання",
+          "creating": "Створення посилання…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Ви досягли ліміту публікацій. Спробуйте ще раз за годину.",
+          "storage-unavailable": "Сховище тимчасово недоступне. Спробуйте ще раз за мить.",
+          "invalid": "Не вдалося поділитися цим аналізом — дані виглядають пошкодженими.",
+          "unknown": "Щось пішло не так під час створення посилання. Спробуйте ще раз."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "Ваше посилання готове",
+          "expiresOn": "Спливає {date}",
+          "copy": "Копіювати",
+          "copied": "Посилання скопійовано",
+          "openNewTab": "Відкрити в новій вкладці",
+          "delete": "Видалити цю публікацію",
+          "deleted": "Публікацію видалено",
+          "urlLabel": "URL для публікації"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "Ваші нещодавні публікації",
+          "subtitle": "Посилання, створені на цьому пристрої. Відкрийте одне для перегляду або видаліть для відкликання доступу.",
+          "idLabel": "Публікація …{last4}",
+          "created": "Створено {date}",
+          "expires": "Спливає {date}",
+          "filtered": "Відфільтровано: {summary}",
+          "open": "Відкрити",
+          "delete": "Видалити"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Застосований фільтр",
+          "summaryShort": "Цей вигляд відфільтровано: {summary}",
+          "showAll": "Показати всі фільтри",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "Дати",
+            "cameras": "Камери",
+            "lenses": "Об'єктиви",
+            "focalLengthRange": "Фокусна відстань",
+            "apertureRange": "Діафрагма",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Рейтинги",
+            "keywords": "Ключові слова",
+            "picks": "Позначки"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Це спільний аналіз. Вихідний каталог ніколи не завантажувався — лише ця зведена статистика.",
+          "cta": "Спробуйте інструмент зі своїм каталогом",
+          "expiredTitle": "Ця публікація спливла або була видалена.",
+          "expiredBody": "Можливо, посилання досягло дати спливання, або його видалив автор.",
+          "schemaNewerTitle": "Створено новішою версією",
+          "schemaNewerBody": "Цей аналіз був зроблений новішою версією інструмента. Спробуйте оновити сторінку.",
+          "pageTitle": "Спільний аналіз каталогу Lightroom"
         }
       }
     }

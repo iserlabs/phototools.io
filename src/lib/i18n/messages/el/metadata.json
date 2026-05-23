@@ -91,8 +91,8 @@
       "description": "Δες πώς τα μεγαπίξελ μεταφράζονται σε μεγέθη εκτύπωσης στα 72–300 DPI, σε διάφορες αναλογίες. Σύγκρινε κάμερες, μεγέθη αρχείων, pixel binning και εύρος περικοπής — με πίνακα εκτύπωσης ανά επίπεδο ποιότητας."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Αναλυτής Καταλόγου Lightroom — Δωρεάν στατιστικά μόνο στον browser",
+      "description": "Αναλύστε τον κατάλογο Lightroom Classic σας τοπικά στο πρόγραμμα περιήγησής σας. Δείτε εξοπλισμό, εστιακές αποστάσεις, συνήθειες διαφράγματος, βαθμολογίες και άλλα. 100% τοπικά — ο κατάλογός σας δεν μεταφορτώνεται ποτέ."
     }
   }
 }

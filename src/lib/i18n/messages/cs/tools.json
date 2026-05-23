@@ -65,8 +65,8 @@
       "description": "Porovnej megapixely, vizualizuj velikosti tisku a podívej se na velikosti souborů pro různé poměry stran a DPI"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Analyzátor katalogu Lightroom",
+      "description": "Analyzujte svůj katalog Lightroom Classic — výbavu, ohniskovou vzdálenost, clony, hodnocení a další — 100% ve vašem prohlížeči"
     }
   }
 }

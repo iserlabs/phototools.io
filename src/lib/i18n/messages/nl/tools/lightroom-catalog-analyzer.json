@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% lokaal · Geen upload",
+      "privacyBadgeAria": "Privacygarantie: deze tool draait volledig in je browser. Je catalogus wordt nooit geüpload.",
+      "skipToMain": "Naar hoofdinhoud springen",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Analyseer je Lightroom Classic-catalogus",
+        "subhead": "Apparatuur, brandpuntsafstanden, diafragmagewoonten, beoordelingen, GPS, bewerkingsintensiteit en meer — volledig in je browser. Je catalogus verlaat nooit je apparaat.",
+        "explainer": "Kies een .lrcat-bestand op je computer. We openen het in een SQLite-WebAssembly-worker, berekenen geaggregeerde statistieken en tonen een interactief dashboard. Er wordt niets geüpload.",
+        "tryDemo": "Probeer de demo-catalogus"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Hiervoor heb je een computer nodig",
+        "body": "De Lightroom-catalogusanalyzer heeft je Lightroom Classic-catalogusbestand (.lrcat) nodig, dat op je computer staat — niet op je telefoon.",
+        "tryDemoCta": "Probeer de demo hier",
+        "openOnDesktop": "Open deze pagina op je computer om je eigen catalogus te analyseren.",
+        "copyLink": "Link kopiëren",
+        "copyLinkSuccess": "Link gekopieerd",
+        "screenshotAlt": "Voorbeeld van het dashboard van de Lightroom-catalogusanalyzer"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "Sleep je .lrcat-bestand hierheen of klik om te bladeren",
+        "tapPrompt": "Tik om een .lrcat-bestand te kiezen",
+        "browseButton": "Naar catalogus bladeren",
+        "selectedFile": "Geselecteerd: {fileName}",
+        "ariaLabel": "Bestandskiezer voor Lightroom Classic-catalogus",
+        "errorNotLrcat": "Dat bestand lijkt geen Lightroom Classic-catalogus (.lrcat) te zijn.",
+        "errorReadFailed": "Kon dat bestand niet lezen. Probeer het opnieuw."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Grote catalogus — let op",
+        "body": "{fileName} is {sizeGb} GB. Het verwerken kan 30 seconden of langer duren en veel geheugen gebruiken. Doorgaan?",
+        "continue": "Doorgaan",
+        "cancel": "Annuleren"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "Je catalogus wordt geanalyseerd",
+        "subtitle": "Dit draait volledig in je browser. Er wordt niets geüpload.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Bestand lezen…",
+          "opening": "Catalogus openen…",
+          "schema": "Schema controleren…",
+          "hashing": "Hash berekenen…",
+          "aggregating": "Statistieken berekenen…",
+          "finalizing": "Afronden…"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Geladen uit cache",
+        "reanalyze": "Opnieuw analyseren",
+        "reanalyzeAria": "Negeer het resultaat in de cache en analyseer deze catalogus opnieuw vanuit het originele bestand."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "We konden die catalogus niet analyseren",
+        "retry": "Probeer een andere catalogus",
+        "parseFailed": "We konden die catalogus niet verwerken. Mogelijk is hij geopend in Lightroom, gedeeltelijk geschreven of in een onverwacht formaat.",
+        "workerFailed": "De analyse-engine kon niet starten. Laad de pagina opnieuw en probeer het opnieuw.",
+        "schemaTooNew": "Deze catalogus is gemaakt met een nieuwere versie van Lightroom Classic dan deze tool voorlopig ondersteunt.",
+        "schemaTooOld": "Deze catalogus is gemaakt met een versie van Lightroom Classic die te oud is voor deze tool.",
+        "tooLarge": "Deze catalogus is te groot om in de browser te analyseren.",
+        "corrupt": "Deze catalogus lijkt beschadigd of onvolledig en kon niet worden gelezen.",
+        "notLightroom": "Dat bestand is geen Lightroom Classic-catalogusdatabase.",
+        "unknown": "Er ging iets mis bij het analyseren van die catalogus. Probeer het opnieuw."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Dashboardsecties",
+        "jumpToSection": "Naar sectie springen",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "Hoogtepunten",
+          "whatYouShoot": "Wat je fotografeert",
+          "howYouCurate": "Hoe je selecteert",
+          "exploreCompare": "Verkennen en vergelijken",
+          "catalog": "Catalogus"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "Jaaroverzicht",
+          "year-to-year": "Jaar op jaar",
+          "overview": "Overzicht",
+          "gear": "Apparatuuruitsplitsing",
+          "focal-length": "Brandpuntsafstand",
+          "focal-length-per-zoom": "Brandpuntsafstand per zoom",
+          "apertures": "Optimaal diafragma",
+          "time-of-day": "Tijdstip van de dag",
+          "heatmap": "Opname-heatmap",
+          "gps": "GPS-locaties",
+          "curation": "Selectietrechter",
+          "edit-intensity": "Bewerkingsintensiteit",
+          "ratings": "Beoordelingen en selecties",
+          "keywords": "Trefwoorddekking",
+          "bursts": "Burstdetectie",
+          "drilldown": "Detailverkenner",
+          "period-comparison": "Periodevergelijking",
+          "catalog-health": "Catalogusgezondheid"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "{section} laden…",
+        "footerNote": "Berekend in je browser op basis van je lokale catalogusbestand. Er is niets geüpload."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Jaaroverzicht",
+          "yearLabel": "Jaar",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Totaal aantal foto's",
+            "daysShot": "Fotodagen",
+            "topBody": "Meest gebruikte body",
+            "topLens": "Meest gebruikte lens",
+            "topFocalLength": "Belangrijkste brandpuntsafstand",
+            "topAperture": "Belangrijkste diafragma",
+            "mostProlificMonth": "Productiefste maand",
+            "avgShotsPerDay": "Gem. opnames / dag"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Maandelijks volume",
+            "topGearShare": "Aandeel belangrijkste apparatuur",
+            "timeOfDayShare": "Aandeel per tijdstip van de dag"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "Je productiefste maand was {month} ({count} foto's). Belangrijkste lens die maand: {lens}.",
+          "empty": "Nog geen jaaroverzichtsgegevens voor deze catalogus.",
+          "caption": "Kerncijfers en minigrafieken voor {year}: {totalPhotos} foto's verspreid over {daysShot} dagen, belangrijkste body {topBody}, belangrijkste lens {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "Jaar op jaar",
+          "yearCountLabel": "Laatste tonen",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 jaar",
+            "3": "3 jaar",
+            "5": "5 jaar"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Grootste verschuiving: {label} in {year} ({delta}).",
+          "stat": "Statistiek",
+          "empty": "Voor een jaar-op-jaar-vergelijking zijn minstens 2 volledige jaren aan catalogusgegevens nodig.",
+          "caption": "Jaarlijkse statistieken naast elkaar met het verschil ten opzichte van het vorige jaar over {n} jaar."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Overzicht",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Totaal aantal foto's",
+            "dateRange": "Datumbereik",
+            "daysShot": "Fotodagen",
+            "photosPerDay": "Foto's / dag",
+            "bodyCount": "Body's",
+            "lensCount": "Lenzen",
+            "topBody": "Belangrijkste body",
+            "topLens": "Belangrijkste lens",
+            "topFocalLength": "Belangrijkste brandpuntsafstand"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Catalogusoverzicht: {totalPhotos} foto's verspreid over {daysShot} dagen, {bodyCount} body's, {lensCount} lenzen."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "Apparatuur",
+          "bodiesOverTime": "Body's in de loop van de tijd",
+          "topLenses": "Belangrijkste lenzen",
+          "topCombos": "Belangrijkste body- + lenscombinaties",
+          "retired": "Buiten gebruik (12 maanden ongebruikt)",
           "tableHeaders": {
             "body": "Body",
             "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "count": "Foto's",
+            "firstUsed": "Eerst gebruikt",
+            "lastUsed": "Laatst gebruikt"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Apparatuuruitsplitsing: belangrijkste lens {topLens} met {topLensCount} foto's; {comboCount} belangrijkste combinaties getoond."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "Brandpuntsafstand",
+          "histogramTitle": "Verdeling van brandpuntsafstanden (35mm-equivalent)",
+          "histogramAria": "Histogram van brandpuntsafstanden",
+          "topPeaks": "Belangrijkste pieken",
+          "onePrime": "Een vaste lens van {mm}mm zou {pct}% van je opnames binnen ±25% dekken.",
+          "noPrime": "Je gebruik van brandpuntsafstanden is te verspreid om één enkele vaste lens te laten domineren.",
+          "caption": "Histogram met klassen van 1mm van {min}mm tot {max}mm; {peakCount} belangrijkste pieken gelabeld."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Brandpuntsafstand per zoom",
+          "callout": "Op je {lens} is {pct}% van de opnames bij {mm}mm.",
+          "empty": "Geen zoomlenzen gedetecteerd in deze catalogus.",
+          "caption": "{n} histogrammen van zoomlenzen met de dominante brandpuntsafstand gemarkeerd."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Optimaal diafragma",
+          "callout": "Je fotografeert met de {lens} {pct}% van de tijd op volledige opening.",
+          "empty": "Niet genoeg gegevens — er is minstens één lens met meer dan 100 foto's nodig.",
+          "caption": "{n} diafragmahistogrammen van lenzen."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Tijdstip van de dag",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Kloktijd",
+            "sun": "Zonnehoek"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "{pct}% van je catalogus heeft GPS — de uitsplitsing naar zonnehoek geldt alleen voor die foto's.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "Gouden uur",
+            "blueHour": "Blauwe uur",
+            "midday": "Middag",
+            "night": "Nacht"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "Per body",
+          "perGearPeak": "{gear} — piekuur {hour}:00",
+          "caption": "Aantal foto's over 24 uur met optionele uitsplitsing naar zonnehoek."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Opname-heatmap",
+          "aria": "Opname-heatmap — activiteitenkalender",
+          "tooltip": "{date}: {count} foto's, belangrijkste lens {topLens}",
+          "caption": "Activiteitenkalender jaar op jaar over {years} jaar."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "GPS-locaties",
+          "aria": "GPS-kaart van fotoclusters in de catalogus",
+          "coverage": "{pct}% van je catalogus heeft GPS-gegevens ({count} foto's).",
+          "topRegions": "Belangrijkste regio's",
+          "empty": "Geen GPS-gegevens gevonden in deze catalogus.",
+          "caption": "Equirectangulaire wereldkaart met {clusters} geaggregeerde clusters; de bescherming van persoonsgegevens verwijdert rastercellen met minder dan 5 foto's."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Selectietrechter",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "Totaal",
+            "notRejected": "Niet afgewezen",
+            "rated1Plus": "1+ ster",
+            "rated4Plus": "4+ sterren"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Selectieratio per apparatuur",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Naam",
+            "total": "Totaal",
+            "rated4Plus": "4+ sterren",
+            "pickRate": "Selectieratio"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Trechter van {total} foto's in totaal naar {rated4Plus} met 4+ beoordeeld ({pickRate}% selectieratio)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Bewerkingsintensiteit",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "Gem. belichtingsverschuiving",
+            "avgCrop": "Gem. uitsnede %",
+            "pctLocal": "% met lokale aanpassingen",
+            "pctPresets": "% met voorinstellingen"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Bewerkingsintensiteitsscore in de loop van de tijd",
+          "topPresets": "Belangrijkste voorinstellingen",
+          "perGear": "Score per apparatuur",
+          "sampled": "Schatting op basis van een steekproef van 5% van {n} foto's.",
+          "caption": "Gemiddelde bewerkingsscore over de hele catalogus met maandelijkse trend en uitsplitsing per apparatuur."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Beoordelingen en selecties",
+          "distribution": "Beoordelingsverdeling",
+          "colorLabels": "Kleurlabels",
+          "perGear": "Selectieratio per apparatuur",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Naam",
+            "total": "Totaal",
+            "rated4Plus": "4+ sterren",
+            "pickRate": "Selectieratio"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "Beoordeling",
+            "count": "Foto's"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Beoordelingsverdeling met {colorLabelCount} kleurlabels en selectieratio's per apparatuur."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Trefwoorddekking",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Foto's met tags",
+            "untagged": "Foto's zonder tags",
+            "uniqueKeywords": "Unieke trefwoorden",
+            "avgPerPhoto": "Gem. trefwoorden / foto met tags",
+            "orphans": "Verweesde trefwoorden"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Belangrijkste trefwoorden",
+          "blindSpots": "Grootste blinde vlekken",
+          "blindSpotItem": "{yearMonth} — {pct}% dekking",
+          "blindSpotsEmpty": "De dekking lijkt gelijkmatig verdeeld over de maanden.",
+          "caption": "Statistieken over tagdekking en de {n} belangrijkste trefwoorden (bescherming van persoonsgegevens: alleen trefwoorden op 3+ foto's)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Burstdetectie",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Totaal aantal bursts",
+            "photosInBursts": "Foto's in bursts",
+            "pctInBursts": "% van de catalogus in bursts",
+            "longestBurst": "Langste burst"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Verdeling van burstlengte",
+          "keeperRate": "Burstfoto's krijgen in {burstRate}% een beoordeling van 4+ — {delta}% {direction} dan losse opnames ({singleRate}%).",
+          "moreOften": "vaker",
+          "lessOften": "minder vaak",
+          "caption": "Verdeling van burstlengte; behoudratio {burstRate}% tegenover {singleRate}% voor losse opnames."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
-          "focalLengthMin": "Min mm",
-          "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "title": "Detailverkenner",
+          "description": "Filter het dashboard op datum, apparatuur, brandpuntsafstand, diafragma, ISO, beoordeling of selectiestatus. Pas alle wijzigingen tegelijk toe.",
+          "dateRange": "Datumbereik",
+          "dateStart": "Van",
+          "dateEnd": "Tot",
+          "cameras": "Camera's",
+          "lenses": "Lenzen",
+          "focalLength": "Brandpuntsafstand (mm, 35mm-equivalent)",
+          "focalLengthMin": "Min. mm",
+          "focalLengthMax": "Max. mm",
+          "aperture": "Diafragma (f-getal)",
+          "apertureMin": "Min. f-getal",
+          "apertureMax": "Max. f-getal",
           "iso": "ISO",
-          "isoMin": "Min ISO",
-          "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "isoMin": "Min. ISO",
+          "isoMax": "Max. ISO",
+          "ratings": "Beoordelingen",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
+          "pickState": "Selectiestatus",
+          "pickAny": "Alle",
+          "pickFlagged": "Gemarkeerd",
+          "pickRejected": "Afgewezen",
+          "pickNone": "Niet gemarkeerd",
+          "apply": "Toepassen",
+          "reset": "Opnieuw instellen",
+          "activeFilters": "Actieve filters",
+          "removeFilter": "Filter {label} verwijderen",
+          "filterDateRange": "Datum {start} – {end}",
           "filterCameras": "Camera: {names}",
           "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "filterFocalLength": "Brandpuntsafstand {min}–{max}mm",
+          "filterAperture": "Diafragma f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "Beoordeling: {ratings}",
+          "filterPicks": "Selectie: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "Periodevergelijking",
+          "periodA": "Periode A",
+          "periodB": "Periode B",
+          "start": "Begin",
+          "end": "Einde",
+          "apply": "Toepassen",
           "headers": {
-            "stat": "Stat",
+            "stat": "Statistiek",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Totaal aantal foto's",
+            "daysShot": "Fotodagen",
+            "topBody": "Belangrijkste body",
+            "topLens": "Belangrijkste lens",
+            "topFocalLength": "Belangrijkste brandpuntsafstand"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Kies een datumbereik voor elke periode en klik op Toepassen.",
+          "caption": "Vergelijking naast elkaar van twee willekeurige datumbereiken met verschilkolom."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Catalogusgezondheid",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Ontbrekende originelen",
+            "missingPreviews": "Ontbrekende voorvertoningen",
+            "brokenPaths": "Verbroken paden",
+            "likelyDuplicates": "Waarschijnlijke duplicaten"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Waarschijnlijke duplicaatclusters",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Opnametijd",
+            "size": "Clustergrootte",
+            "firstPath": "Eerste pad",
+            "lastPath": "Laatste pad"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Bracketing-reeksen kunnen hier verschijnen; controleer ze voordat je verwijdert.",
+          "missingByRootFolder": "Ontbrekende originelen per hoofdmap",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "Hoofdmap",
+            "count": "Ontbrekend"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "In Lightroom Classic: Bibliotheek → Ontbrekende foto's zoeken kan verbroken paden oplossen.",
+          "caption": "Samenvatting van de catalogusgezondheid: {missing} ontbrekende originelen, {duplicates} waarschijnlijke duplicaten."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "Deze analyse exporteren",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Markdown kopiëren",
+          "copied": "Markdown-rapport gekopieerd. ~{kb} KB.",
+          "downloaded": "Klembord niet beschikbaar — het rapport is in plaats daarvan als .md-bestand gedownload."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "PDF exporteren",
+          "loadingEngine": "PDF-engine laden…",
+          "generating": "Rapport genereren…",
+          "success": "PDF-rapport gedownload.",
+          "error": "Kon het PDF niet genereren. Probeer in plaats daarvan Markdown of Delen.",
+          "title": "Lightroom-catalogusanalyse",
+          "filteredSuffix": " (Gefilterde weergave)",
+          "localFooter": "Je catalogus is nooit geüpload — alleen deze geaggregeerde statistieken.",
+          "generatedBy": "Gegenereerd door phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Totaal aantal foto's",
+          "dateRange": "Datumbereik",
+          "catalogVersion": "Catalogusversie",
+          "filterTitle": "Filter toegepast",
+          "page": "Pagina",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Jaaroverzicht",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Totaal aantal foto's",
+                "daysShot": "Fotodagen",
+                "topBody": "Meest gebruikte body",
+                "topLens": "Meest gebruikte lens"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Productiefste maand: {month} ({count} foto's)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "Jaar op jaar",
+              "stat": "Statistiek",
+              "biggestShift": "Grootste verschuiving: {label} in {year} ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Overzicht",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Totaal aantal foto's",
+                "daysShot": "Fotodagen",
+                "topBody": "Belangrijkste body",
+                "topLens": "Belangrijkste lens"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
+              "title": "Apparatuur",
+              "bodiesOverTime": "Body's in de loop van de tijd",
+              "topLenses": "Belangrijkste lenzen",
+              "retired": "Buiten gebruik",
               "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "photosHeader": "Foto's"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "Brandpuntsafstand",
+              "histogramTitle": "Verdeling van brandpuntsafstanden (35mm-equivalent)",
+              "topPeaks": "Belangrijkste pieken",
+              "onePrime": "Een vaste lens van {mm}mm zou {pct}% van je opnames binnen ±25% dekken.",
+              "noPrime": "Je gebruik van brandpuntsafstanden is te verspreid om één enkele vaste lens te laten domineren."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Brandpuntsafstand per zoom",
+              "perLens": "{lens}: {pct}% van de opnames bij {mm}mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Optimaal diafragma",
+              "perLens": "{lens}: {pct}% van de tijd op volledige opening gefotografeerd"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Tijdstip van de dag",
+              "gpsNote": "{pct}% van je catalogus heeft GPS — de uitsplitsing naar zonnehoek geldt alleen voor die foto's."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Opname-heatmap",
+              "daysWithPhotos": "Dagen met foto's",
+              "yearsCovered": "Gedekte jaren"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "GPS-locaties",
+              "coverage": "{pct}% van de catalogus heeft GPS",
+              "topRegions": "Belangrijkste regio's",
+              "regionHeader": "Regio",
+              "photosHeader": "Foto's"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Selectietrechter",
+              "stageHeader": "Fase",
+              "photosHeader": "Foto's"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Bewerkingsintensiteit",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "Gem. belichtingsverschuiving",
+                "crop": "Gem. uitsnede",
+                "local": "Met lokale aanpassingen",
+                "presets": "Met voorinstellingen"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Schatting op basis van een steekproef van de catalogus."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "Beoordelingen en selecties",
+              "ratingHeader": "Beoordeling",
+              "photosHeader": "Foto's"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Trefwoorddekking",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Met tags",
+                "untagged": "Zonder tags",
+                "unique": "Unieke trefwoorden",
+                "orphans": "Verweesde trefwoorden"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "Trefwoord",
+              "photosHeader": "Foto's"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Burstdetectie",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Totaal aantal bursts",
+                "inBursts": "Foto's in bursts",
+                "longest": "Langste burst"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "Burstfoto's krijgen een beoordeling ≥4: {a}% tegenover {b}% voor losse opnames."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "Periodevergelijking",
+              "notExported": "De periodevergelijking is interactief in de app en wordt niet geëxporteerd."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Catalogusgezondheid",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Ontbrekende originelen",
+                "previews": "Ontbrekende voorvertoningen",
+                "broken": "Verbroken paden",
+                "dupes": "Waarschijnlijke duplicaten"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Bibliotheek → Ontbrekende foto's zoeken kan verbroken paden oplossen."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Delen via URL",
+          "placeholderTitle": "Plan 3 koppelt dit."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Delen via URL",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Deel een link naar je analyse",
+          "uploadedHeading": "Wat wordt geüpload",
+          "uploaded": "Aantallen, top-N-lijsten en histogrammen — precies de gegevens die hierboven worden getoond.",
+          "notUploadedHeading": "Wat NIET wordt geüpload",
+          "notUploaded": "Bestandsnamen, afbeeldingsbestanden, mappaden, GPS-coördinaten nauwkeuriger dan rastercellen van ongeveer 5 km en trefwoorden die minder dan 3 keer zijn gebruikt.",
+          "expiresLabel": "De link verloopt over",
+          "expires24h": "24 uur",
+          "expires7d": "7 dagen",
+          "expires30d": "30 dagen",
+          "cancel": "Annuleren",
+          "create": "Link maken",
+          "creating": "Link maken…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Je hebt de deellimiet bereikt. Probeer het over een uur opnieuw.",
+          "storage-unavailable": "Opslag tijdelijk niet beschikbaar. Probeer het zo opnieuw.",
+          "invalid": "Kon deze analyse niet delen — de gegevens lijken onjuist opgemaakt.",
+          "unknown": "Er ging iets mis bij het maken van de link. Probeer het opnieuw."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "Je link is klaar",
+          "expiresOn": "Verloopt op {date}",
+          "copy": "Kopiëren",
+          "copied": "Link gekopieerd",
+          "openNewTab": "Openen in nieuw tabblad",
+          "delete": "Deze deellink verwijderen",
+          "deleted": "Deellink verwijderd",
+          "urlLabel": "Deelbare URL"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "Je recente deellinks",
+          "subtitle": "Links die je op dit apparaat hebt gemaakt. Open er een om hem te bekijken of verwijder hem om de toegang in te trekken.",
+          "idLabel": "Deellink …{last4}",
+          "created": "Gemaakt op {date}",
+          "expires": "Verloopt op {date}",
+          "filtered": "Gefilterd: {summary}",
+          "open": "Openen",
+          "delete": "Verwijderen"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Filter toegepast",
+          "summaryShort": "Deze weergave is gefilterd: {summary}",
+          "showAll": "Alle filters tonen",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "Datums",
+            "cameras": "Camera's",
+            "lenses": "Lenzen",
+            "focalLengthRange": "Brandpuntsafstand",
+            "apertureRange": "Diafragma",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Beoordelingen",
+            "keywords": "Trefwoorden",
+            "picks": "Selecties"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Dit is een gedeelde analyse. De oorspronkelijke catalogus is nooit geüpload — alleen deze geaggregeerde statistieken.",
+          "cta": "Probeer de tool met je eigen catalogus",
+          "expiredTitle": "Deze deellink is verlopen of verwijderd.",
+          "expiredBody": "De link heeft mogelijk zijn vervaldatum bereikt, of de maker heeft hem verwijderd.",
+          "schemaNewerTitle": "Gemaakt met een nieuwere versie",
+          "schemaNewerBody": "Deze analyse is gemaakt met een nieuwere versie van de tool. Probeer de pagina te vernieuwen.",
+          "pageTitle": "Gedeelde Lightroom-catalogusanalyse"
         }
       }
     }

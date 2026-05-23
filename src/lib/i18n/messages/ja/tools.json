@@ -65,8 +65,8 @@
       "description": "メガピクセルを比較し、アスペクト比やDPIごとの印刷サイズとファイルサイズを視覚的に確認"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Lightroom カタログアナライザー",
+      "description": "Lightroom Classic のカタログを分析 — 機材、焦点距離、絞り、レーティングなど — 100% ブラウザ内で完結"
     }
   }
 }

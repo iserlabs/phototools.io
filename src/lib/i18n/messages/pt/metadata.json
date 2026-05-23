@@ -91,8 +91,8 @@
       "description": "Visualize como megapixels se traduzem em tamanhos de impressão de 72 a 300 DPI, em diferentes proporções. Compare câmeras, tamanhos de arquivo, pixel binning e alcance de corte — com tabela de qualidade por nível."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Analisador de Catálogos do Lightroom — Estatísticas grátis, só no navegador",
+      "description": "Analise seu catálogo do Lightroom Classic localmente no seu navegador. Veja o equipamento, as distâncias focais, os hábitos de abertura, as avaliações e muito mais. 100% local — seu catálogo nunca é enviado."
     }
   }
 }

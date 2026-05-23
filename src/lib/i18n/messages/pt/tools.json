@@ -65,8 +65,8 @@
       "description": "Compare megapixels, visualize tamanhos de impressão e confira tamanhos de arquivo em diferentes proporções e DPIs"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Analisador de Catálogos do Lightroom",
+      "description": "Analise seu catálogo do Lightroom Classic — equipamento, distância focal, aberturas, avaliações e muito mais — 100% no seu navegador"
     }
   }
 }

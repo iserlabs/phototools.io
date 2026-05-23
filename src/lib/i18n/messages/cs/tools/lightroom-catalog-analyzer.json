@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% lokálně · Bez nahrávání",
+      "privacyBadgeAria": "Záruka soukromí: tento nástroj běží zcela ve vašem prohlížeči. Váš katalog se nikdy nenahrává.",
+      "skipToMain": "Přejít na hlavní obsah",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Analyzujte svůj katalog Lightroom Classic",
+        "subhead": "Výbava, ohniskové vzdálenosti, návyky u clony, hodnocení, GPS, intenzita úprav a další — zcela ve vašem prohlížeči. Váš katalog nikdy neopustí vaše zařízení.",
+        "explainer": "Vyberte soubor .lrcat ze svého počítače. Otevřeme ho ve workeru SQLite WebAssembly, vypočítáme souhrnné statistiky a vykreslíme interaktivní přehled. Nic se nenahrává.",
+        "tryDemo": "Vyzkoušet ukázkový katalog"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Tohle vyžaduje počítač",
+        "body": "Analyzátor katalogu Lightroom potřebuje soubor katalogu Lightroom Classic (.lrcat), který se nachází ve vašem počítači — ne v telefonu.",
+        "tryDemoCta": "Vyzkoušet demo zde",
+        "openOnDesktop": "Otevřete tuto stránku na počítači, abyste mohli analyzovat vlastní katalog.",
+        "copyLink": "Kopírovat odkaz",
+        "copyLinkSuccess": "Odkaz zkopírován",
+        "screenshotAlt": "Náhled přehledu Analyzátoru katalogu Lightroom"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "Sem přetáhněte soubor .lrcat nebo klikněte pro procházení",
+        "tapPrompt": "Klepnutím vyberte soubor .lrcat",
+        "browseButton": "Procházet katalog",
+        "selectedFile": "Vybráno: {fileName}",
+        "ariaLabel": "Výběr souboru katalogu Lightroom Classic",
+        "errorNotLrcat": "Tento soubor nevypadá jako katalog Lightroom Classic (.lrcat).",
+        "errorReadFailed": "Tento soubor nelze přečíst. Zkuste to znovu."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Velký katalog — pozor",
+        "body": "{fileName} má {sizeGb} GB. Zpracování může trvat 30 sekund i déle a využít hodně paměti. Pokračovat?",
+        "continue": "Pokračovat",
+        "cancel": "Zrušit"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "Analýza katalogu",
+        "subtitle": "Tohle běží zcela ve vašem prohlížeči. Nic se nenahrává.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Čtení souboru…",
+          "opening": "Otevírání katalogu…",
+          "schema": "Kontrola schématu…",
+          "hashing": "Výpočet hashe…",
+          "aggregating": "Výpočet statistik…",
+          "finalizing": "Dokončování…"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Načteno z mezipaměti",
+        "reanalyze": "Analyzovat znovu",
+        "reanalyzeAria": "Zahodit uložený výsledek a znovu analyzovat tento katalog z původního souboru."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "Tento katalog se nepodařilo analyzovat",
+        "retry": "Vyzkoušet jiný katalog",
+        "parseFailed": "Tento katalog se nepodařilo zpracovat. Možná je otevřený v Lightroomu, částečně zapsaný nebo v neočekávaném formátu.",
+        "workerFailed": "Analytický modul se nepodařilo spustit. Obnovte stránku a zkuste to znovu.",
+        "schemaTooNew": "Tento katalog byl vytvořen novější verzí Lightroom Classic, než tento nástroj zatím podporuje.",
+        "schemaTooOld": "Tento katalog byl vytvořen verzí Lightroom Classic, která je pro tento nástroj příliš stará.",
+        "tooLarge": "Tento katalog je příliš velký na analýzu v prohlížeči.",
+        "corrupt": "Tento katalog se zdá být poškozený nebo neúplný a nepodařilo se ho přečíst.",
+        "notLightroom": "Tento soubor není databáze katalogu Lightroom Classic.",
+        "unknown": "Při analýze tohoto katalogu se něco pokazilo. Zkuste to prosím znovu."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Sekce přehledu",
+        "jumpToSection": "Přejít na sekci",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "Hlavní body",
+          "whatYouShoot": "Co fotíte",
+          "howYouCurate": "Jak vybíráte",
+          "exploreCompare": "Prozkoumat a porovnat",
+          "catalog": "Katalog"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "Rok v přehledu",
+          "year-to-year": "Rok od roku",
+          "overview": "Přehled",
+          "gear": "Rozpis výbavy",
+          "focal-length": "Ohnisková vzdálenost",
+          "focal-length-per-zoom": "Ohnisková vzdálenost podle zoomu",
+          "apertures": "Optimální clona",
+          "time-of-day": "Denní doba",
+          "heatmap": "Teplotní mapa fotografování",
+          "gps": "GPS lokace",
+          "curation": "Trychtýř výběru",
+          "edit-intensity": "Intenzita úprav",
+          "ratings": "Hodnocení a výběry",
+          "keywords": "Pokrytí klíčovými slovy",
+          "bursts": "Detekce sérií",
+          "drilldown": "Detailní průzkumník",
+          "period-comparison": "Porovnání období",
+          "catalog-health": "Stav katalogu"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "Načítání: {section}…",
+        "footerNote": "Vypočítáno ve vašem prohlížeči z lokálního souboru katalogu. Nic nebylo nahráno."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Rok v přehledu",
+          "yearLabel": "Rok",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Celkem fotografií",
+            "daysShot": "Dní fotografování",
+            "topBody": "Nejpoužívanější tělo",
+            "topLens": "Nejpoužívanější objektiv",
+            "topFocalLength": "Nejčastější ohnisková vzdálenost",
+            "topAperture": "Nejčastější clona",
+            "mostProlificMonth": "Nejproduktivnější měsíc",
+            "avgShotsPerDay": "Prům. snímků / den"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Měsíční objem",
+            "topGearShare": "Podíl hlavní výbavy",
+            "timeOfDayShare": "Podíl denní doby"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "Vaším nejproduktivnějším měsícem byl {month} ({count} fotografií). Nejčastější objektiv v tomto měsíci: {lens}.",
+          "empty": "Pro tento katalog zatím nejsou žádná data rok v přehledu.",
+          "caption": "Hlavní statistiky a minigrafy pro {year}: {totalPhotos} fotografií za {daysShot} dní, nejčastější tělo {topBody}, nejčastější objektiv {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "Rok od roku",
+          "yearCountLabel": "Zobrazit posledních",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 roky",
+            "3": "3 roky",
+            "5": "5 let"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Největší posun: {label} v roce {year} ({delta}).",
+          "stat": "Statistika",
+          "empty": "Pro porovnání rok od roku jsou potřeba alespoň 2 plné roky dat katalogu.",
+          "caption": "Roční statistiky vedle sebe se změnou oproti předchozímu roku za {n} let."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Přehled",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Celkem fotografií",
+            "dateRange": "Rozsah dat",
+            "daysShot": "Dní fotografování",
+            "photosPerDay": "Fotografií / den",
+            "bodyCount": "Těla",
+            "lensCount": "Objektivy",
+            "topBody": "Nejčastější tělo",
+            "topLens": "Nejčastější objektiv",
+            "topFocalLength": "Nejčastější ohnisková vzdálenost"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Přehled katalogu: {totalPhotos} fotografií za {daysShot} dní, {bodyCount} těl, {lensCount} objektivů."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "Výbava",
+          "bodiesOverTime": "Těla v čase",
+          "topLenses": "Nejčastější objektivy",
+          "topCombos": "Nejčastější kombinace tělo + objektiv",
+          "retired": "Vyřazené (12 měsíců bez použití)",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "Tělo",
+            "lens": "Objektiv",
+            "count": "Fotografie",
+            "firstUsed": "Poprvé použito",
+            "lastUsed": "Naposledy použito"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Rozpis výbavy: nejčastější objektiv {topLens} s {topLensCount} fotografiemi; zobrazeno {comboCount} hlavních kombinací."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "Ohnisková vzdálenost",
+          "histogramTitle": "Rozdělení ohniskových vzdáleností (ekvivalent 35 mm)",
+          "histogramAria": "Histogram ohniskových vzdáleností",
+          "topPeaks": "Hlavní špičky",
+          "onePrime": "Pevný objektiv {mm}mm by pokryl {pct}% vašich snímků v rozsahu ±25%.",
+          "noPrime": "Vaše využití ohniskových vzdáleností je příliš rozptýlené, aby dominoval jediný pevný objektiv.",
+          "caption": "Histogram s koši po 1 mm od {min}mm do {max}mm; označeno {peakCount} hlavních špiček."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Ohnisková vzdálenost podle zoomu",
+          "callout": "Na objektivu {lens} je {pct}% snímků při {mm}mm.",
+          "empty": "V tomto katalogu nebyly zjištěny žádné zoomové objektivy.",
+          "caption": "{n} histogramů zoomových objektivů se zvýrazněnou dominantní ohniskovou vzdáleností."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Optimální clona",
+          "callout": "Objektivem {lens} fotíte naplno otevřeným {pct}% času.",
+          "empty": "Nedostatek dat — je potřeba alespoň jeden objektiv se 100+ fotografiemi.",
+          "caption": "{n} histogramů clony objektivů."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Denní doba",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Hodina dne",
+            "sun": "Úhel slunce"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "{pct}% vašeho katalogu má GPS — rozdělení podle úhlu slunce zahrnuje pouze tyto fotografie.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "Zlatá hodina",
+            "blueHour": "Modrá hodina",
+            "midday": "Poledne",
+            "night": "Noc"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "Podle těla",
+          "perGearPeak": "{gear} — špičková hodina {hour}:00",
+          "caption": "Počty fotografií během 24 hodin s volitelným rozdělením podle úhlu slunce."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Teplotní mapa fotografování",
+          "aria": "Teplotní mapa fotografování — kalendář aktivity",
+          "tooltip": "{date}: {count} fotografií, nejčastější objektiv {topLens}",
+          "caption": "Kalendář aktivity rok po roce za {years} let."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "GPS lokace",
+          "aria": "GPS mapa shluků fotografií z katalogu",
+          "coverage": "{pct}% vašeho katalogu má GPS data ({count} fotografií).",
+          "topRegions": "Hlavní regiony",
+          "empty": "V tomto katalogu nebyla nalezena žádná GPS data.",
+          "caption": "Ekvidistantní mapa světa s {clusters} agregovanými shluky; ochrana PII vynechává buňky mřížky s méně než 5 fotografiemi."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Trychtýř výběru",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "Celkem",
+            "notRejected": "Neodmítnuté",
+            "rated1Plus": "1+ hvězda",
+            "rated4Plus": "4+ hvězdy"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Míra výběru podle výbavy",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Název",
+            "total": "Celkem",
+            "rated4Plus": "4+ hvězdy",
+            "pickRate": "Míra výběru"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Trychtýř od {total} celkových fotografií k {rated4Plus} hodnoceným 4+ ({pickRate}% míra výběru)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Intenzita úprav",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "Prům. posun expozice",
+            "avgCrop": "Prům. % ořezu",
+            "pctLocal": "% s lokálními úpravami",
+            "pctPresets": "% s předvolbami"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Skóre intenzity úprav v čase",
+          "topPresets": "Nejčastější předvolby",
+          "perGear": "Skóre podle výbavy",
+          "sampled": "Odhad na základě 5% vzorku z {n} fotografií.",
+          "caption": "Průměrné skóre úprav v celém katalogu s měsíčním trendem a rozdělením podle výbavy."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Hodnocení a výběry",
+          "distribution": "Rozdělení hodnocení",
+          "colorLabels": "Barevné štítky",
+          "perGear": "Míra výběru podle výbavy",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Název",
+            "total": "Celkem",
+            "rated4Plus": "4+ hvězdy",
+            "pickRate": "Míra výběru"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "Hodnocení",
+            "count": "Fotografie"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Rozdělení hodnocení s {colorLabelCount} barevnými štítky a mírou výběru podle výbavy."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Pokrytí klíčovými slovy",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Otagované fotografie",
+            "untagged": "Neotagované fotografie",
+            "uniqueKeywords": "Unikátní klíčová slova",
+            "avgPerPhoto": "Prům. klíčových slov / otagovaná fotografie",
+            "orphans": "Osamocená klíčová slova"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Nejčastější klíčová slova",
+          "blindSpots": "Největší mezery",
+          "blindSpotItem": "{yearMonth} — {pct}% pokrytí",
+          "blindSpotsEmpty": "Pokrytí vypadá v jednotlivých měsících rovnoměrně.",
+          "caption": "Statistiky pokrytí štítky a {n} nejčastějších klíčových slov (ochrana PII: pouze klíčová slova na 3+ fotografiích)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Detekce sérií",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Celkem sérií",
+            "photosInBursts": "Fotografie v sériích",
+            "pctInBursts": "% katalogu v sériích",
+            "longestBurst": "Nejdelší série"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Rozdělení délky sérií",
+          "keeperRate": "Fotografie ze sérií získávají hodnocení 4+ v {burstRate}% — o {delta}% {direction} než jednotlivé snímky ({singleRate}%).",
+          "moreOften": "častěji",
+          "lessOften": "méně často",
+          "caption": "Rozdělení délky sérií; míra ponechání {burstRate}% oproti {singleRate}% u jednotlivých snímků."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
+          "title": "Detailní průzkumník",
+          "description": "Filtrujte přehled podle data, výbavy, ohniskové vzdálenosti, clony, ISO, hodnocení nebo stavu výběru. Použijte všechny změny najednou.",
+          "dateRange": "Rozsah dat",
+          "dateStart": "Od",
+          "dateEnd": "Do",
+          "cameras": "Fotoaparáty",
+          "lenses": "Objektivy",
+          "focalLength": "Ohnisková vzdálenost (mm, ekvivalent 35 mm)",
           "focalLengthMin": "Min mm",
           "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "aperture": "Clona (clonové číslo)",
+          "apertureMin": "Min clonové číslo",
+          "apertureMax": "Max clonové číslo",
           "iso": "ISO",
           "isoMin": "Min ISO",
           "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "ratings": "Hodnocení",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "Stav výběru",
+          "pickAny": "Libovolný",
+          "pickFlagged": "Označené",
+          "pickRejected": "Odmítnuté",
+          "pickNone": "Neoznačené",
+          "apply": "Použít",
+          "reset": "Obnovit",
+          "activeFilters": "Aktivní filtry",
+          "removeFilter": "Odebrat filtr {label}",
+          "filterDateRange": "Datum {start} – {end}",
+          "filterCameras": "Fotoaparát: {names}",
+          "filterLenses": "Objektiv: {names}",
+          "filterFocalLength": "Ohnisková vzdálenost {min}–{max}mm",
+          "filterAperture": "Clona f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "Hodnocení: {ratings}",
+          "filterPicks": "Výběr: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "Porovnání období",
+          "periodA": "Období A",
+          "periodB": "Období B",
+          "start": "Začátek",
+          "end": "Konec",
+          "apply": "Použít",
           "headers": {
-            "stat": "Stat",
+            "stat": "Statistika",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Celkem fotografií",
+            "daysShot": "Dní fotografování",
+            "topBody": "Nejčastější tělo",
+            "topLens": "Nejčastější objektiv",
+            "topFocalLength": "Nejčastější ohnisková vzdálenost"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Vyberte rozsah dat pro každé období a klikněte na Použít.",
+          "caption": "Porovnání dvou libovolných rozsahů dat vedle sebe se sloupcem změny."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Stav katalogu",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Chybějící originály",
+            "missingPreviews": "Chybějící náhledy",
+            "brokenPaths": "Porušené cesty",
+            "likelyDuplicates": "Pravděpodobné duplikáty"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Pravděpodobné shluky duplikátů",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Čas pořízení",
+            "size": "Velikost shluku",
+            "firstPath": "První cesta",
+            "lastPath": "Poslední cesta"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Mohou se zde objevit série z bracketingu; před smazáním zkontrolujte.",
+          "missingByRootFolder": "Chybějící originály podle kořenové složky",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "Kořenová složka",
+            "count": "Chybějící"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "V Lightroom Classic: Knihovna → Najít chybějící fotografie může vyřešit porušené cesty.",
+          "caption": "Souhrn stavu katalogu: {missing} chybějících originálů, {duplicates} pravděpodobných duplikátů."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "Exportovat tuto analýzu",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Kopírovat Markdown",
+          "copied": "Report Markdown zkopírován. ~{kb} KB.",
+          "downloaded": "Schránka není dostupná — report byl místo toho stažen jako soubor .md."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "Exportovat PDF",
+          "loadingEngine": "Načítání PDF modulu…",
+          "generating": "Generování reportu…",
+          "success": "Report PDF stažen.",
+          "error": "PDF se nepodařilo vygenerovat. Zkuste místo toho Markdown nebo Sdílet.",
+          "title": "Analýza katalogu Lightroom",
+          "filteredSuffix": " (Filtrovaný pohled)",
+          "localFooter": "Váš katalog nebyl nikdy nahrán — pouze tyto souhrnné statistiky.",
+          "generatedBy": "Vygenerováno na phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Celkem fotografií",
+          "dateRange": "Rozsah dat",
+          "catalogVersion": "Verze katalogu",
+          "filterTitle": "Použitý filtr",
+          "page": "Strana",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Rok v přehledu",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Celkem fotografií",
+                "daysShot": "Dní fotografování",
+                "topBody": "Nejpoužívanější tělo",
+                "topLens": "Nejpoužívanější objektiv"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Nejproduktivnější měsíc: {month} ({count} fotografií)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "Rok od roku",
+              "stat": "Statistika",
+              "biggestShift": "Největší posun: {label} v roce {year} ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Přehled",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Celkem fotografií",
+                "daysShot": "Dní fotografování",
+                "topBody": "Nejčastější tělo",
+                "topLens": "Nejčastější objektiv"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "Výbava",
+              "bodiesOverTime": "Těla v čase",
+              "topLenses": "Nejčastější objektivy",
+              "retired": "Vyřazené",
+              "lensHeader": "Objektiv",
+              "photosHeader": "Fotografie"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "Ohnisková vzdálenost",
+              "histogramTitle": "Rozdělení ohniskových vzdáleností (ekvivalent 35 mm)",
+              "topPeaks": "Hlavní špičky",
+              "onePrime": "Pevný objektiv {mm}mm by pokryl {pct}% vašich snímků v rozsahu ±25%.",
+              "noPrime": "Vaše využití ohniskových vzdáleností je příliš rozptýlené, aby dominoval jediný pevný objektiv."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Ohnisková vzdálenost podle zoomu",
+              "perLens": "{lens}: {pct}% snímků při {mm}mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Optimální clona",
+              "perLens": "{lens}: fotografováno naplno otevřeným {pct}% času"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Denní doba",
+              "gpsNote": "{pct}% vašeho katalogu má GPS — rozdělení podle úhlu slunce zahrnuje pouze tyto fotografie."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Teplotní mapa fotografování",
+              "daysWithPhotos": "Dní s fotografiemi",
+              "yearsCovered": "Zahrnuté roky"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
+              "title": "GPS lokace",
+              "coverage": "{pct}% katalogu má GPS",
+              "topRegions": "Hlavní regiony",
               "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "photosHeader": "Fotografie"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Trychtýř výběru",
+              "stageHeader": "Fáze",
+              "photosHeader": "Fotografie"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Intenzita úprav",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "Prům. posun expozice",
+                "crop": "Prům. ořez",
+                "local": "S lokálními úpravami",
+                "presets": "S předvolbami"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Odhad na základě vzorku katalogu."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "Hodnocení a výběry",
+              "ratingHeader": "Hodnocení",
+              "photosHeader": "Fotografie"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Pokrytí klíčovými slovy",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Otagované",
+                "untagged": "Neotagované",
+                "unique": "Unikátní klíčová slova",
+                "orphans": "Osamocená klíčová slova"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "Klíčové slovo",
+              "photosHeader": "Fotografie"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Detekce sérií",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Celkem sérií",
+                "inBursts": "Fotografie v sériích",
+                "longest": "Nejdelší série"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "Fotografie ze sérií získávají hodnocení ≥4: {a}% oproti {b}% u jednotlivých snímků."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "Porovnání období",
+              "notExported": "Porovnání období je interaktivní v aplikaci a neexportuje se."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Stav katalogu",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Chybějící originály",
+                "previews": "Chybějící náhledy",
+                "broken": "Porušené cesty",
+                "dupes": "Pravděpodobné duplikáty"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Knihovna → Najít chybějící fotografie může vyřešit porušené cesty."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Sdílet přes URL",
+          "placeholderTitle": "Plán 3 to propojí."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Sdílet přes URL",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Sdílet odkaz na vaši analýzu",
+          "uploadedHeading": "Co se nahrává",
+          "uploaded": "Počty, seznamy top-N a histogramy — přesně ta data zobrazená výše.",
+          "notUploadedHeading": "Co se NENAHRÁVÁ",
+          "notUploaded": "Názvy souborů, obrazové soubory, cesty ke složkám, GPS souřadnice přesnější než buňky mřížky ~5 km a klíčová slova použitá méně než třikrát.",
+          "expiresLabel": "Odkaz vyprší za",
+          "expires24h": "24 hodin",
+          "expires7d": "7 dní",
+          "expires30d": "30 dní",
+          "cancel": "Zrušit",
+          "create": "Vytvořit odkaz",
+          "creating": "Vytváření odkazu…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Dosáhli jste limitu sdílení. Zkuste to znovu za hodinu.",
+          "storage-unavailable": "Úložiště je dočasně nedostupné. Zkuste to znovu za chvíli.",
+          "invalid": "Tuto analýzu se nepodařilo sdílet — data vypadají poškozeně.",
+          "unknown": "Při vytváření odkazu se něco pokazilo. Zkuste to znovu."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "Váš odkaz je připraven",
+          "expiresOn": "Vyprší {date}",
+          "copy": "Kopírovat",
+          "copied": "Odkaz zkopírován",
+          "openNewTab": "Otevřít na nové kartě",
+          "delete": "Smazat toto sdílení",
+          "deleted": "Sdílení smazáno",
+          "urlLabel": "Sdílitelná URL"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "Vaše nedávná sdílení",
+          "subtitle": "Odkazy, které jste vytvořili na tomto zařízení. Otevřete některý pro zobrazení, nebo ho smažte pro odebrání přístupu.",
+          "idLabel": "Sdílení …{last4}",
+          "created": "Vytvořeno {date}",
+          "expires": "Vyprší {date}",
+          "filtered": "Filtrováno: {summary}",
+          "open": "Otevřít",
+          "delete": "Smazat"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Použitý filtr",
+          "summaryShort": "Tento pohled je filtrovaný: {summary}",
+          "showAll": "Zobrazit všechny filtry",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "Data",
+            "cameras": "Fotoaparáty",
+            "lenses": "Objektivy",
+            "focalLengthRange": "Ohnisková vzdálenost",
+            "apertureRange": "Clona",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Hodnocení",
+            "keywords": "Klíčová slova",
+            "picks": "Výběry"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Toto je sdílená analýza. Původní katalog nebyl nikdy nahrán — pouze tyto souhrnné statistiky.",
+          "cta": "Vyzkoušejte nástroj s vlastním katalogem",
+          "expiredTitle": "Toto sdílení vypršelo nebo bylo smazáno.",
+          "expiredBody": "Odkaz mohl dosáhnout data vypršení, nebo ho tvůrce smazal.",
+          "schemaNewerTitle": "Vytvořeno novější verzí",
+          "schemaNewerBody": "Tato analýza byla vytvořena novější verzí nástroje. Zkuste obnovit stránku.",
+          "pageTitle": "Sdílená analýza katalogu Lightroom"
         }
       }
     }

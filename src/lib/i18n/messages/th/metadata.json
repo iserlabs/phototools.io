@@ -91,8 +91,8 @@
       "description": "ดูว่าเมกะพิกเซลแปลงเป็นขนาดงานพิมพ์ที่ 72-300 DPI ในอัตราส่วนภาพต่างๆ ได้อย่างไร เปรียบเทียบกล้อง ขนาดไฟล์ pixel binning และระยะครอป — พร้อมตารางงานพิมพ์แบ่งตามระดับคุณภาพ"
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Lightroom Catalog Analyzer — สถิติฟรี ทำงานในเบราว์เซอร์เท่านั้น",
+      "description": "วิเคราะห์แคตตาล็อก Lightroom Classic ของคุณในเครื่องผ่านเบราว์เซอร์ของคุณ ดูอุปกรณ์ ทางยาวโฟกัส พฤติกรรมรูรับแสง การให้คะแนน และอื่นๆ 100% ในเครื่อง — แคตตาล็อกของคุณไม่เคยถูกอัปโหลด"
     }
   }
 }

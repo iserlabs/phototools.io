@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% 本機 · 無需上傳",
+      "privacyBadgeAria": "隱私保證：此工具完全在您的瀏覽器中執行。您的目錄絕不會被上傳。",
+      "skipToMain": "跳至主要內容",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "分析您的 Lightroom Classic 目錄",
+        "subhead": "器材、焦距、光圈習慣、評分、GPS、編輯強度等等——全部在您的瀏覽器中完成。您的目錄絕不會離開您的裝置。",
+        "explainer": "從您的電腦中選擇一個 .lrcat 檔案。我們在 SQLite WebAssembly 工作執行緒中開啟它，計算彙總統計資料，並算繪互動式儀表板。不會上傳任何內容。",
+        "tryDemo": "試用示範目錄"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "這個需要桌面裝置",
+        "body": "Lightroom 目錄分析器需要您的 Lightroom Classic 目錄檔案（.lrcat），它存放在您的電腦上——而非手機上。",
+        "tryDemoCta": "在此試用示範",
+        "openOnDesktop": "在電腦上開啟此頁面以分析您自己的目錄。",
+        "copyLink": "複製連結",
+        "copyLinkSuccess": "連結已複製",
+        "screenshotAlt": "Lightroom 目錄分析器儀表板預覽"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "將 .lrcat 檔案拖放至此處，或點擊瀏覽",
+        "tapPrompt": "點按以選擇 .lrcat 檔案",
+        "browseButton": "瀏覽目錄",
+        "selectedFile": "已選擇：{fileName}",
+        "ariaLabel": "Lightroom Classic 目錄檔案選擇器",
+        "errorNotLrcat": "該檔案看起來不是 Lightroom Classic 目錄（.lrcat）。",
+        "errorReadFailed": "無法讀取該檔案。請重試。"
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "大型目錄——請注意",
+        "body": "{fileName} 為 {sizeGb} GB。解析可能需要 30 秒或更久，並佔用大量記憶體。是否繼續？",
+        "continue": "繼續",
+        "cancel": "取消"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "正在分析您的目錄",
+        "subtitle": "這完全在您的瀏覽器中執行。不會上傳任何內容。",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "正在讀取檔案……",
+          "opening": "正在開啟目錄……",
+          "schema": "正在檢查結構描述……",
+          "hashing": "正在計算雜湊……",
+          "aggregating": "正在計算統計資料……",
+          "finalizing": "正在收尾……"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "從快取載入",
+        "reanalyze": "重新分析",
+        "reanalyzeAria": "捨棄快取結果，並從原始檔案重新解析此目錄。"
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "我們無法分析該目錄",
+        "retry": "試用另一個目錄",
+        "parseFailed": "我們無法解析該目錄。它可能正在 Lightroom 中開啟、僅部分寫入或格式異常。",
+        "workerFailed": "分析引擎啟動失敗。請重新載入頁面並重試。",
+        "schemaTooNew": "此目錄由比本工具目前支援的更新版本的 Lightroom Classic 建立。",
+        "schemaTooOld": "此目錄由對本工具而言過舊版本的 Lightroom Classic 建立。",
+        "tooLarge": "此目錄太大，無法在瀏覽器中分析。",
+        "corrupt": "此目錄似乎已損毀或不完整，無法讀取。",
+        "notLightroom": "該檔案不是 Lightroom Classic 目錄資料庫。",
+        "unknown": "分析該目錄時發生問題。請重試。"
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "儀表板各區段",
+        "jumpToSection": "跳至區段",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "亮點",
+          "whatYouShoot": "您拍什麼",
+          "howYouCurate": "您如何篩選",
+          "exploreCompare": "探索與比較",
+          "catalog": "目錄"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "年度回顧",
+          "year-to-year": "逐年對比",
+          "overview": "概覽",
+          "gear": "器材明細",
+          "focal-length": "焦距",
+          "focal-length-per-zoom": "各變焦鏡頭焦距",
+          "apertures": "光圈甜蜜點",
+          "time-of-day": "時段",
+          "heatmap": "拍攝熱力圖",
+          "gps": "GPS 位置",
+          "curation": "篩選漏斗",
+          "edit-intensity": "編輯強度",
+          "ratings": "評分與精選",
+          "keywords": "關鍵字覆蓋率",
+          "bursts": "連拍偵測",
+          "drilldown": "深入探索器",
+          "period-comparison": "時段比較",
+          "catalog-health": "目錄健康度"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "正在載入 {section}……",
+        "footerNote": "在您的瀏覽器中根據本機目錄檔案計算得出。未上傳任何內容。"
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "年度回顧",
+          "yearLabel": "年份",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "照片總數",
+            "daysShot": "拍攝天數",
+            "topBody": "最常用機身",
+            "topLens": "最常用鏡頭",
+            "topFocalLength": "最常用焦距",
+            "topAperture": "最常用光圈",
+            "mostProlificMonth": "產量最高的月份",
+            "avgShotsPerDay": "日均拍攝量"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "月度數量",
+            "topGearShare": "主要器材佔比",
+            "timeOfDayShare": "時段佔比"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "您產量最高的月份是 {month}（{count} 張照片）。當月最常用鏡頭：{lens}。",
+          "empty": "此目錄暫無年度回顧資料。",
+          "caption": "{year} 的關鍵統計與迷你圖表：{daysShot} 天內拍攝 {totalPhotos} 張照片，最常用機身 {topBody}，最常用鏡頭 {topLens}。"
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "逐年對比",
+          "yearCountLabel": "顯示最近",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 年",
+            "3": "3 年",
+            "5": "5 年"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "最大變化：{year} 的 {label}（{delta}）。",
+          "stat": "統計項",
+          "empty": "逐年對比至少需要 2 個完整年份的目錄資料。",
+          "caption": "{n} 年的年度統計並排顯示，含與上一年的差值。"
         },
         "overview": {
-          "title": "Overview",
+          "title": "概覽",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "照片總數",
+            "dateRange": "日期範圍",
+            "daysShot": "拍攝天數",
+            "photosPerDay": "每天照片數",
+            "bodyCount": "機身數",
+            "lensCount": "鏡頭數",
+            "topBody": "最常用機身",
+            "topLens": "最常用鏡頭",
+            "topFocalLength": "最常用焦距"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "目錄概覽：{daysShot} 天內拍攝 {totalPhotos} 張照片，{bodyCount} 台機身，{lensCount} 支鏡頭。"
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "器材",
+          "bodiesOverTime": "機身隨時間變化",
+          "topLenses": "最常用鏡頭",
+          "topCombos": "最常用機身 + 鏡頭組合",
+          "retired": "退役（12 個月未使用）",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "機身",
+            "lens": "鏡頭",
+            "count": "照片",
+            "firstUsed": "首次使用",
+            "lastUsed": "最近使用"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "器材明細：最常用鏡頭 {topLens}，{topLensCount} 張照片；顯示 {comboCount} 個常用組合。"
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "焦距",
+          "histogramTitle": "焦距分布（35mm 等效）",
+          "histogramAria": "焦距直方圖",
+          "topPeaks": "主要峰值",
+          "onePrime": "一支 {mm}mm 定焦鏡頭可覆蓋您 {pct}% 的照片（±25% 範圍內）。",
+          "noPrime": "您的焦距使用過於分散，單支定焦鏡頭無法占主導。",
+          "caption": "從 {min}mm 到 {max}mm、以 1mm 為間隔的直方圖；標註了 {peakCount} 個主要峰值。"
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "各變焦鏡頭焦距",
+          "callout": "在您的 {lens} 上，{pct}% 的照片拍攝於 {mm}mm。",
+          "empty": "此目錄中未偵測到變焦鏡頭。",
+          "caption": "{n} 個變焦鏡頭的直方圖，並突顯主導焦距。"
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "光圈甜蜜點",
+          "callout": "您有 {pct}% 的時間以最大光圈拍攝 {lens}。",
+          "empty": "資料不足——至少需要一支擁有 100 張以上照片的鏡頭。",
+          "caption": "{n} 支鏡頭的光圈直方圖。"
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "時段",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "鐘點",
+            "sun": "太陽高度角"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "您目錄中 {pct}% 含 GPS——太陽高度角分布僅反映這些照片。",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "黃金時刻",
+            "blueHour": "藍色時刻",
+            "midday": "正午",
+            "night": "夜間"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "依機身",
+          "perGearPeak": "{gear}——高峰時段 {hour}:00",
+          "caption": "24 小時內的照片數量，可選依太陽高度角分布。"
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "拍攝熱力圖",
+          "aria": "拍攝熱力圖——貢獻日曆",
+          "tooltip": "{date}：{count} 張照片，最常用鏡頭 {topLens}",
+          "caption": "橫跨 {years} 年的逐年貢獻日曆。"
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "GPS 位置",
+          "aria": "目錄照片叢集的 GPS 地圖",
+          "coverage": "您目錄中 {pct}% 含 GPS 資料（{count} 張照片）。",
+          "topRegions": "主要地區",
+          "empty": "此目錄中未找到 GPS 資料。",
+          "caption": "等距矩形世界地圖，含 {clusters} 個彙總叢集；PII 保護會剔除少於 5 張照片的網格單元。"
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "篩選漏斗",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "總計",
+            "notRejected": "未拒絕",
+            "rated1Plus": "1 星以上",
+            "rated4Plus": "4 星以上"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "依器材的精選率",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "名稱",
+            "total": "總計",
+            "rated4Plus": "4 星以上",
+            "pickRate": "精選率"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "從 {total} 張照片到 {rated4Plus} 張評分 4 星以上的漏斗（精選率 {pickRate}%）。"
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "編輯強度",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "平均曝光調整",
+            "avgCrop": "平均裁切 %",
+            "pctLocal": "含局部調整的比例",
+            "pctPresets": "含預設集的比例"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "編輯強度評分隨時間變化",
+          "topPresets": "最常用預設集",
+          "perGear": "依器材的評分",
+          "sampled": "基於 {n} 張照片中 5% 樣本的估算。",
+          "caption": "整個目錄的平均編輯評分，含月度趨勢和依器材的明細。"
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "評分與精選",
+          "distribution": "評分分布",
+          "colorLabels": "顏色標籤",
+          "perGear": "依器材的精選率",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "名稱",
+            "total": "總計",
+            "rated4Plus": "4 星以上",
+            "pickRate": "精選率"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "評分",
+            "count": "照片"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "評分分布，含 {colorLabelCount} 個顏色標籤和依器材的精選率。"
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "關鍵字覆蓋率",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "已標記照片",
+            "untagged": "未標記照片",
+            "uniqueKeywords": "唯一關鍵字",
+            "avgPerPhoto": "每張已標記照片的平均關鍵字數",
+            "orphans": "孤立關鍵字"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "最常用關鍵字",
+          "blindSpots": "最大盲區",
+          "blindSpotItem": "{yearMonth}——覆蓋率 {pct}%",
+          "blindSpotsEmpty": "各月份覆蓋率看起來均勻。",
+          "caption": "標籤覆蓋率統計和最常用的 {n} 個關鍵字（PII 保護：僅含出現在 3 張以上照片中的關鍵字）。"
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "連拍偵測",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "連拍總數",
+            "photosInBursts": "連拍中的照片",
+            "pctInBursts": "目錄中連拍佔比",
+            "longestBurst": "最長連拍"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "連拍長度分布",
+          "keeperRate": "連拍照片獲得 4 星以上評分的比例為 {burstRate}%——比單張拍攝（{singleRate}%）{direction} {delta}%。",
+          "moreOften": "高出",
+          "lessOften": "低出",
+          "caption": "連拍長度分布；保留率為連拍 {burstRate}% 對比單張拍攝 {singleRate}%。"
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
-          "focalLengthMin": "Min mm",
-          "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "title": "深入探索器",
+          "description": "依日期、器材、焦距、光圈、ISO、評分或精選狀態篩選儀表板。一次性套用所有變更。",
+          "dateRange": "日期範圍",
+          "dateStart": "從",
+          "dateEnd": "至",
+          "cameras": "相機",
+          "lenses": "鏡頭",
+          "focalLength": "焦距（mm，35mm 等效）",
+          "focalLengthMin": "最小 mm",
+          "focalLengthMax": "最大 mm",
+          "aperture": "光圈（f 值）",
+          "apertureMin": "最小 f 值",
+          "apertureMax": "最大 f 值",
           "iso": "ISO",
-          "isoMin": "Min ISO",
-          "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "isoMin": "最小 ISO",
+          "isoMax": "最大 ISO",
+          "ratings": "評分",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "精選狀態",
+          "pickAny": "任意",
+          "pickFlagged": "已留用",
+          "pickRejected": "已拒絕",
+          "pickNone": "未標記",
+          "apply": "套用",
+          "reset": "重設",
+          "activeFilters": "已啟用的篩選",
+          "removeFilter": "移除 {label} 篩選",
+          "filterDateRange": "日期 {start} – {end}",
+          "filterCameras": "相機：{names}",
+          "filterLenses": "鏡頭：{names}",
+          "filterFocalLength": "焦距 {min}–{max}mm",
+          "filterAperture": "光圈 f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "評分：{ratings}",
+          "filterPicks": "精選：{state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "時段比較",
+          "periodA": "時段 A",
+          "periodB": "時段 B",
+          "start": "開始",
+          "end": "結束",
+          "apply": "套用",
           "headers": {
-            "stat": "Stat",
+            "stat": "統計項",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "照片總數",
+            "daysShot": "拍攝天數",
+            "topBody": "最常用機身",
+            "topLens": "最常用鏡頭",
+            "topFocalLength": "最常用焦距"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "為每個時段選擇日期範圍並點擊套用。",
+          "caption": "並排比較兩個任意日期範圍，含差值欄。"
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "目錄健康度",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "遺失的原始檔案",
+            "missingPreviews": "遺失的預覽",
+            "brokenPaths": "中斷的路徑",
+            "likelyDuplicates": "疑似重複"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "疑似重複叢集",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "拍攝時間",
+            "size": "叢集大小",
+            "firstPath": "首個路徑",
+            "lastPath": "末個路徑"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "包圍曝光序列可能會出現在此；刪除前請檢查。",
+          "missingByRootFolder": "依根資料夾劃分的遺失原始檔案",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "根資料夾",
+            "count": "遺失"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "在 Lightroom Classic 中：圖庫 → 尋找遺失的照片可解決中斷的路徑。",
+          "caption": "目錄健康度摘要：{missing} 個遺失原始檔案，{duplicates} 個疑似重複。"
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "匯出此分析",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "複製 Markdown",
+          "copied": "Markdown 報告已複製。約 {kb} KB。",
+          "downloaded": "剪貼簿不可用——已改為將報告下載為 .md 檔案。"
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "匯出 PDF",
+          "loadingEngine": "正在載入 PDF 引擎……",
+          "generating": "正在產生報告……",
+          "success": "PDF 報告已下載。",
+          "error": "無法產生 PDF。請改用 Markdown 或分享。",
+          "title": "Lightroom 目錄分析",
+          "filteredSuffix": "（已篩選檢視）",
+          "localFooter": "您的目錄從未上傳——僅包含這些彙總統計資料。",
+          "generatedBy": "由 phototools.io/lightroom-catalog-analyzer 產生",
+          "totalPhotos": "照片總數",
+          "dateRange": "日期範圍",
+          "catalogVersion": "目錄版本",
+          "filterTitle": "已套用篩選",
+          "page": "頁",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "年度回顧",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "照片總數",
+                "daysShot": "拍攝天數",
+                "topBody": "最常用機身",
+                "topLens": "最常用鏡頭"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "產量最高的月份：{month}（{count} 張照片）。"
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "逐年對比",
+              "stat": "統計項",
+              "biggestShift": "最大變化：{year} 的 {label}（{delta}）。"
             },
             "overview": {
-              "title": "Overview",
+              "title": "概覽",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "照片總數",
+                "daysShot": "拍攝天數",
+                "topBody": "最常用機身",
+                "topLens": "最常用鏡頭"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "器材",
+              "bodiesOverTime": "機身隨時間變化",
+              "topLenses": "最常用鏡頭",
+              "retired": "退役",
+              "lensHeader": "鏡頭",
+              "photosHeader": "照片"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "焦距",
+              "histogramTitle": "焦距分布（35mm 等效）",
+              "topPeaks": "主要峰值",
+              "onePrime": "一支 {mm}mm 定焦鏡頭可覆蓋您 {pct}% 的照片（±25% 範圍內）。",
+              "noPrime": "您的焦距使用過於分散，單支定焦鏡頭無法占主導。"
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "各變焦鏡頭焦距",
+              "perLens": "{lens}：{pct}% 的照片拍攝於 {mm}mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "光圈甜蜜點",
+              "perLens": "{lens}：以最大光圈拍攝的時間佔 {pct}%"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "時段",
+              "gpsNote": "您目錄中 {pct}% 含 GPS——太陽高度角分布僅反映這些照片。"
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "拍攝熱力圖",
+              "daysWithPhotos": "有照片的天數",
+              "yearsCovered": "覆蓋的年份數"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "GPS 位置",
+              "coverage": "目錄中 {pct}% 含 GPS",
+              "topRegions": "主要地區",
+              "regionHeader": "地區",
+              "photosHeader": "照片"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "篩選漏斗",
+              "stageHeader": "階段",
+              "photosHeader": "照片"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "編輯強度",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "平均曝光調整",
+                "crop": "平均裁切",
+                "local": "含局部調整",
+                "presets": "含預設集"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "基於目錄樣本的估算。"
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "評分與精選",
+              "ratingHeader": "評分",
+              "photosHeader": "照片"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "關鍵字覆蓋率",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "已標記",
+                "untagged": "未標記",
+                "unique": "唯一關鍵字",
+                "orphans": "孤立關鍵字"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "關鍵字",
+              "photosHeader": "照片"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "連拍偵測",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "連拍總數",
+                "inBursts": "連拍中的照片",
+                "longest": "最長連拍"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "連拍照片獲得 ≥4 星評分的比例：{a}% 對比單張拍攝 {b}%。"
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "時段比較",
+              "notExported": "時段比較在應用程式中為互動式功能，不會匯出。"
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "目錄健康度",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "遺失的原始檔案",
+                "previews": "遺失的預覽",
+                "broken": "中斷的路徑",
+                "dupes": "疑似重複"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → 圖庫 → 尋找遺失的照片可解決中斷的路徑。"
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "透過 URL 分享",
+          "placeholderTitle": "計畫 3 將連接此功能。"
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "透過 URL 分享",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "分享指向您分析的連結",
+          "uploadedHeading": "會上傳什麼",
+          "uploaded": "計數、前 N 名清單和直方圖——正是上方顯示的資料。",
+          "notUploadedHeading": "不會上傳什麼",
+          "notUploaded": "檔案名稱、影像檔案、資料夾路徑、比約 5 公里網格單元更精確的 GPS 座標，以及使用次數少於 3 次的關鍵字。",
+          "expiresLabel": "連結將於",
+          "expires24h": "24 小時",
+          "expires7d": "7 天",
+          "expires30d": "30 天",
+          "cancel": "取消",
+          "create": "建立連結",
+          "creating": "正在建立連結……"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "您已達到分享上限。請一小時後再試。",
+          "storage-unavailable": "儲存空間暫時不可用。請稍後再試。",
+          "invalid": "無法分享此分析——資料似乎格式有誤。",
+          "unknown": "建立連結時發生問題。請重試。"
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "您的連結已就緒",
+          "expiresOn": "{date} 到期",
+          "copy": "複製",
+          "copied": "連結已複製",
+          "openNewTab": "在新分頁中開啟",
+          "delete": "刪除此分享",
+          "deleted": "分享已刪除",
+          "urlLabel": "可分享的 URL"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "您最近的分享",
+          "subtitle": "您在此裝置上建立的連結。開啟其一可檢視，或刪除以撤銷存取。",
+          "idLabel": "分享 …{last4}",
+          "created": "建立於 {date}",
+          "expires": "{date} 到期",
+          "filtered": "已篩選：{summary}",
+          "open": "開啟",
+          "delete": "刪除"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "已套用篩選",
+          "summaryShort": "此檢視已篩選：{summary}",
+          "showAll": "顯示所有篩選",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "日期",
+            "cameras": "相機",
+            "lenses": "鏡頭",
+            "focalLengthRange": "焦距",
+            "apertureRange": "光圈",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "評分",
+            "keywords": "關鍵字",
+            "picks": "精選"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "這是一份共享的分析。原始目錄從未上傳——僅包含這些彙總統計資料。",
+          "cta": "用您自己的目錄試用此工具",
+          "expiredTitle": "此分享已過期或被刪除。",
+          "expiredBody": "連結可能已到期，或建立者將其刪除。",
+          "schemaNewerTitle": "由更新版本建立",
+          "schemaNewerBody": "此分析由更新版本的工具建立。請嘗試重新整理頁面。",
+          "pageTitle": "共享的 Lightroom 目錄分析"
         }
       }
     }

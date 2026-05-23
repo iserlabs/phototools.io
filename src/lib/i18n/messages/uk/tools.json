@@ -65,8 +65,8 @@
       "description": "Порівнюй мегапікселі, дивись розміри друку та файлів для різних співвідношень сторін і DPI"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Аналізатор каталогу Lightroom",
+      "description": "Проаналізуйте свій каталог Lightroom Classic — техніку, фокусну відстань, діафрагми, рейтинги та інше — на 100% у браузері"
     }
   }
 }

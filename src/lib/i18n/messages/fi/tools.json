@@ -65,8 +65,8 @@
       "description": "Vertaa megapikseleitä, visualisoi tulostuskokoja ja tarkastele tiedostokokoja eri kuvasuhteilla ja DPI-arvoilla"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Lightroom-luettelon analysaattori",
+      "description": "Analysoi Lightroom Classic -luettelosi — kalusto, polttoväli, aukot, arvioinnit ja paljon muuta — 100 % selaimessasi"
     }
   }
 }

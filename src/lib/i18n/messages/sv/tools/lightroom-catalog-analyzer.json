@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100 % lokalt · Ingen uppladdning",
+      "privacyBadgeAria": "Integritetsgaranti: det här verktyget körs helt i din webbläsare. Din katalog laddas aldrig upp.",
+      "skipToMain": "Hoppa till huvudinnehållet",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Analysera din Lightroom Classic-katalog",
+        "subhead": "Utrustning, brännvidder, bländarvanor, betyg, GPS, redigeringsintensitet och mer — helt i din webbläsare. Din katalog lämnar aldrig din enhet.",
+        "explainer": "Välj en .lrcat-fil från din dator. Vi öppnar den i en SQLite-WebAssembly-worker, beräknar aggregerad statistik och visar en interaktiv instrumentpanel. Inget laddas upp.",
+        "tryDemo": "Prova demokatalogen"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Det här kräver en dator",
+        "body": "Lightroom-kataloganalysatorn behöver din Lightroom Classic-katalogfil (.lrcat), som finns på din dator — inte på din telefon.",
+        "tryDemoCta": "Prova demon här",
+        "openOnDesktop": "Öppna den här sidan på din dator för att analysera din egen katalog.",
+        "copyLink": "Kopiera länk",
+        "copyLinkSuccess": "Länk kopierad",
+        "screenshotAlt": "Förhandsvisning av Lightroom-kataloganalysatorns instrumentpanel"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "Släpp din .lrcat-fil här, eller klicka för att bläddra",
+        "tapPrompt": "Tryck för att välja en .lrcat-fil",
+        "browseButton": "Bläddra efter katalog",
+        "selectedFile": "Vald: {fileName}",
+        "ariaLabel": "Filväljare för Lightroom Classic-katalog",
+        "errorNotLrcat": "Den filen ser inte ut som en Lightroom Classic-katalog (.lrcat).",
+        "errorReadFailed": "Kunde inte läsa filen. Försök igen."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Stor katalog — observera",
+        "body": "{fileName} är {sizeGb} GB. Tolkningen kan ta 30 sekunder eller mer och använda mycket minne. Vill du fortsätta?",
+        "continue": "Fortsätt",
+        "cancel": "Avbryt"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "Analyserar din katalog",
+        "subtitle": "Det här körs helt i din webbläsare. Inget laddas upp.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Läser fil…",
+          "opening": "Öppnar katalog…",
+          "schema": "Kontrollerar schema…",
+          "hashing": "Beräknar hash…",
+          "aggregating": "Beräknar statistik…",
+          "finalizing": "Slutför…"
         },
-        "pctLabel": "{pct}%"
+        "pctLabel": "{pct} %"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Inläst från cache",
+        "reanalyze": "Analysera om",
+        "reanalyzeAria": "Förkasta det cachade resultatet och analysera den här katalogen igen från originalfilen."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "Vi kunde inte analysera den katalogen",
+        "retry": "Prova en annan katalog",
+        "parseFailed": "Vi kunde inte tolka den katalogen. Den kan vara öppen i Lightroom, delvis skriven eller i ett oväntat format.",
+        "workerFailed": "Analysmotorn kunde inte startas. Ladda om sidan och försök igen.",
+        "schemaTooNew": "Den här katalogen skapades av en nyare version av Lightroom Classic än vad det här verktyget stöder ännu.",
+        "schemaTooOld": "Den här katalogen skapades av en version av Lightroom Classic som är för gammal för det här verktyget.",
+        "tooLarge": "Den här katalogen är för stor för att analyseras i webbläsaren.",
+        "corrupt": "Den här katalogen verkar vara skadad eller ofullständig och kunde inte läsas.",
+        "notLightroom": "Den filen är inte en Lightroom Classic-katalogdatabas.",
+        "unknown": "Något gick fel när den katalogen analyserades. Försök igen."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Avsnitt i instrumentpanelen",
+        "jumpToSection": "Hoppa till avsnitt",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "Höjdpunkter",
+          "whatYouShoot": "Vad du fotograferar",
+          "howYouCurate": "Hur du gallrar",
+          "exploreCompare": "Utforska och jämför",
+          "catalog": "Katalog"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "Året i sammanfattning",
+          "year-to-year": "År för år",
+          "overview": "Översikt",
+          "gear": "Utrustningsöversikt",
+          "focal-length": "Brännvidd",
+          "focal-length-per-zoom": "Brännvidd per zoom",
+          "apertures": "Optimal bländare",
+          "time-of-day": "Tid på dygnet",
+          "heatmap": "Fotograferingsheatmap",
+          "gps": "GPS-platser",
+          "curation": "Gallringstratt",
+          "edit-intensity": "Redigeringsintensitet",
+          "ratings": "Betyg och urval",
+          "keywords": "Nyckelordstäckning",
+          "bursts": "Serietagningsdetektering",
+          "drilldown": "Detaljutforskare",
+          "period-comparison": "Periodjämförelse",
+          "catalog-health": "Katalogens hälsa"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "Läser in {section}…",
+        "footerNote": "Beräknat i din webbläsare från din lokala katalogfil. Inget har laddats upp."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Året i sammanfattning",
+          "yearLabel": "År",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Totalt antal foton",
+            "daysShot": "Fotodagar",
+            "topBody": "Mest använda kamerahus",
+            "topLens": "Mest använda objektiv",
+            "topFocalLength": "Främsta brännvidd",
+            "topAperture": "Främsta bländare",
+            "mostProlificMonth": "Mest produktiva månad",
+            "avgShotsPerDay": "Snitt foton / dag"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Månadsvolym",
+            "topGearShare": "Andel för främsta utrustning",
+            "timeOfDayShare": "Andel per tid på dygnet"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "Din mest produktiva månad var {month} ({count} foton). Främsta objektiv den månaden: {lens}.",
+          "empty": "Inga data för året i sammanfattning för den här katalogen ännu.",
+          "caption": "Nyckeltal och minidiagram för {year}: {totalPhotos} foton över {daysShot} dagar, främsta kamerahus {topBody}, främsta objektiv {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "År för år",
+          "yearCountLabel": "Visa senaste",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 år",
+            "3": "3 år",
+            "5": "5 år"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Största förändringen: {label} år {year} ({delta}).",
+          "stat": "Statistik",
+          "empty": "Det behövs minst 2 fullständiga år med katalogdata för jämförelse år för år.",
+          "caption": "Årlig statistik sida vid sida med skillnaden mot föregående år över {n} år."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Översikt",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Totalt antal foton",
+            "dateRange": "Datumintervall",
+            "daysShot": "Fotodagar",
+            "photosPerDay": "Foton / dag",
+            "bodyCount": "Kamerahus",
+            "lensCount": "Objektiv",
+            "topBody": "Främsta kamerahus",
+            "topLens": "Främsta objektiv",
+            "topFocalLength": "Främsta brännvidd"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Katalogöversikt: {totalPhotos} foton över {daysShot} dagar, {bodyCount} kamerahus, {lensCount} objektiv."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "Utrustning",
+          "bodiesOverTime": "Kamerahus över tid",
+          "topLenses": "Främsta objektiv",
+          "topCombos": "Främsta kombinationer av kamerahus + objektiv",
+          "retired": "Pensionerad (12 månader utan användning)",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "Kamerahus",
+            "lens": "Objektiv",
+            "count": "Foton",
+            "firstUsed": "Först använd",
+            "lastUsed": "Senast använd"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Utrustningsöversikt: främsta objektiv {topLens} med {topLensCount} foton; {comboCount} främsta kombinationer visas."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "Brännvidd",
+          "histogramTitle": "Fördelning av brännvidder (35 mm-ekvivalent)",
+          "histogramAria": "Histogram över brännvidder",
+          "topPeaks": "Främsta toppar",
+          "onePrime": "Ett fast objektiv på {mm} mm skulle täcka {pct} % av dina foton inom ±25 %.",
+          "noPrime": "Din användning av brännvidder är för utspridd för att ett enda fast objektiv ska dominera.",
+          "caption": "Histogram med 1 mm-intervall från {min} mm till {max} mm; {peakCount} främsta toppar märkta."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Brännvidd per zoom",
+          "callout": "På ditt {lens} är {pct} % av fotona vid {mm} mm.",
+          "empty": "Inga zoomobjektiv upptäcktes i den här katalogen.",
+          "caption": "{n} histogram för zoomobjektiv med den dominerande brännvidden markerad."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Optimal bländare",
+          "callout": "Du fotograferar med {lens} på full öppning {pct} % av tiden.",
+          "empty": "Inte tillräckligt med data — det behövs minst ett objektiv med fler än 100 foton.",
+          "caption": "{n} bländarhistogram för objektiv."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Tid på dygnet",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Klockslag",
+            "sun": "Solvinkel"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "{pct} % av din katalog har GPS — fördelningen efter solvinkel återspeglar endast dessa foton.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "Gyllene timmen",
+            "blueHour": "Blå timmen",
+            "midday": "Mitt på dagen",
+            "night": "Natt"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "Per kamerahus",
+          "perGearPeak": "{gear} — topptimme {hour}:00",
+          "caption": "Antal foton under 24 timmar med valfri fördelning efter solvinkel."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Fotograferingsheatmap",
+          "aria": "Fotograferingsheatmap — aktivitetskalender",
+          "tooltip": "{date}: {count} foton, främsta objektiv {topLens}",
+          "caption": "Aktivitetskalender år för år över {years} år."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "GPS-platser",
+          "aria": "GPS-karta över fotoklustren i katalogen",
+          "coverage": "{pct} % av din katalog har GPS-data ({count} foton).",
+          "topRegions": "Främsta regioner",
+          "empty": "Inga GPS-data hittades i den här katalogen.",
+          "caption": "Ekvirektangulär världskarta med {clusters} aggregerade kluster; skyddet av personuppgifter tar bort rutnätsceller med färre än 5 foton."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Gallringstratt",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "Totalt",
+            "notRejected": "Inte avvisade",
+            "rated1Plus": "1+ stjärna",
+            "rated4Plus": "4+ stjärnor"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Urvalsfrekvens per utrustning",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Namn",
+            "total": "Totalt",
+            "rated4Plus": "4+ stjärnor",
+            "pickRate": "Urvalsfrekvens"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Tratt från {total} foton totalt till {rated4Plus} med betyg 4+ ({pickRate} % urvalsfrekvens)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Redigeringsintensitet",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "Snitt exponeringsförskjutning",
+            "avgCrop": "Snitt beskärning %",
+            "pctLocal": "% med lokala justeringar",
+            "pctPresets": "% med förinställningar"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Redigeringsintensitetspoäng över tid",
+          "topPresets": "Främsta förinställningar",
+          "perGear": "Poäng per utrustning",
+          "sampled": "Uppskattning baserad på ett stickprov om 5 % av {n} foton.",
+          "caption": "Genomsnittlig redigeringspoäng för hela katalogen med månadstrend och fördelning per utrustning."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Betyg och urval",
+          "distribution": "Betygsfördelning",
+          "colorLabels": "Färgetiketter",
+          "perGear": "Urvalsfrekvens per utrustning",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Namn",
+            "total": "Totalt",
+            "rated4Plus": "4+ stjärnor",
+            "pickRate": "Urvalsfrekvens"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "Betyg",
+            "count": "Foton"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Betygsfördelning med {colorLabelCount} färgetiketter och urvalsfrekvenser per utrustning."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Nyckelordstäckning",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Taggade foton",
+            "untagged": "Otaggade foton",
+            "uniqueKeywords": "Unika nyckelord",
+            "avgPerPhoto": "Snitt nyckelord / taggat foto",
+            "orphans": "Föräldralösa nyckelord"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Främsta nyckelord",
+          "blindSpots": "Största blinda fläckarna",
+          "blindSpotItem": "{yearMonth} — {pct} % täckning",
+          "blindSpotsEmpty": "Täckningen ser jämn ut över månaderna.",
+          "caption": "Statistik över taggtäckning och de {n} främsta nyckelorden (skydd av personuppgifter: endast nyckelord på 3+ foton)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Serietagningsdetektering",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Totalt antal serietagningar",
+            "photosInBursts": "Foton i serietagningar",
+            "pctInBursts": "% av katalogen i serietagningar",
+            "longestBurst": "Längsta serietagning"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Fördelning av serietagningslängd",
+          "keeperRate": "Foton i serietagning får betyg 4+ i {burstRate} % — {delta} % {direction} än enstaka bilder ({singleRate} %).",
+          "moreOften": "oftare",
+          "lessOften": "mer sällan",
+          "caption": "Fördelning av serietagningslängd; behållningsfrekvens {burstRate} % mot {singleRate} % för enstaka bilder."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
+          "title": "Detaljutforskare",
+          "description": "Filtrera instrumentpanelen efter datum, utrustning, brännvidd, bländare, ISO, betyg eller urvalsstatus. Tillämpa alla ändringar på en gång.",
+          "dateRange": "Datumintervall",
+          "dateStart": "Från",
+          "dateEnd": "Till",
+          "cameras": "Kameror",
+          "lenses": "Objektiv",
+          "focalLength": "Brännvidd (mm, 35 mm-ekvivalent)",
           "focalLengthMin": "Min mm",
           "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "aperture": "Bländare (f-tal)",
+          "apertureMin": "Min f-tal",
+          "apertureMax": "Max f-tal",
           "iso": "ISO",
           "isoMin": "Min ISO",
           "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "ratings": "Betyg",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "Urvalsstatus",
+          "pickAny": "Vilken som helst",
+          "pickFlagged": "Flaggade",
+          "pickRejected": "Avvisade",
+          "pickNone": "Oflaggade",
+          "apply": "Tillämpa",
+          "reset": "Återställ",
+          "activeFilters": "Aktiva filter",
+          "removeFilter": "Ta bort filtret {label}",
+          "filterDateRange": "Datum {start} – {end}",
+          "filterCameras": "Kamera: {names}",
+          "filterLenses": "Objektiv: {names}",
+          "filterFocalLength": "Brännvidd {min}–{max} mm",
+          "filterAperture": "Bländare f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "Betyg: {ratings}",
+          "filterPicks": "Urval: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
+          "title": "Periodjämförelse",
           "periodA": "Period A",
           "periodB": "Period B",
           "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "end": "Slut",
+          "apply": "Tillämpa",
           "headers": {
-            "stat": "Stat",
+            "stat": "Statistik",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Totalt antal foton",
+            "daysShot": "Fotodagar",
+            "topBody": "Främsta kamerahus",
+            "topLens": "Främsta objektiv",
+            "topFocalLength": "Främsta brännvidd"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Välj ett datumintervall för varje period och klicka på Tillämpa.",
+          "caption": "Jämförelse sida vid sida av två godtyckliga datumintervall med skillnadskolumn."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Katalogens hälsa",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Saknade original",
+            "missingPreviews": "Saknade förhandsvisningar",
+            "brokenPaths": "Brutna sökvägar",
+            "likelyDuplicates": "Sannolika dubbletter"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Sannolika dubblettkluster",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Tagningstid",
+            "size": "Klusterstorlek",
+            "firstPath": "Första sökväg",
+            "lastPath": "Sista sökväg"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Gafflingssekvenser kan dyka upp här; granska innan du tar bort.",
+          "missingByRootFolder": "Saknade original per rotmapp",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "Rotmapp",
+            "count": "Saknade"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "I Lightroom Classic: Bibliotek → Sök saknade foton kan åtgärda brutna sökvägar.",
+          "caption": "Sammanfattning av katalogens hälsa: {missing} saknade original, {duplicates} sannolika dubbletter."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "Exportera den här analysen",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Kopiera Markdown",
+          "copied": "Markdown-rapport kopierad. ~{kb} KB.",
+          "downloaded": "Urklipp ej tillgängligt — rapporten laddades i stället ned som en .md-fil."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "Exportera PDF",
+          "loadingEngine": "Läser in PDF-motor…",
+          "generating": "Genererar rapport…",
+          "success": "PDF-rapport nedladdad.",
+          "error": "Kunde inte generera PDF:en. Prova Markdown eller Dela i stället.",
+          "title": "Lightroom-kataloganalys",
+          "filteredSuffix": " (Filtrerad vy)",
+          "localFooter": "Din katalog laddades aldrig upp — endast denna aggregerade statistik.",
+          "generatedBy": "Genererad av phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Totalt antal foton",
+          "dateRange": "Datumintervall",
+          "catalogVersion": "Katalogversion",
+          "filterTitle": "Filter tillämpat",
+          "page": "Sida",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Året i sammanfattning",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Totalt antal foton",
+                "daysShot": "Fotodagar",
+                "topBody": "Mest använda kamerahus",
+                "topLens": "Mest använda objektiv"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Mest produktiva månad: {month} ({count} foton)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "År för år",
+              "stat": "Statistik",
+              "biggestShift": "Största förändringen: {label} år {year} ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Översikt",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Totalt antal foton",
+                "daysShot": "Fotodagar",
+                "topBody": "Främsta kamerahus",
+                "topLens": "Främsta objektiv"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "Utrustning",
+              "bodiesOverTime": "Kamerahus över tid",
+              "topLenses": "Främsta objektiv",
+              "retired": "Pensionerad",
+              "lensHeader": "Objektiv",
+              "photosHeader": "Foton"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "Brännvidd",
+              "histogramTitle": "Fördelning av brännvidder (35 mm-ekvivalent)",
+              "topPeaks": "Främsta toppar",
+              "onePrime": "Ett fast objektiv på {mm} mm skulle täcka {pct} % av dina foton inom ±25 %.",
+              "noPrime": "Din användning av brännvidder är för utspridd för att ett enda fast objektiv ska dominera."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Brännvidd per zoom",
+              "perLens": "{lens}: {pct} % av fotona vid {mm} mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Optimal bländare",
+              "perLens": "{lens}: fotograferad på full öppning {pct} % av tiden"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Tid på dygnet",
+              "gpsNote": "{pct} % av din katalog har GPS — fördelningen efter solvinkel återspeglar endast dessa foton."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Fotograferingsheatmap",
+              "daysWithPhotos": "Dagar med foton",
+              "yearsCovered": "Täckta år"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
+              "title": "GPS-platser",
+              "coverage": "{pct} % av katalogen har GPS",
+              "topRegions": "Främsta regioner",
               "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "photosHeader": "Foton"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Gallringstratt",
+              "stageHeader": "Steg",
+              "photosHeader": "Foton"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Redigeringsintensitet",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "Snitt exponeringsförskjutning",
+                "crop": "Snitt beskärning",
+                "local": "Med lokala justeringar",
+                "presets": "Med förinställningar"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Uppskattning baserad på ett stickprov av katalogen."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "Betyg och urval",
+              "ratingHeader": "Betyg",
+              "photosHeader": "Foton"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Nyckelordstäckning",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Taggade",
+                "untagged": "Otaggade",
+                "unique": "Unika nyckelord",
+                "orphans": "Föräldralösa nyckelord"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "Nyckelord",
+              "photosHeader": "Foton"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Serietagningsdetektering",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Totalt antal serietagningar",
+                "inBursts": "Foton i serietagningar",
+                "longest": "Längsta serietagning"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "Foton i serietagning får betyg ≥4: {a} % mot {b} % för enstaka bilder."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "Periodjämförelse",
+              "notExported": "Periodjämförelsen är interaktiv i appen och exporteras inte."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Katalogens hälsa",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Saknade original",
+                "previews": "Saknade förhandsvisningar",
+                "broken": "Brutna sökvägar",
+                "dupes": "Sannolika dubbletter"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Bibliotek → Sök saknade foton kan åtgärda brutna sökvägar."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Dela via URL",
+          "placeholderTitle": "Plan 3 kopplar ihop detta."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Dela via URL",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Dela en länk till din analys",
+          "uploadedHeading": "Vad som laddas upp",
+          "uploaded": "Antal, topp-N-listor och histogram — exakt de data som visas ovan.",
+          "notUploadedHeading": "Vad som INTE laddas upp",
+          "notUploaded": "Filnamn, bildfiler, mappsökvägar, GPS-koordinater mer exakta än rutnätsceller på cirka 5 km och nyckelord som använts färre än 3 gånger.",
+          "expiresLabel": "Länken upphör om",
+          "expires24h": "24 timmar",
+          "expires7d": "7 dagar",
+          "expires30d": "30 dagar",
+          "cancel": "Avbryt",
+          "create": "Skapa länk",
+          "creating": "Skapar länk…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Du har nått delningsgränsen. Försök igen om en timme.",
+          "storage-unavailable": "Lagring tillfälligt otillgänglig. Försök igen om en stund.",
+          "invalid": "Kunde inte dela den här analysen — data ser felaktiga ut.",
+          "unknown": "Något gick fel när länken skapades. Försök igen."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "Din länk är klar",
+          "expiresOn": "Upphör {date}",
+          "copy": "Kopiera",
+          "copied": "Länk kopierad",
+          "openNewTab": "Öppna i ny flik",
+          "delete": "Ta bort den här delningen",
+          "deleted": "Delning borttagen",
+          "urlLabel": "Delbar URL"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "Dina senaste delningar",
+          "subtitle": "Länkar du har skapat på den här enheten. Öppna en för att visa den, eller ta bort den för att återkalla åtkomsten.",
+          "idLabel": "Delning …{last4}",
+          "created": "Skapad {date}",
+          "expires": "Upphör {date}",
+          "filtered": "Filtrerad: {summary}",
+          "open": "Öppna",
+          "delete": "Ta bort"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Filter tillämpat",
+          "summaryShort": "Den här vyn är filtrerad: {summary}",
+          "showAll": "Visa alla filter",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "Datum",
+            "cameras": "Kameror",
+            "lenses": "Objektiv",
+            "focalLengthRange": "Brännvidd",
+            "apertureRange": "Bländare",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Betyg",
+            "keywords": "Nyckelord",
+            "picks": "Urval"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Det här är en delad analys. Originalkatalogen laddades aldrig upp — endast denna aggregerade statistik.",
+          "cta": "Prova verktyget med din egen katalog",
+          "expiredTitle": "Den här delningen har upphört eller tagits bort.",
+          "expiredBody": "Länken kan ha nått sitt utgångsdatum, eller så har skaparen tagit bort den.",
+          "schemaNewerTitle": "Skapad med en nyare version",
+          "schemaNewerBody": "Den här analysen gjordes med en nyare version av verktyget. Prova att uppdatera sidan.",
+          "pageTitle": "Delad Lightroom-kataloganalys"
         }
       }
     }

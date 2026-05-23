@@ -91,8 +91,8 @@
       "description": "देखें कि मेगापिक्सल 72-300 DPI पर विभिन्न आस्पेक्ट रेशियो में किस साइज़ में प्रिंट होते हैं। कैमरा, फ़ाइल साइज़, पिक्सल बिनिंग और क्रॉप रीच की तुलना करें — क्वालिटी-लेवल प्रिंट टेबल के साथ।"
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Lightroom Catalog Analyzer — मुफ़्त, केवल-ब्राउज़र आँकड़े",
+      "description": "अपने Lightroom Classic कैटलॉग का विश्लेषण अपने ब्राउज़र में लोकल रूप से करें। गियर, फोकल लंबाई, अपर्चर की आदतें, रेटिंग और बहुत कुछ देखें। 100% लोकल — आपका कैटलॉग कभी अपलोड नहीं होता।"
     }
   }
 }

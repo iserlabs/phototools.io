@@ -65,8 +65,8 @@
       "description": "Σύγκρινε μεγαπίξελ, οπτικοποίησε μεγέθη εκτύπωσης και δες μεγέθη αρχείων σε διάφορες αναλογίες και DPI"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Αναλυτής Καταλόγου Lightroom",
+      "description": "Αναλύστε τον κατάλογο Lightroom Classic σας — εξοπλισμός, εστιακή απόσταση, διαφράγματα, βαθμολογίες και άλλα — 100% στο πρόγραμμα περιήγησής σας"
     }
   }
 }

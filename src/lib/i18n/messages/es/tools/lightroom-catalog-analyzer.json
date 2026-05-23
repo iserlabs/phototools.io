@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100 % local · Sin subidas",
+      "privacyBadgeAria": "Garantía de privacidad: esta herramienta se ejecuta por completo en tu navegador. Tu catálogo nunca se sube.",
+      "skipToMain": "Saltar al contenido principal",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Analiza tu catálogo de Lightroom Classic",
+        "subhead": "Equipo, distancias focales, hábitos de apertura, valoraciones, GPS, intensidad de edición y mucho más, todo dentro de tu navegador. Tu catálogo nunca sale de tu dispositivo.",
+        "explainer": "Elige un archivo .lrcat de tu ordenador. Lo abrimos en un worker SQLite WebAssembly, calculamos estadísticas agregadas y mostramos un panel interactivo. No se sube nada.",
+        "tryDemo": "Prueba el catálogo de demostración"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Esto necesita un ordenador",
+        "body": "El Analizador de Catálogos de Lightroom necesita el archivo de catálogo de Lightroom Classic (.lrcat), que está en tu ordenador, no en tu móvil.",
+        "tryDemoCta": "Prueba la demostración aquí",
+        "openOnDesktop": "Abre esta página en tu ordenador para analizar tu propio catálogo.",
+        "copyLink": "Copiar enlace",
+        "copyLinkSuccess": "Enlace copiado",
+        "screenshotAlt": "Vista previa del panel del Analizador de Catálogos de Lightroom"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "Arrastra aquí tu archivo .lrcat o haz clic para buscar",
+        "tapPrompt": "Toca para elegir un archivo .lrcat",
+        "browseButton": "Buscar catálogo",
+        "selectedFile": "Seleccionado: {fileName}",
+        "ariaLabel": "Selector de archivo de catálogo de Lightroom Classic",
+        "errorNotLrcat": "Ese archivo no parece un catálogo de Lightroom Classic (.lrcat).",
+        "errorReadFailed": "No se pudo leer ese archivo. Inténtalo de nuevo."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Catálogo grande — atención",
+        "body": "{fileName} ocupa {sizeGb} GB. El análisis puede tardar 30 segundos o más y usar mucha memoria. ¿Continuar?",
+        "continue": "Continuar",
+        "cancel": "Cancelar"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "Analizando tu catálogo",
+        "subtitle": "Esto se ejecuta por completo en tu navegador. No se sube nada.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Leyendo archivo…",
+          "opening": "Abriendo catálogo…",
+          "schema": "Comprobando esquema…",
+          "hashing": "Calculando hash…",
+          "aggregating": "Calculando estadísticas…",
+          "finalizing": "Finalizando…"
         },
-        "pctLabel": "{pct}%"
+        "pctLabel": "{pct} %"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Cargado desde caché",
+        "reanalyze": "Reanalizar",
+        "reanalyzeAria": "Descarta el resultado en caché y analiza este catálogo de nuevo desde el archivo original."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "No pudimos analizar ese catálogo",
+        "retry": "Probar otro catálogo",
+        "parseFailed": "No pudimos analizar ese catálogo. Puede que esté abierto en Lightroom, escrito parcialmente o en un formato inesperado.",
+        "workerFailed": "El motor de análisis no se pudo iniciar. Recarga la página e inténtalo de nuevo.",
+        "schemaTooNew": "Este catálogo se creó con una versión de Lightroom Classic más nueva de la que esta herramienta admite por ahora.",
+        "schemaTooOld": "Este catálogo se creó con una versión de Lightroom Classic demasiado antigua para esta herramienta.",
+        "tooLarge": "Este catálogo es demasiado grande para analizarlo en el navegador.",
+        "corrupt": "Este catálogo parece estar dañado o incompleto y no se pudo leer.",
+        "notLightroom": "Ese archivo no es una base de datos de catálogo de Lightroom Classic.",
+        "unknown": "Algo salió mal al analizar ese catálogo. Inténtalo de nuevo."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Secciones del panel",
+        "jumpToSection": "Ir a la sección",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "Destacados",
+          "whatYouShoot": "Qué fotografías",
+          "howYouCurate": "Cómo seleccionas",
+          "exploreCompare": "Explorar y comparar",
+          "catalog": "Catálogo"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "Resumen del año",
+          "year-to-year": "Año tras año",
+          "overview": "Resumen general",
+          "gear": "Desglose de equipo",
+          "focal-length": "Distancia focal",
+          "focal-length-per-zoom": "Distancia focal por zoom",
+          "apertures": "Apertura óptima",
+          "time-of-day": "Hora del día",
+          "heatmap": "Mapa de calor de disparos",
+          "gps": "Ubicaciones GPS",
+          "curation": "Embudo de selección",
+          "edit-intensity": "Intensidad de edición",
+          "ratings": "Valoraciones y selecciones",
+          "keywords": "Cobertura de palabras clave",
+          "bursts": "Detección de ráfagas",
+          "drilldown": "Explorador detallado",
+          "period-comparison": "Comparación de periodos",
+          "catalog-health": "Estado del catálogo"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "Cargando {section}…",
+        "footerNote": "Calculado en tu navegador a partir de tu archivo de catálogo local. No se ha subido nada."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Resumen del año",
+          "yearLabel": "Año",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Fotos totales",
+            "daysShot": "Días con disparos",
+            "topBody": "Cuerpo más usado",
+            "topLens": "Objetivo más usado",
+            "topFocalLength": "Distancia focal principal",
+            "topAperture": "Apertura principal",
+            "mostProlificMonth": "Mes más prolífico",
+            "avgShotsPerDay": "Disparos medios / día"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Volumen mensual",
+            "topGearShare": "Reparto del equipo principal",
+            "timeOfDayShare": "Reparto por hora del día"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "Tu mes más prolífico fue {month} ({count} fotos). Objetivo principal ese mes: {lens}.",
+          "empty": "Aún no hay datos del resumen del año para este catálogo.",
+          "caption": "Estadísticas destacadas y minigráficos de {year}: {totalPhotos} fotos en {daysShot} días, cuerpo principal {topBody}, objetivo principal {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "Año tras año",
+          "yearCountLabel": "Mostrar últimos",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 años",
+            "3": "3 años",
+            "5": "5 años"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Mayor cambio: {label} en {year} ({delta}).",
+          "stat": "Estadística",
+          "empty": "Se necesitan al menos 2 años completos de datos del catálogo para la comparación año tras año.",
+          "caption": "Estadísticas anuales en paralelo con la diferencia respecto al año anterior durante {n} años."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Resumen general",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Fotos totales",
+            "dateRange": "Rango de fechas",
+            "daysShot": "Días con disparos",
+            "photosPerDay": "Fotos / día",
+            "bodyCount": "Cuerpos",
+            "lensCount": "Objetivos",
+            "topBody": "Cuerpo principal",
+            "topLens": "Objetivo principal",
+            "topFocalLength": "Distancia focal principal"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Resumen del catálogo: {totalPhotos} fotos en {daysShot} días, {bodyCount} cuerpos, {lensCount} objetivos."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "Equipo",
+          "bodiesOverTime": "Cuerpos a lo largo del tiempo",
+          "topLenses": "Objetivos principales",
+          "topCombos": "Combinaciones principales de cuerpo + objetivo",
+          "retired": "Retirado (12 meses sin uso)",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "Cuerpo",
+            "lens": "Objetivo",
+            "count": "Fotos",
+            "firstUsed": "Primer uso",
+            "lastUsed": "Último uso"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Desglose de equipo: objetivo principal {topLens} con {topLensCount} fotos; se muestran {comboCount} combinaciones principales."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "Distancia focal",
+          "histogramTitle": "Distribución de distancias focales (equivalente a 35 mm)",
+          "histogramAria": "Histograma de distancias focales",
+          "topPeaks": "Picos principales",
+          "onePrime": "Un objetivo fijo de {mm} mm cubriría el {pct} % de tus disparos dentro de ±25 %.",
+          "noPrime": "Tu uso de distancias focales está demasiado repartido para que domine un solo objetivo fijo.",
+          "caption": "Histograma con intervalos de 1 mm desde {min} mm hasta {max} mm; {peakCount} picos principales etiquetados."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Distancia focal por zoom",
+          "callout": "Con tu {lens}, el {pct} % de los disparos son a {mm} mm.",
+          "empty": "No se detectaron objetivos zoom en este catálogo.",
+          "caption": "{n} histogramas de objetivos zoom con la distancia focal dominante resaltada."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Apertura óptima",
+          "callout": "Disparas con el {lens} a máxima apertura el {pct} % de las veces.",
+          "empty": "No hay datos suficientes — se necesita al menos un objetivo con más de 100 fotos.",
+          "caption": "{n} histogramas de apertura de objetivos."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Hora del día",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Hora del reloj",
+            "sun": "Ángulo solar"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "El {pct} % de tu catálogo tiene GPS — el desglose por ángulo solar solo refleja esas fotos.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "Hora dorada",
+            "blueHour": "Hora azul",
+            "midday": "Mediodía",
+            "night": "Noche"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "Por cuerpo",
+          "perGearPeak": "{gear} — hora punta {hour}:00",
+          "caption": "Recuentos de fotos a lo largo de 24 horas con un desglose opcional por ángulo solar."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Mapa de calor de disparos",
+          "aria": "Mapa de calor de disparos — calendario de actividad",
+          "tooltip": "{date}: {count} fotos, objetivo principal {topLens}",
+          "caption": "Calendario de actividad año a año durante {years} años."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "Ubicaciones GPS",
+          "aria": "Mapa GPS de los grupos de fotos del catálogo",
+          "coverage": "El {pct} % de tu catálogo tiene datos GPS ({count} fotos).",
+          "topRegions": "Regiones principales",
+          "empty": "No se encontraron datos GPS en este catálogo.",
+          "caption": "Mapamundi equirectangular con {clusters} grupos agregados; la protección de datos personales descarta celdas de cuadrícula con menos de 5 fotos."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Embudo de selección",
           "steps": {
             "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "notRejected": "No rechazadas",
+            "rated1Plus": "1+ estrella",
+            "rated4Plus": "4+ estrellas"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Tasa de selección por equipo",
           "tableHeaders": {
-            "name": "Name",
+            "name": "Nombre",
             "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "rated4Plus": "4+ estrellas",
+            "pickRate": "Tasa de selección"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Embudo desde {total} fotos totales hasta {rated4Plus} valoradas con 4+ ({pickRate} % de tasa de selección)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Intensidad de edición",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "Cambio medio de exposición",
+            "avgCrop": "% medio de recorte",
+            "pctLocal": "% con ajustes locales",
+            "pctPresets": "% con ajustes preestablecidos"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Puntuación de intensidad de edición a lo largo del tiempo",
+          "topPresets": "Ajustes preestablecidos principales",
+          "perGear": "Puntuación por equipo",
+          "sampled": "Estimación basada en una muestra del 5 % de {n} fotos.",
+          "caption": "Puntuación media de edición de todo el catálogo con tendencia mensual y desglose por equipo."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Valoraciones y selecciones",
+          "distribution": "Distribución de valoraciones",
+          "colorLabels": "Etiquetas de color",
+          "perGear": "Tasa de selección por equipo",
           "tableHeaders": {
-            "name": "Name",
+            "name": "Nombre",
             "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "rated4Plus": "4+ estrellas",
+            "pickRate": "Tasa de selección"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "Valoración",
+            "count": "Fotos"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Distribución de valoraciones con {colorLabelCount} etiquetas de color y tasas de selección por equipo."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Cobertura de palabras clave",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Fotos etiquetadas",
+            "untagged": "Fotos sin etiquetar",
+            "uniqueKeywords": "Palabras clave únicas",
+            "avgPerPhoto": "Palabras clave medias / foto etiquetada",
+            "orphans": "Palabras clave huérfanas"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Palabras clave principales",
+          "blindSpots": "Mayores puntos ciegos",
+          "blindSpotItem": "{yearMonth} — {pct} % de cobertura",
+          "blindSpotsEmpty": "La cobertura parece uniforme entre los meses.",
+          "caption": "Estadísticas de cobertura de etiquetas y las {n} palabras clave principales (protección de datos personales: solo palabras clave en 3+ fotos)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Detección de ráfagas",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Ráfagas totales",
+            "photosInBursts": "Fotos en ráfagas",
+            "pctInBursts": "% del catálogo en ráfagas",
+            "longestBurst": "Ráfaga más larga"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Distribución de longitud de ráfagas",
+          "keeperRate": "Las fotos en ráfaga obtienen una valoración de 4+ el {burstRate} % — un {delta} % {direction} que los disparos sueltos ({singleRate} %).",
+          "moreOften": "más a menudo",
+          "lessOften": "menos a menudo",
+          "caption": "Distribución de longitud de ráfagas; tasa de conservación {burstRate} % frente a {singleRate} % en disparos sueltos."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
-          "focalLengthMin": "Min mm",
-          "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "title": "Explorador detallado",
+          "description": "Filtra el panel por fecha, equipo, distancia focal, apertura, ISO, valoración o estado de selección. Aplica todos los cambios a la vez.",
+          "dateRange": "Rango de fechas",
+          "dateStart": "Desde",
+          "dateEnd": "Hasta",
+          "cameras": "Cámaras",
+          "lenses": "Objetivos",
+          "focalLength": "Distancia focal (mm, equivalente a 35 mm)",
+          "focalLengthMin": "mm mín.",
+          "focalLengthMax": "mm máx.",
+          "aperture": "Apertura (número f)",
+          "apertureMin": "Número f mín.",
+          "apertureMax": "Número f máx.",
           "iso": "ISO",
-          "isoMin": "Min ISO",
-          "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "isoMin": "ISO mín.",
+          "isoMax": "ISO máx.",
+          "ratings": "Valoraciones",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "Estado de selección",
+          "pickAny": "Cualquiera",
+          "pickFlagged": "Marcadas",
+          "pickRejected": "Rechazadas",
+          "pickNone": "Sin marcar",
+          "apply": "Aplicar",
+          "reset": "Restablecer",
+          "activeFilters": "Filtros activos",
+          "removeFilter": "Quitar filtro {label}",
+          "filterDateRange": "Fecha {start} – {end}",
+          "filterCameras": "Cámara: {names}",
+          "filterLenses": "Objetivo: {names}",
+          "filterFocalLength": "Distancia focal {min}–{max} mm",
+          "filterAperture": "Apertura f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "Valoración: {ratings}",
+          "filterPicks": "Selección: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "Comparación de periodos",
+          "periodA": "Periodo A",
+          "periodB": "Periodo B",
+          "start": "Inicio",
+          "end": "Fin",
+          "apply": "Aplicar",
           "headers": {
-            "stat": "Stat",
+            "stat": "Estadística",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Fotos totales",
+            "daysShot": "Días con disparos",
+            "topBody": "Cuerpo principal",
+            "topLens": "Objetivo principal",
+            "topFocalLength": "Distancia focal principal"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Elige un rango de fechas para cada periodo y haz clic en Aplicar.",
+          "caption": "Comparación en paralelo de dos rangos de fechas arbitrarios con columna de diferencia."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Estado del catálogo",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Originales ausentes",
+            "missingPreviews": "Vistas previas ausentes",
+            "brokenPaths": "Rutas rotas",
+            "likelyDuplicates": "Posibles duplicados"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Posibles grupos de duplicados",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Hora de captura",
+            "size": "Tamaño del grupo",
+            "firstPath": "Primera ruta",
+            "lastPath": "Última ruta"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Aquí pueden aparecer secuencias en horquillado; revísalas antes de eliminarlas.",
+          "missingByRootFolder": "Originales ausentes por carpeta raíz",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "Carpeta raíz",
+            "count": "Ausentes"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "En Lightroom Classic: Biblioteca → Buscar fotos que faltan puede resolver las rutas rotas.",
+          "caption": "Resumen del estado del catálogo: {missing} originales ausentes, {duplicates} posibles duplicados."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "Exporta este análisis",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Copiar Markdown",
+          "copied": "Informe Markdown copiado. ~{kb} KB.",
+          "downloaded": "Portapapeles no disponible — el informe se descargó como archivo .md en su lugar."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "Exportar PDF",
+          "loadingEngine": "Cargando motor PDF…",
+          "generating": "Generando informe…",
+          "success": "Informe PDF descargado.",
+          "error": "No se pudo generar el PDF. Prueba con Markdown o Compartir en su lugar.",
+          "title": "Análisis del catálogo de Lightroom",
+          "filteredSuffix": " (Vista filtrada)",
+          "localFooter": "Tu catálogo nunca se subió — solo estas estadísticas agregadas.",
+          "generatedBy": "Generado por phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Fotos totales",
+          "dateRange": "Rango de fechas",
+          "catalogVersion": "Versión del catálogo",
+          "filterTitle": "Filtro aplicado",
+          "page": "Página",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Resumen del año",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Fotos totales",
+                "daysShot": "Días con disparos",
+                "topBody": "Cuerpo más usado",
+                "topLens": "Objetivo más usado"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Mes más prolífico: {month} ({count} fotos)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "Año tras año",
+              "stat": "Estadística",
+              "biggestShift": "Mayor cambio: {label} en {year} ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Resumen general",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Fotos totales",
+                "daysShot": "Días con disparos",
+                "topBody": "Cuerpo principal",
+                "topLens": "Objetivo principal"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "Equipo",
+              "bodiesOverTime": "Cuerpos a lo largo del tiempo",
+              "topLenses": "Objetivos principales",
+              "retired": "Retirado",
+              "lensHeader": "Objetivo",
+              "photosHeader": "Fotos"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "Distancia focal",
+              "histogramTitle": "Distribución de distancias focales (equivalente a 35 mm)",
+              "topPeaks": "Picos principales",
+              "onePrime": "Un objetivo fijo de {mm} mm cubriría el {pct} % de tus disparos dentro de ±25 %.",
+              "noPrime": "Tu uso de distancias focales está demasiado repartido para que domine un solo objetivo fijo."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Distancia focal por zoom",
+              "perLens": "{lens}: {pct} % de los disparos a {mm} mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Apertura óptima",
+              "perLens": "{lens}: disparado a máxima apertura el {pct} % de las veces"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Hora del día",
+              "gpsNote": "El {pct} % de tu catálogo tiene GPS — el desglose por ángulo solar solo refleja esas fotos."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Mapa de calor de disparos",
+              "daysWithPhotos": "Días con fotos",
+              "yearsCovered": "Años cubiertos"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "Ubicaciones GPS",
+              "coverage": "El {pct} % del catálogo tiene GPS",
+              "topRegions": "Regiones principales",
+              "regionHeader": "Región",
+              "photosHeader": "Fotos"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Embudo de selección",
+              "stageHeader": "Etapa",
+              "photosHeader": "Fotos"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Intensidad de edición",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "Cambio medio de exposición",
+                "crop": "Recorte medio",
+                "local": "Con ajustes locales",
+                "presets": "Con ajustes preestablecidos"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Estimación basada en una muestra del catálogo."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "Valoraciones y selecciones",
+              "ratingHeader": "Valoración",
+              "photosHeader": "Fotos"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Cobertura de palabras clave",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Etiquetadas",
+                "untagged": "Sin etiquetar",
+                "unique": "Palabras clave únicas",
+                "orphans": "Palabras clave huérfanas"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "Palabra clave",
+              "photosHeader": "Fotos"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Detección de ráfagas",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Ráfagas totales",
+                "inBursts": "Fotos en ráfagas",
+                "longest": "Ráfaga más larga"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "Las fotos en ráfaga obtienen una valoración ≥4: {a} % frente al {b} % en disparos sueltos."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "Comparación de periodos",
+              "notExported": "La comparación de periodos es interactiva en la aplicación y no se exporta."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Estado del catálogo",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Originales ausentes",
+                "previews": "Vistas previas ausentes",
+                "broken": "Rutas rotas",
+                "dupes": "Posibles duplicados"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Biblioteca → Buscar fotos que faltan puede resolver las rutas rotas."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Compartir por URL",
+          "placeholderTitle": "El Plan 3 conecta esto."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Compartir por URL",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Comparte un enlace a tu análisis",
+          "uploadedHeading": "Qué se sube",
+          "uploaded": "Recuentos, listas de los más usados e histogramas — exactamente los datos que se muestran arriba.",
+          "notUploadedHeading": "Qué NO se sube",
+          "notUploaded": "Nombres de archivo, archivos de imagen, rutas de carpetas, coordenadas GPS más precisas que celdas de cuadrícula de ~5 km y palabras clave usadas menos de 3 veces.",
+          "expiresLabel": "El enlace caduca en",
+          "expires24h": "24 horas",
+          "expires7d": "7 días",
+          "expires30d": "30 días",
+          "cancel": "Cancelar",
+          "create": "Crear enlace",
+          "creating": "Creando enlace…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Has alcanzado el límite para compartir. Inténtalo de nuevo en una hora.",
+          "storage-unavailable": "Almacenamiento temporalmente no disponible. Inténtalo de nuevo en un momento.",
+          "invalid": "No se pudo compartir este análisis — los datos parecen estar mal formados.",
+          "unknown": "Algo salió mal al crear el enlace. Inténtalo de nuevo."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "Tu enlace está listo",
+          "expiresOn": "Caduca el {date}",
+          "copy": "Copiar",
+          "copied": "Enlace copiado",
+          "openNewTab": "Abrir en una pestaña nueva",
+          "delete": "Eliminar este enlace compartido",
+          "deleted": "Enlace compartido eliminado",
+          "urlLabel": "URL para compartir"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "Tus enlaces compartidos recientes",
+          "subtitle": "Enlaces que creaste en este dispositivo. Abre uno para verlo o elimínalo para revocar el acceso.",
+          "idLabel": "Enlace …{last4}",
+          "created": "Creado el {date}",
+          "expires": "Caduca el {date}",
+          "filtered": "Filtrado: {summary}",
+          "open": "Abrir",
+          "delete": "Eliminar"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Filtro aplicado",
+          "summaryShort": "Esta vista está filtrada: {summary}",
+          "showAll": "Mostrar todos los filtros",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "Fechas",
+            "cameras": "Cámaras",
+            "lenses": "Objetivos",
+            "focalLengthRange": "Distancia focal",
+            "apertureRange": "Apertura",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Valoraciones",
+            "keywords": "Palabras clave",
+            "picks": "Selecciones"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Este es un análisis compartido. El catálogo original nunca se subió — solo estas estadísticas agregadas.",
+          "cta": "Prueba la herramienta con tu propio catálogo",
+          "expiredTitle": "Este enlace compartido ha caducado o se eliminó.",
+          "expiredBody": "Puede que el enlace haya llegado a su fecha de caducidad o que el creador lo haya eliminado.",
+          "schemaNewerTitle": "Creado con una versión más nueva",
+          "schemaNewerBody": "Este análisis se hizo con una versión más nueva de la herramienta. Prueba a recargar la página.",
+          "pageTitle": "Análisis compartido del catálogo de Lightroom"
         }
       }
     }

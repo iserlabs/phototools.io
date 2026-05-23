@@ -1,308 +1,308 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% Lokal · Walang Upload",
+      "privacyBadgeAria": "Garantiya sa privacy: ganap na tumatakbo ang tool na ito sa iyong browser. Hindi kailanman ina-upload ang iyong catalog.",
+      "skipToMain": "Laktawan papunta sa pangunahing nilalaman",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Suriin ang iyong Lightroom Classic catalog",
+        "subhead": "Gear, focal length, mga gawi sa aperture, ratings, GPS, intensity ng edit, at marami pa — ganap sa iyong browser. Hindi kailanman umaalis sa iyong device ang iyong catalog.",
+        "explainer": "Pumili ng .lrcat file mula sa iyong computer. Binubuksan namin ito sa isang SQLite WebAssembly worker, kinakalkula ang mga aggregate na istatistika, at nagpapakita ng interactive na dashboard. Walang ina-upload.",
+        "tryDemo": "Subukan ang demo catalog"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Kailangan nito ng desktop",
+        "body": "Kailangan ng Lightroom Catalog Analyzer ang iyong Lightroom Classic catalog file (.lrcat), na nasa iyong computer — hindi sa iyong telepono.",
+        "tryDemoCta": "Subukan ang demo dito",
+        "openOnDesktop": "Buksan ang pahinang ito sa iyong computer para suriin ang sarili mong catalog.",
+        "copyLink": "Kopyahin ang link",
+        "copyLinkSuccess": "Nakopya ang link",
+        "screenshotAlt": "Preview ng dashboard ng Lightroom Catalog Analyzer"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "I-drop ang iyong .lrcat file dito, o mag-click para mag-browse",
+        "tapPrompt": "I-tap para pumili ng .lrcat file",
+        "browseButton": "Mag-browse ng catalog",
+        "selectedFile": "Napili: {fileName}",
+        "ariaLabel": "Pumipili ng Lightroom Classic catalog file",
+        "errorNotLrcat": "Ang file na iyon ay mukhang hindi isang Lightroom Classic catalog (.lrcat).",
+        "errorReadFailed": "Hindi mabasa ang file na iyon. Subukan ulit."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Malaking catalog — paalala",
+        "body": "Ang {fileName} ay {sizeGb} GB. Maaaring tumagal ng 30 segundo o higit pa ang pag-parse at gumamit ng maraming memory. Magpatuloy?",
+        "continue": "Magpatuloy",
+        "cancel": "Kanselahin"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "Sinusuri ang iyong catalog",
+        "subtitle": "Ganap itong tumatakbo sa iyong browser. Walang ina-upload.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Binabasa ang file…",
+          "opening": "Binubuksan ang catalog…",
+          "schema": "Sinusuri ang schema…",
+          "hashing": "Kinakalkula ang hash…",
+          "aggregating": "Kinakalkula ang mga istatistika…",
+          "finalizing": "Tinatapos…"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Nilo-load mula sa cache",
+        "reanalyze": "Suriing muli",
+        "reanalyzeAria": "Itapon ang naka-cache na resulta at i-parse muli ang catalog na ito mula sa orihinal na file."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "Hindi namin masuri ang catalog na iyon",
+        "retry": "Subukan ang ibang catalog",
+        "parseFailed": "Hindi namin ma-parse ang catalog na iyon. Maaaring nakabukas ito sa Lightroom, bahagyang naisulat, o nasa hindi inaasahang format.",
+        "workerFailed": "Nabigong magsimula ang analysis engine. I-reload ang pahina at subukan ulit.",
+        "schemaTooNew": "Ginawa ang catalog na ito ng mas bagong bersyon ng Lightroom Classic kaysa sa sinusuportahan pa ng tool na ito.",
+        "schemaTooOld": "Ginawa ang catalog na ito ng bersyon ng Lightroom Classic na masyadong luma para sa tool na ito.",
+        "tooLarge": "Masyadong malaki ang catalog na ito para suriin sa browser.",
+        "corrupt": "Mukhang sira o hindi kumpleto ang catalog na ito at hindi mabasa.",
+        "notLightroom": "Ang file na iyon ay hindi isang Lightroom Classic catalog database.",
+        "unknown": "May naganap na mali habang sinusuri ang catalog na iyon. Pakisubukan ulit."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Mga seksyon ng dashboard",
+        "jumpToSection": "Tumalon sa seksyon",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
+          "highlights": "Mga highlight",
+          "whatYouShoot": "Ano ang kinukunan mo",
+          "howYouCurate": "Paano ka nag-curate",
+          "exploreCompare": "Galugarin at ihambing",
           "catalog": "Catalog"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
+          "year-in-review": "Pagbabalik-tanaw sa Taon",
+          "year-to-year": "Taon sa Taon",
+          "overview": "Pangkalahatang-ideya",
+          "gear": "Breakdown ng Gear",
           "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
+          "focal-length-per-zoom": "Focal Length bawat Zoom",
+          "apertures": "Sweet Spot ng Aperture",
+          "time-of-day": "Oras ng Araw",
+          "heatmap": "Heatmap ng Pagkuha",
+          "gps": "Mga Lokasyon ng GPS",
+          "curation": "Funnel ng Curation",
+          "edit-intensity": "Intensity ng Edit",
+          "ratings": "Ratings at Picks",
+          "keywords": "Saklaw ng Keyword",
+          "bursts": "Pag-detect ng Burst",
           "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "period-comparison": "Paghahambing ng Panahon",
+          "catalog-health": "Kalusugan ng Catalog"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "Nilo-load ang {section}…",
+        "footerNote": "Kinalkula sa iyong browser mula sa iyong lokal na catalog file. Walang na-upload."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Pagbabalik-tanaw sa Taon",
+          "yearLabel": "Taon",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Kabuuang larawan",
+            "daysShot": "Mga araw ng pagkuha",
+            "topBody": "Pinakaginagamit na body",
+            "topLens": "Pinakaginagamit na lens",
+            "topFocalLength": "Nangungunang focal length",
+            "topAperture": "Nangungunang aperture",
+            "mostProlificMonth": "Pinakaproduktibong buwan",
+            "avgShotsPerDay": "Avg na shot / araw"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Buwanang dami",
+            "topGearShare": "Bahagi ng nangungunang gear",
+            "timeOfDayShare": "Bahagi ayon sa oras ng araw"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "Ang pinakaproduktibong buwan mo ay {month} ({count} larawan). Nangungunang lens noong buwang iyon: {lens}.",
+          "empty": "Wala pang datos ng pagbabalik-tanaw sa taon para sa catalog na ito.",
+          "caption": "Mga pangunahing istatistika at mini-chart para sa {year}: {totalPhotos} larawan sa loob ng {daysShot} araw, nangungunang body {topBody}, nangungunang lens {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "Taon sa Taon",
+          "yearCountLabel": "Ipakita ang huling",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 taon",
+            "3": "3 taon",
+            "5": "5 taon"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Pinakamalaking pagbabago: {label} noong {year} ({delta}).",
+          "stat": "Istatistika",
+          "empty": "Kailangan ng hindi bababa sa 2 buong taon ng datos ng catalog para sa paghahambing taon sa taon.",
+          "caption": "Magkatabing taunang istatistika na may delta vs nakaraang taon para sa {n} taon."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Pangkalahatang-ideya",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Kabuuang larawan",
+            "dateRange": "Saklaw ng petsa",
+            "daysShot": "Mga araw ng pagkuha",
+            "photosPerDay": "Larawan / araw",
+            "bodyCount": "Mga body",
+            "lensCount": "Mga lens",
+            "topBody": "Nangungunang body",
+            "topLens": "Nangungunang lens",
+            "topFocalLength": "Nangungunang focal length"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Pangkalahatang-ideya ng catalog: {totalPhotos} larawan sa loob ng {daysShot} araw, {bodyCount} body, {lensCount} lens."
         },
         "gear": {
           "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "bodiesOverTime": "Mga body sa paglipas ng panahon",
+          "topLenses": "Nangungunang mga lens",
+          "topCombos": "Nangungunang kombinasyon ng body + lens",
+          "retired": "Retirado (12 buwan na walang gamit)",
           "tableHeaders": {
             "body": "Body",
             "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "count": "Larawan",
+            "firstUsed": "Unang ginamit",
+            "lastUsed": "Huling ginamit"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Breakdown ng gear: nangungunang lens {topLens} na may {topLensCount} larawan; {comboCount} nangungunang kombinasyon ang ipinakita."
         },
         "focal-length": {
           "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "histogramTitle": "Distribusyon ng focal length (katumbas ng 35mm)",
+          "histogramAria": "Histogram ng focal length",
+          "topPeaks": "Nangungunang mga peak",
+          "onePrime": "Ang isang {mm}mm prime ay sasaklaw sa {pct}% ng iyong mga shot sa loob ng ±25%.",
+          "noPrime": "Masyadong nakakalat ang paggamit mo ng focal length para mangibabaw ang iisang prime.",
+          "caption": "Histogram na 1mm-bin mula {min}mm hanggang {max}mm; {peakCount} nangungunang peak ang nilagyan ng label."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Focal Length bawat Zoom",
+          "callout": "Sa iyong {lens}, {pct}% ng mga shot ay nasa {mm}mm.",
+          "empty": "Walang na-detect na zoom lens sa catalog na ito.",
+          "caption": "{n} histogram ng zoom lens na may na-highlight na nangingibabaw na focal length."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Sweet Spot ng Aperture",
+          "callout": "Kinukunan mo ang {lens} nang wide open {pct}% ng oras.",
+          "empty": "Kulang ang datos — kailangan ng hindi bababa sa isang lens na may 100+ larawan.",
+          "caption": "{n} histogram ng aperture ng lens."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Oras ng Araw",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Oras sa orasan",
+            "sun": "Anggulo ng araw"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "{pct}% ng iyong catalog ay may GPS — ang breakdown ng anggulo ng araw ay sumasalamin lamang sa mga larawang iyon.",
           "buckets": {
             "goldenHour": "Golden hour",
             "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "midday": "Tanghaling-tapat",
+            "night": "Gabi"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "Ayon sa body",
+          "perGearPeak": "{gear} — peak na oras {hour}:00",
+          "caption": "Bilang ng larawan sa loob ng 24 oras na may opsyonal na breakdown ng anggulo ng araw."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Heatmap ng Pagkuha",
+          "aria": "Heatmap ng pagkuha — kalendaryo ng kontribusyon",
+          "tooltip": "{date}: {count} larawan, nangungunang lens {topLens}",
+          "caption": "Taon-taong kalendaryo ng kontribusyon sa loob ng {years} taon."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "Mga Lokasyon ng GPS",
+          "aria": "GPS map ng mga cluster ng larawan sa catalog",
+          "coverage": "{pct}% ng iyong catalog ay may datos ng GPS ({count} larawan).",
+          "topRegions": "Nangungunang mga rehiyon",
+          "empty": "Walang nahanap na datos ng GPS sa catalog na ito.",
+          "caption": "Equirectangular na mapa ng mundo na may {clusters} aggregate na cluster; inaalis ng PII guard ang mga grid cell na may mas mababa sa 5 larawan."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Funnel ng Curation",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "Kabuuan",
+            "notRejected": "Hindi tinanggihan",
+            "rated1Plus": "1+ bituin",
+            "rated4Plus": "4+ bituin"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Pick rate ayon sa gear",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
+            "name": "Pangalan",
+            "total": "Kabuuan",
+            "rated4Plus": "4+ bituin",
             "pickRate": "Pick rate"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Funnel mula sa {total} kabuuang larawan hanggang {rated4Plus} na may rating na 4+ ({pickRate}% pick rate)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Intensity ng Edit",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "Avg na shift ng exposure",
+            "avgCrop": "Avg na crop %",
+            "pctLocal": "% na may local adjustments",
+            "pctPresets": "% na may presets"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Score ng intensity ng edit sa paglipas ng panahon",
+          "topPresets": "Nangungunang presets",
+          "perGear": "Score ayon sa gear",
+          "sampled": "Tantya batay sa 5% sample ng {n} larawan.",
+          "caption": "Karaniwang edit score sa buong catalog na may buwanang trend at breakdown bawat gear."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Ratings at Picks",
+          "distribution": "Distribusyon ng rating",
+          "colorLabels": "Mga color label",
+          "perGear": "Pick rate ayon sa gear",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
+            "name": "Pangalan",
+            "total": "Kabuuan",
+            "rated4Plus": "4+ bituin",
             "pickRate": "Pick rate"
           },
           "axes": {
             "rating": "Rating",
-            "count": "Photos"
+            "count": "Larawan"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Distribusyon ng rating na may {colorLabelCount} color label at pick rate bawat gear."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Saklaw ng Keyword",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Mga larawang naka-tag",
+            "untagged": "Mga larawang walang tag",
+            "uniqueKeywords": "Mga natatanging keyword",
+            "avgPerPhoto": "Avg na keyword / naka-tag na larawan",
+            "orphans": "Mga orphan na keyword"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Nangungunang mga keyword",
+          "blindSpots": "Pinakamalaking mga blind spot",
+          "blindSpotItem": "{yearMonth} — {pct}% saklaw",
+          "blindSpotsEmpty": "Mukhang pantay ang saklaw sa lahat ng buwan.",
+          "caption": "Mga istatistika ng saklaw ng tag at {n} nangungunang keyword (PII guard: mga keyword lamang na nasa 3+ larawan)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Pag-detect ng Burst",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Kabuuang burst",
+            "photosInBursts": "Mga larawan sa burst",
+            "pctInBursts": "% ng catalog na nasa burst",
+            "longestBurst": "Pinakamahabang burst"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Distribusyon ng haba ng burst",
+          "keeperRate": "Ang mga larawan sa burst ay nakakakuha ng rating na 4+ sa {burstRate}% — {delta}% {direction} kaysa sa mga single shot ({singleRate}%).",
+          "moreOften": "mas madalas",
+          "lessOften": "mas bihira",
+          "caption": "Distribusyon ng haba ng burst; keeper rate na {burstRate}% vs {singleRate}% para sa mga single shot."
         },
         "drilldown": {
           "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
+          "description": "I-filter ang dashboard ayon sa petsa, gear, focal length, aperture, ISO, rating, o pick state. Ilapat ang lahat ng pagbabago nang sabay-sabay.",
+          "dateRange": "Saklaw ng petsa",
+          "dateStart": "Mula",
+          "dateEnd": "Hanggang",
+          "cameras": "Mga camera",
+          "lenses": "Mga lens",
+          "focalLength": "Focal length (mm, katumbas ng 35mm)",
           "focalLengthMin": "Min mm",
           "focalLengthMax": "Max mm",
           "aperture": "Aperture (f-number)",
@@ -311,7 +311,7 @@
           "iso": "ISO",
           "isoMin": "Min ISO",
           "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "ratings": "Mga rating",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
@@ -319,15 +319,15 @@
           "rating4": "4",
           "rating5": "5",
           "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
+          "pickAny": "Anuman",
+          "pickFlagged": "Naka-flag",
+          "pickRejected": "Tinanggihan",
+          "pickNone": "Walang flag",
+          "apply": "Ilapat",
+          "reset": "I-reset",
+          "activeFilters": "Mga aktibong filter",
+          "removeFilter": "Alisin ang filter na {label}",
+          "filterDateRange": "Petsa {start} – {end}",
           "filterCameras": "Camera: {names}",
           "filterLenses": "Lens: {names}",
           "filterFocalLength": "Focal length {min}–{max}mm",
@@ -337,264 +337,264 @@
           "filterPicks": "Pick: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "Paghahambing ng Panahon",
+          "periodA": "Panahon A",
+          "periodB": "Panahon B",
+          "start": "Simula",
+          "end": "Wakas",
+          "apply": "Ilapat",
           "headers": {
-            "stat": "Stat",
+            "stat": "Istatistika",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Kabuuang larawan",
+            "daysShot": "Mga araw ng pagkuha",
+            "topBody": "Nangungunang body",
+            "topLens": "Nangungunang lens",
+            "topFocalLength": "Nangungunang focal length"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Pumili ng saklaw ng petsa para sa bawat panahon at i-click ang Ilapat.",
+          "caption": "Magkatabing paghahambing ng dalawang anumang saklaw ng petsa na may delta column."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Kalusugan ng Catalog",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Nawawalang mga orihinal",
+            "missingPreviews": "Nawawalang mga preview",
+            "brokenPaths": "Mga sirang path",
+            "likelyDuplicates": "Malamang na duplikado"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Mga cluster na malamang duplikado",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Oras ng pagkuha",
+            "size": "Laki ng cluster",
+            "firstPath": "Unang path",
+            "lastPath": "Huling path"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Maaaring lumabas dito ang mga bracketed na sequence; suriin bago burahin.",
+          "missingByRootFolder": "Nawawalang mga orihinal ayon sa root folder",
           "missingHeaders": {
             "folder": "Root folder",
-            "count": "Missing"
+            "count": "Nawawala"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "Sa Lightroom Classic: Library → Find Missing Photos ay maaaring magresolba ng mga sirang path.",
+          "caption": "Buod ng kalusugan ng catalog: {missing} nawawalang orihinal, {duplicates} malamang na duplikado."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "I-export ang pagsusuring ito",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Kopyahin ang Markdown",
+          "copied": "Nakopya ang Markdown report. ~{kb} KB.",
+          "downloaded": "Hindi available ang clipboard — na-download ang report bilang .md file sa halip."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "I-export ang PDF",
+          "loadingEngine": "Nilo-load ang PDF engine…",
+          "generating": "Gumagawa ng report…",
+          "success": "Na-download ang PDF report.",
+          "error": "Hindi makagawa ng PDF. Subukan ang Markdown o Share sa halip.",
+          "title": "Pagsusuri ng Lightroom Catalog",
+          "filteredSuffix": " (Na-filter na view)",
+          "localFooter": "Hindi kailanman na-upload ang iyong catalog — ang mga aggregate na istatistika lamang na ito.",
+          "generatedBy": "Ginawa ng phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Kabuuang larawan",
+          "dateRange": "Saklaw ng petsa",
+          "catalogVersion": "Bersyon ng catalog",
+          "filterTitle": "Inilapat na filter",
+          "page": "Pahina",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Pagbabalik-tanaw sa Taon",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Kabuuang larawan",
+                "daysShot": "Mga araw ng pagkuha",
+                "topBody": "Pinakaginagamit na body",
+                "topLens": "Pinakaginagamit na lens"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Pinakaproduktibong buwan: {month} ({count} larawan)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "Taon sa Taon",
+              "stat": "Istatistika",
+              "biggestShift": "Pinakamalaking pagbabago: {label} noong {year} ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Pangkalahatang-ideya",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Kabuuang larawan",
+                "daysShot": "Mga araw ng pagkuha",
+                "topBody": "Nangungunang body",
+                "topLens": "Nangungunang lens"
               }
             },
             "gear": {
               "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
+              "bodiesOverTime": "Mga body sa paglipas ng panahon",
+              "topLenses": "Nangungunang mga lens",
+              "retired": "Retirado",
               "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "photosHeader": "Larawan"
             },
             "focalLength": {
               "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "histogramTitle": "Distribusyon ng focal length (katumbas ng 35mm)",
+              "topPeaks": "Nangungunang mga peak",
+              "onePrime": "Ang isang {mm}mm prime ay sasaklaw sa {pct}% ng iyong mga shot sa loob ng ±25%.",
+              "noPrime": "Masyadong nakakalat ang paggamit mo ng focal length para mangibabaw ang iisang prime."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Focal Length bawat Zoom",
+              "perLens": "{lens}: {pct}% ng mga shot sa {mm}mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Sweet Spot ng Aperture",
+              "perLens": "{lens}: kinunan nang wide open {pct}% ng oras"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Oras ng Araw",
+              "gpsNote": "{pct}% ng iyong catalog ay may GPS — ang breakdown ng anggulo ng araw ay sumasalamin lamang sa mga larawang iyon."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Heatmap ng Pagkuha",
+              "daysWithPhotos": "Mga araw na may larawan",
+              "yearsCovered": "Mga taong saklaw"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "Mga Lokasyon ng GPS",
+              "coverage": "{pct}% ng catalog ay may GPS",
+              "topRegions": "Nangungunang mga rehiyon",
+              "regionHeader": "Rehiyon",
+              "photosHeader": "Larawan"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Funnel ng Curation",
+              "stageHeader": "Yugto",
+              "photosHeader": "Larawan"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Intensity ng Edit",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "Avg na shift ng exposure",
+                "crop": "Avg na crop",
+                "local": "May local adjustments",
+                "presets": "May presets"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Tantya batay sa isang sample ng catalog."
             },
             "ratings": {
-              "title": "Ratings & Picks",
+              "title": "Ratings at Picks",
               "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "photosHeader": "Larawan"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Saklaw ng Keyword",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Naka-tag",
+                "untagged": "Walang tag",
+                "unique": "Mga natatanging keyword",
+                "orphans": "Mga orphan na keyword"
               },
               "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "photosHeader": "Larawan"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Pag-detect ng Burst",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Kabuuang burst",
+                "inBursts": "Mga larawan sa burst",
+                "longest": "Pinakamahabang burst"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "Ang mga larawan sa burst ay nakakakuha ng rating na ≥4: {a}% vs {b}% para sa mga single shot."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "Paghahambing ng Panahon",
+              "notExported": "Ang Paghahambing ng Panahon ay interactive sa app at hindi ina-export."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Kalusugan ng Catalog",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Nawawalang mga orihinal",
+                "previews": "Nawawalang mga preview",
+                "broken": "Mga sirang path",
+                "dupes": "Malamang na duplikado"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Library → Find Missing Photos ay maaaring magresolba ng mga sirang path."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Ibahagi sa pamamagitan ng URL",
+          "placeholderTitle": "Ikinakabit ito ng Plan 3."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Ibahagi sa pamamagitan ng URL",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Magbahagi ng link sa iyong pagsusuri",
+          "uploadedHeading": "Ano ang ina-upload",
+          "uploaded": "Mga bilang, top-N na listahan, at histogram — eksaktong datos na ipinapakita sa itaas.",
+          "notUploadedHeading": "Ano ang HINDI ina-upload",
+          "notUploaded": "Mga pangalan ng file, image file, folder path, GPS coordinate na higit sa ~5 km grid cell, at mga keyword na ginamit nang mas mababa sa 3 beses.",
+          "expiresLabel": "Mag-e-expire ang link sa",
+          "expires24h": "24 oras",
+          "expires7d": "7 araw",
+          "expires30d": "30 araw",
+          "cancel": "Kanselahin",
+          "create": "Gumawa ng link",
+          "creating": "Gumagawa ng link…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Naabot mo na ang limitasyon ng pagbabahagi. Subukan ulit sa loob ng isang oras.",
+          "storage-unavailable": "Pansamantalang hindi available ang storage. Subukan ulit sa ilang sandali.",
+          "invalid": "Hindi maibahagi ang pagsusuring ito — mukhang sira ang datos.",
+          "unknown": "May naganap na mali sa paggawa ng link. Subukan ulit."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "Handa na ang iyong link",
+          "expiresOn": "Mag-e-expire {date}",
+          "copy": "Kopyahin",
+          "copied": "Nakopya ang link",
+          "openNewTab": "Buksan sa bagong tab",
+          "delete": "Burahin ang share na ito",
+          "deleted": "Nabura ang share",
+          "urlLabel": "Naibabahaging URL"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
+          "title": "Ang iyong mga kamakailang share",
+          "subtitle": "Mga link na ginawa mo sa device na ito. Magbukas ng isa para tingnan ito, o burahin para bawiin ang access.",
           "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "created": "Ginawa {date}",
+          "expires": "Mag-e-expire {date}",
+          "filtered": "Na-filter: {summary}",
+          "open": "Buksan",
+          "delete": "Burahin"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Inilapat na filter",
+          "summaryShort": "Na-filter ang view na ito: {summary}",
+          "showAll": "Ipakita ang lahat ng filter",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
+            "dateRange": "Mga petsa",
+            "cameras": "Mga camera",
+            "lenses": "Mga lens",
             "focalLengthRange": "Focal length",
             "apertureRange": "Aperture",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Mga rating",
+            "keywords": "Mga keyword",
+            "picks": "Mga pick"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Ito ay isang ibinahaging pagsusuri. Hindi kailanman na-upload ang orihinal na catalog — ang mga aggregate na istatistika lamang na ito.",
+          "cta": "Subukan ang tool gamit ang sarili mong catalog",
+          "expiredTitle": "Nag-expire na o nabura na ang share na ito.",
+          "expiredBody": "Maaaring naabot na ng link ang petsa ng pag-expire nito, o binura ito ng gumawa.",
+          "schemaNewerTitle": "Ginawa gamit ang mas bagong bersyon",
+          "schemaNewerBody": "Ginawa ang pagsusuring ito gamit ang mas bagong bersyon ng tool. Subukang i-refresh ang pahina.",
+          "pageTitle": "Ibinahaging Pagsusuri ng Lightroom Catalog"
         }
       }
     }

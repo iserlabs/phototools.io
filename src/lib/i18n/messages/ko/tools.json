@@ -65,8 +65,8 @@
       "description": "메가픽셀을 비교하고, 인쇄 크기를 시각화하며, 다양한 종횡비와 DPI에서의 파일 크기를 확인합니다"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Lightroom 카탈로그 분석기",
+      "description": "Lightroom Classic 카탈로그 분석 — 장비, 초점 거리, 조리개, 별점 등 — 100% 브라우저에서"
     }
   }
 }

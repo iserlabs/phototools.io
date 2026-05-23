@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% local · Fără încărcare",
+      "privacyBadgeAria": "Garanție de confidențialitate: acest instrument rulează în întregime în browserul tău. Catalogul tău nu este niciodată încărcat.",
+      "skipToMain": "Sari la conținutul principal",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Analizează-ți catalogul Lightroom Classic",
+        "subhead": "Echipament, distanțe focale, obiceiuri de diafragmă, evaluări, GPS, intensitatea editării și multe altele, totul în browserul tău. Catalogul tău nu părăsește niciodată dispozitivul.",
+        "explainer": "Alege un fișier .lrcat de pe computer. Îl deschidem într-un worker SQLite WebAssembly, calculăm statistici agregate și afișăm un tablou de bord interactiv. Nimic nu este încărcat.",
+        "tryDemo": "Încearcă catalogul demonstrativ"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Aici e nevoie de un computer",
+        "body": "Analizorul de Cataloage Lightroom are nevoie de fișierul catalog Lightroom Classic (.lrcat), care se află pe computerul tău — nu pe telefon.",
+        "tryDemoCta": "Încearcă demonstrația aici",
+        "openOnDesktop": "Deschide această pagină pe computer pentru a-ți analiza propriul catalog.",
+        "copyLink": "Copiază linkul",
+        "copyLinkSuccess": "Link copiat",
+        "screenshotAlt": "Previzualizare a tabloului de bord al Analizorului de Cataloage Lightroom"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "Trage aici fișierul .lrcat sau dă clic pentru a răsfoi",
+        "tapPrompt": "Atinge pentru a alege un fișier .lrcat",
+        "browseButton": "Răsfoiește catalogul",
+        "selectedFile": "Selectat: {fileName}",
+        "ariaLabel": "Selector de fișier de catalog Lightroom Classic",
+        "errorNotLrcat": "Acel fișier nu pare a fi un catalog Lightroom Classic (.lrcat).",
+        "errorReadFailed": "Nu am putut citi acel fișier. Încearcă din nou."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Catalog mare — atenție",
+        "body": "{fileName} are {sizeGb} GB. Analiza poate dura 30 de secunde sau mai mult și folosi multă memorie. Continui?",
+        "continue": "Continuă",
+        "cancel": "Anulează"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "Se analizează catalogul tău",
+        "subtitle": "Totul rulează în întregime în browserul tău. Nimic nu este încărcat.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Se citește fișierul…",
+          "opening": "Se deschide catalogul…",
+          "schema": "Se verifică schema…",
+          "hashing": "Se calculează hash-ul…",
+          "aggregating": "Se calculează statisticile…",
+          "finalizing": "Se finalizează…"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Încărcat din cache",
+        "reanalyze": "Reanalizează",
+        "reanalyzeAria": "Renunță la rezultatul din cache și analizează din nou acest catalog din fișierul original."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "Nu am putut analiza acel catalog",
+        "retry": "Încearcă alt catalog",
+        "parseFailed": "Nu am putut analiza acel catalog. Este posibil să fie deschis în Lightroom, scris parțial sau într-un format neașteptat.",
+        "workerFailed": "Motorul de analiză nu a putut porni. Reîncarcă pagina și încearcă din nou.",
+        "schemaTooNew": "Acest catalog a fost creat de o versiune de Lightroom Classic mai nouă decât cea acceptată deocamdată de acest instrument.",
+        "schemaTooOld": "Acest catalog a fost creat de o versiune de Lightroom Classic prea veche pentru acest instrument.",
+        "tooLarge": "Acest catalog este prea mare pentru a fi analizat în browser.",
+        "corrupt": "Acest catalog pare a fi corupt sau incomplet și nu a putut fi citit.",
+        "notLightroom": "Acel fișier nu este o bază de date de catalog Lightroom Classic.",
+        "unknown": "Ceva nu a mers la analizarea acelui catalog. Încearcă din nou."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Secțiuni ale tabloului de bord",
+        "jumpToSection": "Sari la secțiune",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
+          "highlights": "Repere",
+          "whatYouShoot": "Ce fotografiezi",
+          "howYouCurate": "Cum selectezi",
+          "exploreCompare": "Explorează și compară",
           "catalog": "Catalog"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "Retrospectiva anului",
+          "year-to-year": "An de an",
+          "overview": "Prezentare generală",
+          "gear": "Detaliere echipament",
+          "focal-length": "Distanță focală",
+          "focal-length-per-zoom": "Distanță focală per zoom",
+          "apertures": "Diafragma optimă",
+          "time-of-day": "Ora din zi",
+          "heatmap": "Hartă termică a fotografiilor",
+          "gps": "Locații GPS",
+          "curation": "Pâlnia de selecție",
+          "edit-intensity": "Intensitatea editării",
+          "ratings": "Evaluări și selecții",
+          "keywords": "Acoperirea cuvintelor-cheie",
+          "bursts": "Detectarea rafalelor",
+          "drilldown": "Explorator detaliat",
+          "period-comparison": "Comparație între perioade",
+          "catalog-health": "Starea catalogului"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "Se încarcă {section}…",
+        "footerNote": "Calculat în browserul tău din fișierul tău catalog local. Nimic nu a fost încărcat."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Retrospectiva anului",
+          "yearLabel": "An",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Total fotografii",
+            "daysShot": "Zile cu fotografii",
+            "topBody": "Corpul cel mai folosit",
+            "topLens": "Obiectivul cel mai folosit",
+            "topFocalLength": "Distanța focală principală",
+            "topAperture": "Diafragma principală",
+            "mostProlificMonth": "Cea mai prolifică lună",
+            "avgShotsPerDay": "Medie fotografii / zi"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Volum lunar",
+            "topGearShare": "Cota echipamentului principal",
+            "timeOfDayShare": "Cota pe ora din zi"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "Cea mai prolifică lună a ta a fost {month} ({count} fotografii). Obiectivul principal în acea lună: {lens}.",
+          "empty": "Încă nu există date de retrospectivă a anului pentru acest catalog.",
+          "caption": "Statistici cheie și mini-grafice pentru {year}: {totalPhotos} fotografii în {daysShot} zile, corp principal {topBody}, obiectiv principal {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "An de an",
+          "yearCountLabel": "Afișează ultimii",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 ani",
+            "3": "3 ani",
+            "5": "5 ani"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Cea mai mare schimbare: {label} în {year} ({delta}).",
+          "stat": "Statistică",
+          "empty": "Sunt necesari cel puțin 2 ani compleți de date de catalog pentru comparația an de an.",
+          "caption": "Statistici anuale alăturate cu diferența față de anul precedent, pe {n} ani."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Prezentare generală",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Total fotografii",
+            "dateRange": "Interval de date",
+            "daysShot": "Zile cu fotografii",
+            "photosPerDay": "Fotografii / zi",
+            "bodyCount": "Corpuri",
+            "lensCount": "Obiective",
+            "topBody": "Corp principal",
+            "topLens": "Obiectiv principal",
+            "topFocalLength": "Distanța focală principală"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Prezentare generală a catalogului: {totalPhotos} fotografii în {daysShot} zile, {bodyCount} corpuri, {lensCount} obiective."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "Echipament",
+          "bodiesOverTime": "Corpuri în timp",
+          "topLenses": "Obiective principale",
+          "topCombos": "Combinații principale corp + obiectiv",
+          "retired": "Retras (12 luni fără utilizare)",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "Corp",
+            "lens": "Obiectiv",
+            "count": "Fotografii",
+            "firstUsed": "Prima utilizare",
+            "lastUsed": "Ultima utilizare"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Detaliere echipament: obiectiv principal {topLens} cu {topLensCount} fotografii; {comboCount} combinații principale afișate."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "Distanță focală",
+          "histogramTitle": "Distribuția distanțelor focale (echivalent 35 mm)",
+          "histogramAria": "Histogramă a distanțelor focale",
+          "topPeaks": "Vârfuri principale",
+          "onePrime": "Un obiectiv fix de {mm} mm ar acoperi {pct}% dintre fotografiile tale în limita ±25%.",
+          "noPrime": "Utilizarea distanțelor focale este prea dispersată pentru ca un singur obiectiv fix să domine.",
+          "caption": "Histogramă cu intervale de 1 mm de la {min} mm la {max} mm; {peakCount} vârfuri principale etichetate."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Distanță focală per zoom",
+          "callout": "Cu {lens}, {pct}% dintre fotografii sunt la {mm} mm.",
+          "empty": "Niciun obiectiv zoom detectat în acest catalog.",
+          "caption": "{n} histograme de obiective zoom cu distanța focală dominantă evidențiată."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Diafragma optimă",
+          "callout": "Fotografiezi cu {lens} la deschidere maximă {pct}% din timp.",
+          "empty": "Date insuficiente — este nevoie de cel puțin un obiectiv cu peste 100 de fotografii.",
+          "caption": "{n} histograme de diafragmă ale obiectivelor."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Ora din zi",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Ora ceasului",
+            "sun": "Unghiul soarelui"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "{pct}% din catalogul tău are GPS — defalcarea pe unghiul soarelui reflectă doar acele fotografii.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "Ora de aur",
+            "blueHour": "Ora albastră",
+            "midday": "Amiază",
+            "night": "Noapte"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "Pe corp",
+          "perGearPeak": "{gear} — ora de vârf {hour}:00",
+          "caption": "Numărul de fotografii pe parcursul a 24 de ore, cu defalcare opțională pe unghiul soarelui."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Hartă termică a fotografiilor",
+          "aria": "Hartă termică a fotografiilor — calendar de activitate",
+          "tooltip": "{date}: {count} fotografii, obiectiv principal {topLens}",
+          "caption": "Calendar de activitate an de an pe {years} ani."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "Locații GPS",
+          "aria": "Hartă GPS a grupurilor de fotografii din catalog",
+          "coverage": "{pct}% din catalogul tău are date GPS ({count} fotografii).",
+          "topRegions": "Regiuni principale",
+          "empty": "Nu s-au găsit date GPS în acest catalog.",
+          "caption": "Hartă a lumii echirectangulară cu {clusters} grupuri agregate; protecția datelor personale elimină celulele de grilă cu mai puțin de 5 fotografii."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Pâlnia de selecție",
           "steps": {
             "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "notRejected": "Nerespinse",
+            "rated1Plus": "1+ stea",
+            "rated4Plus": "4+ stele"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Rata de selecție pe echipament",
           "tableHeaders": {
-            "name": "Name",
+            "name": "Nume",
             "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "rated4Plus": "4+ stele",
+            "pickRate": "Rata de selecție"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Pâlnie de la {total} fotografii în total la {rated4Plus} evaluate cu 4+ ({pickRate}% rată de selecție)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Intensitatea editării",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "Variație medie a expunerii",
+            "avgCrop": "% mediu de decupare",
+            "pctLocal": "% cu ajustări locale",
+            "pctPresets": "% cu presetări"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Scorul intensității editării în timp",
+          "topPresets": "Presetări principale",
+          "perGear": "Scor pe echipament",
+          "sampled": "Estimare bazată pe un eșantion de 5% din {n} fotografii.",
+          "caption": "Scor mediu de editare pe întregul catalog cu tendință lunară și defalcare pe echipament."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Evaluări și selecții",
+          "distribution": "Distribuția evaluărilor",
+          "colorLabels": "Etichete de culoare",
+          "perGear": "Rata de selecție pe echipament",
           "tableHeaders": {
-            "name": "Name",
+            "name": "Nume",
             "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "rated4Plus": "4+ stele",
+            "pickRate": "Rata de selecție"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "Evaluare",
+            "count": "Fotografii"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Distribuția evaluărilor cu {colorLabelCount} etichete de culoare și rate de selecție pe echipament."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Acoperirea cuvintelor-cheie",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Fotografii etichetate",
+            "untagged": "Fotografii neetichetate",
+            "uniqueKeywords": "Cuvinte-cheie unice",
+            "avgPerPhoto": "Medie cuvinte-cheie / fotografie etichetată",
+            "orphans": "Cuvinte-cheie orfane"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Cuvinte-cheie principale",
+          "blindSpots": "Cele mai mari puncte oarbe",
+          "blindSpotItem": "{yearMonth} — {pct}% acoperire",
+          "blindSpotsEmpty": "Acoperirea pare uniformă de la o lună la alta.",
+          "caption": "Statistici de acoperire a etichetelor și cele {n} cuvinte-cheie principale (protecția datelor personale: doar cuvinte-cheie pe 3+ fotografii)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Detectarea rafalelor",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Total rafale",
+            "photosInBursts": "Fotografii în rafale",
+            "pctInBursts": "% din catalog în rafale",
+            "longestBurst": "Cea mai lungă rafală"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Distribuția lungimii rafalelor",
+          "keeperRate": "Fotografiile din rafală primesc o evaluare de 4+ în {burstRate}% — cu {delta}% {direction} decât fotografiile individuale ({singleRate}%).",
+          "moreOften": "mai des",
+          "lessOften": "mai rar",
+          "caption": "Distribuția lungimii rafalelor; rata de păstrare {burstRate}% față de {singleRate}% pentru fotografiile individuale."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
-          "focalLengthMin": "Min mm",
-          "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "title": "Explorator detaliat",
+          "description": "Filtrează tabloul de bord după dată, echipament, distanță focală, diafragmă, ISO, evaluare sau stare de selecție. Aplică toate modificările deodată.",
+          "dateRange": "Interval de date",
+          "dateStart": "De la",
+          "dateEnd": "Până la",
+          "cameras": "Camere",
+          "lenses": "Obiective",
+          "focalLength": "Distanță focală (mm, echivalent 35 mm)",
+          "focalLengthMin": "mm min.",
+          "focalLengthMax": "mm max.",
+          "aperture": "Diafragmă (număr f)",
+          "apertureMin": "Număr f min.",
+          "apertureMax": "Număr f max.",
           "iso": "ISO",
-          "isoMin": "Min ISO",
-          "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "isoMin": "ISO min.",
+          "isoMax": "ISO max.",
+          "ratings": "Evaluări",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
-          "filterAperture": "Aperture f/{min}–f/{max}",
+          "pickState": "Stare de selecție",
+          "pickAny": "Oricare",
+          "pickFlagged": "Marcate",
+          "pickRejected": "Respinse",
+          "pickNone": "Nemarcate",
+          "apply": "Aplică",
+          "reset": "Resetează",
+          "activeFilters": "Filtre active",
+          "removeFilter": "Elimină filtrul {label}",
+          "filterDateRange": "Dată {start} – {end}",
+          "filterCameras": "Cameră: {names}",
+          "filterLenses": "Obiectiv: {names}",
+          "filterFocalLength": "Distanță focală {min}–{max} mm",
+          "filterAperture": "Diafragmă f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "Evaluare: {ratings}",
+          "filterPicks": "Selecție: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "Comparație între perioade",
+          "periodA": "Perioada A",
+          "periodB": "Perioada B",
+          "start": "Început",
+          "end": "Sfârșit",
+          "apply": "Aplică",
           "headers": {
-            "stat": "Stat",
+            "stat": "Statistică",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Total fotografii",
+            "daysShot": "Zile cu fotografii",
+            "topBody": "Corp principal",
+            "topLens": "Obiectiv principal",
+            "topFocalLength": "Distanța focală principală"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Alege un interval de date pentru fiecare perioadă și dă clic pe Aplică.",
+          "caption": "Comparație alăturată a două intervale de date arbitrare cu coloană de diferență."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Starea catalogului",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Originale lipsă",
+            "missingPreviews": "Previzualizări lipsă",
+            "brokenPaths": "Căi întrerupte",
+            "likelyDuplicates": "Posibile duplicate"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Posibile grupuri de duplicate",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Ora capturii",
+            "size": "Mărimea grupului",
+            "firstPath": "Prima cale",
+            "lastPath": "Ultima cale"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Aici pot apărea secvențe de bracketing; verifică înainte de a șterge.",
+          "missingByRootFolder": "Originale lipsă pe folder rădăcină",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "Folder rădăcină",
+            "count": "Lipsă"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "În Lightroom Classic: Bibliotecă → Găsire fotografii lipsă poate rezolva căile întrerupte.",
+          "caption": "Rezumat al stării catalogului: {missing} originale lipsă, {duplicates} posibile duplicate."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "Exportă această analiză",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Copiază Markdown",
+          "copied": "Raport Markdown copiat. ~{kb} KB.",
+          "downloaded": "Clipboard indisponibil — raportul a fost descărcat ca fișier .md în schimb."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "Exportă PDF",
+          "loadingEngine": "Se încarcă motorul PDF…",
+          "generating": "Se generează raportul…",
+          "success": "Raport PDF descărcat.",
+          "error": "Nu am putut genera PDF-ul. Încearcă Markdown sau Partajare în schimb.",
+          "title": "Analiza catalogului Lightroom",
+          "filteredSuffix": " (Vedere filtrată)",
+          "localFooter": "Catalogul tău nu a fost niciodată încărcat — doar aceste statistici agregate.",
+          "generatedBy": "Generat de phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Total fotografii",
+          "dateRange": "Interval de date",
+          "catalogVersion": "Versiunea catalogului",
+          "filterTitle": "Filtru aplicat",
+          "page": "Pagina",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Retrospectiva anului",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Total fotografii",
+                "daysShot": "Zile cu fotografii",
+                "topBody": "Corpul cel mai folosit",
+                "topLens": "Obiectivul cel mai folosit"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Cea mai prolifică lună: {month} ({count} fotografii)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "An de an",
+              "stat": "Statistică",
+              "biggestShift": "Cea mai mare schimbare: {label} în {year} ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Prezentare generală",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Total fotografii",
+                "daysShot": "Zile cu fotografii",
+                "topBody": "Corp principal",
+                "topLens": "Obiectiv principal"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "Echipament",
+              "bodiesOverTime": "Corpuri în timp",
+              "topLenses": "Obiective principale",
+              "retired": "Retras",
+              "lensHeader": "Obiectiv",
+              "photosHeader": "Fotografii"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "Distanță focală",
+              "histogramTitle": "Distribuția distanțelor focale (echivalent 35 mm)",
+              "topPeaks": "Vârfuri principale",
+              "onePrime": "Un obiectiv fix de {mm} mm ar acoperi {pct}% dintre fotografiile tale în limita ±25%.",
+              "noPrime": "Utilizarea distanțelor focale este prea dispersată pentru ca un singur obiectiv fix să domine."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Distanță focală per zoom",
+              "perLens": "{lens}: {pct}% dintre fotografii la {mm} mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Diafragma optimă",
+              "perLens": "{lens}: fotografiat la deschidere maximă {pct}% din timp"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Ora din zi",
+              "gpsNote": "{pct}% din catalogul tău are GPS — defalcarea pe unghiul soarelui reflectă doar acele fotografii."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Hartă termică a fotografiilor",
+              "daysWithPhotos": "Zile cu fotografii",
+              "yearsCovered": "Ani acoperiți"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "Locații GPS",
+              "coverage": "{pct}% din catalog are GPS",
+              "topRegions": "Regiuni principale",
+              "regionHeader": "Regiune",
+              "photosHeader": "Fotografii"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Pâlnia de selecție",
+              "stageHeader": "Etapă",
+              "photosHeader": "Fotografii"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Intensitatea editării",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "Variație medie a expunerii",
+                "crop": "Decupare medie",
+                "local": "Cu ajustări locale",
+                "presets": "Cu presetări"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Estimare bazată pe un eșantion din catalog."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "Evaluări și selecții",
+              "ratingHeader": "Evaluare",
+              "photosHeader": "Fotografii"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Acoperirea cuvintelor-cheie",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Etichetate",
+                "untagged": "Neetichetate",
+                "unique": "Cuvinte-cheie unice",
+                "orphans": "Cuvinte-cheie orfane"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "Cuvânt-cheie",
+              "photosHeader": "Fotografii"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Detectarea rafalelor",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Total rafale",
+                "inBursts": "Fotografii în rafale",
+                "longest": "Cea mai lungă rafală"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "Fotografiile din rafală primesc o evaluare ≥4: {a}% față de {b}% pentru fotografiile individuale."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "Comparație între perioade",
+              "notExported": "Comparația între perioade este interactivă în aplicație și nu este exportată."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Starea catalogului",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Originale lipsă",
+                "previews": "Previzualizări lipsă",
+                "broken": "Căi întrerupte",
+                "dupes": "Posibile duplicate"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Bibliotecă → Găsire fotografii lipsă poate rezolva căile întrerupte."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Partajează prin URL",
+          "placeholderTitle": "Planul 3 conectează acest lucru."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Partajează prin URL",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Partajează un link către analiza ta",
+          "uploadedHeading": "Ce se încarcă",
+          "uploaded": "Numărători, liste cu cele mai folosite și histograme — exact datele afișate mai sus.",
+          "notUploadedHeading": "Ce NU se încarcă",
+          "notUploaded": "Nume de fișiere, fișiere imagine, căi de foldere, coordonate GPS mai precise decât celule de grilă de ~5 km și cuvinte-cheie folosite de mai puțin de 3 ori.",
+          "expiresLabel": "Linkul expiră în",
+          "expires24h": "24 de ore",
+          "expires7d": "7 zile",
+          "expires30d": "30 de zile",
+          "cancel": "Anulează",
+          "create": "Creează linkul",
+          "creating": "Se creează linkul…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Ai atins limita de partajare. Încearcă din nou peste o oră.",
+          "storage-unavailable": "Stocare temporar indisponibilă. Încearcă din nou într-o clipă.",
+          "invalid": "Nu am putut partaja această analiză — datele par a fi corupte.",
+          "unknown": "Ceva nu a mers la crearea linkului. Încearcă din nou."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "Linkul tău este gata",
+          "expiresOn": "Expiră la {date}",
+          "copy": "Copiază",
+          "copied": "Link copiat",
+          "openNewTab": "Deschide într-o filă nouă",
+          "delete": "Șterge această partajare",
+          "deleted": "Partajare ștearsă",
+          "urlLabel": "URL partajabil"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "Partajările tale recente",
+          "subtitle": "Linkuri create pe acest dispozitiv. Deschide unul pentru a-l vedea sau șterge-l pentru a revoca accesul.",
+          "idLabel": "Partajare …{last4}",
+          "created": "Creat la {date}",
+          "expires": "Expiră la {date}",
+          "filtered": "Filtrat: {summary}",
+          "open": "Deschide",
+          "delete": "Șterge"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Filtru aplicat",
+          "summaryShort": "Această vedere este filtrată: {summary}",
+          "showAll": "Afișează toate filtrele",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
-            "apertureRange": "Aperture",
+            "dateRange": "Date",
+            "cameras": "Camere",
+            "lenses": "Obiective",
+            "focalLengthRange": "Distanță focală",
+            "apertureRange": "Diafragmă",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Evaluări",
+            "keywords": "Cuvinte-cheie",
+            "picks": "Selecții"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Aceasta este o analiză partajată. Catalogul original nu a fost niciodată încărcat — doar aceste statistici agregate.",
+          "cta": "Încearcă instrumentul cu propriul tău catalog",
+          "expiredTitle": "Această partajare a expirat sau a fost ștearsă.",
+          "expiredBody": "Linkul ar putea fi ajuns la data de expirare sau creatorul l-a șters.",
+          "schemaNewerTitle": "Creat cu o versiune mai nouă",
+          "schemaNewerBody": "Această analiză a fost realizată cu o versiune mai nouă a instrumentului. Încearcă să reîncarci pagina.",
+          "pageTitle": "Analiză de catalog Lightroom partajată"
         }
       }
     }

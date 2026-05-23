@@ -91,8 +91,8 @@
       "description": "Visualisieren Sie, wie sich Megapixel bei 72–300 DPI und verschiedenen Seitenverhältnissen in Druckgrößen übersetzen. Kameras, Dateigrößen, Pixel Binning und Crop-Reichweite vergleichen — mit qualitätsgestufter Drucktabelle."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Lightroom-Katalog-Analyzer — Kostenlose Statistiken, nur im Browser",
+      "description": "Analysiere deinen Lightroom-Classic-Katalog lokal in deinem Browser. Sieh dir Ausrüstung, Brennweiten, Blendengewohnheiten, Bewertungen und mehr an. Zu 100 % lokal — dein Katalog wird nie hochgeladen."
     }
   }
 }

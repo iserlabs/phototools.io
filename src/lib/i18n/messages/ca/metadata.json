@@ -91,8 +91,8 @@
       "description": "Visualitza com els megapíxels es tradueixen en mides d'impressió a 72–300 DPI, en diferents relacions d'aspecte. Compara càmeres, mides de fitxer, pixel binning i abast de retall — amb una taula d'impressió per nivells de qualitat."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Analitzador de Catàlegs de Lightroom — Estadístiques gratuïtes, només al navegador",
+      "description": "Analitza el teu catàleg de Lightroom Classic localment al teu navegador. Consulta l'equip, les distàncies focals, els hàbits d'obertura, les valoracions i molt més. 100 % local — el teu catàleg no es puja mai."
     }
   }
 }

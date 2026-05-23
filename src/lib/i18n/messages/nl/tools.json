@@ -65,8 +65,8 @@
       "description": "Vergelijk megapixels, bekijk afdrukformaten en bestandsgroottes per beeldverhouding en DPI"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Lightroom-catalogusanalyzer",
+      "description": "Analyseer je Lightroom Classic-catalogus — uitrusting, brandpuntsafstand, diafragma's, beoordelingen en meer — 100% in je browser"
     }
   }
 }

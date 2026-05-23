@@ -65,8 +65,8 @@
       "description": "Megapikselleri karşılaştırın, baskı boyutlarını görselleştirin ve farklı en-boy oranları ile DPI'larda dosya boyutlarını görün"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Lightroom Katalog Analizci",
+      "description": "Lightroom Classic kataloğunuzu analiz edin — ekipman, odak uzaklığı, diyaframlar, derecelendirmeler ve daha fazlası — %100 tarayıcınızda"
     }
   }
 }

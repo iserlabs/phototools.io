@@ -65,8 +65,8 @@
       "description": "Hasonlítsd össze a megapixeleket, nézd meg a nyomatméreteket és a fájlméreteket különböző képarányoknál és DPI-knél"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Lightroom Katalóguselemző",
+      "description": "Elemezze a Lightroom Classic katalógusát — felszerelés, gyújtótávolság, rekeszek, értékelések és még több — 100% a böngészőjében"
     }
   }
 }

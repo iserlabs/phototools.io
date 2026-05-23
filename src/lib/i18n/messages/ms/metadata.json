@@ -91,8 +91,8 @@
       "description": "Visualkan bagaimana megapiksel diterjemahkan kepada saiz cetakan pada 72–300 DPI, merentasi nisbah aspek. Bandingkan kamera, saiz fail, pixel binning dan jangkauan pangkasan — dengan jadual cetakan mengikut tahap kualiti."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Lightroom Catalog Analyzer — Statistik Percuma, Dalam Pelayar Sahaja",
+      "description": "Analisis katalog Lightroom Classic anda secara setempat dalam pelayar anda. Lihat peralatan, panjang fokus, tabiat aperture, penarafan, dan banyak lagi. 100% setempat — katalog anda tidak pernah dimuat naik."
     }
   }
 }

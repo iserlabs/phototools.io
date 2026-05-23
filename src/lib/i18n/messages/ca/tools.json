@@ -65,8 +65,8 @@
       "description": "Compara megapíxels, visualitza mides d'impressió i mides de fitxer en diferents relacions d'aspecte i DPI"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
-      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+      "name": "Analitzador de Catàlegs de Lightroom",
+      "description": "Analitza el teu catàleg de Lightroom Classic — equip, distància focal, obertures, valoracions i molt més — 100 % al teu navegador"
     }
   }
 }

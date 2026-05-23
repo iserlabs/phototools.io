@@ -1,600 +1,600 @@
 {
   "toolUI": {
     "lightroom-catalog-analyzer": {
-      "privacyBadge": "100% Local · No Upload",
-      "privacyBadgeAria": "Privacy guarantee: this tool runs entirely in your browser. Your catalog is never uploaded.",
-      "skipToMain": "Skip to main content",
+      "privacyBadge": "100% Setempat · Tiada Muat Naik",
+      "privacyBadgeAria": "Jaminan privasi: alat ini berjalan sepenuhnya dalam pelayar anda. Katalog anda tidak pernah dimuat naik.",
+      "skipToMain": "Langkau ke kandungan utama",
       "desktop": {
-        "headline": "Analyze your Lightroom Classic catalog",
-        "subhead": "Gear, focal lengths, aperture habits, ratings, GPS, edit intensity, and more — entirely in your browser. Your catalog never leaves your device.",
-        "explainer": "Pick a .lrcat file from your computer. We open it in a SQLite WebAssembly worker, compute aggregate statistics, and render an interactive dashboard. Nothing is uploaded.",
-        "tryDemo": "Try the demo catalog"
+        "headline": "Analisis katalog Lightroom Classic anda",
+        "subhead": "Peralatan, panjang fokus, tabiat aperture, penarafan, GPS, keamatan suntingan, dan banyak lagi — sepenuhnya dalam pelayar anda. Katalog anda tidak pernah meninggalkan peranti anda.",
+        "explainer": "Pilih fail .lrcat dari komputer anda. Kami membukanya dalam worker SQLite WebAssembly, mengira statistik agregat, dan memaparkan papan pemuka interaktif. Tiada apa-apa dimuat naik.",
+        "tryDemo": "Cuba katalog demo"
       },
       "mobile": {
-        "headline": "This one needs a desktop",
-        "body": "The Lightroom Catalog Analyzer needs your Lightroom Classic catalog file (.lrcat), which lives on your computer — not your phone.",
-        "tryDemoCta": "Try the demo here",
-        "openOnDesktop": "Open this page on your computer to analyze your own catalog.",
-        "copyLink": "Copy link",
-        "copyLinkSuccess": "Link copied",
-        "screenshotAlt": "Lightroom Catalog Analyzer dashboard preview"
+        "headline": "Yang ini memerlukan desktop",
+        "body": "Lightroom Catalog Analyzer memerlukan fail katalog Lightroom Classic (.lrcat) anda, yang terletak pada komputer anda — bukan telefon anda.",
+        "tryDemoCta": "Cuba demo di sini",
+        "openOnDesktop": "Buka halaman ini pada komputer anda untuk menganalisis katalog anda sendiri.",
+        "copyLink": "Salin pautan",
+        "copyLinkSuccess": "Pautan disalin",
+        "screenshotAlt": "Pratonton papan pemuka Lightroom Catalog Analyzer"
       },
       "filePicker": {
-        "dropPrompt": "Drop your .lrcat file here, or click to browse",
-        "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
-        "selectedFile": "Selected: {fileName}",
-        "ariaLabel": "Lightroom Classic catalog file picker",
-        "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
-        "errorReadFailed": "Could not read that file. Try again."
+        "dropPrompt": "Lepaskan fail .lrcat anda di sini, atau klik untuk melayari",
+        "tapPrompt": "Ketik untuk memilih fail .lrcat",
+        "browseButton": "Layari katalog",
+        "selectedFile": "Dipilih: {fileName}",
+        "ariaLabel": "Pemilih fail katalog Lightroom Classic",
+        "errorNotLrcat": "Fail itu tidak kelihatan seperti katalog Lightroom Classic (.lrcat).",
+        "errorReadFailed": "Tidak dapat membaca fail itu. Cuba lagi."
       },
       "largeFileWarning": {
-        "title": "Large catalog — heads up",
-        "body": "{fileName} is {sizeGb} GB. Parsing may take 30 seconds or more and use a lot of memory. Continue?",
-        "continue": "Continue",
-        "cancel": "Cancel"
+        "title": "Katalog besar — perhatian",
+        "body": "{fileName} ialah {sizeGb} GB. Penghuraian mungkin mengambil masa 30 saat atau lebih dan menggunakan banyak memori. Teruskan?",
+        "continue": "Teruskan",
+        "cancel": "Batal"
       },
       "parseProgress": {
-        "title": "Analyzing your catalog",
-        "subtitle": "This runs entirely in your browser. Nothing is uploaded.",
+        "title": "Menganalisis katalog anda",
+        "subtitle": "Ini berjalan sepenuhnya dalam pelayar anda. Tiada apa-apa dimuat naik.",
         "stage": {
-          "reading": "Reading file…",
-          "opening": "Opening catalog…",
-          "schema": "Checking schema…",
-          "hashing": "Computing hash…",
-          "aggregating": "Computing statistics…",
-          "finalizing": "Finalizing…"
+          "reading": "Membaca fail…",
+          "opening": "Membuka katalog…",
+          "schema": "Memeriksa skema…",
+          "hashing": "Mengira hash…",
+          "aggregating": "Mengira statistik…",
+          "finalizing": "Memuktamadkan…"
         },
         "pctLabel": "{pct}%"
       },
       "cacheBadge": {
-        "label": "Loaded from cache",
-        "reanalyze": "Re-analyze",
-        "reanalyzeAria": "Discard the cached result and parse this catalog again from the original file."
+        "label": "Dimuatkan dari cache",
+        "reanalyze": "Analisis semula",
+        "reanalyzeAria": "Buang hasil yang dicache dan hurai semula katalog ini dari fail asal."
       },
       "errors": {
-        "title": "We couldn't analyze that catalog",
-        "retry": "Try another catalog",
-        "parseFailed": "We couldn't parse that catalog. It may be open in Lightroom, partially written, or in an unexpected format.",
-        "workerFailed": "The analysis engine failed to start. Reload the page and try again.",
-        "schemaTooNew": "This catalog was created by a newer version of Lightroom Classic than this tool supports yet.",
-        "schemaTooOld": "This catalog was created by a version of Lightroom Classic that is too old for this tool.",
-        "tooLarge": "This catalog is too large to analyze in the browser.",
-        "corrupt": "This catalog appears to be corrupt or incomplete and could not be read.",
-        "notLightroom": "That file is not a Lightroom Classic catalog database.",
-        "unknown": "Something went wrong while analyzing that catalog. Please try again."
+        "title": "Kami tidak dapat menganalisis katalog itu",
+        "retry": "Cuba katalog lain",
+        "parseFailed": "Kami tidak dapat menghurai katalog itu. Ia mungkin terbuka dalam Lightroom, ditulis sebahagian, atau dalam format yang tidak dijangka.",
+        "workerFailed": "Enjin analisis gagal dimulakan. Muat semula halaman dan cuba lagi.",
+        "schemaTooNew": "Katalog ini dicipta oleh versi Lightroom Classic yang lebih baru daripada yang disokong oleh alat ini buat masa ini.",
+        "schemaTooOld": "Katalog ini dicipta oleh versi Lightroom Classic yang terlalu lama untuk alat ini.",
+        "tooLarge": "Katalog ini terlalu besar untuk dianalisis dalam pelayar.",
+        "corrupt": "Katalog ini kelihatan rosak atau tidak lengkap dan tidak dapat dibaca.",
+        "notLightroom": "Fail itu bukan pangkalan data katalog Lightroom Classic.",
+        "unknown": "Sesuatu telah berlaku semasa menganalisis katalog itu. Sila cuba lagi."
       },
       "sectionNav": {
-        "ariaLabel": "Dashboard sections",
-        "jumpToSection": "Jump to section",
+        "ariaLabel": "Bahagian papan pemuka",
+        "jumpToSection": "Lompat ke bahagian",
         "group": {
-          "highlights": "Highlights",
-          "whatYouShoot": "What you shoot",
-          "howYouCurate": "How you curate",
-          "exploreCompare": "Explore & compare",
-          "catalog": "Catalog"
+          "highlights": "Sorotan",
+          "whatYouShoot": "Apa yang anda rakam",
+          "howYouCurate": "Cara anda mengurasi",
+          "exploreCompare": "Terokai & banding",
+          "catalog": "Katalog"
         },
         "section": {
-          "year-in-review": "Year in Review",
-          "year-to-year": "Year to Year",
-          "overview": "Overview",
-          "gear": "Gear Breakdown",
-          "focal-length": "Focal Length",
-          "focal-length-per-zoom": "Focal Length per Zoom",
-          "apertures": "Aperture Sweet Spot",
-          "time-of-day": "Time of Day",
-          "heatmap": "Shooting Heatmap",
-          "gps": "GPS Locations",
-          "curation": "Curation Funnel",
-          "edit-intensity": "Edit Intensity",
-          "ratings": "Ratings & Picks",
-          "keywords": "Keyword Coverage",
-          "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
-          "period-comparison": "Period Comparison",
-          "catalog-health": "Catalog Health"
+          "year-in-review": "Imbasan Tahun",
+          "year-to-year": "Tahun ke Tahun",
+          "overview": "Gambaran Keseluruhan",
+          "gear": "Pecahan Peralatan",
+          "focal-length": "Panjang Fokus",
+          "focal-length-per-zoom": "Panjang Fokus per Zum",
+          "apertures": "Titik Optimum Aperture",
+          "time-of-day": "Waktu dalam Sehari",
+          "heatmap": "Peta Haba Rakaman",
+          "gps": "Lokasi GPS",
+          "curation": "Corong Kurasi",
+          "edit-intensity": "Keamatan Suntingan",
+          "ratings": "Penarafan & Pilihan",
+          "keywords": "Liputan Kata Kunci",
+          "bursts": "Pengesanan Pancutan",
+          "drilldown": "Penjelajah Gerudi",
+          "period-comparison": "Perbandingan Tempoh",
+          "catalog-health": "Kesihatan Katalog"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
-        "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
+        "sectionLoadingLabel": "Memuatkan {section}…",
+        "footerNote": "Dikira dalam pelayar anda dari fail katalog setempat anda. Tiada apa-apa telah dimuat naik."
       },
       "sections": {
         "year-in-review": {
-          "title": "Year in Review",
-          "yearLabel": "Year",
+          "title": "Imbasan Tahun",
+          "yearLabel": "Tahun",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Most-used body",
-            "topLens": "Most-used lens",
-            "topFocalLength": "Top focal length",
-            "topAperture": "Top aperture",
-            "mostProlificMonth": "Most prolific month",
-            "avgShotsPerDay": "Avg shots / day"
+            "totalPhotos": "Jumlah foto",
+            "daysShot": "Hari merakam",
+            "topBody": "Badan paling kerap digunakan",
+            "topLens": "Lensa paling kerap digunakan",
+            "topFocalLength": "Panjang fokus teratas",
+            "topAperture": "Aperture teratas",
+            "mostProlificMonth": "Bulan paling produktif",
+            "avgShotsPerDay": "Purata rakaman / hari"
           },
           "sparklines": {
-            "monthlyVolume": "Monthly volume",
-            "topGearShare": "Top gear share",
-            "timeOfDayShare": "Time-of-day share"
+            "monthlyVolume": "Volum bulanan",
+            "topGearShare": "Bahagian peralatan teratas",
+            "timeOfDayShare": "Bahagian waktu dalam sehari"
           },
-          "callout": "Your most prolific month was {month} ({count} photos). Top lens that month: {lens}.",
-          "empty": "No year-in-review data for this catalog yet.",
-          "caption": "Headline stats and mini-charts for {year}: {totalPhotos} photos across {daysShot} days, top body {topBody}, top lens {topLens}."
+          "callout": "Bulan paling produktif anda ialah {month} ({count} foto). Lensa teratas bulan itu: {lens}.",
+          "empty": "Belum ada data imbasan tahun untuk katalog ini.",
+          "caption": "Statistik utama dan carta mini untuk {year}: {totalPhotos} foto dalam {daysShot} hari, badan teratas {topBody}, lensa teratas {topLens}."
         },
         "year-to-year": {
-          "title": "Year-to-Year",
-          "yearCountLabel": "Show last",
+          "title": "Tahun ke Tahun",
+          "yearCountLabel": "Tunjuk terkini",
           "yearCountOptions": {
-            "2": "2 years",
-            "3": "3 years",
-            "5": "5 years"
+            "2": "2 tahun",
+            "3": "3 tahun",
+            "5": "5 tahun"
           },
-          "biggestShift": "Biggest shift: {label} in {year} ({delta}).",
-          "stat": "Stat",
-          "empty": "Need at least 2 full years of catalog data for year-to-year comparison.",
-          "caption": "Side-by-side annual stats with delta vs prior year for {n} years."
+          "biggestShift": "Anjakan terbesar: {label} pada {year} ({delta}).",
+          "stat": "Statistik",
+          "empty": "Memerlukan sekurang-kurangnya 2 tahun penuh data katalog untuk perbandingan tahun ke tahun.",
+          "caption": "Statistik tahunan bersebelahan dengan delta berbanding tahun sebelumnya untuk {n} tahun."
         },
         "overview": {
-          "title": "Overview",
+          "title": "Gambaran Keseluruhan",
           "tiles": {
-            "totalPhotos": "Total photos",
-            "dateRange": "Date range",
-            "daysShot": "Days shot",
-            "photosPerDay": "Photos / day",
-            "bodyCount": "Bodies",
-            "lensCount": "Lenses",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Jumlah foto",
+            "dateRange": "Julat tarikh",
+            "daysShot": "Hari merakam",
+            "photosPerDay": "Foto / hari",
+            "bodyCount": "Badan",
+            "lensCount": "Lensa",
+            "topBody": "Badan teratas",
+            "topLens": "Lensa teratas",
+            "topFocalLength": "Panjang fokus teratas"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Gambaran keseluruhan katalog: {totalPhotos} foto dalam {daysShot} hari, {bodyCount} badan, {lensCount} lensa."
         },
         "gear": {
-          "title": "Gear",
-          "bodiesOverTime": "Bodies over time",
-          "topLenses": "Top lenses",
-          "topCombos": "Top body + lens combos",
-          "retired": "Retired (12 months no use)",
+          "title": "Peralatan",
+          "bodiesOverTime": "Badan dari masa ke masa",
+          "topLenses": "Lensa teratas",
+          "topCombos": "Gabungan badan + lensa teratas",
+          "retired": "Bersara (12 bulan tiada penggunaan)",
           "tableHeaders": {
-            "body": "Body",
-            "lens": "Lens",
-            "count": "Photos",
-            "firstUsed": "First used",
-            "lastUsed": "Last used"
+            "body": "Badan",
+            "lens": "Lensa",
+            "count": "Foto",
+            "firstUsed": "Pertama digunakan",
+            "lastUsed": "Terakhir digunakan"
           },
-          "caption": "Gear breakdown: top lens {topLens} with {topLensCount} photos; {comboCount} top combos shown."
+          "caption": "Pecahan peralatan: lensa teratas {topLens} dengan {topLensCount} foto; {comboCount} gabungan teratas ditunjukkan."
         },
         "focal-length": {
-          "title": "Focal Length",
-          "histogramTitle": "Focal length distribution (35mm-equivalent)",
-          "histogramAria": "Focal length histogram",
-          "topPeaks": "Top peaks",
-          "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-          "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "title": "Panjang Fokus",
+          "histogramTitle": "Taburan panjang fokus (setara 35mm)",
+          "histogramAria": "Histogram panjang fokus",
+          "topPeaks": "Puncak teratas",
+          "onePrime": "Sebuah lensa prima {mm}mm akan meliputi {pct}% rakaman anda dalam ±25%.",
+          "noPrime": "Penggunaan panjang fokus anda terlalu tersebar untuk satu lensa prima mendominasi.",
+          "caption": "Histogram bin-1mm dari {min}mm hingga {max}mm; {peakCount} puncak teratas dilabel."
         },
         "focal-length-per-zoom": {
-          "title": "Focal Length per Zoom",
-          "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
-          "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "title": "Panjang Fokus per Zum",
+          "callout": "Pada {lens} anda, {pct}% rakaman berada pada {mm}mm.",
+          "empty": "Tiada lensa zum dikesan dalam katalog ini.",
+          "caption": "{n} histogram lensa zum dengan panjang fokus dominan diserlahkan."
         },
         "apertures": {
-          "title": "Aperture Sweet Spot",
-          "callout": "You shoot the {lens} wide open {pct}% of the time.",
-          "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "title": "Titik Optimum Aperture",
+          "callout": "Anda merakam {lens} bukaan penuh {pct}% daripada masa.",
+          "empty": "Data tidak mencukupi — memerlukan sekurang-kurangnya satu lensa dengan 100+ foto.",
+          "caption": "{n} histogram aperture lensa."
         },
         "time-of-day": {
-          "title": "Time of Day",
+          "title": "Waktu dalam Sehari",
           "modes": {
-            "clock": "Clock hour",
-            "sun": "Sun angle"
+            "clock": "Jam",
+            "sun": "Sudut matahari"
           },
-          "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only.",
+          "gpsNote": "{pct}% katalog anda mempunyai GPS — pecahan sudut matahari hanya mencerminkan foto-foto tersebut.",
           "buckets": {
-            "goldenHour": "Golden hour",
-            "blueHour": "Blue hour",
-            "midday": "Midday",
-            "night": "Night"
+            "goldenHour": "Waktu emas",
+            "blueHour": "Waktu biru",
+            "midday": "Tengah hari",
+            "night": "Malam"
           },
-          "perGear": "By body",
-          "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "perGear": "Mengikut badan",
+          "perGearPeak": "{gear} — waktu puncak {hour}:00",
+          "caption": "Bilangan foto sepanjang 24 jam dengan pecahan sudut matahari pilihan."
         },
         "heatmap": {
-          "title": "Shooting Heatmap",
-          "aria": "Shooting heatmap — contribution calendar",
-          "tooltip": "{date}: {count} photos, top lens {topLens}",
-          "caption": "Year-by-year contribution calendar across {years} years."
+          "title": "Peta Haba Rakaman",
+          "aria": "Peta haba rakaman — kalendar sumbangan",
+          "tooltip": "{date}: {count} foto, lensa teratas {topLens}",
+          "caption": "Kalendar sumbangan tahun demi tahun sepanjang {years} tahun."
         },
         "gps-map": {
-          "title": "GPS Locations",
-          "aria": "GPS map of catalog photo clusters",
-          "coverage": "{pct}% of your catalog has GPS data ({count} photos).",
-          "topRegions": "Top regions",
-          "empty": "No GPS data found in this catalog.",
-          "caption": "Equirectangular world map with {clusters} aggregated clusters; PII guard drops grid cells with fewer than 5 photos."
+          "title": "Lokasi GPS",
+          "aria": "Peta GPS gugusan foto katalog",
+          "coverage": "{pct}% katalog anda mempunyai data GPS ({count} foto).",
+          "topRegions": "Wilayah teratas",
+          "empty": "Tiada data GPS ditemui dalam katalog ini.",
+          "caption": "Peta dunia equirectangular dengan {clusters} gugusan agregat; pengawal PII menggugurkan sel grid dengan kurang daripada 5 foto."
         },
         "curation-funnel": {
-          "title": "Curation Funnel",
+          "title": "Corong Kurasi",
           "steps": {
-            "total": "Total",
-            "notRejected": "Not rejected",
-            "rated1Plus": "1+ star",
-            "rated4Plus": "4+ star"
+            "total": "Jumlah",
+            "notRejected": "Tidak ditolak",
+            "rated1Plus": "1+ bintang",
+            "rated4Plus": "4+ bintang"
           },
-          "perGear": "Pick rate by gear",
+          "perGear": "Kadar pilihan mengikut peralatan",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Nama",
+            "total": "Jumlah",
+            "rated4Plus": "4+ bintang",
+            "pickRate": "Kadar pilihan"
           },
-          "caption": "Funnel from {total} total photos to {rated4Plus} rated 4+ ({pickRate}% pick rate)."
+          "caption": "Corong dari {total} jumlah foto kepada {rated4Plus} dinilai 4+ ({pickRate}% kadar pilihan)."
         },
         "edit-intensity": {
-          "title": "Edit Intensity",
+          "title": "Keamatan Suntingan",
           "tiles": {
-            "avgExposure": "Avg exposure shift",
-            "avgCrop": "Avg crop %",
-            "pctLocal": "% with local adjustments",
-            "pctPresets": "% with presets"
+            "avgExposure": "Purata anjakan pendedahan",
+            "avgCrop": "Purata krop %",
+            "pctLocal": "% dengan pelarasan setempat",
+            "pctPresets": "% dengan praset"
           },
-          "scoreOverTime": "Edit intensity score over time",
-          "topPresets": "Top presets",
-          "perGear": "Score by gear",
-          "sampled": "Estimate based on 5% sample of {n} photos.",
-          "caption": "Average edit score across the catalog with monthly trend and per-gear breakdown."
+          "scoreOverTime": "Skor keamatan suntingan dari masa ke masa",
+          "topPresets": "Praset teratas",
+          "perGear": "Skor mengikut peralatan",
+          "sampled": "Anggaran berdasarkan sampel 5% daripada {n} foto.",
+          "caption": "Skor suntingan purata merentas katalog dengan trend bulanan dan pecahan setiap peralatan."
         },
         "ratings": {
-          "title": "Ratings & Picks",
-          "distribution": "Rating distribution",
-          "colorLabels": "Color labels",
-          "perGear": "Pick rate by gear",
+          "title": "Penarafan & Pilihan",
+          "distribution": "Taburan penarafan",
+          "colorLabels": "Label warna",
+          "perGear": "Kadar pilihan mengikut peralatan",
           "tableHeaders": {
-            "name": "Name",
-            "total": "Total",
-            "rated4Plus": "4+ star",
-            "pickRate": "Pick rate"
+            "name": "Nama",
+            "total": "Jumlah",
+            "rated4Plus": "4+ bintang",
+            "pickRate": "Kadar pilihan"
           },
           "axes": {
-            "rating": "Rating",
-            "count": "Photos"
+            "rating": "Penarafan",
+            "count": "Foto"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Taburan penarafan dengan {colorLabelCount} label warna dan kadar pilihan setiap peralatan."
         },
         "keywords": {
-          "title": "Keyword Coverage",
+          "title": "Liputan Kata Kunci",
           "tiles": {
-            "tagged": "Tagged photos",
-            "untagged": "Untagged photos",
-            "uniqueKeywords": "Unique keywords",
-            "avgPerPhoto": "Avg keywords / tagged photo",
-            "orphans": "Orphan keywords"
+            "tagged": "Foto bertag",
+            "untagged": "Foto tanpa tag",
+            "uniqueKeywords": "Kata kunci unik",
+            "avgPerPhoto": "Purata kata kunci / foto bertag",
+            "orphans": "Kata kunci yatim"
           },
-          "topKeywords": "Top keywords",
-          "blindSpots": "Largest blind spots",
-          "blindSpotItem": "{yearMonth} — {pct}% coverage",
-          "blindSpotsEmpty": "Coverage looks even across months.",
-          "caption": "Tag coverage stats and top {n} keywords (PII guard: only keywords on 3+ photos)."
+          "topKeywords": "Kata kunci teratas",
+          "blindSpots": "Titik buta terbesar",
+          "blindSpotItem": "{yearMonth} — {pct}% liputan",
+          "blindSpotsEmpty": "Liputan kelihatan sekata merentas bulan.",
+          "caption": "Statistik liputan tag dan {n} kata kunci teratas (pengawal PII: hanya kata kunci pada 3+ foto)."
         },
         "bursts": {
-          "title": "Burst Detection",
+          "title": "Pengesanan Pancutan",
           "tiles": {
-            "totalBursts": "Total bursts",
-            "photosInBursts": "Photos in bursts",
-            "pctInBursts": "% of catalog in bursts",
-            "longestBurst": "Longest burst"
+            "totalBursts": "Jumlah pancutan",
+            "photosInBursts": "Foto dalam pancutan",
+            "pctInBursts": "% katalog dalam pancutan",
+            "longestBurst": "Pancutan terpanjang"
           },
-          "lengthHistogram": "Burst length distribution",
-          "keeperRate": "Burst photos earn a 4+ rating {burstRate}% — {delta}% {direction} than single shots ({singleRate}%).",
-          "moreOften": "more often",
-          "lessOften": "less often",
-          "caption": "Burst-length distribution; keeper rate {burstRate}% vs {singleRate}% for single shots."
+          "lengthHistogram": "Taburan panjang pancutan",
+          "keeperRate": "Foto pancutan memperoleh penarafan 4+ pada {burstRate}% — {delta}% {direction} berbanding rakaman tunggal ({singleRate}%).",
+          "moreOften": "lebih kerap",
+          "lessOften": "kurang kerap",
+          "caption": "Taburan panjang pancutan; kadar simpanan {burstRate}% berbanding {singleRate}% bagi rakaman tunggal."
         },
         "drilldown": {
-          "title": "Drilldown Explorer",
-          "description": "Filter the dashboard by date, gear, focal length, aperture, ISO, rating, or pick state. Apply changes all at once.",
-          "dateRange": "Date range",
-          "dateStart": "From",
-          "dateEnd": "To",
-          "cameras": "Cameras",
-          "lenses": "Lenses",
-          "focalLength": "Focal length (mm, 35mm-equivalent)",
-          "focalLengthMin": "Min mm",
-          "focalLengthMax": "Max mm",
-          "aperture": "Aperture (f-number)",
-          "apertureMin": "Min f-number",
-          "apertureMax": "Max f-number",
+          "title": "Penjelajah Gerudi",
+          "description": "Tapis papan pemuka mengikut tarikh, peralatan, panjang fokus, aperture, ISO, penarafan, atau keadaan pilihan. Gunakan semua perubahan sekali gus.",
+          "dateRange": "Julat tarikh",
+          "dateStart": "Dari",
+          "dateEnd": "Hingga",
+          "cameras": "Kamera",
+          "lenses": "Lensa",
+          "focalLength": "Panjang fokus (mm, setara 35mm)",
+          "focalLengthMin": "mm min",
+          "focalLengthMax": "mm maks",
+          "aperture": "Aperture (nombor f)",
+          "apertureMin": "Nombor f min",
+          "apertureMax": "Nombor f maks",
           "iso": "ISO",
-          "isoMin": "Min ISO",
-          "isoMax": "Max ISO",
-          "ratings": "Ratings",
+          "isoMin": "ISO min",
+          "isoMax": "ISO maks",
+          "ratings": "Penarafan",
           "rating0": "0",
           "rating1": "1",
           "rating2": "2",
           "rating3": "3",
           "rating4": "4",
           "rating5": "5",
-          "pickState": "Pick state",
-          "pickAny": "Any",
-          "pickFlagged": "Flagged",
-          "pickRejected": "Rejected",
-          "pickNone": "Unflagged",
-          "apply": "Apply",
-          "reset": "Reset",
-          "activeFilters": "Active filters",
-          "removeFilter": "Remove {label} filter",
-          "filterDateRange": "Date {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
-          "filterFocalLength": "Focal length {min}–{max}mm",
+          "pickState": "Keadaan pilihan",
+          "pickAny": "Mana-mana",
+          "pickFlagged": "Ditanda bendera",
+          "pickRejected": "Ditolak",
+          "pickNone": "Tidak ditanda bendera",
+          "apply": "Guna",
+          "reset": "Set semula",
+          "activeFilters": "Penapis aktif",
+          "removeFilter": "Buang penapis {label}",
+          "filterDateRange": "Tarikh {start} – {end}",
+          "filterCameras": "Kamera: {names}",
+          "filterLenses": "Lensa: {names}",
+          "filterFocalLength": "Panjang fokus {min}–{max}mm",
           "filterAperture": "Aperture f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
-          "filterPicks": "Pick: {state}"
+          "filterRatings": "Penarafan: {ratings}",
+          "filterPicks": "Pilihan: {state}"
         },
         "period-comparison": {
-          "title": "Period Comparison",
-          "periodA": "Period A",
-          "periodB": "Period B",
-          "start": "Start",
-          "end": "End",
-          "apply": "Apply",
+          "title": "Perbandingan Tempoh",
+          "periodA": "Tempoh A",
+          "periodB": "Tempoh B",
+          "start": "Mula",
+          "end": "Tamat",
+          "apply": "Guna",
           "headers": {
-            "stat": "Stat",
+            "stat": "Statistik",
             "delta": "Δ"
           },
           "stats": {
-            "totalPhotos": "Total photos",
-            "daysShot": "Days shot",
-            "topBody": "Top body",
-            "topLens": "Top lens",
-            "topFocalLength": "Top focal length"
+            "totalPhotos": "Jumlah foto",
+            "daysShot": "Hari merakam",
+            "topBody": "Badan teratas",
+            "topLens": "Lensa teratas",
+            "topFocalLength": "Panjang fokus teratas"
           },
-          "empty": "Choose a date range for each period and click Apply.",
-          "caption": "Side-by-side comparison of two arbitrary date ranges with delta column."
+          "empty": "Pilih julat tarikh untuk setiap tempoh dan klik Guna.",
+          "caption": "Perbandingan bersebelahan dua julat tarikh sewenang-wenangnya dengan lajur delta."
         },
         "catalog-health": {
-          "title": "Catalog Health",
+          "title": "Kesihatan Katalog",
           "tiles": {
-            "missingOriginals": "Missing originals",
-            "missingPreviews": "Missing previews",
-            "brokenPaths": "Broken paths",
-            "likelyDuplicates": "Likely duplicates"
+            "missingOriginals": "Asal yang hilang",
+            "missingPreviews": "Pratonton yang hilang",
+            "brokenPaths": "Laluan rosak",
+            "likelyDuplicates": "Kemungkinan pendua"
           },
-          "duplicatesTable": "Likely duplicate clusters",
+          "duplicatesTable": "Gugusan kemungkinan pendua",
           "duplicatesHeaders": {
-            "captureTime": "Capture time",
-            "size": "Cluster size",
-            "firstPath": "First path",
-            "lastPath": "Last path"
+            "captureTime": "Masa rakaman",
+            "size": "Saiz gugusan",
+            "firstPath": "Laluan pertama",
+            "lastPath": "Laluan terakhir"
           },
-          "duplicatesDisclaimer": "Bracketed sequences may appear here; review before deleting.",
-          "missingByRootFolder": "Missing originals by root folder",
+          "duplicatesDisclaimer": "Jujukan kurungan mungkin muncul di sini; semak sebelum memadam.",
+          "missingByRootFolder": "Asal yang hilang mengikut folder akar",
           "missingHeaders": {
-            "folder": "Root folder",
-            "count": "Missing"
+            "folder": "Folder akar",
+            "count": "Hilang"
           },
-          "actionNote": "In Lightroom Classic: Library → Find Missing Photos can resolve broken paths.",
-          "caption": "Catalog health summary: {missing} missing originals, {duplicates} likely duplicates."
+          "actionNote": "Dalam Lightroom Classic: Library → Find Missing Photos boleh menyelesaikan laluan yang rosak.",
+          "caption": "Ringkasan kesihatan katalog: {missing} asal yang hilang, {duplicates} kemungkinan pendua."
         }
       },
       "export": {
-        "barLabel": "Export this analysis",
+        "barLabel": "Eksport analisis ini",
         "markdown": {
-          "button": "Copy Markdown",
-          "copied": "Markdown report copied. ~{kb} KB.",
-          "downloaded": "Clipboard unavailable — downloaded the report as a .md file instead."
+          "button": "Salin Markdown",
+          "copied": "Laporan Markdown disalin. ~{kb} KB.",
+          "downloaded": "Papan keratan tidak tersedia — laporan dimuat turun sebagai fail .md sebagai gantinya."
         },
         "pdf": {
-          "button": "Export PDF",
-          "loadingEngine": "Loading PDF engine…",
-          "generating": "Generating report…",
-          "success": "PDF report downloaded.",
-          "error": "Couldn't generate the PDF. Try Markdown or Share instead.",
-          "title": "Lightroom Catalog Analysis",
-          "filteredSuffix": " (Filtered view)",
-          "localFooter": "Your catalog was never uploaded — only these aggregated stats.",
-          "generatedBy": "Generated by phototools.io/lightroom-catalog-analyzer",
-          "totalPhotos": "Total photos",
-          "dateRange": "Date range",
-          "catalogVersion": "Catalog version",
-          "filterTitle": "Filter applied",
-          "page": "Page",
+          "button": "Eksport PDF",
+          "loadingEngine": "Memuatkan enjin PDF…",
+          "generating": "Menjana laporan…",
+          "success": "Laporan PDF dimuat turun.",
+          "error": "Tidak dapat menjana PDF. Cuba Markdown atau Kongsi sebagai gantinya.",
+          "title": "Analisis Katalog Lightroom",
+          "filteredSuffix": " (Paparan ditapis)",
+          "localFooter": "Katalog anda tidak pernah dimuat naik — hanya statistik agregat ini.",
+          "generatedBy": "Dijana oleh phototools.io/lightroom-catalog-analyzer",
+          "totalPhotos": "Jumlah foto",
+          "dateRange": "Julat tarikh",
+          "catalogVersion": "Versi katalog",
+          "filterTitle": "Penapis digunakan",
+          "page": "Halaman",
           "sections": {
             "yearInReview": {
-              "title": "Year in Review",
+              "title": "Imbasan Tahun",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Most-used body",
-                "topLens": "Most-used lens"
+                "totalPhotos": "Jumlah foto",
+                "daysShot": "Hari merakam",
+                "topBody": "Badan paling kerap digunakan",
+                "topLens": "Lensa paling kerap digunakan"
               },
-              "callout": "Most prolific month: {month} ({count} photos)."
+              "callout": "Bulan paling produktif: {month} ({count} foto)."
             },
             "yearToYear": {
-              "title": "Year-to-Year",
-              "stat": "Stat",
-              "biggestShift": "Biggest shift: {label} in {year} ({delta})."
+              "title": "Tahun ke Tahun",
+              "stat": "Statistik",
+              "biggestShift": "Anjakan terbesar: {label} pada {year} ({delta})."
             },
             "overview": {
-              "title": "Overview",
+              "title": "Gambaran Keseluruhan",
               "tiles": {
-                "totalPhotos": "Total photos",
-                "daysShot": "Days shot",
-                "topBody": "Top body",
-                "topLens": "Top lens"
+                "totalPhotos": "Jumlah foto",
+                "daysShot": "Hari merakam",
+                "topBody": "Badan teratas",
+                "topLens": "Lensa teratas"
               }
             },
             "gear": {
-              "title": "Gear",
-              "bodiesOverTime": "Bodies over time",
-              "topLenses": "Top lenses",
-              "retired": "Retired",
-              "lensHeader": "Lens",
-              "photosHeader": "Photos"
+              "title": "Peralatan",
+              "bodiesOverTime": "Badan dari masa ke masa",
+              "topLenses": "Lensa teratas",
+              "retired": "Bersara",
+              "lensHeader": "Lensa",
+              "photosHeader": "Foto"
             },
             "focalLength": {
-              "title": "Focal Length",
-              "histogramTitle": "Focal length distribution (35mm-equivalent)",
-              "topPeaks": "Top peaks",
-              "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
-              "noPrime": "Your focal-length use is too spread out for a single prime to dominate."
+              "title": "Panjang Fokus",
+              "histogramTitle": "Taburan panjang fokus (setara 35mm)",
+              "topPeaks": "Puncak teratas",
+              "onePrime": "Sebuah lensa prima {mm}mm akan meliputi {pct}% rakaman anda dalam ±25%.",
+              "noPrime": "Penggunaan panjang fokus anda terlalu tersebar untuk satu lensa prima mendominasi."
             },
             "focalLengthPerZoom": {
-              "title": "Focal Length per Zoom",
-              "perLens": "{lens}: {pct}% of shots at {mm}mm"
+              "title": "Panjang Fokus per Zum",
+              "perLens": "{lens}: {pct}% rakaman pada {mm}mm"
             },
             "apertures": {
-              "title": "Aperture Sweet Spot",
-              "perLens": "{lens}: shot wide open {pct}% of the time"
+              "title": "Titik Optimum Aperture",
+              "perLens": "{lens}: dirakam bukaan penuh {pct}% daripada masa"
             },
             "timeOfDay": {
-              "title": "Time of Day",
-              "gpsNote": "{pct}% of your catalog has GPS — sun-angle breakdown reflects those photos only."
+              "title": "Waktu dalam Sehari",
+              "gpsNote": "{pct}% katalog anda mempunyai GPS — pecahan sudut matahari hanya mencerminkan foto-foto tersebut."
             },
             "heatmap": {
-              "title": "Shooting Heatmap",
-              "daysWithPhotos": "Days with photos",
-              "yearsCovered": "Years covered"
+              "title": "Peta Haba Rakaman",
+              "daysWithPhotos": "Hari dengan foto",
+              "yearsCovered": "Tahun diliputi"
             },
             "gps": {
-              "title": "GPS Locations",
-              "coverage": "{pct}% of catalog has GPS",
-              "topRegions": "Top regions",
-              "regionHeader": "Region",
-              "photosHeader": "Photos"
+              "title": "Lokasi GPS",
+              "coverage": "{pct}% katalog mempunyai GPS",
+              "topRegions": "Wilayah teratas",
+              "regionHeader": "Wilayah",
+              "photosHeader": "Foto"
             },
             "curation": {
-              "title": "Curation Funnel",
-              "stageHeader": "Stage",
-              "photosHeader": "Photos"
+              "title": "Corong Kurasi",
+              "stageHeader": "Peringkat",
+              "photosHeader": "Foto"
             },
             "editIntensity": {
-              "title": "Edit Intensity",
+              "title": "Keamatan Suntingan",
               "tiles": {
-                "exposure": "Avg exposure shift",
-                "crop": "Avg crop",
-                "local": "With local adjustments",
-                "presets": "With presets"
+                "exposure": "Purata anjakan pendedahan",
+                "crop": "Purata krop",
+                "local": "Dengan pelarasan setempat",
+                "presets": "Dengan praset"
               },
-              "sampledNote": "Estimate based on a sample of the catalog."
+              "sampledNote": "Anggaran berdasarkan sampel katalog."
             },
             "ratings": {
-              "title": "Ratings & Picks",
-              "ratingHeader": "Rating",
-              "photosHeader": "Photos"
+              "title": "Penarafan & Pilihan",
+              "ratingHeader": "Penarafan",
+              "photosHeader": "Foto"
             },
             "keywords": {
-              "title": "Keyword Coverage",
+              "title": "Liputan Kata Kunci",
               "tiles": {
-                "tagged": "Tagged",
-                "untagged": "Untagged",
-                "unique": "Unique keywords",
-                "orphans": "Orphan keywords"
+                "tagged": "Bertag",
+                "untagged": "Tanpa tag",
+                "unique": "Kata kunci unik",
+                "orphans": "Kata kunci yatim"
               },
-              "keywordHeader": "Keyword",
-              "photosHeader": "Photos"
+              "keywordHeader": "Kata kunci",
+              "photosHeader": "Foto"
             },
             "bursts": {
-              "title": "Burst Detection",
+              "title": "Pengesanan Pancutan",
               "tiles": {
-                "total": "Total bursts",
-                "inBursts": "Photos in bursts",
-                "longest": "Longest burst"
+                "total": "Jumlah pancutan",
+                "inBursts": "Foto dalam pancutan",
+                "longest": "Pancutan terpanjang"
               },
-              "keeperRate": "Burst photos earn a ≥4 rating: {a}% vs {b}% for single shots."
+              "keeperRate": "Foto pancutan memperoleh penarafan ≥4: {a}% berbanding {b}% bagi rakaman tunggal."
             },
             "periodComparison": {
-              "title": "Period Comparison",
-              "notExported": "Period Comparison is interactive in the app and is not exported."
+              "title": "Perbandingan Tempoh",
+              "notExported": "Perbandingan Tempoh adalah interaktif dalam aplikasi dan tidak dieksport."
             },
             "catalogHealth": {
-              "title": "Catalog Health",
+              "title": "Kesihatan Katalog",
               "tiles": {
-                "missing": "Missing originals",
-                "previews": "Missing previews",
-                "broken": "Broken paths",
-                "dupes": "Likely duplicates"
+                "missing": "Asal yang hilang",
+                "previews": "Pratonton yang hilang",
+                "broken": "Laluan rosak",
+                "dupes": "Kemungkinan pendua"
               },
-              "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
+              "actionNote": "Lightroom Classic → Library → Find Missing Photos boleh menyelesaikan laluan yang rosak."
             }
           }
         },
         "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
+          "button": "Kongsi melalui URL",
+          "placeholderTitle": "Plan 3 menyambungkan ini."
         }
       },
       "share": {
-        "button": "Share via URL",
+        "button": "Kongsi melalui URL",
         "disclosure": {
-          "title": "Share a link to your analysis",
-          "uploadedHeading": "What's uploaded",
-          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
-          "notUploadedHeading": "What's NOT uploaded",
-          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
-          "expiresLabel": "Link expires in",
-          "expires24h": "24 hours",
-          "expires7d": "7 days",
-          "expires30d": "30 days",
-          "cancel": "Cancel",
-          "create": "Create link",
-          "creating": "Creating link…"
+          "title": "Kongsi pautan ke analisis anda",
+          "uploadedHeading": "Apa yang dimuat naik",
+          "uploaded": "Kiraan, senarai top-N, dan histogram — tepat data yang ditunjukkan di atas.",
+          "notUploadedHeading": "Apa yang TIDAK dimuat naik",
+          "notUploaded": "Nama fail, fail imej, laluan folder, koordinat GPS melebihi sel grid ~5 km, dan kata kunci yang digunakan kurang daripada 3 kali.",
+          "expiresLabel": "Pautan tamat tempoh dalam",
+          "expires24h": "24 jam",
+          "expires7d": "7 hari",
+          "expires30d": "30 hari",
+          "cancel": "Batal",
+          "create": "Cipta pautan",
+          "creating": "Mencipta pautan…"
         },
         "errors": {
-          "rate-limited": "You've hit the share limit. Try again in an hour.",
-          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
-          "invalid": "Couldn't share this analysis — the data looks malformed.",
-          "unknown": "Something went wrong creating the link. Try again."
+          "rate-limited": "Anda telah mencapai had perkongsian. Cuba lagi dalam masa sejam.",
+          "storage-unavailable": "Storan tidak tersedia buat sementara. Cuba lagi sebentar lagi.",
+          "invalid": "Tidak dapat berkongsi analisis ini — data kelihatan cacat.",
+          "unknown": "Sesuatu telah berlaku semasa mencipta pautan. Cuba lagi."
         },
         "success": {
-          "title": "Your link is ready",
-          "expiresOn": "Expires {date}",
-          "copy": "Copy",
-          "copied": "Link copied",
-          "openNewTab": "Open in new tab",
-          "delete": "Delete this share",
-          "deleted": "Share deleted",
-          "urlLabel": "Shareable URL"
+          "title": "Pautan anda sedia",
+          "expiresOn": "Tamat tempoh {date}",
+          "copy": "Salin",
+          "copied": "Pautan disalin",
+          "openNewTab": "Buka dalam tab baharu",
+          "delete": "Padam perkongsian ini",
+          "deleted": "Perkongsian dipadam",
+          "urlLabel": "URL boleh kongsi"
         },
         "recent": {
-          "title": "Your recent shares",
-          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
-          "idLabel": "Share …{last4}",
-          "created": "Created {date}",
-          "expires": "Expires {date}",
-          "filtered": "Filtered: {summary}",
-          "open": "Open",
-          "delete": "Delete"
+          "title": "Perkongsian terkini anda",
+          "subtitle": "Pautan yang anda cipta pada peranti ini. Buka satu untuk melihatnya, atau padam untuk membatalkan akses.",
+          "idLabel": "Kongsi …{last4}",
+          "created": "Dicipta {date}",
+          "expires": "Tamat tempoh {date}",
+          "filtered": "Ditapis: {summary}",
+          "open": "Buka",
+          "delete": "Padam"
         },
         "filterBanner": {
-          "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
-          "showAll": "Show all filters",
+          "title": "Penapis digunakan",
+          "summaryShort": "Paparan ini ditapis: {summary}",
+          "showAll": "Tunjuk semua penapis",
           "dimensions": {
-            "dateRange": "Dates",
-            "cameras": "Cameras",
-            "lenses": "Lenses",
-            "focalLengthRange": "Focal length",
+            "dateRange": "Tarikh",
+            "cameras": "Kamera",
+            "lenses": "Lensa",
+            "focalLengthRange": "Panjang fokus",
             "apertureRange": "Aperture",
             "isoRange": "ISO",
-            "ratings": "Ratings",
-            "keywords": "Keywords",
-            "picks": "Picks"
+            "ratings": "Penarafan",
+            "keywords": "Kata kunci",
+            "picks": "Pilihan"
           }
         },
         "recipient": {
-          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
-          "cta": "Try the tool with your own catalog",
-          "expiredTitle": "This share has expired or was deleted.",
-          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
-          "schemaNewerTitle": "Created with a newer version",
-          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
-          "pageTitle": "Shared Lightroom Catalog Analysis"
+          "banner": "Ini ialah analisis yang dikongsi. Katalog asal tidak pernah dimuat naik — hanya statistik agregat ini.",
+          "cta": "Cuba alat ini dengan katalog anda sendiri",
+          "expiredTitle": "Perkongsian ini telah tamat tempoh atau dipadam.",
+          "expiredBody": "Pautan mungkin telah mencapai tarikh tamat tempohnya, atau pencipta telah memadamnya.",
+          "schemaNewerTitle": "Dicipta dengan versi yang lebih baru",
+          "schemaNewerBody": "Analisis ini dibuat dengan versi alat yang lebih baru. Cuba muat semula halaman.",
+          "pageTitle": "Analisis Katalog Lightroom yang Dikongsi"
         }
       }
     }

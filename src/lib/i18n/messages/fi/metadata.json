@@ -91,8 +91,8 @@
       "description": "Visualisoi, miten megapikselit muuttuvat tulostuskoiksi 72–300 DPI:llä eri kuvasuhteilla. Vertaa kameroita, tiedostokokoja, pikselien yhdistämistä ja rajausaluetta — mukana laatuluokiteltu tulostustaulukko."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Lightroom-luettelon analysaattori — Ilmaiset tilastot, vain selaimessa",
+      "description": "Analysoi Lightroom Classic -luettelosi paikallisesti selaimessasi. Näe kalusto, polttovälit, aukkotottumukset, arvioinnit ja paljon muuta. 100 % paikallinen — luetteloasi ei koskaan ladata palvelimelle."
     }
   }
 }

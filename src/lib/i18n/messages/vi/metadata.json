@@ -91,8 +91,8 @@
       "description": "Trực quan hóa cách megapixel chuyển đổi sang kích thước in ở 72-300 DPI với các tỷ lệ khung hình khác nhau. So sánh máy ảnh, dung lượng file, pixel binning và tầm crop — với bảng in phân loại chất lượng."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Lightroom Catalog Analyzer — Thống kê miễn phí, chỉ trong trình duyệt",
+      "description": "Phân tích catalog Lightroom Classic của bạn ngay trong trình duyệt một cách cục bộ. Xem thiết bị, tiêu cự, thói quen khẩu độ, xếp hạng và hơn thế nữa. 100% cục bộ — catalog của bạn không bao giờ được tải lên."
     }
   }
 }

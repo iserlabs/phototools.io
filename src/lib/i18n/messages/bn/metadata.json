@@ -91,8 +91,8 @@
       "description": "72-300 DPI-তে বিভিন্ন অ্যাসপেক্ট রেশিওতে মেগাপিক্সেল থেকে প্রিন্ট সাইজ ভিজ্যুয়ালাইজ করো। ক্যামেরা, ফাইল সাইজ, পিক্সেল বিনিং ও ক্রপ রিচ তুলনা করো — কোয়ালিটি স্তরের প্রিন্ট টেবিলসহ।"
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
-      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+      "title": "Lightroom Catalog Analyzer — বিনামূল্যে, শুধুমাত্র-ব্রাউজার পরিসংখ্যান",
+      "description": "আপনার Lightroom Classic ক্যাটালগ আপনার ব্রাউজারে লোকালভাবে বিশ্লেষণ করুন। গিয়ার, ফোকাল দৈর্ঘ্য, অ্যাপারচার অভ্যাস, রেটিং এবং আরও অনেক কিছু দেখুন। ১০০% লোকাল — আপনার ক্যাটালগ কখনও আপলোড হয় না।"
     }
   }
 }
