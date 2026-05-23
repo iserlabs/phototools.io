@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "मेगापिक्सल साइज़ विज़ुअलाइज़र",
       "description": "मेगापिक्सल की तुलना करें, प्रिंट साइज़ देखें, और विभिन्न आस्पेक्ट रेशियो व DPI पर फ़ाइल साइज़ जानें"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

@@ -89,6 +89,10 @@
     "megapixels-size-visualizer": {
       "title": "Megapiksel Boyut Görselleştirici — Baskı Boyutlarını Hesaplayın",
       "description": "Megapiksellerin 72-300 DPI aralığında farklı en-boy oranlarındaki baskı boyutlarına nasıl dönüştüğünü görselleştirin. Kameraları, dosya boyutlarını, piksel birleştirmeyi ve kırpma erişimini kalite sınıflı baskı tablosuyla karşılaştırın."
+    },
+    "lightroom-catalog-analyzer": {
+      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
+      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
     }
   }
 }

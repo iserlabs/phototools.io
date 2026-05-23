@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "Visualitzador de mida de megapíxels",
       "description": "Compara megapíxels, visualitza mides d'impressió i mides de fitxer en diferents relacions d'aspecte i DPI"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

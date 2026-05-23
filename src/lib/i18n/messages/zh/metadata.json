@@ -89,6 +89,10 @@
     "megapixels-size-visualizer": {
       "title": "百万像素可视化工具 — 打印尺寸对比",
       "description": "可视化百万像素在 72-300 DPI、不同宽高比下的打印尺寸。比较相机、文件大小、像素合并和裁切等效——附带质量分级打印表格。"
+    },
+    "lightroom-catalog-analyzer": {
+      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
+      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
     }
   }
 }

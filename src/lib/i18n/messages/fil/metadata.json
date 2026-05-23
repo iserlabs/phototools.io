@@ -89,6 +89,10 @@
     "megapixels-size-visualizer": {
       "title": "Visualizer ng Megapixel Size — tingnan ang mga print size",
       "description": "I-visualize kung paano nai-translate ang megapixels sa print sizes sa 72–300 DPI, sa iba't ibang aspect ratio. Ikumpara ang mga camera, file sizes, pixel binning, at crop reach — may quality-tiered print table."
+    },
+    "lightroom-catalog-analyzer": {
+      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
+      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
     }
   }
 }

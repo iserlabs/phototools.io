@@ -89,6 +89,10 @@
     "megapixels-size-visualizer": {
       "title": "Visualizador de Megapixels — Tamanhos de Impressão",
       "description": "Visualize como megapixels se traduzem em tamanhos de impressão de 72 a 300 DPI, em diferentes proporções. Compare câmeras, tamanhos de arquivo, pixel binning e alcance de corte — com tabela de qualidade por nível."
+    },
+    "lightroom-catalog-analyzer": {
+      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
+      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
     }
   }
 }

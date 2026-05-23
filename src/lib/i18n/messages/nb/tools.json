@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "Megapiksel-visualisering",
       "description": "Sammenlign megapiksler, visualiser utskriftsstørrelser og se filstørrelser på tvers av bildeformater og DPI-verdier"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

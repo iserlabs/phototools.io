@@ -89,6 +89,10 @@
     "megapixels-size-visualizer": {
       "title": "Візуалізатор мегапікселів — розміри друку та файлів",
       "description": "Візуалізуй, як мегапікселі перетворюються на розміри друку при 72–300 DPI для різних співвідношень сторін. Порівняння камер, розмірів файлів, бінінгу пікселів і запасу кропу — з таблицею якості друку."
+    },
+    "lightroom-catalog-analyzer": {
+      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
+      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
     }
   }
 }

@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "百万像素可视化工具",
       "description": "比较百万像素，可视化打印尺寸，查看不同宽高比和 DPI 下的文件大小"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

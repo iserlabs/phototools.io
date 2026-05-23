@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "메가픽셀 크기 시각화 도구",
       "description": "메가픽셀을 비교하고, 인쇄 크기를 시각화하며, 다양한 종횡비와 DPI에서의 파일 크기를 확인합니다"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

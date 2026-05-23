@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "ตัวแสดงผลขนาดเมกะพิกเซล",
       "description": "เปรียบเทียบเมกะพิกเซล แสดงผลขนาดงานพิมพ์ และดูขนาดไฟล์ในอัตราส่วนภาพและ DPI ต่างๆ"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

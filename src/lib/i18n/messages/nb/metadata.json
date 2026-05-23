@@ -89,6 +89,10 @@
     "megapixels-size-visualizer": {
       "title": "Megapiksel-visualisering — utskriftsstørrelser og filstørrelser",
       "description": "Visualiser hvordan megapiksler omsettes til utskriftsstørrelser ved 72–300 DPI, på tvers av bildeformater. Sammenlign kameraer, filstørrelser, pixel binning og beskjæringsrekkevidde — med kvalitetsdelt utskriftstabell."
+    },
+    "lightroom-catalog-analyzer": {
+      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
+      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
     }
   }
 }

@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "百萬畫素視覺化工具",
       "description": "比較百萬畫素、視覺化沖印尺寸，並查看不同長寬比與 DPI 下的檔案大小"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

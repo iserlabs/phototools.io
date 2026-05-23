@@ -89,6 +89,10 @@
     "megapixels-size-visualizer": {
       "title": "Vizualizator megapixeli — dimensiuni de tipărire și fișiere",
       "description": "Vizualizează cum se traduc megapixelii în dimensiuni de tipărire la 72–300 DPI, pe diferite rapoarte de aspect. Compară camere, dimensiuni de fișiere, pixel binning și rază de decupare — cu tabel de calitate a tipăririi."
+    },
+    "lightroom-catalog-analyzer": {
+      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
+      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
     }
   }
 }

@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "Trực quan hóa kích thước Megapixel",
       "description": "So sánh megapixel, trực quan hóa kích thước in và xem dung lượng file ở các tỷ lệ khung hình và DPI khác nhau"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

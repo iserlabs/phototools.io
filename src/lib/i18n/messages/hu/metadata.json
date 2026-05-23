@@ -89,6 +89,10 @@
     "megapixels-size-visualizer": {
       "title": "Megapixel méretmegjelenítő — nyomatméretek vizualizálása",
       "description": "Nézd meg, hogyan alakulnak a megapixelek nyomatméretté 72–300 DPI mellett, különböző képarányoknál. Hasonlítsd össze a fényképezőgépeket, fájlméreteket, pixel binninget és vágási tartományt — minőségi szintű nyomtatási táblázattal."
+    },
+    "lightroom-catalog-analyzer": {
+      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
+      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
     }
   }
 }

@@ -89,6 +89,10 @@
     "megapixels-size-visualizer": {
       "title": "Vizualizér megapixelů — velikosti tisku a souborů",
       "description": "Vizualizuj, jak se megapixely promítají do tiskových formátů při 72–300 DPI napříč poměry stran. Porovnej fotoaparáty, velikosti souborů, pixel binning a dosah ořezu — s tabulkou kvality tisku."
+    },
+    "lightroom-catalog-analyzer": {
+      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
+      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
     }
   }
 }

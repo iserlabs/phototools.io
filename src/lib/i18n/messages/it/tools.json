@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "Visualizzatore Megapixel",
       "description": "Confronta megapixel, visualizza le dimensioni di stampa e controlla i pesi dei file con diversi rapporti d'aspetto e DPI"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

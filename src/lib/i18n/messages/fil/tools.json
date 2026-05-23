@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "Visualizer ng Megapixel Size",
       "description": "Ikumpara ang megapixels, i-visualize ang print sizes, at tingnan ang file sizes sa iba't ibang aspect ratio at DPI"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

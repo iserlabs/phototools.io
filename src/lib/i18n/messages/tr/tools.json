@@ -63,6 +63,10 @@
     "megapixels-size-visualizer": {
       "name": "Megapiksel Boyut Görselleştirici",
       "description": "Megapikselleri karşılaştırın, baskı boyutlarını görselleştirin ve farklı en-boy oranları ile DPI'larda dosya boyutlarını görün"
+    },
+    "lightroom-catalog-analyzer": {
+      "name": "Lightroom Catalog Analyzer",
+      "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
     }
   }
 }

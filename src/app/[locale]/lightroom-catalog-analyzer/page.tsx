@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { getAlternates } from '@/lib/i18n/metadata'
@@ -25,5 +26,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function LightroomCatalogAnalyzerPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   setRequestLocale(locale)
-  return <LightroomCatalogAnalyzer />
+  // LightroomCatalogAnalyzer reads useSearchParams() for the ?demo=true autoload,
+  // which requires a Suspense boundary for static prerender (CSR bailout).
+  return (
+    <Suspense>
+      <LightroomCatalogAnalyzer />
+    </Suspense>
+  )
 }

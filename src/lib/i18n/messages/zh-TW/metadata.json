@@ -89,6 +89,10 @@
     "megapixels-size-visualizer": {
       "title": "百萬畫素視覺化工具 — 沖印尺寸與檔案大小",
       "description": "視覺化百萬畫素在 72–300 DPI、不同長寬比下的沖印尺寸。比較相機、檔案大小、畫素合併與裁切餘裕 — 附帶品質分級沖印表格。"
+    },
+    "lightroom-catalog-analyzer": {
+      "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
+      "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
     }
   }
 }
