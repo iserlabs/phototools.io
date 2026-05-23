@@ -178,6 +178,68 @@ test.describe('Lightroom Catalog Analyzer — demo flow', () => {
   })
 })
 
+test.describe('Lightroom Catalog Analyzer — export bar', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 })
+  })
+
+  test('exports a non-empty PDF when the PDF button is clicked', async ({ page }) => {
+    // PDF export dynamic-imports the engine, then rasterizes ~14 charts
+    // sequentially (html2canvas + offscreen-canvas) before assembling the PDF.
+    // Give it generous headroom over the 30s per-test default.
+    test.setTimeout(120_000)
+    await page.goto(DEMO_PATH)
+    await expect(page.locator(SEC('overview')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
+
+    // Scroll the ExportBar into view (it's the last item in the spine).
+    const pdfButton = page.getByRole('button', { name: /Export PDF/i }).first()
+    await pdfButton.scrollIntoViewIfNeeded()
+
+    // Clicking triggers a download. Wait for the download event.
+    const downloadPromise = page.waitForEvent('download', { timeout: 60_000 })
+    await pdfButton.click()
+
+    // While generating, the label switches to a loading state at least once.
+    // (Don't hard-assert the transient label — generation can be fast in CI.)
+    const download = await downloadPromise
+    expect(download.suggestedFilename()).toMatch(/^phototools-[0-9a-f]{8}-\d{4}-\d{2}-\d{2}\.pdf$/)
+
+    // Verify the downloaded file is a non-empty PDF.
+    const path = await download.path()
+    expect(path).toBeTruthy()
+    const fs = await import('fs')
+    const buf = fs.readFileSync(path as string)
+    expect(buf.length).toBeGreaterThan(1000) // a real PDF, not an empty stub
+    expect(buf.subarray(0, 5).toString('latin1')).toBe('%PDF-') // PDF magic header
+  })
+
+  test('copies the Markdown report (or downloads it as fallback)', async ({ page, context }) => {
+    // Grant clipboard permission so navigator.clipboard.writeText resolves in Chromium.
+    await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+    await page.goto(DEMO_PATH)
+    await expect(page.locator(SEC('overview')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
+
+    const mdButton = page.getByRole('button', { name: /Copy Markdown/i }).first()
+    await mdButton.scrollIntoViewIfNeeded()
+    await mdButton.click()
+
+    // A success toast appears (clipboard path) — sonner renders it in the DOM.
+    await expect(page.getByText(/Markdown report copied/i)).toBeVisible({ timeout: 10_000 })
+
+    // The clipboard now holds the report (when permission granted).
+    const clip = await page.evaluate(() => navigator.clipboard.readText())
+    expect(clip.startsWith('# Lightroom Catalog Analysis')).toBe(true)
+  })
+
+  test('the Share button is present but disabled (Plan 3 wires it)', async ({ page }) => {
+    await page.goto(DEMO_PATH)
+    await expect(page.locator(SEC('overview')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
+    const share = page.getByRole('button', { name: /Share via URL/i }).first()
+    await share.scrollIntoViewIfNeeded()
+    await expect(share).toBeDisabled()
+  })
+})
+
 test.describe('Lightroom Catalog Analyzer — console error baseline', () => {
   test('demo flow does not emit unfiltered console errors', async ({ page }) => {
     const errors: string[] = []

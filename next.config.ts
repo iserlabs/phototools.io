@@ -64,7 +64,9 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline' https://vercel.live",
               "img-src 'self' blob: data: https://pagead2.googlesyndication.com https://www.google.com https://www.googletagmanager.com https://*.google-analytics.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://cdn-cookieyes.com https://www.facebook.com https://vercel.live https://vercel.com",
               "font-src 'self' https://vercel.live https://assets.vercel.com",
-              "connect-src 'self' blob: https://www.google.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://cdn-cookieyes.com https://log.cookieyes.com https://us.i.posthog.com https://us-assets.i.posthog.com https://cloudflareinsights.com https://www.facebook.com https://vercel.live wss://ws-us3.pusher.com",
+              // `data:` lets @react-pdf/renderer fetch() its embedded fontkit/WASM
+              // engine (shipped as a data: URI) during client-side PDF export.
+              "connect-src 'self' blob: data: https://www.google.com https://analytics.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://cdn-cookieyes.com https://log.cookieyes.com https://us.i.posthog.com https://us-assets.i.posthog.com https://cloudflareinsights.com https://www.facebook.com https://vercel.live wss://ws-us3.pusher.com",
               "frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://www.facebook.com https://vercel.live",
               "frame-ancestors 'self'",
               "base-uri 'self'",
