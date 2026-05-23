@@ -20,6 +20,10 @@ vi.mock('./cache', () => ({
   clearAllCachedInsights: vi.fn(async () => {}),
 }))
 
+vi.mock('next/navigation', () => ({
+  useSearchParams: () => new URLSearchParams(''),
+}))
+
 function renderWithIntl(ui: React.ReactNode) {
   return render(
     <NextIntlClientProvider locale="en" messages={enMessages}>

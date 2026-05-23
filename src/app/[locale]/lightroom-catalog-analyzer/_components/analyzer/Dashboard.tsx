@@ -1,13 +1,32 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import type { ReactNode } from 'react'
 import { ALL_SECTION_IDS, anchorIdFor, type SectionId } from '../nav/sections'
 import styles from './LightroomCatalogAnalyzer.module.css'
+import { YearInReview } from '../sections/YearInReview'
+import { YearToYear } from '../sections/YearToYear'
+import { Overview } from '../sections/Overview'
+import { Gear } from '../sections/Gear'
+import { FocalLength } from '../sections/FocalLength'
+import { FocalLengthPerZoom } from '../sections/FocalLengthPerZoom'
+import { Apertures } from '../sections/Apertures'
+import { TimeOfDay } from '../sections/TimeOfDay'
+import { Heatmap } from '../sections/Heatmap'
+import { GpsMap } from '../sections/GpsMap'
+import { CurationFunnel } from '../sections/CurationFunnel'
+import { EditIntensity } from '../sections/EditIntensity'
+import { Ratings } from '../sections/Ratings'
+import { Keywords } from '../sections/Keywords'
+import { Bursts } from '../sections/Bursts'
+import { DrilldownForm } from '../sections/DrilldownForm'
+import { ActiveFilterPills } from '../sections/ActiveFilterPills'
+import { PeriodComparison } from '../sections/PeriodComparison'
+import { CatalogHealth } from '../sections/CatalogHealth'
 
-// Per-section skeleton minimum height in px. Approximates the eventual chart
-// height so anchor scroll-into-view lands on the right region even before
-// Plan 1f mounts the real chart. Tunable — these values match the spec's
-// expected layout grids.
+// Per-section skeleton minimum height in px. Keeps anchor scroll-into-view
+// landing on the right region even while async chart libraries hydrate, and
+// keeps the deterministic-scroll test meaningful.
 const SECTION_MIN_HEIGHTS: Record<SectionId, number> = {
   'year-in-review': 540,
   'year-to-year': 460,
@@ -29,9 +48,36 @@ const SECTION_MIN_HEIGHTS: Record<SectionId, number> = {
   'catalog-health': 360,
 }
 
+// Section ID → rendered body. `drilldown` mounts the form + active filter pills
+// (section IDs `gps` → GpsMap, `curation` → CurationFunnel per Plan 1f mapping).
+const SECTION_BODIES: Record<SectionId, ReactNode> = {
+  'year-in-review': <YearInReview />,
+  'year-to-year': <YearToYear />,
+  'overview': <Overview />,
+  'gear': <Gear />,
+  'focal-length': <FocalLength />,
+  'focal-length-per-zoom': <FocalLengthPerZoom />,
+  'apertures': <Apertures />,
+  'time-of-day': <TimeOfDay />,
+  'heatmap': <Heatmap />,
+  'gps': <GpsMap />,
+  'curation': <CurationFunnel />,
+  'edit-intensity': <EditIntensity />,
+  'ratings': <Ratings />,
+  'keywords': <Keywords />,
+  'bursts': <Bursts />,
+  'drilldown': (
+    <>
+      <DrilldownForm />
+      <ActiveFilterPills />
+    </>
+  ),
+  'period-comparison': <PeriodComparison />,
+  'catalog-health': <CatalogHealth />,
+}
+
 export function Dashboard() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer')
-  const navT = useTranslations('toolUI.lightroom-catalog-analyzer.sectionNav.section')
 
   return (
     <div className={styles.dashboard}>
@@ -41,15 +87,8 @@ export function Dashboard() {
           id={anchorIdFor(id)}
           className={styles.dashboardSection}
           style={{ minHeight: `${SECTION_MIN_HEIGHTS[id]}px` }}
-          aria-busy="true"
         >
-          <h2 className={styles.dashboardSectionHeading}>{navT(id)}</h2>
-          {/* TODO Plan 1f: replace this skeleton with the real section body. */}
-          <div className={styles.dashboardSkeleton} role="presentation">
-            <span className={styles.skeletonLabel}>
-              {t('dashboard.sectionLoadingLabel', { section: navT(id) })}
-            </span>
-          </div>
+          {SECTION_BODIES[id]}
         </section>
       ))}
 

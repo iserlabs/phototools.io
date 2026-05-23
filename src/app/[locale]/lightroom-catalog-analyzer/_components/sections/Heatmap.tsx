@@ -3,16 +3,36 @@
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
+import { anchorIdFor } from '../nav/sections'
 import { drawHeatmap, type HeatmapHitBox } from './Heatmap.canvas'
 
 export interface HeatmapProps {
+  /** Optional override for tests; defaults to the one-day filter + scroll bridge. */
   onDayClick?: (date: string) => void
 }
 
 export function Heatmap({ onDayClick }: HeatmapProps = {}) {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.heatmap')
-  const { insightBlob } = useAnalyzer()
+  const { insightBlob, applyFilter, filter } = useAnalyzer()
   const block = insightBlob?.heatmap ?? null
+
+  function handleDayClick(date: string) {
+    if (onDayClick) {
+      onDayClick(date)
+      return
+    }
+    // Apply a one-day date filter, preserving any other active dimensions.
+    // `filter.ts` compares captureTime as a raw string, so widen to a full day.
+    void applyFilter({
+      ...(filter ?? {}),
+      dateRange: { start: `${date}T00:00:00`, end: `${date}T23:59:59` },
+    })
+    // Anchor-scroll to the Drilldown section so the user sees what changed.
+    if (typeof window !== 'undefined') {
+      const el = document.getElementById(anchorIdFor('drilldown'))
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const hitsRef = useRef<HeatmapHitBox[]>([])
   const [tip, setTip] = useState<{ x: number; y: number; box: HeatmapHitBox } | null>(null)
@@ -58,7 +78,7 @@ export function Heatmap({ onDayClick }: HeatmapProps = {}) {
           onMouseLeave={() => setTip(null)}
           onClick={(e) => {
             const box = pick(e)
-            if (box && onDayClick) onDayClick(box.date)
+            if (box) handleDayClick(box.date)
           }}
         />
         {tip && (

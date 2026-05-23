@@ -1,11 +1,13 @@
 'use client'
 
-import { useCallback, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
+import { useSearchParams } from 'next/navigation'
 import { AnalyzerProvider } from './AnalyzerProvider'
 import { useAnalyzer } from './useAnalyzer'
 import type { OpenCatalogMeta } from './AnalyzerContext'
 import { useScrollSpy } from './useScrollSpy'
+import { useFilterUrlSync } from './useFilterUrlSync'
 import { DesktopEmptyState } from './DesktopEmptyState'
 import { MobileSplash } from './MobileSplash'
 import { ParseProgress } from './ParseProgress'
@@ -24,10 +26,18 @@ interface LastOpened {
 }
 
 function AnalyzerBody() {
-  const { status, error, loadedFromCache, lastProgress, open, reset } = useAnalyzer()
+  const { status, error, loadedFromCache, lastProgress, open, reset, filter, applyFilter } = useAnalyzer()
   const activeSection = useScrollSpy()
+  const searchParams = useSearchParams()
+  const demoRequested = searchParams?.get('demo') === 'true'
+  const demoStartedRef = useRef(false)
   // Retain the last opened catalog so the m-10 "re-analyze" can re-parse.
   const lastOpened = useRef<LastOpened | null>(null)
+
+  // Bidirectional URL sync for the global filter (Task 12.3). On mount it
+  // restores any filter encoded in the URL by calling applyFilter; thereafter
+  // it replaceState-pushes serialized filter changes back to the URL.
+  useFilterUrlSync(filter, applyFilter)
 
   const onFile = useCallback(
     (buffer: ArrayBuffer, meta: OpenCatalogMeta) => {
@@ -53,6 +63,16 @@ function AnalyzerBody() {
       // Demo file may not be deployed yet — fail silently in dev.
     }
   }, [open])
+
+  // Autoload the bundled demo catalog when the URL has `?demo=true` (Task 13.2).
+  // Guard order: already started → not idle (loaded/parsing/error) → start once.
+  useEffect(() => {
+    if (!demoRequested) return
+    if (demoStartedRef.current) return
+    if (status !== 'idle') return
+    demoStartedRef.current = true
+    void onDemo()
+  }, [demoRequested, status, onDemo])
 
   const onReanalyze = useCallback(() => {
     const last = lastOpened.current
