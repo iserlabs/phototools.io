@@ -528,6 +528,74 @@
           "button": "Share via URL",
           "placeholderTitle": "Plan 3 wires this up."
         }
+      },
+      "share": {
+        "button": "Share via URL",
+        "disclosure": {
+          "title": "Share a link to your analysis",
+          "uploadedHeading": "What's uploaded",
+          "uploaded": "Counts, top-N lists, and histograms — exactly the data shown above.",
+          "notUploadedHeading": "What's NOT uploaded",
+          "notUploaded": "Filenames, image files, folder paths, GPS coordinates beyond ~5 km grid cells, and keywords used fewer than 3 times.",
+          "expiresLabel": "Link expires in",
+          "expires24h": "24 hours",
+          "expires7d": "7 days",
+          "expires30d": "30 days",
+          "cancel": "Cancel",
+          "create": "Create link",
+          "creating": "Creating link…"
+        },
+        "errors": {
+          "rate-limited": "You've hit the share limit. Try again in an hour.",
+          "storage-unavailable": "Storage temporarily unavailable. Try again in a moment.",
+          "invalid": "Couldn't share this analysis — the data looks malformed.",
+          "unknown": "Something went wrong creating the link. Try again."
+        },
+        "success": {
+          "title": "Your link is ready",
+          "expiresOn": "Expires {date}",
+          "copy": "Copy",
+          "copied": "Link copied",
+          "openNewTab": "Open in new tab",
+          "delete": "Delete this share",
+          "deleted": "Share deleted",
+          "urlLabel": "Shareable URL"
+        },
+        "recent": {
+          "title": "Your recent shares",
+          "subtitle": "Links you created on this device. Open one to view it, or delete it to revoke access.",
+          "idLabel": "Share …{last4}",
+          "created": "Created {date}",
+          "expires": "Expires {date}",
+          "filtered": "Filtered: {summary}",
+          "open": "Open",
+          "delete": "Delete"
+        },
+        "filterBanner": {
+          "title": "Filter applied",
+          "summaryShort": "This view is filtered: {summary}",
+          "showAll": "Show all filters",
+          "dimensions": {
+            "dateRange": "Dates",
+            "cameras": "Cameras",
+            "lenses": "Lenses",
+            "focalLengthRange": "Focal length",
+            "apertureRange": "Aperture",
+            "isoRange": "ISO",
+            "ratings": "Ratings",
+            "keywords": "Keywords",
+            "picks": "Picks"
+          }
+        },
+        "recipient": {
+          "banner": "This is a shared analysis. The original catalog was never uploaded — only these aggregated stats.",
+          "cta": "Try the tool with your own catalog",
+          "expiredTitle": "This share has expired or was deleted.",
+          "expiredBody": "The link may have reached its expiration date, or the creator deleted it.",
+          "schemaNewerTitle": "Created with a newer version",
+          "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
+          "pageTitle": "Shared Lightroom Catalog Analysis"
+        }
       }
     }
   }
