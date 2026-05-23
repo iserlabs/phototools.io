@@ -21,7 +21,7 @@ export const TOOLS: ToolDef[] = [
   { slug: 'frame-studio', name: 'Frame Studio', description: 'Crop, frame, and compose photos with grid overlays', dev: 'live', prod: 'live', category: 'file-tool' },
   { slug: 'exif-viewer', name: 'EXIF Viewer', description: 'View EXIF metadata and histogram for any photo — 100% client-side', dev: 'live', prod: 'live', category: 'file-tool' },
   { slug: 'megapixels-size-visualizer', name: 'Megapixels Size Visualizer', description: 'Compare megapixels, visualize print sizes, and see file sizes across aspect ratios and DPIs', dev: 'live', prod: 'live', category: 'visualizer' },
-  { slug: 'lightroom-catalog-analyzer', name: 'Lightroom Catalog Analyzer', description: 'Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser', dev: 'live', prod: 'draft', category: 'file-tool' },
+  { slug: 'lightroom-catalog-analyzer', name: 'Lightroom Catalog Analyzer', description: 'Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser', dev: 'live', prod: 'live', category: 'file-tool' },
 ]
 
 function getStatus(tool: ToolDef): ToolStatus {

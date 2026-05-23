@@ -32,6 +32,7 @@ PhotoTools provides educational tools for photographers covering field of view, 
 
 - [Frame Studio](https://www.phototools.io/en/frame-studio): Crop, frame, and compose photos with grid overlays
 - [EXIF Viewer](https://www.phototools.io/en/exif-viewer): View EXIF metadata and histogram for any photo — 100% client-side
+- [Lightroom Catalog Analyzer](https://www.phototools.io/en/lightroom-catalog-analyzer): Analyzes a Lightroom Classic catalog (.lrcat) entirely in the browser with no upload or account. Reports gear usage, focal-length and aperture habits, ratings and pick rates, edit intensity, keyword coverage, GPS clusters, shooting heatmaps, burst detection, and catalog health, and exports to PDF, Markdown, or a shareable link.
 
 ## Reference
 

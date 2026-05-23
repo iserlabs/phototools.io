@@ -213,7 +213,11 @@ describe('Education and tool registry alignment', () => {
   })
 
   it('every live tool has education content', () => {
-    const liveTools = getLiveTools()
+    // Tools intentionally shipped without a LearnPanel / education layer.
+    // The Lightroom Catalog Analyzer is a data-dashboard file tool whose right
+    // sidebar is a section navigator, not an education panel (by design).
+    const EDUCATION_EXEMPT = new Set(['lightroom-catalog-analyzer'])
+    const liveTools = getLiveTools().filter((t) => !EDUCATION_EXEMPT.has(t.slug))
     for (const tool of liveTools) {
       const edu = getAllSkeletons().find((e) => e.slug === tool.slug)
       expect(edu).toBeDefined()

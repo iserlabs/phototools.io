@@ -97,6 +97,15 @@
   margin-bottom: var(--space-md);
 }
 
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
 .emptyHeadline {
   margin: 0;
   font-size: 28px;

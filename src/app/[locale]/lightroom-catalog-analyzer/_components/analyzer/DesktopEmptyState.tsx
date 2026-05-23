@@ -13,10 +13,14 @@ interface DesktopEmptyStateProps {
 
 export function DesktopEmptyState({ onFile, onDemo }: DesktopEmptyStateProps) {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer')
+  const tt = useTranslations('tools')
   return (
     <section className={styles.desktopEmpty} data-testid="desktop-empty">
       <header className={styles.emptyHeader}>
-        <h1 className={styles.emptyHeadline}>{t('desktop.headline')}</h1>
+        <div>
+          <p className={styles.eyebrow}>{tt('lightroom-catalog-analyzer.name')}</p>
+          <h1 className={styles.emptyHeadline}>{t('desktop.headline')}</h1>
+        </div>
         <PrivacyBadge />
       </header>
       <p className={styles.emptySubhead}>{t('desktop.subhead')}</p>
