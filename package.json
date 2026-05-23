@@ -49,7 +49,8 @@
     "resend": "^6.12.3",
     "server-only": "^0.0.1",
     "sonner": "^2.0.7",
-    "upng-js": "^2.1.0"
+    "upng-js": "^2.1.0",
+    "zod": "^4.4.3"
   },
   "overrides": {
     "postcss": "^8.5.10",

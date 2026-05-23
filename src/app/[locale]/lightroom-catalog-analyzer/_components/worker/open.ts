@@ -59,10 +59,14 @@ export async function openCatalog(buf: ArrayBuffer): Promise<{ db: Database; cat
   sqlite3.wasm.heap8u().set(new Uint8Array(buf), ptr)
 
   // 4. Open an empty in-memory DB, then deserialize the bytes into it.
+  //
+  // NOTE: we deliberately do NOT pass SQLITE_DESERIALIZE_READONLY. The worker
+  // (Plan 1d, Audit M-2) needs to CREATE a derived `AgSensorCropFactor` table
+  // in this handle to drive the focal-length 35mm-equivalent normalization.
+  // This only mutates the in-memory deserialized copy — SQLITE_DESERIALIZE_FREEONCLOSE
+  // frees it on close and the user's original .lrcat file is never written to.
   const db = new sqlite3.oo1.DB(':memory:', 'c')
-  const flags =
-    sqlite3.capi.SQLITE_DESERIALIZE_FREEONCLOSE |
-    sqlite3.capi.SQLITE_DESERIALIZE_READONLY
+  const flags = sqlite3.capi.SQLITE_DESERIALIZE_FREEONCLOSE
   const rc = sqlite3.capi.sqlite3_deserialize(db.pointer!, 'main', ptr, len, len, flags)
   if (rc !== sqlite3.capi.SQLITE_OK) {
     sqlite3.wasm.dealloc(ptr)
