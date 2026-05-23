@@ -16,6 +16,8 @@ PhotoTools is an educational photography application — free calculators, simul
 - CSS Modules + CSS custom properties (design tokens)
 - Canvas API for image rendering (FOV Simulator overlays)
 - WebGL2 + GLSL shaders (Exposure Simulator, White Balance Visualizer, Perspective Compression Simulator)
+- `@sqlite.org/sqlite-wasm` + `comlink` in a Web Worker (Lightroom Catalog Analyzer — parses `.lrcat` SQLite catalogs client-side)
+- `recharts` (dashboard charts), `@react-pdf/renderer` + `recharts-to-png` (PDF export, dynamic-imported), `idb-keyval` (insight cache), `pako` (client gzip), `@vercel/blob` + `nanoid` (hosted share)
 - Vercel (deployment)
 
 ## Commands
@@ -227,11 +229,23 @@ Three external services provide production monitoring:
 
 ## Security Headers
 
-`next.config.ts` defines CSP, HSTS, and other security headers. `unsafe-eval` is included in CSP `script-src` only in development (React requires it for dev tooling). Never add `unsafe-eval` in production.
+`next.config.ts` defines CSP, HSTS, and other security headers. `unsafe-eval` is included in CSP `script-src` only in development (React requires it for dev tooling). Never add `unsafe-eval` in production. **`'wasm-unsafe-eval'`** IS in `script-src` in all environments — the Lightroom Catalog Analyzer's `@sqlite.org/sqlite-wasm` worker needs it to compile WebAssembly; it is a narrow WASM-only directive, distinct from the general `'unsafe-eval'`. `connect-src` includes `data:` so `@react-pdf/renderer` can fetch its embedded fontkit/WASM data-URI during client-side PDF export.
 
 ## Share & Embed
 
 `components/shared/ShareModal.tsx` generates share/embed links with current query parameters via `window.location.search`. The FOV Simulator has its own ShareModal (`fov-simulator/_components/ShareModal.tsx`) using `stateToQueryString()`.
+
+## Lightroom Catalog Analyzer
+
+A `file-tool` that diverges from the standard tool patterns — read this before working on it (`src/app/[locale]/lightroom-catalog-analyzer/`).
+
+- **100% client-side parse.** A Web Worker (`_components/worker/analyzer.worker.ts`, bridged via `comlink`) opens the user's `.lrcat` (a SQLite DB) with `@sqlite.org/sqlite-wasm` (`open.ts` deserializes into an in-memory copy — the user's file is never written). 16 pure aggregators in `worker/aggregators/` produce a typed `InsightBlob` (`src/lib/lrcat/types.ts`); the Zod schema is `src/lib/lrcat/insight-blob.schema.ts`. Aggregators are tested in Node with `better-sqlite3` fixtures (`worker/aggregators/__test-helpers__.ts`).
+- **No LearnPanel.** The right sidebar is a section-anchor nav (`_components/nav/SectionAnchorNav.tsx`) with scroll-spy, NOT education content. This tool is **exempt** from the "every live tool has education content" integration test (see the `EDUCATION_EXEMPT` set).
+- **Flattened context.** Sections consume `useAnalyzer()` from `_components/analyzer/AnalyzerContext.tsx` returning `{ status, insightBlob, worker, filter, applyFilter, setFilter, reset, setYearInReview, ... }` — NOT `{ state, dispatch }`. The recipient view passes `worker: null`; sections that re-query (YearInReview, PeriodComparison) self-guard on `!worker`.
+- **Demo catalog.** `public/demo-catalogs/phototools-demo.lrcat` (synthetic, 3000 photos, regenerate via `npm run demo:build` → `scripts/build-demo-catalog.ts`). Autoloads on `?demo=true`; drives the E2E (`src/e2e/tools/lightroom-catalog-analyzer.spec.ts`).
+- **Hosted share (the only server-side surface).** `POST/GET/DELETE /api/share` + `GET /api/cron/expire-shares` store an aggregated, PII-guarded blob in Vercel Blob (`src/lib/lrcat/share-blob.ts`, pathname `share/{expiresAt-ISO}/{id}.json`, expiry encoded in path, swept by a daily cron). Server gzip via `node:zlib` with a 256 KB decompressed cap (gzip-bomb guard); client gzip via `pako`. Recipient view at `r/[id]/` is `force-dynamic` + `noindex`. WAF rate-limit rules: `docs/vercel-waf-rules.md`. Env: `BLOB_READ_WRITE_TOKEN`, `CRON_SECRET`.
+- **PII by construction:** keywords used on <3 photos are dropped; GPS is rounded to a ~5 km grid and clusters <5 photos dropped — baked into the aggregators, so the `InsightBlob` is shareable-safe at creation.
+- **Filter date bounds:** `worker/filter.ts` compares `captureTime` as a raw string, so date-range UIs must pass end-of-day (`T23:59:59`) bounds to include the last day.
 
 ## Conventions
 
