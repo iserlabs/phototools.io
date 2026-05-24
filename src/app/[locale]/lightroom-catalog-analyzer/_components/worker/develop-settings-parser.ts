@@ -1,3 +1,11 @@
+/**
+ * Lightroom Classic stores develop settings in `Adobe_imageDevelopSettings.text`
+ * as a Lua-serialized table — NOT JSON, XML, or plist. It uses Lua table
+ * literals: `key = "value"`, `key = { ... }`, with tab indentation and no
+ * trailing commas on some lines. We parse it with targeted regex extraction
+ * instead of a full Lua parser because we only need a handful of known keys,
+ * and the format is stable across LrC versions 9-14.
+ */
 export interface DevelopSettings {
   exposureShiftStops: number
   cropPct: number                // % of original area cropped away (0–100)

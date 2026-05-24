@@ -99,4 +99,36 @@ describe('aggregateEditIntensity', () => {
     expect(r.perGearScores.length).toBe(1)
     expect(r.perGearScores[0].gear).toBe('A')
   })
+
+  it('does not sample at exactly 50,000 develop-settings rows', () => {
+    // The threshold is `> 50_000`, so exactly 50k should NOT trigger sampling.
+    // We fake the population count via a mock DB to avoid creating 50k rows.
+    const devRows = [
+      { text: LIGHT_EDIT, captureTime: '2024-01-01T10:00:00', body: 'A', lens: 'L1' },
+    ]
+    const mockDb = {
+      selectObject: (sql: string) => {
+        if (sql.includes('Adobe_imageDevelopSettings')) return { n: 50_000 }
+        return undefined
+      },
+      selectObjects: () => devRows,
+    }
+    const r = aggregateEditIntensity(mockDb)
+    expect(r.sampled).toBe(false)
+  })
+
+  it('enables sampling above 50,000 develop-settings rows', () => {
+    const devRows = [
+      { text: LIGHT_EDIT, captureTime: '2024-01-01T10:00:00', body: 'A', lens: 'L1' },
+    ]
+    const mockDb = {
+      selectObject: (sql: string) => {
+        if (sql.includes('Adobe_imageDevelopSettings')) return { n: 50_001 }
+        return undefined
+      },
+      selectObjects: () => devRows,
+    }
+    const r = aggregateEditIntensity(mockDb)
+    expect(r.sampled).toBe(true)
+  })
 })

@@ -249,18 +249,6 @@
 .fileName { color: var(--text-primary); font-size: var(--text-md); font-weight: 600; }
 .fileError { color: var(--lens-b); font-size: var(--text-sm); }
 
-.browseButton {
-  align-self: flex-start;
-  background: var(--accent);
-  color: var(--text-on-accent);
-  border: none;
-  padding: 8px 16px;
-  border-radius: var(--radius-md);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  cursor: pointer;
-}
-
 /* ---- Large-file warning modal ---- */
 .warningBackdrop {
   position: fixed;
@@ -441,26 +429,6 @@
   flex-direction: column;
   gap: var(--space-md);
 }
-
-.dashboardSectionHeading {
-  margin: 0;
-  font-size: var(--text-lg);
-  letter-spacing: -0.01em;
-}
-
-.dashboardSkeleton {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: var(--text-sm);
-}
-
-.skeletonLabel { padding: var(--space-md); }
 
 .dashboardFooter {
   margin-top: var(--space-xl);

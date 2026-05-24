@@ -57,7 +57,10 @@ export function cropFactorForModel(model: string | null | undefined): number {
   // 1. Exact curated match.
   if (EXACT_BY_MODEL[norm] != null) return EXACT_BY_MODEL[norm]
 
-  // 2. Name-based heuristic on the raw + normalized strings.
+  // 2. Name-based heuristic on the raw + normalized EXIF model string.
+  //    Order matters: narrower patterns (MFT, 1", APS-H) must precede the broad
+  //    brand catch-alls (Canon, Nikon) so a "Canon EOS R7" hits APS-C before the
+  //    Canon-brand default of full-frame.
   // Micro Four Thirds: OM System / Olympus E-M / OM-x / Panasonic Lumix G / DC-G* / DMC-G*.
   if (
     /\bom system\b/.test(norm) ||

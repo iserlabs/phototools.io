@@ -125,4 +125,20 @@ describe('aggregateGps', () => {
       { region: 'Japan', count: 5 },
     ])
   })
+
+  it('reports 100% GPS and a single cluster when ALL photos land in one cell', () => {
+    // Every photo has GPS and they all snap to the same ~5 km grid cell.
+    const db = adaptForAggregators(createTestCatalog(
+      Array.from({ length: 8 }, (_, i) => ({
+        id: i + 1, captureTime: '2024-01-01T10:00:00',
+        cameraModel: 'A', lens: 'L',
+        gpsLat: 40.7128 + i * 0.0001,
+        gpsLng: -74.006 + i * 0.0001,
+      })),
+    ))
+    const r = aggregateGps(db)
+    expect(r.pctWithGps).toBe(100)
+    expect(r.clusters).toHaveLength(1)
+    expect(r.clusters[0].count).toBe(8)
+  })
 })

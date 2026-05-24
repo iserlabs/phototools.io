@@ -68,6 +68,18 @@ describe('aggregateBursts', () => {
     expect(r.singleShotKeeperRatePct).toBe(100)   // 2/2
   })
 
+  it('does NOT count exactly 2 photos <1s apart as a burst (minimum is 3)', () => {
+    const db = adaptForAggregators(createTestCatalog([
+      { id: 1, captureTime: '2024-01-01T10:00:00.000', cameraModel: 'A', cameraSerial: 'S1' },
+      { id: 2, captureTime: '2024-01-01T10:00:00.500', cameraModel: 'A', cameraSerial: 'S1' },
+    ]))
+    const r = aggregateBursts(db)
+    expect(r.totalBursts).toBe(0)
+    expect(r.totalPhotosInBursts).toBe(0)
+    expect(r.pctInBursts).toBe(0)
+    expect(r.longestBurst).toBe(0)
+  })
+
   it('returns zeros on an empty catalog', () => {
     const db = adaptForAggregators(createTestCatalog([]))
     const r = aggregateBursts(db)
