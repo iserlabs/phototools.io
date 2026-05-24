@@ -81,7 +81,9 @@ export function Heatmap({ onDayClick }: HeatmapProps = {}) {
           ref={canvasRef}
           role="img"
           aria-label={t('aria')}
-          style={{ width: '100%', height: 220 * block.years.length, display: 'block', cursor: 'pointer' }}
+          // drawHeatmap lays out ~102px per year (7 rows × 12px + label); size the
+          // canvas to that so there's no large empty band below the cells.
+          style={{ width: '100%', height: 8 + 110 * block.years.length, display: 'block', cursor: 'pointer' }}
           onMouseMove={(e) => {
             const box = pick(e)
             setTip(box ? { x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY, box } : null)

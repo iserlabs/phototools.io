@@ -45,7 +45,10 @@ export function YearToYear() {
       </header>
 
       <figure>
-        <YearToYearBiggestShiftCallout shift={block.biggestShift} />
+        <YearToYearBiggestShiftCallout
+          shift={block.biggestShift}
+          label={block.rows.find((r) => r.statKey === block.biggestShift?.statKey)?.label}
+        />
         <YearToYearTable years={shownYears} rows={shownRows} />
         <figcaption className="sr-only">{t('caption', { n: shownYears.length })}</figcaption>
       </figure>

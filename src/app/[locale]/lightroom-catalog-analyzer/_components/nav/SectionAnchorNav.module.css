@@ -73,6 +73,12 @@
   padding: var(--space-sm) var(--space-md);
 }
 
+/* The right-hand SectionAnchorNav sidebar is shown ≥1024px (see the shell),
+   so the mobile jump-to-section dropdown is redundant there — hide it. */
+@media (min-width: 1025px) {
+  .mobileDetails { display: none; }
+}
+
 .mobileSummary {
   cursor: pointer;
   font-weight: 600;

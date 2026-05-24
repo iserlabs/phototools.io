@@ -126,9 +126,8 @@ export function FilePicker({ onFile }: FilePickerProps) {
           </>
         )}
       </div>
-      <button type="button" className={styles.browseButton} onClick={onClick}>
-        {t('filePicker.browseButton')}
-      </button>
+      {/* No separate "Browse" button — the drop zone above is itself the click
+          target (it says "…or click to browse" and is keyboard-activatable). */}
       {error && <div className={styles.fileError} role="alert">{error}</div>}
 
       {pendingLarge && (
