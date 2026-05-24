@@ -596,6 +596,10 @@
           "schemaNewerBody": "Această analiză a fost realizată cu o versiune mai nouă a instrumentului. Încearcă să reîncarci pagina.",
           "pageTitle": "Analiză de catalog Lightroom partajată"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

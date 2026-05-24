@@ -596,6 +596,10 @@
           "schemaNewerBody": "Ez az elemzés az eszköz egy újabb verziójával készült. Próbálja meg frissíteni az oldalt.",
           "pageTitle": "Megosztott Lightroom katalóguselemzés"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

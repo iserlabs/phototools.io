@@ -596,6 +596,10 @@
           "schemaNewerBody": "Ta analiza została utworzona nowszą wersją narzędzia. Spróbuj odświeżyć stronę.",
           "pageTitle": "Udostępniona analiza katalogu Lightroom"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

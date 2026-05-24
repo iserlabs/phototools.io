@@ -11,7 +11,8 @@
 
 .shellBody {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  /* LEFT control sidebar + main content — like other tools' control-panel layout. */
+  grid-template-columns: 300px 1fr;
   flex: 1 1 auto;
   min-height: 0;
 }
@@ -23,9 +24,23 @@
 }
 
 .shellSidebar {
-  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
   background: var(--bg-secondary);
   overflow-y: auto;
+  min-width: 0;
+}
+
+/* Mobile controls area — shown ≤1024px when the desktop sidebar is hidden.
+   Renders the filter + export/share that live in the sidebar on desktop. */
+.mobileControls {
+  display: none;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+@media (max-width: 1024px) {
+  .mobileControls { display: block; }
 }
 
 /* ---- Skip-to-main-content link (m-7 / spec §14) ---- */

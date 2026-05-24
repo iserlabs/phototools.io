@@ -22,7 +22,6 @@ export type SectionId =
   | 'ratings'
   | 'keywords'
   | 'bursts'
-  | 'drilldown'
   | 'period-comparison'
   | 'catalog-health'
 
@@ -42,7 +41,7 @@ export const SECTION_GROUPS: readonly SectionGroupSpec[] = [
   { group: 'highlights',     sections: ['year-in-review', 'year-to-year'] },
   { group: 'whatYouShoot',   sections: ['overview', 'gear', 'focal-length', 'focal-length-per-zoom', 'apertures', 'time-of-day', 'heatmap', 'gps'] },
   { group: 'howYouCurate',   sections: ['curation', 'edit-intensity', 'ratings', 'keywords', 'bursts'] },
-  { group: 'exploreCompare', sections: ['drilldown', 'period-comparison'] },
+  { group: 'exploreCompare', sections: ['period-comparison'] },
   { group: 'catalog',        sections: ['catalog-health'] },
 ] as const
 

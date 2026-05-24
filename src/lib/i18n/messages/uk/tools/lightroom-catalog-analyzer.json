@@ -596,6 +596,10 @@
           "schemaNewerBody": "Цей аналіз був зроблений новішою версією інструмента. Спробуйте оновити сторінку.",
           "pageTitle": "Спільний аналіз каталогу Lightroom"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

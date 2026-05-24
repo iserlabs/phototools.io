@@ -596,6 +596,10 @@
           "schemaNewerBody": "This analysis was made with a newer version of the tool. Try refreshing the page.",
           "pageTitle": "Shared Lightroom Catalog Analysis"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

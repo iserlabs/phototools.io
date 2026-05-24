@@ -596,6 +596,10 @@
           "schemaNewerBody": "Αυτή η ανάλυση δημιουργήθηκε με νεότερη έκδοση του εργαλείου. Δοκιμάστε να ανανεώσετε τη σελίδα.",
           "pageTitle": "Κοινοποιημένη ανάλυση καταλόγου Lightroom"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

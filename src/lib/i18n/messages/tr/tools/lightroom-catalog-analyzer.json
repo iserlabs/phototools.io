@@ -596,6 +596,10 @@
           "schemaNewerBody": "Bu analiz aracın daha yeni bir sürümüyle yapıldı. Sayfayı yenilemeyi deneyin.",
           "pageTitle": "Paylaşılan Lightroom Katalog Analizi"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

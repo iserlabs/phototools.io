@@ -596,6 +596,10 @@
           "schemaNewerBody": "Tämä analyysi tehtiin uudemmalla työkalun versiolla. Kokeile ladata sivu uudelleen.",
           "pageTitle": "Jaettu Lightroom-luettelon analyysi"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

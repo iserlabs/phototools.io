@@ -596,6 +596,10 @@
           "schemaNewerBody": "Analisis ini dibuat dengan versi alat yang lebih baru. Coba segarkan halaman.",
           "pageTitle": "Analisis Katalog Lightroom yang Dibagikan"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

@@ -596,6 +596,10 @@
           "schemaNewerBody": "Deze analyse is gemaakt met een nieuwere versie van de tool. Probeer de pagina te vernieuwen.",
           "pageTitle": "Gedeelde Lightroom-catalogusanalyse"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

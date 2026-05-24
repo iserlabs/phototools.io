@@ -596,6 +596,10 @@
           "schemaNewerBody": "Ginawa ang pagsusuring ito gamit ang mas bagong bersyon ng tool. Subukang i-refresh ang pahina.",
           "pageTitle": "Ibinahaging Pagsusuri ng Lightroom Catalog"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

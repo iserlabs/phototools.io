@@ -596,6 +596,10 @@
           "schemaNewerBody": "Tato analýza byla vytvořena novější verzí nástroje. Zkuste obnovit stránku.",
           "pageTitle": "Sdílená analýza katalogu Lightroom"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

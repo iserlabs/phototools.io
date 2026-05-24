@@ -1,0 +1,83 @@
+/* Left control sidebar — matches the standard tool control-panel position. */
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-md);
+  min-width: 0;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.groupTitle {
+  margin: 0;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.catalogMeta {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.cacheNote {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.catalogActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.actionBtn {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.actionBtnSecondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  cursor: pointer;
+}
+
+.actionBtnSecondary:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+/* Make the DrilldownForm responsive in the narrow sidebar rail. The form was
+   designed for the wide spine (~700px) and uses a multi-column grid — force
+   single-column in this constrained context. */
+.group :global(.section) {
+  /* DrilldownForm's .section wraps the whole form. */
+}
+
+/* The form's fieldset grid should stack in the sidebar. */
+.group :global(fieldset) {
+  display: flex;
+  flex-direction: column;
+}

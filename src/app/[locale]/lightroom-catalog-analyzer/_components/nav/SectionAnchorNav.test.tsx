@@ -22,10 +22,10 @@ describe('SectionAnchorNav', () => {
     expect(screen.getByText('Catalog')).toBeInTheDocument()
   })
 
-  it('renders 18 anchor links with correct href targets', () => {
+  it('renders 17 anchor links (drilldown moved to sidebar) with correct href targets', () => {
     const { container } = renderWithIntl(<SectionAnchorNav activeSection={null} />)
     const links = container.querySelectorAll('a[href^="#section-"]')
-    expect(links.length).toBe(18)
+    expect(links.length).toBe(17)
     expect(links[0].getAttribute('href')).toBe('#section-year-in-review')
   })
 

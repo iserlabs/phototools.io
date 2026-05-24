@@ -596,6 +596,10 @@
           "schemaNewerBody": "이 분석은 더 새로운 버전의 도구로 만들어졌습니다. 페이지를 새로 고쳐 보세요.",
           "pageTitle": "공유된 Lightroom 카탈로그 분석"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

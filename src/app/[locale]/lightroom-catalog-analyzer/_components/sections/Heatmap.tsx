@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { anchorIdFor } from '../nav/sections'
+// anchorIdFor no longer needed — the drilldown filter is in the sidebar, not a spine section.
 import { drawHeatmap, type HeatmapHitBox } from './Heatmap.canvas'
 
 export interface HeatmapProps {
@@ -27,11 +27,8 @@ export function Heatmap({ onDayClick }: HeatmapProps = {}) {
       ...(filter ?? {}),
       dateRange: { start: `${date}T00:00:00`, end: `${date}T23:59:59` },
     })
-    // Anchor-scroll to the Drilldown section so the user sees what changed.
-    if (typeof window !== 'undefined') {
-      const el = document.getElementById(anchorIdFor('drilldown'))
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
+    // The filter now lives in the always-visible sidebar (desktop) or the
+    // mobile controls area — no need to scroll to a spine section.
   }
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const hitsRef = useRef<HeatmapHitBox[]>([])

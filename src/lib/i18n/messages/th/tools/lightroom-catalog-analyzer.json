@@ -596,6 +596,10 @@
           "schemaNewerBody": "การวิเคราะห์นี้สร้างด้วยเครื่องมือเวอร์ชันที่ใหม่กว่า ลองรีเฟรชหน้านี้",
           "pageTitle": "การวิเคราะห์แคตตาล็อก Lightroom ที่แชร์"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

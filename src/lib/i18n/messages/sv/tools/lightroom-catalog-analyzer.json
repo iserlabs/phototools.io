@@ -596,6 +596,10 @@
           "schemaNewerBody": "Den här analysen gjordes med en nyare version av verktyget. Prova att uppdatera sidan.",
           "pageTitle": "Delad Lightroom-kataloganalys"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

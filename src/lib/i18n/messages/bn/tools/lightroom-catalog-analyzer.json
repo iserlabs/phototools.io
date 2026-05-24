@@ -596,6 +596,10 @@
           "schemaNewerBody": "এই বিশ্লেষণটি টুলের একটি নতুন সংস্করণ দিয়ে তৈরি করা হয়েছিল। পৃষ্ঠাটি রিফ্রেশ করার চেষ্টা করুন।",
           "pageTitle": "শেয়ার করা Lightroom ক্যাটালগ বিশ্লেষণ"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

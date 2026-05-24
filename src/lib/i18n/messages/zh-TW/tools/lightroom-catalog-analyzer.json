@@ -596,6 +596,10 @@
           "schemaNewerBody": "此分析由更新版本的工具建立。請嘗試重新整理頁面。",
           "pageTitle": "共享的 Lightroom 目錄分析"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

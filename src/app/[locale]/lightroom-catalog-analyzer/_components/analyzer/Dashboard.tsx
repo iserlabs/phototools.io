@@ -19,11 +19,8 @@ import { EditIntensity } from '../sections/EditIntensity'
 import { Ratings } from '../sections/Ratings'
 import { Keywords } from '../sections/Keywords'
 import { Bursts } from '../sections/Bursts'
-import { DrilldownForm } from '../sections/DrilldownForm'
-import { ActiveFilterPills } from '../sections/ActiveFilterPills'
 import { PeriodComparison } from '../sections/PeriodComparison'
 import { CatalogHealth } from '../sections/CatalogHealth'
-import { ExportBar } from './ExportBar'
 
 // Per-section skeleton minimum height in px. Keeps anchor scroll-into-view
 // landing on the right region even while async chart libraries hydrate, and
@@ -44,7 +41,6 @@ const SECTION_MIN_HEIGHTS: Record<SectionId, number> = {
   'ratings': 360,
   'keywords': 320,
   'bursts': 320,
-  'drilldown': 480,
   'period-comparison': 460,
   'catalog-health': 360,
 }
@@ -67,12 +63,6 @@ const SECTION_BODIES: Record<SectionId, ReactNode> = {
   'ratings': <Ratings />,
   'keywords': <Keywords />,
   'bursts': <Bursts />,
-  'drilldown': (
-    <>
-      <DrilldownForm />
-      <ActiveFilterPills />
-    </>
-  ),
   'period-comparison': <PeriodComparison />,
   'catalog-health': <CatalogHealth />,
 }
@@ -92,8 +82,6 @@ export function Dashboard() {
           {SECTION_BODIES[id]}
         </section>
       ))}
-
-      <ExportBar />
 
       <footer className={styles.dashboardFooter}>
         {t('dashboard.footerNote')}

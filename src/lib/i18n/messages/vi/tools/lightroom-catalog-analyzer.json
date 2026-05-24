@@ -596,6 +596,10 @@
           "schemaNewerBody": "Phân tích này được tạo bằng một phiên bản mới hơn của công cụ. Hãy thử làm mới trang.",
           "pageTitle": "Phân tích catalog Lightroom được chia sẻ"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

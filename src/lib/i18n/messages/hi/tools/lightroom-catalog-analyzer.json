@@ -596,6 +596,10 @@
           "schemaNewerBody": "यह विश्लेषण टूल के एक नए संस्करण से बनाया गया था। पेज को रीफ्रेश करने का प्रयास करें।",
           "pageTitle": "साझा Lightroom कैटलॉग विश्लेषण"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

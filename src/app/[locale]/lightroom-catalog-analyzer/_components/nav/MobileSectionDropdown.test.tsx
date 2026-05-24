@@ -20,9 +20,9 @@ describe('MobileSectionDropdown', () => {
     expect(screen.getByText(/Jump to section/i)).toBeInTheDocument()
   })
 
-  it('lists all 18 sections inside the dropdown', () => {
+  it('lists all 17 sections (drilldown moved to sidebar) inside the dropdown', () => {
     const { container } = renderWithIntl(<MobileSectionDropdown />)
     const links = container.querySelectorAll('a[href^="#section-"]')
-    expect(links.length).toBe(18)
+    expect(links.length).toBe(17)
   })
 })

@@ -12,9 +12,11 @@ import { DesktopEmptyState } from './DesktopEmptyState'
 import { MobileSplash } from './MobileSplash'
 import { ParseProgress } from './ParseProgress'
 import { Dashboard } from './Dashboard'
-import { CacheBadge } from './CacheBadge'
 import { ErrorScreen } from './ErrorScreen'
-import { SectionAnchorNav } from '../nav/SectionAnchorNav'
+import { ControlSidebar } from './ControlSidebar'
+import { DrilldownForm } from '../sections/DrilldownForm'
+import { ActiveFilterPills } from '../sections/ActiveFilterPills'
+import { ExportBar } from './ExportBar'
 import { MobileSectionDropdown } from '../nav/MobileSectionDropdown'
 import styles from './LightroomCatalogAnalyzer.module.css'
 
@@ -26,7 +28,7 @@ interface LastOpened {
 }
 
 function AnalyzerBody() {
-  const { status, error, loadedFromCache, lastProgress, open, reset, filter, applyFilter } = useAnalyzer()
+  const { status, error, lastProgress, open, reset, close, filter, applyFilter } = useAnalyzer()
   const activeSection = useScrollSpy()
   const searchParams = useSearchParams()
   const demoRequested = searchParams?.get('demo') === 'true'
@@ -79,6 +81,11 @@ function AnalyzerBody() {
     if (last) void open(last.buffer, last.meta, { forceFresh: true })
   }, [open])
 
+  const onOpenDifferent = useCallback(() => {
+    // close() transitions back to idle (empty state) so the user can pick a new file.
+    close()
+  }, [close])
+
   if (status === 'parsing') {
     return (
       <div className={styles.shell}>
@@ -105,17 +112,28 @@ function AnalyzerBody() {
   if (status === 'loaded') {
     return (
       <div className={styles.shell}>
+        {/* Mobile: sticky section nav + controls (sidebar hidden ≤1024px). */}
         <MobileSectionDropdown />
+        <div className={styles.mobileControls}>
+          <DrilldownForm />
+          <ActiveFilterPills />
+          <ExportBar />
+        </div>
+
         <div className={styles.shellBody}>
+          {/* LEFT control sidebar (like other tools' control panel). */}
+          <aside className={styles.shellSidebar}>
+            <ControlSidebar
+              activeSection={activeSection}
+              onReanalyze={onReanalyze}
+              onOpenDifferent={onOpenDifferent}
+              canReanalyze={lastOpened.current !== null}
+            />
+          </aside>
+
           <main id="lrcat-main" className={styles.shellMain}>
-            {loadedFromCache && (
-              <CacheBadge onReanalyze={onReanalyze} canReanalyze={lastOpened.current !== null} />
-            )}
             <Dashboard />
           </main>
-          <aside className={styles.shellSidebar}>
-            <SectionAnchorNav activeSection={activeSection} />
-          </aside>
         </div>
       </div>
     )

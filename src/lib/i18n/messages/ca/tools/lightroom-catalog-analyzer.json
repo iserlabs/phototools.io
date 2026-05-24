@@ -596,6 +596,10 @@
           "schemaNewerBody": "Aquesta anàlisi s'ha fet amb una versió més nova de l'eina. Prova de tornar a carregar la pàgina.",
           "pageTitle": "Anàlisi de catàleg de Lightroom compartida"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

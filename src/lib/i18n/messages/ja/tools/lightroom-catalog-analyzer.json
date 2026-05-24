@@ -596,6 +596,10 @@
           "schemaNewerBody": "この分析は新しいバージョンのツールで作成されました。ページを再読み込みしてみてください。",
           "pageTitle": "共有された Lightroom カタログ分析"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

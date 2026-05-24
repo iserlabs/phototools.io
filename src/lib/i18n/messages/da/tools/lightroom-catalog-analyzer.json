@@ -596,6 +596,10 @@
           "schemaNewerBody": "Denne analyse blev lavet med en nyere version af værktøjet. Prøv at genindlæse siden.",
           "pageTitle": "Delt Lightroom-kataloganalyse"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

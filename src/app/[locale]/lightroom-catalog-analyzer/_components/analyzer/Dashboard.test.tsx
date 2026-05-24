@@ -54,12 +54,11 @@ describe('Dashboard', () => {
     expect(getByText(/Computed in your browser/i)).toBeInTheDocument()
   })
 
-  it('mounts the drilldown form and period comparison inside their anchors', () => {
+  it('mounts period comparison inside its anchor (drilldown moved to sidebar)', () => {
     const { container } = renderDashboard()
-    const drilldown = container.querySelector(`#${anchorIdFor('drilldown')}`)
-    expect(drilldown).toBeTruthy()
-    // DrilldownForm renders an Apply button; ActiveFilterPills renders nothing
-    // when no filter is active.
-    expect(drilldown?.querySelector('button')).toBeTruthy()
+    // Drilldown is no longer a spine section — it lives in the sidebar control
+    // panel (ControlSidebar). Period Comparison remains.
+    const periodComp = container.querySelector(`#${anchorIdFor('period-comparison')}`)
+    expect(periodComp).toBeTruthy()
   })
 })

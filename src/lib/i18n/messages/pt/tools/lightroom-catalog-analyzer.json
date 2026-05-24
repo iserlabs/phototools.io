@@ -596,6 +596,10 @@
           "schemaNewerBody": "Esta análise foi feita com uma versão mais nova da ferramenta. Tente atualizar a página.",
           "pageTitle": "Análise compartilhada do catálogo do Lightroom"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }

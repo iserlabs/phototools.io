@@ -596,6 +596,10 @@
           "schemaNewerBody": "此分析由更新版本的工具创建。请尝试刷新页面。",
           "pageTitle": "共享的 Lightroom 目录分析"
         }
+      },
+      "controls": {
+        "openDifferent": "Open a different catalog",
+        "catalogMeta": "{count} photos · {first} – {last}"
       }
     }
   }
