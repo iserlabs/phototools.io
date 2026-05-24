@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { TABLE } from './sectionStyles'
+import { TABLE, TOOLTIP_PROPS } from './sectionStyles'
 
 const KNOWN_LABEL_COLORS: Record<string, string> = {
   Red: '#e64a3b',
@@ -41,7 +41,7 @@ export function Ratings() {
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis dataKey="rating" />
             <YAxis />
-            <Tooltip />
+            <Tooltip {...TOOLTIP_PROPS} />
             <Bar dataKey="count">
               {data.map((_, i) => (
                 <Cell key={i} fill={RATING_COLORS[i] ?? '#888'} />

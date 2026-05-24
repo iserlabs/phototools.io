@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { CALLOUT, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE } from './sectionStyles'
+import { CALLOUT, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE, TOOLTIP_PROPS } from './sectionStyles'
 
 export function Bursts() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.bursts')
@@ -41,7 +41,7 @@ export function Bursts() {
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis dataKey="length" />
             <YAxis />
-            <Tooltip />
+            <Tooltip {...TOOLTIP_PROPS} />
             <Bar dataKey="count" fill="var(--accent)" />
           </BarChart>
         </ResponsiveContainer>

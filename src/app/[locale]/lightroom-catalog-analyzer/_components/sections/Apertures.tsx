@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { CALLOUT, INLINE_FIGURE } from './sectionStyles'
+import { CALLOUT, INLINE_FIGURE, TOOLTIP_PROPS } from './sectionStyles'
 
 export function Apertures() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.apertures')
@@ -31,7 +31,7 @@ export function Apertures() {
               <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
               <XAxis dataKey="aperture" tickFormatter={(v) => `f/${v}`} />
               <YAxis />
-              <Tooltip />
+              <Tooltip {...TOOLTIP_PROPS} />
               <Bar dataKey="count" fill="var(--accent)" />
             </BarChart>
           </ResponsiveContainer>

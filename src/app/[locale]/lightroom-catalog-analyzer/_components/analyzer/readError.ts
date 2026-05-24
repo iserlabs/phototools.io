@@ -26,3 +26,9 @@ export function classifyReadError(err: unknown): 'errorLocked' | 'errorReadFaile
   }
   return 'errorReadFailed'
 }
+
+/** Normalize an unknown thrown value into a `{ name, message }` pair for display. */
+export function describeError(err: unknown): { name: string; message: string } {
+  if (err instanceof Error) return { name: err.name || 'Error', message: err.message || '' }
+  return { name: 'unknown', message: String(err) }
+}

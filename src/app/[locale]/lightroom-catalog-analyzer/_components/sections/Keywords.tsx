@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { COMPACT_LIST, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE } from './sectionStyles'
+import { COMPACT_LIST, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE, TOOLTIP_PROPS } from './sectionStyles'
 
 export function Keywords() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.keywords')
@@ -39,7 +39,7 @@ export function Keywords() {
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis type="number" />
             <YAxis dataKey="keyword" type="category" width={120} />
-            <Tooltip />
+            <Tooltip {...TOOLTIP_PROPS} />
             <Bar dataKey="count" fill="var(--accent)" />
           </BarChart>
         </ResponsiveContainer>

@@ -2,8 +2,6 @@
 
 import { useTranslations } from 'next-intl'
 import { useAnalyzer } from './AnalyzerContext'
-import { DrilldownForm } from '../sections/DrilldownForm'
-import { ActiveFilterPills } from '../sections/ActiveFilterPills'
 import { ExportBar } from './ExportBar'
 import { SectionAnchorNav } from '../nav/SectionAnchorNav'
 import type { SectionId } from '../nav/sections'
@@ -51,14 +49,8 @@ export function ControlSidebar({ activeSection, onReanalyze, onOpenDifferent, ca
         </div>
       </section>
 
-      {/* ─── Filter ─── */}
-      {/* Pills first (active-filter summary), then the form to change them. */}
-      <ActiveFilterPills />
-      <section className={styles.group}>
-        <DrilldownForm />
-      </section>
-
       {/* ─── Export & Share ─── */}
+      {/* (The Drilldown Explorer filter now lives in the right rail.) */}
       <section className={styles.group}>
         <h3 className={styles.groupTitle}>{t('export.barLabel')}</h3>
         <ExportBar />

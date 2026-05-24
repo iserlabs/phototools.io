@@ -86,4 +86,28 @@ describe('analyzer.worker integration', () => {
     new Uint8Array(junk).fill(0xff)
     await expect(api.openCatalog(junk)).rejects.toThrow()
   })
+
+  it('opens a catalog from a File (openCatalogFile, OPFS-less fallback path)', async () => {
+    // In Node/jsdom there's no OPFS, so openCatalogFile falls back to reading
+    // the File into a buffer + deserialize — exercising the File entry point
+    // and producing the same well-formed blob as the ArrayBuffer path.
+    const buffer = buildFixtureBuffer()
+    const file = new File([new Uint8Array(buffer)], 'Lightroom Catalog.lrcat', {
+      type: 'application/x-sqlite3',
+    })
+
+    const blob = await api.openCatalogFile(file)
+    const result = insightBlobSchema.safeParse(blob)
+    if (!result.success) {
+      throw new Error('Zod validation failed: ' + JSON.stringify(result.error.issues, null, 2))
+    }
+    expect(blob.meta.catalogVersion).toBe(14)
+    expect(blob.overview.totalPhotos).toBe(60)
+    await api.close()
+  })
+
+  it('rejects a File that is not a SQLite database', async () => {
+    const junk = new File([new Uint8Array(64).fill(0xff)], 'fake.lrcat')
+    await expect(api.openCatalogFile(junk)).rejects.toThrow()
+  })
 })

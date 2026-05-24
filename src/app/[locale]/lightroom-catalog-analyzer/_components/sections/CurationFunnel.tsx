@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Cell, Funnel, FunnelChart, LabelList, ResponsiveContainer, Tooltip } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { TABLE } from './sectionStyles'
+import { TABLE, TOOLTIP_PROPS } from './sectionStyles'
 
 export function CurationFunnel() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.curation-funnel')
@@ -24,7 +24,7 @@ export function CurationFunnel() {
       <figure>
         <ResponsiveContainer width="100%" height={260}>
           <FunnelChart>
-            <Tooltip />
+            <Tooltip {...TOOLTIP_PROPS} />
             <Funnel dataKey="value" data={data} isAnimationActive={false}>
               <LabelList position="right" dataKey="name" />
               {data.map((d, i) => (

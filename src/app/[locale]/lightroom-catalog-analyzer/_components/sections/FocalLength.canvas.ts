@@ -63,11 +63,18 @@ export function drawFocalLength(
     ctx.fillText(`${m}`, x, padT + innerH + 14)
   }
 
-  // Label top peaks inline
-  ctx.textAlign = 'left'
-  ctx.fillStyle = axisColor
-  for (const peak of block.topPeaks.slice(0, 5)) {
-    const x = padL + ((peak.mm - minMm) / span) * innerW
-    ctx.fillText(`${peak.mm}mm · ${peak.pctOfTotal.toFixed(0)}%`, x + 2, padT + 10)
+  // Annotate only the single dominant peak. Labeling every peak collides badly
+  // when focal lengths cluster (a prime-heavy catalog piles them at one x); the
+  // complete ranked list is rendered as text directly below the chart anyway.
+  const peak = block.topPeaks[0]
+  if (peak) {
+    const label = `${peak.mm}mm · ${peak.pctOfTotal.toFixed(0)}%`
+    ctx.fillStyle = axisColor
+    ctx.textAlign = 'left'
+    const rawX = padL + ((peak.mm - minMm) / span) * innerW + 4
+    const labelW = ctx.measureText(label).width
+    // Clamp so the label stays inside the plot area instead of clipping the edge.
+    const x = Math.max(padL, Math.min(rawX, padL + innerW - labelW))
+    ctx.fillText(label, x, padT + 10)
   }
 }

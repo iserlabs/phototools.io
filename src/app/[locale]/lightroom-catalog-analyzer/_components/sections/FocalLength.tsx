@@ -22,7 +22,12 @@ export function FocalLength() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
     ctx.scale(dpr, dpr)
-    drawFocalLength(ctx, block, { width: rect.width, height: rect.height })
+    // Resolve theme tokens so the canvas matches the rest of the app (amber bars,
+    // not the hardcoded blue default) and adapts to light/dark.
+    const cs = getComputedStyle(canvas)
+    const barColor = cs.getPropertyValue('--accent').trim() || undefined
+    const axisColor = cs.getPropertyValue('--text-secondary').trim() || undefined
+    drawFocalLength(ctx, block, { width: rect.width, height: rect.height, barColor, axisColor })
   }, [block])
 
   if (!block) return null

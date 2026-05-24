@@ -1,15 +1,16 @@
-import sqlite3InitModule, { type Sqlite3Static, type Database } from '@sqlite.org/sqlite-wasm'
+import sqlite3InitModule, {
+  type Sqlite3Static,
+  type Database,
+  type SAHPoolUtil,
+} from '@sqlite.org/sqlite-wasm'
 
-// m-1 (audit): The aggregator `DbLike` interface (`selectObject` / `selectObjects`)
-// is satisfied directly by the sqlite-wasm oo1 `Database` class returned here —
-// see its `selectObject(sql, bind)` / `selectObjects(sql, bind)` methods
-// (true as of `@sqlite.org/sqlite-wasm@^3.50`). Aggregators can consume this
-// handle without an adapter; the better-sqlite3 adapter in tests mirrors the
-// same surface.
+// m-1 (audit): the aggregator `DbLike` interface is satisfied directly by the
+// sqlite-wasm oo1 `Database` returned here; the better-sqlite3 adapter in tests
+// mirrors the same surface.
 
-// The bundled `.d.mts` declares the init function as taking 0 arguments, but at
-// runtime it accepts an Emscripten module config (e.g. `print` / `printErr` to
-// silence console noise). Cast to a config-accepting signature to bridge the gap.
+// The bundled `.d.mts` declares init as taking 0 args, but at runtime it accepts
+// an Emscripten config (`print`/`printErr` to silence console noise). Cast to a
+// config-accepting signature to bridge the gap.
 const initSqlite = sqlite3InitModule as (config?: {
   print?: (msg: string) => void
   printErr?: (msg: string) => void
@@ -36,55 +37,17 @@ const SQLITE_HEADER = new Uint8Array([
 ])
 const MIN_LRC_VERSION = 9
 
-/**
- * Open a Lightroom catalog from an ArrayBuffer.
- * Validates the SQLite header, deserializes into sqlite-wasm read-only,
- * probes the schema version, rejects anything older than LrC 9.
- *
- * @returns the open `Database` handle and detected catalog version (e.g. 14).
- */
-export async function openCatalog(buf: ArrayBuffer): Promise<{ db: Database; catalogVersion: number }> {
-  // 1. Header check
-  const headerBytes = new Uint8Array(buf, 0, Math.min(16, buf.byteLength))
+function assertSqliteHeader(headerBytes: Uint8Array): void {
   for (let i = 0; i < SQLITE_HEADER.length; i++) {
     if (headerBytes[i] !== SQLITE_HEADER[i]) throw new UnsupportedCatalogError('not-sqlite')
   }
+}
 
-  // 2. Initialize sqlite-wasm
-  const sqlite3 = await getSqlite()
-
-  // 3. Allocate WASM-side memory and copy bytes in.
-  //
-  // We over-allocate (data length + headroom) so the deserialized DB has room
-  // to grow when the worker adds the derived `AgSensorCropFactor` table below.
-  // Combined with SQLITE_DESERIALIZE_RESIZEABLE, SQLite can also realloc past
-  // this capacity if it needs to.
-  const len = buf.byteLength
-  const HEADROOM = 1024 * 1024 // 1 MB spare pages for the derived crop-factor table
-  const cap = len + HEADROOM
-  const ptr = sqlite3.wasm.alloc(cap)
-  sqlite3.wasm.heap8u().set(new Uint8Array(buf), ptr)
-
-  // 4. Open an empty in-memory DB, then deserialize the bytes into it.
-  //
-  // NOTE: we deliberately do NOT pass SQLITE_DESERIALIZE_READONLY. The worker
-  // (Plan 1d, Audit M-2) needs to CREATE a derived `AgSensorCropFactor` table
-  // in this handle to drive the focal-length 35mm-equivalent normalization, so
-  // we pass SQLITE_DESERIALIZE_RESIZEABLE to let the in-memory DB grow. This
-  // only mutates the deserialized copy — SQLITE_DESERIALIZE_FREEONCLOSE frees
-  // it on close and the user's original .lrcat file is never written to.
-  const db = new sqlite3.oo1.DB(':memory:', 'c')
-  const flags =
-    sqlite3.capi.SQLITE_DESERIALIZE_FREEONCLOSE |
-    sqlite3.capi.SQLITE_DESERIALIZE_RESIZEABLE
-  const rc = sqlite3.capi.sqlite3_deserialize(db.pointer!, 'main', ptr, len, cap, flags)
-  if (rc !== sqlite3.capi.SQLITE_OK) {
-    sqlite3.wasm.dealloc(ptr)
-    db.close()
-    throw new UnsupportedCatalogError('corrupt')
-  }
-
-  // 5. Schema probe
+/**
+ * Read the LrC schema version from an open handle, rejecting non-Lightroom or
+ * too-old catalogs. Closes the handle before throwing so callers don't leak it.
+ */
+function probeCatalogVersion(db: Database): number {
   let catalogVersion: number
   try {
     const row = db.selectObject(
@@ -97,13 +60,141 @@ export async function openCatalog(buf: ArrayBuffer): Promise<{ db: Database; cat
     if (e instanceof UnsupportedCatalogError) throw e
     throw new UnsupportedCatalogError('not-lrc-classic')
   }
-
   if (catalogVersion < MIN_LRC_VERSION) {
     db.close()
     throw new UnsupportedCatalogError('schema-too-old')
   }
+  return catalogVersion
+}
 
-  return { db, catalogVersion }
+/**
+ * Open a Lightroom catalog from an ArrayBuffer (in-memory `sqlite3_deserialize`).
+ *
+ * Used for catalogs small enough to fit in a single buffer — the bundled demo,
+ * tests (better-sqlite3 mirrors this surface), and the fallback when OPFS isn't
+ * available. Large catalogs (which can't be held in one JS/WASM buffer) go
+ * through `openCatalogFromFile` instead.
+ */
+export async function openCatalog(buf: ArrayBuffer): Promise<{ db: Database; catalogVersion: number }> {
+  assertSqliteHeader(new Uint8Array(buf, 0, Math.min(16, buf.byteLength)))
+  const sqlite3 = await getSqlite()
+
+  // Allocate WASM-side memory and copy bytes in. We over-allocate (data length
+  // + headroom) so the deserialized DB has room to grow when the worker adds
+  // the derived `AgSensorCropFactor` table. Combined with RESIZEABLE, SQLite can
+  // also realloc past this capacity. FREEONCLOSE frees it on close; the user's
+  // original .lrcat is never written.
+  const len = buf.byteLength
+  const HEADROOM = 1024 * 1024 // 1 MB spare pages for the derived crop-factor table
+  const cap = len + HEADROOM
+  const ptr = sqlite3.wasm.alloc(cap)
+  sqlite3.wasm.heap8u().set(new Uint8Array(buf), ptr)
+
+  const db = new sqlite3.oo1.DB(':memory:', 'c')
+  const flags =
+    sqlite3.capi.SQLITE_DESERIALIZE_FREEONCLOSE |
+    sqlite3.capi.SQLITE_DESERIALIZE_RESIZEABLE
+  const rc = sqlite3.capi.sqlite3_deserialize(db.pointer!, 'main', ptr, len, cap, flags)
+  if (rc !== sqlite3.capi.SQLITE_OK) {
+    sqlite3.wasm.dealloc(ptr)
+    db.close()
+    throw new UnsupportedCatalogError('corrupt')
+  }
+
+  return { db, catalogVersion: probeCatalogVersion(db) }
+}
+
+// ---------------------------------------------------------------------------
+// OPFS SAH-Pool streaming path — for catalogs too large to hold in one buffer.
+// A real Lightroom catalog is routinely hundreds of MB to several GB; a single
+// ArrayBuffer that size can't be allocated (V8 caps ~2 GB) and deserialize would
+// need it all in WASM memory. Instead we stream the file to disk-backed OPFS and
+// let SQLite page from disk via the SAH-Pool VFS. SAH-Pool (unlike the plain
+// `opfs` VFS) needs no SharedArrayBuffer / COOP-COEP isolation, so our headers
+// (and third-party ads) are untouched.
+// ---------------------------------------------------------------------------
+
+const OPFS_DIR = '/phototools-lrcat'
+const OPFS_DB_PATH = `${OPFS_DIR}/catalog.lrcat`
+
+let poolPromise: Promise<SAHPoolUtil | null> | null = null
+
+async function getPool(sqlite3: Sqlite3Static): Promise<SAHPoolUtil | null> {
+  if (typeof sqlite3.installOpfsSAHPoolVfs !== 'function') return null
+  if (!poolPromise) {
+    // Wrap in async so both sync and async failures (e.g. no OPFS in Node) → null.
+    poolPromise = (async () => {
+      try {
+        return await sqlite3.installOpfsSAHPoolVfs({
+          name: 'phototools-lrcat',
+          directory: OPFS_DIR,
+          initialCapacity: 4,
+        })
+      } catch {
+        return null
+      }
+    })()
+  }
+  return poolPromise
+}
+
+/**
+ * Open a catalog by streaming the File into OPFS and opening it with the
+ * SAH-Pool VFS (SQLite pages from disk — bounded memory, handles multi-GB
+ * catalogs). Returns `null` if OPFS is unavailable so the caller can fall back
+ * to the in-memory `openCatalog` path.
+ */
+export async function openCatalogFromFile(
+  file: File,
+  onBytes?: (read: number, total: number) => void,
+): Promise<{ db: Database; catalogVersion: number } | null> {
+  // Cheap header probe (16 bytes) before committing to a full disk import.
+  assertSqliteHeader(new Uint8Array(await file.slice(0, 16).arrayBuffer()))
+
+  const sqlite3 = await getSqlite()
+  const pool = await getPool(sqlite3)
+  if (!pool) return null
+
+  // Clear any leftover from a previous (possibly crashed) session, then stream
+  // the file's bytes straight to the OPFS-backed handle — never buffering the
+  // whole file in memory.
+  try { pool.unlink(OPFS_DB_PATH) } catch { /* nothing to remove */ }
+  const reader = file.stream().getReader()
+  let read = 0
+  try {
+    await pool.importDb(OPFS_DB_PATH, async () => {
+      const { done, value } = await reader.read()
+      if (done || !value) return undefined
+      read += value.byteLength
+      onBytes?.(read, file.size)
+      return value
+    })
+  } catch (e) {
+    try { pool.unlink(OPFS_DB_PATH) } catch { /* best effort */ }
+    // importDb validates the SQLite header; a non-DB or truncated file lands here.
+    throw e instanceof UnsupportedCatalogError ? e : new UnsupportedCatalogError('corrupt')
+  }
+
+  const db = new pool.OpfsSAHPoolDb(OPFS_DB_PATH) as unknown as Database
+  // Ephemeral analysis copy — no durability needed. journal_mode=OFF also avoids
+  // consuming extra pool file slots for a rollback journal when the worker
+  // creates the derived AgSensorCropFactor table.
+  try { db.exec('PRAGMA journal_mode=OFF; PRAGMA synchronous=OFF;') } catch { /* non-fatal */ }
+
+  try {
+    return { db, catalogVersion: probeCatalogVersion(db) }
+  } catch (e) {
+    try { pool.unlink(OPFS_DB_PATH) } catch { /* best effort */ }
+    throw e
+  }
+}
+
+/** Remove the streamed catalog copy from OPFS (privacy + storage reclaim). */
+export async function wipeOpfsCatalog(): Promise<void> {
+  const pool = poolPromise ? await poolPromise : null
+  if (pool) {
+    try { pool.unlink(OPFS_DB_PATH) } catch { /* best effort */ }
+  }
 }
 
 export type { Database } from '@sqlite.org/sqlite-wasm'

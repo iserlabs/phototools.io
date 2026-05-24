@@ -4,20 +4,16 @@ import { useCallback, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import * as Sentry from '@sentry/nextjs'
 import styles from './LightroomCatalogAnalyzer.module.css'
-import { classifyReadError } from './readError'
-import { describeError, readCatalogBytes } from './readFile'
-
-export interface FilePickerMeta {
-  name: string
-  size: number
-  lastModified: number
-}
+import { classifyReadError, describeError } from './readError'
 
 interface FilePickerProps {
-  onFile: (buffer: ArrayBuffer, meta: FilePickerMeta) => void
+  /** Hands the picked File to the analyzer, which streams it to the worker.
+   *  We never read the whole (possibly multi-GB) file in the main thread. */
+  onFile: (file: File) => void
 }
 
 const ONE_GB = 1024 * 1024 * 1024
+const PROBE_BYTES = 64 * 1024
 
 function isLrcat(file: File): boolean {
   return file.name.toLowerCase().endsWith('.lrcat')
@@ -35,14 +31,15 @@ export function FilePicker({ onFile }: FilePickerProps) {
   const dispatchFile = useCallback(
     async (file: File) => {
       try {
-        const buffer = await readCatalogBytes(file)
-        onFile(buffer, { name: file.name, size: file.size, lastModified: file.lastModified })
+        // Cheap readability probe (64 KB) — catches an OS read refusal (cloud
+        // placeholder, permission, lock) early with actionable guidance, without
+        // reading the whole (possibly multi-GB) file. The worker streams the rest.
+        await file.slice(0, PROBE_BYTES).arrayBuffer()
+        onFile(file)
       } catch (err) {
-        // The read failed. The most common cause is a large single-shot read
-        // (handled now by streaming in readFile.ts); if streaming still fails
-        // it's the OS refusing access (cloud placeholder, permission, lock).
-        // Surface the OS's own error name to the user (no DevTools needed) and
-        // capture diagnostics — anonymized: error name + size, never the name.
+        // The OS refused the read. Surface its own error name to the user (no
+        // DevTools needed) and capture diagnostics — anonymized: error name +
+        // size only, never the filename.
         const key = classifyReadError(err)
         const { name: errorName, message } = describeError(err)
         console.warn(`[lrcat] catalog read failed: ${errorName} — ${message} (size=${file.size})`)

@@ -19,6 +19,7 @@ beforeAll(() => {
       arc() {}
       fill() {}
       fillText() {}
+      measureText() { return { width: 0 } as TextMetrics }
       scale() {}
       set fillStyle(_v: unknown) {}
       set strokeStyle(_v: unknown) {}

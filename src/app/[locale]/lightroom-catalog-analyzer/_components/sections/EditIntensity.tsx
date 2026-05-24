@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { CALLOUT, COMPACT_LIST, DISCLAIMER, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE } from './sectionStyles'
+import { CALLOUT, COMPACT_LIST, DISCLAIMER, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE, TOOLTIP_PROPS } from './sectionStyles'
 
 export function EditIntensity() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.edit-intensity')
@@ -39,7 +39,7 @@ export function EditIntensity() {
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis dataKey="month" />
             <YAxis domain={[0, 100]} />
-            <Tooltip />
+            <Tooltip {...TOOLTIP_PROPS} />
             <Line type="monotone" dataKey="score" stroke="var(--accent)" strokeWidth={2} dot={false} />
           </LineChart>
         </ResponsiveContainer>

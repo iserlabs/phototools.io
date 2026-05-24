@@ -16,8 +16,9 @@ export type { ProgressEvent } from '@/lib/lrcat/types'
  * Re-exported here under the canonical name `AnalyzerWorker` so Plan 1f section
  * components can `import type { AnalyzerWorker } from '../analyzer/AnalyzerContext'`.
  *
- * The live worker's `openCatalog` accepts optional `fileSize`/`lastModified`
- * trailing args; they are typed here so the handle stays callable from the hook.
+ * `openCatalog` (ArrayBuffer, in-memory) takes optional trailing args incl. a
+ * precomputed cache hash. `openCatalogFile` (File, streamed to OPFS) handles
+ * multi-GB catalogs that can't be held in a single buffer.
  */
 export type AnalyzerWorker = Comlink.Remote<{
   openCatalog(
@@ -25,6 +26,12 @@ export type AnalyzerWorker = Comlink.Remote<{
     onProgress?: (e: ProgressEvent) => void | Promise<void>,
     fileSize?: number,
     lastModified?: number,
+    precomputedHash?: string,
+  ): Promise<InsightBlob>
+  openCatalogFile(
+    file: File,
+    onProgress?: (e: ProgressEvent) => void | Promise<void>,
+    precomputedHash?: string,
   ): Promise<InsightBlob>
   applyFilter(filter: AnalysisFilter): Promise<InsightBlob>
   computeYearInReview(year: number): Promise<YearInReviewBlock>
@@ -47,7 +54,10 @@ export interface AnalyzerContextValue {
   error: string | null
   loadedFromCache: boolean
   lastProgress: ProgressEvent | null
-  open: (buffer: ArrayBuffer, meta: OpenCatalogMeta, opts?: OpenOptions) => Promise<void>
+  /** Open a catalog. A `File` (user upload) streams to OPFS in the worker to
+   *  handle multi-GB catalogs; an `ArrayBuffer` (bundled demo) uses the
+   *  in-memory path. */
+  open: (source: ArrayBuffer | File, meta: OpenCatalogMeta, opts?: OpenOptions) => Promise<void>
   applyFilter: (filter: AnalysisFilter) => Promise<void>
   setFilter: (filter: AnalysisFilter) => void
   reset: () => void

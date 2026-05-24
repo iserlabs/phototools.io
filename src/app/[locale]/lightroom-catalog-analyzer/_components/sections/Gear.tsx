@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useMemo } from 'react'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { CALLOUT, TABLE } from './sectionStyles'
+import { CALLOUT, TABLE, TOOLTIP_PROPS } from './sectionStyles'
 
 export function Gear() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.gear')
@@ -39,7 +39,7 @@ export function Gear() {
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis dataKey="month" />
             <YAxis />
-            <Tooltip />
+            <Tooltip {...TOOLTIP_PROPS} />
             {bodies.map((body, i) => (
               <Area
                 key={body}
@@ -69,7 +69,7 @@ export function Gear() {
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis type="number" />
             <YAxis dataKey="lens" type="category" width={120} />
-            <Tooltip />
+            <Tooltip {...TOOLTIP_PROPS} />
             <Bar dataKey="count" fill="var(--accent)" />
           </BarChart>
         </ResponsiveContainer>

@@ -36,8 +36,10 @@ describe('FilePicker', () => {
     const input = screen.getByLabelText(/catalog file picker/i).querySelector('input[type="file"]') as HTMLInputElement
     fireEvent.change(input, { target: { files: [file] } })
     await waitFor(() => expect(onFile).toHaveBeenCalled())
-    expect(onFile.mock.calls[0][0]).toBeInstanceOf(ArrayBuffer)
-    expect(onFile.mock.calls[0][1].name).toBe('my-catalog.lrcat')
+    // The File is passed straight through (the worker streams it to OPFS); we
+    // no longer read it into an ArrayBuffer in the main thread.
+    expect(onFile.mock.calls[0][0]).toBeInstanceOf(File)
+    expect(onFile.mock.calls[0][0].name).toBe('my-catalog.lrcat')
   })
 
   it('rejects non-.lrcat files with an inline error', async () => {

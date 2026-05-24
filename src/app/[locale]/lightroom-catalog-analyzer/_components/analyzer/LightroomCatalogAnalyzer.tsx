@@ -14,6 +14,7 @@ import { ParseProgress } from './ParseProgress'
 import { Dashboard } from './Dashboard'
 import { ErrorScreen } from './ErrorScreen'
 import { ControlSidebar } from './ControlSidebar'
+import { UploaderPanel } from './UploaderPanel'
 import { DrilldownForm } from '../sections/DrilldownForm'
 import { ActiveFilterPills } from '../sections/ActiveFilterPills'
 import { ExportBar } from './ExportBar'
@@ -23,7 +24,8 @@ import styles from './LightroomCatalogAnalyzer.module.css'
 const DEMO_CATALOG_URL = '/demo-catalogs/phototools-demo.lrcat'
 
 interface LastOpened {
-  buffer: ArrayBuffer
+  /** A File (user upload, streamed to OPFS) or ArrayBuffer (bundled demo). */
+  source: ArrayBuffer | File
   meta: OpenCatalogMeta
 }
 
@@ -42,9 +44,10 @@ function AnalyzerBody() {
   useFilterUrlSync(filter, applyFilter, status === 'loaded')
 
   const onFile = useCallback(
-    (buffer: ArrayBuffer, meta: OpenCatalogMeta) => {
-      lastOpened.current = { buffer, meta }
-      void open(buffer, meta)
+    (file: File) => {
+      const meta: OpenCatalogMeta = { name: file.name, size: file.size, lastModified: file.lastModified }
+      lastOpened.current = { source: file, meta }
+      void open(file, meta)
     },
     [open],
   )
@@ -59,7 +62,7 @@ function AnalyzerBody() {
       const lastModifiedHeader = headers.get('last-modified')
       const lastModified = lastModifiedHeader ? Date.parse(lastModifiedHeader) : Date.now()
       const meta: OpenCatalogMeta = { name: 'phototools-demo.lrcat', size, lastModified }
-      lastOpened.current = { buffer, meta }
+      lastOpened.current = { source: buffer, meta }
       void open(buffer, meta)
     } catch {
       // Demo file may not be deployed yet — fail silently in dev.
@@ -78,7 +81,7 @@ function AnalyzerBody() {
 
   const onReanalyze = useCallback(() => {
     const last = lastOpened.current
-    if (last) void open(last.buffer, last.meta, { forceFresh: true })
+    if (last) void open(last.source, last.meta, { forceFresh: true })
   }, [open])
 
   const onOpenDifferent = useCallback(() => {
@@ -120,8 +123,8 @@ function AnalyzerBody() {
           <ExportBar />
         </div>
 
-        <div className={styles.shellBody}>
-          {/* LEFT control sidebar (like other tools' control panel). */}
+        <div className={`${styles.shellBody} ${styles.shellBodyLoaded}`}>
+          {/* LEFT control sidebar — catalog meta, export/share, section nav. */}
           <aside className={styles.shellSidebar}>
             <ControlSidebar
               activeSection={activeSection}
@@ -134,23 +137,41 @@ function AnalyzerBody() {
           <main id="lrcat-main" className={styles.shellMain}>
             <Dashboard />
           </main>
+
+          {/* RIGHT rail — the Drilldown Explorer (filter) + active-filter pills. */}
+          <aside className={styles.shellSidebarRight}>
+            <div className={styles.rightRailInner}>
+              <ActiveFilterPills />
+              <DrilldownForm />
+            </div>
+          </aside>
         </div>
       </div>
     )
   }
 
-  // idle: empty state. Both desktop + mobile siblings rendered; CSS media
-  // query decides which is visible. No JS viewport detection.
+  // idle: empty state. Same shell as the loaded view — the uploader lives in
+  // the persistent left sidebar (UploaderPanel) so opening a catalog is one
+  // step, not a landing → dashboard hop. Below 1024px the sidebar hides and the
+  // tall MobileSplash takes over (idleShell lets the page scroll there). Desktop
+  // + mobile siblings are both rendered; CSS picks which is visible — no JS
+  // viewport detection, so no hydration mismatch.
   return (
-    <div className={styles.shell}>
-      <main id="lrcat-main" className={styles.shellMain}>
-        <div className={styles.desktopEmpty}>
-          <DesktopEmptyState onFile={onFile} onDemo={onDemo} />
-        </div>
-        <div className={styles.mobileSplash}>
-          <MobileSplash onDemo={onDemo} />
-        </div>
-      </main>
+    <div className={`${styles.shell} ${styles.idleShell}`}>
+      <div className={styles.shellBody}>
+        <aside className={styles.shellSidebar}>
+          <UploaderPanel onFile={onFile} onDemo={onDemo} />
+        </aside>
+
+        <main id="lrcat-main" className={styles.shellMain}>
+          <div className={styles.desktopEmpty}>
+            <DesktopEmptyState />
+          </div>
+          <div className={styles.mobileSplash}>
+            <MobileSplash onDemo={onDemo} />
+          </div>
+        </main>
+      </div>
     </div>
   )
 }

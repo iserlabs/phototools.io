@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Bar, BarChart, CartesianGrid, RadialBar, RadialBarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { COMPACT_LIST, DISCLAIMER, SECTION_HEADER } from './sectionStyles'
+import { COMPACT_LIST, DISCLAIMER, SECTION_HEADER, TOOLTIP_PROPS } from './sectionStyles'
 
 export function TimeOfDay() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.time-of-day')
@@ -47,7 +47,7 @@ export function TimeOfDay() {
               endAngle={-270}
             >
               <RadialBar background dataKey="count" />
-              <Tooltip />
+              <Tooltip {...TOOLTIP_PROPS} />
             </RadialBarChart>
           </ResponsiveContainer>
           <figcaption className="sr-only">{t('caption')}</figcaption>
@@ -74,7 +74,7 @@ export function TimeOfDay() {
               <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
               <XAxis dataKey="name" />
               <YAxis />
-              <Tooltip />
+              <Tooltip {...TOOLTIP_PROPS} />
               <Bar dataKey="value" />
             </BarChart>
           </ResponsiveContainer>

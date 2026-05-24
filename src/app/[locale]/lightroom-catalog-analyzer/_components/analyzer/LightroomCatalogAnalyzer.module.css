@@ -17,6 +17,12 @@
   min-height: 0;
 }
 
+/* Loaded dashboard is three columns: left controls · dashboard · right filter
+   rail (the Drilldown Explorer). Idle keeps the 2-column .shellBody above. */
+.shellBodyLoaded {
+  grid-template-columns: 280px 1fr 300px;
+}
+
 .shellMain {
   overflow-y: auto;
   min-width: 0;
@@ -28,6 +34,25 @@
   background: var(--bg-secondary);
   overflow-y: auto;
   min-width: 0;
+}
+
+/* Right rail holding the Drilldown Explorer filter (loaded state only). */
+.shellSidebarRight {
+  border-left: 1px solid var(--border);
+  background: var(--bg-secondary);
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.rightRailInner {
+  padding: var(--space-md);
+}
+
+/* The DrilldownForm was built for the wide spine; force its checkbox/radio
+   fieldsets to a single column in the narrow rail. */
+.rightRailInner :global(fieldset) {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Mobile controls area — shown ≤1024px when the desktop sidebar is hidden.
@@ -63,22 +88,72 @@
 }
 
 @media (max-width: 1024px) {
-  .shellBody { grid-template-columns: 1fr; }
-  .shellSidebar { display: none; }
+  .shellBody, .shellBodyLoaded { grid-template-columns: 1fr; }
+  .shellSidebar, .shellSidebarRight { display: none; }
 }
 
 /* ---- Mobile splash vs desktop empty state, driven entirely by CSS ---- */
-/* No JS viewport detection — avoids hydration mismatch. */
+/* No JS viewport detection — avoids hydration mismatch. The breakpoint matches
+   the sidebar's (1024px): below it the sidebar — and the uploader it holds — is
+   hidden, so the MobileSplash (which carries its own demo CTA) takes over. */
 
 .mobileSplash { display: none; }
 .desktopEmpty { display: block; }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mobileSplash { display: block; }
   .desktopEmpty { display: none; }
-  /* Allow the page to scroll naturally on mobile. */
+  /* The idle/landing shell can exceed the viewport here (MobileSplash is tall
+     and the sidebar uploader is hidden), so let it scroll. The loaded dashboard
+     keeps its fixed-height internal-scroll layout (handled by .shell below). */
+  .idleShell { height: auto; overflow: visible; }
+  .idleShell .shellMain { overflow-y: visible; padding: var(--space-md); }
+}
+
+@media (max-width: 768px) {
+  /* Allow the page to scroll naturally on phones, in every state. */
   .shell { height: auto; overflow: visible; }
   .shellMain { overflow-y: visible; padding: var(--space-md); }
+}
+
+/* ---- Idle sidebar uploader ---- */
+.uploaderPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md);
+}
+
+/* Spacing between the drop zone and the demo button comes from the panel gap;
+   drop the standalone landing margin so the rail stays evenly spaced. */
+.uploaderPanel .demoButton { margin-top: 0; }
+
+/* ---- Dashboard native <select> dropdowns (Year, Show-last) ---- */
+/* Native selects render as a light control on the dark surface; restyle to the
+   design tokens with a custom chevron. */
+.dashboard select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 5px 28px 5px 10px;
+  font: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+.dashboard select:hover { border-color: var(--accent); }
+
+/* ---- Dashboard sub-heading rhythm ---- */
+.dashboard h3 {
+  margin: var(--space-md) 0 var(--space-sm);
+  font-size: var(--text-md);
+  font-weight: 600;
 }
 
 /* ---- Privacy badge ---- */

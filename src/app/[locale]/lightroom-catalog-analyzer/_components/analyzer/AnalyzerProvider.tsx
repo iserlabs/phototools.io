@@ -43,12 +43,18 @@ export function AnalyzerProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const open = useCallback(
-    async (buffer: ArrayBuffer, meta: OpenCatalogMeta, opts?: OpenOptions) => {
+    async (source: ArrayBuffer | File, meta: OpenCatalogMeta, opts?: OpenOptions) => {
       dispatch({ type: 'parse-start' })
       const size = meta.size
       let catalogVersion: number | undefined
       try {
-        const hash = await computeCatalogHash(buffer, size, meta.lastModified)
+        // The cache key only needs the first 64 KB + size + lastModified, so we
+        // never read a multi-GB File into memory to compute it.
+        const isFile = typeof File !== 'undefined' && source instanceof File
+        const sample = isFile
+          ? await source.slice(0, 64 * 1024).arrayBuffer()
+          : (source as ArrayBuffer)
+        const hash = await computeCatalogHash(sample, size, meta.lastModified)
         const cached = opts?.forceFresh ? null : await getCachedInsights(hash)
         if (cached) {
           catalogVersion = cached.meta.catalogVersion
@@ -61,12 +67,17 @@ export function AnalyzerProvider({ children }: { children: ReactNode }) {
         const onProgress = Comlink.proxy((ev: ProgressEvent) => {
           dispatch({ type: 'parse-progress', ev })
         })
-        const blob = await api.openCatalog(
-          Comlink.transfer(buffer, [buffer]),
-          onProgress,
-          size,
-          meta.lastModified,
-        )
+        // File → stream to OPFS in the worker (handles multi-GB catalogs).
+        // ArrayBuffer → in-memory deserialize path (bundled demo).
+        const blob = isFile
+          ? await api.openCatalogFile(source, onProgress, hash)
+          : await api.openCatalog(
+              Comlink.transfer(source as ArrayBuffer, [source as ArrayBuffer]),
+              onProgress,
+              size,
+              meta.lastModified,
+              hash,
+            )
         catalogVersion = blob.meta.catalogVersion
         await setCachedInsights(hash, blob).catch(() => {
           // Non-fatal — a failed cache write must not block rendering.
