@@ -52,9 +52,10 @@ export function ControlSidebar({ activeSection, onReanalyze, onOpenDifferent, ca
       </section>
 
       {/* ─── Filter ─── */}
+      {/* Pills first (active-filter summary), then the form to change them. */}
+      <ActiveFilterPills />
       <section className={styles.group}>
         <DrilldownForm />
-        <ActiveFilterPills />
       </section>
 
       {/* ─── Export & Share ─── */}
