@@ -47,7 +47,7 @@ export function FocalLength() {
       <h3>{t('topPeaks')}</h3>
       <ul style={{ margin: 0, paddingLeft: 16 }}>
         {block.topPeaks.map((p) => (
-          <li key={p.mm}>{`${p.mm}mm · ${p.pctOfTotal.toFixed(1)}%`}</li>
+          <li key={p.mm}>{t('peakItem', { mm: p.mm, pct: p.pctOfTotal.toFixed(1) })}</li>
         ))}
       </ul>
 

@@ -24,7 +24,7 @@ export function TimeOfDay() {
     <section aria-labelledby="tod-heading">
       <header style={SECTION_HEADER}>
         <h2 id="tod-heading">{t('title')}</h2>
-        <fieldset style={{ border: 'none', padding: 0, display: 'inline-flex', gap: 12 }}>
+        <fieldset aria-label={t('title')} style={{ border: 'none', padding: 0, display: 'inline-flex', gap: 12 }}>
           <label>
             <input type="radio" name="tod-mode" checked={mode === 'clock'} onChange={() => setMode('clock')} /> {t('modes.clock')}
           </label>

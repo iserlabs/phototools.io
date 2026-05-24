@@ -43,10 +43,10 @@ export function Keywords() {
             <Bar dataKey="count" fill="var(--accent)" />
           </BarChart>
         </ResponsiveContainer>
-        <ul style={{ margin: '8px 0 0', paddingLeft: 16 }}>
+        <ul className="sr-only">
           {k.topKeywords.map((kw) => (
             <li key={kw.keyword}>
-              <span>{kw.keyword}</span> — {kw.count.toLocaleString()}
+              {kw.keyword} — {kw.count.toLocaleString()}
             </li>
           ))}
         </ul>

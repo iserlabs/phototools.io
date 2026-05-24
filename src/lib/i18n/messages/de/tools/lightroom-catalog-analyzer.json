@@ -172,7 +172,8 @@
           "topPeaks": "Wichtigste Spitzen",
           "onePrime": "Eine Festbrennweite von {mm} mm würde {pct} % deiner Aufnahmen innerhalb von ±25 % abdecken.",
           "noPrime": "Deine Brennweitennutzung ist zu breit gestreut, als dass eine einzelne Festbrennweite dominieren könnte.",
-          "caption": "Histogramm mit 1-mm-Klassen von {min} mm bis {max} mm; {peakCount} wichtigste Spitzen beschriftet."
+          "caption": "Histogramm mit 1-mm-Klassen von {min} mm bis {max} mm; {peakCount} wichtigste Spitzen beschriftet.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Brennweite pro Zoom",

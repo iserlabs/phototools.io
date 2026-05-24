@@ -172,7 +172,8 @@
           "topPeaks": "Picos principales",
           "onePrime": "Un objetivo fijo de {mm} mm cubriría el {pct} % de tus disparos dentro de ±25 %.",
           "noPrime": "Tu uso de distancias focales está demasiado repartido para que domine un solo objetivo fijo.",
-          "caption": "Histograma con intervalos de 1 mm desde {min} mm hasta {max} mm; {peakCount} picos principales etiquetados."
+          "caption": "Histograma con intervalos de 1 mm desde {min} mm hasta {max} mm; {peakCount} picos principales etiquetados.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Distancia focal por zoom",

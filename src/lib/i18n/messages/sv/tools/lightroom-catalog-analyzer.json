@@ -172,7 +172,8 @@
           "topPeaks": "Främsta toppar",
           "onePrime": "Ett fast objektiv på {mm} mm skulle täcka {pct} % av dina foton inom ±25 %.",
           "noPrime": "Din användning av brännvidder är för utspridd för att ett enda fast objektiv ska dominera.",
-          "caption": "Histogram med 1 mm-intervall från {min} mm till {max} mm; {peakCount} främsta toppar märkta."
+          "caption": "Histogram med 1 mm-intervall från {min} mm till {max} mm; {peakCount} främsta toppar märkta.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Brännvidd per zoom",

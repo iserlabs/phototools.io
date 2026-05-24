@@ -9,7 +9,7 @@ describe('Gear', () => {
     render(wrapper)
     // "24-70mm f/2.8 GM" appears in both the top-lenses list and the combos table.
     expect(screen.getAllByText('24-70mm f/2.8 GM').length).toBeGreaterThan(0)
-    expect(screen.getByText('70-200mm f/2.8 GM')).toBeInTheDocument()
+    expect(screen.getByText(/70-200mm f\/2\.8 GM/)).toBeInTheDocument()
     expect(screen.getByText(/Sony 28mm f\/2/)).toBeInTheDocument()
   })
 })

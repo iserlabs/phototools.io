@@ -40,10 +40,10 @@ export function CatalogHealth() {
       <table style={TABLE}>
         <thead>
           <tr>
-            <th>{t('duplicatesHeaders.captureTime')}</th>
-            <th>{t('duplicatesHeaders.size')}</th>
-            <th>{t('duplicatesHeaders.firstPath')}</th>
-            <th>{t('duplicatesHeaders.lastPath')}</th>
+            <th scope="col">{t('duplicatesHeaders.captureTime')}</th>
+            <th scope="col">{t('duplicatesHeaders.size')}</th>
+            <th scope="col">{t('duplicatesHeaders.firstPath')}</th>
+            <th scope="col">{t('duplicatesHeaders.lastPath')}</th>
           </tr>
         </thead>
         <tbody>
@@ -62,8 +62,8 @@ export function CatalogHealth() {
       <table style={TABLE}>
         <thead>
           <tr>
-            <th>{t('missingHeaders.folder')}</th>
-            <th>{t('missingHeaders.count')}</th>
+            <th scope="col">{t('missingHeaders.folder')}</th>
+            <th scope="col">{t('missingHeaders.count')}</th>
           </tr>
         </thead>
         <tbody>

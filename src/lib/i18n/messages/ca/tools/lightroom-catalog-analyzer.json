@@ -172,7 +172,8 @@
           "topPeaks": "Pics principals",
           "onePrime": "Un objectiu fix de {mm} mm cobriria el {pct} % de les teves fotografies dins de ±25 %.",
           "noPrime": "El teu ús de distàncies focals està massa repartit perquè un sol objectiu fix domini.",
-          "caption": "Histograma amb intervals d'1 mm de {min} mm a {max} mm; {peakCount} pics principals etiquetats."
+          "caption": "Histograma amb intervals d'1 mm de {min} mm a {max} mm; {peakCount} pics principals etiquetats.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Distància focal per zoom",

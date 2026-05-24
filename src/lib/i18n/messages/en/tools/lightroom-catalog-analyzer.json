@@ -172,7 +172,8 @@
           "topPeaks": "Top peaks",
           "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
           "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
-          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled."
+          "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Focal Length per Zoom",

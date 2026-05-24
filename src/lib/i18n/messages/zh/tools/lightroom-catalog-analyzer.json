@@ -172,7 +172,8 @@
           "topPeaks": "主要峰值",
           "onePrime": "一支 {mm}mm 定焦镜头可覆盖您 {pct}% 的照片（±25% 范围内）。",
           "noPrime": "您的焦距使用过于分散，单支定焦镜头无法占主导。",
-          "caption": "从 {min}mm 到 {max}mm、以 1mm 为间隔的直方图；标注了 {peakCount} 个主要峰值。"
+          "caption": "从 {min}mm 到 {max}mm、以 1mm 为间隔的直方图；标注了 {peakCount} 个主要峰值。",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "各变焦镜头焦距",

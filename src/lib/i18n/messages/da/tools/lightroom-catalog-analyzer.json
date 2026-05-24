@@ -172,7 +172,8 @@
           "topPeaks": "Vigtigste toppe",
           "onePrime": "Et fast objektiv på {mm} mm ville dække {pct} % af dine optagelser inden for ±25 %.",
           "noPrime": "Din brug af brændvidder er for spredt til, at et enkelt fast objektiv kan dominere.",
-          "caption": "Histogram med 1 mm-intervaller fra {min} mm til {max} mm; {peakCount} vigtigste toppe mærket."
+          "caption": "Histogram med 1 mm-intervaller fra {min} mm til {max} mm; {peakCount} vigtigste toppe mærket.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Brændvidde pr. zoom",

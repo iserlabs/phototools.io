@@ -77,10 +77,10 @@ export function Ratings() {
       <table style={TABLE}>
         <thead>
           <tr>
-            <th>{t('tableHeaders.name')}</th>
-            <th>{t('tableHeaders.total')}</th>
-            <th>{t('tableHeaders.rated4Plus')}</th>
-            <th>{t('tableHeaders.pickRate')}</th>
+            <th scope="col">{t('tableHeaders.name')}</th>
+            <th scope="col">{t('tableHeaders.total')}</th>
+            <th scope="col">{t('tableHeaders.rated4Plus')}</th>
+            <th scope="col">{t('tableHeaders.pickRate')}</th>
           </tr>
         </thead>
         <tbody>

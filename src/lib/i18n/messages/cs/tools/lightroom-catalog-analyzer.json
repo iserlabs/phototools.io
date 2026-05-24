@@ -172,7 +172,8 @@
           "topPeaks": "Hlavní špičky",
           "onePrime": "Pevný objektiv {mm}mm by pokryl {pct}% vašich snímků v rozsahu ±25%.",
           "noPrime": "Vaše využití ohniskových vzdáleností je příliš rozptýlené, aby dominoval jediný pevný objektiv.",
-          "caption": "Histogram s koši po 1 mm od {min}mm do {max}mm; označeno {peakCount} hlavních špiček."
+          "caption": "Histogram s koši po 1 mm od {min}mm do {max}mm; označeno {peakCount} hlavních špiček.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Ohnisková vzdálenost podle zoomu",

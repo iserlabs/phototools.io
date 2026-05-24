@@ -172,7 +172,8 @@
           "topPeaks": "Vârfuri principale",
           "onePrime": "Un obiectiv fix de {mm} mm ar acoperi {pct}% dintre fotografiile tale în limita ±25%.",
           "noPrime": "Utilizarea distanțelor focale este prea dispersată pentru ca un singur obiectiv fix să domine.",
-          "caption": "Histogramă cu intervale de 1 mm de la {min} mm la {max} mm; {peakCount} vârfuri principale etichetate."
+          "caption": "Histogramă cu intervale de 1 mm de la {min} mm la {max} mm; {peakCount} vârfuri principale etichetate.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Distanță focală per zoom",

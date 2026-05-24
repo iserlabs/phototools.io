@@ -172,7 +172,8 @@
           "topPeaks": "Pics principaux",
           "onePrime": "Une focale fixe de {mm} mm couvrirait {pct} % de vos prises de vue à ±25 %.",
           "noPrime": "Votre usage des focales est trop dispersé pour qu'une seule focale fixe domine.",
-          "caption": "Histogramme par tranches de 1 mm de {min} mm à {max} mm ; {peakCount} pics principaux étiquetés."
+          "caption": "Histogramme par tranches de 1 mm de {min} mm à {max} mm ; {peakCount} pics principaux étiquetés.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Focale par zoom",

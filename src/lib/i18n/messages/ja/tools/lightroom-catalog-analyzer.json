@@ -172,7 +172,8 @@
           "topPeaks": "主要ピーク",
           "onePrime": "{mm}mm の単焦点なら、あなたの写真の {pct}% を ±25% 以内でカバーできます。",
           "noPrime": "あなたの焦点距離の使い方は分散しすぎており、1本の単焦点では支配的になりません。",
-          "caption": "{min}mm から {max}mm までの 1mm 刻みヒストグラム；上位 {peakCount} 件のピークにラベル付け。"
+          "caption": "{min}mm から {max}mm までの 1mm 刻みヒストグラム；上位 {peakCount} 件のピークにラベル付け。",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "ズームごとの焦点距離",

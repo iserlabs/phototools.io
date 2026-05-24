@@ -172,7 +172,8 @@
           "topPeaks": "Picchi principali",
           "onePrime": "Un obiettivo fisso da {mm} mm coprirebbe il {pct}% dei tuoi scatti entro ±25%.",
           "noPrime": "Il tuo uso delle lunghezze focali è troppo distribuito perché un singolo obiettivo fisso possa dominare.",
-          "caption": "Istogramma con intervalli di 1 mm da {min} mm a {max} mm; {peakCount} picchi principali etichettati."
+          "caption": "Istogramma con intervalli di 1 mm da {min} mm a {max} mm; {peakCount} picchi principali etichettati.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Lunghezza focale per zoom",

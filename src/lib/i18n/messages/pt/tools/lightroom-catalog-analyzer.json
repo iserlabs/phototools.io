@@ -172,7 +172,8 @@
           "topPeaks": "Picos principais",
           "onePrime": "Uma lente fixa de {mm} mm cobriria {pct}% das suas fotos dentro de ±25%.",
           "noPrime": "Seu uso de distâncias focais é distribuído demais para que uma única lente fixa domine.",
-          "caption": "Histograma com intervalos de 1 mm de {min} mm até {max} mm; {peakCount} picos principais rotulados."
+          "caption": "Histograma com intervalos de 1 mm de {min} mm até {max} mm; {peakCount} picos principais rotulados.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Distância focal por zoom",

@@ -172,7 +172,8 @@
           "topPeaks": "Đỉnh hàng đầu",
           "onePrime": "Một ống kính fix {mm}mm sẽ bao phủ {pct}% số ảnh của bạn trong khoảng ±25%.",
           "noPrime": "Việc sử dụng tiêu cự của bạn quá phân tán để một ống kính fix duy nhất chiếm ưu thế.",
-          "caption": "Biểu đồ với khoảng chia 1mm từ {min}mm đến {max}mm; {peakCount} đỉnh hàng đầu được gắn nhãn."
+          "caption": "Biểu đồ với khoảng chia 1mm từ {min}mm đến {max}mm; {peakCount} đỉnh hàng đầu được gắn nhãn.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Tiêu cự theo ống kính zoom",

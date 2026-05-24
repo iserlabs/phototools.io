@@ -73,10 +73,10 @@ export function Gear() {
             <Bar dataKey="count" fill="var(--accent)" />
           </BarChart>
         </ResponsiveContainer>
-        <ul style={{ margin: '8px 0 0', paddingLeft: 16 }}>
+        <ul className="sr-only">
           {g.topLenses.map((l) => (
             <li key={l.lens}>
-              <span>{l.lens}</span> — {l.count.toLocaleString()}
+              {l.lens} — {l.count.toLocaleString()}
             </li>
           ))}
         </ul>
@@ -87,11 +87,11 @@ export function Gear() {
       <table style={TABLE}>
         <thead>
           <tr>
-            <th>{t('tableHeaders.body')}</th>
-            <th>{t('tableHeaders.lens')}</th>
-            <th>{t('tableHeaders.count')}</th>
-            <th>{t('tableHeaders.firstUsed')}</th>
-            <th>{t('tableHeaders.lastUsed')}</th>
+            <th scope="col">{t('tableHeaders.body')}</th>
+            <th scope="col">{t('tableHeaders.lens')}</th>
+            <th scope="col">{t('tableHeaders.count')}</th>
+            <th scope="col">{t('tableHeaders.firstUsed')}</th>
+            <th scope="col">{t('tableHeaders.lastUsed')}</th>
           </tr>
         </thead>
         <tbody>

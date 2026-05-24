@@ -172,7 +172,8 @@
           "topPeaks": "Najwyższe szczyty",
           "onePrime": "Stałka {mm}mm pokryłaby {pct}% Twoich zdjęć w zakresie ±25%.",
           "noPrime": "Twoje użycie ogniskowych jest zbyt rozproszone, by jedna stałka dominowała.",
-          "caption": "Histogram z koszami co 1 mm od {min}mm do {max}mm; oznaczono {peakCount} najwyższych szczytów."
+          "caption": "Histogram z koszami co 1 mm od {min}mm do {max}mm; oznaczono {peakCount} najwyższych szczytów.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Ogniskowa na zoom",

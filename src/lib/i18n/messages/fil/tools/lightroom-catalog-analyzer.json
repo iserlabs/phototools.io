@@ -172,7 +172,8 @@
           "topPeaks": "Nangungunang mga peak",
           "onePrime": "Ang isang {mm}mm prime ay sasaklaw sa {pct}% ng iyong mga shot sa loob ng ±25%.",
           "noPrime": "Masyadong nakakalat ang paggamit mo ng focal length para mangibabaw ang iisang prime.",
-          "caption": "Histogram na 1mm-bin mula {min}mm hanggang {max}mm; {peakCount} nangungunang peak ang nilagyan ng label."
+          "caption": "Histogram na 1mm-bin mula {min}mm hanggang {max}mm; {peakCount} nangungunang peak ang nilagyan ng label.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Focal Length bawat Zoom",

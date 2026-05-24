@@ -172,7 +172,8 @@
           "topPeaks": "Ana zirveler",
           "onePrime": "Bir {mm}mm sabit objektif, çekimlerinizin %{pct}'sini ±%25 içinde karşılardı.",
           "noPrime": "Odak uzaklığı kullanımınız tek bir sabit objektifin baskın olması için çok dağınık.",
-          "caption": "{min}mm'den {max}mm'ye 1mm aralıklı histogram; {peakCount} ana zirve etiketlendi."
+          "caption": "{min}mm'den {max}mm'ye 1mm aralıklı histogram; {peakCount} ana zirve etiketlendi.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Zoom Başına Odak Uzaklığı",

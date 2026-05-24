@@ -172,7 +172,8 @@
           "topPeaks": "Fő csúcsok",
           "onePrime": "Egy {mm}mm-es fix objektív a felvételeinek {pct}%-át lefedné ±25%-on belül.",
           "noPrime": "A gyújtótávolság-használata túl szétszórt ahhoz, hogy egyetlen fix objektív domináljon.",
-          "caption": "1mm-es rekeszekkel készült hisztogram {min}mm-től {max}mm-ig; {peakCount} fő csúcs felcímkézve."
+          "caption": "1mm-es rekeszekkel készült hisztogram {min}mm-től {max}mm-ig; {peakCount} fő csúcs felcímkézve.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Gyújtótávolság zoomonként",

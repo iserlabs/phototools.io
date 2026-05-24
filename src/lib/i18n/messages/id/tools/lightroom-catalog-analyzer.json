@@ -172,7 +172,8 @@
           "topPeaks": "Puncak teratas",
           "onePrime": "Sebuah lensa prime {mm}mm akan mencakup {pct}% jepretan Anda dalam ±25%.",
           "noPrime": "Penggunaan panjang fokus Anda terlalu tersebar untuk didominasi satu lensa prime.",
-          "caption": "Histogram bin-1mm dari {min}mm hingga {max}mm; {peakCount} puncak teratas diberi label."
+          "caption": "Histogram bin-1mm dari {min}mm hingga {max}mm; {peakCount} puncak teratas diberi label.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Panjang Fokus per Zoom",

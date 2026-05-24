@@ -172,7 +172,8 @@
           "topPeaks": "Viktigste topper",
           "onePrime": "Et fastobjektiv på {mm} mm ville dekke {pct} % av opptakene dine innenfor ±25 %.",
           "noPrime": "Bruken din av brennvidder er for spredt til at ett enkelt fastobjektiv kan dominere.",
-          "caption": "Histogram med 1 mm-intervaller fra {min} mm til {max} mm; {peakCount} viktigste topper merket."
+          "caption": "Histogram med 1 mm-intervaller fra {min} mm til {max} mm; {peakCount} viktigste topper merket.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Brennvidde per zoom",

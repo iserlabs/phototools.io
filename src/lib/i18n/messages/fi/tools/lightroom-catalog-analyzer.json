@@ -172,7 +172,8 @@
           "topPeaks": "Tärkeimmät huiput",
           "onePrime": "Yksi {mm} mm:n kiinteäpolttovälinen objektiivi kattaisi {pct} % kuvistasi ±25 %:n sisällä.",
           "noPrime": "Polttovälien käyttösi on liian hajanaista, jotta yksi kiinteäpolttovälinen objektiivi voisi hallita.",
-          "caption": "Histogrammi 1 mm:n välein {min} mm:stä {max} mm:iin; {peakCount} tärkeintä huippua merkitty."
+          "caption": "Histogrammi 1 mm:n välein {min} mm:stä {max} mm:iin; {peakCount} tärkeintä huippua merkitty.",
+          "peakItem": "{mm}mm · {pct}%"
         },
         "focal-length-per-zoom": {
           "title": "Polttoväli zoomia kohden",
