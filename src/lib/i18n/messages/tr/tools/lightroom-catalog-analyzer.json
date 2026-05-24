@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": ".lrcat dosyanızı buraya bırakın veya göz atmak için tıklayın",
         "tapPrompt": "Bir .lrcat dosyası seçmek için dokunun",
-        "browseButton": "Kataloğa göz at",
         "selectedFile": "Seçildi: {fileName}",
         "ariaLabel": "Lightroom Classic katalog dosyası seçici",
         "errorNotLrcat": "Bu dosya bir Lightroom Classic kataloğu (.lrcat) gibi görünmüyor.",
@@ -90,13 +89,11 @@
           "ratings": "Derecelendirme ve Seçimler",
           "keywords": "Anahtar Kelime Kapsamı",
           "bursts": "Seri Çekim Tespiti",
-          "drilldown": "Detaylı İnceleme",
           "period-comparison": "Dönem Karşılaştırması",
           "catalog-health": "Katalog Sağlığı"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "{section} yükleniyor…",
         "footerNote": "Yerel katalog dosyanızdan tarayıcınızda hesaplandı. Hiçbir şey yüklenmedi."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Kitaplık → Eksik Fotoğrafları Bul, bozuk yolları çözebilir."
             }
           }
-        },
-        "share": {
-          "button": "URL ile paylaş",
-          "placeholderTitle": "Plan 3 bunu bağlar."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Uygulanan filtre",
-          "summaryShort": "Bu görünüm filtrelendi: {summary}",
           "showAll": "Tüm filtreleri göster",
           "dimensions": {
             "dateRange": "Tarihler",

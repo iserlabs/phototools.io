@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "I-drop ang iyong .lrcat file dito, o mag-click para mag-browse",
         "tapPrompt": "I-tap para pumili ng .lrcat file",
-        "browseButton": "Mag-browse ng catalog",
         "selectedFile": "Napili: {fileName}",
         "ariaLabel": "Pumipili ng Lightroom Classic catalog file",
         "errorNotLrcat": "Ang file na iyon ay mukhang hindi isang Lightroom Classic catalog (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Ratings at Picks",
           "keywords": "Saklaw ng Keyword",
           "bursts": "Pag-detect ng Burst",
-          "drilldown": "Drilldown Explorer",
           "period-comparison": "Paghahambing ng Panahon",
           "catalog-health": "Kalusugan ng Catalog"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Nilo-load ang {section}…",
         "footerNote": "Kinalkula sa iyong browser mula sa iyong lokal na catalog file. Walang na-upload."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Library → Find Missing Photos ay maaaring magresolba ng mga sirang path."
             }
           }
-        },
-        "share": {
-          "button": "Ibahagi sa pamamagitan ng URL",
-          "placeholderTitle": "Ikinakabit ito ng Plan 3."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Inilapat na filter",
-          "summaryShort": "Na-filter ang view na ito: {summary}",
           "showAll": "Ipakita ang lahat ng filter",
           "dimensions": {
             "dateRange": "Mga petsa",

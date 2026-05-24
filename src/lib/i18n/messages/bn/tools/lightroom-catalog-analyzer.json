@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "আপনার .lrcat ফাইল এখানে রাখুন, অথবা ব্রাউজ করতে ক্লিক করুন",
         "tapPrompt": "একটি .lrcat ফাইল বেছে নিতে ট্যাপ করুন",
-        "browseButton": "ক্যাটালগ ব্রাউজ করুন",
         "selectedFile": "নির্বাচিত: {fileName}",
         "ariaLabel": "Lightroom Classic ক্যাটালগ ফাইল পিকার",
         "errorNotLrcat": "সেই ফাইলটি Lightroom Classic ক্যাটালগ (.lrcat) বলে মনে হচ্ছে না।",
@@ -90,13 +89,11 @@
           "ratings": "রেটিং ও পিক",
           "keywords": "কীওয়ার্ড কভারেজ",
           "bursts": "বার্স্ট সনাক্তকরণ",
-          "drilldown": "ড্রিলডাউন এক্সপ্লোরার",
           "period-comparison": "সময়কাল তুলনা",
           "catalog-health": "ক্যাটালগ স্বাস্থ্য"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "{section} লোড হচ্ছে…",
         "footerNote": "আপনার লোকাল ক্যাটালগ ফাইল থেকে আপনার ব্রাউজারে গণনা করা হয়েছে। কিছুই আপলোড করা হয়নি।"
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Library → Find Missing Photos ভাঙা পাথ সমাধান করতে পারে।"
             }
           }
-        },
-        "share": {
-          "button": "URL-এর মাধ্যমে শেয়ার করুন",
-          "placeholderTitle": "Plan 3 এটি সংযুক্ত করে।"
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "ফিল্টার প্রয়োগ করা হয়েছে",
-          "summaryShort": "এই ভিউ ফিল্টার করা হয়েছে: {summary}",
           "showAll": "সমস্ত ফিল্টার দেখান",
           "dimensions": {
             "dateRange": "তারিখ",

@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Sleep je .lrcat-bestand hierheen of klik om te bladeren",
         "tapPrompt": "Tik om een .lrcat-bestand te kiezen",
-        "browseButton": "Naar catalogus bladeren",
         "selectedFile": "Geselecteerd: {fileName}",
         "ariaLabel": "Bestandskiezer voor Lightroom Classic-catalogus",
         "errorNotLrcat": "Dat bestand lijkt geen Lightroom Classic-catalogus (.lrcat) te zijn.",
@@ -90,13 +89,11 @@
           "ratings": "Beoordelingen en selecties",
           "keywords": "Trefwoorddekking",
           "bursts": "Burstdetectie",
-          "drilldown": "Detailverkenner",
           "period-comparison": "Periodevergelijking",
           "catalog-health": "Catalogusgezondheid"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "{section} laden…",
         "footerNote": "Berekend in je browser op basis van je lokale catalogusbestand. Er is niets geüpload."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Bibliotheek → Ontbrekende foto's zoeken kan verbroken paden oplossen."
             }
           }
-        },
-        "share": {
-          "button": "Delen via URL",
-          "placeholderTitle": "Plan 3 koppelt dit."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Filter toegepast",
-          "summaryShort": "Deze weergave is gefilterd: {summary}",
           "showAll": "Alle filters tonen",
           "dimensions": {
             "dateRange": "Datums",

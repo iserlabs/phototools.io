@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Húzza ide a .lrcat fájlt, vagy kattintson a tallózáshoz",
         "tapPrompt": "Koppintson egy .lrcat fájl kiválasztásához",
-        "browseButton": "Katalógus tallózása",
         "selectedFile": "Kiválasztva: {fileName}",
         "ariaLabel": "Lightroom Classic katalógusfájl-választó",
         "errorNotLrcat": "Ez a fájl nem tűnik Lightroom Classic katalógusnak (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Értékelések és kiválasztások",
           "keywords": "Kulcsszó-lefedettség",
           "bursts": "Sorozatfelvétel-észlelés",
-          "drilldown": "Részletes felfedező",
           "period-comparison": "Időszak-összehasonlítás",
           "catalog-health": "Katalógus állapota"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "{section} betöltése…",
         "footerNote": "A böngészőjében számítva a helyi katalógusfájlból. Semmi nem került feltöltésre."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Könyvtár → Hiányzó fényképek keresése feloldhatja a hibás útvonalakat."
             }
           }
-        },
-        "share": {
-          "button": "Megosztás URL-en",
-          "placeholderTitle": "A 3. terv ezt összeköti."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Alkalmazott szűrő",
-          "summaryShort": "Ez a nézet szűrve van: {summary}",
           "showAll": "Összes szűrő megjelenítése",
           "dimensions": {
             "dateRange": "Dátumok",

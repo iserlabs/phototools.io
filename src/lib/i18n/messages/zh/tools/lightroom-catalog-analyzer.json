@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "将 .lrcat 文件拖放到此处，或点击浏览",
         "tapPrompt": "点击选择 .lrcat 文件",
-        "browseButton": "浏览目录",
         "selectedFile": "已选择：{fileName}",
         "ariaLabel": "Lightroom Classic 目录文件选择器",
         "errorNotLrcat": "该文件看起来不是 Lightroom Classic 目录（.lrcat）。",
@@ -90,13 +89,11 @@
           "ratings": "评级与精选",
           "keywords": "关键词覆盖率",
           "bursts": "连拍检测",
-          "drilldown": "深入探索器",
           "period-comparison": "时段比较",
           "catalog-health": "目录健康度"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "正在加载 {section}……",
         "footerNote": "在您的浏览器中根据本地目录文件计算得出。未上传任何内容。"
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → 图库 → 查找缺失的照片可解决断开的路径。"
             }
           }
-        },
-        "share": {
-          "button": "通过 URL 分享",
-          "placeholderTitle": "计划 3 将连接此功能。"
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "已应用筛选",
-          "summaryShort": "此视图已筛选：{summary}",
           "showAll": "显示所有筛选",
           "dimensions": {
             "dateRange": "日期",

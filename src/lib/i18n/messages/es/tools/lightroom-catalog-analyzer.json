@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Arrastra aquí tu archivo .lrcat o haz clic para buscar",
         "tapPrompt": "Toca para elegir un archivo .lrcat",
-        "browseButton": "Buscar catálogo",
         "selectedFile": "Seleccionado: {fileName}",
         "ariaLabel": "Selector de archivo de catálogo de Lightroom Classic",
         "errorNotLrcat": "Ese archivo no parece un catálogo de Lightroom Classic (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Valoraciones y selecciones",
           "keywords": "Cobertura de palabras clave",
           "bursts": "Detección de ráfagas",
-          "drilldown": "Explorador detallado",
           "period-comparison": "Comparación de periodos",
           "catalog-health": "Estado del catálogo"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Cargando {section}…",
         "footerNote": "Calculado en tu navegador a partir de tu archivo de catálogo local. No se ha subido nada."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Biblioteca → Buscar fotos que faltan puede resolver las rutas rotas."
             }
           }
-        },
-        "share": {
-          "button": "Compartir por URL",
-          "placeholderTitle": "El Plan 3 conecta esto."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Filtro aplicado",
-          "summaryShort": "Esta vista está filtrada: {summary}",
           "showAll": "Mostrar todos los filtros",
           "dimensions": {
             "dateRange": "Fechas",

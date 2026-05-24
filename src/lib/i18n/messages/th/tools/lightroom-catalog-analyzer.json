@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "วางไฟล์ .lrcat ของคุณที่นี่ หรือคลิกเพื่อเรียกดู",
         "tapPrompt": "แตะเพื่อเลือกไฟล์ .lrcat",
-        "browseButton": "เรียกดูแคตตาล็อก",
         "selectedFile": "เลือกแล้ว: {fileName}",
         "ariaLabel": "ตัวเลือกไฟล์แคตตาล็อก Lightroom Classic",
         "errorNotLrcat": "ไฟล์นั้นดูไม่เหมือนแคตตาล็อก Lightroom Classic (.lrcat)",
@@ -90,13 +89,11 @@
           "ratings": "การให้คะแนนและการเลือก",
           "keywords": "ความครอบคลุมคีย์เวิร์ด",
           "bursts": "การตรวจจับการถ่ายต่อเนื่อง",
-          "drilldown": "ตัวสำรวจเจาะลึก",
           "period-comparison": "การเปรียบเทียบช่วงเวลา",
           "catalog-health": "สุขภาพแคตตาล็อก"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "กำลังโหลด {section}…",
         "footerNote": "คำนวณในเบราว์เซอร์ของคุณจากไฟล์แคตตาล็อกในเครื่องของคุณ ไม่มีอะไรถูกอัปโหลด"
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Library → Find Missing Photos สามารถแก้ไขเส้นทางที่เสียหายได้"
             }
           }
-        },
-        "share": {
-          "button": "แชร์ผ่าน URL",
-          "placeholderTitle": "Plan 3 เชื่อมต่อส่วนนี้"
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "ใช้ตัวกรองแล้ว",
-          "summaryShort": "มุมมองนี้ถูกกรอง: {summary}",
           "showAll": "แสดงตัวกรองทั้งหมด",
           "dimensions": {
             "dateRange": "วันที่",

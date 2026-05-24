@@ -16,10 +16,12 @@
 import { readFileSync, existsSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { describe, expect, it, vi } from 'vitest'
+import type * as ComlinkTypes from 'comlink'
+import type { AnalyzerWorker } from './analyzer.worker'
 import { insightBlobSchema } from '@/lib/lrcat/insight-blob.schema'
 
 vi.mock('comlink', async () => {
-  const actual = await vi.importActual<typeof import('comlink')>('comlink')
+  const actual = await vi.importActual<typeof ComlinkTypes>('comlink')
   return { ...actual, expose: vi.fn() }
 })
 
@@ -40,8 +42,7 @@ describe.skipIf(!hasDemo)('demo catalog golden stats', () => {
     await import('./analyzer.worker')
     const Comlink = await import('comlink')
     const exposeMock = vi.mocked(Comlink.expose)
-    type Api = import('./analyzer.worker').AnalyzerWorker
-    const api = exposeMock.mock.calls[0][0] as Api
+    const api = exposeMock.mock.calls[0][0] as AnalyzerWorker
 
     const blob = await api.openCatalog(loadDemoBuffer())
 

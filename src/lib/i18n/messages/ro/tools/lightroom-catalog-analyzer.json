@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Trage aici fișierul .lrcat sau dă clic pentru a răsfoi",
         "tapPrompt": "Atinge pentru a alege un fișier .lrcat",
-        "browseButton": "Răsfoiește catalogul",
         "selectedFile": "Selectat: {fileName}",
         "ariaLabel": "Selector de fișier de catalog Lightroom Classic",
         "errorNotLrcat": "Acel fișier nu pare a fi un catalog Lightroom Classic (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Evaluări și selecții",
           "keywords": "Acoperirea cuvintelor-cheie",
           "bursts": "Detectarea rafalelor",
-          "drilldown": "Explorator detaliat",
           "period-comparison": "Comparație între perioade",
           "catalog-health": "Starea catalogului"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Se încarcă {section}…",
         "footerNote": "Calculat în browserul tău din fișierul tău catalog local. Nimic nu a fost încărcat."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Bibliotecă → Găsire fotografii lipsă poate rezolva căile întrerupte."
             }
           }
-        },
-        "share": {
-          "button": "Partajează prin URL",
-          "placeholderTitle": "Planul 3 conectează acest lucru."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Filtru aplicat",
-          "summaryShort": "Această vedere este filtrată: {summary}",
           "showAll": "Afișează toate filtrele",
           "dimensions": {
             "dateRange": "Date",

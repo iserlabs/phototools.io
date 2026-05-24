@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Перетягніть сюди файл .lrcat або натисніть для вибору",
         "tapPrompt": "Торкніться, щоб вибрати файл .lrcat",
-        "browseButton": "Вибрати каталог",
         "selectedFile": "Вибрано: {fileName}",
         "ariaLabel": "Вибір файлу каталогу Lightroom Classic",
         "errorNotLrcat": "Цей файл не схожий на каталог Lightroom Classic (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Рейтинги та позначки",
           "keywords": "Покриття ключовими словами",
           "bursts": "Виявлення серій",
-          "drilldown": "Детальний огляд",
           "period-comparison": "Порівняння періодів",
           "catalog-health": "Стан каталогу"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Завантаження: {section}…",
         "footerNote": "Обчислено у вашому браузері з локального файлу каталогу. Нічого не було завантажено."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Бібліотека → Знайти відсутні фотографії може усунути пошкоджені шляхи."
             }
           }
-        },
-        "share": {
-          "button": "Поділитися через URL",
-          "placeholderTitle": "План 3 підключить це."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Застосований фільтр",
-          "summaryShort": "Цей вигляд відфільтровано: {summary}",
           "showAll": "Показати всі фільтри",
           "dimensions": {
             "dateRange": "Дати",

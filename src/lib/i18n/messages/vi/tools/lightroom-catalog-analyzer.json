@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Thả tệp .lrcat của bạn vào đây, hoặc nhấp để duyệt",
         "tapPrompt": "Chạm để chọn một tệp .lrcat",
-        "browseButton": "Duyệt catalog",
         "selectedFile": "Đã chọn: {fileName}",
         "ariaLabel": "Bộ chọn tệp catalog Lightroom Classic",
         "errorNotLrcat": "Tệp đó không giống một catalog Lightroom Classic (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Xếp hạng & lựa chọn",
           "keywords": "Mức độ phủ từ khóa",
           "bursts": "Phát hiện chụp liên tục",
-          "drilldown": "Trình khám phá chi tiết",
           "period-comparison": "So sánh giai đoạn",
           "catalog-health": "Tình trạng catalog"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Đang tải {section}…",
         "footerNote": "Được tính toán trong trình duyệt của bạn từ tệp catalog cục bộ. Không có gì được tải lên."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Library → Find Missing Photos có thể giải quyết các đường dẫn bị hỏng."
             }
           }
-        },
-        "share": {
-          "button": "Chia sẻ qua URL",
-          "placeholderTitle": "Plan 3 kết nối phần này."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Bộ lọc đã áp dụng",
-          "summaryShort": "Chế độ xem này đã được lọc: {summary}",
           "showAll": "Hiển thị tất cả bộ lọc",
           "dimensions": {
             "dateRange": "Ngày",

@@ -1,6 +1,5 @@
 // Shared types for the Lightroom Catalog Analyzer.
 // Schema-version bump when InsightBlob shape changes in a non-backward-compatible way.
-
 export type InsightSchemaVersion = 1
 
 export interface CatalogMeta {
@@ -163,7 +162,6 @@ export interface CatalogHealthBlock {
   duplicateClusters: Array<{ size: number; firstPath: string; lastPath: string; captureTime: string }>
   missingByRootFolder: Array<{ folder: string; count: number }>
 }
-
 export interface AnalysisFilter {
   dateRange?: { start: string; end: string }
   cameras?: string[]
@@ -175,7 +173,6 @@ export interface AnalysisFilter {
   keywords?: string[]
   picks?: 'pick' | 'reject' | 'none'
 }
-
 export interface InsightBlob {
   meta: CatalogMeta
   yearInReview: YearInReviewBlock | null

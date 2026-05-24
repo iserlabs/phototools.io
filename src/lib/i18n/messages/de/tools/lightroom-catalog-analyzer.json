@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Ziehe deine .lrcat-Datei hierher oder klicke zum Durchsuchen",
         "tapPrompt": "Tippe, um eine .lrcat-Datei auszuwählen",
-        "browseButton": "Katalog durchsuchen",
         "selectedFile": "Ausgewählt: {fileName}",
         "ariaLabel": "Dateiauswahl für Lightroom-Classic-Katalog",
         "errorNotLrcat": "Diese Datei sieht nicht wie ein Lightroom-Classic-Katalog (.lrcat) aus.",
@@ -90,13 +89,11 @@
           "ratings": "Bewertungen & Markierungen",
           "keywords": "Stichwortabdeckung",
           "bursts": "Serienerkennung",
-          "drilldown": "Detail-Explorer",
           "period-comparison": "Zeitraumvergleich",
           "catalog-health": "Katalogzustand"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "{section} wird geladen…",
         "footerNote": "In deinem Browser aus deiner lokalen Katalogdatei berechnet. Es wurde nichts hochgeladen."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Bibliothek → Fehlende Fotos suchen kann unterbrochene Pfade beheben."
             }
           }
-        },
-        "share": {
-          "button": "Per URL teilen",
-          "placeholderTitle": "Plan 3 verbindet dies."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Filter angewendet",
-          "summaryShort": "Diese Ansicht ist gefiltert: {summary}",
           "showAll": "Alle Filter anzeigen",
           "dimensions": {
             "dateRange": "Daten",

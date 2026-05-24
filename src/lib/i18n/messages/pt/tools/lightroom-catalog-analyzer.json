@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Arraste seu arquivo .lrcat para cá ou clique para procurar",
         "tapPrompt": "Toque para escolher um arquivo .lrcat",
-        "browseButton": "Procurar catálogo",
         "selectedFile": "Selecionado: {fileName}",
         "ariaLabel": "Seletor de arquivo de catálogo do Lightroom Classic",
         "errorNotLrcat": "Esse arquivo não parece um catálogo do Lightroom Classic (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Avaliações e seleções",
           "keywords": "Cobertura de palavras-chave",
           "bursts": "Detecção de rajadas",
-          "drilldown": "Explorador detalhado",
           "period-comparison": "Comparação de períodos",
           "catalog-health": "Saúde do catálogo"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Carregando {section}…",
         "footerNote": "Calculado no seu navegador a partir do seu arquivo de catálogo local. Nada foi enviado."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Biblioteca → Localizar Fotos Ausentes pode resolver caminhos quebrados."
             }
           }
-        },
-        "share": {
-          "button": "Compartilhar via URL",
-          "placeholderTitle": "O Plano 3 conecta isto."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Filtro aplicado",
-          "summaryShort": "Esta visualização está filtrada: {summary}",
           "showAll": "Mostrar todos os filtros",
           "dimensions": {
             "dateRange": "Datas",

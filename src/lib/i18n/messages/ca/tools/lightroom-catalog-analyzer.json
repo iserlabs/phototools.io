@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Arrossega aquí el teu fitxer .lrcat o fes clic per cercar",
         "tapPrompt": "Toca per triar un fitxer .lrcat",
-        "browseButton": "Cerca el catàleg",
         "selectedFile": "Seleccionat: {fileName}",
         "ariaLabel": "Selector de fitxer de catàleg de Lightroom Classic",
         "errorNotLrcat": "Aquest fitxer no sembla un catàleg de Lightroom Classic (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Valoracions i seleccions",
           "keywords": "Cobertura de paraules clau",
           "bursts": "Detecció de ràfegues",
-          "drilldown": "Explorador detallat",
           "period-comparison": "Comparació de períodes",
           "catalog-health": "Estat del catàleg"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "S'està carregant {section}…",
         "footerNote": "Calculat al teu navegador a partir del teu fitxer de catàleg local. No s'ha pujat res."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Biblioteca → Cerca fotografies que falten pot resoldre els camins trencats."
             }
           }
-        },
-        "share": {
-          "button": "Comparteix per URL",
-          "placeholderTitle": "El Pla 3 connecta això."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Filtre aplicat",
-          "summaryShort": "Aquesta vista està filtrada: {summary}",
           "showAll": "Mostra tots els filtres",
           "dimensions": {
             "dateRange": "Dates",

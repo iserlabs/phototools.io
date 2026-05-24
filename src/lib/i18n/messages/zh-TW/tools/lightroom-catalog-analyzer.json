@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "將 .lrcat 檔案拖放至此處，或點擊瀏覽",
         "tapPrompt": "點按以選擇 .lrcat 檔案",
-        "browseButton": "瀏覽目錄",
         "selectedFile": "已選擇：{fileName}",
         "ariaLabel": "Lightroom Classic 目錄檔案選擇器",
         "errorNotLrcat": "該檔案看起來不是 Lightroom Classic 目錄（.lrcat）。",
@@ -90,13 +89,11 @@
           "ratings": "評分與精選",
           "keywords": "關鍵字覆蓋率",
           "bursts": "連拍偵測",
-          "drilldown": "深入探索器",
           "period-comparison": "時段比較",
           "catalog-health": "目錄健康度"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "正在載入 {section}……",
         "footerNote": "在您的瀏覽器中根據本機目錄檔案計算得出。未上傳任何內容。"
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → 圖庫 → 尋找遺失的照片可解決中斷的路徑。"
             }
           }
-        },
-        "share": {
-          "button": "透過 URL 分享",
-          "placeholderTitle": "計畫 3 將連接此功能。"
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "已套用篩選",
-          "summaryShort": "此檢視已篩選：{summary}",
           "showAll": "顯示所有篩選",
           "dimensions": {
             "dateRange": "日期",

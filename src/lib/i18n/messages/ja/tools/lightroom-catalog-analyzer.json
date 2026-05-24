@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "ここに .lrcat ファイルをドロップするか、クリックして選択",
         "tapPrompt": "タップして .lrcat ファイルを選択",
-        "browseButton": "カタログを参照",
         "selectedFile": "選択中: {fileName}",
         "ariaLabel": "Lightroom Classic カタログファイルの選択",
         "errorNotLrcat": "このファイルは Lightroom Classic カタログ（.lrcat）ではないようです。",
@@ -90,13 +89,11 @@
           "ratings": "レーティングと採用",
           "keywords": "キーワードの網羅率",
           "bursts": "連写の検出",
-          "drilldown": "ドリルダウン エクスプローラー",
           "period-comparison": "期間比較",
           "catalog-health": "カタログの健全性"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "{section} を読み込み中…",
         "footerNote": "ローカルのカタログファイルからブラウザ内で計算されました。アップロードされたものはありません。"
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → ライブラリ → 見つからない写真を検索 で壊れたパスを解決できます。"
             }
           }
-        },
-        "share": {
-          "button": "URL で共有",
-          "placeholderTitle": "プラン 3 でこれを接続します。"
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "適用されたフィルター",
-          "summaryShort": "このビューはフィルター済みです: {summary}",
           "showAll": "すべてのフィルターを表示",
           "dimensions": {
             "dateRange": "日付",

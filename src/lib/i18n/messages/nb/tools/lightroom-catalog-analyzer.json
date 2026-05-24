@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Slipp .lrcat-filen din her, eller klikk for å bla gjennom",
         "tapPrompt": "Trykk for å velge en .lrcat-fil",
-        "browseButton": "Bla etter katalog",
         "selectedFile": "Valgt: {fileName}",
         "ariaLabel": "Filvelger for Lightroom Classic-katalog",
         "errorNotLrcat": "Den filen ser ikke ut som en Lightroom Classic-katalog (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Vurderinger og utvalg",
           "keywords": "Nøkkelorddekning",
           "bursts": "Serieopptaksdeteksjon",
-          "drilldown": "Detaljutforsker",
           "period-comparison": "Periodesammenligning",
           "catalog-health": "Katalogens tilstand"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Laster {section}…",
         "footerNote": "Beregnet i nettleseren din fra den lokale katalogfilen din. Ingenting er lastet opp."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Bibliotek → Finn manglende bilder kan løse brutte baner."
             }
           }
-        },
-        "share": {
-          "button": "Del via URL",
-          "placeholderTitle": "Plan 3 kobler dette sammen."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Filter brukt",
-          "summaryShort": "Denne visningen er filtrert: {summary}",
           "showAll": "Vis alle filtre",
           "dimensions": {
             "dateRange": "Datoer",

@@ -11,6 +11,8 @@
  * boundary itself, which is exercised by the Playwright E2E in Plan 1g.
  */
 import { beforeAll, describe, expect, it, vi } from 'vitest'
+import type * as ComlinkTypes from 'comlink'
+import type { AnalyzerWorker } from './analyzer.worker'
 import { insightBlobSchema } from '@/lib/lrcat/insight-blob.schema'
 import { buildFixtureBuffer } from '@/lib/lrcat/test-fixtures/build-fixture-catalog'
 
@@ -20,17 +22,15 @@ import { buildFixtureBuffer } from '@/lib/lrcat/test-fixtures/build-fixture-cata
 // loads cleanly. Comlink's `proxy` and friends are not used by the worker
 // internals — only by callers — so this mock is safe.
 vi.mock('comlink', async () => {
-  const actual = await vi.importActual<typeof import('comlink')>('comlink')
+  const actual = await vi.importActual<typeof ComlinkTypes>('comlink')
   return { ...actual, expose: vi.fn() }
 })
-
-type Api = import('./analyzer.worker').AnalyzerWorker
 
 // The worker calls Comlink.expose(api) once at module-eval time. We capture
 // the api here in beforeAll — vitest's `clearMocks` wipes the spy's call
 // history between tests, so reading `mock.calls` lazily in the second test
 // would find nothing.
-let api: Api
+let api: AnalyzerWorker
 
 beforeAll(async () => {
   // Dynamic import so the comlink mock is in place before module eval.
@@ -38,7 +38,7 @@ beforeAll(async () => {
   const Comlink = await import('comlink')
   const exposeMock = vi.mocked(Comlink.expose)
   expect(exposeMock).toHaveBeenCalled()
-  api = exposeMock.mock.calls[0][0] as Api
+  api = exposeMock.mock.calls[0][0] as AnalyzerWorker
 })
 
 describe('analyzer.worker integration', () => {

@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Pudota .lrcat-tiedostosi tähän tai napsauta selataksesi",
         "tapPrompt": "Napauta valitaksesi .lrcat-tiedoston",
-        "browseButton": "Selaa luetteloa",
         "selectedFile": "Valittu: {fileName}",
         "ariaLabel": "Lightroom Classic -luettelon tiedostovalitsin",
         "errorNotLrcat": "Tuo tiedosto ei näytä Lightroom Classic -luettelolta (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Arvioinnit ja valinnat",
           "keywords": "Avainsanakattavuus",
           "bursts": "Sarjakuvauksen tunnistus",
-          "drilldown": "Yksityiskohtainen tutkija",
           "period-comparison": "Jaksojen vertailu",
           "catalog-health": "Luettelon kunto"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Ladataan {section}…",
         "footerNote": "Laskettu selaimessasi paikallisesta luettelotiedostostasi. Mitään ei ole ladattu palvelimelle."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Kirjasto → Etsi puuttuvat kuvat voi korjata rikkinäiset polut."
             }
           }
-        },
-        "share": {
-          "button": "Jaa URL-osoitteella",
-          "placeholderTitle": "Suunnitelma 3 yhdistää tämän."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Suodatin käytössä",
-          "summaryShort": "Tämä näkymä on suodatettu: {summary}",
           "showAll": "Näytä kaikki suodattimet",
           "dimensions": {
             "dateRange": "Päivämäärät",

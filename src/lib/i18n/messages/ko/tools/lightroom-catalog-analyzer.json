@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "여기에 .lrcat 파일을 끌어다 놓거나 클릭하여 찾아보기",
         "tapPrompt": "탭하여 .lrcat 파일 선택",
-        "browseButton": "카탈로그 찾아보기",
         "selectedFile": "선택됨: {fileName}",
         "ariaLabel": "Lightroom Classic 카탈로그 파일 선택",
         "errorNotLrcat": "이 파일은 Lightroom Classic 카탈로그(.lrcat)가 아닌 것 같습니다.",
@@ -90,13 +89,11 @@
           "ratings": "별점 및 채택",
           "keywords": "키워드 커버리지",
           "bursts": "연사 감지",
-          "drilldown": "드릴다운 탐색기",
           "period-comparison": "기간 비교",
           "catalog-health": "카탈로그 상태"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "{section} 불러오는 중…",
         "footerNote": "로컬 카탈로그 파일에서 브라우저로 계산되었습니다. 업로드된 것은 없습니다."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → 라이브러리 → 누락된 사진 찾기로 끊어진 경로를 해결할 수 있습니다."
             }
           }
-        },
-        "share": {
-          "button": "URL로 공유",
-          "placeholderTitle": "플랜 3에서 이를 연결합니다."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "적용된 필터",
-          "summaryShort": "이 보기는 필터링되었습니다: {summary}",
           "showAll": "모든 필터 표시",
           "dimensions": {
             "dateRange": "날짜",

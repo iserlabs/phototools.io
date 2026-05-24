@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Släpp din .lrcat-fil här, eller klicka för att bläddra",
         "tapPrompt": "Tryck för att välja en .lrcat-fil",
-        "browseButton": "Bläddra efter katalog",
         "selectedFile": "Vald: {fileName}",
         "ariaLabel": "Filväljare för Lightroom Classic-katalog",
         "errorNotLrcat": "Den filen ser inte ut som en Lightroom Classic-katalog (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Betyg och urval",
           "keywords": "Nyckelordstäckning",
           "bursts": "Serietagningsdetektering",
-          "drilldown": "Detaljutforskare",
           "period-comparison": "Periodjämförelse",
           "catalog-health": "Katalogens hälsa"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Läser in {section}…",
         "footerNote": "Beräknat i din webbläsare från din lokala katalogfil. Inget har laddats upp."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Bibliotek → Sök saknade foton kan åtgärda brutna sökvägar."
             }
           }
-        },
-        "share": {
-          "button": "Dela via URL",
-          "placeholderTitle": "Plan 3 kopplar ihop detta."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Filter tillämpat",
-          "summaryShort": "Den här vyn är filtrerad: {summary}",
           "showAll": "Visa alla filter",
           "dimensions": {
             "dateRange": "Datum",

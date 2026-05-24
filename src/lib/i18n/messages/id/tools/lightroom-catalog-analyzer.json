@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Jatuhkan file .lrcat Anda di sini, atau klik untuk menjelajah",
         "tapPrompt": "Ketuk untuk memilih file .lrcat",
-        "browseButton": "Jelajahi katalog",
         "selectedFile": "Dipilih: {fileName}",
         "ariaLabel": "Pemilih file katalog Lightroom Classic",
         "errorNotLrcat": "File itu tidak terlihat seperti katalog Lightroom Classic (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Rating & Pilihan",
           "keywords": "Cakupan Kata Kunci",
           "bursts": "Deteksi Burst",
-          "drilldown": "Penjelajah Drilldown",
           "period-comparison": "Perbandingan Periode",
           "catalog-health": "Kesehatan Katalog"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Memuat {section}…",
         "footerNote": "Dihitung di browser Anda dari file katalog lokal Anda. Tidak ada yang diunggah."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Library → Find Missing Photos dapat menyelesaikan jalur yang rusak."
             }
           }
-        },
-        "share": {
-          "button": "Bagikan via URL",
-          "placeholderTitle": "Plan 3 menghubungkan ini."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Filter diterapkan",
-          "summaryShort": "Tampilan ini terfilter: {summary}",
           "showAll": "Tampilkan semua filter",
           "dimensions": {
             "dateRange": "Tanggal",

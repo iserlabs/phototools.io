@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Lepaskan fail .lrcat anda di sini, atau klik untuk melayari",
         "tapPrompt": "Ketik untuk memilih fail .lrcat",
-        "browseButton": "Layari katalog",
         "selectedFile": "Dipilih: {fileName}",
         "ariaLabel": "Pemilih fail katalog Lightroom Classic",
         "errorNotLrcat": "Fail itu tidak kelihatan seperti katalog Lightroom Classic (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Penarafan & Pilihan",
           "keywords": "Liputan Kata Kunci",
           "bursts": "Pengesanan Pancutan",
-          "drilldown": "Penjelajah Gerudi",
           "period-comparison": "Perbandingan Tempoh",
           "catalog-health": "Kesihatan Katalog"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Memuatkan {section}…",
         "footerNote": "Dikira dalam pelayar anda dari fail katalog setempat anda. Tiada apa-apa telah dimuat naik."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Library → Find Missing Photos boleh menyelesaikan laluan yang rosak."
             }
           }
-        },
-        "share": {
-          "button": "Kongsi melalui URL",
-          "placeholderTitle": "Plan 3 menyambungkan ini."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Penapis digunakan",
-          "summaryShort": "Paparan ini ditapis: {summary}",
           "showAll": "Tunjuk semua penapis",
           "dimensions": {
             "dateRange": "Tarikh",

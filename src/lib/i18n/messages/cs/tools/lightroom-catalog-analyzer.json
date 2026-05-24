@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Sem přetáhněte soubor .lrcat nebo klikněte pro procházení",
         "tapPrompt": "Klepnutím vyberte soubor .lrcat",
-        "browseButton": "Procházet katalog",
         "selectedFile": "Vybráno: {fileName}",
         "ariaLabel": "Výběr souboru katalogu Lightroom Classic",
         "errorNotLrcat": "Tento soubor nevypadá jako katalog Lightroom Classic (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Hodnocení a výběry",
           "keywords": "Pokrytí klíčovými slovy",
           "bursts": "Detekce sérií",
-          "drilldown": "Detailní průzkumník",
           "period-comparison": "Porovnání období",
           "catalog-health": "Stav katalogu"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Načítání: {section}…",
         "footerNote": "Vypočítáno ve vašem prohlížeči z lokálního souboru katalogu. Nic nebylo nahráno."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Knihovna → Najít chybějící fotografie může vyřešit porušené cesty."
             }
           }
-        },
-        "share": {
-          "button": "Sdílet přes URL",
-          "placeholderTitle": "Plán 3 to propojí."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Použitý filtr",
-          "summaryShort": "Tento pohled je filtrovaný: {summary}",
           "showAll": "Zobrazit všechny filtry",
           "dimensions": {
             "dateRange": "Data",

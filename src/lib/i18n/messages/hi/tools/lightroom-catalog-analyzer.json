@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "अपनी .lrcat फ़ाइल यहाँ छोड़ें, या ब्राउज़ करने के लिए क्लिक करें",
         "tapPrompt": ".lrcat फ़ाइल चुनने के लिए टैप करें",
-        "browseButton": "कैटलॉग ब्राउज़ करें",
         "selectedFile": "चयनित: {fileName}",
         "ariaLabel": "Lightroom Classic कैटलॉग फ़ाइल चयनकर्ता",
         "errorNotLrcat": "वह फ़ाइल Lightroom Classic कैटलॉग (.lrcat) जैसी नहीं दिखती।",
@@ -90,13 +89,11 @@
           "ratings": "रेटिंग और पिक्स",
           "keywords": "कीवर्ड कवरेज",
           "bursts": "बर्स्ट डिटेक्शन",
-          "drilldown": "ड्रिलडाउन एक्सप्लोरर",
           "period-comparison": "अवधि तुलना",
           "catalog-health": "कैटलॉग स्वास्थ्य"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "{section} लोड हो रहा है…",
         "footerNote": "आपकी लोकल कैटलॉग फ़ाइल से आपके ब्राउज़र में गणना किया गया। कुछ भी अपलोड नहीं किया गया है।"
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Library → Find Missing Photos टूटे हुए पथों को ठीक कर सकता है।"
             }
           }
-        },
-        "share": {
-          "button": "URL के माध्यम से शेयर करें",
-          "placeholderTitle": "Plan 3 इसे जोड़ता है।"
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "फ़िल्टर लागू किया गया",
-          "summaryShort": "यह दृश्य फ़िल्टर किया गया है: {summary}",
           "showAll": "सभी फ़िल्टर दिखाएँ",
           "dimensions": {
             "dateRange": "तिथियाँ",

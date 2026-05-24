@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Drop your .lrcat file here, or click to browse",
         "tapPrompt": "Tap to choose a .lrcat file",
-        "browseButton": "Browse for catalog",
         "selectedFile": "Selected: {fileName}",
         "ariaLabel": "Lightroom Classic catalog file picker",
         "errorNotLrcat": "That file does not look like a Lightroom Classic catalog (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Ratings & Picks",
           "keywords": "Keyword Coverage",
           "bursts": "Burst Detection",
-          "drilldown": "Drilldown Explorer",
           "period-comparison": "Period Comparison",
           "catalog-health": "Catalog Health"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Loading {section}…",
         "footerNote": "Computed in your browser from your local catalog file. Nothing has been uploaded."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Library → Find Missing Photos can resolve broken paths."
             }
           }
-        },
-        "share": {
-          "button": "Share via URL",
-          "placeholderTitle": "Plan 3 wires this up."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Filter applied",
-          "summaryShort": "This view is filtered: {summary}",
           "showAll": "Show all filters",
           "dimensions": {
             "dateRange": "Dates",

@@ -22,7 +22,6 @@
       "filePicker": {
         "dropPrompt": "Ρίξτε εδώ το αρχείο .lrcat ή κάντε κλικ για περιήγηση",
         "tapPrompt": "Πατήστε για να επιλέξετε ένα αρχείο .lrcat",
-        "browseButton": "Περιήγηση για κατάλογο",
         "selectedFile": "Επιλέχθηκε: {fileName}",
         "ariaLabel": "Επιλογέας αρχείου καταλόγου Lightroom Classic",
         "errorNotLrcat": "Αυτό το αρχείο δεν μοιάζει με κατάλογο Lightroom Classic (.lrcat).",
@@ -90,13 +89,11 @@
           "ratings": "Βαθμολογίες & επιλογές",
           "keywords": "Κάλυψη λέξεων-κλειδιών",
           "bursts": "Ανίχνευση ριπών",
-          "drilldown": "Εξερευνητής ανάλυσης",
           "period-comparison": "Σύγκριση περιόδων",
           "catalog-health": "Υγεία καταλόγου"
         }
       },
       "dashboard": {
-        "sectionLoadingLabel": "Φόρτωση {section}…",
         "footerNote": "Υπολογίστηκε στο πρόγραμμα περιήγησής σας από το τοπικό αρχείο καταλόγου. Τίποτα δεν μεταφορτώθηκε."
       },
       "sections": {
@@ -524,10 +521,6 @@
               "actionNote": "Lightroom Classic → Βιβλιοθήκη → Εύρεση φωτογραφιών που λείπουν μπορεί να επιλύσει τις κατεστραμμένες διαδρομές."
             }
           }
-        },
-        "share": {
-          "button": "Κοινοποίηση μέσω URL",
-          "placeholderTitle": "Το Σχέδιο 3 το συνδέει αυτό."
         }
       },
       "share": {
@@ -574,7 +567,6 @@
         },
         "filterBanner": {
           "title": "Εφαρμοσμένο φίλτρο",
-          "summaryShort": "Αυτή η προβολή είναι φιλτραρισμένη: {summary}",
           "showAll": "Εμφάνιση όλων των φίλτρων",
           "dimensions": {
             "dateRange": "Ημερομηνίες",
