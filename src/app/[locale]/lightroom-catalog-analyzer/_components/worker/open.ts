@@ -5,8 +5,7 @@ import sqlite3InitModule, {
 } from '@sqlite.org/sqlite-wasm'
 
 // m-1 (audit): the aggregator `DbLike` interface is satisfied directly by the
-// sqlite-wasm oo1 `Database` returned here; the better-sqlite3 adapter in tests
-// mirrors the same surface.
+// sqlite-wasm oo1 `Database` returned here; tests mirror it via better-sqlite3.
 
 // The bundled `.d.mts` declares init as taking 0 args, but at runtime it accepts
 // an Emscripten config (`print`/`printErr` to silence console noise). Cast to a
@@ -25,7 +24,7 @@ function getSqlite(): Promise<Sqlite3Static> {
 }
 
 export class UnsupportedCatalogError extends Error {
-  constructor(public readonly kind: 'not-sqlite' | 'schema-too-old' | 'not-lrc-classic' | 'corrupt') {
+  constructor(public readonly kind: 'not-sqlite' | 'schema-too-old' | 'not-lrc-classic' | 'corrupt' | 'too-large') {
     super(`Unsupported catalog: ${kind}`)
     this.name = 'UnsupportedCatalogError'
   }
@@ -69,21 +68,16 @@ function probeCatalogVersion(db: Database): number {
 
 /**
  * Open a Lightroom catalog from an ArrayBuffer (in-memory `sqlite3_deserialize`).
- *
- * Used for catalogs small enough to fit in a single buffer — the bundled demo,
- * tests (better-sqlite3 mirrors this surface), and the fallback when OPFS isn't
- * available. Large catalogs (which can't be held in one JS/WASM buffer) go
- * through `openCatalogFromFile` instead.
+ * For catalogs that fit in one buffer — the bundled demo, tests, and the OPFS
+ * fallback. Larger catalogs go through `openCatalogFromFile`.
  */
 export async function openCatalog(buf: ArrayBuffer): Promise<{ db: Database; catalogVersion: number }> {
   assertSqliteHeader(new Uint8Array(buf, 0, Math.min(16, buf.byteLength)))
   const sqlite3 = await getSqlite()
 
-  // Allocate WASM-side memory and copy bytes in. We over-allocate (data length
-  // + headroom) so the deserialized DB has room to grow when the worker adds
-  // the derived `AgSensorCropFactor` table. Combined with RESIZEABLE, SQLite can
-  // also realloc past this capacity. FREEONCLOSE frees it on close; the user's
-  // original .lrcat is never written.
+  // Over-allocate (data + headroom) so the deserialized DB can grow for the
+  // derived AgSensorCropFactor table; RESIZEABLE lets SQLite realloc past it,
+  // FREEONCLOSE frees on close. The user's original .lrcat is never written.
   const len = buf.byteLength
   const HEADROOM = 1024 * 1024 // 1 MB spare pages for the derived crop-factor table
   const cap = len + HEADROOM
@@ -104,18 +98,20 @@ export async function openCatalog(buf: ArrayBuffer): Promise<{ db: Database; cat
   return { db, catalogVersion: probeCatalogVersion(db) }
 }
 
-// ---------------------------------------------------------------------------
-// OPFS SAH-Pool streaming path — for catalogs too large to hold in one buffer.
-// A real Lightroom catalog is routinely hundreds of MB to several GB; a single
-// ArrayBuffer that size can't be allocated (V8 caps ~2 GB) and deserialize would
-// need it all in WASM memory. Instead we stream the file to disk-backed OPFS and
-// let SQLite page from disk via the SAH-Pool VFS. SAH-Pool (unlike the plain
-// `opfs` VFS) needs no SharedArrayBuffer / COOP-COEP isolation, so our headers
-// (and third-party ads) are untouched.
-// ---------------------------------------------------------------------------
+// OPFS SAH-Pool streaming path — for catalogs too large for one buffer (V8 caps
+// ArrayBuffer ~2 GB). Stream the file to disk-backed OPFS and let SQLite page
+// from disk via the SAH-Pool VFS, which (unlike the plain `opfs` VFS) needs no
+// SharedArrayBuffer / COOP-COEP isolation, so our headers (and ads) are untouched.
 
 const OPFS_DIR = '/phototools-lrcat'
 const OPFS_DB_PATH = `${OPFS_DIR}/catalog.lrcat`
+
+// SAH-Pool is backed by one FileSystemSyncAccessHandle, whose read/write `at`
+// offset is truncated to 32 bits in current Chromium — so a DB crossing 2 GB
+// (2^31) corrupts silently (writes past 2 GB wrap onto earlier pages). Cap below
+// 2^31 with headroom for the crop-factor table added after open (verified:
+// 1.9 GB opens cleanly, 2.4 GB corrupts); larger catalogs get a "too large" msg.
+const MAX_OPFS_BYTES = 2_080_000_000
 
 let poolPromise: Promise<SAHPoolUtil | null> | null = null
 
@@ -148,6 +144,10 @@ export async function openCatalogFromFile(
   file: File,
   onBytes?: (read: number, total: number) => void,
 ): Promise<{ db: Database; catalogVersion: number } | null> {
+  // Reject catalogs that would cross the SAH-Pool 2 GB boundary up front, before
+  // a long doomed import — they'd corrupt silently (see MAX_OPFS_BYTES).
+  if (file.size >= MAX_OPFS_BYTES) throw new UnsupportedCatalogError('too-large')
+
   // Cheap header probe (16 bytes) before committing to a full disk import.
   assertSqliteHeader(new Uint8Array(await file.slice(0, 16).arrayBuffer()))
 

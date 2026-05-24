@@ -23,6 +23,7 @@ const CATALOG_KIND_TO_KEY: Record<string, ErrorKey> = {
   'not-lrc-classic': 'notLightroom',
   'schema-too-old': 'schemaTooOld',
   'schema-too-new': 'schemaTooNew',
+  'too-large': 'tooLarge',
   corrupt: 'corrupt',
 }
 
