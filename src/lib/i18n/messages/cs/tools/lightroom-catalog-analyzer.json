@@ -26,7 +26,7 @@
         "ariaLabel": "Výběr souboru katalogu Lightroom Classic",
         "errorNotLrcat": "Tento soubor nevypadá jako katalog Lightroom Classic (.lrcat).",
         "errorReadFailed": "Tento soubor nelze přečíst. Zkuste to znovu.",
-        "errorLocked": "Katalog se nepodařilo načíst. Pokud je Lightroom otevřený, nejprve ho zavřete – během běhu katalog zamyká – nebo vyberte kopii souboru .lrcat a zkuste to znovu.",
+        "errorLocked": "Katalog se nepodařilo načíst – počítač zablokoval přístup k souboru. Spolehlivé řešení: zkopírujte soubor .lrcat na plochu a nahrajte kopii. Tím se vyřeší i katalogy stále otevřené v Lightroomu nebo uložené jen v cloudu (iCloud, Dropbox, OneDrive).",
         "errorEmpty": "Tento soubor vypadá prázdný nebo se ještě nestáhl celý. Pokud je uložený na iCloudu nebo Dropboxu, počkejte na dokončení stahování a zkuste to znovu."
       },
       "largeFileWarning": {

@@ -26,7 +26,7 @@
         "ariaLabel": "Lightroom Classic カタログファイルの選択",
         "errorNotLrcat": "このファイルは Lightroom Classic カタログ（.lrcat）ではないようです。",
         "errorReadFailed": "そのファイルを読み込めませんでした。もう一度お試しください。",
-        "errorLocked": "カタログを読み込めませんでした。Lightroom が開いている場合は、まず終了してください（実行中はカタログがロックされます）。または .lrcat ファイルのコピーを選んで、もう一度お試しください。",
+        "errorLocked": "カタログを読み込めませんでした。お使いのコンピュータがファイルへのアクセスをブロックしました。確実な解決方法は、.lrcat ファイルをデスクトップにコピーして、そのコピーをアップロードすることです。これは、Lightroom でまだ開いているカタログや、クラウド（iCloud、Dropbox、OneDrive）だけに保存されているカタログにも有効です。",
         "errorEmpty": "このファイルは空か、ダウンロードが完了していないようです。iCloud や Dropbox に保存されている場合は、ダウンロードの完了を待ってからもう一度お試しください。"
       },
       "largeFileWarning": {

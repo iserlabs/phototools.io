@@ -26,7 +26,7 @@
         "ariaLabel": "Lightroom Classic -luettelon tiedostovalitsin",
         "errorNotLrcat": "Tuo tiedosto ei näytä Lightroom Classic -luettelolta (.lrcat).",
         "errorReadFailed": "Tuota tiedostoa ei voitu lukea. Yritä uudelleen.",
-        "errorLocked": "Luettelon lukeminen epäonnistui. Jos Lightroom on auki, sulje se ensin – se lukitsee luettelon ollessaan käynnissä – tai valitse kopio .lrcat-tiedostostasi ja yritä uudelleen.",
+        "errorLocked": "Luettelon lukeminen epäonnistui – tietokoneesi esti pääsyn tiedostoon. Luotettava ratkaisu: kopioi .lrcat-tiedosto työpöydälle ja lähetä kopio. Tämä korjaa myös luettelot, jotka ovat yhä auki Lightroomissa tai tallennettu vain pilveen (iCloud, Dropbox, OneDrive).",
         "errorEmpty": "Tämä tiedosto näyttää tyhjältä tai sen lataus on kesken. Jos se on tallennettu iCloudiin tai Dropboxiin, odota latauksen valmistumista ja yritä uudelleen."
       },
       "largeFileWarning": {

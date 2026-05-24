@@ -26,7 +26,7 @@
         "ariaLabel": "Lightroom Classic katalog dosyası seçici",
         "errorNotLrcat": "Bu dosya bir Lightroom Classic kataloğu (.lrcat) gibi görünmüyor.",
         "errorReadFailed": "Bu dosya okunamadı. Tekrar deneyin.",
-        "errorLocked": "Katalog okunamadı. Lightroom açıksa önce kapatın — çalışırken kataloğu kilitler — ya da .lrcat dosyanızın bir kopyasını seçip tekrar deneyin.",
+        "errorLocked": "Katalog okunamadı — bilgisayarınız dosyaya erişimi engelledi. Güvenilir çözüm: .lrcat dosyasını Masaüstüne kopyalayıp kopyayı yükleyin. Bu, Lightroom'da hâlâ açık olan veya yalnızca bulutta (iCloud, Dropbox, OneDrive) saklanan kataloglarda da işe yarar.",
         "errorEmpty": "Bu dosya boş görünüyor veya indirme işlemi tamamlanmamış. iCloud ya da Dropbox'ta saklanıyorsa indirmenin bitmesini bekleyip tekrar deneyin."
       },
       "largeFileWarning": {

@@ -26,7 +26,7 @@
         "ariaLabel": "Filväljare för Lightroom Classic-katalog",
         "errorNotLrcat": "Den filen ser inte ut som en Lightroom Classic-katalog (.lrcat).",
         "errorReadFailed": "Kunde inte läsa filen. Försök igen.",
-        "errorLocked": "Det gick inte att läsa katalogen. Om Lightroom är öppet, avsluta det först – det låser katalogen när det körs – eller välj en kopia av din .lrcat-fil och försök igen.",
+        "errorLocked": "Det gick inte att läsa katalogen – din dator blockerade åtkomsten till filen. Den pålitliga lösningen: kopiera .lrcat-filen till skrivbordet och ladda upp kopian. Detta löser även kataloger som fortfarande är öppna i Lightroom eller bara lagras i molnet (iCloud, Dropbox, OneDrive).",
         "errorEmpty": "Den här filen verkar tom eller har inte laddats ner färdigt. Om den finns i iCloud eller Dropbox, vänta tills nedladdningen är klar och försök igen."
       },
       "largeFileWarning": {

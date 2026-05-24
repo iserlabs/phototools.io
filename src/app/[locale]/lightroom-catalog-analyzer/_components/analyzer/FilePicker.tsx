@@ -22,7 +22,7 @@ function isLrcat(file: File): boolean {
   return file.name.toLowerCase().endsWith('.lrcat')
 }
 
-async function readAsArrayBuffer(file: File): Promise<ArrayBuffer> {
+function readViaFileReader(file: File): Promise<ArrayBuffer> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
     reader.onload = () => resolve(reader.result as ArrayBuffer)
@@ -31,11 +31,34 @@ async function readAsArrayBuffer(file: File): Promise<ArrayBuffer> {
   })
 }
 
+async function readAsArrayBuffer(file: File): Promise<ArrayBuffer> {
+  // Try the modern Blob API first, then fall back to FileReader. Different
+  // engines surface read failures (cloud placeholders, TCC/permission denials,
+  // files moved after selection) through different code paths, so a second
+  // attempt occasionally succeeds where the first throws. If both fail, surface
+  // the original error — it's the more descriptive of the two.
+  try {
+    return await file.arrayBuffer()
+  } catch (primary) {
+    try {
+      return await readViaFileReader(file)
+    } catch {
+      throw primary
+    }
+  }
+}
+
+function describeError(err: unknown): { name: string; message: string } {
+  if (err instanceof Error) return { name: err.name || 'Error', message: err.message || '' }
+  return { name: 'unknown', message: String(err) }
+}
+
 export function FilePicker({ onFile }: FilePickerProps) {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer')
   const [dragOver, setDragOver] = useState(false)
   const [fileName, setFileName] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [errorDetail, setErrorDetail] = useState<string | null>(null)
   const [pendingLarge, setPendingLarge] = useState<File | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -45,20 +68,21 @@ export function FilePicker({ onFile }: FilePickerProps) {
         const buffer = await readAsArrayBuffer(file)
         onFile(buffer, { name: file.name, size: file.size, lastModified: file.lastModified })
       } catch (err) {
-        // A read failure here is almost always the catalog being locked by a
-        // running Lightroom (NotReadableError). Surface guidance instead of a
-        // dead-end, and capture diagnostics — anonymized: error name + size
-        // only, never the filename or file contents.
+        // The OS refused the read. Common culprits: a cloud-only placeholder
+        // (iCloud/Dropbox/OneDrive) whose bytes aren't on disk, a browser
+        // lacking macOS Files-and-Folders/Photos permission, or the catalog
+        // locked by a running Lightroom. We can't tell from here, so surface
+        // the OS's own error name to the user (no DevTools needed) and capture
+        // diagnostics — anonymized: error name + size only, never the filename.
         const key = classifyReadError(err)
-        const errorName = err instanceof DOMException ? err.name : 'unknown'
-        if (process.env.NODE_ENV !== 'production') {
-          console.warn(`[lrcat] catalog read failed (${errorName})`, err)
-        }
+        const { name: errorName, message } = describeError(err)
+        console.warn(`[lrcat] catalog read failed: ${errorName} — ${message}`)
         Sentry.captureException(err, {
           tags: { feature: 'lrcat-analyzer', stage: 'file-read', errorName },
           extra: { size: file.size, errorName },
         })
         setError(t(`filePicker.${key}`))
+        setErrorDetail(`${errorName}${message ? `: ${message}` : ''}`)
       }
     },
     [onFile, t],
@@ -67,6 +91,7 @@ export function FilePicker({ onFile }: FilePickerProps) {
   const handleFile = useCallback(
     (file: File) => {
       setError(null)
+      setErrorDetail(null)
       if (!isLrcat(file)) {
         setError(t('filePicker.errorNotLrcat'))
         setFileName(null)
@@ -151,7 +176,12 @@ export function FilePicker({ onFile }: FilePickerProps) {
       </div>
       {/* No separate "Browse" button — the drop zone above is itself the click
           target (it says "…or click to browse" and is keyboard-activatable). */}
-      {error && <div className={styles.fileError} role="alert">{error}</div>}
+      {error && (
+        <div className={styles.fileError} role="alert">
+          {error}
+          {errorDetail && <span className={styles.fileErrorDetail}>{errorDetail}</span>}
+        </div>
+      )}
 
       {pendingLarge && (
         <LargeFileWarning

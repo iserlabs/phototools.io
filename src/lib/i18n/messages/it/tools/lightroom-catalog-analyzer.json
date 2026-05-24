@@ -26,7 +26,7 @@
         "ariaLabel": "Selettore di file di catalogo Lightroom Classic",
         "errorNotLrcat": "Quel file non sembra un catalogo Lightroom Classic (.lrcat).",
         "errorReadFailed": "Impossibile leggere quel file. Riprova.",
-        "errorLocked": "Impossibile leggere il catalogo. Se Lightroom è aperto, chiudilo prima (blocca il catalogo mentre è in esecuzione) oppure scegli una copia del tuo file .lrcat e riprova.",
+        "errorLocked": "Impossibile leggere il catalogo — il computer ha bloccato l'accesso al file. La soluzione affidabile: copia il file .lrcat sulla Scrivania e carica la copia. Questo risolve anche i cataloghi ancora aperti in Lightroom o archiviati solo nel cloud (iCloud, Dropbox, OneDrive).",
         "errorEmpty": "Questo file sembra vuoto o non è stato ancora scaricato completamente. Se si trova su iCloud o Dropbox, attendi il completamento del download e riprova."
       },
       "largeFileWarning": {

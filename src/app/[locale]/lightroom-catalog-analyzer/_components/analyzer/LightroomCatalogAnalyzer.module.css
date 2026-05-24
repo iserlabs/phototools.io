@@ -249,6 +249,17 @@
 .fileName { color: var(--text-primary); font-size: var(--text-md); font-weight: 600; }
 .fileError { color: var(--lens-b); font-size: var(--text-sm); }
 
+/* Raw OS error name/message shown beneath the friendly message — diagnostic,
+   so users can report the exact failure without opening DevTools. */
+.fileErrorDetail {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: var(--text-xs);
+  word-break: break-word;
+}
+
 /* ---- Large-file warning modal ---- */
 .warningBackdrop {
   position: fixed;

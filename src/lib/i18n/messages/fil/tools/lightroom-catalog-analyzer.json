@@ -26,7 +26,7 @@
         "ariaLabel": "Pumipili ng Lightroom Classic catalog file",
         "errorNotLrcat": "Ang file na iyon ay mukhang hindi isang Lightroom Classic catalog (.lrcat).",
         "errorReadFailed": "Hindi mabasa ang file na iyon. Subukan ulit.",
-        "errorLocked": "Hindi mabasa ang catalog. Kung bukas ang Lightroom, isara muna ito — nila-lock nito ang catalog habang tumatakbo — o pumili ng kopya ng iyong .lrcat file, pagkatapos ay subukan ulit.",
+        "errorLocked": "Hindi mabasa ang catalog — hinarang ng iyong computer ang access sa file. Ang maaasahang solusyon: kopyahin ang .lrcat file sa Desktop at i-upload ang kopya. Inaayos din nito ang mga catalog na bukas pa sa Lightroom o naka-imbak lang sa cloud (iCloud, Dropbox, OneDrive).",
         "errorEmpty": "Mukhang walang laman ang file na ito o hindi pa tapos ang pag-download. Kung nakaimbak ito sa iCloud o Dropbox, hintaying matapos ang pag-download, pagkatapos ay subukan ulit."
       },
       "largeFileWarning": {

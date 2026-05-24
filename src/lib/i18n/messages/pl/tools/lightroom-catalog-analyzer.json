@@ -26,7 +26,7 @@
         "ariaLabel": "Wybór pliku katalogu Lightroom Classic",
         "errorNotLrcat": "Ten plik nie wygląda na katalog Lightroom Classic (.lrcat).",
         "errorReadFailed": "Nie można odczytać tego pliku. Spróbuj ponownie.",
-        "errorLocked": "Nie udało się odczytać katalogu. Jeśli Lightroom jest otwarty, najpierw go zamknij — podczas działania blokuje katalog — lub wybierz kopię pliku .lrcat i spróbuj ponownie.",
+        "errorLocked": "Nie udało się odczytać katalogu — komputer zablokował dostęp do pliku. Pewne rozwiązanie: skopiuj plik .lrcat na pulpit i prześlij kopię. To rozwiązuje też katalogi wciąż otwarte w Lightroomie lub przechowywane tylko w chmurze (iCloud, Dropbox, OneDrive).",
         "errorEmpty": "Ten plik wygląda na pusty lub nie został w pełni pobrany. Jeśli znajduje się w iCloud lub Dropbox, poczekaj na zakończenie pobierania i spróbuj ponownie."
       },
       "largeFileWarning": {

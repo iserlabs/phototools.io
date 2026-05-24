@@ -26,7 +26,7 @@
         "ariaLabel": "Bestandskiezer voor Lightroom Classic-catalogus",
         "errorNotLrcat": "Dat bestand lijkt geen Lightroom Classic-catalogus (.lrcat) te zijn.",
         "errorReadFailed": "Kon dat bestand niet lezen. Probeer het opnieuw.",
-        "errorLocked": "Kan de catalogus niet lezen. Als Lightroom open is, sluit het dan eerst af — het vergrendelt de catalogus terwijl het draait — of kies een kopie van je .lrcat-bestand en probeer het opnieuw.",
+        "errorLocked": "Kan de catalogus niet lezen — je computer blokkeerde de toegang tot het bestand. De betrouwbare oplossing: kopieer het .lrcat-bestand naar je bureaublad en upload de kopie. Dit lost ook catalogi op die nog open zijn in Lightroom of alleen in de cloud (iCloud, Dropbox, OneDrive) staan.",
         "errorEmpty": "Dit bestand lijkt leeg of is nog niet volledig gedownload. Als het in iCloud of Dropbox staat, wacht tot het gedownload is en probeer het opnieuw."
       },
       "largeFileWarning": {

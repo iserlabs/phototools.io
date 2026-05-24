@@ -26,7 +26,7 @@
         "ariaLabel": "Bộ chọn tệp catalog Lightroom Classic",
         "errorNotLrcat": "Tệp đó không giống một catalog Lightroom Classic (.lrcat).",
         "errorReadFailed": "Không thể đọc tệp đó. Hãy thử lại.",
-        "errorLocked": "Không thể đọc catalog. Nếu Lightroom đang mở, hãy thoát trước — nó khóa catalog khi đang chạy — hoặc chọn một bản sao tệp .lrcat của bạn rồi thử lại.",
+        "errorLocked": "Không thể đọc catalog — máy tính của bạn đã chặn quyền truy cập tệp. Cách khắc phục đáng tin cậy: sao chép tệp .lrcat vào Màn hình nền và tải lên bản sao đó. Cách này cũng xử lý các catalog vẫn đang mở trong Lightroom hoặc chỉ lưu trên đám mây (iCloud, Dropbox, OneDrive).",
         "errorEmpty": "Tệp này có vẻ trống hoặc chưa tải xuống xong. Nếu nó được lưu trên iCloud hoặc Dropbox, hãy đợi tải xong rồi thử lại."
       },
       "largeFileWarning": {
