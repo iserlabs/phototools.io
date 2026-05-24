@@ -99,19 +99,16 @@ export async function openCatalog(buf: ArrayBuffer): Promise<{ db: Database; cat
 }
 
 // OPFS SAH-Pool streaming path — for catalogs too large for one buffer (V8 caps
-// ArrayBuffer ~2 GB). Stream the file to disk-backed OPFS and let SQLite page
-// from disk via the SAH-Pool VFS, which (unlike the plain `opfs` VFS) needs no
-// SharedArrayBuffer / COOP-COEP isolation, so our headers (and ads) are untouched.
+// ArrayBuffer ~2 GB). Stream to disk-backed OPFS and let SQLite page from disk
+// via SAH-Pool, which needs no SharedArrayBuffer/COOP-COEP, so ads are untouched.
 
 const OPFS_DIR = '/phototools-lrcat'
 const OPFS_DB_PATH = `${OPFS_DIR}/catalog.lrcat`
 
-// SAH-Pool is backed by one FileSystemSyncAccessHandle, whose read/write `at`
-// offset is truncated to 32 bits in current Chromium — so a DB crossing 2 GB
-// (2^31) corrupts silently (writes past 2 GB wrap onto earlier pages). Cap below
-// 2^31 with headroom for the crop-factor table added after open (verified:
-// 1.9 GB opens cleanly, 2.4 GB corrupts); larger catalogs get a "too large" msg.
-const MAX_OPFS_BYTES = 2_080_000_000
+// Streaming to OPFS needs ~the file's own size on disk; leave margin for the
+// SAH-Pool's spare slots + the derived crop-factor table. Files that can't fit
+// the storage quota fail fast (rather than a partial import → later corruption).
+const OPFS_MARGIN_BYTES = 256 * 1024 * 1024
 
 let poolPromise: Promise<SAHPoolUtil | null> | null = null
 
@@ -144,9 +141,12 @@ export async function openCatalogFromFile(
   file: File,
   onBytes?: (read: number, total: number) => void,
 ): Promise<{ db: Database; catalogVersion: number } | null> {
-  // Reject catalogs that would cross the SAH-Pool 2 GB boundary up front, before
-  // a long doomed import — they'd corrupt silently (see MAX_OPFS_BYTES).
-  if (file.size >= MAX_OPFS_BYTES) throw new UnsupportedCatalogError('too-large')
+  // Reject up front if the file can't fit in OPFS storage (modern Chrome handles
+  // multi-GB files and >2 GB offsets fine, so size is bounded only by quota).
+  const est = await navigator.storage?.estimate?.().catch(() => null)
+  if (est?.quota && file.size > est.quota - OPFS_MARGIN_BYTES) {
+    throw new UnsupportedCatalogError('too-large')
+  }
 
   // Cheap header probe (16 bytes) before committing to a full disk import.
   assertSqliteHeader(new Uint8Array(await file.slice(0, 16).arrayBuffer()))
