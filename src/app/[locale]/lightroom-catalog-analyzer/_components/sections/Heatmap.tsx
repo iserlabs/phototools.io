@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
 // anchorIdFor no longer needed — the drilldown filter is in the sidebar, not a spine section.
+import { MUTED_LABEL } from './sectionStyles'
 import { drawHeatmap, type HeatmapHitBox } from './Heatmap.canvas'
 
 export interface HeatmapProps {
@@ -110,7 +111,7 @@ export function Heatmap({ onDayClick }: HeatmapProps = {}) {
         )}
         <figcaption className="sr-only">{t('caption', { years: block.years.length })}</figcaption>
       </figure>
-      <div style={{ display: 'flex', gap: 12, marginTop: 8, fontSize: 12, color: 'var(--text-muted)' }}>
+      <div style={{ display: 'flex', gap: 12, marginTop: 8, ...MUTED_LABEL }}>
         {block.years.map((y) => (
           <span key={y}>{y}</span>
         ))}

@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Bar, BarChart, CartesianGrid, RadialBar, RadialBarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { SECTION_HEADER } from './sectionStyles'
+import { COMPACT_LIST, DISCLAIMER, SECTION_HEADER } from './sectionStyles'
 
 export function TimeOfDay() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.time-of-day')
@@ -55,7 +55,7 @@ export function TimeOfDay() {
           {block.perGearByClockHour.length > 0 && (
             <div style={{ marginTop: 12 }}>
               <h3>{t('perGear')}</h3>
-              <ul style={{ margin: 0, paddingLeft: 16 }}>
+              <ul style={COMPACT_LIST}>
                 {block.perGearByClockHour.map((row) => {
                   const peak = row.histogram.reduce((m, h) => (h.count > m.count ? h : m), row.histogram[0]!)
                   return <li key={row.gear}>{t('perGearPeak', { gear: row.gear, hour: peak.hour })}</li>
@@ -66,7 +66,7 @@ export function TimeOfDay() {
         </figure>
       ) : (
         <figure>
-          <p style={{ color: 'var(--text-muted)', fontSize: 13 }}>
+          <p style={DISCLAIMER}>
             {t('gpsNote', { pct: insightBlob.gps.pctWithGps.toFixed(0) })}
           </p>
           <ResponsiveContainer width="100%" height={220}>
@@ -78,13 +78,10 @@ export function TimeOfDay() {
               <Bar dataKey="value" />
             </BarChart>
           </ResponsiveContainer>
-          <ul style={{ display: 'flex', flexWrap: 'wrap', gap: 12, listStyle: 'none', padding: 0, margin: '8px 0 0' }}>
+          <ul className="sr-only">
             {sunData.map((slot) => (
-              <li key={slot.name} style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                <span style={{ width: 12, height: 12, borderRadius: 3, background: slot.fill, display: 'inline-block' }} aria-hidden="true" />
-                <span>
-                  {slot.name} — {slot.value.toLocaleString()}
-                </span>
+              <li key={slot.name}>
+                {slot.name} — {slot.value.toLocaleString()}
               </li>
             ))}
           </ul>

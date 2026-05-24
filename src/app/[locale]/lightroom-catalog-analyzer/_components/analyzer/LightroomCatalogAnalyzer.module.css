@@ -37,6 +37,7 @@
   padding: var(--space-md);
   border-bottom: 1px solid var(--border);
   background: var(--bg-secondary);
+  overflow-x: hidden;
 }
 
 @media (max-width: 1024px) {

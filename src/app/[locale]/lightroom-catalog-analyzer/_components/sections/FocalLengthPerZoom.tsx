@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { ACCENT_MUTED, CALLOUT } from './sectionStyles'
+import { ACCENT_MUTED, CALLOUT, INLINE_FIGURE } from './sectionStyles'
 
 export function FocalLengthPerZoom() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.focal-length-per-zoom')
@@ -24,7 +24,7 @@ export function FocalLengthPerZoom() {
       <h2 id="flpz-heading">{t('title')}</h2>
 
       {zooms.map((z) => (
-        <figure key={z.lens} style={{ margin: '16px 0' }}>
+        <figure key={z.lens} style={INLINE_FIGURE}>
           <h3>{z.lens}</h3>
           <ResponsiveContainer width="100%" height={160}>
             <BarChart data={z.histogram} layout="vertical" accessibilityLayer margin={{ top: 4, right: 12, left: 32, bottom: 4 }}>

@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
+import { COMPACT_LIST } from './sectionStyles'
 import { drawGpsMap, type GeoFeatureCollection } from './GpsMap.canvas'
 
 export function GpsMap() {
@@ -59,7 +60,7 @@ export function GpsMap() {
       </figure>
 
       <h3>{t('topRegions')}</h3>
-      <ul style={{ margin: 0, paddingLeft: 16 }}>
+      <ul style={COMPACT_LIST}>
         {gps.topRegions.map((r) => (
           <li key={r.region}>
             <span>{r.region}</span> — {r.count.toLocaleString()}

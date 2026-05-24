@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { CALLOUT, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE } from './sectionStyles'
+import { CALLOUT, COMPACT_LIST, DISCLAIMER, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE } from './sectionStyles'
 
 export function EditIntensity() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.edit-intensity')
@@ -21,7 +21,7 @@ export function EditIntensity() {
   return (
     <section aria-labelledby="edit-intensity-heading">
       <h2 id="edit-intensity-heading">{t('title')}</h2>
-      {e.sampled && <p style={{ ...CALLOUT, fontSize: 13 }}>{t('sampled', { n: e.sampleSize.toLocaleString() })}</p>}
+      {e.sampled && <p style={{ ...CALLOUT, ...DISCLAIMER }}>{t('sampled', { n: e.sampleSize.toLocaleString() })}</p>}
 
       <dl style={TILE_GRID}>
         {tiles.map((tile) => (
@@ -47,7 +47,7 @@ export function EditIntensity() {
       </figure>
 
       <h3>{t('topPresets')}</h3>
-      <ul style={{ margin: 0, paddingLeft: 16 }}>
+      <ul style={COMPACT_LIST}>
         {e.topPresets.map((p) => (
           <li key={p.name}>
             <span>{p.name}</span> — {p.count.toLocaleString()}
@@ -56,7 +56,7 @@ export function EditIntensity() {
       </ul>
 
       <h3>{t('perGear')}</h3>
-      <ul style={{ margin: 0, paddingLeft: 16 }}>
+      <ul style={COMPACT_LIST}>
         {e.perGearScores.map((g) => (
           <li key={g.gear}>
             <span>{g.gear}</span> — {g.score.toFixed(0)}

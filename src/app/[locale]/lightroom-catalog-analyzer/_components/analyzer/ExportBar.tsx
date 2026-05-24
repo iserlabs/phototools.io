@@ -15,9 +15,10 @@ import styles from './ExportBar.module.css'
 // html2canvas deps) loads ONLY on the first PDF-button click. ssr:false keeps it
 // out of the server render and the page's initial client chunk — the empty-state
 // bundle never references these libraries (spec §13 / Task 15.1 gate).
-const PdfExportStage = dynamic(() => import('./PdfExportStage').then((m) => m.PdfExportStage), {
-  ssr: false,
-})
+const PdfExportStage = dynamic(
+  () => import('./PdfExportStage').then((m) => m.PdfExportStage),
+  { ssr: false },
+)
 
 export function ExportBar() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.export')

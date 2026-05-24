@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { TILE, TILE_GRID, TILE_LABEL, TILE_VALUE } from './sectionStyles'
+import { COMPACT_LIST, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE } from './sectionStyles'
 
 export function Keywords() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.keywords')
@@ -57,7 +57,7 @@ export function Keywords() {
       {k.blindSpots.length === 0 ? (
         <p>{t('blindSpotsEmpty')}</p>
       ) : (
-        <ul style={{ margin: 0, paddingLeft: 16 }}>
+        <ul style={COMPACT_LIST}>
           {k.blindSpots.map((b) => (
             <li key={b.yearMonth}>{t('blindSpotItem', { yearMonth: b.yearMonth, pct: b.coveragePct.toFixed(0) })}</li>
           ))}

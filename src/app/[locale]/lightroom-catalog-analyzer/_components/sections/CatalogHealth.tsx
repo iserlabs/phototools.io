@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { CALLOUT, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE, TABLE } from './sectionStyles'
+import { CALLOUT, DISCLAIMER, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE, TABLE } from './sectionStyles'
 
 export function CatalogHealth() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.catalog-health')
@@ -36,7 +36,7 @@ export function CatalogHealth() {
       </figure>
 
       <h3>{t('duplicatesTable')}</h3>
-      <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>{t('duplicatesDisclaimer')}</p>
+      <p style={DISCLAIMER}>{t('duplicatesDisclaimer')}</p>
       <table style={TABLE}>
         <thead>
           <tr>

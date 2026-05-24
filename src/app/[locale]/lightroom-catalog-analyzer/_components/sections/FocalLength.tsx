@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useRef } from 'react'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
 import { drawFocalLength } from './FocalLength.canvas'
-import { CALLOUT } from './sectionStyles'
+import { CALLOUT, COMPACT_LIST } from './sectionStyles'
 
 export function FocalLength() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.focal-length')
@@ -45,7 +45,7 @@ export function FocalLength() {
       </figure>
 
       <h3>{t('topPeaks')}</h3>
-      <ul style={{ margin: 0, paddingLeft: 16 }}>
+      <ul style={COMPACT_LIST}>
         {block.topPeaks.map((p) => (
           <li key={p.mm}>{t('peakItem', { mm: p.mm, pct: p.pctOfTotal.toFixed(1) })}</li>
         ))}

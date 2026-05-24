@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
-import { CALLOUT } from './sectionStyles'
+import { CALLOUT, INLINE_FIGURE } from './sectionStyles'
 
 export function Apertures() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.apertures')
@@ -24,7 +24,7 @@ export function Apertures() {
       <h2 id="apertures-heading">{t('title')}</h2>
 
       {perLens.map((lensRow) => (
-        <figure key={lensRow.lens} style={{ margin: '16px 0' }}>
+        <figure key={lensRow.lens} style={INLINE_FIGURE}>
           <h3>{lensRow.lens}</h3>
           <ResponsiveContainer width="100%" height={180}>
             <BarChart data={lensRow.histogram} accessibilityLayer margin={{ top: 4, right: 12, left: 0, bottom: 4 }}>

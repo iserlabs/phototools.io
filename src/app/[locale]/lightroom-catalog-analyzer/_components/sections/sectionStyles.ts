@@ -53,3 +53,15 @@ export const SECTION_HEADER: CSSProperties = {
 }
 
 export const TABLE: CSSProperties = { width: '100%', borderCollapse: 'collapse' }
+
+/** Compact unstyled list (presets, peaks, per-gear scores, etc.). */
+export const COMPACT_LIST: CSSProperties = { margin: 0, paddingLeft: 16 }
+
+/** Inline figure (used inside map/repeating per-lens chart sections). */
+export const INLINE_FIGURE: CSSProperties = { margin: '16px 0' }
+
+/** Label-like caption text shown above sparklines / below charts. */
+export const MUTED_LABEL: CSSProperties = { fontSize: 12, color: 'var(--text-muted)' }
+
+/** Small disclaimer text (e.g. duplicates caveat in CatalogHealth). */
+export const DISCLAIMER: CSSProperties = { fontSize: 13, color: 'var(--text-muted)' }

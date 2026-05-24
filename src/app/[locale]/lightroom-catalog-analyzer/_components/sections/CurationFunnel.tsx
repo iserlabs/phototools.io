@@ -33,11 +33,10 @@ export function CurationFunnel() {
             </Funnel>
           </FunnelChart>
         </ResponsiveContainer>
-        <ol style={{ display: 'flex', flexWrap: 'wrap', gap: 16, listStyle: 'none', padding: 0, margin: '8px 0 0' }}>
+        <ol className="sr-only">
           {data.map((step) => (
-            <li key={step.name} style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ width: 12, height: 12, borderRadius: 3, background: step.fill, display: 'inline-block' }} aria-hidden="true" />
-              <span>{step.name}</span> — {step.value.toLocaleString()}
+            <li key={step.name}>
+              {step.name} — {step.value.toLocaleString()}
             </li>
           ))}
         </ol>
