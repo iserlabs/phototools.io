@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import * as Sentry from '@sentry/nextjs'
 import styles from './LightroomCatalogAnalyzer.module.css'
 import { classifyReadError } from './readError'
+import { describeError, readCatalogBytes } from './readFile'
 
 export interface FilePickerMeta {
   name: string
@@ -22,37 +23,6 @@ function isLrcat(file: File): boolean {
   return file.name.toLowerCase().endsWith('.lrcat')
 }
 
-function readViaFileReader(file: File): Promise<ArrayBuffer> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader()
-    reader.onload = () => resolve(reader.result as ArrayBuffer)
-    reader.onerror = () => reject(reader.error ?? new Error('read failed'))
-    reader.readAsArrayBuffer(file)
-  })
-}
-
-async function readAsArrayBuffer(file: File): Promise<ArrayBuffer> {
-  // Try the modern Blob API first, then fall back to FileReader. Different
-  // engines surface read failures (cloud placeholders, TCC/permission denials,
-  // files moved after selection) through different code paths, so a second
-  // attempt occasionally succeeds where the first throws. If both fail, surface
-  // the original error — it's the more descriptive of the two.
-  try {
-    return await file.arrayBuffer()
-  } catch (primary) {
-    try {
-      return await readViaFileReader(file)
-    } catch {
-      throw primary
-    }
-  }
-}
-
-function describeError(err: unknown): { name: string; message: string } {
-  if (err instanceof Error) return { name: err.name || 'Error', message: err.message || '' }
-  return { name: 'unknown', message: String(err) }
-}
-
 export function FilePicker({ onFile }: FilePickerProps) {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer')
   const [dragOver, setDragOver] = useState(false)
@@ -65,18 +35,17 @@ export function FilePicker({ onFile }: FilePickerProps) {
   const dispatchFile = useCallback(
     async (file: File) => {
       try {
-        const buffer = await readAsArrayBuffer(file)
+        const buffer = await readCatalogBytes(file)
         onFile(buffer, { name: file.name, size: file.size, lastModified: file.lastModified })
       } catch (err) {
-        // The OS refused the read. Common culprits: a cloud-only placeholder
-        // (iCloud/Dropbox/OneDrive) whose bytes aren't on disk, a browser
-        // lacking macOS Files-and-Folders/Photos permission, or the catalog
-        // locked by a running Lightroom. We can't tell from here, so surface
-        // the OS's own error name to the user (no DevTools needed) and capture
-        // diagnostics — anonymized: error name + size only, never the filename.
+        // The read failed. The most common cause is a large single-shot read
+        // (handled now by streaming in readFile.ts); if streaming still fails
+        // it's the OS refusing access (cloud placeholder, permission, lock).
+        // Surface the OS's own error name to the user (no DevTools needed) and
+        // capture diagnostics — anonymized: error name + size, never the name.
         const key = classifyReadError(err)
         const { name: errorName, message } = describeError(err)
-        console.warn(`[lrcat] catalog read failed: ${errorName} — ${message}`)
+        console.warn(`[lrcat] catalog read failed: ${errorName} — ${message} (size=${file.size})`)
         Sentry.captureException(err, {
           tags: { feature: 'lrcat-analyzer', stage: 'file-read', errorName },
           extra: { size: file.size, errorName },
