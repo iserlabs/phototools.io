@@ -51,3 +51,7 @@ docs/internal/
 !public/**/*.png
 *.json.bak
 .env*.local
+
+# Canonicalize on npm (see commit e7133bb) — keep stray pnpm lockfiles out so
+# Vercel never tie-breaks to pnpm and fails to resolve deps.
+pnpm-lock.yaml
