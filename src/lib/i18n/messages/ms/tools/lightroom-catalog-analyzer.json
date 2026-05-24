@@ -25,7 +25,9 @@
         "selectedFile": "Dipilih: {fileName}",
         "ariaLabel": "Pemilih fail katalog Lightroom Classic",
         "errorNotLrcat": "Fail itu tidak kelihatan seperti katalog Lightroom Classic (.lrcat).",
-        "errorReadFailed": "Tidak dapat membaca fail itu. Cuba lagi."
+        "errorReadFailed": "Tidak dapat membaca fail itu. Cuba lagi.",
+        "errorLocked": "Tidak dapat membaca katalog. Jika Lightroom dibuka, tutup dahulu — ia mengunci katalog semasa berjalan — atau pilih salinan fail .lrcat anda, kemudian cuba lagi.",
+        "errorEmpty": "Fail ini kelihatan kosong atau belum selesai dimuat turun. Jika ia disimpan dalam iCloud atau Dropbox, tunggu sehingga muat turun selesai, kemudian cuba lagi."
       },
       "largeFileWarning": {
         "title": "Katalog besar — perhatian",

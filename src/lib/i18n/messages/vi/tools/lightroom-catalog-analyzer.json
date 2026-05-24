@@ -25,7 +25,9 @@
         "selectedFile": "Đã chọn: {fileName}",
         "ariaLabel": "Bộ chọn tệp catalog Lightroom Classic",
         "errorNotLrcat": "Tệp đó không giống một catalog Lightroom Classic (.lrcat).",
-        "errorReadFailed": "Không thể đọc tệp đó. Hãy thử lại."
+        "errorReadFailed": "Không thể đọc tệp đó. Hãy thử lại.",
+        "errorLocked": "Không thể đọc catalog. Nếu Lightroom đang mở, hãy thoát trước — nó khóa catalog khi đang chạy — hoặc chọn một bản sao tệp .lrcat của bạn rồi thử lại.",
+        "errorEmpty": "Tệp này có vẻ trống hoặc chưa tải xuống xong. Nếu nó được lưu trên iCloud hoặc Dropbox, hãy đợi tải xong rồi thử lại."
       },
       "largeFileWarning": {
         "title": "Catalog lớn — lưu ý",

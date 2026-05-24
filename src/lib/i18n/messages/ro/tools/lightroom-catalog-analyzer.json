@@ -25,7 +25,9 @@
         "selectedFile": "Selectat: {fileName}",
         "ariaLabel": "Selector de fișier de catalog Lightroom Classic",
         "errorNotLrcat": "Acel fișier nu pare a fi un catalog Lightroom Classic (.lrcat).",
-        "errorReadFailed": "Nu am putut citi acel fișier. Încearcă din nou."
+        "errorReadFailed": "Nu am putut citi acel fișier. Încearcă din nou.",
+        "errorLocked": "Catalogul nu a putut fi citit. Dacă Lightroom este deschis, închide-l mai întâi — blochează catalogul cât timp rulează — sau alege o copie a fișierului tău .lrcat și încearcă din nou.",
+        "errorEmpty": "Acest fișier pare gol sau nu s-a descărcat complet. Dacă este stocat în iCloud sau Dropbox, așteaptă finalizarea descărcării și încearcă din nou."
       },
       "largeFileWarning": {
         "title": "Catalog mare — atenție",

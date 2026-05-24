@@ -25,7 +25,9 @@
         "selectedFile": "Seleccionat: {fileName}",
         "ariaLabel": "Selector de fitxer de catàleg de Lightroom Classic",
         "errorNotLrcat": "Aquest fitxer no sembla un catàleg de Lightroom Classic (.lrcat).",
-        "errorReadFailed": "No s'ha pogut llegir aquest fitxer. Torna-ho a provar."
+        "errorReadFailed": "No s'ha pogut llegir aquest fitxer. Torna-ho a provar.",
+        "errorLocked": "No s'ha pogut llegir el catàleg. Si el Lightroom està obert, tanca'l primer —bloqueja el catàleg mentre s'executa— o tria una còpia del fitxer .lrcat i torna-ho a provar.",
+        "errorEmpty": "Aquest fitxer sembla buit o no ha acabat de baixar-se. Si està desat a iCloud o Dropbox, espera que acabi la baixada i torna-ho a provar."
       },
       "largeFileWarning": {
         "title": "Catàleg gran — atenció",

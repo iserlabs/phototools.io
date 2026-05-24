@@ -25,7 +25,9 @@
         "selectedFile": "已選擇：{fileName}",
         "ariaLabel": "Lightroom Classic 目錄檔案選擇器",
         "errorNotLrcat": "該檔案看起來不是 Lightroom Classic 目錄（.lrcat）。",
-        "errorReadFailed": "無法讀取該檔案。請重試。"
+        "errorReadFailed": "無法讀取該檔案。請重試。",
+        "errorLocked": "無法讀取目錄。如果 Lightroom 正在開啟，請先結束它——執行時會鎖定目錄——或選擇 .lrcat 檔案的副本，然後再試一次。",
+        "errorEmpty": "此檔案似乎是空的或尚未下載完成。如果它存放在 iCloud 或 Dropbox，請等待下載完成後再試一次。"
       },
       "largeFileWarning": {
         "title": "大型目錄——請注意",

@@ -2,7 +2,9 @@
 
 import { useCallback, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
+import * as Sentry from '@sentry/nextjs'
 import styles from './LightroomCatalogAnalyzer.module.css'
+import { classifyReadError } from './readError'
 
 export interface FilePickerMeta {
   name: string
@@ -42,8 +44,21 @@ export function FilePicker({ onFile }: FilePickerProps) {
       try {
         const buffer = await readAsArrayBuffer(file)
         onFile(buffer, { name: file.name, size: file.size, lastModified: file.lastModified })
-      } catch {
-        setError(t('filePicker.errorReadFailed'))
+      } catch (err) {
+        // A read failure here is almost always the catalog being locked by a
+        // running Lightroom (NotReadableError). Surface guidance instead of a
+        // dead-end, and capture diagnostics — anonymized: error name + size
+        // only, never the filename or file contents.
+        const key = classifyReadError(err)
+        const errorName = err instanceof DOMException ? err.name : 'unknown'
+        if (process.env.NODE_ENV !== 'production') {
+          console.warn(`[lrcat] catalog read failed (${errorName})`, err)
+        }
+        Sentry.captureException(err, {
+          tags: { feature: 'lrcat-analyzer', stage: 'file-read', errorName },
+          extra: { size: file.size, errorName },
+        })
+        setError(t(`filePicker.${key}`))
       }
     },
     [onFile, t],
@@ -58,6 +73,14 @@ export function FilePicker({ onFile }: FilePickerProps) {
         return
       }
       setFileName(file.name)
+      // A 0-byte file is almost always a cloud placeholder (iCloud/Dropbox) that
+      // hasn't downloaded yet — reading it would "succeed" with an empty buffer
+      // and then fail the SQLite header check with a confusing "corrupt" error.
+      // Catch it up front with actionable guidance.
+      if (file.size === 0) {
+        setError(t('filePicker.errorEmpty'))
+        return
+      }
       if (file.size > ONE_GB) {
         setPendingLarge(file)
         return

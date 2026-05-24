@@ -25,7 +25,9 @@
         "selectedFile": "Kiválasztva: {fileName}",
         "ariaLabel": "Lightroom Classic katalógusfájl-választó",
         "errorNotLrcat": "Ez a fájl nem tűnik Lightroom Classic katalógusnak (.lrcat).",
-        "errorReadFailed": "Nem sikerült beolvasni ezt a fájlt. Próbálja újra."
+        "errorReadFailed": "Nem sikerült beolvasni ezt a fájlt. Próbálja újra.",
+        "errorLocked": "A katalógust nem sikerült beolvasni. Ha a Lightroom meg van nyitva, előbb zárd be – futás közben zárolja a katalógust –, vagy válaszd a .lrcat fájl egy másolatát, majd próbáld újra.",
+        "errorEmpty": "Ez a fájl üresnek tűnik, vagy nem fejeződött be a letöltése. Ha iCloudban vagy Dropboxban van tárolva, várd meg a letöltés végét, majd próbáld újra."
       },
       "largeFileWarning": {
         "title": "Nagy katalógus — figyelem",

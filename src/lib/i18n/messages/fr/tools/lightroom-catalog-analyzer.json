@@ -25,7 +25,9 @@
         "selectedFile": "Sélectionné : {fileName}",
         "ariaLabel": "Sélecteur de fichier de catalogue Lightroom Classic",
         "errorNotLrcat": "Ce fichier ne ressemble pas à un catalogue Lightroom Classic (.lrcat).",
-        "errorReadFailed": "Impossible de lire ce fichier. Réessayez."
+        "errorReadFailed": "Impossible de lire ce fichier. Réessayez.",
+        "errorLocked": "Impossible de lire le catalogue. Si Lightroom est ouvert, fermez-le d'abord — il verrouille le catalogue lorsqu'il est en cours d'exécution — ou choisissez une copie de votre fichier .lrcat, puis réessayez.",
+        "errorEmpty": "Ce fichier semble vide ou n'a pas fini de se télécharger. S'il est stocké sur iCloud ou Dropbox, attendez la fin du téléchargement, puis réessayez."
       },
       "largeFileWarning": {
         "title": "Catalogue volumineux — attention",

@@ -25,7 +25,9 @@
         "selectedFile": "Valgt: {fileName}",
         "ariaLabel": "Filvelger for Lightroom Classic-katalog",
         "errorNotLrcat": "Den filen ser ikke ut som en Lightroom Classic-katalog (.lrcat).",
-        "errorReadFailed": "Kunne ikke lese den filen. Prøv igjen."
+        "errorReadFailed": "Kunne ikke lese den filen. Prøv igjen.",
+        "errorLocked": "Kunne ikke lese katalogen. Hvis Lightroom er åpent, lukk det først – det låser katalogen mens det kjører – eller velg en kopi av .lrcat-filen din og prøv igjen.",
+        "errorEmpty": "Denne filen ser tom ut eller er ikke ferdig nedlastet. Hvis den ligger i iCloud eller Dropbox, vent til nedlastingen er fullført, og prøv igjen."
       },
       "largeFileWarning": {
         "title": "Stor katalog — merk",
