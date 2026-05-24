@@ -62,7 +62,8 @@ test.describe('Lightroom Catalog Analyzer — demo flow', () => {
     expect(elapsed, `demo parse+render took ${elapsed}ms`).toBeLessThan(DEMO_RENDER_BUDGET_MS)
 
     // A spread of section anchors across the four groups must be present.
-    for (const id of ['year-in-review', 'overview', 'gear', 'focal-length', 'heatmap', 'drilldown', 'catalog-health']) {
+    // 'drilldown' is no longer a spine section — it's in the sidebar control panel.
+    for (const id of ['year-in-review', 'overview', 'gear', 'focal-length', 'heatmap', 'catalog-health']) {
       await expect(page.locator(SEC(id)).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
     }
   })
@@ -91,8 +92,7 @@ test.describe('Lightroom Catalog Analyzer — demo flow', () => {
     await expect(overview).toBeVisible({ timeout: DEMO_TIMEOUT })
     const overviewBefore = await overview.innerText()
 
-    await page.locator(SEC('drilldown')).first().scrollIntoViewIfNeeded()
-
+    // The filter is now in the always-visible sidebar (no spine section to scroll to).
     // Check the first camera in the cameras group, then Apply.
     const camerasGroup = page.getByRole('group', { name: /Cameras/i }).first()
     await camerasGroup.locator('input[type="checkbox"]').first().check()
@@ -111,8 +111,8 @@ test.describe('Lightroom Catalog Analyzer — demo flow', () => {
   test('applying a date filter updates the URL query string', async ({ page }) => {
     await page.goto(DEMO_PATH)
     await expect(page.locator(SEC('overview')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
-    await page.locator(SEC('drilldown')).first().scrollIntoViewIfNeeded()
 
+    // The filter is in the sidebar (no scroll to a spine section).
     await page.getByLabel(/^From$/).first().fill('2024-01-01')
     await page.getByLabel(/^To$/).first().fill('2024-12-31')
     await page.getByRole('button', { name: /^Apply$/ }).first().click()
@@ -191,9 +191,8 @@ test.describe('Lightroom Catalog Analyzer — export bar', () => {
     await page.goto(DEMO_PATH)
     await expect(page.locator(SEC('overview')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
 
-    // Scroll the ExportBar into view (it's the last item in the spine).
+    // Export buttons are in the always-visible sidebar (no scroll needed on desktop).
     const pdfButton = page.getByRole('button', { name: /Export PDF/i }).first()
-    await pdfButton.scrollIntoViewIfNeeded()
 
     // Clicking triggers a download. Wait for the download event.
     const downloadPromise = page.waitForEvent('download', { timeout: 60_000 })
@@ -220,7 +219,6 @@ test.describe('Lightroom Catalog Analyzer — export bar', () => {
     await expect(page.locator(SEC('overview')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
 
     const mdButton = page.getByRole('button', { name: /Copy Markdown/i }).first()
-    await mdButton.scrollIntoViewIfNeeded()
     await mdButton.click()
 
     // A success toast appears (clipboard path) — sonner renders it in the DOM.
@@ -235,7 +233,6 @@ test.describe('Lightroom Catalog Analyzer — export bar', () => {
     await page.goto(DEMO_PATH)
     await expect(page.locator(SEC('overview')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
     const share = page.getByRole('button', { name: /Share via URL/i }).first()
-    await share.scrollIntoViewIfNeeded()
     await expect(share).toBeEnabled()
     await share.click()
     await expect(page.getByRole('dialog')).toBeVisible()
