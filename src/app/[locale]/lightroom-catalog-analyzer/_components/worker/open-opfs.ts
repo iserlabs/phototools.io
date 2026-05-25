@@ -15,8 +15,10 @@ import {
 // ("Access Handles cannot be created if there is another open Access Handle").
 // So each worker instance uses its OWN uniquely-named pool dir — nothing to
 // collide on — and we sweep pools left by dead sessions on first use.
-const POOL_PREFIX = 'phototools-lrcat-'
-const POOL_NAME = `${POOL_PREFIX}${Math.random().toString(36).slice(2, 10)}`
+// `POOL_BASE` matches both this naming and the legacy fixed-name dir
+// ('phototools-lrcat') so the sweep reclaims pools from older builds too.
+const POOL_BASE = 'phototools-lrcat'
+const POOL_NAME = `${POOL_BASE}-${Math.random().toString(36).slice(2, 10)}`
 const POOL_DIR = `/${POOL_NAME}`
 const DB_PATH = `${POOL_DIR}/catalog.lrcat`
 
@@ -37,7 +39,7 @@ async function sweepStalePools(): Promise<void> {
   try {
     const root = (await navigator.storage.getDirectory()) as OpfsRoot
     for await (const [name, handle] of root.entries()) {
-      if (handle.kind === 'directory' && name.startsWith(POOL_PREFIX) && name !== POOL_NAME) {
+      if (handle.kind === 'directory' && name.startsWith(POOL_BASE) && name !== POOL_NAME) {
         await root.removeEntry(name, { recursive: true }).catch(() => {})
       }
     }
@@ -75,10 +77,12 @@ export async function openCatalogFromFile(
   file: File,
   onBytes?: (read: number, total: number) => void,
 ): Promise<{ db: Database; catalogVersion: number } | null> {
-  // Reject up front if the file can't fit in OPFS storage (modern Chrome handles
-  // multi-GB files and >2 GB offsets fine, so size is bounded only by quota).
+  // Reject up front if the file can't fit in *free* OPFS storage (modern Chrome
+  // handles multi-GB files and >2 GB offsets fine, so size is bounded only by
+  // available quota). Using free space — not total — avoids a partial import
+  // that fails mid-stream when other data already occupies the quota.
   const est = await navigator.storage?.estimate?.().catch(() => null)
-  if (est?.quota && file.size > est.quota - MARGIN_BYTES) {
+  if (est?.quota != null && file.size > est.quota - (est.usage ?? 0) - MARGIN_BYTES) {
     throw new UnsupportedCatalogError('too-large')
   }
 
