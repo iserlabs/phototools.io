@@ -59,70 +59,60 @@ export function runAggregators(
   filter: AnalysisFilter | undefined,
   onProgress?: (e: ProgressEvent) => void,
 ): InsightBlob {
-  const overview = aggregateOverview(db, filter)
-  emitProgress(onProgress, 'overview', 0)
-  const gear = aggregateGear(db, filter)
-  emitProgress(onProgress, 'gear', 1)
-  const focalLength = aggregateFocalLength(db, filter)
-  emitProgress(onProgress, 'focal-length', 2)
-  const focalLengthPerZoom = aggregateFocalLengthPerZoom(db, filter)
-  emitProgress(onProgress, 'focal-length-per-zoom', 3)
-  const apertures = aggregateApertureSweetSpot(db, filter)
-  emitProgress(onProgress, 'apertures', 4)
-  const timeOfDay = aggregateTimeOfDay(db, filter)
-  emitProgress(onProgress, 'time-of-day', 5)
-  const heatmap = aggregateHeatmap(db, filter)
-  emitProgress(onProgress, 'heatmap', 6)
-  const gps = aggregateGps(db, filter)
-  emitProgress(onProgress, 'gps', 7)
-  const curation = aggregateCurationFunnel(db, filter)
-  emitProgress(onProgress, 'curation', 8)
-  const editIntensity = aggregateEditIntensity(db, filter)
-  emitProgress(onProgress, 'edit-intensity', 9)
-  const ratings = aggregateRatings(db, filter)
-  emitProgress(onProgress, 'ratings', 10)
-  const keywords = aggregateKeywords(db, filter)
-  emitProgress(onProgress, 'keywords', 11)
-  const bursts = aggregateBursts(db, filter)
-  emitProgress(onProgress, 'bursts', 12)
-  const catalogHealth = aggregateCatalogHealth(db) // ignores filter
-  emitProgress(onProgress, 'catalog-health', 13)
-  const yearToYear = aggregateYearToYear(db, 3)    // ignores filter
-  emitProgress(onProgress, 'year-to-year', 14)
+  // Run each aggregator via `at()` so a failure is pinned to a specific stage.
+  // A query that throws on real-catalog data otherwise surfaces only as a
+  // generic "analysis failed"; here the stage + error name/message are logged
+  // before rethrowing, which is essential for diagnosing data-specific failures.
+  let failedStage = ''
+  const at = <T,>(stage: string, index: number, fn: () => T): T => {
+    failedStage = stage
+    const out = fn()
+    emitProgress(onProgress, stage, index)
+    return out
+  }
+  try {
+    const overview = at('overview', 0, () => aggregateOverview(db, filter))
+    const gear = at('gear', 1, () => aggregateGear(db, filter))
+    const focalLength = at('focal-length', 2, () => aggregateFocalLength(db, filter))
+    const focalLengthPerZoom = at('focal-length-per-zoom', 3, () => aggregateFocalLengthPerZoom(db, filter))
+    const apertures = at('apertures', 4, () => aggregateApertureSweetSpot(db, filter))
+    const timeOfDay = at('time-of-day', 5, () => aggregateTimeOfDay(db, filter))
+    const heatmap = at('heatmap', 6, () => aggregateHeatmap(db, filter))
+    const gps = at('gps', 7, () => aggregateGps(db, filter))
+    const curation = at('curation', 8, () => aggregateCurationFunnel(db, filter))
+    const editIntensity = at('edit-intensity', 9, () => aggregateEditIntensity(db, filter))
+    const ratings = at('ratings', 10, () => aggregateRatings(db, filter))
+    const keywords = at('keywords', 11, () => aggregateKeywords(db, filter))
+    const bursts = at('bursts', 12, () => aggregateBursts(db, filter))
+    const catalogHealth = at('catalog-health', 13, () => aggregateCatalogHealth(db)) // ignores filter
+    const yearToYear = at('year-to-year', 14, () => aggregateYearToYear(db, 3))      // ignores filter
+    // Year-in-Review defaults to the most recent year with photos.
+    const yearInReview = at('year-in-review', 15, () => {
+      const latestYear = (db.selectObject(
+        `SELECT CAST(strftime('%Y', MAX(img.captureTime)) AS INTEGER) AS y
+           FROM Adobe_images img WHERE img.captureTime IS NOT NULL`,
+      ) as { y: number | null } | undefined)?.y ?? null
+      return latestYear != null ? aggregateYearInReview(db, latestYear) : null
+    })
 
-  // Year-in-Review defaults to the most recent year with photos.
-  const latestYear = (db.selectObject(
-    `SELECT CAST(strftime('%Y', MAX(img.captureTime)) AS INTEGER) AS y
-       FROM Adobe_images img WHERE img.captureTime IS NOT NULL`,
-  ) as { y: number | null } | undefined)?.y ?? null
-  const yearInReview = latestYear != null ? aggregateYearInReview(db, latestYear) : null
-  emitProgress(onProgress, 'year-in-review', 15)
-
-  return {
-    meta: {
-      schemaVersion: 1,
-      catalogVersion: meta.catalogVersion,
-      totalPhotos: overview.totalPhotos,
-      dateRange: overview.dateRange,
-      parsedAt: meta.parsedAt,
-      catalogHash: meta.catalogHash,
-    },
-    yearInReview,
-    yearToYear,
-    overview,
-    gear,
-    focalLength,
-    focalLengthPerZoom,
-    apertures,
-    timeOfDay,
-    heatmap,
-    gps,
-    curation,
-    editIntensity,
-    ratings,
-    keywords,
-    bursts,
-    catalogHealth,
-    ...(filter ? { filterContext: filter } : {}),
+    return {
+      meta: {
+        schemaVersion: 1,
+        catalogVersion: meta.catalogVersion,
+        totalPhotos: overview.totalPhotos,
+        dateRange: overview.dateRange,
+        parsedAt: meta.parsedAt,
+        catalogHash: meta.catalogHash,
+      },
+      yearInReview, yearToYear, overview, gear, focalLength, focalLengthPerZoom,
+      apertures, timeOfDay, heatmap, gps, curation, editIntensity, ratings,
+      keywords, bursts, catalogHealth,
+      ...(filter ? { filterContext: filter } : {}),
+    }
+  } catch (e) {
+    const err = e as Error
+    console.error(`[lrcat] analysis failed at stage "${failedStage}": ${err?.name}: ${err?.message}`)
+    if (err?.stack) console.error(err.stack)
+    throw e
   }
 }

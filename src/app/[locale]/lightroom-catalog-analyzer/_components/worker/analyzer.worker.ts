@@ -6,13 +6,8 @@ import type {
   ProgressEvent,
   YearInReviewBlock,
 } from '@/lib/lrcat/types'
-import {
-  openCatalog,
-  openCatalogFromFile,
-  wipeOpfsCatalog,
-  type Database,
-  UnsupportedCatalogError,
-} from './open'
+import { openCatalog, type Database, UnsupportedCatalogError } from './open'
+import { openCatalogFromFile, wipeOpfsCatalog } from './open-opfs'
 import { computeCatalogHash } from './hash'
 import { populateCropFactorTable } from './crop-factor'
 import { aggregateYearInReview } from './aggregators/year-in-review'

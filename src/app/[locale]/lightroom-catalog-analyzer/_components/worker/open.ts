@@ -1,7 +1,6 @@
 import sqlite3InitModule, {
   type Sqlite3Static,
   type Database,
-  type SAHPoolUtil,
 } from '@sqlite.org/sqlite-wasm'
 
 // m-1 (audit): the aggregator `DbLike` interface is satisfied directly by the
@@ -16,7 +15,7 @@ const initSqlite = sqlite3InitModule as (config?: {
 }) => Promise<Sqlite3Static>
 
 let initPromise: Promise<Sqlite3Static> | null = null
-function getSqlite(): Promise<Sqlite3Static> {
+export function getSqlite(): Promise<Sqlite3Static> {
   if (!initPromise) {
     initPromise = initSqlite({ print: () => {}, printErr: () => {} })
   }
@@ -36,7 +35,7 @@ const SQLITE_HEADER = new Uint8Array([
 ])
 const MIN_LRC_VERSION = 9
 
-function assertSqliteHeader(headerBytes: Uint8Array): void {
+export function assertSqliteHeader(headerBytes: Uint8Array): void {
   for (let i = 0; i < SQLITE_HEADER.length; i++) {
     if (headerBytes[i] !== SQLITE_HEADER[i]) throw new UnsupportedCatalogError('not-sqlite')
   }
@@ -46,7 +45,7 @@ function assertSqliteHeader(headerBytes: Uint8Array): void {
  * Read the LrC schema version from an open handle, rejecting non-Lightroom or
  * too-old catalogs. Closes the handle before throwing so callers don't leak it.
  */
-function probeCatalogVersion(db: Database): number {
+export function probeCatalogVersion(db: Database): number {
   let catalogVersion: number
   try {
     const row = db.selectObject(
@@ -96,105 +95,6 @@ export async function openCatalog(buf: ArrayBuffer): Promise<{ db: Database; cat
   }
 
   return { db, catalogVersion: probeCatalogVersion(db) }
-}
-
-// OPFS SAH-Pool streaming path — for catalogs too large for one buffer (V8 caps
-// ArrayBuffer ~2 GB). Stream to disk-backed OPFS and let SQLite page from disk
-// via SAH-Pool, which needs no SharedArrayBuffer/COOP-COEP, so ads are untouched.
-
-const OPFS_DIR = '/phototools-lrcat'
-const OPFS_DB_PATH = `${OPFS_DIR}/catalog.lrcat`
-
-// Streaming to OPFS needs ~the file's own size on disk; leave margin for the
-// SAH-Pool's spare slots + the derived crop-factor table. Files that can't fit
-// the storage quota fail fast (rather than a partial import → later corruption).
-const OPFS_MARGIN_BYTES = 256 * 1024 * 1024
-
-let poolPromise: Promise<SAHPoolUtil | null> | null = null
-
-async function getPool(sqlite3: Sqlite3Static): Promise<SAHPoolUtil | null> {
-  if (typeof sqlite3.installOpfsSAHPoolVfs !== 'function') return null
-  if (!poolPromise) {
-    // Wrap in async so both sync and async failures (e.g. no OPFS in Node) → null.
-    poolPromise = (async () => {
-      try {
-        return await sqlite3.installOpfsSAHPoolVfs({
-          name: 'phototools-lrcat',
-          directory: OPFS_DIR,
-          initialCapacity: 4,
-        })
-      } catch {
-        return null
-      }
-    })()
-  }
-  return poolPromise
-}
-
-/**
- * Open a catalog by streaming the File into OPFS and opening it with the
- * SAH-Pool VFS (SQLite pages from disk — bounded memory, handles multi-GB
- * catalogs). Returns `null` if OPFS is unavailable so the caller can fall back
- * to the in-memory `openCatalog` path.
- */
-export async function openCatalogFromFile(
-  file: File,
-  onBytes?: (read: number, total: number) => void,
-): Promise<{ db: Database; catalogVersion: number } | null> {
-  // Reject up front if the file can't fit in OPFS storage (modern Chrome handles
-  // multi-GB files and >2 GB offsets fine, so size is bounded only by quota).
-  const est = await navigator.storage?.estimate?.().catch(() => null)
-  if (est?.quota && file.size > est.quota - OPFS_MARGIN_BYTES) {
-    throw new UnsupportedCatalogError('too-large')
-  }
-
-  // Cheap header probe (16 bytes) before committing to a full disk import.
-  assertSqliteHeader(new Uint8Array(await file.slice(0, 16).arrayBuffer()))
-
-  const sqlite3 = await getSqlite()
-  const pool = await getPool(sqlite3)
-  if (!pool) return null
-
-  // Clear any leftover from a previous (possibly crashed) session, then stream
-  // the file's bytes straight to the OPFS-backed handle — never buffering the
-  // whole file in memory.
-  try { pool.unlink(OPFS_DB_PATH) } catch { /* nothing to remove */ }
-  const reader = file.stream().getReader()
-  let read = 0
-  try {
-    await pool.importDb(OPFS_DB_PATH, async () => {
-      const { done, value } = await reader.read()
-      if (done || !value) return undefined
-      read += value.byteLength
-      onBytes?.(read, file.size)
-      return value
-    })
-  } catch (e) {
-    try { pool.unlink(OPFS_DB_PATH) } catch { /* best effort */ }
-    // importDb validates the SQLite header; a non-DB or truncated file lands here.
-    throw e instanceof UnsupportedCatalogError ? e : new UnsupportedCatalogError('corrupt')
-  }
-
-  const db = new pool.OpfsSAHPoolDb(OPFS_DB_PATH) as unknown as Database
-  // Ephemeral analysis copy — no durability needed. journal_mode=OFF also avoids
-  // consuming extra pool file slots for a rollback journal when the worker
-  // creates the derived AgSensorCropFactor table.
-  try { db.exec('PRAGMA journal_mode=OFF; PRAGMA synchronous=OFF;') } catch { /* non-fatal */ }
-
-  try {
-    return { db, catalogVersion: probeCatalogVersion(db) }
-  } catch (e) {
-    try { pool.unlink(OPFS_DB_PATH) } catch { /* best effort */ }
-    throw e
-  }
-}
-
-/** Remove the streamed catalog copy from OPFS (privacy + storage reclaim). */
-export async function wipeOpfsCatalog(): Promise<void> {
-  const pool = poolPromise ? await poolPromise : null
-  if (pool) {
-    try { pool.unlink(OPFS_DB_PATH) } catch { /* best effort */ }
-  }
 }
 
 export type { Database } from '@sqlite.org/sqlite-wasm'
