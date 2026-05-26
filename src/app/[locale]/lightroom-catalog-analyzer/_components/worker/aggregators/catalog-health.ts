@@ -12,25 +12,32 @@ const DUPLICATE_CLUSTER_LIMIT = 20
  * "ignores global filter". No `AnalysisFilter` argument here on purpose.
  */
 export function aggregateCatalogHealth(db: DbLike): CatalogHealthBlock {
-  const missingTotals = db.selectObject(
-    `SELECT COUNT(*) AS n FROM AgLibraryFile WHERE missing = 1`,
-  ) as { n: number } | undefined
-  const missingOriginals = missingTotals?.n ?? 0
+  // The `missing` column doesn't exist in all LrC catalog versions.
+  // Wrap missing-file queries in try/catch so catalogs without the column
+  // still get duplicate detection (which doesn't depend on `missing`).
+  let missingOriginals = 0
+  let missingByRootFolder: Array<{ folder: string; count: number }> = []
+  try {
+    const missingTotals = db.selectObject(
+      `SELECT COUNT(*) AS n FROM AgLibraryFile WHERE missing = 1`,
+    ) as { n: number } | undefined
+    missingOriginals = missingTotals?.n ?? 0
 
-  // Missing-by-folder: SQLite's nested CASE for prefix extraction is fragile across
-  // versions, so we pull the raw missing paths and bucket them JS-side for stability.
-  const rawMissingPaths = db.selectObjects(
-    `SELECT pathFromRoot FROM AgLibraryFile WHERE missing = 1 AND pathFromRoot IS NOT NULL`,
-  ) as Array<{ pathFromRoot: string }>
-  const folderCounts = new Map<string, number>()
-  for (const row of rawMissingPaths) {
-    const parts = row.pathFromRoot.split('/')
-    const folder = parts.length >= 2 ? parts.slice(0, 2).join('/') : parts[0]
-    folderCounts.set(folder, (folderCounts.get(folder) ?? 0) + 1)
+    const rawMissingPaths = db.selectObjects(
+      `SELECT pathFromRoot FROM AgLibraryFile WHERE missing = 1 AND pathFromRoot IS NOT NULL`,
+    ) as Array<{ pathFromRoot: string }>
+    const folderCounts = new Map<string, number>()
+    for (const row of rawMissingPaths) {
+      const parts = row.pathFromRoot.split('/')
+      const folder = parts.length >= 2 ? parts.slice(0, 2).join('/') : parts[0]
+      folderCounts.set(folder, (folderCounts.get(folder) ?? 0) + 1)
+    }
+    missingByRootFolder = [...folderCounts.entries()]
+      .map(([folder, count]) => ({ folder, count }))
+      .sort((a, b) => b.count - a.count)
+  } catch {
+    // `missing` column absent — leave both at their zero/empty defaults.
   }
-  const missingByRootFolder = [...folderCounts.entries()]
-    .map(([folder, count]) => ({ folder, count }))
-    .sort((a, b) => b.count - a.count)
 
   // Duplicate detection: GROUP BY the EXIF signature; only clusters of size ≥ 2.
   // We surface MIN/MAX path within each cluster as first/last.

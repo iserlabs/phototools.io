@@ -20,6 +20,12 @@ import { aggregateBursts } from './aggregators/bursts'
 import { aggregateCatalogHealth } from './aggregators/catalog-health'
 import { aggregateYearInReview } from './aggregators/year-in-review'
 import { aggregateYearToYear } from './aggregators/year-to-year'
+import {
+  EMPTY_OVERVIEW, EMPTY_GEAR, EMPTY_FOCAL_LENGTH, EMPTY_FOCAL_LENGTH_PER_ZOOM,
+  EMPTY_APERTURE, EMPTY_TIME_OF_DAY, EMPTY_HEATMAP, EMPTY_GPS, EMPTY_CURATION,
+  EMPTY_EDIT_INTENSITY, EMPTY_RATINGS, EMPTY_KEYWORDS, EMPTY_BURSTS,
+  EMPTY_CATALOG_HEALTH, EMPTY_YEAR_IN_REVIEW, EMPTY_YEAR_TO_YEAR,
+} from './aggregator-defaults'
 
 export interface AggregatorDb {
   selectObject: (sql: string, params?: unknown[]) => unknown | undefined
@@ -49,9 +55,37 @@ interface RunMeta {
 }
 
 /**
+ * Resilient per-aggregator wrapper. On success, emits progress and returns the
+ * result. On failure, logs the error and returns the provided fallback default
+ * so the remaining aggregators can still run.
+ */
+function at<T>(
+  stage: string,
+  index: number,
+  fn: () => T,
+  fallback: T,
+  onProgress: ((e: ProgressEvent) => void) | undefined,
+): T {
+  try {
+    const out = fn()
+    emitProgress(onProgress, stage, index)
+    return out
+  } catch (e) {
+    const err = e as Error
+    console.error(`[lrcat] aggregator "${stage}" failed: ${err?.name}: ${err?.message}`)
+    if (err?.stack) console.error(err.stack)
+    emitProgress(onProgress, stage, index)
+    return fallback
+  }
+}
+
+/**
  * Run every aggregator against the open DB with an optional global filter.
  * Filterable aggregators receive `filter`; year-scoped aggregators run with
  * their own scope and ignore the filter.
+ *
+ * Individual aggregator failures are caught and replaced with typed empty
+ * defaults so the dashboard renders all successful sections.
  */
 export function runAggregators(
   db: AggregatorDb,
@@ -59,60 +93,41 @@ export function runAggregators(
   filter: AnalysisFilter | undefined,
   onProgress?: (e: ProgressEvent) => void,
 ): InsightBlob {
-  // Run each aggregator via `at()` so a failure is pinned to a specific stage.
-  // A query that throws on real-catalog data otherwise surfaces only as a
-  // generic "analysis failed"; here the stage + error name/message are logged
-  // before rethrowing, which is essential for diagnosing data-specific failures.
-  let failedStage = ''
-  const at = <T,>(stage: string, index: number, fn: () => T): T => {
-    failedStage = stage
-    const out = fn()
-    emitProgress(onProgress, stage, index)
-    return out
-  }
-  try {
-    const overview = at('overview', 0, () => aggregateOverview(db, filter))
-    const gear = at('gear', 1, () => aggregateGear(db, filter))
-    const focalLength = at('focal-length', 2, () => aggregateFocalLength(db, filter))
-    const focalLengthPerZoom = at('focal-length-per-zoom', 3, () => aggregateFocalLengthPerZoom(db, filter))
-    const apertures = at('apertures', 4, () => aggregateApertureSweetSpot(db, filter))
-    const timeOfDay = at('time-of-day', 5, () => aggregateTimeOfDay(db, filter))
-    const heatmap = at('heatmap', 6, () => aggregateHeatmap(db, filter))
-    const gps = at('gps', 7, () => aggregateGps(db, filter))
-    const curation = at('curation', 8, () => aggregateCurationFunnel(db, filter))
-    const editIntensity = at('edit-intensity', 9, () => aggregateEditIntensity(db, filter))
-    const ratings = at('ratings', 10, () => aggregateRatings(db, filter))
-    const keywords = at('keywords', 11, () => aggregateKeywords(db, filter))
-    const bursts = at('bursts', 12, () => aggregateBursts(db, filter))
-    const catalogHealth = at('catalog-health', 13, () => aggregateCatalogHealth(db)) // ignores filter
-    const yearToYear = at('year-to-year', 14, () => aggregateYearToYear(db, 3))      // ignores filter
-    // Year-in-Review defaults to the most recent year with photos.
-    const yearInReview = at('year-in-review', 15, () => {
-      const latestYear = (db.selectObject(
-        `SELECT CAST(strftime('%Y', MAX(img.captureTime)) AS INTEGER) AS y
-           FROM Adobe_images img WHERE img.captureTime IS NOT NULL`,
-      ) as { y: number | null } | undefined)?.y ?? null
-      return latestYear != null ? aggregateYearInReview(db, latestYear) : null
-    })
+  const overview       = at('overview', 0, () => aggregateOverview(db, filter), EMPTY_OVERVIEW, onProgress)
+  const gear           = at('gear', 1, () => aggregateGear(db, filter), EMPTY_GEAR, onProgress)
+  const focalLength    = at('focal-length', 2, () => aggregateFocalLength(db, filter), EMPTY_FOCAL_LENGTH, onProgress)
+  const focalLengthPerZoom = at('focal-length-per-zoom', 3, () => aggregateFocalLengthPerZoom(db, filter), EMPTY_FOCAL_LENGTH_PER_ZOOM, onProgress)
+  const apertures      = at('apertures', 4, () => aggregateApertureSweetSpot(db, filter), EMPTY_APERTURE, onProgress)
+  const timeOfDay      = at('time-of-day', 5, () => aggregateTimeOfDay(db, filter), EMPTY_TIME_OF_DAY, onProgress)
+  const heatmap        = at('heatmap', 6, () => aggregateHeatmap(db, filter), EMPTY_HEATMAP, onProgress)
+  const gps            = at('gps', 7, () => aggregateGps(db, filter), EMPTY_GPS, onProgress)
+  const curation       = at('curation', 8, () => aggregateCurationFunnel(db, filter), EMPTY_CURATION, onProgress)
+  const editIntensity  = at('edit-intensity', 9, () => aggregateEditIntensity(db, filter), EMPTY_EDIT_INTENSITY, onProgress)
+  const ratings        = at('ratings', 10, () => aggregateRatings(db, filter), EMPTY_RATINGS, onProgress)
+  const keywords       = at('keywords', 11, () => aggregateKeywords(db, filter), EMPTY_KEYWORDS, onProgress)
+  const bursts         = at('bursts', 12, () => aggregateBursts(db, filter), EMPTY_BURSTS, onProgress)
+  const catalogHealth  = at('catalog-health', 13, () => aggregateCatalogHealth(db), EMPTY_CATALOG_HEALTH, onProgress)
+  const yearToYear     = at('year-to-year', 14, () => aggregateYearToYear(db, 3), EMPTY_YEAR_TO_YEAR, onProgress)
+  const yearInReview   = at('year-in-review', 15, () => {
+    const latestYear = (db.selectObject(
+      `SELECT CAST(strftime('%Y', MAX(img.captureTime)) AS INTEGER) AS y
+         FROM Adobe_images img WHERE img.captureTime IS NOT NULL`,
+    ) as { y: number | null } | undefined)?.y ?? null
+    return latestYear != null ? aggregateYearInReview(db, latestYear) : null
+  }, EMPTY_YEAR_IN_REVIEW, onProgress)
 
-    return {
-      meta: {
-        schemaVersion: 1,
-        catalogVersion: meta.catalogVersion,
-        totalPhotos: overview.totalPhotos,
-        dateRange: overview.dateRange,
-        parsedAt: meta.parsedAt,
-        catalogHash: meta.catalogHash,
-      },
-      yearInReview, yearToYear, overview, gear, focalLength, focalLengthPerZoom,
-      apertures, timeOfDay, heatmap, gps, curation, editIntensity, ratings,
-      keywords, bursts, catalogHealth,
-      ...(filter ? { filterContext: filter } : {}),
-    }
-  } catch (e) {
-    const err = e as Error
-    console.error(`[lrcat] analysis failed at stage "${failedStage}": ${err?.name}: ${err?.message}`)
-    if (err?.stack) console.error(err.stack)
-    throw e
+  return {
+    meta: {
+      schemaVersion: 1,
+      catalogVersion: meta.catalogVersion,
+      totalPhotos: overview.totalPhotos,
+      dateRange: overview.dateRange,
+      parsedAt: meta.parsedAt,
+      catalogHash: meta.catalogHash,
+    },
+    yearInReview, yearToYear, overview, gear, focalLength, focalLengthPerZoom,
+    apertures, timeOfDay, heatmap, gps, curation, editIntensity, ratings,
+    keywords, bursts, catalogHealth,
+    ...(filter ? { filterContext: filter } : {}),
   }
 }
