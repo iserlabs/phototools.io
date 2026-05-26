@@ -29,13 +29,11 @@ export function aggregateBursts(db: DbLike, filter?: AnalysisFilter): BurstsBloc
 
   const rows = db.selectObjects(
     `SELECT img.captureTime AS captureTime,
-            COALESCE(serial.value, cam.value, '') AS cameraKey,
+            COALESCE(cam.value, '') AS cameraKey,
             img.rating AS rating
        FROM Adobe_images img
        JOIN AgHarvestedExifMetadata exif ON exif.image = img.id_local
        LEFT JOIN AgInternedExifCameraModel cam ON cam.id_local = exif.cameraModelRef
-       LEFT JOIN AgInternedExifLens lens ON lens.id_local = exif.lensRef
-       LEFT JOIN AgInternedExifCameraSerialNumber serial ON serial.id_local = exif.cameraSerialNumberRef
       WHERE img.captureTime IS NOT NULL ${where}
       ORDER BY img.captureTime ASC, img.id_local ASC`,
     pred.params,
