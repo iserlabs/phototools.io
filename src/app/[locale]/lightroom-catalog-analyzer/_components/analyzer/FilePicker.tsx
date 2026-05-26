@@ -12,7 +12,6 @@ interface FilePickerProps {
   onFile: (file: File) => void
 }
 
-const ONE_GB = 1024 * 1024 * 1024
 const PROBE_BYTES = 64 * 1024
 
 function isLrcat(file: File): boolean {
@@ -25,7 +24,6 @@ export function FilePicker({ onFile }: FilePickerProps) {
   const [fileName, setFileName] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [errorDetail, setErrorDetail] = useState<string | null>(null)
-  const [pendingLarge, setPendingLarge] = useState<File | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const dispatchFile = useCallback(
@@ -64,16 +62,8 @@ export function FilePicker({ onFile }: FilePickerProps) {
         return
       }
       setFileName(file.name)
-      // A 0-byte file is almost always a cloud placeholder (iCloud/Dropbox) that
-      // hasn't downloaded yet — reading it would "succeed" with an empty buffer
-      // and then fail the SQLite header check with a confusing "corrupt" error.
-      // Catch it up front with actionable guidance.
       if (file.size === 0) {
         setError(t('filePicker.errorEmpty'))
-        return
-      }
-      if (file.size > ONE_GB) {
-        setPendingLarge(file)
         return
       }
       void dispatchFile(file)
@@ -100,16 +90,6 @@ export function FilePicker({ onFile }: FilePickerProps) {
   )
 
   const onClick = useCallback(() => inputRef.current?.click(), [])
-
-  const confirmLarge = useCallback(() => {
-    if (pendingLarge) void dispatchFile(pendingLarge)
-    setPendingLarge(null)
-  }, [pendingLarge, dispatchFile])
-
-  const cancelLarge = useCallback(() => {
-    setPendingLarge(null)
-    setFileName(null)
-  }, [])
 
   return (
     <div className={styles.filePickerWrap}>
@@ -140,50 +120,12 @@ export function FilePicker({ onFile }: FilePickerProps) {
           </>
         )}
       </div>
-      {/* No separate "Browse" button — the drop zone above is itself the click
-          target (it says "…or click to browse" and is keyboard-activatable). */}
       {error && (
         <div className={styles.fileError} role="alert">
           {error}
           {errorDetail && <span className={styles.fileErrorDetail}>{errorDetail}</span>}
         </div>
       )}
-
-      {pendingLarge && (
-        <LargeFileWarning
-          fileName={pendingLarge.name}
-          sizeGb={(pendingLarge.size / ONE_GB).toFixed(1)}
-          onConfirm={confirmLarge}
-          onCancel={cancelLarge}
-        />
-      )}
-    </div>
-  )
-}
-
-interface LargeFileWarningProps {
-  fileName: string
-  sizeGb: string
-  onConfirm: () => void
-  onCancel: () => void
-}
-
-function LargeFileWarning({ fileName, sizeGb, onConfirm, onCancel }: LargeFileWarningProps) {
-  const t = useTranslations('toolUI.lightroom-catalog-analyzer')
-  return (
-    <div className={styles.warningBackdrop} role="dialog" aria-modal="true">
-      <div className={styles.warningModal}>
-        <h2 className={styles.warningTitle}>{t('largeFileWarning.title')}</h2>
-        <p className={styles.warningBody}>{t('largeFileWarning.body', { fileName, sizeGb })}</p>
-        <div className={styles.warningActions}>
-          <button type="button" onClick={onCancel} className={styles.warningCancel}>
-            {t('largeFileWarning.cancel')}
-          </button>
-          <button type="button" onClick={onConfirm} className={styles.warningContinue}>
-            {t('largeFileWarning.continue')}
-          </button>
-        </div>
-      </div>
     </div>
   )
 }

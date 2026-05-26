@@ -81,7 +81,8 @@ async function finishOpen(
   adapted.exec(`
     CREATE TABLE IF NOT EXISTS AgInternedExifCameraSerialNumber (id_local INTEGER PRIMARY KEY, value TEXT);
     CREATE TABLE IF NOT EXISTS AgInternedExifCameraModel (id_local INTEGER PRIMARY KEY, value TEXT);
-    CREATE TABLE IF NOT EXISTS AgInternedExifLens (id_local INTEGER PRIMARY KEY, value TEXT)
+    CREATE TABLE IF NOT EXISTS AgInternedExifLens (id_local INTEGER PRIMARY KEY, value TEXT);
+    CREATE TABLE IF NOT EXISTS AgHarvestedDevelopMetadata (image INTEGER, hasDevelopAdjustments INTEGER)
   `)
 
   // Populate the 35mm-equivalent crop-factor table from sensors.ts so the
