@@ -74,6 +74,16 @@ async function finishOpen(
   adapted = adaptDatabase(opened.db)
   catalogVersion = opened.catalogVersion
 
+  // Ensure optional "interned" metadata tables exist so aggregators' LEFT JOINs
+  // succeed even on LrC catalogs where a table is version-dependent or absent.
+  // If the table already exists, IF NOT EXISTS is a no-op.
+  onProgress?.({ stage: 'schema', pct: 1 })
+  adapted.exec(`
+    CREATE TABLE IF NOT EXISTS AgInternedExifCameraSerialNumber (id_local INTEGER PRIMARY KEY, value TEXT);
+    CREATE TABLE IF NOT EXISTS AgInternedExifCameraModel (id_local INTEGER PRIMARY KEY, value TEXT);
+    CREATE TABLE IF NOT EXISTS AgInternedExifLens (id_local INTEGER PRIMARY KEY, value TEXT)
+  `)
+
   // Populate the 35mm-equivalent crop-factor table from sensors.ts so the
   // focal-length aggregator's LEFT JOIN resolves real crop factors.
   onProgress?.({ stage: 'schema', pct: 2 })
