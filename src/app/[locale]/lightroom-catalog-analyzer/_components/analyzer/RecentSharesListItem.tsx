@@ -45,7 +45,7 @@ export function RecentSharesListItem({ record, onRemoved }: Props) {
       </div>
       <div style={{ display: 'flex', gap: 12, alignItems: 'center', whiteSpace: 'nowrap' }}>
         <a href={record.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-secondary)' }}>{t('open')}</a>
-        <button type="button" onClick={onDelete} disabled={busy} style={{ background: 'none', border: 'none', color: '#f87171', cursor: 'pointer', padding: 0 }}>
+        <button type="button" onClick={onDelete} disabled={busy} style={{ background: 'none', border: 'none', color: 'var(--lens-b)', cursor: 'pointer', padding: 0 }}>
           {t('delete')}
         </button>
       </div>

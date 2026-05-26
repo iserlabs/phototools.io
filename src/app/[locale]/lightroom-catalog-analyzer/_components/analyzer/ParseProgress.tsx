@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { AGGREGATOR_STAGES } from '../worker/run-aggregators'
 import styles from './LightroomCatalogAnalyzer.module.css'
 
 interface ParseProgressProps {
@@ -17,20 +18,14 @@ const KNOWN_STAGES = new Set([
   'reading', 'opening', 'schema', 'hashing', 'aggregating', 'finalizing',
 ])
 
-// Per-aggregator stage keys emitted by the worker during the aggregating phase.
-// They all roll up to the single "Computing statistics…" umbrella label so the
-// user never sees raw keys like "focal-length-per-zoom" (Audit m-2).
-const AGGREGATOR_STAGES = new Set([
-  'overview', 'gear', 'focal-length', 'focal-length-per-zoom',
-  'apertures', 'time-of-day', 'heatmap', 'gps',
-  'curation', 'edit-intensity', 'ratings', 'keywords',
-  'bursts', 'catalog-health', 'year-to-year', 'year-in-review',
-])
+// Per-aggregator stage keys are imported from the canonical list in
+// run-aggregators.ts to avoid duplication.
+const AGGREGATOR_STAGE_SET = new Set<string>(AGGREGATOR_STAGES)
 
 export function ParseProgress({ stage, pct }: ParseProgressProps) {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer')
   const clamped = Math.max(0, Math.min(100, Math.round(pct)))
-  const labelStage = AGGREGATOR_STAGES.has(stage) ? 'aggregating' : stage
+  const labelStage = AGGREGATOR_STAGE_SET.has(stage) ? 'aggregating' : stage
   const label = KNOWN_STAGES.has(labelStage) ? t(`parseProgress.stage.${labelStage}` as const) : stage
 
   return (

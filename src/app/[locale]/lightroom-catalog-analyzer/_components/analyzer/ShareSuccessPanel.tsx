@@ -21,7 +21,9 @@ export function ShareSuccessPanel({ result, onDeleted }: Props) {
     .format(new Date(result.expiresAt))
 
   const onCopy = useCallback(() => {
-    navigator.clipboard.writeText(result.url).then(() => toast(t('copied')))
+    navigator.clipboard.writeText(result.url)
+      .then(() => toast(t('copied')))
+      .catch(() => { /* clipboard blocked — the URL is already visible in the input */ })
   }, [result.url, t])
 
   const onDelete = useCallback(async () => {
@@ -55,7 +57,7 @@ export function ShareSuccessPanel({ result, onDeleted }: Props) {
       <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', marginTop: 8 }}>{t('expiresOn', { date: expiresLabel })}</p>
       <div style={{ display: 'flex', gap: 16, marginTop: 12 }}>
         <a href={result.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-secondary)' }}>{t('openNewTab')}</a>
-        <button type="button" onClick={onDelete} disabled={deleting} style={{ background: 'none', border: 'none', color: '#f87171', cursor: 'pointer', padding: 0 }}>
+        <button type="button" onClick={onDelete} disabled={deleting} style={{ background: 'none', border: 'none', color: 'var(--lens-b)', cursor: 'pointer', padding: 0 }}>
           {t('delete')}
         </button>
       </div>

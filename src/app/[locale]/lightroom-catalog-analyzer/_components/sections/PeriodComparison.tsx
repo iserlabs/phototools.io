@@ -23,7 +23,11 @@ export function PeriodComparison() {
       if (!range.start || !range.end) return
       setBusy(true)
       try {
-        const next = await worker.applyFilter({ dateRange: { start: range.start, end: range.end } })
+        // Widen the end date to include the full day — filter.ts compares
+        // captureTime as a raw string, so a bare date like "2024-12-31" would
+        // exclude photos taken later than midnight on that day.
+        const end = range.end.includes('T') ? range.end : `${range.end}T23:59:59`
+        const next = await worker.applyFilter({ dateRange: { start: range.start, end } })
         if (which === 'A') setBlobA(next)
         else setBlobB(next)
       } finally {

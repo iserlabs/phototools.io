@@ -153,7 +153,12 @@ interface LargeFileWarningProps {
 function LargeFileWarning({ fileName, sizeGb, onConfirm, onCancel }: LargeFileWarningProps) {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer')
   return (
-    <div className={styles.warningBackdrop} role="dialog" aria-modal="true">
+    <div
+      className={styles.warningBackdrop}
+      role="dialog"
+      aria-modal="true"
+      onKeyDown={(e) => { if (e.key === 'Escape') onCancel() }}
+    >
       <div className={styles.warningModal}>
         <h2 className={styles.warningTitle}>{t('largeFileWarning.title')}</h2>
         <p className={styles.warningBody}>{t('largeFileWarning.body', { fileName, sizeGb })}</p>
