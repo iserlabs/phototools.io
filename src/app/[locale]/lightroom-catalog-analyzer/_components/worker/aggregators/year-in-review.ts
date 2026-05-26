@@ -8,7 +8,7 @@ interface DbLike {
 const TOP_GEAR_LIMIT = 5
 
 /**
- * Year-in-Review aggregator (spec §5.1 #1).
+ * Year-in-Review aggregator.
  *
  * Self-scoped: ignores the global filter, instead applying a hard
  * `strftime('%Y', img.captureTime) = ?` predicate so cache invalidation

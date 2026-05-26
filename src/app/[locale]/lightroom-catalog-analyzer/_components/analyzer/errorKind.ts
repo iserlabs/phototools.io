@@ -1,6 +1,6 @@
 /**
  * Maps a thrown error from the analyzer worker (or hook) to one of the
- * `toolUI.lightroom-catalog-analyzer.errors.*` i18n key suffixes (M-5).
+ * `toolUI.lightroom-catalog-analyzer.errors.*` i18n key suffixes.
  *
  * The worker raises `UnsupportedCatalogError` with a `kind` discriminator, but
  * Comlink serializes errors to plain `{ name, message }` — the custom `kind`

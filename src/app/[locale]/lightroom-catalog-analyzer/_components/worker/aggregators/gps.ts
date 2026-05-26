@@ -28,7 +28,7 @@ function snapToGrid(value: number): number {
  *   3. The output is capped to TOP_CLUSTERS_LIMIT clusters by count.
  *
  * topRegions is derived from the PII-guarded clusters via the offline
- * nearest-centroid lookup table in `src/lib/lrcat/regions/` (audit fix M-3).
+ * nearest-centroid lookup table in `src/lib/lrcat/regions/`.
  * Because it operates on the already-thresholded clusters, no per-photo
  * coordinate ever leaves the cluster granularity.
  */

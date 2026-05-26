@@ -2,7 +2,7 @@ import { POPULAR_MODELS, SENSORS } from '@/lib/data/sensors'
 
 /**
  * Model name -> crop-factor resolution for the focal-length 35mm-equivalent
- * normalization (Audit M-2).
+ * normalization.
  *
  * `sensors.ts` does NOT map camera models to crop factors directly. It exposes
  * two pieces we combine here:
@@ -122,7 +122,7 @@ interface PopulateDbLike {
 }
 
 /**
- * Audit M-2: build the `AgSensorCropFactor(cameraModelRef, cropFactor)` table
+ * Build the `AgSensorCropFactor(cameraModelRef, cropFactor)` table
  * inside an open catalog so the focal-length aggregator's
  * `LEFT JOIN AgSensorCropFactor` resolves real crop factors on real catalogs.
  *

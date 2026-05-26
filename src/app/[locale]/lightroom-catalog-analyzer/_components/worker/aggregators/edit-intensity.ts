@@ -38,7 +38,7 @@ function pct(n: number, d: number): number {
   return Math.round((n / d) * 1000) / 10
 }
 
-// m-8 (audit, spec §4.3): we deliberately do NOT pull img.id_local into JS here.
+// We deliberately do NOT pull img.id_local into JS here.
 // The deterministic 5% sample uses `img.id_local % 20` entirely SQL-side (SQLite does
 // the integer math), so there is no risk of identifier overflow past 2^53 in JS.
 interface DevRow {

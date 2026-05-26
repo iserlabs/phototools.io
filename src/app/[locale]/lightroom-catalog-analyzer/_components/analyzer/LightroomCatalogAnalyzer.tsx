@@ -26,17 +26,17 @@ interface LastOpened {
 }
 
 function AnalyzerBody() {
-  const { status, error, loadedFromCache, lastProgress, open, reset, filter, applyFilter } = useAnalyzer()
+  const { status, error, loadedFromCache, lastProgress, open, close, filter, applyFilter } = useAnalyzer()
   const activeSection = useScrollSpy()
   const searchParams = useSearchParams()
   const demoRequested = searchParams?.get('demo') === 'true'
   const demoStartedRef = useRef(false)
-  // Retain the last opened catalog so the m-10 "re-analyze" can re-parse.
+  // Retain the last opened catalog so the "re-analyze" can re-parse.
   const lastOpened = useRef<LastOpened | null>(null)
 
-  // Bidirectional URL sync for the global filter (Task 12.3). On mount it
-  // restores any filter encoded in the URL by calling applyFilter; thereafter
-  // it replaceState-pushes serialized filter changes back to the URL.
+  // Bidirectional URL sync for the global filter. On mount it restores any
+  // filter encoded in the URL by calling applyFilter; thereafter it
+  // replaceState-pushes serialized filter changes back to the URL.
   useFilterUrlSync(filter, applyFilter, status === 'loaded')
 
   const onFile = useCallback(
@@ -64,7 +64,7 @@ function AnalyzerBody() {
     }
   }, [open])
 
-  // Autoload the bundled demo catalog when the URL has `?demo=true` (Task 13.2).
+  // Autoload the bundled demo catalog when the URL has `?demo=true`.
   // Guard order: already started → not idle (loaded/parsing/error) → start once.
   useEffect(() => {
     if (!demoRequested) return
@@ -96,7 +96,7 @@ function AnalyzerBody() {
     return (
       <div className={styles.shell}>
         <main id="lrcat-main" className={styles.shellMain}>
-          <ErrorScreen errorKind={error} onRetry={reset} />
+          <ErrorScreen errorKind={error} onRetry={close} />
         </main>
       </div>
     )

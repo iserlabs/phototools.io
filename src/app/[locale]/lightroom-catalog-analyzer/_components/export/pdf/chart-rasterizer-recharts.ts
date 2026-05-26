@@ -16,9 +16,9 @@ export function useChartPng() {
 }
 
 /**
- * Run an ordered map of PNG getters STRICTLY sequentially (one at a time), per
- * spec §7.2. Never lets two html2canvas passes overlap. Returns a map of the same
- * keys to data URLs (or null when a getter yields undefined).
+ * Run an ordered map of PNG getters strictly sequentially (one at a time).
+ * Never lets two html2canvas passes overlap. Returns a map of the same keys
+ * to data URLs (or null when a getter yields undefined).
  */
 export async function rasterizeRechartsCharts<K extends string>(
   getters: Record<K, PngGetter>,

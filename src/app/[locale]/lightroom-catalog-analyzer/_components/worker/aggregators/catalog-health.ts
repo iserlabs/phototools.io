@@ -8,8 +8,8 @@ interface DbLike {
 const DUPLICATE_CLUSTER_LIMIT = 20
 
 /**
- * Catalog Health is whole-catalog only — spec §5.5 / §2.2 list it as
- * "ignores global filter". No `AnalysisFilter` argument here on purpose.
+ * Catalog Health is whole-catalog only — ignores the global filter.
+ * No `AnalysisFilter` argument here on purpose.
  */
 export function aggregateCatalogHealth(db: DbLike): CatalogHealthBlock {
   const missingTotals = db.selectObject(
@@ -34,8 +34,8 @@ export function aggregateCatalogHealth(db: DbLike): CatalogHealthBlock {
 
   // Duplicate detection: GROUP BY the EXIF signature; only clusters of size ≥ 2.
   // We surface MIN/MAX path within each cluster as first/last.
-  // m-8 (audit, spec §4.3): the join `file.id_local = img.rootFile` stays SQL-side;
-  // no identifier column is pulled into JS for arithmetic.
+  // The join `file.id_local = img.rootFile` stays SQL-side; no identifier
+  // column is pulled into JS for arithmetic.
   const clusterRows = db.selectObjects(
     `SELECT img.captureTime AS captureTime,
             cam.value AS cameraModel,

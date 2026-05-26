@@ -50,7 +50,7 @@ export function AnalyzerProvider({ children }: { children: ReactNode }) {
       try {
         // Try IDB cache first using a non-destructive hash (the buffer is needed
         // for the worker; we deliberately do not transfer it until after hashing).
-        // A forced re-analyze (m-10) skips the cache read.
+        // A forced re-analyze skips the cache read.
         const hash = await computeCatalogHash(buffer, size, meta.lastModified)
         const cached = opts?.forceFresh ? null : await getCachedInsights(hash)
         if (cached) {
@@ -77,7 +77,7 @@ export function AnalyzerProvider({ children }: { children: ReactNode }) {
         dispatch({ type: 'parse-success', blob, loadedFromCache: false })
       } catch (e) {
         const kind = errorKindFor(e)
-        // M-4: capture an ANONYMIZED payload — never filenames or content.
+        // Capture an ANONYMIZED payload — never filenames or content.
         Sentry.captureException(e, {
           tags: { feature: 'lrcat-analyzer', errorKind: kind },
           extra: { size, catalogVersion, errorKind: kind },

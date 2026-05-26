@@ -49,8 +49,7 @@ const SECTION_MIN_HEIGHTS: Record<SectionId, number> = {
   'catalog-health': 360,
 }
 
-// Section ID → rendered body. `drilldown` mounts the form + active filter pills
-// (section IDs `gps` → GpsMap, `curation` → CurationFunnel per Plan 1f mapping).
+// Section ID → rendered body.
 const SECTION_BODIES: Record<SectionId, ReactNode> = {
   'year-in-review': <YearInReview />,
   'year-to-year': <YearToYear />,

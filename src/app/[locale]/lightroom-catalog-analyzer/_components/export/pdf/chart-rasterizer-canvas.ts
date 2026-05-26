@@ -21,9 +21,9 @@ function blobToDataUrl(blob: Blob): Promise<string> {
 }
 
 /**
- * Rasterize a Canvas-based chart to a PNG data URL using the SAME pure draw*()
- * functions the live dashboard uses (Plan 1f). Renders to an OffscreenCanvas at
- * 2× resolution, then converts to PNG.
+ * Rasterize a Canvas-based chart to a PNG data URL using the same pure draw*()
+ * functions the live dashboard uses. Renders to an OffscreenCanvas at 2×
+ * resolution, then converts to PNG.
  *
  * Overloads keep the block type honest per chart kind.
  */

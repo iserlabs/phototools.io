@@ -1,11 +1,9 @@
 import sqlite3InitModule, { type Sqlite3Static, type Database } from '@sqlite.org/sqlite-wasm'
 
-// m-1 (audit): The aggregator `DbLike` interface (`selectObject` / `selectObjects`)
-// is satisfied directly by the sqlite-wasm oo1 `Database` class returned here —
-// see its `selectObject(sql, bind)` / `selectObjects(sql, bind)` methods
-// (true as of `@sqlite.org/sqlite-wasm@^3.50`). Aggregators can consume this
-// handle without an adapter; the better-sqlite3 adapter in tests mirrors the
-// same surface.
+// The aggregator `DbLike` interface (`selectObject` / `selectObjects`) is
+// satisfied directly by the sqlite-wasm oo1 `Database` class returned here.
+// Aggregators can consume this handle without an adapter; the better-sqlite3
+// adapter in tests mirrors the same surface.
 
 // The bundled `.d.mts` declares the init function as taking 0 arguments, but at
 // runtime it accepts an Emscripten module config (e.g. `print` / `printErr` to
@@ -68,7 +66,7 @@ export async function openCatalog(buf: ArrayBuffer): Promise<{ db: Database; cat
   // 4. Open an empty in-memory DB, then deserialize the bytes into it.
   //
   // NOTE: we deliberately do NOT pass SQLITE_DESERIALIZE_READONLY. The worker
-  // (Plan 1d, Audit M-2) needs to CREATE a derived `AgSensorCropFactor` table
+  // needs to CREATE a derived `AgSensorCropFactor` table
   // in this handle to drive the focal-length 35mm-equivalent normalization, so
   // we pass SQLITE_DESERIALIZE_RESIZEABLE to let the in-memory DB grow. This
   // only mutates the deserialized copy — SQLITE_DESERIALIZE_FREEONCLOSE frees

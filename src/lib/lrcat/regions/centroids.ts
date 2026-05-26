@@ -7,7 +7,7 @@
 //
 // It is intentionally small and approximate — it exists so the GPS block's
 // `topRegions` is populated with sensible country/region labels rather than
-// shipping permanently empty (audit fix M-3). It is NOT a precise reverse
+// shipping permanently empty. It is NOT a precise reverse
 // geocoder: a point in the middle of an ocean simply resolves to whatever
 // landmass centroid is nearest. The clustering threshold (≥5 photos per
 // ~5 km cell) means stray mislabels have negligible impact on the top list.

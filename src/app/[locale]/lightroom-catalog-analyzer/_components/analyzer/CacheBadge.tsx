@@ -11,7 +11,7 @@ interface CacheBadgeProps {
 }
 
 /**
- * m-10: shown when the loaded InsightBlob came from the IDB cache. Offers a
+ * Shown when the loaded InsightBlob came from the IDB cache. Offers a
  * "re-analyze" affordance that forces a fresh parse from the original file.
  */
 export function CacheBadge({ onReanalyze, canReanalyze }: CacheBadgeProps) {

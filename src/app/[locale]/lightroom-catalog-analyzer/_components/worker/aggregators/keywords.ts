@@ -6,7 +6,7 @@ interface DbLike {
   selectObjects: (sql: string, params?: unknown[]) => unknown[]
 }
 
-const MIN_PHOTOS_PER_KEYWORD = 3              // PII guard, spec §4.13
+const MIN_PHOTOS_PER_KEYWORD = 3              // PII guard: drop rare keywords
 const BLIND_SPOT_COVERAGE_THRESHOLD = 0.2     // months below this fraction tagged
 
 export function aggregateKeywords(db: DbLike, filter?: AnalysisFilter): KeywordsBlock {
@@ -14,9 +14,9 @@ export function aggregateKeywords(db: DbLike, filter?: AnalysisFilter): Keywords
   const where = pred.sql || ''
 
   // Top keywords with the PII threshold baked in via HAVING.
-  // m-8 (audit): the keyword/image joins use raw id_local columns purely SQL-side
-  // (ki.tag = kw.id_local, img.id_local = ki.image) — no identifier is pulled into
-  // JS for arithmetic, so there is no 2^53 overflow risk.
+  // The keyword/image joins use raw id_local columns purely SQL-side
+  // (ki.tag = kw.id_local, img.id_local = ki.image) — no identifier is pulled
+  // into JS for arithmetic.
   const topKeywords = db.selectObjects(
     `SELECT kw.name AS keyword, COUNT(DISTINCT ki.image) AS n
        FROM AgLibraryKeyword kw

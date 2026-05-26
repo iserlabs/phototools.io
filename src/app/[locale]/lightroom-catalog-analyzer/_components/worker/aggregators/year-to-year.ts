@@ -30,7 +30,7 @@ const ROW_SPECS: RowSpec[] = [
 ]
 
 /**
- * Year-to-Year Comparison aggregator (spec §5.1 #2).
+ * Year-to-Year Comparison aggregator.
  *
  * Returns the most recent N calendar years of the catalog as columns,
  * with one row per scorecard stat. Deltas are (this - prev) / prev * 100;

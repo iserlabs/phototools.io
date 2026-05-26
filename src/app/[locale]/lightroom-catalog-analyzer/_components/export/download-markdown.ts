@@ -8,10 +8,8 @@ export function exportFilename(catalogHash: string, date: Date, ext: 'md' | 'pdf
   return `phototools-${hash8}-${iso}.${ext}`
 }
 
-/** Trigger a browser download of `text` as a `.md` file. Browser-only. */
-export function downloadMarkdown(text: string, filename: string): void {
-  const blob = new Blob([text], { type: 'text/markdown;charset=utf-8' })
-  const url = URL.createObjectURL(blob)
+/** Trigger a browser download via an ephemeral anchor element. */
+function downloadUrl(url: string, filename: string): void {
   const a = document.createElement('a')
   a.href = url
   a.download = filename
@@ -21,14 +19,12 @@ export function downloadMarkdown(text: string, filename: string): void {
   URL.revokeObjectURL(url)
 }
 
+/** Trigger a browser download of `text` as a `.md` file. Browser-only. */
+export function downloadMarkdown(text: string, filename: string): void {
+  downloadUrl(URL.createObjectURL(new Blob([text], { type: 'text/markdown;charset=utf-8' })), filename)
+}
+
 /** Trigger a browser download of a pre-built Blob (used by the PDF exporter). */
 export function downloadBlob(blob: Blob, filename: string): void {
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = filename
-  document.body.appendChild(a)
-  a.click()
-  a.remove()
-  URL.revokeObjectURL(url)
+  downloadUrl(URL.createObjectURL(blob), filename)
 }

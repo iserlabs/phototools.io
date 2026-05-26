@@ -15,9 +15,9 @@ const KNOWN_ERROR_KEYS = new Set([
 ])
 
 /**
- * M-5: the `status === 'error'` screen. Renders the localized copy for the
+ * The `status === 'error'` screen. Renders the localized copy for the
  * current error kind (falling back to the generic "unknown" message) plus a
- * retry affordance back to the empty state.
+ * retry affordance that returns to the empty state.
  */
 export function ErrorScreen({ errorKind, onRetry }: ErrorScreenProps) {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.errors')

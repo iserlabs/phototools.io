@@ -16,7 +16,7 @@ export interface PdfChartGetters {
 /**
  * Orchestrates the two-phase PDF export. Dynamically imports @react-pdf/renderer
  * and the recharts/canvas rasterizers ONLY when invoked, keeping them off the
- * initial bundle. Rasterizes charts sequentially per spec §7.2.
+ * initial bundle. Rasterizes charts sequentially.
  */
 export function usePdfExport(blob: InsightBlob, strings: PdfStrings, getters: PdfChartGetters) {
   const [phase, setPhase] = useState<PdfPhase>('idle')

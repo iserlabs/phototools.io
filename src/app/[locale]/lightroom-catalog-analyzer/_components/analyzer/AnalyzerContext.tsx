@@ -12,12 +12,9 @@ import type {
 export type { ProgressEvent } from '@/lib/lrcat/types'
 
 /**
- * The Comlink-wrapped worker surface (defined in Plan 1d `analyzer.worker.ts`).
- * Re-exported here under the canonical name `AnalyzerWorker` so Plan 1f section
- * components can `import type { AnalyzerWorker } from '../analyzer/AnalyzerContext'`.
- *
- * The live worker's `openCatalog` accepts optional `fileSize`/`lastModified`
- * trailing args; they are typed here so the handle stays callable from the hook.
+ * The Comlink-wrapped worker surface. Re-exported here under the canonical
+ * name `AnalyzerWorker` so section components can import the type without
+ * pulling in the worker bundle.
  */
 export type AnalyzerWorker = Comlink.Remote<{
   openCatalog(
@@ -34,10 +31,9 @@ export type AnalyzerWorker = Comlink.Remote<{
 export type AnalyzerStatus = 'idle' | 'parsing' | 'loaded' | 'error'
 
 /**
- * Flattened context surface consumed by `useAnalyzer()` and all Plan 1f
- * section components. This is the canonical contract from EXECUTION-NOTES §2 —
- * sections read `insightBlob` (only mounted when `status === 'loaded'`) and the
- * few that re-query (YearInReview, PeriodComparison) call `worker` directly.
+ * Flattened context surface consumed by `useAnalyzer()`. Sections read
+ * `insightBlob` (only mounted when `status === 'loaded'`) and the few
+ * that re-query (YearInReview, PeriodComparison) call `worker` directly.
  */
 export interface AnalyzerContextValue {
   status: AnalyzerStatus
@@ -62,7 +58,7 @@ export interface OpenCatalogMeta {
 }
 
 export interface OpenOptions {
-  /** Skip the IDB cache and re-parse from the original buffer (m-10 re-analyze). */
+  /** Skip the IDB cache and re-parse from the original buffer (re-analyze). */
   forceFresh?: boolean
 }
 
@@ -78,7 +74,5 @@ export function useAnalyzerContextValue(): AnalyzerContextValue {
   return ctx
 }
 
-// Canonical hook. Plan 1f section components import `useAnalyzer` directly from
-// this module; `./useAnalyzer` also re-exports an identical delegate. Both paths
-// return the same flattened AnalyzerContextValue.
+/** Canonical hook — also re-exported from `./useAnalyzer` for convenience. */
 export const useAnalyzer = useAnalyzerContextValue

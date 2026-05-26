@@ -22,7 +22,7 @@ function approxDistanceSq(lat1: number, lng1: number, lat2: number, lng2: number
  * Map a GPS coordinate to the nearest region centroid's label.
  * Returns null for non-finite or out-of-range coordinates.
  *
- * This is a coarse offline reverse lookup (audit fix M-3) — it labels a point
+ * This is a coarse offline reverse lookup — it labels a point
  * with the nearest known country/sub-region centroid, not a precise address.
  */
 export function lookupRegion(lat: number, lng: number): string | null {

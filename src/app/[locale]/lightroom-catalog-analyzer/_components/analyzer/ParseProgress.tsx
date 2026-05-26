@@ -6,7 +6,7 @@ import styles from './LightroomCatalogAnalyzer.module.css'
 
 interface ParseProgressProps {
   /** Stage key — known lifecycle stages get a localized label; per-aggregator
-   *  stages map to the "aggregating" umbrella label (m-2); anything else renders
+   *  stages map to the "aggregating" umbrella label; anything else renders
    *  the raw key. */
   stage: string
   /** 0..100 (values outside the range are clamped). */

@@ -13,8 +13,7 @@ import styles from './ExportBar.module.css'
 
 // PdfExportStage (and its transitive @react-pdf/renderer + recharts-to-png +
 // html2canvas deps) loads ONLY on the first PDF-button click. ssr:false keeps it
-// out of the server render and the page's initial client chunk — the empty-state
-// bundle never references these libraries (spec §13 / Task 15.1 gate).
+// out of the server render and the page's initial client chunk.
 const PdfExportStage = dynamic(() => import('./PdfExportStage').then((m) => m.PdfExportStage), {
   ssr: false,
 })

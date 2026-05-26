@@ -9,9 +9,9 @@ interface DbLike {
 const BURST_GAP_MS = 1000        // strictly less than 1s = same burst
 const MIN_BURST_SIZE = 3
 
-// m-8 (audit, spec §4.3): we do NOT select img.id_local into JS. Clustering keys on
-// captureTime + cameraKey only; the id_local is used solely as a stable SQL-side
-// ORDER BY tiebreaker, so no identifier ever undergoes JS arithmetic.
+// We do NOT select img.id_local into JS. Clustering keys on captureTime +
+// cameraKey only; id_local is used solely as a stable SQL-side ORDER BY
+// tiebreaker, so no identifier ever undergoes JS arithmetic.
 interface Row {
   captureTime: string
   cameraKey: string                // serial OR model fallback
