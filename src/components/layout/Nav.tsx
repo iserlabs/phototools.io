@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, usePathname } from '@/lib/i18n/navigation'
 import { useTranslations } from 'next-intl'
-import { getVisibleTools, getToolStatus } from '@/lib/data/tools'
+import { getLiveTools } from '@/lib/data/tools'
 import type { ToolCategory } from '@/lib/types'
 import { ToolIcon } from '@/components/shared/ToolIcon'
 import { ApertureLogo } from '@/components/shared/ApertureLogo'
@@ -45,18 +45,12 @@ export function Nav({ theme, onThemeChange }: NavProps) {
   const toolsRef = useRef<HTMLDivElement>(null)
   const canHover = useCanHover()
   const pathname = usePathname()
-  const tools = getVisibleTools()
+  const tools = getLiveTools()
 
   const MAX_PER_COLUMN = 5
 
   const grouped = CATEGORY_ORDER.flatMap((cat) => {
-    const catTools = tools
-      .filter((t) => t.category === cat)
-      .sort((a, b) => {
-        const aLive = getToolStatus(a) === 'live' ? 0 : 1
-        const bLive = getToolStatus(b) === 'live' ? 0 : 1
-        return aLive - bLive
-      })
+    const catTools = tools.filter((t) => t.category === cat)
     if (catTools.length === 0) return []
     if (catTools.length <= MAX_PER_COLUMN) {
       return [{ category: cat, label: CATEGORY_LABELS[cat], tools: catTools }]
@@ -130,41 +124,26 @@ export function Nav({ theme, onThemeChange }: NavProps) {
                 {grouped.map((group) => (
                   <div key={group.category} className={styles.megaColumn}>
                     <div className={styles.megaCategoryLabel}>{group.label || '\u00A0'}</div>
-                    {group.tools.map((tool) => {
-                      const isLive = getToolStatus(tool) === 'live'
-                      if (isLive) {
-                        return (
-                          <Link
-                            key={tool.slug}
-                            href={`/${tool.slug}`}
-                            prefetch={false}
-                            className={styles.megaItem}
-                            data-ph-capture-attribute-source="mega-menu"
-                            data-ph-capture-attribute-tool-slug={tool.slug}
-                            onClick={(e) => {
-                              if (!e.metaKey && !e.ctrlKey) setToolsOpen(false)
-                              trackNavClick({ target: tool.slug, source: 'mega-menu' })
-                            }}
-                          >
-                            <span className={styles.megaItemHeader}>
-                              <ToolIcon slug={tool.slug} width={16} height={16} className={styles.megaItemIcon} />
-                              <span className={styles.megaItemName}>{toolsT(`${tool.slug}.name`)}</span>
-                            </span>
-                            <span className={styles.megaItemDesc}>{toolsT(`${tool.slug}.description`)}</span>
-                          </Link>
-                        )
-                      }
-                      return (
-                        <div key={tool.slug} className={`${styles.megaItem} ${styles.megaItemDisabled}`}>
-                          <span className={styles.megaItemHeader}>
-                            <ToolIcon slug={tool.slug} width={16} height={16} className={styles.megaItemIcon} />
-                            <span className={styles.megaItemName}>{toolsT(`${tool.slug}.name`)}</span>
-                            <span className={styles.megaItemBadge}>{t('comingSoon')}</span>
-                          </span>
-                          <span className={styles.megaItemDesc}>{toolsT(`${tool.slug}.description`)}</span>
-                        </div>
-                      )
-                    })}
+                    {group.tools.map((tool) => (
+                      <Link
+                        key={tool.slug}
+                        href={`/${tool.slug}`}
+                        prefetch={false}
+                        className={styles.megaItem}
+                        data-ph-capture-attribute-source="mega-menu"
+                        data-ph-capture-attribute-tool-slug={tool.slug}
+                        onClick={(e) => {
+                          if (!e.metaKey && !e.ctrlKey) setToolsOpen(false)
+                          trackNavClick({ target: tool.slug, source: 'mega-menu' })
+                        }}
+                      >
+                        <span className={styles.megaItemHeader}>
+                          <ToolIcon slug={tool.slug} width={16} height={16} className={styles.megaItemIcon} />
+                          <span className={styles.megaItemName}>{toolsT(`${tool.slug}.name`)}</span>
+                        </span>
+                        <span className={styles.megaItemDesc}>{toolsT(`${tool.slug}.description`)}</span>
+                      </Link>
+                    ))}
                   </div>
               ))}
             </div>
