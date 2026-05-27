@@ -33,10 +33,11 @@ function renderWithIntl(ui: React.ReactNode) {
 }
 
 describe('LightroomCatalogAnalyzer', () => {
-  it('renders both MobileSplash and DesktopEmptyState (CSS picks which is visible)', () => {
+  it('renders MobileSplash and Dashboard in idle state (sidebar has uploader)', () => {
     renderWithIntl(<LightroomCatalogAnalyzer />)
     expect(screen.getByTestId('mobile-splash')).toBeInTheDocument()
-    expect(screen.getByTestId('desktop-empty')).toBeInTheDocument()
+    // Dashboard sections return null when no insightBlob — structurally present
+    // but visually empty; the uploader in ControlSidebar is the main affordance.
   })
 
   it('renders the privacy badge in the empty state', () => {

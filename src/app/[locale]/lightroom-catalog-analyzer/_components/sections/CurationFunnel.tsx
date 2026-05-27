@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Cell, Funnel, FunnelChart, LabelList, ResponsiveContainer, Tooltip } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
 import { TABLE, TOOLTIP_PROPS } from './sectionStyles'
+import { PILL } from './sectionFormatters'
 
 export function CurationFunnel() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.curation-funnel')
@@ -58,7 +59,7 @@ export function CurationFunnel() {
         <tbody>
           {c.pickRateByBody.map((row) => (
             <tr key={`b-${row.body}`}>
-              <td>{row.body}</td>
+              <td><span style={PILL}>{row.body}</span></td>
               <td>{row.total.toLocaleString()}</td>
               <td>{row.rated4Plus.toLocaleString()}</td>
               <td>{row.pickRatePct.toFixed(1)}%</td>
@@ -66,7 +67,7 @@ export function CurationFunnel() {
           ))}
           {c.pickRateByLens.map((row) => (
             <tr key={`l-${row.lens}`}>
-              <td>{row.lens}</td>
+              <td><span style={PILL}>{row.lens}</span></td>
               <td>{row.total.toLocaleString()}</td>
               <td>{row.rated4Plus.toLocaleString()}</td>
               <td>{row.pickRatePct.toFixed(1)}%</td>

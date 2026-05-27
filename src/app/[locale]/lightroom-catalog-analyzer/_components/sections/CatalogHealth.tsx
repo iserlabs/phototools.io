@@ -9,6 +9,8 @@ export function CatalogHealth() {
   const { insightBlob } = useAnalyzer()
   if (!insightBlob) return null
   const h = insightBlob.catalogHealth
+  const allZero = h.missingOriginals === 0 && h.missingPreviews === 0 && h.brokenPaths === 0 && h.likelyDuplicates === 0
+  if (allZero) return null
 
   const tiles = [
     { label: t('tiles.missingOriginals'), value: h.missingOriginals.toLocaleString() },

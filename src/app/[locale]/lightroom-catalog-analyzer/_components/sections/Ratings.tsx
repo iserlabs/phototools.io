@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
 import { TABLE, TOOLTIP_PROPS } from './sectionStyles'
+import { PILL } from './sectionFormatters'
 
 const KNOWN_LABEL_COLORS: Record<string, string> = {
   Red: '#e64a3b',
@@ -74,6 +75,7 @@ export function Ratings() {
       </ul>
 
       <h3>{t('perGear')}</h3>
+      <h4 style={{ fontSize: 14, color: 'var(--text-secondary)', margin: '12px 0 4px' }}>Cameras</h4>
       <table style={TABLE}>
         <thead>
           <tr>
@@ -86,15 +88,28 @@ export function Ratings() {
         <tbody>
           {r.pickRateByBody.map((row) => (
             <tr key={`b-${row.body}`}>
-              <td>{row.body}</td>
+              <td><span style={PILL}>{row.body}</span></td>
               <td>{row.total.toLocaleString()}</td>
               <td>{row.rated4Plus.toLocaleString()}</td>
               <td>{row.pickRatePct.toFixed(1)}%</td>
             </tr>
           ))}
+        </tbody>
+      </table>
+      <h4 style={{ fontSize: 14, color: 'var(--text-secondary)', margin: '16px 0 4px' }}>Lenses</h4>
+      <table style={TABLE}>
+        <thead>
+          <tr>
+            <th scope="col">{t('tableHeaders.name')}</th>
+            <th scope="col">{t('tableHeaders.total')}</th>
+            <th scope="col">{t('tableHeaders.rated4Plus')}</th>
+            <th scope="col">{t('tableHeaders.pickRate')}</th>
+          </tr>
+        </thead>
+        <tbody>
           {r.pickRateByLens.map((row) => (
             <tr key={`l-${row.lens}`}>
-              <td>{row.lens}</td>
+              <td><span style={PILL}>{row.lens}</span></td>
               <td>{row.total.toLocaleString()}</td>
               <td>{row.rated4Plus.toLocaleString()}</td>
               <td>{row.pickRatePct.toFixed(1)}%</td>

@@ -2,18 +2,5 @@
   flex: 1;
   min-height: 0;
   overflow: auto;
-  width: 80%;
-  max-width: 1400px;
-  margin: 0 auto;
-  border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
-}
-
-@media (max-width: 1023px) {
-  .main {
-    width: 100%;
-    padding: 8px;
-    border-left: none;
-    border-right: none;
-  }
+  width: 100%;
 }

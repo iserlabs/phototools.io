@@ -8,13 +8,11 @@ import { useAnalyzer } from './useAnalyzer'
 import type { OpenCatalogMeta } from './AnalyzerContext'
 import { useScrollSpy } from './useScrollSpy'
 import { useFilterUrlSync } from './useFilterUrlSync'
-import { DesktopEmptyState } from './DesktopEmptyState'
 import { MobileSplash } from './MobileSplash'
 import { ParseProgress } from './ParseProgress'
 import { Dashboard } from './Dashboard'
 import { ErrorScreen } from './ErrorScreen'
 import { ControlSidebar } from './ControlSidebar'
-import { UploaderPanel } from './UploaderPanel'
 import { DrilldownForm } from '../sections/DrilldownForm'
 import { ActiveFilterPills } from '../sections/ActiveFilterPills'
 import { ExportBar } from './ExportBar'
@@ -112,65 +110,57 @@ function AnalyzerBody() {
     )
   }
 
-  if (status === 'loaded') {
-    return (
-      <div className={styles.shell}>
-        {/* Mobile: sticky section nav + controls (sidebar hidden ≤1024px). */}
-        <MobileSectionDropdown />
+  const isLoaded = status === 'loaded'
+
+  // Unified three-column layout for both idle and loaded states. The uploader
+  // always lives at the top of the left sidebar (ControlSidebar renders it);
+  // catalog meta + export appear below it once a catalog is loaded. Sections
+  // return null when there's no insightBlob, so the dashboard is structurally
+  // present but visually empty in idle. Below 1024px the sidebar hides and the
+  // MobileSplash takes over for idle (idleShell lets the page scroll there).
+  return (
+    <div className={`${styles.shell} ${!isLoaded ? styles.idleShell : ''}`}>
+      {/* Mobile: sticky section nav + controls (sidebar hidden ≤1024px). */}
+      {isLoaded && <MobileSectionDropdown />}
+      {isLoaded && (
         <div className={styles.mobileControls}>
           <DrilldownForm />
           <ActiveFilterPills />
           <ExportBar />
         </div>
+      )}
 
-        <div className={`${styles.shellBody} ${styles.shellBodyLoaded}`}>
-          {/* LEFT control sidebar — catalog meta, export/share, section nav. */}
-          <aside className={styles.shellSidebar}>
-            <ControlSidebar
-              activeSection={activeSection}
-              onReanalyze={onReanalyze}
-              onOpenDifferent={onOpenDifferent}
-              canReanalyze={lastOpened.current !== null}
-            />
-          </aside>
+      <div className={`${styles.shellBody} ${styles.shellBodyLoaded}`}>
+        {/* LEFT sidebar — uploader + (when loaded) catalog meta, export, nav. */}
+        <aside className={styles.shellSidebar}>
+          <ControlSidebar
+            activeSection={activeSection}
+            onFile={onFile}
+            onDemo={onDemo}
+            onReanalyze={onReanalyze}
+            onOpenDifferent={onOpenDifferent}
+            canReanalyze={lastOpened.current !== null}
+          />
+        </aside>
 
-          <main id="lrcat-main" className={styles.shellMain}>
-            <Dashboard />
-          </main>
+        <main id="lrcat-main" className={styles.shellMain}>
+          {!isLoaded && (
+            <div className={styles.mobileSplash}>
+              <MobileSplash onDemo={onDemo} />
+            </div>
+          )}
+          <Dashboard />
+        </main>
 
-          {/* RIGHT rail — the Drilldown Explorer (filter) + active-filter pills. */}
+        {/* RIGHT rail — Drilldown Explorer (filter) + active-filter pills. */}
+        {isLoaded && (
           <aside className={styles.shellSidebarRight}>
             <div className={styles.rightRailInner}>
               <ActiveFilterPills />
               <DrilldownForm />
             </div>
           </aside>
-        </div>
-      </div>
-    )
-  }
-
-  // idle: empty state. Same shell as the loaded view — the uploader lives in
-  // the persistent left sidebar (UploaderPanel) so opening a catalog is one
-  // step, not a landing → dashboard hop. Below 1024px the sidebar hides and the
-  // tall MobileSplash takes over (idleShell lets the page scroll there). Desktop
-  // + mobile siblings are both rendered; CSS picks which is visible — no JS
-  // viewport detection, so no hydration mismatch.
-  return (
-    <div className={`${styles.shell} ${styles.idleShell}`}>
-      <div className={styles.shellBody}>
-        <aside className={styles.shellSidebar}>
-          <UploaderPanel onFile={onFile} onDemo={onDemo} />
-        </aside>
-
-        <main id="lrcat-main" className={styles.shellMain}>
-          <div className={styles.desktopEmpty}>
-            <DesktopEmptyState />
-          </div>
-          <div className={styles.mobileSplash}>
-            <MobileSplash onDemo={onDemo} />
-          </div>
-        </main>
+        )}
       </div>
     </div>
   )

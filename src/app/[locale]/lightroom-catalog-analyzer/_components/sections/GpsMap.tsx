@@ -10,6 +10,8 @@ export function GpsMap() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.gps-map')
   const { insightBlob } = useAnalyzer()
   const gps = insightBlob?.gps ?? null
+
+  if (gps && gps.pctWithGps < 1) return null
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const [world, setWorld] = useState<GeoFeatureCollection | null>(null)
 

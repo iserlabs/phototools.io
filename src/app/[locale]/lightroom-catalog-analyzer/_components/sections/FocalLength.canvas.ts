@@ -57,8 +57,18 @@ export function drawFocalLength(
   ctx.moveTo(padL, padT + innerH + 0.5)
   ctx.lineTo(padL + innerW, padT + innerH + 0.5)
   ctx.stroke()
-  const ticks = [14, 24, 35, 50, 85, 135, 200, 400].filter((m) => m >= minMm && m <= maxMm)
-  for (const m of ticks) {
+  const wideTicks = [14, 18, 24, 28, 35, 40, 50, 70, 85, 100]
+  const teleTicks = [100, 135, 200, 300, 400, 600]
+  const allTicks = [...new Set([...wideTicks, ...teleTicks])].sort((a, b) => a - b)
+    .filter((m) => m >= minMm && m <= maxMm)
+  const minTickGap = ctx.measureText('000').width + 8
+  const filteredTicks: number[] = []
+  let lastX = -Infinity
+  for (const m of allTicks) {
+    const x = padL + ((m - minMm) / span) * innerW
+    if (x - lastX >= minTickGap) { filteredTicks.push(m); lastX = x }
+  }
+  for (const m of filteredTicks) {
     const x = padL + ((m - minMm) / span) * innerW
     ctx.fillText(`${m}`, x, padT + innerH + 14)
   }

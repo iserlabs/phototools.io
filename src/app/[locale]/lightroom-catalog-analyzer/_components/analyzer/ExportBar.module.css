@@ -1,25 +1,33 @@
 .bar {
   display: flex;
-  gap: var(--space-sm);
-  flex-wrap: wrap;
-  padding: var(--space-md) 0;
-  border-top: 1px solid var(--border);
-  margin-top: var(--space-lg);
+  flex-direction: column;
+  gap: 4px;
 }
 .button {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
-  padding: 8px 16px;
-  border-radius: var(--radius-md);
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 6px;
   border: 1px solid var(--border);
-  background: var(--bg-surface);
-  color: var(--text-primary);
-  font-size: var(--text-sm);
-  font-weight: 600;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.15s var(--ease-out);
+  width: 100%;
+  justify-content: flex-start;
 }
-.button:hover:not(:disabled) { border-color: var(--accent); }
-.button:disabled { opacity: 0.5; cursor: not-allowed; }
-.primary { background: var(--accent); color: var(--text-on-accent); border-color: var(--accent); }
+.button svg {
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.15s var(--ease-out);
+}
+.button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+.button:hover:not(:disabled) svg { opacity: 0.9; }
+.button:disabled { opacity: 0.4; cursor: not-allowed; }
 .hiddenStage { position: absolute; left: -99999px; top: 0; width: 800px; height: 400px; pointer-events: none; }

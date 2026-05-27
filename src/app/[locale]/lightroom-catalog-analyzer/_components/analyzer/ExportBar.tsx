@@ -11,13 +11,25 @@ import { ShareButton } from './ShareButton'
 import type { PdfPhase } from './usePdfExport'
 import styles from './ExportBar.module.css'
 
-// PdfExportStage (and its transitive @react-pdf/renderer + recharts-to-png +
-// html2canvas deps) loads ONLY on the first PDF-button click. ssr:false keeps it
-// out of the server render and the page's initial client chunk — the empty-state
-// bundle never references these libraries (spec §13 / Task 15.1 gate).
 const PdfExportStage = dynamic(
   () => import('./PdfExportStage').then((m) => m.PdfExportStage),
   { ssr: false },
+)
+
+const IconPdf = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 1h6l4 4v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+    <polyline points="10 1 10 5 14 5" />
+  </svg>
+)
+
+const IconMarkdown = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="1" y="3" width="14" height="10" rx="1.5" />
+    <polyline points="4 9 4 7 6 9 8 7 8 9" />
+    <polyline points="11 7 11 9" />
+    <polyline points="10 8.5 11 9.5 12 8.5" />
+  </svg>
 )
 
 export function ExportBar() {
@@ -38,7 +50,6 @@ export function ExportBar() {
     }
   }, [insightBlob, t])
 
-  // Mount the heavy PDF stage; it auto-runs one export pass and reports phase.
   const onPdf = useCallback(() => {
     if (phase !== 'idle') return
     setPhase('loading-engine')
@@ -59,11 +70,11 @@ export function ExportBar() {
 
   return (
     <div className={styles.bar} role="group" aria-label={t('barLabel')}>
-      <button type="button" className={`${styles.button} ${styles.primary}`} onClick={onPdf} disabled={phase !== 'idle'}>
-        {pdfLabel}
+      <button type="button" className={styles.button} onClick={onPdf} disabled={phase !== 'idle'}>
+        <IconPdf /> {pdfLabel}
       </button>
       <button type="button" className={styles.button} onClick={onMarkdown}>
-        {t('markdown.button')}
+        <IconMarkdown /> {t('markdown.button')}
       </button>
       <ShareButton blob={insightBlob} className={styles.button} />
 

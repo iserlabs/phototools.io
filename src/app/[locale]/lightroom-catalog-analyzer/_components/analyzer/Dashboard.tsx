@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import type { ReactNode } from 'react'
 import { ALL_SECTION_IDS, anchorIdFor, type SectionId } from '../nav/sections'
 import styles from './LightroomCatalogAnalyzer.module.css'
+import '../sections/dashboard-polish.css'
 import { YearInReview } from '../sections/YearInReview'
 import { YearToYear } from '../sections/YearToYear'
 import { Overview } from '../sections/Overview'
@@ -35,14 +36,14 @@ const SECTION_MIN_HEIGHTS: Record<SectionId, number> = {
   'apertures': 420,
   'time-of-day': 360,
   'heatmap': 320,
-  'gps': 480,
+  'gps': 0,
   'curation': 360,
   'edit-intensity': 380,
   'ratings': 360,
   'keywords': 320,
   'bursts': 320,
   'period-comparison': 460,
-  'catalog-health': 360,
+  'catalog-health': 0,
 }
 
 // Section ID → rendered body. `drilldown` mounts the form + active filter pills

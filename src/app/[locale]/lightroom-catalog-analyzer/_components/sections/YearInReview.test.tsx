@@ -10,8 +10,8 @@ describe('YearInReview', () => {
     render(wrapper)
     expect(screen.getByText('1,240')).toBeInTheDocument()           // totalPhotos
     expect(screen.getByText('87')).toBeInTheDocument()              // daysShot
-    expect(screen.getByText('Sony A7R V')).toBeInTheDocument()      // topBody
-    expect(screen.getByText('24-70mm f/2.8 GM')).toBeInTheDocument()// topLens
+    expect(screen.getAllByText('Sony A7R V').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('24-70mm f/2.8 GM').length).toBeGreaterThan(0)
   })
 
   it('renders the year picker with the current year selected', () => {

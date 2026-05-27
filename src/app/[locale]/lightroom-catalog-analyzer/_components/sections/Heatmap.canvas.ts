@@ -35,8 +35,10 @@ export function drawHeatmap(
   opts: DrawHeatmapOpts,
 ): HeatmapHitBox[] {
   const { width, height } = opts
-  const cellSize = opts.cellSize ?? 10
   const gap = opts.gap ?? 2
+  const maxWeeks = 53
+  const dynamicCell = Math.floor((width - 32) / maxWeeks) - gap
+  const cellSize = opts.cellSize ?? Math.max(8, Math.min(dynamicCell, 16))
   const colorScale = opts.colorScale ?? DEFAULT_SCALE
   const textColor = opts.textColor ?? '#888'
 

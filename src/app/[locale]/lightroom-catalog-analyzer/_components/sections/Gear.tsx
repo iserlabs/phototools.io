@@ -1,10 +1,11 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Area, AreaChart, Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useMemo } from 'react'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
 import { CALLOUT, TABLE, TOOLTIP_PROPS } from './sectionStyles'
+import { fmtDate, PILL } from './sectionFormatters'
 
 export function Gear() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.gear')
@@ -34,17 +35,19 @@ export function Gear() {
 
       <figure>
         <h3>{t('bodiesOverTime')}</h3>
-        <ResponsiveContainer width="100%" height={240}>
+        <ResponsiveContainer width="100%" height={280}>
           <AreaChart data={stackedData} accessibilityLayer margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis dataKey="month" />
             <YAxis />
             <Tooltip {...TOOLTIP_PROPS} />
+            <Legend wrapperStyle={{ fontSize: 12 }} />
             {bodies.map((body, i) => (
               <Area
                 key={body}
                 type="monotone"
                 dataKey={body}
+                name={body}
                 stackId="bodies"
                 stroke={`hsl(${(i * 67) % 360} 60% 55%)`}
                 fill={`hsl(${(i * 67) % 360} 60% 55%)`}
@@ -64,13 +67,13 @@ export function Gear() {
 
       <figure>
         <h3>{t('topLenses')}</h3>
-        <ResponsiveContainer width="100%" height={280}>
-          <BarChart data={g.topLenses} layout="vertical" accessibilityLayer margin={{ top: 4, right: 12, left: 80, bottom: 4 }}>
+        <ResponsiveContainer width="100%" height={Math.max(280, g.topLenses.length * 36)}>
+          <BarChart data={g.topLenses} layout="vertical" accessibilityLayer margin={{ top: 4, right: 12, left: 8, bottom: 4 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
             <XAxis type="number" />
-            <YAxis dataKey="lens" type="category" width={120} />
+            <YAxis dataKey="lens" type="category" width={200} tick={{ fontSize: 12 }} />
             <Tooltip {...TOOLTIP_PROPS} />
-            <Bar dataKey="count" fill="var(--accent)" />
+            <Bar dataKey="count" fill="var(--accent)" barSize={20} />
           </BarChart>
         </ResponsiveContainer>
         <ul className="sr-only">
@@ -97,11 +100,11 @@ export function Gear() {
         <tbody>
           {g.topCombos.map((c) => (
             <tr key={`${c.body}::${c.lens}`}>
-              <td>{c.body}</td>
-              <td>{c.lens}</td>
+              <td><span style={PILL}>{c.body}</span></td>
+              <td><span style={PILL}>{c.lens}</span></td>
               <td>{c.count.toLocaleString()}</td>
-              <td>{c.firstUsed}</td>
-              <td>{c.lastUsed}</td>
+              <td>{fmtDate(c.firstUsed)}</td>
+              <td>{fmtDate(c.lastUsed)}</td>
             </tr>
           ))}
         </tbody>
@@ -110,7 +113,7 @@ export function Gear() {
       {g.retired.length > 0 && (
         <p style={CALLOUT}>
           <strong>{t('retired')}: </strong>
-          {g.retired.map((r) => `${r.name} (${r.lastUsed.slice(0, 7)})`).join(' · ')}
+          {g.retired.map((r) => `${r.name} (${fmtDate(r.lastUsed)})`).join(' · ')}
         </p>
       )}
     </section>

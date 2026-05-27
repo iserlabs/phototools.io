@@ -18,9 +18,10 @@ interface DbLike {
  */
 export function aggregateYearToYear(db: DbLike, n = 3): YearToYearBlock {
   const yearRows = db.selectObjects(
-    `SELECT DISTINCT CAST(strftime('%Y', img.captureTime) AS INTEGER) AS y
+    `SELECT DISTINCT CAST(substr(img.captureTime, 1, 4) AS INTEGER) AS y
        FROM Adobe_images img
       WHERE img.captureTime IS NOT NULL
+        AND length(img.captureTime) >= 4
       ORDER BY y DESC
       LIMIT ?`,
     [n],
@@ -33,9 +34,14 @@ export function aggregateYearToYear(db: DbLike, n = 3): YearToYearBlock {
   const years = yearRows.map((r) => r.y)
 
   const rows = ROW_SPECS.map((spec) => {
-    const values = years.map((year) => spec.compute(db, year))
+    const values = years.map((year) => {
+      try {
+        return spec.compute(db, year)
+      } catch {
+        return spec.format === 'str' ? '—' : 0
+      }
+    })
     const deltas = values.map((curr, i) => {
-      // oldest year sits at the end of the array (descending). delta vs prior year (the next index).
       const priorIdx = i + 1
       if (priorIdx >= values.length) return null
       const a = Number(curr)

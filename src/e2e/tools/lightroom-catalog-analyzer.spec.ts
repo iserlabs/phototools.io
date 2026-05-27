@@ -92,11 +92,19 @@ test.describe('Lightroom Catalog Analyzer — demo flow', () => {
     await expect(overview).toBeVisible({ timeout: DEMO_TIMEOUT })
     const overviewBefore = await overview.innerText()
 
-    // The filter is now in the always-visible sidebar (no spine section to scroll to).
-    // Check the first camera in the cameras group, then Apply.
-    const camerasGroup = page.getByRole('group', { name: /Cameras/i }).first()
-    await camerasGroup.locator('input[type="checkbox"]').first().check()
-    await page.getByRole('button', { name: /^Apply$/ }).first().click()
+    // The filter lives in the right-hand "Drilldown Explorer" rail — a nested
+    // scroll container, so interact via evaluate() (as the sibling pill/Reset
+    // tests do). Scope to that region so we don't grab the dashboard's other
+    // "Apply" buttons (e.g. Period Comparison) which precede it in the DOM.
+    const drilldown = page.getByRole('region', { name: /Drilldown Explorer/i }).first()
+    await drilldown
+      .getByRole('group', { name: /Cameras/i })
+      .locator('input[type="checkbox"]')
+      .first()
+      .evaluate((el) => (el as HTMLInputElement).click())
+    await drilldown
+      .getByRole('button', { name: /^Apply$/ })
+      .evaluate((el) => (el as HTMLElement).click())
 
     // The worker re-runs; the Overview text should change (fewer photos).
     await expect(async () => {

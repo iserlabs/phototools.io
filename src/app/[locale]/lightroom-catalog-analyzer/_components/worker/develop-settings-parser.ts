@@ -53,5 +53,6 @@ export function parseDevelopSettings(blob: string): DevelopSettings {
     if (v !== undefined && v !== 0) slidersTouched++
   }
 
-  return { exposureShiftStops: exposure, cropPct, hasLocalAdjustments, slidersTouched }
+  const clampedExposure = Math.max(-10, Math.min(10, exposure))
+  return { exposureShiftStops: clampedExposure, cropPct, hasLocalAdjustments, slidersTouched }
 }

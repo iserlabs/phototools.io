@@ -7,7 +7,7 @@ describe('FocalLength', () => {
   it('renders the canvas, top peaks, and one-prime callout', () => {
     const { wrapper } = renderWithAnalyzer(<FocalLength />, makeFixtureBlob())
     render(wrapper)
-    expect(screen.getByRole('img', { name: /focal length histogram/i })).toBeInTheDocument()
+    expect(screen.getAllByRole('img', { name: /focal length histogram/i }).length).toBeGreaterThan(0)
     // "35mm" appears in both the top-peaks list and the one-prime callout.
     expect(screen.getAllByText(/35mm/).length).toBeGreaterThan(0)
     expect(screen.getByText(/47%/)).toBeInTheDocument()

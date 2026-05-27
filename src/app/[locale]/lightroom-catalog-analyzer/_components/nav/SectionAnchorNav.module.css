@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  padding: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
   font-size: var(--text-sm);
   color: var(--text-secondary);
 }
@@ -21,12 +21,16 @@
   background: transparent;
   border: none;
   color: var(--text-muted);
-  font-size: var(--text-xs);
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   padding: var(--space-xs) 0;
   cursor: pointer;
+  transition: color 0.15s var(--ease-out);
 }
+
+.groupHeader:hover { color: var(--text-secondary); }
 
 .groupCaret {
   font-weight: 600;
@@ -48,19 +52,22 @@
   border-left: 2px solid transparent;
   color: var(--text-secondary);
   text-decoration: none;
+  font-size: 12px;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  transition: color var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+  transition: all 0.15s var(--ease-out);
 }
 
 .anchorLink:hover {
   color: var(--text-primary);
-  background: var(--bg-secondary);
+  background: color-mix(in srgb, var(--text-primary) 5%, transparent);
+  border-left-color: color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
 .anchorLinkActive {
   color: var(--accent);
   border-left-color: var(--accent);
-  background: var(--bg-secondary);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  font-weight: 600;
 }
 
 /* ---- Mobile "jump to section" dropdown (Task 8.9) ---- */

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
 import { CALLOUT, COMPACT_LIST, DISCLAIMER, TILE, TILE_GRID, TILE_LABEL, TILE_VALUE, TOOLTIP_PROPS } from './sectionStyles'
+import { PILL } from './sectionFormatters'
 
 export function EditIntensity() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.edit-intensity')
@@ -58,8 +59,8 @@ export function EditIntensity() {
       <h3>{t('perGear')}</h3>
       <ul style={COMPACT_LIST}>
         {e.perGearScores.map((g) => (
-          <li key={g.gear}>
-            <span>{g.gear}</span> — {g.score.toFixed(0)}
+          <li key={g.gear} style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+            <span style={PILL}>{g.gear}</span> <span>{g.score.toFixed(0)}</span>
           </li>
         ))}
       </ul>

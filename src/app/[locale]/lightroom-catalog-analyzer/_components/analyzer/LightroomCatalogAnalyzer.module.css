@@ -92,17 +92,20 @@
   .shellSidebar, .shellSidebarRight { display: none; }
 }
 
+/* In idle state the right rail is not rendered, so collapse to 2 columns. */
+.idleShell .shellBodyLoaded {
+  grid-template-columns: 280px 1fr;
+}
+
 /* ---- Mobile splash vs desktop empty state, driven entirely by CSS ---- */
 /* No JS viewport detection — avoids hydration mismatch. The breakpoint matches
    the sidebar's (1024px): below it the sidebar — and the uploader it holds — is
    hidden, so the MobileSplash (which carries its own demo CTA) takes over. */
 
 .mobileSplash { display: none; }
-.desktopEmpty { display: block; }
 
 @media (max-width: 1024px) {
   .mobileSplash { display: block; }
-  .desktopEmpty { display: none; }
   /* The idle/landing shell can exceed the viewport here (MobileSplash is tall
      and the sidebar uploader is hidden), so let it scroll. The loaded dashboard
      keeps its fixed-height internal-scroll layout (handled by .shell below). */
@@ -507,20 +510,22 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: 48px;
 }
 
 .dashboardSection {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  padding-top: var(--space-md);
 }
 
 .dashboardFooter {
-  margin-top: var(--space-xl);
-  padding-top: var(--space-md);
+  margin-top: 48px;
+  padding: var(--space-lg) 0;
   border-top: 1px solid var(--border-subtle);
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   text-align: center;
+  letter-spacing: 0.02em;
 }

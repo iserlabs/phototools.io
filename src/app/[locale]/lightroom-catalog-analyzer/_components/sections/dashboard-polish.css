@@ -1,0 +1,175 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Lightroom Catalog Analyzer — Dashboard Polish Layer
+   Refined dark analytics aesthetic. Imported once in Dashboard.tsx.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Entrance animations ── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Section entrance stagger ── */
+[id^="section-"] {
+  animation: fadeSlideUp 0.45s var(--ease-out) both;
+}
+
+[id^="section-"]:nth-child(1)  { animation-delay: 0ms; }
+[id^="section-"]:nth-child(2)  { animation-delay: 50ms; }
+[id^="section-"]:nth-child(3)  { animation-delay: 100ms; }
+[id^="section-"]:nth-child(4)  { animation-delay: 150ms; }
+[id^="section-"]:nth-child(5)  { animation-delay: 200ms; }
+[id^="section-"]:nth-child(6)  { animation-delay: 240ms; }
+[id^="section-"]:nth-child(7)  { animation-delay: 280ms; }
+[id^="section-"]:nth-child(8)  { animation-delay: 320ms; }
+[id^="section-"]:nth-child(9)  { animation-delay: 360ms; }
+[id^="section-"]:nth-child(10) { animation-delay: 400ms; }
+[id^="section-"]:nth-child(n+11) { animation-delay: 440ms; }
+
+/* ── Section headings ── */
+[id^="section-"] > section > h2 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+[id^="section-"] > section > h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+/* ── Sub-headings (h3) — tighter ── */
+[id^="section-"] h3 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+/* ── H4 sub-labels ── */
+[id^="section-"] h4 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
+/* ── Figures / chart containers ── */
+[id^="section-"] figure {
+  margin: 0;
+  animation: fadeIn 0.35s var(--ease-out) both;
+  animation-delay: 0.1s;
+}
+
+/* ── Canvas charts — fade in ── */
+[id^="section-"] canvas {
+  animation: fadeIn 0.4s var(--ease-out) both;
+  animation-delay: 0.2s;
+}
+
+/* ── Recharts — subtle glow on hover ── */
+[id^="section-"] figure:hover .recharts-responsive-container {
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 12%, transparent));
+  transition: filter 0.3s var(--ease-out);
+}
+
+/* ── Tables — the inline TABLE style now sets border-collapse: separate.
+   These rules layer on the visual refinements. ── */
+[id^="section-"] thead {
+  background: color-mix(in srgb, var(--bg-surface) 85%, var(--accent) 3%);
+}
+
+[id^="section-"] th {
+  padding: 9px 14px;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+[id^="section-"] td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+[id^="section-"] tbody tr:last-child td {
+  border-bottom: none;
+}
+
+[id^="section-"] tbody tr {
+  transition: background 0.12s var(--ease-out);
+}
+
+[id^="section-"] tbody tr:hover {
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
+}
+
+/* ── Stat tiles — static, no hover (not interactive) ── */
+
+/* ── Compact lists ── */
+[id^="section-"] ul {
+  line-height: 1.65;
+}
+
+/* ── Recharts globals ── */
+.recharts-tooltip-wrapper { z-index: 10; }
+
+.recharts-text,
+.recharts-cartesian-axis-tick-value {
+  font-size: 11px !important;
+  fill: var(--text-muted) !important;
+}
+
+.recharts-legend-item-text {
+  font-size: 11px !important;
+  color: var(--text-secondary) !important;
+}
+
+/* ── Scrollbar ── */
+#lrcat-main::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--text-muted) 20%, transparent);
+  border-radius: 4px;
+}
+
+#lrcat-main {
+  scrollbar-color: color-mix(in srgb, var(--text-muted) 20%, transparent) transparent;
+  scroll-behavior: smooth;
+}
+
+/* ── Reduce motion ── */
+@media (prefers-reduced-motion: reduce) {
+  [id^="section-"],
+  [id^="section-"] figure,
+  [id^="section-"] canvas {
+    animation: none;
+  }
+  [id^="section-"] dl > div,
+  [id^="section-"] tbody tr {
+    transition: none;
+  }
+}

@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { Bar, BarChart, CartesianGrid, RadialBar, RadialBarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useAnalyzer } from '../analyzer/AnalyzerContext'
 import { COMPACT_LIST, DISCLAIMER, SECTION_HEADER, TOOLTIP_PROPS } from './sectionStyles'
+import { PILL } from './sectionFormatters'
 
 export function TimeOfDay() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.time-of-day')
@@ -58,7 +59,7 @@ export function TimeOfDay() {
               <ul style={COMPACT_LIST}>
                 {block.perGearByClockHour.map((row) => {
                   const peak = row.histogram.reduce((m, h) => (h.count > m.count ? h : m), row.histogram[0]!)
-                  return <li key={row.gear}>{t('perGearPeak', { gear: row.gear, hour: peak.hour })}</li>
+                  return <li key={row.gear} style={{ marginBottom: 4 }}><span style={PILL}>{row.gear}</span> {t('perGearPeak', { gear: '', hour: peak.hour })}</li>
                 })}
               </ul>
             </div>
