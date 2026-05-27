@@ -93,14 +93,22 @@ function CropThumb({ lens, orientation, color, lensIndex, onSelect, offset, clea
     )
 
     if (ratioW > 1.01 || ratioH > 1.01) {
-      const fontSize = 11 * dpr
-      ctx.font = `600 ${fontSize}px -apple-system, BlinkMacSystemFont, sans-serif`
-      ctx.fillStyle = 'rgba(0,0,0,0.4)'
+      ctx.fillStyle = getComputedStyle(canvas).getPropertyValue('--bg-primary').trim() || '#0d0d0d'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
-      ctx.fillStyle = color
-      const text = `${lens.focalLength}mm — wider`
-      const textW = ctx.measureText(text).width
-      ctx.fillText(text, (canvas.width - textW) / 2, (canvas.height + fontSize) / 2)
+      const innerW = canvas.width / ratioW
+      const innerH = canvas.height / ratioH
+      const innerX = (canvas.width - innerW) / 2
+      const innerY = (canvas.height - innerH) / 2
+      if (img && img.complete && img.naturalWidth > 0) {
+        ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, innerX, innerY, innerW, innerH)
+      } else {
+        ctx.drawImage(mainCanvas, 0, 0, mainW, mainH, innerX, innerY, innerW, innerH)
+      }
+      ctx.strokeStyle = color
+      ctx.lineWidth = 1 * dpr
+      ctx.setLineDash([4 * dpr, 4 * dpr])
+      ctx.strokeRect(innerX, innerY, innerW, innerH)
+      ctx.setLineDash([])
       return
     }
 
