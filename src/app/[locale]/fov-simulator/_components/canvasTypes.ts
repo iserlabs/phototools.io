@@ -35,6 +35,7 @@ export interface CanvasProps {
   onOffsetsChange: React.Dispatch<React.SetStateAction<OverlayOffsets>>
   customImageSrc?: string | null
   sourceImageRef?: React.MutableRefObject<HTMLImageElement | null>
+  sourceFocalLength?: number | null
 }
 
 export const FRAMING_GUIDES = [

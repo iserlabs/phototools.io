@@ -13,12 +13,12 @@ import styles from './FovSimulator.module.css'
 
 export type { OverlayOffsets } from './canvasTypes'
 
-const REF_FOV = calcFOV(14, 1.0)
-
-export function Canvas({ lenses, imageIndex, orientation, canvasRef, cleanCanvasRef, distance, showGuides, activeLens, offsets, onOffsetsChange, customImageSrc, sourceImageRef }: CanvasProps) {
+export function Canvas({ lenses, imageIndex, orientation, canvasRef, cleanCanvasRef, distance, showGuides, activeLens, offsets, onOffsetsChange, customImageSrc, sourceImageRef, sourceFocalLength }: CanvasProps) {
   const imageRef = useRef<HTMLImageElement | null>(null)
   const animFrameRef = useRef<number>(0)
   const drawnRectsRef = useRef<Rect[]>([])
+
+  const refFov = sourceFocalLength ? calcFOV(sourceFocalLength, 1.0) : calcFOV(14, 1.0)
 
   const fovs = lenses.map((lens) => calcFOV(getSensor(lens.sensorId).cropFactor, 1).horizontal === 0 ? calcFOV(lens.focalLength, 1) : calcFOV(lens.focalLength, getSensor(lens.sensorId).cropFactor))
 
@@ -31,13 +31,13 @@ export function Canvas({ lenses, imageIndex, orientation, canvasRef, cleanCanvas
     const w = canvas.width; const h = canvas.height
     const isPortrait = orientation === 'portrait'
     return fovs.map((fov, i) => {
-      const ratioW = calcCropRatio(isPortrait ? fov.vertical : fov.horizontal, isPortrait ? REF_FOV.vertical : REF_FOV.horizontal)
-      const ratioH = calcCropRatio(isPortrait ? fov.horizontal : fov.vertical, isPortrait ? REF_FOV.horizontal : REF_FOV.vertical)
+      const ratioW = calcCropRatio(isPortrait ? fov.vertical : fov.horizontal, isPortrait ? refFov.vertical : refFov.horizontal)
+      const ratioH = calcCropRatio(isPortrait ? fov.horizontal : fov.vertical, isPortrait ? refFov.horizontal : refFov.vertical)
       const rw = w * ratioW; const rh = h * ratioH
       const off = offsets[i] ?? { dx: 0, dy: 0 }
       return { x: (w - rw) / 2 + off.dx, y: (h - rh) / 2 + off.dy, w: rw, h: rh, color: LENS_COLORS[i], label: LENS_LABELS[i], index: i, focalLength: lenses[i].focalLength, fov }
     })
-  }, [fovs, lenses, offsets, orientation])
+  }, [fovs, lenses, offsets, orientation, refFov])
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current; const img = imageRef.current
@@ -52,15 +52,25 @@ export function Canvas({ lenses, imageIndex, orientation, canvasRef, cleanCanvas
 
     const rects = computeRects(canvas)
     if (rects.length === 0) return
-    drawOverlayBorders(ctx, rects, w, h, dpr)
 
-    if (showGuides && rects[activeLens]) {
+    const widerIndices = new Set<number>()
+    for (let i = 0; i < rects.length; i++) {
+      if (rects[i].w > w * 1.01 || rects[i].h > h * 1.01) widerIndices.add(i)
+    }
+
+    const visibleRects = rects.filter((_, i) => !widerIndices.has(i))
+    if (visibleRects.length > 0) drawOverlayBorders(ctx, visibleRects, w, h, dpr)
+
+    if (showGuides && rects[activeLens] && !widerIndices.has(activeLens)) {
       const activeFov = fovs[activeLens]
       const verticalFOV = orientation === 'portrait' ? activeFov.horizontal : activeFov.vertical
       drawFramingGuides(ctx, rects[activeLens], calcFrameWidth(verticalFOV, distance), dpr)
     }
 
-    drawLensLabels(ctx, rects, lenses, dpr)
+    drawLensLabels(ctx, visibleRects, lenses, dpr)
+
+    if (widerIndices.size > 0) drawWiderLabels(ctx, rects, widerIndices, dpr)
+
     drawnRectsRef.current = rects
     cleanCanvas?.dispatchEvent(new Event('draw'))
   }, [canvasRef, cleanCanvasRef, computeRects, showGuides, activeLens, distance, fovs, orientation, lenses])
@@ -160,5 +170,25 @@ function drawLensLabels(ctx: CanvasRenderingContext2D, rects: Rect[], lenses: Le
       ctx.fillStyle = 'rgba(0, 0, 0, 0.6)'; ctx.beginPath(); ctx.roundRect(pillX, pillY, pillW, pillH, 4 * dpr); ctx.fill()
       ctx.fillStyle = r.color; ctx.fillText(text, tx, ty)
     }
+  }
+}
+
+function drawWiderLabels(ctx: CanvasRenderingContext2D, rects: Rect[], widerIndices: Set<number>, dpr: number) {
+  const fontSize = 13 * dpr
+  ctx.font = `600 ${fontSize}px -apple-system, BlinkMacSystemFont, sans-serif`
+  const padX = 10 * dpr; const padY = 6 * dpr
+  let yOffset = 0
+  for (const i of widerIndices) {
+    const r = rects[i]
+    const text = `${LENS_LABELS[i]} — ${r.focalLength}mm — wider than source`
+    const textW = ctx.measureText(text).width
+    const pillW = textW + padX * 2; const pillH = fontSize + padY * 2
+    const px = (ctx.canvas.width - pillW) / 2
+    const py = 16 * dpr + yOffset
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.6)'
+    ctx.beginPath(); ctx.roundRect(px, py, pillW, pillH, 4 * dpr); ctx.fill()
+    ctx.fillStyle = r.color
+    ctx.fillText(text, px + padX, py + padY + fontSize * 0.8)
+    yOffset += pillH + 4 * dpr
   }
 }
