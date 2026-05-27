@@ -22,6 +22,8 @@ import { extractFocalLength } from './extractFocalLength'
 import styles from './FovSimulator.module.css'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 
+const COMPARISON_STEPS = [24, 35, 50, 85, 135, 200] as const
+
 export function FovSimulator() {
   const t = useTranslations('toolUI.fov-simulator')
   const { trackParam } = useToolSession()
@@ -44,6 +46,7 @@ export function FovSimulator() {
     setCustomImageSrc(URL.createObjectURL(file))
     dispatch({ type: 'SET_IMAGE', payload: -1 })
     const exif = await extractFocalLength(file)
+    const detected = exif.focalLength35 ?? exif.focalLength
     if (exif.focalLength35) {
       setSourceFocalLength(exif.focalLength35)
       setExifDetected('fl35')
@@ -53,6 +56,11 @@ export function FovSimulator() {
     } else {
       setSourceFocalLength(null)
       setExifDetected(null)
+    }
+    if (detected) {
+      dispatch({ type: 'SET_LENS', payload: { index: 0, updates: { focalLength: detected } } })
+      const comparison = COMPARISON_STEPS.find((f) => f > detected) ?? 135
+      dispatch({ type: 'SET_LENS', payload: { index: 1, updates: { focalLength: comparison } } })
     }
   }, [customImageSrc])
 
