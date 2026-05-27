@@ -10,8 +10,6 @@ import { calcFOV, calcCropRatio } from '@/lib/math/fov'
 import { getSensor } from '@/lib/data/sensors'
 import styles from './CropStrip.module.css'
 
-const REF_FOV = calcFOV(14, 1.0)
-
 /**
  * Compute the cover-fit source region for a given image drawn into a canvas.
  * Returns the visible region of the source image (sx, sy, sw, sh)
@@ -49,9 +47,10 @@ interface CropThumbProps {
   offset: { dx: number; dy: number }
   cleanCanvasRef: React.RefObject<HTMLCanvasElement | null>
   sourceImageRef: React.RefObject<HTMLImageElement | null>
+  sourceFocalLength?: number | null
 }
 
-function CropThumb({ lens, orientation, color, lensIndex, onSelect, offset, cleanCanvasRef, sourceImageRef }: CropThumbProps) {
+function CropThumb({ lens, orientation, color, lensIndex, onSelect, offset, cleanCanvasRef, sourceImageRef, sourceFocalLength }: CropThumbProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   const renderRef = useRef<() => void>(() => {})
@@ -82,14 +81,28 @@ function CropThumb({ lens, orientation, color, lensIndex, onSelect, offset, clea
     const mainW = mainCanvas.width
     const mainH = mainCanvas.height
 
+    const refFov = sourceFocalLength ? calcFOV(sourceFocalLength, 1.0) : calcFOV(14, 1.0)
+
     const ratioW = calcCropRatio(
       isPortrait ? fov.vertical : fov.horizontal,
-      isPortrait ? REF_FOV.vertical : REF_FOV.horizontal,
+      isPortrait ? refFov.vertical : refFov.horizontal,
     )
     const ratioH = calcCropRatio(
       isPortrait ? fov.horizontal : fov.vertical,
-      isPortrait ? REF_FOV.horizontal : REF_FOV.vertical,
+      isPortrait ? refFov.horizontal : refFov.vertical,
     )
+
+    if (ratioW > 1.01 || ratioH > 1.01) {
+      const fontSize = 11 * dpr
+      ctx.font = `600 ${fontSize}px -apple-system, BlinkMacSystemFont, sans-serif`
+      ctx.fillStyle = 'rgba(0,0,0,0.4)'
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      ctx.fillStyle = color
+      const text = `${lens.focalLength}mm — wider`
+      const textW = ctx.measureText(text).width
+      ctx.fillText(text, (canvas.width - textW) / 2, (canvas.height + fontSize) / 2)
+      return
+    }
 
     // Rect position in canvas coordinates
     const rectW = mainW * ratioW
@@ -116,7 +129,7 @@ function CropThumb({ lens, orientation, color, lensIndex, onSelect, offset, clea
 
   renderRef.current = render
 
-  useEffect(render, [lens, orientation, offset, cleanCanvasRef, sourceImageRef])
+  useEffect(render, [lens, orientation, offset, cleanCanvasRef, sourceImageRef, sourceFocalLength, color])
 
   useEffect(() => {
     const cleanCanvas = cleanCanvasRef.current
@@ -150,9 +163,10 @@ interface CropStripProps {
   onToggleExpand: () => void
   cleanCanvasRef: React.RefObject<HTMLCanvasElement | null>
   sourceImageRef: React.RefObject<HTMLImageElement | null>
+  sourceFocalLength?: number | null
 }
 
-export function CropStrip({ lenses, orientation, activeLens, onSelectLens, offsets, expanded, onToggleExpand, cleanCanvasRef, sourceImageRef }: CropStripProps) {
+export function CropStrip({ lenses, orientation, activeLens, onSelectLens, offsets, expanded, onToggleExpand, cleanCanvasRef, sourceImageRef, sourceFocalLength }: CropStripProps) {
   const t = useTranslations('toolUI.fov-simulator')
   return (
     <div className={`${styles.strip} ${expanded ? styles.stripExpanded : ''}`}>
@@ -176,6 +190,7 @@ export function CropStrip({ lenses, orientation, activeLens, onSelectLens, offse
               offset={offsets[i] ?? { dx: 0, dy: 0 }}
               cleanCanvasRef={cleanCanvasRef}
               sourceImageRef={sourceImageRef}
+              sourceFocalLength={sourceFocalLength}
             />
           ))}
         </div>
