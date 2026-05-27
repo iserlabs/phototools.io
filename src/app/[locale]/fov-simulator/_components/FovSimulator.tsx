@@ -17,6 +17,8 @@ import { SCENES } from '@/lib/data/scenes'
 import { ScenePicker } from '@/components/shared/ScenePicker'
 import { Canvas, type OverlayOffsets } from './Canvas'
 import { CropStrip } from './CropStrip'
+import { SourceFocalLengthPopover } from './SourceFocalLengthPopover'
+import { extractFocalLength } from './extractFocalLength'
 import styles from './FovSimulator.module.css'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 
@@ -29,21 +31,36 @@ export function FovSimulator() {
   const [overlayOffsets, setOverlayOffsets] = useState<OverlayOffsets>({})
   const [cropExpanded, setCropExpanded] = useState(true)
   const [customImageSrc, setCustomImageSrc] = useState<string | null>(null)
+  const [sourceFocalLength, setSourceFocalLength] = useState<number | null>(null)
+  const [exifDetected, setExifDetected] = useState<'fl35' | 'fl' | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const cleanCanvasRef = useRef<HTMLCanvasElement>(null)
   const sourceImageRef = useRef<HTMLImageElement | null>(null)
   const { theme, setTheme } = useTheme()
 
-  const handleCustomFile = useCallback((file: File) => {
+  const handleCustomFile = useCallback(async (file: File) => {
     if (!file.type.startsWith('image/')) return
     if (customImageSrc) URL.revokeObjectURL(customImageSrc)
     setCustomImageSrc(URL.createObjectURL(file))
     dispatch({ type: 'SET_IMAGE', payload: -1 })
+    const exif = await extractFocalLength(file)
+    if (exif.focalLength35) {
+      setSourceFocalLength(exif.focalLength35)
+      setExifDetected('fl35')
+    } else if (exif.focalLength) {
+      setSourceFocalLength(exif.focalLength)
+      setExifDetected('fl')
+    } else {
+      setSourceFocalLength(null)
+      setExifDetected(null)
+    }
   }, [customImageSrc])
 
   const handleCustomRemove = useCallback(() => {
     if (customImageSrc) URL.revokeObjectURL(customImageSrc)
     setCustomImageSrc(null)
+    setSourceFocalLength(null)
+    setExifDetected(null)
     if (state.imageIndex === -1) dispatch({ type: 'SET_IMAGE', payload: 0 })
   }, [customImageSrc, state.imageIndex])
 
@@ -107,8 +124,18 @@ export function FovSimulator() {
         <main className={styles.canvasArea}>
           <nav className={styles.canvasTopbar}>
             <ScenePicker scenes={SCENES} selectedIndex={state.imageIndex}
-              onSelect={(i) => dispatch({ type: 'SET_IMAGE', payload: i })}
+              onSelect={(i) => {
+                dispatch({ type: 'SET_IMAGE', payload: i })
+                if (i !== -1) { setSourceFocalLength(null); setExifDetected(null) }
+              }}
               customSrc={customImageSrc} onCustomFile={handleCustomFile} onCustomRemove={handleCustomRemove} />
+            {state.imageIndex === -1 && (
+              <SourceFocalLengthPopover
+                value={sourceFocalLength}
+                exifDetected={exifDetected}
+                onChange={setSourceFocalLength}
+              />
+            )}
             <span className={styles.desktopOnly}>{rotateBtn}</span>
             <span className={styles.desktopOnly}>{centerBtn}</span>
           </nav>
@@ -117,13 +144,15 @@ export function FovSimulator() {
             <Canvas lenses={state.lenses} imageIndex={state.imageIndex} orientation={state.orientation}
               canvasRef={canvasRef} cleanCanvasRef={cleanCanvasRef} distance={state.distance}
               showGuides={state.showGuides} activeLens={state.activeLens} offsets={overlayOffsets}
-              onOffsetsChange={setOverlayOffsets} customImageSrc={customImageSrc} sourceImageRef={sourceImageRef} />
+              onOffsetsChange={setOverlayOffsets} customImageSrc={customImageSrc} sourceImageRef={sourceImageRef}
+              sourceFocalLength={sourceFocalLength} />
           </section>
 
           <CropStrip lenses={state.lenses} imageIndex={state.imageIndex} orientation={state.orientation}
             activeLens={state.activeLens} onSelectLens={(i) => dispatch({ type: 'SET_ACTIVE_LENS', payload: i })}
             offsets={overlayOffsets} expanded={cropExpanded} onToggleExpand={() => setCropExpanded((v) => !v)}
-            cleanCanvasRef={cleanCanvasRef} sourceImageRef={sourceImageRef} />
+            cleanCanvasRef={cleanCanvasRef} sourceImageRef={sourceImageRef}
+            sourceFocalLength={sourceFocalLength} />
         </main>
 
         <div className={styles.desktopOnly}><LearnPanel slug="fov-simulator" /></div>
