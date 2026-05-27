@@ -95,8 +95,9 @@ function CropThumb({ lens, orientation, color, lensIndex, onSelect, offset, clea
     if (ratioW > 1.01 || ratioH > 1.01) {
       ctx.fillStyle = getComputedStyle(canvas).getPropertyValue('--bg-primary').trim() || '#0d0d0d'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
-      const innerW = canvas.width / ratioW
-      const innerH = canvas.height / ratioH
+      const scale = Math.max(ratioW, ratioH)
+      const innerW = canvas.width / scale
+      const innerH = canvas.height / scale
       const innerX = (canvas.width - innerW) / 2
       const innerY = (canvas.height - innerH) / 2
       if (img && img.complete && img.naturalWidth > 0) {
@@ -104,11 +105,6 @@ function CropThumb({ lens, orientation, color, lensIndex, onSelect, offset, clea
       } else {
         ctx.drawImage(mainCanvas, 0, 0, mainW, mainH, innerX, innerY, innerW, innerH)
       }
-      ctx.strokeStyle = color
-      ctx.lineWidth = 1 * dpr
-      ctx.setLineDash([4 * dpr, 4 * dpr])
-      ctx.strokeRect(innerX, innerY, innerW, innerH)
-      ctx.setLineDash([])
       return
     }
 
