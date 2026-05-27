@@ -25,6 +25,14 @@
       "expand": "Vis",
       "fovComparison": "Synsfelt-sammenligning",
       "loadingScene": "Laster scene ...",
+      "sourceFocalLength": "Kildebrennvidde",
+      "setFocalLength": "Angi brennvidde",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Oppdaget fra EXIF",
+      "detectedActualLens": "Oppdaget: {value}mm (faktisk objektiv) — juster ved cropsensor",
+      "enterFocalLength": "Oppgi brennvidden bildet ble tatt med",
+      "widerThanSource": "{value}mm — bredere enn kilden",
+      "apply": "Bruk",
       "faq": {
         "what-is-fov": {
           "question": "Hva er synsfelt i fotografi?",

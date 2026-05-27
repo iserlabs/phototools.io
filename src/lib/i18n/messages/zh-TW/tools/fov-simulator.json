@@ -25,6 +25,14 @@
       "expand": "展開",
       "fovComparison": "視角比較",
       "loadingScene": "正在載入場景...",
+      "sourceFocalLength": "來源焦距",
+      "setFocalLength": "設定焦距",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "從 EXIF 偵測到",
+      "detectedActualLens": "偵測到：{value}mm（實際鏡頭）— 若為裁切感光元件請調整",
+      "enterFocalLength": "輸入拍攝這張照片時使用的焦距",
+      "widerThanSource": "{value}mm — 比原圖更廣",
+      "apply": "套用",
       "faq": {
         "what-is-fov": {
           "question": "攝影中的視角（視角）是什麼？",

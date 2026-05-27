@@ -25,6 +25,14 @@
       "expand": "Desplega",
       "fovComparison": "Comparació d'angle de visió",
       "loadingScene": "Carregant l'escena...",
+      "sourceFocalLength": "Distància focal d'origen",
+      "setFocalLength": "Estableix la distància focal",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Detectada des d'EXIF",
+      "detectedActualLens": "Detectada: {value}mm (objectiu real) — ajusta si és sensor retallat",
+      "enterFocalLength": "Introdueix la distància focal amb què es va fer aquesta foto",
+      "widerThanSource": "{value}mm — més ampli que l'origen",
+      "apply": "Aplica",
       "faq": {
         "what-is-fov": {
           "question": "Què és l'angle de visió en fotografia?",

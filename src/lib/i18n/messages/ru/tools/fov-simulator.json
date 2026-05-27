@@ -25,6 +25,14 @@
       "expand": "Развернуть",
       "fovComparison": "Сравнение углов обзора",
       "loadingScene": "Загрузка сцены...",
+      "sourceFocalLength": "Исходное фокусное расстояние",
+      "setFocalLength": "Задать фокусное расстояние",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Определено из EXIF",
+      "detectedActualLens": "Определено: {value}mm (реальный объектив) — скорректируйте для кроп-матрицы",
+      "enterFocalLength": "Введите фокусное расстояние, на котором сделан этот снимок",
+      "widerThanSource": "{value}mm — шире исходного",
+      "apply": "Применить",
       "faq": {
         "what-is-fov": {
           "question": "Что такое угол обзора в фотографии?",

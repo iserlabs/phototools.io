@@ -25,6 +25,14 @@
       "expand": "펼치기",
       "fovComparison": "화각 비교",
       "loadingScene": "장면 로딩 중...",
+      "sourceFocalLength": "원본 초점 거리",
+      "setFocalLength": "초점 거리 설정",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "EXIF에서 감지됨",
+      "detectedActualLens": "감지됨: {value}mm (실제 렌즈) — 크롭 센서의 경우 조정하세요",
+      "enterFocalLength": "이 사진을 촬영한 초점 거리를 입력하세요",
+      "widerThanSource": "{value}mm — 원본보다 넓음",
+      "apply": "적용",
       "faq": {
         "what-is-fov": {
           "question": "사진에서 화각이란 무엇인가요?",

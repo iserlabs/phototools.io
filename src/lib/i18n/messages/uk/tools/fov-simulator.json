@@ -25,6 +25,14 @@
       "expand": "Розгорнути",
       "fovComparison": "Порівняння кут огляду",
       "loadingScene": "Завантаження сцени...",
+      "sourceFocalLength": "Вихідна фокусна відстань",
+      "setFocalLength": "Задати фокусну відстань",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Визначено з EXIF",
+      "detectedActualLens": "Визначено: {value}mm (реальний об'єктив) — скоригуйте для кроп-матриці",
+      "enterFocalLength": "Введіть фокусну відстань, на якій зроблено цей знімок",
+      "widerThanSource": "{value}mm — ширше за вихідне",
+      "apply": "Застосувати",
       "faq": {
         "what-is-fov": {
           "question": "Що таке кут огляду у фотографії?",

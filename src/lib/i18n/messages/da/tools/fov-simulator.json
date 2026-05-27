@@ -25,6 +25,14 @@
       "expand": "Åbn",
       "fovComparison": "billedvinkel-sammenligning",
       "loadingScene": "Indlæser motiv...",
+      "sourceFocalLength": "Kildebrændvidde",
+      "setFocalLength": "Angiv brændvidde",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Registreret fra EXIF",
+      "detectedActualLens": "Registreret: {value}mm (faktisk linse) — justér ved cropsensor",
+      "enterFocalLength": "Indtast brændvidden, billedet er taget med",
+      "widerThanSource": "{value}mm — bredere end kilden",
+      "apply": "Anvend",
       "faq": {
         "what-is-fov": {
           "question": "Hvad er billedvinkel i fotografi?",

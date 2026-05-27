@@ -25,6 +25,14 @@
       "expand": "Uitklappen",
       "fovComparison": "Beeldhoek vergelijking",
       "loadingScene": "Scène laden...",
+      "sourceFocalLength": "Oorspronkelijke brandpuntsafstand",
+      "setFocalLength": "Brandpuntsafstand instellen",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Gedetecteerd uit EXIF",
+      "detectedActualLens": "Gedetecteerd: {value}mm (werkelijke lens) — pas aan bij cropsensor",
+      "enterFocalLength": "Voer de brandpuntsafstand in waarmee deze foto is genomen",
+      "widerThanSource": "{value}mm — breder dan bron",
+      "apply": "Toepassen",
       "faq": {
         "what-is-fov": {
           "question": "Wat is beeldhoek in fotografie?",

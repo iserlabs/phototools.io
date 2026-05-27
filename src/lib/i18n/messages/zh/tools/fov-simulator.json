@@ -25,6 +25,14 @@
       "expand": "展开",
       "fovComparison": "视场角对��",
       "loadingScene": "加载场景...",
+      "sourceFocalLength": "源焦距",
+      "setFocalLength": "设置焦距",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "从 EXIF 检测到",
+      "detectedActualLens": "检测到：{value}mm（实际镜头）— 若为裁切传感器请调整",
+      "enterFocalLength": "输入拍摄这张照片时使用的焦距",
+      "widerThanSource": "{value}mm — 比原图更广",
+      "apply": "应用",
       "faq": {
         "what-is-fov": {
           "question": "摄影中的视场角是什么？",

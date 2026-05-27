@@ -25,6 +25,14 @@
       "expand": "Genişlet",
       "fovComparison": "görüş alanı Karşılaştırması",
       "loadingScene": "Sahne yükleniyor...",
+      "sourceFocalLength": "Kaynak odak uzaklığı",
+      "setFocalLength": "Odak uzaklığını ayarla",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "EXIF'ten algılandı",
+      "detectedActualLens": "Algılandı: {value}mm (gerçek objektif) — kırpma sensörü ise ayarlayın",
+      "enterFocalLength": "Bu fotoğrafın çekildiği odak uzaklığını girin",
+      "widerThanSource": "{value}mm — kaynaktan daha geniş",
+      "apply": "Uygula",
       "faq": {
         "what-is-fov": {
           "question": "Fotoğrafçılıkta görüş alanı nedir?",

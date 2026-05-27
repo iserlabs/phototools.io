@@ -25,6 +25,14 @@
       "expand": "Expandir",
       "fovComparison": "Comparação de CdV",
       "loadingScene": "Carregando cena...",
+      "sourceFocalLength": "Distância focal de origem",
+      "setFocalLength": "Definir distância focal",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Detectada do EXIF",
+      "detectedActualLens": "Detectada: {value}mm (lente real) — ajuste se sensor cortado",
+      "enterFocalLength": "Insira a distância focal com que esta foto foi tirada",
+      "widerThanSource": "{value}mm — mais amplo que a origem",
+      "apply": "Aplicar",
       "faq": {
         "what-is-fov": {
           "question": "O que é campo de visão na fotografia?",

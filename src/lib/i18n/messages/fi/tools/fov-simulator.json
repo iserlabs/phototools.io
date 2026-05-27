@@ -25,6 +25,14 @@
       "expand": "Laajenna",
       "fovComparison": "Kuvakulmavertailu",
       "loadingScene": "Ladataan näkymää...",
+      "sourceFocalLength": "Lähteen polttoväli",
+      "setFocalLength": "Aseta polttoväli",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Tunnistettu EXIF-tiedoista",
+      "detectedActualLens": "Tunnistettu: {value}mm (todellinen objektiivi) — säädä jos rajattu kenno",
+      "enterFocalLength": "Syötä polttoväli, jolla tämä kuva otettiin",
+      "widerThanSource": "{value}mm — laajempi kuin lähde",
+      "apply": "Käytä",
       "faq": {
         "what-is-fov": {
           "question": "Mikä kuvakulma on valokuvauksessa?",

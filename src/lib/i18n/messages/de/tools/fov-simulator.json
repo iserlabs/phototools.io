@@ -25,6 +25,14 @@
       "expand": "Ausklappen",
       "fovComparison": "Bildwinkel-Vergleich",
       "loadingScene": "Szene wird geladen...",
+      "sourceFocalLength": "Ursprüngliche Brennweite",
+      "setFocalLength": "Brennweite festlegen",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Aus EXIF erkannt",
+      "detectedActualLens": "Erkannt: {value}mm (tatsächliches Objektiv) — bei Crop-Sensor anpassen",
+      "enterFocalLength": "Gib die Brennweite ein, mit der dieses Foto aufgenommen wurde",
+      "widerThanSource": "{value}mm — weitwinkliger als die Quelle",
+      "apply": "Übernehmen",
       "faq": {
         "what-is-fov": {
           "question": "Was ist der Bildwinkel in der Fotografie?",

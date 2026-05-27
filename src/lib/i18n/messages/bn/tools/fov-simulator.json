@@ -25,6 +25,14 @@
       "expand": "খোলো",
       "fovComparison": "দৃষ্টিক্ষেত্র তুলনা",
       "loadingScene": "দৃশ্য লোড হচ্ছে...",
+      "sourceFocalLength": "উৎস ফোকাল দৈর্ঘ্য",
+      "setFocalLength": "ফোকাল দৈর্ঘ্য সেট করো",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "EXIF থেকে শনাক্ত হয়েছে",
+      "detectedActualLens": "শনাক্ত: {value}mm (আসল লেন্স) — ক্রপ সেন্সর হলে সামঞ্জস্য করো",
+      "enterFocalLength": "এই ছবি তোলার ফোকাল দৈর্ঘ্য লেখো",
+      "widerThanSource": "{value}mm — উৎসের চেয়ে প্রশস্ত",
+      "apply": "প্রয়োগ করো",
       "faq": {
         "what-is-fov": {
           "question": "ফটোগ্রাফিতে দৃষ্টিক্ষেত্র কী?",

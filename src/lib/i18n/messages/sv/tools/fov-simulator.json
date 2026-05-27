@@ -25,6 +25,14 @@
       "expand": "Fäll ut",
       "fovComparison": "bildvinkel-jämförelse",
       "loadingScene": "Laddar scen ...",
+      "sourceFocalLength": "Ursprunglig brännvidd",
+      "setFocalLength": "Ange brännvidd",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Upptäckt från EXIF",
+      "detectedActualLens": "Upptäckt: {value}mm (verkligt objektiv) — justera vid cropsensor",
+      "enterFocalLength": "Ange brännvidden som bilden togs med",
+      "widerThanSource": "{value}mm — vidare än källan",
+      "apply": "Verkställ",
       "faq": {
         "what-is-fov": {
           "question": "Vad är bildvinkel i fotografi?",

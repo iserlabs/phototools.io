@@ -25,6 +25,14 @@
       "expand": "Espandi",
       "fovComparison": "Confronto campo visivo",
       "loadingScene": "Caricamento scena...",
+      "sourceFocalLength": "Lunghezza focale di origine",
+      "setFocalLength": "Imposta lunghezza focale",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Rilevata da EXIF",
+      "detectedActualLens": "Rilevata: {value}mm (obiettivo reale) — regola se sensore crop",
+      "enterFocalLength": "Inserisci la lunghezza focale con cui è stata scattata questa foto",
+      "widerThanSource": "{value}mm — più ampio dell'originale",
+      "apply": "Applica",
       "faq": {
         "what-is-fov": {
           "question": "Cos'è il campo visivo nella fotografia?",

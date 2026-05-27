@@ -25,6 +25,14 @@
       "expand": "Kibontás",
       "fovComparison": "látószög összehasonlítás",
       "loadingScene": "Jelenet betöltése...",
+      "sourceFocalLength": "Forrás gyújtótávolság",
+      "setFocalLength": "Gyújtótávolság beállítása",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "EXIF-ből észlelve",
+      "detectedActualLens": "Észlelve: {value}mm (valódi objektív) — crop érzékelőnél állítsd be",
+      "enterFocalLength": "Add meg a gyújtótávolságot, amellyel ez a fotó készült",
+      "widerThanSource": "{value}mm — szélesebb a forrásnál",
+      "apply": "Alkalmaz",
       "faq": {
         "what-is-fov": {
           "question": "Mi a látószög a fotózásban?",

@@ -25,6 +25,14 @@
       "expand": "बड़ा करें",
       "fovComparison": "दृश्य क्षेत्र तुलना",
       "loadingScene": "दृश्य लोड हो रहा है...",
+      "sourceFocalLength": "स्रोत फोकल लंबाई",
+      "setFocalLength": "फोकल लंबाई सेट करें",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "EXIF से पहचाना गया",
+      "detectedActualLens": "पहचाना गया: {value}mm (वास्तविक लेंस) — क्रॉप सेंसर हो तो समायोजित करें",
+      "enterFocalLength": "इस फ़ोटो की फोकल लंबाई दर्ज करें",
+      "widerThanSource": "{value}mm — स्रोत से अधिक चौड़ा",
+      "apply": "लागू करें",
       "faq": {
         "what-is-fov": {
           "question": "फ़ोटोग्राफ़ी में फ़ील्ड ऑफ़ व्यू क्या है?",

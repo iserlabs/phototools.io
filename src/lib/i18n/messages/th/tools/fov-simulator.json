@@ -25,6 +25,14 @@
       "expand": "ขยาย",
       "fovComparison": "เปรียบเทียบ มุมรับภาพ",
       "loadingScene": "กำลังโหลดฉาก...",
+      "sourceFocalLength": "ทางยาวโฟกัสต้นฉบับ",
+      "setFocalLength": "ตั้งค่าทางยาวโฟกัส",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "ตรวจพบจาก EXIF",
+      "detectedActualLens": "ตรวจพบ: {value}mm (เลนส์จริง) — ปรับหากเป็นเซ็นเซอร์ครอป",
+      "enterFocalLength": "ป้อนทางยาวโฟกัสที่ใช้ถ่ายภาพนี้",
+      "widerThanSource": "{value}mm — กว้างกว่าต้นฉบับ",
+      "apply": "นำไปใช้",
       "faq": {
         "what-is-fov": {
           "question": "มุมรับภาพ ในการถ่ายภาพคืออะไร?",

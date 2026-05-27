@@ -25,6 +25,14 @@
       "expand": "Développer",
       "fovComparison": "Comparaison de champ de vision",
       "loadingScene": "Chargement de la scène...",
+      "sourceFocalLength": "Focale d'origine",
+      "setFocalLength": "Définir la focale",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Détectée depuis EXIF",
+      "detectedActualLens": "Détectée : {value}mm (objectif réel) — ajustez si capteur recadré",
+      "enterFocalLength": "Saisissez la focale utilisée pour cette photo",
+      "widerThanSource": "{value}mm — plus large que la source",
+      "apply": "Appliquer",
       "faq": {
         "what-is-fov": {
           "question": "Qu'est-ce que le champ de vision en photographie ?",

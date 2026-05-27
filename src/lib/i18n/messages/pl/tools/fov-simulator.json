@@ -25,6 +25,14 @@
       "expand": "Rozwiń",
       "fovComparison": "Porównanie pole widzenia",
       "loadingScene": "Ładowanie sceny...",
+      "sourceFocalLength": "Źródłowa ogniskowa",
+      "setFocalLength": "Ustaw ogniskową",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Wykryto z EXIF",
+      "detectedActualLens": "Wykryto: {value}mm (rzeczywisty obiektyw) — dostosuj przy matrycy z cropem",
+      "enterFocalLength": "Wprowadź ogniskową, z jaką zrobiono to zdjęcie",
+      "widerThanSource": "{value}mm — szerzej niż źródło",
+      "apply": "Zastosuj",
       "faq": {
         "what-is-fov": {
           "question": "Czym jest pole widzenia w fotografii?",

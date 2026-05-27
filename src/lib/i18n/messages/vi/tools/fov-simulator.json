@@ -25,6 +25,14 @@
       "expand": "Mở rộng",
       "fovComparison": "So sánh góc nhìn",
       "loadingScene": "Đang tải cảnh...",
+      "sourceFocalLength": "Tiêu cự gốc",
+      "setFocalLength": "Đặt tiêu cự",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Phát hiện từ EXIF",
+      "detectedActualLens": "Phát hiện: {value}mm (ống kính thực) — điều chỉnh nếu cảm biến crop",
+      "enterFocalLength": "Nhập tiêu cự đã dùng khi chụp ảnh này",
+      "widerThanSource": "{value}mm — rộng hơn ảnh gốc",
+      "apply": "Áp dụng",
       "faq": {
         "what-is-fov": {
           "question": "Góc nhìn trong nhiếp ảnh là gì?",

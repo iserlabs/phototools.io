@@ -25,6 +25,14 @@
       "expand": "Rozbalit",
       "fovComparison": "Porovnání zorných úhlů",
       "loadingScene": "Načítám scénu...",
+      "sourceFocalLength": "Zdrojová ohnisková vzdálenost",
+      "setFocalLength": "Nastavit ohniskovou vzdálenost",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Zjištěno z EXIF",
+      "detectedActualLens": "Zjištěno: {value}mm (skutečný objektiv) — upravte u crop snímače",
+      "enterFocalLength": "Zadejte ohniskovou vzdálenost, se kterou byl snímek pořízen",
+      "widerThanSource": "{value}mm — širší než zdroj",
+      "apply": "Použít",
       "faq": {
         "what-is-fov": {
           "question": "Co je zorný úhel ve fotografii?",

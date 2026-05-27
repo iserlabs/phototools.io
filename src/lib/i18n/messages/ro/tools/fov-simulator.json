@@ -25,6 +25,14 @@
       "expand": "Extinde",
       "fovComparison": "Comparație câmp vizual",
       "loadingScene": "Se încarcă scena...",
+      "sourceFocalLength": "Distanța focală sursă",
+      "setFocalLength": "Setează distanța focală",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Detectată din EXIF",
+      "detectedActualLens": "Detectată: {value}mm (obiectiv real) — ajustați pentru senzor crop",
+      "enterFocalLength": "Introduceți distanța focală cu care a fost făcută această fotografie",
+      "widerThanSource": "{value}mm — mai larg decât sursa",
+      "apply": "Aplică",
       "faq": {
         "what-is-fov": {
           "question": "Ce este unghiul de vizualizare în fotografie?",

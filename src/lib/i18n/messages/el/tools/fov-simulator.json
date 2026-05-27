@@ -25,6 +25,14 @@
       "expand": "Ανάπτυξη",
       "fovComparison": "Σύγκριση οπτικού πεδίου",
       "loadingScene": "Φόρτωση σκηνής...",
+      "sourceFocalLength": "Εστιακή απόσταση πηγής",
+      "setFocalLength": "Ορισμός εστιακής απόστασης",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Ανιχνεύτηκε από EXIF",
+      "detectedActualLens": "Ανιχνεύτηκε: {value}mm (πραγματικός φακός) — προσαρμόστε σε crop αισθητήρα",
+      "enterFocalLength": "Εισαγάγετε την εστιακή απόσταση με την οποία τραβήχτηκε αυτή η φωτογραφία",
+      "widerThanSource": "{value}mm — ευρύτερο από την πηγή",
+      "apply": "Εφαρμογή",
       "faq": {
         "what-is-fov": {
           "question": "Τι είναι το οπτικό πεδίο στη φωτογραφία;",

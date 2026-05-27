@@ -25,6 +25,14 @@
       "expand": "Expand",
       "fovComparison": "Field-of-View Comparison",
       "loadingScene": "Loading scene...",
+      "sourceFocalLength": "Source focal length",
+      "setFocalLength": "Set focal length",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Detected from EXIF",
+      "detectedActualLens": "Detected: {value}mm (actual lens) — adjust if crop sensor",
+      "enterFocalLength": "Enter the focal length this photo was taken at",
+      "widerThanSource": "{value}mm — wider than source",
+      "apply": "Apply",
       "faq": {
         "what-is-fov": {
           "question": "What is field of view in photography?",

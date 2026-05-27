@@ -25,6 +25,14 @@
       "expand": "Buksan",
       "fovComparison": "field of view Comparison",
       "loadingScene": "Nilo-load ang scene...",
+      "sourceFocalLength": "Source focal length",
+      "setFocalLength": "Itakda ang focal length",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Na-detect mula sa EXIF",
+      "detectedActualLens": "Na-detect: {value}mm (totoong lens) — i-adjust kung crop sensor",
+      "enterFocalLength": "Ilagay ang focal length na ginamit sa pagkuha ng larawang ito",
+      "widerThanSource": "{value}mm — mas malawak kaysa sa source",
+      "apply": "I-apply",
       "faq": {
         "what-is-fov": {
           "question": "Ano ang field of view sa photography?",

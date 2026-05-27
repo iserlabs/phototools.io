@@ -25,6 +25,14 @@
       "expand": "Kembangkan",
       "fovComparison": "Perbandingan medan pandangan",
       "loadingScene": "Memuatkan adegan...",
+      "sourceFocalLength": "Panjang fokus sumber",
+      "setFocalLength": "Tetapkan panjang fokus",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Dikesan daripada EXIF",
+      "detectedActualLens": "Dikesan: {value}mm (lensa sebenar) — laraskan jika sensor crop",
+      "enterFocalLength": "Masukkan panjang fokus semasa foto ini diambil",
+      "widerThanSource": "{value}mm — lebih luas daripada sumber",
+      "apply": "Guna",
       "faq": {
         "what-is-fov": {
           "question": "Apa itu medan pandangan dalam fotografi?",

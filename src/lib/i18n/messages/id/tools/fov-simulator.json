@@ -25,6 +25,14 @@
       "expand": "Buka",
       "fovComparison": "Perbandingan bidang pandang",
       "loadingScene": "Memuat adegan...",
+      "sourceFocalLength": "Panjang fokus sumber",
+      "setFocalLength": "Atur panjang fokus",
+      "focalLengthMm": "{value}mm",
+      "detectedFromExif": "Terdeteksi dari EXIF",
+      "detectedActualLens": "Terdeteksi: {value}mm (lensa asli) — sesuaikan jika sensor crop",
+      "enterFocalLength": "Masukkan panjang fokus saat foto ini diambil",
+      "widerThanSource": "{value}mm — lebih lebar dari sumber",
+      "apply": "Terapkan",
       "faq": {
         "what-is-fov": {
           "question": "Apa itu field of view dalam fotografi?",
