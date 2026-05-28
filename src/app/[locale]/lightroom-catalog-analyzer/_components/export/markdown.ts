@@ -1,4 +1,5 @@
 import type { AnalysisFilter, InsightBlob } from '@/lib/lrcat/types'
+import { fmtAperture } from '../sections/sectionFormatters'
 
 const BRAND = 'phototools.io/lightroom-catalog-analyzer'
 
@@ -53,7 +54,7 @@ export function markdownReport(blob: InsightBlob): string {
     out.push(`- Most-used body: ${yir.topBody ?? '—'}`)
     out.push(`- Most-used lens: ${yir.topLens ?? '—'}`)
     out.push(`- Top focal length: ${yir.topFocalLengthMm != null ? `${yir.topFocalLengthMm}mm` : '—'}`)
-    out.push(`- Top aperture: ${yir.topApertureFNumber != null ? `f/${yir.topApertureFNumber}` : '—'}`)
+    out.push(`- Top aperture: ${yir.topApertureFNumber != null ? fmtAperture(yir.topApertureFNumber) : '—'}`)
     out.push(`- Most prolific month: ${yir.mostProlificMonth ? `${yir.mostProlificMonth.month} (${num(yir.mostProlificMonth.count)})` : '—'}`)
     out.push(`- Avg shots / day: ${yir.avgShotsPerDay.toFixed(1)}`)
   } else {

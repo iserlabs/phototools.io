@@ -15,7 +15,7 @@ function fixtureBlob(overrides: Partial<InsightBlob> = {}): InsightBlob {
     yearInReview: {
       year: 2024, totalPhotos: 1240, daysShot: 87,
       topBody: 'Sony A7R V', topLens: '24-70mm f/2.8 GM',
-      topFocalLengthMm: 35, topApertureFNumber: 2.8,
+      topFocalLengthMm: 35, topApertureFNumber: 2.97,
       mostProlificMonth: { month: '2024-08', count: 489 },
       avgShotsPerDay: 14.3,
       monthlyVolume: [{ month: '2024-01', count: 62 }],

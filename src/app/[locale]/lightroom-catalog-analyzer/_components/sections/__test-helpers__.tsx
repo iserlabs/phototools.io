@@ -52,7 +52,7 @@ export function makeFixtureBlob(overrides: Partial<InsightBlob> = {}): InsightBl
       topBody: 'Sony A7R V',
       topLens: '24-70mm f/2.8 GM',
       topFocalLengthMm: 35,
-      topApertureFNumber: 2.8,
+      topApertureFNumber: 2.97,  // APEX value for f/2.8 (2 * log2(2.8))
       mostProlificMonth: { month: '2024-08', count: 489 },
       avgShotsPerDay: 14.3,
       monthlyVolume: Array.from({ length: 12 }, (_, i) => ({

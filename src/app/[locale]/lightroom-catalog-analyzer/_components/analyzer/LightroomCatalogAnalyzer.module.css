@@ -182,83 +182,7 @@
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
 }
 
-/* ---- Desktop empty state ---- */
-/* Two-column: an action column (headline + file picker + demo) and a value
-   panel (privacy + a preview of the insights the dashboard produces). Keeps
-   the landing view intentional instead of sprawling across a wide viewport. */
-.emptyGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: var(--space-2xl, 48px);
-  align-items: start;
-  max-width: 1120px;
-  margin: var(--space-md) 0 var(--space-2xl, 48px);
-}
-
-@media (max-width: 980px) {
-  .emptyGrid { grid-template-columns: 1fr; gap: var(--space-lg); max-width: 720px; }
-}
-
-.emptyMain { min-width: 0; }
-
-.emptyAside {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* keep the privacy pill its natural width, not stretched */
-  gap: var(--space-md);
-  padding: var(--space-lg);
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg, 14px);
-}
-
-.asideList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: var(--space-sm);
-}
-
-.asideItem {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  color: var(--text-secondary);
-  font-size: var(--text-sm);
-}
-
-.asideDot {
-  flex: none;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-.eyebrow {
-  margin: 0 0 4px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.emptyHeadline {
-  margin: 0;
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.emptySubhead {
-  margin: 0 0 var(--space-lg) 0;
-  color: var(--text-secondary);
-  max-width: 64ch;
-  line-height: 1.55;
-}
-
+/* ---- Empty-state explainer (shown in UploaderPanel) ---- */
 .emptyExplainer {
   margin-top: var(--space-md);
   color: var(--text-muted);
@@ -336,43 +260,6 @@
   font-family: var(--font-mono, ui-monospace, monospace);
   font-size: var(--text-xs);
   word-break: break-word;
-}
-
-/* ---- Large-file warning modal ---- */
-.warningBackdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-}
-
-.warningModal {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  max-width: 480px;
-  width: calc(100% - var(--space-lg) * 2);
-  box-shadow: var(--shadow-md);
-}
-
-.warningTitle { margin: 0 0 var(--space-sm) 0; font-size: var(--text-lg); }
-.warningBody { margin: 0 0 var(--space-lg) 0; color: var(--text-secondary); line-height: 1.55; }
-.warningActions { display: flex; justify-content: flex-end; gap: var(--space-sm); }
-
-.warningCancel {
-  background: transparent; color: var(--text-secondary);
-  border: 1px solid var(--border); padding: 8px 16px; border-radius: var(--radius-md);
-  cursor: pointer; font-size: var(--text-sm);
-}
-
-.warningContinue {
-  background: var(--accent); color: var(--text-on-accent);
-  border: none; padding: 8px 16px; border-radius: var(--radius-md);
-  cursor: pointer; font-size: var(--text-sm); font-weight: 600;
 }
 
 /* ---- Parse progress ---- */

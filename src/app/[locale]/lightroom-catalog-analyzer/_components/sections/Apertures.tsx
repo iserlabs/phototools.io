@@ -21,20 +21,19 @@ function mergeBySnappedAperture(histogram: Array<{ aperture: number; count: numb
 export function Apertures() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.apertures')
   const { insightBlob } = useAnalyzer()
-  const perLens = insightBlob?.apertures.perLens ?? []
   const [selectedIdx, setSelectedIdx] = useState(0)
 
-  const processedLenses = useMemo(() =>
-    perLens.map((lensRow) => {
+  const processedLenses = useMemo(() => {
+    const perLens = insightBlob?.apertures.perLens ?? []
+    return perLens.map((lensRow) => {
       const histogram = mergeBySnappedAperture(lensRow.histogram)
       const peak = histogram.length > 0
         ? histogram.reduce((best, h) => h.count > best.count ? h : best, histogram[0]!)
         : null
       const totalShots = histogram.reduce((s, h) => s + h.count, 0)
       return { ...lensRow, histogram, peak, totalShots }
-    }),
-    [perLens],
-  )
+    })
+  }, [insightBlob?.apertures.perLens])
 
   if (processedLenses.length === 0) {
     return (

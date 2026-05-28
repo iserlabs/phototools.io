@@ -54,27 +54,4 @@ describe('FilePicker', () => {
     expect(onFile).not.toHaveBeenCalled()
   })
 
-  it('shows a warning modal for files > 1 GB and waits for confirmation', async () => {
-    const onFile = vi.fn()
-    renderWithIntl(<FilePicker onFile={onFile} />)
-    const big = makeFile('huge.lrcat', 2 * 1024 * 1024 * 1024) // 2 GB
-    const input = screen.getByLabelText(/catalog file picker/i).querySelector('input[type="file"]') as HTMLInputElement
-    fireEvent.change(input, { target: { files: [big] } })
-    expect(await screen.findByText(/Large catalog/i)).toBeInTheDocument()
-    expect(onFile).not.toHaveBeenCalled()
-    fireEvent.click(screen.getByText(/^Continue$/))
-    await waitFor(() => expect(onFile).toHaveBeenCalled())
-  })
-
-  it('cancelling the large-file warning does not invoke onFile', async () => {
-    const onFile = vi.fn()
-    renderWithIntl(<FilePicker onFile={onFile} />)
-    const big = makeFile('huge.lrcat', 2 * 1024 * 1024 * 1024)
-    const input = screen.getByLabelText(/catalog file picker/i).querySelector('input[type="file"]') as HTMLInputElement
-    fireEvent.change(input, { target: { files: [big] } })
-    expect(await screen.findByText(/Large catalog/i)).toBeInTheDocument()
-    fireEvent.click(screen.getByText(/^Cancel$/))
-    await waitFor(() => expect(screen.queryByText(/Large catalog/i)).not.toBeInTheDocument())
-    expect(onFile).not.toHaveBeenCalled()
-  })
 })

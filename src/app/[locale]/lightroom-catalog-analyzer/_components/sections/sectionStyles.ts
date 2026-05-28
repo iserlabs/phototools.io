@@ -1,13 +1,7 @@
 import type { CSSProperties } from 'react'
 
-/** Panel/tile background. */
-export const SURFACE = 'var(--bg-surface)'
-
-/** Soft accent-tinted callout background. */
-export const CALLOUT_BG = 'color-mix(in srgb, var(--accent) 8%, var(--bg-surface))'
-
-/** Muted variant of the accent for de-emphasised chart elements. */
-export const ACCENT_MUTED = 'color-mix(in srgb, var(--accent) 35%, transparent)'
+const SURFACE = 'var(--bg-surface)'
+const CALLOUT_BG = 'color-mix(in srgb, var(--accent) 8%, var(--bg-surface))'
 
 /** Grid of headline stat tiles. */
 export const TILE_GRID: CSSProperties = {
