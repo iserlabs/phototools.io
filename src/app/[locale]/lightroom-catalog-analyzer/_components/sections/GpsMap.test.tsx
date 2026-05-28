@@ -12,4 +12,16 @@ describe('GpsMap', () => {
     expect(screen.getByText('France')).toBeInTheDocument()
     expect(screen.getByText(/31%/)).toBeInTheDocument()
   })
+
+  it('renders an empty-state message instead of the map when there is no GPS data', () => {
+    const blob = makeFixtureBlob()
+    blob.gps.pctWithGps = 0
+    blob.gps.totalPhotosWithGps = 0
+    blob.gps.clusters = []
+    blob.gps.topRegions = []
+    const { wrapper } = renderWithAnalyzer(<GpsMap />, blob)
+    render(wrapper)
+    expect(screen.queryByRole('img', { name: /gps map/i })).not.toBeInTheDocument()
+    expect(screen.getByText(/no gps data/i)).toBeInTheDocument()
+  })
 })

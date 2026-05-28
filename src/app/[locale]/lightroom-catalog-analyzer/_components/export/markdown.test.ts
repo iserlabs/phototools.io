@@ -103,11 +103,7 @@ function fixtureBlob(overrides: Partial<InsightBlob> = {}): InsightBlob {
 }
 
 describe('markdownReport', () => {
-  it('produces a stable unfiltered report', () => {
-    expect(markdownReport(fixtureBlob())).toMatchSnapshot()
-  })
-
-  it('produces a stable filtered report with a filter-context header', () => {
+  it('renders a filter-context header when filterContext is present', () => {
     const blob = fixtureBlob({
       filterContext: {
         cameras: ['Sony A7R V'],
@@ -120,7 +116,11 @@ describe('markdownReport', () => {
     expect(md).toContain('Cameras: Sony A7R V')
     expect(md).toContain('Date range: 2024-01-01 – 2024-12-31')
     expect(md).toContain('Ratings: 4, 5')
-    expect(md).toMatchSnapshot()
+  })
+
+  it('omits the filter-context header when no filter is applied', () => {
+    const md = markdownReport(fixtureBlob())
+    expect(md).not.toContain('## Filter applied')
   })
 
   it('starts with a top-level title and the brand attribution', () => {

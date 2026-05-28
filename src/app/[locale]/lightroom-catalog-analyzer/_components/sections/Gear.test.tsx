@@ -12,4 +12,24 @@ describe('Gear', () => {
     expect(screen.getByText(/70-200mm f\/2\.8 GM/)).toBeInTheDocument()
     expect(screen.getByText(/Sony 28mm f\/2/)).toBeInTheDocument()
   })
+
+  it('omits the retired callout when no gear has been retired', () => {
+    const blob = makeFixtureBlob()
+    blob.gear.retired = []
+    const { wrapper } = renderWithAnalyzer(<Gear />, blob)
+    render(wrapper)
+    expect(screen.queryByText(/Sony 28mm f\/2/)).not.toBeInTheDocument()
+  })
+
+  it('renders without crashing when all gear data is empty', () => {
+    const blob = makeFixtureBlob()
+    blob.gear.topLenses = []
+    blob.gear.topCombos = []
+    blob.gear.bodiesOverTime = []
+    blob.gear.retired = []
+    const { wrapper } = renderWithAnalyzer(<Gear />, blob)
+    render(wrapper)
+    // Section heading still present
+    expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument()
+  })
 })

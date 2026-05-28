@@ -54,4 +54,32 @@ describe('FilePicker', () => {
     expect(onFile).not.toHaveBeenCalled()
   })
 
+  it('rejects zero-byte .lrcat files without calling onFile', async () => {
+    const onFile = vi.fn()
+    renderWithIntl(<FilePicker onFile={onFile} />)
+    const file = makeFile('empty.lrcat', 0)
+    const input = screen.getByLabelText(/catalog file picker/i).querySelector('input[type="file"]') as HTMLInputElement
+    fireEvent.change(input, { target: { files: [file] } })
+    await waitFor(() => {
+      expect(screen.getByText(/looks empty or hasn't finished downloading/i)).toBeInTheDocument()
+    })
+    expect(onFile).not.toHaveBeenCalled()
+  })
+
+  it('surfaces a read-failure error when the file probe rejects', async () => {
+    const onFile = vi.fn()
+    const probeError = new Error('Permission denied')
+    probeError.name = 'NotReadableError'
+    const arrayBufferSpy = vi.spyOn(Blob.prototype, 'arrayBuffer').mockRejectedValueOnce(probeError)
+    renderWithIntl(<FilePicker onFile={onFile} />)
+    const file = makeFile('locked.lrcat', 1024)
+    const input = screen.getByLabelText(/catalog file picker/i).querySelector('input[type="file"]') as HTMLInputElement
+    fireEvent.change(input, { target: { files: [file] } })
+    await waitFor(() => {
+      // The locked / read-failed error UI surfaces with diagnostic detail
+      expect(screen.getByText(/NotReadableError/i)).toBeInTheDocument()
+    })
+    expect(onFile).not.toHaveBeenCalled()
+    arrayBufferSpy.mockRestore()
+  })
 })

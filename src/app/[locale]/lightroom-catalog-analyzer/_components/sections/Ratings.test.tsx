@@ -12,4 +12,17 @@ describe('Ratings', () => {
     expect(screen.getByText('Sony A7R V')).toBeInTheDocument()
     expect(screen.getByText('24-70mm f/2.8 GM')).toBeInTheDocument()
   })
+
+  it('renders without crashing when all gear and color-label arrays are empty', () => {
+    const blob = makeFixtureBlob()
+    blob.ratings.colorLabels = []
+    blob.ratings.pickRateByBody = []
+    blob.ratings.pickRateByLens = []
+    const { wrapper } = renderWithAnalyzer(<Ratings />, blob)
+    render(wrapper)
+    // Section heading still present
+    expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument()
+    // Stale gear from earlier test should not appear
+    expect(screen.queryByText('Sony A7R V')).not.toBeInTheDocument()
+  })
 })

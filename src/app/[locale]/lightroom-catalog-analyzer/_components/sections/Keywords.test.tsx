@@ -12,4 +12,12 @@ describe('Keywords', () => {
     expect(screen.getByText(/street/i)).toBeInTheDocument()
     expect(screen.getByText(/portrait/i)).toBeInTheDocument()
   })
+
+  it('shows blindSpotsEmpty message when there are no blind spots', () => {
+    const blob = makeFixtureBlob()
+    blob.keywords.blindSpots = []
+    const { wrapper } = renderWithAnalyzer(<Keywords />, blob)
+    render(wrapper)
+    expect(screen.getByText(/Coverage looks even across months/i)).toBeInTheDocument()
+  })
 })

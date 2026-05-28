@@ -26,4 +26,26 @@ describe('PdfDocument', () => {
     const el = PdfDocument({ blob, strings, charts: { focalLength: 'data:image/png;base64,AAA' } })
     expect(el).toBeTruthy()
   })
+
+  it('embeds the catalog version and date range in the cover page tree', () => {
+    const el = PdfDocument({ blob, strings, charts: {} })
+    const serialized = JSON.stringify(el)
+    expect(serialized).toContain('14')          // catalogVersion
+    expect(serialized).toContain('2024-01-01')  // date range first
+    expect(serialized).toContain('2024-12-31')  // date range last
+  })
+
+  it('embeds the title and brand attribution', () => {
+    const el = PdfDocument({ blob, strings, charts: {} })
+    const serialized = JSON.stringify(el)
+    expect(serialized).toContain('Lightroom Catalog Analysis')
+    expect(serialized).toContain('phototools.io/lightroom-catalog-analyzer')
+  })
+
+  it('appends the filtered-view suffix when the blob has a filterContext', () => {
+    const filtered = { ...blob, filterContext: { ratings: [5] } } as unknown as InsightBlob
+    const el = PdfDocument({ blob: filtered, strings, charts: {} })
+    const serialized = JSON.stringify(el)
+    expect(serialized).toContain('(Filtered view)')
+  })
 })

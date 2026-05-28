@@ -11,4 +11,22 @@ describe('Bursts', () => {
     expect(screen.getByText(/33%/)).toBeInTheDocument()        // pctInBursts
     expect(screen.getByText(/keeper rate/i)).toBeInTheDocument()
   })
+
+  it('shows "less often" direction when burst keeper rate is lower than single-shot', () => {
+    const blob = makeFixtureBlob()
+    blob.bursts.keeperRatePct = 8
+    blob.bursts.singleShotKeeperRatePct = 13
+    const { wrapper } = renderWithAnalyzer(<Bursts />, blob)
+    render(wrapper)
+    expect(screen.getByText(/less often/i)).toBeInTheDocument()
+  })
+
+  it('shows "more often" direction when burst keeper rate is higher than single-shot', () => {
+    const blob = makeFixtureBlob()
+    blob.bursts.keeperRatePct = 20
+    blob.bursts.singleShotKeeperRatePct = 13
+    const { wrapper } = renderWithAnalyzer(<Bursts />, blob)
+    render(wrapper)
+    expect(screen.getByText(/more often/i)).toBeInTheDocument()
+  })
 })

@@ -13,4 +13,15 @@ describe('CatalogHealth', () => {
     expect(screen.getByText(/\/Photos\/2022/)).toBeInTheDocument()
     expect(screen.getByText(/Find Missing Photos/i)).toBeInTheDocument()
   })
+
+  it('renders nothing when all health counters are zero', () => {
+    const blob = makeFixtureBlob()
+    blob.catalogHealth.missingOriginals = 0
+    blob.catalogHealth.missingPreviews = 0
+    blob.catalogHealth.brokenPaths = 0
+    blob.catalogHealth.likelyDuplicates = 0
+    const { wrapper } = renderWithAnalyzer(<CatalogHealth />, blob)
+    const { container } = render(wrapper)
+    expect(container.firstChild).toBeNull()
+  })
 })
