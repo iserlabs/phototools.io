@@ -21,7 +21,7 @@ export function Overview() {
     {
       label: t('tiles.totalPhotos'),
       value: fmt(o.totalPhotos),
-      sub: burstPhotos > 0 ? `${fmt(uniquePhotos)} unique · ${fmt(burstPhotos)} in bursts` : undefined,
+      sub: burstPhotos > 0 ? t('burstSub', { unique: fmt(uniquePhotos), bursts: fmt(burstPhotos) }) : undefined,
     },
     { label: t('tiles.dateRange'), value: `${fmtDate(o.dateRange.first)} – ${fmtDate(o.dateRange.last)}` },
     { label: t('tiles.daysShot'), value: fmt(o.daysShot) },

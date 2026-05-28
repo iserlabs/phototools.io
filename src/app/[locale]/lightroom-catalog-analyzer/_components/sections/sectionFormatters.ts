@@ -40,7 +40,7 @@ export function fmtAperture(apex: number): string {
 
 /** Format an already-converted f-number (not APEX) for display. */
 export function fmtFStop(fNum: number): string {
-  return `f/${fNum % 1 === 0 ? fNum.toFixed(0) : fNum}`
+  return `f/${fNum % 1 === 0 ? fNum.toFixed(0) : fNum.toFixed(1)}`
 }
 
 export const PILL: CSSProperties = {

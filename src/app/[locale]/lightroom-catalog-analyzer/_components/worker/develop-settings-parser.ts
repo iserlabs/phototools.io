@@ -45,7 +45,7 @@ export function parseDevelopSettings(blob: string): DevelopSettings {
   const remaining = Math.max(0, bottom - top) * Math.max(0, right - left)
   const cropPct = Math.max(0, Math.min(100, (1 - remaining) * 100))
 
-  const hasLocalAdjustments = LOCAL_ADJUSTMENT_MARKERS.some((k) => blob.includes(k + ' '))
+  const hasLocalAdjustments = LOCAL_ADJUSTMENT_MARKERS.some((k) => blob.includes(k))
 
   let slidersTouched = 0
   for (const key of TOUCH_SLIDERS) {

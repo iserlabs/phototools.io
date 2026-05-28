@@ -147,7 +147,8 @@
             "topLens": "最常用镜头",
             "topFocalLength": "最常用焦距"
           },
-          "caption": "目录概览：{daysShot} 天内拍摄 {totalPhotos} 张照片，{bodyCount} 台机身，{lensCount} 支镜头。"
+          "caption": "目录概览：{daysShot} 天内拍摄 {totalPhotos} 张照片，{bodyCount} 台机身，{lensCount} 支镜头。",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "器材",
@@ -172,19 +173,26 @@
           "onePrime": "一支 {mm}mm 定焦镜头可覆盖您 {pct}% 的照片（±25% 范围内）。",
           "noPrime": "您的焦距使用过于分散，单支定焦镜头无法占主导。",
           "caption": "从 {min}mm 到 {max}mm、以 1mm 为间隔的直方图；标注了 {peakCount} 个主要峰值。",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "各变焦镜头焦距",
           "callout": "在您的 {lens} 上，{pct}% 的照片拍摄于 {mm}mm。",
           "empty": "此目录中未检测到变焦镜头。",
-          "caption": "{n} 个变焦镜头的直方图，并突出显示主导焦距。"
+          "caption": "{n} 个变焦镜头的直方图，并突出显示主导焦距。",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "光圈甜点",
           "callout": "您有 {pct}% 的时间以最大光圈拍摄 {lens}。",
           "empty": "数据不足——至少需要一支拥有 100 张以上照片的镜头。",
-          "caption": "{n} 支镜头的光圈直方图。"
+          "caption": "{n} 支镜头的光圈直方图。",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "时段",
@@ -201,7 +209,8 @@
           },
           "perGear": "按机身",
           "perGearPeak": "{gear}——高峰时段 {hour}:00",
-          "caption": "24 小时内的照片数量，可选按太阳高度角分布。"
+          "caption": "24 小时内的照片数量，可选按太阳高度角分布。",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "拍摄热力图",
@@ -263,7 +272,9 @@
             "rating": "评级",
             "count": "照片"
           },
-          "caption": "评级分布，含 {colorLabelCount} 个颜色标签和按器材的精选率。"
+          "caption": "评级分布，含 {colorLabelCount} 个颜色标签和按器材的精选率。",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "关键词覆盖率",

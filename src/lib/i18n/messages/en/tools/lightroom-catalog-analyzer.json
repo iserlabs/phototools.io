@@ -147,7 +147,8 @@
             "topLens": "Top lens",
             "topFocalLength": "Top focal length"
           },
-          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses."
+          "caption": "Catalog overview: {totalPhotos} photos across {daysShot} days, {bodyCount} bodies, {lensCount} lenses.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Gear",
@@ -172,19 +173,26 @@
           "onePrime": "A {mm}mm prime would cover {pct}% of your shots within ±25%.",
           "noPrime": "Your focal-length use is too spread out for a single prime to dominate.",
           "caption": "1mm-bin histogram from {min}mm to {max}mm; {peakCount} top peaks labelled.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Focal Length per Zoom",
           "callout": "On your {lens}, {pct}% of shots are at {mm}mm.",
           "empty": "No zoom lenses detected in this catalog.",
-          "caption": "{n} zoom lens histograms with the dominant focal length highlighted."
+          "caption": "{n} zoom lens histograms with the dominant focal length highlighted.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Aperture Sweet Spot",
           "callout": "You shoot the {lens} wide open {pct}% of the time.",
           "empty": "Not enough data — need at least one lens with 100+ photos.",
-          "caption": "{n} lens aperture histograms."
+          "caption": "{n} lens aperture histograms.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Time of Day",
@@ -201,7 +209,8 @@
           },
           "perGear": "By body",
           "perGearPeak": "{gear} — peak hour {hour}:00",
-          "caption": "Photo counts across 24 hours with optional sun-angle breakdown."
+          "caption": "Photo counts across 24 hours with optional sun-angle breakdown.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Shooting Heatmap",
@@ -263,7 +272,9 @@
             "rating": "Rating",
             "count": "Photos"
           },
-          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates."
+          "caption": "Rating distribution with {colorLabelCount} color labels and per-gear pick rates.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Keyword Coverage",

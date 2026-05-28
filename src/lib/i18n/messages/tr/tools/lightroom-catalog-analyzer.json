@@ -147,7 +147,8 @@
             "topLens": "En sık objektif",
             "topFocalLength": "En sık odak uzaklığı"
           },
-          "caption": "Katalog genel bakışı: {daysShot} günde {totalPhotos} fotoğraf, {bodyCount} gövde, {lensCount} objektif."
+          "caption": "Katalog genel bakışı: {daysShot} günde {totalPhotos} fotoğraf, {bodyCount} gövde, {lensCount} objektif.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Ekipman",
@@ -172,19 +173,26 @@
           "onePrime": "Bir {mm}mm sabit objektif, çekimlerinizin %{pct}'sini ±%25 içinde karşılardı.",
           "noPrime": "Odak uzaklığı kullanımınız tek bir sabit objektifin baskın olması için çok dağınık.",
           "caption": "{min}mm'den {max}mm'ye 1mm aralıklı histogram; {peakCount} ana zirve etiketlendi.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Zoom Başına Odak Uzaklığı",
           "callout": "{lens} objektifinizde çekimlerin %{pct}'si {mm}mm'de.",
           "empty": "Bu katalogda zoom objektifi tespit edilmedi.",
-          "caption": "Baskın odak uzaklığı vurgulanmış {n} zoom objektifi histogramı."
+          "caption": "Baskın odak uzaklığı vurgulanmış {n} zoom objektifi histogramı.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Diyafram Tatlı Noktası",
           "callout": "{lens} objektifini zamanın %{pct}'sinde sonuna kadar açık çekiyorsunuz.",
           "empty": "Yeterli veri yok — 100+ fotoğrafı olan en az bir objektif gerekir.",
-          "caption": "{n} objektif diyafram histogramı."
+          "caption": "{n} objektif diyafram histogramı.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Günün Saati",
@@ -201,7 +209,8 @@
           },
           "perGear": "Gövdeye göre",
           "perGearPeak": "{gear} — zirve saat {hour}:00",
-          "caption": "İsteğe bağlı güneş açısı dökümüyle 24 saat boyunca fotoğraf sayıları."
+          "caption": "İsteğe bağlı güneş açısı dökümüyle 24 saat boyunca fotoğraf sayıları.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Çekim Isı Haritası",
@@ -263,7 +272,9 @@
             "rating": "Derecelendirme",
             "count": "Fotoğraflar"
           },
-          "caption": "{colorLabelCount} renk etiketi ve ekipman bazlı seçim oranlarıyla derecelendirme dağılımı."
+          "caption": "{colorLabelCount} renk etiketi ve ekipman bazlı seçim oranlarıyla derecelendirme dağılımı.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Anahtar Kelime Kapsamı",

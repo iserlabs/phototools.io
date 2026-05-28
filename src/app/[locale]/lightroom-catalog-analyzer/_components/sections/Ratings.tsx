@@ -75,7 +75,7 @@ export function Ratings() {
       </ul>
 
       <h3>{t('perGear')}</h3>
-      <h4 style={{ fontSize: 14, color: 'var(--text-secondary)', margin: '12px 0 4px' }}>Cameras</h4>
+      <h4 style={{ fontSize: 14, color: 'var(--text-secondary)', margin: '12px 0 4px' }}>{t('cameras')}</h4>
       <table style={TABLE}>
         <thead>
           <tr>
@@ -96,7 +96,7 @@ export function Ratings() {
           ))}
         </tbody>
       </table>
-      <h4 style={{ fontSize: 14, color: 'var(--text-secondary)', margin: '16px 0 4px' }}>Lenses</h4>
+      <h4 style={{ fontSize: 14, color: 'var(--text-secondary)', margin: '16px 0 4px' }}>{t('lenses')}</h4>
       <table style={TABLE}>
         <thead>
           <tr>

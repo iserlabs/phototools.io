@@ -147,7 +147,8 @@
             "topLens": "Belangrijkste lens",
             "topFocalLength": "Belangrijkste brandpuntsafstand"
           },
-          "caption": "Catalogusoverzicht: {totalPhotos} foto's verspreid over {daysShot} dagen, {bodyCount} body's, {lensCount} lenzen."
+          "caption": "Catalogusoverzicht: {totalPhotos} foto's verspreid over {daysShot} dagen, {bodyCount} body's, {lensCount} lenzen.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Apparatuur",
@@ -172,19 +173,26 @@
           "onePrime": "Een vaste lens van {mm}mm zou {pct}% van je opnames binnen ±25% dekken.",
           "noPrime": "Je gebruik van brandpuntsafstanden is te verspreid om één enkele vaste lens te laten domineren.",
           "caption": "Histogram met klassen van 1mm van {min}mm tot {max}mm; {peakCount} belangrijkste pieken gelabeld.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Brandpuntsafstand per zoom",
           "callout": "Op je {lens} is {pct}% van de opnames bij {mm}mm.",
           "empty": "Geen zoomlenzen gedetecteerd in deze catalogus.",
-          "caption": "{n} histogrammen van zoomlenzen met de dominante brandpuntsafstand gemarkeerd."
+          "caption": "{n} histogrammen van zoomlenzen met de dominante brandpuntsafstand gemarkeerd.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Optimaal diafragma",
           "callout": "Je fotografeert met de {lens} {pct}% van de tijd op volledige opening.",
           "empty": "Niet genoeg gegevens — er is minstens één lens met meer dan 100 foto's nodig.",
-          "caption": "{n} diafragmahistogrammen van lenzen."
+          "caption": "{n} diafragmahistogrammen van lenzen.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Tijdstip van de dag",
@@ -201,7 +209,8 @@
           },
           "perGear": "Per body",
           "perGearPeak": "{gear} — piekuur {hour}:00",
-          "caption": "Aantal foto's over 24 uur met optionele uitsplitsing naar zonnehoek."
+          "caption": "Aantal foto's over 24 uur met optionele uitsplitsing naar zonnehoek.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Opname-heatmap",
@@ -263,7 +272,9 @@
             "rating": "Beoordeling",
             "count": "Foto's"
           },
-          "caption": "Beoordelingsverdeling met {colorLabelCount} kleurlabels en selectieratio's per apparatuur."
+          "caption": "Beoordelingsverdeling met {colorLabelCount} kleurlabels en selectieratio's per apparatuur.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Trefwoorddekking",

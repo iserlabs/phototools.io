@@ -29,9 +29,9 @@ describe('SectionAnchorNav', () => {
     expect(links[0].getAttribute('href')).toBe('#section-year-in-review')
   })
 
-  it('marks the active section with aria-current="true"', () => {
+  it('marks the active section with aria-current="location"', () => {
     const { container } = renderWithIntl(<SectionAnchorNav activeSection="heatmap" />)
-    const active = container.querySelector('a[aria-current="true"]') as HTMLAnchorElement
+    const active = container.querySelector('a[aria-current="location"]') as HTMLAnchorElement
     expect(active.getAttribute('href')).toBe('#section-heatmap')
   })
 

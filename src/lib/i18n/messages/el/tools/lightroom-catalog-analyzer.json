@@ -147,7 +147,8 @@
             "topLens": "Κύριος φακός",
             "topFocalLength": "Συχνότερη εστιακή απόσταση"
           },
-          "caption": "Επισκόπηση καταλόγου: {totalPhotos} φωτογραφίες σε {daysShot} ημέρες, {bodyCount} σώματα, {lensCount} φακοί."
+          "caption": "Επισκόπηση καταλόγου: {totalPhotos} φωτογραφίες σε {daysShot} ημέρες, {bodyCount} σώματα, {lensCount} φακοί.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Εξοπλισμός",
@@ -172,19 +173,26 @@
           "onePrime": "Ένας σταθερός φακός {mm}mm θα κάλυπτε το {pct}% των λήψεών σας εντός ±25%.",
           "noPrime": "Η χρήση εστιακών αποστάσεων είναι πολύ διασκορπισμένη ώστε να κυριαρχήσει ένας μόνο σταθερός φακός.",
           "caption": "Ιστόγραμμα με κάδους 1mm από {min}mm έως {max}mm· {peakCount} κύριες κορυφές με ετικέτα.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Εστιακή απόσταση ανά ζουμ",
           "callout": "Στον φακό σας {lens}, το {pct}% των λήψεων είναι στα {mm}mm.",
           "empty": "Δεν εντοπίστηκαν φακοί ζουμ σε αυτόν τον κατάλογο.",
-          "caption": "{n} ιστογράμματα φακών ζουμ με επισήμανση της κυρίαρχης εστιακής απόστασης."
+          "caption": "{n} ιστογράμματα φακών ζουμ με επισήμανση της κυρίαρχης εστιακής απόστασης.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Ιδανικό διάφραγμα",
           "callout": "Φωτογραφίζετε τον {lens} με τέρμα ανοιχτό διάφραγμα το {pct}% του χρόνου.",
           "empty": "Δεν υπάρχουν αρκετά δεδομένα — χρειάζεται τουλάχιστον ένας φακός με 100+ φωτογραφίες.",
-          "caption": "{n} ιστογράμματα διαφράγματος φακών."
+          "caption": "{n} ιστογράμματα διαφράγματος φακών.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Ώρα της ημέρας",
@@ -201,7 +209,8 @@
           },
           "perGear": "Ανά σώμα",
           "perGearPeak": "{gear} — ώρα αιχμής {hour}:00",
-          "caption": "Αριθμοί φωτογραφιών σε 24 ώρες με προαιρετική ανάλυση κατά γωνία ήλιου."
+          "caption": "Αριθμοί φωτογραφιών σε 24 ώρες με προαιρετική ανάλυση κατά γωνία ήλιου.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Θερμικός χάρτης λήψεων",
@@ -263,7 +272,9 @@
             "rating": "Βαθμολογία",
             "count": "Φωτογραφίες"
           },
-          "caption": "Κατανομή βαθμολογιών με {colorLabelCount} ετικέτες χρώματος και ποσοστά επιλογής ανά εξοπλισμό."
+          "caption": "Κατανομή βαθμολογιών με {colorLabelCount} ετικέτες χρώματος και ποσοστά επιλογής ανά εξοπλισμό.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Κάλυψη λέξεων-κλειδιών",

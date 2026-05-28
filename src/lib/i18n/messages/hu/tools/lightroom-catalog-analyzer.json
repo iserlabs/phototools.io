@@ -147,7 +147,8 @@
             "topLens": "Leggyakoribb objektív",
             "topFocalLength": "Leggyakoribb gyújtótávolság"
           },
-          "caption": "Katalógus-áttekintés: {totalPhotos} fénykép {daysShot} nap alatt, {bodyCount} váz, {lensCount} objektív."
+          "caption": "Katalógus-áttekintés: {totalPhotos} fénykép {daysShot} nap alatt, {bodyCount} váz, {lensCount} objektív.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Felszerelés",
@@ -172,19 +173,26 @@
           "onePrime": "Egy {mm}mm-es fix objektív a felvételeinek {pct}%-át lefedné ±25%-on belül.",
           "noPrime": "A gyújtótávolság-használata túl szétszórt ahhoz, hogy egyetlen fix objektív domináljon.",
           "caption": "1mm-es rekeszekkel készült hisztogram {min}mm-től {max}mm-ig; {peakCount} fő csúcs felcímkézve.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Gyújtótávolság zoomonként",
           "callout": "A(z) {lens} objektíven a felvételek {pct}%-a {mm}mm-en készült.",
           "empty": "Nem észleltünk zoomobjektíveket ebben a katalógusban.",
-          "caption": "{n} zoomobjektív-hisztogram a domináns gyújtótávolság kiemelésével."
+          "caption": "{n} zoomobjektív-hisztogram a domináns gyújtótávolság kiemelésével.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Optimális rekesz",
           "callout": "A(z) {lens} objektívet az idő {pct}%-ában teljesen nyitott rekesszel fényképezi.",
           "empty": "Nincs elég adat — legalább egy objektív szükséges 100+ fényképpel.",
-          "caption": "{n} objektív rekesz-hisztogramja."
+          "caption": "{n} objektív rekesz-hisztogramja.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Napszak",
@@ -201,7 +209,8 @@
           },
           "perGear": "Váz szerint",
           "perGearPeak": "{gear} — csúcsóra {hour}:00",
-          "caption": "Fényképszámok 24 órán át, opcionális napszög szerinti lebontással."
+          "caption": "Fényképszámok 24 órán át, opcionális napszög szerinti lebontással.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Fényképezési hőtérkép",
@@ -263,7 +272,9 @@
             "rating": "Értékelés",
             "count": "Fényképek"
           },
-          "caption": "Értékelés-eloszlás {colorLabelCount} színcímkével és felszerelés szerinti kiválasztási arányokkal."
+          "caption": "Értékelés-eloszlás {colorLabelCount} színcímkével és felszerelés szerinti kiválasztási arányokkal.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Kulcsszó-lefedettség",

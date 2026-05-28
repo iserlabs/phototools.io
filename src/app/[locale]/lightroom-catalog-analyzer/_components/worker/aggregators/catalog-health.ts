@@ -24,7 +24,7 @@ export function aggregateCatalogHealth(db: DbLike): CatalogHealthBlock {
     missingOriginals = missingTotals?.n ?? 0
 
     const rawMissingPaths = db.selectObjects(
-      `SELECT pathFromRoot FROM AgLibraryFile WHERE missing = 1 AND pathFromRoot IS NOT NULL`,
+      `SELECT pathFromRoot FROM AgLibraryFile WHERE missing = 1 AND pathFromRoot IS NOT NULL LIMIT 5000`,
     ) as Array<{ pathFromRoot: string }>
     const folderCounts = new Map<string, number>()
     for (const row of rawMissingPaths) {

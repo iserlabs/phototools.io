@@ -42,7 +42,7 @@ export function SectionAnchorNav({ activeSection }: SectionAnchorNavProps) {
                       <a
                         href={`#${anchorIdFor(id)}`}
                         className={`${styles.anchorLink} ${isActive ? styles.anchorLinkActive : ''}`}
-                        aria-current={isActive ? 'true' : undefined}
+                        aria-current={isActive ? 'location' : undefined}
                       >
                         {t(`section.${id}` as const)}
                       </a>

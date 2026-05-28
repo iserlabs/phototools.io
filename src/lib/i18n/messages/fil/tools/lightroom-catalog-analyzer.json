@@ -147,7 +147,8 @@
             "topLens": "Nangungunang lens",
             "topFocalLength": "Nangungunang focal length"
           },
-          "caption": "Pangkalahatang-ideya ng catalog: {totalPhotos} larawan sa loob ng {daysShot} araw, {bodyCount} body, {lensCount} lens."
+          "caption": "Pangkalahatang-ideya ng catalog: {totalPhotos} larawan sa loob ng {daysShot} araw, {bodyCount} body, {lensCount} lens.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Gear",
@@ -172,19 +173,26 @@
           "onePrime": "Ang isang {mm}mm prime ay sasaklaw sa {pct}% ng iyong mga shot sa loob ng ±25%.",
           "noPrime": "Masyadong nakakalat ang paggamit mo ng focal length para mangibabaw ang iisang prime.",
           "caption": "Histogram na 1mm-bin mula {min}mm hanggang {max}mm; {peakCount} nangungunang peak ang nilagyan ng label.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Focal Length bawat Zoom",
           "callout": "Sa iyong {lens}, {pct}% ng mga shot ay nasa {mm}mm.",
           "empty": "Walang na-detect na zoom lens sa catalog na ito.",
-          "caption": "{n} histogram ng zoom lens na may na-highlight na nangingibabaw na focal length."
+          "caption": "{n} histogram ng zoom lens na may na-highlight na nangingibabaw na focal length.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Sweet Spot ng Aperture",
           "callout": "Kinukunan mo ang {lens} nang wide open {pct}% ng oras.",
           "empty": "Kulang ang datos — kailangan ng hindi bababa sa isang lens na may 100+ larawan.",
-          "caption": "{n} histogram ng aperture ng lens."
+          "caption": "{n} histogram ng aperture ng lens.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Oras ng Araw",
@@ -201,7 +209,8 @@
           },
           "perGear": "Ayon sa body",
           "perGearPeak": "{gear} — peak na oras {hour}:00",
-          "caption": "Bilang ng larawan sa loob ng 24 oras na may opsyonal na breakdown ng anggulo ng araw."
+          "caption": "Bilang ng larawan sa loob ng 24 oras na may opsyonal na breakdown ng anggulo ng araw.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Heatmap ng Pagkuha",
@@ -263,7 +272,9 @@
             "rating": "Rating",
             "count": "Larawan"
           },
-          "caption": "Distribusyon ng rating na may {colorLabelCount} color label at pick rate bawat gear."
+          "caption": "Distribusyon ng rating na may {colorLabelCount} color label at pick rate bawat gear.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Saklaw ng Keyword",

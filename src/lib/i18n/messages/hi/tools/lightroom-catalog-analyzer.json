@@ -147,7 +147,8 @@
             "topLens": "शीर्ष लेंस",
             "topFocalLength": "शीर्ष फोकल लंबाई"
           },
-          "caption": "कैटलॉग अवलोकन: {daysShot} दिनों में {totalPhotos} फ़ोटो, {bodyCount} बॉडी, {lensCount} लेंस।"
+          "caption": "कैटलॉग अवलोकन: {daysShot} दिनों में {totalPhotos} फ़ोटो, {bodyCount} बॉडी, {lensCount} लेंस।",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "गियर",
@@ -172,19 +173,26 @@
           "onePrime": "एक {mm}mm प्राइम आपके ±25% के भीतर {pct}% शॉट्स को कवर करेगा।",
           "noPrime": "आपका फोकल-लंबाई उपयोग एक ही प्राइम के हावी होने के लिए बहुत फैला हुआ है।",
           "caption": "{min}mm से {max}mm तक 1mm-बिन हिस्टोग्राम; {peakCount} शीर्ष शिखर लेबल किए गए।",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "प्रति ज़ूम फोकल लंबाई",
           "callout": "आपके {lens} पर, {pct}% शॉट्स {mm}mm पर हैं।",
           "empty": "इस कैटलॉग में कोई ज़ूम लेंस नहीं मिला।",
-          "caption": "{n} ज़ूम लेंस हिस्टोग्राम जिनमें प्रमुख फोकल लंबाई हाइलाइट की गई है।"
+          "caption": "{n} ज़ूम लेंस हिस्टोग्राम जिनमें प्रमुख फोकल लंबाई हाइलाइट की गई है।",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "अपर्चर स्वीट स्पॉट",
           "callout": "आप {lens} को {pct}% समय वाइड ओपन शूट करते हैं।",
           "empty": "पर्याप्त डेटा नहीं — कम से कम एक लेंस के 100+ फ़ोटो चाहिए।",
-          "caption": "{n} लेंस अपर्चर हिस्टोग्राम।"
+          "caption": "{n} लेंस अपर्चर हिस्टोग्राम।",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "दिन का समय",
@@ -201,7 +209,8 @@
           },
           "perGear": "बॉडी के अनुसार",
           "perGearPeak": "{gear} — चरम घंटा {hour}:00",
-          "caption": "वैकल्पिक सूर्य-कोण विवरण के साथ 24 घंटों में फ़ोटो की गिनती।"
+          "caption": "वैकल्पिक सूर्य-कोण विवरण के साथ 24 घंटों में फ़ोटो की गिनती।",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "शूटिंग हीटमैप",
@@ -263,7 +272,9 @@
             "rating": "रेटिंग",
             "count": "फ़ोटो"
           },
-          "caption": "{colorLabelCount} रंग लेबल और प्रति-गियर पिक दरों के साथ रेटिंग वितरण।"
+          "caption": "{colorLabelCount} रंग लेबल और प्रति-गियर पिक दरों के साथ रेटिंग वितरण।",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "कीवर्ड कवरेज",

@@ -83,15 +83,12 @@ export function aggregateOverview(db: DbLike, filter?: AnalysisFilter): Overview
 
   const first = totals.first ?? ''
   const last = totals.last ?? ''
-  const totalDays = first && last
-    ? Math.max(1, Math.ceil((new Date(last).getTime() - new Date(first).getTime()) / 86400000))
-    : 0
 
   return {
     totalPhotos: totals.total,
     dateRange: { first, last },
     daysShot,
-    photosPerDay: totalDays > 0 ? Number((totals.total / totalDays).toFixed(2)) : 0,
+    photosPerDay: daysShot > 0 ? Number((totals.total / daysShot).toFixed(1)) : 0,
     bodyCount: bodies.length,
     lensCount: lenses.length,
     topBody: bodies[0]?.name ?? null,

@@ -147,7 +147,8 @@
             "topLens": "Hauptobjektiv",
             "topFocalLength": "Wichtigste Brennweite"
           },
-          "caption": "Katalogübersicht: {totalPhotos} Fotos an {daysShot} Tagen, {bodyCount} Gehäuse, {lensCount} Objektive."
+          "caption": "Katalogübersicht: {totalPhotos} Fotos an {daysShot} Tagen, {bodyCount} Gehäuse, {lensCount} Objektive.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Ausrüstung",
@@ -172,19 +173,26 @@
           "onePrime": "Eine Festbrennweite von {mm} mm würde {pct} % deiner Aufnahmen innerhalb von ±25 % abdecken.",
           "noPrime": "Deine Brennweitennutzung ist zu breit gestreut, als dass eine einzelne Festbrennweite dominieren könnte.",
           "caption": "Histogramm mit 1-mm-Klassen von {min} mm bis {max} mm; {peakCount} wichtigste Spitzen beschriftet.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Brennweite pro Zoom",
           "callout": "Mit deinem {lens} sind {pct} % der Aufnahmen bei {mm} mm.",
           "empty": "In diesem Katalog wurden keine Zoomobjektive erkannt.",
-          "caption": "{n} Histogramme von Zoomobjektiven mit hervorgehobener dominanter Brennweite."
+          "caption": "{n} Histogramme von Zoomobjektiven mit hervorgehobener dominanter Brennweite.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Optimale Blende",
           "callout": "Du fotografierst mit dem {lens} {pct} % der Zeit bei Offenblende.",
           "empty": "Nicht genug Daten — es wird mindestens ein Objektiv mit über 100 Fotos benötigt.",
-          "caption": "{n} Blenden-Histogramme von Objektiven."
+          "caption": "{n} Blenden-Histogramme von Objektiven.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Tageszeit",
@@ -201,7 +209,8 @@
           },
           "perGear": "Nach Gehäuse",
           "perGearPeak": "{gear} — Spitzenstunde {hour}:00",
-          "caption": "Fotoanzahl über 24 Stunden mit optionaler Aufschlüsselung nach Sonnenstand."
+          "caption": "Fotoanzahl über 24 Stunden mit optionaler Aufschlüsselung nach Sonnenstand.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Aufnahme-Heatmap",
@@ -263,7 +272,9 @@
             "rating": "Bewertung",
             "count": "Fotos"
           },
-          "caption": "Bewertungsverteilung mit {colorLabelCount} Farbmarkierungen und Auswahlquoten nach Ausrüstung."
+          "caption": "Bewertungsverteilung mit {colorLabelCount} Farbmarkierungen und Auswahlquoten nach Ausrüstung.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Stichwortabdeckung",

@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useAnalyzer } from '../analyzer/useAnalyzer'
 import styles from './DrilldownForm.module.css'
@@ -18,6 +18,8 @@ export function DrilldownForm() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.drilldown')
   const { filter, applyFilter, reset, insightBlob } = useAnalyzer()
   const [form, setForm] = useState<FormState>(() => filterToFormState(filter))
+
+  useEffect(() => { setForm(filterToFormState(filter)) }, [filter])
 
   // Camera + lens lists from the current insightBlob gear data.
   const cameras = useMemo(() => {

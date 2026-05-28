@@ -147,7 +147,8 @@
             "topLens": "Objetivo principal",
             "topFocalLength": "Distancia focal principal"
           },
-          "caption": "Resumen del catálogo: {totalPhotos} fotos en {daysShot} días, {bodyCount} cuerpos, {lensCount} objetivos."
+          "caption": "Resumen del catálogo: {totalPhotos} fotos en {daysShot} días, {bodyCount} cuerpos, {lensCount} objetivos.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Equipo",
@@ -172,19 +173,26 @@
           "onePrime": "Un objetivo fijo de {mm} mm cubriría el {pct} % de tus disparos dentro de ±25 %.",
           "noPrime": "Tu uso de distancias focales está demasiado repartido para que domine un solo objetivo fijo.",
           "caption": "Histograma con intervalos de 1 mm desde {min} mm hasta {max} mm; {peakCount} picos principales etiquetados.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Distancia focal por zoom",
           "callout": "Con tu {lens}, el {pct} % de los disparos son a {mm} mm.",
           "empty": "No se detectaron objetivos zoom en este catálogo.",
-          "caption": "{n} histogramas de objetivos zoom con la distancia focal dominante resaltada."
+          "caption": "{n} histogramas de objetivos zoom con la distancia focal dominante resaltada.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Apertura óptima",
           "callout": "Disparas con el {lens} a máxima apertura el {pct} % de las veces.",
           "empty": "No hay datos suficientes — se necesita al menos un objetivo con más de 100 fotos.",
-          "caption": "{n} histogramas de apertura de objetivos."
+          "caption": "{n} histogramas de apertura de objetivos.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Hora del día",
@@ -201,7 +209,8 @@
           },
           "perGear": "Por cuerpo",
           "perGearPeak": "{gear} — hora punta {hour}:00",
-          "caption": "Recuentos de fotos a lo largo de 24 horas con un desglose opcional por ángulo solar."
+          "caption": "Recuentos de fotos a lo largo de 24 horas con un desglose opcional por ángulo solar.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Mapa de calor de disparos",
@@ -263,7 +272,9 @@
             "rating": "Valoración",
             "count": "Fotos"
           },
-          "caption": "Distribución de valoraciones con {colorLabelCount} etiquetas de color y tasas de selección por equipo."
+          "caption": "Distribución de valoraciones con {colorLabelCount} etiquetas de color y tasas de selección por equipo.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Cobertura de palabras clave",

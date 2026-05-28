@@ -147,7 +147,8 @@
             "topLens": "Obiettivo principale",
             "topFocalLength": "Lunghezza focale principale"
           },
-          "caption": "Panoramica del catalogo: {totalPhotos} foto in {daysShot} giorni, {bodyCount} corpi, {lensCount} obiettivi."
+          "caption": "Panoramica del catalogo: {totalPhotos} foto in {daysShot} giorni, {bodyCount} corpi, {lensCount} obiettivi.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Attrezzatura",
@@ -172,19 +173,26 @@
           "onePrime": "Un obiettivo fisso da {mm} mm coprirebbe il {pct}% dei tuoi scatti entro ±25%.",
           "noPrime": "Il tuo uso delle lunghezze focali è troppo distribuito perché un singolo obiettivo fisso possa dominare.",
           "caption": "Istogramma con intervalli di 1 mm da {min} mm a {max} mm; {peakCount} picchi principali etichettati.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Lunghezza focale per zoom",
           "callout": "Con il tuo {lens}, il {pct}% degli scatti è a {mm} mm.",
           "empty": "Nessun obiettivo zoom rilevato in questo catalogo.",
-          "caption": "{n} istogrammi di obiettivi zoom con la lunghezza focale dominante evidenziata."
+          "caption": "{n} istogrammi di obiettivi zoom con la lunghezza focale dominante evidenziata.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Apertura ottimale",
           "callout": "Scatti con il {lens} a tutta apertura il {pct}% delle volte.",
           "empty": "Dati insufficienti — serve almeno un obiettivo con più di 100 foto.",
-          "caption": "{n} istogrammi di apertura degli obiettivi."
+          "caption": "{n} istogrammi di apertura degli obiettivi.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Ora del giorno",
@@ -201,7 +209,8 @@
           },
           "perGear": "Per corpo",
           "perGearPeak": "{gear} — ora di punta {hour}:00",
-          "caption": "Conteggi delle foto nell'arco di 24 ore con suddivisione opzionale per angolo del sole."
+          "caption": "Conteggi delle foto nell'arco di 24 ore con suddivisione opzionale per angolo del sole.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Mappa di calore degli scatti",
@@ -263,7 +272,9 @@
             "rating": "Valutazione",
             "count": "Foto"
           },
-          "caption": "Distribuzione delle valutazioni con {colorLabelCount} etichette colorate e tassi di selezione per attrezzatura."
+          "caption": "Distribuzione delle valutazioni con {colorLabelCount} etichette colorate e tassi di selezione per attrezzatura.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Copertura delle parole chiave",

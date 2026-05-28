@@ -147,7 +147,8 @@
             "topLens": "Lensa teratas",
             "topFocalLength": "Panjang fokus teratas"
           },
-          "caption": "Gambaran keseluruhan katalog: {totalPhotos} foto dalam {daysShot} hari, {bodyCount} badan, {lensCount} lensa."
+          "caption": "Gambaran keseluruhan katalog: {totalPhotos} foto dalam {daysShot} hari, {bodyCount} badan, {lensCount} lensa.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Peralatan",
@@ -172,19 +173,26 @@
           "onePrime": "Sebuah lensa prima {mm}mm akan meliputi {pct}% rakaman anda dalam ±25%.",
           "noPrime": "Penggunaan panjang fokus anda terlalu tersebar untuk satu lensa prima mendominasi.",
           "caption": "Histogram bin-1mm dari {min}mm hingga {max}mm; {peakCount} puncak teratas dilabel.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Panjang Fokus per Zum",
           "callout": "Pada {lens} anda, {pct}% rakaman berada pada {mm}mm.",
           "empty": "Tiada lensa zum dikesan dalam katalog ini.",
-          "caption": "{n} histogram lensa zum dengan panjang fokus dominan diserlahkan."
+          "caption": "{n} histogram lensa zum dengan panjang fokus dominan diserlahkan.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Titik Optimum Aperture",
           "callout": "Anda merakam {lens} bukaan penuh {pct}% daripada masa.",
           "empty": "Data tidak mencukupi — memerlukan sekurang-kurangnya satu lensa dengan 100+ foto.",
-          "caption": "{n} histogram aperture lensa."
+          "caption": "{n} histogram aperture lensa.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Waktu dalam Sehari",
@@ -201,7 +209,8 @@
           },
           "perGear": "Mengikut badan",
           "perGearPeak": "{gear} — waktu puncak {hour}:00",
-          "caption": "Bilangan foto sepanjang 24 jam dengan pecahan sudut matahari pilihan."
+          "caption": "Bilangan foto sepanjang 24 jam dengan pecahan sudut matahari pilihan.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Peta Haba Rakaman",
@@ -263,7 +272,9 @@
             "rating": "Penarafan",
             "count": "Foto"
           },
-          "caption": "Taburan penarafan dengan {colorLabelCount} label warna dan kadar pilihan setiap peralatan."
+          "caption": "Taburan penarafan dengan {colorLabelCount} label warna dan kadar pilihan setiap peralatan.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Liputan Kata Kunci",

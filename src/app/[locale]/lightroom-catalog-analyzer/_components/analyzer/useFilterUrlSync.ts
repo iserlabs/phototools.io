@@ -144,11 +144,10 @@ export function useFilterUrlSync(
     }
   }, [onHydrate, ready])
 
-  // Push filter changes to the URL (replaceState, throttled to 200ms).
   useEffect(() => {
     if (!hydratedRef.current) return
     if (typeof window === 'undefined') return
-    if (timerRef.current) return
+    if (timerRef.current) clearTimeout(timerRef.current)
     timerRef.current = setTimeout(() => {
       const qs = serializeFilter(filter)
       const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname

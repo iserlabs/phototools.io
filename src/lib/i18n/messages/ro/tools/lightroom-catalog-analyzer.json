@@ -147,7 +147,8 @@
             "topLens": "Obiectiv principal",
             "topFocalLength": "Distanța focală principală"
           },
-          "caption": "Prezentare generală a catalogului: {totalPhotos} fotografii în {daysShot} zile, {bodyCount} corpuri, {lensCount} obiective."
+          "caption": "Prezentare generală a catalogului: {totalPhotos} fotografii în {daysShot} zile, {bodyCount} corpuri, {lensCount} obiective.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Echipament",
@@ -172,19 +173,26 @@
           "onePrime": "Un obiectiv fix de {mm} mm ar acoperi {pct}% dintre fotografiile tale în limita ±25%.",
           "noPrime": "Utilizarea distanțelor focale este prea dispersată pentru ca un singur obiectiv fix să domine.",
           "caption": "Histogramă cu intervale de 1 mm de la {min} mm la {max} mm; {peakCount} vârfuri principale etichetate.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Distanță focală per zoom",
           "callout": "Cu {lens}, {pct}% dintre fotografii sunt la {mm} mm.",
           "empty": "Niciun obiectiv zoom detectat în acest catalog.",
-          "caption": "{n} histograme de obiective zoom cu distanța focală dominantă evidențiată."
+          "caption": "{n} histograme de obiective zoom cu distanța focală dominantă evidențiată.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Diafragma optimă",
           "callout": "Fotografiezi cu {lens} la deschidere maximă {pct}% din timp.",
           "empty": "Date insuficiente — este nevoie de cel puțin un obiectiv cu peste 100 de fotografii.",
-          "caption": "{n} histograme de diafragmă ale obiectivelor."
+          "caption": "{n} histograme de diafragmă ale obiectivelor.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Ora din zi",
@@ -201,7 +209,8 @@
           },
           "perGear": "Pe corp",
           "perGearPeak": "{gear} — ora de vârf {hour}:00",
-          "caption": "Numărul de fotografii pe parcursul a 24 de ore, cu defalcare opțională pe unghiul soarelui."
+          "caption": "Numărul de fotografii pe parcursul a 24 de ore, cu defalcare opțională pe unghiul soarelui.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Hartă termică a fotografiilor",
@@ -263,7 +272,9 @@
             "rating": "Evaluare",
             "count": "Fotografii"
           },
-          "caption": "Distribuția evaluărilor cu {colorLabelCount} etichete de culoare și rate de selecție pe echipament."
+          "caption": "Distribuția evaluărilor cu {colorLabelCount} etichete de culoare și rate de selecție pe echipament.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Acoperirea cuvintelor-cheie",

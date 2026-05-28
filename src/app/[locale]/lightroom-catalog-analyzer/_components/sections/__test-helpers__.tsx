@@ -124,7 +124,7 @@ export function makeFixtureBlob(overrides: Partial<InsightBlob> = {}): InsightBl
       perLens: [
         {
           lens: '24-70mm f/2.8 GM',
-          histogram: [{ aperture: 2.8, count: 1280 }, { aperture: 4, count: 320 }, { aperture: 5.6, count: 200 }],
+          histogram: [{ aperture: 2.97, count: 1280 }, { aperture: 4, count: 320 }, { aperture: 4.97, count: 200 }],
           wideOpenPct: 71,
         },
       ],

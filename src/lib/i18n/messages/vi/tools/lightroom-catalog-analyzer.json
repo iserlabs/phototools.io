@@ -147,7 +147,8 @@
             "topLens": "Ống kính hàng đầu",
             "topFocalLength": "Tiêu cự hàng đầu"
           },
-          "caption": "Tổng quan catalog: {totalPhotos} ảnh trong {daysShot} ngày, {bodyCount} thân máy, {lensCount} ống kính."
+          "caption": "Tổng quan catalog: {totalPhotos} ảnh trong {daysShot} ngày, {bodyCount} thân máy, {lensCount} ống kính.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Thiết bị",
@@ -172,19 +173,26 @@
           "onePrime": "Một ống kính fix {mm}mm sẽ bao phủ {pct}% số ảnh của bạn trong khoảng ±25%.",
           "noPrime": "Việc sử dụng tiêu cự của bạn quá phân tán để một ống kính fix duy nhất chiếm ưu thế.",
           "caption": "Biểu đồ với khoảng chia 1mm từ {min}mm đến {max}mm; {peakCount} đỉnh hàng đầu được gắn nhãn.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Tiêu cự theo ống kính zoom",
           "callout": "Trên {lens} của bạn, {pct}% số ảnh ở {mm}mm.",
           "empty": "Không phát hiện ống kính zoom nào trong catalog này.",
-          "caption": "{n} biểu đồ ống kính zoom với tiêu cự chủ đạo được làm nổi bật."
+          "caption": "{n} biểu đồ ống kính zoom với tiêu cự chủ đạo được làm nổi bật.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Điểm khẩu độ tối ưu",
           "callout": "Bạn chụp {lens} mở khẩu tối đa {pct}% thời gian.",
           "empty": "Không đủ dữ liệu — cần ít nhất một ống kính có 100+ ảnh.",
-          "caption": "{n} biểu đồ khẩu độ ống kính."
+          "caption": "{n} biểu đồ khẩu độ ống kính.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Thời điểm trong ngày",
@@ -201,7 +209,8 @@
           },
           "perGear": "Theo thân máy",
           "perGearPeak": "{gear} — giờ cao điểm {hour}:00",
-          "caption": "Số lượng ảnh trong 24 giờ với phân tích góc mặt trời tùy chọn."
+          "caption": "Số lượng ảnh trong 24 giờ với phân tích góc mặt trời tùy chọn.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Bản đồ nhiệt chụp ảnh",
@@ -263,7 +272,9 @@
             "rating": "Xếp hạng",
             "count": "Ảnh"
           },
-          "caption": "Phân bố xếp hạng với {colorLabelCount} nhãn màu và tỷ lệ chọn theo từng thiết bị."
+          "caption": "Phân bố xếp hạng với {colorLabelCount} nhãn màu và tỷ lệ chọn theo từng thiết bị.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Mức độ phủ từ khóa",

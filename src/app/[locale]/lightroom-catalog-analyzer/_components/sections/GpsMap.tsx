@@ -10,8 +10,6 @@ export function GpsMap() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.sections.gps-map')
   const { insightBlob } = useAnalyzer()
   const gps = insightBlob?.gps ?? null
-
-  if (gps && gps.pctWithGps < 1) return null
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const [world, setWorld] = useState<GeoFeatureCollection | null>(null)
 
@@ -43,7 +41,7 @@ export function GpsMap() {
     drawGpsMap(ctx, gps, world, { width: rect.width, height: rect.height })
   }, [gps, world])
 
-  if (!gps || gps.totalPhotosWithGps === 0) {
+  if (!gps || gps.pctWithGps < 1 || gps.totalPhotosWithGps === 0) {
     return (
       <section aria-labelledby="gps-heading">
         <h2 id="gps-heading">{t('title')}</h2>

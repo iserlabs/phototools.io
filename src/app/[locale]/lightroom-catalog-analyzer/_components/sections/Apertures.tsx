@@ -58,7 +58,7 @@ export function Apertures() {
           <select
             value={selectedIdx}
             onChange={(e) => setSelectedIdx(Number(e.target.value))}
-            aria-label="Select lens"
+            aria-label={t('selectLens')}
           >
             {processedLenses.map((l, i) => (
               <option key={l.lens} value={i}>{l.lens}</option>
@@ -68,7 +68,7 @@ export function Apertures() {
       </header>
 
       <figure style={INLINE_FIGURE}>
-        <h3>{lens.lens} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: 12 }}>({lens.totalShots.toLocaleString()} shots)</span></h3>
+        <h3>{lens.lens} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: 12 }}>({t('shotCount', { count: lens.totalShots.toLocaleString() })})</span></h3>
         <ResponsiveContainer width="100%" height={180}>
           <BarChart data={lens.histogram} accessibilityLayer margin={{ top: 4, right: 12, left: 0, bottom: 4 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
@@ -80,7 +80,7 @@ export function Apertures() {
         </ResponsiveContainer>
         {lens.peak && (
           <p style={CALLOUT}>
-            Your most-used aperture on the {lens.lens} is {fmtFStop(lens.peak.fStop)} ({peakPct}% of shots).
+            {t('mostUsedCallout', { lens: lens.lens, aperture: fmtFStop(lens.peak.fStop), pct: String(peakPct) })}
           </p>
         )}
       </figure>

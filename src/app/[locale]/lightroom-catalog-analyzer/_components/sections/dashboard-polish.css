@@ -158,7 +158,7 @@
 
 #lrcat-main {
   scrollbar-color: color-mix(in srgb, var(--text-muted) 20%, transparent) transparent;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth disabled — causes CLS during anchor scroll-spy */
 }
 
 /* ── Reduce motion ── */

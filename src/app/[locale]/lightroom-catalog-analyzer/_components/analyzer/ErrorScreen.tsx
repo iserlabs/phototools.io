@@ -24,9 +24,9 @@ export function ErrorScreen({ errorKind, onRetry }: ErrorScreenProps) {
   const key = errorKind && KNOWN_ERROR_KEYS.has(errorKind) ? errorKind : 'unknown'
 
   return (
-    <section className={styles.errorWrap} role="alert">
+    <section className={styles.errorWrap}>
       <h2 className={styles.errorTitle}>{t('title')}</h2>
-      <p className={styles.errorMessage}>{t(key)}</p>
+      <p className={styles.errorMessage} role="alert">{t(key)}</p>
       <button type="button" className={styles.errorRetry} onClick={onRetry}>
         {t('retry')}
       </button>

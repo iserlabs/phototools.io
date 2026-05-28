@@ -147,7 +147,8 @@
             "topLens": "Найчастіший об'єктив",
             "topFocalLength": "Найчастіша фокусна відстань"
           },
-          "caption": "Огляд каталогу: {totalPhotos} фотографій за {daysShot} днів, камер: {bodyCount}, об'єктивів: {lensCount}."
+          "caption": "Огляд каталогу: {totalPhotos} фотографій за {daysShot} днів, камер: {bodyCount}, об'єктивів: {lensCount}.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Техніка",
@@ -172,19 +173,26 @@
           "onePrime": "Фікс {mm}мм покрив би {pct}% ваших кадрів у межах ±25%.",
           "noPrime": "Ваше використання фокусних відстаней занадто розпорошене, щоб один фікс домінував.",
           "caption": "Гістограма з кроком 1 мм від {min}мм до {max}мм; позначено {peakCount} основних піків.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Фокусна відстань за зумом",
           "callout": "На об'єктиві {lens} {pct}% кадрів зняті на {mm}мм.",
           "empty": "У цьому каталозі не виявлено зум-об'єктивів.",
-          "caption": "{n} гістограм зум-об'єктивів із виділеною домінуючою фокусною відстанню."
+          "caption": "{n} гістограм зум-об'єктивів із виділеною домінуючою фокусною відстанню.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Оптимальна діафрагма",
           "callout": "Ви знімаєте об'єктивом {lens} на повністю відкритій діафрагмі у {pct}% випадків.",
           "empty": "Недостатньо даних — потрібен щонайменше один об'єктив зі 100+ фотографіями.",
-          "caption": "{n} гістограм діафрагми об'єктивів."
+          "caption": "{n} гістограм діафрагми об'єктивів.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Час доби",
@@ -201,7 +209,8 @@
           },
           "perGear": "За камерою",
           "perGearPeak": "{gear} — пікова година {hour}:00",
-          "caption": "Кількість фотографій за 24 години з додатковим розподілом за кутом сонця."
+          "caption": "Кількість фотографій за 24 години з додатковим розподілом за кутом сонця.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Теплова карта зйомки",
@@ -263,7 +272,9 @@
             "rating": "Рейтинг",
             "count": "Фотографії"
           },
-          "caption": "Розподіл рейтингів з {colorLabelCount} кольоровими мітками та частками відбору за технікою."
+          "caption": "Розподіл рейтингів з {colorLabelCount} кольоровими мітками та частками відбору за технікою.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Покриття ключовими словами",

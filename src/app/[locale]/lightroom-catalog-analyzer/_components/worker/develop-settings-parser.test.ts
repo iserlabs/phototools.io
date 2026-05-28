@@ -76,4 +76,11 @@ describe('parseDevelopSettings', () => {
   it('returns 0 sliders for an untouched blob', () => {
     expect(parseDevelopSettings(emptyBlob).slidersTouched).toBe(0)
   })
+
+  it('clamps extreme exposure values to ±10', () => {
+    const extreme = `s = {\n\tExposure2012 = "999",\n}`
+    expect(parseDevelopSettings(extreme).exposureShiftStops).toBe(10)
+    const negative = `s = {\n\tExposure2012 = "-500",\n}`
+    expect(parseDevelopSettings(negative).exposureShiftStops).toBe(-10)
+  })
 })

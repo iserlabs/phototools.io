@@ -78,7 +78,7 @@ export function FocalLength() {
       <figure>
         <h3>{t('histogramTitle')}</h3>
 
-        <h4 style={MUTED_LABEL}>Wide – 100 mm</h4>
+        <h4 style={MUTED_LABEL}>{t('wideRange')}</h4>
         <canvas
           ref={wideRef}
           role="img"
@@ -88,7 +88,7 @@ export function FocalLength() {
 
         {teleBlock && (
           <>
-            <h4 style={{ ...MUTED_LABEL, marginTop: 12 }}>100 mm+</h4>
+            <h4 style={{ ...MUTED_LABEL, marginTop: 12 }}>{t('teleRange')}</h4>
             <canvas
               ref={teleRef}
               role="img"

@@ -147,7 +147,8 @@
             "topLens": "Nejčastější objektiv",
             "topFocalLength": "Nejčastější ohnisková vzdálenost"
           },
-          "caption": "Přehled katalogu: {totalPhotos} fotografií za {daysShot} dní, {bodyCount} těl, {lensCount} objektivů."
+          "caption": "Přehled katalogu: {totalPhotos} fotografií za {daysShot} dní, {bodyCount} těl, {lensCount} objektivů.",
+          "burstSub": "{unique} unique · {bursts} in bursts"
         },
         "gear": {
           "title": "Výbava",
@@ -172,19 +173,26 @@
           "onePrime": "Pevný objektiv {mm}mm by pokryl {pct}% vašich snímků v rozsahu ±25%.",
           "noPrime": "Vaše využití ohniskových vzdáleností je příliš rozptýlené, aby dominoval jediný pevný objektiv.",
           "caption": "Histogram s koši po 1 mm od {min}mm do {max}mm; označeno {peakCount} hlavních špiček.",
-          "peakItem": "{mm}mm · {pct}%"
+          "peakItem": "{mm}mm · {pct}%",
+          "wideRange": "Wide – 100 mm",
+          "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
           "title": "Ohnisková vzdálenost podle zoomu",
           "callout": "Na objektivu {lens} je {pct}% snímků při {mm}mm.",
           "empty": "V tomto katalogu nebyly zjištěny žádné zoomové objektivy.",
-          "caption": "{n} histogramů zoomových objektivů se zvýrazněnou dominantní ohniskovou vzdáleností."
+          "caption": "{n} histogramů zoomových objektivů se zvýrazněnou dominantní ohniskovou vzdáleností.",
+          "selectLens": "Select zoom lens",
+          "shotCount": "{count} shots"
         },
         "apertures": {
           "title": "Optimální clona",
           "callout": "Objektivem {lens} fotíte naplno otevřeným {pct}% času.",
           "empty": "Nedostatek dat — je potřeba alespoň jeden objektiv se 100+ fotografiemi.",
-          "caption": "{n} histogramů clony objektivů."
+          "caption": "{n} histogramů clony objektivů.",
+          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
+          "selectLens": "Select lens",
+          "shotCount": "{count} shots"
         },
         "time-of-day": {
           "title": "Denní doba",
@@ -201,7 +209,8 @@
           },
           "perGear": "Podle těla",
           "perGearPeak": "{gear} — špičková hodina {hour}:00",
-          "caption": "Počty fotografií během 24 hodin s volitelným rozdělením podle úhlu slunce."
+          "caption": "Počty fotografií během 24 hodin s volitelným rozdělením podle úhlu slunce.",
+          "perGearPeakHour": "peak hour {hour}:00"
         },
         "heatmap": {
           "title": "Teplotní mapa fotografování",
@@ -263,7 +272,9 @@
             "rating": "Hodnocení",
             "count": "Fotografie"
           },
-          "caption": "Rozdělení hodnocení s {colorLabelCount} barevnými štítky a mírou výběru podle výbavy."
+          "caption": "Rozdělení hodnocení s {colorLabelCount} barevnými štítky a mírou výběru podle výbavy.",
+          "cameras": "Cameras",
+          "lenses": "Lenses"
         },
         "keywords": {
           "title": "Pokrytí klíčovými slovy",

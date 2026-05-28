@@ -34,7 +34,7 @@ export function FocalLengthPerZoom() {
           <select
             value={selectedIdx}
             onChange={(e) => setSelectedIdx(Number(e.target.value))}
-            aria-label="Select zoom lens"
+            aria-label={t('selectLens')}
           >
             {zooms.map((zoom, i) => (
               <option key={zoom.lens} value={i}>{zoom.lens}</option>
@@ -44,7 +44,7 @@ export function FocalLengthPerZoom() {
       </header>
 
       <figure style={INLINE_FIGURE}>
-        <h3>{z.lens} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: 12 }}>({totalShots.toLocaleString()} shots)</span></h3>
+        <h3>{z.lens} <span style={{ fontWeight: 400, color: 'var(--text-muted)', fontSize: 12 }}>({t('shotCount', { count: totalShots.toLocaleString() })})</span></h3>
         <ResponsiveContainer width="100%" height={Math.max(200, buckets.length * 32)}>
           <BarChart data={buckets} layout="vertical" accessibilityLayer margin={{ top: 4, right: 12, left: 8, bottom: 4 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />

@@ -57,7 +57,7 @@ export function aggregateEditIntensity(db: DbLike, filter?: AnalysisFilter): Edi
   const popCount = (db.selectObject(
     `SELECT COUNT(*) AS n FROM Adobe_imageDevelopSettings`,
   ) as { n: number } | undefined)?.n ?? 0
-  const sampled = popCount > SAMPLE_THRESHOLD
+  const sampled = popCount > SAMPLE_THRESHOLD && !filter
   const sampleClause = sampled ? `AND (img.id_local % ${SAMPLE_MODULUS}) = 0` : ''
 
   const rows = db.selectObjects(

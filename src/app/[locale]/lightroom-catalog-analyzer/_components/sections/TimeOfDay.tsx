@@ -58,8 +58,9 @@ export function TimeOfDay() {
               <h3>{t('perGear')}</h3>
               <ul style={COMPACT_LIST}>
                 {block.perGearByClockHour.map((row) => {
+                  if (row.histogram.length === 0) return null
                   const peak = row.histogram.reduce((m, h) => (h.count > m.count ? h : m), row.histogram[0]!)
-                  return <li key={row.gear} style={{ marginBottom: 4 }}><span style={PILL}>{row.gear}</span> {t('perGearPeak', { gear: '', hour: peak.hour })}</li>
+                  return <li key={row.gear} style={{ marginBottom: 4 }}><span style={PILL}>{row.gear}</span> {t('perGearPeakHour', { hour: peak.hour })}</li>
                 })}
               </ul>
             </div>

@@ -112,8 +112,12 @@ export function AnalyzerProvider({ children }: { children: ReactNode }) {
   const reset = useCallback(async () => {
     const handle = handleRef.current
     if (handle) {
-      const blob = await handle.api.applyFilter({})
-      dispatch({ type: 'reset-filter', blob })
+      try {
+        const blob = await handle.api.applyFilter({})
+        dispatch({ type: 'reset-filter', blob })
+      } catch {
+        dispatch({ type: 'set-filter', filter: undefined })
+      }
     } else {
       dispatch({ type: 'set-filter', filter: undefined })
     }
