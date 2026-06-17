@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/nextjs'
+import { IGNORE_SENTRY_ERRORS } from '@/lib/sentry-filters'
 
 Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
@@ -17,9 +18,10 @@ Sentry.init({
   replaysSessionSampleRate: 0,
   replaysOnErrorSampleRate: 0,
 
-  // Browser-extension content scripts that hit our production CSP raise an
-  // unactionable error here. The CSP is working as intended; drop the noise.
-  ignoreErrors: [/unsafe-eval is not an allowed source of script/],
+  // Unactionable browser noise (extensions, in-app WebViews, RSC stream
+  // aborts). Kept in a tested module so a typo'd pattern can't silently let
+  // the noise through — see src/lib/sentry-filters.ts.
+  ignoreErrors: IGNORE_SENTRY_ERRORS,
 })
 
 // Instrument App Router navigations
