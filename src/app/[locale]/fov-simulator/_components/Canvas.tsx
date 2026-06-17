@@ -45,6 +45,10 @@ export function Canvas({ lenses, imageIndex, orientation, canvasRef, cleanCanvas
     const ctx = canvas.getContext('2d')
     if (!ctx) return
     const w = canvas.width; const h = canvas.height; const dpr = window.devicePixelRatio || 1
+    // A collapsed parent (hidden tab, pre-layout pass, or a 0-width flex frame)
+    // can size the canvas to 0×0. Copying a 0-dimension canvas into cleanCanvas
+    // throws InvalidStateError, so bail before any drawImage runs.
+    if (w === 0 || h === 0) return
 
     drawImageCover(ctx, img, 0, 0, w, h)
     const cleanCanvas = cleanCanvasRef.current
@@ -92,6 +96,9 @@ export function Canvas({ lenses, imageIndex, orientation, canvasRef, cleanCanvas
       const isMobile = window.innerWidth < 1024
       let w = rect.width; let h = w / aspect
       if (!isMobile && h > rect.height) { h = rect.height; w = h * aspect }
+      // Skip while the parent is collapsed (e.g. behind a mobile/desktop
+      // display:none switch); sizing to 0 would clear the canvas and crash draw().
+      if (w <= 0 || h <= 0) return
       canvas.style.width = `${w}px`; canvas.style.height = `${h}px`
       canvas.width = w * dpr; canvas.height = h * dpr; draw()
     })
