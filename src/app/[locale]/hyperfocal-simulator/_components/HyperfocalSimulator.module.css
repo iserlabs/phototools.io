@@ -173,7 +173,16 @@
   display: none;
 }
 
+.desktopOnly {
+  display: block;
+  overflow-y: auto;
+  border-left: 1px solid var(--border);
+}
+
 @media (max-width: 1023px) {
+  .desktopOnly {
+    display: none;
+  }
   .app {
     height: auto;
     overflow: visible;

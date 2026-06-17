@@ -8,6 +8,7 @@ import { SENSORS } from '@/lib/data/sensors'
 import { useQueryInit, useToolQuerySync, intParam, numParam, strParam, sensorParam } from '@/lib/utils/querySync'
 import { ToolActions } from '@/components/shared/ToolActions'
 import { ToolHeading } from '@/components/shared/ToolHeading'
+import { LearnPanel } from '@/components/shared/LearnPanel'
 import { RelatedTools } from '@/components/shared/RelatedTools'
 import { DoFDiagram } from '@/components/shared/DoFDiagram'
 import { DoFCanvas } from '@/components/shared/DoFCanvas'
@@ -119,6 +120,9 @@ export function HyperfocalSimulator() {
             <DoFDiagram result={result} distance={distance} onDistanceChange={handleDiagramDistanceChange} />
           </div>
         </div>
+        <div className={s.desktopOnly}>
+          <LearnPanel slug="hyperfocal-simulator" />
+        </div>
       </div>
 
       <div className={s.mobileControls}>
@@ -126,6 +130,7 @@ export function HyperfocalSimulator() {
         <div className={s.panel}>
           <HyperfocalResults result={result} distance={distance} isAtHyperfocal={isAtHyperfocal} />
         </div>
+        <LearnPanel slug="hyperfocal-simulator" />
       </div>
       <RelatedTools variant="inline" currentSlug="hyperfocal-simulator" />
     </div>
