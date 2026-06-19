@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/nextjs'
-import { IGNORE_SENTRY_ERRORS } from '@/lib/sentry-filters'
+import { IGNORE_SENTRY_ERRORS, SENTRY_DENY_URLS } from '@/lib/sentry-filters'
 import { installDomMutationGuard } from '@/lib/utils/dom-mutation-guard'
 
 // Harden Node.removeChild / insertBefore before React hydrates, so that browser
@@ -28,6 +28,11 @@ Sentry.init({
   // aborts). Kept in a tested module so a typo'd pattern can't silently let
   // the noise through — see src/lib/sentry-filters.ts.
   ignoreErrors: IGNORE_SENTRY_ERRORS,
+
+  // Drop errors thrown by third-party scripts we can't patch (e.g. the
+  // CookieYes consent banner's unhandled localStorage SecurityError), matched
+  // by the culprit frame's URL rather than its message — see sentry-filters.ts.
+  denyUrls: SENTRY_DENY_URLS,
 })
 
 // Instrument App Router navigations

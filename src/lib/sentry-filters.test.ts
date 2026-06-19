@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { IGNORE_SENTRY_ERRORS } from './sentry-filters'
+import { IGNORE_SENTRY_ERRORS, SENTRY_DENY_URLS } from './sentry-filters'
 
 // Mirror of Sentry's own matching (eventFilters.ts / string.ts): an event is
 // dropped if ANY ignore pattern matches ANY of its candidate messages — the
@@ -68,6 +68,53 @@ describe('IGNORE_SENTRY_ERRORS', () => {
 
     it.each(real)('keeps: %s', (_name, type, value) => {
       expect(isIgnored(type, value)).toBe(false)
+    })
+  })
+})
+
+// Mirror of Sentry's denyUrls matching (eventFilters.ts): an event is dropped
+// when the URL of its throwing frame matches any pattern — regex via `.test()`,
+// strings via substring `.includes()`.
+function isUrlDenied(url: string): boolean {
+  return SENTRY_DENY_URLS.some((pattern) =>
+    typeof pattern === 'string' ? url.includes(pattern) : pattern.test(url),
+  )
+}
+
+describe('SENTRY_DENY_URLS', () => {
+  it('every entry is a string or RegExp', () => {
+    expect(SENTRY_DENY_URLS.length).toBeGreaterThan(0)
+    for (const pattern of SENTRY_DENY_URLS) {
+      expect(['string', 'object']).toContain(typeof pattern)
+      if (typeof pattern !== 'string') expect(pattern).toBeInstanceOf(RegExp)
+    }
+  })
+
+  // The CookieYes consent banner reads window.localStorage in its "Reject All"
+  // handler and throws an unhandled SecurityError when the browser blocks
+  // storage (issue 7563162234). We can't patch the vendor script, so drop any
+  // error whose throwing frame is the banner. Match both the raw CDN URL and
+  // the app:///-normalized form Sentry may produce.
+  describe('drops third-party CookieYes frames', () => {
+    const denied: [name: string, url: string][] = [
+      ['raw CDN url', 'https://cdn-cookieyes.com/client_data/283b952854e49874ccae7833ef9ba02a/banner.js'],
+      ['app:///-normalized form', 'app:///client_data/283b952854e49874ccae7833ef9ba02a/banner.js'],
+    ]
+    it.each(denied)('denies: %s', (_name, url) => {
+      expect(isUrlDenied(url)).toBe(true)
+    })
+  })
+
+  // Must stay narrow: errors thrown by our own bundle (including our own
+  // guarded/unguarded localStorage access) have to reach Sentry.
+  describe('keeps our own frames', () => {
+    const kept: [name: string, url: string][] = [
+      ['our hashed chunk', 'https://www.phototools.io/_next/static/chunks/0jzaflnjbojrn.js'],
+      ['our app frame', 'app:///src/app/[locale]/dof-simulator/_components/DofSimulator.tsx'],
+      ['unrelated third party', 'https://connect.facebook.net/en_US/fbevents.js'],
+    ]
+    it.each(kept)('keeps: %s', (_name, url) => {
+      expect(isUrlDenied(url)).toBe(false)
     })
   })
 })

@@ -36,3 +36,23 @@ export const IGNORE_SENTRY_ERRORS: (string | RegExp)[] = [
   // `https` token), so this only drops third-party injection noise.
   /Unexpected identifier 'https'/,
 ]
+
+// Client-side Sentry `denyUrls` patterns — drop any event whose throwing frame
+// originates in a third-party script we neither ship nor can patch. Unlike
+// `IGNORE_SENTRY_ERRORS` (which matches the message), these match the culprit
+// frame's URL, so they suppress only the vendor's frames and never a same-named
+// error thrown by our own bundle.
+//
+// Sentry matches denyUrls against the URL of the last valid stack frame: regex
+// entries via `.test()`, string entries via substring `.includes()`.
+export const SENTRY_DENY_URLS: (string | RegExp)[] = [
+  // CookieYes consent banner — cdn-cookieyes.com/client_data/<id>/banner.js.
+  // Its "Reject All" click handler reads window.localStorage, which throws an
+  // unhandled SecurityError when the browser blocks site storage (e.g. Chrome
+  // with cookies disabled — issue 7563162234). The consent flow still works and
+  // we can't fix vendor code, so this is pure noise. Match the domain AND the
+  // stable file path, so the filter holds whether Sentry keeps the full URL or
+  // normalizes it to `app:///client_data/<id>/banner.js`.
+  /cdn-cookieyes\.com/i,
+  /\/client_data\/[^/]+\/banner\.js/i,
+]
