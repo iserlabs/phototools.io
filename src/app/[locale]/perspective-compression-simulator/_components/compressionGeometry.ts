@@ -109,24 +109,38 @@ export function mergeGeo(...parts: GeoArrays[]): GeoArrays {
   return { positions, normals, colors }
 }
 
-function compileShader(gl: WebGL2RenderingContext, type: number, source: string): WebGLShader {
+// `null` return = recoverable, environmental failure (the WebGL context was
+// lost — e.g. Safari recycling the GPU process; gl.createShader/createProgram
+// return null and COMPILE/LINK_STATUS read false). The caller should bail and
+// wait for 'webglcontextrestored'. A thrown error = a genuine GLSL compile/link
+// bug on a live context, which is actionable and worth reporting (Sentry 7560461832).
+function compileShader(gl: WebGL2RenderingContext, type: number, source: string): WebGLShader | null {
   const shader = gl.createShader(type)
-  if (!shader) throw new Error('Failed to create shader')
+  if (!shader) return null // context lost (or OOM) — not a bug we can fix in code
   gl.shaderSource(shader, source)
   gl.compileShader(shader)
   if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-    const info = gl.getShaderInfoLog(shader)
     gl.deleteShader(shader)
-    throw new Error(`Shader compile error: ${info}`)
+    if (gl.isContextLost()) return null
+    throw new Error(`Shader compile error: ${gl.getShaderInfoLog(shader)}`)
   }
   return shader
 }
 
-export function createProgram(gl: WebGL2RenderingContext, vertSrc: string, fragSrc: string): WebGLProgram {
+export function createProgram(gl: WebGL2RenderingContext, vertSrc: string, fragSrc: string): WebGLProgram | null {
   const vert = compileShader(gl, gl.VERTEX_SHADER, vertSrc)
   const frag = compileShader(gl, gl.FRAGMENT_SHADER, fragSrc)
+  if (!vert || !frag) {
+    if (vert) gl.deleteShader(vert)
+    if (frag) gl.deleteShader(frag)
+    return null
+  }
   const program = gl.createProgram()
-  if (!program) throw new Error('Failed to create program')
+  if (!program) {
+    gl.deleteShader(vert)
+    gl.deleteShader(frag)
+    return null
+  }
   gl.attachShader(program, vert)
   gl.attachShader(program, frag)
   gl.bindAttribLocation(program, 0, 'a_position')
@@ -136,9 +150,9 @@ export function createProgram(gl: WebGL2RenderingContext, vertSrc: string, fragS
   gl.deleteShader(vert)
   gl.deleteShader(frag)
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-    const info = gl.getProgramInfoLog(program)
     gl.deleteProgram(program)
-    throw new Error(`Program link error: ${info}`)
+    if (gl.isContextLost()) return null
+    throw new Error(`Program link error: ${gl.getProgramInfoLog(program)}`)
   }
   return program
 }

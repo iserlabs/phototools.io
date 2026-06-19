@@ -24,6 +24,9 @@ export function CompressionScene({ focalLength, sensorId, distance }: Compressio
   const programRef = useRef<WebGLProgram | null>(null)
   const vaoRef = useRef<WebGLVertexArrayObject | null>(null)
   const vertCountRef = useRef(0)
+  // Always-current render fn, so the mount-only effect (and the context-restore
+  // handler) can repaint with the latest props without re-running setup.
+  const render3DRef = useRef<() => void>(() => {})
 
   useEffect(() => {
     const canvas = sceneCanvasRef.current
@@ -33,52 +36,83 @@ export function CompressionScene({ focalLength, sensorId, distance }: Compressio
     if (!gl) return
     glRef.current = gl
 
-    let program: WebGLProgram
-    try {
-      program = createProgram(gl, compressionVertexShader, compressionFragmentShader)
-    } catch (e) {
-      Sentry.captureException(e, { tags: { module: 'compression-scene', op: 'createProgram' } })
-      return
+    // Build all GPU resources. Re-runnable so the scene recovers after the
+    // browser drops and restores the WebGL context (common on Safari) instead
+    // of staying blank — see 'webglcontextrestored' below.
+    const initResources = () => {
+      if (gl.isContextLost()) return
+
+      let program: WebGLProgram | null
+      try {
+        program = createProgram(gl, compressionVertexShader, compressionFragmentShader)
+      } catch (e) {
+        // createProgram returns null on context loss now, so a throw here is a
+        // genuine GLSL compile/link bug — actionable, worth reporting.
+        Sentry.captureException(e, { tags: { module: 'compression-scene', op: 'createProgram' } })
+        return
+      }
+      if (!program) return // context lost mid-init; 'webglcontextrestored' will retry
+      programRef.current = program
+
+      const parts = [buildGroundPlaneWithGrid()]
+      for (let i = 0; i < PILLAR_COUNT; i++) {
+        const pz = -(i * PILLAR_SPACING)
+        parts.push(buildCylinder(PILLAR_X, pz, PILLAR_RADIUS, PILLAR_HEIGHT, PILLAR_SEGMENTS, PILLAR_COLORS[i % PILLAR_COLORS.length]))
+      }
+      const geo = mergeGeo(...parts)
+      vertCountRef.current = geo.positions.length / 3
+
+      const vao = gl.createVertexArray()
+      gl.bindVertexArray(vao)
+      vaoRef.current = vao
+
+      const posBuf = gl.createBuffer()
+      gl.bindBuffer(gl.ARRAY_BUFFER, posBuf)
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(geo.positions), gl.STATIC_DRAW)
+      gl.enableVertexAttribArray(0)
+      gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0)
+
+      const normBuf = gl.createBuffer()
+      gl.bindBuffer(gl.ARRAY_BUFFER, normBuf)
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(geo.normals), gl.STATIC_DRAW)
+      gl.enableVertexAttribArray(1)
+      gl.vertexAttribPointer(1, 3, gl.FLOAT, false, 0, 0)
+
+      const colBuf = gl.createBuffer()
+      gl.bindBuffer(gl.ARRAY_BUFFER, colBuf)
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(geo.colors), gl.STATIC_DRAW)
+      gl.enableVertexAttribArray(2)
+      gl.vertexAttribPointer(2, 3, gl.FLOAT, false, 0, 0)
+
+      gl.bindVertexArray(null)
+      gl.enable(gl.DEPTH_TEST)
+      gl.clearColor(0.08, 0.08, 0.15, 1.0)
+
+      render3DRef.current()
     }
-    programRef.current = program
 
-    const parts = [buildGroundPlaneWithGrid()]
-    for (let i = 0; i < PILLAR_COUNT; i++) {
-      const pz = -(i * PILLAR_SPACING)
-      parts.push(buildCylinder(PILLAR_X, pz, PILLAR_RADIUS, PILLAR_HEIGHT, PILLAR_SEGMENTS, PILLAR_COLORS[i % PILLAR_COLORS.length]))
+    // preventDefault() is required for the browser to fire the matching
+    // 'webglcontextrestored'; drop the now-invalid resource handles on loss.
+    const handleContextLost = (e: Event) => {
+      e.preventDefault()
+      programRef.current = null
+      vaoRef.current = null
     }
-    const geo = mergeGeo(...parts)
-    vertCountRef.current = geo.positions.length / 3
+    const handleContextRestored = () => initResources()
 
-    const vao = gl.createVertexArray()
-    gl.bindVertexArray(vao)
-    vaoRef.current = vao
-
-    const posBuf = gl.createBuffer()
-    gl.bindBuffer(gl.ARRAY_BUFFER, posBuf)
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(geo.positions), gl.STATIC_DRAW)
-    gl.enableVertexAttribArray(0)
-    gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0)
-
-    const normBuf = gl.createBuffer()
-    gl.bindBuffer(gl.ARRAY_BUFFER, normBuf)
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(geo.normals), gl.STATIC_DRAW)
-    gl.enableVertexAttribArray(1)
-    gl.vertexAttribPointer(1, 3, gl.FLOAT, false, 0, 0)
-
-    const colBuf = gl.createBuffer()
-    gl.bindBuffer(gl.ARRAY_BUFFER, colBuf)
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(geo.colors), gl.STATIC_DRAW)
-    gl.enableVertexAttribArray(2)
-    gl.vertexAttribPointer(2, 3, gl.FLOAT, false, 0, 0)
-
-    gl.bindVertexArray(null)
-    gl.enable(gl.DEPTH_TEST)
-    gl.clearColor(0.08, 0.08, 0.15, 1.0)
+    canvas.addEventListener('webglcontextlost', handleContextLost)
+    canvas.addEventListener('webglcontextrestored', handleContextRestored)
+    initResources()
 
     return () => {
-      if (programRef.current) { gl.deleteProgram(programRef.current); programRef.current = null }
-      if (vaoRef.current) { gl.deleteVertexArray(vaoRef.current); vaoRef.current = null }
+      canvas.removeEventListener('webglcontextlost', handleContextLost)
+      canvas.removeEventListener('webglcontextrestored', handleContextRestored)
+      if (!gl.isContextLost()) {
+        if (programRef.current) gl.deleteProgram(programRef.current)
+        if (vaoRef.current) gl.deleteVertexArray(vaoRef.current)
+      }
+      programRef.current = null
+      vaoRef.current = null
       glRef.current = null
     }
   }, [])
@@ -115,6 +149,7 @@ export function CompressionScene({ focalLength, sensorId, distance }: Compressio
     gl.drawArrays(gl.TRIANGLES, 0, vertCountRef.current)
     gl.bindVertexArray(null)
   }, [focalLength, sensorId, distance])
+  render3DRef.current = render3D
 
   useEffect(() => {
     const canvas = sceneCanvasRef.current
