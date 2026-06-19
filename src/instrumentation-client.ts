@@ -1,5 +1,11 @@
 import * as Sentry from '@sentry/nextjs'
 import { IGNORE_SENTRY_ERRORS } from '@/lib/sentry-filters'
+import { installDomMutationGuard } from '@/lib/utils/dom-mutation-guard'
+
+// Harden Node.removeChild / insertBefore before React hydrates, so that browser
+// auto-translation and extensions reparenting React-owned DOM degrade gracefully
+// instead of crashing the tree (Sentry 7562814497). See the guard module.
+installDomMutationGuard()
 
 Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
