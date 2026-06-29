@@ -5,5 +5,6 @@
       "path": "/api/cron/expire-shares",
       "schedule": "0 3 * * *"
     }
-  ]
+  ],
+  "ignoreCommand": "KEEP_PREVIEWS=1 bash scripts/ci/vercel-ignore.sh"
 }
