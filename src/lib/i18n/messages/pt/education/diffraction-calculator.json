@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Fechar o diafragma aumenta a profundidade de campo — mas, passado certo ponto, ele começa a deixar a imagem inteira mais suave em vez de mais nítida. Isso é a difração: ondas de luz que se curvam ao passar por uma abertura pequena. Esta calculadora mostra exatamente onde fica esse ponto para a sua câmera, para você saber até onde pode fechar o diafragma antes de pagar um preço em nitidez.",
+      "deeper": "Quando a luz atravessa a abertura, cada ponto da cena chega ao sensor não como um ponto, mas como um pequeno padrão de difração: um núcleo brilhante chamado disco de Airy, cercado por halos tênues. O diâmetro do disco cresce em proporção direta ao número f: cerca de 2,44 × comprimento de onda × N, o que em f/8, na luz verde, já dá ~10,7 µm. Se isso importa, depende dos seus pixels. Um sensor full frame de 24 MP tem pixels de ~6 µm; um de 61 MP, de ~3,8 µm. Quando o disco de Airy fica confortavelmente maior que um pixel, o detalhe que o sensor poderia resolver se espalha pelos pixels vizinhos, e nenhuma qualidade de lente consegue trazê-lo de volta. É por isso que o mesmo f/11 que parece bom em um corpo antigo de 12 MP suaviza visivelmente os arquivos de um sensor moderno de alta resolução, e por isso câmeras compactas com pixels minúsculos raramente oferecem aberturas além de f/8. A regra prática do setor usada aqui — limite ≈ pixel pitch / 0,67 — marca onde a suavização se torna mensurável, não onde as imagens desmoronam: fechar um ponto além do limite costuma ser uma troca que vale a pena pela profundidade de campo. Passados dois pontos, o empilhamento de foco supera fechar mais o diafragma.",
+      "keyFactors": {
+        "0": {
+          "label": "Abertura (número f)",
+          "description": "O único controle sobre a difração em si: o diâmetro do disco de Airy escala linearmente com o número f. f/16 espalha a luz duas vezes mais que f/8."
+        },
+        "1": {
+          "label": "Pixel pitch",
+          "description": "O tamanho físico de um pixel, definido pelo tamanho do sensor e pelos megapixels juntos. Pixels menores resolvem mais detalhe — e revelam a difração mais cedo."
+        },
+        "2": {
+          "label": "Tamanho de saída",
+          "description": "Uma difração visível a 100% na tela pode ser invisível em uma exportação para web ou em uma impressão moderada. Julgue a nitidez no tamanho que você realmente vai usar."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Encontre o ponto ideal da sua lente: fotografe a mesma cena detalhada em cada ponto inteiro de abertura e compare a 100%. A maioria das lentes atinge o pico dois ou três pontos abaixo da abertura máxima, logo antes de a difração assumir."
+        },
+        "1": {
+          "text": "Para paisagens que exigem foco profundo em um corpo de alta resolução, experimente a distância hiperfocal em f/8 antes de recorrer a f/16: posicionar o foco com precisão costuma render mais nitidez do que aberturas menores."
+        },
+        "2": {
+          "text": "Em macro, a abertura efetiva cresce com a ampliação (f/11 em 1:1 se comporta como f/22), então a difração morde muito antes do que o dial sugere. Empilhamento de foco em uma abertura moderada é a saída nítida."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pixel pitch",
+          "definition": "A largura de um único pixel do sensor, em micrômetros. Calculada dividindo a largura do sensor pela contagem horizontal de pixels: 24 MP em full frame ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Disco de Airy",
+          "definition": "O padrão de difração que um ponto de luz forma após atravessar a abertura: um núcleo brilhante com anéis tênues. Seu diâmetro ≈ 2,44 × comprimento de onda × número f."
+        },
+        "diffractionLimit": {
+          "term": "Limite de difração",
+          "definition": "O número f em que o disco de Airy ultrapassa o pixel e a nitidez por pixel começa a cair: aproximadamente pixel pitch (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Você fecha a lente de f/8 para f/22 buscando profundidade de campo máxima, mas os detalhes finos da imagem ficam mais suaves em toda parte — até no plano de foco. O que está acontecendo?",
+          "hint": "É física, não um defeito da lente.",
+          "successMessage": "Correto! A luz se curva (difrata) ao passar por uma abertura pequena, espalhando cada ponto em um disco maior que um pixel. Em f/22 essa suavização afeta o quadro inteiro, plano de foco incluído.",
+          "failureMessage": "Isso é difração: as ondas de luz se curvam nas lâminas do diafragma, espalhando cada ponto de luz em um disco borrado. Ela afeta a imagem inteira por igual, independentemente da qualidade da lente.",
+          "options": {
+            "0": { "label": "A lente é mal construída" },
+            "1": { "label": "A luz se curva ao passar pela abertura pequena" },
+            "2": { "label": "O sensor superaquece em aberturas pequenas" },
+            "3": { "label": "O ruído de ISO aumenta" }
+          }
+        },
+        "1": {
+          "scenario": "Você troca uma câmera full frame de 24 MP por uma de 61 MP. O que acontece com a abertura em que a difração se torna visível?",
+          "hint": "Mais megapixels na mesma área de sensor significam pixels menores.",
+          "successMessage": "Isso! Os pixels de ~3,8 µm do sensor de 61 MP resolvem o disco de Airy mais cedo, então o limite de difração cai de cerca de f/9 para cerca de f/5.6. Sensores de alta resolução têm pontos ideais de abertura mais estreitos.",
+          "failureMessage": "Pixels menores revelam a difração mais cedo. O limite de difração do sensor de 61 MP fica em torno de f/5.6, contra f/9 no de 24 MP: o limite se move para uma abertura mais aberta.",
+          "options": {
+            "0": { "label": "Ela se move para uma abertura menor (número f maior)" },
+            "1": { "label": "Ela se move para uma abertura mais aberta (número f menor)" },
+            "2": { "label": "Ela não muda" },
+            "3": { "label": "A difração desaparece com mais megapixels" }
+          }
+        },
+        "2": {
+          "scenario": "Você está fotografando uma paisagem com uma câmera full frame de 45 MP e quer o máximo de nitidez geral com boa profundidade de campo. Qual faixa de aberturas é o melhor ponto de partida?",
+          "hint": "Equilibre as aberrações da lente (ruins em abertura máxima) contra a difração (ruim ao fechar).",
+          "successMessage": "Correto! f/8–f/11 fica bem em torno do limite de difração para pixels de ~4,4 µm e ainda oferece profundidade de campo substancial: o clássico ponto ideal de paisagem em full frame de alta resolução.",
+          "failureMessage": "f/8–f/11 equilibra profundidade de campo e difração em um sensor full frame de 45 MP. f/22 suaviza visivelmente os detalhes finos, e em abertura máxima falta profundidade de campo.",
+          "options": {
+            "0": { "label": "Sempre f/22 para profundidade máxima" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Abertura máxima" },
+            "3": { "label": "Depende apenas do ISO" }
+          }
+        }
+      }
+    }
+  }
+}

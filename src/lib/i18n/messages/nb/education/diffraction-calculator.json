@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Å blende ned øker dybdeskarpheten — men forbi et visst punkt begynner det å gjøre hele bildet mykere i stedet for skarpere. Det er diffraksjon: lysbølger som bøyes når de presses gjennom en liten åpning. Denne kalkulatoren viser nøyaktig hvor det punktet ligger for kameraet ditt, så du vet hvor langt du kan blende ned uten å betale med skarphet.",
+      "deeper": "Når lyset passerer blenderen, lander hvert punkt i scenen ikke som et punkt på sensoren, men som et lite diffraksjonsmønster — en lys kjerne kalt Airy-skiven, omgitt av svake ringer. Skivens diameter vokser i direkte forhold til f-tallet: omtrent 2,44 × bølgelengde × N, som ved f/8 i grønt lys allerede er ~10,7 µm. Om det betyr noe, avhenger av pikslene dine. En 24 MP fullformatsensor har piksler på ~6 µm; en 61 MP-sensor har ~3,8 µm. Når Airy-skiven blir klart større enn en piksel, smøres detaljer som sensoren ellers kunne gjengi, ut over nabopikslene, og ingen objektivkvalitet kan hente dem tilbake. Det er derfor den samme f/11 som ser fin ut på et gammelt 12 MP-hus, synlig myker opp filer fra en moderne høyoppløst sensor, og derfor kompaktkameraer med bittesmå piksler sjelden tilbyr blendere forbi f/8. Tommelfingerregelen brukt her — grense ≈ pikselavstand / 0,67 — markerer hvor oppmykningen blir målbar, ikke hvor bildene faller fra hverandre: å blende ned ett trinn forbi grensen er ofte et fornuftig bytte mot dybdeskarphet. Forbi to trinn slår focus stacking nedblending.",
+      "keyFactors": {
+        "0": {
+          "label": "Blender (f-tall)",
+          "description": "Den eneste kontrollen over selve diffraksjonen: Airy-skivens diameter vokser lineært med f-tallet. f/16 sprer lyset dobbelt så bredt som f/8."
+        },
+        "1": {
+          "label": "Pikselavstand",
+          "description": "Den fysiske størrelsen på én piksel, bestemt av sensorstørrelse og megapiksler sammen. Mindre piksler gjengir mer detalj — og avslører diffraksjon tidligere."
+        },
+        "2": {
+          "label": "Visningsstørrelse",
+          "description": "Diffraksjon som er synlig i 100 % på skjermen, kan være usynlig i en netteksport eller moderat utskrift. Vurder skarpheten i størrelsen du faktisk skal bruke."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Finn objektivets beste blender: fotografer den samme detaljrike scenen på hvert hele trinn og sammenlign i 100 %. De fleste objektiver topper to til tre trinn fra fullt åpent, rett før diffraksjonen tar over."
+        },
+        "1": {
+          "text": "For landskap som trenger dyp fokus på et høyoppløst hus, prøv hyperfokal avstand ved f/8 før du griper til f/16 — presis fokusplassering kjøper ofte mer skarphet enn mindre blenderåpninger."
+        },
+        "2": {
+          "text": "I makro vokser den effektive blenderen med forstørrelsen (f/11 ved 1:1 oppfører seg som f/22), så diffraksjonen slår til langt tidligere enn hjulet antyder. Focus stacking på en moderat blender er den skarpe veien ut."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pikselavstand",
+          "definition": "Bredden på én enkelt piksel på sensoren, i mikrometer. Beregnes som sensorbredden delt på antall piksler horisontalt — 24 MP fullformat ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Airy-skive",
+          "definition": "Diffraksjonsmønsteret et lyspunkt danner etter å ha passert blenderen: en lys kjerne med svake ringer. Diameteren ≈ 2,44 × bølgelengde × f-tall."
+        },
+        "diffractionLimit": {
+          "term": "Diffraksjonsgrense",
+          "definition": "F-tallet der Airy-skiven vokser forbi pikselen og skarpheten per piksel begynner å falle — omtrent pikselavstand (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du blender ned fra f/8 til f/22 for maksimal dybdeskarphet, men de fine detaljene i bildet blir mykere overalt — selv i fokusplanet. Hva skjer?",
+          "hint": "Det er fysikk, ikke en objektivfeil.",
+          "successMessage": "Riktig! Lyset bøyes (diffrakterer) når det passerer en liten blenderåpning, og sprer hvert punkt til en skive større enn en piksel. Ved f/22 påvirker oppmykningen hele bildet, fokusplanet inkludert.",
+          "failureMessage": "Dette er diffraksjon: lysbølger bøyes rundt blenderlamellene og sprer hvert lyspunkt til en uskarp skive. Den påvirker hele bildet likt, uansett objektivkvalitet.",
+          "options": {
+            "0": { "label": "Objektivet er dårlig laget" },
+            "1": { "label": "Lyset bøyes når det passerer den lille åpningen" },
+            "2": { "label": "Sensoren overopphetes ved små blendere" },
+            "3": { "label": "ISO-støyen øker" }
+          }
+        },
+        "1": {
+          "scenario": "Du oppgraderer fra et 24 MP fullformatkamera til et med 61 MP. Hva skjer med blenderen der diffraksjonen blir synlig?",
+          "hint": "Flere megapiksler på samme sensorareal betyr mindre piksler.",
+          "successMessage": "Riktig! 61 MP-sensorens piksler på ~3,8 µm vokser forbi Airy-skiven tidligere, så diffraksjonsgrensen faller fra omtrent f/9 til omtrent f/5.6. Høyoppløste sensorer har smalere blenderområder.",
+          "failureMessage": "Mindre piksler avslører diffraksjon tidligere. 61 MP-sensorens diffraksjonsgrense ligger rundt f/5.6, mot f/9 for 24 MP-sensoren — grensen flytter seg til en større blenderåpning.",
+          "options": {
+            "0": { "label": "Den flytter seg til en mindre blender (høyere f-tall)" },
+            "1": { "label": "Den flytter seg til en større blender (lavere f-tall)" },
+            "2": { "label": "Den endrer seg ikke" },
+            "3": { "label": "Diffraksjonen forsvinner med flere megapiksler" }
+          }
+        },
+        "2": {
+          "scenario": "Du fotograferer et landskap med et 45 MP fullformatkamera og vil ha maksimal samlet skarphet med god dybdeskarphet. Hvilket blenderområde er det beste utgangspunktet?",
+          "hint": "Balanser objektivets aberrasjoner (verst helt åpent) mot diffraksjon (verre nedblendet).",
+          "successMessage": "Riktig! f/8–f/11 ligger akkurat rundt diffraksjonsgrensen for piksler på ~4,4 µm og gir samtidig betydelig dybdeskarphet — det klassiske landskapsområdet på høyoppløst fullformat.",
+          "failureMessage": "f/8–f/11 balanserer dybdeskarphet mot diffraksjon for en 45 MP fullformatsensor. f/22 myker synlig opp fine detaljer, og helt åpent mangler dybdeskarphet.",
+          "options": {
+            "0": { "label": "Alltid f/22 for maksimal dybde" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Helt åpen blender" },
+            "3": { "label": "Det avhenger bare av ISO" }
+          }
+        }
+      }
+    }
+  }
+}

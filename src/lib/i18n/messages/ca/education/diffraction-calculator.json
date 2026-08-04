@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Tancar el diafragma augmenta la profunditat de camp, però a partir d'un cert punt comença a fer tota la imatge més tova en lloc de més nítida. Això és la difracció: ones de llum que es corben en passar per una obertura petita. Aquesta calculadora mostra exactament on és aquest punt per a la teva càmera, perquè sàpigues quant pots tancar el diafragma abans de pagar un preu en nitidesa.",
+      "deeper": "Quan la llum travessa l'obertura, cada punt de l'escena no arriba al sensor com un punt, sinó com un petit patró de difracció: un nucli brillant anomenat disc d'Airy envoltat d'halos tènues. El diàmetre del disc creix en proporció directa al número f: aproximadament 2,44 × longitud d'ona × N, que a f/8 en llum verda ja és de ~10,7 µm. Que això importi depèn dels teus píxels. Un sensor de format complet de 24 MP té píxels de ~6 µm; un de 61 MP, de ~3,8 µm. Quan el disc d'Airy supera clarament la mida d'un píxel, el detall que el sensor podria resoldre s'escampa entre els píxels veïns, i cap qualitat d'objectiu no pot recuperar-lo. Per això el mateix f/11 que es veu bé en un cos antic de 12 MP suavitza visiblement els fitxers d'un sensor modern d'alta resolució, i per això les càmeres compactes amb píxels diminuts rarament ofereixen obertures més enllà de f/8. La regla general del sector usada aquí — límit ≈ pas de píxel / 0,67 — marca on el suavitzat comença a ser mesurable, no on les imatges s'espatllen: tancar un pas més enllà del límit sol ser un intercanvi que val la pena per la profunditat de camp. Passats dos passos, l'apilament d'enfocament supera continuar tancant.",
+      "keyFactors": {
+        "0": {
+          "label": "Obertura (número f)",
+          "description": "L'únic control sobre la difracció en si: el diàmetre del disc d'Airy escala linealment amb el número f. f/16 escampa la llum el doble que f/8."
+        },
+        "1": {
+          "label": "Pas de píxel",
+          "description": "La mida física d'un píxel, definida alhora per la mida del sensor i els megapíxels. Els píxels més petits resolen més detall — i revelen abans la difracció."
+        },
+        "2": {
+          "label": "Mida de sortida",
+          "description": "Una difracció visible al 100 % en pantalla pot ser invisible en una exportació per a web o en una impressió moderada. Jutja la nitidesa a la mida que realment faràs servir."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Troba el punt òptim del teu objectiu: fotografia la mateixa escena detallada a cada pas complet i compara al 100 %. La majoria d'objectius rendeixen al màxim dos o tres passos per sota de l'obertura màxima, just abans que la difracció prengui el control."
+        },
+        "1": {
+          "text": "Per a paisatges que requereixen molta profunditat en un cos d'alta resolució, prova la distància hiperfocal a f/8 abans de recórrer a f/16: col·locar l'enfocament amb precisió sol guanyar més nitidesa que tancar més el diafragma."
+        },
+        "2": {
+          "text": "En macro, l'obertura efectiva creix amb l'ampliació (f/11 a 1:1 es comporta com f/22), així que la difracció apareix molt abans del que indica el dial. L'apilament d'enfocament a una obertura moderada és la sortida nítida."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pas de píxel",
+          "definition": "L'amplada d'un sol píxel del sensor, en micròmetres. Es calcula dividint l'amplada del sensor entre el nombre de píxels horitzontals: 24 MP en format complet ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Disc d'Airy",
+          "definition": "El patró de difracció que forma un punt de llum després de travessar l'obertura: un nucli brillant amb anells tènues. El seu diàmetre ≈ 2,44 × longitud d'ona × número f."
+        },
+        "diffractionLimit": {
+          "term": "Límit de difracció",
+          "definition": "El número f en què el disc d'Airy supera el píxel i la nitidesa per píxel comença a caure: aproximadament pas de píxel (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Tanques l'objectiu de f/8 a f/22 per aconseguir la màxima profunditat de camp, però els detalls fins de la imatge es tornen més tous a tot arreu, fins i tot al pla d'enfocament. Què està passant?",
+          "hint": "És física, no un defecte de l'objectiu.",
+          "successMessage": "Correcte! La llum es corba (es difracta) en passar per una obertura petita i escampa cada punt en un disc més gran que un píxel. A f/22 aquest suavitzat afecta tot l'enquadrament, pla d'enfocament inclòs.",
+          "failureMessage": "Això és difracció: les ones de llum es corben a les pales del diafragma i escampen cada punt de llum en un disc borrós. Afecta tota la imatge per igual, independentment de la qualitat de l'objectiu.",
+          "options": {
+            "0": { "label": "L'objectiu està mal fabricat" },
+            "1": { "label": "La llum es corba en passar per l'obertura petita" },
+            "2": { "label": "El sensor es sobreescalfa amb obertures petites" },
+            "3": { "label": "Augmenta el soroll ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Passes d'una càmera de format complet de 24 MP a una de 61 MP. Què li passa a l'obertura en què la difracció es fa visible?",
+          "hint": "Més megapíxels a la mateixa superfície de sensor signifiquen píxels més petits.",
+          "successMessage": "Exacte! Els píxels de ~3,8 µm del sensor de 61 MP resolen el disc d'Airy abans, així que el límit de difracció baixa de f/9 a f/5.6 aproximadament. Els sensors d'alta resolució tenen punts òptims d'obertura més estrets.",
+          "failureMessage": "Els píxels més petits revelen la difracció abans. El límit de difracció del sensor de 61 MP ronda f/5.6, davant de f/9 en el de 24 MP: el límit es desplaça cap a una obertura més oberta.",
+          "options": {
+            "0": { "label": "Es desplaça cap a una obertura més tancada (número f més gran)" },
+            "1": { "label": "Es desplaça cap a una obertura més oberta (número f més petit)" },
+            "2": { "label": "No canvia" },
+            "3": { "label": "La difracció desapareix amb més megapíxels" }
+          }
+        },
+        "2": {
+          "scenario": "Fotografies un paisatge amb una càmera de format complet de 45 MP i vols la màxima nitidesa general amb bona profunditat de camp. Quin rang d'obertures és el millor punt de partida?",
+          "hint": "Equilibra les aberracions de l'objectiu (dolentes a plena obertura) amb la difracció (dolenta en tancar).",
+          "successMessage": "Correcte! f/8–f/11 se situa just al voltant del límit de difracció per a píxels de ~4,4 µm i ofereix una profunditat de camp considerable: el clàssic punt òptim de paisatge en format complet d'alta resolució.",
+          "failureMessage": "f/8–f/11 equilibra la profunditat de camp amb la difracció en un sensor de format complet de 45 MP. f/22 suavitza visiblement el detall fi, i a plena obertura falta profunditat de camp.",
+          "options": {
+            "0": { "label": "Sempre f/22 per a màxima profunditat" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "A plena obertura" },
+            "3": { "label": "Depèn només de l'ISO" }
+          }
+        }
+      }
+    }
+  }
+}

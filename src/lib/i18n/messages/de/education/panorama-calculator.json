@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Ein Panorama entsteht, indem du mehrere überlappende Fotos machst, während du die Kamera drehst, und die Software sie anschließend zu einem breiten Bild zusammenfügt. Der Trick ist zu wissen, wie weit du zwischen den Aufnahmen drehen musst: zu weit, und die Software kann die Bilder nicht verbinden; zu wenig, und du verschwendest Dutzende Aufnahmen. Dieser Rechner erledigt diese Mathematik aus deinem Objektiv, Sensor und der gewünschten Überlappung.",
+      "deeper": "Jede Aufnahme deckt einen festen Bildwinkel ab, der von Brennweite und Sensorgröße bestimmt wird — ein 50mm-Objektiv am Vollformat sieht horizontal etwa 40°. Stitching-Software richtet benachbarte Aufnahmen aus, indem sie gemeinsame „Kontrollpunkte“ in der Überlappungszone findet — deshalb sind 25–35% Überlappung der praktische Standard: Sie geben dem Algorithmus genug gemeinsame Details, ohne die Bildanzahl explodieren zu lassen. Die nutzbare Drehung pro Aufnahme ist daher der Bildwinkel der Aufnahme mal (1 − Überlappung). Das Hochformat tauscht einen schmaleren horizontalen Schritt gegen deutlich mehr vertikale Abdeckung — deshalb werden die meisten einreihigen Panoramen vertikal fotografiert. Für wirklich hohe Szenen wenden mehrreihige Panoramen dieselbe Überlappungslogik vertikal an. Die fertige Datei wächst schnell: Jede zusätzliche Aufnahme steuert ihre Auflösung minus die Überlappung bei, sodass ein 7-Bild-Hochformat-Panorama aus einer 24-MP-Kamera locker 100 MP überschreitet. Eine physikalische Feinheit begrenzt das Ganze: Wer um das Stativgewinde dreht, verschiebt das optische Zentrum des Objektivs zwischen den Aufnahmen, wodurch nahe und ferne Objekte gegeneinander verrutschen (Parallaxe). Bei fernen Landschaften spielt das selten eine Rolle, aber bei nahen Vordergrundelementen musst du um den parallaxenfreien Punkt des Objektivs drehen — mit einer Nodalschiene oder einem Panoramakopf.",
+      "keyFactors": {
+        "0": {
+          "label": "Brennweite & Sensor",
+          "description": "Zusammen legen sie den Bildwinkel der Einzelaufnahme fest — den Grundbaustein, aus dem das Panorama zusammengesetzt wird. Längere Brennweiten bedeuten schmalere Aufnahmen und mehr Bilder."
+        },
+        "1": {
+          "label": "Überlappung",
+          "description": "Die gemeinsame Zone zwischen benachbarten Aufnahmen, an der sich die Stitching-Software ausrichtet. 25–35% sind der Sweet Spot; strukturarme Szenen (Himmel, Wasser) brauchen mehr."
+        },
+        "2": {
+          "label": "Ausrichtung",
+          "description": "Hochformat-Aufnahmen decken pro Bild weniger Breite, aber deutlich mehr Höhe ab — die Standardwahl für einreihige Panoramen, weil sie Spielraum zum Beschneiden lässt."
+        },
+        "3": {
+          "label": "Parallaxe",
+          "description": "Verschiebung zwischen Nah und Fern durch Drehung um die falsche Achse. Harmlos bei fernen Szenen; kritisch bei nahem Vordergrund."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Stelle Belichtung, Weißabgleich und Fokus vor der ersten Aufnahme auf manuell. Jede Automatik verschiebt sich zwischen den Bildern und erzeugt sichtbare Streifen im zusammengefügten Himmel."
+        },
+        "1": {
+          "text": "Fotografiere mit nivelliertem Objektiv und drehe in einem gleichmäßigen Durchgang, mit je einer Wegwerf-Aufnahme an beiden Enden — Randbilder werden beim Stitching verzerrt und beschnitten."
+        },
+        "2": {
+          "text": "Übertreibe die Überlappung bei Freihand-Panoramen auf 40–50%. Deine Drehung wird nicht präzise sein, und die zusätzlichen Aufnahmen geben der Software Spielraum zum Ausgleichen."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Überlappung",
+          "definition": "Der Prozentsatz jeder Aufnahme, den sie mit ihrem Nachbarn teilt. Stitching-Software braucht diese gemeinsamen Details zum Ausrichten der Bilder — 25–35% sind typisch."
+        },
+        "orientation": {
+          "term": "Kameraausrichtung",
+          "definition": "Hochformat (vertikal) ist der Standard für Panoramen: Jede Aufnahme steuert mehr Höhe bei und lässt Raum für Horizontkorrektur und Beschnitt."
+        },
+        "rotateBetween": {
+          "term": "Drehung zwischen Aufnahmen",
+          "definition": "Um wie viele Grad du die Kamera nach jeder Aufnahme drehst: der Bildwinkel der Aufnahme mal (1 − Überlappung). Panoramaköpfe haben genau dafür Rastpositionen."
+        },
+        "rows": {
+          "term": "Reihen",
+          "definition": "Mehrreihige Panoramen stapeln horizontale Durchgänge vertikal und wenden dieselbe Überlappungsregel zwischen den Reihen an, um hohe Szenen abzudecken."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du fotografierst ein Panorama einer Bergkette. Wie stark sollten sich benachbarte Aufnahmen für zuverlässiges Stitching überlappen?",
+          "hint": "Die Software braucht gemeinsame Details, aber jede zusätzliche Aufnahme kostet Zeit.",
+          "successMessage": "Richtig! Rund 30% Überlappung geben der Stitching-Software reichlich Kontrollpunkte, ohne Aufnahmen zu verschwenden — die Standardempfehlung für die meisten Szenen.",
+          "failureMessage": "25–35% sind der praktische Standard. Unter ~15% findet die Software kaum Kontrollpunkte; 80% verdreifachen deine Bildanzahl ohne Nutzen.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Du willst ein einreihiges Panorama mit genug vertikalem Spielraum, um den Horizont zu begradigen und frei zu beschneiden. In welcher Kameraausrichtung solltest du fotografieren?",
+          "hint": "In welcher Ausrichtung liefert jede Aufnahme mehr Höhe?",
+          "successMessage": "Genau! Das Hochformat erfasst deutlich mehr vertikalen Bildwinkel pro Aufnahme — die zusätzlich nötigen Bilder in der Horizontalen sind ein geringer Preis für die Freiheit beim Beschneiden.",
+          "failureMessage": "Hochformat (vertikal) ist der Standard für einreihige Panoramen: Jede Aufnahme ist höher, sodass das Ergebnis Horizontkorrektur und Beschnitt übersteht.",
+          "options": {
+            "0": { "label": "Querformat" },
+            "1": { "label": "Hochformat" },
+            "2": { "label": "Quadratischer Modus" },
+            "3": { "label": "Um 45° geneigt" }
+          }
+        },
+        "2": {
+          "scenario": "Mit einem 50mm-Objektiv am Vollformat im Querformat (etwa 40° horizontaler Bildwinkel) und 30% Überlappung — wie viele Aufnahmen braucht ein 180°-Panorama ungefähr?",
+          "hint": "Jede Aufnahme erweitert die Abdeckung um 40° × 0,7 = 28°.",
+          "successMessage": "Richtig! Die erste Aufnahme deckt 40° ab, jede weitere fügt ~28° hinzu. Die restlichen 140° erfordern 5 weitere Aufnahmen, also 7 insgesamt (mit etwas Reserve).",
+          "failureMessage": "Jede Aufnahme nach der ersten fügt 40° × (1 − 0,3) = 28° neue Abdeckung hinzu. (180 − 40) / 28 = 5 weitere Aufnahmen, also 7 insgesamt.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Dein Panorama zeigt einen Zaun einen Meter vor der Kamera und Berge dahinter. Im Ergebnis erscheint der Zaun mit Geisterbildern und Versatz zwischen den Aufnahmen. Um welchen Punkt sollte sich die Kamera drehen, um das zu beheben?",
+          "hint": "Das Problem ist Parallaxe — Nahes und Fernes verschieben sich gegeneinander.",
+          "successMessage": "Genau! Die Drehung um den parallaxenfreien Punkt (Nodalpunkt) des Objektivs hält nahe und ferne Objekte zwischen den Aufnahmen deckungsgleich. Panoramaköpfe und Nodalschienen existieren genau dafür.",
+          "failureMessage": "Die Kamera muss sich um den parallaxenfreien Punkt des Objektivs drehen (oft Nodalpunkt genannt). Die Drehung um das Stativgewinde verschiebt das optische Zentrum und verursacht die Parallaxe, die du siehst.",
+          "options": {
+            "0": { "label": "Die Frontlinse des Objektivs" },
+            "1": { "label": "Den parallaxenfreien Punkt des Objektivs" },
+            "2": { "label": "Die Sensorebene" },
+            "3": { "label": "Das Stativgewinde" }
+          }
+        }
+      }
+    }
+  }
+}

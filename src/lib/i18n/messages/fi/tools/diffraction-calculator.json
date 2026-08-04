@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Kenno",
+      "megapixels": "Tarkkuus: {mp} MP",
+      "aperture": "Aukko",
+      "verdict": {
+        "sharp": "{f} on vapaa diffraktiosta",
+        "borderline": "{f} pehmenee hieman diffraktion vuoksi",
+        "soft": "{f} pehmenee näkyvästi diffraktion vuoksi"
+      },
+      "verdictDetail": {
+        "sharp": "Tämän kennon ja tarkkuuden diffraktiorajan {limit} alapuolella terävyyden määrää objektiivi — ei diffraktio.",
+        "borderline": "Diffraktiorajan {limit} jälkeen hienot pikselitason yksityiskohdat alkavat sumentua. Hyväksyttävää, kun tarvitset lisää syväterävyyttä.",
+        "soft": "Selvästi diffraktiorajan {limit} yli. Syväterävyys kasvaa edelleen, mutta kokonaisyksityiskohdat heikkenevät näkyvästi — harkitse tarkennuspinoamista himmentämisen jatkamisen sijaan."
+      },
+      "stripLabel": "Aukkoasteikko väritettynä diffraktion vaikutuksen mukaan",
+      "pixelPitch": "Pikselikoko",
+      "airyDisk": "Airyn kiekon halkaisija",
+      "diffractionLimit": "Diffraktioraja",
+      "tableTitle": "Diffraktioraja kennon ja tarkkuuden mukaan",
+      "tableSensor": "Kenno",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Mitä diffraktio tarkoittaa valokuvauksessa?",
+          "answer": "Diffraktio on valoaaltojen taipumista niiden puristuessa pienen aukon läpi. Mitä pienempi aukko (suurempi aukkoluku), sitä enemmän jokainen valopiste leviää kennolla sumeaksi kiekoksi (Airyn kiekoksi). Kun kiekko kasvaa pikseliä suuremmaksi, hienot yksityiskohdat sumenevat riippumatta siitä, kuinka hyvä objektiivi on."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Mikä aukko on terävin?",
+          "answer": "Useimmat objektiivit ovat parhaimmillaan kaksi tai kolme askelta täysin avoimesta himmennettyinä — tyypillisesti f/4–f/8 täyskennolla. Tämä paras alue tasapainottaa objektiivin kuvausvirheet (pahimmillaan täysin avoimella aukolla) ja diffraktion (pahenee himmennettäessä). Suuritarkkuuksiset kennot saavuttavat diffraktiorajansa aikaisemmin, joten niiden käyttökelpoinen alue on kapeampi."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Riippuuko diffraktio kennosta?",
+          "answer": "Optinen ilmiö riippuu vain aukosta ja valon aallonpituudesta — mutta sen näkyvyys riippuu pikselikoosta. 61 MP:n täyskennossa on ~3,8 µm:n pikselit, ja diffraktion pehmennys näkyy noin aukolla f/5.6, kun taas 12 MP:n kenno suurine pikseleineen pysyy terävänä f/11:een asti. Pienemmät kennot saavuttavat rajan suuremmilla aukoilla samalla megapikselimäärällä."
+        }
+      }
+    }
+  }
+}

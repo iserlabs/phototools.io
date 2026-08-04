@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Vyber si scénář",
+      "tipsTitle": "Tipy do terénu",
+      "labels": {
+        "aperture": "Clona",
+        "shutter": "Expoziční čas",
+        "iso": "ISO",
+        "whiteBalance": "Vyvážení bílé",
+        "focusMode": "Režim ostření",
+        "driveMode": "Režim snímání"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Denní světlo",
+        "cloudy": "Zataženo",
+        "shade": "Stín",
+        "tungsten": "Žárovka (~3200K)",
+        "afSingle": "Jednorázový AF (AF-S)",
+        "afContinuous": "Kontinuální AF (AF-C)",
+        "afTracking": "Kontinuální AF + sledování objektu",
+        "manualFocus": "Manuální ostření",
+        "single": "Jednotlivý snímek",
+        "burstLow": "Pomalé sériové snímání",
+        "burstHigh": "Rychlé sériové snímání",
+        "timer2s": "2s samospoušť / dálková spoušť",
+        "intervalometer": "Intervalometr"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Portréty",
+          "tips": {
+            "0": "Zaostři na oko blíž k fotoaparátu — při otevřených clonách je hloubka ostrosti jen pár centimetrů.",
+            "1": "Poodstup a přibliž si zoomem (85mm+), získáš lichotivou kompresi; širokoúhlé objektivy zblízka deformují rysy obličeje."
+          }
+        },
+        "landscape": {
+          "name": "Krajina",
+          "tips": {
+            "0": "Zaostři zhruba do třetiny scény, nebo použij hyperfokální vzdálenost pro ostrost odpředu dozadu.",
+            "1": "Foť ze stativu se samospouští nebo dálkovou spouští, ať při dlouhých expozičních časech vyloučíš otřesy."
+          }
+        },
+        "street": {
+          "name": "Street",
+          "tips": {
+            "0": "Zónové ostření: přednastav ostření na 3 m a f/8 a vše od 2 m do 6 m bude ostré — žádná prodleva AF.",
+            "1": "Auto ISO s minimálním časem 1/250s zmrazí jdoucí lidi, zatímco ty se soustředíš na kompozici."
+          }
+        },
+        "wildlife": {
+          "name": "Divoká zvířata a ptáci",
+          "tips": {
+            "0": "Přizpůsob expoziční čas objektu: 1/1000s pro sedící ptáky, 1/2500s nebo kratší pro ptáky v letu.",
+            "1": "Foť z úrovně očí a čekej na otočení hlavy — odlesk světla v oku snímek oživí."
+          }
+        },
+        "sports": {
+          "name": "Sport a akce",
+          "tips": {
+            "0": "Zaostři předem tam, kde se akce odehraje (branka, vrchol zatáčky), a sérii spusť těsně před vrcholem.",
+            "1": "Panning při 1/60s–1/125s s kontinuálním AF rozmaže pozadí a objekt zůstane ostrý."
+          }
+        },
+        "macro": {
+          "name": "Makro",
+          "tips": {
+            "0": "Při velkém zvětšení je hloubka ostrosti tenká jako papír — ostři posouváním fotoaparátu, ne kroužkem ostření.",
+            "1": "Za f/16 difrakce tvrdě udeří; místo dalšího zaclánění použij focus stacking."
+          }
+        },
+        "milkyWay": {
+          "name": "Mléčná dráha",
+          "tips": {
+            "0": "Použij pravidlo NPF nebo pravidlo 500 pro maximální expozici, než se hvězdy protáhnou do čar — kolem 15–20 s při 20mm na full frame.",
+            "1": "Zaostři manuálně na jasnou hvězdu ve zvětšeném živém náhledu; vyvážení bílé nastav kolem 3900K pro neutrální oblohu."
+          }
+        },
+        "nightCity": {
+          "name": "Noční město",
+          "tips": {
+            "0": "Foť na základním ISO ze stativu a nech závěrku otevřenou dlouho — světla zůstanou čistá a šum nízký.",
+            "1": "f/11–f/16 promění bodová světla v hvězdicové paprsky; foť během modré hodiny, ať má obloha barvu."
+          }
+        },
+        "waterfall": {
+          "name": "Vodopády a dlouhé expozice",
+          "tips": {
+            "0": "Expozice 0,5–2 s zachovají ve vodě texturu; 30 s a víc ji promění v mlhu. Za denního světla použij ND filtr.",
+            "1": "Cirkulární polarizační filtr potlačí odlesky z mokrých kamenů a listí — a navíc funguje jako ND o síle ~1,5 EV."
+          }
+        },
+        "goldenHour": {
+          "name": "Zlatá hodina",
+          "tips": {
+            "0": "Exponuj na světla a stíny vytáhni v postprodukci — přepálená teplá světla se zachránit nedají.",
+            "1": "Foť objekty v protisvětle pro obrysové světlo a odlesky; předvolba vyvážení bílé „zataženo“ udrží scénu teplou."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Jaká nastavení fotoaparátu použít na portréty?",
+          "answer": "Začni s otevřenou clonou (f/1.8–f/2.8) pro rozmazané pozadí, expozičním časem alespoň 1/200s proti rozmazání pohybem a nejnižším ISO, jaké světlo dovolí (100–400). Použij jednobodové ostření na bližší oko, nebo AF s detekcí očí, pokud ho fotoaparát má."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Jaká nastavení potřebuji na focení Mléčné dráhy?",
+          "answer": "Širokoúhlý světelný objektiv při plném otevření (f/1.4–f/2.8), expozici 10–25 sekund (delší protáhne hvězdy do čar), ISO 1600–6400, manuální ostření nastavené na jasnou hvězdu a stativ. Bezměsíčná noc daleko od městských světel znamená víc než jakékoli nastavení fotoaparátu."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Jsou tahle nastavení přesné recepty?",
+          "answer": "Ne — jsou to osvědčené výchozí body. Světlo se mezi scénami ohromně liší, takže ber rozsahy jako první odhad: udělej zkušební snímek, zkontroluj histogram a doladíš. Cílem je dostat tě rychle do správných hodnot, ne nahradit úsudek."
+        }
+      }
+    }
+  }
+}

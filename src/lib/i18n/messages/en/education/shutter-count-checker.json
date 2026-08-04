@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Every time your camera takes a photo with its mechanical shutter, a counter inside the camera ticks up by one. That number — the shutter count — is like the mileage on a car: it tells you how heavily a camera has been used. It matters most when buying or selling used gear, because shutters are moving parts rated for a finite number of actuations.",
+      "deeper": "A mechanical shutter is a pair of spring-loaded curtains that physically sweep across the sensor for every exposure. Manufacturers life-test these mechanisms and publish ratings: roughly 100,000 actuations for entry-level bodies, 150,000–200,000 for enthusiast models, and 300,000–500,000 for professional ones. The rating is a statistical average, not an expiry date — many shutters last several times their rating, and a failed shutter is usually a repairable (if costly) fault. Where the count lives varies by brand: Nikon writes it, unencrypted, into every file's maker notes, which is why this tool can read it. Canon keeps it only in internal memory, Sony encrypts it, and Pentax obfuscates it. Modern mirrorless cameras complicate the picture further: frames taken with the electronic shutter don't wear the mechanism at all, so a body used mostly in silent mode can have far more total exposures than its mechanical count suggests — and that's fine.",
+      "keyFactors": {
+        "0": {
+          "label": "Camera Brand",
+          "description": "Determines whether the count is readable from files at all. Nikon stores it openly; Canon, Sony, and Pentax do not."
+        },
+        "1": {
+          "label": "Rated Shutter Life",
+          "description": "The manufacturer's tested average lifespan for the shutter mechanism. Higher-tier bodies use more durable mechanisms with higher ratings."
+        },
+        "2": {
+          "label": "Electronic vs Mechanical Shutter",
+          "description": "Electronic-shutter frames cause zero mechanical wear and usually don't increment the mechanical counter. Heavy silent-mode shooters show low counts."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Always check the count from an unedited, straight-from-camera file. Exports from Lightroom, messaging apps, or social media usually strip the maker notes that carry the counter."
+        },
+        "1": {
+          "text": "When buying used, weigh the count against the rating: 40,000 on a body rated 300,000 is barely broken in, while 90,000 on a 100,000-rated body prices in a shutter replacement."
+        },
+        "2": {
+          "text": "A low shutter count doesn't guarantee a healthy camera — water damage, sensor scratches, and drops don't show up in the counter. Inspect test photos and the body itself too."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Shutter Count",
+          "definition": "The number of times the mechanical shutter has fired over the camera's lifetime. Read from the metadata your camera embeds in each photo."
+        },
+        "ratedLife": {
+          "term": "Rated Shutter Life",
+          "definition": "The manufacturer's tested average number of actuations before shutter failure. An average, not a hard limit — many shutters far outlive it."
+        },
+        "source": {
+          "term": "Count Source",
+          "definition": "Where the number was read from: the true shutter-count field, the mechanical-only counter on some mirrorless bodies, or a generic image number used as a rough fallback."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "You shoot 500 photos at a concert using your mirrorless camera's silent electronic shutter. How much mechanical shutter wear did this add?",
+          "hint": "Think about what physically moves during an electronic-shutter exposure.",
+          "successMessage": "Correct! The electronic shutter reads the sensor without moving any curtains, so those 500 frames caused essentially no mechanical wear — and typically don't increment the mechanical counter.",
+          "failureMessage": "The electronic shutter exposes by reading the sensor electronically — no curtains move, so silent shooting adds no mechanical shutter wear.",
+          "options": {
+            "0": { "label": "500 actuations, like any photos" },
+            "1": { "label": "None — only mechanical shutter use counts" },
+            "2": { "label": "Only RAW files add wear" },
+            "3": { "label": "Only flash photos add wear" }
+          }
+        },
+        "1": {
+          "scenario": "A camera is rated for 200,000 actuations and currently shows 195,000. What does the rating actually mean for this body?",
+          "hint": "Ratings come from statistical life testing, like light-bulb hour ratings.",
+          "successMessage": "Right! The rating is the average lifespan from testing — this shutter could fail next week or run to 400,000. It's a probability signal for pricing, not a countdown clock.",
+          "failureMessage": "A shutter rating is the tested average lifespan, not a hard limit or warranty. Many shutters last well beyond it; some fail earlier.",
+          "options": {
+            "0": { "label": "The shutter will stop at 200,000" },
+            "1": { "label": "It's the average lifespan — failure odds rise near it" },
+            "2": { "label": "The warranty ends at 200,000" },
+            "3": { "label": "Battery life degrades after 200,000" }
+          }
+        },
+        "2": {
+          "scenario": "You're comparing two used cameras of the same model: one with 15,000 actuations and visible corrosion near the battery door, one with 60,000 actuations in pristine condition. Which is the safer buy?",
+          "hint": "The counter only records one kind of wear.",
+          "successMessage": "Exactly. Shutter count is one signal among several — corrosion suggests water exposure, which kills cameras far more often than worn shutters. The 60,000-count clean body is the safer buy.",
+          "failureMessage": "Shutter count only measures shutter wear. Corrosion points to water damage, which is far riskier than a moderately used shutter. Judge count plus condition, never count alone.",
+          "options": {
+            "0": { "label": "The 15,000-count body — lower is always better" },
+            "1": { "label": "Whichever is cheaper" },
+            "2": { "label": "The clean 60,000-count body — condition matters more" },
+            "3": { "label": "Neither — both are too old" }
+          }
+        }
+      }
+    }
+  }
+}

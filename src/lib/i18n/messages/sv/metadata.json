@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Lightroom-kataloganalysator — Gratis statistik, endast i webbläsaren",
       "description": "Analysera din Lightroom Classic-katalog lokalt i din webbläsare. Se utrustning, brännvidder, bländarvanor, betyg och mer. 100 % lokalt — din katalog laddas aldrig upp."
+    },
+    "shutter-count-checker": {
+      "title": "Slutarräkningskontroll — gratis och privat",
+      "description": "Kontrollera kamerans slutarräkning från ett foto, gratis och 100 % i din webbläsare. Fungerar med Nikons JPEG- och RAW-filer, med tydlig vägledning för Canon, Sony och andra märken."
+    },
+    "camera-health-checker": {
+      "title": "Kamerahälsokontroll",
+      "description": "Granska ett kamerahus från ett enda foto: modell, serienummer, firmware, ålder, objektiv och slutarliv. 100 % i webbläsaren — perfekt för att kontrollera begagnade kameror före köp."
+    },
+    "panorama-calculator": {
+      "title": "Panoramakalkylator",
+      "description": "Planera hopfogade panoraman: hur många bilder du behöver, hur långt du ska rotera mellan bilderna och den slutliga upplösningen — för valfritt objektiv, valfri sensor och valfritt överlapp."
+    },
+    "diffraction-calculator": {
+      "title": "Diffraktionsgränskalkylator",
+      "description": "Hitta kamerans diffraktionsgräns: bländaren där nedbländning börjar mjuka upp bilderna. Baserat på pixelpitch och Airy-skivan, för valfri sensor och upplösning."
+    },
+    "photography-cheat-sheet": {
+      "title": "Fotofusklapp — kamerainställningar per scenario",
+      "description": "Fusklappar med kamerainställningar för porträtt, landskap, vilda djur, Vintergatan och mycket mer. Beprövade utgångspunkter som du kan ladda ner som bild eller skriva ut."
     }
   }
 }

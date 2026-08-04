@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Kameraets orientering",
+      "portrait": "Højformat",
+      "landscape": "Bredformat",
+      "overlap": "Overlap: {percent}%",
+      "targetWidth": "Panoramabredde",
+      "rows": "Rækker",
+      "megapixels": "Kameraopløsning: {mp} MP",
+      "fanLabel": "Diagram set ovenfra af {frames} overlappende billeder",
+      "totalShots": "Billeder i alt",
+      "perRow": "Billeder × rækker",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotation mellem billeder",
+      "coverage": "Dækning (H × V)",
+      "frameFov": "Billedvinkel pr. billede",
+      "stitchedSize": "Størrelse efter sammensætning",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Hvor meget overlap skal panoramabilleder have?",
+          "answer": "25–35% er ideelt for de fleste scener. Stitching-software har brug for fælles detaljer mellem nabobilleder for at finde kontrolpunkter; under 15% kan den fejle med at rette billederne ind, mens du over 50% tager mange ekstra billeder til ringe gavn. Brug mere overlap i scener med få tydelige detaljer, som klar himmel eller stille vand."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Hvorfor tage panoramaer i højformat (lodret)?",
+          "answer": "Højformat fanger mere lodret billedvinkel pr. billede, så det færdige panorama bliver højere og giver plads til beskæring og korrektion af horisonten. Prisen er et par ekstra billeder i bredden — som regel en god byttehandel for den ekstra fleksibilitet og opløsning."
+        },
+        "what-is-nodal-point": {
+          "question": "Hvad er det parallaksefrie punkt (nodalpunktet)?",
+          "answer": "Det er punktet inde i objektivet, som kameraet kan rotere omkring, uden at nære og fjerne objekter forskyder sig i forhold til hinanden mellem billederne. Roterer man i stedet omkring stativgevindet, opstår parallaksefejl, der gør sammensætningen svær — især med nære forgrundsobjekter. Panoramahoveder lader dig placere objektivets parallaksefrie punkt over rotationsaksen."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "At blænde ned øger dybdeskarpheden — men forbi et vist punkt begynder det at gøre hele billedet blødere i stedet for skarpere. Det er diffraktion: lysbølger, der afbøjes, når de presser sig gennem en lille åbning. Denne beregner viser præcis, hvor det punkt ligger for dit kamera, så du ved, hvor langt du kan blænde ned uden at betale en skarphedsstraf.",
+      "deeper": "Når lyset passerer blænden, lander hvert punkt i scenen ikke som et punkt på sensoren, men som et bittelille diffraktionsmønster — en lys kerne kaldet Airy-skiven omgivet af svage ringe. Skivens diameter vokser proportionalt med blændetallet: cirka 2,44 × bølgelængde × N, hvilket ved f/8 i grønt lys allerede er ~10,7 µm. Om det betyder noget, afhænger af dine pixels. En 24 MP fuldformatsensor har pixels på ~6 µm; en 61 MP-sensor på ~3,8 µm. Når Airy-skiven bliver klart større end en pixel, smøres detaljer, som sensoren ellers kunne opløse, ud over nabopixels, og ingen objektivkvalitet kan hente dem tilbage. Derfor ser samme f/11, der er fin på et gammelt 12 MP-hus, synligt blødere ud på en moderne højopløsningssensor, og derfor tilbyder kompaktkameraer med bittesmå pixels sjældent blænder forbi f/8. Tommelfingerreglen her — grænse ≈ pixelafstand / 0,67 — markerer, hvor blødheden bliver målbar, ikke hvor billederne bryder sammen: At blænde ét trin forbi grænsen er ofte en god byttehandel for dybdeskarphed. Forbi to trin slår focus stacking nedblænding.",
+      "keyFactors": {
+        "0": {
+          "label": "Blænde (blændetal)",
+          "description": "Den eneste kontrol over selve diffraktionen: Airy-skivens diameter skalerer lineært med blændetallet. f/16 spreder lyset dobbelt så bredt som f/8."
+        },
+        "1": {
+          "label": "Pixelafstand",
+          "description": "Den fysiske størrelse af én pixel, bestemt af sensorstørrelse og megapixels tilsammen. Mindre pixels opløser flere detaljer — og afslører diffraktion tidligere."
+        },
+        "2": {
+          "label": "Outputstørrelse",
+          "description": "Diffraktion, der er synlig ved 100% på skærmen, kan være usynlig i en webeksport eller et moderat print. Bedøm skarphed i den størrelse, du reelt skal bruge."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Find dit objektivs sweet spot: Fotografér den samme detaljerige scene ved hvert helt blændetrin, og sammenlign ved 100%. De fleste objektiver topper to til tre trin nede fra fuld åbning, lige før diffraktionen tager over."
+        },
+        "1": {
+          "text": "Til landskaber med behov for dyb fokus på et højopløsningshus: Prøv den hyperfokale afstand ved f/8, før du griber til f/16 — præcis fokusplacering giver ofte mere skarphed end mindre blænder."
+        },
+        "2": {
+          "text": "I makroarbejde vokser den effektive blænde med forstørrelsen (f/11 ved 1:1 opfører sig som f/22), så diffraktionen bider langt tidligere, end hjulet antyder. Focus stacking ved en moderat blænde er den skarpe udvej."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pixelafstand",
+          "definition": "Bredden af en enkelt pixel på sensoren, i mikrometer. Beregnes som sensorbredden divideret med det vandrette antal pixels — 24 MP fuldformat ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Airy-skive",
+          "definition": "Diffraktionsmønsteret, som et lyspunkt danner efter at have passeret blænden: en lys kerne med svage ringe. Diameteren ≈ 2,44 × bølgelængde × blændetal."
+        },
+        "diffractionLimit": {
+          "term": "Diffraktionsgrænse",
+          "definition": "Blændetallet, hvor Airy-skiven vokser ud over pixlen, og skarpheden pr. pixel begynder at falde — cirka pixelafstand (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du blænder dit objektiv ned fra f/8 til f/22 for maksimal dybdeskarphed, men de fine detaljer i dit billede bliver blødere overalt — selv i fokusplanet. Hvad sker der?",
+          "hint": "Det er fysik, ikke en objektivfejl.",
+          "successMessage": "Korrekt! Lyset afbøjes (diffrakterer), når det passerer en lille blænde, og spreder hvert punkt til en skive større end en pixel. Ved f/22 rammer denne blødhed hele billedet, fokusplanet inklusive.",
+          "failureMessage": "Dette er diffraktion: Lysbølger bøjer omkring blændelamellerne og spreder hvert lyspunkt til en udflydende skive. Det rammer hele billedet ens, uanset objektivets kvalitet.",
+          "options": {
+            "0": { "label": "Objektivet er dårligt bygget" },
+            "1": { "label": "Lyset afbøjes, når det passerer den lille åbning" },
+            "2": { "label": "Sensoren overopheder ved små blænder" },
+            "3": { "label": "ISO-støjen stiger" }
+          }
+        },
+        "1": {
+          "scenario": "Du opgraderer fra et 24 MP fuldformatkamera til et med 61 MP. Hvad sker der med den blænde, hvor diffraktion bliver synlig?",
+          "hint": "Flere megapixels på samme sensorareal betyder mindre pixels.",
+          "successMessage": "Rigtigt! 61 MP-sensorens pixels på ~3,8 µm overhaler Airy-skiven tidligere, så diffraktionsgrænsen falder fra cirka f/9 til cirka f/5.6. Højopløsningssensorer har smallere blænde-sweet-spots.",
+          "failureMessage": "Mindre pixels afslører diffraktion tidligere. 61 MP-sensorens diffraktionsgrænse ligger omkring f/5.6, mod f/9 for 24 MP-sensoren — grænsen flytter sig til en større blændeåbning.",
+          "options": {
+            "0": { "label": "Den flytter til en mindre blænde (højere blændetal)" },
+            "1": { "label": "Den flytter til en større blændeåbning (lavere blændetal)" },
+            "2": { "label": "Den ændrer sig ikke" },
+            "3": { "label": "Diffraktion forsvinder med flere megapixels" }
+          }
+        },
+        "2": {
+          "scenario": "Du fotograferer et landskab med et 45 MP fuldformatkamera og vil have maksimal samlet skarphed med god dybdeskarphed. Hvilket blændeområde er det bedste udgangspunkt?",
+          "hint": "Balancér objektivfejl (slemt ved fuld åbning) mod diffraktion (slemt ved nedblænding).",
+          "successMessage": "Korrekt! f/8–f/11 ligger lige omkring diffraktionsgrænsen for pixels på ~4,4 µm og giver samtidig betydelig dybdeskarphed — det klassiske landskabs-sweet-spot på højopløst fuldformat.",
+          "failureMessage": "f/8–f/11 balancerer dybdeskarphed mod diffraktion for en 45 MP fuldformatsensor. f/22 blødgør synligt de fine detaljer, og fuld åbning mangler dybdeskarphed.",
+          "options": {
+            "0": { "label": "Altid f/22 for maksimal dybde" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Fuld åbning" },
+            "3": { "label": "Det afhænger kun af ISO" }
+          }
+        }
+      }
+    }
+  }
+}

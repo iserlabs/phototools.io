@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Pudota valokuva tähän tai valitse tiedosto napsauttamalla (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Mitkä merkit tallentavat laukaisumäärän?",
+      "status": {
+        "supported": "Luettavissa",
+        "partial": "Osittain",
+        "unsupported": "Ei tiedostoissa"
+      },
+      "brands": {
+        "nikon": "Nikon kirjoittaa laukaisumäärän jokaisen valokuvan metatietoihin salaamattomana. Käytä muokkaamatonta alkuperäistiedostoa parhaan tuloksen saamiseksi.",
+        "canon": "Canon ei koskaan kirjoita laukaisumäärää kuvatiedostoihin — se tallennetaan vain kameran sisälle, ja sen lukevat huoltotyökalut tai USB-apuohjelmat.",
+        "sony": "Sony tallentaa laukaisumäärän metatietojensa salattuun osaan, jota ei voi purkaa selaimessa. Erilliset työpöytäohjelmat voivat lukea sen USB:n kautta.",
+        "fujifilm": "Fujifilm-rungot eivät tallenna todellista laukaisumäärää, mutta jotkin kirjoittavat kuvalaskurin, joka antaa karkean alarajan.",
+        "pentax": "Pentax sotkee laukaisumääräkenttänsä salakirjoituksella, joten sitä ei voi lukea luotettavasti tiedostoista.",
+        "olympus": "OM System / Olympus -rungot pitävät täyden laukaisumäärän sisäisessä huoltovalikossa; tiedostoissa on joskus kuvalaskuri, joka antaa viitteitä käytöstä.",
+        "panasonic": "Panasonic ei kirjoita laukaisumäärää tiedostoihin. Kameran huoltovalikko näyttää sen.",
+        "leica": "Leica-rungot eivät yleensä tallenna laukaisumäärää kuvatiedostoihin."
+      },
+      "countLabel": "Sulkimen laukaisut",
+      "source": {
+        "shutterCount": "Luettu kameran laukaisumäärän metatiedoista — tämä on todellinen mekaanisen sulkimen laukaisulaskuri.",
+        "mechanicalShutterCount": "Luettu mekaanisen sulkimen laskurista — elektronisella sulkimella otetut kuvat eivät ole mukana.",
+        "imageNumber": "Arvioitu tiedoston kuvanumerosta. Tämä on karkea alaraja, ei tarkka laukaisumäärä — laskuri voi nollautua tai pyörähtää ympäri."
+      },
+      "ratedLife": "Sulkimen ilmoitettu kestoikä",
+      "ratings": {
+        "entry": "Perustaso",
+        "enthusiast": "Harrastajataso",
+        "advanced": "Edistynyt",
+        "pro": "Ammattilaistaso",
+        "flagship": "Lippulaiva"
+      },
+      "lifeUsed": "{percent} % ilmoitetusta kestoiästä käytetty",
+      "verdict": {
+        "low": "Tuskin käytetty",
+        "moderate": "Kohtuullisesti käytetty",
+        "high": "Kovassa käytössä ollut",
+        "beyond": "Kestoikä ylitetty"
+      },
+      "noCountTitle": "Tässä tiedostossa ei ole laukaisumäärää",
+      "noCountGeneric": "Tämä tiedosto ei sisällä luettavissa olevaa laukaisumäärää. Kokeile muokkaamatonta, suoraan kamerasta tullutta valokuvaa — kuvankäsittelyohjelmien viennit poistavat usein valmistajan metatiedot.",
+      "errorRead": "Tiedostoa ei voitu lukea. Kokeile muokkaamatonta JPEG- tai RAW-tiedostoa suoraan kamerasta.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Mikä on sulkimen laukaisumäärä?",
+          "answer": "Laukaisumäärä kertoo, kuinka monta kertaa kameran mekaaninen suljin on lauennut — se on kameran vastine auton mittarilukemalle. Se on tarkistetuin kulumisen mittari käytettyä kameraa ostettaessa tai myytäessä, koska sulkimet on mitoitettu rajalliselle määrälle laukaisuja."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Kuinka monta laukaisua on liikaa?",
+          "answer": "Se riippuu kameraluokasta. Perustason sulkimet on mitoitettu noin 100 000 laukaisulle, harrastajarungot 150 000–200 000:lle ja ammattilaisrungot 300 000–500 000:lle. Mitoitus on keskimääräinen kestoikä, ei ehdoton raja — monet sulkimet kestävät paljon pidempään, ja pieni lukema huonosti kohdellussa rungossa voi silti tarkoittaa ongelmia."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Miksi en voi tarkistaa laukaisumäärää Canon- tai Sony-kuvastani?",
+          "answer": "Canon ei kirjoita laukaisumäärää kuvatiedostoihin lainkaan — se on vain kameran sisäisessä muistissa. Sony kirjoittaa sen mutta salaa kyseisen osan metatiedoista. Kummassakaan tapauksessa selaintyökalu ei voi lukea sitä valokuvasta; tavallinen kiertotie ovat työpöytäohjelmat, jotka yhdistävät kameraan USB:n kautta."
+        }
+      }
+    }
+  }
+}

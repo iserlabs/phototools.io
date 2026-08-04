@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Capteur",
+      "megapixels": "Résolution : {mp} MP",
+      "aperture": "Ouverture",
+      "verdict": {
+        "sharp": "{f} est exempt de diffraction",
+        "borderline": "{f} est légèrement adouci par la diffraction",
+        "soft": "{f} est visiblement adouci par la diffraction"
+      },
+      "verdictDetail": {
+        "sharp": "En dessous de la limite de diffraction de {limit} pour ce capteur et cette résolution, c'est l'objectif — pas la diffraction — qui détermine la netteté.",
+        "borderline": "Au-delà de la limite de diffraction de {limit}, les détails fins au niveau du pixel commencent à se brouiller. Acceptable quand tu as besoin du surplus de profondeur de champ.",
+        "soft": "Bien au-delà de la limite de diffraction de {limit}. La profondeur de champ continue d'augmenter, mais le niveau de détail global se dégrade visiblement — envisage le focus stacking plutôt que de fermer davantage."
+      },
+      "stripLabel": "Échelle d'ouvertures colorée selon l'impact de la diffraction",
+      "pixelPitch": "Pas de pixel",
+      "airyDisk": "Diamètre de la tache d'Airy",
+      "diffractionLimit": "Limite de diffraction",
+      "tableTitle": "Limite de diffraction par capteur et résolution",
+      "tableSensor": "Capteur",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Qu'est-ce que la diffraction en photographie ?",
+          "answer": "La diffraction est la déviation des ondes lumineuses lorsqu'elles se faufilent par une petite ouverture. Plus l'ouverture est petite (nombre f élevé), plus chaque point de lumière s'étale en un disque flou (la tache d'Airy) sur le capteur. Dès que ce disque devient plus grand qu'un pixel, les détails fins se brouillent, quelle que soit la qualité de l'objectif."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Quelle ouverture est la plus nette ?",
+          "answer": "La plupart des objectifs atteignent leur maximum deux ou trois diaphragmes après la pleine ouverture — typiquement entre f/4 et f/8 en plein format. Cette zone idéale équilibre les aberrations de l'objectif (pires à pleine ouverture) et la diffraction (pire à mesure qu'on ferme). Les capteurs haute résolution atteignent leur limite de diffraction plus tôt, leur zone idéale utilisable est donc plus étroite."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "La diffraction dépend-elle du capteur ?",
+          "answer": "L'effet optique ne dépend que de l'ouverture et de la longueur d'onde de la lumière — mais sa visibilité dépend de la taille des pixels. Un capteur plein format de 61 MP a des pixels de ~3,8 µm et montre un adoucissement par diffraction vers f/5.6, tandis qu'un capteur de 12 MP aux gros pixels reste net jusqu'à f/11. Les capteurs plus petits atteignent la limite à des ouvertures plus grandes pour le même nombre de mégapixels."
+        }
+      }
+    }
+  }
+}

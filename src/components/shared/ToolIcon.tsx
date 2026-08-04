@@ -223,6 +223,61 @@ function LightroomCatalogAnalyzerIcon(p: IconProps) {
   )
 }
 
+/** Shutter Count Checker — odometer dial with needle */
+function ShutterCountIcon(p: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={s} height={s} fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M4 18a9 9 0 1 1 16 0" />
+      <path d="M12 4v2M5.5 7.5L7 9M18.5 7.5L17 9M3 13h2M19 13h2" />
+      <path d="M12 15l3.5-4.5" />
+      <circle cx="12" cy="15" r="1.5" />
+    </svg>
+  )
+}
+
+/** Camera Health Checker — camera body with pulse line */
+function CameraHealthIcon(p: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={s} height={s} fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M3 8h3l2-2h8l2 2h3v12H3z" />
+      <path d="M6 14h3l1.5-3 3 5 1.5-2h3" />
+    </svg>
+  )
+}
+
+/** Panorama Calculator — wide frame with curved horizon */
+function PanoramaIcon(p: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={s} height={s} fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M2 6c3.5 1.5 6.5 2.2 10 2.2S18.5 7.5 22 6v12c-3.5-1.5-6.5-2.2-10-2.2S5.5 16.5 2 18z" />
+      <path d="M8 8.1v7.8M16 8.1v7.8" />
+    </svg>
+  )
+}
+
+/** Diffraction Limit Calculator — aperture dot with diffraction waves */
+function DiffractionIcon(p: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={s} height={s} fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <circle cx="12" cy="12" r="2" />
+      <path d="M12 5.5a6.5 6.5 0 0 1 0 13" />
+      <path d="M12 2a10 10 0 0 1 0 20" />
+      <path d="M12 8.5a3.5 3.5 0 0 0 0 7" />
+    </svg>
+  )
+}
+
+/** Photography Cheat Sheet — settings card with checklist */
+function CheatSheetIcon(p: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={s} height={s} fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <rect x="4" y="3" width="16" height="18" rx="2" />
+      <path d="M8 8h4M8 12h4M8 16h4" />
+      <path d="M15 8l1 1 2-2M15 12l1 1 2-2M15 16l1 1 2-2" />
+    </svg>
+  )
+}
+
 const ICON_MAP: Record<string, (props: IconProps) => React.JSX.Element> = {
   'fov-simulator': FovSimulator,
   'color-scheme-generator': ColorHarmony,
@@ -242,6 +297,11 @@ const ICON_MAP: Record<string, (props: IconProps) => React.JSX.Element> = {
   'frame-studio': FrameStudioIcon,
   'megapixels-size-visualizer': MegapixelVisualizerIcon,
   'lightroom-catalog-analyzer': LightroomCatalogAnalyzerIcon,
+  'shutter-count-checker': ShutterCountIcon,
+  'camera-health-checker': CameraHealthIcon,
+  'panorama-calculator': PanoramaIcon,
+  'diffraction-calculator': DiffractionIcon,
+  'photography-cheat-sheet': CheatSheetIcon,
 }
 
 interface ToolIconProps extends IconProps {

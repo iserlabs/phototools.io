@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Panorama dibina dengan mengambil beberapa foto bertindih sambil memutar kamera, kemudian membiarkan perisian mencantumkannya menjadi satu imej lebar. Kuncinya ialah mengetahui berapa jauh untuk berputar antara tangkapan: terlalu jauh dan perisian tidak dapat menyambungkan bingkai, terlalu sedikit dan anda membazir berpuluh-puluh tangkapan. Kalkulator ini membuat pengiraan itu daripada lensa, sensor dan pertindihan yang anda mahu.",
+      "deeper": "Setiap bingkai meliputi sudut pandangan tetap yang ditentukan oleh panjang fokus dan saiz sensor — lensa 50mm pada bingkai penuh melihat kira-kira 40° secara mendatar. Perisian cantuman menjajarkan bingkai bersebelahan dengan mencari 'titik kawalan' yang dikongsi dalam zon pertindihan, sebab itulah pertindihan 25–35% menjadi standard praktikal: ia memberi algoritma cukup perincian yang dikongsi tanpa meletupkan bilangan bingkai. Putaran berguna setiap tangkapan justeru ialah medan pandangan bingkai didarab (1 − pertindihan). Mengambil gambar dalam orientasi potret menukar langkah mendatar yang lebih sempit dengan liputan menegak yang jauh lebih besar, sebab itulah kebanyakan panorama satu baris diambil secara menegak. Untuk pemandangan yang benar-benar tinggi, panorama berbilang baris menggunakan logik pertindihan yang sama secara menegak. Fail akhir yang dicantum membesar dengan pantas: setiap bingkai tambahan menyumbangkan resolusinya ditolak pertindihan, jadi panorama potret 7 bingkai daripada kamera 24 MP dengan mudah melebihi 100 MP. Satu kehalusan fizikal menghadkan semuanya: berputar pada soket tripod menganjak pusat optik lensa antara bingkai, menyebabkan objek dekat dan jauh tidak sejajar (paralaks). Untuk landskap yang jauh ini jarang menjadi masalah, tetapi dengan elemen latar depan yang dekat anda perlu berputar pada titik tanpa-paralaks lensa menggunakan rel nod atau kepala panorama.",
+      "keyFactors": {
+        "0": {
+          "label": "Panjang Fokus & Sensor",
+          "description": "Bersama-sama ia menetapkan medan pandangan satu bingkai — unit asas pembinaan panorama. Lensa lebih panjang bermakna bingkai lebih sempit dan lebih banyak tangkapan."
+        },
+        "1": {
+          "label": "Pertindihan",
+          "description": "Zon yang dikongsi antara bingkai bersebelahan yang menjadi asas penjajaran perisian cantuman. 25–35% ialah julat terbaik; pemandangan tanpa ciri (langit, air) memerlukan lebih."
+        },
+        "2": {
+          "label": "Orientasi",
+          "description": "Bingkai potret meliputi lebar yang kurang tetapi ketinggian yang jauh lebih besar setiap tangkapan — pilihan standard untuk panorama satu baris kerana ia meninggalkan ruang pemangkasan."
+        },
+        "3": {
+          "label": "Paralaks",
+          "description": "Ketidakjajaran dekat/jauh yang disebabkan oleh putaran pada paksi yang salah. Tidak berbahaya untuk pemandangan jauh; kritikal dengan latar depan yang dekat."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Kunci pendedahan, imbangan putih dan fokus kepada manual sebelum bingkai pertama. Apa-apa yang auto akan beranjak antara bingkai dan mewujudkan jalur yang kelihatan pada langit yang dicantum."
+        },
+        "1": {
+          "text": "Ambil gambar dengan lensa didatarkan dan berputar dalam satu pusingan yang lancar, sambil menambah satu bingkai buangan di setiap hujung — bingkai tepi terherot dan dipangkas semasa cantuman."
+        },
+        "2": {
+          "text": "Untuk panorama pegang tangan, besarkan pertindihan kepada 40–50%. Putaran anda tidak akan tepat, dan bingkai tambahan memberi perisian cantuman ruang untuk pulih."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Pertindihan",
+          "definition": "Peratusan setiap bingkai yang dikongsi dengan jirannya. Perisian cantuman memerlukan perincian yang dikongsi ini untuk menjajarkan bingkai — 25–35% adalah biasa."
+        },
+        "orientation": {
+          "term": "Orientasi Kamera",
+          "definition": "Pembingkaian potret (menegak) ialah standard untuk panorama: setiap bingkai menyumbang lebih ketinggian, meninggalkan ruang untuk pembetulan ufuk dan pemangkasan."
+        },
+        "rotateBetween": {
+          "term": "Putaran Antara Tangkapan",
+          "definition": "Berapa darjah untuk memusingkan kamera selepas setiap bingkai: medan pandangan bingkai didarab (1 − pertindihan). Kepala panorama mempunyai hentian klik khusus untuk ini."
+        },
+        "rows": {
+          "term": "Baris",
+          "definition": "Panorama berbilang baris menyusun pusingan mendatar secara menegak, menggunakan peraturan pertindihan yang sama antara baris untuk meliputi pemandangan yang tinggi."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Anda mengambil panorama banjaran gunung. Berapa banyak bingkai bersebelahan patut bertindih untuk cantuman yang boleh dipercayai?",
+          "hint": "Perisian cantuman memerlukan perincian yang dikongsi, tetapi setiap bingkai tambahan memakan masa.",
+          "successMessage": "Betul! Pertindihan sekitar 30% memberi perisian cantuman titik kawalan yang mencukupi tanpa membazir bingkai — cadangan standard untuk kebanyakan pemandangan.",
+          "failureMessage": "25–35% ialah standard praktikal. Di bawah ~15% perisian cantuman sukar mencari titik kawalan; 80% menggandakan tiga kali bilangan bingkai anda tanpa manfaat.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Anda mahu panorama satu baris dengan ruang menegak yang cukup untuk meluruskan ufuk dan memangkas dengan bebas selepas itu. Dalam orientasi kamera yang manakah anda patut mengambil gambar?",
+          "hint": "Arah manakah yang memberi setiap bingkai lebih ketinggian?",
+          "successMessage": "Betul! Orientasi potret menangkap medan menegak yang jauh lebih besar setiap bingkai — bingkai tambahan yang diperlukan secara mendatar ialah harga murah untuk kebebasan pemangkasan.",
+          "failureMessage": "Potret (menegak) ialah standard untuk panorama satu baris: setiap bingkai lebih tinggi, jadi hasil cantuman tahan pembetulan ufuk dan pemangkasan.",
+          "options": {
+            "0": { "label": "Landskap" },
+            "1": { "label": "Potret" },
+            "2": { "label": "Mod pangkas segi empat sama" },
+            "3": { "label": "Condong 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Dengan lensa 50mm pada bingkai penuh yang dipegang dalam orientasi landskap (kira-kira 40° pandangan mendatar) dan pertindihan 30%, lebih kurang berapa bingkai diperlukan untuk panorama 180°?",
+          "hint": "Setiap tangkapan memajukan liputan sebanyak 40° × 0.7 = 28°.",
+          "successMessage": "Betul! Bingkai pertama meliputi 40°, dan setiap bingkai tambahan menambah ~28°. Meliputi baki 140° memerlukan 5 bingkai lagi, jadi 7 bingkai kesemuanya (dengan sedikit lebihan).",
+          "failureMessage": "Setiap bingkai selepas yang pertama menambah 40° × (1 − 0.3) = 28° liputan baharu. (180 − 40) / 28 = 5 bingkai lagi, jadi 7 kesemuanya.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Panorama anda mempunyai pagar satu meter di hadapan kamera dan gunung di belakang. Hasil cantuman menunjukkan pagar itu berbayang dan tidak sejajar antara bingkai. Pada titik manakah kamera patut berputar untuk membetulkannya?",
+          "hint": "Masalahnya ialah paralaks — objek dekat dan jauh beranjak relatif antara satu sama lain.",
+          "successMessage": "Tepat sekali! Berputar pada titik tanpa-paralaks (nod) lensa mengekalkan objek dekat dan jauh sejajar antara bingkai. Kepala panorama dan rel nod wujud khusus untuk ini.",
+          "failureMessage": "Kamera mesti berputar pada titik tanpa-paralaks lensa (sering dipanggil titik nod). Berputar pada soket tripod menganjak pusat optik, menyebabkan paralaks yang anda lihat.",
+          "options": {
+            "0": { "label": "Elemen hadapan lensa" },
+            "1": { "label": "Titik tanpa-paralaks lensa" },
+            "2": { "label": "Satah sensor" },
+            "3": { "label": "Soket tripod" }
+          }
+        }
+      }
+    }
+  }
+}

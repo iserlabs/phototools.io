@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Khép khẩu độ làm tăng độ sâu trường ảnh — nhưng qua một ngưỡng nhất định, nó bắt đầu khiến toàn bộ bức ảnh mềm đi thay vì nét hơn. Đó là nhiễu xạ: sóng ánh sáng bị bẻ cong khi len qua một khe hở nhỏ. Công cụ này chỉ ra chính xác ngưỡng đó nằm ở đâu với máy của bạn, để bạn biết mình có thể khép khẩu đến đâu trước khi phải trả giá bằng độ nét.",
+      "deeper": "Khi ánh sáng đi qua khẩu độ, mỗi điểm trong cảnh không rơi xuống cảm biến thành một điểm mà thành một hoa văn nhiễu xạ nhỏ xíu — lõi sáng gọi là đĩa Airy bao quanh bởi các vầng mờ nhạt. Đường kính đĩa tăng tỷ lệ thuận với số f: khoảng 2,44 × bước sóng × N, tức ở f/8 với ánh sáng xanh lục đã là ~10,7 µm. Điều đó có đáng ngại hay không tùy vào pixel của bạn. Cảm biến full frame 24 MP có pixel ~6 µm; cảm biến 61 MP có pixel ~3,8 µm. Một khi đĩa Airy lớn hơn hẳn một pixel, chi tiết mà cảm biến lẽ ra phân giải được sẽ bị lem sang các pixel lân cận, và không chất lượng ống kính nào cứu lại được. Đó là lý do cùng f/11 trông ổn trên máy 12 MP đời cũ lại làm mềm rõ rệt tệp ảnh từ cảm biến độ phân giải cao hiện đại, và lý do máy compact với pixel tí hon hiếm khi có khẩu độ nhỏ hơn f/8. Quy tắc kinh nghiệm của ngành dùng ở đây — giới hạn ≈ kích thước pixel / 0,67 — đánh dấu nơi độ mềm bắt đầu đo được, không phải nơi ảnh hỏng hẳn: khép thêm một khẩu qua giới hạn thường là đánh đổi xứng đáng lấy độ sâu trường ảnh. Qua hai khẩu thì chồng ảnh nét thắng việc khép khẩu.",
+      "keyFactors": {
+        "0": {
+          "label": "Khẩu độ (số f)",
+          "description": "Yếu tố duy nhất điều khiển bản thân nhiễu xạ: đường kính đĩa Airy tăng tuyến tính theo số f. f/16 làm ánh sáng loang rộng gấp đôi f/8."
+        },
+        "1": {
+          "label": "Kích thước điểm ảnh",
+          "description": "Kích thước vật lý của một pixel, do kích thước cảm biến và số megapixel cùng quyết định. Pixel nhỏ hơn phân giải nhiều chi tiết hơn — và lộ nhiễu xạ sớm hơn."
+        },
+        "2": {
+          "label": "Kích thước đầu ra",
+          "description": "Nhiễu xạ thấy được ở mức 100% trên màn hình có thể vô hình trong ảnh xuất cỡ web hoặc bản in vừa phải. Hãy đánh giá độ nét ở kích thước bạn thực sự sử dụng."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Tìm vùng lý tưởng của ống kính: chụp cùng một cảnh nhiều chi tiết ở từng khẩu đầy đủ rồi so sánh ở 100%. Hầu hết ống kính đạt đỉnh khi khép hai đến ba khẩu từ mức mở lớn nhất, ngay trước khi nhiễu xạ lấn át."
+        },
+        "1": {
+          "text": "Với phong cảnh cần vùng nét sâu trên máy độ phân giải cao, hãy thử khoảng cách siêu nét ở f/8 trước khi với tới f/16 — đặt điểm nét chính xác thường mang lại nhiều độ nét hơn là khẩu độ nhỏ hơn."
+        },
+        "2": {
+          "text": "Trong chụp macro, khẩu độ hiệu dụng tăng theo độ phóng đại (f/11 ở tỷ lệ 1:1 tương đương f/22), nên nhiễu xạ ập đến sớm hơn nhiều so với con số trên vòng chỉnh. Chồng ảnh nét ở khẩu độ vừa phải là lối thoát sắc nét."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Kích thước điểm ảnh",
+          "definition": "Chiều rộng của một pixel trên cảm biến, tính bằng micromet. Được tính từ chiều rộng cảm biến chia cho số pixel theo chiều ngang — full frame 24 MP ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Đĩa Airy",
+          "definition": "Hoa văn nhiễu xạ mà một điểm sáng tạo ra sau khi đi qua khẩu độ: lõi sáng với các vầng mờ. Đường kính ≈ 2,44 × bước sóng × số f."
+        },
+        "diffractionLimit": {
+          "term": "Giới hạn nhiễu xạ",
+          "definition": "Số f mà tại đó đĩa Airy vượt quá kích thước pixel và độ nét từng pixel bắt đầu giảm — xấp xỉ kích thước pixel (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Bạn khép ống kính từ f/8 xuống f/22 để có độ sâu trường ảnh tối đa, nhưng các chi tiết mịn trong ảnh mềm đi ở khắp mọi nơi — kể cả trong mặt phẳng nét. Chuyện gì đang xảy ra?",
+          "hint": "Đây là vật lý, không phải lỗi ống kính.",
+          "successMessage": "Chính xác! Ánh sáng bị bẻ cong (nhiễu xạ) khi đi qua khẩu độ nhỏ, làm mỗi điểm sáng loang thành một đĩa lớn hơn một pixel. Ở f/22 sự mềm hóa này ảnh hưởng toàn khung hình, kể cả mặt phẳng nét.",
+          "failureMessage": "Đây là nhiễu xạ: sóng ánh sáng bẻ cong quanh lá khẩu, làm mỗi điểm sáng loang thành một đĩa mờ. Nó ảnh hưởng toàn bộ bức ảnh như nhau, bất kể chất lượng ống kính.",
+          "options": {
+            "0": { "label": "Ống kính chế tạo kém" },
+            "1": { "label": "Ánh sáng bị bẻ cong khi đi qua khe hở nhỏ" },
+            "2": { "label": "Cảm biến quá nóng ở khẩu độ nhỏ" },
+            "3": { "label": "Nhiễu ISO tăng lên" }
+          }
+        },
+        "1": {
+          "scenario": "Bạn nâng cấp từ máy full frame 24 MP lên máy 61 MP. Khẩu độ mà nhiễu xạ bắt đầu thấy được sẽ thay đổi thế nào?",
+          "hint": "Nhiều megapixel hơn trên cùng diện tích cảm biến nghĩa là pixel nhỏ hơn.",
+          "successMessage": "Đúng vậy! Pixel ~3,8 µm của cảm biến 61 MP phân giải được đĩa Airy sớm hơn, nên giới hạn nhiễu xạ giảm từ khoảng f/9 xuống khoảng f/5.6. Cảm biến độ phân giải cao có vùng khẩu độ lý tưởng hẹp hơn.",
+          "failureMessage": "Pixel nhỏ hơn lộ nhiễu xạ sớm hơn. Giới hạn nhiễu xạ của cảm biến 61 MP quanh f/5.6, so với f/9 của cảm biến 24 MP — giới hạn dịch về phía khẩu độ lớn hơn.",
+          "options": {
+            "0": { "label": "Dịch về khẩu độ nhỏ hơn (số f cao hơn)" },
+            "1": { "label": "Dịch về khẩu độ lớn hơn (số f thấp hơn)" },
+            "2": { "label": "Không thay đổi" },
+            "3": { "label": "Nhiễu xạ biến mất khi có nhiều megapixel hơn" }
+          }
+        },
+        "2": {
+          "scenario": "Bạn chụp phong cảnh trên máy full frame 45 MP và muốn độ nét tổng thể tối đa với độ sâu trường ảnh tốt. Dải khẩu độ nào là điểm khởi đầu tốt nhất?",
+          "hint": "Cân bằng giữa quang sai ống kính (tệ khi mở lớn nhất) và nhiễu xạ (tệ khi khép sâu).",
+          "successMessage": "Chính xác! f/8–f/11 nằm ngay quanh giới hạn nhiễu xạ của pixel ~4,4 µm mà vẫn cho độ sâu trường ảnh đáng kể — vùng lý tưởng kinh điển cho phong cảnh trên full frame độ phân giải cao.",
+          "failureMessage": "f/8–f/11 cân bằng độ sâu trường ảnh với nhiễu xạ trên cảm biến full frame 45 MP. f/22 làm mềm chi tiết rõ rệt, còn mở lớn nhất thì thiếu độ sâu trường ảnh.",
+          "options": {
+            "0": { "label": "Luôn f/22 để đạt độ sâu tối đa" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Mở lớn nhất" },
+            "3": { "label": "Chỉ phụ thuộc vào ISO" }
+          }
+        }
+      }
+    }
+  }
+}

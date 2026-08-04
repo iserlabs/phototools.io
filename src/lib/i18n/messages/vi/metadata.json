@@ -91,8 +91,28 @@
       "description": "Trực quan hóa cách megapixel chuyển đổi sang kích thước in ở 72-300 DPI với các tỷ lệ khung hình khác nhau. So sánh máy ảnh, dung lượng file, pixel binning và tầm crop — với bảng in phân loại chất lượng."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Thống kê miễn phí, chỉ trong trình duyệt",
+      "title": "Trình phân tích Catalog Lightroom — Thống kê miễn phí, chỉ trong trình duyệt",
       "description": "Phân tích catalog Lightroom Classic của bạn ngay trong trình duyệt một cách cục bộ. Xem thiết bị, tiêu cự, thói quen khẩu độ, xếp hạng và hơn thế nữa. 100% cục bộ — catalog của bạn không bao giờ được tải lên."
+    },
+    "shutter-count-checker": {
+      "title": "Kiểm tra số lần chụp màn trập — Miễn phí & riêng tư",
+      "description": "Kiểm tra số lần chụp màn trập của máy ảnh từ một bức ảnh, miễn phí và 100% trong trình duyệt. Hỗ trợ tệp JPEG và RAW của Nikon, kèm hướng dẫn rõ ràng cho Canon, Sony và các hãng khác."
+    },
+    "camera-health-checker": {
+      "title": "Kiểm tra sức khỏe máy ảnh",
+      "description": "Kiểm tra thân máy chỉ từ một bức ảnh: model, số sê-ri, firmware, tuổi thân máy, ống kính và tuổi thọ màn trập. 100% phía máy khách — lý tưởng để soi máy ảnh cũ trước khi mua."
+    },
+    "panorama-calculator": {
+      "title": "Máy tính panorama",
+      "description": "Lên kế hoạch ghép panorama: cần chụp bao nhiêu khung hình, xoay bao nhiêu độ giữa các lần chụp và độ phân giải cuối cùng — cho mọi ống kính, cảm biến và mức chồng lấn."
+    },
+    "diffraction-calculator": {
+      "title": "Máy tính giới hạn nhiễu xạ",
+      "description": "Tìm giới hạn nhiễu xạ của máy ảnh: khẩu độ mà việc khép khẩu bắt đầu làm mềm ảnh. Dựa trên kích thước điểm ảnh và đĩa Airy, cho mọi cảm biến và độ phân giải."
+    },
+    "photography-cheat-sheet": {
+      "title": "Bảng tra cứu nhanh nhiếp ảnh — Thiết lập máy ảnh theo tình huống",
+      "description": "Bảng tra cứu thiết lập máy ảnh cho chân dung, phong cảnh, động vật hoang dã, Dải Ngân Hà và nhiều tình huống khác. Những điểm khởi đầu đã được kiểm chứng, tải về dưới dạng ảnh hoặc in ra."
     }
   }
 }

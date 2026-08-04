@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Érzékelő",
+      "megapixels": "Felbontás: {mp} MP",
+      "aperture": "Rekesz",
+      "verdict": {
+        "sharp": "{f} — fényelhajlástól mentes",
+        "borderline": "{f} — a fényelhajlás enyhén lágyítja",
+        "soft": "{f} — a fényelhajlás láthatóan lágyítja"
+      },
+      "verdictDetail": {
+        "sharp": "Az ehhez az érzékelőhöz és felbontáshoz tartozó {limit} diffrakciós határ alatt az élességet az objektív határozza meg, nem a fényelhajlás.",
+        "borderline": "A {limit} diffrakciós határon túl a pixelszintű finom részletek kezdenek elmosódni. Elfogadható, ha szüksége van a plusz mélységélességre.",
+        "soft": "Jóval a {limit} diffrakciós határon túl. A mélységélesség tovább nő, de az összképi részletesség láthatóan romlik — a további szűkítés helyett fontolja meg a fókuszhalmozást."
+      },
+      "stripLabel": "Rekeszskála a fényelhajlás hatása szerint színezve",
+      "pixelPitch": "Pixelméret",
+      "airyDisk": "Airy-korong átmérője",
+      "diffractionLimit": "Diffrakciós határ",
+      "tableTitle": "Diffrakciós határ érzékelő és felbontás szerint",
+      "tableSensor": "Érzékelő",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Mi a fényelhajlás a fotográfiában?",
+          "answer": "A fényelhajlás a fényhullámok elhajlása, amikor egy kis nyíláson préselődnek át. Minél kisebb a rekesz (magasabb f-érték), annál jobban szétterül minden fénypont egy elmosódott koronggá (az Airy-koronggá) az érzékelőn. Amint ez a korong nagyobbra nő egy pixelnél, a finom részletek elmosódnak, bármilyen jó is az objektív."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Melyik rekesznél a legélesebb az objektív?",
+          "answer": "A legtöbb objektív a teljes nyitástól két-három fényértékkel szűkítve éri el csúcsát — full frame-en jellemzően f/4 és f/8 között. Ez az édes pont egyensúlyoz az objektívhibák (nyitott rekesznél a legrosszabbak) és a fényelhajlás (szűkítéskor romlik) között. A nagy felbontású érzékelők hamarabb elérik a diffrakciós határt, ezért a használható tartományuk szűkebb."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Függ a fényelhajlás az érzékelőtől?",
+          "answer": "Maga az optikai jelenség csak a rekesztől és a fény hullámhosszától függ — de hogy mennyire látható, azt a pixelméret dönti el. Egy 61 MP-es full frame érzékelő pixelei ~3,8 µm-esek, és már f/5.6 körül mutatják a fényelhajlás okozta lágyulást, míg egy 12 MP-es, nagy pixeles érzékelő f/11-ig éles marad. A kisebb érzékelők azonos megapixelszám mellett nagyobb rekesznyílásnál érik el a határt."
+        }
+      }
+    }
+  }
+}

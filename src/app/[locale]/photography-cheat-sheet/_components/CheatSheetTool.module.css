@@ -1,0 +1,164 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.appBody {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: slideInLeft var(--duration-slow) var(--ease-out) both;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+}
+.main {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: fadeIn var(--duration-slow) var(--ease-out) both;
+}
+.mobileControls { display: none; }
+.desktopOnly {}
+.mobileOnly { display: none; }
+
+/* ── Scenario grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.scenarioBtn {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-primary, inherit);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color var(--duration-fast, 150ms) ease;
+}
+.scenarioBtn:hover {
+  border-color: var(--accent);
+}
+.scenarioActive {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+/* ── Sheet display ── */
+.sheet {
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.sheetTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+.settingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+}
+.settingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.settingRow:last-child {
+  border-bottom: none;
+}
+.settingLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+.settingValue {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  text-align: right;
+}
+.tipsBox {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+}
+.tipsTitle {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+.tipsList {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tip {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.hiddenCanvas {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .app { height: auto; overflow: visible; }
+  .appBody { flex-direction: column; overflow: visible; }
+  .sidebar { display: none; }
+  .main { padding: 8px; }
+  .mobileControls {
+    display: block;
+    padding: 16px;
+    width: 100%;
+  }
+  .desktopOnly { display: none; }
+  .mobileOnly { display: block; }
+}

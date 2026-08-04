@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Escolha um cenário",
+      "tipsTitle": "Dicas de campo",
+      "labels": {
+        "aperture": "Abertura",
+        "shutter": "Velocidade do obturador",
+        "iso": "ISO",
+        "whiteBalance": "Balanço de branco",
+        "focusMode": "Modo de foco",
+        "driveMode": "Modo de disparo"
+      },
+      "values": {
+        "auto": "Automático",
+        "daylight": "Luz do dia",
+        "cloudy": "Nublado",
+        "shade": "Sombra",
+        "tungsten": "Tungstênio (~3200K)",
+        "afSingle": "AF simples (AF-S)",
+        "afContinuous": "AF contínuo (AF-C)",
+        "afTracking": "AF contínuo + rastreamento do assunto",
+        "manualFocus": "Foco manual",
+        "single": "Disparo único",
+        "burstLow": "Rajada em baixa velocidade",
+        "burstHigh": "Rajada em alta velocidade",
+        "timer2s": "Temporizador de 2s / disparo remoto",
+        "intervalometer": "Intervalômetro"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Retratos",
+          "tips": {
+            "0": "Foque no olho mais próximo da câmera: em aberturas amplas a profundidade de campo é de apenas alguns centímetros.",
+            "1": "Afaste-se e use uma focal mais longa (85mm ou mais) para uma compressão favorável; lentes grande-angulares de perto distorcem os traços do rosto."
+          }
+        },
+        "landscape": {
+          "name": "Paisagens",
+          "tips": {
+            "0": "Foque a cerca de um terço da cena ou use a distância hiperfocal para nitidez do primeiro plano ao fundo.",
+            "1": "Fotografe com tripé usando o temporizador ou um disparador remoto para eliminar a trepidação em velocidades lentas do obturador."
+          }
+        },
+        "street": {
+          "name": "Fotografia de rua",
+          "tips": {
+            "0": "Foco por zona: pré-ajuste o foco em 3 m e f/8, e tudo entre 2 m e 6 m sairá nítido — sem atraso do AF.",
+            "1": "ISO automático com velocidade mínima do obturador de 1/250s congela pessoas caminhando enquanto você se concentra no enquadramento."
+          }
+        },
+        "wildlife": {
+          "name": "Vida selvagem e aves",
+          "tips": {
+            "0": "Ajuste a velocidade do obturador ao assunto: 1/1000s para aves pousadas, 1/2500s ou mais rápido para aves em voo.",
+            "1": "Fotografe na altura dos olhos e espere o virar de cabeça: um brilho no olho dá vida à imagem."
+          }
+        },
+        "sports": {
+          "name": "Esportes e ação",
+          "tips": {
+            "0": "Pré-foque onde a ação vai acontecer (o gol, o ápice de uma curva) e comece a rajada logo antes do momento decisivo.",
+            "1": "A panorâmica (panning) a 1/60s–1/125s com AF contínuo borra o fundo enquanto mantém o assunto nítido."
+          }
+        },
+        "macro": {
+          "name": "Macro",
+          "tips": {
+            "0": "Em alta ampliação a profundidade de campo é finíssima: foque movendo a câmera, não o anel de foco.",
+            "1": "A difração castiga forte além de f/16; use empilhamento de foco em vez de fechar ainda mais o diafragma."
+          }
+        },
+        "milkyWay": {
+          "name": "Via Láctea",
+          "tips": {
+            "0": "Use a regra NPF ou a regra 500 para a exposição máxima antes de as estrelas deixarem rastros: cerca de 15–20s a 20mm em full frame.",
+            "1": "Foque manualmente em uma estrela brilhante usando o live view ampliado; ajuste o balanço de branco perto de 3900K para um céu neutro."
+          }
+        },
+        "nightCity": {
+          "name": "Paisagens urbanas noturnas",
+          "tips": {
+            "0": "Fotografe em ISO base com tripé e deixe o obturador aberto pelo tempo necessário: os realces ficam limpos e o ruído, baixo.",
+            "1": "f/11–f/16 transforma luzes pontuais em estrelas; fotografe durante a hora azul para ter cor no céu."
+          }
+        },
+        "waterfall": {
+          "name": "Cachoeiras e longa exposição",
+          "tips": {
+            "0": "Exposições de 0,5–2s mantêm a textura da água; 30s ou mais a transformam em névoa. Use um filtro ND à luz do dia.",
+            "1": "Um polarizador circular corta o brilho de rochas molhadas e da folhagem — e ainda funciona como um ND de ~1,5 ponto."
+          }
+        },
+        "goldenHour": {
+          "name": "Hora dourada",
+          "tips": {
+            "0": "Exponha para os realces e levante as sombras na edição: realces quentes estourados são irrecuperáveis.",
+            "1": "Posicione os assuntos em contraluz para luz de contorno e flare; o preset de balanço de branco «nublado» mantém a cena quente."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Quais configurações de câmera devo usar para retratos?",
+          "answer": "Comece com uma abertura ampla (f/1.8–f/2.8) para desfocar o fundo, uma velocidade do obturador de pelo menos 1/200s para evitar borrão de movimento e o ISO mais baixo que a luz permitir (100–400). Use foco automático de ponto único no olho mais próximo, ou AF com detecção de olhos se a sua câmera tiver."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Quais configurações preciso para fotografar a Via Láctea?",
+          "answer": "Uma lente grande-angular e clara na abertura máxima (f/1.4–f/2.8), uma exposição de 10–25 segundos (mais tempo deixa rastros nas estrelas), ISO 1600–6400, foco manual em uma estrela brilhante e um tripé. Uma noite sem lua e longe das luzes da cidade importa mais do que qualquer configuração da câmera."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Essas configurações são receitas exatas?",
+          "answer": "Não: são pontos de partida comprovados. A luz varia enormemente entre cenas, então trate as faixas como um primeiro palpite, faça uma foto de teste, confira o histograma e ajuste. O objetivo é colocá-lo rapidamente na faixa certa, não substituir o seu julgamento."
+        }
+      }
+    }
+  }
+}

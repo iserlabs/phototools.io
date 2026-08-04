@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Trascina una foto qui o clicca per sfogliare (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Quali marche memorizzano il conteggio scatti?",
+      "status": {
+        "supported": "Leggibile",
+        "partial": "Parziale",
+        "unsupported": "Non nei file"
+      },
+      "brands": {
+        "nikon": "Nikon scrive il conteggio scatti nei metadati di ogni foto, senza cifratura. Per un risultato affidabile usa un file originale non modificato.",
+        "canon": "Canon non scrive mai il conteggio scatti nei file immagine — è memorizzato solo dentro la fotocamera e viene letto da strumenti di assistenza o utility USB.",
+        "sony": "Sony memorizza il conteggio scatti in una sezione cifrata dei suoi metadati che non può essere decodificata nel browser. Utility desktop dedicate possono leggerlo via USB.",
+        "fujifilm": "I corpi Fujifilm non registrano un vero conteggio scatti, ma alcuni scrivono un contatore fotogrammi che offre una stima minima approssimativa.",
+        "pentax": "Pentax offusca il campo del conteggio scatti con una cifratura, quindi non può essere letto in modo affidabile dai file.",
+        "olympus": "I corpi OM System / Olympus conservano il conteggio completo in un menu di assistenza interno; a volte i file contengono un contatore fotogrammi che dà un'idea dell'utilizzo.",
+        "panasonic": "Panasonic non scrive un conteggio scatti nei file. Lo riporta il menu di assistenza della fotocamera.",
+        "leica": "I corpi Leica in genere non memorizzano un conteggio scatti nei file immagine."
+      },
+      "countLabel": "Scatti dell'otturatore",
+      "source": {
+        "shutterCount": "Letto dai metadati del conteggio scatti della fotocamera — è il vero contatore degli azionamenti meccanici.",
+        "mechanicalShutterCount": "Letto dal contatore dell'otturatore meccanico — i fotogrammi con otturatore elettronico non sono inclusi.",
+        "imageNumber": "Stimato dal numero immagine del file. È una stima minima approssimativa, non un conteggio esatto — il contatore può azzerarsi o ripartire da capo."
+      },
+      "ratedLife": "Durata nominale dell'otturatore",
+      "ratings": {
+        "entry": "Entry-level",
+        "enthusiast": "Amatoriale evoluto",
+        "advanced": "Avanzato",
+        "pro": "Professionale",
+        "flagship": "Ammiraglia"
+      },
+      "lifeUsed": "{percent}% della durata nominale utilizzata",
+      "verdict": {
+        "low": "Quasi mai usata",
+        "moderate": "Uso moderato",
+        "high": "Uso intenso",
+        "beyond": "Oltre la durata nominale"
+      },
+      "noCountTitle": "Nessun conteggio scatti in questo file",
+      "noCountGeneric": "Questo file non contiene un conteggio scatti leggibile. Prova con una foto originale non modificata, appena uscita dalla fotocamera — le esportazioni delle app di editing spesso rimuovono i metadati del produttore.",
+      "errorRead": "Impossibile leggere questo file. Prova un JPEG o un file RAW non modificato, appena uscito dalla fotocamera.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Che cos'è il conteggio scatti?",
+          "answer": "Il conteggio scatti è il numero di volte in cui l'otturatore meccanico di una fotocamera è scattato — l'equivalente fotografico del chilometraggio di un'auto. È l'indicatore di usura più consultato quando si compra o si vende una fotocamera usata, perché gli otturatori sono progettati per un numero finito di azionamenti."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Quanti scatti sono troppi?",
+          "answer": "Dipende dalla classe della fotocamera. Gli otturatori entry-level sono garantiti per circa 100.000 scatti, i corpi amatoriali evoluti per 150.000–200.000 e i corpi professionali per 300.000–500.000. La durata nominale è una vita media, non un limite rigido — molti otturatori la superano di gran lunga, e un conteggio basso su un corpo maltrattato può comunque nascondere problemi."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Perché non riesco a verificare il conteggio scatti della mia foto Canon o Sony?",
+          "answer": "Canon non scrive mai il conteggio scatti nei file immagine — vive solo nella memoria interna della fotocamera. Sony lo scrive, ma cifra quella sezione dei metadati. In entrambi i casi uno strumento nel browser non può leggerlo da una foto; la soluzione abituale sono le utility desktop che si collegano alla fotocamera via USB."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Drop a photo here or click to browse (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Drop any photo from the camera you want to inspect. Everything is read in your browser — the file never leaves your device.",
+      "errorRead": "Could not read this file. Try an unedited JPEG or RAW file straight from the camera.",
+      "errorNoMetadata": "This file contains no camera metadata. Exports from editing or messaging apps often strip it — try an unedited original file.",
+      "sections": {
+        "body": "Camera body",
+        "age": "Age",
+        "shutter": "Shutter life",
+        "lens": "Lens"
+      },
+      "cameraModel": "Model",
+      "make": "Make",
+      "serialNumber": "Serial number",
+      "firmware": "Firmware / software",
+      "bodyAge": "Body age",
+      "ageValue": "~{years} years (released {year})",
+      "ageUnknown": "This model is not in our release database, so its age could not be estimated.",
+      "shotDate": "Photo taken",
+      "shutterCount": "Shutter count",
+      "ratedLife": "Rated life",
+      "ratedAssumed": "(assumed)",
+      "lifeUsed": "{percent}% of rated life used",
+      "verdict": {
+        "low": "Barely used",
+        "moderate": "Moderate use",
+        "high": "Heavy use",
+        "beyond": "Past rating"
+      },
+      "shutterUnavailable": {
+        "supported": "No shutter count found even though {brand} normally records it. Try an unedited original file — editing apps often strip maker metadata.",
+        "partial": "{brand} only writes a rough frame counter to some files, and this one has none. The camera's own menus or a USB utility may report it.",
+        "unsupported": "{brand} does not store a readable shutter count in image files. Check the Shutter Count Checker tool page for brand-specific alternatives.",
+        "unknown": "This file has no readable shutter count."
+      },
+      "lensModel": "Lens",
+      "lensSerial": "Lens serial",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "What should I check when buying a used camera?",
+          "answer": "Beyond cosmetics: the shutter count relative to its rated life, the body's age and firmware version, whether the serial number matches the seller's paperwork (and isn't reported stolen), sensor condition (look for dust or scratches in a test photo of a clear sky at f/16), and that all dials, ports, and the lens mount work smoothly."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Where does this health data come from?",
+          "answer": "Everything is read from the metadata embedded in your photo: standard EXIF fields (model, serial number, firmware, lens, capture date) plus manufacturer maker notes where available (shutter count). Body age is estimated from a built-in database of release years for popular camera models."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Is my photo uploaded to a server?",
+          "answer": "No. The file is parsed entirely in your browser using JavaScript — it never leaves your device, and nothing is stored. You can verify this by loading the page and then switching off your connection before dropping a file."
+        }
+      }
+    }
+  }
+}

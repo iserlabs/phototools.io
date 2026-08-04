@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Przymykanie przysłony zwiększa głębię ostrości — ale od pewnego momentu zaczyna zmiękczać cały obraz, zamiast go wyostrzać. To dyfrakcja: uginanie się fal świetlnych przeciskających się przez mały otwór. Ten kalkulator pokazuje dokładnie, gdzie leży ten punkt dla Twojego aparatu, więc wiesz, jak mocno możesz przymknąć przysłonę, zanim zapłacisz karę w ostrości.",
+      "deeper": "Gdy światło przechodzi przez przysłonę, każdy punkt sceny ląduje na matrycy nie jako punkt, lecz jako drobny wzór dyfrakcyjny — jasny rdzeń zwany krążkiem Airy'ego otoczony słabymi obwódkami. Średnica krążka rośnie wprost proporcjonalnie do liczby f: około 2,44 × długość fali × N, co przy f/8 w świetle zielonym daje już ~10,7 µm. Czy to ma znaczenie, zależy od Twoich pikseli. Pełnoklatkowa matryca 24 MP ma piksele ~6 µm; matryca 61 MP — ~3,8 µm. Gdy krążek Airy'ego wyraźnie przerośnie piksel, detale, które matryca mogłaby rozdzielić, rozmazują się na sąsiednie piksele i żadna jakość obiektywu ich nie przywróci. Dlatego to samo f/11, które wygląda dobrze na starym korpusie 12 MP, wyraźnie zmiękcza pliki z nowoczesnej matrycy o wysokiej rozdzielczości, i dlatego kompakty z maleńkimi pikselami rzadko oferują przysłony ciemniejsze niż f/8. Przyjęta tu branżowa reguła — granica ≈ rozmiar piksela / 0,67 — wyznacza miejsce, gdzie zmiękczenie staje się mierzalne, a nie gdzie obraz się rozpada: przymknięcie o stopień za granicę to często opłacalna cena za głębię ostrości. Powyżej dwóch stopni focus stacking wygrywa z przymykaniem.",
+      "keyFactors": {
+        "0": {
+          "label": "Przysłona (liczba f)",
+          "description": "Jedyna kontrola nad samą dyfrakcją: średnica krążka Airy'ego skaluje się liniowo z liczbą f. f/16 rozprasza światło dwa razy szerzej niż f/8."
+        },
+        "1": {
+          "label": "Rozmiar piksela",
+          "description": "Fizyczny rozmiar jednego piksela, wyznaczony wspólnie przez rozmiar matrycy i liczbę megapikseli. Mniejsze piksele rozdzielają więcej detali — i wcześniej ujawniają dyfrakcję."
+        },
+        "2": {
+          "label": "Rozmiar wyjściowy",
+          "description": "Dyfrakcja widoczna przy 100% na ekranie może być niewidoczna w eksporcie na strony internetowe czy w umiarkowanym wydruku. Oceniaj ostrość w rozmiarze, w jakim faktycznie użyjesz zdjęcia."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Znajdź optymalną przysłonę swojego obiektywu: sfotografuj tę samą bogatą w detale scenę przy każdym pełnym stopniu i porównaj przy 100%. Większość obiektywów osiąga szczyt dwa–trzy stopnie od pełnego otwarcia, tuż zanim dyfrakcja przejmie kontrolę."
+        },
+        "1": {
+          "text": "Przy krajobrazach wymagających dużej głębi na korpusie o wysokiej rozdzielczości wypróbuj odległość hiperfokalną przy f/8, zanim sięgniesz po f/16 — trafne ustawienie ostrości często daje więcej ostrości niż mniejsze przysłony."
+        },
+        "2": {
+          "text": "W makrofotografii efektywna przysłona rośnie z powiększeniem (f/11 przy 1:1 działa jak f/22), więc dyfrakcja uderza znacznie wcześniej, niż sugeruje pokrętło. Focus stacking przy umiarkowanej przysłonie to ostre wyjście z sytuacji."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Rozmiar piksela",
+          "definition": "Szerokość pojedynczego piksela na matrycy, w mikrometrach. Obliczana jako szerokość matrycy podzielona przez liczbę pikseli w poziomie — 24 MP na pełnej klatce ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Krążek Airy'ego",
+          "definition": "Wzór dyfrakcyjny, jaki punkt światła tworzy po przejściu przez przysłonę: jasny rdzeń ze słabymi obwódkami. Jego średnica ≈ 2,44 × długość fali × liczba f."
+        },
+        "diffractionLimit": {
+          "term": "Granica dyfrakcji",
+          "definition": "Liczba f, przy której krążek Airy'ego przerasta piksel i ostrość na poziomie pikseli zaczyna spadać — w przybliżeniu rozmiar piksela (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Przymykasz obiektyw z f/8 do f/22 dla maksymalnej głębi ostrości, ale drobne detale na zdjęciu miękną wszędzie — nawet w płaszczyźnie ostrości. Co się dzieje?",
+          "hint": "To fizyka, nie wada obiektywu.",
+          "successMessage": "Zgadza się! Światło ugina się (dyfraguje), przechodząc przez mały otwór, i rozlewa każdy punkt w krążek większy od piksela. Przy f/22 to zmiękczenie obejmuje cały kadr, łącznie z płaszczyzną ostrości.",
+          "failureMessage": "To dyfrakcja: fale świetlne uginają się na listkach przysłony, rozlewając każdy punkt światła w rozmyty krążek. Dotyka całego obrazu jednakowo, niezależnie od jakości obiektywu.",
+          "options": {
+            "0": { "label": "Obiektyw jest źle wykonany" },
+            "1": { "label": "Światło ugina się, przechodząc przez mały otwór" },
+            "2": { "label": "Matryca przegrzewa się przy małych przysłonach" },
+            "3": { "label": "Rośnie szum ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Przesiadasz się z pełnoklatkowego aparatu 24 MP na 61 MP. Co dzieje się z przysłoną, przy której dyfrakcja staje się widoczna?",
+          "hint": "Więcej megapikseli na tej samej powierzchni matrycy to mniejsze piksele.",
+          "successMessage": "Tak! Piksele ~3,8 µm matrycy 61 MP wcześniej przegrywają z krążkiem Airy'ego, więc granica dyfrakcji spada z około f/9 do około f/5.6. Matryce o wysokiej rozdzielczości mają węższy optymalny zakres przysłon.",
+          "failureMessage": "Mniejsze piksele ujawniają dyfrakcję wcześniej. Granica dyfrakcji matrycy 61 MP to okolice f/5.6, wobec f/9 dla matrycy 24 MP — granica przesuwa się ku szerszej przysłonie.",
+          "options": {
+            "0": { "label": "Przesuwa się ku mniejszej przysłonie (wyższa liczba f)" },
+            "1": { "label": "Przesuwa się ku szerszej przysłonie (niższa liczba f)" },
+            "2": { "label": "Nie zmienia się" },
+            "3": { "label": "Dyfrakcja znika przy większej liczbie megapikseli" }
+          }
+        },
+        "2": {
+          "scenario": "Fotografujesz krajobraz pełnoklatkowym aparatem 45 MP i chcesz maksymalnej ogólnej ostrości przy dobrej głębi ostrości. Który zakres przysłon jest najlepszym punktem wyjścia?",
+          "hint": "Zrównoważ wady optyczne obiektywu (złe przy pełnym otwarciu) z dyfrakcją (złą po przymknięciu).",
+          "successMessage": "Zgadza się! f/8–f/11 leży tuż przy granicy dyfrakcji dla pikseli ~4,4 µm, dając zarazem sporą głębię ostrości — klasyczny krajobrazowy zakres na pełnej klatce o wysokiej rozdzielczości.",
+          "failureMessage": "f/8–f/11 równoważy głębię ostrości z dyfrakcją dla pełnoklatkowej matrycy 45 MP. f/22 wyraźnie zmiękcza drobne detale, a pełne otwarcie nie daje dość głębi ostrości.",
+          "options": {
+            "0": { "label": "Zawsze f/22 dla maksymalnej głębi" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Pełne otwarcie" },
+            "3": { "label": "Zależy to wyłącznie od ISO" }
+          }
+        }
+      }
+    }
+  }
+}

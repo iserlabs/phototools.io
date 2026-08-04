@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Panoramę buduje się, robiąc kilka zachodzących na siebie zdjęć podczas obracania aparatu, a następnie pozwalając programowi skleić je w jeden szeroki obraz. Sztuka polega na tym, by wiedzieć, o ile obrócić się między ujęciami: za dużo — a program nie połączy kadrów, za mało — a zmarnujesz dziesiątki ujęć. Ten kalkulator wykonuje te obliczenia na podstawie Twojego obiektywu, matrycy i zakładanej zakładki.",
+      "deeper": "Każdy kadr obejmuje stały kąt widzenia wyznaczony przez ogniskową i rozmiar matrycy — obiektyw 50mm na pełnej klatce widzi około 40° w poziomie. Program do sklejania wyrównuje sąsiednie kadry, wyszukując wspólne „punkty kontrolne” w strefie zakładki, i właśnie dlatego 25–35% to praktyczny standard: daje algorytmowi dość wspólnych szczegółów, nie mnożąc liczby kadrów. Użyteczny obrót na jedno ujęcie to zatem pole widzenia kadru razy (1 − zakładka). Fotografowanie w pionie zamienia węższy krok w poziomie na znacznie większe pokrycie w pionie — dlatego większość jednorzędowych panoram robi się pionowo. Przy naprawdę wysokich scenach panoramy wielorzędowe stosują tę samą logikę zakładki w pionie. Końcowy sklejony plik rośnie szybko: każdy dodatkowy kadr wnosi swoją rozdzielczość pomniejszoną o zakładkę, więc 7-kadrowa pionowa panorama z aparatu 24 MP z łatwością przekracza 100 MP. Wszystko ogranicza jedna fizyczna subtelność: obracanie wokół gniazda statywu przesuwa środek optyczny obiektywu między kadrami, przez co bliskie i dalekie obiekty przestają się pokrywać (paralaksa). W odległych krajobrazach rzadko ma to znaczenie, ale przy bliskich elementach pierwszego planu trzeba obracać się wokół punktu bezparalaksy obiektywu, używając szyny nodalnej lub głowicy panoramicznej.",
+      "keyFactors": {
+        "0": {
+          "label": "Ogniskowa i matryca",
+          "description": "Razem wyznaczają pole widzenia pojedynczego kadru — podstawowy element, z którego składa się panorama. Dłuższe obiektywy to węższe kadry i więcej ujęć."
+        },
+        "1": {
+          "label": "Zakładka",
+          "description": "Wspólna strefa między sąsiednimi kadrami, na której program do sklejania się wyrównuje. 25–35% to optimum; sceny bez wyraźnych szczegółów (niebo, woda) potrzebują więcej."
+        },
+        "2": {
+          "label": "Orientacja",
+          "description": "Kadry pionowe pokrywają mniej szerokości, ale znacznie więcej wysokości na ujęcie — standardowy wybór dla panoram jednorzędowych, bo zostawia zapas na kadrowanie."
+        },
+        "3": {
+          "label": "Paralaksa",
+          "description": "Rozjeżdżanie się bliskich i dalekich obiektów spowodowane obrotem wokół niewłaściwej osi. Nieszkodliwe przy odległych scenach; krytyczne przy bliskim pierwszym planie."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Przed pierwszym kadrem zablokuj ekspozycję, balans bieli i ostrość w trybie ręcznym. Cokolwiek zostawisz na automacie, zmieni się między kadrami i stworzy widoczne pasy na sklejonym niebie."
+        },
+        "1": {
+          "text": "Fotografuj z wypoziomowanym obiektywem i obracaj się jednym płynnym przejściem, dodając po jednym zapasowym kadrze na każdym końcu — skrajne kadry zostają zniekształcone i przycięte podczas sklejania."
+        },
+        "2": {
+          "text": "Przy panoramach z ręki zwiększ zakładkę do 40–50%. Twój obrót nie będzie precyzyjny, a dodatkowe kadry dadzą programowi przestrzeń na uratowanie sklejenia."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Zakładka",
+          "definition": "Procent każdego kadru wspólny z sąsiednim. Program do sklejania potrzebuje tych wspólnych szczegółów do wyrównania kadrów — typowo 25–35%."
+        },
+        "orientation": {
+          "term": "Orientacja aparatu",
+          "definition": "Kadrowanie pionowe to standard przy panoramach: każdy kadr wnosi więcej wysokości, zostawiając zapas na prostowanie horyzontu i kadrowanie."
+        },
+        "rotateBetween": {
+          "term": "Obrót między ujęciami",
+          "definition": "O ile stopni obrócić aparat po każdym kadrze: pole widzenia kadru razy (1 − zakładka). Głowice panoramiczne mają zapadki dokładnie do tego."
+        },
+        "rows": {
+          "term": "Rzędy",
+          "definition": "Panoramy wielorzędowe układają poziome przejścia jedno nad drugim, stosując tę samą zasadę zakładki między rzędami, aby objąć wysokie sceny."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Fotografujesz panoramę pasma górskiego. Jak bardzo sąsiednie kadry powinny na siebie zachodzić, aby sklejanie było niezawodne?",
+          "hint": "Program potrzebuje wspólnych szczegółów, ale każdy dodatkowy kadr kosztuje czas.",
+          "successMessage": "Zgadza się! Około 30% zakładki daje programowi mnóstwo punktów kontrolnych bez marnowania kadrów — standardowe zalecenie dla większości scen.",
+          "failureMessage": "Praktyczny standard to 25–35%. Poniżej ~15% programy mają problem ze znalezieniem punktów kontrolnych; 80% potraja liczbę kadrów bez żadnej korzyści.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Chcesz jednorzędową panoramę z zapasem pionowym na wyprostowanie horyzontu i swobodne kadrowanie. W jakiej orientacji aparatu fotografować?",
+          "hint": "W którą stronę każdy kadr daje więcej wysokości?",
+          "successMessage": "Tak! Orientacja pionowa rejestruje znacznie więcej pionowego pola widzenia na kadr — kilka dodatkowych kadrów w poziomie to niska cena za swobodę kadrowania.",
+          "failureMessage": "Pion to standard dla panoram jednorzędowych: każdy kadr jest wyższy, więc sklejony wynik przetrwa prostowanie horyzontu i kadrowanie.",
+          "options": {
+            "0": { "label": "Pozioma" },
+            "1": { "label": "Pionowa" },
+            "2": { "label": "Tryb kadru kwadratowego" },
+            "3": { "label": "Przechylona o 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Obiektyw 50mm na pełnej klatce trzymany poziomo (około 40° pola widzenia w poziomie) i 30% zakładki — ilu mniej więcej kadrów potrzebuje panorama 180°?",
+          "hint": "Każde ujęcie posuwa pokrycie o 40° × 0,7 = 28°.",
+          "successMessage": "Zgadza się! Pierwszy kadr pokrywa 40°, a każdy kolejny dodaje ~28°. Pokrycie pozostałych 140° wymaga 5 kolejnych kadrów, więc łącznie 7 (z niewielkim zapasem).",
+          "failureMessage": "Każdy kadr po pierwszym dodaje 40° × (1 − 0,3) = 28° nowego pokrycia. (180 − 40) / 28 = 5 kolejnych kadrów, więc łącznie 7.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Na Twojej panoramie metr przed aparatem stoi płot, a w tle są góry. Na sklejonym obrazie płot się dubluje i rozjeżdża między kadrami. Wokół jakiego punktu powinien obracać się aparat, aby to naprawić?",
+          "hint": "Problemem jest paralaksa — bliskie i dalekie obiekty przesuwają się względem siebie.",
+          "successMessage": "Dokładnie! Obrót wokół punktu bezparalaksy (nodalnego) obiektywu utrzymuje bliskie i dalekie obiekty w tej samej pozycji między kadrami. Głowice panoramiczne i szyny nodalne istnieją właśnie po to.",
+          "failureMessage": "Aparat musi obracać się wokół punktu bezparalaksy obiektywu (często zwanego punktem nodalnym). Obrót wokół gniazda statywu przesuwa środek optyczny, powodując paralaksę, którą widzisz.",
+          "options": {
+            "0": { "label": "Przednia soczewka obiektywu" },
+            "1": { "label": "Punkt bezparalaksy obiektywu" },
+            "2": { "label": "Płaszczyzna matrycy" },
+            "3": { "label": "Gniazdo statywu" }
+          }
+        }
+      }
+    }
+  }
+}

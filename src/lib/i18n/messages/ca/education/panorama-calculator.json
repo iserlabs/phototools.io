@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Una panoràmica es construeix fent diverses fotos solapades mentre gires la càmera, i deixant després que el programari les uneixi en una sola imatge ampla. El truc és saber quant girar entre dispars: si gires massa, el programari no pot unir els fotogrames; si gires massa poc, malbarates desenes de dispars. Aquesta calculadora fa aquest càlcul a partir del teu objectiu, el teu sensor i el solapament desitjat.",
+      "deeper": "Cada fotograma cobreix un angle de visió fix determinat per la distància focal i la mida del sensor: un 50mm en format complet veu uns 40° en horitzontal. El programari d'unió alinea fotogrames veïns buscant «punts de control» compartits a la zona de solapament, i per això el 25–35 % és l'estàndard pràctic: dona a l'algorisme prou detall compartit sense disparar el nombre de fotogrames. La rotació útil per dispar és, per tant, el camp de visió del fotograma multiplicat per (1 − solapament). Disparar en vertical canvia un pas horitzontal més estret per molta més cobertura vertical, i per això la majoria de panoràmiques d'una sola fila es fan en vertical. Per a escenes molt altes, les panoràmiques multifila apliquen la mateixa lògica de solapament en vertical. El fitxer final creix de pressa: cada fotograma addicional aporta la seva resolució menys el solapament, així que una panoràmica vertical de 7 fotogrames amb una càmera de 24 MP supera fàcilment els 100 MP. Una subtilesa física ho condiciona tot: girar al voltant de la rosca del trípode desplaça el centre òptic de l'objectiu entre fotogrames i fa que els objectes propers i llunyans es desalineïn (paral·laxi). En paisatges llunyans rarament importa, però amb elements propers en primer pla cal girar al voltant del punt sense paral·laxi de l'objectiu amb un rail nodal o una ròtula panoràmica.",
+      "keyFactors": {
+        "0": {
+          "label": "Distància focal i sensor",
+          "description": "Junts fixen el camp de visió de cada fotograma, la unitat bàsica amb què es construeix la panoràmica. Les focals més llargues impliquen fotogrames més estrets i més dispars."
+        },
+        "1": {
+          "label": "Solapament",
+          "description": "La zona compartida entre fotogrames veïns sobre la qual s'alinea el programari d'unió. El 25–35 % és el punt òptim; les escenes sense trets distintius (cel, aigua) en necessiten més."
+        },
+        "2": {
+          "label": "Orientació",
+          "description": "Els fotogrames verticals cobreixen menys amplada però molta més altura per dispar: l'opció estàndard per a panoràmiques d'una fila perquè deixa marge de retallada."
+        },
+        "3": {
+          "label": "Paral·laxi",
+          "description": "Desalineació entre el que és a prop i el que és lluny causada per girar al voltant de l'eix equivocat. Inofensiva en escenes llunyanes; crítica amb primers plans propers."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Fixa exposició, balanç de blancs i enfocament en manual abans del primer fotograma. Qualsevol automatisme canvia entre fotogrames i crea bandes visibles al cel unit."
+        },
+        "1": {
+          "text": "Dispara amb l'objectiu anivellat i gira en una sola passada fluida, afegint un fotograma de sobres a cada extrem: els fotogrames de les vores es distorsionen i es retallen durant la unió."
+        },
+        "2": {
+          "text": "En panoràmiques a mà alçada, exagera el solapament fins al 40–50 %. La teva rotació no serà precisa, i els fotogrames extra donen al programari marge per recuperar-se."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Solapament",
+          "definition": "El percentatge de cada fotograma compartit amb el seu veí. El programari d'unió necessita aquest detall compartit per alinear els fotogrames: el típic és un 25–35 %."
+        },
+        "orientation": {
+          "term": "Orientació de la càmera",
+          "definition": "L'enquadrament vertical és l'estàndard en panoràmiques: cada fotograma aporta més altura, deixant marge per corregir l'horitzó i retallar."
+        },
+        "rotateBetween": {
+          "term": "Rotació entre dispars",
+          "definition": "Quants graus girar la càmera després de cada fotograma: el camp de visió del fotograma per (1 − solapament). Les ròtules panoràmiques tenen topalls amb clic exactament per a això."
+        },
+        "rows": {
+          "term": "Files",
+          "definition": "Les panoràmiques multifila apilen passades horitzontals en vertical, aplicant la mateixa regla de solapament entre files per cobrir escenes altes."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Estàs fotografiant una panoràmica d'una serralada. Quant s'han de solapar els fotogrames veïns per a una unió fiable?",
+          "hint": "El programari necessita detall compartit, però cada fotograma extra costa temps.",
+          "successMessage": "Correcte! Un solapament d'al voltant del 30 % dona al programari d'unió punts de control de sobres sense malbaratar fotogrames: la recomanació estàndard per a la majoria d'escenes.",
+          "failureMessage": "El 25–35 % és l'estàndard pràctic. Per sota de ~15 % el programari té problemes per trobar punts de control; el 80 % triplica els fotogrames sense benefici.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Vols una panoràmica d'una sola fila amb prou marge vertical per redreçar l'horitzó i retallar amb llibertat després. En quina orientació hauries de disparar?",
+          "hint": "En quina orientació et dona cada fotograma més altura?",
+          "successMessage": "Exacte! L'orientació vertical captura molt més camp vertical per fotograma: els fotogrames extra necessaris en horitzontal són un preu petit per la llibertat de retallada.",
+          "failureMessage": "L'orientació vertical és l'estàndard per a panoràmiques d'una fila: cada fotograma és més alt, així que el resultat unit sobreviu a la correcció de l'horitzó i a la retallada.",
+          "options": {
+            "0": { "label": "Horitzontal" },
+            "1": { "label": "Vertical" },
+            "2": { "label": "Mode de retallada quadrada" },
+            "3": { "label": "Inclinada 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Amb un 50mm en format complet en orientació horitzontal (uns 40° de visió horitzontal) i un 30 % de solapament, aproximadament quants fotogrames necessita una panoràmica de 180°?",
+          "hint": "Cada dispar avança la cobertura 40° × 0,7 = 28°.",
+          "successMessage": "Correcte! El primer fotograma cobreix 40°, i cada fotograma addicional afegeix ~28°. Cobrir els 140° restants requereix 5 fotogrames més, així que 7 en total (amb una mica de marge).",
+          "failureMessage": "Cada fotograma després del primer afegeix 40° × (1 − 0,3) = 28° de cobertura nova. (180 − 40) / 28 = 5 fotogrames més, és a dir, 7 en total.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "La teva panoràmica té una tanca a un metre de la càmera i muntanyes al darrere. El resultat unit mostra la tanca amb imatges fantasma i desalineada entre fotogrames. Al voltant de quin punt ha de girar la càmera per arreglar-ho?",
+          "hint": "El problema és la paral·laxi: objectes propers i llunyans que es desplacen entre si.",
+          "successMessage": "Exacte! Girar al voltant del punt sense paral·laxi (nodal) de l'objectiu manté alineats els objectes propers i llunyans entre fotogrames. Les ròtules panoràmiques i els rails nodals existeixen precisament per a això.",
+          "failureMessage": "La càmera ha de girar al voltant del punt sense paral·laxi de l'objectiu (sovint anomenat punt nodal). Girar al voltant de la rosca del trípode desplaça el centre òptic i provoca la paral·laxi que estàs veient.",
+          "options": {
+            "0": { "label": "La lent frontal de l'objectiu" },
+            "1": { "label": "El punt sense paral·laxi de l'objectiu" },
+            "2": { "label": "El pla del sensor" },
+            "3": { "label": "La rosca del trípode" }
+          }
+        }
+      }
+    }
+  }
+}

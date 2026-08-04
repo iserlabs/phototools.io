@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Velg et scenario",
+      "tipsTitle": "Felttips",
+      "labels": {
+        "aperture": "Blender",
+        "shutter": "Lukkertid",
+        "iso": "ISO",
+        "whiteBalance": "Hvitbalanse",
+        "focusMode": "Fokusmodus",
+        "driveMode": "Utløsermodus"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Dagslys",
+        "cloudy": "Overskyet",
+        "shade": "Skygge",
+        "tungsten": "Glødelampe (~3200K)",
+        "afSingle": "Enkeltbilde-AF (AF-S)",
+        "afContinuous": "Kontinuerlig AF (AF-C)",
+        "afTracking": "Kontinuerlig AF + motivfølging",
+        "manualFocus": "Manuell fokus",
+        "single": "Enkeltbilde",
+        "burstLow": "Serieopptak lav hastighet",
+        "burstHigh": "Serieopptak høy hastighet",
+        "timer2s": "2s selvutløser / fjernutløser",
+        "intervalometer": "Intervallutløser"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Portretter",
+          "tips": {
+            "0": "Fokuser på øyet nærmest kameraet — ved store blenderåpninger er dybdeskarpheten bare noen få centimeter.",
+            "1": "Gå bakover og zoom inn (85mm+) for smigrende komprimering; vidvinkler tett på forvrenger ansiktstrekk."
+          }
+        },
+        "landscape": {
+          "name": "Landskap",
+          "tips": {
+            "0": "Fokuser omtrent en tredjedel inn i scenen eller bruk hyperfokal avstand for skarphet fra forgrunn til bakgrunn.",
+            "1": "Fotografer fra stativ med selvutløser eller fjernutløser for å eliminere risting ved lange lukkertider."
+          }
+        },
+        "street": {
+          "name": "Gatefoto",
+          "tips": {
+            "0": "Sonefokuser: still fokus på 3 m og f/8 på forhånd, så blir alt fra 2 m til 6 m skarpt — ingen AF-forsinkelse.",
+            "1": "Auto-ISO med en korteste lukkertid på 1/250s fryser gående motiver mens du konsentrerer deg om utsnittet."
+          }
+        },
+        "wildlife": {
+          "name": "Dyreliv & fugler",
+          "tips": {
+            "0": "Tilpass lukkertiden til motivet: 1/1000s for sittende fugler, 1/2500s eller raskere for fugler i flukt.",
+            "1": "Fotografer i øyehøyde og vent på at hodet vris — en lysrefleks i øyet gir bildet liv."
+          }
+        },
+        "sports": {
+          "name": "Sport & action",
+          "tips": {
+            "0": "Forhåndsfokuser der handlingen vil skje (målet, toppen av en sving) og start serien like før høydepunktet.",
+            "1": "Panorering på 1/60s–1/125s med kontinuerlig AF gjør bakgrunnen uskarp mens motivet holdes skarpt."
+          }
+        },
+        "macro": {
+          "name": "Makro",
+          "tips": {
+            "0": "Ved høy forstørrelse er dybdeskarpheten papirtynn — fokuser ved å flytte kameraet, ikke fokusringen.",
+            "1": "Diffraksjonen slår hardt til forbi f/16; bruk focus stacking i stedet for å blende ytterligere ned."
+          }
+        },
+        "milkyWay": {
+          "name": "Melkeveien",
+          "tips": {
+            "0": "Bruk NPF- eller 500-regelen for lengste eksponering før stjernene lager striper — rundt 15–20s ved 20mm på fullformat.",
+            "1": "Fokuser manuelt på en klar stjerne med forstørret live view; sett hvitbalansen nær 3900K for en nøytral himmel."
+          }
+        },
+        "nightCity": {
+          "name": "Nattlige bybilder",
+          "tips": {
+            "0": "Fotografer på basis-ISO fra stativ og la lukkeren stå lenge åpen — høylysene holder seg rene og støyen lav.",
+            "1": "f/11–f/16 gjør punktlys om til stjerneformede lys; fotografer i den blå timen for farge på himmelen."
+          }
+        },
+        "waterfall": {
+          "name": "Fosser & lang eksponering",
+          "tips": {
+            "0": "Eksponeringer på 0,5–2s bevarer tekstur i vannet; 30s+ gjør det til tåke. Bruk et ND-filter i dagslys.",
+            "1": "Et sirkulært polarisasjonsfilter fjerner gjenskinn fra våte steiner og løv — og fungerer samtidig som et ND-filter på ~1,5 trinn."
+          }
+        },
+        "goldenHour": {
+          "name": "Den gylne timen",
+          "tips": {
+            "0": "Eksponer for høylysene og løft skyggene i etterbehandlingen — utbrente varme høylys kan ikke reddes.",
+            "1": "Motlys gir kantlys og flare; hvitbalanseforvalget Overskyet holder scenen varm."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Hvilke kamerainnstillinger bør jeg bruke for portretter?",
+          "answer": "Start med en stor blenderåpning (f/1.8–f/2.8) for bakgrunnsuskarphet, en lukkertid på minst 1/200s for å unngå bevegelsesuskarphet, og den laveste ISO-en lyset tillater (100–400). Bruk ettpunkts autofokus på det nærmeste øyet, eller øyegjenkjennings-AF hvis kameraet har det."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Hvilke innstillinger trenger jeg for å fotografere Melkeveien?",
+          "answer": "Et lyssterkt vidvinkelobjektiv på største blenderåpning (f/1.4–f/2.8), en eksponering på 10–25 sekunder (lenger lager striper av stjernene), ISO 1600–6400, manuell fokus på en klar stjerne og et stativ. En månefri natt langt fra bylys betyr mer enn noen kamerainnstilling."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Er disse innstillingene nøyaktige oppskrifter?",
+          "answer": "Nei — de er velprøvde utgangspunkter. Lyset varierer enormt mellom scener, så se på områdene som en første gjetning, ta et testbilde, sjekk histogrammet og juster. Målet er å få deg raskt inn i riktig område, ikke å erstatte skjønn."
+        }
+      }
+    }
+  }
+}

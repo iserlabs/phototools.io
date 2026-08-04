@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Pick a scenario",
+      "tipsTitle": "Field tips",
+      "labels": {
+        "aperture": "Aperture",
+        "shutter": "Shutter speed",
+        "iso": "ISO",
+        "whiteBalance": "White balance",
+        "focusMode": "Focus mode",
+        "driveMode": "Drive mode"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Daylight",
+        "cloudy": "Cloudy",
+        "shade": "Shade",
+        "tungsten": "Tungsten (~3200K)",
+        "afSingle": "Single AF (AF-S)",
+        "afContinuous": "Continuous AF (AF-C)",
+        "afTracking": "Continuous AF + subject tracking",
+        "manualFocus": "Manual focus",
+        "single": "Single shot",
+        "burstLow": "Low-speed burst",
+        "burstHigh": "High-speed burst",
+        "timer2s": "2s self-timer / remote",
+        "intervalometer": "Intervalometer"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Portraits",
+          "tips": {
+            "0": "Focus on the eye nearest the camera — at wide apertures the depth of field is only a few centimeters.",
+            "1": "Step back and zoom in (85mm+) for flattering compression; wide lenses up close distort facial features."
+          }
+        },
+        "landscape": {
+          "name": "Landscapes",
+          "tips": {
+            "0": "Focus about one-third into the scene or use the hyperfocal distance for front-to-back sharpness.",
+            "1": "Shoot from a tripod with the self-timer or a remote to eliminate shake at slow shutter speeds."
+          }
+        },
+        "street": {
+          "name": "Street",
+          "tips": {
+            "0": "Zone focus: pre-set focus at 3m and f/8, and everything from 2m to 6m will be sharp — no AF delay.",
+            "1": "Auto ISO with a minimum shutter speed of 1/250s freezes walking subjects while you concentrate on framing."
+          }
+        },
+        "wildlife": {
+          "name": "Wildlife & birds",
+          "tips": {
+            "0": "Match shutter speed to subject: 1/1000s for perched birds, 1/2500s or faster for birds in flight.",
+            "1": "Shoot at eye level and wait for head turns — a catchlight in the eye brings the image to life."
+          }
+        },
+        "sports": {
+          "name": "Sports & action",
+          "tips": {
+            "0": "Pre-focus where the action will happen (the goal, the apex of a corner) and start the burst just before the peak.",
+            "1": "Panning at 1/60s–1/125s with continuous AF blurs the background while keeping the subject sharp."
+          }
+        },
+        "macro": {
+          "name": "Macro",
+          "tips": {
+            "0": "At high magnification the depth of field is paper-thin — focus by moving the camera, not the focus ring.",
+            "1": "Diffraction bites hard beyond f/16; use focus stacking instead of stopping down further."
+          }
+        },
+        "milkyWay": {
+          "name": "Milky Way",
+          "tips": {
+            "0": "Use the NPF or 500 rule for maximum exposure before stars trail — around 15–20s at 20mm on full frame.",
+            "1": "Focus manually on a bright star using magnified live view; set white balance near 3900K for a neutral sky."
+          }
+        },
+        "nightCity": {
+          "name": "Night cityscapes",
+          "tips": {
+            "0": "Shoot at base ISO from a tripod and let the shutter run long — highlights stay clean and noise stays low.",
+            "1": "f/11–f/16 turns point lights into starbursts; shoot during blue hour for color in the sky."
+          }
+        },
+        "waterfall": {
+          "name": "Waterfalls & long exposure",
+          "tips": {
+            "0": "0.5–2s exposures keep texture in the water; 30s+ turns it to mist. Use an ND filter in daylight.",
+            "1": "A circular polarizer cuts glare from wet rocks and foliage — and doubles as a ~1.5-stop ND."
+          }
+        },
+        "goldenHour": {
+          "name": "Golden hour",
+          "tips": {
+            "0": "Expose for the highlights and lift shadows in post — blown warm highlights are unrecoverable.",
+            "1": "Backlight subjects for rim light and flare; a cloudy white balance preset keeps the scene warm."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "What camera settings should I use for portraits?",
+          "answer": "Start with a wide aperture (f/1.8–f/2.8) for background blur, a shutter speed of at least 1/200s to avoid motion blur, and the lowest ISO the light allows (100–400). Use single-point autofocus on the nearest eye, or eye-detection AF if your camera has it."
+        },
+        "what-settings-for-milky-way": {
+          "question": "What settings do I need to photograph the Milky Way?",
+          "answer": "A wide, fast lens at its widest aperture (f/1.4–f/2.8), a 10–25 second exposure (longer trails the stars), ISO 1600–6400, manual focus set on a bright star, and a tripod. A moonless night far from city lights matters more than any camera setting."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Are these settings exact recipes?",
+          "answer": "No — they are proven starting points. Light varies enormously between scenes, so treat the ranges as a first guess, take a test shot, check the histogram, and adjust. The goal is to get you into the right neighborhood fast, not to replace judgment."
+        }
+      }
+    }
+  }
+}

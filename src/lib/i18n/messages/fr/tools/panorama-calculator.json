@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Capteur",
+      "orientation": "Orientation de l'appareil",
+      "portrait": "Portrait",
+      "landscape": "Paysage",
+      "overlap": "Chevauchement : {percent}%",
+      "targetWidth": "Largeur du panorama",
+      "rows": "Rangées",
+      "megapixels": "Résolution de l'appareil : {mp} MP",
+      "fanLabel": "Schéma vu de dessus de {frames} images qui se chevauchent",
+      "totalShots": "Nombre total de prises",
+      "perRow": "Images × rangées",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotation entre les prises",
+      "coverage": "Couverture (H × V)",
+      "frameFov": "Champ de vision d'une image",
+      "stitchedSize": "Taille assemblée",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Quel chevauchement faut-il entre les prises d'un panorama ?",
+          "answer": "25 à 35 % est la zone idéale pour la plupart des scènes. Le logiciel d'assemblage a besoin de détails communs entre images voisines pour trouver des points de contrôle ; en dessous de 15 % il peut échouer à aligner les images, tandis qu'au-delà de 50 % tu multiplies les prises pour un bénéfice minime. Prévois plus de chevauchement pour les scènes pauvres en détails distincts, comme un ciel dégagé ou une eau calme."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Pourquoi photographier les panoramas en orientation portrait (verticale) ?",
+          "answer": "L'orientation portrait capture plus de champ vertical par image, donc le panorama assemblé final est plus haut et laisse de la marge pour recadrer et redresser l'horizon. Le coût : quelques images de plus à l'horizontale — un compromis presque toujours gagnant vu la flexibilité et la résolution gagnées."
+        },
+        "what-is-nodal-point": {
+          "question": "Qu'est-ce que le point de non-parallaxe (point nodal) ?",
+          "answer": "C'est le point à l'intérieur de l'objectif autour duquel l'appareil peut pivoter sans que les objets proches et lointains se décalent les uns par rapport aux autres entre les images. Pivoter autour du filetage du trépied provoque au contraire des erreurs de parallaxe qui compliquent l'assemblage, surtout avec des objets proches au premier plan. Les têtes panoramiques permettent de placer le point de non-parallaxe de l'objectif sur l'axe de rotation."
+        }
+      }
+    }
+  }
+}

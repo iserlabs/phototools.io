@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Elke keer dat je camera een foto maakt met de mechanische sluiter, telt een teller in de camera één op. Dat getal — de sluitertelling — is als de kilometerstand van een auto: het vertelt je hoe intensief een camera is gebruikt. Het is vooral belangrijk bij het kopen of verkopen van tweedehands apparatuur, omdat sluiters bewegende onderdelen zijn die een eindig aantal ontspanningen meegaan.",
+      "deeper": "Een mechanische sluiter bestaat uit twee veerbelaste gordijnen die bij elke belichting fysiek langs de sensor bewegen. Fabrikanten testen de levensduur van deze mechanismen en publiceren opgaven: ruwweg 100.000 ontspanningen voor instapmodellen, 150.000–200.000 voor enthousiastmodellen en 300.000–500.000 voor professionele camera's. De opgave is een statistisch gemiddelde, geen houdbaarheidsdatum — veel sluiters gaan meerdere keren hun opgave mee, en een kapotte sluiter is meestal een repareerbaar (zij het prijzig) defect. Waar de telling wordt opgeslagen verschilt per merk: Nikon schrijft hem onversleuteld in de maker notes van elk bestand — daarom kan deze tool hem uitlezen. Canon bewaart hem alleen in het interne geheugen, Sony versleutelt hem en Pentax versluiert hem. Moderne systeemcamera's maken het beeld nog ingewikkelder: opnamen met de elektronische sluiter slijten het mechanisme helemaal niet, dus een camera die vooral in stille modus is gebruikt kan veel meer totale opnamen hebben dan de mechanische telling doet vermoeden — en dat is prima.",
+      "keyFactors": {
+        "0": {
+          "label": "Cameramerk",
+          "description": "Bepaalt of de telling überhaupt uit bestanden te lezen is. Nikon slaat hem open op; Canon, Sony en Pentax niet."
+        },
+        "1": {
+          "label": "Opgegeven sluiterlevensduur",
+          "description": "De door de fabrikant geteste gemiddelde levensduur van het sluitermechanisme. Duurdere camera's gebruiken robuustere mechanismen met hogere opgaven."
+        },
+        "2": {
+          "label": "Elektronische vs. mechanische sluiter",
+          "description": "Opnamen met de elektronische sluiter veroorzaken geen mechanische slijtage en verhogen de mechanische teller meestal niet. Wie veel in stille modus fotografeert, toont lage tellingen."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Controleer de telling altijd met een onbewerkt bestand rechtstreeks uit de camera. Exports uit Lightroom, berichtenapps of sociale media verwijderen meestal de maker notes waarin de teller zit."
+        },
+        "1": {
+          "text": "Weeg bij tweedehandsaankoop de telling af tegen de opgave: 40.000 op een camera met een opgave van 300.000 is nauwelijks ingereden, terwijl 90.000 op een camera met een opgave van 100.000 een sluitervervanging inprijst."
+        },
+        "2": {
+          "text": "Een lage sluitertelling garandeert geen gezonde camera — waterschade, sensorkrassen en valpartijen zie je niet terug in de teller. Bekijk ook testfoto's en de camera zelf."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Sluitertelling",
+          "definition": "Het aantal keren dat de mechanische sluiter is afgegaan tijdens de levensduur van de camera. Uitgelezen uit de metadata die je camera in elke foto inbedt."
+        },
+        "ratedLife": {
+          "term": "Opgegeven sluiterlevensduur",
+          "definition": "Het door de fabrikant geteste gemiddelde aantal ontspanningen tot sluiterdefect. Een gemiddelde, geen harde grens — veel sluiters gaan er ruim overheen."
+        },
+        "source": {
+          "term": "Bron van de telling",
+          "definition": "Waar het getal vandaan komt: het echte sluitertellingveld, de puur mechanische teller van sommige systeemcamera's of een generiek beeldnummer als ruwe terugvaloptie."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Je maakt 500 foto's op een concert met de stille elektronische sluiter van je systeemcamera. Hoeveel mechanische sluiterslijtage heeft dit veroorzaakt?",
+          "hint": "Bedenk wat er fysiek beweegt tijdens een belichting met de elektronische sluiter.",
+          "successMessage": "Correct! De elektronische sluiter leest de sensor uit zonder gordijnen te bewegen, dus die 500 beelden veroorzaakten vrijwel geen mechanische slijtage — en verhogen de mechanische teller doorgaans niet.",
+          "failureMessage": "De elektronische sluiter belicht door de sensor elektronisch uit te lezen — er bewegen geen gordijnen, dus stil fotograferen voegt geen mechanische sluiterslijtage toe.",
+          "options": {
+            "0": { "label": "500 ontspanningen, zoals bij elke foto" },
+            "1": { "label": "Geen — alleen mechanisch sluitergebruik telt" },
+            "2": { "label": "Alleen RAW-bestanden veroorzaken slijtage" },
+            "3": { "label": "Alleen flitsfoto's veroorzaken slijtage" }
+          }
+        },
+        "1": {
+          "scenario": "Een camera heeft een opgave van 200.000 ontspanningen en staat nu op 195.000. Wat betekent die opgave eigenlijk voor deze camera?",
+          "hint": "Opgaven komen uit statistische levensduurtests, zoals het aantal branduren van gloeilampen.",
+          "successMessage": "Juist! De opgave is de gemiddelde levensduur uit tests — deze sluiter kan volgende week stukgaan of tot 400.000 doorlopen. Het is een waarschijnlijkheidssignaal voor de prijs, geen aftelklok.",
+          "failureMessage": "Een sluiteropgave is de geteste gemiddelde levensduur, geen harde grens of garantie. Veel sluiters gaan er ruim overheen; sommige begeven het eerder.",
+          "options": {
+            "0": { "label": "De sluiter stopt bij 200.000" },
+            "1": { "label": "Het is de gemiddelde levensduur — de kans op defect stijgt in de buurt ervan" },
+            "2": { "label": "De garantie eindigt bij 200.000" },
+            "3": { "label": "De batterijduur neemt af na 200.000" }
+          }
+        },
+        "2": {
+          "scenario": "Je vergelijkt twee tweedehands camera's van hetzelfde model: één met 15.000 ontspanningen en zichtbare corrosie bij het batterijklepje, en één met 60.000 ontspanningen in onberispelijke staat. Welke is de veiligste koop?",
+          "hint": "De teller registreert maar één soort slijtage.",
+          "successMessage": "Precies. De sluitertelling is één signaal van meerdere — corrosie wijst op waterschade, en die is voor camera's veel dodelijker dan een versleten sluiter. De schone camera met 60.000 is de veiligste koop.",
+          "failureMessage": "De sluitertelling meet alleen sluiterslijtage. Corrosie wijst op waterschade, en die is veel riskanter dan een matig gebruikte sluiter. Beoordeel telling plus conditie, nooit de telling alleen.",
+          "options": {
+            "0": { "label": "De camera met 15.000 — lager is altijd beter" },
+            "1": { "label": "De goedkoopste van de twee" },
+            "2": { "label": "De schone camera met 60.000 — conditie telt zwaarder" },
+            "3": { "label": "Geen van beide — ze zijn allebei te oud" }
+          }
+        }
+      }
+    }
+  }
+}

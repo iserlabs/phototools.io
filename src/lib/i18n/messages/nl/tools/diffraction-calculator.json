@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Resolutie: {mp} MP",
+      "aperture": "Diafragma",
+      "verdict": {
+        "sharp": "{f} is vrij van diffractie",
+        "borderline": "{f} wordt licht verzacht door diffractie",
+        "soft": "{f} wordt zichtbaar verzacht door diffractie"
+      },
+      "verdictDetail": {
+        "sharp": "Onder de diffractiegrens van {limit} voor deze sensor en resolutie bepaalt de lens — niet de diffractie — de scherpte.",
+        "borderline": "Voorbij de diffractiegrens van {limit} begint fijn detail op pixelniveau te vervagen. Acceptabel wanneer je de extra scherptediepte nodig hebt.",
+        "soft": "Ruim voorbij de diffractiegrens van {limit}. De scherptediepte blijft toenemen, maar het totale detail gaat zichtbaar achteruit — overweeg focus stacking in plaats van verder diafragmeren."
+      },
+      "stripLabel": "Diafragmaschaal gekleurd naar diffractie-invloed",
+      "pixelPitch": "Pixelpitch",
+      "airyDisk": "Diameter airy-schijfje",
+      "diffractionLimit": "Diffractiegrens",
+      "tableTitle": "Diffractiegrens per sensor en resolutie",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Wat is diffractie in de fotografie?",
+          "answer": "Diffractie is het afbuigen van lichtgolven wanneer ze zich door een kleine diafragmaopening wringen. Hoe kleiner het diafragma (hoger f-getal), hoe meer elk lichtpunt uitwaaiert tot een wazig schijfje (het airy-schijfje) op de sensor. Zodra dat schijfje groter wordt dan een pixel, vervaagt fijn detail — hoe goed de lens ook is."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Welk diafragma is het scherpst?",
+          "answer": "De meeste lenzen presteren het best twee of drie stops dichtgedraaid vanaf volle opening — doorgaans f/4 tot f/8 op fullframe. Die sweet spot balanceert lensfouten (het ergst bij volle opening) tegen diffractie (erger naarmate je verder diafragmeert). Sensoren met hoge resolutie bereiken hun diffractiegrens eerder, dus hun bruikbare sweet spot is smaller."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Hangt diffractie af van de sensor?",
+          "answer": "Het optische effect hangt alleen af van het diafragma en de golflengte van het licht — maar hoe zichtbaar het is, hangt af van de pixelgrootte. Een 61 MP fullframe-sensor heeft pixels van ~3,8 µm en toont diffractieverzachting rond f/5.6, terwijl een 12 MP-sensor met grote pixels scherp blijft tot f/11. Kleinere sensoren bereiken de grens bij hetzelfde aantal megapixels al bij grotere diafragma's."
+        }
+      }
+    }
+  }
+}

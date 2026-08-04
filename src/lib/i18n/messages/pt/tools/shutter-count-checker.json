@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Arraste uma foto aqui ou clique para procurar (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Quais marcas gravam a contagem de disparos?",
+      "status": {
+        "supported": "Legível",
+        "partial": "Parcial",
+        "unsupported": "Não fica nos arquivos"
+      },
+      "brands": {
+        "nikon": "A Nikon grava a contagem de disparos nos metadados de cada foto, sem criptografia. Use um arquivo original sem edição para obter o melhor resultado.",
+        "canon": "A Canon nunca grava a contagem de disparos nos arquivos de imagem: ela fica armazenada apenas dentro da câmera e é lida por ferramentas de assistência técnica ou utilitários USB.",
+        "sony": "A Sony armazena a contagem de disparos em uma seção criptografada dos metadados que não pode ser decodificada no navegador. Utilitários de desktop dedicados conseguem lê-la via USB.",
+        "fujifilm": "Os corpos Fujifilm não registram uma contagem de disparos verdadeira, mas alguns gravam um contador de quadros que dá um piso aproximado.",
+        "pentax": "A Pentax ofusca o campo de contagem de disparos com uma cifra, então ele não pode ser lido de forma confiável a partir dos arquivos.",
+        "olympus": "Os corpos OM System / Olympus mantêm a contagem completa de disparos em um menu de serviço interno; os arquivos às vezes trazem um contador de quadros que dá uma pista do uso.",
+        "panasonic": "A Panasonic não grava contagem de disparos nos arquivos. O menu de serviço da câmera a informa.",
+        "leica": "Os corpos Leica geralmente não armazenam contagem de disparos nos arquivos de imagem."
+      },
+      "countLabel": "Acionamentos do obturador",
+      "source": {
+        "shutterCount": "Lido dos metadados de contagem de disparos da câmera: este é o contador real de acionamentos mecânicos.",
+        "mechanicalShutterCount": "Lido do contador do obturador mecânico: quadros feitos com obturador eletrônico não são incluídos.",
+        "imageNumber": "Estimado a partir do número de imagem do arquivo. É um piso aproximado, não uma contagem exata de acionamentos: o contador pode ser reiniciado ou zerar ao atingir o limite."
+      },
+      "ratedLife": "Vida útil nominal do obturador",
+      "ratings": {
+        "entry": "De entrada",
+        "enthusiast": "Entusiasta",
+        "advanced": "Avançada",
+        "pro": "Profissional",
+        "flagship": "Topo de linha"
+      },
+      "lifeUsed": "{percent}% da vida útil nominal consumida",
+      "verdict": {
+        "low": "Quase sem uso",
+        "moderate": "Uso moderado",
+        "high": "Uso intenso",
+        "beyond": "Acima da vida nominal"
+      },
+      "noCountTitle": "Este arquivo não contém contagem de disparos",
+      "noCountGeneric": "Este arquivo não contém uma contagem de disparos legível. Tente uma foto original sem edição, direto da câmera: exportações de aplicativos de edição costumam remover os metadados do fabricante.",
+      "errorRead": "Não foi possível ler este arquivo. Tente um JPEG ou RAW sem edição, direto da câmera.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "O que é a contagem de disparos?",
+          "answer": "A contagem de disparos é o número de vezes que o obturador mecânico de uma câmera foi acionado: o equivalente fotográfico da quilometragem de um carro. É o indicador de desgaste mais consultado na compra ou venda de uma câmera usada, porque os obturadores são projetados para um número finito de acionamentos."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Quantos disparos do obturador são demais?",
+          "answer": "Depende da classe da câmera. Obturadores de câmeras de entrada são projetados para cerca de 100.000 acionamentos, corpos para entusiastas para 150.000–200.000 e corpos profissionais para 300.000–500.000. O valor nominal é uma vida útil média, não um limite rígido: muitos obturadores duram bem mais, e uma contagem baixa em um corpo maltratado ainda pode significar problemas."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Por que não consigo verificar a contagem de disparos na minha foto de Canon ou Sony?",
+          "answer": "A Canon nunca grava a contagem de disparos nos arquivos de imagem: ela vive apenas na memória interna da câmera. A Sony grava, mas criptografa essa seção dos metadados. Nos dois casos, uma ferramenta de navegador não consegue lê-la a partir de uma foto; a saída habitual são utilitários de desktop que se conectam à câmera via USB."
+        }
+      }
+    }
+  }
+}

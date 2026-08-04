@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Every photo your camera saves carries a hidden report about the camera itself: the exact model, its serial number, the firmware it runs, the lens that was attached, and sometimes how many photos it has taken. This tool reads that report from a single photo — entirely in your browser — so you can size up a camera body the way a mechanic reads a car's service history.",
+      "deeper": "The data comes from EXIF metadata, a standard block every digital camera embeds in its files. Standard fields include Make, Model, BodySerialNumber, Software (which for most cameras reports the firmware version), LensModel, and the capture timestamp. Manufacturers extend this with proprietary 'maker notes' — Nikon's include the shutter count, which is why shutter life is readable for some brands and not others. Body age is estimated by matching the model name against a database of release years: a camera released in 2018 is at least several years old regardless of what the seller says. Two caveats matter. First, metadata survives only in original files — most editing apps, messaging apps, and social platforms strip or rewrite it. Second, EXIF can be edited with freely available tools, so treat it as strong evidence, not proof: consistency between the serial on the file, the serial on the body, and the seller's receipt is what actually closes the case.",
+      "keyFactors": {
+        "0": {
+          "label": "Original Files Only",
+          "description": "Metadata survives in straight-from-camera files. Exports and re-saves often strip serials, maker notes, and firmware info."
+        },
+        "1": {
+          "label": "Serial Number",
+          "description": "Ties the file to a physical body. Cross-check it against the body itself, the receipt, and stolen-gear registries before buying used."
+        },
+        "2": {
+          "label": "Release Year vs Condition",
+          "description": "Age sets expectations (sensor tech, missing features, remaining support), but shutter wear and physical condition tell you how hard those years were."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Buying used? Ask the seller for an unedited photo straight from the camera. It verifies the model and serial, shows the current firmware, and — on supported brands — the shutter count, all in one file."
+        },
+        "1": {
+          "text": "Check the firmware against the manufacturer's latest release. An out-of-date camera is normal; a camera that can no longer be updated may miss autofocus and compatibility improvements."
+        },
+        "2": {
+          "text": "The capture date on the seller's sample photo tells you when the camera was last actually used. A 'lightly used' body whose newest file is four years old has been sitting — check for a stuck shutter and swollen battery."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Body Serial Number",
+          "definition": "The unique identifier the manufacturer assigns to each camera body, embedded in every photo's EXIF. Useful for warranty checks and stolen-gear registries."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "The camera's internal software, reported in the EXIF Software field. Manufacturers ship autofocus, compatibility, and feature improvements through firmware updates."
+        },
+        "bodyAge": {
+          "term": "Body Age",
+          "definition": "Years since the model was released, estimated from a database of release dates. An upper bound on how current the camera's technology is — not how worn this specific body is."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "You're buying a used camera from an online listing. The seller sends you an original photo from the camera. What's the most valuable thing to do with the serial number in its metadata?",
+          "hint": "The serial connects this specific body to the outside world.",
+          "successMessage": "Correct! Cross-checking the serial against stolen-gear registries (and the seller's receipt) protects you from buying stolen equipment — a check only the serial number makes possible.",
+          "failureMessage": "The serial number's unique value is identification: check it against stolen-gear registries and the seller's paperwork. It says nothing about image quality or compatibility.",
+          "options": {
+            "0": { "label": "Check it against stolen-gear registries" },
+            "1": { "label": "Estimate the photo quality" },
+            "2": { "label": "Verify lens compatibility" },
+            "3": { "label": "Look up the ISO range" }
+          }
+        },
+        "1": {
+          "scenario": "A used camera you're considering runs firmware 1.0 from its launch four years ago, while the manufacturer's current version is 3.1. What does updating typically get you?",
+          "hint": "Think about what manufacturers can change in software after launch.",
+          "successMessage": "Right! Firmware updates ship real improvements — better autofocus algorithms, new lens support, bug fixes, sometimes whole features. Hardware specs like sensor and megapixels never change.",
+          "failureMessage": "Firmware is software: updates improve autofocus, add lens support, and fix bugs. They can't change hardware like the sensor or megapixel count.",
+          "options": {
+            "0": { "label": "New features and autofocus improvements" },
+            "1": { "label": "More megapixels" },
+            "2": { "label": "A larger sensor area" },
+            "3": { "label": "Nothing — firmware is cosmetic" }
+          }
+        },
+        "2": {
+          "scenario": "Two sellers offer the same model: a 7-year-old body and a 4-year-old body at similar prices. What's the right way to use body age in your decision?",
+          "hint": "Age is one input — what does it not tell you?",
+          "successMessage": "Exactly. Age brackets the technology and remaining support life, but the deciding factors are how the body was used: shutter count, physical condition, and service history.",
+          "failureMessage": "Body age alone doesn't decide it — a gently used older body can beat a hammered newer one. Combine age with shutter count and physical condition.",
+          "options": {
+            "0": { "label": "Always buy the newer one" },
+            "1": { "label": "Weigh age together with shutter count and condition" },
+            "2": { "label": "Ignore age — only megapixels matter" },
+            "3": { "label": "Pick by brand reputation alone" }
+          }
+        }
+      }
+    }
+  }
+}

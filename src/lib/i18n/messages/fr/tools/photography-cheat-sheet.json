@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Choisis un scénario",
+      "tipsTitle": "Conseils de terrain",
+      "labels": {
+        "aperture": "Ouverture",
+        "shutter": "Vitesse d'obturation",
+        "iso": "ISO",
+        "whiteBalance": "Balance des blancs",
+        "focusMode": "Mode de mise au point",
+        "driveMode": "Mode d'entraînement"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Lumière du jour",
+        "cloudy": "Nuageux",
+        "shade": "Ombre",
+        "tungsten": "Tungstène (~3200K)",
+        "afSingle": "AF ponctuel (AF-S)",
+        "afContinuous": "AF continu (AF-C)",
+        "afTracking": "AF continu + suivi du sujet",
+        "manualFocus": "Mise au point manuelle",
+        "single": "Vue par vue",
+        "burstLow": "Rafale basse vitesse",
+        "burstHigh": "Rafale haute vitesse",
+        "timer2s": "Retardateur 2 s / télécommande",
+        "intervalometer": "Intervallomètre"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Portraits",
+          "tips": {
+            "0": "Fais la mise au point sur l'œil le plus proche de l'appareil — aux grandes ouvertures, la profondeur de champ ne fait que quelques centimètres.",
+            "1": "Recule et zoome (85mm et plus) pour une compression flatteuse ; les grands-angles utilisés de près déforment les traits du visage."
+          }
+        },
+        "landscape": {
+          "name": "Paysages",
+          "tips": {
+            "0": "Fais la mise au point à environ un tiers de la scène ou utilise la distance hyperfocale pour une netteté du premier plan à l'arrière-plan.",
+            "1": "Photographie sur trépied avec le retardateur ou une télécommande pour éliminer les vibrations aux vitesses lentes."
+          }
+        },
+        "street": {
+          "name": "Street",
+          "tips": {
+            "0": "Mise au point par zone : prérègle la mise au point à 3 m et f/8, et tout sera net de 2 m à 6 m — aucun délai d'AF.",
+            "1": "L'ISO auto avec une vitesse minimale de 1/250s fige les passants pendant que tu te concentres sur le cadrage."
+          }
+        },
+        "wildlife": {
+          "name": "Animaliers et oiseaux",
+          "tips": {
+            "0": "Adapte la vitesse au sujet : 1/1000s pour un oiseau perché, 1/2500s ou plus rapide pour un oiseau en vol.",
+            "1": "Photographie à hauteur d'œil et attends les mouvements de tête — un reflet de lumière dans l'œil donne vie à l'image."
+          }
+        },
+        "sports": {
+          "name": "Sport et action",
+          "tips": {
+            "0": "Prérègle la mise au point là où l'action va se produire (le but, le point de corde d'un virage) et démarre la rafale juste avant le moment clé.",
+            "1": "Un filé à 1/60s–1/125s avec l'AF continu floute l'arrière-plan tout en gardant le sujet net."
+          }
+        },
+        "macro": {
+          "name": "Macro",
+          "tips": {
+            "0": "À fort grossissement, la profondeur de champ est fine comme du papier — fais la mise au point en déplaçant l'appareil, pas avec la bague.",
+            "1": "La diffraction frappe fort au-delà de f/16 ; utilise le focus stacking plutôt que de fermer davantage."
+          }
+        },
+        "milkyWay": {
+          "name": "Voie lactée",
+          "tips": {
+            "0": "Utilise la règle NPF ou la règle des 500 pour l'exposition maximale avant que les étoiles ne filent — environ 15–20 s à 20mm en plein format.",
+            "1": "Fais la mise au point manuellement sur une étoile brillante avec la loupe en visée directe ; règle la balance des blancs vers 3900K pour un ciel neutre."
+          }
+        },
+        "nightCity": {
+          "name": "Ville de nuit",
+          "tips": {
+            "0": "Photographie à l'ISO de base sur trépied et laisse l'obturation durer — les hautes lumières restent propres et le bruit reste bas.",
+            "1": "f/11–f/16 transforme les points lumineux en étoiles ; photographie pendant l'heure bleue pour garder de la couleur dans le ciel."
+          }
+        },
+        "waterfall": {
+          "name": "Cascades et pose longue",
+          "tips": {
+            "0": "Des expositions de 0,5 à 2 s gardent de la texture dans l'eau ; à 30 s et plus, elle devient brume. Utilise un filtre ND en plein jour.",
+            "1": "Un polarisant circulaire supprime les reflets des rochers mouillés et du feuillage — et fait aussi office de filtre ND d'environ 1,5 stop."
+          }
+        },
+        "goldenHour": {
+          "name": "Heure dorée",
+          "tips": {
+            "0": "Expose pour les hautes lumières et débouche les ombres en post-traitement — des hautes lumières chaudes cramées sont irrécupérables.",
+            "1": "Place tes sujets en contre-jour pour un liseré de lumière et du flare ; le préréglage de balance des blancs « nuageux » garde la scène chaude."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Quels réglages utiliser pour les portraits ?",
+          "answer": "Commence avec une grande ouverture (f/1.8–f/2.8) pour le flou d'arrière-plan, une vitesse d'obturation d'au moins 1/200s pour éviter le flou de bougé, et l'ISO le plus bas que la lumière permet (100–400). Utilise l'autofocus sur collimateur unique sur l'œil le plus proche, ou l'AF avec détection de l'œil si ton appareil en dispose."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Quels réglages pour photographier la Voie lactée ?",
+          "answer": "Un objectif grand-angle lumineux à sa pleine ouverture (f/1.4–f/2.8), une exposition de 10 à 25 secondes (au-delà, les étoiles filent), ISO 1600–6400, une mise au point manuelle sur une étoile brillante, et un trépied. Une nuit sans lune, loin des lumières de la ville, compte plus que n'importe quel réglage."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Ces réglages sont-ils des recettes exactes ?",
+          "answer": "Non — ce sont des points de départ éprouvés. La lumière varie énormément d'une scène à l'autre, alors prends ces plages comme une première estimation, fais une photo test, vérifie l'histogramme et ajuste. Le but est de t'amener vite dans la bonne zone, pas de remplacer ton jugement."
+        }
+      }
+    }
+  }
+}

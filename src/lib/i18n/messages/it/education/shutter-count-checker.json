@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Ogni volta che la tua fotocamera scatta una foto con l'otturatore meccanico, un contatore interno avanza di uno. Quel numero — il conteggio scatti — è come il chilometraggio di un'auto: ti dice quanto intensamente è stata usata una fotocamera. Conta soprattutto quando compri o vendi attrezzatura usata, perché gli otturatori sono parti in movimento progettate per un numero finito di azionamenti.",
+      "deeper": "Un otturatore meccanico è una coppia di tendine a molla che attraversano fisicamente il sensore a ogni esposizione. I produttori sottopongono questi meccanismi a test di durata e pubblicano i valori: circa 100.000 scatti per i corpi entry-level, 150.000–200.000 per i modelli amatoriali evoluti e 300.000–500.000 per quelli professionali. La durata nominale è una media statistica, non una data di scadenza — molti otturatori durano diverse volte il valore dichiarato, e un otturatore guasto è di solito un difetto riparabile (anche se costoso). Dove risiede il conteggio varia in base alla marca: Nikon lo scrive, non cifrato, nelle maker note di ogni file, ed è per questo che questo strumento può leggerlo. Canon lo tiene solo nella memoria interna, Sony lo cifra e Pentax lo offusca. Le mirrorless moderne complicano ulteriormente il quadro: i fotogrammi scattati con l'otturatore elettronico non usurano affatto il meccanismo, quindi un corpo usato soprattutto in modalità silenziosa può avere molte più esposizioni totali di quanto suggerisca il conteggio meccanico — e va benissimo così.",
+      "keyFactors": {
+        "0": {
+          "label": "Marca della fotocamera",
+          "description": "Determina se il conteggio è leggibile dai file. Nikon lo memorizza in chiaro; Canon, Sony e Pentax no."
+        },
+        "1": {
+          "label": "Durata nominale dell'otturatore",
+          "description": "La vita media testata dal produttore per il meccanismo dell'otturatore. I corpi di fascia alta usano meccanismi più robusti con durate superiori."
+        },
+        "2": {
+          "label": "Otturatore elettronico vs meccanico",
+          "description": "I fotogrammi con otturatore elettronico non causano alcuna usura meccanica e di solito non incrementano il contatore meccanico. Chi scatta molto in modalità silenziosa mostra conteggi bassi."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Controlla sempre il conteggio da un file originale non modificato, appena uscito dalla fotocamera. Le esportazioni da Lightroom, app di messaggistica o social di solito rimuovono le maker note che contengono il contatore."
+        },
+        "1": {
+          "text": "Quando compri usato, valuta il conteggio rispetto alla durata nominale: 40.000 su un corpo garantito per 300.000 è appena rodato, mentre 90.000 su un corpo da 100.000 deve mettere in conto la sostituzione dell'otturatore."
+        },
+        "2": {
+          "text": "Un conteggio basso non garantisce una fotocamera sana — danni da acqua, graffi sul sensore e cadute non compaiono nel contatore. Esamina anche foto di prova e il corpo stesso."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Conteggio scatti",
+          "definition": "Il numero di volte in cui l'otturatore meccanico è scattato nell'arco di vita della fotocamera. Letto dai metadati che la fotocamera incorpora in ogni foto."
+        },
+        "ratedLife": {
+          "term": "Durata nominale dell'otturatore",
+          "definition": "Il numero medio di azionamenti prima del guasto, testato dal produttore. Una media, non un limite rigido — molti otturatori la superano di gran lunga."
+        },
+        "source": {
+          "term": "Origine del conteggio",
+          "definition": "Da dove è stato letto il numero: il vero campo del conteggio scatti, il contatore solo meccanico di alcune mirrorless, o un numero immagine generico usato come stima approssimativa."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Scatti 500 foto a un concerto usando l'otturatore elettronico silenzioso della tua mirrorless. Quanta usura meccanica dell'otturatore hai aggiunto?",
+          "hint": "Pensa a cosa si muove fisicamente durante un'esposizione con otturatore elettronico.",
+          "successMessage": "Corretto! L'otturatore elettronico legge il sensore senza muovere alcuna tendina, quindi quei 500 fotogrammi non hanno causato praticamente alcuna usura meccanica — e di norma non incrementano il contatore meccanico.",
+          "failureMessage": "L'otturatore elettronico espone leggendo il sensore elettronicamente — nessuna tendina si muove, quindi lo scatto silenzioso non aggiunge usura meccanica all'otturatore.",
+          "options": {
+            "0": { "label": "500 azionamenti, come qualsiasi foto" },
+            "1": { "label": "Nessuna — conta solo l'uso dell'otturatore meccanico" },
+            "2": { "label": "Solo i file RAW aggiungono usura" },
+            "3": { "label": "Solo le foto con flash aggiungono usura" }
+          }
+        },
+        "1": {
+          "scenario": "Una fotocamera è garantita per 200.000 azionamenti e attualmente ne mostra 195.000. Cosa significa davvero la durata nominale per questo corpo?",
+          "hint": "I valori nominali derivano da test statistici di durata, come le ore dichiarate delle lampadine.",
+          "successMessage": "Esatto! La durata nominale è la vita media risultata dai test — questo otturatore potrebbe guastarsi la prossima settimana o arrivare a 400.000. È un segnale di probabilità utile per il prezzo, non un conto alla rovescia.",
+          "failureMessage": "La durata nominale di un otturatore è la vita media testata, non un limite rigido né una garanzia. Molti otturatori la superano abbondantemente; alcuni si guastano prima.",
+          "options": {
+            "0": { "label": "L'otturatore si fermerà a 200.000" },
+            "1": { "label": "È la vita media — le probabilità di guasto salgono avvicinandosi" },
+            "2": { "label": "La garanzia termina a 200.000" },
+            "3": { "label": "La batteria si degrada dopo 200.000" }
+          }
+        },
+        "2": {
+          "scenario": "Stai confrontando due fotocamere usate dello stesso modello: una con 15.000 scatti e corrosione visibile vicino allo sportello della batteria, una con 60.000 scatti in condizioni impeccabili. Qual è l'acquisto più sicuro?",
+          "hint": "Il contatore registra un solo tipo di usura.",
+          "successMessage": "Esattamente. Il conteggio scatti è solo uno dei segnali — la corrosione suggerisce esposizione all'acqua, che uccide le fotocamere molto più spesso degli otturatori usurati. Il corpo pulito da 60.000 è l'acquisto più sicuro.",
+          "failureMessage": "Il conteggio scatti misura solo l'usura dell'otturatore. La corrosione indica danni da acqua, molto più rischiosi di un otturatore moderatamente usato. Valuta conteggio più condizioni, mai il conteggio da solo.",
+          "options": {
+            "0": { "label": "Il corpo da 15.000 — più basso è sempre meglio" },
+            "1": { "label": "Quello che costa meno" },
+            "2": { "label": "Il corpo pulito da 60.000 — le condizioni contano di più" },
+            "3": { "label": "Nessuno dei due — sono entrambi troppo vecchi" }
+          }
+        }
+      }
+    }
+  }
+}

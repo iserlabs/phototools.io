@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Minden fotózási helyzetnek — portré, vadfotózás, Tejút — megvan a maga bevált rekesz-, zársebesség- és ISO-kombinációja, amelyhez a tapasztalt fotósok elsőként nyúlnak. Ezek a puskák azonnal megadják ezt a kiindulópontot, így a figyelmét a fényre és a kompozícióra fordíthatja, ahelyett hogy a tárcsákat találgatná.",
+      "deeper": "Az itteni receptek mindegyike az expozíciós háromszög alkalmazása, egyetlen kiemelt oldallal. A portré a rekeszt helyezi előtérbe: a nyitott rekesz (f/1.8–f/2.8) elválasztja a témát a háttértől, és minden más ehhez igazodik. Az akciófotózás a zársebességet: az 1/1000s kimerevíti a mozgást, ezért a rekesz nyílik, az ISO pedig emelkedik, hogy legyen elég fény hozzá. A tájkép a képminőséget: alap-ISO és közepes rekesz az objektív ideális tartományában, az ebből adódó zársebességet pedig elnyeli az állvány. Az éjszakai jelenetek mind a három oldalt egyszerre feszítik, ezért ezeknek a legkötöttebbek a receptjei — a Tejút valóban megköveteli a teljesen nyitott, fényerős objektívet, a ~20 másodpercnél rövidebb zársebességet (mielőtt a Föld forgása csíkokká húzná a csillagokat), és azt az ISO-t, amellyel a hisztogram használhatóvá válik. Az igazi tanulság annak felismerése, hogy melyik helyzet melyik oldalt helyezi előtérbe: ha látja a prioritást, bármelyik receptet hozzáigazíthatja az Ön előtt lévő fényhez, ahelyett hogy vakon követné. A tartományok tipikus körülményekre hangolt kiindulópontok; a végső szót a hisztogram mondja ki, nem a puska.",
+      "keyFactors": {
+        "0": {
+          "label": "A helyzet prioritása",
+          "description": "Minden szituáció először egy expozíciós változót rögzít — portrénál a rekeszt, akciónál a zársebességet, tájképnél az ISO-t —, a többit pedig ehhez igazítja."
+        },
+        "1": {
+          "label": "Rendelkezésre álló fény",
+          "description": "Ugyanaz a helyzet délben és alkonyatkor más beállítást kíván. Tekintse a tartományokat horgonynak, és mozogjon bennük a fény változásával."
+        },
+        "2": {
+          "label": "Támasz és stabilitás",
+          "description": "Az állvány felszabadítja az alap-ISO-t és a hosszú zársebességeket a statikus jeleneteknél. Kézből fotózva a zársebesség alsó határa nagyjából 1/(gyújtótávolság) vagy annál rövidebb."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Készítsen próbafelvételt, és a hisztogramot olvassa, ne az LCD-előnézetet — a kijelzők tűző napon és éjszaka hazudnak, a hisztogram soha."
+        },
+        "1": {
+          "text": "Jegyezzen meg egy receptet minden műfajhoz, amelyet fotóz, majd gyakorolja egyszerre csak egyetlen változó módosítását. Így sokkal gyorsabban rögzülnek a kompromisszumok, mintha mindent egyszerre változtatna."
+        },
+        "2": {
+          "text": "Töltse le a puskát azokhoz a helyzetekhez, amelyeket ritkán fotóz — a Tejút receptje hajnali kettőkor, egy hegyoldalon, átfagyott ujjakkal nehezen jut eszébe."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Rekesz",
+          "definition": "Az objektív nyílásának mérete f-értékben. Kisebb szám = több fény és erősebb háttérelmosás; nagyobb szám = nagyobb mélységélesség."
+        },
+        "shutter": {
+          "term": "Zársebesség",
+          "definition": "Mennyi ideig gyűjti a fényt az érzékelő. A rövid idő kimerevíti a mozgást; a hosszú elmossa, és stabilizálást vagy állványt igényel."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Az érzékelő jelerősítése. Tartsa olyan alacsonyan, amennyire a fény engedi — a növelése zaj árán világosítja a képet."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Portrét fotóz, és a klasszikus hatást szeretné: éles téma, elmosott háttér. Melyik beállítással éri el?",
+          "hint": "A háttér elmosódása a mélységélességből fakad — melyik szabályozó irányítja ezt?",
+          "successMessage": "Helyes! A nyitott rekesz (például f/1.8–f/2.8) hozza létre azt a szűk mélységélességet, amely elválasztja a témát az elmosott háttértől — ez a portré meghatározó választása.",
+          "failureMessage": "A háttér elmosódását a nyitott rekesz (alacsony f-érték), például az f/1.8–f/2.8 adja, amely szűkíti a mélységélességet. A szűk rekesz ennek épp az ellenkezőjét teszi.",
+          "options": {
+            "0": { "label": "Szűk rekesz, például f/16" },
+            "1": { "label": "Nyitott rekesz, például f/2" },
+            "2": { "label": "Hosszú expozíció állványról" },
+            "3": { "label": "Maximális ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Egy gém mindig épp akkor rugaszkodik el a vízről, amikor exponál, és minden képkockán elmosódnak a szárnyvégek. Mi a megoldás?",
+          "hint": "A bemozdulás időprobléma.",
+          "successMessage": "Így van! A repülő madarakhoz rövid zársebesség kell — az 1/2500s vagy annál rövidebb kimerevíti a szárnycsapást. Nyissa a rekeszt, és hagyja, hogy az Auto ISO felkússzon a szükséges sebességhez.",
+          "failureMessage": "Az elmosódott szárnyak azt jelentik, hogy a zársebesség túl hosszú a mozgáshoz. Váltson 1/2500s-ra vagy rövidebbre, a kieső fényt pedig pótolja a rekesszel és az ISO-val.",
+          "options": {
+            "0": { "label": "Hosszabb zársebesség több fényért" },
+            "1": { "label": "Sokkal rövidebb zársebesség" },
+            "2": { "label": "Szűkítés f/22-re" },
+            "3": { "label": "Fehéregyensúly-váltás izzólámpára" }
+          }
+        },
+        "2": {
+          "scenario": "Sötét égbolt alatt készül a Tejút fotózására. Melyik kombinációval kap használható expozíciót a galaktikus magról?",
+          "hint": "A csillagok halványak, mozognak (a Föld forgásával), és ők az egyetlen fényforrása.",
+          "successMessage": "Helyes! Teljesen nyitva (f/1.4–f/2.8), 10–25 másodperc, ISO 1600–6400: a rekesz maximális fényt gyűjt, a zár még a csillagok megnyúlása előtt lezár, a magas ISO pedig láthatóvá teszi a halvány magot.",
+          "failureMessage": "A Tejúthoz minden kell: teljesen nyitott rekesz, olyan rövid expozíció, hogy a csillagok ne húzzanak csíkot (10–25 s), és magas ISO (1600–6400). A szűk rekesz vagy az alap-ISO feketén hagyja az eget.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Teljesen nyitva, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Bármilyen beállítás ND szűrővel" }
+          }
+        }
+      }
+    }
+  }
+}

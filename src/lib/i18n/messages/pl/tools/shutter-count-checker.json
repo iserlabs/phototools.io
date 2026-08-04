@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Upuść zdjęcie tutaj lub kliknij, aby wybrać plik (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Które marki zapisują przebieg migawki?",
+      "status": {
+        "supported": "Odczytywalny",
+        "partial": "Częściowo",
+        "unsupported": "Brak w plikach"
+      },
+      "brands": {
+        "nikon": "Nikon zapisuje przebieg migawki w metadanych każdego zdjęcia, bez szyfrowania. Najlepsze wyniki daje nieedytowany oryginalny plik.",
+        "canon": "Canon nigdy nie zapisuje przebiegu migawki w plikach zdjęć — liczba jest przechowywana wyłącznie w aparacie i odczytywana przez narzędzia serwisowe lub programy działające po USB.",
+        "sony": "Sony przechowuje przebieg migawki w zaszyfrowanej sekcji metadanych, której nie da się odczytać w przeglądarce. Dedykowane programy na komputer potrafią odczytać go po USB.",
+        "fujifilm": "Aparaty Fujifilm nie zapisują prawdziwego przebiegu migawki, ale niektóre zapisują licznik klatek, który daje przybliżoną dolną granicę.",
+        "pentax": "Pentax maskuje pole z przebiegiem migawki szyfrem, więc nie da się go wiarygodnie odczytać z plików.",
+        "olympus": "Aparaty OM System / Olympus trzymają pełny przebieg migawki w wewnętrznym menu serwisowym; pliki czasem zawierają licznik klatek, który daje pojęcie o stopniu zużycia.",
+        "panasonic": "Panasonic nie zapisuje przebiegu migawki w plikach. Liczbę podaje menu serwisowe aparatu.",
+        "leica": "Aparaty Leica zazwyczaj nie przechowują przebiegu migawki w plikach zdjęć."
+      },
+      "countLabel": "Liczba zwolnień migawki",
+      "source": {
+        "shutterCount": "Odczytano z metadanych przebiegu migawki aparatu — to rzeczywisty licznik mechanicznych zwolnień.",
+        "mechanicalShutterCount": "Odczytano z licznika migawki mechanicznej — klatki wykonane migawką elektroniczną nie są wliczane.",
+        "imageNumber": "Oszacowano na podstawie numeru zdjęcia w pliku. To przybliżona dolna granica, a nie dokładna liczba zwolnień — licznik może się zerować lub przekręcać."
+      },
+      "ratedLife": "Deklarowana żywotność migawki",
+      "ratings": {
+        "entry": "Podstawowy",
+        "enthusiast": "Amatorski zaawansowany",
+        "advanced": "Zaawansowany",
+        "pro": "Profesjonalny",
+        "flagship": "Flagowy"
+      },
+      "lifeUsed": "Wykorzystano {percent}% deklarowanej żywotności",
+      "verdict": {
+        "low": "Ledwo używany",
+        "moderate": "Umiarkowane zużycie",
+        "high": "Intensywne zużycie",
+        "beyond": "Powyżej deklarowanej żywotności"
+      },
+      "noCountTitle": "Brak przebiegu migawki w tym pliku",
+      "noCountGeneric": "Ten plik nie zawiera odczytywalnego przebiegu migawki. Spróbuj z nieedytowanym oryginalnym zdjęciem prosto z aparatu — eksporty z programów do edycji często usuwają metadane producenta.",
+      "errorRead": "Nie udało się odczytać tego pliku. Spróbuj z nieedytowanym plikiem JPEG lub RAW prosto z aparatu.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Czym jest przebieg migawki?",
+          "answer": "Przebieg migawki to liczba zadziałań mechanicznej migawki aparatu — odpowiednik przebiegu samochodu. To najczęściej sprawdzany wskaźnik zużycia przy kupnie lub sprzedaży używanego aparatu, ponieważ migawki są projektowane na skończoną liczbę zwolnień."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Ile zwolnień migawki to za dużo?",
+          "answer": "To zależy od klasy aparatu. Migawki w modelach podstawowych mają deklarowaną żywotność około 100 000 zwolnień, w korpusach dla zaawansowanych amatorów 150 000–200 000, a w profesjonalnych 300 000–500 000. Deklaracja to średnia żywotność, a nie sztywny limit — wiele migawek wytrzymuje znacznie więcej, a niski przebieg w źle traktowanym korpusie i tak może oznaczać problemy."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Dlaczego nie mogę sprawdzić przebiegu migawki na zdjęciu z Canona lub Sony?",
+          "answer": "Canon w ogóle nie zapisuje przebiegu migawki w plikach zdjęć — liczba istnieje tylko w wewnętrznej pamięci aparatu. Sony ją zapisuje, ale szyfruje tę sekcję metadanych. W obu przypadkach narzędzie w przeglądarce nie odczyta jej ze zdjęcia; typowym obejściem są programy na komputer łączące się z aparatem po USB."
+        }
+      }
+    }
+  }
+}

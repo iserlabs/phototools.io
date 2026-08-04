@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Jokaisella kuvaustilanteella — muotokuvilla, villieläimillä, Linnunradalla — on vakiintunut aukon, suljinajan ja ISO:n yhdistelmä, johon kokeneet valokuvaajat tarttuvat ensimmäisenä. Nämä muistilistat antavat sinulle tuon lähtökohdan heti, jotta voit keskittyä valoon ja sommitteluun sen sijaan, että arvailisit säätimien kanssa.",
+      "deeper": "Jokainen täällä oleva resepti on valotuskolmion sovellus, jossa yksi sivu on asetettu etusijalle. Muotokuvissa etusijalla on aukko: suuret aukot (f/1.8–f/2.8) erottavat kohteen taustasta, ja kaikki muu mukautuu siihen. Toimintakuvissa etusijalla on suljinaika: 1/1000s pysäyttää liikkeen, joten aukko avautuu ja ISO nousee tuomaan lisää valoa. Maisemissa etusijalla on kuvanlaatu: perus-ISO ja keskikokoinen aukko objektiivin parhaalta alueelta, ja jalusta ottaa vastaan sen suljinajan, joka siitä seuraa. Yökuvat venyttävät kaikkia kolmea sivua yhtä aikaa, minkä vuoksi niiden reseptit ovat kaikkein tiukimpia — Linnunrata vaatii aidosti valovoimaisen objektiivin täysin auki, alle noin 20 sekunnin suljinajan (ennen kuin Maan pyöriminen venyttää tähdet viiruiksi) ja sen ISO-arvon, jolla histogrammista tulee käyttökelpoinen. Varsinainen oppi on ymmärtää, mikä sivu kussakin tilanteessa on etusijalla: kun näet painotuksen, voit sovittaa minkä tahansa reseptin edessäsi olevaan valoon sen sijaan, että seuraisit sitä sokeasti. Alueet ovat tyypillisiin olosuhteisiin kalibroituja lähtökohtia; viimeinen sana on histogrammilla, ei muistilistalla.",
+      "keyFactors": {
+        "0": {
+          "label": "Tilanteen painotus",
+          "description": "Jokainen tilanne lukitsee ensin yhden valotusmuuttujan — muotokuvissa aukon, toiminnassa suljinajan, maisemissa ISO:n — ja antaa muiden mukautua."
+        },
+        "1": {
+          "label": "Käytettävissä oleva valo",
+          "description": "Sama tilanne vaatii eri asetukset keskipäivällä ja hämärässä. Pidä alueita ankkureina ja liiku niiden sisällä valon muuttuessa."
+        },
+        "2": {
+          "label": "Tuki ja vakaus",
+          "description": "Jalusta vapauttaa perus-ISO:n ja pitkät suljinajat liikkumattomiin kohteisiin. Käsivaralta kuvattaessa suljinajan alaraja on noin 1/(polttoväli) tai nopeampi."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Ota testikuva ja lue histogrammi, älä LCD-esikatselua — näytöt valehtelevat kirkkaassa auringossa ja yöllä, histogrammi ei koskaan."
+        },
+        "1": {
+          "text": "Opettele ulkoa yksi resepti jokaiselle kuvaamallesi lajille ja harjoittele sitten yhden muuttujan säätämistä kerrallaan. Sisäistät kompromissit paljon nopeammin kuin muuttamalla kaiken yhdellä kertaa."
+        },
+        "2": {
+          "text": "Lataa muistilista niitä tilanteita varten, joita kuvaat harvoin — Linnunradan reseptiä on vaikea muistaa kello kahdelta yöllä vuorenrinteellä kylmin sormin."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Aukko",
+          "definition": "Objektiivin aukon koko f-lukuina. Pienemmät luvut = enemmän valoa ja enemmän taustan sumennusta; suuremmat luvut = enemmän syväterävyyttä."
+        },
+        "shutter": {
+          "term": "Suljinaika",
+          "definition": "Kuinka kauan kenno kerää valoa. Nopeat ajat pysäyttävät liikkeen; hitaat sumentavat sen ja vaativat vakautusta tai jalustan."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Kennon vahvistus. Pidä se niin matalana kuin valo sallii — nostaminen kirkastaa kuvaa kohinan kustannuksella."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Kuvaat muotokuvaa ja haluat klassisen lopputuloksen: kohde terävänä, tausta sulanut sumeaksi. Mikä asetusvalinta saa sen aikaan?",
+          "hint": "Taustan sumennus syntyy syväterävyydestä — mikä säädin ohjaa sitä?",
+          "successMessage": "Oikein! Suuri aukko (kuten f/1.8–f/2.8) luo kapean syväterävyyden, joka erottaa kohteen sumeasta taustasta — muotokuvauksen määrittävä valinta.",
+          "failureMessage": "Taustan sumennus syntyy suuresta aukosta eli pienestä f-luvusta, kuten f/1.8–f/2.8, joka kaventaa syväterävyyttä. Pienet aukot tekevät päinvastoin.",
+          "options": {
+            "0": { "label": "Pieni aukko, kuten f/16" },
+            "1": { "label": "Suuri aukko, kuten f/2" },
+            "2": { "label": "Pitkä valotus jalustalta" },
+            "3": { "label": "Suurin ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Haikara ponnahtaa vedestä lentoon juuri kun painat laukaisinta, ja joka ruudussa siipien kärjet ovat epäteräviä. Mikä on ratkaisu?",
+          "hint": "Liike-epäterävyys on aikaan liittyvä ongelma.",
+          "successMessage": "Aivan! Lentävät linnut vaativat nopeita suljinaikoja — 1/2500s tai nopeampi pysäyttää siiveniskut. Avaa aukko ja anna automaatti-ISO:n nousta tuomaan tarvitsemasi valon.",
+          "failureMessage": "Epäterävät siivet tarkoittavat, että suljinaika on liian hidas liikkeeseen nähden. Siirry 1/2500s:iin tai nopeampaan ja anna aukon ja ISO:n korvata menetetty valo.",
+          "options": {
+            "0": { "label": "Hitaampi suljinaika lisävalon saamiseksi" },
+            "1": { "label": "Paljon nopeampi suljinaika" },
+            "2": { "label": "Himmennä f/22:een" },
+            "3": { "label": "Vaihda valkotasapaino hehkulamppuasetukselle" }
+          }
+        },
+        "2": {
+          "scenario": "Olet asettunut pimeän taivaan alle kuvaamaan Linnunrataa. Mikä yhdistelmä tuottaa käyttökelpoisen valotuksen galaksin ytimestä?",
+          "hint": "Tähdet ovat himmeitä, liikkeessä Maan pyörimisen mukana ja ainoa valonlähteesi.",
+          "successMessage": "Oikein! Täysin auki (f/1.4–f/2.8), 10–25 sekuntia, ISO 1600–6400: aukko kerää mahdollisimman paljon valoa, suljin sulkeutuu ennen kuin tähdet venyvät viiruiksi, ja korkea ISO tuo himmeän ytimen näkyviin.",
+          "failureMessage": "Linnunrata vaatii kaiken: aukon täysin auki, valotuksen niin lyhyenä etteivät tähdet veny viiruiksi (10–25s) ja korkean ISO:n (1600–6400). Pienet aukot tai perus-ISO jättävät taivaan mustaksi.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Täysin auki, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Mitkä tahansa asetukset ND-suotimen kanssa" }
+          }
+        }
+      }
+    }
+  }
+}

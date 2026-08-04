@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Lightroom-catalogusanalyzer — Gratis statistieken, alleen in de browser",
       "description": "Analyseer je Lightroom Classic-catalogus lokaal in je browser. Bekijk uitrusting, brandpuntsafstanden, diafragmagewoonten, beoordelingen en meer. 100% lokaal — je catalogus wordt nooit geüpload."
+    },
+    "shutter-count-checker": {
+      "title": "Sluitertelling-checker — gratis & privé",
+      "description": "Controleer de sluitertelling van je camera via een foto, gratis en 100% in je browser. Werkt met Nikon JPEG- en RAW-bestanden, met duidelijke uitleg voor Canon, Sony en andere merken."
+    },
+    "camera-health-checker": {
+      "title": "Cameragezondheid-checker",
+      "description": "Inspecteer een camerabody via één foto: model, serienummer, firmware, leeftijd, lens en sluiterlevensduur. 100% client-side — ideaal om tweedehands camera's te controleren vóór aankoop."
+    },
+    "panorama-calculator": {
+      "title": "Panoramacalculator",
+      "description": "Plan gestitchte panorama's: hoeveel opnamen je nodig hebt, hoe ver je tussen beelden moet draaien en de uiteindelijke resolutie — voor elke lens, sensor en overlap."
+    },
+    "diffraction-calculator": {
+      "title": "Diffractiegrens-calculator",
+      "description": "Vind de diffractiegrens van je camera: het diafragma waarbij verder diafragmeren beelden zachter maakt. Gebaseerd op pixelpitch en het airy-schijfje, voor elke sensor en resolutie."
+    },
+    "photography-cheat-sheet": {
+      "title": "Fotografie-spiekbriefje — camera-instellingen per scenario",
+      "description": "Spiekbriefjes met camera-instellingen voor portretten, landschappen, wildlife, de Melkweg en meer. Bewezen startpunten die je als afbeelding kunt downloaden of printen."
     }
   }
 }

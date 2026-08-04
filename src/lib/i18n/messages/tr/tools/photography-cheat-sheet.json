@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Bir senaryo seçin",
+      "tipsTitle": "Saha ipuçları",
+      "labels": {
+        "aperture": "Diyafram",
+        "shutter": "Enstantane hızı",
+        "iso": "ISO",
+        "whiteBalance": "Beyaz dengesi",
+        "focusMode": "Odaklama modu",
+        "driveMode": "Sürüş modu"
+      },
+      "values": {
+        "auto": "Otomatik",
+        "daylight": "Gün ışığı",
+        "cloudy": "Bulutlu",
+        "shade": "Gölge",
+        "tungsten": "Tungsten (~3200K)",
+        "afSingle": "Tekli AF (AF-S)",
+        "afContinuous": "Sürekli AF (AF-C)",
+        "afTracking": "Sürekli AF + konu takibi",
+        "manualFocus": "Manuel odaklama",
+        "single": "Tek çekim",
+        "burstLow": "Düşük hızlı seri çekim",
+        "burstHigh": "Yüksek hızlı seri çekim",
+        "timer2s": "2 sn zamanlayıcı / uzaktan kumanda",
+        "intervalometer": "İntervalometre"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Portreler",
+          "tips": {
+            "0": "Kameraya en yakın göze odaklanın — açık diyaframlarda alan derinliği yalnızca birkaç santimetredir.",
+            "1": "Geri çekilip yakınlaştırın (85mm+); bu, yüzü güzelleştiren bir sıkıştırma sağlar. Geniş açı objektifler yakın mesafede yüz hatlarını bozar."
+          }
+        },
+        "landscape": {
+          "name": "Manzaralar",
+          "tips": {
+            "0": "Sahnenin yaklaşık üçte birine odaklanın veya önden arkaya netlik için hiperfokal mesafeyi kullanın.",
+            "1": "Yavaş enstantane hızlarında titremeyi önlemek için tripoddan, zamanlayıcı veya uzaktan kumandayla çekin."
+          }
+        },
+        "street": {
+          "name": "Sokak",
+          "tips": {
+            "0": "Bölge odaklaması yapın: odağı önceden 3 m'ye ve f/8'e ayarlayın; 2 m ile 6 m arasındaki her şey net olur — AF gecikmesi yaşamazsınız.",
+            "1": "Minimum enstantane hızı 1/250s olan Otomatik ISO, siz kadraja odaklanırken yürüyen konuları dondurur."
+          }
+        },
+        "wildlife": {
+          "name": "Yaban hayatı ve kuşlar",
+          "tips": {
+            "0": "Enstantane hızını konuya göre seçin: tünemiş kuşlar için 1/1000s, uçan kuşlar için 1/2500s veya daha hızlısı.",
+            "1": "Göz hizasından çekin ve başın dönmesini bekleyin — gözdeki ışık yansıması fotoğrafa hayat verir."
+          }
+        },
+        "sports": {
+          "name": "Spor ve aksiyon",
+          "tips": {
+            "0": "Aksiyonun gerçekleşeceği yere (kale, virajın tepe noktası) önceden odaklanın ve seri çekimi zirveden hemen önce başlatın.",
+            "1": "Sürekli AF ile 1/60s–1/125s arasında pan yapmak, konuyu net tutarken arka planı bulanıklaştırır."
+          }
+        },
+        "macro": {
+          "name": "Makro",
+          "tips": {
+            "0": "Yüksek büyütmede alan derinliği kağıt inceliğindedir — odak halkasıyla değil, kamerayı hareket ettirerek odaklanın.",
+            "1": "Kırınım f/16'nın ötesinde sert biçimde etkisini gösterir; diyaframı daha da kısmak yerine odak istifleme kullanın."
+          }
+        },
+        "milkyWay": {
+          "name": "Samanyolu",
+          "tips": {
+            "0": "Yıldızlar iz bırakmadan önceki en uzun pozlama için NPF veya 500 kuralını kullanın — full frame'de 20mm ile yaklaşık 15–20 sn.",
+            "1": "Büyütülmüş canlı görüntüde parlak bir yıldıza manuel odaklanın; nötr bir gökyüzü için beyaz dengesini 3900K civarına ayarlayın."
+          }
+        },
+        "nightCity": {
+          "name": "Gece şehir manzaraları",
+          "tips": {
+            "0": "Tripoddan taban ISO'da çekin ve pozlamayı uzun tutun — parlak alanlar temiz, gürültü düşük kalır.",
+            "1": "f/11–f/16, nokta ışıkları yıldız patlamalarına dönüştürür; gökyüzünde renk için mavi saatte çekin."
+          }
+        },
+        "waterfall": {
+          "name": "Şelaleler ve uzun pozlama",
+          "tips": {
+            "0": "0,5–2 sn pozlamalar suda dokuyu korur; 30 sn ve üzeri onu sise çevirir. Gün ışığında ND filtre kullanın.",
+            "1": "Dairesel polarize filtre, ıslak kayalardan ve yapraklardan gelen parlamayı keser — ayrıca ~1,5 stopluk bir ND görevi görür."
+          }
+        },
+        "goldenHour": {
+          "name": "Altın saat",
+          "tips": {
+            "0": "Pozlamayı parlak alanlara göre yapın ve gölgeleri sonradan açın — patlamış sıcak tonlu parlak alanlar geri getirilemez.",
+            "1": "Kontur ışığı ve parlama için konuları arkadan aydınlatın; bulutlu beyaz dengesi ön ayarı sahneyi sıcak tutar."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Portreler için hangi kamera ayarlarını kullanmalıyım?",
+          "answer": "Arka plan bulanıklığı için açık bir diyafram (f/1.8–f/2.8), hareket bulanıklığını önlemek için en az 1/200s enstantane hızı ve ışığın izin verdiği en düşük ISO (100–400) ile başlayın. En yakın göze tek noktalı otomatik odaklama kullanın; kameranızda varsa göz algılamalı AF'yi tercih edin."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Samanyolu'nu fotoğraflamak için hangi ayarlar gerekir?",
+          "answer": "En açık diyaframında geniş ve hızlı bir objektif (f/1.4–f/2.8), 10–25 saniyelik bir pozlama (daha uzunu yıldızları iz bırakır hale getirir), ISO 1600–6400, parlak bir yıldıza ayarlanmış manuel odak ve bir tripod. Şehir ışıklarından uzak, aysız bir gece, herhangi bir kamera ayarından daha önemlidir."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Bu ayarlar kesin reçeteler mi?",
+          "answer": "Hayır — bunlar kendini kanıtlamış başlangıç noktalarıdır. Işık sahneden sahneye çok değişir; bu yüzden aralıkları ilk tahmin olarak görün, bir test çekimi yapın, histograma bakın ve ayarlayın. Amaç, muhakemenizin yerini almak değil, sizi hızla doğru bölgeye getirmektir."
+        }
+      }
+    }
+  }
+}

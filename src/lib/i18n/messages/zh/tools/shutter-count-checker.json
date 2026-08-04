@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "将照片拖放到此处，或点击选择文件（JPEG、TIFF、NEF、DNG）",
+      "supportTitle": "哪些品牌会记录快门数？",
+      "status": {
+        "supported": "可读取",
+        "partial": "部分支持",
+        "unsupported": "文件中无记录"
+      },
+      "brands": {
+        "nikon": "Nikon 会将快门数以未加密的方式写入每张照片的元数据。使用未经编辑的原始文件可获得最准确的结果。",
+        "canon": "Canon 从不将快门数写入图像文件 — 它只存储在相机内部，需要通过维修工具或 USB 实用程序读取。",
+        "sony": "Sony 将快门数保存在元数据的加密区域中，浏览器无法解码。专用的桌面工具可以通过 USB 读取。",
+        "fujifilm": "Fujifilm 机身不记录真正的快门数，但部分机型会写入帧计数器，可作为大致的下限参考。",
+        "pentax": "Pentax 对快门数字段做了类似加密的混淆处理，因此无法从文件中可靠地读取。",
+        "olympus": "OM System / Olympus 机身将完整快门数保存在内部维修菜单中；文件中有时会带有帧计数器，可以大致反映使用量。",
+        "panasonic": "Panasonic 不会将快门数写入文件。可通过相机的维修菜单查看。",
+        "leica": "Leica 机身一般不会在图像文件中存储快门数。"
+      },
+      "countLabel": "快门动作次数",
+      "source": {
+        "shutterCount": "从相机的快门数元数据中读取 — 这是机械快门的实际动作计数器。",
+        "mechanicalShutterCount": "从机械快门计数器中读取 — 不包含电子快门拍摄的张数。",
+        "imageNumber": "根据文件的图像编号估算。这只是一个大致的下限，并非精确的动作次数 — 计数器可能被重置或归零循环。"
+      },
+      "ratedLife": "额定快门寿命",
+      "ratings": {
+        "entry": "入门级",
+        "enthusiast": "进阶级",
+        "advanced": "高级",
+        "pro": "专业级",
+        "flagship": "旗舰级"
+      },
+      "lifeUsed": "已使用额定寿命的 {percent}%",
+      "verdict": {
+        "low": "几乎未使用",
+        "moderate": "适度使用",
+        "high": "重度使用",
+        "beyond": "超出额定寿命"
+      },
+      "noCountTitle": "此文件中没有快门数",
+      "noCountGeneric": "此文件不包含可读取的快门数。请尝试直接从相机取出的未编辑原始照片 — 编辑软件导出的文件通常会删除厂商元数据。",
+      "errorRead": "无法读取此文件。请尝试直接从相机取出的未编辑 JPEG 或 RAW 文件。",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "什么是快门数？",
+          "answer": "快门数是相机机械快门累计释放的次数 — 相当于汽车的行驶里程。由于快门的额定动作次数是有限的，它是买卖二手相机时最常检查的磨损指标。"
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "快门数多少算太多？",
+          "answer": "这取决于相机的级别。入门级快门的额定寿命约为 10 万次，进阶级机身为 15 万至 20 万次，专业级机身为 30 万至 50 万次。额定值是平均寿命，不是硬性上限 — 许多快门远超额定值仍在正常工作，而一台被粗暴对待的机身即使快门数很低也可能存在问题。"
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "为什么无法从我的 Canon 或 Sony 照片中查询快门数？",
+          "answer": "Canon 根本不会将快门数写入图像文件 — 它只存在于相机的内部存储中。Sony 会写入，但对该部分元数据做了加密。这两种情况下，浏览器工具都无法从照片中读取；常见的替代方案是使用通过 USB 连接相机的桌面实用程序。"
+        }
+      }
+    }
+  }
+}

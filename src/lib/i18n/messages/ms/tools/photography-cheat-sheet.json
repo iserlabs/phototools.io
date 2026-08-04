@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Pilih senario",
+      "tipsTitle": "Petua lapangan",
+      "labels": {
+        "aperture": "Aperture",
+        "shutter": "Kelajuan pengatup",
+        "iso": "ISO",
+        "whiteBalance": "Imbangan putih",
+        "focusMode": "Mod fokus",
+        "driveMode": "Mod pacuan"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Cahaya siang",
+        "cloudy": "Mendung",
+        "shade": "Teduh",
+        "tungsten": "Tungsten (~3200K)",
+        "afSingle": "AF tunggal (AF-S)",
+        "afContinuous": "AF berterusan (AF-C)",
+        "afTracking": "AF berterusan + penjejakan subjek",
+        "manualFocus": "Fokus manual",
+        "single": "Tangkapan tunggal",
+        "burstLow": "Rentetan kelajuan rendah",
+        "burstHigh": "Rentetan kelajuan tinggi",
+        "timer2s": "Pemasa 2s / alat kawalan jauh",
+        "intervalometer": "Intervalometer"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Potret",
+          "tips": {
+            "0": "Fokus pada mata yang paling dekat dengan kamera — pada aperture luas, kedalaman medan hanya beberapa sentimeter.",
+            "1": "Berundur dan zum masuk (85mm+) untuk mampatan yang menawan; lensa luas dari jarak dekat mengherotkan raut wajah."
+          }
+        },
+        "landscape": {
+          "name": "Landskap",
+          "tips": {
+            "0": "Fokus kira-kira satu pertiga ke dalam pemandangan atau gunakan jarak hiperfokal untuk ketajaman dari depan ke belakang.",
+            "1": "Ambil gambar dari tripod dengan pemasa atau alat kawalan jauh untuk menghapuskan goyangan pada kelajuan pengatup perlahan."
+          }
+        },
+        "street": {
+          "name": "Jalanan",
+          "tips": {
+            "0": "Fokus zon: pratetapkan fokus pada 3m dan f/8, dan semuanya dari 2m hingga 6m akan tajam — tiada lengah AF.",
+            "1": "ISO auto dengan kelajuan pengatup minimum 1/250s membekukan subjek yang berjalan sementara anda menumpukan pada pembingkaian."
+          }
+        },
+        "wildlife": {
+          "name": "Hidupan liar & burung",
+          "tips": {
+            "0": "Padankan kelajuan pengatup dengan subjek: 1/1000s untuk burung yang hinggap, 1/2500s atau lebih pantas untuk burung yang terbang.",
+            "1": "Ambil gambar pada aras mata dan tunggu kepala berpaling — kilauan cahaya pada mata menghidupkan imej."
+          }
+        },
+        "sports": {
+          "name": "Sukan & aksi",
+          "tips": {
+            "0": "Prafokus di tempat aksi akan berlaku (gawang gol, puncak selekoh) dan mulakan rentetan sejurus sebelum kemuncaknya.",
+            "1": "Panning pada 1/60s–1/125s dengan AF berterusan mengaburkan latar belakang sambil mengekalkan subjek yang tajam."
+          }
+        },
+        "macro": {
+          "name": "Makro",
+          "tips": {
+            "0": "Pada pembesaran tinggi, kedalaman medan senipis kertas — fokus dengan menggerakkan kamera, bukan gelang fokus.",
+            "1": "Pembelauan menggigit kuat melepasi f/16; gunakan focus stacking dan bukannya terus mengecilkan aperture."
+          }
+        },
+        "milkyWay": {
+          "name": "Bima Sakti",
+          "tips": {
+            "0": "Gunakan peraturan NPF atau peraturan 500 untuk pendedahan maksimum sebelum bintang berjejak — sekitar 15–20s pada 20mm pada bingkai penuh.",
+            "1": "Fokus secara manual pada bintang yang terang menggunakan live view yang dibesarkan; tetapkan imbangan putih berhampiran 3900K untuk langit yang neutral."
+          }
+        },
+        "nightCity": {
+          "name": "Bandar waktu malam",
+          "tips": {
+            "0": "Ambil gambar pada ISO asas dari tripod dan biarkan pengatup terbuka lama — kawasan terang kekal bersih dan hingar kekal rendah.",
+            "1": "f/11–f/16 menukarkan lampu titik menjadi pancaran bintang; ambil gambar semasa waktu biru untuk warna di langit."
+          }
+        },
+        "waterfall": {
+          "name": "Air terjun & pendedahan panjang",
+          "tips": {
+            "0": "Pendedahan 0.5–2s mengekalkan tekstur pada air; 30s+ menukarkannya menjadi kabus. Gunakan penapis ND pada waktu siang.",
+            "1": "Penapis polarisasi bulat memotong silauan dari batu basah dan dedaunan — dan turut berfungsi sebagai ND ~1.5 stop."
+          }
+        },
+        "goldenHour": {
+          "name": "Waktu keemasan",
+          "tips": {
+            "0": "Dedahkan untuk kawasan terang dan angkat bayang semasa suntingan — kawasan terang hangat yang terbakar tidak boleh dipulihkan.",
+            "1": "Cahayakan subjek dari belakang untuk rim light dan flare; pratetapan imbangan putih mendung mengekalkan suasana yang hangat."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Apakah tetapan kamera yang patut saya gunakan untuk potret?",
+          "answer": "Mulakan dengan aperture luas (f/1.8–f/2.8) untuk kekaburan latar belakang, kelajuan pengatup sekurang-kurangnya 1/200s untuk mengelakkan kekaburan gerakan, dan ISO terendah yang dibenarkan oleh cahaya (100–400). Gunakan autofokus titik tunggal pada mata yang terdekat, atau AF pengesanan mata jika kamera anda memilikinya."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Apakah tetapan yang saya perlukan untuk memotret Bima Sakti?",
+          "answer": "Lensa luas dan pantas pada aperture terluasnya (f/1.4–f/2.8), pendedahan 10–25 saat (lebih lama, bintang akan berjejak), ISO 1600–6400, fokus manual ditetapkan pada bintang yang terang, dan tripod. Malam tanpa bulan yang jauh dari lampu bandar lebih penting daripada mana-mana tetapan kamera."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Adakah tetapan ini resipi yang tepat?",
+          "answer": "Tidak — ia titik permulaan yang terbukti. Cahaya sangat berbeza antara pemandangan, jadi anggap julat ini sebagai tekaan pertama, ambil tangkapan ujian, semak histogram, dan laraskan. Matlamatnya adalah untuk membawa anda ke kawasan yang betul dengan pantas, bukan menggantikan pertimbangan anda."
+        }
+      }
+    }
+  }
+}

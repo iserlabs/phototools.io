@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Resolution: {mp} MP",
+      "aperture": "Aperture",
+      "verdict": {
+        "sharp": "Walang diffraction sa {f}",
+        "borderline": "Bahagyang pinalalambot ng diffraction ang {f}",
+        "soft": "Kapansin-pansing pinalalambot ng diffraction ang {f}"
+      },
+      "verdictDetail": {
+        "sharp": "Sa ilalim ng diffraction limit na {limit} para sa sensor at resolution na ito, ang lens — hindi ang diffraction — ang nagtatakda ng sharpness.",
+        "borderline": "Lampas sa diffraction limit na {limit}, nagsisimulang lumabo ang pinong detalye kada pixel. Katanggap-tanggap kapag kailangan mo ng dagdag na depth of field.",
+        "soft": "Malayo nang lampas sa diffraction limit na {limit}. Patuloy na tumataas ang depth of field, pero kapansin-pansing bumababa ang kabuuang detalye — isaalang-alang ang focus stacking sa halip na mag-stop down pa."
+      },
+      "stripLabel": "Aperture scale na may kulay ayon sa epekto ng diffraction",
+      "pixelPitch": "Pixel pitch",
+      "airyDisk": "Diameter ng Airy disk",
+      "diffractionLimit": "Diffraction limit",
+      "tableTitle": "Diffraction limit ayon sa sensor at resolution",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Ano ang diffraction sa photography?",
+          "answer": "Ang diffraction ay ang pagbaluktot ng mga light wave habang sumisiksik ang mga ito sa maliit na aperture. Habang lumiliit ang aperture (mas mataas na f-number), lalong kumakalat ang bawat punto ng liwanag bilang malabong disk (ang Airy disk) sa sensor. Kapag lumaki na ang disk na iyon nang lampas sa isang pixel, lumalabo ang pinong detalye gaano man kaganda ang lens."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Anong aperture ang pinakamatalas?",
+          "answer": "Karamihan ng mga lens ay pumipeak nang dalawa o tatlong stop mula sa wide open — karaniwang f/4 hanggang f/8 sa full frame. Binabalanse ng sweet spot na iyon ang mga lens aberration (pinakamalala kapag wide open) laban sa diffraction (lumalala habang nagsi-stop down). Mas maagang umaabot sa diffraction limit ang mga high-resolution sensor, kaya mas makitid ang magagamit nilang sweet spot."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Nakadepende ba ang diffraction sa sensor?",
+          "answer": "Ang optical effect ay nakadepende lang sa aperture at sa wavelength ng liwanag — pero kung gaano ito kapansin-pansin ay nakadepende sa laki ng pixel. Ang 61 MP full-frame sensor ay may ~3.8 µm na mga pixel at nagpapakita ng paglalambot mula sa diffraction bandang f/5.6, habang ang 12 MP sensor na may malalaking pixel ay nananatiling matalas hanggang f/11. Mas maagang umaabot sa limit ang mas maliliit na sensor sa mas malalapad na aperture para sa parehong megapixel count."
+        }
+      }
+    }
+  }
+}

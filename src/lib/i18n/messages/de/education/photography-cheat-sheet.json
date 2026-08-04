@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Jede Aufnahmesituation — Porträts, Wildtiere, die Milchstraße — hat eine bewährte Kombination aus Blende, Verschlusszeit und ISO, zu der erfahrene Fotografen zuerst greifen. Diese Spickzettel liefern dir diesen Ausgangspunkt sofort, damit du deine Aufmerksamkeit auf Licht und Komposition verwenden kannst, statt an den Rädern zu zweifeln.",
+      "deeper": "Jedes Rezept hier ist eine Anwendung des Belichtungsdreiecks mit einer priorisierten Seite. Porträts priorisieren die Blende: Große Öffnungen (f/1.8–f/2.8) lösen das Motiv vom Hintergrund, und alles andere passt sich daran an. Action priorisiert die Verschlusszeit: 1/1000s friert Bewegung ein, also öffnet sich die Blende und der ISO-Wert steigt, um Licht nachzuliefern. Landschaften priorisieren die Bildqualität: Basis-ISO und eine mittlere Blende im Sweet Spot des Objektivs, während ein Stativ die resultierende Verschlusszeit abfängt. Nachtszenen reizen alle drei Seiten gleichzeitig aus — deshalb haben sie die starrsten Rezepte: Die Milchstraße verlangt tatsächlich ein lichtstarkes Objektiv bei Offenblende, eine Verschlusszeit unter ~20 Sekunden (bevor die Erdrotation die Sterne zu Strichen zieht) und den ISO-Wert, der das Histogramm brauchbar macht. Zu verstehen, welche Seite jedes Szenario priorisiert, ist die eigentliche Lektion: Sobald du die Priorität erkennst, kannst du jedes Rezept an das Licht vor dir anpassen, statt ihm blind zu folgen. Die Bereiche sind Ausgangspunkte für typische Bedingungen; das letzte Wort hat dein Histogramm, nicht der Spickzettel.",
+      "keyFactors": {
+        "0": {
+          "label": "Szenario-Priorität",
+          "description": "Jede Situation legt zuerst eine Belichtungsvariable fest — Blende für Porträts, Verschlusszeit für Action, ISO für Landschaften — und lässt die anderen sich anpassen."
+        },
+        "1": {
+          "label": "Verfügbares Licht",
+          "description": "Dasselbe Szenario braucht mittags andere Einstellungen als in der Dämmerung. Betrachte die Bereiche als Anker und verschiebe dich darin, wenn sich das Licht ändert."
+        },
+        "2": {
+          "label": "Stütze & Stabilität",
+          "description": "Ein Stativ ermöglicht Basis-ISO und lange Verschlusszeiten bei statischen Szenen. Freihand gilt eine Untergrenze der Verschlusszeit von etwa 1/(Brennweite) oder kürzer."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Mach eine Testaufnahme und lies das Histogramm, nicht die LCD-Vorschau — Bildschirme lügen in praller Sonne und bei Nacht, das Histogramm nie."
+        },
+        "1": {
+          "text": "Merke dir ein Rezept pro Genre, das du fotografierst, und übe dann, jeweils nur eine Variable anzupassen. So verinnerlichst du die Kompromisse viel schneller, als wenn du alles gleichzeitig änderst."
+        },
+        "2": {
+          "text": "Lade den Spickzettel für Szenarien herunter, die du selten fotografierst — das Milchstraßen-Rezept ist um 2 Uhr nachts am Berghang mit kalten Fingern schwer zu erinnern."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Blende",
+          "definition": "Die Größe der Objektivöffnung, in Blendenzahlen. Niedrigere Zahlen = mehr Licht und mehr Hintergrundunschärfe; höhere Zahlen = mehr Schärfentiefe."
+        },
+        "shutter": {
+          "term": "Verschlusszeit",
+          "definition": "Wie lange der Sensor Licht sammelt. Kurze Zeiten frieren Bewegung ein; lange Zeiten verwischen sie und verlangen Stabilisierung oder ein Stativ."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Die Verstärkung des Sensors. Halte sie so niedrig, wie das Licht erlaubt — sie zu erhöhen macht das Bild heller, auf Kosten von Rauschen."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du fotografierst ein Porträt und willst den klassischen Look: Motiv scharf, Hintergrund in Unschärfe aufgelöst. Welche Einstellung erreicht das?",
+          "hint": "Hintergrundunschärfe kommt von der Schärfentiefe — welcher Regler steuert die?",
+          "successMessage": "Richtig! Eine offene Blende (etwa f/1.8–f/2.8) erzeugt die geringe Schärfentiefe, die das Motiv vom unscharfen Hintergrund trennt — die prägende Porträtentscheidung.",
+          "failureMessage": "Hintergrundunschärfe entsteht durch eine offene Blende (niedrige Blendenzahl) wie f/1.8–f/2.8, die die Schärfentiefe verringert. Geschlossene Blenden bewirken das Gegenteil.",
+          "options": {
+            "0": { "label": "Eine geschlossene Blende wie f/16" },
+            "1": { "label": "Eine offene Blende wie f/2" },
+            "2": { "label": "Eine Langzeitbelichtung vom Stativ" },
+            "3": { "label": "Maximaler ISO-Wert" }
+          }
+        },
+        "1": {
+          "scenario": "Ein Reiher hebt immer genau dann vom Wasser ab, wenn du auslöst, und jedes Bild zeigt verwischte Flügelspitzen. Was ist die Lösung?",
+          "hint": "Bewegungsunschärfe ist ein Zeitproblem.",
+          "successMessage": "Genau! Vögel im Flug brauchen kurze Verschlusszeiten — 1/2500s oder kürzer friert Flügelschläge ein. Öffne die Blende und lass die ISO-Automatik steigen, um die nötige Zeit zu versorgen.",
+          "failureMessage": "Verwischte Flügel bedeuten, dass die Verschlusszeit für die Bewegung zu lang ist. Spring auf 1/2500s oder kürzer und lass Blende und ISO das verlorene Licht ausgleichen.",
+          "options": {
+            "0": { "label": "Eine längere Verschlusszeit für mehr Licht" },
+            "1": { "label": "Eine deutlich kürzere Verschlusszeit" },
+            "2": { "label": "Auf f/22 abblenden" },
+            "3": { "label": "Weißabgleich auf Kunstlicht stellen" }
+          }
+        },
+        "2": {
+          "scenario": "Du hast dich unter dunklem Himmel eingerichtet, um die Milchstraße zu fotografieren. Welche Kombination liefert eine brauchbare Belichtung des galaktischen Zentrums?",
+          "hint": "Die Sterne sind schwach, bewegen sich (mit der Erdrotation) und sind deine einzige Lichtquelle.",
+          "successMessage": "Richtig! Offenblende (f/1.4–f/2.8), 10–25 Sekunden, ISO 1600–6400: Die Blende sammelt maximales Licht, der Verschluss stoppt, bevor Sterne Striche ziehen, und der hohe ISO-Wert macht das schwache Zentrum sichtbar.",
+          "failureMessage": "Die Milchstraße braucht alles: Blende ganz offen, eine Belichtung kurz genug, dass Sterne keine Striche ziehen (10–25s), und hohen ISO-Wert (1600–6400). Kleine Blenden oder Basis-ISO lassen den Himmel schwarz.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Offenblende, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Beliebige Einstellungen mit ND-Filter" }
+          }
+        }
+      }
+    }
+  }
+}

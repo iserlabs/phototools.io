@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Panorama dibangun dengan mengambil beberapa foto yang bertumpang tindih sambil memutar kamera, lalu membiarkan perangkat lunak menjahitnya menjadi satu gambar lebar. Kuncinya adalah tahu seberapa jauh memutar di antara jepretan: terlalu jauh dan perangkat lunak tidak bisa menyambung frame, terlalu sedikit dan puluhan jepretan terbuang. Kalkulator ini menghitungnya dari lensa, sensor, dan tumpang tindih yang Anda inginkan.",
+      "deeper": "Setiap frame mencakup sudut pandang tetap yang ditentukan panjang fokus dan ukuran sensor — lensa 50mm pada full frame melihat sekitar 40° secara horizontal. Perangkat lunak stitching menyejajarkan frame bertetangga dengan menemukan 'titik kontrol' yang sama di zona tumpang tindih, itulah sebabnya 25–35% menjadi standar praktis: cukup memberi algoritme detail bersama tanpa meledakkan jumlah frame. Rotasi berguna per jepretan karenanya adalah bidang pandang frame dikali (1 − tumpang tindih). Memotret dalam orientasi potret menukar langkah horizontal yang lebih sempit dengan cakupan vertikal yang jauh lebih besar — karena itu kebanyakan panorama satu baris dipotret vertikal. Untuk pemandangan yang sangat tinggi, panorama multi-baris menerapkan logika tumpang tindih yang sama secara vertikal. File hasil stitching membesar dengan cepat: setiap frame tambahan menyumbang resolusinya dikurangi tumpang tindih, sehingga pano potret 7 frame dari kamera 24 MP dengan mudah melampaui 100 MP. Satu kehalusan fisik membatasi semuanya: berputar pada soket tripod menggeser pusat optik lensa di antara frame, membuat objek dekat dan jauh tidak sejajar (paralaks). Untuk lanskap yang jauh ini jarang jadi masalah, tetapi dengan elemen latar depan yang dekat Anda perlu berputar pada titik tanpa-paralaks lensa menggunakan nodal rail atau kepala panorama.",
+      "keyFactors": {
+        "0": {
+          "label": "Panjang Fokus & Sensor",
+          "description": "Bersama-sama keduanya menentukan bidang pandang satu frame — unit dasar penyusun panorama. Lensa lebih panjang berarti frame lebih sempit dan jepretan lebih banyak."
+        },
+        "1": {
+          "label": "Tumpang Tindih",
+          "description": "Zona bersama antara frame bertetangga tempat perangkat lunak stitching menyejajarkan. 25–35% adalah titik ideal; pemandangan minim fitur (langit, air) butuh lebih."
+        },
+        "2": {
+          "label": "Orientasi",
+          "description": "Frame potret mencakup lebar lebih kecil tetapi tinggi jauh lebih besar per jepretan — pilihan standar untuk panorama satu baris karena menyisakan ruang crop."
+        },
+        "3": {
+          "label": "Paralaks",
+          "description": "Ketidaksejajaran dekat/jauh akibat berputar pada sumbu yang salah. Tak berbahaya untuk pemandangan jauh; krusial dengan latar depan yang dekat."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Kunci eksposur, white balance, dan fokus ke manual sebelum frame pertama. Pengaturan otomatis apa pun bergeser antar frame dan menimbulkan banding yang terlihat di langit hasil stitching."
+        },
+        "1": {
+          "text": "Potret dengan lensa yang rata dan putar dalam satu gerakan halus, tambahkan satu frame buangan di tiap ujung — frame tepi terdistorsi dan terpotong saat stitching."
+        },
+        "2": {
+          "text": "Untuk panorama tanpa tripod, besarkan tumpang tindih menjadi 40–50%. Rotasi Anda tidak akan presisi, dan frame ekstra memberi ruang bagi stitcher untuk pulih."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Tumpang Tindih",
+          "definition": "Persentase tiap frame yang dibagi dengan tetangganya. Perangkat lunak stitching butuh detail bersama ini untuk menyejajarkan frame — 25–35% adalah angka umum."
+        },
+        "orientation": {
+          "term": "Orientasi Kamera",
+          "definition": "Framing potret (vertikal) adalah standar untuk panorama: tiap frame menyumbang tinggi lebih besar, menyisakan ruang untuk koreksi horizon dan crop."
+        },
+        "rotateBetween": {
+          "term": "Rotasi Antar Jepretan",
+          "definition": "Berapa derajat kamera diputar setelah tiap frame: bidang pandang frame dikali (1 − tumpang tindih). Kepala panorama punya click-stop persis untuk ini."
+        },
+        "rows": {
+          "term": "Baris",
+          "definition": "Panorama multi-baris menumpuk lintasan horizontal secara vertikal, menerapkan aturan tumpang tindih yang sama antar baris untuk mencakup pemandangan yang tinggi."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Anda memotret panorama pegunungan. Berapa banyak frame bertetangga harus bertumpang tindih agar stitching andal?",
+          "hint": "Stitcher butuh detail bersama, tetapi tiap frame ekstra memakan waktu.",
+          "successMessage": "Benar! Tumpang tindih sekitar 30% memberi perangkat lunak stitching banyak titik kontrol tanpa memboroskan frame — rekomendasi standar untuk kebanyakan pemandangan.",
+          "failureMessage": "25–35% adalah standar praktis. Di bawah ~15% stitcher kesulitan menemukan titik kontrol; 80% melipatgandakan jumlah frame tiga kali tanpa manfaat.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Anda ingin panorama satu baris dengan ruang vertikal cukup untuk meluruskan horizon dan melakukan crop dengan bebas. Orientasi kamera mana yang sebaiknya dipakai?",
+          "hint": "Arah mana yang memberi tiap frame tinggi lebih besar?",
+          "successMessage": "Tepat! Orientasi potret menangkap bidang vertikal jauh lebih besar per frame — beberapa frame ekstra yang diperlukan secara horizontal adalah harga murah untuk kebebasan crop itu.",
+          "failureMessage": "Potret (vertikal) adalah standar untuk panorama satu baris: tiap frame lebih tinggi, sehingga hasil stitching tahan terhadap koreksi horizon dan crop.",
+          "options": {
+            "0": { "label": "Lanskap" },
+            "1": { "label": "Potret" },
+            "2": { "label": "Mode crop persegi" },
+            "3": { "label": "Dimiringkan 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Dengan lensa 50mm pada full frame dalam orientasi lanskap (sekitar 40° pandangan horizontal) dan tumpang tindih 30%, kira-kira berapa frame yang dibutuhkan panorama 180°?",
+          "hint": "Tiap jepretan memajukan cakupan sebesar 40° × 0.7 = 28°.",
+          "successMessage": "Benar! Frame pertama mencakup 40°, dan tiap frame tambahan menambah ~28°. Menutup sisa 140° butuh 5 frame lagi, jadi total 7 frame (dengan sedikit cadangan).",
+          "failureMessage": "Tiap frame setelah yang pertama menambah 40° × (1 − 0.3) = 28° cakupan baru. (180 − 40) / 28 = 5 frame lagi, jadi total 7.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Panorama Anda punya pagar satu meter di depan kamera dan pegunungan di belakangnya. Hasil stitching menunjukkan pagar itu ghosting dan tidak sejajar antar frame. Pada titik apa kamera harus berputar untuk memperbaikinya?",
+          "hint": "Masalahnya paralaks — objek dekat dan jauh bergeser relatif satu sama lain.",
+          "successMessage": "Tepat! Berputar pada titik tanpa-paralaks (nodal) lensa menjaga objek dekat dan jauh tetap sejajar antar frame. Kepala panorama dan nodal rail ada persis untuk ini.",
+          "failureMessage": "Kamera harus berputar pada titik tanpa-paralaks lensa (sering disebut nodal point). Berputar pada soket tripod menggeser pusat optik, menimbulkan paralaks yang Anda lihat.",
+          "options": {
+            "0": { "label": "Elemen depan lensa" },
+            "1": { "label": "Titik tanpa-paralaks lensa" },
+            "2": { "label": "Bidang sensor" },
+            "3": { "label": "Soket tripod" }
+          }
+        }
+      }
+    }
+  }
+}

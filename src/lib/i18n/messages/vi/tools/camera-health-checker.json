@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Kéo thả ảnh vào đây hoặc nhấp để chọn tệp (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Thả bất kỳ bức ảnh nào từ chiếc máy bạn muốn kiểm tra. Mọi thứ được đọc ngay trong trình duyệt — tệp không bao giờ rời khỏi thiết bị của bạn.",
+      "errorRead": "Không thể đọc tệp này. Hãy thử tệp JPEG hoặc RAW chưa chỉnh sửa lấy thẳng từ máy ảnh.",
+      "errorNoMetadata": "Tệp này không chứa metadata máy ảnh. Tệp xuất từ ứng dụng chỉnh sửa hoặc nhắn tin thường bị xóa mất — hãy thử tệp gốc chưa chỉnh sửa.",
+      "sections": {
+        "body": "Thân máy",
+        "age": "Tuổi máy",
+        "shutter": "Tuổi thọ màn trập",
+        "lens": "Ống kính"
+      },
+      "cameraModel": "Model",
+      "make": "Hãng",
+      "serialNumber": "Số sê-ri",
+      "firmware": "Firmware / phần mềm",
+      "bodyAge": "Tuổi thân máy",
+      "ageValue": "~{years} năm (ra mắt {year})",
+      "ageUnknown": "Model này không có trong cơ sở dữ liệu năm ra mắt của chúng tôi, nên không thể ước tính tuổi máy.",
+      "shotDate": "Ngày chụp ảnh",
+      "shutterCount": "Số lần chụp màn trập",
+      "ratedLife": "Tuổi thọ định mức",
+      "ratedAssumed": "(giả định)",
+      "lifeUsed": "Đã dùng {percent}% tuổi thọ định mức",
+      "verdict": {
+        "low": "Gần như mới",
+        "moderate": "Sử dụng vừa phải",
+        "high": "Sử dụng nhiều",
+        "beyond": "Vượt định mức"
+      },
+      "shutterUnavailable": {
+        "supported": "Không tìm thấy số lần chụp màn trập dù {brand} thường có ghi lại. Hãy thử tệp gốc chưa chỉnh sửa — ứng dụng chỉnh sửa thường xóa mất metadata của hãng.",
+        "partial": "{brand} chỉ ghi bộ đếm khung hình gần đúng vào một số tệp, và tệp này không có. Menu trên máy hoặc tiện ích USB có thể cho biết con số này.",
+        "unsupported": "{brand} không lưu số lần chụp màn trập đọc được trong tệp ảnh. Xem trang công cụ Kiểm tra số lần chụp màn trập để biết các giải pháp thay thế theo từng hãng.",
+        "unknown": "Tệp này không có số lần chụp màn trập đọc được."
+      },
+      "lensModel": "Ống kính",
+      "lensSerial": "Số sê-ri ống kính",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Nên kiểm tra gì khi mua máy ảnh cũ?",
+          "answer": "Ngoài ngoại hình: số lần chụp màn trập so với tuổi thọ định mức, tuổi máy và phiên bản firmware, số sê-ri có khớp với giấy tờ của người bán không (và không bị báo mất cắp), tình trạng cảm biến (tìm bụi hoặc vết xước trong một ảnh thử chụp bầu trời quang ở f/16), và mọi vòng xoay, cổng kết nối cùng ngàm ống kính hoạt động trơn tru."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Dữ liệu tình trạng máy này lấy từ đâu?",
+          "answer": "Mọi thứ được đọc từ metadata nhúng trong bức ảnh của bạn: các trường EXIF tiêu chuẩn (model, số sê-ri, firmware, ống kính, ngày chụp) cùng maker notes của nhà sản xuất nếu có (số lần chụp màn trập). Tuổi thân máy được ước tính từ cơ sở dữ liệu tích hợp sẵn về năm ra mắt của các model máy ảnh phổ biến."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Ảnh của tôi có bị tải lên máy chủ không?",
+          "answer": "Không. Tệp được phân tích hoàn toàn trong trình duyệt của bạn bằng JavaScript — nó không bao giờ rời khỏi thiết bị và không có gì được lưu trữ. Bạn có thể tự kiểm chứng bằng cách tải trang, sau đó ngắt kết nối mạng trước khi thả tệp vào."
+        }
+      }
+    }
+  }
+}

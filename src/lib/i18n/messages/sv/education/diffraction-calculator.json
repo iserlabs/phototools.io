@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Att blända ner ökar skärpedjupet — men efter en viss punkt börjar hela bilden bli mjukare i stället för skarpare. Det är diffraktion: ljusvågor som böjs när de pressas genom en liten öppning. Den här kalkylatorn visar exakt var den punkten ligger för din kamera, så att du vet hur långt du kan blända ner utan att betala med skärpa.",
+      "deeper": "När ljuset passerar bländaren landar varje punkt i scenen inte som en punkt på sensorn utan som ett litet diffraktionsmönster — en ljus kärna som kallas Airy-skivan, omgiven av svaga ringar. Skivans diameter växer i direkt proportion till f-talet: ungefär 2,44 × våglängden × N, vilket vid f/8 i grönt ljus redan är ~10,7 µm. Om det spelar roll beror på dina pixlar. En 24 MP fullformatssensor har ~6 µm stora pixlar; en 61 MP-sensor har ~3,8 µm. När Airy-skivan blir klart större än en pixel smetas detaljer som sensorn annars kunde återge ut över grannpixlarna, och ingen objektivkvalitet kan hämta tillbaka dem. Det är därför samma f/11 som ser bra ut på ett gammalt 12 MP-hus synbart mjukar upp filer från en modern högupplöst sensor, och därför kompaktkameror med pyttesmå pixlar sällan erbjuder bländare bortom f/8. Tumregeln som används här — gräns ≈ pixelpitch / 0,67 — markerar var uppmjukningen blir mätbar, inte var bilderna kollapsar: att blända ner ett steg förbi gränsen är ofta ett rimligt byte mot skärpedjup. Bortom två steg slår focus stacking nedbländning.",
+      "keyFactors": {
+        "0": {
+          "label": "Bländare (f-tal)",
+          "description": "Den enda kontrollen över själva diffraktionen: Airy-skivans diameter växer linjärt med f-talet. f/16 sprider ljuset dubbelt så brett som f/8."
+        },
+        "1": {
+          "label": "Pixelpitch",
+          "description": "En pixels fysiska storlek, bestämd av sensorstorlek och megapixlar tillsammans. Mindre pixlar återger mer detalj — och avslöjar diffraktion tidigare."
+        },
+        "2": {
+          "label": "Visningsstorlek",
+          "description": "Diffraktion som syns i 100 % på skärmen kan vara osynlig i en webbexport eller måttlig utskrift. Bedöm skärpan i den storlek du faktiskt ska använda."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Hitta objektivets bästa bländare: fotografera samma detaljrika scen på varje helt steg och jämför i 100 %. De flesta objektiv toppar två till tre steg från full öppning, strax innan diffraktionen tar över."
+        },
+        "1": {
+          "text": "För landskap som kräver stort skärpedjup på ett högupplöst hus, prova hyperfokalavståndet vid f/8 innan du tar till f/16 — exakt fokusplacering köper ofta mer skärpa än mindre bländaröppningar."
+        },
+        "2": {
+          "text": "I makro växer den effektiva bländaren med förstoringen (f/11 vid 1:1 beter sig som f/22), så diffraktionen slår till långt tidigare än ratten antyder. Focus stacking vid en måttlig bländare är den skarpa vägen ut."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pixelpitch",
+          "definition": "Bredden på en enskild pixel på sensorn, i mikrometer. Beräknas som sensorbredden delad med antalet pixlar horisontellt — 24 MP fullformat ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Airy-skiva",
+          "definition": "Diffraktionsmönstret en ljuspunkt bildar efter att ha passerat bländaren: en ljus kärna med svaga ringar. Diametern ≈ 2,44 × våglängden × f-talet."
+        },
+        "diffractionLimit": {
+          "term": "Diffraktionsgräns",
+          "definition": "F-talet där Airy-skivan växer om pixeln och skärpan per pixel börjar sjunka — ungefär pixelpitch (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du bländar ner från f/8 till f/22 för maximalt skärpedjup, men de fina detaljerna i bilden blir mjukare överallt — även i fokusplanet. Vad händer?",
+          "hint": "Det är fysik, inte ett objektivfel.",
+          "successMessage": "Rätt! Ljuset böjs (diffrakterar) när det passerar en liten bländaröppning och sprider varje punkt till en skiva större än en pixel. Vid f/22 påverkar uppmjukningen hela bilden, fokusplanet inräknat.",
+          "failureMessage": "Detta är diffraktion: ljusvågor böjs runt bländarlamellerna och sprider varje ljuspunkt till en suddig skiva. Den påverkar hela bilden lika mycket, oavsett objektivets kvalitet.",
+          "options": {
+            "0": { "label": "Objektivet är dåligt byggt" },
+            "1": { "label": "Ljuset böjs när det passerar den lilla öppningen" },
+            "2": { "label": "Sensorn överhettas vid små bländare" },
+            "3": { "label": "ISO-bruset ökar" }
+          }
+        },
+        "1": {
+          "scenario": "Du uppgraderar från en 24 MP fullformatskamera till en med 61 MP. Vad händer med bländaren där diffraktionen blir synlig?",
+          "hint": "Fler megapixlar på samma sensoryta betyder mindre pixlar.",
+          "successMessage": "Rätt! 61 MP-sensorns pixlar på ~3,8 µm växer om Airy-skivan tidigare, så diffraktionsgränsen sjunker från ungefär f/9 till ungefär f/5.6. Högupplösta sensorer har smalare bländarzoner.",
+          "failureMessage": "Mindre pixlar avslöjar diffraktion tidigare. 61 MP-sensorns diffraktionsgräns ligger runt f/5.6, mot f/9 för 24 MP-sensorn — gränsen flyttas till en större bländaröppning.",
+          "options": {
+            "0": { "label": "Den flyttas till en mindre bländare (högre f-tal)" },
+            "1": { "label": "Den flyttas till en större bländare (lägre f-tal)" },
+            "2": { "label": "Den ändras inte" },
+            "3": { "label": "Diffraktionen försvinner med fler megapixlar" }
+          }
+        },
+        "2": {
+          "scenario": "Du fotograferar landskap med en 45 MP fullformatskamera och vill ha maximal total skärpa med gott skärpedjup. Vilket bländarintervall är den bästa utgångspunkten?",
+          "hint": "Balansera objektivets aberrationer (värst vid full öppning) mot diffraktion (värre nedbländat).",
+          "successMessage": "Rätt! f/8–f/11 ligger precis kring diffraktionsgränsen för pixlar på ~4,4 µm och ger samtidigt rejält skärpedjup — den klassiska landskapszonen på högupplöst fullformat.",
+          "failureMessage": "f/8–f/11 balanserar skärpedjup mot diffraktion för en 45 MP fullformatssensor. f/22 mjukar synbart upp fina detaljer, och full öppning saknar skärpedjup.",
+          "options": {
+            "0": { "label": "Alltid f/22 för maximalt djup" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Full öppning" },
+            "3": { "label": "Det beror bara på ISO" }
+          }
+        }
+      }
+    }
+  }
+}

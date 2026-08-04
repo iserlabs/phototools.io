@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Upplösning: {mp} MP",
+      "aperture": "Bländare",
+      "verdict": {
+        "sharp": "{f} är fri från diffraktion",
+        "borderline": "{f} mjukas upp något av diffraktion",
+        "soft": "{f} mjukas upp synligt av diffraktion"
+      },
+      "verdictDetail": {
+        "sharp": "Under diffraktionsgränsen på {limit} för den här sensorn och upplösningen är det objektivet — inte diffraktionen — som avgör skärpan.",
+        "borderline": "Bortom diffraktionsgränsen på {limit} börjar fina detaljer på pixelnivå att suddas ut. Acceptabelt när du behöver det extra skärpedjupet.",
+        "soft": "Långt bortom diffraktionsgränsen på {limit}. Skärpedjupet fortsätter att öka, men den totala detaljrikedomen försämras synligt — överväg focus stacking i stället för att blända ner ytterligare."
+      },
+      "stripLabel": "Bländarskala färgad efter diffraktionens påverkan",
+      "pixelPitch": "Pixelpitch",
+      "airyDisk": "Airy-skivans diameter",
+      "diffractionLimit": "Diffraktionsgräns",
+      "tableTitle": "Diffraktionsgräns per sensor och upplösning",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Vad är diffraktion inom fotografi?",
+          "answer": "Diffraktion är ljusvågors böjning när de pressas genom en liten bländaröppning. Ju mindre öppningen är (högre f-tal), desto mer sprids varje ljuspunkt ut till en suddig skiva (Airy-skivan) på sensorn. När skivan blir större än en pixel suddas fina detaljer ut oavsett hur bra objektivet är."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Vilken bländare är skarpast?",
+          "answer": "De flesta objektiv presterar bäst två eller tre steg från full öppning — typiskt f/4 till f/8 på fullformat. Den zonen balanserar objektivets aberrationer (värst vid full öppning) mot diffraktion (värre ju mer du bländar ner). Högupplösta sensorer når sin diffraktionsgräns tidigare, så deras användbara zon är smalare."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Beror diffraktionen på sensorn?",
+          "answer": "Den optiska effekten beror bara på bländaren och ljusets våglängd — men hur synlig den är beror på pixelstorleken. En 61 MP fullformatssensor har ~3,8 µm stora pixlar och visar diffraktionsuppmjukning runt f/5.6, medan en 12 MP-sensor med stora pixlar förblir skarp till f/11. Mindre sensorer når gränsen vid större bländaröppningar för samma antal megapixlar."
+        }
+      }
+    }
+  }
+}

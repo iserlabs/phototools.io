@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Resolució: {mp} MP",
+      "aperture": "Obertura",
+      "verdict": {
+        "sharp": "{f} està lliure de difracció",
+        "borderline": "{f} se suavitza lleugerament per la difracció",
+        "soft": "{f} se suavitza visiblement per la difracció"
+      },
+      "verdictDetail": {
+        "sharp": "Per sota del límit de difracció de {limit} per a aquest sensor i resolució, la nitidesa la determina l'objectiu, no la difracció.",
+        "borderline": "Superat el límit de difracció de {limit}, el detall fi a escala de píxel comença a difuminar-se. Acceptable quan necessites la profunditat de camp extra.",
+        "soft": "Molt per sobre del límit de difracció de {limit}. La profunditat de camp continua augmentant, però el detall general es degrada visiblement: considera l'apilament d'enfocament en lloc de continuar tancant el diafragma."
+      },
+      "stripLabel": "Escala d'obertures acolorida segons l'impacte de la difracció",
+      "pixelPitch": "Pas de píxel",
+      "airyDisk": "Diàmetre del disc d'Airy",
+      "diffractionLimit": "Límit de difracció",
+      "tableTitle": "Límit de difracció per sensor i resolució",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Què és la difracció en fotografia?",
+          "answer": "La difracció és la curvatura de les ones de llum en passar per una obertura petita. Com més petita és l'obertura (número f més alt), més es dispersa cada punt de llum en un disc borrós (el disc d'Airy) sobre el sensor. Quan aquest disc supera la mida d'un píxel, el detall fi es difumina per bo que sigui l'objectiu."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Quina obertura és la més nítida?",
+          "answer": "La majoria d'objectius rendeixen al màxim dos o tres passos per sota de l'obertura màxima: normalment entre f/4 i f/8 en format complet. Aquest punt òptim equilibra les aberracions de l'objectiu (pitjors a plena obertura) amb la difracció (pitjor a mesura que tanques el diafragma). Els sensors d'alta resolució arriben abans al seu límit de difracció, així que el seu punt òptim útil és més estret."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "La difracció depèn del sensor?",
+          "answer": "L'efecte òptic depèn només de l'obertura i de la longitud d'ona de la llum, però la seva visibilitat depèn de la mida del píxel. Un sensor de format complet de 61 MP té píxels de ~3,8 µm i mostra el suavitzat per difracció al voltant de f/5.6, mentre que un sensor de 12 MP amb píxels grans es manté nítid fins a f/11. Els sensors més petits arriben al límit amb obertures més obertes per al mateix nombre de megapíxels."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Stopping down your aperture increases depth of field — but past a certain point, it starts making the whole image softer instead of sharper. That's diffraction: light waves bending as they squeeze through a small opening. This calculator shows exactly where that point is for your camera, so you know how far you can stop down before paying a sharpness penalty.",
+      "deeper": "When light passes through the aperture, each point in the scene lands on the sensor not as a point but as a tiny diffraction pattern — a bright core called the Airy disk ringed by faint halos. The disk's diameter grows in direct proportion to the f-number: about 2.44 × wavelength × N, which at f/8 in green light is already ~10.7 µm. Whether that matters depends on your pixels. A 24 MP full-frame sensor has ~6 µm pixels; a 61 MP sensor has ~3.8 µm pixels. Once the Airy disk grows comfortably larger than a pixel, detail that the sensor could otherwise resolve gets smeared across neighboring pixels, and no lens quality can bring it back. This is why the same f/11 that looks fine on an old 12 MP body visibly softens files from a modern high-resolution sensor, and why compact cameras with tiny pixels rarely offer apertures beyond f/8. The industry rule of thumb used here — limit ≈ pixel pitch / 0.67 — marks where softening becomes measurable, not where images fall apart: stopping down one stop past the limit is often a worthwhile trade for depth of field. Past two stops, focus stacking beats stopping down.",
+      "keyFactors": {
+        "0": {
+          "label": "Aperture (f-number)",
+          "description": "The only control over diffraction itself: the Airy disk diameter scales linearly with the f-number. f/16 spreads light twice as wide as f/8."
+        },
+        "1": {
+          "label": "Pixel Pitch",
+          "description": "The physical size of one pixel, set by sensor size and megapixels together. Smaller pixels resolve more detail — and reveal diffraction sooner."
+        },
+        "2": {
+          "label": "Output Size",
+          "description": "Diffraction visible at 100% on screen may be invisible in a web-size export or moderate print. Judge sharpness at the size you'll actually use."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Find your lens's sweet spot: shoot the same detailed scene at every full stop and compare at 100%. Most lenses peak two to three stops down from wide open, right before diffraction takes over."
+        },
+        "1": {
+          "text": "For landscapes needing deep focus on a high-resolution body, try the hyperfocal distance at f/8 before reaching for f/16 — accurate focus placement often buys more sharpness than smaller apertures."
+        },
+        "2": {
+          "text": "In macro work, effective aperture grows with magnification (f/11 at 1:1 acts like f/22), so diffraction bites much earlier than the dial suggests. Focus stacking at a moderate aperture is the sharp way out."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pixel Pitch",
+          "definition": "The width of a single pixel on the sensor, in micrometers. Computed from sensor width divided by horizontal pixel count — 24 MP full frame ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Airy Disk",
+          "definition": "The diffraction pattern a point of light forms after passing through the aperture: a bright core with faint rings. Its diameter ≈ 2.44 × wavelength × f-number."
+        },
+        "diffractionLimit": {
+          "term": "Diffraction Limit",
+          "definition": "The f-number where the Airy disk outgrows the pixel and per-pixel sharpness starts to drop — approximately pixel pitch (µm) ÷ 0.67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "You stop your lens down from f/8 to f/22 for maximum depth of field, but the fine details in your image get softer everywhere — even in the focal plane. What's happening?",
+          "hint": "It's physics, not a lens defect.",
+          "successMessage": "Correct! Light bends (diffracts) as it passes through a small aperture, spreading each point into a disk larger than a pixel. At f/22 this softening affects the entire frame, focal plane included.",
+          "failureMessage": "This is diffraction: light waves bend around the aperture blades, spreading each point of light into a fuzzy disk. It affects the whole image equally, regardless of lens quality.",
+          "options": {
+            "0": { "label": "The lens is poorly made" },
+            "1": { "label": "Light bends passing through the small opening" },
+            "2": { "label": "The sensor overheats at small apertures" },
+            "3": { "label": "ISO noise increases" }
+          }
+        },
+        "1": {
+          "scenario": "You upgrade from a 24 MP full-frame camera to a 61 MP one. What happens to the aperture where diffraction becomes visible?",
+          "hint": "More megapixels on the same sensor area means smaller pixels.",
+          "successMessage": "Right! The 61 MP sensor's ~3.8 µm pixels outresolve the Airy disk sooner, so the diffraction limit drops from about f/9 to about f/5.6. High-resolution sensors have narrower aperture sweet spots.",
+          "failureMessage": "Smaller pixels reveal diffraction earlier. The 61 MP sensor's diffraction limit is around f/5.6, versus f/9 for the 24 MP sensor — the limit moves to a wider aperture.",
+          "options": {
+            "0": { "label": "It moves to a smaller aperture (higher f-number)" },
+            "1": { "label": "It moves to a wider aperture (lower f-number)" },
+            "2": { "label": "It doesn't change" },
+            "3": { "label": "Diffraction disappears with more megapixels" }
+          }
+        },
+        "2": {
+          "scenario": "You're shooting a landscape on a 45 MP full-frame camera and want maximum overall sharpness with good depth of field. Which aperture range is the best starting point?",
+          "hint": "Balance lens aberrations (bad wide open) against diffraction (bad stopped down).",
+          "successMessage": "Correct! f/8–f/11 sits right around the diffraction limit for ~4.4 µm pixels while giving substantial depth of field — the classic landscape sweet spot on high-resolution full frame.",
+          "failureMessage": "f/8–f/11 balances depth of field against diffraction for a 45 MP full-frame sensor. f/22 visibly softens fine detail, and wide open lacks depth of field.",
+          "options": {
+            "0": { "label": "Always f/22 for maximum depth" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Wide open" },
+            "3": { "label": "It depends only on ISO" }
+          }
+        }
+      }
+    }
+  }
+}

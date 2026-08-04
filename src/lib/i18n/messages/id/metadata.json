@@ -91,8 +91,28 @@
       "description": "Visualisasikan bagaimana megapiksel diterjemahkan ke ukuran cetak pada 72-300 DPI di berbagai rasio aspek. Bandingkan kamera, ukuran file, pixel binning, dan jangkauan crop — dengan tabel cetak bertingkat kualitas."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Statistik Gratis, Hanya di Browser",
+      "title": "Penganalisis Katalog Lightroom — Statistik Gratis, Hanya di Browser",
       "description": "Analisis katalog Lightroom Classic Anda secara lokal di browser Anda. Lihat gear, panjang fokus, kebiasaan apertur, rating, dan lainnya. 100% lokal — katalog Anda tidak pernah diunggah."
+    },
+    "shutter-count-checker": {
+      "title": "Pemeriksa Shutter Count — Gratis & Privat",
+      "description": "Periksa shutter count kamera Anda dari sebuah foto, gratis dan 100% di browser Anda. Bekerja dengan file JPEG dan RAW Nikon, dengan panduan jelas untuk Canon, Sony, dan merek lain."
+    },
+    "camera-health-checker": {
+      "title": "Pemeriksa Kesehatan Kamera",
+      "description": "Periksa bodi kamera dari satu foto: model, nomor seri, firmware, usia bodi, lensa, dan umur rana. 100% di sisi klien — ideal untuk memeriksa kamera bekas sebelum membeli."
+    },
+    "panorama-calculator": {
+      "title": "Kalkulator Panorama",
+      "description": "Rencanakan panorama hasil stitching: berapa jepretan yang dibutuhkan, seberapa jauh memutar antar frame, dan resolusi akhirnya — untuk lensa, sensor, dan tumpang tindih apa pun."
+    },
+    "diffraction-calculator": {
+      "title": "Kalkulator Batas Difraksi",
+      "description": "Temukan batas difraksi kamera Anda: apertur tempat menutup bukaan mulai melunakkan gambar. Berdasarkan pixel pitch dan cakram Airy, untuk sensor dan resolusi apa pun."
+    },
+    "photography-cheat-sheet": {
+      "title": "Cheat Sheet Fotografi — Pengaturan Kamera per Skenario",
+      "description": "Cheat sheet pengaturan kamera untuk potret, lanskap, satwa liar, Bima Sakti, dan lainnya. Titik awal teruji yang bisa Anda unduh sebagai gambar atau cetak."
     }
   }
 }

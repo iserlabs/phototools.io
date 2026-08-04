@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Kameraorientering",
+      "portrait": "Stående",
+      "landscape": "Liggende",
+      "overlap": "Overlapp: {percent} %",
+      "targetWidth": "Panoramabredde",
+      "rows": "Rader",
+      "megapixels": "Kameraoppløsning: {mp} MP",
+      "fanLabel": "Diagram ovenfra av {frames} overlappende delbilder",
+      "totalShots": "Totalt antall bilder",
+      "perRow": "Bilder × rader",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotasjon mellom bilder",
+      "coverage": "Dekning (H × V)",
+      "frameFov": "Synsfelt per delbilde",
+      "stitchedSize": "Sammensatt størrelse",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Hvor mye overlapp trenger panoramabilder?",
+          "answer": "25–35 % er ideelt for de fleste scener. Sammensettingsprogrammer trenger felles detaljer mellom nabobilder for å finne kontrollpunkter; under 15 % kan de mislykkes i å justere bildene, mens du over 50 % tar mange ekstra bilder til liten nytte. Bruk mer overlapp for scener med få tydelige detaljer, som klar himmel eller stille vann."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Hvorfor ta panoramaer i stående (vertikal) orientering?",
+          "answer": "Stående orientering fanger mer vertikalt synsfelt per delbilde, så det ferdige panoramaet blir høyere og gir rom for beskjæring og horisontkorrigering. Prisen er noen ekstra bilder i bredden — som regel en god byttehandel for den ekstra fleksibiliteten og oppløsningen."
+        },
+        "what-is-nodal-point": {
+          "question": "Hva er det parallaksefrie punktet (nodalpunktet)?",
+          "answer": "Det er punktet inne i objektivet som kameraet kan rotere rundt uten at nære og fjerne objekter forskyver seg i forhold til hverandre mellom bildene. Roterer du i stedet rundt stativfestet, oppstår parallaksefeil som gjør sammensettingen vanskelig, spesielt med nære forgrunnsobjekter. Panoramahoder lar deg plassere objektivets parallaksefrie punkt over rotasjonsaksen."
+        }
+      }
+    }
+  }
+}

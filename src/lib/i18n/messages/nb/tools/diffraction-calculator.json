@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Oppløsning: {mp} MP",
+      "aperture": "Blender",
+      "verdict": {
+        "sharp": "{f} er fri for diffraksjon",
+        "borderline": "{f} mykes litt opp av diffraksjon",
+        "soft": "{f} mykes synlig opp av diffraksjon"
+      },
+      "verdictDetail": {
+        "sharp": "Under diffraksjonsgrensen på {limit} for denne sensoren og oppløsningen er det objektivet — ikke diffraksjonen — som avgjør skarpheten.",
+        "borderline": "Forbi diffraksjonsgrensen på {limit} begynner fine detaljer på pikselnivå å viskes ut. Akseptabelt når du trenger den ekstra dybdeskarpheten.",
+        "soft": "Langt forbi diffraksjonsgrensen på {limit}. Dybdeskarpheten fortsetter å øke, men den samlede detaljrikdommen forringes synlig — vurder focus stacking i stedet for å blende ytterligere ned."
+      },
+      "stripLabel": "Blenderskala farget etter diffraksjonens virkning",
+      "pixelPitch": "Pikselavstand",
+      "airyDisk": "Airy-skivens diameter",
+      "diffractionLimit": "Diffraksjonsgrense",
+      "tableTitle": "Diffraksjonsgrense etter sensor og oppløsning",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Hva er diffraksjon i fotografering?",
+          "answer": "Diffraksjon er bøyningen av lysbølger når de presses gjennom en liten blenderåpning. Jo mindre åpningen er (høyere f-tall), desto mer sprer hvert lyspunkt seg til en uskarp skive (Airy-skiven) på sensoren. Når skiven blir større enn en piksel, viskes fine detaljer ut uansett hvor godt objektivet er."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Hvilken blender er skarpest?",
+          "answer": "De fleste objektiver yter best to eller tre trinn fra fullt åpen blender — typisk f/4 til f/8 på fullformat. Det området balanserer objektivets aberrasjoner (verst helt åpent) mot diffraksjon (verre jo mer du blender ned). Høyoppløste sensorer når diffraksjonsgrensen tidligere, så det brukbare området deres er smalere."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Avhenger diffraksjonen av sensoren?",
+          "answer": "Den optiske effekten avhenger bare av blenderen og lysets bølgelengde — men hvor synlig den er, avhenger av pikselstørrelsen. En 61 MP fullformatsensor har piksler på ~3,8 µm og viser diffraksjonsoppmykning rundt f/5.6, mens en 12 MP-sensor med store piksler holder seg skarp til f/11. Mindre sensorer når grensen ved større blenderåpninger for samme antall megapiksler."
+        }
+      }
+    }
+  }
+}

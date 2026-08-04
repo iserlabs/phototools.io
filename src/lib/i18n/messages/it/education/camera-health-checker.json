@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Ogni foto che la tua fotocamera salva porta con sé un rapporto nascosto sulla fotocamera stessa: il modello esatto, il numero di serie, il firmware in uso, l'obiettivo montato e a volte quante foto ha scattato. Questo strumento legge quel rapporto da una singola foto — interamente nel tuo browser — così puoi valutare un corpo macchina come un meccanico legge il libretto dei tagliandi di un'auto.",
+      "deeper": "I dati provengono dai metadati EXIF, un blocco standard che ogni fotocamera digitale incorpora nei suoi file. I campi standard includono marca, modello, numero di serie del corpo, software (che per la maggior parte delle fotocamere riporta la versione del firmware), modello dell'obiettivo e data di scatto. I produttori li estendono con le «maker note» proprietarie — quelle di Nikon includono il conteggio scatti, ed è per questo che la vita dell'otturatore è leggibile per alcune marche e non per altre. L'età del corpo si stima confrontando il nome del modello con un database di anni di uscita: una fotocamera uscita nel 2018 ha almeno diversi anni, qualunque cosa dica il venditore. Contano due avvertenze. Primo, i metadati sopravvivono solo nei file originali — la maggior parte delle app di editing, di messaggistica e delle piattaforme social li rimuove o li riscrive. Secondo, l'EXIF può essere modificato con strumenti liberamente disponibili, quindi trattalo come un indizio forte, non come una prova: è la coerenza tra il numero di serie nel file, quello sul corpo e la ricevuta del venditore a chiudere davvero il caso.",
+      "keyFactors": {
+        "0": {
+          "label": "Solo file originali",
+          "description": "I metadati sopravvivono nei file appena usciti dalla fotocamera. Esportazioni e ri-salvataggi spesso rimuovono numeri di serie, maker note e informazioni sul firmware."
+        },
+        "1": {
+          "label": "Numero di serie",
+          "description": "Lega il file a un corpo fisico. Prima di comprare usato, confrontalo con il corpo stesso, la ricevuta e i registri di attrezzatura rubata."
+        },
+        "2": {
+          "label": "Anno di uscita vs condizioni",
+          "description": "L'età definisce le aspettative (tecnologia del sensore, funzioni mancanti, supporto residuo), ma l'usura dell'otturatore e le condizioni fisiche dicono quanto sono stati duri quegli anni."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Compri usato? Chiedi al venditore una foto non modificata appena uscita dalla fotocamera. Verifica modello e numero di serie, mostra il firmware attuale e — sulle marche supportate — il conteggio scatti, tutto in un unico file."
+        },
+        "1": {
+          "text": "Confronta il firmware con l'ultima versione del produttore. Una fotocamera non aggiornata è normale; una che non può più essere aggiornata può perdere miglioramenti di autofocus e compatibilità."
+        },
+        "2": {
+          "text": "La data di scatto della foto campione del venditore ti dice quando la fotocamera è stata usata davvero l'ultima volta. Un corpo «poco usato» il cui file più recente ha quattro anni è rimasto fermo — controlla un otturatore bloccato e una batteria gonfia."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Numero di serie del corpo",
+          "definition": "L'identificativo univoco che il produttore assegna a ogni corpo macchina, incorporato nell'EXIF di ogni foto. Utile per i controlli di garanzia e i registri di attrezzatura rubata."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "Il software interno della fotocamera, riportato nel campo Software dell'EXIF. I produttori distribuiscono miglioramenti di autofocus, compatibilità e funzionalità tramite gli aggiornamenti del firmware."
+        },
+        "bodyAge": {
+          "term": "Età del corpo",
+          "definition": "Gli anni trascorsi dall'uscita del modello, stimati da un database di date di uscita. Un limite superiore su quanto è attuale la tecnologia della fotocamera — non su quanto è usurato questo specifico corpo."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Stai comprando una fotocamera usata da un annuncio online. Il venditore ti manda una foto originale scattata con la fotocamera. Qual è la cosa più preziosa da fare con il numero di serie nei suoi metadati?",
+          "hint": "Il numero di serie collega questo specifico corpo al mondo esterno.",
+          "successMessage": "Corretto! Verificare il numero di serie nei registri di attrezzatura rubata (e sulla ricevuta del venditore) ti protegge dal comprare materiale rubato — un controllo che solo il numero di serie rende possibile.",
+          "failureMessage": "Il valore unico del numero di serie è l'identificazione: verificalo nei registri di attrezzatura rubata e nei documenti del venditore. Non dice nulla sulla qualità d'immagine o sulla compatibilità.",
+          "options": {
+            "0": { "label": "Verificarlo nei registri di attrezzatura rubata" },
+            "1": { "label": "Stimare la qualità della foto" },
+            "2": { "label": "Verificare la compatibilità degli obiettivi" },
+            "3": { "label": "Cercare la gamma ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Una fotocamera usata che stai valutando monta il firmware 1.0 del lancio di quattro anni fa, mentre la versione attuale del produttore è la 3.1. Cosa ottieni tipicamente aggiornando?",
+          "hint": "Pensa a cosa i produttori possono cambiare via software dopo il lancio.",
+          "successMessage": "Esatto! Gli aggiornamenti del firmware portano miglioramenti reali — algoritmi di autofocus migliori, supporto per nuovi obiettivi, correzioni di bug, a volte intere funzionalità. Le specifiche hardware come sensore e megapixel non cambiano mai.",
+          "failureMessage": "Il firmware è software: gli aggiornamenti migliorano l'autofocus, aggiungono supporto agli obiettivi e correggono bug. Non possono cambiare l'hardware, come il sensore o i megapixel.",
+          "options": {
+            "0": { "label": "Nuove funzioni e miglioramenti dell'autofocus" },
+            "1": { "label": "Più megapixel" },
+            "2": { "label": "Un sensore più grande" },
+            "3": { "label": "Niente — il firmware è cosmetico" }
+          }
+        },
+        "2": {
+          "scenario": "Due venditori offrono lo stesso modello: un corpo di 7 anni e uno di 4 anni a prezzi simili. Qual è il modo giusto di usare l'età del corpo nella tua decisione?",
+          "hint": "L'età è solo uno degli elementi — cosa non ti dice?",
+          "successMessage": "Esattamente. L'età inquadra la tecnologia e la vita di supporto residua, ma i fattori decisivi sono come è stato usato il corpo: conteggio scatti, condizioni fisiche e storia della manutenzione.",
+          "failureMessage": "L'età del corpo da sola non decide — un corpo più vecchio ma trattato bene può battere uno più nuovo maltrattato. Combina l'età con il conteggio scatti e le condizioni.",
+          "options": {
+            "0": { "label": "Comprare sempre il più recente" },
+            "1": { "label": "Pesare l'età insieme a conteggio scatti e condizioni" },
+            "2": { "label": "Ignorare l'età — contano solo i megapixel" },
+            "3": { "label": "Scegliere solo in base alla reputazione della marca" }
+          }
+        }
+      }
+    }
+  }
+}

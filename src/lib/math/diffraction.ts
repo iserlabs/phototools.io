@@ -47,3 +47,39 @@ export function pixelPitch(sensorWidthMm: number, resolutionMp: number, sensorHe
 export function diffractionLimitedAperture(pixelPitchUm: number): number {
   return pixelPitchUm / 0.67
 }
+
+/**
+ * Airy disk diameter (first minimum) for a given aperture.
+ *
+ *   d ≈ 2.44 · λ · N
+ *
+ * With λ in nm and the result in µm: d = 2.44 × (λ/1000) × N.
+ * At f/8 in green light (550nm): 2.44 × 0.55 × 8 ≈ 10.7 µm — larger than any
+ * current sensor's pixel pitch, which is why landscape shooters avoid f/16+.
+ *
+ * @param fNumber      - Aperture f-number (e.g. 8)
+ * @param wavelengthNm - Light wavelength in nanometers (default 550, green)
+ * @returns Airy disk diameter in micrometers (µm)
+ */
+export function airyDiskDiameterUm(fNumber: number, wavelengthNm = 550): number {
+  return 2.44 * (wavelengthNm / 1000) * fNumber
+}
+
+export type ApertureVerdict = 'sharp' | 'borderline' | 'soft'
+
+/**
+ * Classify an aperture against a sensor's diffraction limit.
+ *
+ * The limit marks where softening becomes measurable, not where images fall
+ * apart — so there is a tolerance band above it (up to 1.5x the limit, i.e.
+ * roughly one stop) where diffraction is present but usually an acceptable
+ * trade for depth of field.
+ *
+ * @param fNumber - The aperture being evaluated
+ * @param limit   - Diffraction-limited f-number from diffractionLimitedAperture()
+ */
+export function apertureVerdict(fNumber: number, limit: number): ApertureVerdict {
+  if (fNumber <= limit) return 'sharp'
+  if (fNumber <= limit * 1.5) return 'borderline'
+  return 'soft'
+}

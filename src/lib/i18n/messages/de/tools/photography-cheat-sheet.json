@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Szenario wählen",
+      "tipsTitle": "Praxistipps",
+      "labels": {
+        "aperture": "Blende",
+        "shutter": "Verschlusszeit",
+        "iso": "ISO",
+        "whiteBalance": "Weißabgleich",
+        "focusMode": "Fokusmodus",
+        "driveMode": "Aufnahmemodus"
+      },
+      "values": {
+        "auto": "Automatik",
+        "daylight": "Tageslicht",
+        "cloudy": "Bewölkt",
+        "shade": "Schatten",
+        "tungsten": "Kunstlicht (~3200K)",
+        "afSingle": "Einzel-AF (AF-S)",
+        "afContinuous": "Kontinuierlicher AF (AF-C)",
+        "afTracking": "Kontinuierlicher AF + Motivverfolgung",
+        "manualFocus": "Manueller Fokus",
+        "single": "Einzelbild",
+        "burstLow": "Serienaufnahme langsam",
+        "burstHigh": "Serienaufnahme schnell",
+        "timer2s": "2s-Selbstauslöser / Fernauslöser",
+        "intervalometer": "Intervallauslöser"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Porträts",
+          "tips": {
+            "0": "Fokussiere auf das kameranähere Auge — bei offenen Blenden beträgt die Schärfentiefe nur wenige Zentimeter.",
+            "1": "Geh zurück und zoome heran (85mm+) für schmeichelhafte Kompression; Weitwinkelobjektive aus der Nähe verzerren Gesichtszüge."
+          }
+        },
+        "landscape": {
+          "name": "Landschaften",
+          "tips": {
+            "0": "Fokussiere etwa ein Drittel in die Szene hinein oder nutze die hyperfokale Distanz für durchgehende Schärfe.",
+            "1": "Fotografiere vom Stativ mit Selbstauslöser oder Fernauslöser, um Verwacklungen bei langen Verschlusszeiten zu vermeiden."
+          }
+        },
+        "street": {
+          "name": "Street",
+          "tips": {
+            "0": "Zonenfokus: Stelle vorab auf 3 m und f/8 scharf, und alles von 2 m bis 6 m wird scharf — ohne AF-Verzögerung.",
+            "1": "ISO-Automatik mit einer Mindest-Verschlusszeit von 1/200s friert gehende Personen ein, während du dich aufs Framing konzentrierst."
+          }
+        },
+        "wildlife": {
+          "name": "Wildtiere & Vögel",
+          "tips": {
+            "0": "Passe die Verschlusszeit ans Motiv an: 1/1000s für sitzende Vögel, 1/2500s oder kürzer für Vögel im Flug.",
+            "1": "Fotografiere auf Augenhöhe und warte auf Kopfdrehungen — ein Lichtreflex im Auge erweckt das Bild zum Leben."
+          }
+        },
+        "sports": {
+          "name": "Sport & Action",
+          "tips": {
+            "0": "Fokussiere vor, wo die Action passieren wird (das Tor, der Scheitelpunkt einer Kurve), und starte die Serie kurz vor dem Höhepunkt.",
+            "1": "Mitziehen bei 1/60s–1/125s mit kontinuierlichem AF verwischt den Hintergrund und hält das Motiv scharf."
+          }
+        },
+        "macro": {
+          "name": "Makro",
+          "tips": {
+            "0": "Bei hoher Vergrößerung ist die Schärfentiefe hauchdünn — fokussiere, indem du die Kamera bewegst, nicht den Fokusring.",
+            "1": "Jenseits von f/16 schlägt die Beugung hart zu; nutze Focus Stacking, statt weiter abzublenden."
+          }
+        },
+        "milkyWay": {
+          "name": "Milchstraße",
+          "tips": {
+            "0": "Nutze die NPF- oder 500er-Regel für die maximale Belichtungszeit, bevor Sterne Striche ziehen — etwa 15–20s bei 20mm am Vollformat.",
+            "1": "Fokussiere manuell auf einen hellen Stern mit vergrößerter Live-Ansicht; stelle den Weißabgleich auf etwa 3900K für einen neutralen Himmel."
+          }
+        },
+        "nightCity": {
+          "name": "Nächtliche Stadtansichten",
+          "tips": {
+            "0": "Fotografiere mit Basis-ISO vom Stativ und lass den Verschluss lange offen — Lichter bleiben sauber und das Rauschen niedrig.",
+            "1": "f/11–f/16 verwandelt Punktlichter in Blendensterne; fotografiere zur blauen Stunde für Farbe am Himmel."
+          }
+        },
+        "waterfall": {
+          "name": "Wasserfälle & Langzeitbelichtung",
+          "tips": {
+            "0": "Belichtungen von 0,5–2s erhalten die Struktur im Wasser; ab 30s wird es zu Nebel. Nutze bei Tageslicht einen ND-Filter.",
+            "1": "Ein Zirkularpolfilter beseitigt Reflexe auf nassen Steinen und Blättern — und wirkt nebenbei wie ein ND-Filter mit ~1,5 Stufen."
+          }
+        },
+        "goldenHour": {
+          "name": "Goldene Stunde",
+          "tips": {
+            "0": "Belichte auf die Lichter und hebe die Schatten in der Nachbearbeitung an — ausgefressene warme Lichter sind nicht zu retten.",
+            "1": "Stelle Motive ins Gegenlicht für Kantenlicht und Flares; die Weißabgleich-Voreinstellung „Bewölkt“ hält die Szene warm."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Welche Kameraeinstellungen sollte ich für Porträts verwenden?",
+          "answer": "Beginne mit einer offenen Blende (f/1.8–f/2.8) für Hintergrundunschärfe, einer Verschlusszeit von mindestens 1/200s gegen Bewegungsunschärfe und dem niedrigsten ISO-Wert, den das Licht erlaubt (100–400). Nutze Einzelfeld-Autofokus auf das nähere Auge oder Augenerkennungs-AF, falls deine Kamera ihn hat."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Welche Einstellungen brauche ich, um die Milchstraße zu fotografieren?",
+          "answer": "Ein lichtstarkes Weitwinkelobjektiv bei Offenblende (f/1.4–f/2.8), eine Belichtungszeit von 10–25 Sekunden (länger zieht die Sterne zu Strichen), ISO 1600–6400, manuellen Fokus auf einen hellen Stern und ein Stativ. Eine mondlose Nacht fernab von Stadtlichtern zählt mehr als jede Kameraeinstellung."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Sind diese Einstellungen exakte Rezepte?",
+          "answer": "Nein — es sind bewährte Ausgangspunkte. Das Licht variiert enorm zwischen Szenen, also betrachte die Bereiche als erste Schätzung, mach eine Testaufnahme, prüfe das Histogramm und passe an. Das Ziel ist, dich schnell in die richtige Gegend zu bringen, nicht dein Urteilsvermögen zu ersetzen."
+        }
+      }
+    }
+  }
+}

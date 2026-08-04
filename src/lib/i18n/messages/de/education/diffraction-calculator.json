@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Abblenden erhöht die Schärfentiefe — aber ab einem gewissen Punkt macht es das ganze Bild weicher statt schärfer. Das ist Beugung: Lichtwellen knicken ab, wenn sie sich durch eine kleine Öffnung zwängen. Dieser Rechner zeigt dir genau, wo dieser Punkt für deine Kamera liegt, damit du weißt, wie weit du abblenden kannst, ohne Schärfe einzubüßen.",
+      "deeper": "Wenn Licht durch die Blende tritt, landet jeder Punkt der Szene nicht als Punkt auf dem Sensor, sondern als winziges Beugungsmuster — ein heller Kern, das sogenannte Beugungsscheibchen (Airy-Scheibchen), umgeben von schwachen Ringen. Der Durchmesser des Scheibchens wächst proportional zur Blendenzahl: etwa 2,44 × Wellenlänge × N, was bei f/8 in grünem Licht bereits ~10,7 µm sind. Ob das eine Rolle spielt, hängt von deinen Pixeln ab. Ein 24-MP-Vollformatsensor hat ~6 µm große Pixel; ein 61-MP-Sensor ~3,8 µm. Sobald das Beugungsscheibchen deutlich größer wird als ein Pixel, werden Details, die der Sensor eigentlich auflösen könnte, über Nachbarpixel verschmiert — und keine Objektivqualität holt sie zurück. Deshalb sieht dasselbe f/11, das auf einem alten 12-MP-Gehäuse gut aussieht, auf einem modernen hochauflösenden Sensor sichtbar weicher aus, und deshalb bieten Kompaktkameras mit winzigen Pixeln selten Blenden jenseits von f/8. Die hier verwendete Faustregel — Grenze ≈ Pixelpitch / 0,67 — markiert, wo die Unschärfe messbar wird, nicht wo Bilder zerfallen: Eine Stufe über die Grenze hinaus abzublenden ist oft ein lohnender Tausch für Schärfentiefe. Ab zwei Stufen darüber schlägt Focus Stacking das Abblenden.",
+      "keyFactors": {
+        "0": {
+          "label": "Blende (Blendenzahl)",
+          "description": "Die einzige Stellschraube für die Beugung selbst: Der Durchmesser des Beugungsscheibchens skaliert linear mit der Blendenzahl. f/16 verteilt das Licht doppelt so breit wie f/8."
+        },
+        "1": {
+          "label": "Pixelpitch",
+          "description": "Die physische Größe eines Pixels, bestimmt durch Sensorgröße und Megapixel zusammen. Kleinere Pixel lösen mehr Details auf — und zeigen Beugung früher."
+        },
+        "2": {
+          "label": "Ausgabegröße",
+          "description": "Beugung, die bei 100% am Bildschirm sichtbar ist, kann in einem Web-Export oder moderaten Druck unsichtbar sein. Beurteile Schärfe in der Größe, die du tatsächlich nutzt."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Finde den Sweet Spot deines Objektivs: Fotografiere dieselbe detailreiche Szene bei jeder vollen Blendenstufe und vergleiche bei 100%. Die meisten Objektive erreichen ihr Maximum zwei bis drei Stufen abgeblendet, kurz bevor die Beugung übernimmt."
+        },
+        "1": {
+          "text": "Für Landschaften mit tiefem Fokus auf einem hochauflösenden Gehäuse: Probiere die hyperfokale Distanz bei f/8, bevor du zu f/16 greifst — präzise Fokusplatzierung bringt oft mehr Schärfe als kleinere Blenden."
+        },
+        "2": {
+          "text": "In der Makrofotografie wächst die effektive Blende mit der Vergrößerung (f/11 bei 1:1 wirkt wie f/22), also schlägt die Beugung viel früher zu, als das Einstellrad vermuten lässt. Focus Stacking bei moderater Blende ist der scharfe Ausweg."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pixelpitch",
+          "definition": "Die Breite eines einzelnen Pixels auf dem Sensor, in Mikrometern. Berechnet aus Sensorbreite geteilt durch horizontale Pixelzahl — 24 MP Vollformat ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Beugungsscheibchen",
+          "definition": "Das Beugungsmuster, das ein Lichtpunkt nach dem Durchtritt durch die Blende bildet: ein heller Kern mit schwachen Ringen. Sein Durchmesser ≈ 2,44 × Wellenlänge × Blendenzahl."
+        },
+        "diffractionLimit": {
+          "term": "Beugungsgrenze",
+          "definition": "Die Blendenzahl, bei der das Beugungsscheibchen den Pixel überwächst und die Schärfe auf Pixelebene zu sinken beginnt — ungefähr Pixelpitch (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du blendest dein Objektiv von f/8 auf f/22 ab, um maximale Schärfentiefe zu erreichen, aber die feinen Details deines Bildes werden überall weicher — sogar in der Fokusebene. Was passiert hier?",
+          "hint": "Es ist Physik, kein Objektivfehler.",
+          "successMessage": "Richtig! Licht wird gebeugt, wenn es durch eine kleine Blende tritt, und verteilt jeden Punkt zu einem Scheibchen, das größer als ein Pixel ist. Bei f/22 betrifft diese Unschärfe das gesamte Bild, Fokusebene eingeschlossen.",
+          "failureMessage": "Das ist Beugung: Lichtwellen knicken an den Blendenlamellen ab und verteilen jeden Lichtpunkt zu einem unscharfen Scheibchen. Sie betrifft das ganze Bild gleichermaßen, unabhängig von der Objektivqualität.",
+          "options": {
+            "0": { "label": "Das Objektiv ist schlecht gefertigt" },
+            "1": { "label": "Licht knickt beim Durchtritt durch die kleine Öffnung ab" },
+            "2": { "label": "Der Sensor überhitzt bei kleinen Blenden" },
+            "3": { "label": "Das ISO-Rauschen nimmt zu" }
+          }
+        },
+        "1": {
+          "scenario": "Du steigst von einer 24-MP-Vollformatkamera auf eine mit 61 MP um. Was passiert mit der Blende, bei der Beugung sichtbar wird?",
+          "hint": "Mehr Megapixel auf derselben Sensorfläche bedeuten kleinere Pixel.",
+          "successMessage": "Genau! Die ~3,8 µm großen Pixel des 61-MP-Sensors überflügeln das Beugungsscheibchen früher, sodass die Beugungsgrenze von etwa f/9 auf etwa f/5.6 sinkt. Hochauflösende Sensoren haben schmalere Blenden-Sweet-Spots.",
+          "failureMessage": "Kleinere Pixel zeigen Beugung früher. Die Beugungsgrenze des 61-MP-Sensors liegt bei etwa f/5.6, gegenüber f/9 beim 24-MP-Sensor — die Grenze wandert zu einer offeneren Blende.",
+          "options": {
+            "0": { "label": "Sie wandert zu einer kleineren Blende (höhere Blendenzahl)" },
+            "1": { "label": "Sie wandert zu einer offeneren Blende (niedrigere Blendenzahl)" },
+            "2": { "label": "Sie ändert sich nicht" },
+            "3": { "label": "Beugung verschwindet mit mehr Megapixeln" }
+          }
+        },
+        "2": {
+          "scenario": "Du fotografierst eine Landschaft mit einer 45-MP-Vollformatkamera und willst maximale Gesamtschärfe bei guter Schärfentiefe. Welcher Blendenbereich ist der beste Ausgangspunkt?",
+          "hint": "Balanciere Objektivfehler (schlimm bei Offenblende) gegen Beugung (schlimm beim Abblenden).",
+          "successMessage": "Richtig! f/8–f/11 liegt genau um die Beugungsgrenze für ~4,4 µm große Pixel und liefert zugleich beträchtliche Schärfentiefe — der klassische Landschafts-Sweet-Spot am hochauflösenden Vollformat.",
+          "failureMessage": "f/8–f/11 balanciert Schärfentiefe gegen Beugung bei einem 45-MP-Vollformatsensor. f/22 macht feine Details sichtbar weicher, und bei Offenblende fehlt die Schärfentiefe.",
+          "options": {
+            "0": { "label": "Immer f/22 für maximale Tiefe" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Offenblende" },
+            "3": { "label": "Das hängt nur vom ISO-Wert ab" }
+          }
+        }
+      }
+    }
+  }
+}

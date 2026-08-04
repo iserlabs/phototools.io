@@ -2,9 +2,10 @@ import { describe, it, expect } from 'vitest'
 import { getSkeletonBySlug } from './index'
 import { TOOL_EDUCATION_SKELETONS } from './content'
 import { TOOL_EDUCATION_SKELETONS_2 } from './content2'
+import { TOOL_EDUCATION_SKELETONS_3 } from './content3'
 import { TOOLS } from '../tools'
 
-const ALL_SKELETONS = [...TOOL_EDUCATION_SKELETONS, ...TOOL_EDUCATION_SKELETONS_2]
+const ALL_SKELETONS = [...TOOL_EDUCATION_SKELETONS, ...TOOL_EDUCATION_SKELETONS_2, ...TOOL_EDUCATION_SKELETONS_3]
 
 describe('Education skeletons', () => {
   it('every skeleton has a valid structure', () => {

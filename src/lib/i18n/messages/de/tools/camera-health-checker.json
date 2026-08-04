@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Foto hierher ziehen oder klicken zum Auswählen (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Ziehe ein beliebiges Foto der Kamera hierher, die du prüfen möchtest. Alles wird in deinem Browser gelesen — die Datei verlässt dein Gerät nie.",
+      "errorRead": "Diese Datei konnte nicht gelesen werden. Versuche es mit einer unbearbeiteten JPEG- oder RAW-Datei direkt aus der Kamera.",
+      "errorNoMetadata": "Diese Datei enthält keine Kamera-Metadaten. Exporte aus Bearbeitungs- oder Messaging-Apps entfernen sie oft — versuche es mit einer unbearbeiteten Originaldatei.",
+      "sections": {
+        "body": "Kameragehäuse",
+        "age": "Alter",
+        "shutter": "Verschlusslebensdauer",
+        "lens": "Objektiv"
+      },
+      "cameraModel": "Modell",
+      "make": "Hersteller",
+      "serialNumber": "Seriennummer",
+      "firmware": "Firmware / Software",
+      "bodyAge": "Gehäusealter",
+      "ageValue": "~{years} Jahre (erschienen {year})",
+      "ageUnknown": "Dieses Modell ist nicht in unserer Erscheinungsdatenbank, daher konnte sein Alter nicht geschätzt werden.",
+      "shotDate": "Foto aufgenommen",
+      "shutterCount": "Auslösungszahl",
+      "ratedLife": "Ausgelegte Lebensdauer",
+      "ratedAssumed": "(angenommen)",
+      "lifeUsed": "{percent}% der ausgelegten Lebensdauer verbraucht",
+      "verdict": {
+        "low": "Kaum benutzt",
+        "moderate": "Mäßig benutzt",
+        "high": "Stark benutzt",
+        "beyond": "Über der Auslegung"
+      },
+      "shutterUnavailable": {
+        "supported": "Keine Auslösungszahl gefunden, obwohl {brand} sie normalerweise aufzeichnet. Versuche es mit einer unbearbeiteten Originaldatei — Bearbeitungsprogramme entfernen oft die Hersteller-Metadaten.",
+        "partial": "{brand} schreibt nur in manche Dateien einen groben Bildzähler, und diese enthält keinen. Die Kameramenüs selbst oder ein USB-Programm können ihn möglicherweise anzeigen.",
+        "unsupported": "{brand} speichert keine auslesbare Auslösungszahl in Bilddateien. Auf der Seite des Auslösungszahl-Checkers findest du markenspezifische Alternativen.",
+        "unknown": "Diese Datei enthält keine auslesbare Auslösungszahl."
+      },
+      "lensModel": "Objektiv",
+      "lensSerial": "Objektiv-Seriennummer",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Was sollte ich beim Kauf einer gebrauchten Kamera prüfen?",
+          "answer": "Über die Optik hinaus: die Auslösungszahl im Verhältnis zur ausgelegten Lebensdauer, das Alter des Gehäuses und die Firmware-Version, ob die Seriennummer zu den Unterlagen des Verkäufers passt (und nicht als gestohlen gemeldet ist), den Zustand des Sensors (achte auf Staub oder Kratzer in einem Testfoto eines klaren Himmels bei f/16) und dass alle Räder, Anschlüsse und der Objektivanschluss einwandfrei funktionieren."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Woher stammen diese Zustandsdaten?",
+          "answer": "Alles wird aus den in dein Foto eingebetteten Metadaten gelesen: Standard-EXIF-Felder (Modell, Seriennummer, Firmware, Objektiv, Aufnahmedatum) plus herstellerspezifische Maker Notes, sofern verfügbar (Auslösungszahl). Das Gehäusealter wird anhand einer integrierten Datenbank mit Erscheinungsjahren beliebter Kameramodelle geschätzt."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Wird mein Foto auf einen Server hochgeladen?",
+          "answer": "Nein. Die Datei wird vollständig in deinem Browser mit JavaScript ausgewertet — sie verlässt dein Gerät nie, und nichts wird gespeichert. Du kannst das überprüfen, indem du die Seite lädst und dann deine Verbindung trennst, bevor du eine Datei ablegst."
+        }
+      }
+    }
+  }
+}

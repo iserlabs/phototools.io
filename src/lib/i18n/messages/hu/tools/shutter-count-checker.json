@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Húzzon ide egy fotót, vagy kattintson a tallózáshoz (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Mely márkák tárolják a zárszámlálót?",
+      "status": {
+        "supported": "Kiolvasható",
+        "partial": "Részleges",
+        "unsupported": "Nincs a fájlokban"
+      },
+      "brands": {
+        "nikon": "A Nikon minden fotó metaadataiba titkosítás nélkül beírja a zárszámlálót. A pontos eredményhez használjon szerkesztetlen, eredeti fájlt.",
+        "canon": "A Canon soha nem írja a zárszámlálót a képfájlokba — csak a kamera belsejében tárolódik, és szervizeszközök vagy USB-s segédprogramok olvassák ki.",
+        "sony": "A Sony a zárszámlálót a metaadatok titkosított részében tárolja, amelyet a böngészőben nem lehet visszafejteni. Dedikált asztali segédprogramok USB-n keresztül ki tudják olvasni.",
+        "fujifilm": "A Fujifilm vázak nem rögzítenek valódi zárszámlálót, de némelyik ír egy képkocka-számlálót, amely durva alsó becslést ad.",
+        "pentax": "A Pentax a zárszámláló mezőt rejtjelezéssel álcázza, ezért a fájlokból nem olvasható ki megbízhatóan.",
+        "olympus": "Az OM System / Olympus vázak a teljes zárszámlálót egy belső szervizmenüben tartják; a fájlokban néha szerepel egy képkocka-számláló, amely sejteti a használatot.",
+        "panasonic": "A Panasonic nem ír zárszámlálót a fájlokba. A kamera szervizmenüje mutatja meg.",
+        "leica": "A Leica vázak általában nem tárolnak zárszámlálót a képfájlokban."
+      },
+      "countLabel": "Zárkioldások",
+      "source": {
+        "shutterCount": "A kamera zárszámláló-metaadatából kiolvasva — ez a tényleges mechanikus kioldásszámláló.",
+        "mechanicalShutterCount": "A mechanikus zár számlálójából kiolvasva — az elektronikus zárral készült képek nincsenek benne.",
+        "imageNumber": "A fájl képsorszámából becsülve. Ez durva alsó határ, nem pontos kioldásszám — a számláló nullázódhat vagy átfordulhat."
+      },
+      "ratedLife": "Névleges zár-élettartam",
+      "ratings": {
+        "entry": "Belépő szintű",
+        "enthusiast": "Hobbi",
+        "advanced": "Haladó",
+        "pro": "Professzionális",
+        "flagship": "Csúcsmodell"
+      },
+      "lifeUsed": "A névleges élettartam {percent}%-a elhasználva",
+      "verdict": {
+        "low": "Alig használt",
+        "moderate": "Mérsékelt használat",
+        "high": "Intenzív használat",
+        "beyond": "Élettartamon túl"
+      },
+      "noCountTitle": "Ebben a fájlban nincs zárszámláló",
+      "noCountGeneric": "Ez a fájl nem tartalmaz kiolvasható zárszámlálót. Próbáljon meg egy szerkesztetlen, közvetlenül a kamerából származó eredeti fotót — a képszerkesztőkből exportált fájlokból gyakran hiányoznak a gyártói metaadatok.",
+      "errorRead": "Nem sikerült beolvasni a fájlt. Próbáljon meg egy szerkesztetlen, közvetlenül a kamerából származó JPEG vagy RAW fájlt.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Mi az a zárszámláló?",
+          "answer": "A zárszámláló azt mutatja, hányszor oldott ki a kamera mechanikus zárja — olyan, mint az autó kilométeróra-állása, csak fényképezőgépre. Ez a leggyakrabban ellenőrzött kopásjelző használt kamera vételekor vagy eladásakor, mivel a zárszerkezeteket véges számú kioldásra méretezik."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Hány zárkioldás számít soknak?",
+          "answer": "A kamera kategóriájától függ. A belépő szintű zárakat nagyjából 100 000 kioldásra méretezik, a hobbi kategóriás vázakat 150 000–200 000-re, a professzionálisakat 300 000–500 000-re. A névleges érték átlagos élettartam, nem szigorú határ — sok zár messze túléli, és egy rosszul kezelt váz alacsony számlálóval is okozhat gondokat."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Miért nem tudom kiolvasni a zárszámlálót a Canon vagy Sony fotómból?",
+          "answer": "A Canon egyáltalán nem írja a zárszámlálót a képfájlokba — csak a kamera belső memóriájában él. A Sony beleírja, de titkosítja a metaadatok azon részét. Egyik esetben sem tudja egy böngészős eszköz a fotóból kiolvasni; a szokásos megoldás egy asztali segédprogram, amely USB-n keresztül csatlakozik a kamerához."
+        }
+      }
+    }
+  }
+}

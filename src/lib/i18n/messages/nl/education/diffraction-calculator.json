@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Verder diafragmeren vergroot de scherptediepte — maar voorbij een bepaald punt maakt het je hele beeld juist zachter in plaats van scherper. Dat is diffractie: lichtgolven die afbuigen wanneer ze zich door een kleine opening wringen. Deze calculator laat precies zien waar dat punt ligt voor jouw camera, zodat je weet hoe ver je kunt diafragmeren zonder scherpte in te leveren.",
+      "deeper": "Wanneer licht door het diafragma valt, landt elk punt in de scène niet als punt op de sensor maar als een piepklein diffractiepatroon — een heldere kern, het airy-schijfje, omringd door vage ringen. De diameter van het schijfje groeit recht evenredig met het f-getal: ongeveer 2,44 × golflengte × N, wat bij f/8 in groen licht al ~10,7 µm is. Of dat uitmaakt, hangt af van je pixels. Een 24 MP fullframe-sensor heeft pixels van ~6 µm; een 61 MP-sensor van ~3,8 µm. Zodra het airy-schijfje ruim groter wordt dan een pixel, wordt detail dat de sensor anders zou kunnen oplossen uitgesmeerd over buurpixels, en geen lenskwaliteit haalt dat terug. Daarom ziet dezelfde f/11 die op een oude 12 MP-camera prima oogt, er op een moderne hogeresolutiesensor zichtbaar zachter uit, en daarom bieden compactcamera's met piepkleine pixels zelden diafragma's voorbij f/8. De vuistregel die hier wordt gebruikt — grens ≈ pixelpitch / 0,67 — markeert waar de verzachting meetbaar wordt, niet waar beelden instorten: één stop voorbij de grens diafragmeren is vaak een prima ruil voor scherptediepte. Voorbij twee stops wint focus stacking het van verder diafragmeren.",
+      "keyFactors": {
+        "0": {
+          "label": "Diafragma (f-getal)",
+          "description": "De enige knop voor diffractie zelf: de diameter van het airy-schijfje schaalt lineair met het f-getal. f/16 spreidt het licht twee keer zo breed als f/8."
+        },
+        "1": {
+          "label": "Pixelpitch",
+          "description": "De fysieke grootte van één pixel, bepaald door sensorformaat en megapixels samen. Kleinere pixels lossen meer detail op — en tonen diffractie eerder."
+        },
+        "2": {
+          "label": "Uitvoerformaat",
+          "description": "Diffractie die zichtbaar is op 100% op het scherm kan onzichtbaar zijn in een webexport of gemiddelde print. Beoordeel scherpte op het formaat dat je daadwerkelijk gebruikt."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Vind de sweet spot van je lens: fotografeer dezelfde detailrijke scène op elke hele stop en vergelijk op 100%. De meeste lenzen pieken twee tot drie stops vanaf volle opening, net voordat diffractie het overneemt."
+        },
+        "1": {
+          "text": "Probeer voor landschappen met veel dieptescherpte op een hogeresolutiecamera eerst de hyperfocale afstand bij f/8 voordat je naar f/16 grijpt — nauwkeurige scherpstelplaatsing levert vaak meer scherpte op dan kleinere diafragma's."
+        },
+        "2": {
+          "text": "Bij macrowerk groeit het effectieve diafragma met de vergroting (f/11 bij 1:1 gedraagt zich als f/22), dus diffractie slaat veel eerder toe dan de instelring doet vermoeden. Focus stacking op een gematigd diafragma is de scherpe uitweg."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pixelpitch",
+          "definition": "De breedte van één pixel op de sensor, in micrometers. Berekend als sensorbreedte gedeeld door het horizontale aantal pixels — 24 MP fullframe ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Airy-schijfje",
+          "definition": "Het diffractiepatroon dat een lichtpunt vormt na het passeren van het diafragma: een heldere kern met vage ringen. De diameter ≈ 2,44 × golflengte × f-getal."
+        },
+        "diffractionLimit": {
+          "term": "Diffractiegrens",
+          "definition": "Het f-getal waarbij het airy-schijfje de pixel ontgroeit en de scherpte per pixel begint te dalen — ongeveer pixelpitch (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Je diafragmeert je lens van f/8 naar f/22 voor maximale scherptediepte, maar de fijne details in je beeld worden overal zachter — zelfs in het scherptevlak. Wat gebeurt er?",
+          "hint": "Het is natuurkunde, geen lensdefect.",
+          "successMessage": "Correct! Licht buigt af (diffracteert) bij het passeren van een kleine opening en spreidt elk punt uit tot een schijfje groter dan een pixel. Bij f/22 raakt die verzachting het hele beeld, scherptevlak inbegrepen.",
+          "failureMessage": "Dit is diffractie: lichtgolven buigen af langs de diafragmalamellen en spreiden elk lichtpunt uit tot een wazig schijfje. Het raakt het hele beeld gelijkmatig, ongeacht de lenskwaliteit.",
+          "options": {
+            "0": { "label": "De lens is slecht gebouwd" },
+            "1": { "label": "Licht buigt af bij het passeren van de kleine opening" },
+            "2": { "label": "De sensor raakt oververhit bij kleine diafragma's" },
+            "3": { "label": "De ISO-ruis neemt toe" }
+          }
+        },
+        "1": {
+          "scenario": "Je stapt over van een 24 MP fullframe-camera naar een van 61 MP. Wat gebeurt er met het diafragma waarbij diffractie zichtbaar wordt?",
+          "hint": "Meer megapixels op hetzelfde sensoroppervlak betekent kleinere pixels.",
+          "successMessage": "Juist! De pixels van ~3,8 µm van de 61 MP-sensor ontgroeien het airy-schijfje eerder, dus de diffractiegrens zakt van ongeveer f/9 naar ongeveer f/5.6. Hogeresolutiesensoren hebben smallere diafragma-sweet-spots.",
+          "failureMessage": "Kleinere pixels tonen diffractie eerder. De diffractiegrens van de 61 MP-sensor ligt rond f/5.6, tegenover f/9 bij de 24 MP-sensor — de grens verschuift naar een groter diafragma.",
+          "options": {
+            "0": { "label": "Hij verschuift naar een kleiner diafragma (hoger f-getal)" },
+            "1": { "label": "Hij verschuift naar een groter diafragma (lager f-getal)" },
+            "2": { "label": "Hij verandert niet" },
+            "3": { "label": "Diffractie verdwijnt met meer megapixels" }
+          }
+        },
+        "2": {
+          "scenario": "Je fotografeert een landschap met een 45 MP fullframe-camera en wilt maximale totaalscherpte met goede scherptediepte. Welk diafragmabereik is het beste startpunt?",
+          "hint": "Balanceer lensfouten (slecht bij volle opening) tegen diffractie (slecht bij ver diafragmeren).",
+          "successMessage": "Correct! f/8–f/11 zit precies rond de diffractiegrens voor pixels van ~4,4 µm en geeft tegelijk flinke scherptediepte — de klassieke landschaps-sweet-spot op hogeresolutie-fullframe.",
+          "failureMessage": "f/8–f/11 balanceert scherptediepte tegen diffractie voor een 45 MP fullframe-sensor. f/22 verzacht fijn detail zichtbaar, en volle opening mist scherptediepte.",
+          "options": {
+            "0": { "label": "Altijd f/22 voor maximale diepte" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Volle opening" },
+            "3": { "label": "Het hangt alleen van de ISO af" }
+          }
+        }
+      }
+    }
+  }
+}

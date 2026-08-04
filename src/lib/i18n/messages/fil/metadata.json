@@ -91,8 +91,28 @@
       "description": "I-visualize kung paano nai-translate ang megapixels sa print sizes sa 72–300 DPI, sa iba't ibang aspect ratio. Ikumpara ang mga camera, file sizes, pixel binning, at crop reach — may quality-tiered print table."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Libreng Istatistika, Browser Lamang",
+      "title": "Analyzer ng Lightroom Catalog — Libreng Istatistika, Browser Lamang",
       "description": "Suriin ang iyong Lightroom Classic catalog nang lokal sa iyong browser. Tingnan ang gear, focal length, mga gawi sa aperture, ratings, at marami pa. 100% lokal — hindi kailanman ina-upload ang iyong catalog."
+    },
+    "shutter-count-checker": {
+      "title": "Tagasuri ng Shutter Count — Libre & Pribado",
+      "description": "I-check ang shutter count ng camera mo mula sa photo, libre at 100% sa browser mo. Gumagana sa mga Nikon JPEG at RAW file, na may malinaw na gabay para sa Canon, Sony, at iba pang brand."
+    },
+    "camera-health-checker": {
+      "title": "Tagasuri ng Camera Health",
+      "description": "Suriin ang camera body mula sa iisang photo: model, serial number, firmware, edad ng body, lens, at shutter life. 100% client-side — mainam para sa pag-check ng segunda-manong camera bago bumili."
+    },
+    "panorama-calculator": {
+      "title": "Kalkulador ng Panorama",
+      "description": "Planuhin ang mga stitched na panorama: ilang shot ang kailangan mo, gaano kalayo iikot sa pagitan ng mga frame, at ang final na resolution — para sa kahit anong lens, sensor, at overlap."
+    },
+    "diffraction-calculator": {
+      "title": "Kalkulador ng Diffraction Limit",
+      "description": "Hanapin ang diffraction limit ng camera mo: ang aperture kung saan nagsisimulang palambutin ng pag-stop down ang mga imahe. Batay sa pixel pitch at sa Airy disk, para sa kahit anong sensor at resolution."
+    },
+    "photography-cheat-sheet": {
+      "title": "Photography Cheat Sheet — Mga Camera Setting Kada Scenario",
+      "description": "Mga cheat sheet ng camera setting para sa mga portrait, landscape, wildlife, Milky Way, at iba pa. Mga napatunayang panimulang punto na mada-download bilang imahe o mapi-print."
     }
   }
 }

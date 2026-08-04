@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Fiecare situație de fotografiere — portrete, animale sălbatice, Calea Lactee — are o combinație verificată de diafragmă, timp de expunere și ISO la care fotografii experimentați apelează mai întâi. Aceste fișe îți dau acel punct de plecare pe loc, ca să-ți poți dedica atenția luminii și compoziției în loc să te îndoiești de rotițe.",
+      "deeper": "Fiecare rețetă de aici e o aplicare a triunghiului expunerii cu o latură prioritizată. Portretele prioritizează diafragma: deschiderile mari (f/1.8–f/2.8) separă subiectul de fundal, iar restul se adaptează în jurul lor. Acțiunea prioritizează timpul de expunere: 1/1000s îngheață mișcarea, așa că diafragma se deschide și ISO-ul urcă pentru a-i furniza lumină. Peisajele prioritizează calitatea imaginii: ISO de bază și o diafragmă medie în zona ideală a obiectivului, cu un trepied care absoarbe orice timp de expunere rezultă. Scenele nocturne împing toate cele trei laturi deodată, motiv pentru care au cele mai rigide rețete — Calea Lactee chiar cere un obiectiv luminos la deschidere maximă, o expunere sub ~20 de secunde (înainte ca rotația Pământului să transforme stelele în dâre) și orice ISO face histograma utilizabilă. Adevărata lecție e să înțelegi ce latură prioritizează fiecare scenariu: odată ce vezi prioritatea, poți adapta orice rețetă la lumina din fața ta în loc s-o urmezi orbește. Intervalele sunt puncte de plecare calibrate pentru condiții tipice; ultimul cuvânt îl are histograma ta, nu fișa.",
+      "keyFactors": {
+        "0": {
+          "label": "Prioritatea scenariului",
+          "description": "Fiecare situație blochează mai întâi o variabilă de expunere — diafragma pentru portrete, timpul pentru acțiune, ISO-ul pentru peisaje — și le lasă pe celelalte să se adapteze."
+        },
+        "1": {
+          "label": "Lumina disponibilă",
+          "description": "Același scenariu cere setări diferite la amiază și la amurg. Ia intervalele drept repere și mută-te în interiorul lor pe măsură ce lumina se schimbă."
+        },
+        "2": {
+          "label": "Suport și stabilitate",
+          "description": "Un trepied deblochează ISO de bază și timpi lungi pentru scene statice. Din mână, stabilește-ți un prag minim al timpului de expunere în jur de 1/(distanța focală) sau mai rapid."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Fă un cadru de test și citește histograma, nu previzualizarea de pe LCD — ecranele mint în soare puternic și noaptea, histograma niciodată."
+        },
+        "1": {
+          "text": "Memorează câte o rețetă pentru fiecare gen pe care îl practici, apoi exersează ajustarea unei singure variabile pe rând. Vei interioriza compromisurile mult mai repede decât schimbând totul deodată."
+        },
+        "2": {
+          "text": "Descarcă fișa pentru scenariile pe care le fotografiezi rar — rețeta pentru Calea Lactee e greu de ținut minte la 2 noaptea, pe munte, cu degetele înghețate."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Diafragmă",
+          "definition": "Dimensiunea deschiderii obiectivului, în numere f. Numere mai mici = mai multă lumină și mai mult fundal estompat; numere mai mari = mai multă profunzime de câmp."
+        },
+        "shutter": {
+          "term": "Timp de expunere",
+          "definition": "Cât timp adună senzorul lumină. Timpii scurți îngheață mișcarea; cei lungi o estompează și cer stabilizare sau un trepied."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Amplificarea senzorului. Ține-l cât de jos permite lumina — ridicarea lui luminează imaginea cu prețul zgomotului."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Fotografiezi un portret și vrei aspectul clasic: subiect clar, fundal topit în neclaritate. Ce alegere de setare îl obține?",
+          "hint": "Fundalul estompat vine din profunzimea de câmp — ce control o guvernează?",
+          "successMessage": "Corect! O diafragmă deschisă (precum f/1.8–f/2.8) creează profunzimea de câmp redusă care separă subiectul de un fundal estompat — alegerea definitorie pentru portret.",
+          "failureMessage": "Fundalul estompat vine dintr-o diafragmă deschisă (număr f mic) precum f/1.8–f/2.8, care face profunzimea de câmp redusă. Diafragmele închise fac exact opusul.",
+          "options": {
+            "0": { "label": "O diafragmă închisă precum f/16" },
+            "1": { "label": "O diafragmă deschisă precum f/2" },
+            "2": { "label": "O expunere lungă pe trepied" },
+            "3": { "label": "ISO la maximum" }
+          }
+        },
+        "1": {
+          "scenario": "Un stârc tot își ia zborul de pe apă exact când apeși pe declanșator, și fiecare cadru arată vârfurile aripilor mișcate. Care e soluția?",
+          "hint": "Neclaritatea de mișcare e o problemă de timp.",
+          "successMessage": "Exact! Păsările în zbor au nevoie de timpi rapizi — 1/2500s sau mai rapid îngheață bătăile de aripi. Deschide diafragma și lasă ISO auto să urce ca să alimenteze viteza de care ai nevoie.",
+          "failureMessage": "Aripile mișcate înseamnă că timpul e prea lent pentru mișcare. Sari la 1/2500s sau mai rapid și lasă diafragma și ISO-ul să compenseze lumina pierdută.",
+          "options": {
+            "0": { "label": "Un timp mai lent pentru mai multă lumină" },
+            "1": { "label": "Un timp de expunere mult mai rapid" },
+            "2": { "label": "Închide la f/22" },
+            "3": { "label": "Comută balansul de alb pe tungsten" }
+          }
+        },
+        "2": {
+          "scenario": "Ești instalat sub un cer întunecat ca să fotografiezi Calea Lactee. Ce combinație obține o expunere utilizabilă a nucleului galactic?",
+          "hint": "Stelele sunt slabe, în mișcare (odată cu rotația Pământului) și singura ta sursă de lumină.",
+          "successMessage": "Corect! Deschidere maximă (f/1.4–f/2.8), 10–25 de secunde, ISO 1600–6400: diafragma adună maximum de lumină, expunerea se oprește înainte ca stelele să lase dâre, iar ISO-ul ridicat face vizibil nucleul slab.",
+          "failureMessage": "Calea Lactee cere totul: diafragma la deschidere maximă, o expunere destul de scurtă ca stelele să nu lase dâre (10–25 s) și ISO ridicat (1600–6400). Diafragmele închise sau ISO de bază lasă cerul negru.",
+          "options": {
+            "0": { "label": "f/11, 30 s, ISO 100" },
+            "1": { "label": "Deschidere maximă, 10–25 s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Orice setări cu un filtru ND" }
+          }
+        }
+      }
+    }
+  }
+}

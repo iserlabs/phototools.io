@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "传感器",
+      "orientation": "相机方向",
+      "portrait": "竖拍",
+      "landscape": "横拍",
+      "overlap": "重叠率：{percent}%",
+      "targetWidth": "全景宽度",
+      "rows": "行数",
+      "megapixels": "相机分辨率：{mp} MP",
+      "fanLabel": "{frames} 张重叠画幅的俯视示意图",
+      "totalShots": "总拍摄张数",
+      "perRow": "张数 × 行数",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "每张之间的旋转角度",
+      "coverage": "覆盖范围（水平 × 垂直）",
+      "frameFov": "单张画幅视场角",
+      "stitchedSize": "拼接后尺寸",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "全景拍摄需要多少重叠？",
+          "answer": "对大多数场景来说，25%–35% 是最佳区间。拼接软件需要相邻画幅之间的共同细节来寻找控制点；低于 15% 时可能无法对齐画幅，而超过 50% 则会拍摄大量多余的照片却收效甚微。对于晴朗天空或平静水面这类特征稀少的场景，请增加重叠率。"
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "为什么全景要竖拍（竖直方向）？",
+          "answer": "竖拍时每张照片能捕捉更多的垂直视场，因此最终拼接的全景更高，为裁切和地平线校正留出余地。代价是水平方向要多拍几张 — 但换来的灵活性和分辨率通常非常值得。"
+        },
+        "what-is-nodal-point": {
+          "question": "什么是无视差点（节点）？",
+          "answer": "它是镜头内部的一个点：绕该点旋转相机时，画幅之间近处和远处的物体不会发生相对位移。如果改为绕三脚架接口旋转，就会产生视差误差，让拼接变得困难，尤其是有近距离前景时。全景云台可以让镜头的无视差点正好位于旋转轴上。"
+        }
+      }
+    }
+  }
+}

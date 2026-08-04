@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Válasszon helyzetet",
+      "tipsTitle": "Terepi tippek",
+      "labels": {
+        "aperture": "Rekesz",
+        "shutter": "Zársebesség",
+        "iso": "ISO",
+        "whiteBalance": "Fehéregyensúly",
+        "focusMode": "Fókuszmód",
+        "driveMode": "Felvételi mód"
+      },
+      "values": {
+        "auto": "Automatikus",
+        "daylight": "Nappali fény",
+        "cloudy": "Felhős",
+        "shade": "Árnyék",
+        "tungsten": "Izzólámpa (~3200K)",
+        "afSingle": "Egyszeri AF (AF-S)",
+        "afContinuous": "Folyamatos AF (AF-C)",
+        "afTracking": "Folyamatos AF + témakövetés",
+        "manualFocus": "Kézi fókusz",
+        "single": "Egyetlen felvétel",
+        "burstLow": "Lassú sorozat",
+        "burstHigh": "Gyors sorozat",
+        "timer2s": "2 mp önkioldó / távkioldó",
+        "intervalometer": "Intervalométer"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Portrék",
+          "tips": {
+            "0": "Fókuszáljon a kamerához közelebbi szemre — nyitott rekesznél a mélységélesség csak néhány centiméter.",
+            "1": "Lépjen hátrébb, és zoomoljon rá (85mm+) a hízelgő kompresszióért; a nagylátószög közelről torzítja az arcvonásokat."
+          }
+        },
+        "landscape": {
+          "name": "Tájképek",
+          "tips": {
+            "0": "Fókuszáljon nagyjából a jelenet első harmadára, vagy használja a hiperfokális távolságot az elölről hátig terjedő élességért.",
+            "1": "Fotózzon állványról önkioldóval vagy távkioldóval, hogy hosszú záridőknél kizárja a bemozdulást."
+          }
+        },
+        "street": {
+          "name": "Utcai fotózás",
+          "tips": {
+            "0": "Zónafókusz: állítsa be előre a fókuszt 3 m-re f/8-cal, és minden éles lesz 2 és 6 m között — AF-késlekedés nélkül.",
+            "1": "Az automatikus ISO 1/250s minimális zársebességgel megfagyasztja a sétáló témákat, míg ön a képkivágásra koncentrál."
+          }
+        },
+        "wildlife": {
+          "name": "Vadvilág és madarak",
+          "tips": {
+            "0": "Igazítsa a zársebességet a témához: 1/1000s ülő madarakhoz, 1/2500s vagy gyorsabb repülő madarakhoz.",
+            "1": "Fotózzon szemmagasságból, és várja meg a fejfordulást — a szemben megcsillanó fény kelti életre a képet."
+          }
+        },
+        "sports": {
+          "name": "Sport és akció",
+          "tips": {
+            "0": "Fókuszáljon előre oda, ahol az akció történni fog (a kapu, a kanyar íve), és indítsa a sorozatot közvetlenül a csúcspont előtt.",
+            "1": "Az 1/60s–1/125s közötti követett svenkelés folyamatos AF-fel elmossa a hátteret, miközben a téma éles marad."
+          }
+        },
+        "macro": {
+          "name": "Makró",
+          "tips": {
+            "0": "Nagy nagyításnál a mélységélesség papírvékony — a kamera mozgatásával fókuszáljon, ne a fókuszgyűrűvel.",
+            "1": "f/16 fölött a fényelhajlás keményen lecsap; szűkítés helyett használjon fókuszhalmozást."
+          }
+        },
+        "milkyWay": {
+          "name": "Tejút",
+          "tips": {
+            "0": "Használja az NPF- vagy az 500-as szabályt a leghosszabb csíkmentes expozícióhoz — full frame-en 20mm-rel nagyjából 15–20 s.",
+            "1": "Fókuszáljon kézzel egy fényes csillagra nagyított élő nézetben; a 3900K körüli fehéregyensúly semleges eget ad."
+          }
+        },
+        "nightCity": {
+          "name": "Éjszakai városképek",
+          "tips": {
+            "0": "Fotózzon alap ISO-n állványról, és hagyja hosszan nyitva a zárat — a csúcsfények tiszták, a zaj alacsony marad.",
+            "1": "f/11–f/16 csillagsugarakká változtatja a pontszerű fényeket; fotózzon a kék órában, hogy az égnek színe legyen."
+          }
+        },
+        "waterfall": {
+          "name": "Vízesések és hosszú expozíció",
+          "tips": {
+            "0": "A 0,5–2 s expozíciók megőrzik a víz textúráját; 30 s fölött köddé válik. Nappal használjon ND szűrőt.",
+            "1": "A cirkuláris polárszűrő kiszűri a nedves sziklák és lombok csillogását — és mellesleg ~1,5 fényértéknyi ND-ként is működik."
+          }
+        },
+        "goldenHour": {
+          "name": "Aranyóra",
+          "tips": {
+            "0": "Exponáljon a csúcsfényekre, és emelje meg az árnyékokat utómunkában — a beégett meleg fények visszahozhatatlanok.",
+            "1": "Világítsa hátulról a témát a kontúrfényért és a becsillanásért; a felhős fehéregyensúly-beállítás melegen tartja a jelenetet."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Milyen kamerabeállításokat használjak portrékhoz?",
+          "answer": "Induljon nyitott rekesszel (f/1.8–f/2.8) a háttér elmosásához, legalább 1/200s zársebességgel a bemozdulás ellen, és a fény engedte legalacsonyabb ISO-val (100–400). Használjon egypontos autofókuszt a közelebbi szemre, vagy szemfelismerő AF-et, ha a kamerája tudja."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Milyen beállítások kellenek a Tejút fotózásához?",
+          "answer": "Nagylátószögű, fényerős objektív a legnagyobb nyitáson (f/1.4–f/2.8), 10–25 másodperces expozíció (hosszabbnál a csillagok csíkot húznak), ISO 1600–6400, kézi fókusz egy fényes csillagra, és állvány. A várostól távoli, holdmentes éjszaka többet számít bármely kamerabeállításnál."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Ezek a beállítások pontos receptek?",
+          "answer": "Nem — bevált kiindulópontok. A fény jelenetenként óriási mértékben változik, ezért kezelje a tartományokat első tippként: készítsen próbafelvételt, nézze meg a hisztogramot, és igazítson. A cél, hogy gyorsan a jó tartományba kerüljön, nem az ítélőképesség pótlása."
+        }
+      }
+    }
+  }
+}

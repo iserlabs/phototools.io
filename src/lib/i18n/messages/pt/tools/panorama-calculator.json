@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Orientação da câmera",
+      "portrait": "Retrato",
+      "landscape": "Paisagem",
+      "overlap": "Sobreposição: {percent}%",
+      "targetWidth": "Largura do panorama",
+      "rows": "Fileiras",
+      "megapixels": "Resolução da câmera: {mp} MP",
+      "fanLabel": "Diagrama visto de cima de {frames} quadros sobrepostos",
+      "totalShots": "Total de disparos",
+      "perRow": "Quadros × fileiras",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotação entre disparos",
+      "coverage": "Cobertura (H × V)",
+      "frameFov": "Campo de visão por quadro",
+      "stitchedSize": "Tamanho da imagem costurada",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Quanta sobreposição as fotos de um panorama precisam ter?",
+          "answer": "De 25 a 35% é o ponto ideal para a maioria das cenas. O software de costura precisa de detalhes compartilhados entre quadros vizinhos para encontrar pontos de controle; abaixo de 15% ele pode falhar ao alinhar os quadros, e acima de 50% você faz muitos quadros extras com pouco benefício. Use mais sobreposição em cenas com poucos elementos distintos, como céus limpos ou águas calmas."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Por que fotografar panoramas na orientação retrato (vertical)?",
+          "answer": "A orientação retrato captura mais campo de visão vertical por quadro, então o panorama final costurado fica mais alto e deixa espaço para recortes e correção do horizonte. O custo são alguns quadros a mais na horizontal: uma troca que geralmente vale a pena pela flexibilidade e resolução extras."
+        },
+        "what-is-nodal-point": {
+          "question": "O que é o ponto sem paralaxe (ponto nodal)?",
+          "answer": "É o ponto dentro da lente ao redor do qual a câmera pode girar sem que objetos próximos e distantes se desloquem entre si de um quadro para outro. Girar em torno da rosca do tripé causa erros de paralaxe que dificultam a costura, principalmente com objetos próximos em primeiro plano. Cabeças panorâmicas de tripé permitem posicionar o ponto sem paralaxe da lente sobre o eixo de rotação."
+        }
+      }
+    }
+  }
+}

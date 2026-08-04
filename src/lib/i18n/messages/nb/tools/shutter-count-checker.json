@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Slipp et bilde her eller klikk for å bla gjennom (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Hvilke merker lagrer lukkertellingen?",
+      "status": {
+        "supported": "Lesbar",
+        "partial": "Delvis",
+        "unsupported": "Ikke i filene"
+      },
+      "brands": {
+        "nikon": "Nikon skriver lukkertellingen inn i metadataene til hvert bilde, ukryptert. Bruk en uredigert originalfil for best resultat.",
+        "canon": "Canon skriver aldri lukkertellingen inn i bildefiler — den lagres bare inne i kameraet og leses av serviceverktøy eller USB-programmer.",
+        "sony": "Sony lagrer lukkertellingen i en kryptert del av metadataene som ikke kan dekodes i nettleseren. Egne skrivebordsprogrammer kan lese den via USB.",
+        "fujifilm": "Fujifilm-hus registrerer ingen ekte lukkertelling, men noen skriver en bildeteller som gir en grov nedre grense.",
+        "pentax": "Pentax skjuler lukkertellingsfeltet sitt med et chiffer, så det kan ikke leses pålitelig fra filer.",
+        "olympus": "OM System / Olympus-hus holder den fullstendige lukkertellingen i en intern servicemeny; filene inneholder noen ganger en bildeteller som antyder bruken.",
+        "panasonic": "Panasonic skriver ingen lukkertelling til filer. Servicemenyen på kameraet viser den.",
+        "leica": "Leica-hus lagrer som regel ingen lukkertelling i bildefiler."
+      },
+      "countLabel": "Lukkerutløsninger",
+      "source": {
+        "shutterCount": "Lest fra kameraets metadata for lukkertelling — dette er den faktiske mekaniske utløsertelleren.",
+        "mechanicalShutterCount": "Lest fra den mekaniske lukkertelleren — bilder tatt med elektronisk lukker er ikke med.",
+        "imageNumber": "Anslått fra filens bildenummer. Dette er en grov nedre grense, ikke et nøyaktig antall utløsninger — telleren kan nullstilles eller gå rundt."
+      },
+      "ratedLife": "Oppgitt lukkerlevetid",
+      "ratings": {
+        "entry": "Innstegsnivå",
+        "enthusiast": "Entusiast",
+        "advanced": "Avansert",
+        "pro": "Profesjonell",
+        "flagship": "Flaggskip"
+      },
+      "lifeUsed": "{percent} % av oppgitt levetid brukt",
+      "verdict": {
+        "low": "Knapt brukt",
+        "moderate": "Moderat brukt",
+        "high": "Mye brukt",
+        "beyond": "Over oppgitt levetid"
+      },
+      "noCountTitle": "Ingen lukkertelling i denne filen",
+      "noCountGeneric": "Denne filen inneholder ingen lesbar lukkertelling. Prøv et uredigert originalbilde rett fra kameraet — eksporter fra redigeringsprogrammer fjerner ofte produsentens metadata.",
+      "errorRead": "Kunne ikke lese denne filen. Prøv en uredigert JPEG- eller RAW-fil rett fra kameraet.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Hva er lukkertelling?",
+          "answer": "Lukkertellingen er antall ganger kameraets mekaniske lukker har blitt utløst — kameraets svar på kilometerstanden i en bil. Det er den mest sjekkede slitasjeindikatoren ved kjøp eller salg av et brukt kamera, fordi lukkere er dimensjonert for et begrenset antall utløsninger."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Hvor mange lukkerutløsninger er for mange?",
+          "answer": "Det avhenger av kameraklassen. Lukkere i innstegskameraer er dimensjonert for rundt 100 000 utløsninger, entusiasthus for 150 000–200 000 og profesjonelle hus for 300 000–500 000. Tallet er en gjennomsnittlig levetid, ikke en hard grense — mange lukkere varer langt lenger, og en lav telling på et dårlig behandlet hus kan likevel bety problemer."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Hvorfor kan jeg ikke sjekke lukkertellingen på Canon- eller Sony-bildet mitt?",
+          "answer": "Canon skriver aldri lukkertellingen inn i bildefiler i det hele tatt — den finnes bare i kameraets interne minne. Sony skriver den, men krypterer den delen av metadataene. I begge tilfeller kan et nettleserverktøy ikke lese den fra et bilde; skrivebordsprogrammer som kobler til kameraet via USB er den vanlige løsningen."
+        }
+      }
+    }
+  }
+}

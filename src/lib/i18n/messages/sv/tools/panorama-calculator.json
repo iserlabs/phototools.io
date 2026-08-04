@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Kamerans orientering",
+      "portrait": "Stående",
+      "landscape": "Liggande",
+      "overlap": "Överlapp: {percent} %",
+      "targetWidth": "Panoramats bredd",
+      "rows": "Rader",
+      "megapixels": "Kameraupplösning: {mp} MP",
+      "fanLabel": "Diagram ovanifrån av {frames} överlappande bildrutor",
+      "totalShots": "Totalt antal bilder",
+      "perRow": "Bilder × rader",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotation mellan bilder",
+      "coverage": "Täckning (H × V)",
+      "frameFov": "Bildvinkel per bildruta",
+      "stitchedSize": "Sammanfogad storlek",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Hur mycket överlapp behöver panoramabilder?",
+          "answer": "25–35 % är lagom för de flesta scener. Ihopfogningsprogram behöver gemensamma detaljer mellan intilliggande bildrutor för att hitta kontrollpunkter; under 15 % kan det misslyckas med att passa ihop bilderna, medan du över 50 % tar många extra bilder till liten nytta. Använd mer överlapp för scener med få tydliga detaljer, som klar himmel eller stilla vatten."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Varför ta panoraman i stående (vertikal) orientering?",
+          "answer": "Stående orientering fångar mer vertikal bildvinkel per bildruta, så det färdiga panoramat blir högre och lämnar utrymme för beskärning och horisontkorrigering. Priset är några extra bilder på bredden — oftast en bra affär för den extra flexibiliteten och upplösningen."
+        },
+        "what-is-nodal-point": {
+          "question": "Vad är den parallaxfria punkten (nodalpunkten)?",
+          "answer": "Det är punkten inuti objektivet som kameran kan rotera runt utan att nära och avlägsna objekt förskjuts i förhållande till varandra mellan bildrutorna. Roterar man i stället runt stativgängan uppstår parallaxfel som gör ihopfogningen svår, särskilt med nära förgrundsobjekt. Panoramahuvuden låter dig placera objektivets parallaxfria punkt över rotationsaxeln."
+        }
+      }
+    }
+  }
+}

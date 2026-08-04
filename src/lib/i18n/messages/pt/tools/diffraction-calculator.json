@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Resolução: {mp} MP",
+      "aperture": "Abertura",
+      "verdict": {
+        "sharp": "{f} está livre de difração",
+        "borderline": "{f} é levemente suavizada pela difração",
+        "soft": "{f} é visivelmente suavizada pela difração"
+      },
+      "verdictDetail": {
+        "sharp": "Abaixo do limite de difração de {limit} para este sensor e resolução, é a lente — não a difração — que determina a nitidez.",
+        "borderline": "Passado o limite de difração de {limit}, os detalhes finos no nível do pixel começam a borrar. Aceitável quando você precisa da profundidade de campo extra.",
+        "soft": "Bem além do limite de difração de {limit}. A profundidade de campo continua aumentando, mas o detalhe geral degrada visivelmente: considere o empilhamento de foco em vez de fechar ainda mais o diafragma."
+      },
+      "stripLabel": "Escala de aberturas colorida pelo impacto da difração",
+      "pixelPitch": "Pixel pitch",
+      "airyDisk": "Diâmetro do disco de Airy",
+      "diffractionLimit": "Limite de difração",
+      "tableTitle": "Limite de difração por sensor e resolução",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "O que é difração na fotografia?",
+          "answer": "Difração é a curvatura das ondas de luz ao passarem por uma abertura pequena. Quanto menor a abertura (número f mais alto), mais cada ponto de luz se espalha em um disco borrado (o disco de Airy) sobre o sensor. Quando esse disco fica maior que um pixel, os detalhes finos borram, por melhor que seja a lente."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Qual abertura é a mais nítida?",
+          "answer": "A maioria das lentes atinge o pico dois ou três pontos abaixo da abertura máxima: normalmente entre f/4 e f/8 em full frame. Esse ponto ideal equilibra as aberrações da lente (piores em abertura máxima) contra a difração (pior conforme se fecha o diafragma). Sensores de alta resolução atingem o limite de difração mais cedo, então o ponto ideal utilizável deles é mais estreito."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "A difração depende do sensor?",
+          "answer": "O efeito óptico depende apenas da abertura e do comprimento de onda da luz — mas a visibilidade depende do tamanho do pixel. Um sensor full frame de 61 MP tem pixels de ~3,8 µm e mostra a suavização por difração por volta de f/5.6, enquanto um sensor de 12 MP com pixels grandes permanece nítido até f/11. Sensores menores atingem o limite em aberturas mais abertas para a mesma quantidade de megapixels."
+        }
+      }
+    }
+  }
+}

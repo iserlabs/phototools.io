@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Toda vez que a sua câmera tira uma foto com o obturador mecânico, um contador interno soma um. Esse número — a contagem de disparos — é como a quilometragem de um carro: mostra com que intensidade a câmera foi usada. Ele importa principalmente na compra ou venda de equipamento usado, porque obturadores são peças móveis projetadas para um número finito de acionamentos.",
+      "deeper": "Um obturador mecânico é um par de cortinas acionadas por mola que varrem fisicamente o sensor a cada exposição. Os fabricantes testam a vida útil desses mecanismos e publicam valores nominais: cerca de 100.000 acionamentos para corpos de entrada, 150.000–200.000 para modelos de entusiasta e 300.000–500.000 para os profissionais. O valor é uma média estatística, não uma data de validade: muitos obturadores duram várias vezes o valor nominal, e um obturador que falha costuma ser um defeito reparável (embora caro). Onde a contagem fica gravada varia por marca: a Nikon a escreve, sem criptografia, nas notas do fabricante de cada arquivo, e é por isso que esta ferramenta consegue lê-la. A Canon a mantém apenas na memória interna, a Sony a criptografa e a Pentax a ofusca. As câmeras mirrorless modernas complicam ainda mais o quadro: quadros feitos com o obturador eletrônico não desgastam o mecanismo, então um corpo usado sobretudo no modo silencioso pode ter muito mais exposições totais do que a contagem mecânica sugere — e não há problema nisso.",
+      "keyFactors": {
+        "0": {
+          "label": "Marca da câmera",
+          "description": "Determina se a contagem pode ser lida dos arquivos. A Nikon a grava abertamente; Canon, Sony e Pentax não."
+        },
+        "1": {
+          "label": "Vida útil nominal do obturador",
+          "description": "A vida média testada pelo fabricante para o mecanismo do obturador. Corpos de linha superior usam mecanismos mais duráveis, com valores nominais mais altos."
+        },
+        "2": {
+          "label": "Obturador eletrônico vs mecânico",
+          "description": "Quadros com obturador eletrônico causam zero desgaste mecânico e geralmente não incrementam o contador mecânico. Quem fotografa muito no modo silencioso mostra contagens baixas."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Sempre verifique a contagem em um arquivo sem edição, direto da câmera. Exportações do Lightroom, aplicativos de mensagens ou redes sociais costumam remover as notas do fabricante que carregam o contador."
+        },
+        "1": {
+          "text": "Ao comprar usado, pese a contagem contra o valor nominal: 40.000 em um corpo projetado para 300.000 está apenas amaciado, enquanto 90.000 em um corpo de 100.000 já embute no preço uma troca de obturador."
+        },
+        "2": {
+          "text": "Uma contagem baixa não garante uma câmera saudável: danos por água, riscos no sensor e quedas não aparecem no contador. Inspecione também fotos de teste e o próprio corpo."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Contagem de disparos",
+          "definition": "O número de vezes que o obturador mecânico foi acionado ao longo da vida da câmera. Lida dos metadados que a câmera embute em cada foto."
+        },
+        "ratedLife": {
+          "term": "Vida útil nominal do obturador",
+          "definition": "O número médio de acionamentos, testado pelo fabricante, antes de o obturador falhar. Uma média, não um limite rígido: muitos obturadores a superam de longe."
+        },
+        "source": {
+          "term": "Origem da contagem",
+          "definition": "De onde o número foi lido: o campo verdadeiro de contagem de disparos, o contador apenas mecânico de algumas mirrorless ou um número de imagem genérico usado como aproximação."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Você faz 500 fotos em um show usando o obturador eletrônico silencioso da sua mirrorless. Quanto desgaste isso adicionou ao obturador mecânico?",
+          "hint": "Pense no que se move fisicamente durante uma exposição com obturador eletrônico.",
+          "successMessage": "Correto! O obturador eletrônico lê o sensor sem mover cortina nenhuma, então esses 500 quadros não causaram praticamente nenhum desgaste mecânico — e normalmente não incrementam o contador mecânico.",
+          "failureMessage": "O obturador eletrônico expõe lendo o sensor eletronicamente: nenhuma cortina se move, então fotografar em silêncio não adiciona desgaste mecânico ao obturador.",
+          "options": {
+            "0": { "label": "500 acionamentos, como qualquer foto" },
+            "1": { "label": "Nenhum: só o uso do obturador mecânico conta" },
+            "2": { "label": "Só arquivos RAW adicionam desgaste" },
+            "3": { "label": "Só fotos com flash adicionam desgaste" }
+          }
+        },
+        "1": {
+          "scenario": "Uma câmera é projetada para 200.000 acionamentos e mostra atualmente 195.000. O que o valor nominal realmente significa para este corpo?",
+          "hint": "Os valores nominais vêm de testes estatísticos de vida útil, como as horas nominais de uma lâmpada.",
+          "successMessage": "Isso! O valor nominal é a vida média obtida em testes: este obturador pode falhar na semana que vem ou chegar a 400.000. É um sinal de probabilidade para precificar, não uma contagem regressiva.",
+          "failureMessage": "O valor nominal do obturador é a vida média testada, não um limite rígido nem uma garantia. Muitos obturadores duram bem mais; alguns falham antes.",
+          "options": {
+            "0": { "label": "O obturador vai parar aos 200.000" },
+            "1": { "label": "É a vida média: a chance de falha cresce perto dela" },
+            "2": { "label": "A garantia termina aos 200.000" },
+            "3": { "label": "A bateria degrada depois de 200.000" }
+          }
+        },
+        "2": {
+          "scenario": "Você compara duas câmeras usadas do mesmo modelo: uma com 15.000 acionamentos e corrosão visível perto da tampa da bateria, outra com 60.000 acionamentos em estado impecável. Qual é a compra mais segura?",
+          "hint": "O contador só registra um tipo de desgaste.",
+          "successMessage": "Exatamente. A contagem de disparos é um sinal entre vários: corrosão sugere exposição à água, que mata câmeras com muito mais frequência do que obturadores gastos. O corpo limpo com 60.000 é a compra mais segura.",
+          "failureMessage": "A contagem de disparos só mede o desgaste do obturador. Corrosão aponta para dano por água, muito mais arriscado do que um obturador com uso moderado. Avalie contagem mais estado, nunca a contagem sozinha.",
+          "options": {
+            "0": { "label": "O corpo de 15.000: menos é sempre melhor" },
+            "1": { "label": "O que for mais barato" },
+            "2": { "label": "O corpo limpo de 60.000: o estado importa mais" },
+            "3": { "label": "Nenhum: os dois são velhos demais" }
+          }
+        }
+      }
+    }
+  }
+}

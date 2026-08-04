@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Húzzon ide egy fotót, vagy kattintson a tallózáshoz (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Húzzon ide bármilyen fotót a vizsgálni kívánt kamerából. Minden a böngészőjében kerül kiolvasásra — a fájl soha nem hagyja el az eszközét.",
+      "errorRead": "Nem sikerült beolvasni a fájlt. Próbáljon meg egy szerkesztetlen, közvetlenül a kamerából származó JPEG vagy RAW fájlt.",
+      "errorNoMetadata": "Ez a fájl nem tartalmaz kamera-metaadatokat. A képszerkesztőkből és üzenetküldőkből exportált fájlokból gyakran hiányoznak — próbáljon meg egy szerkesztetlen eredeti fájlt.",
+      "sections": {
+        "body": "Kameraváz",
+        "age": "Kor",
+        "shutter": "Zár-élettartam",
+        "lens": "Objektív"
+      },
+      "cameraModel": "Modell",
+      "make": "Gyártó",
+      "serialNumber": "Sorozatszám",
+      "firmware": "Firmware / szoftver",
+      "bodyAge": "Váz kora",
+      "ageValue": "~{years} év ({year}-ben jelent meg)",
+      "ageUnknown": "Ez a modell nincs a megjelenési adatbázisunkban, ezért a korát nem tudtuk megbecsülni.",
+      "shotDate": "Fotó készült",
+      "shutterCount": "Zárszámláló",
+      "ratedLife": "Névleges élettartam",
+      "ratedAssumed": "(feltételezett)",
+      "lifeUsed": "A névleges élettartam {percent}%-a elhasználva",
+      "verdict": {
+        "low": "Alig használt",
+        "moderate": "Mérsékelt használat",
+        "high": "Intenzív használat",
+        "beyond": "Élettartamon túl"
+      },
+      "shutterUnavailable": {
+        "supported": "Nem található zárszámláló, pedig a {brand} általában rögzíti. Próbáljon meg egy szerkesztetlen eredeti fájlt — a képszerkesztők gyakran eltávolítják a gyártói metaadatokat.",
+        "partial": "A {brand} csak durva képkocka-számlálót ír egyes fájlokba, ebben pedig nincs. A kamera saját menüje vagy egy USB-s segédprogram megmutathatja.",
+        "unsupported": "A {brand} nem tárol kiolvasható zárszámlálót a képfájlokban. Márkaspecifikus alternatívákért nézze meg a Zárszámláló-ellenőrző eszköz oldalát.",
+        "unknown": "Ebben a fájlban nincs kiolvasható zárszámláló."
+      },
+      "lensModel": "Objektív",
+      "lensSerial": "Objektív sorozatszáma",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Mit ellenőrizzek használt kamera vásárlásakor?",
+          "answer": "A külsőn túl: a zárszámlálót a névleges élettartamhoz viszonyítva, a váz korát és a firmware-verziót, hogy a sorozatszám egyezik-e az eladó papírjaival (és nem szerepel-e lopott eszközként), az érzékelő állapotát (keressen port és karcokat egy tiszta égboltról f/16-tal készült tesztfotón), valamint hogy minden tárcsa, csatlakozó és az objektívbajonett simán működjön."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Honnan származnak ezek az állapotadatok?",
+          "answer": "Minden a fotójába ágyazott metaadatokból kerül kiolvasásra: a szabványos EXIF-mezőkből (modell, sorozatszám, firmware, objektív, felvétel dátuma), valamint ahol elérhetők, a gyártói maker notes bejegyzésekből (zárszámláló). A váz korát a népszerű kameramodellek megjelenési éveit tartalmazó beépített adatbázisból becsüljük."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Feltöltődik a fotóm egy szerverre?",
+          "answer": "Nem. A fájlt teljes egészében a böngészője dolgozza fel JavaScripttel — soha nem hagyja el az eszközét, és semmi sem tárolódik. Ellenőrizheti is: töltse be az oldalt, majd kapcsolja ki az internetkapcsolatot, mielőtt behúzna egy fájlt."
+        }
+      }
+    }
+  }
+}

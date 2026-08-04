@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Analyzátor katalogu Lightroom — bezplatné statistiky jen v prohlížeči",
       "description": "Analyzujte svůj katalog Lightroom Classic lokálně ve svém prohlížeči. Prohlédněte si výbavu, ohniskové vzdálenosti, návyky u clony, hodnocení a další. 100% lokálně — váš katalog se nikdy nenahrává."
+    },
+    "shutter-count-checker": {
+      "title": "Kontrola počtu expozic — zdarma a soukromě",
+      "description": "Zjisti počet expozic svého fotoaparátu z fotky, zdarma a 100 % ve tvém prohlížeči. Funguje s JPEG i RAW soubory od Nikonu a nabízí jasný návod pro Canon, Sony a další značky."
+    },
+    "camera-health-checker": {
+      "title": "Kontrola stavu fotoaparátu",
+      "description": "Prověř tělo fotoaparátu z jediné fotky: model, sériové číslo, firmware, stáří těla, objektiv a životnost závěrky. Vše běží ve tvém prohlížeči — ideální na kontrolu použitých fotoaparátů před koupí."
+    },
+    "panorama-calculator": {
+      "title": "Kalkulačka panoramat",
+      "description": "Naplánuj spojovaná panoramata: kolik snímků potřebuješ, o kolik se mezi nimi otočit a jaké bude výsledné rozlišení — pro libovolný objektiv, snímač a překryv."
+    },
+    "diffraction-calculator": {
+      "title": "Kalkulačka difrakčního limitu",
+      "description": "Zjisti difrakční limit svého fotoaparátu: clonu, od které začne zaclonění změkčovat snímky. Vychází z rozteče pixelů a Airyho disku, pro libovolný snímač a rozlišení."
+    },
+    "photography-cheat-sheet": {
+      "title": "Fotografický tahák — nastavení fotoaparátu podle situace",
+      "description": "Taháky s nastavením fotoaparátu na portréty, krajinu, divokou přírodu, Mléčnou dráhu a další situace. Osvědčené výchozí body, které si stáhneš jako obrázek nebo vytiskneš."
     }
   }
 }

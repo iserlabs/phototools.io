@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Toda situação de fotografia — retratos, vida selvagem, a Via Láctea — tem uma combinação consagrada de abertura, velocidade do obturador e ISO que os fotógrafos experientes buscam primeiro. Estas folhas de referência entregam esse ponto de partida na hora, para você dedicar a atenção à luz e à composição em vez de ficar em dúvida com os controles.",
+      "deeper": "Cada receita aqui é uma aplicação do triângulo de exposição com um lado priorizado. Retratos priorizam a abertura: aberturas amplas (f/1.8–f/2.8) separam o assunto do fundo, e todo o resto se adapta a isso. Ação prioriza a velocidade do obturador: 1/1000s congela o movimento, então a abertura se abre e o ISO sobe para alimentá-la de luz. Paisagens priorizam a qualidade de imagem: ISO base e uma abertura média no ponto ideal da lente, com um tripé absorvendo a velocidade do obturador que resultar. Cenas noturnas forçam os três lados ao mesmo tempo, e é por isso que têm as receitas mais rígidas: a Via Láctea exige de fato uma lente clara em abertura máxima, um obturador abaixo de ~20 segundos (antes de a rotação da Terra deixar rastros nas estrelas) e o ISO que tornar o histograma utilizável. Entender qual lado cada cenário prioriza é a verdadeira lição: quando você enxerga a prioridade, consegue adaptar qualquer receita à luz à sua frente em vez de segui-la cegamente. As faixas são pontos de partida calibrados para condições típicas; a palavra final é do seu histograma, não da folha.",
+      "keyFactors": {
+        "0": {
+          "label": "Prioridade do cenário",
+          "description": "Cada situação trava primeiro uma variável de exposição — abertura para retratos, obturador para ação, ISO para paisagens — e deixa as outras se adaptarem."
+        },
+        "1": {
+          "label": "Luz disponível",
+          "description": "O mesmo cenário exige configurações diferentes ao meio-dia e ao anoitecer. Trate as faixas como âncoras e mova-se dentro delas conforme a luz muda."
+        },
+        "2": {
+          "label": "Apoio e estabilidade",
+          "description": "Um tripé libera o ISO base e obturadores lentos em cenas estáticas. À mão livre, o piso de velocidade fica em torno de 1/(distância focal) ou mais rápido."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Faça uma foto de teste e leia o histograma, não a pré-visualização do LCD: as telas mentem sob sol forte e à noite; o histograma, nunca."
+        },
+        "1": {
+          "text": "Memorize uma receita por gênero que você fotografa e pratique ajustando uma única variável por vez. Você vai internalizar as trocas muito mais rápido do que mudando tudo de uma vez."
+        },
+        "2": {
+          "text": "Baixe a folha dos cenários que você fotografa raramente: a receita da Via Láctea é difícil de lembrar às 2 da manhã na encosta de uma montanha, com os dedos gelados."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Abertura",
+          "definition": "O tamanho da abertura da lente, em números f. Números menores = mais luz e mais desfoque de fundo; números maiores = mais profundidade de campo."
+        },
+        "shutter": {
+          "term": "Velocidade do obturador",
+          "definition": "Por quanto tempo o sensor coleta luz. Velocidades rápidas congelam o movimento; velocidades lentas o borram e exigem estabilização ou tripé."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "A amplificação do sensor. Mantenha-o tão baixo quanto a luz permitir: aumentá-lo clareia a imagem ao custo de ruído."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Você está fazendo um retrato e quer o visual clássico: assunto nítido, fundo derretido em desfoque. Qual escolha de configuração consegue isso?",
+          "hint": "O desfoque de fundo vem da profundidade de campo: qual controle comanda isso?",
+          "successMessage": "Correto! Uma abertura ampla (como f/1.8–f/2.8) cria a profundidade de campo rasa que separa o assunto de um fundo desfocado: a escolha que define o retrato.",
+          "failureMessage": "O desfoque de fundo vem de uma abertura ampla (número f baixo) como f/1.8–f/2.8, que deixa a profundidade de campo rasa. Aberturas fechadas fazem o oposto.",
+          "options": {
+            "0": { "label": "Uma abertura fechada como f/16" },
+            "1": { "label": "Uma abertura ampla como f/2" },
+            "2": { "label": "Uma longa exposição no tripé" },
+            "3": { "label": "ISO no máximo" }
+          }
+        },
+        "1": {
+          "scenario": "Uma garça levanta voo da água bem na hora em que você aperta o disparador, e todos os quadros mostram as pontas das asas borradas. Qual é a solução?",
+          "hint": "Borrão de movimento é um problema de tempo.",
+          "successMessage": "Isso! Aves em voo pedem velocidades rápidas: 1/2500s ou mais rápido congela as batidas de asa. Abra a abertura e deixe o ISO automático subir para alimentar a velocidade de que você precisa.",
+          "failureMessage": "Asas borradas significam que o obturador está lento demais para o movimento. Suba para 1/2500s ou mais rápido e deixe a abertura e o ISO compensarem a luz perdida.",
+          "options": {
+            "0": { "label": "Um obturador mais lento para mais luz" },
+            "1": { "label": "Uma velocidade do obturador muito mais rápida" },
+            "2": { "label": "Fechar para f/22" },
+            "3": { "label": "Mudar o balanço de branco para tungstênio" }
+          }
+        },
+        "2": {
+          "scenario": "Você está montado sob um céu escuro para fotografar a Via Láctea. Qual combinação consegue uma exposição utilizável do núcleo galáctico?",
+          "hint": "As estrelas são fracas, se movem (com a rotação da Terra) e são sua única fonte de luz.",
+          "successMessage": "Correto! Abertura máxima (f/1.4–f/2.8), 10–25 segundos, ISO 1600–6400: a abertura coleta o máximo de luz, o obturador para antes de as estrelas deixarem rastros e o ISO alto torna o núcleo fraco visível.",
+          "failureMessage": "A Via Láctea precisa de tudo: abertura totalmente aberta, uma exposição curta o bastante para as estrelas não deixarem rastros (10–25s) e ISO alto (1600–6400). Aberturas pequenas ou ISO base deixam o céu preto.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Abertura máxima, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Qualquer configuração com um filtro ND" }
+          }
+        }
+      }
+    }
+  }
+}

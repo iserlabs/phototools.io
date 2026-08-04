@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { pixelPitch, diffractionLimitedAperture } from './diffraction'
+import { pixelPitch, diffractionLimitedAperture, airyDiskDiameterUm, apertureVerdict } from './diffraction'
 
 describe('pixelPitch', () => {
   it('24MP FF sensor (36mm wide) has ~6µm pixel pitch', () => {
@@ -51,5 +51,54 @@ describe('diffractionLimitedAperture', () => {
     const limit12 = diffractionLimitedAperture(pixelPitch(36, 12))
     const limit24 = diffractionLimitedAperture(pixelPitch(36, 24))
     expect(limit12).toBeGreaterThan(limit24)
+  })
+})
+
+describe('airyDiskDiameterUm', () => {
+  it('f/8 in green light (550nm) produces a ~10.7µm Airy disk', () => {
+    // 2.44 × 0.55 × 8 = 10.736
+    expect(airyDiskDiameterUm(8)).toBeCloseTo(10.74, 1)
+  })
+
+  it('scales linearly with f-number', () => {
+    expect(airyDiskDiameterUm(16)).toBeCloseTo(airyDiskDiameterUm(8) * 2, 5)
+  })
+
+  it('longer wavelengths diffract more', () => {
+    expect(airyDiskDiameterUm(8, 650)).toBeGreaterThan(airyDiskDiameterUm(8, 450))
+  })
+
+  it('at the diffraction-limited aperture the Airy disk is ~1.6x the pixel pitch', () => {
+    // The 0.67 constant targets the Airy radius ≈ pitch; diameter/pitch = 2.44·0.55/0.67·...
+    const pitch = 6.0
+    const limit = diffractionLimitedAperture(pitch)
+    expect(airyDiskDiameterUm(limit) / pitch).toBeCloseTo(2.0, 0)
+  })
+})
+
+describe('apertureVerdict', () => {
+  const limit = diffractionLimitedAperture(pixelPitch(36, 24)) // ~f/9 on 24MP FF
+
+  it('apertures at or below the limit are sharp', () => {
+    expect(apertureVerdict(5.6, limit)).toBe('sharp')
+    expect(apertureVerdict(8, limit)).toBe('sharp')
+    expect(apertureVerdict(limit, limit)).toBe('sharp')
+  })
+
+  it('up to ~1 stop past the limit is borderline, not soft', () => {
+    expect(apertureVerdict(11, limit)).toBe('borderline')
+    expect(apertureVerdict(limit * 1.5, limit)).toBe('borderline')
+  })
+
+  it('well past the limit is soft', () => {
+    expect(apertureVerdict(16, limit)).toBe('soft')
+    expect(apertureVerdict(22, limit)).toBe('soft')
+  })
+
+  it('a high-resolution sensor turns an aperture soft that a low-resolution one keeps sharp', () => {
+    const limit61 = diffractionLimitedAperture(pixelPitch(36, 61))
+    const limit12 = diffractionLimitedAperture(pixelPitch(36, 12))
+    expect(apertureVerdict(11, limit61)).toBe('soft')
+    expect(apertureVerdict(11, limit12)).toBe('sharp')
   })
 })

@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Mengecilkan aperture meningkatkan kedalaman medan — tetapi melepasi titik tertentu, ia mula menjadikan keseluruhan imej lebih lembut dan bukannya lebih tajam. Itulah pembelauan: gelombang cahaya membengkok semasa menyusup melalui bukaan yang kecil. Kalkulator ini menunjukkan dengan tepat di mana titik itu untuk kamera anda, supaya anda tahu sejauh mana boleh mengecilkan aperture sebelum membayar penalti ketajaman.",
+      "deeper": "Apabila cahaya melalui aperture, setiap titik dalam pemandangan jatuh pada sensor bukan sebagai titik tetapi sebagai corak pembelauan kecil — teras terang yang dipanggil cakera Airy, dikelilingi halo samar. Diameter cakera itu membesar berkadar terus dengan nombor-f: kira-kira 2.44 × panjang gelombang × N, yang pada f/8 dalam cahaya hijau sudah pun ~10.7 µm. Sama ada itu penting bergantung pada piksel anda. Sensor bingkai penuh 24 MP mempunyai piksel ~6 µm; sensor 61 MP mempunyai piksel ~3.8 µm. Sebaik sahaja cakera Airy tumbuh jelas lebih besar daripada satu piksel, perincian yang sepatutnya dapat dileraikan oleh sensor terpalit merentasi piksel bersebelahan, dan tiada kualiti lensa yang dapat memulihkannya. Inilah sebabnya f/11 yang sama, yang kelihatan baik pada badan lama 12 MP, melembutkan dengan ketara fail daripada sensor beresolusi tinggi moden, dan sebabnya kamera kompak dengan piksel kecil jarang menawarkan aperture melebihi f/8. Peraturan praktikal industri yang digunakan di sini — had ≈ jarak piksel / 0.67 — menandakan titik di mana pelembutan menjadi boleh diukur, bukan titik di mana imej hancur: mengecilkan satu stop melepasi had selalunya pertukaran berbaloi untuk kedalaman medan. Melepasi dua stop, focus stacking mengalahkan pengecilan aperture.",
+      "keyFactors": {
+        "0": {
+          "label": "Aperture (nombor-f)",
+          "description": "Satu-satunya kawalan ke atas pembelauan itu sendiri: diameter cakera Airy berskala linear dengan nombor-f. f/16 menyebarkan cahaya dua kali lebih lebar daripada f/8."
+        },
+        "1": {
+          "label": "Jarak Piksel",
+          "description": "Saiz fizikal satu piksel, ditetapkan oleh saiz sensor dan megapiksel bersama-sama. Piksel lebih kecil meleraikan lebih perincian — dan mendedahkan pembelauan lebih awal."
+        },
+        "2": {
+          "label": "Saiz Output",
+          "description": "Pembelauan yang kelihatan pada 100% di skrin mungkin tidak kelihatan dalam eksport bersaiz web atau cetakan sederhana. Nilaikan ketajaman pada saiz yang sebenarnya akan anda gunakan."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Cari julat terbaik lensa anda: ambil pemandangan terperinci yang sama pada setiap stop penuh dan bandingkan pada 100%. Kebanyakan lensa mencapai puncak dua hingga tiga stop dari bukaan penuh, tepat sebelum pembelauan mengambil alih."
+        },
+        "1": {
+          "text": "Untuk landskap yang memerlukan fokus mendalam pada badan beresolusi tinggi, cuba jarak hiperfokal pada f/8 sebelum beralih kepada f/16 — penempatan fokus yang tepat sering membeli lebih ketajaman daripada aperture yang lebih kecil."
+        },
+        "2": {
+          "text": "Dalam kerja makro, aperture berkesan membesar dengan pembesaran (f/11 pada 1:1 bertindak seperti f/22), jadi pembelauan menggigit jauh lebih awal daripada yang ditunjukkan oleh dail. Focus stacking pada aperture sederhana ialah jalan keluar yang tajam."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Jarak Piksel",
+          "definition": "Lebar satu piksel pada sensor, dalam mikrometer. Dikira daripada lebar sensor dibahagikan dengan kiraan piksel mendatar — 24 MP bingkai penuh ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Cakera Airy",
+          "definition": "Corak pembelauan yang dibentuk oleh satu titik cahaya selepas melalui aperture: teras terang dengan gelang samar. Diameternya ≈ 2.44 × panjang gelombang × nombor-f."
+        },
+        "diffractionLimit": {
+          "term": "Had Pembelauan",
+          "definition": "Nombor-f di mana cakera Airy melebihi saiz piksel dan ketajaman setiap piksel mula menurun — lebih kurang jarak piksel (µm) ÷ 0.67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Anda mengecilkan lensa daripada f/8 kepada f/22 untuk kedalaman medan maksimum, tetapi perincian halus dalam imej anda menjadi lebih lembut di mana-mana — malah pada satah fokus. Apa yang berlaku?",
+          "hint": "Ia fizik, bukan kecacatan lensa.",
+          "successMessage": "Betul! Cahaya membengkok (membelau) semasa melalui aperture yang kecil, menyebarkan setiap titik menjadi cakera yang lebih besar daripada piksel. Pada f/22 pelembutan ini menjejaskan keseluruhan bingkai, termasuk satah fokus.",
+          "failureMessage": "Ini pembelauan: gelombang cahaya membengkok di sekeliling bilah aperture, menyebarkan setiap titik cahaya menjadi cakera kabur. Ia menjejaskan keseluruhan imej sama rata, tidak kira kualiti lensa.",
+          "options": {
+            "0": { "label": "Lensa itu dibuat dengan buruk" },
+            "1": { "label": "Cahaya membengkok melalui bukaan yang kecil" },
+            "2": { "label": "Sensor terlalu panas pada aperture kecil" },
+            "3": { "label": "Hingar ISO meningkat" }
+          }
+        },
+        "1": {
+          "scenario": "Anda menaik taraf daripada kamera bingkai penuh 24 MP kepada 61 MP. Apakah yang berlaku kepada aperture di mana pembelauan menjadi kelihatan?",
+          "hint": "Lebih banyak megapiksel pada kawasan sensor yang sama bermakna piksel lebih kecil.",
+          "successMessage": "Betul! Piksel ~3.8 µm sensor 61 MP meleraikan cakera Airy lebih awal, jadi had pembelauan turun daripada kira-kira f/9 kepada kira-kira f/5.6. Sensor beresolusi tinggi mempunyai julat aperture terbaik yang lebih sempit.",
+          "failureMessage": "Piksel lebih kecil mendedahkan pembelauan lebih awal. Had pembelauan sensor 61 MP adalah sekitar f/5.6, berbanding f/9 untuk sensor 24 MP — had bergerak ke aperture yang lebih luas.",
+          "options": {
+            "0": { "label": "Ia bergerak ke aperture lebih kecil (nombor-f lebih tinggi)" },
+            "1": { "label": "Ia bergerak ke aperture lebih luas (nombor-f lebih rendah)" },
+            "2": { "label": "Ia tidak berubah" },
+            "3": { "label": "Pembelauan hilang dengan lebih banyak megapiksel" }
+          }
+        },
+        "2": {
+          "scenario": "Anda mengambil landskap dengan kamera bingkai penuh 45 MP dan mahukan ketajaman keseluruhan maksimum dengan kedalaman medan yang baik. Julat aperture manakah titik permulaan terbaik?",
+          "hint": "Imbangkan aberasi lensa (teruk pada bukaan penuh) dengan pembelauan (teruk apabila dikecilkan).",
+          "successMessage": "Betul! f/8–f/11 berada tepat di sekitar had pembelauan untuk piksel ~4.4 µm sambil memberikan kedalaman medan yang besar — julat terbaik klasik landskap pada bingkai penuh beresolusi tinggi.",
+          "failureMessage": "f/8–f/11 mengimbangi kedalaman medan dengan pembelauan untuk sensor bingkai penuh 45 MP. f/22 melembutkan perincian halus dengan ketara, dan bukaan penuh kekurangan kedalaman medan.",
+          "options": {
+            "0": { "label": "Sentiasa f/22 untuk kedalaman maksimum" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Bukaan penuh" },
+            "3": { "label": "Ia bergantung pada ISO sahaja" }
+          }
+        }
+      }
+    }
+  }
+}

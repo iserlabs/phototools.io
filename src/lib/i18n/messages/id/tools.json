@@ -65,8 +65,28 @@
       "description": "Bandingkan megapiksel, visualisasikan ukuran cetak, dan lihat ukuran file di berbagai rasio aspek dan DPI"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
+      "name": "Penganalisis Katalog Lightroom",
       "description": "Analisis katalog Lightroom Classic Anda — gear, panjang fokus, apertur, rating, dan lainnya — 100% di browser Anda"
+    },
+    "shutter-count-checker": {
+      "name": "Pemeriksa Shutter Count",
+      "description": "Periksa shutter count kamera Anda dari sebuah foto — 100% di browser Anda"
+    },
+    "camera-health-checker": {
+      "name": "Pemeriksa Kesehatan Kamera",
+      "description": "Periksa usia, firmware, nomor seri, dan umur rana bodi kamera dari satu foto saja"
+    },
+    "panorama-calculator": {
+      "name": "Kalkulator Panorama",
+      "description": "Rencanakan foto panorama — jumlah frame, tumpang tindih, dan rotasi antar jepretan"
+    },
+    "diffraction-calculator": {
+      "name": "Kalkulator Batas Difraksi",
+      "description": "Temukan apertur tempat difraksi mulai melunakkan gambar Anda"
+    },
+    "photography-cheat-sheet": {
+      "name": "Cheat Sheet Fotografi",
+      "description": "Cheat sheet pengaturan kamera untuk skenario pemotretan umum — dapat diunduh dan dicetak"
     }
   }
 }

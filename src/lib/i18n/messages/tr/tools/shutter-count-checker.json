@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Bir fotoğrafı buraya sürükleyin veya tıklayıp seçin (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Hangi markalar deklanşör sayısını kaydeder?",
+      "status": {
+        "supported": "Okunabilir",
+        "partial": "Kısmi",
+        "unsupported": "Dosyalarda yok"
+      },
+      "brands": {
+        "nikon": "Nikon, deklanşör sayısını her fotoğrafın meta verisine şifrelemeden yazar. En iyi sonuç için düzenlenmemiş orijinal bir dosya kullanın.",
+        "canon": "Canon, deklanşör sayısını görüntü dosyalarına asla yazmaz — sayı yalnızca kameranın içinde tutulur ve servis araçları veya USB yardımcı programlarıyla okunur.",
+        "sony": "Sony, deklanşör sayısını meta verisinin şifrelenmiş bir bölümünde saklar ve bu bölüm tarayıcıda çözülemez. Özel masaüstü yardımcı programları sayıyı USB üzerinden okuyabilir.",
+        "fujifilm": "Fujifilm gövdeleri gerçek bir deklanşör sayısı kaydetmez, ancak bazıları kaba bir alt sınır veren bir kare sayacı yazar.",
+        "pentax": "Pentax, deklanşör sayısı alanını bir şifreyle gizler, bu yüzden dosyalardan güvenilir biçimde okunamaz.",
+        "olympus": "OM System / Olympus gövdeleri tam deklanşör sayısını dahili bir servis menüsünde tutar; dosyalar bazen kullanımı ima eden bir kare sayacı taşır.",
+        "panasonic": "Panasonic, dosyalara deklanşör sayısı yazmaz. Sayıyı kameranın servis menüsü bildirir.",
+        "leica": "Leica gövdeleri genellikle görüntü dosyalarında deklanşör sayısı saklamaz."
+      },
+      "countLabel": "Deklanşör sayısı",
+      "source": {
+        "shutterCount": "Kameranın deklanşör sayısı meta verisinden okundu — bu, gerçek mekanik tetiklenme sayacıdır.",
+        "mechanicalShutterCount": "Mekanik deklanşör sayacından okundu — elektronik deklanşörle çekilen kareler dahil değildir.",
+        "imageNumber": "Dosyanın görüntü numarasından tahmin edildi. Bu, kesin bir tetiklenme sayısı değil kaba bir alt sınırdır — sayaç sıfırlanabilir veya başa dönebilir."
+      },
+      "ratedLife": "Öngörülen deklanşör ömrü",
+      "ratings": {
+        "entry": "Giriş seviyesi",
+        "enthusiast": "Meraklı",
+        "advanced": "İleri seviye",
+        "pro": "Profesyonel",
+        "flagship": "Amiral gemisi"
+      },
+      "lifeUsed": "Öngörülen ömrün %{percent} kadarı kullanılmış",
+      "verdict": {
+        "low": "Neredeyse hiç kullanılmamış",
+        "moderate": "Orta düzey kullanım",
+        "high": "Yoğun kullanım",
+        "beyond": "Öngörülen ömrü aşmış"
+      },
+      "noCountTitle": "Bu dosyada deklanşör sayısı yok",
+      "noCountGeneric": "Bu dosya okunabilir bir deklanşör sayısı içermiyor. Doğrudan kameradan çıkmış, düzenlenmemiş orijinal bir fotoğraf deneyin — düzenleme uygulamalarından yapılan dışa aktarımlar üretici meta verilerini genellikle siler.",
+      "errorRead": "Bu dosya okunamadı. Doğrudan kameradan çıkmış, düzenlenmemiş bir JPEG veya RAW dosyası deneyin.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Deklanşör sayısı nedir?",
+          "answer": "Deklanşör sayısı, kameranın mekanik deklanşörünün kaç kez çalıştığını gösterir — bir arabanın kilometresinin kamera karşılığıdır. İkinci el bir kamera alırken veya satarken en çok bakılan yıpranma göstergesidir, çünkü deklanşörler sınırlı sayıda tetiklenme için tasarlanır."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Kaç deklanşör tetiklenmesi çok fazladır?",
+          "answer": "Kameranın sınıfına bağlıdır. Giriş seviyesi deklanşörler yaklaşık 100.000 tetiklenme, meraklı gövdeleri 150.000–200.000, profesyonel gövdeler ise 300.000–500.000 için derecelendirilir. Bu değer kesin bir sınır değil ortalama bir ömürdür — birçok deklanşör bunun çok ötesine geçer; kötü muamele görmüş bir gövdede düşük sayı da sorun anlamına gelebilir."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Canon veya Sony fotoğrafımda deklanşör sayısını neden kontrol edemiyorum?",
+          "answer": "Canon, deklanşör sayısını görüntü dosyalarına hiç yazmaz — sayı yalnızca kameranın dahili belleğinde bulunur. Sony yazar, ancak meta verisinin o bölümünü şifreler. Her iki durumda da bir tarayıcı aracı sayıyı fotoğraftan okuyamaz; kameraya USB üzerinden bağlanan masaüstü yardımcı programları olağan çözümdür."
+        }
+      }
+    }
+  }
+}

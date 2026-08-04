@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom Katalog Analizci",
       "description": "Lightroom Classic kataloğunuzu analiz edin — ekipman, odak uzaklığı, diyaframlar, derecelendirmeler ve daha fazlası — %100 tarayıcınızda"
+    },
+    "shutter-count-checker": {
+      "name": "Deklanşör Sayısı Kontrolü",
+      "description": "Kameranızın deklanşör sayısını bir fotoğraftan öğrenin — %100 tarayıcınızda"
+    },
+    "camera-health-checker": {
+      "name": "Kamera Sağlık Kontrolü",
+      "description": "Bir gövdenin yaşını, donanım yazılımını, seri numarasını ve deklanşör ömrünü tek bir fotoğraftan inceleyin"
+    },
+    "panorama-calculator": {
+      "name": "Panorama Hesaplayıcı",
+      "description": "Panorama çekimlerini planlayın — kare sayısı, örtüşme ve çekimler arası dönüş"
+    },
+    "diffraction-calculator": {
+      "name": "Kırınım Sınırı Hesaplayıcı",
+      "description": "Kırınımın görüntülerinizi yumuşatmaya başladığı diyaframı bulun"
+    },
+    "photography-cheat-sheet": {
+      "name": "Fotoğrafçılık Kopya Kağıdı",
+      "description": "Yaygın çekim senaryoları için kamera ayarı kopya kağıtları — indirilebilir ve yazdırılabilir"
     }
   }
 }

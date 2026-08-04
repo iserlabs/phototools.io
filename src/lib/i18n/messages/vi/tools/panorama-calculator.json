@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Cảm biến",
+      "orientation": "Hướng máy ảnh",
+      "portrait": "Dọc",
+      "landscape": "Ngang",
+      "overlap": "Chồng lấn: {percent}%",
+      "targetWidth": "Chiều rộng panorama",
+      "rows": "Số hàng",
+      "megapixels": "Độ phân giải máy: {mp} MP",
+      "fanLabel": "Sơ đồ nhìn từ trên xuống của {frames} khung hình chồng lấn",
+      "totalShots": "Tổng số ảnh chụp",
+      "perRow": "Khung hình × hàng",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Góc xoay giữa các lần chụp",
+      "coverage": "Vùng bao phủ (N × D)",
+      "frameFov": "Góc nhìn một khung hình",
+      "stitchedSize": "Kích thước sau ghép",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Ảnh panorama cần chồng lấn bao nhiêu?",
+          "answer": "25–35% là mức lý tưởng cho hầu hết cảnh. Phần mềm ghép ảnh cần chi tiết chung giữa các khung hình liền kề để tìm điểm khớp; dưới 15% nó có thể không căn chỉnh được các khung hình, còn trên 50% bạn chụp thêm nhiều ảnh mà chẳng được lợi bao nhiêu. Hãy dùng độ chồng lấn cao hơn với những cảnh ít chi tiết đặc trưng, như bầu trời quang hoặc mặt nước lặng."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Tại sao nên chụp panorama theo hướng dọc?",
+          "answer": "Hướng dọc thu được nhiều góc nhìn theo chiều đứng hơn mỗi khung hình, nên bức panorama sau khi ghép sẽ cao hơn và còn chỗ để cắt cúp cũng như chỉnh đường chân trời. Cái giá là phải chụp thêm vài khung theo chiều ngang — thường là đánh đổi xứng đáng cho sự linh hoạt và độ phân giải tăng thêm."
+        },
+        "what-is-nodal-point": {
+          "question": "Điểm không thị sai (điểm nút) là gì?",
+          "answer": "Đó là điểm bên trong ống kính mà khi máy xoay quanh nó, các vật thể gần và xa không bị dịch chuyển tương đối với nhau giữa các khung hình. Xoay quanh lỗ vít chân máy sẽ gây lỗi thị sai khiến việc ghép ảnh khó khăn, nhất là khi có tiền cảnh ở gần. Đầu chân máy chuyên chụp panorama cho phép bạn đặt điểm không thị sai của ống kính trùng với trục xoay."
+        }
+      }
+    }
+  }
+}

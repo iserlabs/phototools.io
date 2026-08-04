@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Ett panorama byggs genom att du tar flera överlappande foton medan du roterar kameran och sedan låter programvara foga ihop dem till en enda bred bild. Konsten är att veta hur långt du ska rotera mellan bilderna: för långt och programmet kan inte foga ihop bildrutorna, för kort och du slösar bort dussintals bilder. Den här kalkylatorn gör den matematiken utifrån ditt objektiv, din sensor och önskat överlapp.",
+      "deeper": "Varje bildruta täcker en fast bildvinkel som bestäms av brännvidd och sensorstorlek — ett 50mm-objektiv på fullformat ser ungefär 40° horisontellt. Ihopfogningsprogram passar ihop intilliggande bildrutor genom att hitta gemensamma 'kontrollpunkter' i överlappszonen, och därför är 25–35 % överlapp den praktiska standarden: det ger algoritmen tillräckligt med gemensamma detaljer utan att antalet bilder exploderar. Den användbara rotationen per bild är därmed bildrutans bildvinkel gånger (1 − överlapp). Att fotografera i stående orientering byter ett smalare horisontellt steg mot betydligt mer vertikal täckning, vilket är varför de flesta enradiga panoraman tas på höjden. För riktigt höga scener tillämpar flerradiga panoraman samma överlappslogik vertikalt. Den färdiga sammanfogade filen växer snabbt: varje ytterligare bildruta bidrar med sin upplösning minus överlappet, så ett stående panorama på 7 bilder från en 24 MP-kamera överstiger lätt 100 MP. En fysisk finess begränsar alltihop: roterar man runt stativgängan förskjuts objektivets optiska centrum mellan bildrutorna, så att nära och avlägsna objekt hamnar fel i förhållande till varandra (parallax). För avlägsna landskap spelar det sällan någon roll, men med nära förgrundselement måste du rotera runt objektivets parallaxfria punkt med hjälp av en nodalskena eller ett panoramahuvud.",
+      "keyFactors": {
+        "0": {
+          "label": "Brännvidd & sensor",
+          "description": "Tillsammans bestämmer de bildvinkeln för en enskild bildruta — grundenheten panoramat byggs av. Längre objektiv ger smalare bildrutor och fler bilder."
+        },
+        "1": {
+          "label": "Överlapp",
+          "description": "Den gemensamma zonen mellan intilliggande bildrutor som ihopfogningsprogrammet passar ihop. 25–35 % är lagom; detaljfattiga scener (himmel, vatten) behöver mer."
+        },
+        "2": {
+          "label": "Orientering",
+          "description": "Stående bildrutor täcker mindre bredd men mycket mer höjd per bild — standardvalet för enradiga panoraman eftersom det lämnar beskärningsutrymme."
+        },
+        "3": {
+          "label": "Parallax",
+          "description": "Felpassning mellan nära och fjärran som orsakas av rotation runt fel axel. Ofarlig för avlägsna scener; kritisk med nära förgrunder."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Lås exponering, vitbalans och fokus till manuellt före första bilden. Allt som står på auto ändrar sig mellan bildrutorna och skapar synlig bandning i den sammanfogade himlen."
+        },
+        "1": {
+          "text": "Fotografera med objektivet i våg och rotera i ett jämnt svep, med en extra slaskbild i varje ände — kantbilderna förvrängs och beskärs under ihopfogningen."
+        },
+        "2": {
+          "text": "Överdriv överlappet till 40–50 % för panoraman på fri hand. Din rotation blir inte exakt, och de extra bilderna ger programmet marginal att rädda resultatet."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Överlapp",
+          "definition": "Andelen av varje bildruta som delas med grannen. Ihopfogningsprogram behöver den gemensamma detaljen för att passa ihop bildrutorna — 25–35 % är typiskt."
+        },
+        "orientation": {
+          "term": "Kamerans orientering",
+          "definition": "Stående (vertikal) komposition är standard för panoraman: varje bildruta bidrar med mer höjd, vilket lämnar utrymme för horisontkorrigering och beskärning."
+        },
+        "rotateBetween": {
+          "term": "Rotation mellan bilder",
+          "definition": "Hur många grader kameran ska vridas efter varje bildruta: bildrutans bildvinkel gånger (1 − överlapp). Panoramahuvuden har klicksteg för precis detta."
+        },
+        "rows": {
+          "term": "Rader",
+          "definition": "Flerradiga panoraman staplar horisontella svep på höjden och tillämpar samma överlappsregel mellan raderna för att täcka höga scener."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du fotograferar ett panorama av en bergskedja. Hur mycket bör intilliggande bildrutor överlappa för pålitlig ihopfogning?",
+          "hint": "Programmet behöver gemensamma detaljer, men varje extra bild kostar tid.",
+          "successMessage": "Rätt! Runt 30 % överlapp ger ihopfogningsprogrammet gott om kontrollpunkter utan att slösa bilder — standardrekommendationen för de flesta scener.",
+          "failureMessage": "25–35 % är den praktiska standarden. Under ~15 % har programmen svårt att hitta kontrollpunkter; 80 % tredubblar antalet bilder utan vinst.",
+          "options": {
+            "0": { "label": "5 %" },
+            "1": { "label": "15 %" },
+            "2": { "label": "30 %" },
+            "3": { "label": "80 %" }
+          }
+        },
+        "1": {
+          "scenario": "Du vill ha ett enradigt panorama med tillräckligt vertikalt utrymme för att räta upp horisonten och beskära fritt efteråt. Vilken orientering ska du fotografera i?",
+          "hint": "Åt vilket håll ger varje bildruta dig mer höjd?",
+          "successMessage": "Rätt! Stående orientering fångar betydligt mer vertikal bildvinkel per bildruta — de extra bilder som krävs på bredden är ett billigt pris för beskärningsfriheten.",
+          "failureMessage": "Stående (vertikalt) är standarden för enradiga panoraman: varje bildruta är högre, så det sammanfogade resultatet tål horisontkorrigering och beskärning.",
+          "options": {
+            "0": { "label": "Liggande" },
+            "1": { "label": "Stående" },
+            "2": { "label": "Kvadratiskt beskärningsläge" },
+            "3": { "label": "Lutad 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Med ett 50mm-objektiv på fullformat i liggande orientering (cirka 40° horisontell bildvinkel) och 30 % överlapp — ungefär hur många bildrutor kräver ett 180°-panorama?",
+          "hint": "Varje bild flyttar täckningen framåt med 40° × 0,7 = 28°.",
+          "successMessage": "Rätt! Första bildrutan täcker 40°, och varje ytterligare bildruta lägger till ~28°. Att täcka de återstående 140° kräver 5 bilder till, alltså 7 bildrutor totalt (med lite marginal).",
+          "failureMessage": "Varje bildruta efter den första lägger till 40° × (1 − 0,3) = 28° ny täckning. (180 − 40) / 28 = 5 bilder till, alltså 7 totalt.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Ditt panorama har ett staket en meter framför kameran och berg i bakgrunden. I det sammanfogade resultatet spökar staketet och hamnar fel mellan bildrutorna. Vilken punkt ska kameran rotera runt för att åtgärda detta?",
+          "hint": "Problemet är parallax — nära och avlägsna objekt förskjuts i förhållande till varandra.",
+          "successMessage": "Precis! Rotation runt objektivets parallaxfria punkt (nodalpunkten) håller nära och fjärran i linje mellan bildrutorna. Panoramahuvuden och nodalskenor finns just för detta.",
+          "failureMessage": "Kameran måste rotera runt objektivets parallaxfria punkt (ofta kallad nodalpunkten). Rotation runt stativgängan förskjuter det optiska centrumet och orsakar parallaxen du ser.",
+          "options": {
+            "0": { "label": "Objektivets frontlins" },
+            "1": { "label": "Objektivets parallaxfria punkt" },
+            "2": { "label": "Sensorplanet" },
+            "3": { "label": "Stativgängan" }
+          }
+        }
+      }
+    }
+  }
+}

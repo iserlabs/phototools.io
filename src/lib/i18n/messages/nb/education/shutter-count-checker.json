@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Hver gang kameraet tar et bilde med den mekaniske lukkeren, tikker en teller inne i kameraet ett hakk opp. Det tallet — lukkertellingen — er som kilometerstanden på en bil: det forteller hvor hardt et kamera har blitt brukt. Det betyr mest ved kjøp og salg av brukt utstyr, fordi lukkere er bevegelige deler dimensjonert for et begrenset antall utløsninger.",
+      "deeper": "En mekanisk lukker er et par fjærbelastede gardiner som fysisk sveiper over sensoren ved hver eksponering. Produsentene levetidstester mekanismene og publiserer tall: omtrent 100 000 utløsninger for innstegshus, 150 000–200 000 for entusiastmodeller og 300 000–500 000 for profesjonelle. Tallet er et statistisk gjennomsnitt, ikke en utløpsdato — mange lukkere varer flere ganger lenger enn oppgitt, og en ødelagt lukker er som regel en reparerbar (om enn kostbar) feil. Hvor tellingen lagres, varierer mellom merkene: Nikon skriver den, ukryptert, inn i maker notes i hver fil, og det er derfor dette verktøyet kan lese den. Canon holder den bare i internminnet, Sony krypterer den, og Pentax skjuler den. Moderne speilløse kameraer kompliserer bildet ytterligere: bilder tatt med elektronisk lukker sliter ikke på mekanismen i det hele tatt, så et hus som stort sett er brukt i stillemodus, kan ha langt flere eksponeringer totalt enn den mekaniske tellingen antyder — og det er helt greit.",
+      "keyFactors": {
+        "0": {
+          "label": "Kameramerke",
+          "description": "Avgjør om tellingen i det hele tatt kan leses fra filer. Nikon lagrer den åpent; Canon, Sony og Pentax gjør det ikke."
+        },
+        "1": {
+          "label": "Oppgitt lukkerlevetid",
+          "description": "Produsentens testede gjennomsnittlige levetid for lukkermekanismen. Hus i høyere klasser bruker mer robuste mekanismer med høyere tall."
+        },
+        "2": {
+          "label": "Elektronisk vs mekanisk lukker",
+          "description": "Bilder med elektronisk lukker gir null mekanisk slitasje og teller vanligvis ikke opp den mekaniske telleren. Den som stort sett fotograferer i stillemodus, viser lave tellinger."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Sjekk alltid tellingen fra en uredigert fil rett fra kameraet. Eksporter fra Lightroom, meldingsapper eller sosiale medier fjerner som regel maker notes som bærer telleren."
+        },
+        "1": {
+          "text": "Vei tellingen mot oppgitt levetid når du kjøper brukt: 40 000 på et hus dimensjonert for 300 000 er knapt innkjørt, mens 90 000 på et hus dimensjonert for 100 000 bør prises med et lukkerbytte i tankene."
+        },
+        "2": {
+          "text": "En lav lukkertelling garanterer ikke et friskt kamera — vannskader, riper på sensoren og fall vises ikke i telleren. Undersøk testbilder og selve huset også."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Lukkertelling",
+          "definition": "Antall ganger den mekaniske lukkeren har blitt utløst i kameraets levetid. Leses fra metadataene kameraet bygger inn i hvert bilde."
+        },
+        "ratedLife": {
+          "term": "Oppgitt lukkerlevetid",
+          "definition": "Produsentens testede gjennomsnittlige antall utløsninger før lukkeren svikter. Et gjennomsnitt, ikke en hard grense — mange lukkere lever langt lenger."
+        },
+        "source": {
+          "term": "Tellingens kilde",
+          "definition": "Hvor tallet ble lest fra: det ekte lukkertellingsfeltet, den kun mekaniske telleren på noen speilløse hus, eller et generisk bildenummer som grov reserve."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du tar 500 bilder på en konsert med den stille elektroniske lukkeren på det speilløse kameraet ditt. Hvor mye mekanisk lukkerslitasje ga dette?",
+          "hint": "Tenk på hva som fysisk beveger seg under en eksponering med elektronisk lukker.",
+          "successMessage": "Riktig! Den elektroniske lukkeren leser av sensoren uten at noen gardiner beveger seg, så de 500 bildene ga i praksis ingen mekanisk slitasje — og teller vanligvis ikke opp den mekaniske telleren.",
+          "failureMessage": "Den elektroniske lukkeren eksponerer ved å lese av sensoren elektronisk — ingen gardiner beveger seg, så stille fotografering gir ingen mekanisk lukkerslitasje.",
+          "options": {
+            "0": { "label": "500 utløsninger, som alle andre bilder" },
+            "1": { "label": "Ingen — bare mekanisk lukkerbruk teller" },
+            "2": { "label": "Bare RAW-filer gir slitasje" },
+            "3": { "label": "Bare blitsbilder gir slitasje" }
+          }
+        },
+        "1": {
+          "scenario": "Et kamera er dimensjonert for 200 000 utløsninger og viser nå 195 000. Hva betyr tallet egentlig for dette huset?",
+          "hint": "Tallene kommer fra statistisk levetidstesting, som timetall for lyspærer.",
+          "successMessage": "Riktig! Tallet er gjennomsnittlig levetid fra testing — denne lukkeren kan svikte neste uke eller vare til 400 000. Det er et sannsynlighetssignal for prising, ikke en nedtellingsklokke.",
+          "failureMessage": "Et lukkertall er den testede gjennomsnittlige levetiden, ikke en hard grense eller garanti. Mange lukkere varer langt lenger; noen svikter tidligere.",
+          "options": {
+            "0": { "label": "Lukkeren stopper ved 200 000" },
+            "1": { "label": "Det er gjennomsnittlig levetid — risikoen for svikt øker nær den" },
+            "2": { "label": "Garantien utløper ved 200 000" },
+            "3": { "label": "Batteritiden forringes etter 200 000" }
+          }
+        },
+        "2": {
+          "scenario": "Du sammenligner to brukte kameraer av samme modell: ett med 15 000 utløsninger og synlig korrosjon ved batteriluken, og ett med 60 000 utløsninger i plettfri stand. Hvilket er det tryggeste kjøpet?",
+          "hint": "Telleren registrerer bare én type slitasje.",
+          "successMessage": "Nettopp. Lukkertellingen er ett signal blant flere — korrosjon tyder på fukteksponering, som tar livet av kameraer langt oftere enn slitte lukkere. Det rene huset med 60 000 er det tryggeste kjøpet.",
+          "failureMessage": "Lukkertellingen måler bare lukkerslitasje. Korrosjon peker mot vannskade, som er langt mer risikabelt enn en moderat brukt lukker. Vurder telling pluss tilstand, aldri tellingen alene.",
+          "options": {
+            "0": { "label": "Huset med 15 000 — lavere er alltid bedre" },
+            "1": { "label": "Det som er billigst" },
+            "2": { "label": "Det rene huset med 60 000 — tilstanden betyr mer" },
+            "3": { "label": "Ingen av dem — begge er for gamle" }
+          }
+        }
+      }
+    }
+  }
+}

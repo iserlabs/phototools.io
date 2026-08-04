@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Bawat sitwasyon sa pag-shoot — mga portrait, wildlife, ang Milky Way — ay may subok nang kumbinasyon ng aperture, shutter speed, at ISO na unang inaabot ng mga bihasang photographer. Agad na ibinibigay sa iyo ng mga cheat sheet na ito ang panimulang puntong iyon, para maigugol mo ang atensyon mo sa liwanag at komposisyon sa halip na pag-alinlanganan ang mga dial.",
+      "deeper": "Bawat recipe dito ay aplikasyon ng exposure triangle na may isang panig na inuuna. Inuuna ng mga portrait ang aperture: ang malalapad na bukas (f/1.8–f/2.8) ay naghihiwalay sa subject mula sa background, at lahat ng iba pa ay umaangkop dito. Inuuna ng action ang shutter speed: ang 1/1000s ay nagpi-freeze ng galaw, kaya bumubukas ang aperture at tumataas ang ISO para pakainin ito ng liwanag. Inuuna ng mga landscape ang kalidad ng imahe: base ISO at gitnang aperture sa sweet spot ng lens, na may tripod na sumasalo sa kahit anong shutter speed na lumabas. Ang mga night scene ay sabay na nagtutulak sa tatlong panig, kaya sila ang may pinakamahigpit na recipe — talagang kailangan ng Milky Way ng wide-open na mabilis na lens, shutter na wala pang ~20 segundo (bago mag-trail ang mga bituin dahil sa pag-ikot ng Earth), at kung anong ISO ang magpapagamit sa histogram. Ang pag-unawa kung aling panig ang inuuna ng bawat scenario ang tunay na aral: kapag nakita mo na ang priyoridad, maiaangkop mo ang kahit anong recipe sa liwanag sa harap mo sa halip na sundan ito nang bulag. Ang mga range ay mga panimulang puntong naka-calibrate para sa karaniwang kondisyon; ang histogram mo, hindi ang sheet, ang may huling salita.",
+      "keyFactors": {
+        "0": {
+          "label": "Priyoridad ng Scenario",
+          "description": "Bawat sitwasyon ay unang nagla-lock ng isang exposure variable — aperture para sa mga portrait, shutter para sa action, ISO para sa mga landscape — at hinahayaang umangkop ang iba."
+        },
+        "1": {
+          "label": "Available na Liwanag",
+          "description": "Ang parehong scenario ay nangangailangan ng ibang mga setting sa tanghali at sa takipsilim. Ituring ang mga range bilang angkla at gumalaw sa loob nito habang nagbabago ang liwanag."
+        },
+        "2": {
+          "label": "Suporta & Katatagan",
+          "description": "Ang tripod ang nagbubukas ng base ISO at mabagal na shutter para sa mga static na eksena. Ang handheld na trabaho ay nagtatakda ng shutter-speed floor na bandang 1/(focal length) o mas mabilis."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Kumuha ng test shot at basahin ang histogram, hindi ang LCD preview — nagsisinungaling ang mga screen sa matinding araw at sa gabi, ang histogram kailanman hindi."
+        },
+        "1": {
+          "text": "Isaulo ang isang recipe kada genre na kinukunan mo, tapos magsanay sa pag-a-adjust ng isang variable sa bawat pagkakataon. Mas mabilis mong maiintindihan ang mga trade-off kaysa sa sabay-sabay na pagbabago ng lahat."
+        },
+        "2": {
+          "text": "I-download ang sheet para sa mga scenario na bihira mong kunan — mahirap tandaan ang Milky Way recipe nang alas-2 ng madaling-araw sa gilid ng bundok na nanlalamig ang mga daliri."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Aperture",
+          "definition": "Ang laki ng bukas ng lens, sa mga f-number. Mas mababang numero = mas maraming liwanag at mas maraming background blur; mas mataas na numero = mas malaking depth of field."
+        },
+        "shutter": {
+          "term": "Shutter Speed",
+          "definition": "Kung gaano katagal nangongolekta ng liwanag ang sensor. Ang mabibilis na speed ay nagpi-freeze ng galaw; ang mababagal ay nagpapalabo nito at nangangailangan ng stabilization o tripod."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Ang amplification ng sensor. Panatilihin itong kasingbaba ng kaya ng liwanag — ang pagtataas nito ay nagpapaliwanag sa imahe kapalit ng noise."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Kumukuha ka ng portrait at gusto mo ang klasikong itsura: matalas ang subject, natunaw sa blur ang background. Aling pagpili ng setting ang nakakamit nito?",
+          "hint": "Ang background blur ay nagmumula sa depth of field — aling kontrol ang nagpapatakbo niyon?",
+          "successMessage": "Tama! Ang malapad na aperture (tulad ng f/1.8–f/2.8) ang lumilikha ng mababaw na depth of field na naghihiwalay sa subject mula sa malabong background — ang mapagpasyang pagpili sa portrait.",
+          "failureMessage": "Ang background blur ay nagmumula sa malapad na aperture (mababang f-number) tulad ng f/1.8–f/2.8, na nagpapababaw sa depth of field. Kabaligtaran ang ginagawa ng makikitid na aperture.",
+          "options": {
+            "0": { "label": "Makitid na aperture tulad ng f/16" },
+            "1": { "label": "Malapad na aperture tulad ng f/2" },
+            "2": { "label": "Long exposure sa tripod" },
+            "3": { "label": "Maximum na ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Lagi nang lumilipad ang tagak mula sa tubig sa mismong sandaling pinipindot mo ang shutter, at bawat frame ay nagpapakita ng malabong dulo ng pakpak. Ano ang solusyon?",
+          "hint": "Ang motion blur ay problema sa oras.",
+          "successMessage": "Tama! Kailangan ng mga ibong lumilipad ng mabilis na shutter speed — ang 1/2500s o mas mabilis ay nagpi-freeze ng pagpagaspas ng pakpak. Buksan ang aperture at hayaang umakyat ang Auto ISO para pakainin ang bilis na kailangan mo.",
+          "failureMessage": "Ang malabong mga pakpak ay nangangahulugang masyadong mabagal ang shutter para sa galaw. Tumalon sa 1/2500s o mas mabilis at hayaang punan ng aperture at ISO ang nawalang liwanag.",
+          "options": {
+            "0": { "label": "Mas mabagal na shutter para sa mas maraming liwanag" },
+            "1": { "label": "Mas mabilis na shutter speed" },
+            "2": { "label": "Mag-stop down sa f/22" },
+            "3": { "label": "Ilipat ang white balance sa tungsten" }
+          }
+        },
+        "2": {
+          "scenario": "Nakapuwesto ka sa ilalim ng madilim na langit para kunan ang Milky Way. Aling kumbinasyon ang makakakuha ng magagamit na exposure ng galactic core?",
+          "hint": "Malabo ang mga bituin, gumagalaw (kasabay ng pag-ikot ng Earth), at sila lang ang pinagmumulan mo ng liwanag.",
+          "successMessage": "Tama! Wide open (f/1.4–f/2.8), 10–25 segundo, ISO 1600–6400: ang aperture ang nangongolekta ng pinakamaraming liwanag, humihinto ang shutter bago mag-trail ang mga bituin, at ang mataas na ISO ang nagpapakita sa malabong core.",
+          "failureMessage": "Kailangan ng Milky Way ang lahat: aperture na wide open, exposure na sapat na maikli para hindi mag-trail ang mga bituin (10–25s), at mataas na ISO (1600–6400). Iniiwang itim ng maliliit na aperture o base ISO ang langit.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Aperture na wide open, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Kahit anong setting na may ND filter" }
+          }
+        }
+      }
+    }
+  }
+}

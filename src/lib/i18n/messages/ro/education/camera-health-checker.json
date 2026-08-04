@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Fiecare fotografie salvată de aparatul tău poartă un raport ascuns despre aparatul însuși: modelul exact, numărul de serie, firmware-ul pe care rulează, obiectivul montat și uneori câte fotografii a făcut. Acest instrument citește acel raport dintr-o singură fotografie — integral în browserul tău — ca să poți evalua un aparat așa cum un mecanic citește istoricul de service al unei mașini.",
+      "deeper": "Datele provin din metadatele EXIF, un bloc standard pe care fiecare aparat digital îl încorporează în fișierele sale. Câmpurile standard includ marca, modelul, numărul de serie al corpului, software-ul (care la majoritatea aparatelor raportează versiunea de firmware), modelul obiectivului și marcajul temporal al capturii. Producătorii le extind cu „note ale producătorului” proprietare — cele Nikon includ numărul de declanșări, motiv pentru care durata de viață a obturatorului se poate citi la unele mărci și la altele nu. Vârsta corpului se estimează comparând numele modelului cu o bază de date a anilor de lansare: un aparat lansat în 2018 are cel puțin câțiva ani, indiferent ce spune vânzătorul. Contează două avertismente. În primul rând, metadatele supraviețuiesc doar în fișierele originale — majoritatea aplicațiilor de editare, de mesagerie și platformelor sociale le elimină sau le rescriu. În al doilea rând, EXIF-ul poate fi modificat cu instrumente disponibile gratuit, așa că tratează-l ca pe o dovadă solidă, nu ca pe o certitudine: consecvența dintre seria din fișier, seria de pe corp și chitanța vânzătorului e cea care închide cu adevărat cazul.",
+      "keyFactors": {
+        "0": {
+          "label": "Doar fișiere originale",
+          "description": "Metadatele supraviețuiesc în fișierele venite direct din aparat. Exporturile și resalvările elimină adesea seriile, notele producătorului și informațiile despre firmware."
+        },
+        "1": {
+          "label": "Numărul de serie",
+          "description": "Leagă fișierul de un corp fizic. Verifică-l față de aparatul însuși, chitanță și registrele de echipamente furate înainte să cumperi second-hand."
+        },
+        "2": {
+          "label": "Anul lansării vs stare",
+          "description": "Vârsta stabilește așteptările (tehnologia senzorului, funcții lipsă, suport rămas), dar uzura obturatorului și starea fizică îți spun cât de grei au fost acei ani."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Cumperi second-hand? Cere-i vânzătorului o fotografie needitată, direct din aparat. Verifică modelul și seria, arată firmware-ul curent și — la mărcile compatibile — numărul de declanșări, totul într-un singur fișier."
+        },
+        "1": {
+          "text": "Compară firmware-ul cu ultima versiune a producătorului. Un aparat neactualizat e normal; unul care nu mai poate fi actualizat poate rata îmbunătățiri de autofocalizare și compatibilitate."
+        },
+        "2": {
+          "text": "Data capturii din fotografia-mostră a vânzătorului îți spune când a fost folosit aparatul cu adevărat ultima dată. Un aparat „puțin folosit” al cărui cel mai nou fișier are patru ani a stat nefolosit — verifică un obturator înțepenit și o baterie umflată."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Numărul de serie al corpului",
+          "definition": "Identificatorul unic pe care producătorul îl atribuie fiecărui corp de aparat, încorporat în EXIF-ul fiecărei fotografii. Util pentru verificări de garanție și registre de echipamente furate."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "Software-ul intern al aparatului, raportat în câmpul Software din EXIF. Producătorii livrează îmbunătățiri de autofocalizare, compatibilitate și funcții prin actualizări de firmware."
+        },
+        "bodyAge": {
+          "term": "Vârsta corpului",
+          "definition": "Anii scurși de la lansarea modelului, estimați dintr-o bază de date cu date de lansare. O limită superioară pentru cât de actuală e tehnologia aparatului — nu pentru cât de uzat e acest exemplar anume."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Cumperi un aparat second-hand dintr-un anunț online. Vânzătorul îți trimite o fotografie originală din aparat. Care e cel mai valoros lucru pe care-l poți face cu numărul de serie din metadatele ei?",
+          "hint": "Seria leagă acest corp anume de lumea exterioară.",
+          "successMessage": "Corect! Verificarea seriei în registrele de echipamente furate (și pe chitanța vânzătorului) te protejează de cumpărarea unui echipament furat — o verificare pe care doar numărul de serie o face posibilă.",
+          "failureMessage": "Valoarea unică a numărului de serie este identificarea: verifică-l în registrele de echipamente furate și în actele vânzătorului. Nu spune nimic despre calitatea imaginii sau compatibilitate.",
+          "options": {
+            "0": { "label": "Să-l verifici în registrele de echipamente furate" },
+            "1": { "label": "Să estimezi calitatea fotografiei" },
+            "2": { "label": "Să verifici compatibilitatea obiectivelor" },
+            "3": { "label": "Să cauți gama ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Un aparat second-hand pe care îl ai în vedere rulează firmware-ul 1.0 de la lansarea de acum patru ani, în timp ce versiunea curentă a producătorului este 3.1. Ce obții de obicei prin actualizare?",
+          "hint": "Gândește-te la ce pot schimba producătorii prin software după lansare.",
+          "successMessage": "Exact! Actualizările de firmware aduc îmbunătățiri reale — algoritmi de autofocalizare mai buni, suport pentru obiective noi, corecții de erori, uneori funcții întregi. Specificațiile hardware precum senzorul și megapixelii nu se schimbă niciodată.",
+          "failureMessage": "Firmware-ul e software: actualizările îmbunătățesc autofocalizarea, adaugă suport pentru obiective și corectează erori. Nu pot schimba hardware-ul, cum ar fi senzorul sau numărul de megapixeli.",
+          "options": {
+            "0": { "label": "Funcții noi și îmbunătățiri de autofocalizare" },
+            "1": { "label": "Mai mulți megapixeli" },
+            "2": { "label": "O suprafață mai mare a senzorului" },
+            "3": { "label": "Nimic — firmware-ul e cosmetic" }
+          }
+        },
+        "2": {
+          "scenario": "Doi vânzători oferă același model: un aparat de 7 ani și unul de 4 ani, la prețuri similare. Care e modul corect de a folosi vârsta aparatului în decizia ta?",
+          "hint": "Vârsta e doar un criteriu — ce nu îți spune ea?",
+          "successMessage": "Exact. Vârsta încadrează tehnologia și durata de suport rămasă, dar factorii decisivi sunt felul în care a fost folosit aparatul: numărul de declanșări, starea fizică și istoricul de service.",
+          "failureMessage": "Vârsta aparatului singură nu decide — un aparat mai vechi, dar menajat, poate bate unul mai nou, dar chinuit. Combină vârsta cu numărul de declanșări și starea.",
+          "options": {
+            "0": { "label": "Cumpără-l întotdeauna pe cel mai nou" },
+            "1": { "label": "Cântărește vârsta împreună cu declanșările și starea" },
+            "2": { "label": "Ignoră vârsta — contează doar megapixelii" },
+            "3": { "label": "Alege doar după reputația mărcii" }
+          }
+        }
+      }
+    }
+  }
+}

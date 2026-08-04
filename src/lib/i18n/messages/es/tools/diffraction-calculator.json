@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Resolución: {mp} MP",
+      "aperture": "Apertura",
+      "verdict": {
+        "sharp": "{f} está libre de difracción",
+        "borderline": "{f} se suaviza ligeramente por la difracción",
+        "soft": "{f} se suaviza visiblemente por la difracción"
+      },
+      "verdictDetail": {
+        "sharp": "Por debajo del límite de difracción de {limit} para este sensor y resolución, la nitidez la determina el objetivo, no la difracción.",
+        "borderline": "Superado el límite de difracción de {limit}, el detalle fino a nivel de píxel empieza a difuminarse. Aceptable cuando necesitas la profundidad de campo extra.",
+        "soft": "Muy por encima del límite de difracción de {limit}. La profundidad de campo sigue aumentando, pero el detalle general se degrada visiblemente: considera el apilamiento de enfoque en lugar de seguir cerrando el diafragma."
+      },
+      "stripLabel": "Escala de aperturas coloreada según el impacto de la difracción",
+      "pixelPitch": "Paso de píxel",
+      "airyDisk": "Diámetro del disco de Airy",
+      "diffractionLimit": "Límite de difracción",
+      "tableTitle": "Límite de difracción por sensor y resolución",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "¿Qué es la difracción en fotografía?",
+          "answer": "La difracción es la curvatura de las ondas de luz al pasar por una apertura pequeña. Cuanto menor es la apertura (número f más alto), más se dispersa cada punto de luz en un disco borroso (el disco de Airy) sobre el sensor. Cuando ese disco supera el tamaño de un píxel, el detalle fino se difumina por muy bueno que sea el objetivo."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "¿Qué apertura es la más nítida?",
+          "answer": "La mayoría de los objetivos rinden al máximo dos o tres pasos por debajo de la máxima apertura: normalmente entre f/4 y f/8 en formato completo. Ese punto óptimo equilibra las aberraciones del objetivo (peores a plena apertura) con la difracción (peor al cerrar el diafragma). Los sensores de alta resolución alcanzan su límite de difracción antes, así que su punto óptimo útil es más estrecho."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "¿La difracción depende del sensor?",
+          "answer": "El efecto óptico depende solo de la apertura y de la longitud de onda de la luz, pero su visibilidad depende del tamaño del píxel. Un sensor de formato completo de 61 MP tiene píxeles de ~3,8 µm y muestra el suavizado por difracción alrededor de f/5.6, mientras que un sensor de 12 MP con píxeles grandes se mantiene nítido hasta f/11. Los sensores más pequeños alcanzan el límite con aperturas más abiertas para el mismo número de megapíxeles."
+        }
+      }
+    }
+  }
+}

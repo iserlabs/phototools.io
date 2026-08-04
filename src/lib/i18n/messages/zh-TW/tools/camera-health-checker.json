@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "將照片拖放到這裡，或點擊瀏覽（JPEG、TIFF、NEF、DNG）",
+      "emptyState": "拖入任何一張你想檢測的相機所拍的照片。所有內容都在你的瀏覽器中讀取——檔案絕不會離開你的裝置。",
+      "errorRead": "無法讀取此檔案。請嘗試相機直出的未編輯 JPEG 或 RAW 檔。",
+      "errorNoMetadata": "此檔案不含相機中繼資料。編輯或通訊軟體匯出的檔案往往會移除這些資訊——請嘗試未編輯的原始檔。",
+      "sections": {
+        "body": "相機機身",
+        "age": "機齡",
+        "shutter": "快門壽命",
+        "lens": "鏡頭"
+      },
+      "cameraModel": "型號",
+      "make": "製造商",
+      "serialNumber": "序號",
+      "firmware": "韌體／軟體",
+      "bodyAge": "機身年齡",
+      "ageValue": "約 {years} 年（{year} 年發表）",
+      "ageUnknown": "此型號不在我們的發表年份資料庫中，因此無法估算機齡。",
+      "shotDate": "拍攝日期",
+      "shutterCount": "快門數",
+      "ratedLife": "額定壽命",
+      "ratedAssumed": "（推估值）",
+      "lifeUsed": "已使用額定壽命的 {percent}%",
+      "verdict": {
+        "low": "幾乎全新",
+        "moderate": "中度使用",
+        "high": "重度使用",
+        "beyond": "超過額定值"
+      },
+      "shutterUnavailable": {
+        "supported": "雖然 {brand} 通常會記錄快門數，但此檔案中找不到。請嘗試未編輯的原始檔——編輯軟體往往會移除廠商中繼資料。",
+        "partial": "{brand} 只會在部分檔案寫入粗略的影格計數器，而這個檔案沒有。相機本身的選單或 USB 工具程式或許能提供。",
+        "unsupported": "{brand} 不會在影像檔案中儲存可讀取的快門數。請到快門數查詢器的工具頁面查看各品牌的替代方案。",
+        "unknown": "此檔案沒有可讀取的快門數。"
+      },
+      "lensModel": "鏡頭",
+      "lensSerial": "鏡頭序號",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "購買二手相機時應該檢查什麼？",
+          "answer": "除了外觀之外：快門數相對於額定壽命的比例、機身年齡與韌體版本、序號是否與賣家的文件相符（且未被通報失竊）、感光元件狀況（用 f/16 對晴朗天空拍一張測試照，檢查灰塵或刮痕），以及所有轉盤、連接埠和鏡頭接環是否運作順暢。"
+        },
+        "where-does-health-data-come-from": {
+          "question": "這些健康資料是從哪裡來的？",
+          "answer": "所有資訊都讀取自照片內嵌的中繼資料：標準 EXIF 欄位（型號、序號、韌體、鏡頭、拍攝日期），加上可取得的廠商專屬資訊（快門數）。機身年齡則是根據內建的熱門相機型號發表年份資料庫估算。"
+        },
+        "is-my-photo-uploaded": {
+          "question": "我的照片會上傳到伺服器嗎？",
+          "answer": "不會。檔案完全在你的瀏覽器中以 JavaScript 解析——它絕不會離開你的裝置，也不會儲存任何內容。你可以自行驗證：先載入頁面，再切斷網路連線後拖入檔案。"
+        }
+      }
+    }
+  }
+}

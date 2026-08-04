@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Kameraausrichtung",
+      "portrait": "Hochformat",
+      "landscape": "Querformat",
+      "overlap": "Überlappung: {percent}%",
+      "targetWidth": "Panoramabreite",
+      "rows": "Reihen",
+      "megapixels": "Kameraauflösung: {mp} MP",
+      "fanLabel": "Draufsicht-Diagramm von {frames} überlappenden Aufnahmen",
+      "totalShots": "Aufnahmen gesamt",
+      "perRow": "Aufnahmen × Reihen",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Drehung zwischen Aufnahmen",
+      "coverage": "Abdeckung (H × V)",
+      "frameFov": "Bildwinkel pro Aufnahme",
+      "stitchedSize": "Größe nach dem Stitching",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Wie viel Überlappung brauchen Panorama-Aufnahmen?",
+          "answer": "25–35% sind für die meisten Szenen ideal. Stitching-Software braucht gemeinsame Details zwischen benachbarten Aufnahmen, um Kontrollpunkte zu finden; unter 15% kann die Ausrichtung der Bilder scheitern, während du jenseits von 50% viele zusätzliche Aufnahmen für wenig Nutzen machst. Verwende mehr Überlappung bei Szenen mit wenigen markanten Merkmalen, etwa klarem Himmel oder ruhigem Wasser."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Warum Panoramen im Hochformat (vertikal) fotografieren?",
+          "answer": "Das Hochformat erfasst pro Aufnahme mehr vertikalen Bildwinkel, sodass das fertige Panorama höher wird und Spielraum für Beschnitt und Horizontkorrektur lässt. Der Preis sind ein paar zusätzliche Aufnahmen in der Horizontalen — meist ein lohnender Tausch für die zusätzliche Flexibilität und Auflösung."
+        },
+        "what-is-nodal-point": {
+          "question": "Was ist der parallaxenfreie Punkt (Nodalpunkt)?",
+          "answer": "Es ist der Punkt im Objektiv, um den sich die Kamera drehen kann, ohne dass sich nahe und ferne Objekte zwischen den Aufnahmen gegeneinander verschieben. Dreht man stattdessen um das Stativgewinde, entstehen Parallaxenfehler, die das Stitching erschweren — besonders bei nahen Vordergrundobjekten. Panoramaköpfe für Stative erlauben es, den parallaxenfreien Punkt des Objektivs über der Drehachse zu positionieren."
+        }
+      }
+    }
+  }
+}

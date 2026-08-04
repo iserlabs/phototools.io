@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Snímač",
+      "orientation": "Orientace fotoaparátu",
+      "portrait": "Na výšku",
+      "landscape": "Na šířku",
+      "overlap": "Překryv: {percent} %",
+      "targetWidth": "Šířka panoramatu",
+      "rows": "Řady",
+      "megapixels": "Rozlišení fotoaparátu: {mp} MP",
+      "fanLabel": "Schéma shora: {frames} překrývajících se snímků",
+      "totalShots": "Celkem snímků",
+      "perRow": "Snímky × řady",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Otočení mezi snímky",
+      "coverage": "Pokrytí (H × V)",
+      "frameFov": "Zorné pole jednoho snímku",
+      "stitchedSize": "Velikost po spojení",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Jak velký překryv snímky panoramatu potřebují?",
+          "answer": "Pro většinu scén je ideál 25–35 %. Software na spojování potřebuje mezi sousedními snímky společné detaily, aby našel kontrolní body; pod 15 % se mu nemusí podařit snímky zarovnat, zatímco nad 50 % fotíš spoustu snímků navíc s minimálním přínosem. Větší překryv použij u scén s málo výraznými detaily, jako je čistá obloha nebo klidná voda."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Proč fotit panoramata na výšku?",
+          "answer": "Orientace na výšku zachytí v každém snímku víc vertikálního zorného pole, takže výsledné spojené panorama je vyšší a nechává prostor na ořez a srovnání horizontu. Cenou je pár snímků navíc na šířku — za získanou flexibilitu a rozlišení to obvykle stojí."
+        },
+        "what-is-nodal-point": {
+          "question": "Co je bod bez paralaxy (nodální bod)?",
+          "answer": "Je to bod uvnitř objektivu, kolem kterého lze fotoaparát otáčet, aniž by se blízké a vzdálené objekty mezi snímky vzájemně posouvaly. Otáčení kolem stativového závitu naopak způsobuje chyby paralaxy, které spojování ztěžují, zvlášť u blízkých objektů v popředí. Panoramatické stativové hlavy umožňují umístit bod bez paralaxy objektivu nad osu otáčení."
+        }
+      }
+    }
+  }
+}

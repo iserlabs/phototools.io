@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Bir fotoğrafı buraya sürükleyin veya tıklayıp seçin (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "İncelemek istediğiniz kameradan herhangi bir fotoğrafı bırakın. Her şey tarayıcınızda okunur — dosya cihazınızdan asla ayrılmaz.",
+      "errorRead": "Bu dosya okunamadı. Doğrudan kameradan çıkmış, düzenlenmemiş bir JPEG veya RAW dosyası deneyin.",
+      "errorNoMetadata": "Bu dosyada kamera meta verisi yok. Düzenleme veya mesajlaşma uygulamalarından yapılan dışa aktarımlar meta veriyi genellikle siler — düzenlenmemiş orijinal bir dosya deneyin.",
+      "sections": {
+        "body": "Kamera gövdesi",
+        "age": "Yaş",
+        "shutter": "Deklanşör ömrü",
+        "lens": "Objektif"
+      },
+      "cameraModel": "Model",
+      "make": "Marka",
+      "serialNumber": "Seri numarası",
+      "firmware": "Donanım yazılımı / yazılım",
+      "bodyAge": "Gövde yaşı",
+      "ageValue": "~{years} yıl ({year} yılında çıktı)",
+      "ageUnknown": "Bu model çıkış tarihi veritabanımızda yok, bu yüzden yaşı tahmin edilemedi.",
+      "shotDate": "Fotoğrafın çekildiği tarih",
+      "shutterCount": "Deklanşör sayısı",
+      "ratedLife": "Öngörülen ömür",
+      "ratedAssumed": "(varsayılan)",
+      "lifeUsed": "Öngörülen ömrün %{percent} kadarı kullanılmış",
+      "verdict": {
+        "low": "Neredeyse hiç kullanılmamış",
+        "moderate": "Orta düzey kullanım",
+        "high": "Yoğun kullanım",
+        "beyond": "Öngörülen ömrü aşmış"
+      },
+      "shutterUnavailable": {
+        "supported": "{brand} normalde deklanşör sayısını kaydettiği halde bu dosyada bulunamadı. Düzenlenmemiş orijinal bir dosya deneyin — düzenleme uygulamaları üretici meta verilerini genellikle siler.",
+        "partial": "{brand} bazı dosyalara yalnızca kaba bir kare sayacı yazar ve bu dosyada o da yok. Kameranın kendi menüleri veya bir USB yardımcı programı sayıyı bildirebilir.",
+        "unsupported": "{brand}, görüntü dosyalarında okunabilir bir deklanşör sayısı saklamaz. Markaya özgü alternatifler için Deklanşör Sayısı Denetleyicisi aracının sayfasına bakın.",
+        "unknown": "Bu dosyada okunabilir bir deklanşör sayısı yok."
+      },
+      "lensModel": "Objektif",
+      "lensSerial": "Objektif seri numarası",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "İkinci el kamera alırken nelere bakmalıyım?",
+          "answer": "Kozmetiğin ötesinde: öngörülen ömre kıyasla deklanşör sayısına, gövdenin yaşına ve donanım yazılımı sürümüne, seri numarasının satıcının belgeleriyle eşleşip eşleşmediğine (ve çalıntı kaydı olup olmadığına), sensörün durumuna (f/16'da açık bir gökyüzü test fotoğrafında toz veya çizik arayın) ve tüm kadranların, bağlantı noktalarının ve objektif yuvasının sorunsuz çalıştığına bakın."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Bu sağlık verileri nereden geliyor?",
+          "answer": "Her şey fotoğrafınıza gömülü meta veriden okunur: standart EXIF alanları (model, seri numarası, donanım yazılımı, objektif, çekim tarihi) ve varsa üretici notları (deklanşör sayısı). Gövde yaşı, popüler kamera modellerinin çıkış yıllarını içeren yerleşik bir veritabanından tahmin edilir."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Fotoğrafım bir sunucuya mı yükleniyor?",
+          "answer": "Hayır. Dosya, JavaScript kullanılarak tamamen tarayıcınızda çözümlenir — cihazınızdan asla ayrılmaz ve hiçbir şey saklanmaz. Sayfayı yükleyip dosyayı bırakmadan önce bağlantınızı kapatarak bunu kendiniz doğrulayabilirsiniz."
+        }
+      }
+    }
+  }
+}

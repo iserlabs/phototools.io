@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensör",
+      "megapixels": "Çözünürlük: {mp} MP",
+      "aperture": "Diyafram",
+      "verdict": {
+        "sharp": "{f} kırınımdan etkilenmiyor",
+        "borderline": "{f} kırınım nedeniyle hafifçe yumuşuyor",
+        "soft": "{f} kırınım nedeniyle gözle görülür biçimde yumuşuyor"
+      },
+      "verdictDetail": {
+        "sharp": "Bu sensör ve çözünürlük için {limit} olan kırınım sınırının altında, netliği kırınım değil objektif belirler.",
+        "borderline": "{limit} kırınım sınırının ötesinde, piksel düzeyindeki ince ayrıntılar bulanıklaşmaya başlar. Ekstra alan derinliğine ihtiyacınız olduğunda kabul edilebilir.",
+        "soft": "{limit} kırınım sınırının epey ötesinde. Alan derinliği artmaya devam eder, ancak genel ayrıntı gözle görülür biçimde bozulur — diyaframı daha da kısmak yerine odak istiflemeyi düşünün."
+      },
+      "stripLabel": "Kırınım etkisine göre renklendirilmiş diyafram ölçeği",
+      "pixelPitch": "Piksel aralığı",
+      "airyDisk": "Airy diski çapı",
+      "diffractionLimit": "Kırınım sınırı",
+      "tableTitle": "Sensör ve çözünürlüğe göre kırınım sınırı",
+      "tableSensor": "Sensör",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Fotoğrafçılıkta kırınım nedir?",
+          "answer": "Kırınım, ışık dalgalarının küçük bir diyafram açıklığından geçerken bükülmesidir. Diyafram ne kadar küçükse (f değeri ne kadar yüksekse), her ışık noktası sensör üzerinde o kadar geniş, bulanık bir diske (Airy diski) yayılır. Bu disk bir pikselden büyük hale geldiğinde, objektif ne kadar iyi olursa olsun ince ayrıntılar bulanıklaşır."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "En net diyafram hangisidir?",
+          "answer": "Çoğu objektif, tam açık konumdan iki-üç stop kısıldığında zirveye ulaşır — full frame'de genellikle f/4 ile f/8 arası. Bu ideal aralık, objektif kusurları (tam açıkken en kötü) ile kırınımı (kıstıkça kötüleşir) dengeler. Yüksek çözünürlüklü sensörler kırınım sınırına daha erken ulaşır, bu yüzden kullanılabilir ideal aralıkları daha dardır."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Kırınım sensöre bağlı mıdır?",
+          "answer": "Optik etki yalnızca diyaframa ve ışığın dalga boyuna bağlıdır — ancak ne kadar görünür olduğu piksel boyutuna bağlıdır. 61 MP'lik bir full frame sensörün pikselleri ~3,8 µm'dir ve f/5.6 civarında kırınım yumuşaması gösterir; büyük piksellere sahip 12 MP'lik bir sensör ise f/11'e kadar net kalır. Küçük sensörler, aynı megapiksel sayısında bu sınıra daha açık diyaframlarda ulaşır."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Ảnh panorama được tạo bằng cách chụp nhiều bức chồng lấn nhau trong khi xoay máy, rồi để phần mềm ghép chúng thành một bức ảnh rộng. Bí quyết nằm ở chỗ biết xoay bao nhiêu giữa các lần chụp: xoay quá nhiều thì phần mềm không nối được các khung hình, quá ít thì bạn phí hàng chục kiểu ảnh. Công cụ này tính toán điều đó từ ống kính, cảm biến và độ chồng lấn bạn muốn.",
+      "deeper": "Mỗi khung hình bao phủ một góc nhìn cố định do tiêu cự và kích thước cảm biến quyết định — ống 50mm trên full frame thấy khoảng 40° theo chiều ngang. Phần mềm ghép ảnh căn chỉnh các khung hình liền kề bằng cách tìm 'điểm khớp' chung trong vùng chồng lấn, đó là lý do 25–35% là chuẩn thực dụng: nó cho thuật toán đủ chi tiết chung mà không làm bùng nổ số khung hình. Góc xoay hữu dụng mỗi lần chụp vì thế bằng góc nhìn của khung hình nhân với (1 − độ chồng lấn). Chụp theo hướng dọc đánh đổi bước xoay ngang hẹp hơn lấy vùng phủ dọc lớn hơn nhiều, đó là lý do hầu hết panorama một hàng được chụp dọc. Với những cảnh rất cao, panorama nhiều hàng áp dụng cùng logic chồng lấn theo chiều dọc. Tệp ghép cuối cùng phình to rất nhanh: mỗi khung hình thêm vào đóng góp độ phân giải của nó trừ phần chồng lấn, nên một tấm panorama dọc 7 khung từ máy 24 MP dễ dàng vượt 100 MP. Một chi tiết vật lý giới hạn tất cả: xoay quanh lỗ vít chân máy làm tâm quang học của ống kính dịch chuyển giữa các khung hình, khiến vật gần và xa lệch nhau (thị sai). Với phong cảnh xa điều này hiếm khi thành vấn đề, nhưng khi có tiền cảnh gần, bạn cần xoay quanh điểm không thị sai của ống kính bằng thanh trượt nodal hoặc đầu chân máy panorama.",
+      "keyFactors": {
+        "0": {
+          "label": "Tiêu cự & cảm biến",
+          "description": "Cùng nhau chúng quyết định góc nhìn mỗi khung hình — đơn vị cơ bản để lắp ráp panorama. Ống dài hơn nghĩa là khung hẹp hơn và nhiều kiểu ảnh hơn."
+        },
+        "1": {
+          "label": "Chồng lấn",
+          "description": "Vùng chung giữa các khung hình liền kề mà phần mềm ghép dựa vào để căn chỉnh. 25–35% là mức lý tưởng; cảnh ít chi tiết (trời, mặt nước) cần nhiều hơn."
+        },
+        "2": {
+          "label": "Hướng máy",
+          "description": "Khung dọc phủ ít chiều rộng nhưng nhiều chiều cao hơn hẳn mỗi lần chụp — lựa chọn tiêu chuẩn cho panorama một hàng vì để lại chỗ cắt cúp."
+        },
+        "3": {
+          "label": "Thị sai",
+          "description": "Sự lệch giữa vật gần/xa do xoay quanh sai trục. Vô hại với cảnh xa; tối quan trọng khi có tiền cảnh gần."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Khóa phơi sáng, cân bằng trắng và lấy nét sang chế độ tay trước khung hình đầu tiên. Bất cứ thứ gì để tự động đều thay đổi giữa các khung và tạo dải màu lộ rõ trên bầu trời sau khi ghép."
+        },
+        "1": {
+          "text": "Giữ ống kính cân bằng và xoay trong một lượt mượt mà, chụp thêm một khung bỏ đi ở mỗi đầu — các khung rìa bị méo và cắt mất trong quá trình ghép."
+        },
+        "2": {
+          "text": "Với panorama cầm tay, hãy tăng độ chồng lấn lên 40–50%. Vòng xoay của bạn sẽ không chính xác, và các khung dư cho phần mềm ghép chỗ để cứu vãn."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Chồng lấn",
+          "definition": "Tỷ lệ phần trăm mỗi khung hình chia sẻ với khung bên cạnh. Phần mềm ghép cần chi tiết chung này để căn chỉnh — thường là 25–35%."
+        },
+        "orientation": {
+          "term": "Hướng máy ảnh",
+          "definition": "Khung dọc là chuẩn cho panorama: mỗi khung đóng góp nhiều chiều cao hơn, để lại chỗ chỉnh đường chân trời và cắt cúp."
+        },
+        "rotateBetween": {
+          "term": "Góc xoay giữa các lần chụp",
+          "definition": "Số độ cần xoay máy sau mỗi khung hình: góc nhìn của khung nhân với (1 − độ chồng lấn). Đầu chân máy panorama có nấc khóa chính xác cho việc này."
+        },
+        "rows": {
+          "term": "Số hàng",
+          "definition": "Panorama nhiều hàng xếp chồng các lượt quét ngang theo chiều dọc, áp dụng cùng quy tắc chồng lấn giữa các hàng để bao phủ cảnh cao."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Bạn đang chụp panorama một dãy núi. Các khung hình liền kề nên chồng lấn bao nhiêu để ghép ảnh đáng tin cậy?",
+          "hint": "Phần mềm ghép cần chi tiết chung, nhưng mỗi khung thêm đều tốn thời gian.",
+          "successMessage": "Chính xác! Khoảng 30% chồng lấn cho phần mềm ghép dư dả điểm khớp mà không lãng phí khung hình — khuyến nghị tiêu chuẩn cho hầu hết cảnh.",
+          "failureMessage": "25–35% là chuẩn thực dụng. Dưới ~15% phần mềm khó tìm điểm khớp; 80% làm số khung tăng gấp ba mà chẳng được gì.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Bạn muốn một panorama một hàng với đủ khoảng trống dọc để kéo thẳng đường chân trời và cắt cúp thoải mái sau đó. Nên chụp theo hướng máy nào?",
+          "hint": "Hướng nào cho mỗi khung hình nhiều chiều cao hơn?",
+          "successMessage": "Đúng vậy! Hướng dọc thu được nhiều góc nhìn theo chiều đứng hơn hẳn mỗi khung — vài khung chụp thêm theo chiều ngang là cái giá rẻ cho sự tự do cắt cúp.",
+          "failureMessage": "Hướng dọc là chuẩn cho panorama một hàng: mỗi khung cao hơn, nên ảnh ghép chịu được việc chỉnh đường chân trời và cắt cúp.",
+          "options": {
+            "0": { "label": "Ngang" },
+            "1": { "label": "Dọc" },
+            "2": { "label": "Chế độ khung vuông" },
+            "3": { "label": "Nghiêng 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Với ống 50mm trên full frame cầm ngang (góc nhìn ngang khoảng 40°) và chồng lấn 30%, một panorama 180° cần khoảng bao nhiêu khung hình?",
+          "hint": "Mỗi kiểu chụp mở rộng vùng phủ thêm 40° × 0,7 = 28°.",
+          "successMessage": "Chính xác! Khung đầu tiên phủ 40°, mỗi khung sau thêm ~28°. Phủ nốt 140° còn lại cần thêm 5 khung, vậy tổng cộng 7 khung (còn dư chút đỉnh).",
+          "failureMessage": "Mỗi khung sau khung đầu thêm 40° × (1 − 0,3) = 28° vùng phủ mới. (180 − 40) / 28 = thêm 5 khung, vậy tổng cộng 7.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Bức panorama của bạn có hàng rào cách máy một mét phía trước và dãy núi phía sau. Kết quả ghép cho thấy hàng rào bị bóng ma và lệch giữa các khung hình. Máy cần xoay quanh điểm nào để khắc phục?",
+          "hint": "Vấn đề là thị sai — vật gần và xa dịch chuyển tương đối với nhau.",
+          "successMessage": "Chính xác! Xoay quanh điểm không thị sai (điểm nút) của ống kính giữ vật gần và xa thẳng hàng giữa các khung. Đầu panorama và thanh trượt nodal sinh ra chính xác cho việc này.",
+          "failureMessage": "Máy phải xoay quanh điểm không thị sai của ống kính (thường gọi là điểm nút). Xoay quanh lỗ vít chân máy làm dịch tâm quang học, gây ra thị sai bạn đang thấy.",
+          "options": {
+            "0": { "label": "Thấu kính trước của ống kính" },
+            "1": { "label": "Điểm không thị sai của ống kính" },
+            "2": { "label": "Mặt phẳng cảm biến" },
+            "3": { "label": "Lỗ vít chân máy" }
+          }
+        }
+      }
+    }
+  }
+}

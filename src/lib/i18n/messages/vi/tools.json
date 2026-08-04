@@ -65,8 +65,28 @@
       "description": "So sánh megapixel, trực quan hóa kích thước in và xem dung lượng file ở các tỷ lệ khung hình và DPI khác nhau"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
+      "name": "Trình phân tích Catalog Lightroom",
       "description": "Phân tích catalog Lightroom Classic của bạn — thiết bị, tiêu cự, khẩu độ, xếp hạng và hơn thế nữa — 100% trong trình duyệt của bạn"
+    },
+    "shutter-count-checker": {
+      "name": "Kiểm tra số lần chụp màn trập",
+      "description": "Kiểm tra số lần chụp màn trập của máy ảnh từ một bức ảnh — 100% trong trình duyệt"
+    },
+    "camera-health-checker": {
+      "name": "Kiểm tra sức khỏe máy ảnh",
+      "description": "Xem tuổi thân máy, firmware, số sê-ri và tuổi thọ màn trập chỉ từ một bức ảnh"
+    },
+    "panorama-calculator": {
+      "name": "Máy tính panorama",
+      "description": "Lên kế hoạch chụp panorama — số khung hình, độ chồng lấn và góc xoay giữa các lần chụp"
+    },
+    "diffraction-calculator": {
+      "name": "Máy tính giới hạn nhiễu xạ",
+      "description": "Tìm khẩu độ mà nhiễu xạ bắt đầu làm mềm ảnh của bạn"
+    },
+    "photography-cheat-sheet": {
+      "name": "Bảng tra cứu nhanh nhiếp ảnh",
+      "description": "Bảng tra cứu thiết lập máy ảnh cho những tình huống chụp thường gặp — tải về và in được"
     }
   }
 }

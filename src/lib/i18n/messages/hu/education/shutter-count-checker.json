@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Valahányszor a kamera a mechanikus zárjával fotót készít, egy belső számláló eggyel feljebb lép. Ez a szám — a zárszámláló — olyan, mint az autó kilométeróra-állása: megmutatja, milyen intenzíven használták a kamerát. Használt felszerelés vételekor és eladásakor számít a legtöbbet, mert a zár mozgó alkatrész, amelyet véges számú kioldásra méreteznek.",
+      "deeper": "A mechanikus zár egy pár rugós redőny, amely minden expozíciónál fizikailag végigsöpör az érzékelő előtt. A gyártók élettartam-tesztelik ezeket a szerkezeteket, és közzéteszik az értékeket: nagyjából 100 000 kioldás a belépő szintű vázaknál, 150 000–200 000 a hobbi kategóriában, és 300 000–500 000 a professzionális modelleknél. A névleges érték statisztikai átlag, nem lejárati dátum — sok zár a névleges értéke többszöröséig kitart, és a meghibásodott zár általában javítható (bár költséges) hiba. Hogy hol él a számláló, márkánként változik: a Nikon titkosítás nélkül minden fájl maker notes részébe beírja — ezért tudja ez az eszköz kiolvasni. A Canon csak a belső memóriában tartja, a Sony titkosítja, a Pentax pedig álcázza. A modern MILC-ek tovább bonyolítják a képet: az elektronikus zárral készült képek egyáltalán nem koptatják a szerkezetet, így egy főleg csendes módban használt váz összes expozíciója jóval meghaladhatja a mechanikus számlálót — és ez rendben is van.",
+      "keyFactors": {
+        "0": {
+          "label": "Kameramárka",
+          "description": "Ez dönti el, hogy a számláló egyáltalán kiolvasható-e a fájlokból. A Nikon nyíltan tárolja; a Canon, a Sony és a Pentax nem."
+        },
+        "1": {
+          "label": "Névleges zár-élettartam",
+          "description": "A zárszerkezet gyártó által tesztelt átlagos élettartama. A magasabb kategóriás vázak tartósabb, nagyobb élettartamú szerkezeteket használnak."
+        },
+        "2": {
+          "label": "Elektronikus vagy mechanikus zár",
+          "description": "Az elektronikus zárral készült képek nulla mechanikai kopást okoznak, és általában nem növelik a mechanikus számlálót. A sokat csendes módban fotózók számlálója alacsony."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Mindig szerkesztetlen, közvetlenül a kamerából származó fájlból ellenőrizze a számlálót. A Lightroomból, üzenetküldőkből vagy közösségi médiából exportált fájlokból általában hiányoznak a számlálót hordozó maker notes adatok."
+        },
+        "1": {
+          "text": "Használt váz vételekor vesse össze a számlálót a névleges értékkel: 40 000 egy 300 000-re méretezett vázon még alig bejáratott, míg 90 000 egy 100 000-es vázon már beárazza a zárcserét."
+        },
+        "2": {
+          "text": "Az alacsony zárszámláló nem garantál egészséges kamerát — a vízkár, az érzékelőkarcok és az ejtések nem látszanak a számlálóban. Vizsgálja meg a tesztfotókat és magát a vázat is."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Zárszámláló",
+          "definition": "Ahányszor a mechanikus zár a kamera élete során kioldott. A kamera által minden fotóba beágyazott metaadatokból olvasható ki."
+        },
+        "ratedLife": {
+          "term": "Névleges zár-élettartam",
+          "definition": "A gyártó által tesztelt átlagos kioldásszám a zár meghibásodásáig. Átlag, nem szigorú határ — sok zár messze túléli."
+        },
+        "source": {
+          "term": "Számláló forrása",
+          "definition": "Honnan származik a szám: a valódi zárszámláló-mezőből, egyes MILC-vázak csak mechanikus számlálójából, vagy durva tartalékként egy általános képsorszámból."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "500 fotót készít egy koncerten a MILC-kamerája csendes elektronikus zárjával. Mennyi mechanikus zárkopást okozott ez?",
+          "hint": "Gondolja végig, mi mozog fizikailag egy elektronikus záras expozíció közben.",
+          "successMessage": "Helyes! Az elektronikus zár redőnymozgás nélkül olvassa ki az érzékelőt, így az az 500 kép gyakorlatilag semmilyen mechanikai kopást nem okozott — és jellemzően a mechanikus számlálót sem növeli.",
+          "failureMessage": "Az elektronikus zár az érzékelő elektronikus kiolvasásával exponál — redőny nem mozog, így a csendes fotózás nem koptatja a mechanikus zárat.",
+          "options": {
+            "0": { "label": "500 kioldás, mint bármely fotónál" },
+            "1": { "label": "Semennyit — csak a mechanikus zár használata számít" },
+            "2": { "label": "Csak a RAW fájlok koptatnak" },
+            "3": { "label": "Csak a vakus fotók koptatnak" }
+          }
+        },
+        "1": {
+          "scenario": "Egy kamerát 200 000 kioldásra méreteztek, jelenleg 195 000-nél jár. Mit jelent valójában a névleges érték ennél a váznál?",
+          "hint": "A névleges értékek statisztikai élettartam-tesztekből származnak, mint az izzók óraszámai.",
+          "successMessage": "Így van! A névleges érték a tesztekből származó átlagos élettartam — ez a zár tönkremehet jövő héten, de kitarthat 400 000-ig is. Az árazáshoz szolgáló valószínűségi jelzés, nem visszaszámláló.",
+          "failureMessage": "A zár névleges értéke a tesztelt átlagos élettartam, nem szigorú határ vagy garancia. Sok zár jóval túléli; némelyik korábban hibásodik meg.",
+          "options": {
+            "0": { "label": "A zár 200 000-nél leáll" },
+            "1": { "label": "Ez az átlagos élettartam — a meghibásodás esélye a közelében nő" },
+            "2": { "label": "A garancia 200 000-nél jár le" },
+            "3": { "label": "200 000 után az akkumulátor romlik" }
+          }
+        },
+        "2": {
+          "scenario": "Két azonos modellű használt kamerát hasonlít össze: az egyik 15 000 kioldásnál jár, és látható korrózió van az akkufedél környékén, a másik 60 000-nél, kifogástalan állapotban. Melyik a biztonságosabb vétel?",
+          "hint": "A számláló csak egyfajta kopást rögzít.",
+          "successMessage": "Pontosan. A zárszámláló csak egy jel a sok közül — a korrózió vízbehatásra utal, ami sokkal gyakrabban végez a kamerákkal, mint a kopott zárak. A tiszta, 60 000-es váz a biztonságosabb vétel.",
+          "failureMessage": "A zárszámláló csak a zár kopását méri. A korrózió vízkárra utal, ami sokkal kockázatosabb egy mérsékelten használt zárnál. A számlálót az állapottal együtt mérlegelje, soha ne önmagában.",
+          "options": {
+            "0": { "label": "A 15 000-es váz — a kevesebb mindig jobb" },
+            "1": { "label": "Amelyik olcsóbb" },
+            "2": { "label": "A tiszta, 60 000-es váz — az állapot többet számít" },
+            "3": { "label": "Egyik sem — mindkettő túl öreg" }
+          }
+        }
+      }
+    }
+  }
+}

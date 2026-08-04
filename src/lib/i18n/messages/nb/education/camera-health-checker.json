@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Hvert bilde kameraet lagrer, bærer på en skjult rapport om selve kameraet: nøyaktig modell, serienummer, fastvaren det kjører, objektivet som satt på, og noen ganger hvor mange bilder det har tatt. Dette verktøyet leser den rapporten fra ett enkelt bilde — helt i nettleseren din — slik at du kan vurdere et kamerahus omtrent som en mekaniker leser servicehistorikken til en bil.",
+      "deeper": "Dataene kommer fra EXIF-metadata, en standardblokk hvert digitalkamera bygger inn i filene sine. Standardfeltene omfatter Make, Model, BodySerialNumber, Software (som hos de fleste kameraer oppgir fastvareversjonen), LensModel og tidsstempelet for opptaket. Produsentene utvider dette med egne 'maker notes' — Nikons inneholder lukkertellingen, som er grunnen til at lukkerlevetid kan leses for noen merker og ikke andre. Husets alder anslås ved å matche modellnavnet mot en database over lanseringsår: et kamera lansert i 2018 er minst flere år gammelt uansett hva selgeren sier. To forbehold er viktige. For det første overlever metadata bare i originalfiler — de fleste redigeringsapper, meldingsapper og sosiale plattformer fjerner eller omskriver dem. For det andre kan EXIF redigeres med fritt tilgjengelige verktøy, så behandle det som sterke indisier, ikke bevis: det som faktisk avgjør saken, er samsvar mellom serienummeret i filen, serienummeret på huset og selgerens kvittering.",
+      "keyFactors": {
+        "0": {
+          "label": "Kun originalfiler",
+          "description": "Metadata overlever i filer rett fra kameraet. Eksporter og ny lagring fjerner ofte serienumre, maker notes og fastvareinfo."
+        },
+        "1": {
+          "label": "Serienummer",
+          "description": "Knytter filen til et fysisk hus. Sjekk det mot selve huset, kvitteringen og registre over stjålet utstyr før du kjøper brukt."
+        },
+        "2": {
+          "label": "Lanseringsår vs tilstand",
+          "description": "Alderen setter forventningene (sensorteknologi, manglende funksjoner, gjenværende støtte), men lukkerslitasje og fysisk tilstand forteller hvor harde årene har vært."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Kjøper du brukt? Be selgeren om et uredigert bilde rett fra kameraet. Det bekrefter modell og serienummer, viser gjeldende fastvare og — på støttede merker — lukkertellingen, alt i én fil."
+        },
+        "1": {
+          "text": "Sjekk fastvaren mot produsentens nyeste versjon. Et kamera som ikke er oppdatert, er normalt; et kamera som ikke lenger kan oppdateres, kan gå glipp av autofokus- og kompatibilitetsforbedringer."
+        },
+        "2": {
+          "text": "Opptaksdatoen på selgerens eksempelbilde forteller når kameraet sist faktisk ble brukt. Et 'lite brukt' hus med en nyeste fil som er fire år gammel, har ligget stille — sjekk om lukkeren henger og batteriet er oppsvulmet."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Husets serienummer",
+          "definition": "Den unike identifikatoren produsenten gir hvert kamerahus, innebygd i EXIF i hvert bilde. Nyttig for garantisjekker og registre over stjålet utstyr."
+        },
+        "firmware": {
+          "term": "Fastvare",
+          "definition": "Kameraets interne programvare, oppgitt i EXIF-feltet Software. Produsentene leverer forbedringer i autofokus, kompatibilitet og funksjoner gjennom fastvareoppdateringer."
+        },
+        "bodyAge": {
+          "term": "Husets alder",
+          "definition": "Antall år siden modellen ble lansert, anslått fra en database over lanseringsdatoer. En øvre grense for hvor moderne kameraets teknologi er — ikke for hvor slitt akkurat dette huset er."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du kjøper et brukt kamera fra en nettannonse. Selgeren sender deg et originalbilde fra kameraet. Hva er det mest verdifulle du kan gjøre med serienummeret i metadataene?",
+          "hint": "Serienummeret knytter akkurat dette huset til omverdenen.",
+          "successMessage": "Riktig! Å sjekke serienummeret mot registre over stjålet utstyr (og selgerens kvittering) beskytter deg mot å kjøpe tyvegods — en kontroll bare serienummeret gjør mulig.",
+          "failureMessage": "Serienummerets unike verdi er identifikasjon: sjekk det mot registre over stjålet utstyr og selgerens papirer. Det sier ingenting om bildekvalitet eller kompatibilitet.",
+          "options": {
+            "0": { "label": "Sjekke det mot registre over stjålet utstyr" },
+            "1": { "label": "Anslå bildekvaliteten" },
+            "2": { "label": "Bekrefte objektivkompatibilitet" },
+            "3": { "label": "Slå opp ISO-området" }
+          }
+        },
+        "1": {
+          "scenario": "Et brukt kamera du vurderer, kjører fastvare 1.0 fra lanseringen for fire år siden, mens produsentens gjeldende versjon er 3.1. Hva gir en oppdatering vanligvis?",
+          "hint": "Tenk på hva produsenter kan endre i programvare etter lansering.",
+          "successMessage": "Riktig! Fastvareoppdateringer leverer reelle forbedringer — bedre autofokusalgoritmer, støtte for nye objektiver, feilrettinger, noen ganger hele funksjoner. Maskinvarespesifikasjoner som sensor og megapiksler endres aldri.",
+          "failureMessage": "Fastvare er programvare: oppdateringer forbedrer autofokus, legger til objektivstøtte og retter feil. De kan ikke endre maskinvare som sensoren eller antallet megapiksler.",
+          "options": {
+            "0": { "label": "Nye funksjoner og autofokusforbedringer" },
+            "1": { "label": "Flere megapiksler" },
+            "2": { "label": "Et større sensorareal" },
+            "3": { "label": "Ingenting — fastvare er kosmetisk" }
+          }
+        },
+        "2": {
+          "scenario": "To selgere tilbyr samme modell: et 7 år gammelt hus og et 4 år gammelt til omtrent samme pris. Hva er riktig måte å bruke husets alder på i avgjørelsen?",
+          "hint": "Alderen er én faktor — hva forteller den ikke?",
+          "successMessage": "Nettopp. Alderen rammer inn teknologien og gjenværende støttetid, men det avgjørende er hvordan huset er brukt: lukkertelling, fysisk tilstand og servicehistorikk.",
+          "failureMessage": "Husets alder alene avgjør ikke saken — et forsiktig brukt eldre hus kan slå et hardt kjørt nyere. Kombiner alder med lukkertelling og fysisk tilstand.",
+          "options": {
+            "0": { "label": "Kjøp alltid det nyeste" },
+            "1": { "label": "Vei alderen sammen med lukkertelling og tilstand" },
+            "2": { "label": "Ignorer alderen — bare megapiksler teller" },
+            "3": { "label": "Velg bare ut fra merkets rykte" }
+          }
+        }
+      }
+    }
+  }
+}

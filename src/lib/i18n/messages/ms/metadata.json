@@ -91,8 +91,28 @@
       "description": "Visualkan bagaimana megapiksel diterjemahkan kepada saiz cetakan pada 72–300 DPI, merentasi nisbah aspek. Bandingkan kamera, saiz fail, pixel binning dan jangkauan pangkasan — dengan jadual cetakan mengikut tahap kualiti."
     },
     "lightroom-catalog-analyzer": {
-      "title": "Lightroom Catalog Analyzer — Statistik Percuma, Dalam Pelayar Sahaja",
+      "title": "Penganalisis Katalog Lightroom — Statistik Percuma, Dalam Pelayar Sahaja",
       "description": "Analisis katalog Lightroom Classic anda secara setempat dalam pelayar anda. Lihat peralatan, panjang fokus, tabiat aperture, penarafan, dan banyak lagi. 100% setempat — katalog anda tidak pernah dimuat naik."
+    },
+    "shutter-count-checker": {
+      "title": "Penyemak Kiraan Pengatup — Percuma & Privat",
+      "description": "Semak kiraan pengatup kamera anda daripada foto, percuma dan 100% dalam pelayar anda. Berfungsi dengan fail JPEG dan RAW Nikon, dengan panduan jelas untuk Canon, Sony dan jenama lain."
+    },
+    "camera-health-checker": {
+      "title": "Penyemak Kesihatan Kamera",
+      "description": "Periksa badan kamera daripada satu foto: model, nombor siri, perisian tegar, usia badan, lensa dan hayat pengatup. 100% di sisi pelanggan — sesuai untuk menyemak kamera terpakai sebelum membeli."
+    },
+    "panorama-calculator": {
+      "title": "Kalkulator Panorama",
+      "description": "Rancang panorama yang dicantum: berapa banyak tangkapan yang anda perlukan, berapa jauh untuk berputar antara bingkai, dan resolusi akhir — untuk mana-mana lensa, sensor dan pertindihan."
+    },
+    "diffraction-calculator": {
+      "title": "Kalkulator Had Pembelauan",
+      "description": "Cari had pembelauan kamera anda: aperture di mana pengecilan aperture mula melembutkan imej. Berdasarkan jarak piksel dan cakera Airy, untuk mana-mana sensor dan resolusi."
+    },
+    "photography-cheat-sheet": {
+      "title": "Helaian Rujukan Fotografi — Tetapan Kamera Mengikut Senario",
+      "description": "Helaian rujukan tetapan kamera untuk potret, landskap, hidupan liar, Bima Sakti dan banyak lagi. Titik permulaan terbukti yang boleh anda muat turun sebagai imej atau cetak."
     }
   }
 }

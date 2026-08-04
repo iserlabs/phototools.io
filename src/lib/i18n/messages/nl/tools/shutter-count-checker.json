@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Sleep een foto hierheen of klik om te bladeren (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Welke merken slaan de sluitertelling op?",
+      "status": {
+        "supported": "Uitleesbaar",
+        "partial": "Gedeeltelijk",
+        "unsupported": "Niet in bestanden"
+      },
+      "brands": {
+        "nikon": "Nikon schrijft de sluitertelling onversleuteld in de metadata van elke foto. Gebruik voor het beste resultaat een onbewerkt origineel bestand.",
+        "canon": "Canon schrijft de sluitertelling nooit in beeldbestanden — die wordt alleen in de camera zelf opgeslagen en uitgelezen door servicetools of USB-programma's.",
+        "sony": "Sony bewaart de sluitertelling in een versleuteld deel van de metadata dat niet in de browser te ontcijferen is. Speciale desktopprogramma's kunnen hem via USB uitlezen.",
+        "fujifilm": "Fujifilm-camera's registreren geen echte sluitertelling, maar sommige schrijven een beeldteller die een ruwe ondergrens geeft.",
+        "pentax": "Pentax versluiert het veld met de sluitertelling met een cijferschrift, waardoor het niet betrouwbaar uit bestanden te lezen is.",
+        "olympus": "OM System / Olympus-camera's bewaren de volledige sluitertelling in een intern servicemenu; bestanden bevatten soms een beeldteller die een indicatie van het gebruik geeft.",
+        "panasonic": "Panasonic schrijft geen sluitertelling naar bestanden. Het servicemenu van de camera toont hem wel.",
+        "leica": "Leica-camera's slaan doorgaans geen sluitertelling op in beeldbestanden."
+      },
+      "countLabel": "Sluiterontspanningen",
+      "source": {
+        "shutterCount": "Uitgelezen uit de sluitertelling-metadata van de camera — dit is de daadwerkelijke mechanische teller.",
+        "mechanicalShutterCount": "Uitgelezen van de mechanische sluiterteller — opnamen met elektronische sluiter tellen niet mee.",
+        "imageNumber": "Geschat op basis van het beeldnummer van het bestand. Dit is een ruwe ondergrens, geen exacte telling — de teller kan gereset worden of overlopen."
+      },
+      "ratedLife": "Opgegeven sluiterlevensduur",
+      "ratings": {
+        "entry": "Instapmodel",
+        "enthusiast": "Enthousiast",
+        "advanced": "Gevorderd",
+        "pro": "Professioneel",
+        "flagship": "Vlaggenschip"
+      },
+      "lifeUsed": "{percent}% van de opgegeven levensduur verbruikt",
+      "verdict": {
+        "low": "Nauwelijks gebruikt",
+        "moderate": "Matig gebruikt",
+        "high": "Intensief gebruikt",
+        "beyond": "Voorbij de opgave"
+      },
+      "noCountTitle": "Geen sluitertelling in dit bestand",
+      "noCountGeneric": "Dit bestand bevat geen uitleesbare sluitertelling. Probeer een onbewerkte originele foto rechtstreeks uit de camera — exports uit bewerkingsapps verwijderen vaak de fabrikant-metadata.",
+      "errorRead": "Dit bestand kon niet worden gelezen. Probeer een onbewerkt JPEG- of RAW-bestand rechtstreeks uit de camera.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Wat is een sluitertelling?",
+          "answer": "De sluitertelling is het aantal keren dat de mechanische sluiter van een camera is afgegaan — het camera-equivalent van de kilometerstand van een auto. Het is de meest gecontroleerde slijtage-indicator bij het kopen of verkopen van een tweedehands camera, omdat sluiters een eindig aantal ontspanningen meegaan."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Hoeveel sluiterontspanningen is te veel?",
+          "answer": "Dat hangt af van de cameraklasse. Sluiters van instapmodellen zijn opgegeven voor zo'n 100.000 ontspanningen, enthousiastmodellen voor 150.000–200.000 en professionele camera's voor 300.000–500.000. Een opgave is een gemiddelde levensduur, geen harde grens — veel sluiters gaan er ruim overheen, en een lage telling op een slecht behandelde camera kan alsnog problemen betekenen."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Waarom kan ik de sluitertelling van mijn Canon- of Sony-foto niet controleren?",
+          "answer": "Canon schrijft de sluitertelling helemaal niet in beeldbestanden — die bestaat alleen in het interne geheugen van de camera. Sony schrijft hem wel, maar versleutelt dat deel van de metadata. In beide gevallen kan een browsertool hem niet uit een foto lezen; desktopprogramma's die via USB met de camera verbinden zijn de gebruikelijke oplossing."
+        }
+      }
+    }
+  }
+}

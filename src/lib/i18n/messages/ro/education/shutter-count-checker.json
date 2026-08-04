@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "De fiecare dată când aparatul tău face o fotografie cu obturatorul mecanic, un contor din interior avansează cu unu. Acel număr — numărul de declanșări — e ca kilometrajul unei mașini: îți spune cât de intens a fost folosit un aparat. Contează cel mai mult la cumpărarea sau vânzarea echipamentului second-hand, pentru că obturatoarele sunt piese în mișcare proiectate pentru un număr finit de acționări.",
+      "deeper": "Un obturator mecanic este o pereche de perdele cu arc care mătură fizic senzorul la fiecare expunere. Producătorii testează durata de viață a acestor mecanisme și publică cote: aproximativ 100.000 de declanșări pentru aparatele entry-level, 150.000–200.000 pentru modelele de entuziast și 300.000–500.000 pentru cele profesionale. Cota este o medie statistică, nu o dată de expirare — multe obturatoare rezistă de câteva ori mai mult decât cota lor, iar un obturator defect este de obicei o defecțiune reparabilă (deși costisitoare). Locul unde stă numărul variază în funcție de marcă: Nikon îl scrie, necriptat, în notele producătorului din fiecare fișier, motiv pentru care acest instrument îl poate citi. Canon îl păstrează doar în memoria internă, Sony îl criptează, iar Pentax îl maschează. Aparatele mirrorless moderne complică și mai mult tabloul: cadrele făcute cu obturatorul electronic nu uzează deloc mecanismul, așa că un aparat folosit mai ales în modul silențios poate avea mult mai multe expuneri totale decât sugerează contorul mecanic — și e perfect în regulă.",
+      "keyFactors": {
+        "0": {
+          "label": "Marca aparatului",
+          "description": "Determină dacă numărul poate fi citit din fișiere. Nikon îl stochează la vedere; Canon, Sony și Pentax nu."
+        },
+        "1": {
+          "label": "Durata de viață nominală a obturatorului",
+          "description": "Durata medie de viață testată de producător pentru mecanismul obturatorului. Aparatele din gama superioară folosesc mecanisme mai durabile, cu cote mai mari."
+        },
+        "2": {
+          "label": "Obturator electronic vs mecanic",
+          "description": "Cadrele cu obturator electronic nu produc nicio uzură mecanică și de obicei nu incrementează contorul mecanic. Cei care fotografiază mult în modul silențios au contoare mici."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Verifică întotdeauna numărul dintr-un fișier needitat, direct din aparat. Exporturile din Lightroom, aplicațiile de mesagerie sau rețelele sociale elimină de regulă notele producătorului care conțin contorul."
+        },
+        "1": {
+          "text": "Când cumperi second-hand, raportează numărul la cotă: 40.000 pe un aparat cotat la 300.000 abia e rodat, în timp ce 90.000 pe unul cotat la 100.000 trebuie să includă în preț o înlocuire de obturator."
+        },
+        "2": {
+          "text": "Un număr mic de declanșări nu garantează un aparat sănătos — daunele de la apă, zgârieturile de pe senzor și căzăturile nu apar în contor. Inspectează și fotografii de test, și aparatul în sine."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Numărul de declanșări",
+          "definition": "De câte ori s-a acționat obturatorul mecanic pe durata de viață a aparatului. Citit din metadatele pe care aparatul le încorporează în fiecare fotografie."
+        },
+        "ratedLife": {
+          "term": "Durata de viață nominală a obturatorului",
+          "definition": "Numărul mediu de acționări până la defectare, testat de producător. O medie, nu o limită strictă — multe obturatoare o depășesc cu mult."
+        },
+        "source": {
+          "term": "Sursa numărului",
+          "definition": "De unde a fost citit numărul: câmpul real cu numărul de declanșări, contorul exclusiv mecanic de pe unele mirrorless sau un număr de imagine generic folosit ca aproximare de rezervă."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Faci 500 de fotografii la un concert folosind obturatorul electronic silențios al aparatului tău mirrorless. Câtă uzură mecanică a obturatorului a adăugat asta?",
+          "hint": "Gândește-te la ce se mișcă fizic în timpul unei expuneri cu obturator electronic.",
+          "successMessage": "Corect! Obturatorul electronic citește senzorul fără să miște vreo perdea, așa că acele 500 de cadre nu au produs practic nicio uzură mecanică — și de regulă nu incrementează contorul mecanic.",
+          "failureMessage": "Obturatorul electronic expune citind senzorul electronic — nicio perdea nu se mișcă, deci fotografierea silențioasă nu adaugă uzură mecanică obturatorului.",
+          "options": {
+            "0": { "label": "500 de acționări, ca orice fotografii" },
+            "1": { "label": "Niciuna — contează doar folosirea obturatorului mecanic" },
+            "2": { "label": "Doar fișierele RAW adaugă uzură" },
+            "3": { "label": "Doar fotografiile cu blitz adaugă uzură" }
+          }
+        },
+        "1": {
+          "scenario": "Un aparat este cotat la 200.000 de acționări și arată în prezent 195.000. Ce înseamnă de fapt cota pentru acest aparat?",
+          "hint": "Cotele provin din teste statistice de durată de viață, ca orele declarate ale becurilor.",
+          "successMessage": "Exact! Cota este durata medie de viață rezultată din teste — acest obturator ar putea ceda săptămâna viitoare sau ar putea ajunge la 400.000. E un semnal de probabilitate pentru stabilirea prețului, nu o numărătoare inversă.",
+          "failureMessage": "Cota unui obturator este durata medie de viață testată, nu o limită strictă sau o garanție. Multe obturatoare rezistă mult peste ea; unele cedează mai devreme.",
+          "options": {
+            "0": { "label": "Obturatorul se va opri la 200.000" },
+            "1": { "label": "E durata medie de viață — șansele de defectare cresc în apropierea ei" },
+            "2": { "label": "Garanția se termină la 200.000" },
+            "3": { "label": "Bateria se degradează după 200.000" }
+          }
+        },
+        "2": {
+          "scenario": "Compari două aparate second-hand de același model: unul cu 15.000 de declanșări și coroziune vizibilă lângă capacul bateriei, unul cu 60.000 de declanșări în stare impecabilă. Care e achiziția mai sigură?",
+          "hint": "Contorul înregistrează un singur tip de uzură.",
+          "successMessage": "Exact. Numărul de declanșări e doar unul dintre semnale — coroziunea sugerează expunere la apă, care omoară aparatele mult mai des decât obturatoarele uzate. Aparatul curat cu 60.000 e achiziția mai sigură.",
+          "failureMessage": "Numărul de declanșări măsoară doar uzura obturatorului. Coroziunea indică daune de la apă, mult mai riscante decât un obturator folosit moderat. Judecă numărul plus starea, niciodată numărul singur.",
+          "options": {
+            "0": { "label": "Aparatul cu 15.000 — mai puțin e întotdeauna mai bine" },
+            "1": { "label": "Oricare e mai ieftin" },
+            "2": { "label": "Aparatul curat cu 60.000 — starea contează mai mult" },
+            "3": { "label": "Niciunul — ambele sunt prea vechi" }
+          }
+        }
+      }
+    }
+  }
+}

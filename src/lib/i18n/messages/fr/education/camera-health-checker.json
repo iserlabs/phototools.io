@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Chaque photo enregistrée par ton appareil transporte un rapport caché sur l'appareil lui-même : le modèle exact, son numéro de série, le firmware qu'il exécute, l'objectif monté, et parfois le nombre de photos prises. Cet outil lit ce rapport depuis une seule photo — entièrement dans ton navigateur — pour que tu puisses évaluer un boîtier comme un mécanicien lit le carnet d'entretien d'une voiture.",
+      "deeper": "Les données proviennent des métadonnées EXIF, un bloc standard que chaque appareil numérique intègre à ses fichiers. Les champs standard incluent la marque, le modèle, le numéro de série du boîtier, le logiciel (qui pour la plupart des appareils indique la version du firmware), le modèle d'objectif et l'horodatage de prise de vue. Les fabricants les complètent avec des « notes de fabricant » propriétaires — celles de Nikon incluent le nombre de déclenchements, ce qui explique pourquoi l'endurance de l'obturateur est lisible pour certaines marques et pas d'autres. L'âge du boîtier est estimé en croisant le nom du modèle avec une base de données d'années de sortie : un appareil sorti en 2018 a au moins plusieurs années, quoi qu'en dise le vendeur. Deux réserves importent. D'abord, les métadonnées ne survivent que dans les fichiers originaux — la plupart des logiciels de retouche, applis de messagerie et plateformes sociales les suppriment ou les réécrivent. Ensuite, l'EXIF peut être modifié avec des outils librement disponibles, alors considère-le comme un indice solide, pas comme une preuve : c'est la cohérence entre le numéro de série du fichier, celui gravé sur le boîtier et le reçu du vendeur qui clôt vraiment l'enquête.",
+      "keyFactors": {
+        "0": {
+          "label": "Fichiers originaux uniquement",
+          "description": "Les métadonnées survivent dans les fichiers sortis directement de l'appareil. Les exports et réenregistrements suppriment souvent numéros de série, notes de fabricant et infos de firmware."
+        },
+        "1": {
+          "label": "Numéro de série",
+          "description": "Relie le fichier à un boîtier physique. Compare-le au boîtier lui-même, au reçu et aux registres de matériel volé avant un achat d'occasion."
+        },
+        "2": {
+          "label": "Année de sortie vs état",
+          "description": "L'âge cadre les attentes (technologie du capteur, fonctions absentes, support restant), mais l'usure de l'obturateur et l'état physique disent à quel point ces années ont été rudes."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Achat d'occasion ? Demande au vendeur une photo non retouchée sortie directement de l'appareil. Elle vérifie le modèle et le numéro de série, montre le firmware actuel et — sur les marques compatibles — le nombre de déclenchements, le tout dans un seul fichier."
+        },
+        "1": {
+          "text": "Compare le firmware à la dernière version du fabricant. Un appareil pas à jour, c'est normal ; un appareil qui ne peut plus être mis à jour peut manquer des améliorations d'autofocus et de compatibilité."
+        },
+        "2": {
+          "text": "La date de prise de vue de la photo d'exemple du vendeur t'indique quand l'appareil a réellement servi pour la dernière fois. Un boîtier « peu utilisé » dont le fichier le plus récent a quatre ans est resté au placard — vérifie un obturateur grippé et une batterie gonflée."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Numéro de série du boîtier",
+          "definition": "L'identifiant unique attribué par le fabricant à chaque boîtier, intégré à l'EXIF de chaque photo. Utile pour les vérifications de garantie et les registres de matériel volé."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "Le logiciel interne de l'appareil, indiqué dans le champ Software de l'EXIF. Les fabricants livrent des améliorations d'autofocus, de compatibilité et de fonctionnalités via les mises à jour de firmware."
+        },
+        "bodyAge": {
+          "term": "Âge du boîtier",
+          "definition": "Les années écoulées depuis la sortie du modèle, estimées à partir d'une base de données de dates de sortie. Une borne haute sur la modernité de la technologie — pas sur l'usure de ce boîtier précis."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Tu achètes un appareil d'occasion via une annonce en ligne. Le vendeur t'envoie une photo originale prise avec l'appareil. Quelle est l'utilisation la plus précieuse du numéro de série dans ses métadonnées ?",
+          "hint": "Le numéro de série relie ce boîtier précis au monde extérieur.",
+          "successMessage": "Correct ! Croiser le numéro de série avec les registres de matériel volé (et le reçu du vendeur) te protège d'un achat de matériel volé — une vérification que seul le numéro de série rend possible.",
+          "failureMessage": "La valeur unique du numéro de série, c'est l'identification : vérifie-le dans les registres de matériel volé et les papiers du vendeur. Il ne dit rien de la qualité d'image ni de la compatibilité.",
+          "options": {
+            "0": { "label": "Le vérifier dans les registres de matériel volé" },
+            "1": { "label": "Estimer la qualité de la photo" },
+            "2": { "label": "Vérifier la compatibilité des objectifs" },
+            "3": { "label": "Chercher la plage ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Un appareil d'occasion que tu envisages tourne avec le firmware 1.0 de son lancement il y a quatre ans, alors que la version actuelle du fabricant est la 3.1. Qu'apporte typiquement la mise à jour ?",
+          "hint": "Pense à ce que les fabricants peuvent changer par logiciel après le lancement.",
+          "successMessage": "Exact ! Les mises à jour de firmware apportent de vraies améliorations — meilleurs algorithmes d'autofocus, prise en charge de nouveaux objectifs, corrections de bugs, parfois des fonctions entières. Les caractéristiques matérielles comme le capteur et les mégapixels ne changent jamais.",
+          "failureMessage": "Le firmware est un logiciel : les mises à jour améliorent l'autofocus, ajoutent la prise en charge d'objectifs et corrigent des bugs. Elles ne peuvent pas changer le matériel, comme le capteur ou le nombre de mégapixels.",
+          "options": {
+            "0": { "label": "Des nouveautés et des améliorations d'autofocus" },
+            "1": { "label": "Plus de mégapixels" },
+            "2": { "label": "Une surface de capteur plus grande" },
+            "3": { "label": "Rien — le firmware est cosmétique" }
+          }
+        },
+        "2": {
+          "scenario": "Deux vendeurs proposent le même modèle : un boîtier de 7 ans et un boîtier de 4 ans à des prix similaires. Comment bien utiliser l'âge du boîtier dans ta décision ?",
+          "hint": "L'âge est un critère parmi d'autres — que ne dit-il pas ?",
+          "successMessage": "Exactement. L'âge cadre la technologie et la durée de support restante, mais les facteurs décisifs sont l'usage du boîtier : nombre de déclenchements, état physique et historique d'entretien.",
+          "failureMessage": "L'âge du boîtier seul ne tranche pas — un boîtier plus vieux mais ménagé peut battre un plus récent malmené. Combine l'âge avec le nombre de déclenchements et l'état général.",
+          "options": {
+            "0": { "label": "Toujours acheter le plus récent" },
+            "1": { "label": "Pondérer l'âge avec le compteur et l'état" },
+            "2": { "label": "Ignorer l'âge — seuls les mégapixels comptent" },
+            "3": { "label": "Choisir uniquement selon la réputation de la marque" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Chaque situation de prise de vue — portraits, animalier, Voie lactée — possède une combinaison éprouvée d'ouverture, de vitesse d'obturation et d'ISO vers laquelle les photographes expérimentés se tournent en premier. Ces aide-mémoire te donnent ce point de départ instantanément, pour que tu consacres ton attention à la lumière et à la composition plutôt qu'à douter de tes molettes.",
+      "deeper": "Chaque recette ici est une application du triangle d'exposition avec un côté priorisé. Les portraits priorisent l'ouverture : les grandes ouvertures (f/1.8–f/2.8) détachent le sujet de l'arrière-plan, et tout le reste s'adapte autour. L'action priorise la vitesse d'obturation : 1/1000s fige le mouvement, donc l'ouverture s'agrandit et l'ISO monte pour l'alimenter en lumière. Les paysages priorisent la qualité d'image : ISO de base et ouverture moyenne dans la zone idéale de l'objectif, un trépied absorbant la vitesse d'obturation qui en résulte. Les scènes nocturnes poussent les trois côtés à la fois, d'où leurs recettes les plus rigides — la Voie lactée exige réellement un objectif lumineux à pleine ouverture, une exposition sous ~20 secondes (avant que la rotation de la Terre ne fasse filer les étoiles), et l'ISO qu'il faut pour rendre l'histogramme exploitable. Comprendre quel côté chaque scénario priorise est la vraie leçon : une fois la priorité identifiée, tu peux adapter n'importe quelle recette à la lumière devant toi au lieu de la suivre aveuglément. Les plages sont des points de départ calibrés pour des conditions typiques ; c'est ton histogramme, pas la fiche, qui a le dernier mot.",
+      "keyFactors": {
+        "0": {
+          "label": "Priorité du scénario",
+          "description": "Chaque situation verrouille d'abord une variable d'exposition — l'ouverture pour les portraits, la vitesse pour l'action, l'ISO pour les paysages — et laisse les autres s'adapter."
+        },
+        "1": {
+          "label": "Lumière disponible",
+          "description": "Le même scénario demande des réglages différents à midi et au crépuscule. Prends les plages comme des repères et déplace-toi à l'intérieur quand la lumière change."
+        },
+        "2": {
+          "label": "Support et stabilité",
+          "description": "Un trépied débloque l'ISO de base et les vitesses lentes pour les scènes statiques. À main levée, fixe un plancher de vitesse d'obturation autour de 1/(focale) ou plus rapide."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Fais une photo test et lis l'histogramme, pas l'aperçu LCD — les écrans mentent en plein soleil et de nuit, l'histogramme jamais."
+        },
+        "1": {
+          "text": "Mémorise une recette par genre que tu pratiques, puis entraîne-toi à ajuster une seule variable à la fois. Tu intérioriseras les compromis bien plus vite qu'en changeant tout d'un coup."
+        },
+        "2": {
+          "text": "Télécharge la fiche pour les scénarios que tu pratiques rarement — la recette de la Voie lactée est difficile à retrouver à 2 h du matin en montagne avec les doigts gelés."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Ouverture",
+          "definition": "La taille de l'ouverture de l'objectif, en nombres f. Nombres plus bas = plus de lumière et plus de flou d'arrière-plan ; nombres plus élevés = plus de profondeur de champ."
+        },
+        "shutter": {
+          "term": "Vitesse d'obturation",
+          "definition": "La durée pendant laquelle le capteur recueille la lumière. Les vitesses rapides figent le mouvement ; les lentes le floutent et exigent une stabilisation ou un trépied."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "L'amplification du capteur. Garde-le aussi bas que la lumière le permet — le monter éclaircit l'image au prix du bruit."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Tu fais un portrait et tu veux le rendu classique : sujet net, arrière-plan fondu dans le flou. Quel choix de réglage y parvient ?",
+          "hint": "Le flou d'arrière-plan vient de la profondeur de champ — quel contrôle la pilote ?",
+          "successMessage": "Correct ! Une grande ouverture (comme f/1.8–f/2.8) crée la faible profondeur de champ qui détache le sujet d'un arrière-plan flou — le choix qui définit le portrait.",
+          "failureMessage": "Le flou d'arrière-plan vient d'une grande ouverture (nombre f bas) comme f/1.8–f/2.8, qui rend la profondeur de champ faible. Les petites ouvertures font l'inverse.",
+          "options": {
+            "0": { "label": "Une petite ouverture comme f/16" },
+            "1": { "label": "Une grande ouverture comme f/2" },
+            "2": { "label": "Une pose longue sur trépied" },
+            "3": { "label": "L'ISO au maximum" }
+          }
+        },
+        "1": {
+          "scenario": "Un héron décolle de l'eau pile quand tu déclenches, et chaque image montre des bouts d'ailes flous. Quelle est la solution ?",
+          "hint": "Le flou de mouvement est un problème de temps.",
+          "successMessage": "Exact ! Les oiseaux en vol exigent des vitesses rapides — 1/2500s ou plus vite fige les battements d'ailes. Ouvre le diaphragme et laisse l'ISO auto grimper pour alimenter la vitesse dont tu as besoin.",
+          "failureMessage": "Des ailes floues signifient une vitesse trop lente pour le mouvement. Passe à 1/2500s ou plus rapide et laisse l'ouverture et l'ISO compenser la lumière perdue.",
+          "options": {
+            "0": { "label": "Une vitesse plus lente pour plus de lumière" },
+            "1": { "label": "Une vitesse d'obturation beaucoup plus rapide" },
+            "2": { "label": "Fermer à f/22" },
+            "3": { "label": "Passer la balance des blancs en tungstène" }
+          }
+        },
+        "2": {
+          "scenario": "Tu es installé sous un ciel noir pour photographier la Voie lactée. Quelle combinaison obtient une exposition exploitable du cœur galactique ?",
+          "hint": "Les étoiles sont faibles, en mouvement (avec la rotation de la Terre), et ta seule source de lumière.",
+          "successMessage": "Correct ! Pleine ouverture (f/1.4–f/2.8), 10–25 secondes, ISO 1600–6400 : l'ouverture recueille un maximum de lumière, l'obturation s'arrête avant que les étoiles ne filent, et l'ISO élevé rend le cœur faible visible.",
+          "failureMessage": "La Voie lactée exige tout : l'ouverture au maximum, une exposition assez courte pour que les étoiles ne filent pas (10–25 s), et un ISO élevé (1600–6400). Petites ouvertures ou ISO de base laissent le ciel noir.",
+          "options": {
+            "0": { "label": "f/11, 30 s, ISO 100" },
+            "1": { "label": "Pleine ouverture, 10–25 s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "N'importe quels réglages avec un filtre ND" }
+          }
+        }
+      }
+    }
+  }
+}

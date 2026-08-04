@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Dépose une photo ici ou clique pour parcourir (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Dépose n'importe quelle photo de l'appareil que tu veux inspecter. Tout est lu dans ton navigateur — le fichier ne quitte jamais ton appareil.",
+      "errorRead": "Impossible de lire ce fichier. Essaie un JPEG ou un fichier RAW non retouché, sorti directement de l'appareil.",
+      "errorNoMetadata": "Ce fichier ne contient aucune métadonnée d'appareil photo. Les exports des logiciels de retouche ou de messagerie les suppriment souvent — essaie un fichier original non retouché.",
+      "sections": {
+        "body": "Boîtier",
+        "age": "Âge",
+        "shutter": "Endurance de l'obturateur",
+        "lens": "Objectif"
+      },
+      "cameraModel": "Modèle",
+      "make": "Marque",
+      "serialNumber": "Numéro de série",
+      "firmware": "Firmware / logiciel",
+      "bodyAge": "Âge du boîtier",
+      "ageValue": "~{years} ans (sorti en {year})",
+      "ageUnknown": "Ce modèle n'est pas dans notre base de données de sorties, son âge n'a donc pas pu être estimé.",
+      "shotDate": "Photo prise le",
+      "shutterCount": "Nombre de déclenchements",
+      "ratedLife": "Endurance nominale",
+      "ratedAssumed": "(estimée)",
+      "lifeUsed": "{percent}% de l'endurance nominale utilisée",
+      "verdict": {
+        "low": "À peine utilisé",
+        "moderate": "Usage modéré",
+        "high": "Usage intensif",
+        "beyond": "Au-delà de l'endurance"
+      },
+      "shutterUnavailable": {
+        "supported": "Aucun nombre de déclenchements trouvé alors que {brand} l'enregistre normalement. Essaie un fichier original non retouché — les logiciels de retouche suppriment souvent les métadonnées du fabricant.",
+        "partial": "{brand} n'écrit qu'un compteur d'images approximatif dans certains fichiers, et celui-ci n'en contient pas. Les menus de l'appareil ou un utilitaire USB peuvent l'indiquer.",
+        "unsupported": "{brand} n'enregistre pas de nombre de déclenchements lisible dans les fichiers image. Consulte la page du Vérificateur de déclenchements pour les alternatives propres à chaque marque.",
+        "unknown": "Ce fichier ne contient aucun nombre de déclenchements lisible."
+      },
+      "lensModel": "Objectif",
+      "lensSerial": "Numéro de série de l'objectif",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Que vérifier avant d'acheter un appareil photo d'occasion ?",
+          "answer": "Au-delà de l'aspect extérieur : le nombre de déclenchements par rapport à l'endurance nominale, l'âge du boîtier et la version du firmware, la correspondance entre le numéro de série et les papiers du vendeur (et son absence des registres de matériel volé), l'état du capteur (cherche poussières ou rayures sur une photo test de ciel dégagé à f/16), et le bon fonctionnement de toutes les molettes, des ports et de la monture d'objectif."
+        },
+        "where-does-health-data-come-from": {
+          "question": "D'où viennent ces données d'état ?",
+          "answer": "Tout est lu depuis les métadonnées intégrées à ta photo : les champs EXIF standard (modèle, numéro de série, firmware, objectif, date de prise de vue) plus les notes de fabricant propriétaires quand elles existent (nombre de déclenchements). L'âge du boîtier est estimé à partir d'une base de données intégrée des années de sortie des modèles les plus courants."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Ma photo est-elle envoyée sur un serveur ?",
+          "answer": "Non. Le fichier est analysé entièrement dans ton navigateur en JavaScript — il ne quitte jamais ton appareil, et rien n'est stocké. Tu peux le vérifier en chargeant la page puis en coupant ta connexion avant de déposer un fichier."
+        }
+      }
+    }
+  }
+}

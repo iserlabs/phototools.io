@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Matryca",
+      "megapixels": "Rozdzielczość: {mp} MP",
+      "aperture": "Przysłona",
+      "verdict": {
+        "sharp": "{f} jest wolne od dyfrakcji",
+        "borderline": "{f} jest lekko zmiękczone przez dyfrakcję",
+        "soft": "{f} jest wyraźnie zmiękczone przez dyfrakcję"
+      },
+      "verdictDetail": {
+        "sharp": "Poniżej granicy dyfrakcji {limit} dla tej matrycy i rozdzielczości o ostrości decyduje obiektyw, a nie dyfrakcja.",
+        "borderline": "Za granicą dyfrakcji {limit} drobne detale na poziomie pikseli zaczynają się rozmywać. Do przyjęcia, gdy potrzebujesz dodatkowej głębi ostrości.",
+        "soft": "Znacznie za granicą dyfrakcji {limit}. Głębia ostrości wciąż rośnie, ale ogólna szczegółowość wyraźnie się pogarsza — zamiast dalej przymykać przysłonę, rozważ focus stacking."
+      },
+      "stripLabel": "Skala przysłon pokolorowana według wpływu dyfrakcji",
+      "pixelPitch": "Rozmiar piksela",
+      "airyDisk": "Średnica krążka Airy'ego",
+      "diffractionLimit": "Granica dyfrakcji",
+      "tableTitle": "Granica dyfrakcji według matrycy i rozdzielczości",
+      "tableSensor": "Matryca",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Czym jest dyfrakcja w fotografii?",
+          "answer": "Dyfrakcja to uginanie się fal świetlnych przeciskających się przez mały otwór przysłony. Im mniejszy otwór (wyższa liczba f), tym bardziej każdy punkt światła rozlewa się na matrycy w rozmyty krążek (krążek Airy'ego). Gdy ten krążek staje się większy od piksela, drobne detale rozmywają się niezależnie od jakości obiektywu."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Która przysłona jest najostrzejsza?",
+          "answer": "Większość obiektywów osiąga szczyt ostrości dwa–trzy stopnie od pełnego otwarcia — na pełnej klatce zwykle między f/4 a f/8. Ten optymalny zakres równoważy wady optyczne obiektywu (najgorsze przy pełnym otwarciu) z dyfrakcją (gorszą w miarę przymykania). Matryce o wysokiej rozdzielczości osiągają granicę dyfrakcji wcześniej, więc ich użyteczny zakres jest węższy."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Czy dyfrakcja zależy od matrycy?",
+          "answer": "Efekt optyczny zależy tylko od przysłony i długości fali światła — ale jego widoczność zależy od rozmiaru piksela. Pełnoklatkowa matryca 61 MP ma piksele ~3,8 µm i pokazuje zmiękczenie dyfrakcyjne już około f/5.6, podczas gdy matryca 12 MP z dużymi pikselami pozostaje ostra do f/11. Mniejsze matryce przy tej samej liczbie megapikseli osiągają granicę przy szerszych przysłonach."
+        }
+      }
+    }
+  }
+}

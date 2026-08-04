@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Elke foto die je camera opslaat, draagt een verborgen rapport over de camera zelf mee: het exacte model, het serienummer, de firmware die erop draait, de lens die erop zat en soms hoeveel foto's hij heeft gemaakt. Deze tool leest dat rapport uit één enkele foto — volledig in je browser — zodat je een camerabody kunt beoordelen zoals een monteur de onderhoudshistorie van een auto leest.",
+      "deeper": "De gegevens komen uit EXIF-metadata, een standaardblok dat elke digitale camera in zijn bestanden inbedt. Standaardvelden zijn onder meer merk, model, body-serienummer, software (die bij de meeste camera's de firmwareversie meldt), lensmodel en het opnametijdstip. Fabrikanten breiden dit uit met eigen 'maker notes' — bij Nikon hoort daar de sluitertelling bij, en daarom is de sluiterlevensduur bij sommige merken wel uitleesbaar en bij andere niet. De leeftijd van de body wordt geschat door de modelnaam te vergelijken met een database van releasejaren: een camera die in 2018 uitkwam is minstens enkele jaren oud, wat de verkoper ook beweert. Twee kanttekeningen zijn belangrijk. Ten eerste overleeft metadata alleen in originele bestanden — de meeste bewerkingsapps, berichtenapps en sociale platforms verwijderen of herschrijven haar. Ten tweede is EXIF met vrij verkrijgbare tools te bewerken, dus beschouw het als sterk bewijs, geen sluitend bewijs: pas als het serienummer in het bestand, dat op de body en dat op het aankoopbewijs van de verkoper overeenkomen, is de zaak echt rond.",
+      "keyFactors": {
+        "0": {
+          "label": "Alleen originele bestanden",
+          "description": "Metadata overleeft in bestanden rechtstreeks uit de camera. Exports en opnieuw opslaan verwijderen vaak serienummers, maker notes en firmware-informatie."
+        },
+        "1": {
+          "label": "Serienummer",
+          "description": "Koppelt het bestand aan een fysieke body. Controleer het tegen de body zelf, het aankoopbewijs en registers van gestolen apparatuur voordat je tweedehands koopt."
+        },
+        "2": {
+          "label": "Releasejaar vs. conditie",
+          "description": "Leeftijd bepaalt de verwachtingen (sensortechniek, ontbrekende functies, resterende ondersteuning), maar sluiterslijtage en fysieke staat vertellen je hoe zwaar die jaren waren."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Tweedehands kopen? Vraag de verkoper om een onbewerkte foto rechtstreeks uit de camera. Die bevestigt model en serienummer, toont de huidige firmware en — bij ondersteunde merken — de sluitertelling, allemaal in één bestand."
+        },
+        "1": {
+          "text": "Vergelijk de firmware met de nieuwste versie van de fabrikant. Een niet-bijgewerkte camera is normaal; een camera die niet meer bijgewerkt kan worden, loopt mogelijk autofocus- en compatibiliteitsverbeteringen mis."
+        },
+        "2": {
+          "text": "De opnamedatum op de voorbeeldfoto van de verkoper vertelt je wanneer de camera voor het laatst echt is gebruikt. Een 'nauwelijks gebruikte' body waarvan het nieuwste bestand vier jaar oud is, heeft stilgelegen — controleer op een vastzittende sluiter en een opgezwollen accu."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Body-serienummer",
+          "definition": "De unieke identificatie die de fabrikant aan elke camerabody toekent, ingebed in de EXIF van elke foto. Handig voor garantiecontroles en registers van gestolen apparatuur."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "De interne software van de camera, gemeld in het EXIF-veld Software. Fabrikanten leveren autofocus-, compatibiliteits- en functieverbeteringen via firmware-updates."
+        },
+        "bodyAge": {
+          "term": "Leeftijd van de body",
+          "definition": "Jaren sinds het model werd uitgebracht, geschat aan de hand van een database met releasedata. Een bovengrens voor hoe actueel de techniek van de camera is — niet voor hoe versleten dit specifieke exemplaar is."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Je koopt een tweedehands camera via een online advertentie. De verkoper stuurt je een originele foto uit de camera. Wat is het waardevolste dat je met het serienummer in de metadata kunt doen?",
+          "hint": "Het serienummer verbindt deze specifieke body met de buitenwereld.",
+          "successMessage": "Correct! Het serienummer controleren tegen registers van gestolen apparatuur (en het aankoopbewijs van de verkoper) beschermt je tegen het kopen van gestolen spullen — een controle die alleen het serienummer mogelijk maakt.",
+          "failureMessage": "De unieke waarde van het serienummer is identificatie: controleer het tegen registers van gestolen apparatuur en de papieren van de verkoper. Over beeldkwaliteit of compatibiliteit zegt het niets.",
+          "options": {
+            "0": { "label": "Controleren tegen registers van gestolen apparatuur" },
+            "1": { "label": "De fotokwaliteit inschatten" },
+            "2": { "label": "De lenscompatibiliteit verifiëren" },
+            "3": { "label": "Het ISO-bereik opzoeken" }
+          }
+        },
+        "1": {
+          "scenario": "Een tweedehands camera die je overweegt draait op firmware 1.0 van de lancering vier jaar geleden, terwijl de huidige versie van de fabrikant 3.1 is. Wat levert bijwerken doorgaans op?",
+          "hint": "Bedenk wat fabrikanten na de lancering nog via software kunnen veranderen.",
+          "successMessage": "Juist! Firmware-updates leveren echte verbeteringen — betere autofocusalgoritmen, ondersteuning voor nieuwe lenzen, bugfixes, soms hele functies. Hardware-specificaties zoals de sensor en megapixels veranderen nooit.",
+          "failureMessage": "Firmware is software: updates verbeteren de autofocus, voegen lensondersteuning toe en verhelpen bugs. Hardware zoals de sensor of het aantal megapixels kunnen ze niet veranderen.",
+          "options": {
+            "0": { "label": "Nieuwe functies en autofocusverbeteringen" },
+            "1": { "label": "Meer megapixels" },
+            "2": { "label": "Een groter sensoroppervlak" },
+            "3": { "label": "Niets — firmware is cosmetisch" }
+          }
+        },
+        "2": {
+          "scenario": "Twee verkopers bieden hetzelfde model aan: een body van 7 jaar oud en een van 4 jaar oud voor vergelijkbare prijzen. Hoe gebruik je de leeftijd van de body op de juiste manier in je beslissing?",
+          "hint": "Leeftijd is één factor — wat vertelt hij je niet?",
+          "successMessage": "Precies. Leeftijd kadert de techniek en de resterende ondersteuningsperiode, maar de doorslaggevende factoren zijn hoe de body is gebruikt: sluitertelling, fysieke staat en onderhoudshistorie.",
+          "failureMessage": "De leeftijd van de body alleen beslist het niet — een zorgvuldig gebruikte oudere body kan een afgebeulde nieuwere verslaan. Combineer leeftijd met sluitertelling en fysieke staat.",
+          "options": {
+            "0": { "label": "Altijd de nieuwste kopen" },
+            "1": { "label": "Leeftijd afwegen samen met sluitertelling en conditie" },
+            "2": { "label": "Leeftijd negeren — alleen megapixels tellen" },
+            "3": { "label": "Alleen kiezen op merkreputatie" }
+          }
+        }
+      }
+    }
+  }
+}

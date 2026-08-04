@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Přetáhni sem fotku nebo klikni a vyber soubor (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Přetáhni sem libovolnou fotku z fotoaparátu, který chceš prověřit. Vše se čte v prohlížeči — soubor nikdy neopustí tvoje zařízení.",
+      "errorRead": "Tento soubor se nepodařilo přečíst. Zkus neupravený JPEG nebo RAW soubor přímo z fotoaparátu.",
+      "errorNoMetadata": "Tento soubor neobsahuje žádná metadata fotoaparátu. Exporty z editačních aplikací a messengerů je často odstraňují — zkus neupravený originální soubor.",
+      "sections": {
+        "body": "Tělo fotoaparátu",
+        "age": "Stáří",
+        "shutter": "Životnost závěrky",
+        "lens": "Objektiv"
+      },
+      "cameraModel": "Model",
+      "make": "Výrobce",
+      "serialNumber": "Sériové číslo",
+      "firmware": "Firmware / software",
+      "bodyAge": "Stáří těla",
+      "ageValue": "~{years} let (uveden v roce {year})",
+      "ageUnknown": "Tento model není v naší databázi uvedení na trh, takže jeho stáří nešlo odhadnout.",
+      "shotDate": "Fotka pořízena",
+      "shutterCount": "Počet expozic",
+      "ratedLife": "Udávaná životnost",
+      "ratedAssumed": "(předpokládaná)",
+      "lifeUsed": "Využito {percent} % udávané životnosti",
+      "verdict": {
+        "low": "Sotva používaný",
+        "moderate": "Střední opotřebení",
+        "high": "Silné opotřebení",
+        "beyond": "Za udávanou životností"
+      },
+      "shutterUnavailable": {
+        "supported": "Počet expozic se nenašel, přestože {brand} ho běžně zaznamenává. Zkus neupravený originální soubor — editační aplikace často odstraňují metadata výrobce.",
+        "partial": "{brand} zapisuje do některých souborů jen hrubé počítadlo snímků a v tomhle žádné není. Číslo může ukázat menu fotoaparátu nebo utilita přes USB.",
+        "unsupported": "{brand} čitelný počet expozic do souborů s fotkami neukládá. Alternativy pro jednotlivé značky najdeš na stránce nástroje Kontrola počtu expozic.",
+        "unknown": "Tento soubor neobsahuje čitelný počet expozic."
+      },
+      "lensModel": "Objektiv",
+      "lensSerial": "Sériové číslo objektivu",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Co zkontrolovat při koupi použitého fotoaparátu?",
+          "answer": "Kromě vzhledu: počet expozic vzhledem k udávané životnosti, stáří těla a verzi firmwaru, zda sériové číslo odpovídá dokladům prodejce (a nefiguruje jako kradené), stav snímače (na testovací fotce čisté oblohy při f/16 hledej prach a škrábance) a zda všechna kolečka, konektory i bajonet fungují hladce."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Odkud tahle data o stavu pocházejí?",
+          "answer": "Vše se čte z metadat vložených do tvé fotky: ze standardních polí EXIF (model, sériové číslo, firmware, objektiv, datum pořízení) a tam, kde jsou k dispozici, z poznámek výrobce (počet expozic). Stáří těla se odhaduje z vestavěné databáze roků uvedení oblíbených modelů fotoaparátů."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Nahrává se moje fotka na server?",
+          "answer": "Ne. Soubor se zpracovává výhradně v tvém prohlížeči pomocí JavaScriptu — nikdy neopustí tvoje zařízení a nic se neukládá. Můžeš si to ověřit: načti stránku a před přetažením souboru vypni připojení k internetu."
+        }
+      }
+    }
+  }
+}

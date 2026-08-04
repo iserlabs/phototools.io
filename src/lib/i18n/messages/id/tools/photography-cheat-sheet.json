@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Pilih skenario",
+      "tipsTitle": "Tips lapangan",
+      "labels": {
+        "aperture": "Apertur",
+        "shutter": "Kecepatan Rana",
+        "iso": "ISO",
+        "whiteBalance": "White Balance",
+        "focusMode": "Mode fokus",
+        "driveMode": "Mode drive"
+      },
+      "values": {
+        "auto": "Otomatis",
+        "daylight": "Cahaya siang",
+        "cloudy": "Berawan",
+        "shade": "Teduh",
+        "tungsten": "Tungsten (~3200K)",
+        "afSingle": "AF tunggal (AF-S)",
+        "afContinuous": "AF kontinu (AF-C)",
+        "afTracking": "AF kontinu + pelacakan subjek",
+        "manualFocus": "Fokus manual",
+        "single": "Jepretan tunggal",
+        "burstLow": "Burst kecepatan rendah",
+        "burstHigh": "Burst kecepatan tinggi",
+        "timer2s": "Self-timer 2s / remote",
+        "intervalometer": "Intervalometer"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Potret",
+          "tips": {
+            "0": "Fokuskan pada mata yang paling dekat ke kamera — pada apertur lebar kedalaman bidangnya hanya beberapa sentimeter.",
+            "1": "Mundurlah dan zoom in (85mm+) untuk kompresi yang menawan; lensa lebar dari jarak dekat mendistorsi fitur wajah."
+          }
+        },
+        "landscape": {
+          "name": "Lanskap",
+          "tips": {
+            "0": "Fokuskan sekitar sepertiga ke dalam pemandangan atau gunakan jarak hiperfocal untuk ketajaman dari depan sampai belakang.",
+            "1": "Potret dari tripod dengan self-timer atau remote untuk menghilangkan guncangan pada kecepatan rana lambat."
+          }
+        },
+        "street": {
+          "name": "Street",
+          "tips": {
+            "0": "Zone focus: setel fokus di 3m dan f/8, maka semua dari 2m sampai 6m akan tajam — tanpa jeda AF.",
+            "1": "Auto ISO dengan kecepatan rana minimum 1/250s membekukan subjek yang berjalan sementara Anda berkonsentrasi pada framing."
+          }
+        },
+        "wildlife": {
+          "name": "Satwa liar & burung",
+          "tips": {
+            "0": "Sesuaikan kecepatan rana dengan subjek: 1/1000s untuk burung bertengger, 1/2500s atau lebih cepat untuk burung terbang.",
+            "1": "Potret sejajar mata dan tunggu kepala menoleh — catchlight di mata menghidupkan gambar."
+          }
+        },
+        "sports": {
+          "name": "Olahraga & aksi",
+          "tips": {
+            "0": "Pra-fokus di tempat aksi akan terjadi (gawang, puncak tikungan) dan mulai burst tepat sebelum momen puncak.",
+            "1": "Panning pada 1/60s–1/125s dengan AF kontinu mengaburkan latar belakang sambil menjaga subjek tetap tajam."
+          }
+        },
+        "macro": {
+          "name": "Makro",
+          "tips": {
+            "0": "Pada perbesaran tinggi kedalaman bidangnya setipis kertas — fokuslah dengan menggerakkan kamera, bukan ring fokus.",
+            "1": "Difraksi menggigit keras di atas f/16; gunakan focus stacking alih-alih menutup apertur lebih jauh."
+          }
+        },
+        "milkyWay": {
+          "name": "Bima Sakti",
+          "tips": {
+            "0": "Gunakan aturan NPF atau 500 untuk eksposur maksimum sebelum bintang meninggalkan jejak — sekitar 15–20s pada 20mm di full frame.",
+            "1": "Fokus manual pada bintang terang lewat live view yang diperbesar; setel white balance sekitar 3900K untuk langit yang netral."
+          }
+        },
+        "nightCity": {
+          "name": "Lanskap kota malam",
+          "tips": {
+            "0": "Potret pada ISO dasar dari tripod dan biarkan rana terbuka lama — highlight tetap bersih dan noise tetap rendah.",
+            "1": "f/11–f/16 mengubah titik lampu menjadi starburst; potretlah saat blue hour agar langit berwarna."
+          }
+        },
+        "waterfall": {
+          "name": "Air terjun & eksposur panjang",
+          "tips": {
+            "0": "Eksposur 0.5–2s mempertahankan tekstur air; 30s+ mengubahnya jadi kabut. Gunakan filter ND di siang hari.",
+            "1": "Polarizer sirkular memotong kilau dari batu basah dan dedaunan — sekaligus berfungsi sebagai ND ~1.5 stop."
+          }
+        },
+        "goldenHour": {
+          "name": "Golden hour",
+          "tips": {
+            "0": "Ekspos untuk highlight dan angkat bayangan saat editing — highlight hangat yang terbakar tidak bisa dipulihkan.",
+            "1": "Backlight subjek untuk rim light dan flare; preset white balance berawan menjaga suasana tetap hangat."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Pengaturan kamera apa yang sebaiknya saya pakai untuk potret?",
+          "answer": "Mulailah dengan apertur lebar (f/1.8–f/2.8) untuk mengaburkan latar belakang, kecepatan rana minimal 1/200s untuk menghindari motion blur, dan ISO serendah yang dimungkinkan cahaya (100–400). Gunakan autofocus titik tunggal pada mata terdekat, atau AF deteksi mata jika kamera Anda memilikinya."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Pengaturan apa yang saya perlukan untuk memotret Bima Sakti?",
+          "answer": "Lensa lebar dan cepat pada apertur terlebarnya (f/1.4–f/2.8), eksposur 10–25 detik (lebih lama membuat bintang berjejak), ISO 1600–6400, fokus manual pada bintang terang, dan tripod. Malam tanpa bulan yang jauh dari lampu kota lebih menentukan daripada pengaturan kamera mana pun."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Apakah pengaturan ini resep yang pasti?",
+          "answer": "Tidak — ini titik awal yang sudah teruji. Cahaya sangat bervariasi antar pemandangan, jadi anggap rentang ini sebagai tebakan pertama, ambil jepretan uji, periksa histogram, lalu sesuaikan. Tujuannya membawa Anda cepat ke kisaran yang benar, bukan menggantikan penilaian Anda."
+        }
+      }
+    }
+  }
+}

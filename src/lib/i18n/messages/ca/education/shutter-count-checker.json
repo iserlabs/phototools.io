@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Cada vegada que la teva càmera fa una foto amb l'obturador mecànic, un comptador intern hi suma un. Aquest número — el recompte de dispars — és com el quilometratge d'un cotxe: indica amb quina intensitat s'ha fet servir la càmera. Importa sobretot en comprar o vendre equip de segona mà, perquè els obturadors són peces mòbils dissenyades per a un nombre finit d'accionaments.",
+      "deeper": "Un obturador mecànic és un parell de cortinetes accionades per molla que escombren físicament el sensor a cada exposició. Els fabricants sotmeten aquests mecanismes a proves de vida útil i publiquen xifres nominals: aproximadament 100.000 accionaments en els cossos d'iniciació, 150.000–200.000 en els models per a entusiastes i 300.000–500.000 en els professionals. La xifra és una mitjana estadística, no una data de caducitat: molts obturadors duren diverses vegades el seu valor nominal, i un obturador espatllat sol ser una avaria reparable (encara que costosa). On es guarda el recompte varia segons la marca: Nikon l'escriu, sense xifrar, a les notes del fabricant de cada fitxer, i per això aquesta eina pot llegir-lo. Canon el guarda només a la memòria interna, Sony el xifra i Pentax l'ofusca. Les càmeres sense mirall modernes compliquen encara més el panorama: els fotogrames fets amb l'obturador electrònic no desgasten gens el mecanisme, així que un cos usat sobretot en mode silenciós pot tenir moltes més exposicions totals de les que suggereix el recompte mecànic — i no passa res.",
+      "keyFactors": {
+        "0": {
+          "label": "Marca de la càmera",
+          "description": "Determina si el recompte es pot llegir des dels fitxers. Nikon el guarda obertament; Canon, Sony i Pentax no."
+        },
+        "1": {
+          "label": "Vida útil nominal de l'obturador",
+          "description": "La vida mitjana provada pel fabricant per al mecanisme de l'obturador. Els cossos de gamma alta fan servir mecanismes més duradors amb xifres nominals més altes."
+        },
+        "2": {
+          "label": "Obturador electrònic vs mecànic",
+          "description": "Els fotogrames amb obturador electrònic no causen desgast mecànic i normalment no incrementen el comptador mecànic. Qui dispara molt en mode silenciós mostra recomptes baixos."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Comprova sempre el recompte amb un fitxer sense editar, directe de la càmera. Les exportacions de Lightroom, les aplicacions de missatgeria o les xarxes socials solen eliminar les notes del fabricant que contenen el comptador."
+        },
+        "1": {
+          "text": "En comprar de segona mà, pondera el recompte davant la xifra nominal: 40.000 en un cos dissenyat per a 300.000 està tot just rodat, mentre que 90.000 en un de 100.000 ja descompta al preu un canvi d'obturador."
+        },
+        "2": {
+          "text": "Un recompte baix no garanteix una càmera sana: els danys per aigua, les ratllades al sensor i els cops no apareixen al comptador. Inspecciona també fotos de prova i el mateix cos."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Recompte de dispars",
+          "definition": "El nombre de vegades que l'obturador mecànic s'ha accionat al llarg de la vida de la càmera. Es llegeix de les metadades que la càmera incrusta a cada foto."
+        },
+        "ratedLife": {
+          "term": "Vida útil nominal de l'obturador",
+          "definition": "El nombre mitjà d'accionaments, provat pel fabricant, abans que falli l'obturador. Una mitjana, no un límit estricte: molts obturadors la superen amb escreix."
+        },
+        "source": {
+          "term": "Origen del recompte",
+          "definition": "D'on s'ha llegit el número: el camp real de recompte de dispars, el comptador només mecànic d'algunes càmeres sense mirall o un número d'imatge genèric usat com a aproximació."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Fas 500 fotos en un concert amb l'obturador electrònic silenciós de la teva càmera sense mirall. Quant de desgast ha afegit això a l'obturador mecànic?",
+          "hint": "Pensa en què es mou físicament durant una exposició amb obturador electrònic.",
+          "successMessage": "Correcte! L'obturador electrònic llegeix el sensor sense moure cap cortineta, així que aquests 500 fotogrames no han causat pràcticament cap desgast mecànic — i normalment no incrementen el comptador mecànic.",
+          "failureMessage": "L'obturador electrònic exposa llegint el sensor electrònicament: no es mou cap cortineta, així que disparar en silenci no afegeix desgast mecànic a l'obturador.",
+          "options": {
+            "0": { "label": "500 accionaments, com qualsevol foto" },
+            "1": { "label": "Cap: només compta l'ús de l'obturador mecànic" },
+            "2": { "label": "Només els fitxers RAW afegeixen desgast" },
+            "3": { "label": "Només les fotos amb flaix afegeixen desgast" }
+          }
+        },
+        "1": {
+          "scenario": "Una càmera està dissenyada per a 200.000 accionaments i actualment en mostra 195.000. Què significa realment aquesta xifra per a aquest cos?",
+          "hint": "Les xifres nominals surten de proves estadístiques de vida útil, com les hores nominals d'una bombeta.",
+          "successMessage": "Exacte! La xifra és la vida mitjana obtinguda en proves: aquest obturador podria fallar la setmana que ve o arribar als 400.000. És un senyal de probabilitat per fixar el preu, no un compte enrere.",
+          "failureMessage": "La xifra nominal de l'obturador és la vida mitjana provada, no un límit estricte ni una garantia. Molts obturadors duren molt més; alguns fallen abans.",
+          "options": {
+            "0": { "label": "L'obturador s'aturarà als 200.000" },
+            "1": { "label": "És la vida mitjana: la probabilitat de fallada creix en acostar-s'hi" },
+            "2": { "label": "La garantia s'acaba als 200.000" },
+            "3": { "label": "La bateria es degrada a partir de 200.000" }
+          }
+        },
+        "2": {
+          "scenario": "Compares dues càmeres usades del mateix model: una amb 15.000 accionaments i corrosió visible al costat de la tapa de la bateria, i una altra amb 60.000 accionaments en estat impecable. Quina és la compra més segura?",
+          "hint": "El comptador només registra un tipus de desgast.",
+          "successMessage": "Exacte. El recompte de dispars és un senyal entre diversos: la corrosió suggereix exposició a l'aigua, que mata càmeres molt més sovint que un obturador desgastat. El cos net amb 60.000 és la compra més segura.",
+          "failureMessage": "El recompte de dispars només mesura el desgast de l'obturador. La corrosió apunta a danys per aigua, molt més arriscats que un obturador amb ús moderat. Valora recompte i estat, mai el recompte tot sol.",
+          "options": {
+            "0": { "label": "El cos de 15.000: menys sempre és millor" },
+            "1": { "label": "El que sigui més barat" },
+            "2": { "label": "El cos net de 60.000: l'estat importa més" },
+            "3": { "label": "Cap: tots dos són massa vells" }
+          }
+        }
+      }
+    }
+  }
+}

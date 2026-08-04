@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Tria un escenari",
+      "tipsTitle": "Consells de camp",
+      "labels": {
+        "aperture": "Obertura",
+        "shutter": "Velocitat d'obturació",
+        "iso": "ISO",
+        "whiteBalance": "Balanç de blancs",
+        "focusMode": "Mode d'enfocament",
+        "driveMode": "Mode de dispar"
+      },
+      "values": {
+        "auto": "Automàtic",
+        "daylight": "Llum de dia",
+        "cloudy": "Ennuvolat",
+        "shade": "Ombra",
+        "tungsten": "Tungstè (~3200K)",
+        "afSingle": "AF simple (AF-S)",
+        "afContinuous": "AF continu (AF-C)",
+        "afTracking": "AF continu + seguiment del subjecte",
+        "manualFocus": "Enfocament manual",
+        "single": "Dispar únic",
+        "burstLow": "Ràfega a baixa velocitat",
+        "burstHigh": "Ràfega a alta velocitat",
+        "timer2s": "Temporitzador de 2s / disparador remot",
+        "intervalometer": "Intervalòmetre"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Retrats",
+          "tips": {
+            "0": "Enfoca l'ull més proper a la càmera: amb obertures àmplies la profunditat de camp és de només uns centímetres.",
+            "1": "Allunya't i fes servir una focal llarga (85mm o més) per a una compressió afavoridora; els angulars de prop distorsionen els trets facials."
+          }
+        },
+        "landscape": {
+          "name": "Paisatges",
+          "tips": {
+            "0": "Enfoca aproximadament a un terç de l'escena o fes servir la distància hiperfocal per aconseguir nitidesa de davant a darrere.",
+            "1": "Dispara des de trípode amb el temporitzador o un disparador remot per eliminar les vibracions amb velocitats d'obturació lentes."
+          }
+        },
+        "street": {
+          "name": "Fotografia de carrer",
+          "tips": {
+            "0": "Enfocament per zones: preajusta l'enfocament a 3 m i f/8, i tot el que hi hagi entre 2 m i 6 m sortirà nítid, sense esperes de l'AF.",
+            "1": "ISO automàtic amb una velocitat d'obturació mínima d'1/250s congela els vianants mentre et concentres en l'enquadrament."
+          }
+        },
+        "wildlife": {
+          "name": "Fauna i ocells",
+          "tips": {
+            "0": "Ajusta la velocitat d'obturació al subjecte: 1/1000s per a ocells posats, 1/2500s o més ràpid per a ocells en vol.",
+            "1": "Dispara a l'altura dels ulls i espera els girs de cap: una lluïssor a l'ull dona vida a la imatge."
+          }
+        },
+        "sports": {
+          "name": "Esports i acció",
+          "tips": {
+            "0": "Preenfoca on passarà l'acció (la porteria, el vèrtex d'una corba) i comença la ràfega just abans del moment àlgid.",
+            "1": "Un escombratge a 1/60s–1/125s amb AF continu desenfoca el fons mentre manté el subjecte nítid."
+          }
+        },
+        "macro": {
+          "name": "Macro",
+          "tips": {
+            "0": "Amb molta ampliació la profunditat de camp és finíssima: enfoca movent la càmera, no l'anell d'enfocament.",
+            "1": "La difracció castiga fort més enllà de f/16; fes servir apilament d'enfocament en lloc de tancar més el diafragma."
+          }
+        },
+        "milkyWay": {
+          "name": "Via Làctia",
+          "tips": {
+            "0": "Fes servir la regla NPF o la regla 500 per a l'exposició màxima abans que les estrelles deixin traces: uns 15–20s a 20mm en format complet.",
+            "1": "Enfoca manualment una estrella brillant amb la visió en directe ampliada; ajusta el balanç de blancs prop de 3900K per a un cel neutre."
+          }
+        },
+        "nightCity": {
+          "name": "Paisatges urbans nocturns",
+          "tips": {
+            "0": "Dispara a ISO base des de trípode i deixa córrer l'obturador: les altes llums es mantenen netes i el soroll, baix.",
+            "1": "f/11–f/16 converteix els llums puntuals en estrelles; dispara durant l'hora blava per tenir color al cel."
+          }
+        },
+        "waterfall": {
+          "name": "Cascades i llarga exposició",
+          "tips": {
+            "0": "Les exposicions de 0,5–2s conserven la textura de l'aigua; a partir de 30s es converteix en boira. Fes servir un filtre ND a plena llum de dia.",
+            "1": "Un polaritzador circular elimina els reflexos de les roques mullades i el fullatge, i a més funciona com un ND d'~1,5 passos."
+          }
+        },
+        "goldenHour": {
+          "name": "Hora daurada",
+          "tips": {
+            "0": "Exposa per a les altes llums i apuja les ombres en el revelatge: les altes llums càlides cremades són irrecuperables.",
+            "1": "Posa els subjectes a contrallum per aconseguir llum de contorn i reflexos; el preajust de balanç de blancs «ennuvolat» manté la calidesa de l'escena."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Quins ajustos de càmera he de fer servir per a retrats?",
+          "answer": "Comença amb una obertura àmplia (f/1.8–f/2.8) per desenfocar el fons, una velocitat d'obturació d'almenys 1/200s per evitar el moviment i l'ISO més baix que permeti la llum (100–400). Fes servir autofocus de punt únic sobre l'ull més proper, o AF amb detecció d'ulls si la teva càmera en té."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Quins ajustos necessito per fotografiar la Via Làctia?",
+          "answer": "Un objectiu angular i lluminós a la seva obertura màxima (f/1.4–f/2.8), una exposició de 10–25 segons (més temps deixa traces a les estrelles), ISO 1600–6400, enfocament manual sobre una estrella brillant i un trípode. Una nit sense lluna i lluny dels llums de la ciutat importa més que qualsevol ajust de la càmera."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Aquests ajustos són receptes exactes?",
+          "answer": "No: són punts de partida provats. La llum varia enormement entre escenes, així que pren els rangs com una primera aproximació, fes una foto de prova, revisa l'histograma i ajusta. L'objectiu és situar-te ràpid en el rang correcte, no substituir el teu criteri."
+        }
+      }
+    }
+  }
+}

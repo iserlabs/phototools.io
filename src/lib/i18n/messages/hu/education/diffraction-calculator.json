@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "A rekesz szűkítése növeli a mélységélességet — egy ponton túl azonban élesebb helyett lágyabb lesz tőle az egész kép. Ez a fényelhajlás: a fényhullámok elhajlanak, ahogy átpréselődnek a kis nyíláson. Ez a kalkulátor pontosan megmutatja, hol van ez a pont az Ön kameráján, így tudni fogja, meddig szűkíthet, mielőtt élességgel fizetne érte.",
+      "deeper": "Amikor a fény áthalad a rekeszen, a jelenet minden pontja nem pontként, hanem apró elhajlási mintázatként érkezik az érzékelőre — egy Airy-korongnak nevezett fényes maggal és köré rendeződő halvány gyűrűkkel. A korong átmérője egyenes arányban nő az f-értékkel: nagyjából 2,44 × hullámhossz × N, ami f/8-nál zöld fényben már ~10,7 µm. Hogy ez számít-e, a pixelein múlik. Egy 24 MP-es teljes képmezős érzékelő pixelei ~6 µm-esek; egy 61 MP-esé ~3,8 µm-esek. Amint az Airy-korong számottevően nagyobbra nő a pixelnél, a részletek, amelyeket az érzékelő egyébként felbontana, szétkenődnek a szomszédos pixeleken, és ezt semmilyen objektívminőség nem hozza vissza. Ezért lágyítja láthatóan egy modern, nagy felbontású érzékelő fájljait ugyanaz az f/11, amely egy régi 12 MP-es vázon még rendben van, és ezért kínálnak a kis pixelű kompaktok ritkán f/8-nál szűkebb rekeszt. Az itt használt ökölszabály — határ ≈ pixelméret / 0,67 — azt jelöli, hol válik mérhetővé a lágyulás, nem azt, hol esik szét a kép: a határon egy fényértékkel túllépni gyakran megéri a nagyobb mélységélességért. Két fényérték után viszont a fókuszhalmozás jobb megoldás, mint a további szűkítés.",
+      "keyFactors": {
+        "0": {
+          "label": "Rekesz (f-érték)",
+          "description": "Az egyetlen, amivel magát a fényelhajlást szabályozza: az Airy-korong átmérője lineárisan nő az f-értékkel. Az f/16 kétszer olyan szélesen teríti szét a fényt, mint az f/8."
+        },
+        "1": {
+          "label": "Pixelméret",
+          "description": "Egyetlen pixel fizikai mérete, amelyet az érzékelőméret és a megapixelszám együtt határoz meg. A kisebb pixel több részletet bont fel — és hamarabb leleplezi a fényelhajlást."
+        },
+        "2": {
+          "label": "Megjelenítési méret",
+          "description": "Ami 100%-os nagyításban látszik a képernyőn, az egy webes méretű exportban vagy közepes nyomaton láthatatlan lehet. Abban a méretben ítélje meg az élességet, amelyben ténylegesen használni fogja."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Keresse meg az objektívje ideális rekeszét: fotózza le ugyanazt a részletgazdag jelenetet minden egész fényértéknél, és hasonlítsa össze őket 100%-on. A legtöbb objektív a teljesen nyitott állástól két-három fényértékkel szűkítve teljesít a legjobban, épp mielőtt a fényelhajlás átvenné a főszerepet."
+        },
+        "1": {
+          "text": "Nagy mélységélességet igénylő tájképnél, nagy felbontású vázon próbálja meg előbb a hiperfokális távolságot f/8-nál, mielőtt f/16-ra váltana — a pontos fókuszhelyezés gyakran több élességet hoz, mint a szűkebb rekesz."
+        },
+        "2": {
+          "text": "Makrózásnál az effektív rekesz a nagyítással együtt nő (1:1-nél az f/11 úgy viselkedik, mint az f/22), így a fényelhajlás jóval hamarabb harap, mint azt a tárcsa sugallja. Az éles kiút a mérsékelt rekesszel készített fókuszhalmozás."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pixelméret",
+          "definition": "Egyetlen pixel szélessége az érzékelőn, mikrométerben. Az érzékelő szélességét a vízszintes pixelszámmal elosztva adódik — a 24 MP-es teljes képmező ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Airy-korong",
+          "definition": "Az az elhajlási mintázat, amelyet egy fénypont a rekeszen áthaladva alkot: fényes mag halvány gyűrűkkel. Átmérője ≈ 2,44 × hullámhossz × f-érték."
+        },
+        "diffractionLimit": {
+          "term": "Diffrakciós határ",
+          "definition": "Az az f-érték, amelynél az Airy-korong túlnő a pixelen, és a pixelszintű élesség romlani kezd — körülbelül pixelméret (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "A maximális mélységélességért f/8-ról f/22-re szűkíti a rekeszt, de a finom részletek mindenütt lágyabbak lesznek — még a fókuszsíkban is. Mi történik?",
+          "hint": "Ez fizika, nem objektívhiba.",
+          "successMessage": "Helyes! A fény elhajlik, ahogy áthalad a kis rekeszen, és minden pontot a pixelnél nagyobb koronggá terít szét. f/22-nél ez a lágyulás az egész képkockát érinti, a fókuszsíkot is beleértve.",
+          "failureMessage": "Ez a fényelhajlás: a fényhullámok elhajlanak a rekeszlamellák körül, és minden fénypontot elmosódott koronggá terítenek szét. Az egész képet egyformán érinti, az objektív minőségétől függetlenül.",
+          "options": {
+            "0": { "label": "Az objektív rossz minőségű" },
+            "1": { "label": "A fény elhajlik a kis nyíláson áthaladva" },
+            "2": { "label": "Az érzékelő túlmelegszik szűk rekesznél" },
+            "3": { "label": "Nő az ISO-zaj" }
+          }
+        },
+        "1": {
+          "scenario": "Egy 24 MP-es teljes képmezős kameráról egy 61 MP-esre vált. Mi történik azzal a rekeszértékkel, ahol a fényelhajlás láthatóvá válik?",
+          "hint": "Több megapixel ugyanakkora érzékelőn kisebb pixeleket jelent.",
+          "successMessage": "Így van! A 61 MP-es érzékelő ~3,8 µm-es pixelei hamarabb túlnövik az Airy-korongot, így a diffrakciós határ nagyjából f/9-ről f/5.6 környékére csökken. A nagy felbontású érzékelők ideális rekesztartománya szűkebb.",
+          "failureMessage": "A kisebb pixelek hamarabb leleplezik a fényelhajlást. A 61 MP-es érzékelő diffrakciós határa f/5.6 körül van, szemben a 24 MP-es f/9-ével — a határ a nyitottabb rekesz felé mozdul.",
+          "options": {
+            "0": { "label": "Szűkebb rekesz felé mozdul (magasabb f-érték)" },
+            "1": { "label": "Nyitottabb rekesz felé mozdul (alacsonyabb f-érték)" },
+            "2": { "label": "Nem változik" },
+            "3": { "label": "Több megapixellel eltűnik a fényelhajlás" }
+          }
+        },
+        "2": {
+          "scenario": "Tájképet fotóz egy 45 MP-es teljes képmezős kamerával, és a lehető legjobb összélességet szeretné jó mélységélesség mellett. Melyik rekesztartomány a legjobb kiindulópont?",
+          "hint": "Egyensúlyozzon az objektívhibák (teljesen nyitva rosszak) és a fényelhajlás (szűkítve rossz) között.",
+          "successMessage": "Helyes! Az f/8–f/11 épp a ~4,4 µm-es pixelek diffrakciós határa körül van, és közben jelentős mélységélességet ad — ez a klasszikus tájképes ideális tartomány nagy felbontású teljes képmezőn.",
+          "failureMessage": "Az f/8–f/11 egyensúlyozza ki a mélységélességet és a fényelhajlást egy 45 MP-es teljes képmezős érzékelőn. Az f/22 láthatóan lágyítja a finom részleteket, teljesen nyitva pedig hiányzik a mélységélesség.",
+          "options": {
+            "0": { "label": "Mindig f/22 a maximális mélységért" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Teljesen nyitva" },
+            "3": { "label": "Csak az ISO-tól függ" }
+          }
+        }
+      }
+    }
+  }
+}

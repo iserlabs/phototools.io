@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Lightroom Katalóguselemző — ingyenes, csak böngészős statisztikák",
       "description": "Elemezze a Lightroom Classic katalógusát helyben a böngészőjében. Tekintse meg a felszerelést, gyújtótávolságokat, rekeszhasználati szokásokat, értékeléseket és még többet. 100% helyi — a katalógusa soha nem kerül feltöltésre."
+    },
+    "shutter-count-checker": {
+      "title": "Zárszámláló-ellenőrző — ingyenes és privát",
+      "description": "Nézd meg a kamerád zárszámlálóját egy fotóból, ingyen és 100%-ban a böngésződben. Nikon JPEG és RAW fájlokkal működik, Canon, Sony és más márkákhoz világos útmutatóval."
+    },
+    "camera-health-checker": {
+      "title": "Kameraállapot-ellenőrző",
+      "description": "Vizsgálj meg egy kameravázat egyetlen fotóból: modell, sorozatszám, firmware, a váz kora, objektív és zárélettartam. 100%-ban a böngészőben — ideális használt kamerák ellenőrzésére vásárlás előtt."
+    },
+    "panorama-calculator": {
+      "title": "Panorámakalkulátor",
+      "description": "Tervezd meg az összefűzött panorámákat: hány felvétel kell, mennyit kell fordulni két képkocka között, és mekkora lesz a végső felbontás — bármilyen objektívhez, érzékelőhöz és átfedéshez."
+    },
+    "diffraction-calculator": {
+      "title": "Diffrakciós határ kalkulátor",
+      "description": "Találd meg a kamerád diffrakciós határát: azt a rekeszt, ahol a szűkítés lágyítani kezdi a képet. A pixelméreten és az Airy-korongon alapul, bármilyen érzékelőhöz és felbontáshoz."
+    },
+    "photography-cheat-sheet": {
+      "title": "Fotós puska — kamerabeállítások helyzetenként",
+      "description": "Kamerabeállítási puskák portréhoz, tájképhez, vadfotózáshoz, a Tejúthoz és még sok máshoz. Bevált kiindulópontok, amelyeket képként letölthetsz vagy kinyomtathatsz."
     }
   }
 }

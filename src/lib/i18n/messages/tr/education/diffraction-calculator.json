@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Diyaframı kısmak alan derinliğini artırır — ancak belli bir noktadan sonra görüntüyü netleştirmek yerine bütünüyle yumuşatmaya başlar. Bu, kırınımdır: ışık dalgalarının küçük bir açıklıktan geçerken bükülmesi. Bu hesaplayıcı, o noktanın kameranız için tam olarak nerede olduğunu gösterir; böylece netlik bedeli ödemeden diyaframı ne kadar kısabileceğinizi bilirsiniz.",
+      "deeper": "Işık diyaframdan geçerken, sahnedeki her nokta sensöre bir nokta olarak değil, küçük bir kırınım deseni olarak düşer — Airy diski denen parlak bir çekirdek ve çevresindeki soluk haleler. Diskin çapı f değeriyle doğru orantılı büyür: yaklaşık 2,44 × dalga boyu × N; bu, yeşil ışıkta f/8'de bile ~10,7 µm eder. Bunun önemi piksellerinize bağlıdır. 24 MP'lik bir full frame sensörün pikselleri ~6 µm'dir; 61 MP'lik bir sensörünkiler ~3,8 µm. Airy diski bir pikselden belirgin biçimde büyüdüğünde, sensörün normalde çözebileceği ayrıntı komşu piksellere yayılır ve hiçbir objektif kalitesi onu geri getiremez. Eski 12 MP bir gövdede sorunsuz görünen f/11'in modern yüksek çözünürlüklü bir sensörün dosyalarını gözle görülür biçimde yumuşatmasının ve minik pikselli kompakt kameraların nadiren f/8'in ötesinde diyafram sunmasının nedeni budur. Burada kullanılan sektör pratiği — sınır ≈ piksel aralığı / 0,67 — görüntülerin dağıldığı yeri değil, yumuşamanın ölçülebilir hale geldiği yeri işaretler: sınırın bir stop ötesine kısmak, alan derinliği için çoğu zaman değerli bir takastır. İki stopun ötesinde ise odak istifleme, diyafram kısmayı geride bırakır.",
+      "keyFactors": {
+        "0": {
+          "label": "Diyafram (f değeri)",
+          "description": "Kırınımın kendisi üzerindeki tek kontrol: Airy diski çapı f değeriyle doğrusal ölçeklenir. f/16, ışığı f/8'in iki katı genişliğe yayar."
+        },
+        "1": {
+          "label": "Piksel Aralığı",
+          "description": "Sensör boyutu ve megapiksel sayısının birlikte belirlediği, tek bir pikselin fiziksel boyutu. Küçük pikseller daha fazla ayrıntı çözer — ve kırınımı daha erken açığa çıkarır."
+        },
+        "2": {
+          "label": "Çıktı Boyutu",
+          "description": "Ekranda %100'de görünen kırınım, web boyutunda bir dışa aktarımda veya orta boy bir baskıda görünmez olabilir. Netliği, gerçekten kullanacağınız boyutta değerlendirin."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Objektifinizin ideal noktasını bulun: aynı ayrıntılı sahneyi her tam stopta çekip %100'de karşılaştırın. Çoğu objektif, tam açıktan iki-üç stop kısıldığında, kırınım devreye girmeden hemen önce zirve yapar."
+        },
+        "1": {
+          "text": "Yüksek çözünürlüklü bir gövdede derin netlik gerektiren manzaralar için f/16'ya uzanmadan önce f/8'de hiperfokal mesafeyi deneyin — isabetli odak yerleşimi, daha küçük diyaframlardan çoğu zaman daha fazla netlik kazandırır."
+        },
+        "2": {
+          "text": "Makro çalışmada etkin diyafram büyütmeyle birlikte artar (1:1'de f/11, f/22 gibi davranır); bu yüzden kırınım, kadranın gösterdiğinden çok daha erken etkisini gösterir. Orta bir diyaframda odak istifleme, net çıkışın yoludur."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Piksel Aralığı",
+          "definition": "Sensördeki tek bir pikselin mikrometre cinsinden genişliği. Sensör genişliğinin yatay piksel sayısına bölünmesiyle hesaplanır — 24 MP full frame ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Airy Diski",
+          "definition": "Bir ışık noktasının diyaframdan geçtikten sonra oluşturduğu kırınım deseni: soluk halkalarla çevrili parlak bir çekirdek. Çapı ≈ 2,44 × dalga boyu × f değeri."
+        },
+        "diffractionLimit": {
+          "term": "Kırınım Sınırı",
+          "definition": "Airy diskinin pikseli aştığı ve piksel düzeyindeki netliğin düşmeye başladığı f değeri — yaklaşık olarak piksel aralığı (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Maksimum alan derinliği için objektifinizi f/8'den f/22'ye kısıyorsunuz, ama görüntünüzdeki ince ayrıntılar her yerde — odak düzleminde bile — yumuşuyor. Ne oluyor?",
+          "hint": "Bu bir objektif kusuru değil, fizik.",
+          "successMessage": "Doğru! Işık, küçük bir diyaframdan geçerken bükülür (kırınıma uğrar) ve her noktayı bir pikselden büyük bir diske yayar. f/22'de bu yumuşama, odak düzlemi dahil tüm kareyi etkiler.",
+          "failureMessage": "Bu, kırınımdır: ışık dalgaları diyafram yapraklarının çevresinde bükülür ve her ışık noktasını bulanık bir diske yayar. Objektif kalitesinden bağımsız olarak tüm görüntüyü eşit etkiler.",
+          "options": {
+            "0": { "label": "Objektif kötü üretilmiş" },
+            "1": { "label": "Işık, küçük açıklıktan geçerken bükülüyor" },
+            "2": { "label": "Sensör küçük diyaframlarda aşırı ısınıyor" },
+            "3": { "label": "ISO gürültüsü artıyor" }
+          }
+        },
+        "1": {
+          "scenario": "24 MP'lik bir full frame kameradan 61 MP'lik bir kameraya geçiyorsunuz. Kırınımın görünür hale geldiği diyaframa ne olur?",
+          "hint": "Aynı sensör alanında daha fazla megapiksel, daha küçük pikseller demektir.",
+          "successMessage": "Doğru! 61 MP sensörün ~3,8 µm pikselleri Airy diskini daha erken aşar; kırınım sınırı yaklaşık f/9'dan yaklaşık f/5.6'ya iner. Yüksek çözünürlüklü sensörlerin diyafram ideal aralıkları daha dardır.",
+          "failureMessage": "Küçük pikseller kırınımı daha erken açığa çıkarır. 61 MP sensörün kırınım sınırı f/5.6 civarındadır; 24 MP sensörde bu f/9'dur — sınır daha açık bir diyaframa kayar.",
+          "options": {
+            "0": { "label": "Daha küçük bir diyaframa (daha yüksek f değeri) kayar" },
+            "1": { "label": "Daha açık bir diyaframa (daha düşük f değeri) kayar" },
+            "2": { "label": "Değişmez" },
+            "3": { "label": "Daha fazla megapikselle kırınım kaybolur" }
+          }
+        },
+        "2": {
+          "scenario": "45 MP'lik bir full frame kamerayla manzara çekiyorsunuz ve iyi bir alan derinliğiyle birlikte en yüksek genel netliği istiyorsunuz. En iyi başlangıç noktası hangi diyafram aralığıdır?",
+          "hint": "Objektif kusurlarını (tam açıkken kötü) kırınıma (kısınca kötü) karşı dengeleyin.",
+          "successMessage": "Doğru! f/8–f/11, ~4,4 µm pikseller için kırınım sınırının tam civarında durur ve hatırı sayılır bir alan derinliği sağlar — yüksek çözünürlüklü full frame'de klasik manzara ideal aralığı.",
+          "failureMessage": "45 MP'lik bir full frame sensörde f/8–f/11, alan derinliğini kırınıma karşı dengeler. f/22 ince ayrıntıyı gözle görülür biçimde yumuşatır, tam açık ise alan derinliğinden yoksundur.",
+          "options": {
+            "0": { "label": "Maksimum derinlik için her zaman f/22" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Tam açık" },
+            "3": { "label": "Yalnızca ISO'ya bağlıdır" }
+          }
+        }
+      }
+    }
+  }
+}

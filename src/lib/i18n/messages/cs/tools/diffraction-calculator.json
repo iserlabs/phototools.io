@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Snímač",
+      "megapixels": "Rozlišení: {mp} MP",
+      "aperture": "Clona",
+      "verdict": {
+        "sharp": "{f} je bez vlivu difrakce",
+        "borderline": "{f} je difrakcí mírně změkčeno",
+        "soft": "{f} je difrakcí viditelně změkčeno"
+      },
+      "verdictDetail": {
+        "sharp": "Pod difrakčním limitem {limit} pro tento snímač a rozlišení rozhoduje o ostrosti objektiv, ne difrakce.",
+        "borderline": "Za difrakčním limitem {limit} se jemné detaily na úrovni pixelů začínají rozmazávat. Přijatelné, když potřebuješ větší hloubku ostrosti.",
+        "soft": "Hluboko za difrakčním limitem {limit}. Hloubka ostrosti dál roste, ale celková kresba se viditelně zhoršuje — místo dalšího zaclánění zvaž focus stacking."
+      },
+      "stripLabel": "Stupnice clon obarvená podle vlivu difrakce",
+      "pixelPitch": "Rozteč pixelů",
+      "airyDisk": "Průměr Airyho disku",
+      "diffractionLimit": "Difrakční limit",
+      "tableTitle": "Difrakční limit podle snímače a rozlišení",
+      "tableSensor": "Snímač",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Co je difrakce ve fotografii?",
+          "answer": "Difrakce je ohyb světelných vln při průchodu malým otvorem clony. Čím menší otvor (vyšší clonové číslo), tím víc se každý světelný bod na snímači rozprostře do neostrého kotoučku (Airyho disku). Jakmile tento kotouček přeroste pixel, jemné detaily se rozmažou bez ohledu na kvalitu objektivu."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Která clona je nejostřejší?",
+          "answer": "Většina objektivů dosahuje vrcholu dvě až tři clonová čísla od plného otevření — na full frame typicky mezi f/4 a f/8. Tento ideální rozsah vyvažuje optické vady objektivu (nejhorší při plném otevření) proti difrakci (horší se zacláněním). Snímače s vysokým rozlišením narazí na difrakční limit dřív, takže jejich použitelný rozsah je užší."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Závisí difrakce na snímači?",
+          "answer": "Optický jev závisí jen na cloně a vlnové délce světla — ale jak moc je vidět, závisí na velikosti pixelů. Full frame snímač s 61 MP má pixely ~3,8 µm a difrakční změkčení ukazuje už kolem f/5.6, zatímco 12 MP snímač s velkými pixely zůstává ostrý až do f/11. Menší snímače narazí na limit při stejném počtu megapixelů u světelnějších clon."
+        }
+      }
+    }
+  }
+}

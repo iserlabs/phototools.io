@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Pudota valokuva tähän tai valitse tiedosto napsauttamalla (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Pudota mikä tahansa valokuva kamerasta, jota haluat tutkia. Kaikki luetaan selaimessasi — tiedosto ei koskaan poistu laitteeltasi.",
+      "errorRead": "Tiedostoa ei voitu lukea. Kokeile muokkaamatonta JPEG- tai RAW-tiedostoa suoraan kamerasta.",
+      "errorNoMetadata": "Tämä tiedosto ei sisällä kameran metatietoja. Kuvankäsittely- ja viestisovellusten viennit poistavat ne usein — kokeile muokkaamatonta alkuperäistiedostoa.",
+      "sections": {
+        "body": "Kamerarunko",
+        "age": "Ikä",
+        "shutter": "Sulkimen kestoikä",
+        "lens": "Objektiivi"
+      },
+      "cameraModel": "Malli",
+      "make": "Valmistaja",
+      "serialNumber": "Sarjanumero",
+      "firmware": "Laiteohjelmisto / ohjelmisto",
+      "bodyAge": "Rungon ikä",
+      "ageValue": "~{years} vuotta (julkaistu {year})",
+      "ageUnknown": "Tämä malli ei ole julkaisutietokannassamme, joten sen ikää ei voitu arvioida.",
+      "shotDate": "Kuva otettu",
+      "shutterCount": "Laukaisumäärä",
+      "ratedLife": "Ilmoitettu kestoikä",
+      "ratedAssumed": "(oletus)",
+      "lifeUsed": "{percent} % ilmoitetusta kestoiästä käytetty",
+      "verdict": {
+        "low": "Tuskin käytetty",
+        "moderate": "Kohtuullisesti käytetty",
+        "high": "Kovassa käytössä ollut",
+        "beyond": "Kestoikä ylitetty"
+      },
+      "shutterUnavailable": {
+        "supported": "Laukaisumäärää ei löytynyt, vaikka {brand} yleensä tallentaa sen. Kokeile muokkaamatonta alkuperäistiedostoa — kuvankäsittelyohjelmat poistavat usein valmistajan metatiedot.",
+        "partial": "{brand} kirjoittaa vain karkean kuvalaskurin joihinkin tiedostoihin, eikä tässä ole sitä. Kameran omat valikot tai USB-apuohjelma voivat näyttää sen.",
+        "unsupported": "{brand} ei tallenna luettavissa olevaa laukaisumäärää kuvatiedostoihin. Katso merkkikohtaiset vaihtoehdot Laukaisumäärän tarkistus -työkalun sivulta.",
+        "unknown": "Tässä tiedostossa ei ole luettavissa olevaa laukaisumäärää."
+      },
+      "lensModel": "Objektiivi",
+      "lensSerial": "Objektiivin sarjanumero",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Mitä minun pitäisi tarkistaa käytettyä kameraa ostaessa?",
+          "answer": "Ulkonäön lisäksi: laukaisumäärä suhteessa ilmoitettuun kestoikään, rungon ikä ja laiteohjelmistoversio, täsmääkö sarjanumero myyjän papereihin (eikä sitä ole ilmoitettu varastetuksi), kennon kunto (etsi pölyä tai naarmuja kirkkaasta taivaasta aukolla f/16 otetusta testikuvasta) sekä että kaikki säätimet, liitännät ja objektiivin kiinnike toimivat sujuvasti."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Mistä nämä kuntotiedot ovat peräisin?",
+          "answer": "Kaikki luetaan valokuvaasi upotetuista metatiedoista: standardeista EXIF-kentistä (malli, sarjanumero, laiteohjelmisto, objektiivi, kuvauspäivä) sekä valmistajan maker notes -tiedoista, jos ne ovat saatavilla (laukaisumäärä). Rungon ikä arvioidaan sisäänrakennetusta tietokannasta, joka sisältää suosittujen kameramallien julkaisuvuodet."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Ladataanko valokuvani palvelimelle?",
+          "answer": "Ei. Tiedosto jäsennetään kokonaan selaimessasi JavaScriptillä — se ei koskaan poistu laitteeltasi, eikä mitään tallenneta. Voit varmistaa tämän lataamalla sivun ja katkaisemalla sitten yhteyden ennen tiedoston pudottamista."
+        }
+      }
+    }
+  }
+}

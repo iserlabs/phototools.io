@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Panorama vzniká tak, že při otáčení fotoaparátu pořídíš několik překrývajících se snímků a software je pak spojí do jednoho širokého obrazu. Celý trik je vědět, o kolik se mezi snímky otočit: při příliš velkém kroku software snímky nespojí, při příliš malém zbytečně nafotíš desítky záběrů. Tahle kalkulačka ten výpočet udělá za tebe z objektivu, snímače a požadovaného překryvu.",
+      "deeper": "Každý snímek pokryje pevný úhel záběru daný ohniskovou vzdáleností a velikostí snímače — objektiv 50mm na plném formátu vidí vodorovně asi 40°. Spojovací software sesazuje sousední snímky tak, že v překryvu hledá společné „kontrolní body“, a proto je praktickým standardem překryv 25–35 %: algoritmu dá dost společných detailů, aniž by počet snímků vystřelil nahoru. Využitelné otočení na jeden snímek je tedy zorné pole snímku krát (1 − překryv). Focení na výšku vymění užší vodorovný krok za mnohem větší svislé pokrytí — proto se většina jednořadých panoramat fotí na výšku. U opravdu vysokých scén použije víceřadé panorama stejnou logiku překryvu i svisle. Výsledný spojený soubor roste rychle: každý další snímek přidá své rozlišení minus překryv, takže sedmisnímkové panorama na výšku z 24MP fotoaparátu snadno přesáhne 100 MP. Všechno omezuje jedna fyzikální drobnost: při otáčení kolem stativového závitu se optický střed objektivu mezi snímky posouvá, takže blízké a vzdálené objekty do sebe nesednou (paralaxa). U vzdálených krajin to málokdy vadí, ale s blízkým popředím se musíš otáčet kolem bezparalaxového bodu objektivu — pomocí nodální lišty nebo panoramatické hlavy.",
+      "keyFactors": {
+        "0": {
+          "label": "Ohnisko a snímač",
+          "description": "Společně určují zorné pole jednoho snímku — základní stavební jednotku panoramatu. Delší objektivy znamenají užší snímky a víc záběrů."
+        },
+        "1": {
+          "label": "Překryv",
+          "description": "Společná zóna mezi sousedními snímky, podle které software sesazuje. Ideál je 25–35 %; scény bez detailů (obloha, voda) potřebují víc."
+        },
+        "2": {
+          "label": "Orientace",
+          "description": "Snímky na výšku pokryjí méně šířky, ale mnohem víc výšky — standardní volba u jednořadých panoramat, protože nechá rezervu na ořez."
+        },
+        "3": {
+          "label": "Paralaxa",
+          "description": "Nesoulad blízkých a vzdálených objektů způsobený otáčením kolem špatné osy. U vzdálených scén neškodí, u blízkého popředí je zásadní."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Před prvním snímkem zamkni expozici, vyvážení bílé i zaostření na manuál. Cokoli automatického se mezi snímky posune a ve spojené obloze vznikne viditelné pruhování."
+        },
+        "1": {
+          "text": "Foť s objektivem ve vodorovné rovině a otáčej se jedním plynulým průchodem; na každém konci přidej jeden snímek navíc — okrajové snímky se při spojování deformují a ořezávají."
+        },
+        "2": {
+          "text": "Při focení z ruky překryv přežeň na 40–50 %. Otáčení nebude přesné a snímky navíc dají spojovacímu softwaru prostor to dohnat."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Překryv",
+          "definition": "Kolik procent snímku sdílí se sousedním. Spojovací software tyto společné detaily potřebuje k sesazení snímků — obvyklých je 25–35 %."
+        },
+        "orientation": {
+          "term": "Orientace fotoaparátu",
+          "definition": "U panoramat je standardem formát na výšku: každý snímek přidá víc výšky, takže zbude rezerva na srovnání horizontu a ořez."
+        },
+        "rotateBetween": {
+          "term": "Otočení mezi snímky",
+          "definition": "O kolik stupňů fotoaparát po každém snímku pootočit: zorné pole snímku krát (1 − překryv). Panoramatické hlavy mají přesně na to aretace."
+        },
+        "rows": {
+          "term": "Řady",
+          "definition": "Víceřadá panoramata skládají vodorovné průchody nad sebe a mezi řadami používají stejné pravidlo překryvu, aby pokryla vysoké scény."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Fotíš panorama horského hřebene. Jak velký překryv mají mít sousední snímky, aby spojení spolehlivě vyšlo?",
+          "hint": "Spojovací software potřebuje společné detaily, ale každý snímek navíc stojí čas.",
+          "successMessage": "Správně! Překryv kolem 30 % dá spojovacímu softwaru spoustu kontrolních bodů, aniž bys plýtval snímky — u většiny scén je to standardní doporučení.",
+          "failureMessage": "Praktický standard je 25–35 %. Pod ~15 % software těžko hledá kontrolní body; 80 % ztrojnásobí počet snímků bez jakéhokoli přínosu.",
+          "options": {
+            "0": { "label": "5 %" },
+            "1": { "label": "15 %" },
+            "2": { "label": "30 %" },
+            "3": { "label": "80 %" }
+          }
+        },
+        "1": {
+          "scenario": "Chceš jednořadé panorama s dostatkem svislé rezervy, abys mohl potom srovnat horizont a volně ořezávat. V jaké orientaci fotoaparátu fotit?",
+          "hint": "Ve které poloze dá každý snímek víc výšky?",
+          "successMessage": "Přesně tak! Na výšku zachytí každý snímek mnohem větší svislé pole — pár snímků navíc ve vodorovném směru je za tu volnost při ořezu levná cena.",
+          "failureMessage": "U jednořadých panoramat je standardem orientace na výšku: každý snímek je vyšší, takže spojený výsledek přežije srovnání horizontu i ořez.",
+          "options": {
+            "0": { "label": "Na šířku" },
+            "1": { "label": "Na výšku" },
+            "2": { "label": "Režim čtvercového ořezu" },
+            "3": { "label": "Nakloněno o 45°" }
+          }
+        },
+        "2": {
+          "scenario": "S objektivem 50mm na plném formátu drženým na šířku (vodorovný záběr asi 40°) a s překryvem 30 % — kolik snímků zhruba potřebuje panorama o 180°?",
+          "hint": "Každý snímek posune pokrytí o 40° × 0,7 = 28°.",
+          "successMessage": "Správně! První snímek pokryje 40° a každý další přidá ~28°. Na zbývajících 140° připadá 5 dalších snímků, tedy celkem 7 (s malou rezervou).",
+          "failureMessage": "Každý snímek po prvním přidá 40° × (1 − 0,3) = 28° nového pokrytí. (180 − 40) / 28 = 5 dalších snímků, celkem tedy 7.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "V panoramatu máš metr před fotoaparátem plot a za ním hory. Ve spojeném výsledku se plot mezi snímky duplikuje a nesedí. Kolem jakého bodu se má fotoaparát otáčet, aby se to spravilo?",
+          "hint": "Problém je paralaxa — vzájemný posun blízkých a vzdálených objektů.",
+          "successMessage": "Přesně tak! Otáčení kolem bezparalaxového (nodálního) bodu objektivu udrží blízké i vzdálené objekty mezi snímky zarovnané. Panoramatické hlavy a nodální lišty existují právě kvůli tomu.",
+          "failureMessage": "Fotoaparát se musí otáčet kolem bezparalaxového bodu objektivu (často se mu říká nodální bod). Otáčení kolem stativového závitu posouvá optický střed, a to způsobuje paralaxu, kterou vidíš.",
+          "options": {
+            "0": { "label": "Přední čočka objektivu" },
+            "1": { "label": "Bezparalaxový bod objektivu" },
+            "2": { "label": "Rovina snímače" },
+            "3": { "label": "Stativový závit" }
+          }
+        }
+      }
+    }
+  }
+}

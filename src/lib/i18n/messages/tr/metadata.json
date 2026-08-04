@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Lightroom Katalog Analizci — Ücretsiz, Yalnızca Tarayıcı İstatistikleri",
       "description": "Lightroom Classic kataloğunuzu tarayıcınızda yerel olarak analiz edin. Ekipman, odak uzaklıkları, diyafram alışkanlıkları, derecelendirmeler ve daha fazlasını görün. %100 yerel — kataloğunuz asla yüklenmez."
+    },
+    "shutter-count-checker": {
+      "title": "Deklanşör Sayısı Kontrolü — Ücretsiz ve Gizli",
+      "description": "Kameranızın deklanşör sayısını bir fotoğraftan öğrenin; ücretsiz ve %100 tarayıcınızda. Nikon JPEG ve RAW dosyalarıyla çalışır, Canon, Sony ve diğer markalar için net yönlendirme sunar."
+    },
+    "camera-health-checker": {
+      "title": "Kamera Sağlık Kontrolü",
+      "description": "Bir kamera gövdesini tek bir fotoğraftan inceleyin: model, seri numarası, donanım yazılımı, gövde yaşı, objektif ve deklanşör ömrü. %100 istemci tarafı — ikinci el kamera almadan önce kontrol için ideal."
+    },
+    "panorama-calculator": {
+      "title": "Panorama Hesaplayıcı",
+      "description": "Birleştirilecek panoramaları planlayın: kaç çekim gerektiğini, kareler arasında ne kadar döneceğinizi ve son çözünürlüğü — her objektif, sensör ve örtüşme için."
+    },
+    "diffraction-calculator": {
+      "title": "Kırınım Sınırı Hesaplayıcı",
+      "description": "Kameranızın kırınım sınırını bulun: diyaframı kısmanın görüntüleri yumuşatmaya başladığı değeri. Piksel aralığı ve Airy diski temel alınır; her sensör ve çözünürlük için."
+    },
+    "photography-cheat-sheet": {
+      "title": "Fotoğrafçılık Kopya Kağıdı — Senaryoya Göre Kamera Ayarları",
+      "description": "Portre, manzara, yaban hayatı, Samanyolu ve daha fazlası için kamera ayarı kopya kağıtları. Görsel olarak indirebileceğiniz veya yazdırabileceğiniz, kendini kanıtlamış başlangıç noktaları."
     }
   }
 }

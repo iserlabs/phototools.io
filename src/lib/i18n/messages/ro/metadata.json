@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Analizor de Cataloage Lightroom — Statistici gratuite, doar în browser",
       "description": "Analizează-ți catalogul Lightroom Classic local, în browserul tău. Vezi echipamentul, distanțele focale, obiceiurile de diafragmă, evaluările și multe altele. 100% local — catalogul tău nu este niciodată încărcat."
+    },
+    "shutter-count-checker": {
+      "title": "Verificator număr de declanșări — gratuit și privat",
+      "description": "Verifică numărul de declanșări al aparatului tău dintr-o fotografie, gratuit și 100% în browser. Funcționează cu fișiere JPEG și RAW Nikon, cu îndrumări clare pentru Canon, Sony și alte mărci."
+    },
+    "camera-health-checker": {
+      "title": "Verificator stare aparat foto",
+      "description": "Inspectează un aparat foto dintr-o singură fotografie: model, număr de serie, firmware, vârstă, obiectiv și durata de viață a obturatorului. 100% în browser — ideal pentru verificarea aparatelor second-hand înainte de cumpărare."
+    },
+    "panorama-calculator": {
+      "title": "Calculator de panorame",
+      "description": "Planifică panorame asamblate: de câte cadre ai nevoie, cât să rotești între cadre și rezoluția finală — pentru orice obiectiv, senzor și suprapunere."
+    },
+    "diffraction-calculator": {
+      "title": "Calculator al limitei de difracție",
+      "description": "Află limita de difracție a aparatului tău: diafragma la care închiderea diafragmei începe să înmoaie imaginile. Bazat pe pasul pixelilor și discul Airy, pentru orice senzor și rezoluție."
+    },
+    "photography-cheat-sheet": {
+      "title": "Fișă de setări foto — setări de aparat pe scenarii",
+      "description": "Fișe cu setări de aparat pentru portrete, peisaje, animale sălbatice, Calea Lactee și altele. Puncte de plecare verificate, de descărcat ca imagine sau de imprimat."
     }
   }
 }

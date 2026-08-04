@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Een panorama bouw je door meerdere overlappende foto's te maken terwijl je de camera draait, waarna software ze aan elkaar stitcht tot één breed beeld. De kunst is te weten hoe ver je tussen de opnamen moet draaien: te ver en de software kan de beelden niet verbinden, te weinig en je verspilt tientallen opnamen. Deze calculator doet die rekensom op basis van je lens, sensor en gewenste overlap.",
+      "deeper": "Elk beeld bestrijkt een vaste kijkhoek die wordt bepaald door brandpuntsafstand en sensorformaat — een 50mm-lens op fullframe ziet horizontaal ongeveer 40°. Stitchsoftware lijnt aangrenzende beelden uit door gedeelde 'controlepunten' in de overlapzone te vinden, en daarom is 25–35% overlap de praktische standaard: het geeft het algoritme genoeg gedeeld detail zonder het aantal beelden te laten exploderen. De bruikbare draaiing per opname is dus de beeldhoek van het beeld maal (1 − overlap). Fotograferen in staande stand ruilt een smallere horizontale stap in voor veel meer verticale dekking — daarom worden de meeste enkelrijige panorama's verticaal geschoten. Voor echt hoge scènes passen meerrijige panorama's dezelfde overlaplogica verticaal toe. Het uiteindelijke gestitchte bestand groeit snel: elk extra beeld draagt zijn resolutie minus de overlap bij, dus een staand panorama van 7 beelden uit een 24 MP-camera komt makkelijk boven de 100 MP uit. Eén fysieke subtiliteit begrenst dit alles: draaien om de statiefaansluiting verschuift het optische centrum van de lens tussen de beelden, waardoor dichtbije en verre objecten niet meer uitlijnen (parallax). Bij verre landschappen maakt dat zelden uit, maar met een dichtbije voorgrond moet je draaien om het parallaxvrije punt van de lens, met een nodaalrail of panoramakop.",
+      "keyFactors": {
+        "0": {
+          "label": "Brandpuntsafstand & sensor",
+          "description": "Samen bepalen ze de beeldhoek van één beeld — de bouwsteen waaruit het panorama wordt samengesteld. Langere lenzen betekenen smallere beelden en meer opnamen."
+        },
+        "1": {
+          "label": "Overlap",
+          "description": "De gedeelde zone tussen aangrenzende beelden waarop stitchsoftware uitlijnt. 25–35% is de sweet spot; scènes zonder herkenningspunten (lucht, water) hebben meer nodig."
+        },
+        "2": {
+          "label": "Stand",
+          "description": "Staande beelden bestrijken minder breedte maar veel meer hoogte per opname — de standaardkeuze voor enkelrijige panorama's omdat het ruimte laat om bij te snijden."
+        },
+        "3": {
+          "label": "Parallax",
+          "description": "Verschuiving tussen dichtbij en veraf door te draaien om de verkeerde as. Onschuldig bij verre scènes; kritiek bij een dichtbije voorgrond."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Zet belichting, witbalans en scherpstelling op handmatig vóór het eerste beeld. Alles wat automatisch is, verschuift tussen de beelden en veroorzaakt zichtbare strepen in de gestitchte lucht."
+        },
+        "1": {
+          "text": "Fotografeer met de lens waterpas en draai in één vloeiende beweging, met aan beide uiteinden één wegwerpbeeld extra — randbeelden raken vervormd en worden bij het stitchen weggesneden."
+        },
+        "2": {
+          "text": "Overdrijf de overlap bij panorama's uit de hand naar 40–50%. Je draaiing zal niet precies zijn, en de extra beelden geven de stitcher ruimte om dat op te vangen."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Overlap",
+          "definition": "Het percentage van elk beeld dat het deelt met zijn buur. Stitchsoftware heeft dit gedeelde detail nodig om beelden uit te lijnen — 25–35% is gebruikelijk."
+        },
+        "orientation": {
+          "term": "Camerastand",
+          "definition": "Staande (verticale) kadrering is de standaard voor panorama's: elk beeld draagt meer hoogte bij, wat ruimte laat voor horizoncorrectie en bijsnijden."
+        },
+        "rotateBetween": {
+          "term": "Draaiing tussen opnamen",
+          "definition": "Hoeveel graden je de camera na elk beeld draait: de beeldhoek van het beeld maal (1 − overlap). Panoramakoppen hebben hier precies klikstanden voor."
+        },
+        "rows": {
+          "term": "Rijen",
+          "definition": "Meerrijige panorama's stapelen horizontale doorgangen verticaal, met dezelfde overlapregel tussen de rijen, om hoge scènes te bestrijken."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Je fotografeert een panorama van een bergketen. Hoeveel moeten aangrenzende beelden overlappen voor betrouwbaar stitchen?",
+          "hint": "De stitcher heeft gedeeld detail nodig, maar elk extra beeld kost tijd.",
+          "successMessage": "Correct! Zo'n 30% overlap geeft stitchsoftware volop controlepunten zonder beelden te verspillen — de standaardaanbeveling voor de meeste scènes.",
+          "failureMessage": "25–35% is de praktische standaard. Onder ~15% vindt de stitcher amper controlepunten; 80% verdrievoudigt je aantal beelden zonder winst.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Je wilt een enkelrijig panorama met genoeg verticale ruimte om de horizon recht te trekken en vrij bij te snijden. In welke camerastand moet je fotograferen?",
+          "hint": "In welke stand levert elk beeld meer hoogte op?",
+          "successMessage": "Juist! De staande stand vangt veel meer verticale beeldhoek per opname — de extra beelden die je horizontaal nodig hebt, zijn een kleine prijs voor de vrijheid bij het bijsnijden.",
+          "failureMessage": "Staand (verticaal) is de standaard voor enkelrijige panorama's: elk beeld is hoger, dus het gestitchte resultaat overleeft horizoncorrectie en bijsnijden.",
+          "options": {
+            "0": { "label": "Liggend" },
+            "1": { "label": "Staand" },
+            "2": { "label": "Vierkante uitsnede" },
+            "3": { "label": "45° gekanteld" }
+          }
+        },
+        "2": {
+          "scenario": "Met een 50mm-lens op fullframe in liggende stand (ongeveer 40° horizontale beeldhoek) en 30% overlap: hoeveel beelden heeft een panorama van 180° ongeveer nodig?",
+          "hint": "Elke opname breidt de dekking uit met 40° × 0,7 = 28°.",
+          "successMessage": "Correct! Het eerste beeld dekt 40°, en elk volgend beeld voegt ~28° toe. De resterende 140° kost 5 extra beelden, dus 7 beelden in totaal (met wat marge).",
+          "failureMessage": "Elk beeld na het eerste voegt 40° × (1 − 0,3) = 28° nieuwe dekking toe. (180 − 40) / 28 = 5 extra beelden, dus 7 in totaal.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Je panorama heeft een hek op één meter voor de camera en bergen daarachter. In het gestitchte resultaat vertoont het hek spookbeelden en verspringingen tussen de beelden. Om welk punt moet de camera draaien om dit op te lossen?",
+          "hint": "Het probleem is parallax — dichtbije en verre objecten die ten opzichte van elkaar verschuiven.",
+          "successMessage": "Precies! Draaien om het parallaxvrije punt (nodaalpunt) van de lens houdt dichtbije en verre objecten tussen de beelden uitgelijnd. Panoramakoppen en nodaalrails bestaan juist hiervoor.",
+          "failureMessage": "De camera moet draaien om het parallaxvrije punt van de lens (vaak het nodaalpunt genoemd). Draaien om de statiefaansluiting verschuift het optische centrum en veroorzaakt de parallax die je ziet.",
+          "options": {
+            "0": { "label": "Het voorste lenselement" },
+            "1": { "label": "Het parallaxvrije punt van de lens" },
+            "2": { "label": "Het sensorvlak" },
+            "3": { "label": "De statiefaansluiting" }
+          }
+        }
+      }
+    }
+  }
+}

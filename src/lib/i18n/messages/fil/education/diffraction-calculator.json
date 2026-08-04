@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Ang pag-stop down ng aperture ay nagpapalaki ng depth of field — pero lampas sa isang punto, sinisimulan nitong palambutin ang buong imahe sa halip na patalasin. Iyon ang diffraction: bumabaluktot ang mga light wave habang sumisiksik sa maliit na butas. Ipinapakita ng calculator na ito nang eksakto kung nasaan ang puntong iyon para sa camera mo, para alam mo kung hanggang saan ka puwedeng mag-stop down bago magbayad ng sharpness.",
+      "deeper": "Kapag dumaan ang liwanag sa aperture, bawat punto sa eksena ay bumabagsak sa sensor hindi bilang punto kundi bilang maliit na diffraction pattern — isang maliwanag na core na tinatawag na Airy disk na napapalibutan ng malalabong halo. Ang diameter ng disk ay lumalaki nang direktang proporsyonal sa f-number: mga 2.44 × wavelength × N, na sa f/8 sa berdeng liwanag ay ~10.7 µm na. Kung mahalaga iyon ay nakadepende sa mga pixel mo. Ang 24 MP full-frame sensor ay may ~6 µm na mga pixel; ang 61 MP sensor ay may ~3.8 µm na mga pixel. Kapag lumaki na ang Airy disk nang malinaw na lampas sa isang pixel, ang detalyeng kaya sanang i-resolve ng sensor ay kumakalat sa mga katabing pixel, at walang kalidad ng lens na makapagbabalik nito. Kaya ang parehong f/11 na mukhang okay sa lumang 12 MP body ay kapansin-pansing nagpapalambot sa mga file mula sa modernong high-resolution sensor, at kaya ang mga compact camera na may maliliit na pixel ay bihirang mag-alok ng aperture lampas sa f/8. Ang rule of thumb ng industriya na ginagamit dito — limit ≈ pixel pitch / 0.67 — ay nagmamarka kung saan nagiging nasusukat ang paglalambot, hindi kung saan nasisira ang mga imahe: ang pag-stop down ng isang stop lampas sa limit ay kadalasang sulit na kapalit para sa depth of field. Lampas sa dalawang stop, mas mahusay na ang focus stacking kaysa sa pag-stop down.",
+      "keyFactors": {
+        "0": {
+          "label": "Aperture (f-number)",
+          "description": "Ang tanging kontrol sa mismong diffraction: ang diameter ng Airy disk ay nag-i-scale nang linear sa f-number. Ang f/16 ay nagkakalat ng liwanag nang dalawang beses na mas malapad kaysa sa f/8."
+        },
+        "1": {
+          "label": "Pixel Pitch",
+          "description": "Ang pisikal na laki ng isang pixel, na itinatakda ng laki ng sensor at megapixels nang magkasama. Ang mas maliliit na pixel ay nakaka-resolve ng mas maraming detalye — at mas maagang naglalantad ng diffraction."
+        },
+        "2": {
+          "label": "Laki ng Output",
+          "description": "Ang diffraction na kita sa 100% sa screen ay maaaring hindi makita sa web-size na export o katamtamang print. Husgahan ang sharpness sa laking talagang gagamitin mo."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Hanapin ang sweet spot ng lens mo: kunan ang parehong detalyadong eksena sa bawat full stop at ikumpara sa 100%. Karamihan ng mga lens ay pumipeak nang dalawa hanggang tatlong stop mula sa wide open, bago pa manaig ang diffraction."
+        },
+        "1": {
+          "text": "Para sa mga landscape na nangangailangan ng malalim na focus sa high-resolution body, subukan ang hyperfocal distance sa f/8 bago dumukwang sa f/16 — ang tamang paglalagay ng focus ay madalas na nakabibili ng mas maraming sharpness kaysa sa mas maliliit na aperture."
+        },
+        "2": {
+          "text": "Sa macro, lumalaki ang effective aperture kasabay ng magnification (ang f/11 sa 1:1 ay parang f/22), kaya mas maagang kumakagat ang diffraction kaysa sa ipinapakita ng dial. Ang focus stacking sa katamtamang aperture ang matalas na paraan palabas."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pixel Pitch",
+          "definition": "Ang lapad ng isang pixel sa sensor, sa micrometers. Kinukuwenta mula sa lapad ng sensor na hinati sa pahalang na bilang ng pixel — 24 MP full frame ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Airy Disk",
+          "definition": "Ang diffraction pattern na nabubuo ng isang punto ng liwanag pagkatapos dumaan sa aperture: isang maliwanag na core na may malalabong singsing. Ang diameter nito ≈ 2.44 × wavelength × f-number."
+        },
+        "diffractionLimit": {
+          "term": "Diffraction Limit",
+          "definition": "Ang f-number kung saan nilalampasan ng Airy disk ang pixel at nagsisimulang bumaba ang sharpness kada pixel — humigit-kumulang pixel pitch (µm) ÷ 0.67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Nag-stop down ka mula f/8 hanggang f/22 para sa maximum na depth of field, pero lumambot ang pinong detalye ng imahe mo kahit saan — pati sa focal plane. Ano ang nangyayari?",
+          "hint": "Physics ito, hindi depekto ng lens.",
+          "successMessage": "Tama! Bumabaluktot (nagdi-diffract) ang liwanag habang dumadaan sa maliit na aperture, na nagkakalat sa bawat punto bilang disk na mas malaki kaysa sa pixel. Sa f/22 ang paglalambot na ito ay umaapekto sa buong frame, kasama ang focal plane.",
+          "failureMessage": "Ito ang diffraction: bumabaluktot ang mga light wave sa palibot ng mga aperture blade, na nagkakalat sa bawat punto ng liwanag bilang malabong disk. Pantay nitong inaapektuhan ang buong imahe, anuman ang kalidad ng lens.",
+          "options": {
+            "0": { "label": "Masamang pagkakagawa ng lens" },
+            "1": { "label": "Bumabaluktot ang liwanag sa pagdaan sa maliit na butas" },
+            "2": { "label": "Nag-o-overheat ang sensor sa maliliit na aperture" },
+            "3": { "label": "Tumataas ang ISO noise" }
+          }
+        },
+        "1": {
+          "scenario": "Nag-upgrade ka mula sa 24 MP full-frame camera patungo sa 61 MP. Ano ang mangyayari sa aperture kung saan nagiging kita ang diffraction?",
+          "hint": "Ang mas maraming megapixel sa parehong sensor area ay nangangahulugan ng mas maliliit na pixel.",
+          "successMessage": "Tama! Ang ~3.8 µm na mga pixel ng 61 MP sensor ay mas maagang nao-outresolve ang Airy disk, kaya bumababa ang diffraction limit mula humigit-kumulang f/9 patungong humigit-kumulang f/5.6. Mas makitid ang aperture sweet spot ng mga high-resolution sensor.",
+          "failureMessage": "Mas maagang inilalantad ng mas maliliit na pixel ang diffraction. Ang diffraction limit ng 61 MP sensor ay nasa bandang f/5.6, kumpara sa f/9 para sa 24 MP sensor — lumilipat ang limit sa mas malapad na aperture.",
+          "options": {
+            "0": { "label": "Lumilipat ito sa mas maliit na aperture (mas mataas na f-number)" },
+            "1": { "label": "Lumilipat ito sa mas malapad na aperture (mas mababang f-number)" },
+            "2": { "label": "Hindi ito nagbabago" },
+            "3": { "label": "Nawawala ang diffraction kapag mas maraming megapixel" }
+          }
+        },
+        "2": {
+          "scenario": "Kumukuha ka ng landscape sa 45 MP full-frame camera at gusto mo ng maximum na kabuuang sharpness na may magandang depth of field. Aling aperture range ang pinakamagandang panimulang punto?",
+          "hint": "Balansehin ang mga lens aberration (malala kapag wide open) laban sa diffraction (malala kapag naka-stop down).",
+          "successMessage": "Tama! Ang f/8–f/11 ay nasa mismong bandang diffraction limit para sa ~4.4 µm na mga pixel habang nagbibigay ng malaking depth of field — ang klasikong landscape sweet spot sa high-resolution full frame.",
+          "failureMessage": "Binabalanse ng f/8–f/11 ang depth of field laban sa diffraction para sa 45 MP full-frame sensor. Kapansin-pansing pinalalambot ng f/22 ang pinong detalye, at kulang naman sa depth of field ang wide open.",
+          "options": {
+            "0": { "label": "Laging f/22 para sa maximum na lalim" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Wide open" },
+            "3": { "label": "Nakadepende lang ito sa ISO" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Arrossega una foto aquí o fes clic per triar-ne una (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Arrossega qualsevol foto de la càmera que vulguis inspeccionar. Tot es llegeix al teu navegador: el fitxer no surt mai del teu dispositiu.",
+      "errorRead": "No s'ha pogut llegir aquest fitxer. Prova amb un JPEG o RAW sense editar tret directament de la càmera.",
+      "errorNoMetadata": "Aquest fitxer no conté metadades de càmera. Les exportacions d'aplicacions d'edició o de missatgeria sovint les eliminen: prova amb un fitxer original sense editar.",
+      "sections": {
+        "body": "Cos de la càmera",
+        "age": "Antiguitat",
+        "shutter": "Vida de l'obturador",
+        "lens": "Objectiu"
+      },
+      "cameraModel": "Model",
+      "make": "Fabricant",
+      "serialNumber": "Número de sèrie",
+      "firmware": "Microprogramari / programari",
+      "bodyAge": "Antiguitat del cos",
+      "ageValue": "~{years} anys (presentada el {year})",
+      "ageUnknown": "Aquest model no és a la nostra base de dades de llançaments, així que no se n'ha pogut estimar l'antiguitat.",
+      "shotDate": "Foto presa",
+      "shutterCount": "Recompte de dispars",
+      "ratedLife": "Vida útil nominal",
+      "ratedAssumed": "(suposada)",
+      "lifeUsed": "{percent}% de la vida útil nominal consumida",
+      "verdict": {
+        "low": "Gairebé sense ús",
+        "moderate": "Ús moderat",
+        "high": "Ús intensiu",
+        "beyond": "Per sobre de la vida nominal"
+      },
+      "shutterUnavailable": {
+        "supported": "No s'ha trobat cap recompte de dispars tot i que {brand} normalment el registra. Prova amb un fitxer original sense editar: les aplicacions d'edició sovint eliminen les metadades del fabricant.",
+        "partial": "{brand} només escriu un comptador de fotogrames aproximat en alguns fitxers, i aquest no en té cap. Els menús de la mateixa càmera o una utilitat USB poden mostrar-lo.",
+        "unsupported": "{brand} no guarda un recompte de dispars llegible als fitxers d'imatge. Consulta la pàgina del Comprovador de recompte de dispars per veure alternatives segons la marca.",
+        "unknown": "Aquest fitxer no té un recompte de dispars llegible."
+      },
+      "lensModel": "Objectiu",
+      "lensSerial": "Número de sèrie de l'objectiu",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Què he de comprovar en comprar una càmera de segona mà?",
+          "answer": "Més enllà de l'estètica: el recompte de dispars en relació amb la seva vida útil nominal, l'antiguitat del cos i la versió del microprogramari, que el número de sèrie coincideixi amb la documentació del venedor (i no consti com a robat), l'estat del sensor (busca pols o ratllades en una foto de prova d'un cel clar a f/16) i que tots els dials, ports i la muntura de l'objectiu funcionin amb suavitat."
+        },
+        "where-does-health-data-come-from": {
+          "question": "D'on surten aquestes dades d'estat?",
+          "answer": "Tot es llegeix de les metadades incrustades a la teva foto: camps EXIF estàndard (model, número de sèrie, microprogramari, objectiu, data de captura) més les notes del fabricant quan estan disponibles (recompte de dispars). L'antiguitat del cos s'estima amb una base de dades integrada d'anys de llançament dels models de càmera més populars."
+        },
+        "is-my-photo-uploaded": {
+          "question": "La meva foto es puja a un servidor?",
+          "answer": "No. El fitxer s'analitza completament al teu navegador amb JavaScript: no surt mai del teu dispositiu i no s'hi guarda res. Ho pots comprovar carregant la pàgina i desconnectant la connexió abans de deixar-hi anar un fitxer."
+        }
+      }
+    }
+  }
+}

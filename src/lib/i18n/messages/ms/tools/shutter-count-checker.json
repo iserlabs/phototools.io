@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Letakkan foto di sini atau klik untuk melayari (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Jenama mana yang menyimpan kiraan pengatup?",
+      "status": {
+        "supported": "Boleh dibaca",
+        "partial": "Separa",
+        "unsupported": "Tiada dalam fail"
+      },
+      "brands": {
+        "nikon": "Nikon menulis kiraan pengatup ke dalam metadata setiap foto, tanpa penyulitan. Gunakan fail asal yang belum disunting untuk hasil terbaik.",
+        "canon": "Canon tidak pernah menulis kiraan pengatup ke dalam fail imej — ia disimpan hanya di dalam kamera dan dibaca oleh alat servis atau utiliti USB.",
+        "sony": "Sony menyimpan kiraan pengatup dalam bahagian metadata yang disulitkan dan tidak boleh dinyahkod dalam pelayar. Utiliti desktop khusus boleh membacanya melalui USB.",
+        "fujifilm": "Badan kamera Fujifilm tidak merekodkan kiraan pengatup sebenar, tetapi sesetengahnya menulis pembilang bingkai yang memberikan anggaran batas bawah yang kasar.",
+        "pentax": "Pentax mengaburkan medan kiraan pengatupnya dengan sifer, jadi ia tidak boleh dibaca dengan pasti daripada fail.",
+        "olympus": "Badan kamera OM System / Olympus menyimpan kiraan pengatup penuh dalam menu servis dalaman; fail kadangkala membawa pembilang bingkai yang memberi bayangan tentang penggunaan.",
+        "panasonic": "Panasonic tidak menulis kiraan pengatup ke dalam fail. Menu servis pada kamera yang melaporkannya.",
+        "leica": "Badan kamera Leica umumnya tidak menyimpan kiraan pengatup dalam fail imej."
+      },
+      "countLabel": "Lepasan pengatup",
+      "source": {
+        "shutterCount": "Dibaca daripada metadata kiraan pengatup kamera — ini ialah pembilang lepasan mekanikal yang sebenar.",
+        "mechanicalShutterCount": "Dibaca daripada pembilang pengatup mekanikal — bingkai pengatup elektronik tidak termasuk.",
+        "imageNumber": "Dianggarkan daripada nombor imej fail. Ini anggaran batas bawah yang kasar, bukan kiraan lepasan yang tepat — pembilang boleh ditetapkan semula atau berpusing semula ke sifar."
+      },
+      "ratedLife": "Hayat pengatup terkadar",
+      "ratings": {
+        "entry": "Peringkat permulaan",
+        "enthusiast": "Peminat",
+        "advanced": "Mahir",
+        "pro": "Profesional",
+        "flagship": "Perdana"
+      },
+      "lifeUsed": "{percent}% daripada hayat terkadar telah digunakan",
+      "verdict": {
+        "low": "Hampir tidak digunakan",
+        "moderate": "Penggunaan sederhana",
+        "high": "Penggunaan berat",
+        "beyond": "Melebihi kadaran"
+      },
+      "noCountTitle": "Tiada kiraan pengatup dalam fail ini",
+      "noCountGeneric": "Fail ini tidak mengandungi kiraan pengatup yang boleh dibaca. Cuba foto asal yang belum disunting terus daripada kamera — eksport daripada aplikasi penyuntingan sering membuang metadata pengeluar.",
+      "errorRead": "Fail ini tidak dapat dibaca. Cuba fail JPEG atau RAW yang belum disunting terus daripada kamera.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Apakah kiraan pengatup?",
+          "answer": "Kiraan pengatup ialah bilangan kali pengatup mekanikal kamera telah dilepaskan — setara dengan bacaan jarak perjalanan sebuah kereta. Ia penunjuk haus yang paling kerap diperiksa semasa membeli atau menjual kamera terpakai, kerana pengatup dikadarkan untuk bilangan lepasan yang terhad."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Berapa banyak lepasan pengatup yang dianggap terlalu banyak?",
+          "answer": "Ia bergantung pada kelas kamera. Pengatup peringkat permulaan dikadarkan sekitar 100,000 lepasan, badan kamera peminat 150,000–200,000, dan badan profesional 300,000–500,000. Kadaran ialah purata jangka hayat, bukan had mutlak — banyak pengatup bertahan jauh melebihinya, dan kiraan rendah pada badan yang tidak dijaga dengan baik masih boleh bermakna masalah."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Mengapa saya tidak boleh menyemak kiraan pengatup pada foto Canon atau Sony saya?",
+          "answer": "Canon langsung tidak menulis kiraan pengatup ke dalam fail imej — ia wujud hanya dalam memori dalaman kamera. Sony menulisnya, tetapi menyulitkan bahagian metadata itu. Dalam kedua-dua kes, alat pelayar tidak dapat membacanya daripada foto; utiliti desktop yang bersambung ke kamera melalui USB ialah penyelesaian yang biasa."
+        }
+      }
+    }
+  }
+}

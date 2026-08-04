@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Mỗi tình huống chụp — chân dung, động vật hoang dã, Dải Ngân Hà — đều có một tổ hợp khẩu độ, tốc độ màn trập và ISO quen thuộc mà các nhiếp ảnh gia giàu kinh nghiệm chọn đầu tiên. Những bảng tra nhanh này cho bạn điểm khởi đầu đó ngay lập tức, để bạn dồn sự chú ý vào ánh sáng và bố cục thay vì loay hoay với các nút xoay.",
+      "deeper": "Mỗi công thức ở đây là một ứng dụng của tam giác phơi sáng với một cạnh được ưu tiên. Chân dung ưu tiên khẩu độ: khẩu lớn (f/1.8–f/2.8) tách chủ thể khỏi hậu cảnh, và mọi thứ khác xoay quanh đó. Hành động ưu tiên tốc độ màn trập: 1/1000s đóng băng chuyển động, nên khẩu mở rộng và ISO tăng để cấp đủ sáng. Phong cảnh ưu tiên chất lượng ảnh: ISO gốc và khẩu độ tầm trung trong vùng lý tưởng của ống kính, chân máy gánh mọi tốc độ màn trập nào sinh ra. Cảnh đêm ép cả ba cạnh cùng lúc, đó là lý do công thức của chúng cứng nhắc nhất — Dải Ngân Hà thực sự đòi hỏi ống nhanh mở hết khẩu, màn trập dưới ~20 giây (trước khi vòng quay Trái Đất kéo vệt sao), và mức ISO nào làm histogram dùng được. Hiểu mỗi tình huống ưu tiên cạnh nào mới là bài học thật sự: một khi nhìn ra thứ tự ưu tiên, bạn có thể điều chỉnh bất kỳ công thức nào theo ánh sáng trước mặt thay vì làm theo một cách mù quáng. Các khoảng giá trị là điểm khởi đầu hiệu chỉnh cho điều kiện thông thường; histogram của bạn, chứ không phải bảng tra, mới có tiếng nói cuối cùng.",
+      "keyFactors": {
+        "0": {
+          "label": "Ưu tiên theo tình huống",
+          "description": "Mỗi tình huống khóa một biến phơi sáng trước — khẩu độ cho chân dung, màn trập cho hành động, ISO cho phong cảnh — và để các biến còn lại thích ứng."
+        },
+        "1": {
+          "label": "Ánh sáng hiện có",
+          "description": "Cùng một tình huống cần thông số khác nhau lúc giữa trưa và lúc hoàng hôn. Coi các khoảng giá trị là mỏ neo và dịch chuyển trong đó khi ánh sáng thay đổi."
+        },
+        "2": {
+          "label": "Chân máy & độ ổn định",
+          "description": "Chân máy mở khóa ISO gốc và màn trập chậm cho cảnh tĩnh. Chụp cầm tay đặt sàn tốc độ màn trập quanh 1/(tiêu cự) hoặc nhanh hơn."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Chụp thử một tấm và đọc histogram, đừng tin màn hình xem trước — màn hình đánh lừa bạn dưới nắng gắt và trong đêm, histogram thì không bao giờ."
+        },
+        "1": {
+          "text": "Thuộc lòng một công thức cho mỗi thể loại bạn chụp, rồi tập điều chỉnh từng biến một. Bạn sẽ thấm các đánh đổi nhanh hơn hẳn so với thay đổi mọi thứ cùng lúc."
+        },
+        "2": {
+          "text": "Tải bảng tra về cho những tình huống bạn ít chụp — công thức Dải Ngân Hà rất khó nhớ lúc 2 giờ sáng trên sườn núi với những ngón tay tê cóng."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Khẩu độ",
+          "definition": "Độ mở của ống kính, tính bằng số f. Số thấp hơn = nhiều sáng hơn và hậu cảnh mờ hơn; số cao hơn = độ sâu trường ảnh lớn hơn."
+        },
+        "shutter": {
+          "term": "Tốc độ màn trập",
+          "definition": "Thời gian cảm biến thu nhận ánh sáng. Tốc độ nhanh đóng băng chuyển động; tốc độ chậm làm nhòe nó và đòi hỏi chống rung hoặc chân máy."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Mức khuếch đại của cảm biến. Giữ nó thấp nhất mà ánh sáng cho phép — tăng lên làm ảnh sáng hơn với cái giá là nhiễu."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Bạn chụp chân dung và muốn hiệu ứng kinh điển: chủ thể sắc nét, hậu cảnh tan thành một vùng mờ. Lựa chọn thông số nào đạt được điều đó?",
+          "hint": "Hậu cảnh mờ đến từ độ sâu trường ảnh — thông số nào điều khiển nó?",
+          "successMessage": "Chính xác! Khẩu độ lớn (như f/1.8–f/2.8) tạo độ sâu trường ảnh mỏng, tách chủ thể khỏi hậu cảnh mờ — lựa chọn định hình thể loại chân dung.",
+          "failureMessage": "Hậu cảnh mờ đến từ khẩu độ lớn (số f thấp) như f/1.8–f/2.8, làm độ sâu trường ảnh mỏng đi. Khẩu độ nhỏ cho tác dụng ngược lại.",
+          "options": {
+            "0": { "label": "Khẩu độ nhỏ như f/16" },
+            "1": { "label": "Khẩu độ lớn như f/2" },
+            "2": { "label": "Phơi sáng dài trên chân máy" },
+            "3": { "label": "ISO tối đa" }
+          }
+        },
+        "1": {
+          "scenario": "Một con diệc cứ vụt bay khỏi mặt nước đúng lúc bạn bấm máy, và khung hình nào cũng thấy đầu cánh bị nhòe. Cách khắc phục là gì?",
+          "hint": "Nhòe chuyển động là vấn đề về thời gian.",
+          "successMessage": "Đúng vậy! Chim đang bay cần tốc độ màn trập nhanh — 1/2500s trở lên mới đóng băng được nhịp vỗ cánh. Mở khẩu và để Auto ISO leo lên để cấp đủ sáng cho tốc độ bạn cần.",
+          "failureMessage": "Cánh nhòe nghĩa là màn trập quá chậm so với chuyển động. Nhảy lên 1/2500s hoặc nhanh hơn và để khẩu độ cùng ISO bù lại lượng sáng mất đi.",
+          "options": {
+            "0": { "label": "Màn trập chậm hơn để lấy thêm sáng" },
+            "1": { "label": "Tốc độ màn trập nhanh hơn hẳn" },
+            "2": { "label": "Khép khẩu xuống f/22" },
+            "3": { "label": "Chuyển cân bằng trắng sang đèn sợi đốt" }
+          }
+        },
+        "2": {
+          "scenario": "Bạn đã dựng máy dưới bầu trời tối để chụp Dải Ngân Hà. Tổ hợp nào cho một tấm phơi sáng dùng được của lõi thiên hà?",
+          "hint": "Các ngôi sao mờ nhạt, đang di chuyển (theo vòng quay Trái Đất), và là nguồn sáng duy nhất của bạn.",
+          "successMessage": "Chính xác! Mở hết khẩu (f/1.4–f/2.8), 10–25 giây, ISO 1600–6400: khẩu độ gom tối đa ánh sáng, màn trập dừng trước khi sao kéo vệt, và ISO cao làm lõi thiên hà mờ nhạt hiện ra.",
+          "failureMessage": "Dải Ngân Hà cần tất cả: khẩu mở hết cỡ, phơi sáng đủ ngắn để sao không kéo vệt (10–25s), và ISO cao (1600–6400). Khẩu nhỏ hay ISO gốc chỉ để lại bầu trời đen kịt.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Mở hết khẩu, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Thông số nào cũng được kèm filter ND" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Analizador de Catálogos de Lightroom",
       "description": "Analiza tu catálogo de Lightroom Classic — equipo, distancia focal, aperturas, valoraciones y mucho más — 100 % en tu navegador"
+    },
+    "shutter-count-checker": {
+      "name": "Comprobador de recuento de disparos",
+      "description": "Comprueba el recuento de disparos de tu cámara a partir de una foto — 100% en tu navegador"
+    },
+    "camera-health-checker": {
+      "name": "Comprobador de estado de la cámara",
+      "description": "Inspecciona la antigüedad, el firmware, el número de serie y la vida del obturador de un cuerpo a partir de una sola foto"
+    },
+    "panorama-calculator": {
+      "name": "Calculadora de panorámicas",
+      "description": "Planifica tus panorámicas: número de fotogramas, solapamiento y rotación entre disparos"
+    },
+    "diffraction-calculator": {
+      "name": "Calculadora del límite de difracción",
+      "description": "Encuentra la apertura en la que la difracción empieza a suavizar tus imágenes"
+    },
+    "photography-cheat-sheet": {
+      "name": "Hoja de referencia fotográfica",
+      "description": "Hojas de referencia con ajustes de cámara para escenarios habituales — descargables e imprimibles"
     }
   }
 }

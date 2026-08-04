@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Hver fotosituasjon — portretter, dyreliv, Melkeveien — har en velprøvd kombinasjon av blender, lukkertid og ISO som erfarne fotografer griper til først. Disse jukselappene gir deg det utgangspunktet umiddelbart, slik at du kan bruke oppmerksomheten på lys og komposisjon i stedet for å nøle ved hjulene.",
+      "deeper": "Hver oppskrift her er en anvendelse av eksponeringstrekanten med én side prioritert. Portretter prioriterer blenderen: store åpninger (f/1.8–f/2.8) skiller motivet fra bakgrunnen, og alt annet tilpasser seg rundt det. Action prioriterer lukkertiden: 1/1000s fryser bevegelse, så blenderen åpnes og ISO stiger for å mate den med lys. Landskap prioriterer bildekvaliteten: basis-ISO og en mellomblender i objektivets beste område, med et stativ som tar seg av lukkertiden som blir resultatet. Nattscener presser alle tre sidene samtidig, og derfor har de de mest rigide oppskriftene — Melkeveien krever faktisk et lyssterkt objektiv helt åpent, en lukkertid under ~20 sekunder (før jordens rotasjon lager striper av stjernene) og den ISO-en som gjør histogrammet brukbart. Å forstå hvilken side hvert scenario prioriterer, er den egentlige lærdommen: når du ser prioriteten, kan du tilpasse enhver oppskrift til lyset foran deg i stedet for å følge den blindt. Områdene er utgangspunkter kalibrert for typiske forhold; histogrammet ditt, ikke lappen, har siste ord.",
+      "keyFactors": {
+        "0": {
+          "label": "Scenarioets prioritet",
+          "description": "Hver situasjon låser én eksponeringsvariabel først — blenderen for portretter, lukkeren for action, ISO for landskap — og lar de andre tilpasse seg."
+        },
+        "1": {
+          "label": "Tilgjengelig lys",
+          "description": "Samme scenario trenger ulike innstillinger midt på dagen og i skumringen. Bruk områdene som ankere og flytt deg innenfor dem når lyset endrer seg."
+        },
+        "2": {
+          "label": "Støtte & stabilitet",
+          "description": "Et stativ låser opp basis-ISO og lange lukkertider for statiske scener. Håndholdt arbeid setter et lukkertidsgulv rundt 1/(brennvidden) eller raskere."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Ta et testbilde og les histogrammet, ikke LCD-forhåndsvisningen — skjermer lyver i sterk sol og om natten, histogrammet gjør det aldri."
+        },
+        "1": {
+          "text": "Memorer én oppskrift per sjanger du fotograferer, og øv deretter på å justere én variabel om gangen. Du internaliserer avveiningene langt raskere enn ved å endre alt på en gang."
+        },
+        "2": {
+          "text": "Last ned lappen for scenarier du sjelden fotograferer — Melkevei-oppskriften er vanskelig å huske klokka 2 om natten på en fjellside med kalde fingre."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Blender",
+          "definition": "Størrelsen på objektivåpningen, i f-tall. Lavere tall = mer lys og mer bakgrunnsuskarphet; høyere tall = mer dybdeskarphet."
+        },
+        "shutter": {
+          "term": "Lukkertid",
+          "definition": "Hvor lenge sensoren samler lys. Raske tider fryser bevegelse; lange tider gjør den uskarp og krever stabilisering eller stativ."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Sensorens forsterkning. Hold den så lav som lyset tillater — å øke den gjør bildet lysere på bekostning av støy."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du tar et portrett og vil ha den klassiske looken: skarpt motiv, bakgrunn smeltet til uskarphet. Hvilket innstillingsvalg oppnår det?",
+          "hint": "Bakgrunnsuskarphet kommer fra dybdeskarpheten — hvilken kontroll styrer den?",
+          "successMessage": "Riktig! En stor blenderåpning (som f/1.8–f/2.8) skaper den grunne dybdeskarpheten som skiller motivet fra en uskarp bakgrunn — det definerende portrettvalget.",
+          "failureMessage": "Bakgrunnsuskarphet kommer fra en stor blenderåpning (lavt f-tall) som f/1.8–f/2.8, som gjør dybdeskarpheten grunn. Små åpninger gjør det motsatte.",
+          "options": {
+            "0": { "label": "En liten blender som f/16" },
+            "1": { "label": "En stor blender som f/2" },
+            "2": { "label": "En lang eksponering på stativ" },
+            "3": { "label": "Maksimal ISO" }
+          }
+        },
+        "1": {
+          "scenario": "En hegre letter fra vannet akkurat idet du trykker på utløseren, og hvert bilde viser uskarpe vingespisser. Hva er løsningen?",
+          "hint": "Bevegelsesuskarphet er et tidsproblem.",
+          "successMessage": "Riktig! Fugler i flukt trenger raske lukkertider — 1/2500s eller raskere fryser vingeslagene. Åpne blenderen og la Auto-ISO klatre for å mate tiden du trenger.",
+          "failureMessage": "Uskarpe vinger betyr at lukkeren er for treg for bevegelsen. Hopp til 1/2500s eller raskere og la blender og ISO kompensere for det tapte lyset.",
+          "options": {
+            "0": { "label": "En tregere lukker for mer lys" },
+            "1": { "label": "En mye raskere lukkertid" },
+            "2": { "label": "Blend ned til f/22" },
+            "3": { "label": "Bytt hvitbalanse til glødelampe" }
+          }
+        },
+        "2": {
+          "scenario": "Du står klar under en mørk himmel for å fotografere Melkeveien. Hvilken kombinasjon gir en brukbar eksponering av galaksens kjerne?",
+          "hint": "Stjernene er svake, i bevegelse (med jordens rotasjon) og din eneste lyskilde.",
+          "successMessage": "Riktig! Helt åpen blender (f/1.4–f/2.8), 10–25 sekunder, ISO 1600–6400: blenderen samler maksimalt med lys, lukkeren stopper før stjernene lager striper, og høy ISO gjør den svake kjernen synlig.",
+          "failureMessage": "Melkeveien krever alt: blenderen helt åpen, en eksponering kort nok til at stjernene ikke lager striper (10–25s) og høy ISO (1600–6400). Små blendere eller basis-ISO etterlater himmelen svart.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Helt åpen, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Hvilke som helst innstillinger med et ND-filter" }
+          }
+        }
+      }
+    }
+  }
+}

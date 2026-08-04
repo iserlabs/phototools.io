@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Jedes Foto, das deine Kamera speichert, trägt einen verborgenen Bericht über die Kamera selbst: das genaue Modell, die Seriennummer, die laufende Firmware, das angesetzte Objektiv und manchmal, wie viele Fotos sie schon gemacht hat. Dieses Tool liest diesen Bericht aus einem einzigen Foto — vollständig in deinem Browser —, damit du ein Kameragehäuse so einschätzen kannst, wie ein Mechaniker die Servicehistorie eines Autos liest.",
+      "deeper": "Die Daten stammen aus EXIF-Metadaten, einem Standardblock, den jede Digitalkamera in ihre Dateien einbettet. Zu den Standardfeldern gehören Hersteller, Modell, Gehäuse-Seriennummer, Software (die bei den meisten Kameras die Firmware-Version angibt), Objektivmodell und der Aufnahmezeitstempel. Hersteller erweitern das um proprietäre „Maker Notes“ — bei Nikon gehört die Auslösungszahl dazu, weshalb die Verschlusslebensdauer bei manchen Marken auslesbar ist und bei anderen nicht. Das Gehäusealter wird geschätzt, indem der Modellname mit einer Datenbank von Erscheinungsjahren abgeglichen wird: Eine 2018 erschienene Kamera ist mindestens etliche Jahre alt, egal was der Verkäufer behauptet. Zwei Vorbehalte sind wichtig. Erstens überleben Metadaten nur in Originaldateien — die meisten Bearbeitungs-Apps, Messenger und sozialen Plattformen entfernen oder überschreiben sie. Zweitens lässt sich EXIF mit frei verfügbaren Tools bearbeiten, also betrachte es als starkes Indiz, nicht als Beweis: Erst die Übereinstimmung zwischen der Seriennummer in der Datei, der am Gehäuse und der auf der Quittung des Verkäufers macht den Fall wirklich dicht.",
+      "keyFactors": {
+        "0": {
+          "label": "Nur Originaldateien",
+          "description": "Metadaten überleben in Dateien direkt aus der Kamera. Exporte und erneutes Speichern entfernen oft Seriennummern, Maker Notes und Firmware-Infos."
+        },
+        "1": {
+          "label": "Seriennummer",
+          "description": "Verknüpft die Datei mit einem physischen Gehäuse. Gleiche sie vor dem Gebrauchtkauf mit dem Gehäuse selbst, der Quittung und Diebstahlregistern ab."
+        },
+        "2": {
+          "label": "Erscheinungsjahr vs. Zustand",
+          "description": "Das Alter setzt die Erwartungen (Sensortechnik, fehlende Funktionen, verbleibender Support), aber Verschlussverschleiß und äußerer Zustand verraten, wie hart diese Jahre waren."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Du kaufst gebraucht? Bitte den Verkäufer um ein unbearbeitetes Foto direkt aus der Kamera. Es bestätigt Modell und Seriennummer, zeigt die aktuelle Firmware und — bei unterstützten Marken — die Auslösungszahl, alles in einer Datei."
+        },
+        "1": {
+          "text": "Vergleiche die Firmware mit der aktuellen Version des Herstellers. Eine nicht aktualisierte Kamera ist normal; eine Kamera, die sich nicht mehr aktualisieren lässt, verpasst womöglich Autofokus- und Kompatibilitätsverbesserungen."
+        },
+        "2": {
+          "text": "Das Aufnahmedatum des Beispielfotos verrät, wann die Kamera zuletzt tatsächlich benutzt wurde. Ein „kaum benutztes“ Gehäuse, dessen neueste Datei vier Jahre alt ist, hat herumgelegen — prüfe auf einen klemmenden Verschluss und einen aufgeblähten Akku."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Gehäuse-Seriennummer",
+          "definition": "Die eindeutige Kennung, die der Hersteller jedem Kameragehäuse zuweist, eingebettet im EXIF jedes Fotos. Nützlich für Garantieprüfungen und Diebstahlregister."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "Die interne Software der Kamera, gemeldet im EXIF-Feld „Software“. Hersteller liefern Autofokus-, Kompatibilitäts- und Funktionsverbesserungen über Firmware-Updates aus."
+        },
+        "bodyAge": {
+          "term": "Gehäusealter",
+          "definition": "Jahre seit der Markteinführung des Modells, geschätzt aus einer Datenbank mit Erscheinungsdaten. Eine Obergrenze dafür, wie aktuell die Technik der Kamera ist — nicht dafür, wie abgenutzt dieses konkrete Gehäuse ist."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du kaufst eine gebrauchte Kamera über ein Online-Inserat. Der Verkäufer schickt dir ein Originalfoto aus der Kamera. Was ist das Wertvollste, das du mit der Seriennummer in den Metadaten tun kannst?",
+          "hint": "Die Seriennummer verbindet dieses konkrete Gehäuse mit der Außenwelt.",
+          "successMessage": "Richtig! Der Abgleich der Seriennummer mit Diebstahlregistern (und der Quittung des Verkäufers) schützt dich davor, gestohlene Ausrüstung zu kaufen — eine Prüfung, die nur die Seriennummer möglich macht.",
+          "failureMessage": "Der einzigartige Wert der Seriennummer liegt in der Identifikation: Gleiche sie mit Diebstahlregistern und den Unterlagen des Verkäufers ab. Über Bildqualität oder Kompatibilität sagt sie nichts aus.",
+          "options": {
+            "0": { "label": "Mit Diebstahlregistern abgleichen" },
+            "1": { "label": "Die Fotoqualität einschätzen" },
+            "2": { "label": "Die Objektivkompatibilität prüfen" },
+            "3": { "label": "Den ISO-Bereich nachschlagen" }
+          }
+        },
+        "1": {
+          "scenario": "Eine gebrauchte Kamera, die du in Betracht ziehst, läuft mit Firmware 1.0 von ihrer Markteinführung vor vier Jahren, während die aktuelle Version des Herstellers 3.1 ist. Was bringt ein Update typischerweise?",
+          "hint": "Überlege, was Hersteller nach der Markteinführung per Software ändern können.",
+          "successMessage": "Genau! Firmware-Updates liefern echte Verbesserungen — bessere Autofokus-Algorithmen, Unterstützung neuer Objektive, Fehlerbehebungen, manchmal ganze Funktionen. Hardware-Daten wie Sensor und Megapixel ändern sich nie.",
+          "failureMessage": "Firmware ist Software: Updates verbessern den Autofokus, ergänzen Objektivunterstützung und beheben Fehler. Hardware wie den Sensor oder die Megapixelzahl können sie nicht ändern.",
+          "options": {
+            "0": { "label": "Neue Funktionen und Autofokus-Verbesserungen" },
+            "1": { "label": "Mehr Megapixel" },
+            "2": { "label": "Eine größere Sensorfläche" },
+            "3": { "label": "Nichts — Firmware ist kosmetisch" }
+          }
+        },
+        "2": {
+          "scenario": "Zwei Verkäufer bieten dasselbe Modell an: ein 7 Jahre altes Gehäuse und ein 4 Jahre altes zu ähnlichen Preisen. Wie nutzt du das Gehäusealter richtig für deine Entscheidung?",
+          "hint": "Das Alter ist ein Faktor — was verrät es dir nicht?",
+          "successMessage": "Genau. Das Alter steckt den Rahmen für Technik und verbleibende Support-Zeit ab, aber entscheidend ist, wie das Gehäuse genutzt wurde: Auslösungszahl, äußerer Zustand und Servicehistorie.",
+          "failureMessage": "Das Gehäusealter allein entscheidet nicht — ein schonend genutztes älteres Gehäuse kann ein malträtiertes neueres schlagen. Kombiniere das Alter mit Auslösungszahl und Zustand.",
+          "options": {
+            "0": { "label": "Immer das neuere kaufen" },
+            "1": { "label": "Alter zusammen mit Auslösungszahl und Zustand abwägen" },
+            "2": { "label": "Alter ignorieren — nur Megapixel zählen" },
+            "3": { "label": "Allein nach Markenruf entscheiden" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Trage o fotografie aici sau apasă pentru a răsfoi (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Trage orice fotografie din aparatul pe care vrei să-l inspectezi. Totul este citit în browserul tău — fișierul nu părăsește niciodată dispozitivul.",
+      "errorRead": "Nu am putut citi acest fișier. Încearcă un JPEG sau un fișier RAW needitat, direct din aparat.",
+      "errorNoMetadata": "Acest fișier nu conține metadate ale aparatului foto. Exporturile din aplicații de editare sau mesagerie le elimină adesea — încearcă un fișier original needitat.",
+      "sections": {
+        "body": "Corpul aparatului",
+        "age": "Vârstă",
+        "shutter": "Durata de viață a obturatorului",
+        "lens": "Obiectiv"
+      },
+      "cameraModel": "Model",
+      "make": "Marcă",
+      "serialNumber": "Număr de serie",
+      "firmware": "Firmware / software",
+      "bodyAge": "Vârsta corpului",
+      "ageValue": "~{years} ani (lansat în {year})",
+      "ageUnknown": "Acest model nu se află în baza noastră de date cu lansări, așa că vârsta lui nu a putut fi estimată.",
+      "shotDate": "Fotografie realizată",
+      "shutterCount": "Număr de declanșări",
+      "ratedLife": "Durată nominală",
+      "ratedAssumed": "(estimată)",
+      "lifeUsed": "{percent}% din durata nominală consumată",
+      "verdict": {
+        "low": "Abia folosit",
+        "moderate": "Utilizare moderată",
+        "high": "Utilizare intensă",
+        "beyond": "Peste durata nominală"
+      },
+      "shutterUnavailable": {
+        "supported": "Nu am găsit numărul de declanșări, deși {brand} îl înregistrează de obicei. Încearcă un fișier original needitat — aplicațiile de editare elimină adesea metadatele producătorului.",
+        "partial": "{brand} scrie doar un contor de cadre aproximativ în unele fișiere, iar acesta nu are niciunul. Meniurile aparatului sau un utilitar USB îl pot raporta.",
+        "unsupported": "{brand} nu stochează un număr de declanșări lizibil în fișierele imagine. Vezi pagina instrumentului de verificare a declanșărilor pentru alternative specifice fiecărei mărci.",
+        "unknown": "Acest fișier nu conține un număr de declanșări care să poată fi citit."
+      },
+      "lensModel": "Obiectiv",
+      "lensSerial": "Seria obiectivului",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Ce ar trebui să verific când cumpăr un aparat foto second-hand?",
+          "answer": "Dincolo de aspect: numărul de declanșări raportat la durata nominală, vârsta corpului și versiunea de firmware, dacă numărul de serie corespunde cu actele vânzătorului (și nu figurează ca furat), starea senzorului (caută praf sau zgârieturi într-o fotografie de test cu cer senin la f/16) și dacă toate rotițele, porturile și montura obiectivului funcționează fără probleme."
+        },
+        "where-does-health-data-come-from": {
+          "question": "De unde provin aceste date despre stare?",
+          "answer": "Totul este citit din metadatele încorporate în fotografia ta: câmpurile EXIF standard (model, număr de serie, firmware, obiectiv, data capturii) plus notele proprietare ale producătorilor, acolo unde există (numărul de declanșări). Vârsta corpului este estimată dintr-o bază de date integrată cu anii de lansare ai modelelor populare."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Fotografia mea este încărcată pe un server?",
+          "answer": "Nu. Fișierul este analizat integral în browserul tău cu JavaScript — nu părăsește niciodată dispozitivul și nimic nu este stocat. Poți verifica acest lucru încărcând pagina și apoi oprind conexiunea înainte de a trage un fișier."
+        }
+      }
+    }
+  }
+}

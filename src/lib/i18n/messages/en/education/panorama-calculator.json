@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "A panorama is built by taking several overlapping photos while rotating the camera, then letting software stitch them into one wide image. The trick is knowing how far to rotate between shots: too far and the software can't join the frames, too little and you waste dozens of shots. This calculator does that math from your lens, sensor, and desired overlap.",
+      "deeper": "Each frame covers a fixed angle of view determined by focal length and sensor size — a 50mm lens on full frame sees about 40° horizontally. Stitching software aligns neighboring frames by finding shared 'control points' in the overlap zone, which is why 25–35% overlap is the practical standard: it gives the algorithm enough shared detail without exploding the frame count. The usable rotation per shot is therefore the frame's field of view times (1 − overlap). Shooting in portrait orientation trades a narrower horizontal step for much more vertical coverage, which is why most single-row panoramas are shot vertical. For really tall scenes, multi-row panoramas apply the same overlap logic vertically. The final stitched file grows fast: each additional frame contributes its resolution minus the overlap, so a 7-frame portrait pano from a 24 MP camera easily exceeds 100 MP. One physical subtlety limits it all: rotating around the tripod socket shifts the lens's optical center between frames, causing near and far objects to misalign (parallax). For distant landscapes this rarely matters, but with close foreground elements you need to rotate around the lens's no-parallax point using a nodal rail or panoramic head.",
+      "keyFactors": {
+        "0": {
+          "label": "Focal Length & Sensor",
+          "description": "Together they set the single-frame field of view — the basic unit the panorama is assembled from. Longer lenses mean narrower frames and more shots."
+        },
+        "1": {
+          "label": "Overlap",
+          "description": "The shared zone between neighboring frames that stitching software aligns on. 25–35% is the sweet spot; featureless scenes (sky, water) need more."
+        },
+        "2": {
+          "label": "Orientation",
+          "description": "Portrait frames cover less width but much more height per shot — the standard choice for single-row panoramas because it leaves cropping room."
+        },
+        "3": {
+          "label": "Parallax",
+          "description": "Near/far misalignment caused by rotating around the wrong axis. Harmless for distant scenes; critical with close foregrounds."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Lock exposure, white balance, and focus to manual before the first frame. Auto anything shifts between frames and creates visible banding in the stitched sky."
+        },
+        "1": {
+          "text": "Shoot with the lens leveled and rotate in one smooth pass, adding one throwaway frame on each end — edge frames get distorted and cropped during stitching."
+        },
+        "2": {
+          "text": "For handheld panoramas, exaggerate the overlap to 40–50%. Your rotation won't be precise, and the extra frames give the stitcher room to recover."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Overlap",
+          "definition": "The percentage of each frame shared with its neighbor. Stitching software needs this shared detail to align frames — 25–35% is typical."
+        },
+        "orientation": {
+          "term": "Camera Orientation",
+          "definition": "Portrait (vertical) framing is standard for panoramas: each frame contributes more height, leaving room for horizon correction and cropping."
+        },
+        "rotateBetween": {
+          "term": "Rotation Between Shots",
+          "definition": "How many degrees to turn the camera after each frame: the frame's field of view times (1 − overlap). Panoramic heads have click-stops for exactly this."
+        },
+        "rows": {
+          "term": "Rows",
+          "definition": "Multi-row panoramas stack horizontal passes vertically, applying the same overlap rule between rows to cover tall scenes."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "You're shooting a panorama of a mountain range. How much should neighboring frames overlap for reliable stitching?",
+          "hint": "The stitcher needs shared detail, but every extra frame costs time.",
+          "successMessage": "Correct! Around 30% overlap gives stitching software plenty of control points without wasting frames — the standard recommendation for most scenes.",
+          "failureMessage": "25–35% is the practical standard. Below ~15% stitchers struggle to find control points; 80% triples your frame count for no benefit.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "You want a single-row panorama with enough vertical room to straighten the horizon and crop freely afterward. Which camera orientation should you shoot in?",
+          "hint": "Which way does each frame give you more height?",
+          "successMessage": "Right! Portrait orientation captures far more vertical field per frame — the extra frames needed horizontally are a cheap price for the cropping freedom.",
+          "failureMessage": "Portrait (vertical) is the standard for single-row panoramas: each frame is taller, so the stitched result survives horizon correction and cropping.",
+          "options": {
+            "0": { "label": "Landscape" },
+            "1": { "label": "Portrait" },
+            "2": { "label": "Square crop mode" },
+            "3": { "label": "Tilted 45°" }
+          }
+        },
+        "2": {
+          "scenario": "With a 50mm lens on full frame held in landscape orientation (about 40° horizontal view) and 30% overlap, roughly how many frames does a 180° panorama need?",
+          "hint": "Each shot advances the coverage by 40° × 0.7 = 28°.",
+          "successMessage": "Correct! The first frame covers 40°, and each additional frame adds ~28°. Covering the remaining 140° takes 5 more frames, so 7 frames total (with a little spare).",
+          "failureMessage": "Each frame past the first adds 40° × (1 − 0.3) = 28° of new coverage. (180 − 40) / 28 = 5 more frames, so 7 in total.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Your panorama has a fence one meter in front of the camera and mountains behind. The stitched result shows the fence ghosting and misaligning between frames. What point should the camera rotate around to fix this?",
+          "hint": "The problem is parallax — near and far objects shifting relative to each other.",
+          "successMessage": "Exactly! Rotating around the lens's no-parallax (nodal) point keeps near and far objects aligned between frames. Panoramic heads and nodal rails exist precisely for this.",
+          "failureMessage": "The camera must rotate around the lens's no-parallax point (often called the nodal point). Rotating around the tripod socket shifts the optical center, causing the parallax you're seeing.",
+          "options": {
+            "0": { "label": "The front element of the lens" },
+            "1": { "label": "The lens's no-parallax point" },
+            "2": { "label": "The sensor plane" },
+            "3": { "label": "The tripod socket" }
+          }
+        }
+      }
+    }
+  }
+}

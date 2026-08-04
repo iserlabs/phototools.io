@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Un panorama se construit en prenant plusieurs photos qui se chevauchent tout en faisant pivoter l'appareil, puis en laissant un logiciel les assembler en une seule image large. Toute l'astuce est de savoir de combien pivoter entre les prises : trop, et le logiciel ne peut pas joindre les images ; trop peu, et tu gaspilles des dizaines de prises. Ce calculateur fait ce calcul à partir de ton objectif, de ton capteur et du chevauchement souhaité.",
+      "deeper": "Chaque image couvre un angle de vue fixe déterminé par la focale et la taille du capteur — un 50mm en plein format voit environ 40° à l'horizontale. Le logiciel d'assemblage aligne les images voisines en trouvant des « points de contrôle » communs dans la zone de chevauchement, d'où le standard pratique de 25 à 35 % : il donne à l'algorithme assez de détails partagés sans faire exploser le nombre de prises. La rotation utile par prise est donc le champ de vision de l'image multiplié par (1 − chevauchement). Photographier en orientation portrait échange un pas horizontal plus étroit contre beaucoup plus de couverture verticale, raison pour laquelle la plupart des panoramas à une rangée se font à la verticale. Pour les scènes vraiment hautes, les panoramas multi-rangées appliquent la même logique de chevauchement à la verticale. Le fichier final assemblé grossit vite : chaque image supplémentaire apporte sa résolution moins le chevauchement, si bien qu'un pano portrait de 7 images avec un appareil de 24 MP dépasse facilement 100 MP. Une subtilité physique limite le tout : pivoter autour du filetage du trépied déplace le centre optique de l'objectif entre les prises, ce qui désaligne objets proches et lointains (parallaxe). Pour des paysages lointains, cela importe rarement, mais avec des éléments proches au premier plan, il faut pivoter autour du point de non-parallaxe de l'objectif à l'aide d'un rail nodal ou d'une tête panoramique.",
+      "keyFactors": {
+        "0": {
+          "label": "Focale et capteur",
+          "description": "Ensemble, ils fixent le champ de vision d'une image — l'unité de base dont le panorama est assemblé. Plus l'objectif est long, plus les images sont étroites et nombreuses."
+        },
+        "1": {
+          "label": "Chevauchement",
+          "description": "La zone partagée entre images voisines sur laquelle le logiciel d'assemblage s'aligne. 25 à 35 % est la zone idéale ; les scènes sans relief (ciel, eau) en demandent plus."
+        },
+        "2": {
+          "label": "Orientation",
+          "description": "Les images en portrait couvrent moins de largeur mais bien plus de hauteur par prise — le choix standard pour les panoramas à une rangée, car il laisse de la marge de recadrage."
+        },
+        "3": {
+          "label": "Parallaxe",
+          "description": "Le désalignement proche/lointain causé par une rotation autour du mauvais axe. Sans conséquence pour les scènes lointaines ; critique avec des premiers plans proches."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Verrouille l'exposition, la balance des blancs et la mise au point en manuel avant la première image. Tout automatisme dérive entre les prises et crée des bandes visibles dans le ciel assemblé."
+        },
+        "1": {
+          "text": "Photographie avec l'objectif à niveau et pivote en un seul passage fluide, en ajoutant une image sacrifiée à chaque extrémité — les images de bord sont déformées et rognées à l'assemblage."
+        },
+        "2": {
+          "text": "Pour les panoramas à main levée, exagère le chevauchement à 40–50 %. Ta rotation ne sera pas précise, et les images supplémentaires donnent au logiciel de quoi rattraper."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Chevauchement",
+          "definition": "Le pourcentage de chaque image partagé avec sa voisine. Le logiciel d'assemblage a besoin de ces détails communs pour aligner les images — 25 à 35 % est la norme."
+        },
+        "orientation": {
+          "term": "Orientation de l'appareil",
+          "definition": "Le cadrage portrait (vertical) est le standard des panoramas : chaque image apporte plus de hauteur, laissant de la marge pour redresser l'horizon et recadrer."
+        },
+        "rotateBetween": {
+          "term": "Rotation entre les prises",
+          "definition": "De combien de degrés tourner l'appareil après chaque image : le champ de vision de l'image multiplié par (1 − chevauchement). Les têtes panoramiques ont des crans exactement pour cela."
+        },
+        "rows": {
+          "term": "Rangées",
+          "definition": "Les panoramas multi-rangées empilent des passages horizontaux à la verticale, en appliquant la même règle de chevauchement entre rangées pour couvrir les scènes hautes."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Tu photographies un panorama d'une chaîne de montagnes. De combien les images voisines doivent-elles se chevaucher pour un assemblage fiable ?",
+          "hint": "Le logiciel a besoin de détails communs, mais chaque image en plus coûte du temps.",
+          "successMessage": "Correct ! Environ 30 % de chevauchement donne au logiciel d'assemblage largement assez de points de contrôle sans gaspiller d'images — la recommandation standard pour la plupart des scènes.",
+          "failureMessage": "25 à 35 % est le standard pratique. En dessous de ~15 %, les logiciels peinent à trouver des points de contrôle ; 80 % triple le nombre d'images sans bénéfice.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Tu veux un panorama à une rangée avec assez de marge verticale pour redresser l'horizon et recadrer librement ensuite. Dans quelle orientation photographier ?",
+          "hint": "Dans quel sens chaque image te donne-t-elle plus de hauteur ?",
+          "successMessage": "Exact ! L'orientation portrait capture beaucoup plus de champ vertical par image — les quelques images de plus à l'horizontale sont un prix modique pour la liberté de recadrage.",
+          "failureMessage": "Le portrait (vertical) est le standard des panoramas à une rangée : chaque image est plus haute, donc le résultat assemblé survit au redressement d'horizon et au recadrage.",
+          "options": {
+            "0": { "label": "Paysage" },
+            "1": { "label": "Portrait" },
+            "2": { "label": "Mode carré" },
+            "3": { "label": "Incliné à 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Avec un 50mm en plein format tenu en orientation paysage (environ 40° de champ horizontal) et 30 % de chevauchement, combien d'images faut-il environ pour un panorama de 180° ?",
+          "hint": "Chaque prise fait avancer la couverture de 40° × 0,7 = 28°.",
+          "successMessage": "Correct ! La première image couvre 40°, et chaque image supplémentaire ajoute ~28°. Couvrir les 140° restants prend 5 images de plus, donc 7 images au total (avec un peu de marge).",
+          "failureMessage": "Chaque image après la première ajoute 40° × (1 − 0,3) = 28° de couverture nouvelle. (180 − 40) / 28 = 5 images de plus, donc 7 au total.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Ton panorama comporte une clôture à un mètre de l'appareil et des montagnes derrière. Le résultat assemblé montre la clôture dédoublée et désalignée entre les images. Autour de quel point l'appareil doit-il pivoter pour corriger cela ?",
+          "hint": "Le problème est la parallaxe — les objets proches et lointains se décalent les uns par rapport aux autres.",
+          "successMessage": "Exactement ! Pivoter autour du point de non-parallaxe (point nodal) de l'objectif garde les objets proches et lointains alignés entre les images. Les têtes panoramiques et rails nodaux existent précisément pour cela.",
+          "failureMessage": "L'appareil doit pivoter autour du point de non-parallaxe de l'objectif (souvent appelé point nodal). Pivoter autour du filetage du trépied déplace le centre optique, causant la parallaxe que tu observes.",
+          "options": {
+            "0": { "label": "La lentille frontale de l'objectif" },
+            "1": { "label": "Le point de non-parallaxe de l'objectif" },
+            "2": { "label": "Le plan du capteur" },
+            "3": { "label": "Le filetage du trépied" }
+          }
+        }
+      }
+    }
+  }
+}

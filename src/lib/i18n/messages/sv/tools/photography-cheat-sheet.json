@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Välj ett scenario",
+      "tipsTitle": "Fälttips",
+      "labels": {
+        "aperture": "Bländare",
+        "shutter": "Slutartid",
+        "iso": "ISO",
+        "whiteBalance": "Vitbalans",
+        "focusMode": "Fokusläge",
+        "driveMode": "Matningsläge"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Dagsljus",
+        "cloudy": "Molnigt",
+        "shade": "Skugga",
+        "tungsten": "Glödlampa (~3200K)",
+        "afSingle": "Enbilds-AF (AF-S)",
+        "afContinuous": "Kontinuerlig AF (AF-C)",
+        "afTracking": "Kontinuerlig AF + motivföljning",
+        "manualFocus": "Manuell fokus",
+        "single": "Enbildstagning",
+        "burstLow": "Långsam serietagning",
+        "burstHigh": "Snabb serietagning",
+        "timer2s": "2s självutlösare / fjärrutlösare",
+        "intervalometer": "Intervallutlösare"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Porträtt",
+          "tips": {
+            "0": "Fokusera på ögat närmast kameran — vid stora bländaröppningar är skärpedjupet bara några centimeter.",
+            "1": "Backa och zooma in (85mm+) för smickrande kompression; vidvinklar nära inpå förvränger ansiktsdrag."
+          }
+        },
+        "landscape": {
+          "name": "Landskap",
+          "tips": {
+            "0": "Fokusera ungefär en tredjedel in i scenen eller använd hyperfokalavståndet för skärpa från förgrund till bakgrund.",
+            "1": "Fotografera från stativ med självutlösare eller fjärrutlösare för att eliminera skakningar vid långa slutartider."
+          }
+        },
+        "street": {
+          "name": "Gatufoto",
+          "tips": {
+            "0": "Zonfokusera: förinställ fokus på 3 m och f/8, så blir allt från 2 m till 6 m skarpt — ingen AF-fördröjning.",
+            "1": "Auto-ISO med en kortaste slutartid på 1/250s fryser gående motiv medan du koncentrerar dig på kompositionen."
+          }
+        },
+        "wildlife": {
+          "name": "Vilda djur & fåglar",
+          "tips": {
+            "0": "Anpassa slutartiden till motivet: 1/1000s för sittande fåglar, 1/2500s eller kortare för fåglar i flykt.",
+            "1": "Fotografera i ögonhöjd och vänta på att huvudet vrids — en ljusreflex i ögat ger bilden liv."
+          }
+        },
+        "sports": {
+          "name": "Sport & action",
+          "tips": {
+            "0": "Förfokusera där det kommer att hända (målet, kurvans apex) och starta serietagningen strax före höjdpunkten.",
+            "1": "Panorering vid 1/60s–1/125s med kontinuerlig AF gör bakgrunden suddig medan motivet hålls skarpt."
+          }
+        },
+        "macro": {
+          "name": "Makro",
+          "tips": {
+            "0": "Vid hög förstoring är skärpedjupet papperstunt — fokusera genom att flytta kameran, inte fokusringen.",
+            "1": "Diffraktionen slår hårt bortom f/16; använd focus stacking i stället för att blända ner mer."
+          }
+        },
+        "milkyWay": {
+          "name": "Vintergatan",
+          "tips": {
+            "0": "Använd NPF- eller 500-regeln för längsta exponering innan stjärnorna blir streck — cirka 15–20s vid 20mm på fullformat.",
+            "1": "Fokusera manuellt på en ljusstark stjärna med förstorad live view; sätt vitbalansen nära 3900K för en neutral himmel."
+          }
+        },
+        "nightCity": {
+          "name": "Nattliga stadsvyer",
+          "tips": {
+            "0": "Fotografera på bas-ISO från stativ och låt slutartiden bli lång — högdagrarna förblir rena och bruset lågt.",
+            "1": "f/11–f/16 förvandlar punktljus till stjärnformade ljus; fotografera under blå timmen för färg i himlen."
+          }
+        },
+        "waterfall": {
+          "name": "Vattenfall & långtidsexponering",
+          "tips": {
+            "0": "Exponeringar på 0,5–2s behåller struktur i vattnet; 30s+ gör det till dimma. Använd ett ND-filter i dagsljus.",
+            "1": "Ett cirkulärt polarisationsfilter tar bort reflexer från våta stenar och blad — och fungerar samtidigt som ett ND-filter på ~1,5 steg."
+          }
+        },
+        "goldenHour": {
+          "name": "Gyllene timmen",
+          "tips": {
+            "0": "Exponera för högdagrarna och lyft skuggorna i efterbehandlingen — utfrätta varma högdagrar går inte att rädda.",
+            "1": "Motljus ger kantljus och flare; vitbalansförinställningen Molnigt håller scenen varm."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Vilka kamerainställningar ska jag använda för porträtt?",
+          "answer": "Börja med en stor bländaröppning (f/1.8–f/2.8) för bakgrundsoskärpa, en slutartid på minst 1/200s för att undvika rörelseoskärpa och det lägsta ISO ljuset tillåter (100–400). Använd enpunkts-autofokus på det närmaste ögat, eller ögondetekterande AF om kameran har det."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Vilka inställningar behöver jag för att fotografera Vintergatan?",
+          "answer": "Ett ljusstarkt vidvinkelobjektiv på största bländaröppningen (f/1.4–f/2.8), en exponering på 10–25 sekunder (längre gör stjärnorna till streck), ISO 1600–6400, manuell fokus på en ljusstark stjärna och ett stativ. En månlös natt långt från stadens ljus betyder mer än någon kamerainställning."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Är de här inställningarna exakta recept?",
+          "answer": "Nej — de är beprövade utgångspunkter. Ljuset varierar enormt mellan scener, så se intervallen som en första gissning, ta en testbild, kolla histogrammet och justera. Målet är att snabbt få dig i rätt härad, inte att ersätta ditt omdöme."
+        }
+      }
+    }
+  }
+}

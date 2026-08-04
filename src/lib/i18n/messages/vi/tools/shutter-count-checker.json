@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Kéo thả ảnh vào đây hoặc nhấp để chọn tệp (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Những hãng nào lưu số lần chụp màn trập?",
+      "status": {
+        "supported": "Đọc được",
+        "partial": "Một phần",
+        "unsupported": "Không có trong tệp"
+      },
+      "brands": {
+        "nikon": "Nikon ghi số lần chụp màn trập vào metadata của mọi bức ảnh, không mã hóa. Hãy dùng tệp gốc chưa chỉnh sửa để có kết quả tốt nhất.",
+        "canon": "Canon không bao giờ ghi số lần chụp màn trập vào tệp ảnh — con số này chỉ được lưu bên trong máy và phải đọc bằng công cụ bảo trì hoặc tiện ích USB.",
+        "sony": "Sony lưu số lần chụp màn trập trong một phần metadata đã mã hóa mà trình duyệt không thể giải mã. Các tiện ích chuyên dụng trên máy tính có thể đọc nó qua USB.",
+        "fujifilm": "Máy Fujifilm không ghi số lần chụp màn trập thực sự, nhưng một số máy ghi bộ đếm khung hình cho một con số ước lượng tối thiểu.",
+        "pentax": "Pentax làm rối trường số lần chụp màn trập bằng thuật toán mã hóa, nên không thể đọc chính xác từ tệp.",
+        "olympus": "Máy OM System / Olympus giữ số lần chụp màn trập đầy đủ trong menu bảo trì nội bộ; đôi khi tệp có bộ đếm khung hình gợi ý mức độ sử dụng.",
+        "panasonic": "Panasonic không ghi số lần chụp màn trập vào tệp. Menu bảo trì trên máy sẽ hiển thị con số này.",
+        "leica": "Máy Leica thường không lưu số lần chụp màn trập trong tệp ảnh."
+      },
+      "countLabel": "Số lần kích hoạt màn trập",
+      "source": {
+        "shutterCount": "Đọc từ metadata số lần chụp màn trập của máy — đây là bộ đếm kích hoạt cơ học thực tế.",
+        "mechanicalShutterCount": "Đọc từ bộ đếm màn trập cơ học — không bao gồm các khung hình chụp bằng màn trập điện tử.",
+        "imageNumber": "Ước tính từ số thứ tự ảnh của tệp. Đây chỉ là con số tối thiểu gần đúng, không phải số lần kích hoạt chính xác — bộ đếm có thể bị đặt lại hoặc quay vòng."
+      },
+      "ratedLife": "Tuổi thọ màn trập định mức",
+      "ratings": {
+        "entry": "Phổ thông",
+        "enthusiast": "Bán chuyên",
+        "advanced": "Nâng cao",
+        "pro": "Chuyên nghiệp",
+        "flagship": "Đầu bảng"
+      },
+      "lifeUsed": "Đã dùng {percent}% tuổi thọ định mức",
+      "verdict": {
+        "low": "Gần như mới",
+        "moderate": "Sử dụng vừa phải",
+        "high": "Sử dụng nhiều",
+        "beyond": "Vượt định mức"
+      },
+      "noCountTitle": "Tệp này không có số lần chụp màn trập",
+      "noCountGeneric": "Tệp này không chứa số lần chụp màn trập đọc được. Hãy thử một ảnh gốc chưa chỉnh sửa lấy thẳng từ máy — tệp xuất từ ứng dụng chỉnh sửa thường bị xóa mất metadata của hãng.",
+      "errorRead": "Không thể đọc tệp này. Hãy thử tệp JPEG hoặc RAW chưa chỉnh sửa lấy thẳng từ máy ảnh.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Số lần chụp màn trập là gì?",
+          "answer": "Số lần chụp màn trập (shutter count) là số lần màn trập cơ học của máy ảnh đã hoạt động — tương đương số km đã đi của một chiếc ô tô. Đây là chỉ số hao mòn được kiểm tra nhiều nhất khi mua bán máy ảnh cũ, vì màn trập được định mức cho một số lần kích hoạt hữu hạn."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Bao nhiêu lần kích hoạt màn trập là quá nhiều?",
+          "answer": "Điều đó tùy vào phân khúc máy. Màn trập máy phổ thông được định mức khoảng 100.000 lần, máy bán chuyên 150.000–200.000, và máy chuyên nghiệp 300.000–500.000. Định mức là tuổi thọ trung bình, không phải giới hạn cứng — nhiều màn trập bền hơn hẳn con số đó, và một máy bị đối xử tệ vẫn có thể gặp vấn đề dù số lần chụp thấp."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Tại sao tôi không kiểm tra được số lần chụp màn trập trên ảnh Canon hoặc Sony?",
+          "answer": "Canon hoàn toàn không ghi số lần chụp màn trập vào tệp ảnh — con số này chỉ nằm trong bộ nhớ nội bộ của máy. Sony có ghi, nhưng mã hóa phần metadata đó. Trong cả hai trường hợp, công cụ chạy trên trình duyệt không thể đọc nó từ ảnh; giải pháp thường dùng là các tiện ích máy tính kết nối với máy ảnh qua USB."
+        }
+      }
+    }
+  }
+}

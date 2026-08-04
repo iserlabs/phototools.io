@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Pokaždé, když fotoaparát pořídí snímek mechanickou závěrkou, počítadlo uvnitř těla poskočí o jedničku. To číslo — počet expozic — je jako najeté kilometry u auta: říká, jak intenzivně byl fotoaparát používaný. Nejvíc záleží při koupi a prodeji použité techniky, protože závěrka je pohyblivý mechanismus dimenzovaný na konečný počet spuštění.",
+      "deeper": "Mechanická závěrka je dvojice pružinových lamel, které při každé expozici fyzicky přejedou před snímačem. Výrobci tyto mechanismy testují na životnost a zveřejňují údaje: zhruba 100 000 spuštění u těl základní třídy, 150 000–200 000 u pokročilých modelů a 300 000–500 000 u profesionálních. Údaj je statistický průměr, ne datum spotřeby — mnoho závěrek vydrží několikanásobek své životnosti a vadná závěrka je obvykle opravitelná (byť nákladná) závada. Kde počítadlo sídlí, se liší podle značky: Nikon ho nešifrovaně zapisuje do poznámek výrobce v každém souboru, a proto ho tenhle nástroj dokáže přečíst. Canon ho drží jen ve vnitřní paměti, Sony ho šifruje a Pentax maskuje. Moderní bezzrcadlovky obraz dál komplikují: snímky pořízené elektronickou závěrkou mechanismus vůbec neopotřebovávají, takže tělo používané převážně v tichém režimu může mít celkově daleko víc expozic, než mechanické počítadlo naznačuje — a to je v pořádku.",
+      "keyFactors": {
+        "0": {
+          "label": "Značka fotoaparátu",
+          "description": "Určuje, zda jde počet vůbec ze souborů přečíst. Nikon ho ukládá otevřeně; Canon, Sony a Pentax ne."
+        },
+        "1": {
+          "label": "Udávaná životnost závěrky",
+          "description": "Výrobcem otestovaná průměrná životnost mechanismu závěrky. Těla vyšších tříd používají odolnější mechanismy s vyšší udávanou životností."
+        },
+        "2": {
+          "label": "Elektronická vs. mechanická závěrka",
+          "description": "Snímky elektronickou závěrkou nezpůsobují žádné mechanické opotřebení a mechanické počítadlo obvykle nezvyšují. Kdo hodně fotí v tichém režimu, má nízké počty."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Počet vždy zjišťuj z neupraveného souboru přímo z fotoaparátu. Exporty z Lightroomu, messengerů nebo sociálních sítí obvykle odstraní poznámky výrobce, které počítadlo nesou."
+        },
+        "1": {
+          "text": "Při koupi z druhé ruky poměřuj počet s udávanou životností: 40 000 na těle s životností 300 000 je sotva zajeté, zatímco 90 000 na těle s životností 100 000 by mělo mít v ceně započtenou výměnu závěrky."
+        },
+        "2": {
+          "text": "Nízký počet expozic nezaručuje zdravý fotoaparát — poškození vodou, škrábance na snímači ani pády se v počítadle neukážou. Prohlédni si i testovací fotky a samotné tělo."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Počet expozic",
+          "definition": "Kolikrát se za život fotoaparátu spustila mechanická závěrka. Čte se z metadat, která fotoaparát vkládá do každé fotky."
+        },
+        "ratedLife": {
+          "term": "Udávaná životnost závěrky",
+          "definition": "Výrobcem otestovaný průměrný počet spuštění do selhání závěrky. Průměr, ne tvrdý limit — mnoho závěrek ho výrazně přežije."
+        },
+        "source": {
+          "term": "Zdroj údaje",
+          "definition": "Odkud bylo číslo přečteno: ze skutečného pole s počtem expozic, z čistě mechanického počítadla některých bezzrcadlovek, nebo z obecného čísla snímku jako hrubé náhrady."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Na koncertě pořídíš 500 fotek tichou elektronickou závěrkou bezzrcadlovky. Jak moc se tím opotřebovala mechanická závěrka?",
+          "hint": "Zamysli se, co se při expozici elektronickou závěrkou fyzicky pohybuje.",
+          "successMessage": "Správně! Elektronická závěrka čte snímač bez pohybu lamel, takže těch 500 snímků nezpůsobilo prakticky žádné mechanické opotřebení — a mechanické počítadlo obvykle nezvyšuje.",
+          "failureMessage": "Elektronická závěrka exponuje elektronickým čtením snímače — žádné lamely se nepohybují, takže tiché focení mechanickou závěrku neopotřebovává.",
+          "options": {
+            "0": { "label": "500 spuštění, jako u každých fotek" },
+            "1": { "label": "Vůbec — počítá se jen použití mechanické závěrky" },
+            "2": { "label": "Opotřebení způsobují jen RAW soubory" },
+            "3": { "label": "Opotřebení způsobují jen fotky s bleskem" }
+          }
+        },
+        "1": {
+          "scenario": "Fotoaparát má udávanou životnost 200 000 spuštění a aktuálně ukazuje 195 000. Co ten údaj pro tohle tělo doopravdy znamená?",
+          "hint": "Údaje vycházejí ze statistických testů životnosti, podobně jako hodiny u žárovek.",
+          "successMessage": "Přesně tak! Údaj je průměrná životnost z testů — tahle závěrka může selhat příští týden, nebo doběhnout ke 400 000. Je to pravděpodobnostní signál pro cenu, ne odpočet.",
+          "failureMessage": "Udávaná životnost závěrky je otestovaný průměr, ne tvrdý limit ani záruka. Mnoho závěrek vydrží daleko déle; některé selžou dřív.",
+          "options": {
+            "0": { "label": "Závěrka se na 200 000 zastaví" },
+            "1": { "label": "Je to průměrná životnost — poblíž ní roste riziko selhání" },
+            "2": { "label": "Na 200 000 končí záruka" },
+            "3": { "label": "Po 200 000 se zhorší výdrž baterie" }
+          }
+        },
+        "2": {
+          "scenario": "Porovnáváš dva použité fotoaparáty stejného modelu: jeden má 15 000 expozic a viditelnou korozi u dvířek baterie, druhý 60 000 expozic v bezvadném stavu. Který je bezpečnější koupě?",
+          "hint": "Počítadlo zaznamenává jen jeden druh opotřebení.",
+          "successMessage": "Přesně tak. Počet expozic je jen jeden z několika signálů — koroze ukazuje na kontakt s vodou, který fotoaparáty zabíjí mnohem častěji než opotřebovaná závěrka. Čisté tělo se 60 000 expozicemi je bezpečnější koupě.",
+          "failureMessage": "Počet expozic měří jen opotřebení závěrky. Koroze ukazuje na poškození vodou, které je mnohem rizikovější než středně opotřebovaná závěrka. Posuzuj počet spolu se stavem, nikdy počet samotný.",
+          "options": {
+            "0": { "label": "Tělo s 15 000 expozicemi — nižší je vždycky lepší" },
+            "1": { "label": "To, které je levnější" },
+            "2": { "label": "Čisté tělo se 60 000 expozicemi — stav je důležitější" },
+            "3": { "label": "Ani jeden — oba jsou moc staré" }
+          }
+        }
+      }
+    }
+  }
+}

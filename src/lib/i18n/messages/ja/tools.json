@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom カタログアナライザー",
       "description": "Lightroom Classic のカタログを分析 — 機材、焦点距離、絞り、レーティングなど — 100% ブラウザ内で完結"
+    },
+    "shutter-count-checker": {
+      "name": "シャッター回数チェッカー",
+      "description": "写真からカメラのシャッター回数を確認 — 100%ブラウザ内で処理"
+    },
+    "camera-health-checker": {
+      "name": "カメラヘルスチェッカー",
+      "description": "1枚の写真からカメラボディの経過年数、ファームウェア、シリアル番号、シャッター寿命を診断"
+    },
+    "panorama-calculator": {
+      "name": "パノラマ計算ツール",
+      "description": "パノラマ撮影の計画 — 撮影枚数、オーバーラップ、1枚ごとの回転角"
+    },
+    "diffraction-calculator": {
+      "name": "回折限界計算ツール",
+      "description": "回折で画像が甘くなり始める絞りを確認"
+    },
+    "photography-cheat-sheet": {
+      "name": "撮影設定チートシート",
+      "description": "よくある撮影シーン別のカメラ設定チートシート — ダウンロード・印刷可能"
     }
   }
 }

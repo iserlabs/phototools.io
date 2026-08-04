@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Lightroom Catalog Analyzer — Free, Browser-Only Stats",
       "description": "Analyze your Lightroom Classic catalog locally in your browser. See gear, focal lengths, aperture habits, ratings, and more. 100% local — your catalog is never uploaded."
+    },
+    "shutter-count-checker": {
+      "title": "Shutter Count Checker — Free & Private",
+      "description": "Check your camera's shutter count from a photo, free and 100% in your browser. Works with Nikon JPEG and RAW files, with clear guidance for Canon, Sony, and other brands."
+    },
+    "camera-health-checker": {
+      "title": "Camera Health Checker",
+      "description": "Inspect a camera body from a single photo: model, serial number, firmware, body age, lens, and shutter life. 100% client-side — ideal for checking used cameras before buying."
+    },
+    "panorama-calculator": {
+      "title": "Panorama Calculator",
+      "description": "Plan stitched panoramas: how many shots you need, how far to rotate between frames, and the final resolution — for any lens, sensor, and overlap."
+    },
+    "diffraction-calculator": {
+      "title": "Diffraction Limit Calculator",
+      "description": "Find your camera's diffraction limit: the aperture where stopping down starts to soften images. Based on pixel pitch and the Airy disk, for any sensor and resolution."
+    },
+    "photography-cheat-sheet": {
+      "title": "Photography Cheat Sheet — Camera Settings by Scenario",
+      "description": "Camera settings cheat sheets for portraits, landscapes, wildlife, the Milky Way, and more. Proven starting points you can download as an image or print."
     }
   }
 }

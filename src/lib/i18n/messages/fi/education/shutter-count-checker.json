@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Joka kerta, kun kamera ottaa kuvan mekaanisella sulkimellaan, kameran sisällä oleva laskuri kasvaa yhdellä. Tämä luku — laukaisumäärä — on kuin auton mittarilukema: se kertoo, kuinka paljon kameraa on käytetty. Sillä on eniten merkitystä käytettyjä laitteita ostettaessa ja myytäessä, sillä sulkimet ovat liikkuvia osia, jotka on mitoitettu rajalliselle määrälle laukaisuja.",
+      "deeper": "Mekaaninen suljin on pari jousikuormitteisia verhoja, jotka pyyhkäisevät fyysisesti kennon yli jokaisen valotuksen aikana. Valmistajat testaavat mekanismien kestoikää ja julkaisevat mitoituksia: noin 100 000 laukaisua perustason rungoille, 150 000–200 000 harrastajamalleille ja 300 000–500 000 ammattilaisrungoille. Mitoitus on tilastollinen keskiarvo, ei viimeinen käyttöpäivä — monet sulkimet kestävät moninkertaisesti mitoituksensa, ja rikkoutunut suljin on yleensä korjattavissa oleva (joskin kallis) vika. Se, mihin laukaisumäärä tallennetaan, vaihtelee merkeittäin: Nikon kirjoittaa sen salaamattomana jokaisen tiedoston maker notes -tietoihin, minkä vuoksi tämä työkalu voi lukea sen. Canon pitää sen vain sisäisessä muistissa, Sony salaa sen ja Pentax sotkee sen. Nykyaikaiset peilittömät kamerat mutkistavat kuvaa entisestään: elektronisella sulkimella otetut kuvat eivät kuluta mekanismia lainkaan, joten enimmäkseen äänettömässä tilassa käytetyllä rungolla voi olla paljon enemmän valotuksia kuin mekaaninen laskuri antaa ymmärtää — eikä siinä ole mitään vikaa.",
+      "keyFactors": {
+        "0": {
+          "label": "Kameramerkki",
+          "description": "Määrää, voiko laukaisumäärän ylipäätään lukea tiedostoista. Nikon tallentaa sen avoimesti; Canon, Sony ja Pentax eivät."
+        },
+        "1": {
+          "label": "Sulkimen ilmoitettu kestoikä",
+          "description": "Valmistajan testaama sulkimen mekanismin keskimääräinen kestoikä. Kalliimpien luokkien rungoissa on kestävämmät mekanismit ja korkeammat mitoitukset."
+        },
+        "2": {
+          "label": "Elektroninen vs. mekaaninen suljin",
+          "description": "Elektronisella sulkimella otetut kuvat eivät kuluta mekaniikkaa lainkaan, eivätkä ne yleensä kasvata mekaanista laskuria. Paljon äänetöntä tilaa käyttävillä lukemat ovat pieniä."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Tarkista laukaisumäärä aina muokkaamattomasta, suoraan kamerasta tulleesta tiedostosta. Lightroomin, viestisovellusten tai sosiaalisen median viennit poistavat yleensä laskurin sisältävät maker notes -tiedot."
+        },
+        "1": {
+          "text": "Käytettyä ostaessasi suhteuta lukema mitoitukseen: 40 000 rungossa, joka on mitoitettu 300 000:lle, on tuskin sisäänajettu, kun taas 90 000 rungossa, jonka mitoitus on 100 000, tulee hinnoitella sulkimen vaihto mukaan."
+        },
+        "2": {
+          "text": "Pieni laukaisumäärä ei takaa tervettä kameraa — vesivahingot, kennon naarmut ja putoamiset eivät näy laskurissa. Tutki myös testikuvat ja itse runko."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Laukaisumäärä",
+          "definition": "Kuinka monta kertaa mekaaninen suljin on lauennut kameran elinkaaren aikana. Luetaan metatiedoista, jotka kamera upottaa jokaiseen valokuvaan."
+        },
+        "ratedLife": {
+          "term": "Sulkimen ilmoitettu kestoikä",
+          "definition": "Valmistajan testaama keskimääräinen laukaisumäärä ennen sulkimen rikkoutumista. Keskiarvo, ei ehdoton raja — monet sulkimet kestävät paljon pidempään."
+        },
+        "source": {
+          "term": "Lukeman lähde",
+          "definition": "Mistä luku on peräisin: varsinaisesta laukaisumääräkentästä, joidenkin peilittömien runkojen vain mekaanisesta laskurista tai yleisestä kuvanumerosta karkeana varamenetelmänä."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Otat konsertissa 500 kuvaa peilittömän kamerasi äänettömällä elektronisella sulkimella. Kuinka paljon mekaanista sulkimen kulumista tästä aiheutui?",
+          "hint": "Mieti, mikä liikkuu fyysisesti elektronisen sulkimen valotuksen aikana.",
+          "successMessage": "Oikein! Elektroninen suljin lukee kennon ilman, että mitkään verhot liikkuvat, joten nuo 500 kuvaa eivät käytännössä aiheuttaneet mekaanista kulumista — eivätkä ne yleensä kasvata mekaanista laskuria.",
+          "failureMessage": "Elektroninen suljin valottaa lukemalla kennon elektronisesti — verhot eivät liiku, joten äänetön kuvaaminen ei kuluta mekaanista suljinta.",
+          "options": {
+            "0": { "label": "500 laukaisua, kuten mitkä tahansa kuvat" },
+            "1": { "label": "Ei yhtään — vain mekaanisen sulkimen käyttö lasketaan" },
+            "2": { "label": "Vain RAW-tiedostot kuluttavat" },
+            "3": { "label": "Vain salamakuvat kuluttavat" }
+          }
+        },
+        "1": {
+          "scenario": "Kamera on mitoitettu 200 000 laukaisulle, ja lukema on nyt 195 000. Mitä mitoitus todella tarkoittaa tälle rungolle?",
+          "hint": "Mitoitukset perustuvat tilastolliseen kestotestaukseen, kuten hehkulamppujen tuntimitoitukset.",
+          "successMessage": "Aivan oikein! Mitoitus on testauksen keskimääräinen kestoikä — tämä suljin voi hajota ensi viikolla tai kestää 400 000:een. Se on todennäköisyyssignaali hinnoitteluun, ei lähtölaskentakello.",
+          "failureMessage": "Sulkimen mitoitus on testattu keskimääräinen kestoikä, ei ehdoton raja tai takuu. Monet sulkimet kestävät selvästi pidempään; jotkin hajoavat aikaisemmin.",
+          "options": {
+            "0": { "label": "Suljin pysähtyy 200 000:een" },
+            "1": { "label": "Se on keskimääräinen kestoikä — rikkoutumisen todennäköisyys kasvaa sitä lähestyttäessä" },
+            "2": { "label": "Takuu päättyy 200 000:een" },
+            "3": { "label": "Akunkesto heikkenee 200 000:n jälkeen" }
+          }
+        },
+        "2": {
+          "scenario": "Vertailet kahta saman mallin käytettyä kameraa: toisessa on 15 000 laukaisua ja näkyvää korroosiota akkuluukun lähellä, toisessa 60 000 laukaisua moitteettomassa kunnossa. Kumpi on turvallisempi ostos?",
+          "hint": "Laskuri tallentaa vain yhdenlaista kulumista.",
+          "successMessage": "Juuri niin. Laukaisumäärä on yksi signaali monista — korroosio viittaa kosteusaltistukseen, joka tappaa kameroita paljon useammin kuin kuluneet sulkimet. Puhdas 60 000 laukaisun runko on turvallisempi ostos.",
+          "failureMessage": "Laukaisumäärä mittaa vain sulkimen kulumista. Korroosio viittaa vesivahinkoon, joka on paljon riskialttiimpi kuin kohtuullisesti käytetty suljin. Arvioi lukema ja kunto yhdessä, älä koskaan pelkkää lukemaa.",
+          "options": {
+            "0": { "label": "15 000 laukaisun runko — pienempi on aina parempi" },
+            "1": { "label": "Kumpi tahansa on halvempi" },
+            "2": { "label": "Puhdas 60 000 laukaisun runko — kunto merkitsee enemmän" },
+            "3": { "label": "Ei kumpikaan — molemmat ovat liian vanhoja" }
+          }
+        }
+      }
+    }
+  }
+}

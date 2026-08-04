@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Hver gang dit kamera tager et foto med den mekaniske lukker, tæller en tæller inde i kameraet én op. Det tal — lukkertællingen — er som kilometertallet på en bil: Det fortæller, hvor hårdt et kamera har været brugt. Det betyder mest ved køb eller salg af brugt udstyr, fordi lukkere er bevægelige dele, der er konstrueret til et begrænset antal udløsninger.",
+      "deeper": "En mekanisk lukker er et par fjederbelastede gardiner, der fysisk fejer hen over sensoren ved hver eksponering. Producenterne levetidstester disse mekanismer og offentliggør angivelser: cirka 100.000 udløsninger for begynderhuse, 150.000–200.000 for entusiastmodeller og 300.000–500.000 for professionelle. Angivelsen er et statistisk gennemsnit, ikke en udløbsdato — mange lukkere holder flere gange deres angivelse, og en defekt lukker er som regel en reparerbar (om end dyr) fejl. Hvor tallet gemmes, varierer fra mærke til mærke: Nikon skriver det ukrypteret ind i hver fils maker notes, og derfor kan dette værktøj aflæse det. Canon gemmer det kun i den interne hukommelse, Sony krypterer det, og Pentax slører det. Moderne spejlløse kameraer komplicerer billedet yderligere: Billeder taget med den elektroniske lukker slider slet ikke på mekanismen, så et hus, der mest er brugt i lydløs tilstand, kan have langt flere samlede eksponeringer, end dets mekaniske tælling antyder — og det er helt fint.",
+      "keyFactors": {
+        "0": {
+          "label": "Kameramærke",
+          "description": "Afgør, om tallet overhovedet kan aflæses fra filer. Nikon gemmer det åbent; Canon, Sony og Pentax gør ikke."
+        },
+        "1": {
+          "label": "Angivet lukkerlevetid",
+          "description": "Producentens testede gennemsnitlige levetid for lukkermekanismen. Huse i højere klasser bruger mere holdbare mekanismer med højere angivelser."
+        },
+        "2": {
+          "label": "Elektronisk vs. mekanisk lukker",
+          "description": "Billeder med elektronisk lukker giver nul mekanisk slid og tæller som regel ikke med i den mekaniske tæller. Flittige brugere af lydløs tilstand viser lave tal."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Tjek altid tallet fra en uredigeret fil direkte fra kameraet. Eksporter fra Lightroom, beskedapps eller sociale medier fjerner som regel de maker notes, der indeholder tælleren."
+        },
+        "1": {
+          "text": "Vej tallet op mod angivelsen, når du køber brugt: 40.000 på et hus angivet til 300.000 er knap nok kørt til, mens 90.000 på et hus angivet til 100.000 bør prissætte en lukkerudskiftning."
+        },
+        "2": {
+          "text": "En lav lukkertælling garanterer ikke et sundt kamera — vandskader, sensorridser og fald dukker ikke op i tælleren. Undersøg også testfotos og selve huset."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Lukkertælling",
+          "definition": "Antallet af gange, den mekaniske lukker er blevet udløst i kameraets levetid. Aflæses fra de metadata, dit kamera indlejrer i hvert foto."
+        },
+        "ratedLife": {
+          "term": "Angivet lukkerlevetid",
+          "definition": "Producentens testede gennemsnitlige antal udløsninger før lukkerfejl. Et gennemsnit, ikke en hård grænse — mange lukkere lever langt længere."
+        },
+        "source": {
+          "term": "Tallets kilde",
+          "definition": "Hvor tallet blev aflæst fra: det rigtige lukkertællingsfelt, den rent mekaniske tæller på nogle spejlløse huse eller et generisk billednummer brugt som groft nødtal."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du tager 500 fotos til en koncert med dit spejlløse kameras lydløse elektroniske lukker. Hvor meget mekanisk lukkerslid gav det?",
+          "hint": "Tænk over, hvad der fysisk bevæger sig under en eksponering med elektronisk lukker.",
+          "successMessage": "Korrekt! Den elektroniske lukker aflæser sensoren uden at bevæge nogen gardiner, så de 500 billeder gav stort set intet mekanisk slid — og tæller typisk ikke med i den mekaniske tæller.",
+          "failureMessage": "Den elektroniske lukker eksponerer ved at aflæse sensoren elektronisk — ingen gardiner bevæger sig, så lydløs fotografering giver intet mekanisk lukkerslid.",
+          "options": {
+            "0": { "label": "500 udløsninger, som ved alle fotos" },
+            "1": { "label": "Intet — kun mekanisk lukkerbrug tæller" },
+            "2": { "label": "Kun RAW-filer giver slid" },
+            "3": { "label": "Kun blitzfotos giver slid" }
+          }
+        },
+        "1": {
+          "scenario": "Et kamera er angivet til 200.000 udløsninger og viser i øjeblikket 195.000. Hvad betyder angivelsen egentlig for dette hus?",
+          "hint": "Angivelser stammer fra statistiske levetidstest, ligesom timetal for elpærer.",
+          "successMessage": "Rigtigt! Angivelsen er den gennemsnitlige levetid fra test — denne lukker kan svigte i næste uge eller holde til 400.000. Det er et sandsynlighedssignal til prissætning, ikke et nedtællingsur.",
+          "failureMessage": "En lukkerangivelse er den testede gennemsnitlige levetid, ikke en hård grænse eller en garanti. Mange lukkere holder langt længere; nogle svigter tidligere.",
+          "options": {
+            "0": { "label": "Lukkeren stopper ved 200.000" },
+            "1": { "label": "Det er den gennemsnitlige levetid — risikoen for fejl stiger nær den" },
+            "2": { "label": "Garantien udløber ved 200.000" },
+            "3": { "label": "Batterilevetiden falder efter 200.000" }
+          }
+        },
+        "2": {
+          "scenario": "Du sammenligner to brugte kameraer af samme model: ét med 15.000 udløsninger og synlig korrosion ved batterilågen, og ét med 60.000 udløsninger i perfekt stand. Hvilket er det sikreste køb?",
+          "hint": "Tælleren registrerer kun én slags slid.",
+          "successMessage": "Præcis. Lukkertællingen er ét signal blandt flere — korrosion tyder på vandpåvirkning, som tager livet af kameraer langt oftere end slidte lukkere. Det rene hus med 60.000 er det sikreste køb.",
+          "failureMessage": "Lukkertællingen måler kun lukkerslid. Korrosion peger på vandskade, som er langt mere risikabel end en moderat brugt lukker. Bedøm tal plus tilstand, aldrig tallet alene.",
+          "options": {
+            "0": { "label": "Huset med 15.000 — lavere er altid bedre" },
+            "1": { "label": "Det billigste af de to" },
+            "2": { "label": "Det rene hus med 60.000 — tilstanden betyder mere" },
+            "3": { "label": "Ingen af dem — begge er for gamle" }
+          }
+        }
+      }
+    }
+  }
+}

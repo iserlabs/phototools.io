@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom 目錄分析器",
       "description": "分析您的 Lightroom Classic 目錄——器材、焦距、光圈、評分等等——100% 在您的瀏覽器中完成"
+    },
+    "shutter-count-checker": {
+      "name": "快門數查詢工具",
+      "description": "從照片查詢相機的快門數 — 完全在瀏覽器端處理"
+    },
+    "camera-health-checker": {
+      "name": "相機健康檢測工具",
+      "description": "從單張照片檢視機身的機齡、韌體、序號與快門壽命"
+    },
+    "panorama-calculator": {
+      "name": "全景計算機",
+      "description": "規劃全景拍攝 — 拍攝張數、重疊率與每張之間的旋轉角度"
+    },
+    "diffraction-calculator": {
+      "name": "繞射極限計算機",
+      "description": "找出繞射開始讓影像變鬆軟的光圈"
+    },
+    "photography-cheat-sheet": {
+      "name": "攝影速查表",
+      "description": "常見拍攝場景的相機設定速查表 — 可下載、可列印"
     }
   }
 }

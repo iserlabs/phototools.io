@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Binubuo ang panorama sa pamamagitan ng pagkuha ng ilang nagsasapawang photo habang iniikot ang camera, at pagkatapos ay pagpapa-stitch sa software para maging isang malapad na imahe. Ang sikreto ay malaman kung gaano kalayo iikot sa pagitan ng mga shot: masyadong malayo at hindi maidudugtong ng software ang mga frame, masyadong kaunti at nasasayang ang dose-dosenang shot. Ginagawa ng calculator na ito ang matematikang iyon mula sa lens, sensor, at gustong overlap mo.",
+      "deeper": "Bawat frame ay sumasaklaw ng nakapirming angle of view na itinatakda ng focal length at laki ng sensor — ang 50mm lens sa full frame ay nakakakita ng mga 40° nang pahalang. Ini-align ng stitching software ang magkatabing frame sa pamamagitan ng paghahanap ng magkaparehong 'control points' sa overlap zone, kaya ang 25–35% overlap ang praktikal na pamantayan: nagbibigay ito sa algorithm ng sapat na magkaparehong detalye nang hindi pinasasabog ang bilang ng frame. Ang magagamit na pag-ikot kada shot samakatuwid ay ang field of view ng frame times (1 − overlap). Ang pag-shoot sa portrait orientation ay nagpapalit ng mas makitid na hakbang pahalang para sa mas malaking patayong saklaw, kaya karamihan ng single-row panorama ay kinukunan nang patayo. Para sa talagang matataas na eksena, ang mga multi-row panorama ay nag-a-apply ng parehong lohika ng overlap nang patayo. Mabilis lumaki ang final na stitched file: bawat karagdagang frame ay nag-aambag ng resolution nito minus ang overlap, kaya ang 7-frame na portrait pano mula sa 24 MP camera ay madaling lumampas sa 100 MP. May isang pisikal na detalye na naglilimita sa lahat ng ito: ang pag-ikot sa tripod socket ay naglilipat ng optical center ng lens sa pagitan ng mga frame, na nagiging sanhi ng hindi pagkaka-align ng malalapit at malalayong bagay (parallax). Sa malalayong landscape bihira itong magpakita ng problema, pero kapag may malalapit na foreground element kailangan mong umikot sa no-parallax point ng lens gamit ang nodal rail o panoramic head.",
+      "keyFactors": {
+        "0": {
+          "label": "Focal Length & Sensor",
+          "description": "Magkasama nilang itinatakda ang field of view ng isang frame — ang batayang unit na pinagbubuuan ng panorama. Ang mas mahahabang lens ay nangangahulugan ng mas makikitid na frame at mas maraming shot."
+        },
+        "1": {
+          "label": "Overlap",
+          "description": "Ang magkaparehong zone sa pagitan ng magkatabing frame na pinag-a-align-an ng stitching software. Ang 25–35% ang sweet spot; ang mga eksenang walang katangi-tanging detalye (langit, tubig) ay nangangailangan ng higit pa."
+        },
+        "2": {
+          "label": "Orientation",
+          "description": "Ang mga portrait frame ay sumasaklaw ng mas kaunting lapad pero mas malaking taas kada shot — ang standard na pagpipilian para sa mga single-row panorama dahil nag-iiwan ito ng espasyo sa cropping."
+        },
+        "3": {
+          "label": "Parallax",
+          "description": "Ang hindi pagkaka-align ng malapit/malayo na dulot ng pag-ikot sa maling axis. Hindi mapanganib sa malalayong eksena; kritikal kapag may malalapit na foreground."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "I-lock ang exposure, white balance, at focus sa manual bago ang unang frame. Kahit anong naka-auto ay nagbabago sa pagitan ng mga frame at lumilikha ng kapansin-pansing banding sa stitched na langit."
+        },
+        "1": {
+          "text": "Mag-shoot nang nakapantay ang lens at umikot sa isang tuloy-tuloy na pasada, na may dagdag na isang panapong frame sa bawat dulo — nadidistort at napuputol ang mga frame sa gilid habang nagsi-stitch."
+        },
+        "2": {
+          "text": "Para sa mga handheld na panorama, palakihin ang overlap sa 40–50%. Hindi magiging eksakto ang pag-ikot mo, at ang mga dagdag na frame ay nagbibigay sa stitcher ng puwang para makabawi."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Overlap",
+          "definition": "Ang porsyento ng bawat frame na kapareho ng katabi nito. Kailangan ng stitching software ang magkaparehong detalyeng ito para ma-align ang mga frame — 25–35% ang karaniwan."
+        },
+        "orientation": {
+          "term": "Orientation ng Camera",
+          "definition": "Ang portrait (patayong) framing ang standard para sa mga panorama: bawat frame ay nag-aambag ng mas malaking taas, na nag-iiwan ng espasyo para sa pagtutuwid ng horizon at cropping."
+        },
+        "rotateBetween": {
+          "term": "Pag-ikot sa Pagitan ng mga Shot",
+          "definition": "Ilang degree ang pag-ikot ng camera pagkatapos ng bawat frame: ang field of view ng frame times (1 − overlap). May mga click-stop ang mga panoramic head para mismo rito."
+        },
+        "rows": {
+          "term": "Mga Row",
+          "definition": "Pinapatong ng mga multi-row panorama ang mga pahalang na pasada nang patayo, na nag-a-apply ng parehong panuntunan ng overlap sa pagitan ng mga row para masaklaw ang matataas na eksena."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Kumukuha ka ng panorama ng isang bulubundukin. Gaano dapat magsapawan ang magkatabing frame para sa maaasahang stitching?",
+          "hint": "Kailangan ng stitcher ng magkaparehong detalye, pero bawat dagdag na frame ay may katumbas na oras.",
+          "successMessage": "Tama! Ang humigit-kumulang 30% overlap ay nagbibigay sa stitching software ng sapat na control points nang hindi nagsasayang ng frame — ang standard na rekomendasyon para sa karamihan ng eksena.",
+          "failureMessage": "Ang 25–35% ang praktikal na pamantayan. Sa ilalim ng ~15% nahihirapan ang mga stitcher na makahanap ng control points; ang 80% ay nagtitriple ng bilang ng frame mo nang walang benepisyo.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Gusto mo ng single-row panorama na may sapat na patayong espasyo para maituwid ang horizon at malayang makapag-crop pagkatapos. Sa anong orientation ng camera ka dapat mag-shoot?",
+          "hint": "Saang direksyon nagbibigay ang bawat frame ng mas malaking taas?",
+          "successMessage": "Tama! Nakakakuha ang portrait orientation ng mas malaking patayong field kada frame — ang mga dagdag na frame na kailangan nang pahalang ay murang kapalit para sa kalayaan sa pag-crop.",
+          "failureMessage": "Ang portrait (patayo) ang standard para sa mga single-row panorama: mas mataas ang bawat frame, kaya nakakayanan ng stitched na resulta ang pagtutuwid ng horizon at pag-crop.",
+          "options": {
+            "0": { "label": "Landscape" },
+            "1": { "label": "Portrait" },
+            "2": { "label": "Square crop mode" },
+            "3": { "label": "Nakatagilid nang 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Gamit ang 50mm lens sa full frame na nakahawak sa landscape orientation (mga 40° na pahalang na view) at 30% overlap, humigit-kumulang ilang frame ang kailangan ng isang 180° panorama?",
+          "hint": "Bawat shot ay nagpapasulong sa saklaw nang 40° × 0.7 = 28°.",
+          "successMessage": "Tama! Sumasaklaw ang unang frame ng 40°, at bawat karagdagang frame ay nagdadagdag ng ~28°. Ang pagsaklaw sa natitirang 140° ay nangangailangan ng 5 pang frame, kaya 7 frame lahat (na may kaunting sobra).",
+          "failureMessage": "Bawat frame pagkatapos ng una ay nagdadagdag ng 40° × (1 − 0.3) = 28° na bagong saklaw. (180 − 40) / 28 = 5 pang frame, kaya 7 lahat.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "May bakod ang panorama mo na isang metro sa harap ng camera at mga bundok sa likod. Sa stitched na resulta, nagmumulto at hindi nagkaka-align ang bakod sa pagitan ng mga frame. Sa anong punto dapat umikot ang camera para maayos ito?",
+          "hint": "Parallax ang problema — nagbabago ang posisyon ng malalapit at malalayong bagay kaugnay ng isa't isa.",
+          "successMessage": "Eksakto! Ang pag-ikot sa no-parallax (nodal) point ng lens ang nagpapanatiling naka-align ang malalapit at malalayong bagay sa pagitan ng mga frame. Umiiral ang mga panoramic head at nodal rail para mismo rito.",
+          "failureMessage": "Dapat umikot ang camera sa no-parallax point ng lens (madalas tawaging nodal point). Ang pag-ikot sa tripod socket ay naglilipat ng optical center, na nagdudulot ng parallax na nakikita mo.",
+          "options": {
+            "0": { "label": "Ang front element ng lens" },
+            "1": { "label": "Ang no-parallax point ng lens" },
+            "2": { "label": "Ang sensor plane" },
+            "3": { "label": "Ang tripod socket" }
+          }
+        }
+      }
+    }
+  }
+}

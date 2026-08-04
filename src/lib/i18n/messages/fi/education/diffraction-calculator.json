@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Aukon himmentäminen kasvattaa syväterävyyttä — mutta tietyn pisteen jälkeen se alkaa pehmentää koko kuvaa terävöittämisen sijaan. Se on diffraktiota: valoaaltojen taipumista niiden puristuessa pienen aukon läpi. Tämä laskuri näyttää tarkalleen, missä tuo piste on kamerallesi, jotta tiedät, kuinka pitkälle voit himmentää maksamatta terävyydellä.",
+      "deeper": "Kun valo kulkee aukon läpi, jokainen kohteen piste ei osu kennolle pisteenä vaan pienenä diffraktiokuviona — kirkkaana ytimenä nimeltä Airyn kiekko, jota ympäröivät himmeät renkaat. Kiekon halkaisija kasvaa suoraan verrannollisesti aukkolukuun: noin 2,44 × aallonpituus × N, mikä aukolla f/8 vihreässä valossa on jo ~10,7 µm. Merkitseekö se mitään, riippuu pikseleistäsi. 24 MP:n täyskennossa on ~6 µm:n pikselit; 61 MP:n kennossa ~3,8 µm:n. Kun Airyn kiekko kasvaa selvästi pikseliä suuremmaksi, yksityiskohdat, jotka kenno muuten voisi erottaa, leviävät naapuripikseleille, eikä mikään objektiivin laatu tuo niitä takaisin. Siksi sama f/11, joka näyttää hyvältä vanhassa 12 MP:n rungossa, pehmentää näkyvästi nykyaikaisen suuritarkkuuksisen kennon tiedostoja, ja siksi pienipikseliset kompaktikamerat tarjoavat harvoin aukkoja f/8:aa pienemmiksi. Tässä käytetty nyrkkisääntö — raja ≈ pikselikoko / 0,67 — merkitsee kohtaa, jossa pehmeneminen on mitattavissa, ei kohtaa, jossa kuvat romahtavat: yhden askelen himmentäminen rajan yli on usein kannattava vaihtokauppa syväterävyydestä. Kahden askelen jälkeen tarkennuspinoaminen voittaa himmentämisen.",
+      "keyFactors": {
+        "0": {
+          "label": "Aukko (aukkoluku)",
+          "description": "Ainoa keino vaikuttaa itse diffraktioon: Airyn kiekon halkaisija kasvaa lineaarisesti aukkoluvun mukana. f/16 levittää valon kaksi kertaa niin leveälle kuin f/8."
+        },
+        "1": {
+          "label": "Pikselikoko",
+          "description": "Yhden pikselin fyysinen koko, jonka kennokoko ja megapikselit yhdessä määräävät. Pienemmät pikselit erottavat enemmän yksityiskohtia — ja paljastavat diffraktion aikaisemmin."
+        },
+        "2": {
+          "label": "Katselukoko",
+          "description": "Näytöllä 100 %:ssa näkyvä diffraktio voi olla näkymätön verkkokoossa tai kohtuullisessa vedoksessa. Arvioi terävyys siinä koossa, jota todella käytät."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Etsi objektiivisi paras aukko: kuvaa sama yksityiskohtainen kohde jokaisella täydellä askelella ja vertaa 100 %:ssa. Useimmat objektiivit ovat parhaimmillaan kahdesta kolmeen askelta täysin avoimesta, juuri ennen kuin diffraktio ottaa vallan."
+        },
+        "1": {
+          "text": "Maisemiin, jotka vaativat syvää terävyyttä suuritarkkuuksisella rungolla, kokeile hyperfokaalietäisyyttä aukolla f/8 ennen kuin tartut f/16:een — tarkka tarkennuksen sijoittelu tuo usein enemmän terävyyttä kuin pienemmät aukot."
+        },
+        "2": {
+          "text": "Makrokuvauksessa efektiivinen aukko kasvaa suurennuksen myötä (f/11 suhteessa 1:1 käyttäytyy kuin f/22), joten diffraktio iskee paljon aikaisemmin kuin säädin antaa ymmärtää. Tarkennuspinoaminen kohtuullisella aukolla on terävä tie ulos."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pikselikoko",
+          "definition": "Yhden pikselin leveys kennolla mikrometreinä. Lasketaan jakamalla kennon leveys vaakasuuntaisella pikselimäärällä — 24 MP täyskenno ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Airyn kiekko",
+          "definition": "Diffraktiokuvio, jonka valopiste muodostaa kuljettuaan aukon läpi: kirkas ydin ja himmeät renkaat. Halkaisija ≈ 2,44 × aallonpituus × aukkoluku."
+        },
+        "diffractionLimit": {
+          "term": "Diffraktioraja",
+          "definition": "Aukkoluku, jossa Airyn kiekko kasvaa pikseliä suuremmaksi ja pikselitason terävyys alkaa laskea — noin pikselikoko (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Himmennät objektiivin f/8:sta f/22:een maksimoidaksesi syväterävyyden, mutta kuvan hienot yksityiskohdat pehmenevät kaikkialla — myös tarkennustasossa. Mitä tapahtuu?",
+          "hint": "Kyse on fysiikasta, ei objektiivin viasta.",
+          "successMessage": "Oikein! Valo taipuu (diffraktoituu) kulkiessaan pienen aukon läpi ja levittää jokaisen pisteen pikseliä suuremmaksi kiekoksi. Aukolla f/22 pehmeneminen vaikuttaa koko kuvaan, tarkennustaso mukaan lukien.",
+          "failureMessage": "Tämä on diffraktiota: valoaallot taipuvat aukon lamellien ympäri ja levittävät jokaisen valopisteen sumeaksi kiekoksi. Se vaikuttaa koko kuvaan yhtä lailla objektiivin laadusta riippumatta.",
+          "options": {
+            "0": { "label": "Objektiivi on huonosti valmistettu" },
+            "1": { "label": "Valo taipuu kulkiessaan pienen aukon läpi" },
+            "2": { "label": "Kenno ylikuumenee pienillä aukoilla" },
+            "3": { "label": "ISO-kohina kasvaa" }
+          }
+        },
+        "1": {
+          "scenario": "Päivität 24 MP:n täyskennokamerasta 61 MP:n malliin. Mitä tapahtuu aukolle, jossa diffraktio tulee näkyväksi?",
+          "hint": "Enemmän megapikseleitä samalla kennopinta-alalla tarkoittaa pienempiä pikseleitä.",
+          "successMessage": "Aivan oikein! 61 MP:n kennon ~3,8 µm:n pikselit jäävät Airyn kiekkoa pienemmiksi aikaisemmin, joten diffraktioraja laskee noin f/9:stä noin f/5.6:een. Suuritarkkuuksisilla kennoilla on kapeammat parhaan aukon alueet.",
+          "failureMessage": "Pienemmät pikselit paljastavat diffraktion aikaisemmin. 61 MP:n kennon diffraktioraja on noin f/5.6, kun 24 MP:n kennolla se on f/9 — raja siirtyy suurempaan aukkoon.",
+          "options": {
+            "0": { "label": "Se siirtyy pienempään aukkoon (suurempi aukkoluku)" },
+            "1": { "label": "Se siirtyy suurempaan aukkoon (pienempi aukkoluku)" },
+            "2": { "label": "Se ei muutu" },
+            "3": { "label": "Diffraktio katoaa, kun megapikseleitä on enemmän" }
+          }
+        },
+        "2": {
+          "scenario": "Kuvaat maisemaa 45 MP:n täyskennokameralla ja haluat parhaan kokonaisterävyyden hyvällä syväterävyydellä. Mikä aukkoalue on paras lähtökohta?",
+          "hint": "Tasapainota objektiivin kuvausvirheet (pahimmat täysin avoimella) ja diffraktio (pahenee himmennettäessä).",
+          "successMessage": "Oikein! f/8–f/11 osuu juuri ~4,4 µm:n pikselien diffraktiorajan tuntumaan ja antaa samalla reilusti syväterävyyttä — klassinen maisema-alue suuritarkkuuksisella täyskennolla.",
+          "failureMessage": "f/8–f/11 tasapainottaa syväterävyyden ja diffraktion 45 MP:n täyskennolle. f/22 pehmentää näkyvästi hienoja yksityiskohtia, ja täysin avoimella aukolla syväterävyys ei riitä.",
+          "options": {
+            "0": { "label": "Aina f/22 maksimisyvyyden vuoksi" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Täysin avoin aukko" },
+            "3": { "label": "Se riippuu vain ISO:sta" }
+          }
+        }
+      }
+    }
+  }
+}

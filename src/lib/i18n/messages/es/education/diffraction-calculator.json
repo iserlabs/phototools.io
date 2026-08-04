@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Cerrar el diafragma aumenta la profundidad de campo, pero a partir de cierto punto empieza a hacer toda la imagen más blanda en lugar de más nítida. Eso es la difracción: ondas de luz que se curvan al pasar por una abertura pequeña. Esta calculadora muestra exactamente dónde está ese punto para tu cámara, para que sepas cuánto puedes cerrar el diafragma antes de pagar un precio en nitidez.",
+      "deeper": "Cuando la luz atraviesa la apertura, cada punto de la escena no llega al sensor como un punto, sino como un pequeño patrón de difracción: un núcleo brillante llamado disco de Airy rodeado de halos tenues. El diámetro del disco crece en proporción directa al número f: aproximadamente 2,44 × longitud de onda × N, que a f/8 en luz verde ya es de ~10,7 µm. Que eso importe depende de tus píxeles. Un sensor de formato completo de 24 MP tiene píxeles de ~6 µm; uno de 61 MP, de ~3,8 µm. Cuando el disco de Airy supera claramente el tamaño de un píxel, el detalle que el sensor podría resolver se esparce entre los píxeles vecinos, y ninguna calidad de objetivo puede recuperarlo. Por eso el mismo f/11 que se ve bien en un cuerpo antiguo de 12 MP suaviza visiblemente los archivos de un sensor moderno de alta resolución, y por eso las cámaras compactas con píxeles diminutos rara vez ofrecen aperturas más allá de f/8. La regla general del sector usada aquí — límite ≈ paso de píxel / 0,67 — marca dónde el suavizado empieza a ser medible, no dónde las imágenes se estropean: cerrar un paso más allá del límite suele ser un intercambio que vale la pena por la profundidad de campo. Pasados dos pasos, el apilamiento de enfoque supera a seguir cerrando.",
+      "keyFactors": {
+        "0": {
+          "label": "Apertura (número f)",
+          "description": "El único control sobre la difracción en sí: el diámetro del disco de Airy escala linealmente con el número f. f/16 esparce la luz el doble que f/8."
+        },
+        "1": {
+          "label": "Paso de píxel",
+          "description": "El tamaño físico de un píxel, definido a la vez por el tamaño del sensor y los megapíxeles. Los píxeles más pequeños resuelven más detalle — y revelan antes la difracción."
+        },
+        "2": {
+          "label": "Tamaño de salida",
+          "description": "Una difracción visible al 100 % en pantalla puede ser invisible en una exportación para web o en una impresión moderada. Juzga la nitidez al tamaño que realmente vayas a usar."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Encuentra el punto óptimo de tu objetivo: fotografía la misma escena detallada a cada paso completo y compara al 100 %. La mayoría de los objetivos rinden al máximo dos o tres pasos por debajo de la máxima apertura, justo antes de que la difracción tome el control."
+        },
+        "1": {
+          "text": "Para paisajes que requieren mucha profundidad en un cuerpo de alta resolución, prueba la distancia hiperfocal a f/8 antes de recurrir a f/16: colocar el enfoque con precisión suele ganar más nitidez que cerrar más el diafragma."
+        },
+        "2": {
+          "text": "En macro, la apertura efectiva crece con la ampliación (f/11 a 1:1 se comporta como f/22), así que la difracción aparece mucho antes de lo que indica el dial. El apilamiento de enfoque a una apertura moderada es la salida nítida."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Paso de píxel",
+          "definition": "La anchura de un solo píxel del sensor, en micrómetros. Se calcula dividiendo la anchura del sensor entre el número de píxeles horizontales: 24 MP en formato completo ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Disco de Airy",
+          "definition": "El patrón de difracción que forma un punto de luz tras atravesar la apertura: un núcleo brillante con anillos tenues. Su diámetro ≈ 2,44 × longitud de onda × número f."
+        },
+        "diffractionLimit": {
+          "term": "Límite de difracción",
+          "definition": "El número f en el que el disco de Airy supera al píxel y la nitidez por píxel empieza a caer: aproximadamente paso de píxel (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Cierras el objetivo de f/8 a f/22 para lograr la máxima profundidad de campo, pero los detalles finos de la imagen se vuelven más blandos en todas partes, incluso en el plano de enfoque. ¿Qué está pasando?",
+          "hint": "Es física, no un defecto del objetivo.",
+          "successMessage": "¡Correcto! La luz se curva (se difracta) al pasar por una apertura pequeña y esparce cada punto en un disco mayor que un píxel. A f/22 este suavizado afecta a todo el encuadre, plano de enfoque incluido.",
+          "failureMessage": "Esto es difracción: las ondas de luz se curvan en las palas del diafragma y esparcen cada punto de luz en un disco borroso. Afecta a toda la imagen por igual, independientemente de la calidad del objetivo.",
+          "options": {
+            "0": { "label": "El objetivo está mal fabricado" },
+            "1": { "label": "La luz se curva al pasar por la abertura pequeña" },
+            "2": { "label": "El sensor se sobrecalienta con aperturas pequeñas" },
+            "3": { "label": "Aumenta el ruido ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Pasas de una cámara de formato completo de 24 MP a una de 61 MP. ¿Qué le ocurre a la apertura en la que la difracción se hace visible?",
+          "hint": "Más megapíxeles en la misma superficie de sensor significan píxeles más pequeños.",
+          "successMessage": "¡Exacto! Los píxeles de ~3,8 µm del sensor de 61 MP resuelven el disco de Airy antes, así que el límite de difracción baja de f/9 a f/5.6 aproximadamente. Los sensores de alta resolución tienen puntos óptimos de apertura más estrechos.",
+          "failureMessage": "Los píxeles más pequeños revelan la difracción antes. El límite de difracción del sensor de 61 MP ronda f/5.6, frente a f/9 en el de 24 MP: el límite se desplaza a una apertura más abierta.",
+          "options": {
+            "0": { "label": "Se desplaza a una apertura más cerrada (número f mayor)" },
+            "1": { "label": "Se desplaza a una apertura más abierta (número f menor)" },
+            "2": { "label": "No cambia" },
+            "3": { "label": "La difracción desaparece con más megapíxeles" }
+          }
+        },
+        "2": {
+          "scenario": "Fotografías un paisaje con una cámara de formato completo de 45 MP y quieres la máxima nitidez general con buena profundidad de campo. ¿Qué rango de aperturas es el mejor punto de partida?",
+          "hint": "Equilibra las aberraciones del objetivo (malas a plena apertura) con la difracción (mala al cerrar).",
+          "successMessage": "¡Correcto! f/8–f/11 se sitúa justo alrededor del límite de difracción para píxeles de ~4,4 µm y ofrece una profundidad de campo considerable: el clásico punto óptimo de paisaje en formato completo de alta resolución.",
+          "failureMessage": "f/8–f/11 equilibra la profundidad de campo con la difracción en un sensor de formato completo de 45 MP. f/22 suaviza visiblemente el detalle fino, y a plena apertura falta profundidad de campo.",
+          "options": {
+            "0": { "label": "Siempre f/22 para máxima profundidad" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "A plena apertura" },
+            "3": { "label": "Depende solo del ISO" }
+          }
+        }
+      }
+    }
+  }
+}

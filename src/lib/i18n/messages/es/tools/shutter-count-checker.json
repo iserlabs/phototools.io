@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Arrastra una foto aquí o haz clic para buscar (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "¿Qué marcas guardan el recuento de disparos?",
+      "status": {
+        "supported": "Legible",
+        "partial": "Parcial",
+        "unsupported": "No está en los archivos"
+      },
+      "brands": {
+        "nikon": "Nikon escribe el recuento de disparos en los metadatos de cada foto, sin cifrar. Usa un archivo original sin editar para obtener el mejor resultado.",
+        "canon": "Canon nunca escribe el recuento de disparos en los archivos de imagen: se guarda solo dentro de la cámara y se lee con herramientas de servicio técnico o utilidades USB.",
+        "sony": "Sony guarda el recuento de disparos en una sección cifrada de sus metadatos que no puede descodificarse en el navegador. Hay utilidades de escritorio específicas que pueden leerlo por USB.",
+        "fujifilm": "Los cuerpos Fujifilm no registran un recuento de disparos real, pero algunos escriben un contador de fotogramas que da una cota inferior aproximada.",
+        "pentax": "Pentax ofusca su campo de recuento de disparos con un cifrado, así que no puede leerse de forma fiable desde los archivos.",
+        "olympus": "Los cuerpos OM System / Olympus guardan el recuento completo de disparos en un menú de servicio interno; los archivos a veces llevan un contador de fotogramas que da una pista del uso.",
+        "panasonic": "Panasonic no escribe el recuento de disparos en los archivos. El menú de servicio de la cámara lo muestra.",
+        "leica": "Los cuerpos Leica en general no guardan el recuento de disparos en los archivos de imagen."
+      },
+      "countLabel": "Disparos del obturador",
+      "source": {
+        "shutterCount": "Leído de los metadatos de recuento de disparos de la cámara: es el contador real de accionamientos mecánicos.",
+        "mechanicalShutterCount": "Leído del contador del obturador mecánico: los fotogramas con obturador electrónico no se incluyen.",
+        "imageNumber": "Estimado a partir del número de imagen del archivo. Es una cota inferior aproximada, no un recuento exacto de accionamientos: el contador puede reiniciarse o desbordarse."
+      },
+      "ratedLife": "Vida útil nominal del obturador",
+      "ratings": {
+        "entry": "De iniciación",
+        "enthusiast": "Entusiasta",
+        "advanced": "Avanzada",
+        "pro": "Profesional",
+        "flagship": "Tope de gama"
+      },
+      "lifeUsed": "{percent}% de la vida útil nominal consumida",
+      "verdict": {
+        "low": "Apenas usada",
+        "moderate": "Uso moderado",
+        "high": "Uso intensivo",
+        "beyond": "Por encima de su vida nominal"
+      },
+      "noCountTitle": "Este archivo no contiene recuento de disparos",
+      "noCountGeneric": "Este archivo no contiene un recuento de disparos legible. Prueba con una foto original sin editar sacada directamente de la cámara: las exportaciones de las aplicaciones de edición suelen eliminar los metadatos del fabricante.",
+      "errorRead": "No se pudo leer este archivo. Prueba con un JPEG o RAW sin editar sacado directamente de la cámara.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "¿Qué es el recuento de disparos?",
+          "answer": "El recuento de disparos es el número de veces que se ha accionado el obturador mecánico de una cámara: el equivalente fotográfico al kilometraje de un coche. Es el indicador de desgaste más consultado al comprar o vender una cámara usada, porque los obturadores están diseñados para un número finito de accionamientos."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "¿Cuántos disparos del obturador son demasiados?",
+          "answer": "Depende de la clase de cámara. Los obturadores de los cuerpos de iniciación están diseñados para unos 100.000 accionamientos, los de entusiasta para 150.000–200.000 y los profesionales para 300.000–500.000. La cifra nominal es una vida media, no un límite estricto: muchos obturadores duran mucho más, y un recuento bajo en un cuerpo maltratado puede seguir significando problemas."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "¿Por qué no puedo comprobar el recuento de disparos en mi foto de Canon o Sony?",
+          "answer": "Canon nunca escribe el recuento de disparos en los archivos de imagen: vive solo en la memoria interna de la cámara. Sony sí lo escribe, pero cifra esa sección de los metadatos. En ambos casos, una herramienta de navegador no puede leerlo desde una foto; la solución habitual son utilidades de escritorio que se conectan a la cámara por USB."
+        }
+      }
+    }
+  }
+}

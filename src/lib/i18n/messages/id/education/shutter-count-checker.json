@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Setiap kali kamera Anda mengambil foto dengan rana mekanisnya, sebuah penghitung di dalam kamera bertambah satu. Angka itu — shutter count — ibarat kilometer tempuh pada mobil: ia menunjukkan seberapa berat kamera telah dipakai. Angka ini paling penting saat membeli atau menjual perlengkapan bekas, karena rana adalah komponen bergerak yang dirating untuk jumlah aktuasi terbatas.",
+      "deeper": "Rana mekanis adalah sepasang tirai berpegas yang secara fisik menyapu melintasi sensor pada setiap eksposur. Pabrikan menguji umur mekanisme ini dan memublikasikan rating-nya: sekitar 100.000 aktuasi untuk bodi kelas pemula, 150.000–200.000 untuk model enthusiast, dan 300.000–500.000 untuk model profesional. Rating adalah rata-rata statistik, bukan tanggal kedaluwarsa — banyak rana bertahan beberapa kali lipat rating-nya, dan rana yang rusak biasanya kerusakan yang bisa diperbaiki (meski mahal). Lokasi penyimpanan count berbeda per merek: Nikon menulisnya, tanpa enkripsi, ke maker notes setiap file — itulah sebabnya alat ini bisa membacanya. Canon menyimpannya hanya di memori internal, Sony mengenkripsinya, dan Pentax mengaburkannya. Kamera mirrorless modern membuat gambarannya makin rumit: frame yang diambil dengan rana elektronik sama sekali tidak mengauskan mekanisme, sehingga bodi yang sebagian besar dipakai dalam mode senyap bisa memiliki total eksposur jauh lebih banyak daripada yang ditunjukkan count mekanisnya — dan itu tidak masalah.",
+      "keyFactors": {
+        "0": {
+          "label": "Merek Kamera",
+          "description": "Menentukan apakah count bisa dibaca dari file sama sekali. Nikon menyimpannya secara terbuka; Canon, Sony, dan Pentax tidak."
+        },
+        "1": {
+          "label": "Umur Rana Menurut Rating",
+          "description": "Umur rata-rata mekanisme rana hasil pengujian pabrikan. Bodi kelas atas memakai mekanisme lebih tahan lama dengan rating lebih tinggi."
+        },
+        "2": {
+          "label": "Rana Elektronik vs Mekanis",
+          "description": "Frame rana elektronik tidak menimbulkan keausan mekanis sama sekali dan biasanya tidak menambah penghitung mekanis. Pengguna berat mode senyap menunjukkan count rendah."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Selalu periksa count dari file asli langsung dari kamera yang belum diedit. Ekspor dari Lightroom, aplikasi perpesanan, atau media sosial biasanya menghapus maker notes yang membawa penghitung tersebut."
+        },
+        "1": {
+          "text": "Saat membeli bekas, timbang count terhadap rating-nya: 40.000 pada bodi berating 300.000 nyaris baru dipakai, sementara 90.000 pada bodi berating 100.000 berarti harga harus memperhitungkan penggantian rana."
+        },
+        "2": {
+          "text": "Shutter count yang rendah tidak menjamin kamera sehat — kerusakan air, goresan sensor, dan bekas jatuh tidak muncul di penghitung. Periksa juga foto uji dan kondisi bodinya."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Shutter Count",
+          "definition": "Jumlah berapa kali rana mekanis telah bekerja sepanjang umur kamera. Dibaca dari metadata yang ditanamkan kamera Anda di setiap foto."
+        },
+        "ratedLife": {
+          "term": "Umur Rana Menurut Rating",
+          "definition": "Jumlah rata-rata aktuasi hasil pengujian pabrikan sebelum rana rusak. Sebuah rata-rata, bukan batas mutlak — banyak rana bertahan jauh melampauinya."
+        },
+        "source": {
+          "term": "Sumber Count",
+          "definition": "Dari mana angkanya dibaca: field shutter count yang sebenarnya, penghitung khusus-mekanis pada sebagian bodi mirrorless, atau nomor gambar generik sebagai cadangan kasar."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Anda memotret 500 foto di sebuah konser menggunakan rana elektronik senyap kamera mirrorless Anda. Berapa banyak keausan rana mekanis yang ditambahkan?",
+          "hint": "Pikirkan apa yang bergerak secara fisik selama eksposur rana elektronik.",
+          "successMessage": "Benar! Rana elektronik membaca sensor tanpa menggerakkan tirai apa pun, jadi 500 frame itu praktis tidak menimbulkan keausan mekanis — dan biasanya tidak menambah penghitung mekanis.",
+          "failureMessage": "Rana elektronik melakukan eksposur dengan membaca sensor secara elektronik — tidak ada tirai yang bergerak, jadi memotret senyap tidak menambah keausan rana mekanis.",
+          "options": {
+            "0": { "label": "500 aktuasi, seperti foto biasa" },
+            "1": { "label": "Tidak ada — hanya pemakaian rana mekanis yang terhitung" },
+            "2": { "label": "Hanya file RAW yang menambah keausan" },
+            "3": { "label": "Hanya foto dengan flash yang menambah keausan" }
+          }
+        },
+        "1": {
+          "scenario": "Sebuah kamera dirating untuk 200.000 aktuasi dan saat ini menunjukkan 195.000. Apa arti rating itu sebenarnya untuk bodi ini?",
+          "hint": "Rating berasal dari pengujian umur statistik, seperti rating jam nyala bohlam.",
+          "successMessage": "Tepat! Rating adalah umur rata-rata dari pengujian — rana ini bisa rusak minggu depan atau bertahan sampai 400.000. Ini sinyal probabilitas untuk menentukan harga, bukan hitungan mundur.",
+          "failureMessage": "Rating rana adalah umur rata-rata hasil pengujian, bukan batas mutlak atau garansi. Banyak rana bertahan jauh melampauinya; sebagian rusak lebih awal.",
+          "options": {
+            "0": { "label": "Rana akan berhenti di 200.000" },
+            "1": { "label": "Itu umur rata-rata — peluang rusak naik saat mendekatinya" },
+            "2": { "label": "Garansi berakhir di 200.000" },
+            "3": { "label": "Umur baterai menurun setelah 200.000" }
+          }
+        },
+        "2": {
+          "scenario": "Anda membandingkan dua kamera bekas dengan model sama: satu dengan 15.000 aktuasi dan korosi terlihat di dekat pintu baterai, satu lagi dengan 60.000 aktuasi dalam kondisi mulus. Mana pembelian yang lebih aman?",
+          "hint": "Penghitung hanya merekam satu jenis keausan.",
+          "successMessage": "Tepat sekali. Shutter count hanyalah satu dari beberapa sinyal — korosi menandakan paparan air, yang jauh lebih sering mematikan kamera daripada rana aus. Bodi bersih dengan count 60.000 adalah pilihan lebih aman.",
+          "failureMessage": "Shutter count hanya mengukur keausan rana. Korosi menunjuk ke kerusakan air, yang jauh lebih berisiko daripada rana dengan pemakaian sedang. Nilailah count plus kondisi, jangan count saja.",
+          "options": {
+            "0": { "label": "Bodi dengan count 15.000 — lebih rendah selalu lebih baik" },
+            "1": { "label": "Mana pun yang lebih murah" },
+            "2": { "label": "Bodi mulus dengan count 60.000 — kondisi lebih menentukan" },
+            "3": { "label": "Tidak keduanya — dua-duanya terlalu tua" }
+          }
+        }
+      }
+    }
+  }
+}

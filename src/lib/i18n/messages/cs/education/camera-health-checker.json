@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Každá fotka, kterou fotoaparát uloží, nese skrytou zprávu o něm samotném: přesný model, sériové číslo, verzi firmwaru, nasazený objektiv a někdy i počet pořízených snímků. Tenhle nástroj tu zprávu přečte z jediné fotky — celé ve tvém prohlížeči — takže tělo fotoaparátu posoudíš tak, jako mechanik čte servisní knížku auta.",
+      "deeper": "Data pocházejí z metadat EXIF, standardního bloku, který každý digitální fotoaparát vkládá do svých souborů. Mezi standardní pole patří Make, Model, BodySerialNumber, Software (u většiny fotoaparátů uvádí verzi firmwaru), LensModel a časové razítko pořízení. Výrobci to rozšiřují o proprietární „poznámky výrobce“ — ty Nikonovy obsahují počet expozic, a proto je životnost závěrky čitelná u některých značek a u jiných ne. Stáří těla se odhaduje porovnáním názvu modelu s databází roků uvedení: fotoaparát uvedený v roce 2018 je starý přinejmenším několik let, ať prodejce tvrdí cokoli. Důležité jsou dvě výhrady. Zaprvé, metadata přežijí jen v originálních souborech — většina editačních aplikací, messengerů a sociálních platforem je odstraní nebo přepíše. Zadruhé, EXIF lze upravit volně dostupnými nástroji, takže ho ber jako silnou indicii, ne důkaz: případ doopravdy uzavírá až shoda sériového čísla v souboru, na těle a na dokladu prodejce.",
+      "keyFactors": {
+        "0": {
+          "label": "Jen originální soubory",
+          "description": "Metadata přežívají v souborech přímo z fotoaparátu. Exporty a opakovaná uložení často odstraní sériová čísla, poznámky výrobce i informace o firmwaru."
+        },
+        "1": {
+          "label": "Sériové číslo",
+          "description": "Spojuje soubor s konkrétním tělem. Před koupí z druhé ruky ho porovnej s tělem samotným, dokladem a registry kradené techniky."
+        },
+        "2": {
+          "label": "Rok uvedení vs. stav",
+          "description": "Stáří nastavuje očekávání (technologie snímače, chybějící funkce, zbývající podpora), ale jak tvrdé ty roky byly, prozradí opotřebení závěrky a fyzický stav."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Kupuješ z druhé ruky? Požádej prodejce o neupravenou fotku přímo z fotoaparátu. V jediném souboru ověří model a sériové číslo, ukáže aktuální firmware a — u podporovaných značek — počet expozic."
+        },
+        "1": {
+          "text": "Porovnej firmware s nejnovější verzí od výrobce. Neaktuální fotoaparát je normální; fotoaparát, který už aktualizovat nejde, může přijít o vylepšení ostření a kompatibility."
+        },
+        "2": {
+          "text": "Datum pořízení na ukázkové fotce prodejce prozradí, kdy byl fotoaparát naposledy skutečně používán. „Málo používané“ tělo, jehož nejnovější soubor je čtyři roky starý, dlouho leželo — zkontroluj zaseknutou závěrku a nafouklou baterii."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Sériové číslo těla",
+          "definition": "Jedinečný identifikátor, který výrobce přiděluje každému tělu a který je vložen v EXIF každé fotky. Hodí se pro kontrolu záruky a registry kradené techniky."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "Vnitřní software fotoaparátu, uváděný v poli Software v EXIF. Výrobci přes aktualizace firmwaru dodávají vylepšení ostření, kompatibility i nové funkce."
+        },
+        "bodyAge": {
+          "term": "Stáří těla",
+          "definition": "Počet let od uvedení modelu, odhadnutý z databáze dat vydání. Horní mez toho, jak aktuální je technologie fotoaparátu — ne toho, jak opotřebovaný je tenhle konkrétní kus."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Kupuješ použitý fotoaparát z online inzerátu. Prodejce ti pošle originální fotku z fotoaparátu. Co nejcennějšího můžeš udělat se sériovým číslem v jejích metadatech?",
+          "hint": "Sériové číslo spojuje tohle konkrétní tělo s vnějším světem.",
+          "successMessage": "Správně! Porovnání sériového čísla s registry kradené techniky (a dokladem prodejce) tě chrání před koupí kradeného vybavení — kontrola, kterou umožňuje jedině sériové číslo.",
+          "failureMessage": "Jedinečná hodnota sériového čísla je identifikace: porovnej ho s registry kradené techniky a doklady prodejce. O kvalitě obrazu ani kompatibilitě neříká nic.",
+          "options": {
+            "0": { "label": "Porovnat ho s registry kradené techniky" },
+            "1": { "label": "Odhadnout kvalitu fotky" },
+            "2": { "label": "Ověřit kompatibilitu objektivu" },
+            "3": { "label": "Vyhledat rozsah ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Použitý fotoaparát, o kterém uvažuješ, běží na firmwaru 1.0 z uvedení před čtyřmi lety, zatímco aktuální verze výrobce je 3.1. Co ti aktualizace obvykle přinese?",
+          "hint": "Zamysli se, co může výrobce po uvedení změnit softwarem.",
+          "successMessage": "Přesně tak! Aktualizace firmwaru přinášejí skutečná vylepšení — lepší algoritmy ostření, podporu nových objektivů, opravy chyb, někdy celé nové funkce. Hardwarové parametry jako snímač a megapixely se nikdy nemění.",
+          "failureMessage": "Firmware je software: aktualizace zlepšují ostření, přidávají podporu objektivů a opravují chyby. Hardware, jako je snímač nebo počet megapixelů, změnit nemohou.",
+          "options": {
+            "0": { "label": "Nové funkce a vylepšení automatického ostření" },
+            "1": { "label": "Víc megapixelů" },
+            "2": { "label": "Větší plochu snímače" },
+            "3": { "label": "Nic — firmware je jen kosmetika" }
+          }
+        },
+        "2": {
+          "scenario": "Dva prodejci nabízejí stejný model: sedm let staré tělo a čtyři roky staré tělo za podobné ceny. Jak správně použít stáří těla při rozhodování?",
+          "hint": "Stáří je jen jeden ze vstupů — co ti neřekne?",
+          "successMessage": "Přesně tak. Stáří vymezuje technologii a zbývající dobu podpory, ale rozhodující je, jak bylo tělo používáno: počet expozic, fyzický stav a servisní historie.",
+          "failureMessage": "Samotné stáří těla nerozhoduje — šetrně používané starší tělo může porazit ztahané novější. Kombinuj stáří s počtem expozic a fyzickým stavem.",
+          "options": {
+            "0": { "label": "Vždy koupit to novější" },
+            "1": { "label": "Zvážit stáří spolu s počtem expozic a stavem" },
+            "2": { "label": "Stáří ignorovat — záleží jen na megapixelech" },
+            "3": { "label": "Vybírat jen podle pověsti značky" }
+          }
+        }
+      }
+    }
+  }
+}

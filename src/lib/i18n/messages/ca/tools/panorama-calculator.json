@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Orientació de la càmera",
+      "portrait": "Vertical",
+      "landscape": "Horitzontal",
+      "overlap": "Solapament: {percent}%",
+      "targetWidth": "Amplada de la panoràmica",
+      "rows": "Files",
+      "megapixels": "Resolució de la càmera: {mp} MP",
+      "fanLabel": "Diagrama zenital de {frames} fotogrames solapats",
+      "totalShots": "Dispars totals",
+      "perRow": "Fotogrames × files",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotació entre dispars",
+      "coverage": "Cobertura (H × V)",
+      "frameFov": "Camp de visió per fotograma",
+      "stitchedSize": "Mida de la imatge unida",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Quant de solapament necessiten les fotos d'una panoràmica?",
+          "answer": "Entre el 25 i el 35 % és el punt òptim per a la majoria d'escenes. El programari d'unió necessita detall compartit entre fotogrames veïns per trobar punts de control; per sota del 15 % pot fallar en alinear els fotogrames, i per sobre del 50 % fas molts fotogrames extra amb poc benefici. Fes servir més solapament en escenes amb pocs trets distintius, com cels clars o aigües tranquil·les."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Per què disparar les panoràmiques en orientació vertical?",
+          "answer": "L'orientació vertical captura més camp de visió vertical per fotograma, de manera que la panoràmica final és més alta i deixa marge per retallar i corregir l'horitzó. El cost són uns quants fotogrames més en horitzontal: un intercanvi que sol valer la pena per la flexibilitat i la resolució addicionals."
+        },
+        "what-is-nodal-point": {
+          "question": "Què és el punt sense paral·laxi (punt nodal)?",
+          "answer": "És el punt dins de l'objectiu al voltant del qual la càmera pot girar sense que els objectes propers i llunyans es desplacin entre si d'un fotograma a l'altre. Girar al voltant de la rosca del trípode provoca errors de paral·laxi que dificulten la unió, sobretot amb objectes propers en primer pla. Les ròtules panoràmiques permeten situar el punt sense paral·laxi de l'objectiu sobre l'eix de rotació."
+        }
+      }
+    }
+  }
+}

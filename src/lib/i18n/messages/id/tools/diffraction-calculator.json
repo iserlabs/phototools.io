@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Resolusi: {mp} MP",
+      "aperture": "Apertur",
+      "verdict": {
+        "sharp": "{f} bebas difraksi",
+        "borderline": "{f} sedikit melunak karena difraksi",
+        "soft": "{f} terlihat jelas melunak karena difraksi"
+      },
+      "verdictDetail": {
+        "sharp": "Di bawah batas difraksi {limit} untuk sensor dan resolusi ini, ketajaman ditentukan oleh lensa — bukan difraksi.",
+        "borderline": "Melewati batas difraksi {limit}, detail halus per piksel mulai kabur. Masih bisa diterima bila Anda membutuhkan kedalaman bidang ekstra.",
+        "soft": "Jauh melewati batas difraksi {limit}. Kedalaman bidang terus bertambah, tetapi detail keseluruhan menurun secara kasatmata — pertimbangkan focus stacking alih-alih menutup apertur lebih jauh."
+      },
+      "stripLabel": "Skala apertur yang diwarnai berdasarkan dampak difraksi",
+      "pixelPitch": "Pixel pitch",
+      "airyDisk": "Diameter cakram Airy",
+      "diffractionLimit": "Batas difraksi",
+      "tableTitle": "Batas difraksi menurut sensor dan resolusi",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Apa itu difraksi dalam fotografi?",
+          "answer": "Difraksi adalah pembelokan gelombang cahaya saat menembus apertur yang kecil. Semakin kecil apertur (angka f semakin tinggi), semakin lebar setiap titik cahaya menyebar menjadi cakram buram (cakram Airy) di sensor. Begitu cakram itu tumbuh lebih besar dari satu piksel, detail halus menjadi kabur sebagus apa pun lensanya."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Apertur mana yang paling tajam?",
+          "answer": "Kebanyakan lensa mencapai puncaknya dua atau tiga stop dari bukaan terlebar — biasanya f/4 sampai f/8 pada full frame. Titik ideal itu menyeimbangkan aberasi lensa (terburuk di bukaan terlebar) dengan difraksi (memburuk saat apertur ditutup). Sensor beresolusi tinggi mencapai batas difraksinya lebih awal, sehingga rentang idealnya lebih sempit."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Apakah difraksi bergantung pada sensor?",
+          "answer": "Efek optisnya hanya bergantung pada apertur dan panjang gelombang cahaya — tetapi seberapa terlihat efeknya bergantung pada ukuran piksel. Sensor full-frame 61 MP memiliki piksel ~3.8 µm dan menunjukkan pelunakan difraksi sekitar f/5.6, sedangkan sensor 12 MP dengan piksel besar tetap tajam hingga f/11. Sensor yang lebih kecil mencapai batas itu pada apertur lebih lebar untuk jumlah megapiksel yang sama."
+        }
+      }
+    }
+  }
+}

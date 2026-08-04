@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Matryca",
+      "orientation": "Orientacja aparatu",
+      "portrait": "Pionowa",
+      "landscape": "Pozioma",
+      "overlap": "Zakładka: {percent}%",
+      "targetWidth": "Szerokość panoramy",
+      "rows": "Rzędy",
+      "megapixels": "Rozdzielczość aparatu: {mp} MP",
+      "fanLabel": "Schemat z góry: {frames} zachodzących na siebie kadrów",
+      "totalShots": "Łączna liczba ujęć",
+      "perRow": "Kadry × rzędy",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Obrót między ujęciami",
+      "coverage": "Pokrycie (poz. × pion.)",
+      "frameFov": "Pole widzenia jednego kadru",
+      "stitchedSize": "Rozmiar po sklejeniu",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Jak dużej zakładki potrzebują ujęcia do panoramy?",
+          "answer": "Dla większości scen optymalne jest 25–35%. Program do sklejania potrzebuje wspólnych szczegółów między sąsiednimi kadrami, aby znaleźć punkty kontrolne; poniżej 15% może nie wyrównać kadrów, a powyżej 50% robisz wiele dodatkowych ujęć przy znikomej korzyści. Większą zakładkę stosuj w scenach z niewieloma wyraźnymi szczegółami, jak czyste niebo czy spokojna woda."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Dlaczego panoramy fotografuje się w orientacji pionowej?",
+          "answer": "Orientacja pionowa rejestruje więcej pionowego pola widzenia w każdym kadrze, więc sklejona panorama jest wyższa i zostawia zapas na kadrowanie i prostowanie horyzontu. Kosztem jest kilka dodatkowych kadrów w poziomie — zwykle opłacalna cena za dodatkową elastyczność i rozdzielczość."
+        },
+        "what-is-nodal-point": {
+          "question": "Czym jest punkt bezparalaksy (punkt nodalny)?",
+          "answer": "To punkt wewnątrz obiektywu, wokół którego można obracać aparat bez przesuwania się bliskich i dalekich obiektów względem siebie między kadrami. Obracanie wokół gniazda statywu powoduje natomiast błędy paralaksy, które utrudniają sklejanie, zwłaszcza przy bliskich obiektach na pierwszym planie. Głowice panoramiczne pozwalają umieścić punkt bezparalaksy obiektywu nad osią obrotu."
+        }
+      }
+    }
+  }
+}

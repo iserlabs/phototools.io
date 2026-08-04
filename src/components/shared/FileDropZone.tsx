@@ -9,9 +9,15 @@ interface FileDropZoneProps {
   onFile: (file: File) => void
   /** Custom prompt text (default: "Drop an image here or click to browse") */
   prompt?: string
+  /**
+   * Custom accept attribute (default "image/*"). Extension entries (".nef")
+   * also whitelist dropped files whose browser MIME type is empty — the case
+   * for most RAW formats.
+   */
+  accept?: string
 }
 
-export function FileDropZone({ onFile, prompt: promptText }: FileDropZoneProps) {
+export function FileDropZone({ onFile, prompt: promptText, accept = 'image/*' }: FileDropZoneProps) {
   const t = useTranslations('common.fileUpload')
   const [fileName, setFileName] = useState<string | null>(null)
   const [dragOver, setDragOver] = useState(false)
@@ -26,16 +32,28 @@ export function FileDropZone({ onFile, prompt: promptText }: FileDropZoneProps) 
     [onFile],
   )
 
+  const acceptsFile = useCallback(
+    (file: File) => {
+      if (file.type.startsWith('image/')) return true
+      const name = file.name.toLowerCase()
+      return accept
+        .split(',')
+        .map((a) => a.trim().toLowerCase())
+        .some((a) => a.startsWith('.') && name.endsWith(a))
+    },
+    [accept],
+  )
+
   const handleDrop = useCallback(
     (e: React.DragEvent) => {
       e.preventDefault()
       setDragOver(false)
       const file = e.dataTransfer.files[0]
-      if (file && file.type.startsWith('image/')) {
+      if (file && acceptsFile(file)) {
         handleFile(file)
       }
     },
-    [handleFile],
+    [handleFile, acceptsFile],
   )
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
@@ -76,7 +94,7 @@ export function FileDropZone({ onFile, prompt: promptText }: FileDropZoneProps) 
       <input
         ref={inputRef}
         type="file"
-        accept="image/*"
+        accept={accept}
         className={styles.hiddenInput}
         onChange={handleInputChange}
       />

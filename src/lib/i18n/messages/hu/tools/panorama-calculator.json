@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Érzékelő",
+      "orientation": "Kamera tájolása",
+      "portrait": "Álló",
+      "landscape": "Fekvő",
+      "overlap": "Átfedés: {percent}%",
+      "targetWidth": "Panoráma szélessége",
+      "rows": "Sorok",
+      "megapixels": "Kamera felbontása: {mp} MP",
+      "fanLabel": "Felülnézeti ábra {frames} átfedő képkockáról",
+      "totalShots": "Összes felvétel",
+      "perRow": "Képkockák × sorok",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Elforgatás felvételek között",
+      "coverage": "Lefedettség (V × F)",
+      "frameFov": "Egy képkocka látószöge",
+      "stitchedSize": "Összefűzött méret",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Mekkora átfedés kell a panorámaképekhez?",
+          "answer": "A legtöbb jelenethez 25–35% az ideális. Az összefűző szoftvernek közös részletekre van szüksége a szomszédos képkockák között a kontrollpontok megtalálásához; 15% alatt előfordulhat, hogy nem tudja illeszteni a képeket, 50% fölött viszont sok felesleges felvételt készít csekély haszonért. Kevés jellegzetes részletet tartalmazó jeleneteknél — tiszta égbolt, nyugodt víz — használjon nagyobb átfedést."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Miért érdemes a panorámákat álló tájolásban fotózni?",
+          "answer": "Az álló tájolás képkockánként nagyobb függőleges látószöget rögzít, így a kész panoráma magasabb lesz, és marad hely a vágáshoz és a horizont kiegyenesítéséhez. Az ára néhány plusz képkocka vízszintesen — a többletrugalmasságért és felbontásért általában megéri."
+        },
+        "what-is-nodal-point": {
+          "question": "Mi az a parallaxismentes pont (nodális pont)?",
+          "answer": "Az objektíven belüli pont, amely körül a kamera úgy forgatható, hogy a közeli és távoli tárgyak nem tolódnak el egymáshoz képest a képkockák között. Az állványmenet körüli forgatás ezzel szemben parallaxishibákat okoz, amelyek megnehezítik az összefűzést, különösen közeli előtérelemeknél. A panorámafejek lehetővé teszik, hogy az objektív parallaxismentes pontja a forgástengely fölé kerüljön."
+        }
+      }
+    }
+  }
+}

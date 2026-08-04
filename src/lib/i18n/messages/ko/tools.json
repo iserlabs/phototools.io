@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom 카탈로그 분석기",
       "description": "Lightroom Classic 카탈로그 분석 — 장비, 초점 거리, 조리개, 별점 등 — 100% 브라우저에서"
+    },
+    "shutter-count-checker": {
+      "name": "셔터 카운트 확인 도구",
+      "description": "사진 한 장으로 카메라의 셔터 카운트를 확인합니다 — 100% 브라우저 내 처리"
+    },
+    "camera-health-checker": {
+      "name": "카메라 상태 진단 도구",
+      "description": "사진 한 장으로 카메라 바디의 연식, 펌웨어, 시리얼, 셔터 수명을 점검합니다"
+    },
+    "panorama-calculator": {
+      "name": "파노라마 계산기",
+      "description": "파노라마 촬영을 계획합니다 — 촬영 컷 수, 오버랩, 컷 사이 회전 각도"
+    },
+    "diffraction-calculator": {
+      "name": "회절 한계 계산기",
+      "description": "회절로 이미지가 부드러워지기 시작하는 조리개를 찾습니다"
+    },
+    "photography-cheat-sheet": {
+      "name": "사진 촬영 치트 시트",
+      "description": "자주 만나는 촬영 상황별 카메라 설정 치트 시트 — 다운로드와 인쇄 가능"
     }
   }
 }

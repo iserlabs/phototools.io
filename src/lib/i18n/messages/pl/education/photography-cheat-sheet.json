@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Każda sytuacja zdjęciowa — portrety, dzika przyroda, Droga Mleczna — ma sprawdzoną kombinację przysłony, czasu naświetlania i ISO, po którą doświadczeni fotografowie sięgają w pierwszej kolejności. Te ściągi dają Ci ten punkt wyjścia od razu, więc możesz poświęcić uwagę światłu i kompozycji zamiast zgadywania przy pokrętłach.",
+      "deeper": "Każdy przepis to zastosowanie trójkąta ekspozycji z priorytetem dla jednego boku. Portrety stawiają na przysłonę: szerokie otwory (f/1.8–f/2.8) oddzielają obiekt od tła, a cała reszta się do tego dostosowuje. Akcja stawia na czas naświetlania: 1/1000 s zamraża ruch, więc przysłona się otwiera, a ISO rośnie, by dostarczyć światła. Krajobrazy stawiają na jakość obrazu: bazowe ISO i średnia przysłona w optymalnym zakresie obiektywu, a statyw przyjmuje na siebie każdy wynikły czas naświetlania. Sceny nocne napinają wszystkie trzy boki naraz — dlatego mają najsztywniejsze przepisy: Droga Mleczna naprawdę wymaga jasnego obiektywu przy pełnym otwarciu, czasu poniżej ~20 sekund (zanim obrót Ziemi rozciągnie gwiazdy w smugi) i takiego ISO, które uczyni histogram użytecznym. Prawdziwą lekcją jest zrozumienie, który bok priorytetyzuje dany scenariusz: gdy raz dostrzeżesz priorytet, możesz dostosować każdy przepis do światła przed Tobą, zamiast ślepo go stosować. Zakresy to punkty wyjścia skalibrowane dla typowych warunków; ostatnie słowo ma Twój histogram, nie ściąga.",
+      "keyFactors": {
+        "0": {
+          "label": "Priorytet scenariusza",
+          "description": "Każda sytuacja blokuje najpierw jedną zmienną ekspozycji — przysłonę dla portretów, czas dla akcji, ISO dla krajobrazów — i pozwala pozostałym się dostosować."
+        },
+        "1": {
+          "label": "Dostępne światło",
+          "description": "Ten sam scenariusz wymaga innych ustawień w południe i o zmierzchu. Traktuj zakresy jako punkty odniesienia i przesuwaj się w ich obrębie wraz ze światłem."
+        },
+        "2": {
+          "label": "Podparcie i stabilność",
+          "description": "Statyw odblokowuje bazowe ISO i długie czasy dla scen statycznych. Praca z ręki wyznacza dolną granicę czasu około 1/(ogniskowa) lub krócej."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Zrób zdjęcie próbne i czytaj histogram, nie podgląd na LCD — ekrany kłamią w ostrym słońcu i nocą, histogram nigdy."
+        },
+        "1": {
+          "text": "Zapamiętaj jeden przepis na każdy gatunek, który fotografujesz, a potem ćwicz zmienianie jednej zmiennej naraz. Zinternalizujesz kompromisy o wiele szybciej niż zmieniając wszystko jednocześnie."
+        },
+        "2": {
+          "text": "Pobierz ściągę dla scenariuszy, które fotografujesz rzadko — przepis na Drogę Mleczną trudno sobie przypomnieć o 2 w nocy na zboczu góry ze zmarzniętymi palcami."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Przysłona",
+          "definition": "Rozmiar otworu obiektywu, wyrażony liczbami f. Niższe liczby = więcej światła i mocniejsze rozmycie tła; wyższe liczby = większa głębia ostrości."
+        },
+        "shutter": {
+          "term": "Czas naświetlania",
+          "definition": "Jak długo matryca zbiera światło. Krótkie czasy zamrażają ruch; długie go rozmywają i wymagają stabilizacji lub statywu."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Wzmocnienie sygnału matrycy. Trzymaj je tak nisko, jak pozwala światło — podnoszenie rozjaśnia obraz kosztem szumu."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Fotografujesz portret i chcesz klasycznego efektu: ostry obiekt, tło rozpływające się w rozmyciu. Który wybór ustawień to daje?",
+          "hint": "Rozmycie tła bierze się z głębi ostrości — które ustawienie nią steruje?",
+          "successMessage": "Zgadza się! Szeroka przysłona (jak f/1.8–f/2.8) tworzy płytką głębię ostrości, która oddziela obiekt od rozmytego tła — to definiujący wybór portretowy.",
+          "failureMessage": "Rozmycie tła daje szeroka przysłona (niska liczba f), jak f/1.8–f/2.8, która spłyca głębię ostrości. Wąskie przysłony robią coś odwrotnego.",
+          "options": {
+            "0": { "label": "Wąska przysłona, np. f/16" },
+            "1": { "label": "Szeroka przysłona, np. f/2" },
+            "2": { "label": "Długa ekspozycja na statywie" },
+            "3": { "label": "Maksymalne ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Czapla startuje z wody dokładnie w chwili, gdy naciskasz spust, i na każdej klatce końcówki skrzydeł są rozmyte. Jak to naprawić?",
+          "hint": "Rozmycie ruchu to problem czasu.",
+          "successMessage": "Tak! Ptaki w locie wymagają krótkich czasów — 1/2500 s lub krócej zamraża uderzenia skrzydeł. Otwórz przysłonę i pozwól Auto ISO wzrosnąć, by zasilić potrzebny czas.",
+          "failureMessage": "Rozmyte skrzydła oznaczają, że czas jest za długi dla tego ruchu. Przejdź na 1/2500 s lub krócej i pozwól, by przysłona i ISO zrekompensowały utracone światło.",
+          "options": {
+            "0": { "label": "Dłuższy czas dla większej ilości światła" },
+            "1": { "label": "Znacznie krótszy czas naświetlania" },
+            "2": { "label": "Przymknięcie do f/22" },
+            "3": { "label": "Przełączenie balansu bieli na żarowy" }
+          }
+        },
+        "2": {
+          "scenario": "Rozstawiasz się pod ciemnym niebem, aby sfotografować Drogę Mleczną. Która kombinacja da użyteczną ekspozycję jądra galaktyki?",
+          "hint": "Gwiazdy są słabe, poruszają się (z obrotem Ziemi) i są Twoim jedynym źródłem światła.",
+          "successMessage": "Zgadza się! Pełne otwarcie (f/1.4–f/2.8), 10–25 sekund, ISO 1600–6400: przysłona zbiera maksimum światła, czas kończy się, zanim gwiazdy się rozciągną, a wysokie ISO uwidacznia słabe jądro.",
+          "failureMessage": "Droga Mleczna wymaga wszystkiego: przysłony w pełni otwartej, ekspozycji na tyle krótkiej, by gwiazdy się nie rozciągnęły (10–25 s), i wysokiego ISO (1600–6400). Małe przysłony lub bazowe ISO zostawiają niebo czarne.",
+          "options": {
+            "0": { "label": "f/11, 30 s, ISO 100" },
+            "1": { "label": "Pełne otwarcie, 10–25 s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125 s, ISO 400" },
+            "3": { "label": "Dowolne ustawienia z filtrem ND" }
+          }
+        }
+      }
+    }
+  }
+}

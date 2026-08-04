@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Orientación de la cámara",
+      "portrait": "Vertical",
+      "landscape": "Horizontal",
+      "overlap": "Solapamiento: {percent}%",
+      "targetWidth": "Anchura de la panorámica",
+      "rows": "Filas",
+      "megapixels": "Resolución de la cámara: {mp} MP",
+      "fanLabel": "Diagrama cenital de {frames} fotogramas solapados",
+      "totalShots": "Disparos totales",
+      "perRow": "Fotogramas × filas",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotación entre disparos",
+      "coverage": "Cobertura (H × V)",
+      "frameFov": "Campo de visión por fotograma",
+      "stitchedSize": "Tamaño de la imagen unida",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "¿Cuánto solapamiento necesitan las fotos de una panorámica?",
+          "answer": "Entre el 25 y el 35 % es el punto óptimo para la mayoría de las escenas. El software de unión necesita detalle compartido entre fotogramas vecinos para encontrar puntos de control; por debajo del 15 % puede fallar al alinear los fotogramas, y por encima del 50 % disparas muchos fotogramas extra con poco beneficio. Usa más solapamiento en escenas con pocos rasgos distintivos, como cielos despejados o aguas tranquilas."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "¿Por qué disparar las panorámicas en orientación vertical?",
+          "answer": "La orientación vertical captura más campo de visión vertical por fotograma, de modo que la panorámica final es más alta y deja margen para recortar y corregir el horizonte. El coste son unos pocos fotogramas más en horizontal: un intercambio que suele valer la pena por la flexibilidad y la resolución adicionales."
+        },
+        "what-is-nodal-point": {
+          "question": "¿Qué es el punto sin paralaje (punto nodal)?",
+          "answer": "Es el punto dentro del objetivo alrededor del cual la cámara puede girar sin que los objetos cercanos y lejanos se desplacen entre sí de un fotograma a otro. Girar alrededor de la rosca del trípode provoca errores de paralaje que dificultan la unión, sobre todo con objetos cercanos en primer plano. Las rótulas panorámicas permiten situar el punto sin paralaje del objetivo sobre el eje de rotación."
+        }
+      }
+    }
+  }
+}

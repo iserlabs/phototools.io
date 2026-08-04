@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Jokainen kameran tallentama valokuva kantaa mukanaan piilotettua raporttia itse kamerasta: tarkan mallin, sarjanumeron, käytössä olevan laiteohjelmiston, kiinnitettynä olleen objektiivin ja joskus otettujen kuvien määrän. Tämä työkalu lukee raportin yhdestä valokuvasta — kokonaan selaimessasi — jotta voit arvioida kamerarungon samaan tapaan kuin mekaanikko lukee auton huoltohistorian.",
+      "deeper": "Tiedot ovat peräisin EXIF-metatiedoista, standardilohkosta, jonka jokainen digikamera upottaa tiedostoihinsa. Standardikenttiä ovat muun muassa Make, Model, BodySerialNumber, Software (joka useimmissa kameroissa ilmoittaa laiteohjelmistoversion), LensModel ja kuvaushetken aikaleima. Valmistajat laajentavat tätä omilla 'maker notes' -tiedoillaan — Nikonin tiedoissa on laukaisumäärä, minkä vuoksi sulkimen kestoikä on luettavissa joillakin merkeillä muttei toisilla. Rungon ikä arvioidaan vertaamalla mallinimeä julkaisuvuosien tietokantaan: vuonna 2018 julkaistu kamera on vähintään useita vuosia vanha riippumatta siitä, mitä myyjä sanoo. Kaksi varausta on tärkeää. Ensinnäkin metatiedot säilyvät vain alkuperäistiedostoissa — useimmat kuvankäsittely- ja viestisovellukset sekä sosiaaliset alustat poistavat tai kirjoittavat ne uudelleen. Toiseksi EXIF-tietoja voi muokata vapaasti saatavilla olevilla työkaluilla, joten pidä niitä vahvana näyttönä, ei todisteena: asian ratkaisee lopulta se, että tiedoston sarjanumero, rungon sarjanumero ja myyjän kuitti täsmäävät.",
+      "keyFactors": {
+        "0": {
+          "label": "Vain alkuperäistiedostot",
+          "description": "Metatiedot säilyvät suoraan kamerasta tulleissa tiedostoissa. Viennit ja uudelleentallennukset poistavat usein sarjanumerot, maker notes -tiedot ja laiteohjelmistotiedot."
+        },
+        "1": {
+          "label": "Sarjanumero",
+          "description": "Sitoo tiedoston fyysiseen runkoon. Vertaa sitä itse runkoon, kuittiin ja varastettujen laitteiden rekistereihin ennen käytetyn ostamista."
+        },
+        "2": {
+          "label": "Julkaisuvuosi vs. kunto",
+          "description": "Ikä asettaa odotukset (kennoteknologia, puuttuvat ominaisuudet, jäljellä oleva tuki), mutta sulkimen kuluminen ja fyysinen kunto kertovat, kuinka rankkoja nuo vuodet ovat olleet."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Ostamassa käytettyä? Pyydä myyjältä muokkaamaton kuva suoraan kamerasta. Se vahvistaa mallin ja sarjanumeron, näyttää nykyisen laiteohjelmiston ja — tuetuilla merkeillä — laukaisumäärän, kaikki yhdessä tiedostossa."
+        },
+        "1": {
+          "text": "Vertaa laiteohjelmistoa valmistajan uusimpaan versioon. Päivittämätön kamera on normaalia; kamera, jota ei voi enää päivittää, voi jäädä paitsi tarkennus- ja yhteensopivuusparannuksista."
+        },
+        "2": {
+          "text": "Myyjän näytekuvan kuvauspäivä kertoo, milloin kameraa on oikeasti viimeksi käytetty. 'Vähän käytetty' runko, jonka uusin tiedosto on neljä vuotta vanha, on seissyt käyttämättä — tarkista jumittava suljin ja turvonnut akku."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Rungon sarjanumero",
+          "definition": "Valmistajan jokaiselle kamerarungolle antama yksilöllinen tunniste, joka on upotettu jokaisen kuvan EXIF-tietoihin. Hyödyllinen takuutarkistuksissa ja varastettujen laitteiden rekistereissä."
+        },
+        "firmware": {
+          "term": "Laiteohjelmisto",
+          "definition": "Kameran sisäinen ohjelmisto, joka ilmoitetaan EXIF-kentässä Software. Valmistajat toimittavat tarkennus-, yhteensopivuus- ja ominaisuusparannuksia laiteohjelmistopäivityksillä."
+        },
+        "bodyAge": {
+          "term": "Rungon ikä",
+          "definition": "Vuosia mallin julkaisusta, arvioitu julkaisupäivien tietokannasta. Yläraja sille, kuinka ajantasaista kameran teknologia on — ei sille, kuinka kulunut juuri tämä runko on."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Olet ostamassa käytettyä kameraa verkkoilmoituksesta. Myyjä lähettää sinulle alkuperäisen kuvan kamerasta. Mikä on arvokkain asia, jonka voit tehdä sen metatiedoissa olevalla sarjanumerolla?",
+          "hint": "Sarjanumero yhdistää juuri tämän rungon ulkomaailmaan.",
+          "successMessage": "Oikein! Sarjanumeron vertaaminen varastettujen laitteiden rekistereihin (ja myyjän kuittiin) suojaa sinua varastetun laitteen ostamiselta — tarkistus, jonka vain sarjanumero mahdollistaa.",
+          "failureMessage": "Sarjanumeron ainutlaatuinen arvo on tunnistaminen: vertaa sitä varastettujen laitteiden rekistereihin ja myyjän papereihin. Se ei kerro mitään kuvanlaadusta tai yhteensopivuudesta.",
+          "options": {
+            "0": { "label": "Vertaa sitä varastettujen laitteiden rekistereihin" },
+            "1": { "label": "Arvioi kuvanlaatua" },
+            "2": { "label": "Varmista objektiivien yhteensopivuus" },
+            "3": { "label": "Katso ISO-alue" }
+          }
+        },
+        "1": {
+          "scenario": "Harkitsemasi käytetty kamera käyttää laiteohjelmistoa 1.0 neljän vuoden takaisesta julkaisusta, kun valmistajan nykyinen versio on 3.1. Mitä päivittäminen yleensä tuo?",
+          "hint": "Mieti, mitä valmistajat voivat muuttaa ohjelmistolla julkaisun jälkeen.",
+          "successMessage": "Aivan oikein! Laiteohjelmistopäivitykset tuovat todellisia parannuksia — parempia tarkennusalgoritmeja, uusien objektiivien tukea, virheenkorjauksia, joskus kokonaisia ominaisuuksia. Laitteisto-ominaisuudet kuten kenno ja megapikselit eivät koskaan muutu.",
+          "failureMessage": "Laiteohjelmisto on ohjelmistoa: päivitykset parantavat tarkennusta, lisäävät objektiivitukea ja korjaavat virheitä. Ne eivät voi muuttaa laitteistoa, kuten kennoa tai megapikselien määrää.",
+          "options": {
+            "0": { "label": "Uusia ominaisuuksia ja tarkennusparannuksia" },
+            "1": { "label": "Lisää megapikseleitä" },
+            "2": { "label": "Suuremman kennon pinta-alan" },
+            "3": { "label": "Ei mitään — laiteohjelmisto on kosmeettinen" }
+          }
+        },
+        "2": {
+          "scenario": "Kaksi myyjää tarjoaa samaa mallia: 7 vuotta vanhaa runkoa ja 4 vuotta vanhaa runkoa samaan hintaan. Miten rungon ikää kannattaa käyttää päätöksessä?",
+          "hint": "Ikä on yksi tekijä — mitä se ei kerro?",
+          "successMessage": "Juuri niin. Ikä rajaa teknologian ja jäljellä olevan tukiajan, mutta ratkaisevaa on, miten runkoa on käytetty: laukaisumäärä, fyysinen kunto ja huoltohistoria.",
+          "failureMessage": "Rungon ikä yksin ei ratkaise — hellävaraisesti käytetty vanhempi runko voi voittaa kovaa käytetyn uudemman. Yhdistä ikä laukaisumäärään ja fyysiseen kuntoon.",
+          "options": {
+            "0": { "label": "Osta aina uudempi" },
+            "1": { "label": "Punnitse ikä yhdessä laukaisumäärän ja kunnon kanssa" },
+            "2": { "label": "Jätä ikä huomiotta — vain megapikselit merkitsevät" },
+            "3": { "label": "Valitse pelkän merkin maineen perusteella" }
+          }
+        }
+      }
+    }
+  }
+}

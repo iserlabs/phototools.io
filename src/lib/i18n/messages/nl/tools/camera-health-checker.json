@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Sleep een foto hierheen of klik om te bladeren (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Sleep een willekeurige foto hierheen van de camera die je wilt inspecteren. Alles wordt in je browser gelezen — het bestand verlaat je apparaat nooit.",
+      "errorRead": "Dit bestand kon niet worden gelezen. Probeer een onbewerkt JPEG- of RAW-bestand rechtstreeks uit de camera.",
+      "errorNoMetadata": "Dit bestand bevat geen camerametadata. Exports uit bewerkings- of berichtenapps verwijderen die vaak — probeer een onbewerkt origineel bestand.",
+      "sections": {
+        "body": "Camerabody",
+        "age": "Leeftijd",
+        "shutter": "Sluiterlevensduur",
+        "lens": "Lens"
+      },
+      "cameraModel": "Model",
+      "make": "Merk",
+      "serialNumber": "Serienummer",
+      "firmware": "Firmware / software",
+      "bodyAge": "Leeftijd van de body",
+      "ageValue": "~{years} jaar (uitgebracht in {year})",
+      "ageUnknown": "Dit model staat niet in onze releasedatabase, dus de leeftijd kon niet worden geschat.",
+      "shotDate": "Foto genomen",
+      "shutterCount": "Sluitertelling",
+      "ratedLife": "Opgegeven levensduur",
+      "ratedAssumed": "(aangenomen)",
+      "lifeUsed": "{percent}% van de opgegeven levensduur verbruikt",
+      "verdict": {
+        "low": "Nauwelijks gebruikt",
+        "moderate": "Matig gebruikt",
+        "high": "Intensief gebruikt",
+        "beyond": "Voorbij de opgave"
+      },
+      "shutterUnavailable": {
+        "supported": "Geen sluitertelling gevonden, hoewel {brand} die normaal registreert. Probeer een onbewerkt origineel bestand — bewerkingsapps verwijderen vaak de fabrikant-metadata.",
+        "partial": "{brand} schrijft alleen naar sommige bestanden een ruwe beeldteller, en dit bestand heeft er geen. De menu's van de camera zelf of een USB-programma kunnen hem mogelijk tonen.",
+        "unsupported": "{brand} slaat geen uitleesbare sluitertelling op in beeldbestanden. Bekijk de pagina van de Shutter Count Checker voor merkspecifieke alternatieven.",
+        "unknown": "Dit bestand bevat geen uitleesbare sluitertelling."
+      },
+      "lensModel": "Lens",
+      "lensSerial": "Lens-serienummer",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Wat moet ik controleren bij het kopen van een tweedehands camera?",
+          "answer": "Naast het uiterlijk: de sluitertelling ten opzichte van de opgegeven levensduur, de leeftijd van de body en de firmwareversie, of het serienummer overeenkomt met de papieren van de verkoper (en niet als gestolen geregistreerd staat), de staat van de sensor (let op stof of krassen in een testfoto van een heldere lucht bij f/16), en of alle knoppen, poorten en de lensvatting soepel werken."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Waar komen deze gezondheidsgegevens vandaan?",
+          "answer": "Alles wordt gelezen uit de metadata die in je foto is ingebed: standaard EXIF-velden (model, serienummer, firmware, lens, opnamedatum) plus fabrikantspecifieke maker notes waar beschikbaar (sluitertelling). De leeftijd van de body wordt geschat aan de hand van een ingebouwde database met releasejaren van populaire cameramodellen."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Wordt mijn foto naar een server geüpload?",
+          "answer": "Nee. Het bestand wordt volledig in je browser met JavaScript verwerkt — het verlaat je apparaat nooit en er wordt niets opgeslagen. Je kunt dit controleren door de pagina te laden en daarna je verbinding uit te schakelen voordat je een bestand neerzet."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Un panorama si costruisce scattando diverse foto sovrapposte mentre ruoti la fotocamera, lasciando poi che il software le unisca in un'unica immagine ampia. Il trucco è sapere di quanto ruotare tra uno scatto e l'altro: troppo e il software non riesce a unire i fotogrammi, troppo poco e sprechi decine di scatti. Questo calcolatore fa quel conto a partire da obiettivo, sensore e sovrapposizione desiderata.",
+      "deeper": "Ogni fotogramma copre un angolo di campo fisso determinato da lunghezza focale e dimensione del sensore — un 50mm su full frame vede circa 40° in orizzontale. Il software di stitching allinea i fotogrammi adiacenti trovando «punti di controllo» condivisi nella zona di sovrapposizione, ed è per questo che il 25–35% è lo standard pratico: dà all'algoritmo abbastanza dettagli in comune senza far esplodere il numero di scatti. La rotazione utile per scatto è quindi il campo visivo del fotogramma moltiplicato per (1 − sovrapposizione). Scattare in verticale scambia un passo orizzontale più stretto con molta più copertura verticale, motivo per cui la maggior parte dei panorami a fila singola si scatta in verticale. Per scene davvero alte, i panorami multi-riga applicano la stessa logica di sovrapposizione in verticale. Il file finale unito cresce in fretta: ogni fotogramma aggiuntivo contribuisce con la sua risoluzione meno la sovrapposizione, quindi un pano verticale di 7 fotogrammi da una fotocamera di 24 MP supera facilmente i 100 MP. Una sottigliezza fisica limita tutto: ruotare attorno all'attacco del treppiede sposta il centro ottico dell'obiettivo tra i fotogrammi, disallineando oggetti vicini e lontani (parallasse). Per paesaggi distanti conta raramente, ma con elementi vicini in primo piano devi ruotare attorno al punto di non parallasse dell'obiettivo usando una slitta nodale o una testa panoramica.",
+      "keyFactors": {
+        "0": {
+          "label": "Focale e sensore",
+          "description": "Insieme definiscono il campo visivo del singolo fotogramma — l'unità di base con cui si assembla il panorama. Obiettivi più lunghi significano fotogrammi più stretti e più scatti."
+        },
+        "1": {
+          "label": "Sovrapposizione",
+          "description": "La zona condivisa tra fotogrammi adiacenti su cui il software di stitching si allinea. Il 25–35% è la zona ideale; le scene senza dettagli (cielo, acqua) ne richiedono di più."
+        },
+        "2": {
+          "label": "Orientamento",
+          "description": "I fotogrammi verticali coprono meno larghezza ma molta più altezza per scatto — la scelta standard per i panorami a fila singola, perché lascia margine di ritaglio."
+        },
+        "3": {
+          "label": "Parallasse",
+          "description": "Il disallineamento vicino/lontano causato dalla rotazione attorno all'asse sbagliato. Innocuo per le scene distanti; critico con primi piani ravvicinati."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Blocca esposizione, bilanciamento del bianco e messa a fuoco in manuale prima del primo fotogramma. Qualsiasi automatismo cambia tra i fotogrammi e crea bande visibili nel cielo unito."
+        },
+        "1": {
+          "text": "Scatta con l'obiettivo in bolla e ruota in un unico passaggio fluido, aggiungendo un fotogramma di scarto a ciascuna estremità — i fotogrammi ai bordi vengono distorti e ritagliati durante lo stitching."
+        },
+        "2": {
+          "text": "Per i panorami a mano libera, esagera la sovrapposizione fino al 40–50%. La tua rotazione non sarà precisa, e i fotogrammi extra danno al software margine per recuperare."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Sovrapposizione",
+          "definition": "La percentuale di ogni fotogramma condivisa con quello adiacente. Il software di stitching ha bisogno di questi dettagli comuni per allineare i fotogrammi — il 25–35% è tipico."
+        },
+        "orientation": {
+          "term": "Orientamento della fotocamera",
+          "definition": "L'inquadratura verticale è lo standard per i panorami: ogni fotogramma contribuisce con più altezza, lasciando margine per raddrizzare l'orizzonte e ritagliare."
+        },
+        "rotateBetween": {
+          "term": "Rotazione tra gli scatti",
+          "definition": "Di quanti gradi ruotare la fotocamera dopo ogni fotogramma: il campo visivo del fotogramma moltiplicato per (1 − sovrapposizione). Le teste panoramiche hanno scatti a incastro proprio per questo."
+        },
+        "rows": {
+          "term": "Righe",
+          "definition": "I panorami multi-riga impilano passaggi orizzontali in verticale, applicando la stessa regola di sovrapposizione tra le righe per coprire scene alte."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Stai fotografando il panorama di una catena montuosa. Di quanto devono sovrapporsi i fotogrammi adiacenti per uno stitching affidabile?",
+          "hint": "Il software ha bisogno di dettagli condivisi, ma ogni fotogramma extra costa tempo.",
+          "successMessage": "Corretto! Circa il 30% di sovrapposizione dà al software di stitching punti di controllo in abbondanza senza sprecare fotogrammi — la raccomandazione standard per la maggior parte delle scene.",
+          "failureMessage": "Il 25–35% è lo standard pratico. Sotto il ~15% i software faticano a trovare punti di controllo; l'80% triplica i fotogrammi senza alcun beneficio.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Vuoi un panorama a fila singola con abbastanza margine verticale per raddrizzare l'orizzonte e ritagliare liberamente in seguito. In quale orientamento dovresti scattare?",
+          "hint": "In quale verso ogni fotogramma ti dà più altezza?",
+          "successMessage": "Esatto! L'orientamento verticale cattura molto più campo in altezza per fotogramma — i pochi scatti in più in orizzontale sono un prezzo minimo per la libertà di ritaglio.",
+          "failureMessage": "Il verticale è lo standard per i panorami a fila singola: ogni fotogramma è più alto, così il risultato unito sopravvive a raddrizzamento dell'orizzonte e ritaglio.",
+          "options": {
+            "0": { "label": "Orizzontale" },
+            "1": { "label": "Verticale" },
+            "2": { "label": "Modalità quadrata" },
+            "3": { "label": "Inclinato a 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Con un 50mm su full frame tenuto in orizzontale (circa 40° di campo orizzontale) e il 30% di sovrapposizione, quanti fotogrammi servono all'incirca per un panorama di 180°?",
+          "hint": "Ogni scatto fa avanzare la copertura di 40° × 0,7 = 28°.",
+          "successMessage": "Corretto! Il primo fotogramma copre 40°, e ogni fotogramma aggiuntivo ne aggiunge ~28°. Coprire i 140° rimanenti richiede altri 5 fotogrammi, quindi 7 in totale (con un po' di margine).",
+          "failureMessage": "Ogni fotogramma dopo il primo aggiunge 40° × (1 − 0,3) = 28° di copertura nuova. (180 − 40) / 28 = altri 5 fotogrammi, quindi 7 in totale.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Il tuo panorama ha una staccionata a un metro dalla fotocamera e montagne sullo sfondo. Il risultato unito mostra la staccionata sdoppiata e disallineata tra i fotogrammi. Attorno a quale punto deve ruotare la fotocamera per risolvere il problema?",
+          "hint": "Il problema è la parallasse — oggetti vicini e lontani che si spostano l'uno rispetto all'altro.",
+          "successMessage": "Esattamente! Ruotare attorno al punto di non parallasse (nodale) dell'obiettivo mantiene allineati oggetti vicini e lontani tra i fotogrammi. Teste panoramiche e slitte nodali esistono proprio per questo.",
+          "failureMessage": "La fotocamera deve ruotare attorno al punto di non parallasse dell'obiettivo (spesso chiamato punto nodale). Ruotare attorno all'attacco del treppiede sposta il centro ottico, causando la parallasse che vedi.",
+          "options": {
+            "0": { "label": "La lente frontale dell'obiettivo" },
+            "1": { "label": "Il punto di non parallasse dell'obiettivo" },
+            "2": { "label": "Il piano del sensore" },
+            "3": { "label": "L'attacco del treppiede" }
+          }
+        }
+      }
+    }
+  }
+}

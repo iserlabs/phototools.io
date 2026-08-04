@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Lightroom 目录分析器 — 免费、纯浏览器统计",
       "description": "在浏览器中本地分析您的 Lightroom Classic 目录。查看器材、焦距、光圈习惯、评级等等。100% 本地——您的目录绝不会被上传。"
+    },
+    "shutter-count-checker": {
+      "title": "快门数查询工具 — 免费且保护隐私",
+      "description": "从照片查询相机的快门数，免费且 100% 在浏览器中完成。支持 Nikon JPEG 和 RAW 文件，并为 Canon、Sony 及其他品牌提供清晰指引。"
+    },
+    "camera-health-checker": {
+      "title": "相机健康检测工具",
+      "description": "从一张照片检测相机机身：型号、序列号、固件、机龄、镜头和快门寿命。100% 本地处理 — 购买二手相机前检查的理想选择。"
+    },
+    "panorama-calculator": {
+      "title": "全景计算器",
+      "description": "规划拼接全景：需要拍多少张、每张之间转多少度以及最终分辨率 — 适用于任何镜头、传感器和重叠率。"
+    },
+    "diffraction-calculator": {
+      "title": "衍射极限计算器",
+      "description": "找出您相机的衍射极限：继续收缩光圈会开始让图像变软的那一挡。基于像素间距和艾里斑，适用于任何传感器和分辨率。"
+    },
+    "photography-cheat-sheet": {
+      "title": "摄影速查表 — 按场景查相机设置",
+      "description": "涵盖人像、风光、野生动物、银河等场景的相机设置速查表。可下载为图片或打印的可靠拍摄起点。"
     }
   }
 }

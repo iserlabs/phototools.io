@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Letakkan foto di sini atau klik untuk memilih file (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Merek mana yang menyimpan shutter count?",
+      "status": {
+        "supported": "Terbaca",
+        "partial": "Sebagian",
+        "unsupported": "Tidak ada di file"
+      },
+      "brands": {
+        "nikon": "Nikon menulis shutter count ke metadata setiap foto tanpa enkripsi. Gunakan file asli yang belum diedit agar hasilnya paling akurat.",
+        "canon": "Canon tidak pernah menulis shutter count ke file gambar — angka ini hanya tersimpan di dalam kamera dan dibaca oleh alat servis atau utilitas USB.",
+        "sony": "Sony menyimpan shutter count di bagian metadata yang terenkripsi sehingga tidak bisa didekode di browser. Utilitas desktop khusus dapat membacanya lewat USB.",
+        "fujifilm": "Bodi Fujifilm tidak merekam shutter count yang sebenarnya, tetapi sebagian menulis penghitung frame yang memberi perkiraan batas bawah kasar.",
+        "pentax": "Pentax mengaburkan field shutter count-nya dengan sandi, sehingga tidak bisa dibaca secara andal dari file.",
+        "olympus": "Bodi OM System / Olympus menyimpan shutter count lengkap di menu servis internal; file kadang membawa penghitung frame yang memberi petunjuk pemakaian.",
+        "panasonic": "Panasonic tidak menulis shutter count ke file. Menu servis pada kamera yang melaporkannya.",
+        "leica": "Bodi Leica umumnya tidak menyimpan shutter count di file gambar."
+      },
+      "countLabel": "Aktuasi rana",
+      "source": {
+        "shutterCount": "Dibaca dari metadata shutter count kamera — inilah penghitung aktuasi mekanis yang sebenarnya.",
+        "mechanicalShutterCount": "Dibaca dari penghitung rana mekanis — frame dengan rana elektronik tidak termasuk.",
+        "imageNumber": "Diperkirakan dari nomor gambar file. Ini batas bawah kasar, bukan jumlah aktuasi yang pasti — penghitungnya bisa ter-reset atau berputar ulang."
+      },
+      "ratedLife": "Umur rana menurut rating",
+      "ratings": {
+        "entry": "Kelas pemula",
+        "enthusiast": "Enthusiast",
+        "advanced": "Advanced",
+        "pro": "Profesional",
+        "flagship": "Flagship"
+      },
+      "lifeUsed": "{percent}% dari umur rating telah terpakai",
+      "verdict": {
+        "low": "Hampir tak terpakai",
+        "moderate": "Pemakaian sedang",
+        "high": "Pemakaian berat",
+        "beyond": "Melewati rating"
+      },
+      "noCountTitle": "Tidak ada shutter count di file ini",
+      "noCountGeneric": "File ini tidak berisi shutter count yang bisa dibaca. Coba foto asli yang belum diedit langsung dari kamera — ekspor dari aplikasi edit sering menghapus metadata pabrikan.",
+      "errorRead": "File ini tidak bisa dibaca. Coba file JPEG atau RAW yang belum diedit langsung dari kamera.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Apa itu shutter count?",
+          "answer": "Shutter count adalah jumlah berapa kali rana mekanis kamera telah bekerja — padanan kilometer tempuh pada mobil. Ini indikator keausan yang paling sering diperiksa saat membeli atau menjual kamera bekas, karena rana dirancang untuk jumlah aktuasi yang terbatas."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Berapa banyak aktuasi rana yang tergolong terlalu banyak?",
+          "answer": "Tergantung kelas kameranya. Rana kelas pemula dirating sekitar 100.000 aktuasi, bodi enthusiast 150.000–200.000, dan bodi profesional 300.000–500.000. Rating adalah umur rata-rata, bukan batas mutlak — banyak rana bertahan jauh melampauinya, dan count rendah pada bodi yang diperlakukan buruk tetap bisa berarti masalah."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Mengapa saya tidak bisa memeriksa shutter count di foto Canon atau Sony saya?",
+          "answer": "Canon sama sekali tidak menulis shutter count ke file gambar — angkanya hanya ada di memori internal kamera. Sony menulisnya, tetapi mengenkripsi bagian metadata tersebut. Dalam kedua kasus, alat berbasis browser tidak bisa membacanya dari foto; utilitas desktop yang terhubung ke kamera lewat USB adalah solusi yang umum."
+        }
+      }
+    }
+  }
+}

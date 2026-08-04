@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Enhver fotosituation — portrætter, dyreliv, Mælkevejen — har en velafprøvet kombination af blænde, lukkertid og ISO, som erfarne fotografer griber til først. Disse huskesedler giver dig det udgangspunkt med det samme, så du kan bruge din opmærksomhed på lys og komposition i stedet for at tvivle på hjulene.",
+      "deeper": "Hver opskrift her er en anvendelse af eksponeringstrekanten med én side prioriteret. Portrætter prioriterer blænden: Store åbninger (f/1.8–f/2.8) adskiller motivet fra baggrunden, og alt andet tilpasser sig det. Action prioriterer lukkertiden: 1/1000s fastfryser bevægelse, så blænden åbnes og ISO stiger for at skaffe lys. Landskaber prioriterer billedkvaliteten: basis-ISO og en mellemblænde i objektivets sweet spot, mens et stativ opsuger den lukkertid, det resulterer i. Nattescener presser alle tre sider på én gang, og derfor har de de mest ufravigelige opskrifter — Mælkevejen kræver reelt et lysstærkt objektiv ved fuld åbning, en lukkertid under ~20 sekunder (før Jordens rotation trækker stjernerne ud i spor) og den ISO, der gør histogrammet brugbart. At forstå, hvilken side hvert scenarie prioriterer, er den egentlige lektie: Når du ser prioriteten, kan du tilpasse enhver opskrift til lyset foran dig i stedet for at følge den blindt. Intervallerne er udgangspunkter kalibreret til typiske forhold; dit histogram, ikke huskesedlen, har det sidste ord.",
+      "keyFactors": {
+        "0": {
+          "label": "Scenariets prioritet",
+          "description": "Hver situation låser én eksponeringsvariabel først — blænde til portrætter, lukkertid til action, ISO til landskaber — og lader de andre tilpasse sig."
+        },
+        "1": {
+          "label": "Tilgængeligt lys",
+          "description": "Det samme scenarie kræver forskellige indstillinger ved middagstid og i skumringen. Betragt intervallerne som ankre, og flyt dig inden for dem, når lyset ændrer sig."
+        },
+        "2": {
+          "label": "Støtte & stabilitet",
+          "description": "Et stativ låser op for basis-ISO og lange lukkertider til statiske scener. Håndholdt arbejde sætter en nedre grænse for lukkertiden omkring 1/(brændvidden) eller hurtigere."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Tag et testbillede og læs histogrammet, ikke LCD-forhåndsvisningen — skærme lyver i skarp sol og om natten, det gør histogrammet aldrig."
+        },
+        "1": {
+          "text": "Lær én opskrift udenad pr. genre, du fotograferer, og øv dig så i at justere én variabel ad gangen. Du lærer afvejningerne langt hurtigere end ved at ændre alt på én gang."
+        },
+        "2": {
+          "text": "Download huskesedlen for scenarier, du sjældent fotograferer — Mælkevejsopskriften er svær at huske kl. 2 om natten på en bjergside med kolde fingre."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Blænde",
+          "definition": "Størrelsen på objektivets åbning, i blændetal. Lavere tal = mere lys og mere baggrundssløring; højere tal = mere dybdeskarphed."
+        },
+        "shutter": {
+          "term": "Lukkertid",
+          "definition": "Hvor længe sensoren samler lys. Hurtige tider fastfryser bevægelse; langsomme tider slører den og kræver stabilisering eller et stativ."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Sensorens forstærkning. Hold den så lav, som lyset tillader — at hæve den gør billedet lysere på bekostning af støj."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du fotograferer et portræt og vil have det klassiske look: motivet skarpt, baggrunden smeltet ud i sløring. Hvilket indstillingsvalg opnår det?",
+          "hint": "Baggrundssløring kommer fra dybdeskarpheden — hvilken kontrol styrer den?",
+          "successMessage": "Korrekt! En stor blændeåbning (som f/1.8–f/2.8) skaber den lave dybdeskarphed, der adskiller motivet fra en sløret baggrund — det definerende portrætvalg.",
+          "failureMessage": "Baggrundssløring kommer fra en stor blændeåbning (lavt blændetal) som f/1.8–f/2.8, der gør dybdeskarpheden lav. Små blænder gør det modsatte.",
+          "options": {
+            "0": { "label": "En lille blænde som f/16" },
+            "1": { "label": "En stor blændeåbning som f/2" },
+            "2": { "label": "En lang eksponering på stativ" },
+            "3": { "label": "Maksimal ISO" }
+          }
+        },
+        "1": {
+          "scenario": "En hejre letter fra vandet, lige når du trykker på udløseren, og hvert billede viser slørede vingespidser. Hvad er løsningen?",
+          "hint": "Bevægelsessløring er et tidsproblem.",
+          "successMessage": "Rigtigt! Fugle i flugt kræver hurtige lukkertider — 1/2500s eller hurtigere fastfryser vingeslag. Åbn blænden, og lad Auto-ISO stige for at levere den hastighed, du har brug for.",
+          "failureMessage": "Slørede vinger betyder, at lukkeren er for langsom til bevægelsen. Hop til 1/2500s eller hurtigere, og lad blænde og ISO kompensere for det tabte lys.",
+          "options": {
+            "0": { "label": "En langsommere lukker for mere lys" },
+            "1": { "label": "En meget hurtigere lukkertid" },
+            "2": { "label": "Blænd ned til f/22" },
+            "3": { "label": "Skift hvidbalancen til kunstlys" }
+          }
+        },
+        "2": {
+          "scenario": "Du står klar under en mørk himmel for at fotografere Mælkevejen. Hvilken kombination giver en brugbar eksponering af den galaktiske kerne?",
+          "hint": "Stjernerne er svage, bevæger sig (med Jordens rotation) og er din eneste lyskilde.",
+          "successMessage": "Korrekt! Fuld åbning (f/1.4–f/2.8), 10–25 sekunder, ISO 1600–6400: Blænden samler maksimalt lys, lukkeren stopper, før stjernerne trækker spor, og den høje ISO gør den svage kerne synlig.",
+          "failureMessage": "Mælkevejen kræver det hele: blænden helt åben, en eksponering kort nok til, at stjernerne ikke trækker spor (10–25s), og høj ISO (1600–6400). Små blænder eller basis-ISO efterlader himlen sort.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Fuld åbning, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Alle indstillinger med et ND-filter" }
+          }
+        }
+      }
+    }
+  }
+}

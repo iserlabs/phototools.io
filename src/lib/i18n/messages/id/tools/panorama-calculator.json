@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Orientasi kamera",
+      "portrait": "Potret",
+      "landscape": "Lanskap",
+      "overlap": "Tumpang tindih: {percent}%",
+      "targetWidth": "Lebar panorama",
+      "rows": "Baris",
+      "megapixels": "Resolusi kamera: {mp} MP",
+      "fanLabel": "Diagram tampak atas dari {frames} frame yang bertumpang tindih",
+      "totalShots": "Total jepretan",
+      "perRow": "Frame × baris",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotasi antar jepretan",
+      "coverage": "Cakupan (H × V)",
+      "frameFov": "FOV satu frame",
+      "stitchedSize": "Ukuran hasil stitching",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Berapa banyak tumpang tindih yang dibutuhkan foto panorama?",
+          "answer": "25–35% adalah titik ideal untuk kebanyakan pemandangan. Perangkat lunak stitching membutuhkan detail yang sama di antara frame bertetangga untuk menemukan titik kontrol; di bawah 15% ia bisa gagal menyejajarkan frame, sementara di atas 50% Anda memotret banyak frame ekstra dengan manfaat kecil. Gunakan tumpang tindih lebih besar untuk pemandangan yang minim fitur khas, seperti langit cerah atau air yang tenang."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Mengapa panorama dipotret dalam orientasi potret (vertikal)?",
+          "answer": "Orientasi potret menangkap bidang pandang vertikal lebih banyak per frame, sehingga hasil panorama akhir lebih tinggi dan menyisakan ruang untuk crop serta koreksi horizon. Harganya hanya beberapa frame ekstra secara horizontal — pertukaran yang biasanya sepadan demi fleksibilitas dan resolusi tambahan."
+        },
+        "what-is-nodal-point": {
+          "question": "Apa itu titik tanpa-paralaks (nodal point)?",
+          "answer": "Ini titik di dalam lensa yang menjadi poros rotasi kamera agar objek dekat dan jauh tidak bergeser relatif satu sama lain di antara frame. Berputar pada soket tripod justru menimbulkan kesalahan paralaks yang menyulitkan stitching, terutama dengan objek latar depan yang dekat. Kepala tripod panorama memungkinkan Anda menempatkan titik tanpa-paralaks lensa tepat di atas sumbu rotasi."
+        }
+      }
+    }
+  }
+}

@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Analizator katalogu Lightroom",
       "description": "Przeanalizuj swój katalog Lightroom Classic — sprzęt, ogniskowe, przysłony, oceny i więcej — w 100% w przeglądarce"
+    },
+    "shutter-count-checker": {
+      "name": "Sprawdzanie przebiegu migawki",
+      "description": "Sprawdź przebieg migawki swojego aparatu ze zdjęcia — w 100% w przeglądarce"
+    },
+    "camera-health-checker": {
+      "name": "Sprawdzanie stanu aparatu",
+      "description": "Sprawdź wiek korpusu, firmware, numer seryjny i żywotność migawki z jednego zdjęcia"
+    },
+    "panorama-calculator": {
+      "name": "Kalkulator panoramy",
+      "description": "Zaplanuj panoramę — liczbę kadrów, zakładkę i obrót między ujęciami"
+    },
+    "diffraction-calculator": {
+      "name": "Kalkulator granicy dyfrakcji",
+      "description": "Znajdź przysłonę, przy której dyfrakcja zaczyna zmiękczać zdjęcia"
+    },
+    "photography-cheat-sheet": {
+      "name": "Ściąga fotograficzna",
+      "description": "Ściągi z ustawieniami aparatu na typowe sytuacje zdjęciowe — do pobrania i wydruku"
     }
   }
 }

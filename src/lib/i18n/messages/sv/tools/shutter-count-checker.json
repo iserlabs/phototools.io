@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Släpp ett foto här eller klicka för att bläddra (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Vilka märken lagrar slutarräkningen?",
+      "status": {
+        "supported": "Läsbar",
+        "partial": "Delvis",
+        "unsupported": "Inte i filerna"
+      },
+      "brands": {
+        "nikon": "Nikon skriver in slutarräkningen i varje fotos metadata, okrypterad. Använd en oredigerad originalfil för bästa resultat.",
+        "canon": "Canon skriver aldrig in slutarräkningen i bildfiler — den lagras bara inuti kameran och läses av serviceverktyg eller USB-program.",
+        "sony": "Sony lagrar slutarräkningen i en krypterad del av sin metadata som inte kan avkodas i webbläsaren. Särskilda skrivbordsprogram kan läsa den via USB.",
+        "fujifilm": "Fujifilm-hus registrerar ingen riktig slutarräkning, men vissa skriver en bildräknare som ger en grov undre gräns.",
+        "pentax": "Pentax döljer sitt slutarräkningsfält med ett chiffer, så det kan inte läsas tillförlitligt från filer.",
+        "olympus": "OM System / Olympus-hus sparar den fullständiga slutarräkningen i en intern servicemeny; filerna innehåller ibland en bildräknare som antyder användningen.",
+        "panasonic": "Panasonic skriver ingen slutarräkning till filer. Kamerans servicemeny visar den.",
+        "leica": "Leica-hus lagrar i allmänhet ingen slutarräkning i bildfiler."
+      },
+      "countLabel": "Slutarutlösningar",
+      "source": {
+        "shutterCount": "Läst från kamerans metadata för slutarräkning — detta är den faktiska mekaniska utlösningsräknaren.",
+        "mechanicalShutterCount": "Läst från den mekaniska slutarräknaren — bilder tagna med elektronisk slutare ingår inte.",
+        "imageNumber": "Uppskattad från filens bildnummer. Detta är en grov undre gräns, inte ett exakt antal utlösningar — räknaren kan nollställas eller slå runt."
+      },
+      "ratedLife": "Angiven slutarlivslängd",
+      "ratings": {
+        "entry": "Instegsnivå",
+        "enthusiast": "Entusiast",
+        "advanced": "Avancerad",
+        "pro": "Professionell",
+        "flagship": "Flaggskepp"
+      },
+      "lifeUsed": "{percent} % av angiven livslängd använd",
+      "verdict": {
+        "low": "Knappt använd",
+        "moderate": "Måttligt använd",
+        "high": "Flitigt använd",
+        "beyond": "Över angiven livslängd"
+      },
+      "noCountTitle": "Ingen slutarräkning i den här filen",
+      "noCountGeneric": "Den här filen innehåller ingen läsbar slutarräkning. Prova ett oredigerat originalfoto direkt från kameran — exporter från redigeringsprogram tar ofta bort tillverkarens metadata.",
+      "errorRead": "Kunde inte läsa den här filen. Prova en oredigerad JPEG- eller RAW-fil direkt från kameran.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Vad är slutarräkning?",
+          "answer": "Slutarräkningen är antalet gånger kamerans mekaniska slutare har utlösts — kamerans motsvarighet till en bils mätarställning. Det är den mest kontrollerade slitageindikatorn vid köp eller försäljning av en begagnad kamera, eftersom slutare är klassade för ett begränsat antal utlösningar."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Hur många slutarutlösningar är för många?",
+          "answer": "Det beror på kameraklassen. Slutare i instegskameror är klassade för runt 100 000 utlösningar, entusiasthus för 150 000–200 000 och professionella hus för 300 000–500 000. Klassningen är en genomsnittlig livslängd, inte en hård gräns — många slutare håller långt längre, och en låg räkning på ett illa behandlat hus kan ändå betyda problem."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Varför kan jag inte kolla slutarräkningen på mitt Canon- eller Sony-foto?",
+          "answer": "Canon skriver aldrig in slutarräkningen i bildfiler över huvud taget — den finns bara i kamerans interna minne. Sony skriver den, men krypterar den delen av metadatan. I båda fallen kan ett webbläsarverktyg inte läsa den från ett foto; skrivbordsprogram som ansluter till kameran via USB är den vanliga lösningen."
+        }
+      }
+    }
+  }
+}

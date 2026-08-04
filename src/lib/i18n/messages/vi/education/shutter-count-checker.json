@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Mỗi lần máy ảnh chụp một bức bằng màn trập cơ học, một bộ đếm bên trong máy lại tăng thêm một. Con số đó — số lần chụp màn trập — giống như số km đã đi của ô tô: nó cho biết chiếc máy đã được sử dụng nhiều đến đâu. Nó quan trọng nhất khi mua bán thiết bị cũ, vì màn trập là bộ phận chuyển động được định mức cho một số lần kích hoạt hữu hạn.",
+      "deeper": "Màn trập cơ học là một cặp màn lò xo quét ngang qua cảm biến trong mỗi lần phơi sáng. Các nhà sản xuất kiểm nghiệm tuổi thọ những cơ cấu này và công bố định mức: khoảng 100.000 lần cho máy phổ thông, 150.000–200.000 cho máy bán chuyên, và 300.000–500.000 cho máy chuyên nghiệp. Định mức là con số trung bình thống kê, không phải hạn sử dụng — nhiều màn trập bền gấp mấy lần định mức, và màn trập hỏng thường là lỗi có thể sửa được (dù tốn kém). Nơi lưu con số này khác nhau tùy hãng: Nikon ghi nó, không mã hóa, vào maker notes của mọi tệp — đó là lý do công cụ này đọc được. Canon chỉ giữ trong bộ nhớ nội bộ, Sony mã hóa, còn Pentax làm rối dữ liệu. Máy mirrorless hiện đại còn khiến bức tranh phức tạp hơn: các khung hình chụp bằng màn trập điện tử hoàn toàn không làm mòn cơ cấu, nên một máy chủ yếu dùng chế độ im lặng có thể có tổng số lần phơi sáng cao hơn nhiều so với con số cơ học — và điều đó hoàn toàn bình thường.",
+      "keyFactors": {
+        "0": {
+          "label": "Hãng máy ảnh",
+          "description": "Quyết định việc con số có đọc được từ tệp hay không. Nikon lưu công khai; Canon, Sony và Pentax thì không."
+        },
+        "1": {
+          "label": "Tuổi thọ màn trập định mức",
+          "description": "Tuổi thọ trung bình đã qua kiểm nghiệm của cơ cấu màn trập. Máy phân khúc cao dùng cơ cấu bền hơn với định mức cao hơn."
+        },
+        "2": {
+          "label": "Màn trập điện tử vs cơ học",
+          "description": "Khung hình chụp bằng màn trập điện tử không gây hao mòn cơ học và thường không làm tăng bộ đếm cơ học. Người chụp nhiều ở chế độ im lặng sẽ có số đếm thấp."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Luôn kiểm tra con số từ tệp gốc chưa chỉnh sửa, lấy thẳng từ máy. Tệp xuất từ Lightroom, ứng dụng nhắn tin hay mạng xã hội thường bị xóa mất phần maker notes chứa bộ đếm."
+        },
+        "1": {
+          "text": "Khi mua máy cũ, hãy so con số với định mức: 40.000 trên máy định mức 300.000 gần như còn mới, trong khi 90.000 trên máy định mức 100.000 thì giá bán phải tính cả chi phí thay màn trập."
+        },
+        "2": {
+          "text": "Số lần chụp thấp không bảo đảm máy còn tốt — hư hại do nước, xước cảm biến và va rơi không hiện lên bộ đếm. Hãy kiểm tra cả ảnh chụp thử lẫn thân máy."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Số lần chụp màn trập",
+          "definition": "Số lần màn trập cơ học đã hoạt động trong suốt vòng đời máy. Được đọc từ metadata mà máy nhúng vào mỗi bức ảnh."
+        },
+        "ratedLife": {
+          "term": "Tuổi thọ màn trập định mức",
+          "definition": "Số lần kích hoạt trung bình trước khi màn trập hỏng, theo kiểm nghiệm của nhà sản xuất. Là con số trung bình, không phải giới hạn cứng — nhiều màn trập bền hơn hẳn."
+        },
+        "source": {
+          "term": "Nguồn của con số",
+          "definition": "Nơi con số được đọc ra: trường số lần chụp màn trập thực thụ, bộ đếm thuần cơ học trên một số máy mirrorless, hoặc số thứ tự ảnh chung chung dùng làm phương án dự phòng gần đúng."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Bạn chụp 500 bức tại một buổi hòa nhạc bằng màn trập điện tử im lặng của máy mirrorless. Việc này gây thêm bao nhiêu hao mòn cho màn trập cơ học?",
+          "hint": "Hãy nghĩ xem bộ phận nào thực sự chuyển động khi phơi sáng bằng màn trập điện tử.",
+          "successMessage": "Chính xác! Màn trập điện tử đọc cảm biến mà không di chuyển màn nào, nên 500 khung hình đó gần như không gây hao mòn cơ học — và thường cũng không làm tăng bộ đếm cơ học.",
+          "failureMessage": "Màn trập điện tử phơi sáng bằng cách đọc cảm biến theo phương thức điện tử — không màn nào chuyển động, nên chụp im lặng không làm mòn màn trập cơ học.",
+          "options": {
+            "0": { "label": "500 lần kích hoạt, như mọi bức ảnh khác" },
+            "1": { "label": "Không hề — chỉ màn trập cơ học mới được tính" },
+            "2": { "label": "Chỉ tệp RAW mới gây hao mòn" },
+            "3": { "label": "Chỉ ảnh dùng đèn flash mới gây hao mòn" }
+          }
+        },
+        "1": {
+          "scenario": "Một máy ảnh được định mức 200.000 lần kích hoạt và hiện hiển thị 195.000. Định mức đó thực sự có ý nghĩa gì với chiếc máy này?",
+          "hint": "Định mức đến từ kiểm nghiệm tuổi thọ thống kê, giống định mức giờ của bóng đèn.",
+          "successMessage": "Đúng vậy! Định mức là tuổi thọ trung bình từ kiểm nghiệm — màn trập này có thể hỏng tuần sau hoặc chạy đến 400.000. Nó là tín hiệu xác suất để định giá, không phải đồng hồ đếm ngược.",
+          "failureMessage": "Định mức màn trập là tuổi thọ trung bình đã kiểm nghiệm, không phải giới hạn cứng hay bảo hành. Nhiều màn trập bền vượt xa định mức; một số hỏng sớm hơn.",
+          "options": {
+            "0": { "label": "Màn trập sẽ ngừng hoạt động ở mốc 200.000" },
+            "1": { "label": "Đó là tuổi thọ trung bình — xác suất hỏng tăng khi tiến gần" },
+            "2": { "label": "Bảo hành kết thúc ở mốc 200.000" },
+            "3": { "label": "Pin xuống cấp sau 200.000 lần" }
+          }
+        },
+        "2": {
+          "scenario": "Bạn đang so sánh hai máy cũ cùng model: một máy 15.000 lần kích hoạt nhưng có vết gỉ sét rõ gần nắp pin, một máy 60.000 lần kích hoạt nhưng tình trạng hoàn hảo. Máy nào an toàn hơn để mua?",
+          "hint": "Bộ đếm chỉ ghi lại một loại hao mòn duy nhất.",
+          "successMessage": "Chính xác. Số lần chụp chỉ là một trong nhiều tín hiệu — gỉ sét cho thấy máy từng dính nước, thứ giết máy ảnh thường xuyên hơn hẳn màn trập mòn. Chiếc máy sạch sẽ với 60.000 lần là lựa chọn an toàn hơn.",
+          "failureMessage": "Số lần chụp chỉ đo hao mòn màn trập. Gỉ sét chỉ ra hư hại do nước, rủi ro lớn hơn nhiều so với màn trập dùng ở mức vừa phải. Hãy đánh giá cả con số lẫn tình trạng máy, đừng bao giờ chỉ nhìn con số.",
+          "options": {
+            "0": { "label": "Máy 15.000 lần — số thấp hơn luôn tốt hơn" },
+            "1": { "label": "Máy nào rẻ hơn thì mua" },
+            "2": { "label": "Máy sạch 60.000 lần — tình trạng quan trọng hơn" },
+            "3": { "label": "Không máy nào — cả hai đều quá cũ" }
+          }
+        }
+      }
+    }
+  }
+}

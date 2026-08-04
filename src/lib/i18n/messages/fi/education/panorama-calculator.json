@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Panoraama rakennetaan ottamalla useita limittyviä kuvia kameraa kiertäen ja antamalla sitten ohjelmiston yhdistää ne yhdeksi leveäksi kuvaksi. Taito on tietää, kuinka paljon kameraa käännetään kuvien välillä: liikaa, eikä ohjelmisto pysty liittämään ruutuja yhteen; liian vähän, ja tuhlaat kymmeniä kuvia. Tämä laskuri tekee laskutoimituksen objektiivisi, kennosi ja halutun limityksen perusteella.",
+      "deeper": "Jokainen ruutu kattaa kiinteän kuvakulman, jonka polttoväli ja kennokoko määräävät — 50mm objektiivi täyskennolla näkee noin 40° vaakasuunnassa. Yhdistämisohjelmat kohdistavat vierekkäiset ruudut etsimällä yhteisiä 'kontrollipisteitä' limitysalueelta, minkä vuoksi 25–35 % limitys on käytännön standardi: se antaa algoritmille riittävästi yhteisiä yksityiskohtia kasvattamatta kuvamäärää kohtuuttomasti. Käyttökelpoinen kierto kuvaa kohden on siten ruudun kuvakulma kerrottuna (1 − limitys). Pystysuunnassa kuvaaminen vaihtaa kapeamman vaakasuuntaisen askelen paljon suurempaan pystysuuntaiseen kattavuuteen, minkä vuoksi useimmat yksiriviset panoraamat kuvataan pystyssä. Todella korkeisiin kohteisiin moniriviset panoraamat soveltavat samaa limityslogiikkaa pystysuunnassa. Valmis yhdistetty tiedosto kasvaa nopeasti: jokainen lisäruutu tuo tarkkuutensa miinus limityksen, joten 7 ruudun pystypanoraama 24 MP:n kamerasta ylittää helposti 100 MP. Yksi fyysinen yksityiskohta rajoittaa kaikkea: jalustakierteen ympäri kiertäminen siirtää objektiivin optista keskipistettä ruutujen välillä, jolloin lähellä ja kaukana olevat kohteet eivät enää kohdistu (parallaksi). Kaukaisissa maisemissa tällä on harvoin merkitystä, mutta lähellä olevien etualan elementtien kanssa kameraa on kierrettävä objektiivin parallaksittoman pisteen ympäri nodaalikiskon tai panoraamapään avulla.",
+      "keyFactors": {
+        "0": {
+          "label": "Polttoväli & kenno",
+          "description": "Yhdessä ne määräävät yksittäisen ruudun kuvakulman — perusyksikön, josta panoraama kootaan. Pidemmät objektiivit merkitsevät kapeampia ruutuja ja enemmän kuvia."
+        },
+        "1": {
+          "label": "Limitys",
+          "description": "Vierekkäisten ruutujen yhteinen alue, jonka mukaan yhdistämisohjelma kohdistaa ne. 25–35 % on paras alue; yksityiskohdattomat kohteet (taivas, vesi) tarvitsevat enemmän."
+        },
+        "2": {
+          "label": "Suunta",
+          "description": "Pystyruudut kattavat vähemmän leveyttä mutta paljon enemmän korkeutta kuvaa kohden — yksirivisen panoraaman vakiovalinta, koska se jättää rajausvaraa."
+        },
+        "3": {
+          "label": "Parallaksi",
+          "description": "Lähellä ja kaukana olevien kohteiden kohdistusvirhe, joka syntyy väärän akselin ympäri kiertämisestä. Harmiton kaukaisissa kohteissa; kriittinen lähietualan kanssa."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Lukitse valotus, valkotasapaino ja tarkennus käsisäädölle ennen ensimmäistä kuvaa. Kaikki automaattinen muuttuu ruutujen välillä ja synnyttää näkyvää raidoitusta yhdistettyyn taivaaseen."
+        },
+        "1": {
+          "text": "Kuvaa objektiivi vaakatasossa ja kierrä yhdellä tasaisella liikkeellä lisäten yhden hukkakuvan kumpaankin päähän — reunakuvat vääristyvät ja rajautuvat yhdistämisessä."
+        },
+        "2": {
+          "text": "Käsivaralta kuvattaviin panoraamiin kasvata limitys 40–50 %:iin. Kiertosi ei ole tarkka, ja lisäkuvat antavat ohjelmalle varaa pelastaa lopputulos."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Limitys",
+          "definition": "Se osuus kustakin ruudusta, joka jaetaan naapurin kanssa. Yhdistämisohjelmat tarvitsevat tätä yhteistä yksityiskohtaa ruutujen kohdistamiseen — 25–35 % on tyypillistä."
+        },
+        "orientation": {
+          "term": "Kameran suunta",
+          "definition": "Pystysuuntainen rajaus on panoraamien vakio: jokainen ruutu tuo enemmän korkeutta, mikä jättää tilaa horisontin suoristukselle ja rajaukselle."
+        },
+        "rotateBetween": {
+          "term": "Kierto kuvien välillä",
+          "definition": "Kuinka monta astetta kameraa käännetään kunkin ruudun jälkeen: ruudun kuvakulma kerrottuna (1 − limitys). Panoraamapäissä on napsahduspysäytykset juuri tätä varten."
+        },
+        "rows": {
+          "term": "Rivit",
+          "definition": "Moniriviset panoraamat pinoavat vaakasuuntaisia pyyhkäisyjä päällekkäin soveltaen samaa limityssääntöä rivien välillä korkeiden kohteiden kattamiseksi."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Kuvaat panoraamaa vuoristosta. Kuinka paljon vierekkäisten ruutujen tulisi limittyä luotettavaa yhdistämistä varten?",
+          "hint": "Ohjelma tarvitsee yhteisiä yksityiskohtia, mutta jokainen lisäkuva maksaa aikaa.",
+          "successMessage": "Oikein! Noin 30 % limitys antaa yhdistämisohjelmalle runsaasti kontrollipisteitä tuhlaamatta kuvia — vakio-ohje useimpiin kohteisiin.",
+          "failureMessage": "25–35 % on käytännön standardi. Alle ~15 %:lla ohjelmilla on vaikeuksia löytää kontrollipisteitä; 80 % kolminkertaistaa kuvamäärän ilman hyötyä.",
+          "options": {
+            "0": { "label": "5 %" },
+            "1": { "label": "15 %" },
+            "2": { "label": "30 %" },
+            "3": { "label": "80 %" }
+          }
+        },
+        "1": {
+          "scenario": "Haluat yksirivisen panoraaman, jossa on tarpeeksi pystysuuntaista tilaa horisontin suoristamiseen ja vapaaseen rajaamiseen jälkikäteen. Missä suunnassa kamera kannattaa pitää?",
+          "hint": "Kummin päin jokainen ruutu antaa enemmän korkeutta?",
+          "successMessage": "Oikein! Pystysuunta tallentaa huomattavasti enemmän pystysuuntaista kuvakulmaa ruutua kohden — vaakasuunnassa tarvittavat lisäkuvat ovat halpa hinta rajausvapaudesta.",
+          "failureMessage": "Pysty on yksirivisen panoraaman vakio: jokainen ruutu on korkeampi, joten yhdistetty tulos kestää horisontin suoristuksen ja rajauksen.",
+          "options": {
+            "0": { "label": "Vaaka" },
+            "1": { "label": "Pysty" },
+            "2": { "label": "Neliörajaustila" },
+            "3": { "label": "45° kallistettuna" }
+          }
+        },
+        "2": {
+          "scenario": "50mm objektiivi täyskennolla vaakasuunnassa (noin 40° vaakakuvakulma) ja 30 % limitys — suunnilleen kuinka monta ruutua 180° panoraama vaatii?",
+          "hint": "Jokainen kuva vie kattavuutta eteenpäin 40° × 0,7 = 28°.",
+          "successMessage": "Oikein! Ensimmäinen ruutu kattaa 40°, ja jokainen lisäruutu tuo ~28°. Jäljellä olevien 140°:n kattaminen vaatii 5 kuvaa lisää, eli yhteensä 7 ruutua (pienellä varalla).",
+          "failureMessage": "Jokainen ruutu ensimmäisen jälkeen tuo 40° × (1 − 0,3) = 28° uutta kattavuutta. (180 − 40) / 28 = 5 kuvaa lisää, eli yhteensä 7.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Panoraamassasi on aita metrin päässä kamerasta ja vuoret taustalla. Yhdistetyssä tuloksessa aita haamuilee ja kohdistuu väärin ruutujen välillä. Minkä pisteen ympäri kameran tulisi kiertyä ongelman korjaamiseksi?",
+          "hint": "Ongelma on parallaksi — lähellä ja kaukana olevat kohteet siirtyvät toisiinsa nähden.",
+          "successMessage": "Juuri niin! Kierto objektiivin parallaksittoman pisteen (nodaalipisteen) ympäri pitää lähellä ja kaukana olevat kohteet linjassa ruutujen välillä. Panoraamapäät ja nodaalikiskot ovat olemassa juuri tätä varten.",
+          "failureMessage": "Kameran on kierryttävä objektiivin parallaksittoman pisteen (usein nodaalipisteeksi kutsutun) ympäri. Jalustakierteen ympäri kiertäminen siirtää optista keskipistettä ja aiheuttaa näkemäsi parallaksin.",
+          "options": {
+            "0": { "label": "Objektiivin etulinssi" },
+            "1": { "label": "Objektiivin parallaksiton piste" },
+            "2": { "label": "Kennon taso" },
+            "3": { "label": "Jalustakierre" }
+          }
+        }
+      }
+    }
+  }
+}

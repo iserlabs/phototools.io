@@ -65,8 +65,28 @@
       "description": "Ikumpara ang megapixels, i-visualize ang print sizes, at tingnan ang file sizes sa iba't ibang aspect ratio at DPI"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
+      "name": "Analyzer ng Lightroom Catalog",
       "description": "Suriin ang iyong Lightroom Classic catalog — gear, focal length, aperture, ratings, at marami pa — 100% sa iyong browser"
+    },
+    "shutter-count-checker": {
+      "name": "Tagasuri ng Shutter Count",
+      "description": "I-check ang shutter count ng camera mo mula sa isang photo — 100% sa browser mo"
+    },
+    "camera-health-checker": {
+      "name": "Tagasuri ng Camera Health",
+      "description": "Suriin ang edad, firmware, serial, at shutter life ng camera body mula sa iisang photo"
+    },
+    "panorama-calculator": {
+      "name": "Kalkulador ng Panorama",
+      "description": "Planuhin ang mga panorama shot — bilang ng frame, overlap, at pag-ikot sa pagitan ng mga shot"
+    },
+    "diffraction-calculator": {
+      "name": "Kalkulador ng Diffraction Limit",
+      "description": "Hanapin ang aperture kung saan nagsisimulang palambutin ng diffraction ang mga imahe mo"
+    },
+    "photography-cheat-sheet": {
+      "name": "Photography Cheat Sheet",
+      "description": "Mga cheat sheet ng camera setting para sa mga karaniwang shooting scenario — nada-download at napi-print"
     }
   }
 }

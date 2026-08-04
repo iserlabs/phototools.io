@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom-kataloganalysator",
       "description": "Analyser Lightroom Classic-katalogen din — utstyr, brennvidde, blendere, vurderinger og mer — 100 % i nettleseren din"
+    },
+    "shutter-count-checker": {
+      "name": "Lukkertelling-sjekker",
+      "description": "Sjekk kameraets lukkertelling ut fra et bilde — 100 % i nettleseren din"
+    },
+    "camera-health-checker": {
+      "name": "Kamerahelse-sjekker",
+      "description": "Undersøk alder, fastvare, serienummer og lukkerlevetid for et kamerahus ut fra ett enkelt bilde"
+    },
+    "panorama-calculator": {
+      "name": "Panoramakalkulator",
+      "description": "Planlegg panoramabilder — antall bilder, overlapp og rotasjon mellom bildene"
+    },
+    "diffraction-calculator": {
+      "name": "Diffraksjonsgrense-kalkulator",
+      "description": "Finn blenderen der diffraksjon begynner å mykne opp bildene dine"
+    },
+    "photography-cheat-sheet": {
+      "name": "Foto-jukselapp",
+      "description": "Jukselapper med kamerainnstillinger for vanlige fotosituasjoner — til nedlasting og utskrift"
     }
   }
 }

@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Varje gång kameran tar ett foto med sin mekaniska slutare tickar en räknare inuti kameran upp ett steg. Den siffran — slutarräkningen — är som mätarställningen på en bil: den visar hur flitigt en kamera har använts. Den betyder mest vid köp och försäljning av begagnad utrustning, eftersom slutare är rörliga delar klassade för ett begränsat antal utlösningar.",
+      "deeper": "En mekanisk slutare är ett par fjäderbelastade ridåer som fysiskt sveper över sensorn vid varje exponering. Tillverkarna livslängdstestar mekanismerna och publicerar klassningar: ungefär 100 000 utlösningar för instegshus, 150 000–200 000 för entusiastmodeller och 300 000–500 000 för professionella. Klassningen är ett statistiskt genomsnitt, inte ett utgångsdatum — många slutare håller flera gånger sin klassning, och en trasig slutare är oftast ett reparerbart (om än dyrt) fel. Var räkningen lagras varierar mellan märkena: Nikon skriver in den, okrypterad, i varje fils maker notes, och det är därför det här verktyget kan läsa den. Canon behåller den bara i internminnet, Sony krypterar den och Pentax döljer den. Moderna spegellösa kameror komplicerar bilden ytterligare: bilder tagna med elektronisk slutare sliter inte alls på mekanismen, så ett hus som mest använts i tyst läge kan ha långt fler exponeringar totalt än den mekaniska räkningen antyder — och det är helt i sin ordning.",
+      "keyFactors": {
+        "0": {
+          "label": "Kameramärke",
+          "description": "Avgör om räkningen alls går att läsa från filer. Nikon lagrar den öppet; Canon, Sony och Pentax gör det inte."
+        },
+        "1": {
+          "label": "Angiven slutarlivslängd",
+          "description": "Tillverkarens testade genomsnittliga livslängd för slutarmekanismen. Hus i högre klasser använder tåligare mekanismer med högre klassning."
+        },
+        "2": {
+          "label": "Elektronisk vs mekanisk slutare",
+          "description": "Bilder med elektronisk slutare orsakar noll mekaniskt slitage och räknas oftast inte upp i den mekaniska räknaren. Den som mest fotograferar i tyst läge visar låga räkningar."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Kontrollera alltid räkningen från en oredigerad fil direkt från kameran. Exporter från Lightroom, meddelandeappar eller sociala medier tar oftast bort de maker notes som bär räknaren."
+        },
+        "1": {
+          "text": "Väg räkningen mot klassningen när du köper begagnat: 40 000 på ett hus klassat för 300 000 är knappt inkört, medan 90 000 på ett hus klassat för 100 000 bör prissättas med ett slutarbyte i åtanke."
+        },
+        "2": {
+          "text": "En låg slutarräkning garanterar ingen frisk kamera — vattenskador, sensorrepor och tappningar syns inte i räknaren. Granska testfoton och själva huset också."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Slutarräkning",
+          "definition": "Antalet gånger den mekaniska slutaren har utlösts under kamerans livstid. Läses från metadatan som kameran bäddar in i varje foto."
+        },
+        "ratedLife": {
+          "term": "Angiven slutarlivslängd",
+          "definition": "Tillverkarens testade genomsnittliga antal utlösningar innan slutaren går sönder. Ett genomsnitt, inte en hård gräns — många slutare lever långt längre."
+        },
+        "source": {
+          "term": "Räkningens källa",
+          "definition": "Var siffran lästes ifrån: det riktiga slutarräkningsfältet, den enbart mekaniska räknaren på vissa spegellösa hus, eller ett generiskt bildnummer som grov reserv."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du tar 500 bilder på en konsert med din spegellösa kameras tysta elektroniska slutare. Hur mycket mekaniskt slutarslitage gav det?",
+          "hint": "Fundera på vad som fysiskt rör sig under en exponering med elektronisk slutare.",
+          "successMessage": "Rätt! Den elektroniska slutaren läser av sensorn utan att några ridåer rör sig, så de 500 bilderna orsakade i princip inget mekaniskt slitage — och räknas normalt inte upp i den mekaniska räknaren.",
+          "failureMessage": "Den elektroniska slutaren exponerar genom att läsa av sensorn elektroniskt — inga ridåer rör sig, så tyst fotografering ger inget mekaniskt slutarslitage.",
+          "options": {
+            "0": { "label": "500 utlösningar, som vilka foton som helst" },
+            "1": { "label": "Inget — bara mekanisk slutaranvändning räknas" },
+            "2": { "label": "Bara RAW-filer ger slitage" },
+            "3": { "label": "Bara blixtfoton ger slitage" }
+          }
+        },
+        "1": {
+          "scenario": "En kamera är klassad för 200 000 utlösningar och visar just nu 195 000. Vad betyder klassningen egentligen för det här huset?",
+          "hint": "Klassningar kommer från statistisk livslängdstestning, som timklassningar för glödlampor.",
+          "successMessage": "Rätt! Klassningen är den genomsnittliga livslängden från testning — den här slutaren kan gå sönder nästa vecka eller hålla till 400 000. Det är en sannolikhetssignal för prissättning, inte en nedräkningsklocka.",
+          "failureMessage": "En slutarklassning är den testade genomsnittliga livslängden, inte en hård gräns eller garanti. Många slutare håller långt längre; några går sönder tidigare.",
+          "options": {
+            "0": { "label": "Slutaren stannar vid 200 000" },
+            "1": { "label": "Det är den genomsnittliga livslängden — risken för fel ökar i närheten av den" },
+            "2": { "label": "Garantin upphör vid 200 000" },
+            "3": { "label": "Batteritiden försämras efter 200 000" }
+          }
+        },
+        "2": {
+          "scenario": "Du jämför två begagnade kameror av samma modell: en med 15 000 utlösningar och synlig korrosion vid batteriluckan, en med 60 000 utlösningar i fläckfritt skick. Vilken är det tryggare köpet?",
+          "hint": "Räknaren registrerar bara en sorts slitage.",
+          "successMessage": "Precis. Slutarräkningen är en signal bland flera — korrosion tyder på fuktexponering, som dödar kameror betydligt oftare än slitna slutare. Det rena huset med 60 000 är det tryggare köpet.",
+          "failureMessage": "Slutarräkningen mäter bara slutarslitage. Korrosion pekar mot vattenskada, vilket är mycket mer riskabelt än en måttligt använd slutare. Bedöm räkning plus skick, aldrig räkningen ensam.",
+          "options": {
+            "0": { "label": "Huset med 15 000 — lägre är alltid bättre" },
+            "1": { "label": "Det som är billigast" },
+            "2": { "label": "Det rena huset med 60 000 — skicket betyder mer" },
+            "3": { "label": "Ingetdera — båda är för gamla" }
+          }
+        }
+      }
+    }
+  }
+}

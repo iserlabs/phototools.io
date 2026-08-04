@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Foto hierher ziehen oder klicken zum Auswählen (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Welche Marken speichern die Auslösungszahl?",
+      "status": {
+        "supported": "Auslesbar",
+        "partial": "Teilweise",
+        "unsupported": "Nicht in Dateien"
+      },
+      "brands": {
+        "nikon": "Nikon schreibt die Auslösungszahl unverschlüsselt in die Metadaten jedes Fotos. Verwende für beste Ergebnisse eine unbearbeitete Originaldatei.",
+        "canon": "Canon schreibt die Auslösungszahl nie in Bilddateien — sie wird nur in der Kamera selbst gespeichert und von Service-Tools oder USB-Programmen ausgelesen.",
+        "sony": "Sony speichert die Auslösungszahl in einem verschlüsselten Bereich der Metadaten, der sich im Browser nicht entschlüsseln lässt. Spezielle Desktop-Programme können sie per USB auslesen.",
+        "fujifilm": "Fujifilm-Gehäuse zeichnen keine echte Auslösungszahl auf, manche schreiben aber einen Bildzähler, der eine grobe Untergrenze liefert.",
+        "pentax": "Pentax verschleiert das Feld mit der Auslösungszahl durch eine Chiffre, sodass es sich nicht zuverlässig aus Dateien auslesen lässt.",
+        "olympus": "OM System / Olympus-Gehäuse führen die vollständige Auslösungszahl in einem internen Servicemenü; Dateien enthalten manchmal einen Bildzähler, der auf die Nutzung hindeutet.",
+        "panasonic": "Panasonic schreibt keine Auslösungszahl in Dateien. Das Servicemenü der Kamera zeigt sie an.",
+        "leica": "Leica-Gehäuse speichern in der Regel keine Auslösungszahl in Bilddateien."
+      },
+      "countLabel": "Verschlussauslösungen",
+      "source": {
+        "shutterCount": "Aus den Auslösungszahl-Metadaten der Kamera gelesen — das ist der tatsächliche mechanische Auslösungszähler.",
+        "mechanicalShutterCount": "Vom mechanischen Verschlusszähler gelesen — Aufnahmen mit elektronischem Verschluss sind nicht enthalten.",
+        "imageNumber": "Aus der Bildnummer der Datei geschätzt. Das ist eine grobe Untergrenze, keine exakte Auslösungszahl — der Zähler kann zurückgesetzt werden oder überlaufen."
+      },
+      "ratedLife": "Ausgelegte Verschlusslebensdauer",
+      "ratings": {
+        "entry": "Einsteigerklasse",
+        "enthusiast": "Enthusiast",
+        "advanced": "Fortgeschritten",
+        "pro": "Professionell",
+        "flagship": "Flaggschiff"
+      },
+      "lifeUsed": "{percent}% der ausgelegten Lebensdauer verbraucht",
+      "verdict": {
+        "low": "Kaum benutzt",
+        "moderate": "Mäßig benutzt",
+        "high": "Stark benutzt",
+        "beyond": "Über der Auslegung"
+      },
+      "noCountTitle": "Keine Auslösungszahl in dieser Datei",
+      "noCountGeneric": "Diese Datei enthält keine auslesbare Auslösungszahl. Versuche es mit einem unbearbeiteten Originalfoto direkt aus der Kamera — Exporte aus Bearbeitungsprogrammen entfernen oft die Hersteller-Metadaten.",
+      "errorRead": "Diese Datei konnte nicht gelesen werden. Versuche es mit einer unbearbeiteten JPEG- oder RAW-Datei direkt aus der Kamera.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Was ist die Auslösungszahl?",
+          "answer": "Die Auslösungszahl gibt an, wie oft der mechanische Verschluss einer Kamera ausgelöst hat — das Kamera-Pendant zum Kilometerstand eines Autos. Sie ist der meistgeprüfte Verschleißindikator beim Kauf oder Verkauf einer gebrauchten Kamera, denn Verschlüsse sind auf eine begrenzte Zahl von Auslösungen ausgelegt."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Wie viele Auslösungen sind zu viele?",
+          "answer": "Das hängt von der Kameraklasse ab. Verschlüsse in Einsteigerkameras sind auf rund 100.000 Auslösungen ausgelegt, Enthusiasten-Gehäuse auf 150.000–200.000 und Profi-Gehäuse auf 300.000–500.000. Die Auslegung ist eine durchschnittliche Lebensdauer, keine harte Grenze — viele Verschlüsse halten deutlich länger, und eine niedrige Zahl bei einem schlecht behandelten Gehäuse kann trotzdem Probleme bedeuten."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Warum kann ich die Auslösungszahl bei meinem Canon- oder Sony-Foto nicht prüfen?",
+          "answer": "Canon schreibt die Auslösungszahl überhaupt nicht in Bilddateien — sie existiert nur im internen Speicher der Kamera. Sony schreibt sie zwar, verschlüsselt diesen Bereich der Metadaten aber. In beiden Fällen kann ein Browser-Tool sie nicht aus einem Foto auslesen; Desktop-Programme, die sich per USB mit der Kamera verbinden, sind der übliche Ausweg."
+        }
+      }
+    }
+  }
+}

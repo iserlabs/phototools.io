@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom Katalóguselemző",
       "description": "Elemezze a Lightroom Classic katalógusát — felszerelés, gyújtótávolság, rekeszek, értékelések és még több — 100% a böngészőjében"
+    },
+    "shutter-count-checker": {
+      "name": "Zárszámláló-ellenőrző",
+      "description": "Nézd meg a kamerád zárszámlálóját egyetlen fotóból — 100%-ban a böngésződben"
+    },
+    "camera-health-checker": {
+      "name": "Kameraállapot-ellenőrző",
+      "description": "Nézd meg a váz korát, firmware-ét, sorozatszámát és zárélettartamát egyetlen fotóból"
+    },
+    "panorama-calculator": {
+      "name": "Panorámakalkulátor",
+      "description": "Tervezd meg a panorámát — képkockaszám, átfedés és elfordulás felvételek között"
+    },
+    "diffraction-calculator": {
+      "name": "Diffrakciós határ kalkulátor",
+      "description": "Találd meg azt a rekeszt, ahol a fényelhajlás lágyítani kezdi a képeidet"
+    },
+    "photography-cheat-sheet": {
+      "name": "Fotós puska",
+      "description": "Kamerabeállítási puskák gyakori fotózási helyzetekhez — letölthetők és nyomtathatók"
     }
   }
 }

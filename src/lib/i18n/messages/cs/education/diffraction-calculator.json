@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Zaclonění zvětšuje hloubku ostrosti — jenže od určitého bodu začne celý snímek naopak změkčovat. To je difrakce: světelné vlny se ohýbají, když se protlačí malým otvorem. Tahle kalkulačka ukáže, kde přesně ten bod pro tvůj fotoaparát leží, takže víš, kam až můžeš zaclonit, než začneš platit ztrátou ostrosti.",
+      "deeper": "Když světlo projde clonou, každý bod scény nedopadne na snímač jako bod, ale jako drobný difrakční obrazec — jasné jádro zvané Airyho disk obklopené slabými prstenci. Průměr disku roste přímo úměrně clonovému číslu: zhruba 2,44 × vlnová délka × N, což při f/8 v zeleném světle dělá už ~10,7 µm. Jestli to vadí, závisí na tvých pixelech. Plnoformátový snímač s 24 MP má pixely kolem 6 µm, snímač s 61 MP kolem 3,8 µm. Jakmile Airyho disk pohodlně přeroste pixel, detaily, které by snímač jinak rozlišil, se rozmažou přes sousední pixely — a žádná kvalita objektivu je nevrátí. Proto stejné f/11, které na starém 12MP těle vypadá v pořádku, viditelně změkčí soubory z moderního vysokorozlišujícího snímače, a proto kompakty s drobnými pixely málokdy nabízejí clony za f/8. Praktické pravidlo použité tady — limit ≈ rozteč pixelů / 0,67 — označuje, kde je změkčení měřitelné, ne kde se snímek rozpadne: zaclonit o jeden stupeň za limit bývá za hloubku ostrosti výhodný obchod. Od dvou stupňů dál už dalšího zaclonění porazí focus stacking.",
+      "keyFactors": {
+        "0": {
+          "label": "Clona (clonové číslo)",
+          "description": "Jediné, čím difrakci přímo ovlivníš: průměr Airyho disku roste lineárně s clonovým číslem. f/16 rozprostře světlo dvakrát tak široko jako f/8."
+        },
+        "1": {
+          "label": "Rozteč pixelů",
+          "description": "Fyzická velikost jednoho pixelu, daná dohromady velikostí snímače a počtem megapixelů. Menší pixely rozliší víc detailů — a difrakci odhalí dřív."
+        },
+        "2": {
+          "label": "Velikost výstupu",
+          "description": "Difrakce viditelná při 100 % na monitoru může být v exportu na web nebo na středně velkém tisku neznatelná. Ostrost posuzuj ve velikosti, ve které snímek opravdu použiješ."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Najdi si sladký bod svého objektivu: nafoť stejnou detailní scénu na každém celém clonovém stupni a porovnej při 100 %. Většina objektivů vrcholí dva až tři stupně od plné světelnosti, těsně předtím, než převezme vládu difrakce."
+        },
+        "1": {
+          "text": "U krajin s velkou hloubkou ostrosti na vysokorozlišujícím těle zkus nejdřív hyperfokální vzdálenost na f/8, než sáhneš po f/16 — přesné umístění zaostření často přinese víc ostrosti než menší clona."
+        },
+        "2": {
+          "text": "V makru roste efektivní clona s měřítkem zvětšení (f/11 při 1:1 se chová jako f/22), takže difrakce udeří mnohem dřív, než napovídá kroužek clony. Ostrá cesta ven je focus stacking při střední cloně."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Rozteč pixelů",
+          "definition": "Šířka jednoho pixelu na snímači v mikrometrech. Spočítá se jako šířka snímače dělená počtem pixelů na šířku — plný formát s 24 MP ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Airyho disk",
+          "definition": "Difrakční obrazec, který světelný bod vytvoří po průchodu clonou: jasné jádro se slabými prstenci. Jeho průměr ≈ 2,44 × vlnová délka × clonové číslo."
+        },
+        "diffractionLimit": {
+          "term": "Difrakční limit",
+          "definition": "Clonové číslo, při kterém Airyho disk přeroste pixel a ostrost na úrovni pixelů začne klesat — přibližně rozteč pixelů (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Zacloníš z f/8 na f/22 kvůli maximální hloubce ostrosti, jenže jemné detaily jsou najednou měkčí všude — i v rovině zaostření. Co se děje?",
+          "hint": "Je to fyzika, ne vada objektivu.",
+          "successMessage": "Správně! Světlo se při průchodu malou clonou ohýbá (difraktuje) a každý bod roztáhne do disku většího než pixel. Při f/22 zasáhne změkčení celý snímek včetně roviny zaostření.",
+          "failureMessage": "Tohle je difrakce: světelné vlny se ohýbají kolem lamel clony a každý světelný bod rozprostřou do rozmazaného disku. Postihuje celý snímek stejně, bez ohledu na kvalitu objektivu.",
+          "options": {
+            "0": { "label": "Objektiv je špatně vyrobený" },
+            "1": { "label": "Světlo se při průchodu malým otvorem ohýbá" },
+            "2": { "label": "Snímač se při malých clonách přehřívá" },
+            "3": { "label": "Roste šum z ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Přejdeš z plnoformátového fotoaparátu s 24 MP na 61MP. Co se stane s clonou, u které se difrakce projeví?",
+          "hint": "Víc megapixelů na stejné ploše snímače znamená menší pixely.",
+          "successMessage": "Přesně tak! Pixely 61MP snímače (~3,8 µm) přerostou Airyho disk dřív, takže difrakční limit klesne asi z f/9 na zhruba f/5.6. Vysokorozlišující snímače mají užší sladký bod clony.",
+          "failureMessage": "Menší pixely odhalí difrakci dřív. Difrakční limit 61MP snímače je kolem f/5.6 oproti f/9 u 24MP snímače — limit se posune k otevřenější cloně.",
+          "options": {
+            "0": { "label": "Posune se k zavřenější cloně (vyšší clonové číslo)" },
+            "1": { "label": "Posune se k otevřenější cloně (nižší clonové číslo)" },
+            "2": { "label": "Nezmění se" },
+            "3": { "label": "S vyšším rozlišením difrakce zmizí" }
+          }
+        },
+        "2": {
+          "scenario": "Fotíš krajinu plnoformátovým fotoaparátem s 45 MP a chceš maximální celkovou ostrost při solidní hloubce ostrosti. Který rozsah clon je nejlepší výchozí bod?",
+          "hint": "Vyvažuj vady objektivu (špatné naplno otevřeně) proti difrakci (špatná zacloněně).",
+          "successMessage": "Správně! f/8–f/11 leží přesně kolem difrakčního limitu pixelů ~4,4 µm a přitom dá slušnou hloubku ostrosti — klasický sladký bod krajinářů na vysokorozlišujícím plném formátu.",
+          "failureMessage": "f/8–f/11 vyvažuje hloubku ostrosti proti difrakci u plnoformátového snímače s 45 MP. f/22 viditelně změkčí jemné detaily a naplno otevřená clona nemá dost hloubky ostrosti.",
+          "options": {
+            "0": { "label": "Vždy f/22 pro maximální hloubku" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Naplno otevřená clona" },
+            "3": { "label": "Záleží jen na ISO" }
+          }
+        }
+      }
+    }
+  }
+}

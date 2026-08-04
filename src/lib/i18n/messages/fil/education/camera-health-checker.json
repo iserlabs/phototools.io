@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Bawat photo na sine-save ng camera mo ay may dalang nakatagong ulat tungkol sa mismong camera: ang eksaktong model, ang serial number nito, ang firmware na tumatakbo rito, ang lens na nakakabit, at minsan pati kung ilang photo na ang nakuha nito. Binabasa ng tool na ito ang ulat na iyon mula sa iisang photo — nang buo sa browser mo — para masuri mo ang camera body tulad ng pagbasa ng mekaniko sa service history ng kotse.",
+      "deeper": "Nagmumula ang data sa EXIF metadata, isang standard na block na ini-embed ng bawat digital camera sa mga file nito. Kabilang sa mga standard field ang Make, Model, BodySerialNumber, Software (na para sa karamihan ng camera ay nag-uulat ng firmware version), LensModel, at ang timestamp ng kuha. Pinapalawak ito ng mga manufacturer gamit ang mga proprietary na 'maker note' — kasama sa mga note ng Nikon ang shutter count, kaya nababasa ang shutter life para sa ilang brand at hindi sa iba. Ang edad ng body ay tinatantiya sa pamamagitan ng pagtutugma ng pangalan ng model sa database ng mga taon ng paglabas: ang camera na inilabas noong 2018 ay ilang taon na, anuman ang sabihin ng nagbebenta. Dalawang paalala ang mahalaga. Una, sa mga orihinal na file lang nananatili ang metadata — karamihan ng mga editing app, messaging app, at social platform ay nagtatanggal o nagre-rewrite nito. Ikalawa, puwedeng i-edit ang EXIF gamit ang mga libreng tool, kaya ituring itong matibay na ebidensya, hindi patunay: ang pagtutugma ng serial sa file, ng serial sa body, at ng resibo ng nagbebenta ang talagang nagsasara ng kaso.",
+      "keyFactors": {
+        "0": {
+          "label": "Mga Orihinal na File Lang",
+          "description": "Nananatili ang metadata sa mga file na diretso mula sa camera. Ang mga export at muling pag-save ay madalas nagtatanggal ng mga serial, maker note, at impormasyon ng firmware."
+        },
+        "1": {
+          "label": "Serial Number",
+          "description": "Iniuugnay ang file sa isang pisikal na body. I-cross-check ito sa mismong body, sa resibo, at sa mga registry ng ninakaw na gear bago bumili ng segunda-mano."
+        },
+        "2": {
+          "label": "Taon ng Paglabas vs Kondisyon",
+          "description": "Ang edad ang nagtatakda ng inaasahan (sensor tech, mga nawawalang feature, natitirang suporta), pero ang shutter wear at pisikal na kondisyon ang nagsasabi kung gaano kahirap ang mga taong iyon."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Bibili ng segunda-mano? Hingin sa nagbebenta ang unedited na photo na diretso mula sa camera. Bine-verify nito ang model at serial, ipinapakita ang kasalukuyang firmware, at — sa mga suportadong brand — ang shutter count, lahat sa iisang file."
+        },
+        "1": {
+          "text": "I-check ang firmware laban sa pinakabagong release ng manufacturer. Normal ang camera na hindi updated; ang camera na hindi na maa-update ay baka mapag-iwanan sa mga pagpapahusay sa autofocus at compatibility."
+        },
+        "2": {
+          "text": "Ang petsa ng kuha sa sample photo ng nagbebenta ang nagsasabi kung kailan huling talagang ginamit ang camera. Ang 'bahagya lang nagamit' na body na ang pinakabagong file ay apat na taon na ang tanda ay matagal nang nakatengga — i-check ang barado o dumikit na shutter at namamagang baterya."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Serial Number ng Body",
+          "definition": "Ang natatanging identifier na itinatalaga ng manufacturer sa bawat camera body, naka-embed sa EXIF ng bawat photo. Kapaki-pakinabang para sa mga warranty check at registry ng ninakaw na gear."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "Ang internal software ng camera, naka-report sa EXIF Software field. Nagpapadala ang mga manufacturer ng mga pagpapahusay sa autofocus, compatibility, at feature sa pamamagitan ng mga firmware update."
+        },
+        "bodyAge": {
+          "term": "Edad ng Body",
+          "definition": "Ang mga taon mula nang ilabas ang model, tinantiya mula sa database ng mga release date. Isang upper bound sa kung gaano ka-moderno ang teknolohiya ng camera — hindi kung gaano na kagastado ang partikular na body na ito."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Bumibili ka ng segunda-manong camera mula sa isang online listing. Nagpadala ang nagbebenta ng orihinal na photo mula sa camera. Ano ang pinakamahalagang gawin sa serial number sa metadata nito?",
+          "hint": "Iniuugnay ng serial ang partikular na body na ito sa labas ng mundo.",
+          "successMessage": "Tama! Ang pag-cross-check ng serial sa mga registry ng ninakaw na gear (at sa resibo ng nagbebenta) ay nagpoprotekta sa iyo mula sa pagbili ng ninakaw na kagamitan — isang check na tanging serial number lang ang makakagawa.",
+          "failureMessage": "Ang natatanging halaga ng serial number ay pagkakakilanlan: i-check ito sa mga registry ng ninakaw na gear at sa mga papeles ng nagbebenta. Wala itong sinasabi tungkol sa kalidad ng imahe o compatibility.",
+          "options": {
+            "0": { "label": "I-check ito sa mga registry ng ninakaw na gear" },
+            "1": { "label": "Tantiyahin ang kalidad ng photo" },
+            "2": { "label": "I-verify ang compatibility ng lens" },
+            "3": { "label": "Hanapin ang ISO range" }
+          }
+        },
+        "1": {
+          "scenario": "Ang segunda-manong camera na iniisip mong bilhin ay tumatakbo sa firmware 1.0 mula nang ilabas ito apat na taon na ang nakararaan, habang 3.1 na ang kasalukuyang version ng manufacturer. Ano ang karaniwang naidudulot ng pag-update?",
+          "hint": "Isipin kung ano ang kayang baguhin ng mga manufacturer sa software pagkatapos ng launch.",
+          "successMessage": "Tama! Nagdadala ang mga firmware update ng tunay na pagpapahusay — mas magagaling na autofocus algorithm, suporta sa mga bagong lens, mga bug fix, minsan pati buong feature. Hindi kailanman nagbabago ang mga hardware spec tulad ng sensor at megapixels.",
+          "failureMessage": "Ang firmware ay software: pinapahusay ng mga update ang autofocus, nagdadagdag ng suporta sa lens, at nag-aayos ng mga bug. Hindi nito mababago ang hardware tulad ng sensor o ng bilang ng megapixel.",
+          "options": {
+            "0": { "label": "Mga bagong feature at pagpapahusay sa autofocus" },
+            "1": { "label": "Mas maraming megapixel" },
+            "2": { "label": "Mas malaking sensor area" },
+            "3": { "label": "Wala — pang-kosmetiko lang ang firmware" }
+          }
+        },
+        "2": {
+          "scenario": "Dalawang nagbebenta ang nag-aalok ng parehong model: isang 7 taong gulang na body at isang 4 na taong gulang na body sa magkatulad na presyo. Ano ang tamang paraan ng paggamit sa edad ng body sa desisyon mo?",
+          "hint": "Isang input lang ang edad — ano ang hindi nito sinasabi?",
+          "successMessage": "Eksakto. Ang edad ang nagtatakda ng saklaw ng teknolohiya at natitirang buhay ng suporta, pero ang mga mapagpasyang salik ay kung paano ginamit ang body: shutter count, pisikal na kondisyon, at service history.",
+          "failureMessage": "Hindi sapat ang edad ng body para magdesisyon — ang maingat na ginamit na mas lumang body ay puwedeng manalo sa binugbog na mas bagong body. Pagsamahin ang edad sa shutter count at pisikal na kondisyon.",
+          "options": {
+            "0": { "label": "Laging bilhin ang mas bago" },
+            "1": { "label": "Timbangin ang edad kasama ang shutter count at kondisyon" },
+            "2": { "label": "Balewalain ang edad — megapixels lang ang mahalaga" },
+            "3": { "label": "Pumili base lang sa reputasyon ng brand" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Orientasi kamera",
+      "portrait": "Potret",
+      "landscape": "Landskap",
+      "overlap": "Pertindihan: {percent}%",
+      "targetWidth": "Lebar panorama",
+      "rows": "Baris",
+      "megapixels": "Resolusi kamera: {mp} MP",
+      "fanLabel": "Rajah pandangan atas {frames} bingkai bertindih",
+      "totalShots": "Jumlah tangkapan",
+      "perRow": "Bingkai × baris",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Putaran antara tangkapan",
+      "coverage": "Liputan (M × T)",
+      "frameFov": "Medan pandangan satu bingkai",
+      "stitchedSize": "Saiz selepas cantuman",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Berapa banyak pertindihan yang diperlukan untuk tangkapan panorama?",
+          "answer": "25–35% ialah julat terbaik untuk kebanyakan pemandangan. Perisian cantuman memerlukan perincian yang dikongsi antara bingkai bersebelahan untuk mencari titik kawalan; di bawah 15% ia mungkin gagal menjajarkan bingkai, manakala melebihi 50% anda mengambil banyak bingkai tambahan untuk manfaat yang kecil. Gunakan pertindihan lebih besar untuk pemandangan dengan sedikit ciri tersendiri, seperti langit cerah atau air yang tenang."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Mengapa panorama diambil dalam orientasi potret (menegak)?",
+          "answer": "Orientasi potret menangkap lebih banyak medan pandangan menegak setiap bingkai, jadi panorama akhir yang dicantum lebih tinggi dan meninggalkan ruang untuk pemangkasan dan pembetulan ufuk. Kosnya beberapa bingkai tambahan secara mendatar — biasanya pertukaran yang berbaloi untuk fleksibiliti dan resolusi tambahan itu."
+        },
+        "what-is-nodal-point": {
+          "question": "Apakah titik tanpa-paralaks (titik nod)?",
+          "answer": "Ia titik di dalam lensa yang membolehkan kamera berputar di sekelilingnya tanpa objek dekat dan jauh beranjak relatif antara satu sama lain dari bingkai ke bingkai. Berputar pada soket tripod sebaliknya menyebabkan ralat paralaks yang menyukarkan cantuman, terutamanya dengan objek latar depan yang dekat. Kepala tripod panorama membolehkan anda meletakkan titik tanpa-paralaks lensa tepat di atas paksi putaran."
+        }
+      }
+    }
+  }
+}

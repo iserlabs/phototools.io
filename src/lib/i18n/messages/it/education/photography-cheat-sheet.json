@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Ogni situazione di scatto — ritratti, natura, Via Lattea — ha una combinazione collaudata di apertura, tempo di esposizione e ISO a cui i fotografi esperti ricorrono per prima. Questi promemoria ti danno quel punto di partenza all'istante, così puoi dedicare la tua attenzione alla luce e alla composizione invece di dubitare delle ghiere.",
+      "deeper": "Ogni ricetta qui è un'applicazione del triangolo dell'esposizione con un lato prioritario. I ritratti danno priorità all'apertura: le aperture ampie (f/1.8–f/2.8) separano il soggetto dallo sfondo, e tutto il resto si adatta di conseguenza. L'azione dà priorità al tempo di esposizione: 1/1000s congela il movimento, quindi l'apertura si allarga e l'ISO sale per fornirgli luce. I paesaggi danno priorità alla qualità d'immagine: ISO base e apertura media nella zona ideale dell'obiettivo, con un treppiede che assorbe qualunque tempo di esposizione ne risulti. Le scene notturne spingono tutti e tre i lati insieme, ed è per questo che hanno le ricette più rigide — la Via Lattea richiede davvero un obiettivo luminoso a tutta apertura, un tempo sotto i ~20 secondi (prima che la rotazione terrestre trasformi le stelle in scie) e l'ISO necessario a rendere utilizzabile l'istogramma. Capire quale lato ogni scenario privilegia è la vera lezione: una volta vista la priorità, puoi adattare qualsiasi ricetta alla luce che hai davanti invece di seguirla ciecamente. Gli intervalli sono punti di partenza calibrati su condizioni tipiche; l'ultima parola ce l'ha il tuo istogramma, non la scheda.",
+      "keyFactors": {
+        "0": {
+          "label": "Priorità dello scenario",
+          "description": "Ogni situazione blocca per prima una variabile di esposizione — l'apertura per i ritratti, il tempo per l'azione, l'ISO per i paesaggi — e lascia che le altre si adattino."
+        },
+        "1": {
+          "label": "Luce disponibile",
+          "description": "Lo stesso scenario richiede impostazioni diverse a mezzogiorno e al crepuscolo. Considera gli intervalli come punti di riferimento e spostati al loro interno quando la luce cambia."
+        },
+        "2": {
+          "label": "Supporto e stabilità",
+          "description": "Un treppiede sblocca ISO base e tempi lenti per le scene statiche. A mano libera, fissa un tempo minimo intorno a 1/(lunghezza focale) o più veloce."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Fai uno scatto di prova e leggi l'istogramma, non l'anteprima LCD — gli schermi mentono in pieno sole e di notte, l'istogramma mai."
+        },
+        "1": {
+          "text": "Memorizza una ricetta per ogni genere che pratichi, poi allenati a regolare una sola variabile alla volta. Interiorizzerai i compromessi molto più in fretta che cambiando tutto insieme."
+        },
+        "2": {
+          "text": "Scarica la scheda per gli scenari che fotografi di rado — la ricetta della Via Lattea è difficile da ricordare alle 2 di notte in montagna con le dita congelate."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Apertura",
+          "definition": "La dimensione dell'apertura dell'obiettivo, in numeri f. Numeri più bassi = più luce e più sfocato sullo sfondo; numeri più alti = più profondità di campo."
+        },
+        "shutter": {
+          "term": "Tempo di esposizione",
+          "definition": "Per quanto tempo il sensore raccoglie la luce. I tempi rapidi congelano il movimento; quelli lenti lo sfocano e richiedono stabilizzazione o un treppiede."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "L'amplificazione del sensore. Tienilo il più basso possibile per la luce disponibile — alzarlo schiarisce l'immagine al prezzo del rumore."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Stai scattando un ritratto e vuoi il look classico: soggetto nitido, sfondo sciolto nello sfocato. Quale scelta di impostazione lo ottiene?",
+          "hint": "Lo sfondo sfocato nasce dalla profondità di campo — quale controllo la governa?",
+          "successMessage": "Corretto! Un'apertura ampia (come f/1.8–f/2.8) crea la profondità di campo ridotta che separa il soggetto da uno sfondo sfocato — la scelta che definisce il ritratto.",
+          "failureMessage": "Lo sfondo sfocato nasce da un'apertura ampia (numero f basso) come f/1.8–f/2.8, che riduce la profondità di campo. Le aperture chiuse fanno l'opposto.",
+          "options": {
+            "0": { "label": "Un'apertura chiusa come f/16" },
+            "1": { "label": "Un'apertura ampia come f/2" },
+            "2": { "label": "Una lunga esposizione su treppiede" },
+            "3": { "label": "ISO al massimo" }
+          }
+        },
+        "1": {
+          "scenario": "Un airone continua a spiccare il volo dall'acqua proprio quando premi il pulsante, e ogni fotogramma mostra le punte delle ali mosse. Qual è il rimedio?",
+          "hint": "Il mosso è un problema di tempo.",
+          "successMessage": "Esatto! Gli uccelli in volo richiedono tempi rapidi — 1/2500s o più veloce congela i battiti d'ala. Apri il diaframma e lascia salire l'ISO auto per alimentare il tempo che ti serve.",
+          "failureMessage": "Ali mosse significano un tempo troppo lento per il movimento. Sali a 1/2500s o più veloce e lascia che apertura e ISO compensino la luce persa.",
+          "options": {
+            "0": { "label": "Un tempo più lento per più luce" },
+            "1": { "label": "Un tempo di esposizione molto più rapido" },
+            "2": { "label": "Chiudere a f/22" },
+            "3": { "label": "Passare il bilanciamento del bianco su tungsteno" }
+          }
+        },
+        "2": {
+          "scenario": "Sei sistemato sotto un cielo buio per fotografare la Via Lattea. Quale combinazione ottiene un'esposizione utilizzabile del nucleo galattico?",
+          "hint": "Le stelle sono deboli, in movimento (con la rotazione terrestre) e la tua unica fonte di luce.",
+          "successMessage": "Corretto! Tutta apertura (f/1.4–f/2.8), 10–25 secondi, ISO 1600–6400: l'apertura raccoglie il massimo della luce, il tempo si ferma prima che le stelle lascino scie e l'ISO alto rende visibile il debole nucleo.",
+          "failureMessage": "La Via Lattea richiede tutto: apertura al massimo, un'esposizione abbastanza breve da non far scia alle stelle (10–25 s) e ISO alto (1600–6400). Aperture chiuse o ISO base lasciano il cielo nero.",
+          "options": {
+            "0": { "label": "f/11, 30 s, ISO 100" },
+            "1": { "label": "Tutta apertura, 10–25 s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Qualsiasi impostazione con un filtro ND" }
+          }
+        }
+      }
+    }
+  }
+}

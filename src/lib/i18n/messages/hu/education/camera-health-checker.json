@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Minden fotó, amelyet a kamera elment, rejtett jelentést hordoz magáról a kameráról: a pontos modellt, a sorozatszámát, a futó firmware-t, a felhelyezett objektívet, és néha azt is, hány fotó készült vele. Ez az eszköz egyetlen fotóból olvassa ki ezt a jelentést — teljes egészében a böngészőjében —, így úgy mérheti fel a kameravázat, ahogy egy szerelő olvassa az autó szervizkönyvét.",
+      "deeper": "Az adatok az EXIF-metaadatokból származnak — ez az a szabványos blokk, amelyet minden digitális kamera beágyaz a fájljaiba. A szabványos mezők közé tartozik a gyártó, a modell, a váz sorozatszáma, a Software mező (a legtöbb kameránál a firmware-verziót jelenti), az objektívmodell és a felvétel időbélyege. A gyártók ezt saját maker notes bejegyzésekkel bővítik — a Nikonénál ott a zárszámláló, ezért olvasható ki a zár-élettartam egyes márkáknál, másoknál nem. A váz korát a modellnév és egy megjelenésiév-adatbázis egyeztetésével becsüljük: egy 2018-ban megjelent kamera legalább több éves, bármit is mond az eladó. Két kikötés fontos. Először: a metaadatok csak az eredeti fájlokban maradnak meg — a legtöbb képszerkesztő, üzenetküldő és közösségi platform eltávolítja vagy átírja őket. Másodszor: az EXIF szabadon elérhető eszközökkel szerkeszthető, ezért erős bizonyítéknak tekintse, ne perdöntőnek: az ügyet valójában az zárja le, ha a fájlban lévő, a vázon lévő és az eladó számláján szereplő sorozatszám egyezik.",
+      "keyFactors": {
+        "0": {
+          "label": "Csak eredeti fájlok",
+          "description": "A metaadatok a közvetlenül a kamerából származó fájlokban maradnak meg. Az exportálás és az újramentés gyakran eltávolítja a sorozatszámokat, a maker notes adatokat és a firmware-információt."
+        },
+        "1": {
+          "label": "Sorozatszám",
+          "description": "A fájlt egy fizikai vázhoz köti. Használt vétel előtt vesse össze magával a vázzal, a számlával és a lopott felszerelések nyilvántartásaival."
+        },
+        "2": {
+          "label": "Megjelenési év vs. állapot",
+          "description": "A kor elvárásokat állít be (érzékelőtechnológia, hiányzó funkciók, hátralévő támogatás), de azt, hogy milyen kemények voltak azok az évek, a zárkopás és a fizikai állapot árulja el."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Használtat vesz? Kérjen az eladótól egy szerkesztetlen, közvetlenül a kamerából származó fotót. Igazolja a modellt és a sorozatszámot, mutatja az aktuális firmware-t, és — a támogatott márkáknál — a zárszámlálót is, mindezt egyetlen fájlban."
+        },
+        "1": {
+          "text": "Vesse össze a firmware-t a gyártó legfrissebb kiadásával. Az elavult firmware normális; az a kamera viszont, amely már nem frissíthető, lemaradhat az autofókusz- és kompatibilitási fejlesztésekről."
+        },
+        "2": {
+          "text": "Az eladó mintafotójának felvételi dátuma elárulja, mikor használták utoljára ténylegesen a kamerát. Az a „keveset használt” váz, amelynek legfrissebb fájlja négyéves, csak állt — ellenőrizze a beragadt zárat és a felpúposodott akkumulátort."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Váz sorozatszáma",
+          "definition": "A gyártó által minden kameravázhoz rendelt egyedi azonosító, amely minden fotó EXIF-adatába beágyazódik. Hasznos garanciaellenőrzéshez és a lopott felszerelések nyilvántartásaihoz."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "A kamera belső szoftvere, az EXIF Software mezőjében jelentve. A gyártók firmware-frissítéseken keresztül szállítanak autofókusz-, kompatibilitási és funkciófejlesztéseket."
+        },
+        "bodyAge": {
+          "term": "Váz kora",
+          "definition": "A modell megjelenése óta eltelt évek száma, megjelenési dátumok adatbázisából becsülve. Felső korlát arra, mennyire korszerű a kamera technológiája — nem arra, mennyire kopott ez a konkrét példány."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Használt kamerát vásárol egy online hirdetésből. Az eladó küld egy eredeti fotót a kamerából. Mi a legértékesebb, amit a metaadataiban lévő sorozatszámmal tehet?",
+          "hint": "A sorozatszám köti ezt a konkrét vázat a külvilághoz.",
+          "successMessage": "Helyes! A sorozatszám ellenőrzése a lopott felszerelések nyilvántartásaiban (és az eladó számláján) megvéd attól, hogy lopott eszközt vegyen — ezt az ellenőrzést csak a sorozatszám teszi lehetővé.",
+          "failureMessage": "A sorozatszám egyedi értéke az azonosítás: vesse össze a lopott felszerelések nyilvántartásaival és az eladó papírjaival. A képminőségről vagy a kompatibilitásról semmit sem mond.",
+          "options": {
+            "0": { "label": "Ellenőrizni a lopott felszerelések nyilvántartásaiban" },
+            "1": { "label": "Megbecsülni a fotó minőségét" },
+            "2": { "label": "Ellenőrizni az objektív-kompatibilitást" },
+            "3": { "label": "Kikeresni az ISO-tartományt" }
+          }
+        },
+        "1": {
+          "scenario": "Egy kiszemelt használt kamera a négy évvel ezelőtti, megjelenéskori 1.0 firmware-en fut, míg a gyártó aktuális verziója a 3.1. Mit hoz jellemzően a frissítés?",
+          "hint": "Gondolja végig, mit tud a gyártó szoftveresen megváltoztatni a megjelenés után.",
+          "successMessage": "Így van! A firmware-frissítések valódi fejlesztéseket hoznak — jobb autofókusz-algoritmusokat, új objektívtámogatást, hibajavításokat, néha teljes funkciókat. A hardveres jellemzők, mint az érzékelő és a megapixelek, soha nem változnak.",
+          "failureMessage": "A firmware szoftver: a frissítések javítják az autofókuszt, objektívtámogatást adnak és hibákat javítanak. A hardvert — az érzékelőt vagy a megapixelszámot — nem tudják megváltoztatni.",
+          "options": {
+            "0": { "label": "Új funkciók és autofókusz-fejlesztések" },
+            "1": { "label": "Több megapixel" },
+            "2": { "label": "Nagyobb érzékelőfelület" },
+            "3": { "label": "Semmit — a firmware kozmetikai" }
+          }
+        },
+        "2": {
+          "scenario": "Két eladó ugyanazt a modellt kínálja: egy 7 éves és egy 4 éves vázat, hasonló áron. Hogyan használja helyesen a váz korát a döntésben?",
+          "hint": "A kor csak egy tényező — mit nem árul el?",
+          "successMessage": "Pontosan. A kor behatárolja a technológiát és a hátralévő támogatási időt, de a döntő tényező az, hogyan használták a vázat: zárszámláló, fizikai állapot és szerviztörténet.",
+          "failureMessage": "A váz kora önmagában nem dönt — egy kíméletesen használt öregebb váz jobb lehet egy agyonhajtott újabbnál. A kort a zárszámlálóval és az állapottal együtt mérlegelje.",
+          "options": {
+            "0": { "label": "Mindig az újabbat venni" },
+            "1": { "label": "A kort a zárszámlálóval és az állapottal együtt mérlegelni" },
+            "2": { "label": "A kort figyelmen kívül hagyni — csak a megapixel számít" },
+            "3": { "label": "Csak a márka hírneve alapján dönteni" }
+          }
+        }
+      }
+    }
+  }
+}

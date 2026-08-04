@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Her çekim durumunun — portreler, yaban hayatı, Samanyolu — deneyimli fotoğrafçıların ilk elden başvurduğu, kendini kanıtlamış bir diyafram, enstantane hızı ve ISO kombinasyonu vardır. Bu kopya kağıtları size o başlangıç noktasını anında verir; böylece dikkatinizi kadranları sorgulamak yerine ışığa ve kompozisyona harcayabilirsiniz.",
+      "deeper": "Buradaki her reçete, pozlama üçgeninin bir kenarına öncelik verilmiş bir uygulamasıdır. Portreler diyaframa öncelik verir: açık diyaframlar (f/1.8–f/2.8) konuyu arka plandan ayırır ve diğer her şey buna uyum sağlar. Aksiyon enstantane hızına öncelik verir: 1/1000s hareketi dondurur; bu yüzden diyafram açılır ve ona ışık sağlamak için ISO yükselir. Manzaralar görüntü kalitesine öncelik verir: taban ISO ve objektifin ideal noktasında orta bir diyafram; ortaya çıkan enstantane hızını da tripod karşılar. Gece sahneleri üç kenarı birden zorlar; en katı reçetelere sahip olmalarının nedeni budur — Samanyolu gerçekten tam açık hızlı bir objektif, ~20 saniyenin altında bir enstantane (Dünya'nın dönüşü yıldızları iz haline getirmeden önce) ve histogramı kullanılabilir kılan bir ISO gerektirir. Asıl ders, her senaryonun hangi kenara öncelik verdiğini anlamaktır: önceliği bir kez gördüğünüzde, herhangi bir reçeteyi körü körüne izlemek yerine önünüzdeki ışığa uyarlayabilirsiniz. Aralıklar, tipik koşullara göre ayarlanmış başlangıç noktalarıdır; son söz kağıtta değil histogramınızdadır.",
+      "keyFactors": {
+        "0": {
+          "label": "Senaryo Önceliği",
+          "description": "Her durum önce bir pozlama değişkenini sabitler — portrelerde diyafram, aksiyonda enstantane, manzaralarda ISO — ve diğerlerinin uyum sağlamasına izin verir."
+        },
+        "1": {
+          "label": "Mevcut Işık",
+          "description": "Aynı senaryo öğlen ve alacakaranlıkta farklı ayarlar ister. Aralıkları çapa olarak görün ve ışık değiştikçe içlerinde kaydırın."
+        },
+        "2": {
+          "label": "Destek ve Sabitlik",
+          "description": "Tripod, durağan sahnelerde taban ISO'nun ve yavaş enstantanelerin önünü açar. Elde çekim ise enstantane hızına 1/(odak uzaklığı) veya daha hızlısı olacak şekilde bir taban koyar."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Bir test çekimi yapın ve LCD önizlemeyi değil histogramı okuyun — ekranlar parlak güneşte ve gecede yalan söyler, histogram asla söylemez."
+        },
+        "1": {
+          "text": "Çektiğiniz her tür için bir reçete ezberleyin, sonra tek seferde tek bir değişkeni değiştirme alıştırması yapın. Takasları, her şeyi aynı anda değiştirmekten çok daha hızlı içselleştirirsiniz."
+        },
+        "2": {
+          "text": "Nadiren çektiğiniz senaryolar için kağıdı indirin — Samanyolu reçetesini gece 2'de bir dağ başında donmuş parmaklarla hatırlamak zordur."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Diyafram",
+          "definition": "Objektif açıklığının f değerleriyle ifade edilen boyutu. Düşük değerler = daha fazla ışık ve daha fazla arka plan bulanıklığı; yüksek değerler = daha fazla alan derinliği."
+        },
+        "shutter": {
+          "term": "Enstantane Hızı",
+          "definition": "Sensörün ne kadar süre ışık topladığı. Hızlı süreler hareketi dondurur; yavaş süreler onu bulanıklaştırır ve sabitleme veya tripod gerektirir."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Sensörün yükseltme düzeyi. Işığın izin verdiği en düşükte tutun — yükseltmek, görüntüyü gürültü pahasına aydınlatır."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Bir portre çekiyorsunuz ve klasik görünümü istiyorsunuz: konu net, arka plan bulanıklığa karışmış. Bunu hangi ayar seçimi sağlar?",
+          "hint": "Arka plan bulanıklığı alan derinliğinden gelir — bunu hangi kontrol yönetir?",
+          "successMessage": "Doğru! Açık bir diyafram (f/1.8–f/2.8 gibi), konuyu bulanık bir arka plandan ayıran sığ alan derinliğini yaratır — portrenin belirleyici tercihi.",
+          "failureMessage": "Arka plan bulanıklığı, alan derinliğini sığlaştıran f/1.8–f/2.8 gibi açık bir diyaframdan (düşük f değeri) gelir. Kısık diyaframlar tam tersini yapar.",
+          "options": {
+            "0": { "label": "f/16 gibi kısık bir diyafram" },
+            "1": { "label": "f/2 gibi açık bir diyafram" },
+            "2": { "label": "Tripodda uzun pozlama" },
+            "3": { "label": "Maksimum ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Bir balıkçıl, tam deklanşöre bastığınız anda sudan havalanıyor ve her karede kanat uçları bulanık çıkıyor. Çözüm nedir?",
+          "hint": "Hareket bulanıklığı bir zaman sorunudur.",
+          "successMessage": "Doğru! Uçan kuşlar hızlı enstantane ister — 1/2500s veya daha hızlısı kanat çırpışlarını dondurur. Diyaframı açın ve gereken hızı beslemek için Otomatik ISO'nun yükselmesine izin verin.",
+          "failureMessage": "Bulanık kanatlar, enstantanenin harekete göre çok yavaş olduğu anlamına gelir. 1/2500s veya daha hızlısına çıkın ve kaybolan ışığı diyafram ile ISO'nun telafi etmesine izin verin.",
+          "options": {
+            "0": { "label": "Daha fazla ışık için daha yavaş enstantane" },
+            "1": { "label": "Çok daha hızlı bir enstantane hızı" },
+            "2": { "label": "f/22'ye kısmak" },
+            "3": { "label": "Beyaz dengesini tungstene almak" }
+          }
+        },
+        "2": {
+          "scenario": "Samanyolu'nu fotoğraflamak için karanlık bir gökyüzü altında kurulum yaptınız. Galaktik çekirdeğin kullanılabilir bir pozlamasını hangi kombinasyon verir?",
+          "hint": "Yıldızlar soluk, (Dünya'nın dönüşüyle) hareket halinde ve tek ışık kaynağınız.",
+          "successMessage": "Doğru! Tam açık (f/1.4–f/2.8), 10–25 saniye, ISO 1600–6400: diyafram en fazla ışığı toplar, enstantane yıldızlar iz bırakmadan durur ve yüksek ISO soluk çekirdeği görünür kılar.",
+          "failureMessage": "Samanyolu her şeyi ister: tam açık diyafram, yıldızların iz bırakmayacağı kadar kısa bir pozlama (10–25 sn) ve yüksek ISO (1600–6400). Küçük diyaframlar veya taban ISO gökyüzünü karanlık bırakır.",
+          "options": {
+            "0": { "label": "f/11, 30 sn, ISO 100" },
+            "1": { "label": "Tam açık, 10–25 sn, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "ND filtreyle herhangi bir ayar" }
+          }
+        }
+      }
+    }
+  }
+}

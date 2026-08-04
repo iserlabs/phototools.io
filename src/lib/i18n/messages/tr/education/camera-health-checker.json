@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Kameranızın kaydettiği her fotoğraf, kameranın kendisi hakkında gizli bir rapor taşır: tam model adı, seri numarası, çalıştığı donanım yazılımı, takılı olan objektif ve bazen kaç fotoğraf çektiği. Bu araç, o raporu tek bir fotoğraftan — tamamen tarayıcınızda — okur; böylece bir kamera gövdesini, bir tamircinin arabanın servis geçmişini okuduğu gibi değerlendirebilirsiniz.",
+      "deeper": "Veriler, her dijital kameranın dosyalarına gömdüğü standart bir blok olan EXIF meta verisinden gelir. Standart alanlar arasında Make, Model, BodySerialNumber, Software (çoğu kamerada donanım yazılımı sürümünü bildirir), LensModel ve çekim zaman damgası bulunur. Üreticiler bunu kendi özel 'üretici notlarıyla' genişletir — Nikon'unkiler deklanşör sayısını içerir; deklanşör ömrünün bazı markalarda okunup bazılarında okunamamasının nedeni budur. Gövde yaşı, model adının çıkış yılları veritabanıyla eşleştirilmesiyle tahmin edilir: 2018'de çıkmış bir kamera, satıcı ne derse desin en az birkaç yaşındadır. İki uyarı önemlidir. Birincisi, meta veri yalnızca orijinal dosyalarda hayatta kalır — çoğu düzenleme uygulaması, mesajlaşma uygulaması ve sosyal platform onu siler ya da yeniden yazar. İkincisi, EXIF serbestçe erişilebilen araçlarla düzenlenebilir; bu yüzden onu kanıt değil güçlü bir ipucu olarak görün: davayı asıl kapatan, dosyadaki seri numarası, gövdedeki seri numarası ve satıcının faturası arasındaki tutarlılıktır.",
+      "keyFactors": {
+        "0": {
+          "label": "Yalnızca Orijinal Dosyalar",
+          "description": "Meta veri, doğrudan kameradan çıkan dosyalarda hayatta kalır. Dışa aktarımlar ve yeniden kaydetmeler seri numaralarını, üretici notlarını ve donanım yazılımı bilgisini genellikle siler."
+        },
+        "1": {
+          "label": "Seri Numarası",
+          "description": "Dosyayı fiziksel bir gövdeye bağlar. İkinci el almadan önce gövdenin kendisi, fatura ve çalıntı ekipman kayıtlarıyla çapraz kontrol edin."
+        },
+        "2": {
+          "label": "Çıkış Yılı ve Durum",
+          "description": "Yaş beklentileri belirler (sensör teknolojisi, eksik özellikler, kalan destek); ancak o yılların ne kadar zorlu geçtiğini deklanşör yıpranması ve fiziksel durum söyler."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "İkinci el mi alıyorsunuz? Satıcıdan doğrudan kameradan çıkmış, düzenlenmemiş bir fotoğraf isteyin. Tek bir dosyada modeli ve seri numarasını doğrular, güncel donanım yazılımını gösterir ve — desteklenen markalarda — deklanşör sayısını verir."
+        },
+        "1": {
+          "text": "Donanım yazılımını üreticinin en son sürümüyle karşılaştırın. Güncel olmayan bir kamera normaldir; ancak artık güncellenemeyen bir kamera, otomatik odaklama ve uyumluluk iyileştirmelerinden mahrum kalabilir."
+        },
+        "2": {
+          "text": "Satıcının örnek fotoğrafındaki çekim tarihi, kameranın en son ne zaman gerçekten kullanıldığını söyler. En yeni dosyası dört yıl öncesine ait 'az kullanılmış' bir gövde uzun süre beklemiş demektir — sıkışmış deklanşör ve şişmiş pil kontrolü yapın."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Gövde Seri Numarası",
+          "definition": "Üreticinin her kamera gövdesine atadığı, her fotoğrafın EXIF verisine gömülü benzersiz kimlik. Garanti kontrolleri ve çalıntı ekipman kayıtları için işe yarar."
+        },
+        "firmware": {
+          "term": "Donanım Yazılımı",
+          "definition": "Kameranın EXIF Software alanında bildirilen dahili yazılımı. Üreticiler; otomatik odaklama, uyumluluk ve özellik iyileştirmelerini donanım yazılımı güncellemeleriyle sunar."
+        },
+        "bodyAge": {
+          "term": "Gövde Yaşı",
+          "definition": "Çıkış tarihleri veritabanından tahmin edilen, modelin çıkışından bu yana geçen yıl sayısı. Kameranın teknolojisinin ne kadar güncel olduğuna dair bir üst sınırdır — bu belirli gövdenin ne kadar yıprandığını göstermez."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "İnternetteki bir ilandan ikinci el kamera alıyorsunuz. Satıcı size kameradan çıkmış orijinal bir fotoğraf gönderiyor. Meta verideki seri numarasıyla yapılacak en değerli şey nedir?",
+          "hint": "Seri numarası, bu belirli gövdeyi dış dünyaya bağlar.",
+          "successMessage": "Doğru! Seri numarasını çalıntı ekipman kayıtlarıyla (ve satıcının faturasıyla) çapraz kontrol etmek sizi çalıntı ekipman almaktan korur — bu kontrolü yalnızca seri numarası mümkün kılar.",
+          "failureMessage": "Seri numarasının benzersiz değeri kimlik tespitidir: onu çalıntı ekipman kayıtları ve satıcının belgeleriyle karşılaştırın. Görüntü kalitesi veya uyumluluk hakkında hiçbir şey söylemez.",
+          "options": {
+            "0": { "label": "Çalıntı ekipman kayıtlarıyla karşılaştırmak" },
+            "1": { "label": "Fotoğraf kalitesini tahmin etmek" },
+            "2": { "label": "Objektif uyumluluğunu doğrulamak" },
+            "3": { "label": "ISO aralığına bakmak" }
+          }
+        },
+        "1": {
+          "scenario": "Düşündüğünüz ikinci el kamera, dört yıl önceki çıkışından kalma 1.0 sürümünde; üreticinin güncel sürümü ise 3.1. Güncelleme size genellikle ne kazandırır?",
+          "hint": "Üreticilerin çıkıştan sonra yazılımla neleri değiştirebileceğini düşünün.",
+          "successMessage": "Doğru! Donanım yazılımı güncellemeleri gerçek iyileştirmeler getirir — daha iyi otomatik odaklama algoritmaları, yeni objektif desteği, hata düzeltmeleri, bazen komple yeni özellikler. Sensör ve megapiksel gibi donanım özellikleri asla değişmez.",
+          "failureMessage": "Donanım yazılımı bir yazılımdır: güncellemeler otomatik odaklamayı geliştirir, objektif desteği ekler ve hataları giderir. Sensör veya megapiksel sayısı gibi donanımı değiştiremez.",
+          "options": {
+            "0": { "label": "Yeni özellikler ve otomatik odaklama iyileştirmeleri" },
+            "1": { "label": "Daha fazla megapiksel" },
+            "2": { "label": "Daha büyük bir sensör alanı" },
+            "3": { "label": "Hiçbir şey — donanım yazılımı kozmetiktir" }
+          }
+        },
+        "2": {
+          "scenario": "İki satıcı aynı modeli sunuyor: benzer fiyatlarla 7 yaşında bir gövde ve 4 yaşında bir gövde. Gövde yaşını kararınızda nasıl kullanmalısınız?",
+          "hint": "Yaş girdilerden yalnızca biri — size neyi söylemez?",
+          "successMessage": "Aynen öyle. Yaş, teknolojiyi ve kalan destek ömrünü çerçeveler; ancak belirleyici etkenler gövdenin nasıl kullanıldığıdır: deklanşör sayısı, fiziksel durum ve servis geçmişi.",
+          "failureMessage": "Gövde yaşı tek başına karar verdirmez — özenle kullanılmış eski bir gövde, hırpalanmış yeni bir gövdeden iyi olabilir. Yaşı, deklanşör sayısı ve fiziksel durumla birlikte değerlendirin.",
+          "options": {
+            "0": { "label": "Her zaman daha yenisini almak" },
+            "1": { "label": "Yaşı, deklanşör sayısı ve durumla birlikte tartmak" },
+            "2": { "label": "Yaşı yok saymak — yalnızca megapiksel önemli" },
+            "3": { "label": "Yalnızca marka itibarına göre seçmek" }
+          }
+        }
+      }
+    }
+  }
+}

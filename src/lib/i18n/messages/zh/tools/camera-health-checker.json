@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "将照片拖放到此处，或点击选择文件（JPEG、TIFF、NEF、DNG）",
+      "emptyState": "拖入一张用您想检测的相机拍摄的照片。所有数据都在您的浏览器中读取 — 文件绝不会离开您的设备。",
+      "errorRead": "无法读取此文件。请尝试直接从相机取出的未编辑 JPEG 或 RAW 文件。",
+      "errorNoMetadata": "此文件不包含相机元数据。编辑软件或聊天应用导出的文件通常会删除元数据 — 请尝试未编辑的原始文件。",
+      "sections": {
+        "body": "相机机身",
+        "age": "机龄",
+        "shutter": "快门寿命",
+        "lens": "镜头"
+      },
+      "cameraModel": "型号",
+      "make": "厂商",
+      "serialNumber": "序列号",
+      "firmware": "固件 / 软件",
+      "bodyAge": "机身机龄",
+      "ageValue": "约 {years} 年（{year} 年发布）",
+      "ageUnknown": "此型号不在我们的发布年份数据库中，因此无法估算机龄。",
+      "shotDate": "拍摄日期",
+      "shutterCount": "快门数",
+      "ratedLife": "额定寿命",
+      "ratedAssumed": "（推测值）",
+      "lifeUsed": "已使用额定寿命的 {percent}%",
+      "verdict": {
+        "low": "几乎未使用",
+        "moderate": "适度使用",
+        "high": "重度使用",
+        "beyond": "超出额定寿命"
+      },
+      "shutterUnavailable": {
+        "supported": "{brand} 相机通常会记录快门数，但此文件中未找到。请尝试未编辑的原始文件 — 编辑软件常会删除厂商元数据。",
+        "partial": "{brand} 相机只在部分文件中写入大致的帧计数器，而此文件中没有。相机自身的菜单或 USB 实用程序也许能显示。",
+        "unsupported": "{brand} 相机不会在图像文件中存储可读取的快门数。请查看快门数查询工具页面了解各品牌的替代方案。",
+        "unknown": "此文件中没有可读取的快门数。"
+      },
+      "lensModel": "镜头",
+      "lensSerial": "镜头序列号",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "购买二手相机时应该检查什么？",
+          "answer": "除了外观之外：快门数相对于额定寿命的比例、机身机龄和固件版本、序列号是否与卖家的凭证一致（且未被登记为失窃）、传感器状态（用 f/16 对着晴朗天空试拍一张，检查灰尘或划痕），以及所有拨盘、接口和镜头卡口是否运作顺畅。"
+        },
+        "where-does-health-data-come-from": {
+          "question": "这些健康数据从哪里来？",
+          "answer": "所有信息都从照片内嵌的元数据中读取：标准 EXIF 字段（型号、序列号、固件、镜头、拍摄日期），加上可用时的厂商自定义数据（快门数）。机身机龄则通过内置的热门相机型号发布年份数据库估算。"
+        },
+        "is-my-photo-uploaded": {
+          "question": "我的照片会被上传到服务器吗？",
+          "answer": "不会。文件完全在您的浏览器中通过 JavaScript 解析 — 它绝不会离开您的设备，也不会保存任何内容。您可以先加载页面，然后断开网络连接再拖入文件，即可自行验证。"
+        }
+      }
+    }
+  }
+}

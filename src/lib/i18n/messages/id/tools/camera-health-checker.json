@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Letakkan foto di sini atau klik untuk memilih file (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Letakkan foto apa pun dari kamera yang ingin Anda periksa. Semuanya dibaca di browser Anda — file tidak pernah meninggalkan perangkat Anda.",
+      "errorRead": "File ini tidak bisa dibaca. Coba file JPEG atau RAW yang belum diedit langsung dari kamera.",
+      "errorNoMetadata": "File ini tidak berisi metadata kamera. Ekspor dari aplikasi edit atau perpesanan sering menghapusnya — coba file asli yang belum diedit.",
+      "sections": {
+        "body": "Bodi kamera",
+        "age": "Usia",
+        "shutter": "Umur rana",
+        "lens": "Lensa"
+      },
+      "cameraModel": "Model",
+      "make": "Merek",
+      "serialNumber": "Nomor seri",
+      "firmware": "Firmware / perangkat lunak",
+      "bodyAge": "Usia bodi",
+      "ageValue": "~{years} tahun (dirilis {year})",
+      "ageUnknown": "Model ini tidak ada di database rilis kami, sehingga usianya tidak bisa diperkirakan.",
+      "shotDate": "Foto diambil",
+      "shutterCount": "Shutter count",
+      "ratedLife": "Umur rating",
+      "ratedAssumed": "(diasumsikan)",
+      "lifeUsed": "{percent}% dari umur rating telah terpakai",
+      "verdict": {
+        "low": "Hampir tak terpakai",
+        "moderate": "Pemakaian sedang",
+        "high": "Pemakaian berat",
+        "beyond": "Melewati rating"
+      },
+      "shutterUnavailable": {
+        "supported": "Shutter count tidak ditemukan padahal {brand} biasanya merekamnya. Coba file asli yang belum diedit — aplikasi edit sering menghapus metadata pabrikan.",
+        "partial": "{brand} hanya menulis penghitung frame kasar ke sebagian file, dan file ini tidak memilikinya. Menu kamera sendiri atau utilitas USB mungkin bisa melaporkannya.",
+        "unsupported": "{brand} tidak menyimpan shutter count yang bisa dibaca di file gambar. Lihat halaman alat Shutter Count Checker untuk alternatif per merek.",
+        "unknown": "File ini tidak memiliki shutter count yang bisa dibaca."
+      },
+      "lensModel": "Lensa",
+      "lensSerial": "Nomor seri lensa",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Apa saja yang harus diperiksa saat membeli kamera bekas?",
+          "answer": "Selain kondisi fisik: shutter count dibandingkan umur rating-nya, usia bodi dan versi firmware, apakah nomor seri cocok dengan dokumen penjual (dan tidak dilaporkan dicuri), kondisi sensor (cari debu atau goresan pada foto uji langit cerah di f/16), serta apakah semua dial, port, dan dudukan lensa bekerja mulus."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Dari mana data kesehatan ini berasal?",
+          "answer": "Semuanya dibaca dari metadata yang tertanam di foto Anda: field EXIF standar (model, nomor seri, firmware, lensa, tanggal pengambilan) ditambah maker notes pabrikan bila tersedia (shutter count). Usia bodi diperkirakan dari database bawaan berisi tahun rilis model-model kamera populer."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Apakah foto saya diunggah ke server?",
+          "answer": "Tidak. File di-parse sepenuhnya di browser Anda menggunakan JavaScript — tidak pernah meninggalkan perangkat Anda, dan tidak ada yang disimpan. Anda bisa membuktikannya dengan memuat halaman ini lalu mematikan koneksi internet sebelum meletakkan file."
+        }
+      }
+    }
+  }
+}

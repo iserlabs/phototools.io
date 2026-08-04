@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Lightroom 目錄分析器 — 免費、純瀏覽器統計",
       "description": "在瀏覽器中本機分析您的 Lightroom Classic 目錄。檢視器材、焦距、光圈習慣、評分等等。100% 本機——您的目錄絕不會被上傳。"
+    },
+    "shutter-count-checker": {
+      "title": "快門數查詢工具 — 免費且保護隱私",
+      "description": "從照片查詢相機的快門數，免費且完全在瀏覽器端處理。支援 Nikon 的 JPEG 與 RAW 檔，並為 Canon、Sony 及其他品牌提供清楚指引。"
+    },
+    "camera-health-checker": {
+      "title": "相機健康檢測工具",
+      "description": "從單張照片檢視相機機身：型號、序號、韌體、機齡、鏡頭與快門壽命。完全於瀏覽器端處理 — 購買二手相機前檢查的最佳幫手。"
+    },
+    "panorama-calculator": {
+      "title": "全景計算機",
+      "description": "規劃接圖全景：需要拍幾張、每張之間要轉多少度，以及最終解析度 — 適用於任何鏡頭、感光元件與重疊率。"
+    },
+    "diffraction-calculator": {
+      "title": "繞射極限計算機",
+      "description": "找出相機的繞射極限：繼續縮光圈會開始讓影像變鬆軟的那一級。依據畫素間距與艾里斑計算，適用於任何感光元件與解析度。"
+    },
+    "photography-cheat-sheet": {
+      "title": "攝影速查表 — 依場景查相機設定",
+      "description": "涵蓋人像、風景、野生動物、銀河等場景的相機設定速查表。經得起實戰的起始設定，可下載為圖片或直接列印。"
     }
   }
 }

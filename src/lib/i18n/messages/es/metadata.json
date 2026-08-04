@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Analizador de Catálogos de Lightroom — Estadísticas gratis, solo en el navegador",
       "description": "Analiza tu catálogo de Lightroom Classic localmente en tu navegador. Consulta el equipo, las distancias focales, los hábitos de apertura, las valoraciones y mucho más. 100 % local — tu catálogo nunca se sube."
+    },
+    "shutter-count-checker": {
+      "title": "Comprobador de recuento de disparos — Gratis y privado",
+      "description": "Comprueba el recuento de disparos de tu cámara a partir de una foto, gratis y 100% en tu navegador. Funciona con archivos JPEG y RAW de Nikon, con orientación clara para Canon, Sony y otras marcas."
+    },
+    "camera-health-checker": {
+      "title": "Comprobador de estado de la cámara",
+      "description": "Inspecciona un cuerpo de cámara a partir de una sola foto: modelo, número de serie, firmware, antigüedad, objetivo y vida del obturador. 100% en el navegador — ideal para revisar cámaras usadas antes de comprar."
+    },
+    "panorama-calculator": {
+      "title": "Calculadora de panorámicas",
+      "description": "Planifica panorámicas por unión de fotos: cuántos disparos necesitas, cuánto girar entre fotogramas y la resolución final — para cualquier objetivo, sensor y solapamiento."
+    },
+    "diffraction-calculator": {
+      "title": "Calculadora del límite de difracción",
+      "description": "Encuentra el límite de difracción de tu cámara: la apertura en la que cerrar el diafragma empieza a suavizar las imágenes. Basada en el paso de píxel y el disco de Airy, para cualquier sensor y resolución."
+    },
+    "photography-cheat-sheet": {
+      "title": "Hoja de referencia fotográfica — Ajustes de cámara por escenario",
+      "description": "Hojas de referencia con ajustes de cámara para retratos, paisajes, fauna, la Vía Láctea y más. Puntos de partida probados que puedes descargar como imagen o imprimir."
     }
   }
 }

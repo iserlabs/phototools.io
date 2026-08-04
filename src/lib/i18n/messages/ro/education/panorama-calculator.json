@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "O panoramă se construiește făcând mai multe fotografii suprapuse în timp ce rotești aparatul, apoi lăsând un software să le asambleze într-o singură imagine lată. Șmecheria e să știi cât să rotești între cadre: prea mult și software-ul nu poate uni cadrele, prea puțin și irosești zeci de cadre. Acest calculator face acel calcul pornind de la obiectivul, senzorul și suprapunerea dorită.",
+      "deeper": "Fiecare cadru acoperă un unghi de vedere fix, determinat de distanța focală și dimensiunea senzorului — un 50mm pe full frame vede cam 40° pe orizontală. Software-ul de asamblare aliniază cadrele vecine găsind „puncte de control” comune în zona de suprapunere, motiv pentru care 25–35% e standardul practic: oferă algoritmului destule detalii comune fără să explodeze numărul de cadre. Rotația utilă per cadru este deci câmpul vizual al cadrului înmulțit cu (1 − suprapunerea). Fotografierea în orientare portret schimbă un pas orizontal mai îngust pe mult mai multă acoperire verticală, motiv pentru care majoritatea panoramelor pe un singur rând se fac pe verticală. Pentru scene cu adevărat înalte, panoramele pe mai multe rânduri aplică aceeași logică a suprapunerii pe verticală. Fișierul final asamblat crește repede: fiecare cadru suplimentar contribuie cu rezoluția sa minus suprapunerea, așa că o panoramă portret din 7 cadre cu un aparat de 24 MP depășește ușor 100 MP. O subtilitate fizică limitează totul: rotirea în jurul filetului trepiedului deplasează centrul optic al obiectivului între cadre, ceea ce dezaliniază obiectele apropiate față de cele îndepărtate (paralaxă). Pentru peisaje îndepărtate rareori contează, dar cu elemente apropiate în prim-plan trebuie să rotești în jurul punctului fără paralaxă al obiectivului, folosind o șină nodală sau un cap panoramic.",
+      "keyFactors": {
+        "0": {
+          "label": "Distanța focală și senzorul",
+          "description": "Împreună stabilesc câmpul vizual al unui singur cadru — unitatea de bază din care se asamblează panorama. Obiectivele mai lungi înseamnă cadre mai înguste și mai multe."
+        },
+        "1": {
+          "label": "Suprapunerea",
+          "description": "Zona comună dintre cadrele vecine pe care se aliniază software-ul de asamblare. 25–35% e intervalul ideal; scenele fără repere (cer, apă) au nevoie de mai mult."
+        },
+        "2": {
+          "label": "Orientarea",
+          "description": "Cadrele în portret acoperă mai puțină lățime, dar mult mai multă înălțime per cadru — alegerea standard pentru panoramele pe un singur rând, pentru că lasă loc de decupare."
+        },
+        "3": {
+          "label": "Paralaxa",
+          "description": "Dezalinierea aproape/departe cauzată de rotirea în jurul axei greșite. Inofensivă pentru scenele îndepărtate; critică la prim-planuri apropiate."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Blochează expunerea, balansul de alb și focalizarea pe manual înainte de primul cadru. Orice automatism se schimbă între cadre și creează benzi vizibile pe cerul asamblat."
+        },
+        "1": {
+          "text": "Fotografiază cu obiectivul la nivel și rotește într-o singură trecere lină, adăugând câte un cadru de sacrificiu la fiecare capăt — cadrele de margine sunt distorsionate și decupate la asamblare."
+        },
+        "2": {
+          "text": "Pentru panorame din mână, exagerează suprapunerea la 40–50%. Rotația ta nu va fi precisă, iar cadrele suplimentare îi dau software-ului marjă de recuperare."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Suprapunerea",
+          "definition": "Procentul din fiecare cadru împărtășit cu vecinul său. Software-ul de asamblare are nevoie de aceste detalii comune ca să alinieze cadrele — 25–35% e tipic."
+        },
+        "orientation": {
+          "term": "Orientarea aparatului",
+          "definition": "Încadrarea portret (verticală) e standardul pentru panorame: fiecare cadru contribuie cu mai multă înălțime, lăsând loc pentru corectarea orizontului și decupare."
+        },
+        "rotateBetween": {
+          "term": "Rotirea între cadre",
+          "definition": "Câte grade să rotești aparatul după fiecare cadru: câmpul vizual al cadrului înmulțit cu (1 − suprapunerea). Capetele panoramice au opriri cu clic exact pentru asta."
+        },
+        "rows": {
+          "term": "Rânduri",
+          "definition": "Panoramele pe mai multe rânduri stivuiesc treceri orizontale pe verticală, aplicând aceeași regulă a suprapunerii între rânduri pentru a acoperi scene înalte."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Fotografiezi o panoramă a unui lanț muntos. Cât ar trebui să se suprapună cadrele vecine pentru o asamblare fiabilă?",
+          "hint": "Software-ul are nevoie de detalii comune, dar fiecare cadru în plus costă timp.",
+          "successMessage": "Corect! În jur de 30% suprapunere oferă software-ului de asamblare puncte de control din belșug fără să irosească cadre — recomandarea standard pentru majoritatea scenelor.",
+          "failureMessage": "25–35% e standardul practic. Sub ~15% software-ul se chinuie să găsească puncte de control; 80% îți triplează numărul de cadre fără niciun beneficiu.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Vrei o panoramă pe un singur rând, cu destul spațiu vertical ca să îndrepți orizontul și să decupezi liber după aceea. În ce orientare ar trebui să fotografiezi?",
+          "hint": "În ce sens îți dă fiecare cadru mai multă înălțime?",
+          "successMessage": "Exact! Orientarea portret surprinde mult mai mult câmp vertical per cadru — cele câteva cadre în plus pe orizontală sunt un preț mic pentru libertatea de decupare.",
+          "failureMessage": "Portretul (vertical) e standardul pentru panoramele pe un singur rând: fiecare cadru e mai înalt, așa că rezultatul asamblat supraviețuiește corectării orizontului și decupării.",
+          "options": {
+            "0": { "label": "Peisaj" },
+            "1": { "label": "Portret" },
+            "2": { "label": "Modul de decupare pătrată" },
+            "3": { "label": "Înclinat la 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Cu un 50mm pe full frame ținut în orientare peisaj (cam 40° câmp orizontal) și 30% suprapunere, aproximativ câte cadre are nevoie o panoramă de 180°?",
+          "hint": "Fiecare cadru avansează acoperirea cu 40° × 0,7 = 28°.",
+          "successMessage": "Corect! Primul cadru acoperă 40°, iar fiecare cadru suplimentar adaugă ~28°. Acoperirea celor 140° rămase ia încă 5 cadre, deci 7 cadre în total (cu puțină rezervă).",
+          "failureMessage": "Fiecare cadru după primul adaugă 40° × (1 − 0,3) = 28° de acoperire nouă. (180 − 40) / 28 = încă 5 cadre, deci 7 în total.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Panorama ta are un gard la un metru de aparat și munți în spate. Rezultatul asamblat arată gardul dublat și dezaliniat între cadre. În jurul cărui punct ar trebui să se rotească aparatul ca să rezolvi asta?",
+          "hint": "Problema e paralaxa — obiectele apropiate și cele îndepărtate se deplasează unele față de altele.",
+          "successMessage": "Exact! Rotirea în jurul punctului fără paralaxă (nodal) al obiectivului menține obiectele apropiate și îndepărtate aliniate între cadre. Capetele panoramice și șinele nodale există exact pentru asta.",
+          "failureMessage": "Aparatul trebuie să se rotească în jurul punctului fără paralaxă al obiectivului (numit adesea punct nodal). Rotirea în jurul filetului trepiedului deplasează centrul optic, provocând paralaxa pe care o vezi.",
+          "options": {
+            "0": { "label": "Lentila frontală a obiectivului" },
+            "1": { "label": "Punctul fără paralaxă al obiectivului" },
+            "2": { "label": "Planul senzorului" },
+            "3": { "label": "Filetul trepiedului" }
+          }
+        }
+      }
+    }
+  }
+}

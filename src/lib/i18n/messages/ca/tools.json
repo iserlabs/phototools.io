@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Analitzador de Catàlegs de Lightroom",
       "description": "Analitza el teu catàleg de Lightroom Classic — equip, distància focal, obertures, valoracions i molt més — 100 % al teu navegador"
+    },
+    "shutter-count-checker": {
+      "name": "Comprovador de recompte de dispars",
+      "description": "Comprova el recompte de dispars de la teva càmera a partir d’una foto — 100% al teu navegador"
+    },
+    "camera-health-checker": {
+      "name": "Comprovador d’estat de la càmera",
+      "description": "Inspecciona l’antiguitat, el microprogramari, el número de sèrie i la vida de l’obturador d’un cos a partir d’una sola foto"
+    },
+    "panorama-calculator": {
+      "name": "Calculadora de panoràmiques",
+      "description": "Planifica les teves panoràmiques: nombre de fotogrames, solapament i rotació entre dispars"
+    },
+    "diffraction-calculator": {
+      "name": "Calculadora del límit de difracció",
+      "description": "Troba l’obertura en què la difracció comença a suavitzar les teves imatges"
+    },
+    "photography-cheat-sheet": {
+      "name": "Full de referència fotogràfic",
+      "description": "Fulls de referència amb ajustos de càmera per a escenaris habituals — descarregables i imprimibles"
     }
   }
 }

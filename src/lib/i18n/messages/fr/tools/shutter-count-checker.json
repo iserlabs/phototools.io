@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Dépose une photo ici ou clique pour parcourir (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Quelles marques enregistrent le nombre de déclenchements ?",
+      "status": {
+        "supported": "Lisible",
+        "partial": "Partiel",
+        "unsupported": "Absent des fichiers"
+      },
+      "brands": {
+        "nikon": "Nikon inscrit le nombre de déclenchements dans les métadonnées de chaque photo, sans chiffrement. Utilise un fichier original non retouché pour un résultat fiable.",
+        "canon": "Canon n'écrit jamais le nombre de déclenchements dans les fichiers image — il n'existe que dans la mémoire interne du boîtier et se lit avec des outils de maintenance ou des utilitaires USB.",
+        "sony": "Sony stocke le nombre de déclenchements dans une section chiffrée de ses métadonnées, impossible à décoder dans le navigateur. Des utilitaires de bureau dédiés peuvent le lire via USB.",
+        "fujifilm": "Les boîtiers Fujifilm n'enregistrent pas de vrai compteur de déclenchements, mais certains écrivent un compteur d'images qui donne une estimation basse approximative.",
+        "pentax": "Pentax brouille son champ de compteur de déclenchements avec un chiffrement, il est donc impossible de le lire de façon fiable depuis les fichiers.",
+        "olympus": "Les boîtiers OM System / Olympus conservent le compteur complet dans un menu de maintenance interne ; les fichiers contiennent parfois un compteur d'images qui donne une idée de l'usage.",
+        "panasonic": "Panasonic n'écrit pas de nombre de déclenchements dans les fichiers. Le menu de maintenance de l'appareil l'indique.",
+        "leica": "Les boîtiers Leica n'enregistrent généralement pas le nombre de déclenchements dans les fichiers image."
+      },
+      "countLabel": "Déclenchements de l'obturateur",
+      "source": {
+        "shutterCount": "Lu depuis les métadonnées de compteur de déclenchements de l'appareil — c'est le véritable compteur d'actionnements mécaniques.",
+        "mechanicalShutterCount": "Lu depuis le compteur d'obturateur mécanique — les images prises à l'obturateur électronique ne sont pas comptées.",
+        "imageNumber": "Estimé à partir du numéro d'image du fichier. C'est une estimation basse approximative, pas un compte exact — le compteur peut être remis à zéro ou reboucler."
+      },
+      "ratedLife": "Endurance nominale de l'obturateur",
+      "ratings": {
+        "entry": "Entrée de gamme",
+        "enthusiast": "Amateur expert",
+        "advanced": "Avancé",
+        "pro": "Professionnel",
+        "flagship": "Haut de gamme"
+      },
+      "lifeUsed": "{percent}% de l'endurance nominale utilisée",
+      "verdict": {
+        "low": "À peine utilisé",
+        "moderate": "Usage modéré",
+        "high": "Usage intensif",
+        "beyond": "Au-delà de l'endurance"
+      },
+      "noCountTitle": "Aucun nombre de déclenchements dans ce fichier",
+      "noCountGeneric": "Ce fichier ne contient pas de nombre de déclenchements lisible. Essaie une photo originale non retouchée, sortie directement de l'appareil — les exports des logiciels de retouche suppriment souvent les métadonnées du fabricant.",
+      "errorRead": "Impossible de lire ce fichier. Essaie un JPEG ou un fichier RAW non retouché, sorti directement de l'appareil.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Qu'est-ce que le nombre de déclenchements ?",
+          "answer": "Le nombre de déclenchements est le nombre de fois où l'obturateur mécanique d'un appareil s'est actionné — l'équivalent photo du kilométrage d'une voiture. C'est l'indicateur d'usure le plus consulté lors de l'achat ou de la vente d'un appareil d'occasion, car les obturateurs sont conçus pour un nombre fini d'actionnements."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Combien de déclenchements, c'est trop ?",
+          "answer": "Cela dépend de la gamme de l'appareil. Les obturateurs d'entrée de gamme sont donnés pour environ 100 000 déclenchements, les boîtiers amateurs experts pour 150 000 à 200 000, et les boîtiers professionnels pour 300 000 à 500 000. Cette endurance est une durée de vie moyenne, pas une limite stricte — beaucoup d'obturateurs la dépassent largement, et un compteur bas sur un boîtier maltraité peut quand même cacher des problèmes."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Pourquoi je ne peux pas vérifier le nombre de déclenchements sur ma photo Canon ou Sony ?",
+          "answer": "Canon n'écrit jamais le nombre de déclenchements dans les fichiers image — il ne vit que dans la mémoire interne de l'appareil. Sony l'écrit, mais chiffre cette section des métadonnées. Dans les deux cas, un outil dans le navigateur ne peut pas le lire depuis une photo ; la solution habituelle passe par des utilitaires de bureau qui se connectent à l'appareil via USB."
+        }
+      }
+    }
+  }
+}

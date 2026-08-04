@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Et panorama bygges ved å ta flere overlappende bilder mens du roterer kameraet, og deretter la programvare sette dem sammen til ett bredt bilde. Kunsten er å vite hvor langt du skal rotere mellom bildene: for langt, og programmet klarer ikke å koble delbildene sammen; for kort, og du kaster bort dusinvis av bilder. Denne kalkulatoren gjør den matematikken ut fra objektivet, sensoren og ønsket overlapp.",
+      "deeper": "Hvert delbilde dekker en fast synsvinkel bestemt av brennvidde og sensorstørrelse — et 50mm-objektiv på fullformat ser omtrent 40° horisontalt. Sammensettingsprogrammer justerer nabobilder ved å finne felles 'kontrollpunkter' i overlappsonen, og derfor er 25–35 % overlapp den praktiske standarden: det gir algoritmen nok felles detaljer uten at antallet bilder eksploderer. Den brukbare rotasjonen per bilde er dermed delbildets synsfelt ganger (1 − overlapp). Å fotografere i stående orientering bytter et smalere horisontalt steg mot mye mer vertikal dekning, og derfor tas de fleste enrads panoramaer på høykant. For virkelig høye scener bruker flerrads panoramaer samme overlappslogikk vertikalt. Den ferdige sammensatte filen vokser raskt: hvert ekstra delbilde bidrar med sin oppløsning minus overlappet, så et stående panorama på 7 bilder fra et 24 MP-kamera passerer lett 100 MP. Én fysisk detalj begrenser alt: roterer du rundt stativfestet, forskyves objektivets optiske senter mellom bildene, slik at nære og fjerne objekter ikke lenger stemmer overens (parallakse). For fjerne landskap betyr det sjelden noe, men med nære forgrunnselementer må du rotere rundt objektivets parallaksefrie punkt ved hjelp av en nodalskinne eller et panoramahode.",
+      "keyFactors": {
+        "0": {
+          "label": "Brennvidde & sensor",
+          "description": "Sammen bestemmer de synsfeltet til ett delbilde — grunnenheten panoramaet bygges av. Lengre objektiver gir smalere delbilder og flere bilder."
+        },
+        "1": {
+          "label": "Overlapp",
+          "description": "Den delte sonen mellom nabobilder som sammensettingsprogrammet justerer etter. 25–35 % er ideelt; scener med få detaljer (himmel, vann) trenger mer."
+        },
+        "2": {
+          "label": "Orientering",
+          "description": "Stående delbilder dekker mindre bredde, men mye mer høyde per bilde — standardvalget for enrads panoramaer fordi det gir rom for beskjæring."
+        },
+        "3": {
+          "label": "Parallakse",
+          "description": "Forskyvning mellom nært og fjernt forårsaket av rotasjon rundt feil akse. Ufarlig for fjerne scener; kritisk med nære forgrunner."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Lås eksponering, hvitbalanse og fokus til manuelt før første bilde. Alt som står på auto, endrer seg mellom bildene og skaper synlige striper i den sammensatte himmelen."
+        },
+        "1": {
+          "text": "Fotografer med objektivet i vater og roter i én jevn bevegelse, med et ekstra offerbilde i hver ende — kantbildene forvrenges og beskjæres under sammensettingen."
+        },
+        "2": {
+          "text": "For håndholdte panoramaer, overdriv overlappet til 40–50 %. Rotasjonen din blir ikke presis, og de ekstra bildene gir programmet rom til å redde resultatet."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Overlapp",
+          "definition": "Prosentandelen av hvert delbilde som deles med naboen. Sammensettingsprogrammer trenger denne felles detaljen for å justere bildene — 25–35 % er typisk."
+        },
+        "orientation": {
+          "term": "Kameraorientering",
+          "definition": "Stående (vertikal) innramming er standard for panoramaer: hvert delbilde bidrar med mer høyde og gir rom for horisontkorrigering og beskjæring."
+        },
+        "rotateBetween": {
+          "term": "Rotasjon mellom bilder",
+          "definition": "Hvor mange grader kameraet skal dreies etter hvert bilde: delbildets synsfelt ganger (1 − overlapp). Panoramahoder har klikkstopp for akkurat dette."
+        },
+        "rows": {
+          "term": "Rader",
+          "definition": "Flerrads panoramaer stabler horisontale sveip vertikalt og bruker samme overlappsregel mellom radene for å dekke høye scener."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du fotograferer et panorama av en fjellkjede. Hvor mye bør nabobilder overlappe for pålitelig sammensetting?",
+          "hint": "Programmet trenger felles detaljer, men hvert ekstra bilde koster tid.",
+          "successMessage": "Riktig! Rundt 30 % overlapp gir sammensettingsprogrammet rikelig med kontrollpunkter uten å sløse med bilder — standardanbefalingen for de fleste scener.",
+          "failureMessage": "25–35 % er den praktiske standarden. Under ~15 % sliter programmene med å finne kontrollpunkter; 80 % tredobler antallet bilder uten gevinst.",
+          "options": {
+            "0": { "label": "5 %" },
+            "1": { "label": "15 %" },
+            "2": { "label": "30 %" },
+            "3": { "label": "80 %" }
+          }
+        },
+        "1": {
+          "scenario": "Du vil ha et enrads panorama med nok vertikalt rom til å rette opp horisonten og beskjære fritt etterpå. Hvilken orientering bør du fotografere i?",
+          "hint": "Hvilken vei gir hvert delbilde deg mer høyde?",
+          "successMessage": "Riktig! Stående orientering fanger langt mer vertikalt synsfelt per delbilde — de ekstra bildene som trengs i bredden, er en billig pris for beskjæringsfriheten.",
+          "failureMessage": "Stående (vertikalt) er standarden for enrads panoramaer: hvert delbilde er høyere, så det sammensatte resultatet tåler horisontkorrigering og beskjæring.",
+          "options": {
+            "0": { "label": "Liggende" },
+            "1": { "label": "Stående" },
+            "2": { "label": "Kvadratisk beskjæringsmodus" },
+            "3": { "label": "Skråstilt 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Med et 50mm-objektiv på fullformat holdt i liggende orientering (omtrent 40° horisontalt synsfelt) og 30 % overlapp — omtrent hvor mange delbilder trenger et 180°-panorama?",
+          "hint": "Hvert bilde flytter dekningen fremover med 40° × 0,7 = 28°.",
+          "successMessage": "Riktig! Det første delbildet dekker 40°, og hvert ekstra delbilde legger til ~28°. Å dekke de gjenværende 140° krever 5 bilder til, altså 7 delbilder totalt (med litt å gå på).",
+          "failureMessage": "Hvert delbilde etter det første legger til 40° × (1 − 0,3) = 28° ny dekning. (180 − 40) / 28 = 5 bilder til, altså 7 totalt.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Panoramaet ditt har et gjerde én meter foran kameraet og fjell bak. Det sammensatte resultatet viser at gjerdet spøker og forskyver seg mellom bildene. Hvilket punkt bør kameraet rotere rundt for å fikse dette?",
+          "hint": "Problemet er parallakse — nære og fjerne objekter forskyver seg i forhold til hverandre.",
+          "successMessage": "Nettopp! Rotasjon rundt objektivets parallaksefrie punkt (nodalpunktet) holder nært og fjernt på linje mellom bildene. Panoramahoder og nodalskinner finnes nettopp for dette.",
+          "failureMessage": "Kameraet må rotere rundt objektivets parallaksefrie punkt (ofte kalt nodalpunktet). Rotasjon rundt stativfestet forskyver det optiske senteret og forårsaker parallaksen du ser.",
+          "options": {
+            "0": { "label": "Frontlinsen på objektivet" },
+            "1": { "label": "Objektivets parallaksefrie punkt" },
+            "2": { "label": "Sensorplanet" },
+            "3": { "label": "Stativfestet" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Kameranız mekanik deklanşörüyle her fotoğraf çektiğinde, içindeki bir sayaç bir artar. Bu sayı — deklanşör sayısı — bir arabanın kilometresi gibidir: kameranın ne kadar yoğun kullanıldığını söyler. En çok ikinci el ekipman alıp satarken önem taşır, çünkü deklanşörler sınırlı sayıda tetiklenme için tasarlanmış hareketli parçalardır.",
+      "deeper": "Mekanik deklanşör, her pozlama için sensörün önünden fiziksel olarak geçen bir çift yaylı perdedir. Üreticiler bu mekanizmaları ömür testlerinden geçirir ve derecelendirmeler yayımlar: giriş seviyesi gövdeler için kabaca 100.000 tetiklenme, meraklı modelleri için 150.000–200.000, profesyonel gövdeler için 300.000–500.000. Bu değer istatistiksel bir ortalamadır, son kullanma tarihi değil — birçok deklanşör derecesinin birkaç katı kadar dayanır ve arızalanan bir deklanşör genellikle onarılabilir (gerçi masraflı) bir sorundur. Sayının nerede tutulduğu markaya göre değişir: Nikon onu her dosyanın üretici notlarına şifrelemeden yazar; bu araç bu yüzden okuyabilir. Canon yalnızca dahili bellekte tutar, Sony şifreler, Pentax ise gizler. Modern aynasız kameralar tabloyu daha da karmaşıklaştırır: elektronik deklanşörle çekilen kareler mekanizmayı hiç yıpratmaz, bu yüzden çoğunlukla sessiz modda kullanılan bir gövdenin toplam pozlama sayısı, mekanik sayacının gösterdiğinden çok daha yüksek olabilir — ve bunda bir sorun yoktur.",
+      "keyFactors": {
+        "0": {
+          "label": "Kamera Markası",
+          "description": "Sayının dosyalardan okunup okunamayacağını belirler. Nikon açıkça saklar; Canon, Sony ve Pentax saklamaz."
+        },
+        "1": {
+          "label": "Öngörülen Deklanşör Ömrü",
+          "description": "Üreticinin deklanşör mekanizması için test edilmiş ortalama ömrü. Üst sınıf gövdeler, daha yüksek dereceli, daha dayanıklı mekanizmalar kullanır."
+        },
+        "2": {
+          "label": "Elektronik ve Mekanik Deklanşör",
+          "description": "Elektronik deklanşörle çekilen kareler sıfır mekanik yıpranma yaratır ve genellikle mekanik sayacı artırmaz. Yoğun sessiz mod kullananların sayıları düşük görünür."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Sayıyı her zaman doğrudan kameradan çıkmış, düzenlenmemiş bir dosyadan kontrol edin. Lightroom, mesajlaşma uygulamaları veya sosyal medyadan yapılan dışa aktarımlar, sayacı taşıyan üretici notlarını genellikle siler."
+        },
+        "1": {
+          "text": "İkinci el alırken sayıyı dereceyle birlikte değerlendirin: 300.000 dereceli bir gövdede 40.000 daha yeni açılmış demektir; 100.000 dereceli bir gövdede 90.000 ise fiyata bir deklanşör değişimini dahil eder."
+        },
+        "2": {
+          "text": "Düşük deklanşör sayısı sağlıklı bir kamera garantisi vermez — su hasarı, sensör çizikleri ve düşmeler sayaçta görünmez. Test fotoğraflarını ve gövdenin kendisini de inceleyin."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Deklanşör Sayısı",
+          "definition": "Mekanik deklanşörün kameranın ömrü boyunca kaç kez çalıştığı. Kameranızın her fotoğrafa gömdüğü meta veriden okunur."
+        },
+        "ratedLife": {
+          "term": "Öngörülen Deklanşör Ömrü",
+          "definition": "Üreticinin test ettiği, deklanşör arızasından önceki ortalama tetiklenme sayısı. Kesin bir sınır değil ortalamadır — birçok deklanşör bunun çok ötesine geçer."
+        },
+        "source": {
+          "term": "Sayı Kaynağı",
+          "definition": "Sayının nereden okunduğu: gerçek deklanşör sayısı alanı, bazı aynasız gövdelerdeki yalnızca mekanik sayaç veya kaba bir yedek olarak kullanılan genel görüntü numarası."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Bir konserde aynasız kameranızın sessiz elektronik deklanşörüyle 500 fotoğraf çekiyorsunuz. Bu, mekanik deklanşöre ne kadar yıpranma ekledi?",
+          "hint": "Elektronik deklanşörle pozlama sırasında fiziksel olarak neyin hareket ettiğini düşünün.",
+          "successMessage": "Doğru! Elektronik deklanşör, hiçbir perdeyi hareket ettirmeden sensörü okur; dolayısıyla o 500 kare esasen hiç mekanik yıpranma yaratmadı — ve genellikle mekanik sayacı da artırmaz.",
+          "failureMessage": "Elektronik deklanşör, pozlamayı sensörü elektronik olarak okuyarak yapar — hiçbir perde hareket etmez, bu yüzden sessiz çekim mekanik deklanşörü yıpratmaz.",
+          "options": {
+            "0": { "label": "Her fotoğraf gibi 500 tetiklenme" },
+            "1": { "label": "Hiç — yalnızca mekanik deklanşör kullanımı sayılır" },
+            "2": { "label": "Yalnızca RAW dosyalar yıpratır" },
+            "3": { "label": "Yalnızca flaşlı fotoğraflar yıpratır" }
+          }
+        },
+        "1": {
+          "scenario": "Bir kamera 200.000 tetiklenme için derecelendirilmiş ve şu anda 195.000 gösteriyor. Bu derece bu gövde için gerçekte ne anlama geliyor?",
+          "hint": "Dereceler, ampullerin saat dereceleri gibi istatistiksel ömür testlerinden gelir.",
+          "successMessage": "Doğru! Derece, testlerden elde edilen ortalama ömürdür — bu deklanşör gelecek hafta arızalanabilir de 400.000'e kadar da gidebilir. Fiyatlama için bir olasılık göstergesidir, geri sayım saati değil.",
+          "failureMessage": "Deklanşör derecesi, test edilmiş ortalama ömürdür; kesin bir sınır veya garanti değildir. Birçok deklanşör bunun çok ötesine dayanır; bazıları daha erken arızalanır.",
+          "options": {
+            "0": { "label": "Deklanşör 200.000'de duracak" },
+            "1": { "label": "Ortalama ömürdür — yaklaştıkça arıza olasılığı artar" },
+            "2": { "label": "Garanti 200.000'de biter" },
+            "3": { "label": "200.000'den sonra pil ömrü azalır" }
+          }
+        },
+        "2": {
+          "scenario": "Aynı modelden iki ikinci el kamerayı karşılaştırıyorsunuz: biri 15.000 tetiklenmede ama pil kapağının yanında gözle görülür korozyon var, diğeri 60.000 tetiklenmede ve tertemiz durumda. Hangisi daha güvenli bir alım?",
+          "hint": "Sayaç yalnızca tek bir yıpranma türünü kaydeder.",
+          "successMessage": "Aynen öyle. Deklanşör sayısı birçok göstergeden yalnızca biridir — korozyon, kameraları yıpranmış deklanşörlerden çok daha sık öldüren su temasına işaret eder. 60.000 sayaçlı temiz gövde daha güvenli alımdır.",
+          "failureMessage": "Deklanşör sayısı yalnızca deklanşör yıpranmasını ölçer. Korozyon, orta düzeyde kullanılmış bir deklanşörden çok daha riskli olan su hasarına işaret eder. Sayıyı durumla birlikte değerlendirin, asla tek başına değil.",
+          "options": {
+            "0": { "label": "15.000 sayaçlı gövde — düşük her zaman daha iyidir" },
+            "1": { "label": "Hangisi daha ucuzsa" },
+            "2": { "label": "Temiz 60.000 sayaçlı gövde — durum daha önemlidir" },
+            "3": { "label": "Hiçbiri — ikisi de çok eski" }
+          }
+        }
+      }
+    }
+  }
+}

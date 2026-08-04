@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Cảm biến",
+      "megapixels": "Độ phân giải: {mp} MP",
+      "aperture": "Khẩu độ",
+      "verdict": {
+        "sharp": "{f} không bị nhiễu xạ",
+        "borderline": "{f} hơi mềm do nhiễu xạ",
+        "soft": "{f} mềm rõ rệt do nhiễu xạ"
+      },
+      "verdictDetail": {
+        "sharp": "Dưới giới hạn nhiễu xạ {limit} của cảm biến và độ phân giải này, chính ống kính — chứ không phải nhiễu xạ — quyết định độ nét.",
+        "borderline": "Vượt qua giới hạn nhiễu xạ {limit}, chi tiết mịn ở từng pixel bắt đầu nhòe. Chấp nhận được khi bạn cần thêm độ sâu trường ảnh.",
+        "soft": "Vượt xa giới hạn nhiễu xạ {limit}. Độ sâu trường ảnh vẫn tăng, nhưng chi tiết tổng thể xuống cấp rõ rệt — hãy cân nhắc chồng ảnh nét (focus stacking) thay vì tiếp tục khép khẩu."
+      },
+      "stripLabel": "Thang khẩu độ tô màu theo mức độ ảnh hưởng của nhiễu xạ",
+      "pixelPitch": "Kích thước điểm ảnh",
+      "airyDisk": "Đường kính đĩa Airy",
+      "diffractionLimit": "Giới hạn nhiễu xạ",
+      "tableTitle": "Giới hạn nhiễu xạ theo cảm biến và độ phân giải",
+      "tableSensor": "Cảm biến",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Nhiễu xạ trong nhiếp ảnh là gì?",
+          "answer": "Nhiễu xạ là hiện tượng sóng ánh sáng bị bẻ cong khi len qua một khẩu độ nhỏ. Khẩu độ càng nhỏ (số f càng cao), mỗi điểm sáng càng loang rộng thành một vòng tròn mờ (đĩa Airy) trên cảm biến. Một khi vòng tròn đó lớn hơn một pixel, chi tiết mịn sẽ bị nhòe dù ống kính có tốt đến đâu."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Khẩu độ nào cho ảnh nét nhất?",
+          "answer": "Hầu hết ống kính đạt đỉnh khi khép hai đến ba khẩu từ mức mở lớn nhất — thường là f/4 đến f/8 trên full frame. Vùng lý tưởng đó cân bằng giữa quang sai của ống kính (tệ nhất khi mở lớn nhất) và nhiễu xạ (tệ dần khi khép khẩu). Cảm biến độ phân giải cao chạm giới hạn nhiễu xạ sớm hơn, nên vùng lý tưởng của chúng hẹp hơn."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Nhiễu xạ có phụ thuộc vào cảm biến không?",
+          "answer": "Hiệu ứng quang học chỉ phụ thuộc vào khẩu độ và bước sóng ánh sáng — nhưng mức độ dễ nhận thấy phụ thuộc vào kích thước pixel. Cảm biến full frame 61 MP có pixel ~3,8 µm và bắt đầu mềm do nhiễu xạ quanh f/5.6, trong khi cảm biến 12 MP với pixel lớn vẫn sắc nét đến f/11. Cảm biến nhỏ hơn chạm giới hạn ở khẩu độ lớn hơn với cùng số megapixel."
+        }
+      }
+    }
+  }
+}

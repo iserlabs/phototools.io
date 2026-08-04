@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom-kataloganalysator",
       "description": "Analysera din Lightroom Classic-katalog — utrustning, brännvidd, bländare, betyg och mer — 100 % i din webbläsare"
+    },
+    "shutter-count-checker": {
+      "name": "Slutarräkningskontroll",
+      "description": "Kontrollera kamerans slutarräkning från ett foto — 100 % i din webbläsare"
+    },
+    "camera-health-checker": {
+      "name": "Kamerahälsokontroll",
+      "description": "Granska ett kamerahus ålder, firmware, serienummer och slutarliv från ett enda foto"
+    },
+    "panorama-calculator": {
+      "name": "Panoramakalkylator",
+      "description": "Planera panoramabilder — antal bilder, överlapp och rotation mellan bilderna"
+    },
+    "diffraction-calculator": {
+      "name": "Diffraktionsgränskalkylator",
+      "description": "Hitta bländaren där diffraktion börjar mjuka upp dina bilder"
+    },
+    "photography-cheat-sheet": {
+      "name": "Fotofusklapp",
+      "description": "Fusklappar med kamerainställningar för vanliga fotosituationer — att ladda ner och skriva ut"
     }
   }
 }

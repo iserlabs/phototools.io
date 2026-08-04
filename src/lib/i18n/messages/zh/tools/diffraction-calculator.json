@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "传感器",
+      "megapixels": "分辨率：{mp} MP",
+      "aperture": "光圈",
+      "verdict": {
+        "sharp": "{f} 不受衍射影响",
+        "borderline": "{f} 受衍射影响略微变软",
+        "soft": "{f} 受衍射影响明显变软"
+      },
+      "verdictDetail": {
+        "sharp": "低于此传感器和分辨率的衍射极限 {limit}，决定锐度的是镜头而非衍射。",
+        "borderline": "超过衍射极限 {limit} 后，像素级的精细细节开始模糊。在需要更大景深时仍可接受。",
+        "soft": "已远超衍射极限 {limit}。景深仍在增加，但整体细节明显下降 — 建议改用焦点堆叠，而不是继续收缩光圈。"
+      },
+      "stripLabel": "按衍射影响着色的光圈刻度",
+      "pixelPitch": "像素间距",
+      "airyDisk": "艾里斑直径",
+      "diffractionLimit": "衍射极限",
+      "tableTitle": "各传感器与分辨率的衍射极限",
+      "tableSensor": "传感器",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "摄影中的衍射是什么？",
+          "answer": "衍射是光波挤过小光圈时发生弯曲的现象。光圈越小（f 值越大），每个光点在传感器上就扩散成越大的模糊圆斑（艾里斑）。一旦这个圆斑大过一个像素，无论镜头多好，精细细节都会变模糊。"
+        },
+        "what-aperture-is-sharpest": {
+          "question": "哪个光圈最锐利？",
+          "answer": "大多数镜头在从最大光圈收缩两三挡后达到峰值 — 全画幅通常在 f/4 到 f/8。这个最佳区间是镜头像差（全开时最严重）与衍射（越收越严重）之间的平衡点。高分辨率传感器更早到达衍射极限，因此其可用的最佳区间更窄。"
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "衍射与传感器有关吗？",
+          "answer": "光学效应本身只取决于光圈和光的波长 — 但它的可见程度取决于像素大小。6100 万像素的全画幅传感器像素约 3.8 µm，在 f/5.6 左右就能看到衍射造成的软化；而像素较大的 1200 万像素传感器到 f/11 仍然清晰。在相同像素数下，较小的传感器会在更大的光圈处到达极限。"
+        }
+      }
+    }
+  }
+}

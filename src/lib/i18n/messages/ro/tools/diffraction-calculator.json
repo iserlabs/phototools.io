@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Senzor",
+      "megapixels": "Rezoluție: {mp} MP",
+      "aperture": "Diafragmă",
+      "verdict": {
+        "sharp": "{f} este fără difracție",
+        "borderline": "{f} este ușor înmuiat de difracție",
+        "soft": "{f} este vizibil înmuiat de difracție"
+      },
+      "verdictDetail": {
+        "sharp": "Sub limita de difracție de {limit} pentru acest senzor și această rezoluție, obiectivul — nu difracția — determină claritatea.",
+        "borderline": "Dincolo de limita de difracție de {limit}, detaliile fine la nivel de pixel încep să se estompeze. Acceptabil când ai nevoie de profunzimea de câmp suplimentară.",
+        "soft": "Mult peste limita de difracție de {limit}. Profunzimea de câmp continuă să crească, dar detaliul general se degradează vizibil — ia în calcul focus stacking în loc să închizi și mai mult diafragma."
+      },
+      "stripLabel": "Scala diafragmelor colorată după impactul difracției",
+      "pixelPitch": "Pasul pixelilor",
+      "airyDisk": "Diametrul discului Airy",
+      "diffractionLimit": "Limita de difracție",
+      "tableTitle": "Limita de difracție după senzor și rezoluție",
+      "tableSensor": "Senzor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Ce este difracția în fotografie?",
+          "answer": "Difracția este curbarea undelor de lumină când se strecoară printr-o deschidere mică. Cu cât diafragma este mai închisă (număr f mai mare), cu atât fiecare punct de lumină se împrăștie într-un disc neclar (discul Airy) pe senzor. Odată ce acel disc devine mai mare decât un pixel, detaliile fine se estompează indiferent cât de bun este obiectivul."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Care diafragmă este cea mai clară?",
+          "answer": "Majoritatea obiectivelor ating maximul la două-trei trepte după deschiderea maximă — de regulă între f/4 și f/8 pe full frame. Acest interval ideal echilibrează aberațiile obiectivului (cele mai grave la deschidere maximă) cu difracția (tot mai gravă pe măsură ce închizi). Senzorii de înaltă rezoluție își ating limita de difracție mai devreme, deci intervalul lor utilizabil este mai îngust."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Depinde difracția de senzor?",
+          "answer": "Efectul optic depinde doar de diafragmă și de lungimea de undă a luminii — dar cât de vizibil este depinde de dimensiunea pixelilor. Un senzor full frame de 61 MP are pixeli de ~3,8 µm și arată înmuierea prin difracție pe la f/5.6, în timp ce un senzor de 12 MP cu pixeli mari rămâne clar până la f/11. Senzorii mai mici ating limita la diafragme mai deschise pentru același număr de megapixeli."
+        }
+      }
+    }
+  }
+}

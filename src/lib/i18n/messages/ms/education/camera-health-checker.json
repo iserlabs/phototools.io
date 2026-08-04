@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Setiap foto yang disimpan oleh kamera anda membawa laporan tersembunyi tentang kamera itu sendiri: model yang tepat, nombor sirinya, perisian tegar yang dijalankannya, lensa yang dipasang, dan kadangkala berapa banyak foto yang telah diambilnya. Alat ini membaca laporan itu daripada satu foto sahaja — sepenuhnya dalam pelayar anda — supaya anda boleh menilai badan kamera seperti mekanik membaca sejarah servis sebuah kereta.",
+      "deeper": "Data ini datang daripada metadata EXIF, blok standard yang ditanam oleh setiap kamera digital dalam failnya. Medan standard termasuk Make, Model, BodySerialNumber, Software (yang bagi kebanyakan kamera melaporkan versi perisian tegar), LensModel, dan cap masa tangkapan. Pengeluar melanjutkannya dengan 'nota pengeluar' proprietari — nota Nikon termasuk kiraan pengatup, sebab itulah hayat pengatup boleh dibaca untuk sesetengah jenama dan tidak untuk yang lain. Usia badan dianggarkan dengan memadankan nama model dengan pangkalan data tahun keluaran: kamera yang dikeluarkan pada 2018 sekurang-kurangnya sudah berusia beberapa tahun, tidak kira apa yang dikatakan penjual. Dua perkara perlu diambil kira. Pertama, metadata hanya kekal dalam fail asal — kebanyakan aplikasi penyuntingan, aplikasi pemesejan dan platform sosial membuang atau menulis semulanya. Kedua, EXIF boleh disunting dengan alat yang tersedia secara percuma, jadi anggap ia sebagai bukti kukuh, bukan bukti muktamad: keselarasan antara nombor siri pada fail, nombor siri pada badan, dan resit penjual itulah yang benar-benar memuktamadkan kes.",
+      "keyFactors": {
+        "0": {
+          "label": "Fail Asal Sahaja",
+          "description": "Metadata kekal dalam fail terus-dari-kamera. Eksport dan simpanan semula sering membuang nombor siri, nota pengeluar dan maklumat perisian tegar."
+        },
+        "1": {
+          "label": "Nombor Siri",
+          "description": "Mengikat fail kepada badan fizikal. Semak silang dengan badan itu sendiri, resit, dan pendaftaran peralatan curi sebelum membeli terpakai."
+        },
+        "2": {
+          "label": "Tahun Keluaran vs Keadaan",
+          "description": "Usia menetapkan jangkaan (teknologi sensor, ciri yang tiada, baki sokongan), tetapi haus pengatup dan keadaan fizikal memberitahu anda betapa beratnya tahun-tahun itu."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Membeli terpakai? Minta penjual foto asal yang belum disunting terus daripada kamera. Ia mengesahkan model dan nombor siri, menunjukkan perisian tegar semasa, dan — pada jenama yang disokong — kiraan pengatup, semuanya dalam satu fail."
+        },
+        "1": {
+          "text": "Semak perisian tegar berbanding keluaran terkini pengeluar. Kamera yang belum dikemas kini itu perkara biasa; kamera yang tidak lagi boleh dikemas kini mungkin terlepas penambahbaikan autofokus dan keserasian."
+        },
+        "2": {
+          "text": "Tarikh tangkapan pada foto sampel penjual memberitahu anda bila kamera itu benar-benar digunakan kali terakhir. Badan yang kononnya 'jarang digunakan' tetapi fail terbarunya berusia empat tahun telah lama terbiar — periksa pengatup yang tersekat dan bateri yang kembung."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Nombor Siri Badan",
+          "definition": "Pengecam unik yang diberikan pengeluar kepada setiap badan kamera, ditanam dalam EXIF setiap foto. Berguna untuk semakan waranti dan pendaftaran peralatan curi."
+        },
+        "firmware": {
+          "term": "Perisian Tegar",
+          "definition": "Perisian dalaman kamera, dilaporkan dalam medan Software EXIF. Pengeluar menghantar penambahbaikan autofokus, keserasian dan ciri melalui kemas kini perisian tegar."
+        },
+        "bodyAge": {
+          "term": "Usia Badan",
+          "definition": "Bilangan tahun sejak model itu dikeluarkan, dianggarkan daripada pangkalan data tarikh keluaran. Batas atas tentang betapa terkini teknologi kamera itu — bukan betapa hausnya badan khusus ini."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Anda membeli kamera terpakai daripada iklan dalam talian. Penjual menghantar foto asal daripada kamera itu. Apakah perkara paling bernilai untuk dilakukan dengan nombor siri dalam metadatanya?",
+          "hint": "Nombor siri menghubungkan badan khusus ini kepada dunia luar.",
+          "successMessage": "Betul! Menyemak silang nombor siri dengan pendaftaran peralatan curi (dan resit penjual) melindungi anda daripada membeli peralatan curi — semakan yang hanya boleh dilakukan dengan nombor siri.",
+          "failureMessage": "Nilai unik nombor siri ialah pengenalpastian: semak dengan pendaftaran peralatan curi dan dokumen penjual. Ia tidak menyatakan apa-apa tentang kualiti imej atau keserasian.",
+          "options": {
+            "0": { "label": "Semak dengan pendaftaran peralatan curi" },
+            "1": { "label": "Anggarkan kualiti foto" },
+            "2": { "label": "Sahkan keserasian lensa" },
+            "3": { "label": "Cari julat ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Sebuah kamera terpakai yang anda pertimbangkan menjalankan perisian tegar 1.0 dari pelancarannya empat tahun lalu, manakala versi terkini pengeluar ialah 3.1. Apakah yang biasanya diperoleh daripada kemas kini?",
+          "hint": "Fikirkan apa yang boleh diubah oleh pengeluar dalam perisian selepas pelancaran.",
+          "successMessage": "Betul! Kemas kini perisian tegar membawa penambahbaikan sebenar — algoritma autofokus yang lebih baik, sokongan lensa baharu, pembetulan pepijat, kadangkala ciri yang lengkap. Spesifikasi perkakasan seperti sensor dan megapiksel tidak pernah berubah.",
+          "failureMessage": "Perisian tegar ialah perisian: kemas kini menambah baik autofokus, menambah sokongan lensa dan membetulkan pepijat. Ia tidak boleh mengubah perkakasan seperti sensor atau kiraan megapiksel.",
+          "options": {
+            "0": { "label": "Ciri baharu dan penambahbaikan autofokus" },
+            "1": { "label": "Lebih banyak megapiksel" },
+            "2": { "label": "Kawasan sensor yang lebih besar" },
+            "3": { "label": "Tiada apa-apa — perisian tegar hanya kosmetik" }
+          }
+        },
+        "2": {
+          "scenario": "Dua penjual menawarkan model yang sama: badan berusia 7 tahun dan badan berusia 4 tahun pada harga yang serupa. Apakah cara yang betul untuk menggunakan usia badan dalam keputusan anda?",
+          "hint": "Usia hanya satu input — apakah yang tidak diberitahunya?",
+          "successMessage": "Tepat sekali. Usia menetapkan julat teknologi dan baki hayat sokongan, tetapi faktor penentu ialah bagaimana badan itu digunakan: kiraan pengatup, keadaan fizikal dan sejarah servis.",
+          "failureMessage": "Usia badan semata-mata tidak memutuskannya — badan lebih tua yang dijaga rapi boleh mengalahkan badan lebih baharu yang diperlakukan kasar. Gabungkan usia dengan kiraan pengatup dan keadaan fizikal.",
+          "options": {
+            "0": { "label": "Sentiasa beli yang lebih baharu" },
+            "1": { "label": "Timbang usia bersama kiraan pengatup dan keadaan" },
+            "2": { "label": "Abaikan usia — hanya megapiksel penting" },
+            "3": { "label": "Pilih berdasarkan reputasi jenama semata-mata" }
+          }
+        }
+      }
+    }
+  }
+}

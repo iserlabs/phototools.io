@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Upuść zdjęcie tutaj lub kliknij, aby wybrać plik (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Upuść dowolne zdjęcie z aparatu, który chcesz sprawdzić. Wszystko jest odczytywane w przeglądarce — plik nigdy nie opuszcza Twojego urządzenia.",
+      "errorRead": "Nie udało się odczytać tego pliku. Spróbuj z nieedytowanym plikiem JPEG lub RAW prosto z aparatu.",
+      "errorNoMetadata": "Ten plik nie zawiera metadanych aparatu. Eksporty z programów do edycji i komunikatorów często je usuwają — spróbuj z nieedytowanym oryginalnym plikiem.",
+      "sections": {
+        "body": "Korpus aparatu",
+        "age": "Wiek",
+        "shutter": "Żywotność migawki",
+        "lens": "Obiektyw"
+      },
+      "cameraModel": "Model",
+      "make": "Producent",
+      "serialNumber": "Numer seryjny",
+      "firmware": "Firmware / oprogramowanie",
+      "bodyAge": "Wiek korpusu",
+      "ageValue": "~{years} lat (premiera w {year} r.)",
+      "ageUnknown": "Tego modelu nie ma w naszej bazie premier, więc nie udało się oszacować jego wieku.",
+      "shotDate": "Data wykonania zdjęcia",
+      "shutterCount": "Przebieg migawki",
+      "ratedLife": "Deklarowana żywotność",
+      "ratedAssumed": "(przyjęta)",
+      "lifeUsed": "Wykorzystano {percent}% deklarowanej żywotności",
+      "verdict": {
+        "low": "Ledwo używany",
+        "moderate": "Umiarkowane zużycie",
+        "high": "Intensywne zużycie",
+        "beyond": "Powyżej deklarowanej żywotności"
+      },
+      "shutterUnavailable": {
+        "supported": "Nie znaleziono przebiegu migawki, mimo że {brand} zwykle go zapisuje. Spróbuj z nieedytowanym oryginalnym plikiem — programy do edycji często usuwają metadane producenta.",
+        "partial": "{brand} zapisuje w niektórych plikach jedynie przybliżony licznik klatek, a w tym pliku go nie ma. Liczbę może podać menu aparatu lub program działający po USB.",
+        "unsupported": "{brand} nie przechowuje odczytywalnego przebiegu migawki w plikach zdjęć. Sprawdź stronę narzędzia Sprawdzanie przebiegu migawki, aby poznać alternatywy dla poszczególnych marek.",
+        "unknown": "Ten plik nie zawiera odczytywalnego przebiegu migawki."
+      },
+      "lensModel": "Obiektyw",
+      "lensSerial": "Numer seryjny obiektywu",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Co sprawdzić przy kupnie używanego aparatu?",
+          "answer": "Poza stanem wizualnym: przebieg migawki w stosunku do deklarowanej żywotności, wiek korpusu i wersję firmware'u, zgodność numeru seryjnego z dokumentami sprzedającego (i czy nie figuruje jako skradziony), stan matrycy (poszukaj pyłków i rys na zdjęciu testowym czystego nieba przy f/16) oraz to, czy wszystkie pokrętła, gniazda i mocowanie obiektywu działają płynnie."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Skąd pochodzą te dane o stanie aparatu?",
+          "answer": "Wszystko jest odczytywane z metadanych osadzonych w zdjęciu: standardowych pól EXIF (model, numer seryjny, firmware, obiektyw, data wykonania) oraz — o ile są dostępne — notatek producenta (przebieg migawki). Wiek korpusu jest szacowany na podstawie wbudowanej bazy lat premier popularnych modeli aparatów."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Czy moje zdjęcie jest wysyłane na serwer?",
+          "answer": "Nie. Plik jest analizowany w całości w Twojej przeglądarce za pomocą JavaScriptu — nigdy nie opuszcza Twojego urządzenia i nic nie jest zapisywane. Możesz to sprawdzić: załaduj stronę, a przed upuszczeniem pliku wyłącz połączenie z internetem."
+        }
+      }
+    }
+  }
+}

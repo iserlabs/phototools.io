@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Resolusi: {mp} MP",
+      "aperture": "Aperture",
+      "verdict": {
+        "sharp": "{f} bebas daripada pembelauan",
+        "borderline": "{f} dilembutkan sedikit oleh pembelauan",
+        "soft": "{f} dilembutkan dengan ketara oleh pembelauan"
+      },
+      "verdictDetail": {
+        "sharp": "Di bawah had pembelauan {limit} untuk sensor dan resolusi ini, lensa — bukan pembelauan — yang menentukan ketajaman.",
+        "borderline": "Melepasi had pembelauan {limit}, perincian halus setiap piksel mula kabur. Boleh diterima apabila anda memerlukan kedalaman medan tambahan.",
+        "soft": "Jauh melepasi had pembelauan {limit}. Kedalaman medan terus bertambah, tetapi perincian keseluruhan merosot dengan ketara — pertimbangkan focus stacking dan bukannya terus mengecilkan aperture."
+      },
+      "stripLabel": "Skala aperture berwarna mengikut kesan pembelauan",
+      "pixelPitch": "Jarak piksel",
+      "airyDisk": "Diameter cakera Airy",
+      "diffractionLimit": "Had pembelauan",
+      "tableTitle": "Had pembelauan mengikut sensor dan resolusi",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Apakah pembelauan dalam fotografi?",
+          "answer": "Pembelauan ialah pembengkokan gelombang cahaya semasa ia menyusup melalui aperture yang kecil. Semakin kecil aperture (nombor-f lebih tinggi), semakin setiap titik cahaya tersebar menjadi cakera kabur (cakera Airy) pada sensor. Sebaik sahaja cakera itu tumbuh lebih besar daripada satu piksel, perincian halus menjadi kabur tidak kira betapa bagusnya lensa itu."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Aperture manakah yang paling tajam?",
+          "answer": "Kebanyakan lensa mencapai puncak dua atau tiga stop dari bukaan penuh — biasanya f/4 hingga f/8 pada bingkai penuh. Julat terbaik itu mengimbangi aberasi lensa (paling teruk pada bukaan penuh) dengan pembelauan (semakin teruk apabila aperture dikecilkan). Sensor beresolusi tinggi mencapai had pembelauannya lebih awal, jadi julat terbaik yang boleh digunakan lebih sempit."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Adakah pembelauan bergantung pada sensor?",
+          "answer": "Kesan optiknya bergantung hanya pada aperture dan panjang gelombang cahaya — tetapi sejauh mana ia kelihatan bergantung pada saiz piksel. Sensor bingkai penuh 61 MP mempunyai piksel ~3.8 µm dan menunjukkan pelembutan pembelauan sekitar f/5.6, manakala sensor 12 MP dengan piksel besar kekal tajam hingga f/11. Sensor lebih kecil mencapai had pada aperture lebih luas untuk kiraan megapiksel yang sama."
+        }
+      }
+    }
+  }
+}

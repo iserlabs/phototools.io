@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Kies een scenario",
+      "tipsTitle": "Praktijktips",
+      "labels": {
+        "aperture": "Diafragma",
+        "shutter": "Sluitertijd",
+        "iso": "ISO",
+        "whiteBalance": "Witbalans",
+        "focusMode": "Scherpstelmodus",
+        "driveMode": "Transportmodus"
+      },
+      "values": {
+        "auto": "Automatisch",
+        "daylight": "Daglicht",
+        "cloudy": "Bewolkt",
+        "shade": "Schaduw",
+        "tungsten": "Kunstlicht (~3200K)",
+        "afSingle": "Enkelvoudige AF (AF-S)",
+        "afContinuous": "Continue AF (AF-C)",
+        "afTracking": "Continue AF + onderwerpvolging",
+        "manualFocus": "Handmatig scherpstellen",
+        "single": "Enkele opname",
+        "burstLow": "Lage burstsnelheid",
+        "burstHigh": "Hoge burstsnelheid",
+        "timer2s": "2s-zelfontspanner / afstandsbediening",
+        "intervalometer": "Intervalmeter"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Portretten",
+          "tips": {
+            "0": "Stel scherp op het oog dat het dichtst bij de camera is — bij grote diafragma's is de scherptediepte maar een paar centimeter.",
+            "1": "Stap naar achteren en zoom in (85mm+) voor flatterende compressie; groothoeklenzen van dichtbij vervormen gelaatstrekken."
+          }
+        },
+        "landscape": {
+          "name": "Landschappen",
+          "tips": {
+            "0": "Stel scherp op ongeveer een derde in de scène of gebruik de hyperfocale afstand voor scherpte van voor tot achter.",
+            "1": "Fotografeer vanaf een statief met de zelfontspanner of een afstandsbediening om trillingen bij lange sluitertijden uit te sluiten."
+          }
+        },
+        "street": {
+          "name": "Straat",
+          "tips": {
+            "0": "Zonefocus: stel vooraf scherp op 3 m en f/8, en alles van 2 m tot 6 m is scherp — zonder AF-vertraging.",
+            "1": "Auto-ISO met een minimale sluitertijd van 1/250s bevriest wandelende mensen terwijl jij je op de kadrering concentreert."
+          }
+        },
+        "wildlife": {
+          "name": "Wildlife & vogels",
+          "tips": {
+            "0": "Stem de sluitertijd af op het onderwerp: 1/1000s voor zittende vogels, 1/2500s of sneller voor vogels in vlucht.",
+            "1": "Fotografeer op ooghoogte en wacht op een hoofddraai — een lichtvonkje in het oog brengt het beeld tot leven."
+          }
+        },
+        "sports": {
+          "name": "Sport & actie",
+          "tips": {
+            "0": "Stel vooraf scherp waar de actie gaat gebeuren (het doel, de apex van een bocht) en start de burst net vóór het hoogtepunt.",
+            "1": "Meetrekken op 1/60s–1/125s met continue AF vervaagt de achtergrond terwijl het onderwerp scherp blijft."
+          }
+        },
+        "macro": {
+          "name": "Macro",
+          "tips": {
+            "0": "Bij hoge vergroting is de scherptediepte flinterdun — stel scherp door de camera te bewegen, niet de scherpstelring.",
+            "1": "Diffractie slaat hard toe voorbij f/16; gebruik focus stacking in plaats van verder diafragmeren."
+          }
+        },
+        "milkyWay": {
+          "name": "Melkweg",
+          "tips": {
+            "0": "Gebruik de NPF- of 500-regel voor de maximale belichting voordat sterren strepen worden — zo'n 15–20s bij 20mm op fullframe.",
+            "1": "Stel handmatig scherp op een heldere ster met vergroot liveview; zet de witbalans rond 3900K voor een neutrale lucht."
+          }
+        },
+        "nightCity": {
+          "name": "Nachtelijke stadsgezichten",
+          "tips": {
+            "0": "Fotografeer op basis-ISO vanaf een statief en laat de sluiter lang open — hoge lichten blijven schoon en ruis blijft laag.",
+            "1": "f/11–f/16 verandert puntlichten in sterretjes; fotografeer tijdens het blauwe uur voor kleur in de lucht."
+          }
+        },
+        "waterfall": {
+          "name": "Watervallen & lange sluitertijden",
+          "tips": {
+            "0": "Belichtingen van 0,5–2s behouden textuur in het water; 30s+ maakt er nevel van. Gebruik overdag een ND-filter.",
+            "1": "Een circulair polarisatiefilter haalt schittering van natte rotsen en bladeren weg — en werkt meteen als een ND van ~1,5 stop."
+          }
+        },
+        "goldenHour": {
+          "name": "Gouden uur",
+          "tips": {
+            "0": "Belicht op de hoge lichten en haal de schaduwen in de nabewerking omhoog — uitgebeten warme hoge lichten zijn onherstelbaar.",
+            "1": "Zet onderwerpen in tegenlicht voor randlicht en flare; de witbalansinstelling 'Bewolkt' houdt de scène warm."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Welke camera-instellingen moet ik gebruiken voor portretten?",
+          "answer": "Begin met een groot diafragma (f/1.8–f/2.8) voor achtergrondvervaging, een sluitertijd van minstens 1/200s tegen bewegingsonscherpte en de laagste ISO die het licht toelaat (100–400). Gebruik éénpunts-autofocus op het dichtstbijzijnde oog, of oogherkennings-AF als je camera die heeft."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Welke instellingen heb ik nodig om de Melkweg te fotograferen?",
+          "answer": "Een lichtsterke groothoeklens op zijn grootste diafragma (f/1.4–f/2.8), een belichting van 10–25 seconden (langer maakt strepen van de sterren), ISO 1600–6400, handmatige scherpstelling op een heldere ster en een statief. Een maanloze nacht ver van stadslicht doet er meer toe dan welke camera-instelling dan ook."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Zijn deze instellingen exacte recepten?",
+          "answer": "Nee — het zijn bewezen startpunten. Licht verschilt enorm per scène, dus beschouw de bereiken als een eerste gok, maak een testopname, controleer het histogram en pas aan. Het doel is je snel in de juiste buurt te krijgen, niet om je eigen oordeel te vervangen."
+        }
+      }
+    }
+  }
+}

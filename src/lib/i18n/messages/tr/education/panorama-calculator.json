@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Panorama, kamerayı döndürerek birbirini örten birkaç fotoğraf çekmek ve ardından yazılımın bunları tek bir geniş görüntüde birleştirmesine izin vermekle oluşturulur. İşin püf noktası, çekimler arasında ne kadar döneceğinizi bilmektir: çok dönerseniz yazılım kareleri birleştiremez, az dönerseniz onlarca kareyi boşa harcarsınız. Bu hesaplayıcı, o matematiği objektifinizden, sensörünüzden ve istediğiniz örtüşmeden yola çıkarak yapar.",
+      "deeper": "Her kare, odak uzaklığı ve sensör boyutuna göre belirlenen sabit bir görüş açısını kapsar — full frame üzerinde 50mm bir objektif yatayda yaklaşık 40° görür. Birleştirme yazılımı, komşu kareleri örtüşme bölgesindeki ortak 'kontrol noktalarını' bularak hizalar; %25–35 örtüşmenin pratik standart olmasının nedeni budur: kare sayısını patlatmadan algoritmaya yeterli ortak ayrıntı verir. Bu yüzden çekim başına kullanılabilir dönüş, karenin görüş alanı çarpı (1 − örtüşme) kadardır. Dikey yönde çekmek, daha dar bir yatay adımı çok daha fazla dikey kapsamayla takas eder; tek sıralı panoramaların çoğunun dikey çekilmesinin nedeni budur. Gerçekten yüksek sahneler için çok sıralı panoramalar aynı örtüşme mantığını dikeyde uygular. Nihai birleştirilmiş dosya hızla büyür: her ek kare, çözünürlüğünden örtüşme düşülmüş halini katkı olarak ekler; bu yüzden 24 MP bir kameradan 7 karelik dikey bir panorama kolayca 100 MP'yi aşar. Fiziksel bir incelik hepsini sınırlar: tripod yuvası etrafında dönmek, objektifin optik merkezini kareler arasında kaydırır ve yakın ile uzak nesnelerin hizasını bozar (paralaks). Uzak manzaralarda bu nadiren önemlidir; ancak yakın ön plan ögeleri varsa, bir nodal ray veya panoramik başlık kullanarak objektifin paralakssız noktası etrafında dönmeniz gerekir.",
+      "keyFactors": {
+        "0": {
+          "label": "Odak Uzaklığı ve Sensör",
+          "description": "Birlikte tek karenin görüş alanını — panoramanın inşa edildiği temel birimi — belirler. Daha uzun objektifler daha dar kareler ve daha fazla çekim demektir."
+        },
+        "1": {
+          "label": "Örtüşme",
+          "description": "Birleştirme yazılımının hizalamada kullandığı, komşu kareler arasındaki ortak bölge. İdeal aralık %25–35'tir; belirgin ayrıntısı az sahneler (gökyüzü, su) daha fazlasına ihtiyaç duyar."
+        },
+        "2": {
+          "label": "Yön",
+          "description": "Dikey kareler çekim başına daha az genişlik ama çok daha fazla yükseklik kapsar — kırpma payı bıraktığı için tek sıralı panoramaların standart tercihidir."
+        },
+        "3": {
+          "label": "Paralaks",
+          "description": "Yanlış eksen etrafında dönmenin yol açtığı yakın/uzak hizalama bozukluğu. Uzak sahnelerde zararsız; yakın ön planlarda kritiktir."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "İlk kareden önce pozlamayı, beyaz dengesini ve odağı manuele kilitleyin. Otomatik bırakılan her şey kareler arasında değişir ve birleştirilmiş gökyüzünde görünür bantlar oluşturur."
+        },
+        "1": {
+          "text": "Objektifi düz tutarak tek bir akıcı geçişle döndürün ve her iki uca birer atılacak kare ekleyin — kenar kareler birleştirme sırasında bozulur ve kırpılır."
+        },
+        "2": {
+          "text": "Elde çekilen panoramalarda örtüşmeyi %40–50'ye çıkarın. Dönüşünüz hassas olmayacaktır ve fazladan kareler, birleştiriciye toparlanma alanı verir."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Örtüşme",
+          "definition": "Her karenin komşusuyla paylaştığı yüzde. Birleştirme yazılımı kareleri hizalamak için bu ortak ayrıntıya ihtiyaç duyar — tipik değer %25–35'tir."
+        },
+        "orientation": {
+          "term": "Kamera Yönü",
+          "definition": "Dikey kadraj panoramalar için standarttır: her kare daha fazla yükseklik katar ve ufuk düzeltmesi ile kırpma için alan bırakır."
+        },
+        "rotateBetween": {
+          "term": "Çekimler Arası Döndürme",
+          "definition": "Her kareden sonra kamerayı kaç derece çevireceğiniz: karenin görüş alanı çarpı (1 − örtüşme). Panoramik başlıklarda tam bunun için tık durakları vardır."
+        },
+        "rows": {
+          "term": "Sıralar",
+          "definition": "Çok sıralı panoramalar, yüksek sahneleri kapsamak için yatay geçişleri dikeyde üst üste dizer ve sıralar arasında aynı örtüşme kuralını uygular."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Bir dağ silsilesinin panoramasını çekiyorsunuz. Güvenilir birleştirme için komşu kareler ne kadar örtüşmeli?",
+          "hint": "Birleştirici ortak ayrıntıya ihtiyaç duyar, ama her fazladan kare zamana mal olur.",
+          "successMessage": "Doğru! Yaklaşık %30 örtüşme, kare israf etmeden birleştirme yazılımına bol bol kontrol noktası sağlar — çoğu sahne için standart öneri budur.",
+          "failureMessage": "Pratik standart %25–35'tir. ~%15'in altında birleştiriciler kontrol noktası bulmakta zorlanır; %80 ise hiçbir kazanç sağlamadan kare sayınızı üçe katlar.",
+          "options": {
+            "0": { "label": "%5" },
+            "1": { "label": "%15" },
+            "2": { "label": "%30" },
+            "3": { "label": "%80" }
+          }
+        },
+        "1": {
+          "scenario": "Sonradan ufku düzeltip rahatça kırpabilmek için yeterli dikey alana sahip tek sıralı bir panorama istiyorsunuz. Hangi kamera yönünde çekmelisiniz?",
+          "hint": "Hangi yön kare başına daha fazla yükseklik verir?",
+          "successMessage": "Doğru! Dikey yön, kare başına çok daha fazla dikey görüş alanı yakalar — yatayda gereken birkaç fazladan kare, kırpma özgürlüğü için ucuz bir bedeldir.",
+          "failureMessage": "Tek sıralı panoramalarda standart, dikey yöndür: her kare daha uzundur, böylece birleştirilmiş sonuç ufuk düzeltmesine ve kırpmaya dayanır.",
+          "options": {
+            "0": { "label": "Yatay" },
+            "1": { "label": "Dikey" },
+            "2": { "label": "Kare kırpma modu" },
+            "3": { "label": "45° eğik" }
+          }
+        },
+        "2": {
+          "scenario": "Full frame üzerinde 50mm bir objektifle yatay konumda (yaklaşık 40° yatay görüş) ve %30 örtüşmeyle 180°'lik bir panorama kabaca kaç kare gerektirir?",
+          "hint": "Her çekim kapsamayı 40° × 0,7 = 28° ilerletir.",
+          "successMessage": "Doğru! İlk kare 40° kapsar ve her ek kare ~28° ekler. Kalan 140°'yi kapsamak 5 kare daha gerektirir, yani toplam 7 kare (biraz payla birlikte).",
+          "failureMessage": "İlkinden sonraki her kare 40° × (1 − 0,3) = 28° yeni kapsama ekler. (180 − 40) / 28 = 5 kare daha, yani toplam 7.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Panoramanızda kameranın bir metre önünde bir çit, arkasında dağlar var. Birleştirilmiş sonuçta çit, kareler arasında hayalet görüntü veriyor ve hizası bozuluyor. Bunu düzeltmek için kamera hangi nokta etrafında dönmeli?",
+          "hint": "Sorun paralaks — yakın ve uzak nesnelerin birbirine göre kayması.",
+          "successMessage": "Aynen öyle! Objektifin paralakssız (nodal) noktası etrafında dönmek, yakın ve uzak nesneleri kareler arasında hizalı tutar. Panoramik başlıklar ve nodal raylar tam olarak bunun için vardır.",
+          "failureMessage": "Kamera, objektifin paralakssız noktası (genellikle nodal nokta denir) etrafında dönmelidir. Tripod yuvası etrafında dönmek optik merkezi kaydırır ve gördüğünüz paralaksa yol açar.",
+          "options": {
+            "0": { "label": "Objektifin ön elemanı" },
+            "1": { "label": "Objektifin paralakssız noktası" },
+            "2": { "label": "Sensör düzlemi" },
+            "3": { "label": "Tripod yuvası" }
+          }
+        }
+      }
+    }
+  }
+}

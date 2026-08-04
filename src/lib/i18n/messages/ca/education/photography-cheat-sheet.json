@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Cada situació fotogràfica — retrats, fauna, la Via Làctia — té una combinació ben rodada d'obertura, velocitat d'obturació i ISO a la qual els fotògrafs amb experiència recorren primer. Aquests fulls de referència et donen aquest punt de partida a l'instant, perquè dediquis l'atenció a la llum i la composició en lloc de dubtar amb els dials.",
+      "deeper": "Cada recepta d'aquesta eina és una aplicació del triangle d'exposició amb un costat prioritzat. Els retrats prioritzen l'obertura: les obertures àmplies (f/1.8–f/2.8) separen el subjecte del fons, i tota la resta s'hi adapta. L'acció prioritza la velocitat d'obturació: 1/1000s congela el moviment, així que l'obertura s'obre i l'ISO puja per alimentar-la de llum. Els paisatges prioritzen la qualitat d'imatge: ISO base i una obertura mitjana al punt òptim de l'objectiu, amb un trípode absorbint la velocitat d'obturació que en resulti. Les escenes nocturnes forcen els tres costats alhora, i per això tenen les receptes més rígides: la Via Làctia exigeix de debò un objectiu lluminós a plena obertura, una obturació per sota de ~20 segons (abans que la rotació de la Terra deixi traces a les estrelles) i l'ISO que faci utilitzable l'histograma. Entendre quin costat prioritza cada escenari és la lliçó de debò: quan veus la prioritat, pots adaptar qualsevol recepta a la llum que tens al davant en lloc de seguir-la a cegues. Els rangs són punts de partida calibrats per a condicions típiques; l'última paraula la té el teu histograma, no el full.",
+      "keyFactors": {
+        "0": {
+          "label": "Prioritat de l'escenari",
+          "description": "Cada situació fixa primer una variable d'exposició — l'obertura en retrats, l'obturació en acció, l'ISO en paisatges — i deixa que les altres s'adaptin."
+        },
+        "1": {
+          "label": "Llum disponible",
+          "description": "El mateix escenari necessita ajustos diferents al migdia i al capvespre. Pren els rangs com a àncores i mou-t'hi dins a mesura que canviï la llum."
+        },
+        "2": {
+          "label": "Suport i estabilitat",
+          "description": "Un trípode desbloqueja l'ISO base i obturacions lentes en escenes estàtiques. A mà alçada, el terra de velocitat ronda 1/(distància focal) o més ràpid."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Fes una foto de prova i llegeix l'histograma, no la previsualització del LCD: les pantalles menteixen a ple sol i de nit; l'histograma, mai."
+        },
+        "1": {
+          "text": "Memoritza una recepta per cada gènere que fotografiïs i practica ajustant una sola variable cada vegada. Interioritzaràs els compromisos molt més ràpid que canviant-ho tot alhora."
+        },
+        "2": {
+          "text": "Descarrega el full dels escenaris que fotografiïs poc: la recepta de la Via Làctia és difícil de recordar a les 2 de la matinada al vessant d'una muntanya i amb els dits gelats."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Obertura",
+          "definition": "La mida de l'obertura de l'objectiu, en números f. Números baixos = més llum i més desenfocament de fons; números alts = més profunditat de camp."
+        },
+        "shutter": {
+          "term": "Velocitat d'obturació",
+          "definition": "Quant de temps recull llum el sensor. Les velocitats ràpides congelen el moviment; les lentes el difuminen i exigeixen estabilització o trípode."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "L'amplificació del sensor. Mantén-lo tan baix com permeti la llum: apujar-lo aclareix la imatge a costa de soroll."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Fotografies un retrat i vols l'aspecte clàssic: subjecte nítid, fons fos en desenfocament. Quina elecció d'ajustos ho aconsegueix?",
+          "hint": "El desenfocament de fons ve de la profunditat de camp: quin control la governa?",
+          "successMessage": "Correcte! Una obertura àmplia (com f/1.8–f/2.8) crea la poca profunditat de camp que separa el subjecte d'un fons desenfocat: l'elecció que defineix el retrat.",
+          "failureMessage": "El desenfocament de fons ve d'una obertura àmplia (número f baix) com f/1.8–f/2.8, que redueix la profunditat de camp. Les obertures tancades fan el contrari.",
+          "options": {
+            "0": { "label": "Una obertura tancada com f/16" },
+            "1": { "label": "Una obertura àmplia com f/2" },
+            "2": { "label": "Una llarga exposició en trípode" },
+            "3": { "label": "L'ISO al màxim" }
+          }
+        },
+        "1": {
+          "scenario": "Un bernat pescaire s'enlaira de l'aigua just quan prems el disparador, i tots els fotogrames mostren les puntes de les ales borroses. Quina és la solució?",
+          "hint": "El desenfocament de moviment és un problema de temps.",
+          "successMessage": "Exacte! Els ocells en vol requereixen velocitats d'obturació ràpides: 1/2500s o menys congela l'aleteig. Obre l'obertura i deixa que l'ISO automàtic pugi per alimentar la velocitat que necessites.",
+          "failureMessage": "Les ales borroses signifiquen que l'obturació és massa lenta per al moviment. Puja a 1/2500s o més ràpid i deixa que l'obertura i l'ISO compensin la llum perduda.",
+          "options": {
+            "0": { "label": "Una obturació més lenta per a més llum" },
+            "1": { "label": "Una velocitat d'obturació molt més ràpida" },
+            "2": { "label": "Tancar a f/22" },
+            "3": { "label": "Canviar el balanç de blancs a tungstè" }
+          }
+        },
+        "2": {
+          "scenario": "Ets sota un cel fosc per fotografiar la Via Làctia. Quina combinació aconsegueix una exposició utilitzable del centre galàctic?",
+          "hint": "Les estrelles són tènues, es mouen (amb la rotació de la Terra) i són la teva única font de llum.",
+          "successMessage": "Correcte! A plena obertura (f/1.4–f/2.8), 10–25 segons, ISO 1600–6400: l'obertura recull la màxima llum, l'obturació s'atura abans que les estrelles deixin traça i l'ISO alt fa visible el tènue centre galàctic.",
+          "failureMessage": "La Via Làctia ho necessita tot: l'obertura al màxim, una exposició prou curta perquè les estrelles no deixin traça (10–25s) i un ISO alt (1600–6400). Les obertures petites o l'ISO base deixen el cel negre.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "A plena obertura, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Qualsevol ajust amb un filtre ND" }
+          }
+        }
+      }
+    }
+  }
+}

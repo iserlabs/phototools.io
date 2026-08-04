@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Elige un escenario",
+      "tipsTitle": "Consejos de campo",
+      "labels": {
+        "aperture": "Apertura",
+        "shutter": "Velocidad de obturación",
+        "iso": "ISO",
+        "whiteBalance": "Balance de blancos",
+        "focusMode": "Modo de enfoque",
+        "driveMode": "Modo de disparo"
+      },
+      "values": {
+        "auto": "Automático",
+        "daylight": "Luz de día",
+        "cloudy": "Nublado",
+        "shade": "Sombra",
+        "tungsten": "Tungsteno (~3200K)",
+        "afSingle": "AF simple (AF-S)",
+        "afContinuous": "AF continuo (AF-C)",
+        "afTracking": "AF continuo + seguimiento del sujeto",
+        "manualFocus": "Enfoque manual",
+        "single": "Disparo único",
+        "burstLow": "Ráfaga a baja velocidad",
+        "burstHigh": "Ráfaga a alta velocidad",
+        "timer2s": "Temporizador de 2s / disparador remoto",
+        "intervalometer": "Intervalómetro"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Retratos",
+          "tips": {
+            "0": "Enfoca al ojo más cercano a la cámara: con aperturas amplias la profundidad de campo es de solo unos centímetros.",
+            "1": "Aléjate y usa una focal larga (85mm o más) para una compresión favorecedora; los angulares de cerca distorsionan los rasgos faciales."
+          }
+        },
+        "landscape": {
+          "name": "Paisajes",
+          "tips": {
+            "0": "Enfoca aproximadamente a un tercio de la escena o usa la distancia hiperfocal para conseguir nitidez de delante a atrás.",
+            "1": "Dispara desde trípode con el temporizador o un disparador remoto para eliminar la trepidación con velocidades de obturación lentas."
+          }
+        },
+        "street": {
+          "name": "Fotografía callejera",
+          "tips": {
+            "0": "Enfoque por zonas: preajusta el enfoque a 3 m y f/8, y todo lo que esté entre 2 m y 6 m saldrá nítido, sin esperas del AF.",
+            "1": "ISO automático con una velocidad de obturación mínima de 1/250s congela a los sujetos que caminan mientras te concentras en el encuadre."
+          }
+        },
+        "wildlife": {
+          "name": "Fauna y aves",
+          "tips": {
+            "0": "Ajusta la velocidad de obturación al sujeto: 1/1000s para aves posadas, 1/2500s o más rápido para aves en vuelo.",
+            "1": "Dispara a la altura de los ojos y espera los giros de cabeza: un brillo en el ojo da vida a la imagen."
+          }
+        },
+        "sports": {
+          "name": "Deportes y acción",
+          "tips": {
+            "0": "Preenfoca donde va a ocurrir la acción (la portería, el vértice de una curva) y empieza la ráfaga justo antes del momento álgido.",
+            "1": "Un barrido a 1/60s–1/125s con AF continuo desenfoca el fondo mientras mantiene nítido al sujeto."
+          }
+        },
+        "macro": {
+          "name": "Macro",
+          "tips": {
+            "0": "Con mucha ampliación la profundidad de campo es finísima: enfoca moviendo la cámara, no el anillo de enfoque.",
+            "1": "La difracción castiga con fuerza más allá de f/16; usa apilamiento de enfoque en lugar de cerrar más el diafragma."
+          }
+        },
+        "milkyWay": {
+          "name": "Vía Láctea",
+          "tips": {
+            "0": "Usa la regla NPF o la regla 500 para la exposición máxima antes de que las estrellas dejen estelas: unos 15–20s a 20mm en formato completo.",
+            "1": "Enfoca manualmente a una estrella brillante con la vista en vivo ampliada; ajusta el balance de blancos cerca de 3900K para un cielo neutro."
+          }
+        },
+        "nightCity": {
+          "name": "Paisajes urbanos nocturnos",
+          "tips": {
+            "0": "Dispara a ISO base desde trípode y deja correr el obturador: las altas luces se mantienen limpias y el ruido, bajo.",
+            "1": "f/11–f/16 convierte las luces puntuales en estrellas; dispara durante la hora azul para tener color en el cielo."
+          }
+        },
+        "waterfall": {
+          "name": "Cascadas y larga exposición",
+          "tips": {
+            "0": "Las exposiciones de 0,5–2s conservan la textura del agua; a partir de 30s se convierte en niebla. Usa un filtro ND a plena luz del día.",
+            "1": "Un polarizador circular elimina los reflejos de las rocas mojadas y el follaje, y además funciona como un ND de ~1,5 pasos."
+          }
+        },
+        "goldenHour": {
+          "name": "Hora dorada",
+          "tips": {
+            "0": "Expón para las altas luces y levanta las sombras en el revelado: las altas luces cálidas quemadas son irrecuperables.",
+            "1": "Coloca a los sujetos a contraluz para conseguir luz de contorno y destellos; el preajuste de balance de blancos «nublado» mantiene la calidez de la escena."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "¿Qué ajustes de cámara debo usar para retratos?",
+          "answer": "Empieza con una apertura amplia (f/1.8–f/2.8) para desenfocar el fondo, una velocidad de obturación de al menos 1/200s para evitar el movimiento y el ISO más bajo que permita la luz (100–400). Usa autofoco de punto único sobre el ojo más cercano, o AF con detección de ojos si tu cámara lo tiene."
+        },
+        "what-settings-for-milky-way": {
+          "question": "¿Qué ajustes necesito para fotografiar la Vía Láctea?",
+          "answer": "Un objetivo angular y luminoso a su máxima apertura (f/1.4–f/2.8), una exposición de 10–25 segundos (más tiempo deja estelas en las estrellas), ISO 1600–6400, enfoque manual sobre una estrella brillante y un trípode. Una noche sin luna y lejos de las luces de la ciudad importa más que cualquier ajuste de la cámara."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "¿Son estos ajustes recetas exactas?",
+          "answer": "No: son puntos de partida probados. La luz varía enormemente entre escenas, así que toma los rangos como una primera aproximación, haz una foto de prueba, revisa el histograma y ajusta. El objetivo es situarte rápido en el rango correcto, no sustituir tu criterio."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Every shooting situation — portraits, wildlife, the Milky Way — has a well-worn combination of aperture, shutter speed, and ISO that experienced photographers reach for first. These cheat sheets give you that starting point instantly, so you can spend your attention on light and composition instead of second-guessing the dials.",
+      "deeper": "Every recipe here is an application of the exposure triangle with one side prioritized. Portraits prioritize aperture: wide openings (f/1.8–f/2.8) separate the subject from the background, and everything else adapts around that. Action prioritizes shutter speed: 1/1000s freezes motion, so aperture opens and ISO rises to feed it light. Landscapes prioritize image quality: base ISO and a mid aperture in the lens's sweet spot, with a tripod absorbing whatever shutter speed results. Night scenes push all three sides at once, which is why they have the most rigid recipes — the Milky Way genuinely requires a wide-open fast lens, a shutter under ~20 seconds (before Earth's rotation trails the stars), and whatever ISO makes the histogram usable. Understanding which side each scenario prioritizes is the real lesson: once you see the priority, you can adapt any recipe to the light in front of you instead of following it blindly. The ranges are starting points calibrated for typical conditions; your histogram, not the sheet, has the final word.",
+      "keyFactors": {
+        "0": {
+          "label": "Scenario Priority",
+          "description": "Each situation locks one exposure variable first — aperture for portraits, shutter for action, ISO for landscapes — and lets the others adapt."
+        },
+        "1": {
+          "label": "Available Light",
+          "description": "The same scenario needs different settings at noon and dusk. Treat the ranges as anchors and shift within them as light changes."
+        },
+        "2": {
+          "label": "Support & Stability",
+          "description": "A tripod unlocks base ISO and slow shutters for static scenes. Handheld work sets a shutter-speed floor around 1/(focal length) or faster."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Take a test shot and read the histogram, not the LCD preview — screens lie in bright sun and at night, the histogram never does."
+        },
+        "1": {
+          "text": "Memorize one recipe per genre you shoot, then practice adjusting a single variable at a time. You'll internalize the trade-offs far faster than by changing everything at once."
+        },
+        "2": {
+          "text": "Download the sheet for scenarios you shoot rarely — the Milky Way recipe is hard to remember at 2 AM on a mountainside with cold fingers."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Aperture",
+          "definition": "The size of the lens opening, in f-numbers. Lower numbers = more light and more background blur; higher numbers = more depth of field."
+        },
+        "shutter": {
+          "term": "Shutter Speed",
+          "definition": "How long the sensor gathers light. Fast speeds freeze motion; slow speeds blur it and demand stabilization or a tripod."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "The sensor's amplification. Keep it as low as the light allows — raising it brightens the image at the cost of noise."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "You're shooting a portrait and want the classic look: subject sharp, background melted into blur. Which setting choice achieves it?",
+          "hint": "Background blur comes from depth of field — which control drives that?",
+          "successMessage": "Correct! A wide aperture (like f/1.8–f/2.8) creates the shallow depth of field that separates the subject from a blurred background — the defining portrait choice.",
+          "failureMessage": "Background blur comes from a wide aperture (low f-number) like f/1.8–f/2.8, which makes depth of field shallow. Narrow apertures do the opposite.",
+          "options": {
+            "0": { "label": "A narrow aperture like f/16" },
+            "1": { "label": "A wide aperture like f/2" },
+            "2": { "label": "A long exposure on a tripod" },
+            "3": { "label": "Maximum ISO" }
+          }
+        },
+        "1": {
+          "scenario": "A heron keeps launching off the water just as you press the shutter, and every frame shows blurred wingtips. What's the fix?",
+          "hint": "Motion blur is a time problem.",
+          "successMessage": "Right! Birds in flight need fast shutter speeds — 1/2500s or quicker freezes wingbeats. Open the aperture and let Auto ISO climb to feed the speed you need.",
+          "failureMessage": "Blurred wings mean the shutter is too slow for the motion. Jump to 1/2500s or faster and let aperture and ISO compensate for the lost light.",
+          "options": {
+            "0": { "label": "A slower shutter for more light" },
+            "1": { "label": "A much faster shutter speed" },
+            "2": { "label": "Stop down to f/22" },
+            "3": { "label": "Switch white balance to tungsten" }
+          }
+        },
+        "2": {
+          "scenario": "You're set up under a dark sky to photograph the Milky Way. Which combination gets a usable exposure of the galactic core?",
+          "hint": "The stars are faint, moving (with Earth's rotation), and your only light source.",
+          "successMessage": "Correct! Wide open (f/1.4–f/2.8), 10–25 seconds, ISO 1600–6400: the aperture gathers maximum light, the shutter stops before stars trail, and high ISO makes the faint core visible.",
+          "failureMessage": "The Milky Way needs everything: aperture wide open, an exposure short enough that stars don't trail (10–25s), and ISO high (1600–6400). Small apertures or base ISO leave the sky black.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Wide open, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Any settings with an ND filter" }
+          }
+        }
+      }
+    }
+  }
+}

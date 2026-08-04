@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Elke opnamesituatie — portretten, wildlife, de Melkweg — heeft een beproefde combinatie van diafragma, sluitertijd en ISO waar ervaren fotografen als eerste naar grijpen. Deze spiekbriefjes geven je dat startpunt meteen, zodat je je aandacht kunt richten op licht en compositie in plaats van te twijfelen aan de knoppen.",
+      "deeper": "Elk recept hier is een toepassing van de belichtingsdriehoek met één zijde als prioriteit. Portretten geven voorrang aan het diafragma: grote openingen (f/1.8–f/2.8) maken het onderwerp los van de achtergrond, en al het andere past zich daaraan aan. Actie geeft voorrang aan de sluitertijd: 1/1000s bevriest beweging, dus het diafragma gaat open en de ISO stijgt om licht aan te voeren. Landschappen geven voorrang aan beeldkwaliteit: basis-ISO en een middendiafragma in de sweet spot van de lens, waarbij een statief de resulterende sluitertijd opvangt. Nachtscènes rekken alle drie de zijden tegelijk op, en daarom hebben ze de striktste recepten — de Melkweg vereist echt een lichtsterke lens op volle opening, een sluitertijd onder ~20 seconden (voordat de aardrotatie strepen van de sterren maakt) en de ISO die het histogram bruikbaar maakt. Begrijpen welke zijde elk scenario prioriteit geeft, is de echte les: zodra je de prioriteit ziet, kun je elk recept aanpassen aan het licht voor je neus in plaats van het blind te volgen. De bereiken zijn startpunten voor typische omstandigheden; je histogram, niet het briefje, heeft het laatste woord.",
+      "keyFactors": {
+        "0": {
+          "label": "Scenarioprioriteit",
+          "description": "Elke situatie legt eerst één belichtingsvariabele vast — diafragma voor portretten, sluitertijd voor actie, ISO voor landschappen — en laat de andere zich aanpassen."
+        },
+        "1": {
+          "label": "Beschikbaar licht",
+          "description": "Hetzelfde scenario vraagt om andere instellingen om twaalf uur 's middags dan in de schemering. Beschouw de bereiken als ankers en schuif erbinnen mee met het licht."
+        },
+        "2": {
+          "label": "Steun & stabiliteit",
+          "description": "Een statief maakt basis-ISO en lange sluitertijden mogelijk bij statische scènes. Uit de hand geldt een ondergrens voor de sluitertijd van ongeveer 1/(brandpuntsafstand) of sneller."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Maak een testopname en lees het histogram, niet het lcd-voorbeeld — schermen liegen in fel zonlicht en 's nachts, het histogram nooit."
+        },
+        "1": {
+          "text": "Leer één recept uit je hoofd per genre dat je fotografeert en oefen daarna met het aanpassen van één variabele tegelijk. Zo krijg je de afwegingen veel sneller in de vingers dan door alles tegelijk te veranderen."
+        },
+        "2": {
+          "text": "Download het briefje voor scenario's die je zelden fotografeert — het Melkwegrecept is om 2 uur 's nachts op een berghelling met koude vingers lastig te onthouden."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Diafragma",
+          "definition": "De grootte van de lensopening, in f-getallen. Lagere getallen = meer licht en meer achtergrondvervaging; hogere getallen = meer scherptediepte."
+        },
+        "shutter": {
+          "term": "Sluitertijd",
+          "definition": "Hoe lang de sensor licht verzamelt. Korte tijden bevriezen beweging; lange tijden vervagen haar en vragen om stabilisatie of een statief."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "De versterking van de sensor. Houd hem zo laag als het licht toelaat — hoger zetten maakt het beeld helderder ten koste van ruis."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Je fotografeert een portret en wilt de klassieke look: onderwerp scherp, achtergrond weggesmolten in onscherpte. Welke instellingskeuze bereikt dat?",
+          "hint": "Achtergrondvervaging komt van de scherptediepte — welke knop stuurt die aan?",
+          "successMessage": "Correct! Een groot diafragma (zoals f/1.8–f/2.8) creëert de geringe scherptediepte die het onderwerp losmaakt van een vervaagde achtergrond — dé bepalende portretkeuze.",
+          "failureMessage": "Achtergrondvervaging komt van een groot diafragma (laag f-getal) zoals f/1.8–f/2.8, dat de scherptediepte klein maakt. Kleine diafragma's doen het tegenovergestelde.",
+          "options": {
+            "0": { "label": "Een klein diafragma zoals f/16" },
+            "1": { "label": "Een groot diafragma zoals f/2" },
+            "2": { "label": "Een lange belichting op statief" },
+            "3": { "label": "Maximale ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Een reiger stijgt telkens op van het water precies wanneer je afdrukt, en elk beeld toont vervaagde vleugelpunten. Wat is de oplossing?",
+          "hint": "Bewegingsonscherpte is een tijdprobleem.",
+          "successMessage": "Juist! Vogels in vlucht vragen om korte sluitertijden — 1/2500s of sneller bevriest vleugelslagen. Open het diafragma en laat Auto-ISO stijgen om de benodigde snelheid van licht te voorzien.",
+          "failureMessage": "Vervaagde vleugels betekenen dat de sluiter te traag is voor de beweging. Spring naar 1/2500s of sneller en laat diafragma en ISO het verloren licht compenseren.",
+          "options": {
+            "0": { "label": "Een tragere sluiter voor meer licht" },
+            "1": { "label": "Een veel kortere sluitertijd" },
+            "2": { "label": "Diafragmeren naar f/22" },
+            "3": { "label": "De witbalans op kunstlicht zetten" }
+          }
+        },
+        "2": {
+          "scenario": "Je staat opgesteld onder een donkere hemel om de Melkweg te fotograferen. Welke combinatie levert een bruikbare belichting van de galactische kern op?",
+          "hint": "De sterren zijn zwak, bewegen (met de aardrotatie) en zijn je enige lichtbron.",
+          "successMessage": "Correct! Volle opening (f/1.4–f/2.8), 10–25 seconden, ISO 1600–6400: het diafragma verzamelt maximaal licht, de sluiter stopt voordat sterren strepen worden, en de hoge ISO maakt de zwakke kern zichtbaar.",
+          "failureMessage": "De Melkweg vraagt alles: diafragma helemaal open, een belichting kort genoeg dat sterren geen strepen worden (10–25s) en een hoge ISO (1600–6400). Kleine diafragma's of basis-ISO laten de lucht zwart.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Volle opening, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Willekeurige instellingen met een ND-filter" }
+          }
+        }
+      }
+    }
+  }
+}

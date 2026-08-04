@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Analyzátor katalogu Lightroom",
       "description": "Analyzujte svůj katalog Lightroom Classic — výbavu, ohniskovou vzdálenost, clony, hodnocení a další — 100% ve vašem prohlížeči"
+    },
+    "shutter-count-checker": {
+      "name": "Kontrola počtu expozic",
+      "description": "Zjisti počet expozic svého fotoaparátu z jediné fotky — 100 % ve tvém prohlížeči"
+    },
+    "camera-health-checker": {
+      "name": "Kontrola stavu fotoaparátu",
+      "description": "Prověř stáří těla, firmware, sériové číslo a životnost závěrky z jediné fotky"
+    },
+    "panorama-calculator": {
+      "name": "Kalkulačka panoramat",
+      "description": "Naplánuj panorama — počet snímků, překryv a otočení mezi snímky"
+    },
+    "diffraction-calculator": {
+      "name": "Kalkulačka difrakčního limitu",
+      "description": "Zjisti clonu, od které začne difrakce změkčovat snímky"
+    },
+    "photography-cheat-sheet": {
+      "name": "Fotografický tahák",
+      "description": "Taháky s nastavením fotoaparátu pro běžné situace — ke stažení i k vytištění"
     }
   }
 }

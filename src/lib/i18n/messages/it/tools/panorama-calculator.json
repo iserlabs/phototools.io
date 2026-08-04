@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensore",
+      "orientation": "Orientamento della fotocamera",
+      "portrait": "Verticale",
+      "landscape": "Orizzontale",
+      "overlap": "Sovrapposizione: {percent}%",
+      "targetWidth": "Ampiezza del panorama",
+      "rows": "Righe",
+      "megapixels": "Risoluzione della fotocamera: {mp} MP",
+      "fanLabel": "Schema dall'alto di {frames} fotogrammi sovrapposti",
+      "totalShots": "Scatti totali",
+      "perRow": "Fotogrammi × righe",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotazione tra gli scatti",
+      "coverage": "Copertura (O × V)",
+      "frameFov": "Campo visivo del singolo fotogramma",
+      "stitchedSize": "Dimensione finale unita",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Quanta sovrapposizione serve tra gli scatti di un panorama?",
+          "answer": "Il 25–35% è la zona ideale per la maggior parte delle scene. Il software di stitching ha bisogno di dettagli condivisi tra fotogrammi adiacenti per trovare i punti di controllo; sotto il 15% può non riuscire ad allinearli, mentre oltre il 50% scatti molti fotogrammi in più con un beneficio minimo. Usa più sovrapposizione per le scene con pochi dettagli distintivi, come cieli sereni o acqua calma."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Perché scattare i panorami in orientamento verticale?",
+          "answer": "L'orientamento verticale cattura più campo visivo in altezza per ogni fotogramma, quindi il panorama finale è più alto e lascia margine per ritagliare e raddrizzare l'orizzonte. Il costo è qualche fotogramma in più in orizzontale — di solito uno scambio conveniente per la flessibilità e la risoluzione guadagnate."
+        },
+        "what-is-nodal-point": {
+          "question": "Che cos'è il punto di non parallasse (punto nodale)?",
+          "answer": "È il punto all'interno dell'obiettivo attorno al quale la fotocamera può ruotare senza che gli oggetti vicini e lontani si spostino l'uno rispetto all'altro tra i fotogrammi. Ruotare attorno all'attacco del treppiede provoca invece errori di parallasse che rendono difficile lo stitching, soprattutto con oggetti vicini in primo piano. Le teste panoramiche permettono di posizionare il punto di non parallasse dell'obiettivo sull'asse di rotazione."
+        }
+      }
+    }
+  }
+}

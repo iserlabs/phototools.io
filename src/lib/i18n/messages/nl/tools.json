@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom-catalogusanalyzer",
       "description": "Analyseer je Lightroom Classic-catalogus — uitrusting, brandpuntsafstand, diafragma's, beoordelingen en meer — 100% in je browser"
+    },
+    "shutter-count-checker": {
+      "name": "Sluitertelling-checker",
+      "description": "Controleer de sluitertelling van je camera via een foto — 100% in je browser"
+    },
+    "camera-health-checker": {
+      "name": "Cameragezondheid-checker",
+      "description": "Inspecteer leeftijd, firmware, serienummer en sluiterlevensduur van een camerabody via één foto"
+    },
+    "panorama-calculator": {
+      "name": "Panoramacalculator",
+      "description": "Plan panoramaopnamen — aantal beelden, overlap en draaiing tussen opnamen"
+    },
+    "diffraction-calculator": {
+      "name": "Diffractiegrens-calculator",
+      "description": "Vind het diafragma waarbij diffractie je beelden zachter begint te maken"
+    },
+    "photography-cheat-sheet": {
+      "name": "Fotografie-spiekbriefje",
+      "description": "Spiekbriefjes met camera-instellingen voor veelvoorkomende scenario's — te downloaden en te printen"
     }
   }
 }

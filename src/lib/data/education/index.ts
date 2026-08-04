@@ -1,9 +1,10 @@
 import { TOOL_EDUCATION_SKELETONS } from './content'
 import { TOOL_EDUCATION_SKELETONS_2 } from './content2'
+import { TOOL_EDUCATION_SKELETONS_3 } from './content3'
 import { safeStorageSet } from '@/lib/utils/safe-storage'
 import type { ToolEducationSkeleton, ChallengeProgress } from './types'
 
-const ALL_SKELETONS: ToolEducationSkeleton[] = [...TOOL_EDUCATION_SKELETONS, ...TOOL_EDUCATION_SKELETONS_2]
+const ALL_SKELETONS: ToolEducationSkeleton[] = [...TOOL_EDUCATION_SKELETONS, ...TOOL_EDUCATION_SKELETONS_2, ...TOOL_EDUCATION_SKELETONS_3]
 
 export function getSkeletonBySlug(slug: string): ToolEducationSkeleton | undefined {
   return ALL_SKELETONS.find((s) => s.slug === slug)

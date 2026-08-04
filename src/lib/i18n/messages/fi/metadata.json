@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Lightroom-luettelon analysaattori — Ilmaiset tilastot, vain selaimessa",
       "description": "Analysoi Lightroom Classic -luettelosi paikallisesti selaimessasi. Näe kalusto, polttovälit, aukkotottumukset, arvioinnit ja paljon muuta. 100 % paikallinen — luetteloasi ei koskaan ladata palvelimelle."
+    },
+    "shutter-count-checker": {
+      "title": "Laukaisumäärän tarkistin — ilmainen ja yksityinen",
+      "description": "Tarkista kamerasi laukaisumäärä valokuvasta, ilmaiseksi ja 100 % selaimessasi. Toimii Nikonin JPEG- ja RAW-tiedostojen kanssa, ja mukana on selkeät ohjeet Canonille, Sonylle ja muille merkeille."
+    },
+    "camera-health-checker": {
+      "title": "Kameran kuntotarkistus",
+      "description": "Tutki kamerarunkoa yhdestä valokuvasta: malli, sarjanumero, laiteohjelmisto, rungon ikä, objektiivi ja sulkimen kestoikä. 100 % selaimessa — ihanteellinen käytetyn kameran tarkistamiseen ennen ostoa."
+    },
+    "panorama-calculator": {
+      "title": "Panoraamalaskuri",
+      "description": "Suunnittele yhdistettävät panoraamat: kuinka monta kuvaa tarvitset, kuinka paljon kameraa käännetään kuvien välillä ja mikä on lopullinen tarkkuus — mille tahansa objektiiville, kennolle ja limitykselle."
+    },
+    "diffraction-calculator": {
+      "title": "Diffraktiorajan laskuri",
+      "description": "Etsi kamerasi diffraktioraja: aukko, jossa himmentäminen alkaa pehmentää kuvia. Perustuu pikselikokoon ja Airyn kiekkoon, mille tahansa kennolle ja tarkkuudelle."
+    },
+    "photography-cheat-sheet": {
+      "title": "Valokuvauksen muistilista — kamera-asetukset tilanteittain",
+      "description": "Kamera-asetusten muistilistat muotokuviin, maisemiin, villieläimiin, Linnunrataan ja moneen muuhun. Hyväksi havaittuja lähtökohtia, jotka voit ladata kuvana tai tulostaa."
     }
   }
 }

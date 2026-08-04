@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Orientation ng camera",
+      "portrait": "Portrait",
+      "landscape": "Landscape",
+      "overlap": "Overlap: {percent}%",
+      "targetWidth": "Lapad ng panorama",
+      "rows": "Mga row",
+      "megapixels": "Resolution ng camera: {mp} MP",
+      "fanLabel": "Top-down na diagram ng {frames} nagsasapawang frame",
+      "totalShots": "Kabuuang shot",
+      "perRow": "Frames × rows",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Pag-ikot sa pagitan ng mga shot",
+      "coverage": "Saklaw (H × V)",
+      "frameFov": "FOV ng isang frame",
+      "stitchedSize": "Laki pagkatapos ng stitching",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Gaano kalaking overlap ang kailangan ng mga panorama shot?",
+          "answer": "Ang 25–35% ang sweet spot para sa karamihan ng mga eksena. Kailangan ng stitching software ng magkaparehong detalye sa pagitan ng magkatabing frame para makahanap ng mga control point; sa ilalim ng 15% baka mabigo itong i-align ang mga frame, habang lampas sa 50% marami kang kukunang dagdag na frame para sa maliit na benepisyo. Gumamit ng mas malaking overlap para sa mga eksenang kaunti ang natatanging detalye, tulad ng maaliwalas na langit o kalmadong tubig."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Bakit kinukunan ang mga panorama sa portrait (patayo) na orientation?",
+          "answer": "Nakakakuha ang portrait orientation ng mas maraming patayong field of view kada frame, kaya mas mataas ang final na stitched panorama at may natitirang espasyo para sa cropping at pagtutuwid ng horizon. Ang kapalit ay ilang dagdag na frame nang pahalang — kadalasang sulit na palitan para sa dagdag na flexibility at resolution."
+        },
+        "what-is-nodal-point": {
+          "question": "Ano ang no-parallax point (nodal point)?",
+          "answer": "Ito ang punto sa loob ng lens kung saan puwedeng umikot ang camera nang hindi nagbabago ang posisyon ng malalapit at malalayong bagay kaugnay ng isa't isa sa pagitan ng mga frame. Ang pag-ikot sa tripod socket sa halip ay nagdudulot ng mga parallax error na nagpapahirap sa stitching, lalo na kapag may malalapit na foreground object. Hinahayaan ka ng mga panoramic tripod head na iposisyon ang no-parallax point ng lens sa ibabaw ng rotation axis."
+        }
+      }
+    }
+  }
+}

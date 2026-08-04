@@ -11,7 +11,8 @@ const TOOL_SLUGS = [
   'shutter-speed-visualizer', 'sensor-size-comparison', 'color-scheme-generator',
   'perspective-compression-simulator', 'exif-viewer', 'nd-filter-calculator',
   'histogram', 'focus-stacking-calculator', 'equivalent-settings-calculator',
-  'megapixels-size-visualizer',
+  'megapixels-size-visualizer', 'shutter-count-checker', 'camera-health-checker',
+  'panorama-calculator', 'diffraction-calculator', 'photography-cheat-sheet',
 ] as const
 
 /** Tools that have toolUI messages only (no LearnPanel / education). */

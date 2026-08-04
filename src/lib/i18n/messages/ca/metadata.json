@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Analitzador de Catàlegs de Lightroom — Estadístiques gratuïtes, només al navegador",
       "description": "Analitza el teu catàleg de Lightroom Classic localment al teu navegador. Consulta l'equip, les distàncies focals, els hàbits d'obertura, les valoracions i molt més. 100 % local — el teu catàleg no es puja mai."
+    },
+    "shutter-count-checker": {
+      "title": "Comprovador de recompte de dispars — Gratuït i privat",
+      "description": "Comprova el recompte de dispars de la teva càmera a partir d’una foto, gratuït i 100% al teu navegador. Funciona amb fitxers JPEG i RAW de Nikon, amb orientació clara per a Canon, Sony i altres marques."
+    },
+    "camera-health-checker": {
+      "title": "Comprovador d’estat de la càmera",
+      "description": "Inspecciona un cos de càmera a partir d’una sola foto: model, número de sèrie, microprogramari, antiguitat, objectiu i vida de l’obturador. 100% al navegador — ideal per revisar càmeres usades abans de comprar."
+    },
+    "panorama-calculator": {
+      "title": "Calculadora de panoràmiques",
+      "description": "Planifica panoràmiques per unió de fotos: quants dispars necessites, quant girar entre fotogrames i la resolució final — per a qualsevol objectiu, sensor i solapament."
+    },
+    "diffraction-calculator": {
+      "title": "Calculadora del límit de difracció",
+      "description": "Troba el límit de difracció de la teva càmera: l’obertura en què tancar el diafragma comença a suavitzar les imatges. Basada en el pas de píxel i el disc d’Airy, per a qualsevol sensor i resolució."
+    },
+    "photography-cheat-sheet": {
+      "title": "Full de referència fotogràfic — Ajustos de càmera per escenari",
+      "description": "Fulls de referència amb ajustos de càmera per a retrats, paisatges, fauna, la Via Làctia i més. Punts de partida provats que pots descarregar com a imatge o imprimir."
     }
   }
 }

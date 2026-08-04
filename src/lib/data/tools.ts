@@ -22,6 +22,11 @@ export const TOOLS: ToolDef[] = [
   { slug: 'exif-viewer', name: 'EXIF Viewer', description: 'View EXIF metadata and histogram for any photo — 100% client-side', dev: 'live', prod: 'live', category: 'file-tool' },
   { slug: 'megapixels-size-visualizer', name: 'Megapixels Size Visualizer', description: 'Compare megapixels, visualize print sizes, and see file sizes across aspect ratios and DPIs', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'lightroom-catalog-analyzer', name: 'Lightroom Catalog Analyzer', description: 'Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser', dev: 'live', prod: 'draft', category: 'file-tool' },
+  { slug: 'shutter-count-checker', name: 'Shutter Count Checker', description: 'Check your camera’s shutter count from a photo — 100% in your browser', dev: 'live', prod: 'draft', category: 'file-tool' },
+  { slug: 'camera-health-checker', name: 'Camera Health Checker', description: 'Inspect a camera body’s age, firmware, serial, and shutter life from a single photo', dev: 'live', prod: 'draft', category: 'file-tool' },
+  { slug: 'panorama-calculator', name: 'Panorama Calculator', description: 'Plan panorama shots — frame count, overlap, and rotation between shots', dev: 'live', prod: 'draft', category: 'calculator' },
+  { slug: 'diffraction-calculator', name: 'Diffraction Limit Calculator', description: 'Find the aperture where diffraction starts to soften your images', dev: 'live', prod: 'draft', category: 'calculator' },
+  { slug: 'photography-cheat-sheet', name: 'Photography Cheat Sheet', description: 'Camera settings cheat sheets for common shooting scenarios — downloadable and printable', dev: 'live', prod: 'draft', category: 'reference' },
 ]
 
 function getStatus(tool: ToolDef): ToolStatus {

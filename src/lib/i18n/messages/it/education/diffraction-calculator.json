@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Chiudere il diaframma aumenta la profondità di campo — ma oltre un certo punto inizia a rendere l'intera immagine più morbida invece che più nitida. È la diffrazione: le onde luminose si piegano passando per un'apertura piccola. Questo calcolatore mostra esattamente dove si trova quel punto per la tua fotocamera, così sai fino a dove puoi chiudere prima di pagare una penalità di nitidezza.",
+      "deeper": "Quando la luce attraversa l'apertura, ogni punto della scena arriva sul sensore non come un punto ma come un minuscolo pattern di diffrazione — un nucleo luminoso chiamato disco di Airy circondato da deboli aloni. Il diametro del disco cresce in proporzione diretta al numero f: circa 2,44 × lunghezza d'onda × N, che a f/8 in luce verde fa già ~10,7 µm. Se questo conti o meno dipende dai tuoi pixel. Un sensore full frame da 24 MP ha pixel di ~6 µm; uno da 61 MP, pixel di ~3,8 µm. Quando il disco di Airy diventa nettamente più grande di un pixel, i dettagli che il sensore potrebbe altrimenti risolvere si spalmano sui pixel vicini, e nessuna qualità ottica può recuperarli. Ecco perché lo stesso f/11 che sembra a posto su un vecchio corpo da 12 MP ammorbidisce visibilmente i file di un moderno sensore ad alta risoluzione, e perché le compatte con pixel minuscoli raramente offrono aperture oltre f/8. La regola pratica del settore usata qui — limite ≈ pixel pitch / 0,67 — segna il punto in cui l'ammorbidimento diventa misurabile, non quello in cui le immagini crollano: chiudere di uno stop oltre il limite è spesso uno scambio conveniente per la profondità di campo. Oltre i due stop, il focus stacking batte la chiusura del diaframma.",
+      "keyFactors": {
+        "0": {
+          "label": "Apertura (numero f)",
+          "description": "L'unico controllo sulla diffrazione in sé: il diametro del disco di Airy cresce linearmente con il numero f. f/16 allarga la luce il doppio di f/8."
+        },
+        "1": {
+          "label": "Pixel pitch",
+          "description": "La dimensione fisica di un pixel, determinata insieme da dimensione del sensore e megapixel. Pixel più piccoli risolvono più dettagli — e rivelano prima la diffrazione."
+        },
+        "2": {
+          "label": "Dimensione di output",
+          "description": "Una diffrazione visibile al 100% a schermo può essere invisibile in un'esportazione per il web o in una stampa moderata. Giudica la nitidezza alla dimensione che userai davvero."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Trova la zona ideale del tuo obiettivo: fotografa la stessa scena ricca di dettagli a ogni stop intero e confronta al 100%. La maggior parte degli obiettivi rende al massimo due o tre stop dopo la massima apertura, appena prima che la diffrazione prenda il sopravvento."
+        },
+        "1": {
+          "text": "Per paesaggi che richiedono grande nitidezza estesa su un corpo ad alta risoluzione, prova la distanza iperfocale a f/8 prima di ricorrere a f/16 — un posizionamento accurato della messa a fuoco spesso rende più nitidezza delle aperture più chiuse."
+        },
+        "2": {
+          "text": "In macro, l'apertura effettiva cresce con l'ingrandimento (f/11 a 1:1 si comporta come f/22), quindi la diffrazione morde molto prima di quanto suggerisca la ghiera. Il focus stacking a un'apertura moderata è la via d'uscita nitida."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pixel pitch",
+          "definition": "La larghezza di un singolo pixel sul sensore, in micrometri. Si calcola dividendo la larghezza del sensore per il numero di pixel orizzontali — 24 MP full frame ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Disco di Airy",
+          "definition": "Il pattern di diffrazione che un punto di luce forma dopo aver attraversato l'apertura: un nucleo luminoso con deboli anelli. Il suo diametro ≈ 2,44 × lunghezza d'onda × numero f."
+        },
+        "diffractionLimit": {
+          "term": "Limite di diffrazione",
+          "definition": "Il numero f al quale il disco di Airy supera il pixel e la nitidezza a livello di pixel inizia a calare — approssimativamente pixel pitch (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Chiudi l'obiettivo da f/8 a f/22 per la massima profondità di campo, ma i dettagli fini della tua immagine diventano più morbidi ovunque — anche nel piano di messa a fuoco. Cosa sta succedendo?",
+          "hint": "È fisica, non un difetto dell'obiettivo.",
+          "successMessage": "Corretto! La luce si piega (diffrange) passando per un'apertura piccola, allargando ogni punto in un disco più grande di un pixel. A f/22 questo ammorbidimento interessa l'intero fotogramma, piano di messa a fuoco compreso.",
+          "failureMessage": "È la diffrazione: le onde luminose si piegano attorno alle lamelle del diaframma, allargando ogni punto di luce in un disco sfocato. Interessa tutta l'immagine allo stesso modo, indipendentemente dalla qualità dell'obiettivo.",
+          "options": {
+            "0": { "label": "L'obiettivo è costruito male" },
+            "1": { "label": "La luce si piega passando per la piccola apertura" },
+            "2": { "label": "Il sensore si surriscalda alle aperture piccole" },
+            "3": { "label": "Aumenta il rumore ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Passi da una full frame da 24 MP a una da 61 MP. Cosa succede all'apertura alla quale la diffrazione diventa visibile?",
+          "hint": "Più megapixel sulla stessa area del sensore significano pixel più piccoli.",
+          "successMessage": "Esatto! I pixel di ~3,8 µm del sensore da 61 MP risolvono il disco di Airy prima, quindi il limite di diffrazione scende da circa f/9 a circa f/5.6. I sensori ad alta risoluzione hanno zone ideali di apertura più strette.",
+          "failureMessage": "Pixel più piccoli rivelano prima la diffrazione. Il limite di diffrazione del sensore da 61 MP è intorno a f/5.6, contro f/9 per quello da 24 MP — il limite si sposta verso un'apertura più ampia.",
+          "options": {
+            "0": { "label": "Si sposta verso un'apertura più piccola (numero f più alto)" },
+            "1": { "label": "Si sposta verso un'apertura più ampia (numero f più basso)" },
+            "2": { "label": "Non cambia" },
+            "3": { "label": "La diffrazione scompare con più megapixel" }
+          }
+        },
+        "2": {
+          "scenario": "Stai fotografando un paesaggio con una full frame da 45 MP e vuoi la massima nitidezza complessiva con una buona profondità di campo. Qual è il miglior intervallo di aperture da cui partire?",
+          "hint": "Bilancia le aberrazioni dell'obiettivo (peggiori a tutta apertura) con la diffrazione (peggiore chiudendo).",
+          "successMessage": "Corretto! f/8–f/11 si colloca proprio attorno al limite di diffrazione per pixel di ~4,4 µm offrendo al contempo una profondità di campo consistente — la classica zona ideale per il paesaggio su full frame ad alta risoluzione.",
+          "failureMessage": "f/8–f/11 bilancia profondità di campo e diffrazione per un sensore full frame da 45 MP. f/22 ammorbidisce visibilmente i dettagli fini, e a tutta apertura manca la profondità di campo.",
+          "options": {
+            "0": { "label": "Sempre f/22 per la massima profondità" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "A tutta apertura" },
+            "3": { "label": "Dipende solo dall'ISO" }
+          }
+        }
+      }
+    }
+  }
+}

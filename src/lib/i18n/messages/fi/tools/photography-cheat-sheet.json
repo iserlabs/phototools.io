@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Valitse tilanne",
+      "tipsTitle": "Kenttävinkit",
+      "labels": {
+        "aperture": "Aukko",
+        "shutter": "Suljinaika",
+        "iso": "ISO",
+        "whiteBalance": "Valkotasapaino",
+        "focusMode": "Tarkennustila",
+        "driveMode": "Kuvaustapa"
+      },
+      "values": {
+        "auto": "Automaatti",
+        "daylight": "Päivänvalo",
+        "cloudy": "Pilvinen",
+        "shade": "Varjo",
+        "tungsten": "Hehkulamppu (~3200K)",
+        "afSingle": "Kertatarkennus (AF-S)",
+        "afContinuous": "Jatkuva tarkennus (AF-C)",
+        "afTracking": "Jatkuva tarkennus + kohteen seuranta",
+        "manualFocus": "Käsitarkennus",
+        "single": "Yksittäiskuvaus",
+        "burstLow": "Hidas sarjakuvaus",
+        "burstHigh": "Nopea sarjakuvaus",
+        "timer2s": "2s itselaukaisin / kaukolaukaisin",
+        "intervalometer": "Intervalliajastin"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Muotokuvat",
+          "tips": {
+            "0": "Tarkenna kameraa lähimpänä olevaan silmään — suurilla aukoilla syväterävyys on vain muutamia senttejä.",
+            "1": "Ota etäisyyttä ja zoomaa (85mm+) imartelevan perspektiivin saamiseksi; laajakulma läheltä vääristää kasvonpiirteitä."
+          }
+        },
+        "landscape": {
+          "name": "Maisemat",
+          "tips": {
+            "0": "Tarkenna noin kolmanneksen päähän maisemaan tai käytä hyperfokaalietäisyyttä terävyyteen edestä taakse.",
+            "1": "Kuvaa jalustalta itselaukaisimella tai kaukolaukaisimella tärähdysten poistamiseksi pitkillä suljinajoilla."
+          }
+        },
+        "street": {
+          "name": "Katukuvaus",
+          "tips": {
+            "0": "Aluetarkennus: aseta tarkennus etukäteen 3 metriin ja aukoksi f/8, niin kaikki 2–6 metrin alueella on terävää — ei AF-viivettä.",
+            "1": "Automaatti-ISO ja vähimmäissuljinaika 1/250s pysäyttävät kävelevät kohteet, kun sinä keskityt sommitteluun."
+          }
+        },
+        "wildlife": {
+          "name": "Villieläimet & linnut",
+          "tips": {
+            "0": "Sovita suljinaika kohteeseen: 1/1000s oksalla istuville linnuille, 1/2500s tai nopeampi lentäville linnuille.",
+            "1": "Kuvaa silmien tasolta ja odota pään kääntymistä — kiiltopiste silmässä herättää kuvan eloon."
+          }
+        },
+        "sports": {
+          "name": "Urheilu & toiminta",
+          "tips": {
+            "0": "Tarkenna etukäteen sinne, missä tapahtuu (maali, mutkan kärki), ja aloita sarjakuvaus juuri ennen huippuhetkeä.",
+            "1": "Panorointi suljinajalla 1/60s–1/125s ja jatkuvalla tarkennuksella sumentaa taustan mutta pitää kohteen terävänä."
+          }
+        },
+        "macro": {
+          "name": "Makro",
+          "tips": {
+            "0": "Suurella suurennuksella syväterävyys on paperinohut — tarkenna liikuttamalla kameraa, älä tarkennusrengasta.",
+            "1": "Diffraktio iskee lujaa f/16:n jälkeen; käytä tarkennuspinoamista himmentämisen jatkamisen sijaan."
+          }
+        },
+        "milkyWay": {
+          "name": "Linnunrata",
+          "tips": {
+            "0": "Käytä NPF- tai 500-sääntöä pisimpään valotukseen ennen kuin tähdet venyvät viiruiksi — noin 15–20s 20mm:llä täyskennolla.",
+            "1": "Tarkenna käsin kirkkaaseen tähteen suurennetussa live view'ssä; aseta valkotasapaino lähelle 3900K:ta neutraalia taivasta varten."
+          }
+        },
+        "nightCity": {
+          "name": "Kaupunki yöllä",
+          "tips": {
+            "0": "Kuvaa perus-ISO:lla jalustalta ja anna valotuksen kestää pitkään — huippuvalot pysyvät puhtaina ja kohina matalana.",
+            "1": "f/11–f/16 muuttaa pistevalot tähtisäteiksi; kuvaa sinisen hetken aikana saadaksesi väriä taivaalle."
+          }
+        },
+        "waterfall": {
+          "name": "Vesiputoukset & pitkä valotus",
+          "tips": {
+            "0": "0,5–2s valotukset säilyttävät veden tekstuurin; 30s+ muuttaa sen usvaksi. Käytä ND-suodinta päivänvalossa.",
+            "1": "Pyöröpolarisaatiosuodin poistaa heijastukset märistä kivistä ja lehvästöstä — ja toimii samalla noin 1,5 aukon ND-suotimena."
+          }
+        },
+        "goldenHour": {
+          "name": "Kultainen hetki",
+          "tips": {
+            "0": "Valota huippuvalojen mukaan ja nosta varjoja jälkikäsittelyssä — puhki palaneita lämpimiä huippuvaloja ei voi pelastaa.",
+            "1": "Vastavalo antaa kohteille reunavalon ja heijastuksia; Pilvinen-valkotasapainoasetus pitää kohtauksen lämpimänä."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Mitä kamera-asetuksia minun pitäisi käyttää muotokuviin?",
+          "answer": "Aloita suurella aukolla (f/1.8–f/2.8) taustan sumentamiseksi, vähintään 1/200s suljinajalla liike-epäterävyyden välttämiseksi ja pienimmällä ISO:lla, jonka valo sallii (100–400). Käytä yhden pisteen automaattitarkennusta lähimpään silmään tai silmäntunnistustarkennusta, jos kamerassasi on se."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Mitä asetuksia tarvitsen Linnunradan kuvaamiseen?",
+          "answer": "Valovoimainen laajakulmaobjektiivi suurimmalla aukollaan (f/1.4–f/2.8), 10–25 sekunnin valotus (pidempi venyttää tähdet viiruiksi), ISO 1600–6400, käsitarkennus kirkkaaseen tähteen ja jalusta. Kuuton yö kaukana kaupungin valoista merkitsee enemmän kuin mikään kamera-asetus."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Ovatko nämä asetukset tarkkoja reseptejä?",
+          "answer": "Eivät — ne ovat hyväksi havaittuja lähtökohtia. Valo vaihtelee valtavasti kohteiden välillä, joten pidä alueita ensimmäisenä arvauksena, ota testikuva, tarkista histogrammi ja säädä. Tavoitteena on saada sinut nopeasti oikeille asetuksille, ei korvata omaa harkintaasi."
+        }
+      }
+    }
+  }
+}

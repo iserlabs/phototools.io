@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Arrastra una foto aquí o haz clic para buscar (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Arrastra cualquier foto de la cámara que quieras inspeccionar. Todo se lee en tu navegador: el archivo nunca sale de tu dispositivo.",
+      "errorRead": "No se pudo leer este archivo. Prueba con un JPEG o RAW sin editar sacado directamente de la cámara.",
+      "errorNoMetadata": "Este archivo no contiene metadatos de cámara. Las exportaciones de aplicaciones de edición o mensajería suelen eliminarlos: prueba con un archivo original sin editar.",
+      "sections": {
+        "body": "Cuerpo de la cámara",
+        "age": "Antigüedad",
+        "shutter": "Vida del obturador",
+        "lens": "Objetivo"
+      },
+      "cameraModel": "Modelo",
+      "make": "Fabricante",
+      "serialNumber": "Número de serie",
+      "firmware": "Firmware / software",
+      "bodyAge": "Antigüedad del cuerpo",
+      "ageValue": "~{years} años (presentada en {year})",
+      "ageUnknown": "Este modelo no está en nuestra base de datos de lanzamientos, así que no se ha podido estimar su antigüedad.",
+      "shotDate": "Foto tomada",
+      "shutterCount": "Recuento de disparos",
+      "ratedLife": "Vida útil nominal",
+      "ratedAssumed": "(supuesta)",
+      "lifeUsed": "{percent}% de la vida útil nominal consumida",
+      "verdict": {
+        "low": "Apenas usada",
+        "moderate": "Uso moderado",
+        "high": "Uso intensivo",
+        "beyond": "Por encima de su vida nominal"
+      },
+      "shutterUnavailable": {
+        "supported": "No se encontró ningún recuento de disparos aunque {brand} normalmente lo registra. Prueba con un archivo original sin editar: las aplicaciones de edición suelen eliminar los metadatos del fabricante.",
+        "partial": "{brand} solo escribe un contador de fotogramas aproximado en algunos archivos, y este no tiene ninguno. Los menús de la propia cámara o una utilidad USB pueden mostrarlo.",
+        "unsupported": "{brand} no guarda un recuento de disparos legible en los archivos de imagen. Consulta la página del Comprobador de recuento de disparos para ver alternativas según la marca.",
+        "unknown": "Este archivo no tiene un recuento de disparos legible."
+      },
+      "lensModel": "Objetivo",
+      "lensSerial": "Número de serie del objetivo",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "¿Qué debo comprobar al comprar una cámara usada?",
+          "answer": "Más allá de la estética: el recuento de disparos en relación con su vida útil nominal, la antigüedad del cuerpo y la versión de firmware, que el número de serie coincida con la documentación del vendedor (y no figure como robado), el estado del sensor (busca polvo o arañazos en una foto de prueba de un cielo despejado a f/16) y que todos los diales, puertos y la montura del objetivo funcionen con suavidad."
+        },
+        "where-does-health-data-come-from": {
+          "question": "¿De dónde salen estos datos de estado?",
+          "answer": "Todo se lee de los metadatos incrustados en tu foto: campos EXIF estándar (modelo, número de serie, firmware, objetivo, fecha de captura) más las notas del fabricante cuando están disponibles (recuento de disparos). La antigüedad del cuerpo se estima con una base de datos integrada de años de lanzamiento de los modelos de cámara más populares."
+        },
+        "is-my-photo-uploaded": {
+          "question": "¿Se sube mi foto a un servidor?",
+          "answer": "No. El archivo se analiza por completo en tu navegador con JavaScript: nunca sale de tu dispositivo y no se guarda nada. Puedes comprobarlo cargando la página y desconectando la conexión antes de soltar un archivo."
+        }
+      }
+    }
+  }
+}

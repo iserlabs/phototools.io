@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Arraste uma foto aqui ou clique para procurar (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Arraste qualquer foto da câmera que você quer inspecionar. Tudo é lido no seu navegador: o arquivo nunca sai do seu dispositivo.",
+      "errorRead": "Não foi possível ler este arquivo. Tente um JPEG ou RAW sem edição, direto da câmera.",
+      "errorNoMetadata": "Este arquivo não contém metadados de câmera. Exportações de aplicativos de edição ou de mensagens costumam removê-los: tente um arquivo original sem edição.",
+      "sections": {
+        "body": "Corpo da câmera",
+        "age": "Idade",
+        "shutter": "Vida do obturador",
+        "lens": "Lente"
+      },
+      "cameraModel": "Modelo",
+      "make": "Fabricante",
+      "serialNumber": "Número de série",
+      "firmware": "Firmware / software",
+      "bodyAge": "Idade do corpo",
+      "ageValue": "~{years} anos (lançada em {year})",
+      "ageUnknown": "Este modelo não está no nosso banco de dados de lançamentos, então não foi possível estimar a idade.",
+      "shotDate": "Foto tirada em",
+      "shutterCount": "Contagem de disparos",
+      "ratedLife": "Vida útil nominal",
+      "ratedAssumed": "(presumida)",
+      "lifeUsed": "{percent}% da vida útil nominal consumida",
+      "verdict": {
+        "low": "Quase sem uso",
+        "moderate": "Uso moderado",
+        "high": "Uso intenso",
+        "beyond": "Acima da vida nominal"
+      },
+      "shutterUnavailable": {
+        "supported": "Nenhuma contagem de disparos foi encontrada, embora a {brand} normalmente a registre. Tente um arquivo original sem edição: aplicativos de edição costumam remover os metadados do fabricante.",
+        "partial": "A {brand} só grava um contador de quadros aproximado em alguns arquivos, e este não tem nenhum. Os menus da própria câmera ou um utilitário USB podem informá-lo.",
+        "unsupported": "A {brand} não armazena uma contagem de disparos legível nos arquivos de imagem. Confira a página do Verificador de Contagem de Disparos para alternativas específicas por marca.",
+        "unknown": "Este arquivo não tem uma contagem de disparos legível."
+      },
+      "lensModel": "Lente",
+      "lensSerial": "Número de série da lente",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "O que devo verificar ao comprar uma câmera usada?",
+          "answer": "Além da estética: a contagem de disparos em relação à vida útil nominal, a idade do corpo e a versão do firmware, se o número de série bate com a documentação do vendedor (e não consta como roubado), o estado do sensor (procure poeira ou riscos em uma foto de teste de um céu limpo em f/16) e se todos os discos de comando, portas e o encaixe da lente funcionam com suavidade."
+        },
+        "where-does-health-data-come-from": {
+          "question": "De onde vêm esses dados de estado?",
+          "answer": "Tudo é lido dos metadados embutidos na sua foto: campos EXIF padrão (modelo, número de série, firmware, lente, data de captura) mais as notas do fabricante quando disponíveis (contagem de disparos). A idade do corpo é estimada com um banco de dados interno de anos de lançamento dos modelos de câmera mais populares."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Minha foto é enviada para um servidor?",
+          "answer": "Não. O arquivo é analisado inteiramente no seu navegador usando JavaScript: ele nunca sai do seu dispositivo e nada é armazenado. Você pode verificar isso carregando a página e desligando a conexão antes de soltar um arquivo."
+        }
+      }
+    }
+  }
+}

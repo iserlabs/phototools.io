@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Setiap foto yang disimpan kamera Anda membawa laporan tersembunyi tentang kamera itu sendiri: model persisnya, nomor serinya, firmware yang dijalankannya, lensa yang terpasang, dan kadang berapa banyak foto yang telah diambilnya. Alat ini membaca laporan itu dari satu foto saja — sepenuhnya di browser Anda — sehingga Anda bisa menilai sebuah bodi kamera seperti montir membaca riwayat servis mobil.",
+      "deeper": "Datanya berasal dari metadata EXIF, blok standar yang ditanamkan setiap kamera digital di file-nya. Field standar meliputi Make, Model, BodySerialNumber, Software (yang pada kebanyakan kamera melaporkan versi firmware), LensModel, dan stempel waktu pengambilan. Pabrikan memperluasnya dengan 'maker notes' proprietary — milik Nikon mencantumkan shutter count, itulah sebabnya umur rana terbaca untuk sebagian merek dan tidak untuk yang lain. Usia bodi diperkirakan dengan mencocokkan nama model terhadap database tahun rilis: kamera yang dirilis tahun 2018 setidaknya berumur beberapa tahun, apa pun kata penjualnya. Dua catatan penting. Pertama, metadata hanya bertahan di file asli — kebanyakan aplikasi edit, aplikasi perpesanan, dan platform sosial menghapus atau menulis ulang metadata. Kedua, EXIF bisa diedit dengan alat yang tersedia gratis, jadi perlakukan sebagai bukti kuat, bukan bukti mutlak: konsistensi antara nomor seri di file, nomor seri di bodi, dan kuitansi penjual-lah yang benar-benar menutup kasusnya.",
+      "keyFactors": {
+        "0": {
+          "label": "Hanya File Asli",
+          "description": "Metadata bertahan di file langsung dari kamera. Ekspor dan penyimpanan ulang sering menghapus nomor seri, maker notes, dan info firmware."
+        },
+        "1": {
+          "label": "Nomor Seri",
+          "description": "Mengikat file ke bodi fisik tertentu. Cocokkan dengan bodinya sendiri, kuitansi, dan registri perlengkapan curian sebelum membeli bekas."
+        },
+        "2": {
+          "label": "Tahun Rilis vs Kondisi",
+          "description": "Usia menetapkan ekspektasi (teknologi sensor, fitur yang belum ada, sisa dukungan), tetapi keausan rana dan kondisi fisik menceritakan seberapa berat tahun-tahun itu dilalui."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Membeli bekas? Minta penjual mengirim foto asli yang belum diedit langsung dari kamera. Foto itu memverifikasi model dan nomor seri, menunjukkan firmware saat ini, dan — pada merek yang didukung — shutter count, semuanya dalam satu file."
+        },
+        "1": {
+          "text": "Bandingkan firmware dengan rilis terbaru pabrikan. Kamera yang firmware-nya belum diperbarui itu normal; kamera yang tidak bisa diperbarui lagi mungkin kehilangan perbaikan autofocus dan kompatibilitas."
+        },
+        "2": {
+          "text": "Tanggal pengambilan pada foto contoh dari penjual memberi tahu kapan kamera terakhir benar-benar dipakai. Bodi 'jarang dipakai' yang file terbarunya berumur empat tahun berarti lama menganggur — periksa rana yang macet dan baterai yang menggembung."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Nomor Seri Bodi",
+          "definition": "Pengenal unik yang diberikan pabrikan ke setiap bodi kamera, tertanam di EXIF setiap foto. Berguna untuk cek garansi dan registri perlengkapan curian."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "Perangkat lunak internal kamera, dilaporkan di field Software pada EXIF. Pabrikan mengirim perbaikan autofocus, kompatibilitas, dan fitur lewat pembaruan firmware."
+        },
+        "bodyAge": {
+          "term": "Usia Bodi",
+          "definition": "Tahun sejak model dirilis, diperkirakan dari database tanggal rilis. Batas atas seberapa mutakhir teknologi kameranya — bukan seberapa aus bodi spesifik ini."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Anda membeli kamera bekas dari iklan online. Penjual mengirimi Anda foto asli dari kamera tersebut. Apa hal paling berharga yang bisa dilakukan dengan nomor seri di metadatanya?",
+          "hint": "Nomor seri menghubungkan bodi spesifik ini ke dunia luar.",
+          "successMessage": "Benar! Mencocokkan nomor seri dengan registri perlengkapan curian (dan kuitansi penjual) melindungi Anda dari membeli barang curian — pemeriksaan yang hanya dimungkinkan oleh nomor seri.",
+          "failureMessage": "Nilai unik nomor seri adalah identifikasi: cocokkan dengan registri perlengkapan curian dan dokumen penjual. Ia tidak mengatakan apa pun tentang kualitas gambar atau kompatibilitas.",
+          "options": {
+            "0": { "label": "Mencocokkannya dengan registri perlengkapan curian" },
+            "1": { "label": "Memperkirakan kualitas fotonya" },
+            "2": { "label": "Memverifikasi kompatibilitas lensa" },
+            "3": { "label": "Mencari tahu rentang ISO-nya" }
+          }
+        },
+        "1": {
+          "scenario": "Kamera bekas yang Anda incar menjalankan firmware 1.0 dari peluncurannya empat tahun lalu, sementara versi terkini pabrikan adalah 3.1. Apa yang biasanya didapat dari pembaruan?",
+          "hint": "Pikirkan apa yang bisa diubah pabrikan lewat perangkat lunak setelah peluncuran.",
+          "successMessage": "Tepat! Pembaruan firmware membawa perbaikan nyata — algoritme autofocus yang lebih baik, dukungan lensa baru, perbaikan bug, kadang fitur baru sepenuhnya. Spesifikasi perangkat keras seperti sensor dan megapiksel tidak pernah berubah.",
+          "failureMessage": "Firmware adalah perangkat lunak: pembaruan meningkatkan autofocus, menambah dukungan lensa, dan memperbaiki bug. Ia tidak bisa mengubah perangkat keras seperti sensor atau jumlah megapiksel.",
+          "options": {
+            "0": { "label": "Fitur baru dan peningkatan autofocus" },
+            "1": { "label": "Megapiksel lebih banyak" },
+            "2": { "label": "Area sensor lebih besar" },
+            "3": { "label": "Tidak ada — firmware hanya kosmetik" }
+          }
+        },
+        "2": {
+          "scenario": "Dua penjual menawarkan model yang sama: bodi berumur 7 tahun dan bodi berumur 4 tahun dengan harga mirip. Bagaimana cara yang benar menggunakan usia bodi dalam keputusan Anda?",
+          "hint": "Usia adalah satu masukan — apa yang tidak diceritakannya?",
+          "successMessage": "Tepat sekali. Usia membingkai teknologi dan sisa masa dukungan, tetapi faktor penentunya adalah bagaimana bodi itu dipakai: shutter count, kondisi fisik, dan riwayat servis.",
+          "failureMessage": "Usia bodi saja tidak memutuskan — bodi lama yang dipakai hati-hati bisa mengalahkan bodi lebih baru yang dipakai kasar. Gabungkan usia dengan shutter count dan kondisi fisik.",
+          "options": {
+            "0": { "label": "Selalu beli yang lebih baru" },
+            "1": { "label": "Timbang usia bersama shutter count dan kondisi" },
+            "2": { "label": "Abaikan usia — hanya megapiksel yang penting" },
+            "3": { "label": "Pilih berdasarkan reputasi merek saja" }
+          }
+        }
+      }
+    }
+  }
+}

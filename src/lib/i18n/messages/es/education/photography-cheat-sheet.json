@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Cada situación fotográfica — retratos, fauna, la Vía Láctea — tiene una combinación bien rodada de apertura, velocidad de obturación e ISO a la que los fotógrafos con experiencia recurren primero. Estas hojas de referencia te dan ese punto de partida al instante, para que dediques tu atención a la luz y la composición en lugar de dudar con los diales.",
+      "deeper": "Cada receta de esta herramienta es una aplicación del triángulo de exposición con un lado priorizado. Los retratos priorizan la apertura: las aperturas amplias (f/1.8–f/2.8) separan al sujeto del fondo, y todo lo demás se adapta a eso. La acción prioriza la velocidad de obturación: 1/1000s congela el movimiento, así que la apertura se abre y el ISO sube para alimentarla de luz. Los paisajes priorizan la calidad de imagen: ISO base y una apertura media en el punto óptimo del objetivo, con un trípode absorbiendo la velocidad de obturación que resulte. Las escenas nocturnas fuerzan los tres lados a la vez, y por eso tienen las recetas más rígidas: la Vía Láctea exige de verdad un objetivo luminoso a plena apertura, una obturación por debajo de ~20 segundos (antes de que la rotación de la Tierra deje estelas en las estrellas) y el ISO que haga utilizable el histograma. Entender qué lado prioriza cada escenario es la verdadera lección: cuando ves la prioridad, puedes adaptar cualquier receta a la luz que tienes delante en lugar de seguirla a ciegas. Los rangos son puntos de partida calibrados para condiciones típicas; la última palabra la tiene tu histograma, no la hoja.",
+      "keyFactors": {
+        "0": {
+          "label": "Prioridad del escenario",
+          "description": "Cada situación fija primero una variable de exposición — la apertura en retratos, la obturación en acción, el ISO en paisajes — y deja que las demás se adapten."
+        },
+        "1": {
+          "label": "Luz disponible",
+          "description": "El mismo escenario necesita ajustes distintos a mediodía y al anochecer. Toma los rangos como anclas y muévete dentro de ellos según cambie la luz."
+        },
+        "2": {
+          "label": "Apoyo y estabilidad",
+          "description": "Un trípode desbloquea el ISO base y obturaciones lentas en escenas estáticas. A mano alzada, el suelo de velocidad ronda 1/(distancia focal) o más rápido."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Haz una foto de prueba y lee el histograma, no la vista previa del LCD: las pantallas mienten a pleno sol y de noche; el histograma, nunca."
+        },
+        "1": {
+          "text": "Memoriza una receta por cada género que fotografíes y practica ajustando una sola variable cada vez. Interiorizarás los compromisos mucho más rápido que cambiándolo todo a la vez."
+        },
+        "2": {
+          "text": "Descarga la hoja de los escenarios que fotografíes poco: la receta de la Vía Láctea es difícil de recordar a las 2 de la madrugada en la ladera de una montaña y con los dedos helados."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Apertura",
+          "definition": "El tamaño de la abertura del objetivo, en números f. Números bajos = más luz y más desenfoque de fondo; números altos = más profundidad de campo."
+        },
+        "shutter": {
+          "term": "Velocidad de obturación",
+          "definition": "Cuánto tiempo recoge luz el sensor. Las velocidades rápidas congelan el movimiento; las lentas lo difuminan y exigen estabilización o trípode."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "La amplificación del sensor. Mantenlo tan bajo como permita la luz: subirlo aclara la imagen a costa de ruido."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Fotografías un retrato y quieres el look clásico: sujeto nítido, fondo fundido en desenfoque. ¿Qué elección de ajustes lo consigue?",
+          "hint": "El desenfoque de fondo viene de la profundidad de campo: ¿qué control la gobierna?",
+          "successMessage": "¡Correcto! Una apertura amplia (como f/1.8–f/2.8) crea la poca profundidad de campo que separa al sujeto de un fondo desenfocado: la elección que define el retrato.",
+          "failureMessage": "El desenfoque de fondo viene de una apertura amplia (número f bajo) como f/1.8–f/2.8, que reduce la profundidad de campo. Las aperturas cerradas hacen lo contrario.",
+          "options": {
+            "0": { "label": "Una apertura cerrada como f/16" },
+            "1": { "label": "Una apertura amplia como f/2" },
+            "2": { "label": "Una larga exposición en trípode" },
+            "3": { "label": "El ISO al máximo" }
+          }
+        },
+        "1": {
+          "scenario": "Una garza despega del agua justo cuando pulsas el disparador, y todos los fotogramas muestran las puntas de las alas borrosas. ¿Cuál es la solución?",
+          "hint": "El desenfoque de movimiento es un problema de tiempo.",
+          "successMessage": "¡Exacto! Las aves en vuelo requieren velocidades de obturación rápidas: 1/2500s o menos congela el aleteo. Abre la apertura y deja que el ISO automático suba para alimentar la velocidad que necesitas.",
+          "failureMessage": "Las alas borrosas significan que la obturación es demasiado lenta para el movimiento. Sube a 1/2500s o más rápido y deja que la apertura y el ISO compensen la luz perdida.",
+          "options": {
+            "0": { "label": "Una obturación más lenta para más luz" },
+            "1": { "label": "Una velocidad de obturación mucho más rápida" },
+            "2": { "label": "Cerrar a f/22" },
+            "3": { "label": "Cambiar el balance de blancos a tungsteno" }
+          }
+        },
+        "2": {
+          "scenario": "Estás bajo un cielo oscuro para fotografiar la Vía Láctea. ¿Qué combinación logra una exposición utilizable del centro galáctico?",
+          "hint": "Las estrellas son tenues, se mueven (con la rotación de la Tierra) y son tu única fuente de luz.",
+          "successMessage": "¡Correcto! A plena apertura (f/1.4–f/2.8), 10–25 segundos, ISO 1600–6400: la apertura recoge la máxima luz, la obturación se detiene antes de que las estrellas dejen estela y el ISO alto hace visible el tenue centro galáctico.",
+          "failureMessage": "La Vía Láctea lo necesita todo: la apertura al máximo, una exposición lo bastante corta para que las estrellas no dejen estela (10–25s) y un ISO alto (1600–6400). Las aperturas pequeñas o el ISO base dejan el cielo negro.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "A plena apertura, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Cualquier ajuste con un filtro ND" }
+          }
+        }
+      }
+    }
+  }
+}

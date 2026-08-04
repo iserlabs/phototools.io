@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Auflösung: {mp} MP",
+      "aperture": "Blende",
+      "verdict": {
+        "sharp": "{f} ist frei von Beugung",
+        "borderline": "{f} wird durch Beugung leicht weicher",
+        "soft": "{f} wird durch Beugung sichtbar weicher"
+      },
+      "verdictDetail": {
+        "sharp": "Unterhalb der Beugungsgrenze von {limit} für diesen Sensor und diese Auflösung bestimmt das Objektiv — nicht die Beugung — die Schärfe.",
+        "borderline": "Jenseits der Beugungsgrenze von {limit} beginnen feine Details auf Pixelebene zu verschwimmen. Akzeptabel, wenn du die zusätzliche Schärfentiefe brauchst.",
+        "soft": "Deutlich jenseits der Beugungsgrenze von {limit}. Die Schärfentiefe nimmt weiter zu, aber die Detailwiedergabe leidet sichtbar — erwäge Focus Stacking, statt weiter abzublenden."
+      },
+      "stripLabel": "Blendenskala, eingefärbt nach Beugungseinfluss",
+      "pixelPitch": "Pixelpitch",
+      "airyDisk": "Durchmesser des Beugungsscheibchens",
+      "diffractionLimit": "Beugungsgrenze",
+      "tableTitle": "Beugungsgrenze nach Sensor und Auflösung",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Was ist Beugung in der Fotografie?",
+          "answer": "Beugung ist das Abknicken von Lichtwellen, wenn sie sich durch eine kleine Blendenöffnung zwängen. Je kleiner die Blende (höhere Blendenzahl), desto mehr verteilt sich jeder Lichtpunkt zu einem unscharfen Scheibchen (dem Beugungsscheibchen) auf dem Sensor. Sobald dieses Scheibchen größer als ein Pixel wird, verschwimmen feine Details — egal wie gut das Objektiv ist."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Bei welcher Blende ist es am schärfsten?",
+          "answer": "Die meisten Objektive erreichen ihr Maximum zwei bis drei Stufen abgeblendet von der Offenblende — typischerweise f/4 bis f/8 am Vollformat. Dieser Sweet Spot balanciert Objektivfehler (am schlimmsten bei Offenblende) gegen Beugung (schlimmer beim Abblenden). Hochauflösende Sensoren erreichen ihre Beugungsgrenze früher, ihr nutzbarer Sweet Spot ist also schmaler."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Hängt die Beugung vom Sensor ab?",
+          "answer": "Der optische Effekt hängt nur von Blende und Wellenlänge des Lichts ab — wie sichtbar er ist, hängt aber von der Pixelgröße ab. Ein 61-MP-Vollformatsensor hat ~3,8 µm große Pixel und zeigt Beugungsunschärfe ab etwa f/5.6, während ein 12-MP-Sensor mit großen Pixeln bis f/11 knackig bleibt. Kleinere Sensoren erreichen die Grenze bei gleicher Megapixelzahl schon bei offeneren Blenden."
+        }
+      }
+    }
+  }
+}

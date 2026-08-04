@@ -72,6 +72,46 @@ export const TOOL_FAQS: ToolFaqs[] = [
       { id: 'difference-300-dpi-vs-240-dpi' },
     ],
   },
+  {
+    slug: 'shutter-count-checker',
+    questions: [
+      { id: 'what-is-shutter-count' },
+      { id: 'how-many-actuations-is-too-many' },
+      { id: 'why-no-canon-sony-shutter-count' },
+    ],
+  },
+  {
+    slug: 'camera-health-checker',
+    questions: [
+      { id: 'what-to-check-buying-used-camera' },
+      { id: 'where-does-health-data-come-from' },
+      { id: 'is-my-photo-uploaded' },
+    ],
+  },
+  {
+    slug: 'panorama-calculator',
+    questions: [
+      { id: 'how-much-overlap-for-panorama' },
+      { id: 'why-shoot-panorama-vertical' },
+      { id: 'what-is-nodal-point' },
+    ],
+  },
+  {
+    slug: 'diffraction-calculator',
+    questions: [
+      { id: 'what-is-diffraction-in-photography' },
+      { id: 'what-aperture-is-sharpest' },
+      { id: 'does-diffraction-depend-on-sensor' },
+    ],
+  },
+  {
+    slug: 'photography-cheat-sheet',
+    questions: [
+      { id: 'what-settings-for-portraits' },
+      { id: 'what-settings-for-milky-way' },
+      { id: 'are-cheat-sheet-settings-exact' },
+    ],
+  },
 ]
 
 export function getFaqsBySlug(slug: string): ToolFaqs | undefined {

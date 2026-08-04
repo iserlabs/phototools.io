@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom-Katalog-Analyzer",
       "description": "Analysiere deinen Lightroom-Classic-Katalog — Ausrüstung, Brennweite, Blenden, Bewertungen und mehr — zu 100 % in deinem Browser"
+    },
+    "shutter-count-checker": {
+      "name": "Auslösungszahl-Checker",
+      "description": "Prüfe die Auslösungszahl deiner Kamera anhand eines Fotos — 100% in deinem Browser"
+    },
+    "camera-health-checker": {
+      "name": "Kamera-Zustandscheck",
+      "description": "Prüfe Alter, Firmware, Seriennummer und Verschlusslebensdauer eines Kameragehäuses anhand eines einzigen Fotos"
+    },
+    "panorama-calculator": {
+      "name": "Panorama-Rechner",
+      "description": "Plane Panorama-Aufnahmen — Bildanzahl, Überlappung und Drehung zwischen den Aufnahmen"
+    },
+    "diffraction-calculator": {
+      "name": "Beugungsgrenzen-Rechner",
+      "description": "Finde die Blende, ab der Beugung deine Bilder weicher macht"
+    },
+    "photography-cheat-sheet": {
+      "name": "Fotografie-Spickzettel",
+      "description": "Spickzettel mit Kameraeinstellungen für gängige Aufnahmesituationen — zum Herunterladen und Ausdrucken"
     }
   }
 }

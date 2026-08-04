@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Setiap kali kamera anda mengambil foto dengan pengatup mekanikalnya, pembilang di dalam kamera bertambah satu. Nombor itu — kiraan pengatup — umpama bacaan jarak perjalanan pada kereta: ia memberitahu anda sejauh mana kamera itu telah digunakan. Ia paling penting semasa membeli atau menjual peralatan terpakai, kerana pengatup ialah bahagian bergerak yang dikadarkan untuk bilangan lepasan yang terhad.",
+      "deeper": "Pengatup mekanikal ialah sepasang tirai berspring yang secara fizikal menyapu melintasi sensor untuk setiap pendedahan. Pengeluar menguji hayat mekanisme ini dan menerbitkan kadaran: kira-kira 100,000 lepasan untuk badan peringkat permulaan, 150,000–200,000 untuk model peminat, dan 300,000–500,000 untuk model profesional. Kadaran itu purata statistik, bukan tarikh luput — banyak pengatup bertahan beberapa kali ganda kadarannya, dan pengatup yang rosak biasanya kerosakan yang boleh dibaiki (walaupun mahal). Tempat kiraan itu disimpan berbeza mengikut jenama: Nikon menulisnya, tanpa penyulitan, ke dalam nota pengeluar setiap fail, sebab itulah alat ini boleh membacanya. Canon menyimpannya hanya dalam memori dalaman, Sony menyulitkannya, dan Pentax mengaburkannya. Kamera tanpa cermin moden merumitkan lagi gambarannya: bingkai yang diambil dengan pengatup elektronik langsung tidak menghauskan mekanisme, jadi badan yang kebanyakannya digunakan dalam mod senyap boleh mempunyai jauh lebih banyak jumlah pendedahan daripada yang dicadangkan oleh kiraan mekanikalnya — dan itu tidak mengapa.",
+      "keyFactors": {
+        "0": {
+          "label": "Jenama Kamera",
+          "description": "Menentukan sama ada kiraan boleh dibaca daripada fail langsung. Nikon menyimpannya secara terbuka; Canon, Sony dan Pentax tidak."
+        },
+        "1": {
+          "label": "Hayat Pengatup Terkadar",
+          "description": "Purata jangka hayat mekanisme pengatup yang diuji oleh pengeluar. Badan kelas lebih tinggi menggunakan mekanisme lebih tahan lasak dengan kadaran lebih tinggi."
+        },
+        "2": {
+          "label": "Pengatup Elektronik vs Mekanikal",
+          "description": "Bingkai pengatup elektronik tidak menyebabkan haus mekanikal langsung dan biasanya tidak menambah pembilang mekanikal. Pengguna tegar mod senyap menunjukkan kiraan yang rendah."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Sentiasa semak kiraan daripada fail asal yang belum disunting, terus dari kamera. Eksport daripada Lightroom, aplikasi pemesejan atau media sosial biasanya membuang nota pengeluar yang membawa pembilang itu."
+        },
+        "1": {
+          "text": "Semasa membeli terpakai, timbang kiraan berbanding kadaran: 40,000 pada badan yang dikadarkan 300,000 baru sahaja dipecah masuk, manakala 90,000 pada badan berkadaran 100,000 perlu mengambil kira kos penggantian pengatup dalam harganya."
+        },
+        "2": {
+          "text": "Kiraan pengatup yang rendah tidak menjamin kamera yang sihat — kerosakan air, calar pada sensor dan kesan jatuh tidak kelihatan dalam pembilang. Periksa juga foto ujian dan badan kamera itu sendiri."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Kiraan Pengatup",
+          "definition": "Bilangan kali pengatup mekanikal telah dilepaskan sepanjang hayat kamera. Dibaca daripada metadata yang ditanam oleh kamera anda dalam setiap foto."
+        },
+        "ratedLife": {
+          "term": "Hayat Pengatup Terkadar",
+          "definition": "Purata bilangan lepasan sebelum kegagalan pengatup, seperti yang diuji oleh pengeluar. Purata, bukan had mutlak — banyak pengatup bertahan jauh melebihinya."
+        },
+        "source": {
+          "term": "Sumber Kiraan",
+          "definition": "Dari mana nombor itu dibaca: medan kiraan pengatup sebenar, pembilang mekanikal-sahaja pada sesetengah badan tanpa cermin, atau nombor imej generik yang digunakan sebagai anggaran kasar."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Anda mengambil 500 foto di sebuah konsert menggunakan pengatup elektronik senyap kamera tanpa cermin anda. Berapa banyak haus pengatup mekanikal yang ditambah?",
+          "hint": "Fikirkan apa yang bergerak secara fizikal semasa pendedahan pengatup elektronik.",
+          "successMessage": "Betul! Pengatup elektronik membaca sensor tanpa menggerakkan sebarang tirai, jadi 500 bingkai itu pada dasarnya tidak menyebabkan haus mekanikal — dan biasanya tidak menambah pembilang mekanikal.",
+          "failureMessage": "Pengatup elektronik mendedahkan dengan membaca sensor secara elektronik — tiada tirai bergerak, jadi penggambaran senyap tidak menambah haus pengatup mekanikal.",
+          "options": {
+            "0": { "label": "500 lepasan, seperti mana-mana foto" },
+            "1": { "label": "Tiada — hanya penggunaan pengatup mekanikal dikira" },
+            "2": { "label": "Hanya fail RAW menambah haus" },
+            "3": { "label": "Hanya foto denyar menambah haus" }
+          }
+        },
+        "1": {
+          "scenario": "Sebuah kamera dikadarkan untuk 200,000 lepasan dan kini menunjukkan 195,000. Apakah maksud sebenar kadaran itu bagi badan ini?",
+          "hint": "Kadaran datang daripada ujian hayat statistik, seperti kadaran jam mentol lampu.",
+          "successMessage": "Betul! Kadaran ialah purata jangka hayat daripada ujian — pengatup ini boleh gagal minggu depan atau bertahan hingga 400,000. Ia isyarat kebarangkalian untuk penetapan harga, bukan jam undur.",
+          "failureMessage": "Kadaran pengatup ialah purata jangka hayat yang diuji, bukan had mutlak atau waranti. Banyak pengatup bertahan jauh melebihinya; ada yang gagal lebih awal.",
+          "options": {
+            "0": { "label": "Pengatup akan berhenti pada 200,000" },
+            "1": { "label": "Ia purata jangka hayat — kebarangkalian kegagalan meningkat menghampirinya" },
+            "2": { "label": "Waranti tamat pada 200,000" },
+            "3": { "label": "Hayat bateri merosot selepas 200,000" }
+          }
+        },
+        "2": {
+          "scenario": "Anda membandingkan dua kamera terpakai model yang sama: satu dengan 15,000 lepasan dan kakisan yang jelas berhampiran pintu bateri, satu lagi dengan 60,000 lepasan dalam keadaan sempurna. Yang mana pembelian yang lebih selamat?",
+          "hint": "Pembilang hanya merekodkan satu jenis haus.",
+          "successMessage": "Tepat sekali. Kiraan pengatup hanya satu isyarat antara beberapa — kakisan menunjukkan pendedahan kepada air, yang membunuh kamera jauh lebih kerap daripada pengatup yang haus. Badan bersih dengan 60,000 kiraan ialah pembelian yang lebih selamat.",
+          "failureMessage": "Kiraan pengatup hanya mengukur haus pengatup. Kakisan menunjukkan kerosakan air, yang jauh lebih berisiko daripada pengatup yang digunakan secara sederhana. Nilaikan kiraan bersama keadaan, jangan sekali-kali kiraan sahaja.",
+          "options": {
+            "0": { "label": "Badan 15,000 kiraan — lebih rendah sentiasa lebih baik" },
+            "1": { "label": "Yang mana lebih murah" },
+            "2": { "label": "Badan bersih 60,000 kiraan — keadaan lebih penting" },
+            "3": { "label": "Tiada satu pun — kedua-duanya terlalu tua" }
+          }
+        }
+      }
+    }
+  }
+}

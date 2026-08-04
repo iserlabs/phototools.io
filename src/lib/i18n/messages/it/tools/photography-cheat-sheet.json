@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Scegli uno scenario",
+      "tipsTitle": "Consigli sul campo",
+      "labels": {
+        "aperture": "Apertura",
+        "shutter": "Tempo di esposizione",
+        "iso": "ISO",
+        "whiteBalance": "Bilanciamento del bianco",
+        "focusMode": "Modalità di messa a fuoco",
+        "driveMode": "Modalità di scatto"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Luce diurna",
+        "cloudy": "Nuvoloso",
+        "shade": "Ombra",
+        "tungsten": "Tungsteno (~3200K)",
+        "afSingle": "AF singolo (AF-S)",
+        "afContinuous": "AF continuo (AF-C)",
+        "afTracking": "AF continuo + tracking del soggetto",
+        "manualFocus": "Messa a fuoco manuale",
+        "single": "Scatto singolo",
+        "burstLow": "Raffica lenta",
+        "burstHigh": "Raffica veloce",
+        "timer2s": "Autoscatto 2 s / telecomando",
+        "intervalometer": "Intervallometro"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Ritratti",
+          "tips": {
+            "0": "Metti a fuoco l'occhio più vicino alla fotocamera — alle grandi aperture la profondità di campo è di pochi centimetri.",
+            "1": "Allontanati e zooma (85mm e oltre) per una compressione lusinghiera; i grandangoli da vicino distorcono i lineamenti del viso."
+          }
+        },
+        "landscape": {
+          "name": "Paesaggi",
+          "tips": {
+            "0": "Metti a fuoco a circa un terzo della scena o usa la distanza iperfocale per avere nitidezza dal primo piano allo sfondo.",
+            "1": "Scatta dal treppiede con l'autoscatto o un telecomando per eliminare le vibrazioni ai tempi lenti."
+          }
+        },
+        "street": {
+          "name": "Street",
+          "tips": {
+            "0": "Zone focusing: preimposta la messa a fuoco a 3 m e f/8, e tutto tra 2 m e 6 m sarà nitido — nessun ritardo dell'AF.",
+            "1": "ISO auto con un tempo minimo di 1/250s congela i passanti mentre ti concentri sull'inquadratura."
+          }
+        },
+        "wildlife": {
+          "name": "Natura e uccelli",
+          "tips": {
+            "0": "Adatta il tempo al soggetto: 1/1000s per uccelli posati, 1/2500s o più veloce per uccelli in volo.",
+            "1": "Scatta ad altezza occhi e aspetta che giri la testa — un riflesso di luce nell'occhio dà vita all'immagine."
+          }
+        },
+        "sports": {
+          "name": "Sport e azione",
+          "tips": {
+            "0": "Pre-metti a fuoco dove accadrà l'azione (la porta, l'apice di una curva) e avvia la raffica poco prima del momento clou.",
+            "1": "Il panning a 1/60s–1/125s con AF continuo sfoca lo sfondo mantenendo nitido il soggetto."
+          }
+        },
+        "macro": {
+          "name": "Macro",
+          "tips": {
+            "0": "Ad alti ingrandimenti la profondità di campo è sottile come un foglio — metti a fuoco spostando la fotocamera, non con la ghiera.",
+            "1": "La diffrazione colpisce duro oltre f/16; usa il focus stacking invece di chiudere ulteriormente."
+          }
+        },
+        "milkyWay": {
+          "name": "Via Lattea",
+          "tips": {
+            "0": "Usa la regola NPF o quella del 500 per l'esposizione massima prima che le stelle lascino scie — circa 15–20 s a 20mm su full frame.",
+            "1": "Metti a fuoco manualmente una stella luminosa con il live view ingrandito; imposta il bilanciamento del bianco intorno a 3900K per un cielo neutro."
+          }
+        },
+        "nightCity": {
+          "name": "Città di notte",
+          "tips": {
+            "0": "Scatta a ISO base dal treppiede e lascia correre l'otturatore — le alte luci restano pulite e il rumore resta basso.",
+            "1": "f/11–f/16 trasforma le luci puntiformi in stelle; scatta durante l'ora blu per avere colore nel cielo."
+          }
+        },
+        "waterfall": {
+          "name": "Cascate e lunghe esposizioni",
+          "tips": {
+            "0": "Esposizioni di 0,5–2 s mantengono la texture dell'acqua; da 30 s in su diventa nebbia. Usa un filtro ND in pieno giorno.",
+            "1": "Un polarizzatore circolare elimina i riflessi da rocce bagnate e fogliame — e fa anche da ND di circa 1,5 stop."
+          }
+        },
+        "goldenHour": {
+          "name": "Ora d'oro",
+          "tips": {
+            "0": "Esponi per le alte luci e recupera le ombre in post — le alte luci calde bruciate sono irrecuperabili.",
+            "1": "Metti i soggetti in controluce per bordi luminosi e flare; il preset di bilanciamento del bianco «nuvoloso» mantiene calda la scena."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Quali impostazioni usare per i ritratti?",
+          "answer": "Parti da un'apertura ampia (f/1.8–f/2.8) per lo sfondo sfocato, un tempo di almeno 1/200s per evitare il mosso, e l'ISO più basso che la luce consente (100–400). Usa l'autofocus a punto singolo sull'occhio più vicino, o l'AF con rilevamento degli occhi se la tua fotocamera lo offre."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Quali impostazioni servono per fotografare la Via Lattea?",
+          "answer": "Un obiettivo grandangolare luminoso alla massima apertura (f/1.4–f/2.8), un'esposizione di 10–25 secondi (più a lungo le stelle lasciano scie), ISO 1600–6400, messa a fuoco manuale su una stella luminosa e un treppiede. Una notte senza luna lontano dalle luci della città conta più di qualsiasi impostazione."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Queste impostazioni sono ricette esatte?",
+          "answer": "No — sono punti di partenza collaudati. La luce varia enormemente da scena a scena, quindi considera gli intervalli una prima ipotesi, fai uno scatto di prova, controlla l'istogramma e correggi. L'obiettivo è portarti in fretta nella zona giusta, non sostituire il tuo giudizio."
+        }
+      }
+    }
+  }
+}

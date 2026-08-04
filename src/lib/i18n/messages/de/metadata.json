@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Lightroom-Katalog-Analyzer — Kostenlose Statistiken, nur im Browser",
       "description": "Analysiere deinen Lightroom-Classic-Katalog lokal in deinem Browser. Sieh dir Ausrüstung, Brennweiten, Blendengewohnheiten, Bewertungen und mehr an. Zu 100 % lokal — dein Katalog wird nie hochgeladen."
+    },
+    "shutter-count-checker": {
+      "title": "Auslösungszahl-Checker — kostenlos & privat",
+      "description": "Prüfe die Auslösungszahl deiner Kamera anhand eines Fotos, kostenlos und 100% in deinem Browser. Funktioniert mit Nikon-JPEG- und RAW-Dateien, mit klaren Hinweisen für Canon, Sony und andere Marken."
+    },
+    "camera-health-checker": {
+      "title": "Kamera-Zustandscheck",
+      "description": "Prüfe ein Kameragehäuse anhand eines einzigen Fotos: Modell, Seriennummer, Firmware, Gehäusealter, Objektiv und Verschlusslebensdauer. 100% clientseitig — ideal zum Prüfen gebrauchter Kameras vor dem Kauf."
+    },
+    "panorama-calculator": {
+      "title": "Panorama-Rechner",
+      "description": "Plane gestitchte Panoramen: wie viele Aufnahmen du brauchst, wie weit du zwischen den Bildern drehen musst und die endgültige Auflösung — für jedes Objektiv, jeden Sensor und jede Überlappung."
+    },
+    "diffraction-calculator": {
+      "title": "Beugungsgrenzen-Rechner",
+      "description": "Finde die Beugungsgrenze deiner Kamera: die Blende, ab der Abblenden die Bilder weicher macht. Basierend auf Pixelpitch und Beugungsscheibchen, für jeden Sensor und jede Auflösung."
+    },
+    "photography-cheat-sheet": {
+      "title": "Fotografie-Spickzettel — Kameraeinstellungen nach Szenario",
+      "description": "Spickzettel mit Kameraeinstellungen für Porträts, Landschaften, Wildtiere, die Milchstraße und mehr. Bewährte Ausgangspunkte zum Herunterladen als Bild oder Ausdrucken."
     }
   }
 }

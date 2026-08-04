@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Cada foto que guarda la teva càmera porta un informe ocult sobre la mateixa càmera: el model exacte, el número de sèrie, el microprogramari que executa, l'objectiu que hi havia muntat i, de vegades, quantes fotos ha fet. Aquesta eina llegeix aquest informe a partir d'una sola foto — completament al teu navegador — perquè avaluïs un cos de càmera igual que un mecànic llegeix l'historial de manteniment d'un cotxe.",
+      "deeper": "Les dades provenen de les metadades EXIF, un bloc estàndard que tota càmera digital incrusta als seus fitxers. Els camps estàndard inclouen el fabricant, el model, el número de sèrie del cos, el programari (que en la majoria de càmeres indica la versió del microprogramari), el model d'objectiu i la data de captura. Els fabricants ho amplien amb «notes del fabricant» pròpies: les de Nikon inclouen el recompte de dispars, i per això la vida de l'obturador és llegible en unes marques i no en altres. L'antiguitat del cos s'estima comparant el nom del model amb una base de dades d'anys de llançament: una càmera presentada el 2018 té com a mínim uns quants anys, digui el que digui el venedor. Hi ha dues reserves importants. Primera: les metadades només sobreviuen als fitxers originals — la majoria d'aplicacions d'edició, de missatgeria i les xarxes socials les eliminen o les reescriuen. Segona: l'EXIF es pot editar amb eines gratuïtes, així que tracta'l com un indici sòlid, no com una prova: el que realment tanca el cas és la coherència entre el número de sèrie del fitxer, el del cos i el del rebut del venedor.",
+      "keyFactors": {
+        "0": {
+          "label": "Només fitxers originals",
+          "description": "Les metadades sobreviuen als fitxers directes de la càmera. Les exportacions i els fitxers tornats a desar solen eliminar números de sèrie, notes del fabricant i informació del microprogramari."
+        },
+        "1": {
+          "label": "Número de sèrie",
+          "description": "Vincula el fitxer a un cos físic. Contrasta'l amb el mateix cos, el rebut i els registres d'equip robat abans de comprar de segona mà."
+        },
+        "2": {
+          "label": "Any de llançament vs estat",
+          "description": "L'antiguitat marca expectatives (tecnologia del sensor, funcions absents, suport restant), però el desgast de l'obturador i l'estat físic et diuen com de durs van ser aquests anys."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Compres de segona mà? Demana al venedor una foto sense editar directa de la càmera. Verifica el model i el número de sèrie, mostra el microprogramari actual i — en les marques compatibles — el recompte de dispars, tot en un sol fitxer."
+        },
+        "1": {
+          "text": "Compara el microprogramari amb l'última versió del fabricant. Una càmera desactualitzada és normal; una que ja no es pot actualitzar pot quedar-se sense millores d'autofocus i de compatibilitat."
+        },
+        "2": {
+          "text": "La data de captura de la foto de mostra del venedor et diu quan es va fer servir la càmera per última vegada de debò. Un cos «poc usat» amb el fitxer més recent de fa quatre anys ha estat aturat: revisa que l'obturador no estigui encallat i que la bateria no estigui inflada."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Número de sèrie del cos",
+          "definition": "L'identificador únic que el fabricant assigna a cada cos de càmera, incrustat a l'EXIF de cada foto. Útil per comprovar garanties i registres d'equip robat."
+        },
+        "firmware": {
+          "term": "Microprogramari",
+          "definition": "El programari intern de la càmera, indicat al camp Software de l'EXIF. Els fabricants distribueixen millores d'autofocus, compatibilitat i funcions mitjançant actualitzacions de microprogramari."
+        },
+        "bodyAge": {
+          "term": "Antiguitat del cos",
+          "definition": "Anys transcorreguts des del llançament del model, estimats amb una base de dades de dates de presentació. És una cota de com d'actual és la tecnologia de la càmera, no de com de desgastat està aquest cos concret."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Vols comprar una càmera usada d'un anunci en línia. El venedor t'envia una foto original de la càmera. Què és el més valuós que pots fer amb el número de sèrie de les seves metadades?",
+          "hint": "El número de sèrie connecta aquest cos concret amb el món exterior.",
+          "successMessage": "Correcte! Contrastar el número de sèrie amb els registres d'equip robat (i amb el rebut del venedor) et protegeix de comprar material robat: una comprovació que només el número de sèrie fa possible.",
+          "failureMessage": "El valor únic del número de sèrie és la identificació: compara'l amb els registres d'equip robat i la documentació del venedor. No diu res sobre la qualitat d'imatge ni la compatibilitat.",
+          "options": {
+            "0": { "label": "Contrastar-lo amb registres d'equip robat" },
+            "1": { "label": "Estimar la qualitat de la foto" },
+            "2": { "label": "Verificar la compatibilitat de l'objectiu" },
+            "3": { "label": "Consultar el rang ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Una càmera usada que estàs considerant executa el microprogramari 1.0 del seu llançament fa quatre anys, mentre que la versió actual del fabricant és la 3.1. Què sol aportar actualitzar?",
+          "hint": "Pensa en què poden canviar els fabricants per programari després del llançament.",
+          "successMessage": "Exacte! Les actualitzacions de microprogramari porten millores reals: millors algorismes d'autofocus, compatibilitat amb nous objectius, correccions d'errors i, de vegades, funcions completes. Les especificacions de maquinari, com el sensor o els megapíxels, no canvien mai.",
+          "failureMessage": "El microprogramari és programari: les actualitzacions milloren l'autofocus, afegeixen compatibilitat amb objectius i corregeixen errors. No poden canviar el maquinari, com el sensor o el nombre de megapíxels.",
+          "options": {
+            "0": { "label": "Noves funcions i millores d'autofocus" },
+            "1": { "label": "Més megapíxels" },
+            "2": { "label": "Un sensor de més superfície" },
+            "3": { "label": "Res: el microprogramari és cosmètic" }
+          }
+        },
+        "2": {
+          "scenario": "Dos venedors ofereixen el mateix model: un cos de 7 anys i un altre de 4, a preus semblants. Quina és la manera correcta d'usar l'antiguitat en la teva decisió?",
+          "hint": "L'antiguitat és una dada més: què és el que no et diu?",
+          "successMessage": "Exacte. L'antiguitat acota la tecnologia i la vida de suport restant, però el que decideix és com es va fer servir el cos: recompte de dispars, estat físic i historial de manteniment.",
+          "failureMessage": "L'antiguitat per si sola no decideix: un cos més vell i ben cuidat pot superar-ne un de més nou i castigat. Combina l'antiguitat amb el recompte de dispars i l'estat.",
+          "options": {
+            "0": { "label": "Comprar sempre el més nou" },
+            "1": { "label": "Ponderar l'antiguitat juntament amb el recompte de dispars i l'estat" },
+            "2": { "label": "Ignorar l'antiguitat: només importen els megapíxels" },
+            "3": { "label": "Triar només per la reputació de la marca" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Drop a photo here or click to browse (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Which brands store shutter count?",
+      "status": {
+        "supported": "Readable",
+        "partial": "Partial",
+        "unsupported": "Not in files"
+      },
+      "brands": {
+        "nikon": "Nikon writes the shutter count into every photo's metadata, unencrypted. Use an unedited original file for best results.",
+        "canon": "Canon never writes the shutter count into image files — it is stored only inside the camera and read by service tools or USB utilities.",
+        "sony": "Sony stores the shutter count in an encrypted section of its metadata that cannot be decoded in the browser. Dedicated desktop utilities can read it over USB.",
+        "fujifilm": "Fujifilm bodies do not record a true shutter count, but some write a frame counter that gives a rough lower bound.",
+        "pentax": "Pentax obfuscates its shutter count field with a cipher, so it cannot be reliably read from files.",
+        "olympus": "OM System / Olympus bodies keep the full shutter count in an internal service menu; files sometimes carry a frame counter that hints at usage.",
+        "panasonic": "Panasonic does not write a shutter count to files. The service menu on the camera reports it.",
+        "leica": "Leica bodies generally do not store a shutter count in image files."
+      },
+      "countLabel": "Shutter actuations",
+      "source": {
+        "shutterCount": "Read from the camera's shutter count metadata — this is the actual mechanical actuation counter.",
+        "mechanicalShutterCount": "Read from the mechanical shutter counter — electronic-shutter frames are not included.",
+        "imageNumber": "Estimated from the file's image number. This is a rough lower bound, not an exact actuation count — the counter can reset or roll over."
+      },
+      "ratedLife": "Rated shutter life",
+      "ratings": {
+        "entry": "Entry-level",
+        "enthusiast": "Enthusiast",
+        "advanced": "Advanced",
+        "pro": "Professional",
+        "flagship": "Flagship"
+      },
+      "lifeUsed": "{percent}% of rated life used",
+      "verdict": {
+        "low": "Barely used",
+        "moderate": "Moderate use",
+        "high": "Heavy use",
+        "beyond": "Past rating"
+      },
+      "noCountTitle": "No shutter count in this file",
+      "noCountGeneric": "This file does not contain a readable shutter count. Try an unedited original photo straight from the camera — exports from editing apps often strip maker metadata.",
+      "errorRead": "Could not read this file. Try an unedited JPEG or RAW file straight from the camera.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "What is a shutter count?",
+          "answer": "Shutter count is the number of times a camera's mechanical shutter has fired — the camera equivalent of a car's mileage. It is the most-checked indicator of wear when buying or selling a used camera, because shutters are rated for a finite number of actuations."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "How many shutter actuations is too many?",
+          "answer": "It depends on the camera class. Entry-level shutters are rated around 100,000 actuations, enthusiast bodies 150,000–200,000, and professional bodies 300,000–500,000. A rating is an average lifespan, not a hard limit — many shutters last far beyond it, and a low count on a poorly treated body can still mean problems."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Why can't I check the shutter count on my Canon or Sony photo?",
+          "answer": "Canon never writes the shutter count into image files at all — it lives only in the camera's internal memory. Sony writes it, but encrypts that section of the metadata. In both cases a browser tool cannot read it from a photo; desktop utilities that connect to the camera over USB are the usual workaround."
+        }
+      }
+    }
+  }
+}

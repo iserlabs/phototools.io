@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Una panorámica se construye tomando varias fotos solapadas mientras giras la cámara, y dejando después que el software las una en una sola imagen ancha. El truco está en saber cuánto girar entre disparos: si giras demasiado, el software no puede unir los fotogramas; si giras muy poco, desperdicias decenas de disparos. Esta calculadora hace ese cálculo a partir de tu objetivo, tu sensor y el solapamiento deseado.",
+      "deeper": "Cada fotograma cubre un ángulo de visión fijo determinado por la distancia focal y el tamaño del sensor: un 50mm en formato completo ve unos 40° en horizontal. El software de unión alinea fotogramas vecinos buscando «puntos de control» compartidos en la zona de solapamiento, y por eso el 25–35 % es el estándar práctico: da al algoritmo suficiente detalle compartido sin disparar el número de fotogramas. La rotación útil por disparo es, por tanto, el campo de visión del fotograma multiplicado por (1 − solapamiento). Disparar en vertical cambia un paso horizontal más estrecho por mucha más cobertura vertical, y por eso la mayoría de las panorámicas de una sola fila se hacen en vertical. Para escenas muy altas, las panorámicas multifila aplican la misma lógica de solapamiento en vertical. El archivo final crece deprisa: cada fotograma adicional aporta su resolución menos el solapamiento, así que una panorámica vertical de 7 fotogramas con una cámara de 24 MP supera fácilmente los 100 MP. Una sutileza física lo condiciona todo: girar alrededor de la rosca del trípode desplaza el centro óptico del objetivo entre fotogramas y hace que los objetos cercanos y lejanos se desalineen (paralaje). En paisajes lejanos rara vez importa, pero con elementos cercanos en primer plano necesitas girar alrededor del punto sin paralaje del objetivo con un raíl nodal o una rótula panorámica.",
+      "keyFactors": {
+        "0": {
+          "label": "Distancia focal y sensor",
+          "description": "Juntos fijan el campo de visión de cada fotograma, la unidad básica con la que se construye la panorámica. Las focales más largas implican fotogramas más estrechos y más disparos."
+        },
+        "1": {
+          "label": "Solapamiento",
+          "description": "La zona compartida entre fotogramas vecinos sobre la que se alinea el software de unión. El 25–35 % es el punto óptimo; las escenas sin rasgos distintivos (cielo, agua) necesitan más."
+        },
+        "2": {
+          "label": "Orientación",
+          "description": "Los fotogramas verticales cubren menos anchura pero mucha más altura por disparo: la opción estándar para panorámicas de una fila porque deja margen de recorte."
+        },
+        "3": {
+          "label": "Paralaje",
+          "description": "Desalineación entre lo cercano y lo lejano causada por girar alrededor del eje equivocado. Inofensiva en escenas lejanas; crítica con primeros planos cercanos."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Fija exposición, balance de blancos y enfoque en manual antes del primer fotograma. Cualquier automatismo cambia entre fotogramas y crea bandas visibles en el cielo unido."
+        },
+        "1": {
+          "text": "Dispara con el objetivo nivelado y gira en una sola pasada fluida, añadiendo un fotograma de sobra en cada extremo: los fotogramas de los bordes se distorsionan y se recortan durante la unión."
+        },
+        "2": {
+          "text": "En panorámicas a mano alzada, exagera el solapamiento hasta el 40–50 %. Tu rotación no será precisa, y los fotogramas extra dan al software margen para recuperarse."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Solapamiento",
+          "definition": "El porcentaje de cada fotograma compartido con su vecino. El software de unión necesita ese detalle compartido para alinear los fotogramas: lo típico es un 25–35 %."
+        },
+        "orientation": {
+          "term": "Orientación de la cámara",
+          "definition": "El encuadre vertical es el estándar en panorámicas: cada fotograma aporta más altura, dejando margen para corregir el horizonte y recortar."
+        },
+        "rotateBetween": {
+          "term": "Rotación entre disparos",
+          "definition": "Cuántos grados girar la cámara tras cada fotograma: el campo de visión del fotograma por (1 − solapamiento). Las rótulas panorámicas tienen topes con clic exactamente para esto."
+        },
+        "rows": {
+          "term": "Filas",
+          "definition": "Las panorámicas multifila apilan pasadas horizontales en vertical, aplicando la misma regla de solapamiento entre filas para cubrir escenas altas."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Estás fotografiando una panorámica de una cordillera. ¿Cuánto deben solaparse los fotogramas vecinos para una unión fiable?",
+          "hint": "El software necesita detalle compartido, pero cada fotograma extra cuesta tiempo.",
+          "successMessage": "¡Correcto! Un solapamiento de alrededor del 30 % da al software de unión puntos de control de sobra sin desperdiciar fotogramas: la recomendación estándar para la mayoría de las escenas.",
+          "failureMessage": "El 25–35 % es el estándar práctico. Por debajo de ~15 % el software tiene problemas para encontrar puntos de control; el 80 % triplica los fotogramas sin beneficio.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Quieres una panorámica de una sola fila con suficiente margen vertical para enderezar el horizonte y recortar con libertad después. ¿En qué orientación deberías disparar?",
+          "hint": "¿En qué orientación te da cada fotograma más altura?",
+          "successMessage": "¡Exacto! La orientación vertical captura mucho más campo vertical por fotograma: los fotogramas extra necesarios en horizontal son un precio pequeño por la libertad de recorte.",
+          "failureMessage": "La orientación vertical es el estándar para panorámicas de una fila: cada fotograma es más alto, así que el resultado unido sobrevive a la corrección del horizonte y al recorte.",
+          "options": {
+            "0": { "label": "Horizontal" },
+            "1": { "label": "Vertical" },
+            "2": { "label": "Modo de recorte cuadrado" },
+            "3": { "label": "Inclinada 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Con un 50mm en formato completo en orientación horizontal (unos 40° de visión horizontal) y un 30 % de solapamiento, ¿aproximadamente cuántos fotogramas necesita una panorámica de 180°?",
+          "hint": "Cada disparo avanza la cobertura 40° × 0,7 = 28°.",
+          "successMessage": "¡Correcto! El primer fotograma cubre 40°, y cada fotograma adicional añade ~28°. Cubrir los 140° restantes requiere 5 fotogramas más, así que 7 en total (con un pequeño margen).",
+          "failureMessage": "Cada fotograma después del primero añade 40° × (1 − 0,3) = 28° de cobertura nueva. (180 − 40) / 28 = 5 fotogramas más, es decir, 7 en total.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Tu panorámica tiene una valla a un metro de la cámara y montañas detrás. El resultado unido muestra la valla con imágenes fantasma y desalineada entre fotogramas. ¿Alrededor de qué punto debe girar la cámara para arreglarlo?",
+          "hint": "El problema es el paralaje: objetos cercanos y lejanos que se desplazan entre sí.",
+          "successMessage": "¡Exacto! Girar alrededor del punto sin paralaje (nodal) del objetivo mantiene alineados los objetos cercanos y lejanos entre fotogramas. Las rótulas panorámicas y los raíles nodales existen precisamente para esto.",
+          "failureMessage": "La cámara debe girar alrededor del punto sin paralaje del objetivo (a menudo llamado punto nodal). Girar alrededor de la rosca del trípode desplaza el centro óptico y provoca el paralaje que estás viendo.",
+          "options": {
+            "0": { "label": "La lente frontal del objetivo" },
+            "1": { "label": "El punto sin paralaje del objetivo" },
+            "2": { "label": "El plano del sensor" },
+            "3": { "label": "La rosca del trípode" }
+          }
+        }
+      }
+    }
+  }
+}

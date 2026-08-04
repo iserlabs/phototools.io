@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Mỗi bức ảnh máy của bạn lưu lại đều mang theo một bản báo cáo ẩn về chính chiếc máy: model chính xác, số sê-ri, firmware đang chạy, ống kính gắn lúc chụp, và đôi khi cả số ảnh máy đã chụp. Công cụ này đọc bản báo cáo đó từ một bức ảnh duy nhất — hoàn toàn trong trình duyệt của bạn — để bạn đánh giá một thân máy như cách thợ máy đọc lịch sử bảo dưỡng của ô tô.",
+      "deeper": "Dữ liệu đến từ metadata EXIF, một khối tiêu chuẩn mà mọi máy ảnh số nhúng vào tệp của nó. Các trường tiêu chuẩn gồm Make, Model, BodySerialNumber, Software (với hầu hết máy là phiên bản firmware), LensModel và dấu thời gian chụp. Các nhà sản xuất mở rộng thêm bằng 'maker notes' độc quyền — của Nikon có cả số lần chụp màn trập, đó là lý do tuổi thọ màn trập đọc được với một số hãng còn số khác thì không. Tuổi thân máy được ước tính bằng cách đối chiếu tên model với cơ sở dữ liệu năm ra mắt: một máy ra mắt năm 2018 thì ít nhất cũng đã nhiều năm tuổi, bất kể người bán nói gì. Có hai lưu ý quan trọng. Thứ nhất, metadata chỉ tồn tại trong tệp gốc — hầu hết ứng dụng chỉnh sửa, nhắn tin và mạng xã hội xóa hoặc ghi đè nó. Thứ hai, EXIF có thể bị sửa bằng công cụ miễn phí, nên hãy coi nó là bằng chứng mạnh chứ không phải bằng chứng tuyệt đối: sự nhất quán giữa số sê-ri trên tệp, trên thân máy và trên hóa đơn của người bán mới thực sự khép lại vấn đề.",
+      "keyFactors": {
+        "0": {
+          "label": "Chỉ tệp gốc",
+          "description": "Metadata chỉ nguyên vẹn trong tệp lấy thẳng từ máy. Tệp xuất và lưu lại thường mất số sê-ri, maker notes và thông tin firmware."
+        },
+        "1": {
+          "label": "Số sê-ri",
+          "description": "Gắn tệp với một thân máy vật lý. Hãy đối chiếu nó với chính thân máy, hóa đơn và các danh sách thiết bị bị mất cắp trước khi mua đồ cũ."
+        },
+        "2": {
+          "label": "Năm ra mắt vs tình trạng",
+          "description": "Tuổi máy đặt kỳ vọng (công nghệ cảm biến, tính năng thiếu, thời gian hỗ trợ còn lại), nhưng độ mòn màn trập và tình trạng vật lý mới cho biết những năm đó vất vả đến đâu."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Mua máy cũ? Hãy xin người bán một bức ảnh chưa chỉnh sửa lấy thẳng từ máy. Nó xác minh model và số sê-ri, hiển thị firmware hiện tại, và — với các hãng được hỗ trợ — cả số lần chụp màn trập, tất cả trong một tệp."
+        },
+        "1": {
+          "text": "So firmware với bản phát hành mới nhất của hãng. Máy chưa cập nhật là chuyện bình thường; nhưng máy không còn cập nhật được nữa có thể bỏ lỡ các cải tiến về lấy nét tự động và khả năng tương thích."
+        },
+        "2": {
+          "text": "Ngày chụp trên ảnh mẫu của người bán cho biết lần cuối máy thực sự được dùng. Một máy 'ít dùng' mà tệp mới nhất đã bốn năm tuổi nghĩa là nó nằm im lâu rồi — hãy kiểm tra màn trập kẹt và pin phồng."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Số sê-ri thân máy",
+          "definition": "Mã định danh duy nhất nhà sản xuất gán cho mỗi thân máy, nhúng trong EXIF của mọi bức ảnh. Hữu ích để kiểm tra bảo hành và tra cứu danh sách thiết bị bị mất cắp."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "Phần mềm nội bộ của máy ảnh, hiển thị trong trường Software của EXIF. Các hãng đưa cải tiến về lấy nét, tương thích và tính năng qua các bản cập nhật firmware."
+        },
+        "bodyAge": {
+          "term": "Tuổi thân máy",
+          "definition": "Số năm kể từ khi model ra mắt, ước tính từ cơ sở dữ liệu ngày phát hành. Là mức trần cho độ mới của công nghệ trong máy — không phải mức độ hao mòn của chiếc máy cụ thể này."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Bạn đang mua máy ảnh cũ qua một tin rao trên mạng. Người bán gửi cho bạn một bức ảnh gốc từ máy. Việc giá trị nhất nên làm với số sê-ri trong metadata là gì?",
+          "hint": "Số sê-ri kết nối chiếc máy cụ thể này với thế giới bên ngoài.",
+          "successMessage": "Chính xác! Đối chiếu số sê-ri với danh sách thiết bị bị mất cắp (và hóa đơn của người bán) bảo vệ bạn khỏi mua phải đồ ăn trộm — một phép kiểm tra mà chỉ số sê-ri mới làm được.",
+          "failureMessage": "Giá trị độc nhất của số sê-ri là định danh: hãy đối chiếu nó với danh sách thiết bị bị mất cắp và giấy tờ của người bán. Nó không nói gì về chất lượng ảnh hay khả năng tương thích.",
+          "options": {
+            "0": { "label": "Đối chiếu với danh sách thiết bị bị mất cắp" },
+            "1": { "label": "Ước lượng chất lượng ảnh" },
+            "2": { "label": "Xác minh khả năng tương thích ống kính" },
+            "3": { "label": "Tra cứu dải ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Một máy cũ bạn đang cân nhắc chạy firmware 1.0 từ khi ra mắt bốn năm trước, trong khi phiên bản hiện tại của hãng là 3.1. Việc cập nhật thường mang lại gì?",
+          "hint": "Hãy nghĩ xem nhà sản xuất có thể thay đổi gì bằng phần mềm sau khi máy đã bán ra.",
+          "successMessage": "Đúng vậy! Bản cập nhật firmware mang đến cải tiến thực sự — thuật toán lấy nét tốt hơn, hỗ trợ ống kính mới, sửa lỗi, đôi khi cả tính năng hoàn toàn mới. Thông số phần cứng như cảm biến và megapixel thì không bao giờ đổi.",
+          "failureMessage": "Firmware là phần mềm: bản cập nhật cải thiện lấy nét, thêm hỗ trợ ống kính và sửa lỗi. Nó không thể thay đổi phần cứng như cảm biến hay số megapixel.",
+          "options": {
+            "0": { "label": "Tính năng mới và cải tiến lấy nét tự động" },
+            "1": { "label": "Nhiều megapixel hơn" },
+            "2": { "label": "Diện tích cảm biến lớn hơn" },
+            "3": { "label": "Không gì cả — firmware chỉ để trang trí" }
+          }
+        },
+        "2": {
+          "scenario": "Hai người bán cùng rao một model: một thân máy 7 năm tuổi và một thân máy 4 năm tuổi với giá tương đương. Cách dùng tuổi máy đúng đắn trong quyết định là gì?",
+          "hint": "Tuổi máy chỉ là một dữ kiện — nó không cho bạn biết điều gì?",
+          "successMessage": "Chính xác. Tuổi máy khoanh vùng thế hệ công nghệ và thời gian hỗ trợ còn lại, nhưng yếu tố quyết định là máy đã được dùng ra sao: số lần chụp màn trập, tình trạng vật lý và lịch sử bảo dưỡng.",
+          "failureMessage": "Tuổi máy đơn thuần không quyết định được — một máy cũ hơn nhưng được dùng nhẹ nhàng có thể hơn hẳn máy mới hơn bị vắt kiệt. Hãy kết hợp tuổi máy với số lần chụp và tình trạng vật lý.",
+          "options": {
+            "0": { "label": "Luôn mua máy mới hơn" },
+            "1": { "label": "Cân nhắc tuổi máy cùng số lần chụp và tình trạng" },
+            "2": { "label": "Bỏ qua tuổi máy — chỉ megapixel quan trọng" },
+            "3": { "label": "Chọn chỉ dựa vào danh tiếng thương hiệu" }
+          }
+        }
+      }
+    }
+  }
+}

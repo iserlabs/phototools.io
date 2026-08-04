@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Arrossega una foto aquí o fes clic per triar-ne una (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Quines marques guarden el recompte de dispars?",
+      "status": {
+        "supported": "Llegible",
+        "partial": "Parcial",
+        "unsupported": "No és als fitxers"
+      },
+      "brands": {
+        "nikon": "Nikon escriu el recompte de dispars a les metadades de cada foto, sense xifrar. Fes servir un fitxer original sense editar per obtenir el millor resultat.",
+        "canon": "Canon no escriu mai el recompte de dispars als fitxers d'imatge: es guarda només dins de la càmera i es llegeix amb eines de servei tècnic o utilitats USB.",
+        "sony": "Sony guarda el recompte de dispars en una secció xifrada de les seves metadades que no es pot descodificar al navegador. Hi ha utilitats d'escriptori específiques que poden llegir-lo per USB.",
+        "fujifilm": "Els cossos Fujifilm no registren un recompte de dispars real, però alguns escriuen un comptador de fotogrames que dona una cota inferior aproximada.",
+        "pentax": "Pentax ofusca el camp del recompte de dispars amb un xifratge, així que no es pot llegir de manera fiable des dels fitxers.",
+        "olympus": "Els cossos OM System / Olympus guarden el recompte complet de dispars en un menú de servei intern; els fitxers de vegades porten un comptador de fotogrames que dona una pista de l'ús.",
+        "panasonic": "Panasonic no escriu el recompte de dispars als fitxers. El menú de servei de la càmera el mostra.",
+        "leica": "Els cossos Leica en general no guarden el recompte de dispars als fitxers d'imatge."
+      },
+      "countLabel": "Dispars de l'obturador",
+      "source": {
+        "shutterCount": "Llegit de les metadades de recompte de dispars de la càmera: és el comptador real d'accionaments mecànics.",
+        "mechanicalShutterCount": "Llegit del comptador de l'obturador mecànic: els fotogrames amb obturador electrònic no s'hi inclouen.",
+        "imageNumber": "Estimat a partir del número d'imatge del fitxer. És una cota inferior aproximada, no un recompte exacte d'accionaments: el comptador es pot reiniciar o desbordar."
+      },
+      "ratedLife": "Vida útil nominal de l'obturador",
+      "ratings": {
+        "entry": "D'iniciació",
+        "enthusiast": "Entusiasta",
+        "advanced": "Avançada",
+        "pro": "Professional",
+        "flagship": "Topall de gamma"
+      },
+      "lifeUsed": "{percent}% de la vida útil nominal consumida",
+      "verdict": {
+        "low": "Gairebé sense ús",
+        "moderate": "Ús moderat",
+        "high": "Ús intensiu",
+        "beyond": "Per sobre de la vida nominal"
+      },
+      "noCountTitle": "Aquest fitxer no conté recompte de dispars",
+      "noCountGeneric": "Aquest fitxer no conté un recompte de dispars llegible. Prova amb una foto original sense editar treta directament de la càmera: les exportacions de les aplicacions d'edició sovint eliminen les metadades del fabricant.",
+      "errorRead": "No s'ha pogut llegir aquest fitxer. Prova amb un JPEG o RAW sense editar tret directament de la càmera.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Què és el recompte de dispars?",
+          "answer": "El recompte de dispars és el nombre de vegades que s'ha accionat l'obturador mecànic d'una càmera: l'equivalent fotogràfic del quilometratge d'un cotxe. És l'indicador de desgast més consultat en comprar o vendre una càmera de segona mà, perquè els obturadors estan dissenyats per a un nombre finit d'accionaments."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Quants dispars de l'obturador són massa?",
+          "answer": "Depèn de la classe de càmera. Els obturadors dels cossos d'iniciació estan dissenyats per a uns 100.000 accionaments, els d'entusiasta per a 150.000–200.000 i els professionals per a 300.000–500.000. La xifra nominal és una vida mitjana, no un límit estricte: molts obturadors duren molt més, i un recompte baix en un cos maltractat encara pot significar problemes."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Per què no puc comprovar el recompte de dispars a la meva foto de Canon o Sony?",
+          "answer": "Canon no escriu mai el recompte de dispars als fitxers d'imatge: viu només a la memòria interna de la càmera. Sony sí que l'escriu, però xifra aquesta secció de les metadades. En tots dos casos, una eina de navegador no pot llegir-lo des d'una foto; la solució habitual són utilitats d'escriptori que es connecten a la càmera per USB."
+        }
+      }
+    }
+  }
+}

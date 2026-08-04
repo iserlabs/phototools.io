@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Analyseur de Catalogue Lightroom — Statistiques gratuites, dans le navigateur",
       "description": "Analysez votre catalogue Lightroom Classic localement dans votre navigateur. Découvrez le matériel, les focales, les habitudes d'ouverture, les notes et bien plus. 100 % local — votre catalogue n'est jamais envoyé."
+    },
+    "shutter-count-checker": {
+      "title": "Vérificateur de déclenchements — gratuit et privé",
+      "description": "Vérifie le nombre de déclenchements de ton appareil à partir d'une photo, gratuitement et 100 % dans ton navigateur. Fonctionne avec les fichiers JPEG et RAW Nikon, avec des conseils clairs pour Canon, Sony et les autres marques."
+    },
+    "camera-health-checker": {
+      "title": "Vérificateur d'état d'appareil photo",
+      "description": "Inspecte un boîtier à partir d'une seule photo : modèle, numéro de série, firmware, âge, objectif et endurance de l'obturateur. 100 % côté client — idéal pour vérifier un appareil d'occasion avant l'achat."
+    },
+    "panorama-calculator": {
+      "title": "Calculateur de panorama",
+      "description": "Planifie tes panoramas assemblés : combien de prises il te faut, de combien pivoter entre les images et la résolution finale — pour tout objectif, capteur et chevauchement."
+    },
+    "diffraction-calculator": {
+      "title": "Calculateur de limite de diffraction",
+      "description": "Trouve la limite de diffraction de ton appareil : l'ouverture où fermer le diaphragme commence à adoucir les images. Basé sur le pas de pixel et la tache d'Airy, pour tout capteur et toute résolution."
+    },
+    "photography-cheat-sheet": {
+      "title": "Aide-mémoire photo — réglages par scénario",
+      "description": "Fiches de réglages photo pour les portraits, les paysages, l'animalier, la Voie lactée et plus. Des points de départ éprouvés à télécharger en image ou à imprimer."
     }
   }
 }

@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Chọn một tình huống",
+      "tipsTitle": "Mẹo thực chiến",
+      "labels": {
+        "aperture": "Khẩu độ",
+        "shutter": "Tốc độ màn trập",
+        "iso": "ISO",
+        "whiteBalance": "Cân bằng trắng",
+        "focusMode": "Chế độ lấy nét",
+        "driveMode": "Chế độ chụp"
+      },
+      "values": {
+        "auto": "Tự động",
+        "daylight": "Ánh sáng ban ngày",
+        "cloudy": "Trời nhiều mây",
+        "shade": "Bóng râm",
+        "tungsten": "Đèn sợi đốt (~3200K)",
+        "afSingle": "Lấy nét đơn (AF-S)",
+        "afContinuous": "Lấy nét liên tục (AF-C)",
+        "afTracking": "Lấy nét liên tục + theo dõi chủ thể",
+        "manualFocus": "Lấy nét tay",
+        "single": "Chụp đơn",
+        "burstLow": "Chụp liên tiếp tốc độ thấp",
+        "burstHigh": "Chụp liên tiếp tốc độ cao",
+        "timer2s": "Hẹn giờ 2s / điều khiển từ xa",
+        "intervalometer": "Bộ hẹn giờ chụp cách quãng"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Chân dung",
+          "tips": {
+            "0": "Lấy nét vào con mắt gần máy nhất — ở khẩu độ lớn, độ sâu trường ảnh chỉ vài xăng-ti-mét.",
+            "1": "Lùi lại và zoom vào (85mm trở lên) để có hiệu ứng nén phối cảnh đẹp; ống góc rộng chụp gần làm méo khuôn mặt."
+          }
+        },
+        "landscape": {
+          "name": "Phong cảnh",
+          "tips": {
+            "0": "Lấy nét vào khoảng một phần ba chiều sâu của cảnh, hoặc dùng khoảng cách siêu nét để nét từ trước ra sau.",
+            "1": "Chụp trên chân máy với hẹn giờ hoặc điều khiển từ xa để loại bỏ rung khi tốc độ màn trập chậm."
+          }
+        },
+        "street": {
+          "name": "Đường phố",
+          "tips": {
+            "0": "Lấy nét theo vùng: đặt sẵn nét ở 3m và f/8, mọi thứ từ 2m đến 6m sẽ nét — không còn độ trễ AF.",
+            "1": "Auto ISO với tốc độ màn trập tối thiểu 1/250s đóng băng người đi bộ trong khi bạn tập trung vào khung hình."
+          }
+        },
+        "wildlife": {
+          "name": "Động vật hoang dã & chim",
+          "tips": {
+            "0": "Chọn tốc độ màn trập theo chủ thể: 1/1000s cho chim đậu, 1/2500s hoặc nhanh hơn cho chim đang bay.",
+            "1": "Chụp ngang tầm mắt và chờ khoảnh khắc quay đầu — ánh sáng phản chiếu trong mắt làm bức ảnh sống động hẳn lên."
+          }
+        },
+        "sports": {
+          "name": "Thể thao & hành động",
+          "tips": {
+            "0": "Lấy nét trước vào nơi hành động sẽ diễn ra (khung thành, đỉnh khúc cua) và bấm chụp liên tiếp ngay trước khoảnh khắc cao trào.",
+            "1": "Lia máy ở 1/60s–1/125s với lấy nét liên tục làm nhòe hậu cảnh trong khi giữ chủ thể sắc nét."
+          }
+        },
+        "macro": {
+          "name": "Macro",
+          "tips": {
+            "0": "Ở độ phóng đại cao, độ sâu trường ảnh mỏng như tờ giấy — lấy nét bằng cách di chuyển máy, đừng xoay vòng nét.",
+            "1": "Nhiễu xạ tàn phá mạnh sau f/16; hãy dùng chồng ảnh nét thay vì khép khẩu thêm."
+          }
+        },
+        "milkyWay": {
+          "name": "Dải Ngân Hà",
+          "tips": {
+            "0": "Dùng quy tắc NPF hoặc quy tắc 500 để tính thời gian phơi sáng tối đa trước khi sao bị kéo vệt — khoảng 15–20s ở 20mm trên full frame.",
+            "1": "Lấy nét tay vào một ngôi sao sáng bằng live view phóng đại; đặt cân bằng trắng quanh 3900K để bầu trời có tông trung tính."
+          }
+        },
+        "nightCity": {
+          "name": "Thành phố về đêm",
+          "tips": {
+            "0": "Chụp ở ISO gốc trên chân máy và cứ để màn trập mở lâu — vùng sáng sạch sẽ và nhiễu ở mức thấp.",
+            "1": "f/11–f/16 biến các điểm sáng thành tia sao; chụp vào giờ xanh để bầu trời còn màu sắc."
+          }
+        },
+        "waterfall": {
+          "name": "Thác nước & phơi sáng dài",
+          "tips": {
+            "0": "Phơi sáng 0,5–2s giữ được kết cấu của dòng nước; từ 30s trở lên nước biến thành sương mù. Dùng filter ND vào ban ngày.",
+            "1": "Kính lọc phân cực tròn cắt phản xạ từ đá ướt và tán lá — kiêm luôn vai trò ND khoảng 1,5 stop."
+          }
+        },
+        "goldenHour": {
+          "name": "Giờ vàng",
+          "tips": {
+            "0": "Đo sáng theo vùng sáng và kéo vùng tối lên khi hậu kỳ — vùng sáng ấm bị cháy thì không cứu được.",
+            "1": "Để chủ thể ngược sáng lấy viền sáng và lóa nghệ thuật; preset cân bằng trắng trời nhiều mây giữ tông ấm cho cảnh."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Chụp chân dung nên dùng thông số máy nào?",
+          "answer": "Bắt đầu với khẩu độ lớn (f/1.8–f/2.8) để xóa phông, tốc độ màn trập tối thiểu 1/200s để tránh nhòe chuyển động, và ISO thấp nhất mà ánh sáng cho phép (100–400). Dùng lấy nét điểm đơn vào con mắt gần hơn, hoặc AF nhận diện mắt nếu máy của bạn có."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Cần thông số gì để chụp Dải Ngân Hà?",
+          "answer": "Một ống kính góc rộng khẩu lớn mở hết cỡ (f/1.4–f/2.8), phơi sáng 10–25 giây (lâu hơn thì sao bị kéo vệt), ISO 1600–6400, lấy nét tay vào một ngôi sao sáng, và chân máy. Một đêm không trăng cách xa ánh đèn thành phố còn quan trọng hơn mọi thông số máy."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Các thông số này có phải công thức chính xác không?",
+          "answer": "Không — chúng là những điểm khởi đầu đã được kiểm chứng. Ánh sáng giữa các cảnh khác nhau rất nhiều, nên hãy coi các khoảng giá trị là phỏng đoán ban đầu: chụp thử một tấm, xem histogram rồi điều chỉnh. Mục tiêu là đưa bạn đến gần đáp án thật nhanh, chứ không thay thế óc phán đoán."
+        }
+      }
+    }
+  }
+}

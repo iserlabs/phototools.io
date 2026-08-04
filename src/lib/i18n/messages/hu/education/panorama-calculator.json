@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "A panoráma úgy készül, hogy a kamerát forgatva több, egymást átfedő fotót készít, majd a szoftver egyetlen széles képpé fűzi őket. A trükk az, hogy tudja, mennyit kell fordulni két felvétel között: ha túl sokat, a szoftver nem tudja összeilleszteni a képkockákat, ha túl keveset, feleslegesen készít tucatnyi felvételt. Ez a kalkulátor elvégzi ezt a számítást az objektív, az érzékelő és a kívánt átfedés alapján.",
+      "deeper": "Minden képkocka rögzített látószöget fog át, amelyet a gyújtótávolság és az érzékelőméret határoz meg — egy 50mm-es objektív teljes képmezőn vízszintesen körülbelül 40°-ot lát. Az összefűző szoftver úgy illeszti egymáshoz a szomszédos képkockákat, hogy közös „vezérlőpontokat” keres az átfedési sávban; ezért gyakorlati szabvány a 25–35% átfedés: elég közös részletet ad az algoritmusnak anélkül, hogy a képkockaszám elszállna. A felvételenként hasznosítható elfordulás tehát a képkocka látószöge szorozva (1 − átfedés)-sel. Az álló tájolású fotózás keskenyebb vízszintes lépésért cserébe sokkal nagyobb függőleges lefedettséget ad — ezért készül a legtöbb egysoros panoráma állóban. Igazán magas jeleneteknél a többsoros panoráma ugyanezt az átfedési logikát alkalmazza függőlegesen is. A kész, összefűzött fájl gyorsan nő: minden további képkocka a saját felbontását adja hozzá, mínusz az átfedés, így egy 24 MP-es kamerából származó, 7 képkockás álló panoráma könnyedén meghaladja a 100 MP-t. Egyetlen fizikai finomság korlátoz mindent: az állványmenet körüli forgatás képkockánként elmozdítja az objektív optikai középpontját, ezért a közeli és a távoli tárgyak elcsúsznak egymáshoz képest (parallaxis). Távoli tájképeknél ez ritkán számít, közeli előtérrel viszont az objektív parallaxismentes pontja körül kell forgatni, nodális sín vagy panorámafej segítségével.",
+      "keyFactors": {
+        "0": {
+          "label": "Gyújtótávolság és érzékelő",
+          "description": "Együtt határozzák meg az egy képkockára eső látószöget — azt az alapegységet, amelyből a panoráma összeáll. A hosszabb objektív keskenyebb képkockát és több felvételt jelent."
+        },
+        "1": {
+          "label": "Átfedés",
+          "description": "A szomszédos képkockák közös sávja, amelyre az összefűző szoftver illeszt. A 25–35% az ideális; a részletszegény jelenetek (ég, víz) többet kívánnak."
+        },
+        "2": {
+          "label": "Tájolás",
+          "description": "Az álló képkocka kevesebb szélességet, de sokkal több magasságot fog át felvételenként — az egysoros panorámák megszokott választása, mert marad hely a vágásra."
+        },
+        "3": {
+          "label": "Parallaxis",
+          "description": "A közeli és távoli tárgyak elcsúszása, amelyet a rossz tengely körüli forgatás okoz. Távoli jeleneteknél ártalmatlan, közeli előtérnél kritikus."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Az első képkocka előtt rögzítse kézire az expozíciót, a fehéregyensúlyt és a fókuszt. Bármilyen automatika elmozdul a képkockák között, és látható sávozást hoz létre az összefűzött égbolton."
+        },
+        "1": {
+          "text": "Vízszintbe állított objektívvel fotózzon, és egyetlen egyenletes mozdulattal forduljon körbe, mindkét végén egy eldobható képkockával kiegészítve — a szélső képkockák az összefűzés során torzulnak és levágódnak."
+        },
+        "2": {
+          "text": "Kézből készített panorámáknál vigye túlzásba az átfedést, 40–50%-ra. A forgatás nem lesz pontos, és a többletképkockák teret adnak az összefűzőnek a hibák kijavítására."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Átfedés",
+          "definition": "Az egyes képkockák hány százalékát osztja meg a szomszédjával. Az összefűző szoftvernek szüksége van erre a közös részletre a képkockák illesztéséhez — jellemzően 25–35%."
+        },
+        "orientation": {
+          "term": "Kamera tájolása",
+          "definition": "A panorámáknál az álló tájolás a szabvány: minden képkocka több magasságot ad, így marad hely a horizont korrekciójára és a vágásra."
+        },
+        "rotateBetween": {
+          "term": "Elfordulás felvételek között",
+          "definition": "Hány fokkal kell elfordítani a kamerát minden képkocka után: a képkocka látószöge szorozva (1 − átfedés)-sel. A panorámafejeken pontosan ehhez vannak kattanó osztások."
+        },
+        "rows": {
+          "term": "Sorok",
+          "definition": "A többsoros panorámák vízszintes menetei egymás fölé kerülnek, és a sorok között ugyanazt az átfedési szabályt alkalmazzák, hogy magas jeleneteket is lefedjenek."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Panorámát fotóz egy hegyvonulatról. Mennyire fedjék át egymást a szomszédos képkockák a megbízható összefűzéshez?",
+          "hint": "Az összefűzőnek közös részletre van szüksége, de minden extra képkocka időbe kerül.",
+          "successMessage": "Helyes! A 30% körüli átfedés bőven ad vezérlőpontot az összefűző szoftvernek, felesleges képkockák nélkül — a legtöbb jelenetnél ez a szokásos ajánlás.",
+          "failureMessage": "A gyakorlati szabvány a 25–35%. Nagyjából 15% alatt az összefűzők nehezen találnak vezérlőpontokat; a 80% pedig megháromszorozza a képkockaszámot minden haszon nélkül.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Egysoros panorámát szeretne, elég függőleges tartalékkal ahhoz, hogy utólag kiegyenesítse a horizontot és szabadon vághasson. Milyen kameratájolásban fotózzon?",
+          "hint": "Melyik állásban ad több magasságot egy képkocka?",
+          "successMessage": "Így van! Az álló tájolás sokkal nagyobb függőleges mezőt rögzít képkockánként — a vízszintesen szükséges néhány többletfelvétel olcsó ár a vágási szabadságért.",
+          "failureMessage": "Az egysoros panorámáknál az álló tájolás a szabvány: minden képkocka magasabb, így az összefűzött eredmény kibírja a horizontkorrekciót és a vágást.",
+          "options": {
+            "0": { "label": "Fekvő" },
+            "1": { "label": "Álló" },
+            "2": { "label": "Négyzetes vágási mód" },
+            "3": { "label": "45°-ra döntve" }
+          }
+        },
+        "2": {
+          "scenario": "Egy 50mm-es objektívvel teljes képmezős vázon, fekvő tájolásban (kb. 40° vízszintes látószög) és 30% átfedéssel — nagyjából hány képkocka kell egy 180°-os panorámához?",
+          "hint": "Minden felvétel 40° × 0,7 = 28°-kal viszi tovább a lefedettséget.",
+          "successMessage": "Helyes! Az első képkocka 40°-ot fog át, és minden további ~28°-kal növeli a lefedettséget. A maradék 140°-hoz 5 további felvétel kell, tehát összesen 7 képkocka (kis tartalékkal).",
+          "failureMessage": "Az első utáni minden képkocka 40° × (1 − 0,3) = 28° új lefedettséget ad. (180 − 40) / 28 = 5 további képkocka, tehát összesen 7.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "A panorámájában egy kerítés áll egy méterre a kamera előtt, mögötte hegyek. Az összefűzött eredményen a kerítés szellemképes és elcsúszik a képkockák között. Melyik pont körül kell forgatni a kamerát a javításhoz?",
+          "hint": "A probléma a parallaxis — a közeli és a távoli tárgyak egymáshoz képesti elmozdulása.",
+          "successMessage": "Pontosan! Az objektív parallaxismentes (nodális) pontja körüli forgatás a képkockák között is illeszkedve tartja a közeli és a távoli tárgyakat. A panorámafejek és a nodális sínek éppen ezért léteznek.",
+          "failureMessage": "A kamerát az objektív parallaxismentes pontja (gyakran nodális pontnak nevezik) körül kell forgatni. Az állványmenet körüli forgatás elmozdítja az optikai középpontot, és ez okozza a látott parallaxist.",
+          "options": {
+            "0": { "label": "Az objektív előlencséje" },
+            "1": { "label": "Az objektív parallaxismentes pontja" },
+            "2": { "label": "Az érzékelősík" },
+            "3": { "label": "Az állványmenet" }
+          }
+        }
+      }
+    }
+  }
+}

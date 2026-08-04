@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Camera orientation",
+      "portrait": "Portrait",
+      "landscape": "Landscape",
+      "overlap": "Overlap: {percent}%",
+      "targetWidth": "Panorama width",
+      "rows": "Rows",
+      "megapixels": "Camera resolution: {mp} MP",
+      "fanLabel": "Top-down diagram of {frames} overlapping frames",
+      "totalShots": "Total shots",
+      "perRow": "Frames × rows",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotate between shots",
+      "coverage": "Coverage (H × V)",
+      "frameFov": "Single frame FOV",
+      "stitchedSize": "Stitched size",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "How much overlap do panorama shots need?",
+          "answer": "25–35% is the sweet spot for most scenes. Stitching software needs shared detail between neighboring frames to find control points; below 15% it may fail to align frames, while beyond 50% you shoot many extra frames for little benefit. Use more overlap for scenes with few distinct features, like clear skies or calm water."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Why shoot panoramas in portrait (vertical) orientation?",
+          "answer": "Portrait orientation captures more vertical field of view per frame, so the final stitched panorama is taller and leaves room for cropping and horizon correction. The cost is a few extra frames horizontally — usually a worthwhile trade for the added flexibility and resolution."
+        },
+        "what-is-nodal-point": {
+          "question": "What is the no-parallax point (nodal point)?",
+          "answer": "It is the point inside the lens around which the camera can rotate without near and far objects shifting relative to each other between frames. Rotating around the tripod socket instead causes parallax errors that make stitching hard, especially with close foreground objects. Panoramic tripod heads let you position the lens's no-parallax point over the rotation axis."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Fermer le diaphragme augmente la profondeur de champ — mais passé un certain point, cela rend toute l'image plus douce au lieu de plus nette. C'est la diffraction : les ondes lumineuses se courbent en se faufilant par une petite ouverture. Ce calculateur montre exactement où se situe ce point pour ton appareil, pour que tu saches jusqu'où fermer avant de payer une pénalité de netteté.",
+      "deeper": "Quand la lumière traverse l'ouverture, chaque point de la scène n'atterrit pas sur le capteur comme un point mais comme un minuscule motif de diffraction — un cœur brillant appelé tache d'Airy, entouré de halos discrets. Le diamètre de la tache croît en proportion directe du nombre f : environ 2,44 × longueur d'onde × N, ce qui à f/8 en lumière verte fait déjà ~10,7 µm. Que cela compte ou non dépend de tes pixels. Un capteur plein format de 24 MP a des pixels de ~6 µm ; un capteur de 61 MP, des pixels de ~3,8 µm. Dès que la tache d'Airy devient nettement plus grande qu'un pixel, les détails que le capteur pourrait résoudre se répandent sur les pixels voisins, et aucune qualité d'objectif ne peut les récupérer. C'est pourquoi le même f/11 qui semble correct sur un vieux boîtier de 12 MP adoucit visiblement les fichiers d'un capteur haute résolution moderne, et pourquoi les compacts aux pixels minuscules proposent rarement des ouvertures au-delà de f/8. La règle empirique de l'industrie utilisée ici — limite ≈ pas de pixel / 0,67 — marque le point où l'adoucissement devient mesurable, pas celui où l'image s'effondre : fermer d'un diaphragme au-delà de la limite est souvent un compromis rentable pour la profondeur de champ. Au-delà de deux diaphragmes, le focus stacking bat la fermeture du diaphragme.",
+      "keyFactors": {
+        "0": {
+          "label": "Ouverture (nombre f)",
+          "description": "Le seul contrôle sur la diffraction elle-même : le diamètre de la tache d'Airy croît linéairement avec le nombre f. f/16 étale la lumière deux fois plus que f/8."
+        },
+        "1": {
+          "label": "Pas de pixel",
+          "description": "La taille physique d'un pixel, déterminée par la taille du capteur et les mégapixels ensemble. Des pixels plus petits résolvent plus de détails — et révèlent la diffraction plus tôt."
+        },
+        "2": {
+          "label": "Taille de sortie",
+          "description": "Une diffraction visible à 100 % à l'écran peut être invisible dans un export web ou un tirage modéré. Juge la netteté à la taille que tu utiliseras réellement."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Trouve la zone idéale de ton objectif : photographie la même scène détaillée à chaque diaphragme entier et compare à 100 %. La plupart des objectifs culminent deux à trois diaphragmes après la pleine ouverture, juste avant que la diffraction ne prenne le dessus."
+        },
+        "1": {
+          "text": "Pour des paysages exigeant une grande zone de netteté sur un boîtier haute résolution, essaie la distance hyperfocale à f/8 avant de recourir à f/16 — un placement précis de la mise au point rapporte souvent plus de netteté que des ouvertures plus petites."
+        },
+        "2": {
+          "text": "En macro, l'ouverture effective croît avec le grossissement (f/11 au rapport 1:1 agit comme f/22), donc la diffraction mord bien plus tôt que la bague ne le suggère. Le focus stacking à une ouverture modérée est la sortie nette."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pas de pixel",
+          "definition": "La largeur d'un seul pixel sur le capteur, en micromètres. Calculée en divisant la largeur du capteur par le nombre de pixels horizontaux — 24 MP en plein format ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Tache d'Airy",
+          "definition": "Le motif de diffraction qu'un point de lumière forme après avoir traversé l'ouverture : un cœur brillant entouré d'anneaux discrets. Son diamètre ≈ 2,44 × longueur d'onde × nombre f."
+        },
+        "diffractionLimit": {
+          "term": "Limite de diffraction",
+          "definition": "Le nombre f où la tache d'Airy dépasse le pixel et où la netteté au niveau du pixel commence à chuter — approximativement pas de pixel (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Tu fermes ton objectif de f/8 à f/22 pour une profondeur de champ maximale, mais les détails fins de ton image deviennent plus doux partout — même dans le plan de mise au point. Que se passe-t-il ?",
+          "hint": "C'est de la physique, pas un défaut de l'objectif.",
+          "successMessage": "Correct ! La lumière se courbe (diffracte) en traversant une petite ouverture, étalant chaque point en un disque plus grand qu'un pixel. À f/22, cet adoucissement affecte toute l'image, plan de mise au point compris.",
+          "failureMessage": "C'est la diffraction : les ondes lumineuses se courbent autour des lamelles du diaphragme, étalant chaque point de lumière en un disque flou. Elle affecte toute l'image de la même façon, quelle que soit la qualité de l'objectif.",
+          "options": {
+            "0": { "label": "L'objectif est mal fabriqué" },
+            "1": { "label": "La lumière se courbe en traversant la petite ouverture" },
+            "2": { "label": "Le capteur surchauffe aux petites ouvertures" },
+            "3": { "label": "Le bruit ISO augmente" }
+          }
+        },
+        "1": {
+          "scenario": "Tu passes d'un plein format de 24 MP à un modèle de 61 MP. Qu'arrive-t-il à l'ouverture où la diffraction devient visible ?",
+          "hint": "Plus de mégapixels sur la même surface de capteur signifie des pixels plus petits.",
+          "successMessage": "Exact ! Les pixels de ~3,8 µm du capteur 61 MP résolvent la tache d'Airy plus tôt, donc la limite de diffraction passe d'environ f/9 à environ f/5.6. Les capteurs haute résolution ont des zones idéales d'ouverture plus étroites.",
+          "failureMessage": "Des pixels plus petits révèlent la diffraction plus tôt. La limite de diffraction du capteur 61 MP est vers f/5.6, contre f/9 pour le 24 MP — la limite se déplace vers une ouverture plus grande.",
+          "options": {
+            "0": { "label": "Elle se déplace vers une ouverture plus petite (nombre f plus élevé)" },
+            "1": { "label": "Elle se déplace vers une ouverture plus grande (nombre f plus bas)" },
+            "2": { "label": "Elle ne change pas" },
+            "3": { "label": "La diffraction disparaît avec plus de mégapixels" }
+          }
+        },
+        "2": {
+          "scenario": "Tu photographies un paysage avec un plein format de 45 MP et tu veux une netteté globale maximale avec une bonne profondeur de champ. Quelle plage d'ouvertures est le meilleur point de départ ?",
+          "hint": "Équilibre les aberrations de l'objectif (mauvaises à pleine ouverture) et la diffraction (mauvaise en fermant).",
+          "successMessage": "Correct ! f/8–f/11 se situe juste autour de la limite de diffraction pour des pixels de ~4,4 µm tout en offrant une profondeur de champ substantielle — la zone idéale classique du paysage en plein format haute résolution.",
+          "failureMessage": "f/8–f/11 équilibre profondeur de champ et diffraction pour un plein format de 45 MP. f/22 adoucit visiblement les détails fins, et la pleine ouverture manque de profondeur de champ.",
+          "options": {
+            "0": { "label": "Toujours f/22 pour une profondeur maximale" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "À pleine ouverture" },
+            "3": { "label": "Cela ne dépend que de l'ISO" }
+          }
+        }
+      }
+    }
+  }
+}

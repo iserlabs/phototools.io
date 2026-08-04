@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Sa tuwing kumukuha ng photo ang camera mo gamit ang mechanical shutter nito, tumataas nang isa ang counter sa loob ng camera. Ang bilang na iyon — ang shutter count — ay parang mileage ng kotse: sinasabi nito kung gaano na kadalas nagamit ang camera. Pinakamahalaga ito kapag bumibili o nagbebenta ng segunda-manong gear, dahil ang mga shutter ay gumagalaw na piyesa na may rating para sa limitadong bilang ng actuations.",
+      "deeper": "Ang mechanical shutter ay isang pares ng mga kurtinang may spring na pisikal na dumadaan sa sensor sa bawat exposure. Tine-test ng mga manufacturer ang tibay ng mga mekanismong ito at naglalathala ng mga rating: humigit-kumulang 100,000 actuations para sa mga entry-level body, 150,000–200,000 para sa mga enthusiast model, at 300,000–500,000 para sa mga professional. Ang rating ay statistical average, hindi expiration date — maraming shutter ang tumatagal nang ilang beses ng kanilang rating, at ang sirang shutter ay kadalasang maaayos (kahit magastos) na depekto. Iba-iba kada brand kung saan nakalagay ang count: isinusulat ito ng Nikon, walang encryption, sa maker notes ng bawat file, kaya nababasa ito ng tool na ito. Iniingatan ito ng Canon sa internal memory lang, ine-encrypt ito ng Sony, at tinatakpan ito ng Pentax. Lalong pinagugulo ng mga modernong mirrorless camera ang sitwasyon: ang mga frame na kinuha gamit ang electronic shutter ay hindi nagpapagod sa mekanismo, kaya ang body na kadalasang ginagamit sa silent mode ay puwedeng may mas maraming kabuuang exposure kaysa sa ipinapakita ng mechanical count nito — at okay lang iyon.",
+      "keyFactors": {
+        "0": {
+          "label": "Brand ng Camera",
+          "description": "Nagtatakda kung nababasa ba talaga ang count mula sa mga file. Hayagang iniimbak ito ng Nikon; hindi ng Canon, Sony, at Pentax."
+        },
+        "1": {
+          "label": "Rated Shutter Life",
+          "description": "Ang na-test na average na lifespan ng shutter mechanism ayon sa manufacturer. Ang mga mas mataas na klaseng body ay gumagamit ng mas matibay na mekanismo na may mas mataas na rating."
+        },
+        "2": {
+          "label": "Electronic vs Mechanical na Shutter",
+          "description": "Walang mechanical wear ang mga frame na kinuha sa electronic shutter at kadalasang hindi nadadagdagan ang mechanical counter. Mababa ang count ng mga madalas mag-shoot sa silent mode."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Laging i-check ang count mula sa unedited na file na diretso mula sa camera. Ang mga export mula sa Lightroom, mga messaging app, o social media ay kadalasang nagtatanggal ng maker notes na may dalang counter."
+        },
+        "1": {
+          "text": "Kapag bumibili ng segunda-mano, timbangin ang count laban sa rating: ang 40,000 sa body na may rating na 300,000 ay halos bago pa lang, habang ang 90,000 sa body na may rating na 100,000 ay dapat nang isama sa presyo ang pagpapalit ng shutter."
+        },
+        "2": {
+          "text": "Ang mababang shutter count ay hindi garantiya ng malusog na camera — hindi lumalabas sa counter ang water damage, mga gasgas sa sensor, at mga pagkahulog. Suriin din ang mga test photo at ang mismong body."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Shutter Count",
+          "definition": "Ang bilang ng beses na pumutok ang mechanical shutter sa buong buhay ng camera. Binabasa mula sa metadata na ini-embed ng camera mo sa bawat photo."
+        },
+        "ratedLife": {
+          "term": "Rated Shutter Life",
+          "definition": "Ang na-test na average na bilang ng actuations bago masira ang shutter, ayon sa manufacturer. Average ito, hindi mahigpit na limitasyon — maraming shutter ang tumatagal nang malayo pa rito."
+        },
+        "source": {
+          "term": "Pinagmulan ng Count",
+          "definition": "Kung saan nabasa ang bilang: ang tunay na shutter-count field, ang mechanical-only counter sa ilang mirrorless body, o ang generic na image number na ginagamit bilang magaspang na panghalili."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Kumuha ka ng 500 photo sa isang concert gamit ang silent electronic shutter ng mirrorless camera mo. Gaano karaming mechanical shutter wear ang naidagdag nito?",
+          "hint": "Isipin kung ano ang pisikal na gumagalaw sa isang electronic-shutter exposure.",
+          "successMessage": "Tama! Binabasa ng electronic shutter ang sensor nang hindi ginagalaw ang anumang kurtina, kaya halos walang mechanical wear na idinulot ang 500 frame na iyon — at kadalasang hindi nadadagdagan ang mechanical counter.",
+          "failureMessage": "Nag-e-expose ang electronic shutter sa pamamagitan ng electronic na pagbasa sa sensor — walang kurtinang gumagalaw, kaya walang naidadagdag na mechanical shutter wear ang silent shooting.",
+          "options": {
+            "0": { "label": "500 actuations, tulad ng kahit anong photo" },
+            "1": { "label": "Wala — tanging paggamit ng mechanical shutter ang binibilang" },
+            "2": { "label": "Tanging mga RAW file ang nagdadagdag ng wear" },
+            "3": { "label": "Tanging mga photo na may flash ang nagdadagdag ng wear" }
+          }
+        },
+        "1": {
+          "scenario": "Ang isang camera ay may rating na 200,000 actuations at kasalukuyang nagpapakita ng 195,000. Ano talaga ang ibig sabihin ng rating para sa body na ito?",
+          "hint": "Nagmumula ang mga rating sa statistical na life testing, tulad ng mga rating ng oras ng bombilya.",
+          "successMessage": "Tama! Ang rating ay ang average na lifespan mula sa testing — puwedeng masira ang shutter na ito sa susunod na linggo o umabot pa sa 400,000. Isa itong senyales ng probabilidad para sa pagpepresyo, hindi countdown clock.",
+          "failureMessage": "Ang shutter rating ay ang na-test na average na lifespan, hindi mahigpit na limitasyon o warranty. Maraming shutter ang tumatagal nang malayo pa rito; ang iba ay mas maagang nasisira.",
+          "options": {
+            "0": { "label": "Hihinto ang shutter sa 200,000" },
+            "1": { "label": "Ito ang average na lifespan — tumataas ang tsansa ng pagkasira palapit dito" },
+            "2": { "label": "Nagtatapos ang warranty sa 200,000" },
+            "3": { "label": "Bumababa ang battery life pagkatapos ng 200,000" }
+          }
+        },
+        "2": {
+          "scenario": "Nagkukumpara ka ng dalawang segunda-manong camera ng parehong model: isa na may 15,000 actuations at kitang-kitang kalawang malapit sa battery door, at isa na may 60,000 actuations na parang bago pa. Alin ang mas ligtas na bilhin?",
+          "hint": "Isang uri lang ng pagkakagamit ang nirere-record ng counter.",
+          "successMessage": "Eksakto. Ang shutter count ay isa lang sa ilang senyales — ang kalawang ay nagpapahiwatig ng pagkababad sa tubig, na mas madalas pumapatay ng camera kaysa sa gastadong shutter. Ang malinis na body na may 60,000 count ang mas ligtas na bilhin.",
+          "failureMessage": "Sinusukat lang ng shutter count ang pagkakagamit ng shutter. Ang kalawang ay tumuturo sa water damage, na mas mapanganib kaysa sa katamtamang nagamit na shutter. Husgahan ang count kasama ang kondisyon, huwag kailanman ang count lang.",
+          "options": {
+            "0": { "label": "Ang body na may 15,000 count — mas mababa, laging mas maganda" },
+            "1": { "label": "Kung alin ang mas mura" },
+            "2": { "label": "Ang malinis na body na may 60,000 count — mas mahalaga ang kondisyon" },
+            "3": { "label": "Wala sa dalawa — parehong masyado nang luma" }
+          }
+        }
+      }
+    }
+  }
+}

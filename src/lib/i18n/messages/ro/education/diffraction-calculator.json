@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Închiderea diafragmei mărește profunzimea de câmp — dar dincolo de un anumit punct începe să facă întreaga imagine mai moale în loc de mai clară. Aceasta e difracția: undele de lumină se curbează când se strecoară printr-o deschidere mică. Acest calculator arată exact unde se află acel punct pentru aparatul tău, ca să știi cât poți închide diafragma înainte să plătești un preț în claritate.",
+      "deeper": "Când lumina trece prin diafragmă, fiecare punct din scenă ajunge pe senzor nu ca un punct, ci ca un minuscul model de difracție — un nucleu luminos numit discul Airy, înconjurat de halouri slabe. Diametrul discului crește direct proporțional cu numărul f: aproximativ 2,44 × lungimea de undă × N, ceea ce la f/8 în lumină verde înseamnă deja ~10,7 µm. Dacă asta contează sau nu depinde de pixelii tăi. Un senzor full frame de 24 MP are pixeli de ~6 µm; unul de 61 MP, pixeli de ~3,8 µm. Odată ce discul Airy devine clar mai mare decât un pixel, detaliile pe care senzorul le-ar putea altfel rezolva se întind peste pixelii vecini, și nicio calitate a obiectivului nu le mai poate recupera. De aceea același f/11 care arată bine pe un aparat vechi de 12 MP înmoaie vizibil fișierele unui senzor modern de înaltă rezoluție, și de aceea compactele cu pixeli minusculi oferă rar diafragme dincolo de f/8. Regula practică a industriei folosită aici — limita ≈ pasul pixelilor / 0,67 — marchează punctul în care înmuierea devine măsurabilă, nu cel în care imaginile se prăbușesc: închiderea cu o treaptă peste limită e adesea un schimb avantajos pentru profunzimea de câmp. Dincolo de două trepte, focus stacking bate închiderea diafragmei.",
+      "keyFactors": {
+        "0": {
+          "label": "Diafragma (numărul f)",
+          "description": "Singurul control asupra difracției în sine: diametrul discului Airy crește liniar cu numărul f. f/16 împrăștie lumina de două ori mai lat decât f/8."
+        },
+        "1": {
+          "label": "Pasul pixelilor",
+          "description": "Dimensiunea fizică a unui pixel, stabilită împreună de dimensiunea senzorului și megapixeli. Pixelii mai mici rezolvă mai multe detalii — și dezvăluie difracția mai devreme."
+        },
+        "2": {
+          "label": "Dimensiunea de ieșire",
+          "description": "O difracție vizibilă la 100% pe ecran poate fi invizibilă într-un export pentru web sau un print moderat. Judecă claritatea la dimensiunea pe care o vei folosi efectiv."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Găsește zona ideală a obiectivului tău: fotografiază aceeași scenă bogată în detalii la fiecare treaptă întreagă și compară la 100%. Majoritatea obiectivelor ating maximul la două-trei trepte după deschiderea maximă, chiar înainte ca difracția să preia controlul."
+        },
+        "1": {
+          "text": "Pentru peisaje care cer claritate în adâncime pe un aparat de înaltă rezoluție, încearcă distanța hiperfocală la f/8 înainte să apelezi la f/16 — plasarea precisă a focalizării aduce adesea mai multă claritate decât diafragmele mai închise."
+        },
+        "2": {
+          "text": "În macro, diafragma efectivă crește cu mărirea (f/11 la 1:1 se comportă ca f/22), așa că difracția mușcă mult mai devreme decât sugerează inelul. Focus stacking la o diafragmă moderată e ieșirea clară din impas."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pasul pixelilor",
+          "definition": "Lățimea unui singur pixel de pe senzor, în micrometri. Se calculează împărțind lățimea senzorului la numărul de pixeli pe orizontală — 24 MP full frame ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Discul Airy",
+          "definition": "Modelul de difracție pe care un punct de lumină îl formează după ce trece prin diafragmă: un nucleu luminos cu inele slabe. Diametrul său ≈ 2,44 × lungimea de undă × numărul f."
+        },
+        "diffractionLimit": {
+          "term": "Limita de difracție",
+          "definition": "Numărul f la care discul Airy depășește pixelul și claritatea la nivel de pixel începe să scadă — aproximativ pasul pixelilor (µm) ÷ 0,67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Închizi obiectivul de la f/8 la f/22 pentru profunzime de câmp maximă, dar detaliile fine din imagine devin mai moi peste tot — chiar și în planul de focalizare. Ce se întâmplă?",
+          "hint": "E fizică, nu un defect al obiectivului.",
+          "successMessage": "Corect! Lumina se curbează (difractă) când trece printr-o deschidere mică, împrăștiind fiecare punct într-un disc mai mare decât un pixel. La f/22, această înmuiere afectează întregul cadru, inclusiv planul de focalizare.",
+          "failureMessage": "Aceasta e difracția: undele de lumină se curbează în jurul lamelelor diafragmei, împrăștiind fiecare punct de lumină într-un disc neclar. Afectează întreaga imagine în mod egal, indiferent de calitatea obiectivului.",
+          "options": {
+            "0": { "label": "Obiectivul e prost construit" },
+            "1": { "label": "Lumina se curbează trecând prin deschiderea mică" },
+            "2": { "label": "Senzorul se supraîncălzește la diafragme mici" },
+            "3": { "label": "Crește zgomotul ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Treci de la un aparat full frame de 24 MP la unul de 61 MP. Ce se întâmplă cu diafragma la care difracția devine vizibilă?",
+          "hint": "Mai mulți megapixeli pe aceeași suprafață de senzor înseamnă pixeli mai mici.",
+          "successMessage": "Exact! Pixelii de ~3,8 µm ai senzorului de 61 MP disting discul Airy mai devreme, așa că limita de difracție coboară de la aproximativ f/9 la aproximativ f/5.6. Senzorii de înaltă rezoluție au intervale ideale de diafragmă mai înguste.",
+          "failureMessage": "Pixelii mai mici dezvăluie difracția mai devreme. Limita de difracție a senzorului de 61 MP e în jur de f/5.6, față de f/9 la cel de 24 MP — limita se mută spre o diafragmă mai deschisă.",
+          "options": {
+            "0": { "label": "Se mută spre o diafragmă mai închisă (număr f mai mare)" },
+            "1": { "label": "Se mută spre o diafragmă mai deschisă (număr f mai mic)" },
+            "2": { "label": "Nu se schimbă" },
+            "3": { "label": "Difracția dispare cu mai mulți megapixeli" }
+          }
+        },
+        "2": {
+          "scenario": "Fotografiezi un peisaj cu un full frame de 45 MP și vrei claritate generală maximă cu o profunzime de câmp bună. Care interval de diafragme e cel mai bun punct de plecare?",
+          "hint": "Echilibrează aberațiile obiectivului (grave la deschidere maximă) cu difracția (gravă la diafragme închise).",
+          "successMessage": "Corect! f/8–f/11 se află chiar în jurul limitei de difracție pentru pixeli de ~4,4 µm, oferind în același timp o profunzime de câmp consistentă — clasicul interval ideal pentru peisaj pe full frame de înaltă rezoluție.",
+          "failureMessage": "f/8–f/11 echilibrează profunzimea de câmp cu difracția pentru un senzor full frame de 45 MP. f/22 înmoaie vizibil detaliile fine, iar la deschidere maximă lipsește profunzimea de câmp.",
+          "options": {
+            "0": { "label": "Întotdeauna f/22 pentru profunzime maximă" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "La deschidere maximă" },
+            "3": { "label": "Depinde doar de ISO" }
+          }
+        }
+      }
+    }
+  }
+}

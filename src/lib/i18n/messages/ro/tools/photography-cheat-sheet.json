@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Alege un scenariu",
+      "tipsTitle": "Sfaturi de teren",
+      "labels": {
+        "aperture": "Diafragmă",
+        "shutter": "Timp de expunere",
+        "iso": "ISO",
+        "whiteBalance": "Balans de alb",
+        "focusMode": "Mod de focalizare",
+        "driveMode": "Mod de declanșare"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Lumină de zi",
+        "cloudy": "Înnorat",
+        "shade": "Umbră",
+        "tungsten": "Tungsten (~3200K)",
+        "afSingle": "AF simplu (AF-S)",
+        "afContinuous": "AF continuu (AF-C)",
+        "afTracking": "AF continuu + urmărirea subiectului",
+        "manualFocus": "Focalizare manuală",
+        "single": "Cadru unic",
+        "burstLow": "Rafală lentă",
+        "burstHigh": "Rafală rapidă",
+        "timer2s": "Temporizator 2 s / telecomandă",
+        "intervalometer": "Intervalometru"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Portrete",
+          "tips": {
+            "0": "Focalizează pe ochiul cel mai apropiat de aparat — la diafragme deschise, profunzimea de câmp e de doar câțiva centimetri.",
+            "1": "Dă-te înapoi și apropie cu zoomul (85mm+) pentru o compresie măgulitoare; obiectivele largi folosite de aproape distorsionează trăsăturile feței."
+          }
+        },
+        "landscape": {
+          "name": "Peisaje",
+          "tips": {
+            "0": "Focalizează cam la o treime în adâncimea scenei sau folosește distanța hiperfocală pentru claritate din prim-plan până în fundal.",
+            "1": "Fotografiază de pe trepied cu temporizatorul sau o telecomandă ca să elimini tremurul la timpi de expunere lungi."
+          }
+        },
+        "street": {
+          "name": "Street",
+          "tips": {
+            "0": "Focalizare pe zonă: presetează focalizarea la 3 m și f/8, și tot ce e între 2 m și 6 m va fi clar — fără întârzierea AF-ului.",
+            "1": "ISO auto cu un timp de expunere minim de 1/250s îngheață trecătorii în timp ce tu te concentrezi pe încadrare."
+          }
+        },
+        "wildlife": {
+          "name": "Animale sălbatice și păsări",
+          "tips": {
+            "0": "Potrivește timpul de expunere cu subiectul: 1/1000s pentru păsări așezate, 1/2500s sau mai rapid pentru păsări în zbor.",
+            "1": "Fotografiază de la nivelul ochilor și așteaptă întoarcerile capului — o scânteie de lumină în ochi dă viață imaginii."
+          }
+        },
+        "sports": {
+          "name": "Sport și acțiune",
+          "tips": {
+            "0": "Focalizează dinainte acolo unde se va petrece acțiunea (poarta, apexul unui viraj) și pornește rafala chiar înainte de momentul culminant.",
+            "1": "Panning-ul la 1/60s–1/125s cu AF continuu estompează fundalul păstrând subiectul clar."
+          }
+        },
+        "macro": {
+          "name": "Macro",
+          "tips": {
+            "0": "La măriri mari, profunzimea de câmp e subțire ca hârtia — focalizează mișcând aparatul, nu inelul de focalizare.",
+            "1": "Difracția mușcă tare dincolo de f/16; folosește focus stacking în loc să închizi și mai mult diafragma."
+          }
+        },
+        "milkyWay": {
+          "name": "Calea Lactee",
+          "tips": {
+            "0": "Folosește regula NPF sau regula 500 pentru expunerea maximă înainte ca stelele să lase dâre — în jur de 15–20 s la 20mm pe full frame.",
+            "1": "Focalizează manual pe o stea strălucitoare folosind live view mărit; setează balansul de alb pe la 3900K pentru un cer neutru."
+          }
+        },
+        "nightCity": {
+          "name": "Orașul noaptea",
+          "tips": {
+            "0": "Fotografiază la ISO de bază de pe trepied și lasă expunerea să curgă — luminile puternice rămân curate, iar zgomotul rămâne redus.",
+            "1": "f/11–f/16 transformă luminile punctiforme în stele; fotografiază la ora albastră pentru culoare pe cer."
+          }
+        },
+        "waterfall": {
+          "name": "Cascade și expuneri lungi",
+          "tips": {
+            "0": "Expunerile de 0,5–2 s păstrează textura apei; de la 30 s în sus devine ceață. Folosește un filtru ND în plină zi.",
+            "1": "Un polarizator circular taie reflexiile de pe pietrele ude și frunziș — și ține loc și de un ND de circa 1,5 stopuri."
+          }
+        },
+        "goldenHour": {
+          "name": "Ora de aur",
+          "tips": {
+            "0": "Expune pentru luminile puternice și ridică umbrele în editare — luminile calde arse sunt irecuperabile.",
+            "1": "Pune subiecții în contralumină pentru contur luminos și flare; presetarea de balans de alb „înnorat” păstrează scena caldă."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Ce setări ar trebui să folosesc pentru portrete?",
+          "answer": "Începe cu o diafragmă deschisă (f/1.8–f/2.8) pentru fundal estompat, un timp de expunere de cel puțin 1/200s ca să eviți mișcarea și cel mai mic ISO pe care îl permite lumina (100–400). Folosește autofocalizarea pe un singur punct, pe ochiul cel mai apropiat, sau AF cu detecția ochilor dacă aparatul tău o are."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Ce setări îmi trebuie ca să fotografiez Calea Lactee?",
+          "answer": "Un obiectiv larg și luminos la deschiderea maximă (f/1.4–f/2.8), o expunere de 10–25 de secunde (mai lungă și stelele lasă dâre), ISO 1600–6400, focalizare manuală pe o stea strălucitoare și un trepied. O noapte fără lună, departe de luminile orașului, contează mai mult decât orice setare."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Sunt aceste setări rețete exacte?",
+          "answer": "Nu — sunt puncte de plecare verificate. Lumina variază enorm de la o scenă la alta, așa că ia intervalele ca pe o primă estimare, fă un cadru de test, verifică histograma și ajustează. Scopul e să te aducă rapid în zona potrivită, nu să-ți înlocuiască judecata."
+        }
+      }
+    }
+  }
+}

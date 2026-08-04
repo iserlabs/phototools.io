@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom-luettelon analysaattori",
       "description": "Analysoi Lightroom Classic -luettelosi — kalusto, polttoväli, aukot, arvioinnit ja paljon muuta — 100 % selaimessasi"
+    },
+    "shutter-count-checker": {
+      "name": "Laukaisumäärän tarkistin",
+      "description": "Tarkista kamerasi laukaisumäärä valokuvasta — 100 % selaimessasi"
+    },
+    "camera-health-checker": {
+      "name": "Kameran kuntotarkistus",
+      "description": "Tutki kamerarungon ikä, laiteohjelmisto, sarjanumero ja sulkimen kestoikä yhdestä valokuvasta"
+    },
+    "panorama-calculator": {
+      "name": "Panoraamalaskuri",
+      "description": "Suunnittele panoraamakuvaus — ruutujen määrä, limitys ja kierto kuvien välillä"
+    },
+    "diffraction-calculator": {
+      "name": "Diffraktiorajan laskuri",
+      "description": "Etsi aukko, jossa diffraktio alkaa pehmentää kuviasi"
+    },
+    "photography-cheat-sheet": {
+      "name": "Valokuvauksen muistilista",
+      "description": "Kamera-asetusten muistilistat yleisiin kuvaustilanteisiin — ladattavat ja tulostettavat"
     }
   }
 }

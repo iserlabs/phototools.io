@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Letakkan foto di sini atau klik untuk melayari (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Letakkan mana-mana foto daripada kamera yang anda ingin periksa. Semuanya dibaca dalam pelayar anda — fail tidak pernah meninggalkan peranti anda.",
+      "errorRead": "Fail ini tidak dapat dibaca. Cuba fail JPEG atau RAW yang belum disunting terus daripada kamera.",
+      "errorNoMetadata": "Fail ini tidak mengandungi metadata kamera. Eksport daripada aplikasi penyuntingan atau pemesejan sering membuangnya — cuba fail asal yang belum disunting.",
+      "sections": {
+        "body": "Badan kamera",
+        "age": "Usia",
+        "shutter": "Hayat pengatup",
+        "lens": "Lensa"
+      },
+      "cameraModel": "Model",
+      "make": "Pengeluar",
+      "serialNumber": "Nombor siri",
+      "firmware": "Perisian tegar / perisian",
+      "bodyAge": "Usia badan",
+      "ageValue": "~{years} tahun (dikeluarkan pada {year})",
+      "ageUnknown": "Model ini tiada dalam pangkalan data keluaran kami, jadi usianya tidak dapat dianggarkan.",
+      "shotDate": "Foto diambil",
+      "shutterCount": "Kiraan pengatup",
+      "ratedLife": "Hayat terkadar",
+      "ratedAssumed": "(andaian)",
+      "lifeUsed": "{percent}% daripada hayat terkadar telah digunakan",
+      "verdict": {
+        "low": "Hampir tidak digunakan",
+        "moderate": "Penggunaan sederhana",
+        "high": "Penggunaan berat",
+        "beyond": "Melebihi kadaran"
+      },
+      "shutterUnavailable": {
+        "supported": "Tiada kiraan pengatup ditemui walaupun {brand} biasanya merekodkannya. Cuba fail asal yang belum disunting — aplikasi penyuntingan sering membuang metadata pengeluar.",
+        "partial": "{brand} hanya menulis pembilang bingkai kasar pada sesetengah fail, dan fail ini tiada langsung. Menu kamera itu sendiri atau utiliti USB mungkin dapat melaporkannya.",
+        "unsupported": "{brand} tidak menyimpan kiraan pengatup yang boleh dibaca dalam fail imej. Semak halaman alat Penyemak Kiraan Pengatup untuk alternatif mengikut jenama.",
+        "unknown": "Fail ini tiada kiraan pengatup yang boleh dibaca."
+      },
+      "lensModel": "Lensa",
+      "lensSerial": "Nombor siri lensa",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Apakah yang perlu saya periksa semasa membeli kamera terpakai?",
+          "answer": "Selain rupa fizikal: kiraan pengatup berbanding hayat terkadarnya, usia badan dan versi perisian tegar, sama ada nombor siri sepadan dengan dokumen penjual (dan tidak dilaporkan dicuri), keadaan sensor (cari habuk atau calar dalam foto ujian langit cerah pada f/16), dan pastikan semua tombol, port dan lekapan lensa berfungsi dengan lancar."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Dari manakah data kesihatan ini datang?",
+          "answer": "Semuanya dibaca daripada metadata yang tertanam dalam foto anda: medan EXIF standard (model, nombor siri, perisian tegar, lensa, tarikh tangkapan) serta nota pengeluar proprietari jika ada (kiraan pengatup). Usia badan dianggarkan daripada pangkalan data terbina dalam yang mengandungi tahun keluaran model kamera popular."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Adakah foto saya dimuat naik ke pelayan?",
+          "answer": "Tidak. Fail dihuraikan sepenuhnya dalam pelayar anda menggunakan JavaScript — ia tidak pernah meninggalkan peranti anda, dan tiada apa-apa disimpan. Anda boleh mengesahkannya dengan memuatkan halaman ini kemudian mematikan sambungan internet sebelum meletakkan fail."
+        }
+      }
+    }
+  }
+}

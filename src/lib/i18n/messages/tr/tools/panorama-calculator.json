@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensör",
+      "orientation": "Kamera yönü",
+      "portrait": "Dikey",
+      "landscape": "Yatay",
+      "overlap": "Örtüşme: %{percent}",
+      "targetWidth": "Panorama genişliği",
+      "rows": "Sıra",
+      "megapixels": "Kamera çözünürlüğü: {mp} MP",
+      "fanLabel": "{frames} örtüşen karenin tepeden görünüş şeması",
+      "totalShots": "Toplam çekim",
+      "perRow": "Kare × sıra",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Çekimler arası döndürme",
+      "coverage": "Kapsama (Y × D)",
+      "frameFov": "Tek kare görüş alanı",
+      "stitchedSize": "Birleştirilmiş boyut",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Panorama çekimlerinde ne kadar örtüşme gerekir?",
+          "answer": "Çoğu sahne için ideal aralık %25–35'tir. Birleştirme yazılımı, kontrol noktalarını bulmak için komşu kareler arasında ortak ayrıntıya ihtiyaç duyar; %15'in altında kareleri hizalayamayabilir, %50'nin üzerinde ise çok az kazanç için bir sürü fazladan kare çekersiniz. Açık gökyüzü veya durgun su gibi belirgin ayrıntısı az sahnelerde daha fazla örtüşme kullanın."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Panoramalar neden dikey yönde çekilir?",
+          "answer": "Dikey yön, kare başına daha fazla dikey görüş alanı yakalar; böylece birleştirilen panorama daha uzun olur ve kırpma ile ufuk düzeltmesi için pay bırakır. Bedeli, yatayda birkaç fazladan karedir — kazanılan esneklik ve çözünürlük için genellikle değerli bir takas."
+        },
+        "what-is-nodal-point": {
+          "question": "Paralakssız nokta (nodal nokta) nedir?",
+          "answer": "Objektifin içinde, kameranın etrafında döndürüldüğünde yakın ve uzak nesnelerin kareler arasında birbirine göre kaymadığı noktadır. Bunun yerine tripod yuvası etrafında dönmek, özellikle yakın ön plan nesneleriyle birleştirmeyi zorlaştıran paralaks hatalarına yol açar. Panoramik tripod başlıkları, objektifin paralakssız noktasını dönüş ekseninin üzerine yerleştirmenizi sağlar."
+        }
+      }
+    }
+  }
+}

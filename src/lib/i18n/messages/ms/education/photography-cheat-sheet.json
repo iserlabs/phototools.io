@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Setiap situasi penggambaran — potret, hidupan liar, Bima Sakti — mempunyai kombinasi aperture, kelajuan pengatup dan ISO yang sudah teruji, yang menjadi pilihan pertama jurugambar berpengalaman. Helaian rujukan ini memberi anda titik permulaan itu serta-merta, supaya anda boleh menumpukan perhatian pada cahaya dan komposisi dan bukannya meragui tetapan dail.",
+      "deeper": "Setiap resipi di sini ialah penerapan segi tiga pendedahan dengan satu sisi diutamakan. Potret mengutamakan aperture: bukaan luas (f/1.8–f/2.8) memisahkan subjek daripada latar belakang, dan segala yang lain menyesuaikan diri di sekelilingnya. Aksi mengutamakan kelajuan pengatup: 1/1000s membekukan gerakan, jadi aperture terbuka dan ISO naik untuk membekalkan cahaya kepadanya. Landskap mengutamakan kualiti imej: ISO asas dan aperture pertengahan dalam julat terbaik lensa, dengan tripod menampung apa jua kelajuan pengatup yang terhasil. Pemandangan malam menekan ketiga-tiga sisi serentak, sebab itulah resipinya paling tegar — Bima Sakti benar-benar memerlukan lensa pantas pada bukaan penuh, pengatup di bawah ~20 saat (sebelum putaran Bumi menjejakkan bintang), dan ISO yang menjadikan histogram boleh digunakan. Memahami sisi yang diutamakan oleh setiap senario ialah pelajaran sebenar: sebaik sahaja anda nampak keutamaannya, anda boleh menyesuaikan mana-mana resipi kepada cahaya di hadapan anda dan bukannya mengikutinya secara membuta tuli. Julat ini titik permulaan yang ditentukur untuk keadaan biasa; histogram anda, bukan helaian ini, yang mempunyai kata putus.",
+      "keyFactors": {
+        "0": {
+          "label": "Keutamaan Senario",
+          "description": "Setiap situasi mengunci satu pemboleh ubah pendedahan dahulu — aperture untuk potret, pengatup untuk aksi, ISO untuk landskap — dan membiarkan yang lain menyesuaikan diri."
+        },
+        "1": {
+          "label": "Cahaya Sedia Ada",
+          "description": "Senario yang sama memerlukan tetapan berbeza pada tengah hari dan senja. Anggap julat ini sebagai sauh dan beralih dalam lingkungannya apabila cahaya berubah."
+        },
+        "2": {
+          "label": "Sokongan & Kestabilan",
+          "description": "Tripod membuka kunci ISO asas dan pengatup perlahan untuk pemandangan statik. Kerja pegang tangan menetapkan lantai kelajuan pengatup sekitar 1/(panjang fokus) atau lebih pantas."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Ambil tangkapan ujian dan baca histogram, bukan pratonton LCD — skrin menipu di bawah matahari terik dan pada waktu malam, histogram tidak pernah."
+        },
+        "1": {
+          "text": "Hafal satu resipi untuk setiap genre yang anda gambar, kemudian berlatih melaraskan satu pemboleh ubah pada satu masa. Anda akan menghayati pertukaran itu jauh lebih pantas daripada mengubah semuanya sekali gus."
+        },
+        "2": {
+          "text": "Muat turun helaian untuk senario yang jarang anda gambar — resipi Bima Sakti sukar diingat pada pukul 2 pagi di lereng gunung dengan jari yang kesejukan."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Aperture",
+          "definition": "Saiz bukaan lensa, dalam nombor-f. Nombor lebih rendah = lebih cahaya dan lebih kekaburan latar belakang; nombor lebih tinggi = lebih kedalaman medan."
+        },
+        "shutter": {
+          "term": "Kelajuan Pengatup",
+          "definition": "Berapa lama sensor mengumpul cahaya. Kelajuan pantas membekukan gerakan; kelajuan perlahan mengaburkannya dan memerlukan penstabilan atau tripod."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Penguatan sensor. Kekalkan serendah yang dibenarkan oleh cahaya — menaikkannya mencerahkan imej dengan kos hingar."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Anda mengambil potret dan mahukan rupa klasik: subjek tajam, latar belakang cair menjadi kabur. Pilihan tetapan manakah yang mencapainya?",
+          "hint": "Kekaburan latar belakang datang daripada kedalaman medan — kawalan manakah yang memandunya?",
+          "successMessage": "Betul! Aperture luas (seperti f/1.8–f/2.8) mencipta kedalaman medan cetek yang memisahkan subjek daripada latar belakang yang kabur — pilihan potret yang menentukan.",
+          "failureMessage": "Kekaburan latar belakang datang daripada aperture luas (nombor-f rendah) seperti f/1.8–f/2.8, yang menjadikan kedalaman medan cetek. Aperture sempit melakukan sebaliknya.",
+          "options": {
+            "0": { "label": "Aperture sempit seperti f/16" },
+            "1": { "label": "Aperture luas seperti f/2" },
+            "2": { "label": "Pendedahan panjang di atas tripod" },
+            "3": { "label": "ISO maksimum" }
+          }
+        },
+        "1": {
+          "scenario": "Seekor bangau asyik berlepas dari air tepat ketika anda menekan pengatup, dan setiap bingkai menunjukkan hujung sayap yang kabur. Apakah penyelesaiannya?",
+          "hint": "Kekaburan gerakan ialah masalah masa.",
+          "successMessage": "Betul! Burung yang terbang memerlukan kelajuan pengatup pantas — 1/2500s atau lebih pantas membekukan kepakan sayap. Buka aperture dan biarkan ISO Auto naik untuk membekalkan kelajuan yang anda perlukan.",
+          "failureMessage": "Sayap yang kabur bermakna pengatup terlalu perlahan untuk gerakan itu. Lompat ke 1/2500s atau lebih pantas dan biarkan aperture dan ISO menggantikan cahaya yang hilang.",
+          "options": {
+            "0": { "label": "Pengatup lebih perlahan untuk lebih cahaya" },
+            "1": { "label": "Kelajuan pengatup yang jauh lebih pantas" },
+            "2": { "label": "Kecilkan kepada f/22" },
+            "3": { "label": "Tukar imbangan putih kepada tungsten" }
+          }
+        },
+        "2": {
+          "scenario": "Anda sudah bersedia di bawah langit gelap untuk memotret Bima Sakti. Kombinasi manakah yang mendapat pendedahan yang boleh digunakan bagi teras galaksi?",
+          "hint": "Bintang-bintang itu samar, bergerak (dengan putaran Bumi), dan satu-satunya sumber cahaya anda.",
+          "successMessage": "Betul! Bukaan penuh (f/1.4–f/2.8), 10–25 saat, ISO 1600–6400: aperture mengumpul cahaya maksimum, pengatup berhenti sebelum bintang berjejak, dan ISO tinggi menjadikan teras yang samar itu kelihatan.",
+          "failureMessage": "Bima Sakti memerlukan semuanya: aperture pada bukaan penuh, pendedahan cukup singkat supaya bintang tidak berjejak (10–25s), dan ISO tinggi (1600–6400). Aperture kecil atau ISO asas meninggalkan langit yang hitam.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Bukaan penuh, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Apa-apa tetapan dengan penapis ND" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensor",
+      "megapixels": "Resolution: {mp} MP",
+      "aperture": "Aperture",
+      "verdict": {
+        "sharp": "{f} is diffraction-free",
+        "borderline": "{f} is slightly softened by diffraction",
+        "soft": "{f} is visibly softened by diffraction"
+      },
+      "verdictDetail": {
+        "sharp": "Below the diffraction limit of {limit} for this sensor and resolution, the lens — not diffraction — determines sharpness.",
+        "borderline": "Past the diffraction limit of {limit}, fine per-pixel detail starts to blur. Acceptable when you need the extra depth of field.",
+        "soft": "Well past the diffraction limit of {limit}. Depth of field keeps increasing, but overall detail visibly degrades — consider focus stacking instead of stopping down further."
+      },
+      "stripLabel": "Aperture scale colored by diffraction impact",
+      "pixelPitch": "Pixel pitch",
+      "airyDisk": "Airy disk diameter",
+      "diffractionLimit": "Diffraction limit",
+      "tableTitle": "Diffraction limit by sensor and resolution",
+      "tableSensor": "Sensor",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "What is diffraction in photography?",
+          "answer": "Diffraction is the bending of light waves as they squeeze through a small aperture. The smaller the aperture (higher f-number), the more each point of light spreads into a fuzzy disk (the Airy disk) on the sensor. Once that disk grows larger than a pixel, fine detail blurs no matter how good the lens is."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "What aperture is sharpest?",
+          "answer": "Most lenses peak two or three stops down from wide open — typically f/4 to f/8 on full frame. That sweet spot balances lens aberrations (worst wide open) against diffraction (worse as you stop down). High-resolution sensors reach their diffraction limit earlier, so their usable sweet spot is narrower."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "Does diffraction depend on the sensor?",
+          "answer": "The optical effect depends only on aperture and the wavelength of light — but how visible it is depends on pixel size. A 61 MP full-frame sensor has ~3.8 µm pixels and shows diffraction softening around f/5.6, while a 12 MP sensor with big pixels stays crisp to f/11. Smaller sensors hit the limit at wider apertures for the same megapixel count."
+        }
+      }
+    }
+  }
+}

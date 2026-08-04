@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Analizzatore di Cataloghi Lightroom — Statistiche gratuite, solo nel browser",
       "description": "Analizza il tuo catalogo Lightroom Classic localmente nel tuo browser. Scopri l'attrezzatura, le lunghezze focali, le abitudini di apertura, le valutazioni e altro ancora. Al 100% locale — il tuo catalogo non viene mai caricato."
+    },
+    "shutter-count-checker": {
+      "title": "Verificatore conteggio scatti — gratuito e privato",
+      "description": "Verifica il conteggio scatti della tua fotocamera da una foto, gratis e 100% nel tuo browser. Funziona con file JPEG e RAW Nikon, con indicazioni chiare per Canon, Sony e altre marche."
+    },
+    "camera-health-checker": {
+      "title": "Verificatore stato fotocamera",
+      "description": "Esamina un corpo macchina da una singola foto: modello, numero di serie, firmware, età, obiettivo e vita dell'otturatore. 100% lato client — ideale per controllare fotocamere usate prima dell'acquisto."
+    },
+    "panorama-calculator": {
+      "title": "Calcolatore di panorami",
+      "description": "Pianifica i panorami da unire: quanti scatti servono, di quanto ruotare tra i fotogrammi e la risoluzione finale — per qualsiasi obiettivo, sensore e sovrapposizione."
+    },
+    "diffraction-calculator": {
+      "title": "Calcolatore del limite di diffrazione",
+      "description": "Trova il limite di diffrazione della tua fotocamera: l'apertura alla quale chiudere il diaframma inizia ad ammorbidire le immagini. Basato su pixel pitch e disco di Airy, per qualsiasi sensore e risoluzione."
+    },
+    "photography-cheat-sheet": {
+      "title": "Cheat sheet di fotografia — impostazioni per scenario",
+      "description": "Schede di impostazioni per ritratti, paesaggi, natura, Via Lattea e altro. Punti di partenza collaudati da scaricare come immagine o stampare."
     }
   }
 }

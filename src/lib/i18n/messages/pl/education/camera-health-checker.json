@@ -1,0 +1,85 @@
+{
+  "education": {
+    "camera-health-checker": {
+      "beginner": "Każde zdjęcie zapisane przez aparat niesie ukryty raport o nim samym: dokładny model, numer seryjny, wersję firmware'u, podpięty obiektyw, a czasem liczbę wykonanych zdjęć. To narzędzie odczytuje ten raport z pojedynczego zdjęcia — w całości w Twojej przeglądarce — dzięki czemu możesz ocenić korpus tak, jak mechanik czyta historię serwisową samochodu.",
+      "deeper": "Dane pochodzą z metadanych EXIF — standardowego bloku, który każdy aparat cyfrowy osadza w swoich plikach. Standardowe pola to m.in. Make, Model, BodySerialNumber, Software (w większości aparatów podaje wersję firmware'u), LensModel i znacznik czasu wykonania zdjęcia. Producenci rozszerzają to o własnościowe „notatki producenta” — u Nikona zawierają one przebieg migawki, dlatego żywotność migawki da się odczytać u jednych marek, a u innych nie. Wiek korpusu jest szacowany przez dopasowanie nazwy modelu do bazy lat premier: aparat wydany w 2018 roku ma co najmniej kilka lat, niezależnie od zapewnień sprzedającego. Ważne są dwa zastrzeżenia. Po pierwsze, metadane przetrwają tylko w oryginalnych plikach — większość programów do edycji, komunikatorów i platform społecznościowych usuwa je lub nadpisuje. Po drugie, EXIF można edytować ogólnodostępnymi narzędziami, więc traktuj go jako mocną poszlakę, nie dowód: sprawę naprawdę zamyka zgodność numeru seryjnego z pliku, numeru na korpusie i paragonu sprzedającego.",
+      "keyFactors": {
+        "0": {
+          "label": "Tylko oryginalne pliki",
+          "description": "Metadane przetrwają w plikach prosto z aparatu. Eksporty i ponowne zapisy często usuwają numery seryjne, notatki producenta i informacje o firmwarze."
+        },
+        "1": {
+          "label": "Numer seryjny",
+          "description": "Wiąże plik z konkretnym korpusem. Przed zakupem używanego sprzętu porównaj go z numerem na korpusie, paragonem i rejestrami skradzionego sprzętu."
+        },
+        "2": {
+          "label": "Rok premiery a stan",
+          "description": "Wiek ustawia oczekiwania (technologia matrycy, brakujące funkcje, pozostałe wsparcie), ale o tym, jak ciężkie były te lata, mówią zużycie migawki i stan fizyczny."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Kupujesz używany sprzęt? Poproś sprzedającego o nieedytowane zdjęcie prosto z aparatu. Potwierdza ono model i numer seryjny, pokazuje aktualny firmware, a u wspieranych marek — przebieg migawki, wszystko w jednym pliku."
+        },
+        "1": {
+          "text": "Porównaj firmware z najnowszą wersją producenta. Nieaktualny aparat to nic dziwnego; aparat, którego nie da się już zaktualizować, może być pozbawiony ulepszeń autofokusa i zgodności."
+        },
+        "2": {
+          "text": "Data wykonania przykładowego zdjęcia od sprzedającego mówi, kiedy aparat był ostatnio naprawdę używany. „Mało używany” korpus, którego najnowszy plik ma cztery lata, długo leżał — sprawdź, czy migawka się nie zacina i czy bateria nie spuchła."
+        }
+      },
+      "tooltips": {
+        "serialNumber": {
+          "term": "Numer seryjny korpusu",
+          "definition": "Unikatowy identyfikator nadawany przez producenta każdemu korpusowi, osadzany w EXIF każdego zdjęcia. Przydatny do sprawdzania gwarancji i rejestrów skradzionego sprzętu."
+        },
+        "firmware": {
+          "term": "Firmware",
+          "definition": "Wewnętrzne oprogramowanie aparatu, raportowane w polu Software w EXIF. Producenci dostarczają przez aktualizacje firmware'u ulepszenia autofokusa, zgodności i nowe funkcje."
+        },
+        "bodyAge": {
+          "term": "Wiek korpusu",
+          "definition": "Liczba lat od premiery modelu, oszacowana na podstawie bazy dat premier. Górna granica aktualności technologii aparatu — nie miara zużycia tego konkretnego egzemplarza."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Kupujesz używany aparat z ogłoszenia w internecie. Sprzedający wysyła Ci oryginalne zdjęcie z aparatu. Co najcenniejszego możesz zrobić z numerem seryjnym z jego metadanych?",
+          "hint": "Numer seryjny łączy ten konkretny korpus ze światem zewnętrznym.",
+          "successMessage": "Zgadza się! Porównanie numeru seryjnego z rejestrami skradzionego sprzętu (i paragonem sprzedającego) chroni Cię przed kupnem kradzionego sprzętu — tę weryfikację umożliwia wyłącznie numer seryjny.",
+          "failureMessage": "Unikatowa wartość numeru seryjnego to identyfikacja: sprawdź go w rejestrach skradzionego sprzętu i dokumentach sprzedającego. Nie mówi nic o jakości obrazu ani zgodności.",
+          "options": {
+            "0": { "label": "Sprawdzić go w rejestrach skradzionego sprzętu" },
+            "1": { "label": "Oszacować jakość zdjęcia" },
+            "2": { "label": "Zweryfikować zgodność obiektywu" },
+            "3": { "label": "Sprawdzić zakres ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Rozważany przez Ciebie używany aparat działa na firmwarze 1.0 z premiery sprzed czterech lat, a aktualna wersja producenta to 3.1. Co zwykle daje aktualizacja?",
+          "hint": "Pomyśl, co producent może zmienić w oprogramowaniu po premierze.",
+          "successMessage": "Tak! Aktualizacje firmware'u przynoszą realne ulepszenia — lepsze algorytmy autofokusa, obsługę nowych obiektywów, poprawki błędów, czasem całe nowe funkcje. Parametry sprzętowe, jak matryca czy megapiksele, nigdy się nie zmieniają.",
+          "failureMessage": "Firmware to oprogramowanie: aktualizacje poprawiają autofokus, dodają obsługę obiektywów i usuwają błędy. Nie mogą zmienić sprzętu, takiego jak matryca czy liczba megapikseli.",
+          "options": {
+            "0": { "label": "Nowe funkcje i ulepszenia autofokusa" },
+            "1": { "label": "Więcej megapikseli" },
+            "2": { "label": "Większą powierzchnię matrycy" },
+            "3": { "label": "Nic — firmware jest kosmetyczny" }
+          }
+        },
+        "2": {
+          "scenario": "Dwóch sprzedających oferuje ten sam model: korpus 7-letni i 4-letni w podobnych cenach. Jak właściwie wykorzystać wiek korpusu w decyzji?",
+          "hint": "Wiek to jedna z danych wejściowych — czego Ci nie powie?",
+          "successMessage": "Dokładnie. Wiek określa ramy technologii i pozostałego wsparcia, ale o wyborze decyduje to, jak korpus był używany: przebieg migawki, stan fizyczny i historia serwisowa.",
+          "failureMessage": "Sam wiek korpusu nie rozstrzyga — delikatnie używany starszy korpus może być lepszy od zajeżdżonego nowszego. Łącz wiek z przebiegiem migawki i stanem fizycznym.",
+          "options": {
+            "0": { "label": "Zawsze kupować nowszy" },
+            "1": { "label": "Ważyć wiek razem z przebiegiem migawki i stanem" },
+            "2": { "label": "Ignorować wiek — liczą się tylko megapiksele" },
+            "3": { "label": "Wybierać wyłącznie po renomie marki" }
+          }
+        }
+      }
+    }
+  }
+}

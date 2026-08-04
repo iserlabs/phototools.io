@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Jedes Mal, wenn deine Kamera ein Foto mit dem mechanischen Verschluss aufnimmt, zählt ein Zähler in der Kamera um eins hoch. Diese Zahl — die Auslösungszahl — ist wie der Kilometerstand eines Autos: Sie verrät, wie intensiv eine Kamera genutzt wurde. Am wichtigsten ist sie beim Kauf oder Verkauf gebrauchter Ausrüstung, denn Verschlüsse sind bewegliche Teile, die auf eine begrenzte Zahl von Auslösungen ausgelegt sind.",
+      "deeper": "Ein mechanischer Verschluss besteht aus zwei federgespannten Vorhängen, die bei jeder Belichtung physisch über den Sensor gleiten. Hersteller testen die Lebensdauer dieser Mechanismen und veröffentlichen Auslegungswerte: rund 100.000 Auslösungen für Einsteigergehäuse, 150.000–200.000 für Enthusiasten-Modelle und 300.000–500.000 für Profi-Gehäuse. Die Auslegung ist ein statistischer Durchschnitt, kein Ablaufdatum — viele Verschlüsse halten ein Mehrfaches davon, und ein defekter Verschluss ist meist ein reparierbarer (wenn auch teurer) Schaden. Wo die Zahl gespeichert wird, hängt von der Marke ab: Nikon schreibt sie unverschlüsselt in die Maker Notes jeder Datei — deshalb kann dieses Tool sie auslesen. Canon führt sie nur im internen Speicher, Sony verschlüsselt sie, und Pentax verschleiert sie. Moderne spiegellose Kameras verkomplizieren das Bild zusätzlich: Aufnahmen mit elektronischem Verschluss verschleißen den Mechanismus überhaupt nicht, sodass ein überwiegend im Lautlos-Modus genutztes Gehäuse weit mehr Gesamtauslösungen haben kann, als die mechanische Zahl vermuten lässt — und das ist völlig in Ordnung.",
+      "keyFactors": {
+        "0": {
+          "label": "Kameramarke",
+          "description": "Bestimmt, ob die Zahl überhaupt aus Dateien auslesbar ist. Nikon speichert sie offen; Canon, Sony und Pentax nicht."
+        },
+        "1": {
+          "label": "Ausgelegte Verschlusslebensdauer",
+          "description": "Die vom Hersteller getestete durchschnittliche Lebensdauer des Verschlussmechanismus. Höherklassige Gehäuse nutzen robustere Mechanismen mit höheren Werten."
+        },
+        "2": {
+          "label": "Elektronischer vs. mechanischer Verschluss",
+          "description": "Aufnahmen mit elektronischem Verschluss verursachen keinerlei mechanischen Verschleiß und erhöhen den mechanischen Zähler meist nicht. Vielnutzer des Lautlos-Modus zeigen niedrige Zahlen."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Prüfe die Zahl immer anhand einer unbearbeiteten Datei direkt aus der Kamera. Exporte aus Lightroom, Messaging-Apps oder sozialen Medien entfernen meist die Maker Notes, die den Zähler enthalten."
+        },
+        "1": {
+          "text": "Wäge beim Gebrauchtkauf die Zahl gegen die Auslegung ab: 40.000 bei einem auf 300.000 ausgelegten Gehäuse ist kaum eingefahren, während 90.000 bei einem auf 100.000 ausgelegten Gehäuse einen Verschlusstausch einpreist."
+        },
+        "2": {
+          "text": "Eine niedrige Auslösungszahl garantiert keine gesunde Kamera — Wasserschäden, Sensorkratzer und Stürze tauchen im Zähler nicht auf. Prüfe auch Testfotos und das Gehäuse selbst."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Auslösungszahl",
+          "definition": "Die Anzahl der Auslösungen des mechanischen Verschlusses über die Lebensdauer der Kamera. Wird aus den Metadaten gelesen, die deine Kamera in jedes Foto einbettet."
+        },
+        "ratedLife": {
+          "term": "Ausgelegte Verschlusslebensdauer",
+          "definition": "Die vom Hersteller getestete durchschnittliche Zahl von Auslösungen bis zum Verschlussausfall. Ein Durchschnitt, keine harte Grenze — viele Verschlüsse überleben sie deutlich."
+        },
+        "source": {
+          "term": "Quelle der Zahl",
+          "definition": "Woher die Zahl gelesen wurde: das echte Auslösungszahl-Feld, der rein mechanische Zähler mancher spiegelloser Gehäuse oder eine generische Bildnummer als grober Notbehelf."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du machst 500 Fotos bei einem Konzert mit dem lautlosen elektronischen Verschluss deiner spiegellosen Kamera. Wie viel mechanischen Verschlussverschleiß hat das verursacht?",
+          "hint": "Überlege, was sich bei einer Belichtung mit elektronischem Verschluss physisch bewegt.",
+          "successMessage": "Richtig! Der elektronische Verschluss liest den Sensor aus, ohne Vorhänge zu bewegen — diese 500 Aufnahmen haben also praktisch keinen mechanischen Verschleiß verursacht und erhöhen den mechanischen Zähler in der Regel nicht.",
+          "failureMessage": "Der elektronische Verschluss belichtet, indem er den Sensor elektronisch ausliest — keine Vorhänge bewegen sich, also verursacht lautloses Fotografieren keinen mechanischen Verschlussverschleiß.",
+          "options": {
+            "0": { "label": "500 Auslösungen, wie bei jedem Foto" },
+            "1": { "label": "Keinen — nur der mechanische Verschluss zählt" },
+            "2": { "label": "Nur RAW-Dateien verursachen Verschleiß" },
+            "3": { "label": "Nur Blitzfotos verursachen Verschleiß" }
+          }
+        },
+        "1": {
+          "scenario": "Eine Kamera ist auf 200.000 Auslösungen ausgelegt und zeigt aktuell 195.000. Was bedeutet die Auslegung für dieses Gehäuse tatsächlich?",
+          "hint": "Auslegungswerte stammen aus statistischen Lebensdauertests, wie Stundenangaben bei Glühbirnen.",
+          "successMessage": "Genau! Die Auslegung ist die durchschnittliche Lebensdauer aus Tests — dieser Verschluss könnte nächste Woche ausfallen oder bis 400.000 durchhalten. Sie ist ein Wahrscheinlichkeitssignal für die Preisfindung, kein Countdown.",
+          "failureMessage": "Eine Verschlussauslegung ist die getestete durchschnittliche Lebensdauer, keine harte Grenze oder Garantie. Viele Verschlüsse halten deutlich länger; manche fallen früher aus.",
+          "options": {
+            "0": { "label": "Der Verschluss stoppt bei 200.000" },
+            "1": { "label": "Es ist die durchschnittliche Lebensdauer — das Ausfallrisiko steigt in ihrer Nähe" },
+            "2": { "label": "Die Garantie endet bei 200.000" },
+            "3": { "label": "Die Akkulaufzeit sinkt nach 200.000" }
+          }
+        },
+        "2": {
+          "scenario": "Du vergleichst zwei gebrauchte Kameras desselben Modells: eine mit 15.000 Auslösungen und sichtbarer Korrosion an der Akkuklappe, eine mit 60.000 Auslösungen in tadellosem Zustand. Welche ist der sicherere Kauf?",
+          "hint": "Der Zähler erfasst nur eine Art von Verschleiß.",
+          "successMessage": "Genau. Die Auslösungszahl ist nur eines von mehreren Signalen — Korrosion deutet auf Wasserkontakt hin, und der tötet Kameras weit häufiger als abgenutzte Verschlüsse. Das saubere Gehäuse mit 60.000 ist der sicherere Kauf.",
+          "failureMessage": "Die Auslösungszahl misst nur den Verschlussverschleiß. Korrosion deutet auf Wasserschaden hin, und der ist weit riskanter als ein mäßig genutzter Verschluss. Beurteile Zahl plus Zustand, nie die Zahl allein.",
+          "options": {
+            "0": { "label": "Das Gehäuse mit 15.000 — weniger ist immer besser" },
+            "1": { "label": "Das günstigere von beiden" },
+            "2": { "label": "Das saubere Gehäuse mit 60.000 — der Zustand zählt mehr" },
+            "3": { "label": "Keine — beide sind zu alt" }
+          }
+        }
+      }
+    }
+  }
+}

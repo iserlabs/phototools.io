@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Analizor de Cataloage Lightroom",
       "description": "Analizează-ți catalogul Lightroom Classic — echipament, distanță focală, diafragme, evaluări și multe altele — 100% în browserul tău"
+    },
+    "shutter-count-checker": {
+      "name": "Verificator număr de declanșări",
+      "description": "Verifică numărul de declanșări al aparatului tău dintr-o fotografie — 100% în browser"
+    },
+    "camera-health-checker": {
+      "name": "Verificator stare aparat foto",
+      "description": "Inspectează vârsta, firmware-ul, seria și durata de viață a obturatorului unui aparat dintr-o singură fotografie"
+    },
+    "panorama-calculator": {
+      "name": "Calculator de panorame",
+      "description": "Planifică-ți cadrele de panoramă — numărul de cadre, suprapunerea și rotirea între cadre"
+    },
+    "diffraction-calculator": {
+      "name": "Calculator al limitei de difracție",
+      "description": "Află diafragma la care difracția începe să-ți înmoaie imaginile"
+    },
+    "photography-cheat-sheet": {
+      "name": "Fișă de setări foto",
+      "description": "Fișe cu setări de aparat pentru scenarii de fotografiere obișnuite — descărcabile și imprimabile"
     }
   }
 }

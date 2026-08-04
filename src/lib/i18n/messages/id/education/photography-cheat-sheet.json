@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Setiap situasi pemotretan — potret, satwa liar, Bima Sakti — punya kombinasi apertur, kecepatan rana, dan ISO yang sudah teruji dan menjadi andalan pertama para fotografer berpengalaman. Cheat sheet ini memberi Anda titik awal itu seketika, sehingga perhatian Anda bisa tercurah ke cahaya dan komposisi alih-alih menebak-nebak dial.",
+      "deeper": "Setiap resep di sini adalah penerapan segitiga eksposur dengan satu sisi diprioritaskan. Potret memprioritaskan apertur: bukaan lebar (f/1.8–f/2.8) memisahkan subjek dari latar belakang, dan yang lain menyesuaikan di sekitarnya. Aksi memprioritaskan kecepatan rana: 1/1000s membekukan gerakan, sehingga apertur membuka dan ISO naik untuk memasok cahaya. Lanskap memprioritaskan kualitas gambar: ISO dasar dan apertur menengah di titik ideal lensa, dengan tripod menanggung kecepatan rana berapa pun hasilnya. Pemandangan malam menekan ketiga sisi sekaligus, itulah sebabnya resepnya paling kaku — Bima Sakti benar-benar membutuhkan lensa cepat di bukaan terlebar, rana di bawah ~20 detik (sebelum rotasi Bumi membuat bintang berjejak), dan ISO berapa pun yang membuat histogram terpakai. Memahami sisi mana yang diprioritaskan tiap skenario adalah pelajaran sesungguhnya: begitu Anda melihat prioritasnya, Anda bisa menyesuaikan resep mana pun dengan cahaya di depan Anda alih-alih mengikutinya membabi buta. Rentang-rentang ini adalah titik awal yang dikalibrasi untuk kondisi umum; histogram Anda, bukan lembar ini, yang memegang kata akhir.",
+      "keyFactors": {
+        "0": {
+          "label": "Prioritas Skenario",
+          "description": "Setiap situasi mengunci satu variabel eksposur lebih dulu — apertur untuk potret, rana untuk aksi, ISO untuk lanskap — dan membiarkan yang lain menyesuaikan."
+        },
+        "1": {
+          "label": "Cahaya yang Tersedia",
+          "description": "Skenario yang sama butuh pengaturan berbeda di siang bolong dan senja. Anggap rentangnya sebagai jangkar dan bergeserlah di dalamnya saat cahaya berubah."
+        },
+        "2": {
+          "label": "Penyangga & Stabilitas",
+          "description": "Tripod membuka ISO dasar dan rana lambat untuk pemandangan statis. Memotret tanpa tripod menetapkan batas bawah kecepatan rana sekitar 1/(panjang fokus) atau lebih cepat."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Ambil jepretan uji dan baca histogram, bukan pratinjau LCD — layar berbohong di bawah matahari terang dan di malam hari, histogram tidak pernah."
+        },
+        "1": {
+          "text": "Hafalkan satu resep per genre yang Anda potret, lalu berlatihlah mengubah satu variabel saja setiap kali. Anda akan menghayati pertukarannya jauh lebih cepat daripada mengubah semuanya sekaligus."
+        },
+        "2": {
+          "text": "Unduh lembar untuk skenario yang jarang Anda potret — resep Bima Sakti sulit diingat pukul 2 pagi di lereng gunung dengan jari kedinginan."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Apertur",
+          "definition": "Ukuran bukaan lensa, dalam angka f. Angka rendah = cahaya lebih banyak dan blur latar belakang lebih kuat; angka tinggi = kedalaman bidang lebih besar."
+        },
+        "shutter": {
+          "term": "Kecepatan Rana",
+          "definition": "Berapa lama sensor mengumpulkan cahaya. Kecepatan tinggi membekukan gerakan; kecepatan lambat mengaburkannya dan menuntut stabilisasi atau tripod."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Penguatan sensor. Jaga serendah yang dimungkinkan cahaya — menaikkannya mencerahkan gambar dengan noise sebagai harganya."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Anda memotret potret dan menginginkan tampilan klasik: subjek tajam, latar belakang melebur jadi blur. Pilihan pengaturan mana yang mewujudkannya?",
+          "hint": "Blur latar belakang berasal dari kedalaman bidang — kendali mana yang mengaturnya?",
+          "successMessage": "Benar! Apertur lebar (seperti f/1.8–f/2.8) menciptakan kedalaman bidang dangkal yang memisahkan subjek dari latar belakang yang kabur — pilihan khas potret.",
+          "failureMessage": "Blur latar belakang berasal dari apertur lebar (angka f rendah) seperti f/1.8–f/2.8, yang membuat kedalaman bidang dangkal. Apertur sempit melakukan kebalikannya.",
+          "options": {
+            "0": { "label": "Apertur sempit seperti f/16" },
+            "1": { "label": "Apertur lebar seperti f/2" },
+            "2": { "label": "Eksposur panjang di tripod" },
+            "3": { "label": "ISO maksimum" }
+          }
+        },
+        "1": {
+          "scenario": "Seekor kuntul terus lepas landas dari air tepat saat Anda menekan rana, dan setiap frame memperlihatkan ujung sayap yang kabur. Apa solusinya?",
+          "hint": "Motion blur adalah masalah waktu.",
+          "successMessage": "Tepat! Burung terbang butuh kecepatan rana tinggi — 1/2500s atau lebih cepat membekukan kepakan sayap. Buka apertur dan biarkan Auto ISO naik untuk memasok kecepatan yang Anda butuhkan.",
+          "failureMessage": "Sayap kabur berarti rana terlalu lambat untuk gerakannya. Lompat ke 1/2500s atau lebih cepat dan biarkan apertur serta ISO mengompensasi cahaya yang hilang.",
+          "options": {
+            "0": { "label": "Rana lebih lambat untuk cahaya lebih banyak" },
+            "1": { "label": "Kecepatan rana yang jauh lebih tinggi" },
+            "2": { "label": "Tutup apertur ke f/22" },
+            "3": { "label": "Ganti white balance ke tungsten" }
+          }
+        },
+        "2": {
+          "scenario": "Anda sudah siap di bawah langit gelap untuk memotret Bima Sakti. Kombinasi mana yang menghasilkan eksposur inti galaksi yang terpakai?",
+          "hint": "Bintang-bintangnya redup, bergerak (bersama rotasi Bumi), dan satu-satunya sumber cahaya Anda.",
+          "successMessage": "Benar! Bukaan terlebar (f/1.4–f/2.8), 10–25 detik, ISO 1600–6400: apertur mengumpulkan cahaya maksimum, rana berhenti sebelum bintang berjejak, dan ISO tinggi membuat inti yang redup terlihat.",
+          "failureMessage": "Bima Sakti butuh semuanya: apertur di bukaan terlebar, eksposur cukup singkat agar bintang tidak berjejak (10–25s), dan ISO tinggi (1600–6400). Apertur kecil atau ISO dasar membiarkan langit tetap hitam.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Bukaan terlebar, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Pengaturan apa pun dengan filter ND" }
+          }
+        }
+      }
+    }
+  }
+}

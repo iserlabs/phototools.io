@@ -65,8 +65,28 @@
       "description": "Bandingkan megapiksel, visualkan saiz cetakan dan lihat saiz fail merentasi nisbah aspek dan DPI"
     },
     "lightroom-catalog-analyzer": {
-      "name": "Lightroom Catalog Analyzer",
+      "name": "Penganalisis Katalog Lightroom",
       "description": "Analisis katalog Lightroom Classic anda — peralatan, panjang fokus, aperture, penarafan, dan banyak lagi — 100% dalam pelayar anda"
+    },
+    "shutter-count-checker": {
+      "name": "Penyemak Kiraan Pengatup",
+      "description": "Semak kiraan pengatup kamera anda daripada foto — 100% dalam pelayar anda"
+    },
+    "camera-health-checker": {
+      "name": "Penyemak Kesihatan Kamera",
+      "description": "Periksa usia, perisian tegar, nombor siri dan hayat pengatup badan kamera daripada satu foto"
+    },
+    "panorama-calculator": {
+      "name": "Kalkulator Panorama",
+      "description": "Rancang tangkapan panorama — bilangan bingkai, pertindihan dan putaran antara tangkapan"
+    },
+    "diffraction-calculator": {
+      "name": "Kalkulator Had Pembelauan",
+      "description": "Cari aperture di mana pembelauan mula melembutkan imej anda"
+    },
+    "photography-cheat-sheet": {
+      "name": "Helaian Rujukan Fotografi",
+      "description": "Helaian rujukan tetapan kamera untuk senario penggambaran biasa — boleh dimuat turun dan dicetak"
     }
   }
 }

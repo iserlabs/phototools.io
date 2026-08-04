@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Et panorama bygges ved at tage flere overlappende fotos, mens du roterer kameraet, og derefter lade software sammensætte dem til ét bredt billede. Kunsten er at vide, hvor langt du skal rotere mellem billederne: for langt, og softwaren kan ikke forbinde billederne; for lidt, og du spilder dusinvis af billeder. Denne beregner klarer regnestykket ud fra dit objektiv, din sensor og det ønskede overlap.",
+      "deeper": "Hvert billede dækker en fast billedvinkel bestemt af brændvidde og sensorstørrelse — et 50mm-objektiv på fuldformat ser cirka 40° vandret. Stitching-software retter nabobilleder ind ved at finde fælles 'kontrolpunkter' i overlapzonen, og derfor er 25–35% overlap den praktiske standard: Det giver algoritmen nok fælles detaljer uden at få antallet af billeder til at eksplodere. Den brugbare rotation pr. billede er derfor billedets billedvinkel gange (1 − overlap). At fotografere i højformat bytter et smallere vandret trin for langt mere lodret dækning, og derfor tages de fleste panoramaer i én række lodret. Til rigtig høje scener anvender flerrækkers panoramaer samme overlaplogik lodret. Den færdige sammensatte fil vokser hurtigt: Hvert ekstra billede bidrager med sin opløsning minus overlappet, så et højformatpanorama på 7 billeder fra et 24 MP-kamera overstiger nemt 100 MP. Én fysisk finesse begrænser det hele: Roterer man omkring stativgevindet, forskydes objektivets optiske centrum mellem billederne, så nære og fjerne objekter kommer ud af flugt (parallakse). For fjerne landskaber betyder det sjældent noget, men med nære forgrundselementer skal du rotere omkring objektivets parallaksefrie punkt med en nodalskinne eller et panoramahoved.",
+      "keyFactors": {
+        "0": {
+          "label": "Brændvidde & sensor",
+          "description": "Tilsammen bestemmer de det enkelte billedes billedvinkel — grundenheden, panoramaet samles af. Længere objektiver betyder smallere billeder og flere optagelser."
+        },
+        "1": {
+          "label": "Overlap",
+          "description": "Den fælles zone mellem nabobilleder, som stitching-softwaren retter ind efter. 25–35% er sweet spottet; scener uden kendetegn (himmel, vand) kræver mere."
+        },
+        "2": {
+          "label": "Orientering",
+          "description": "Højformatbilleder dækker mindre bredde men langt mere højde pr. billede — standardvalget for panoramaer i én række, fordi det giver plads til beskæring."
+        },
+        "3": {
+          "label": "Parallakse",
+          "description": "Forskydning mellem nært og fjernt forårsaget af rotation omkring den forkerte akse. Harmløs for fjerne scener; kritisk med nær forgrund."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Lås eksponering, hvidbalance og fokus til manuel før det første billede. Alt automatisk skifter mellem billederne og skaber synlige striber i den sammensatte himmel."
+        },
+        "1": {
+          "text": "Fotografér med objektivet i vater, og rotér i én jævn bevægelse med ét kassabelt billede ekstra i hver ende — kantbillederne bliver forvrænget og beskåret under sammensætningen."
+        },
+        "2": {
+          "text": "Overdriv overlappet til 40–50% ved håndholdte panoramaer. Din rotation bliver ikke præcis, og de ekstra billeder giver softwaren plads til at rette op."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Overlap",
+          "definition": "Den procentdel af hvert billede, der deles med nabobilledet. Stitching-software har brug for disse fælles detaljer for at rette billederne ind — 25–35% er typisk."
+        },
+        "orientation": {
+          "term": "Kameraets orientering",
+          "definition": "Højformat (lodret) er standarden for panoramaer: Hvert billede bidrager med mere højde, hvilket giver plads til horisontkorrektion og beskæring."
+        },
+        "rotateBetween": {
+          "term": "Rotation mellem billeder",
+          "definition": "Hvor mange grader du drejer kameraet efter hvert billede: billedets billedvinkel gange (1 − overlap). Panoramahoveder har klikstop til præcis dette."
+        },
+        "rows": {
+          "term": "Rækker",
+          "definition": "Flerrækkers panoramaer stabler vandrette gennemløb lodret og anvender samme overlapregel mellem rækkerne for at dække høje scener."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du fotograferer et panorama af en bjergkæde. Hvor meget skal nabobilleder overlappe for pålidelig sammensætning?",
+          "hint": "Softwaren har brug for fælles detaljer, men hvert ekstra billede koster tid.",
+          "successMessage": "Korrekt! Omkring 30% overlap giver stitching-softwaren masser af kontrolpunkter uden at spilde billeder — standardanbefalingen for de fleste scener.",
+          "failureMessage": "25–35% er den praktiske standard. Under ~15% har softwaren svært ved at finde kontrolpunkter; 80% tredobler dit antal billeder uden gevinst.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Du vil have et panorama i én række med nok lodret plads til at rette horisonten op og beskære frit bagefter. Hvilken orientering skal du fotografere i?",
+          "hint": "Hvilken vej giver hvert billede dig mere højde?",
+          "successMessage": "Rigtigt! Højformat fanger langt mere lodret billedvinkel pr. billede — de ekstra billeder, der kræves vandret, er en billig pris for friheden til at beskære.",
+          "failureMessage": "Højformat (lodret) er standarden for panoramaer i én række: Hvert billede er højere, så det sammensatte resultat tåler horisontkorrektion og beskæring.",
+          "options": {
+            "0": { "label": "Bredformat" },
+            "1": { "label": "Højformat" },
+            "2": { "label": "Kvadratisk beskæring" },
+            "3": { "label": "Vippet 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Med et 50mm-objektiv på fuldformat holdt i bredformat (cirka 40° vandret billedvinkel) og 30% overlap — hvor mange billeder kræver et panorama på 180° cirka?",
+          "hint": "Hvert billede udvider dækningen med 40° × 0,7 = 28°.",
+          "successMessage": "Korrekt! Det første billede dækker 40°, og hvert ekstra billede tilføjer ~28°. De resterende 140° kræver 5 billeder mere, altså 7 billeder i alt (med lidt til overs).",
+          "failureMessage": "Hvert billede efter det første tilføjer 40° × (1 − 0,3) = 28° ny dækning. (180 − 40) / 28 = 5 billeder mere, altså 7 i alt.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Dit panorama har et hegn en meter foran kameraet og bjerge bagved. Det sammensatte resultat viser hegnet med spøgelsesbilleder og forskydninger mellem billederne. Hvilket punkt skal kameraet rotere omkring for at løse det?",
+          "hint": "Problemet er parallakse — nære og fjerne objekter, der forskyder sig i forhold til hinanden.",
+          "successMessage": "Præcis! Rotation omkring objektivets parallaksefrie punkt (nodalpunktet) holder nære og fjerne objekter i flugt mellem billederne. Panoramahoveder og nodalskinner findes netop til dette.",
+          "failureMessage": "Kameraet skal rotere omkring objektivets parallaksefrie punkt (ofte kaldet nodalpunktet). Rotation omkring stativgevindet forskyder det optiske centrum og skaber den parallakse, du ser.",
+          "options": {
+            "0": { "label": "Objektivets frontelement" },
+            "1": { "label": "Objektivets parallaksefrie punkt" },
+            "2": { "label": "Sensorplanet" },
+            "3": { "label": "Stativgevindet" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "education": {
+    "panorama-calculator": {
+      "beginner": "Um panorama é construído tirando várias fotos sobrepostas enquanto se gira a câmera, e deixando depois o software costurá-las em uma única imagem larga. O truque é saber quanto girar entre os disparos: girando demais, o software não consegue juntar os quadros; girando de menos, você desperdiça dezenas de disparos. Esta calculadora faz essa conta a partir da sua lente, do seu sensor e da sobreposição desejada.",
+      "deeper": "Cada quadro cobre um ângulo de visão fixo determinado pela distância focal e pelo tamanho do sensor: uma 50mm em full frame enxerga cerca de 40° na horizontal. O software de costura alinha quadros vizinhos encontrando «pontos de controle» compartilhados na zona de sobreposição, e é por isso que 25–35% é o padrão prático: dá ao algoritmo detalhe compartilhado suficiente sem explodir a quantidade de quadros. A rotação útil por disparo é, portanto, o campo de visão do quadro vezes (1 − sobreposição). Fotografar em retrato troca um passo horizontal mais estreito por muito mais cobertura vertical, e é por isso que a maioria dos panoramas de fileira única é feita na vertical. Para cenas muito altas, os panoramas de múltiplas fileiras aplicam a mesma lógica de sobreposição na vertical. O arquivo final cresce rápido: cada quadro adicional contribui com sua resolução menos a sobreposição, então um panorama vertical de 7 quadros com uma câmera de 24 MP passa facilmente de 100 MP. Uma sutileza física limita tudo isso: girar em torno da rosca do tripé desloca o centro óptico da lente entre quadros, fazendo objetos próximos e distantes desalinharem (paralaxe). Em paisagens distantes isso raramente importa, mas com elementos próximos em primeiro plano é preciso girar em torno do ponto sem paralaxe da lente usando um trilho nodal ou uma cabeça panorâmica.",
+      "keyFactors": {
+        "0": {
+          "label": "Distância focal e sensor",
+          "description": "Juntos, definem o campo de visão de cada quadro — a unidade básica com que o panorama é montado. Lentes mais longas significam quadros mais estreitos e mais disparos."
+        },
+        "1": {
+          "label": "Sobreposição",
+          "description": "A zona compartilhada entre quadros vizinhos na qual o software de costura se alinha. 25–35% é o ponto ideal; cenas sem elementos distintos (céu, água) precisam de mais."
+        },
+        "2": {
+          "label": "Orientação",
+          "description": "Quadros em retrato cobrem menos largura, mas muito mais altura por disparo: a escolha padrão para panoramas de fileira única, porque deixa margem de recorte."
+        },
+        "3": {
+          "label": "Paralaxe",
+          "description": "Desalinhamento entre o próximo e o distante causado por girar em torno do eixo errado. Inofensiva em cenas distantes; crítica com primeiros planos próximos."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Trave exposição, balanço de branco e foco no manual antes do primeiro quadro. Qualquer automatismo muda entre os quadros e cria faixas visíveis no céu costurado."
+        },
+        "1": {
+          "text": "Fotografe com a lente nivelada e gire em uma única passada suave, adicionando um quadro descartável em cada ponta: os quadros das bordas são distorcidos e recortados durante a costura."
+        },
+        "2": {
+          "text": "Em panoramas feitos à mão, exagere a sobreposição para 40–50%. Sua rotação não será precisa, e os quadros extras dão ao software margem para se recuperar."
+        }
+      },
+      "tooltips": {
+        "overlap": {
+          "term": "Sobreposição",
+          "definition": "A porcentagem de cada quadro compartilhada com o vizinho. O software de costura precisa desse detalhe compartilhado para alinhar os quadros: 25–35% é o típico."
+        },
+        "orientation": {
+          "term": "Orientação da câmera",
+          "definition": "O enquadramento em retrato (vertical) é o padrão em panoramas: cada quadro contribui com mais altura, deixando espaço para correção do horizonte e recorte."
+        },
+        "rotateBetween": {
+          "term": "Rotação entre disparos",
+          "definition": "Quantos graus girar a câmera após cada quadro: o campo de visão do quadro vezes (1 − sobreposição). Cabeças panorâmicas têm paradas com clique exatamente para isso."
+        },
+        "rows": {
+          "term": "Fileiras",
+          "definition": "Panoramas de múltiplas fileiras empilham passadas horizontais na vertical, aplicando a mesma regra de sobreposição entre as fileiras para cobrir cenas altas."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Você está fotografando um panorama de uma cadeia de montanhas. Quanto os quadros vizinhos devem se sobrepor para uma costura confiável?",
+          "hint": "O software precisa de detalhe compartilhado, mas cada quadro extra custa tempo.",
+          "successMessage": "Correto! Cerca de 30% de sobreposição dá ao software de costura pontos de controle de sobra sem desperdiçar quadros: a recomendação padrão para a maioria das cenas.",
+          "failureMessage": "25–35% é o padrão prático. Abaixo de ~15% o software tem dificuldade para encontrar pontos de controle; 80% triplica a quantidade de quadros sem benefício.",
+          "options": {
+            "0": { "label": "5%" },
+            "1": { "label": "15%" },
+            "2": { "label": "30%" },
+            "3": { "label": "80%" }
+          }
+        },
+        "1": {
+          "scenario": "Você quer um panorama de fileira única com espaço vertical suficiente para endireitar o horizonte e recortar à vontade depois. Em qual orientação deve fotografar?",
+          "hint": "Em qual orientação cada quadro lhe dá mais altura?",
+          "successMessage": "Isso! A orientação retrato captura muito mais campo vertical por quadro: os quadros extras necessários na horizontal são um preço baixo pela liberdade de recorte.",
+          "failureMessage": "Retrato (vertical) é o padrão para panoramas de fileira única: cada quadro é mais alto, então o resultado costurado sobrevive à correção do horizonte e ao recorte.",
+          "options": {
+            "0": { "label": "Paisagem" },
+            "1": { "label": "Retrato" },
+            "2": { "label": "Modo de recorte quadrado" },
+            "3": { "label": "Inclinada 45°" }
+          }
+        },
+        "2": {
+          "scenario": "Com uma 50mm em full frame na orientação paisagem (cerca de 40° de visão horizontal) e 30% de sobreposição, aproximadamente quantos quadros um panorama de 180° precisa?",
+          "hint": "Cada disparo avança a cobertura em 40° × 0,7 = 28°.",
+          "successMessage": "Correto! O primeiro quadro cobre 40°, e cada quadro adicional soma ~28°. Cobrir os 140° restantes leva mais 5 quadros, então 7 no total (com uma pequena folga).",
+          "failureMessage": "Cada quadro após o primeiro adiciona 40° × (1 − 0,3) = 28° de cobertura nova. (180 − 40) / 28 = mais 5 quadros, ou seja, 7 no total.",
+          "options": {
+            "0": { "label": "4" },
+            "1": { "label": "7" },
+            "2": { "label": "13" },
+            "3": { "label": "20" }
+          }
+        },
+        "3": {
+          "scenario": "Seu panorama tem uma cerca a um metro da câmera e montanhas ao fundo. O resultado costurado mostra a cerca com fantasmas e desalinhada entre os quadros. Em torno de qual ponto a câmera deve girar para corrigir isso?",
+          "hint": "O problema é paralaxe: objetos próximos e distantes se deslocando entre si.",
+          "successMessage": "Exatamente! Girar em torno do ponto sem paralaxe (nodal) da lente mantém objetos próximos e distantes alinhados entre os quadros. Cabeças panorâmicas e trilhos nodais existem precisamente para isso.",
+          "failureMessage": "A câmera deve girar em torno do ponto sem paralaxe da lente (frequentemente chamado de ponto nodal). Girar em torno da rosca do tripé desloca o centro óptico, causando a paralaxe que você está vendo.",
+          "options": {
+            "0": { "label": "O elemento frontal da lente" },
+            "1": { "label": "O ponto sem paralaxe da lente" },
+            "2": { "label": "O plano do sensor" },
+            "3": { "label": "A rosca do tripé" }
+          }
+        }
+      }
+    }
+  }
+}

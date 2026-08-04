@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "I-drop ang photo dito o mag-click para mag-browse (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Aling mga brand ang nag-iimbak ng shutter count?",
+      "status": {
+        "supported": "Nababasa",
+        "partial": "Bahagya",
+        "unsupported": "Wala sa files"
+      },
+      "brands": {
+        "nikon": "Isinusulat ng Nikon ang shutter count sa metadata ng bawat photo, nang walang encryption. Gumamit ng unedited na orihinal na file para sa pinakamagandang resulta.",
+        "canon": "Hindi kailanman isinusulat ng Canon ang shutter count sa mga image file — nakaimbak lang ito sa loob ng camera at nababasa ng mga service tool o USB utility.",
+        "sony": "Iniimbak ng Sony ang shutter count sa naka-encrypt na bahagi ng metadata nito na hindi ma-decode sa browser. May mga dedicated desktop utility na nakakabasa nito sa pamamagitan ng USB.",
+        "fujifilm": "Ang mga Fujifilm body ay hindi nagre-record ng tunay na shutter count, pero ang ilan ay nagsusulat ng frame counter na nagbibigay ng magaspang na lower bound.",
+        "pentax": "Tinatakpan ng Pentax ang shutter count field nito gamit ang cipher, kaya hindi ito mababasa nang maaasahan mula sa mga file.",
+        "olympus": "Ang mga OM System / Olympus body ay nag-iingat ng buong shutter count sa internal service menu; may mga file na minsan may dalang frame counter na nagpapahiwatig ng paggamit.",
+        "panasonic": "Hindi nagsusulat ang Panasonic ng shutter count sa mga file. Ang service menu sa camera ang nag-uulat nito.",
+        "leica": "Ang mga Leica body sa pangkalahatan ay hindi nag-iimbak ng shutter count sa mga image file."
+      },
+      "countLabel": "Shutter actuations",
+      "source": {
+        "shutterCount": "Nabasa mula sa shutter count metadata ng camera — ito ang aktuwal na mechanical actuation counter.",
+        "mechanicalShutterCount": "Nabasa mula sa mechanical shutter counter — hindi kasama ang mga frame na kinuha gamit ang electronic shutter.",
+        "imageNumber": "Tinantiya mula sa image number ng file. Magaspang na lower bound ito, hindi eksaktong actuation count — puwedeng mag-reset o umikot pabalik ang counter."
+      },
+      "ratedLife": "Rated shutter life",
+      "ratings": {
+        "entry": "Entry-level",
+        "enthusiast": "Enthusiast",
+        "advanced": "Advanced",
+        "pro": "Professional",
+        "flagship": "Flagship"
+      },
+      "lifeUsed": "{percent}% ng rated life ang nagamit na",
+      "verdict": {
+        "low": "Halos hindi nagamit",
+        "moderate": "Katamtamang gamit",
+        "high": "Matinding gamit",
+        "beyond": "Lampas na sa rating"
+      },
+      "noCountTitle": "Walang shutter count sa file na ito",
+      "noCountGeneric": "Walang nababasang shutter count ang file na ito. Subukan ang unedited na orihinal na photo na diretso mula sa camera — madalas tinatanggal ng mga editing app ang maker metadata.",
+      "errorRead": "Hindi mabasa ang file na ito. Subukan ang unedited na JPEG o RAW file na diretso mula sa camera.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Ano ang shutter count?",
+          "answer": "Ang shutter count ay ang bilang ng beses na pumutok ang mechanical shutter ng camera — ang katumbas nito sa camera ng mileage ng kotse. Ito ang pinaka-chine-check na indikasyon ng pagkakagamit kapag bumibili o nagbebenta ng segunda-manong camera, dahil ang mga shutter ay may rating para sa limitadong bilang ng actuations."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Ilang shutter actuations ang masyadong marami?",
+          "answer": "Depende sa klase ng camera. Ang mga entry-level shutter ay may rating na humigit-kumulang 100,000 actuations, ang mga enthusiast body ay 150,000–200,000, at ang mga professional body ay 300,000–500,000. Ang rating ay average na lifespan, hindi mahigpit na limitasyon — maraming shutter ang tumatagal nang higit pa rito, at ang mababang count sa isang pinabayaang body ay puwede pa ring mangahulugan ng problema."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Bakit hindi ko ma-check ang shutter count sa aking Canon o Sony photo?",
+          "answer": "Hindi talaga isinusulat ng Canon ang shutter count sa mga image file — nasa internal memory lang ito ng camera. Isinusulat ito ng Sony, pero ine-encrypt nito ang bahaging iyon ng metadata. Sa parehong kaso, hindi ito mababasa ng browser tool mula sa photo; ang karaniwang solusyon ay mga desktop utility na kumokonekta sa camera sa pamamagitan ng USB."
+        }
+      }
+    }
+  }
+}

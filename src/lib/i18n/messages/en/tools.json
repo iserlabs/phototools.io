@@ -67,6 +67,26 @@
     "lightroom-catalog-analyzer": {
       "name": "Lightroom Catalog Analyzer",
       "description": "Analyze your Lightroom Classic catalog — gear, focal length, apertures, ratings, and more — 100% in your browser"
+    },
+    "shutter-count-checker": {
+      "name": "Shutter Count Checker",
+      "description": "Check your camera’s shutter count from a photo — 100% in your browser"
+    },
+    "camera-health-checker": {
+      "name": "Camera Health Checker",
+      "description": "Inspect a camera body’s age, firmware, serial, and shutter life from a single photo"
+    },
+    "panorama-calculator": {
+      "name": "Panorama Calculator",
+      "description": "Plan panorama shots — frame count, overlap, and rotation between shots"
+    },
+    "diffraction-calculator": {
+      "name": "Diffraction Limit Calculator",
+      "description": "Find the aperture where diffraction starts to soften your images"
+    },
+    "photography-cheat-sheet": {
+      "name": "Photography Cheat Sheet",
+      "description": "Camera settings cheat sheets for common shooting scenarios — downloadable and printable"
     }
   }
 }

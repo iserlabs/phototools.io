@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Pumili ng scenario",
+      "tipsTitle": "Mga field tip",
+      "labels": {
+        "aperture": "Aperture",
+        "shutter": "Shutter speed",
+        "iso": "ISO",
+        "whiteBalance": "White balance",
+        "focusMode": "Focus mode",
+        "driveMode": "Drive mode"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Daylight",
+        "cloudy": "Cloudy",
+        "shade": "Shade",
+        "tungsten": "Tungsten (~3200K)",
+        "afSingle": "Single AF (AF-S)",
+        "afContinuous": "Continuous AF (AF-C)",
+        "afTracking": "Continuous AF + pag-track ng subject",
+        "manualFocus": "Manual focus",
+        "single": "Single shot",
+        "burstLow": "Low-speed burst",
+        "burstHigh": "High-speed burst",
+        "timer2s": "2s self-timer / remote",
+        "intervalometer": "Intervalometer"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Mga portrait",
+          "tips": {
+            "0": "Mag-focus sa matang pinakamalapit sa camera — sa malalapad na aperture, ilang sentimetro lang ang depth of field.",
+            "1": "Umatras at mag-zoom in (85mm+) para sa nakakagandang compression; ang mga wide lens sa malapitan ay dumidistort sa mga hugis ng mukha."
+          }
+        },
+        "landscape": {
+          "name": "Mga landscape",
+          "tips": {
+            "0": "Mag-focus nang mga isang-katlo papasok sa eksena o gamitin ang hyperfocal distance para sa front-to-back na sharpness.",
+            "1": "Kumuha mula sa tripod gamit ang self-timer o remote para maalis ang pag-uga sa mabagal na shutter speed."
+          }
+        },
+        "street": {
+          "name": "Street",
+          "tips": {
+            "0": "Zone focus: i-preset ang focus sa 3m at f/8, at magiging matalas ang lahat mula 2m hanggang 6m — walang AF delay.",
+            "1": "Ang Auto ISO na may minimum shutter speed na 1/250s ay nagpi-freeze sa mga naglalakad habang nakatutok ka sa framing."
+          }
+        },
+        "wildlife": {
+          "name": "Wildlife & mga ibon",
+          "tips": {
+            "0": "Itugma ang shutter speed sa subject: 1/1000s para sa nakadapong ibon, 1/2500s o mas mabilis para sa mga ibong lumilipad.",
+            "1": "Kumuha sa eye level at hintayin ang paglingon ng ulo — ang catchlight sa mata ang nagbibigay-buhay sa imahe."
+          }
+        },
+        "sports": {
+          "name": "Sports & action",
+          "tips": {
+            "0": "Mag-pre-focus kung saan mangyayari ang aksyon (ang goal, ang apex ng kurbada) at simulan ang burst bago pa ang rurok.",
+            "1": "Ang panning sa 1/60s–1/125s na may continuous AF ay nagpapalabo sa background habang pinapanatiling matalas ang subject."
+          }
+        },
+        "macro": {
+          "name": "Macro",
+          "tips": {
+            "0": "Sa mataas na magnification, kasingnipis ng papel ang depth of field — mag-focus sa pamamagitan ng paggalaw ng camera, hindi ng focus ring.",
+            "1": "Malakas kumagat ang diffraction lampas sa f/16; gumamit ng focus stacking sa halip na mag-stop down pa."
+          }
+        },
+        "milkyWay": {
+          "name": "Milky Way",
+          "tips": {
+            "0": "Gamitin ang NPF o 500 rule para sa maximum exposure bago mag-trail ang mga bituin — mga 15–20s sa 20mm sa full frame.",
+            "1": "Mag-manual focus sa maliwanag na bituin gamit ang naka-magnify na live view; itakda ang white balance malapit sa 3900K para sa neutral na langit."
+          }
+        },
+        "nightCity": {
+          "name": "Night cityscapes",
+          "tips": {
+            "0": "Kumuha sa base ISO mula sa tripod at hayaang tumagal ang shutter — nananatiling malinis ang mga highlight at mababa ang noise.",
+            "1": "Ginagawang starburst ng f/11–f/16 ang mga point light; kumuha sa blue hour para may kulay ang langit."
+          }
+        },
+        "waterfall": {
+          "name": "Mga talon & long exposure",
+          "tips": {
+            "0": "Ang 0.5–2s na exposure ay nagpapanatili ng texture sa tubig; ginagawa itong ulap ng 30s+. Gumamit ng ND filter sa liwanag ng araw.",
+            "1": "Binabawasan ng circular polarizer ang glare mula sa basang bato at mga dahon — at nagsisilbi rin itong ~1.5-stop na ND."
+          }
+        },
+        "goldenHour": {
+          "name": "Golden hour",
+          "tips": {
+            "0": "Mag-expose para sa mga highlight at iangat ang mga shadow sa post — hindi na maibabalik ang mga nasunog na mainit na highlight.",
+            "1": "I-backlight ang mga subject para sa rim light at flare; pinapanatiling mainit ang eksena ng cloudy white balance preset."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Anong mga camera setting ang dapat kong gamitin para sa mga portrait?",
+          "answer": "Magsimula sa malapad na aperture (f/1.8–f/2.8) para sa background blur, shutter speed na hindi bababa sa 1/200s para maiwasan ang motion blur, at ang pinakamababang ISO na kaya ng liwanag (100–400). Gumamit ng single-point autofocus sa pinakamalapit na mata, o eye-detection AF kung mayroon ang camera mo."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Anong mga setting ang kailangan ko para makunan ang Milky Way?",
+          "answer": "Isang wide at mabilis na lens sa pinakamalapad nitong aperture (f/1.4–f/2.8), 10–25 segundong exposure (mas matagal at magte-trail na ang mga bituin), ISO 1600–6400, manual focus na nakatakda sa maliwanag na bituin, at tripod. Mas mahalaga ang gabing walang buwan na malayo sa mga ilaw ng lungsod kaysa sa kahit anong camera setting."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Eksaktong recipe ba ang mga setting na ito?",
+          "answer": "Hindi — mga napatunayang panimulang punto ang mga ito. Napakalaki ng pagkakaiba ng liwanag sa bawat eksena, kaya ituring ang mga range bilang unang tantiya, kumuha ng test shot, tingnan ang histogram, at mag-adjust. Ang layunin ay mabilis kang mailagay sa tamang lugar, hindi palitan ang sarili mong paghuhusga."
+        }
+      }
+    }
+  }
+}

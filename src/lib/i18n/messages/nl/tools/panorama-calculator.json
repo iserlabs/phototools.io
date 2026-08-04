@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Sensor",
+      "orientation": "Camerastand",
+      "portrait": "Staand",
+      "landscape": "Liggend",
+      "overlap": "Overlap: {percent}%",
+      "targetWidth": "Panoramabreedte",
+      "rows": "Rijen",
+      "megapixels": "Cameraresolutie: {mp} MP",
+      "fanLabel": "Bovenaanzicht van {frames} overlappende beelden",
+      "totalShots": "Totaal aantal opnamen",
+      "perRow": "Beelden × rijen",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Draaien tussen opnamen",
+      "coverage": "Dekking (H × V)",
+      "frameFov": "Beeldhoek per opname",
+      "stitchedSize": "Grootte na stitchen",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Hoeveel overlap hebben panoramaopnamen nodig?",
+          "answer": "25–35% is voor de meeste scènes ideaal. Stitchsoftware heeft gedeelde details tussen aangrenzende beelden nodig om controlepunten te vinden; onder de 15% kan het uitlijnen mislukken, terwijl je boven de 50% veel extra opnamen maakt voor weinig winst. Gebruik meer overlap bij scènes met weinig herkenbare details, zoals een strakblauwe lucht of kalm water."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Waarom panorama's in staande (verticale) stand fotograferen?",
+          "answer": "De staande stand vangt per beeld meer verticale beeldhoek, waardoor het uiteindelijke panorama hoger wordt en er ruimte overblijft voor bijsnijden en horizoncorrectie. De prijs is een paar extra beelden in de breedte — meestal een prima ruil voor de extra flexibiliteit en resolutie."
+        },
+        "what-is-nodal-point": {
+          "question": "Wat is het parallaxvrije punt (nodaalpunt)?",
+          "answer": "Het is het punt in de lens waaromheen de camera kan draaien zonder dat dichtbije en verre objecten tussen de beelden ten opzichte van elkaar verschuiven. Draaien om de statiefaansluiting veroorzaakt juist parallaxfouten die het stitchen bemoeilijken, vooral bij een dichtbije voorgrond. Met panoramakoppen kun je het parallaxvrije punt van de lens boven de draaias plaatsen."
+        }
+      }
+    }
+  }
+}

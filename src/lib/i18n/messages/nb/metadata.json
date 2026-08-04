@@ -93,6 +93,26 @@
     "lightroom-catalog-analyzer": {
       "title": "Lightroom-kataloganalysator — Gratis statistikk, kun i nettleseren",
       "description": "Analyser Lightroom Classic-katalogen din lokalt i nettleseren. Se utstyr, brennvidder, blendervaner, vurderinger og mer. 100 % lokalt — katalogen din lastes aldri opp."
+    },
+    "shutter-count-checker": {
+      "title": "Lukkertelling-sjekker — gratis og privat",
+      "description": "Sjekk kameraets lukkertelling ut fra et bilde, gratis og 100 % i nettleseren din. Virker med Nikon JPEG- og RAW-filer, med tydelig veiledning for Canon, Sony og andre merker."
+    },
+    "camera-health-checker": {
+      "title": "Kamerahelse-sjekker",
+      "description": "Undersøk et kamerahus ut fra ett enkelt bilde: modell, serienummer, fastvare, alder, objektiv og lukkerlevetid. 100 % i nettleseren — ideelt for å sjekke brukte kameraer før kjøp."
+    },
+    "panorama-calculator": {
+      "title": "Panoramakalkulator",
+      "description": "Planlegg sammensatte panoramaer: hvor mange bilder du trenger, hvor langt du må rotere mellom bildene og den endelige oppløsningen — for hvilket som helst objektiv, hvilken som helst sensor og hvilket som helst overlapp."
+    },
+    "diffraction-calculator": {
+      "title": "Diffraksjonsgrense-kalkulator",
+      "description": "Finn kameraets diffraksjonsgrense: blenderen der nedblending begynner å mykne opp bildene. Basert på pikselavstand og Airy-skiven, for hvilken som helst sensor og oppløsning."
+    },
+    "photography-cheat-sheet": {
+      "title": "Foto-jukselapp — kamerainnstillinger etter scenario",
+      "description": "Jukselapper med kamerainnstillinger for portretter, landskap, dyreliv, Melkeveien og mer. Utprøvde utgangspunkter du kan laste ned som bilde eller skrive ut."
     }
   }
 }

@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Trage o fotografie aici sau apasă pentru a răsfoi (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Care mărci stochează numărul de declanșări?",
+      "status": {
+        "supported": "Se poate citi",
+        "partial": "Parțial",
+        "unsupported": "Nu apare în fișiere"
+      },
+      "brands": {
+        "nikon": "Nikon scrie numărul de declanșări în metadatele fiecărei fotografii, necriptat. Pentru rezultate fiabile folosește un fișier original needitat.",
+        "canon": "Canon nu scrie niciodată numărul de declanșări în fișierele imagine — este stocat doar în interiorul aparatului și citit de instrumente de service sau utilitare USB.",
+        "sony": "Sony stochează numărul de declanșări într-o secțiune criptată a metadatelor, care nu poate fi decodată în browser. Utilitare desktop dedicate îl pot citi prin USB.",
+        "fujifilm": "Aparatele Fujifilm nu înregistrează un număr real de declanșări, dar unele scriu un contor de cadre care oferă o estimare minimă aproximativă.",
+        "pentax": "Pentax își maschează câmpul cu numărul de declanșări printr-un cifru, așa că nu poate fi citit fiabil din fișiere.",
+        "olympus": "Aparatele OM System / Olympus păstrează numărul complet de declanșări într-un meniu de service intern; fișierele conțin uneori un contor de cadre care sugerează gradul de utilizare.",
+        "panasonic": "Panasonic nu scrie numărul de declanșări în fișiere. Îl raportează meniul de service al aparatului.",
+        "leica": "Aparatele Leica în general nu stochează numărul de declanșări în fișierele imagine."
+      },
+      "countLabel": "Declanșări ale obturatorului",
+      "source": {
+        "shutterCount": "Citit din metadatele cu numărul de declanșări ale aparatului — acesta este contorul real al acționărilor mecanice.",
+        "mechanicalShutterCount": "Citit din contorul obturatorului mecanic — cadrele făcute cu obturatorul electronic nu sunt incluse.",
+        "imageNumber": "Estimat din numărul de imagine al fișierului. Este o limită inferioară aproximativă, nu un număr exact — contorul se poate reseta sau relua de la zero."
+      },
+      "ratedLife": "Durata de viață nominală a obturatorului",
+      "ratings": {
+        "entry": "Entry-level",
+        "enthusiast": "Entuziast",
+        "advanced": "Avansat",
+        "pro": "Profesional",
+        "flagship": "Vârf de gamă"
+      },
+      "lifeUsed": "{percent}% din durata nominală consumată",
+      "verdict": {
+        "low": "Abia folosit",
+        "moderate": "Utilizare moderată",
+        "high": "Utilizare intensă",
+        "beyond": "Peste durata nominală"
+      },
+      "noCountTitle": "Niciun număr de declanșări în acest fișier",
+      "noCountGeneric": "Acest fișier nu conține un număr de declanșări care să poată fi citit. Încearcă o fotografie originală needitată, direct din aparat — exporturile din aplicațiile de editare elimină adesea metadatele producătorului.",
+      "errorRead": "Nu am putut citi acest fișier. Încearcă un JPEG sau un fișier RAW needitat, direct din aparat.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Ce este numărul de declanșări?",
+          "answer": "Numărul de declanșări este de câte ori s-a acționat obturatorul mecanic al unui aparat — echivalentul fotografic al kilometrajului unei mașini. Este cel mai verificat indicator de uzură la cumpărarea sau vânzarea unui aparat second-hand, pentru că obturatoarele sunt proiectate pentru un număr finit de acționări."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Câte declanșări înseamnă prea multe?",
+          "answer": "Depinde de clasa aparatului. Obturatoarele entry-level sunt cotate la aproximativ 100.000 de declanșări, aparatele pentru entuziaști la 150.000–200.000, iar cele profesionale la 300.000–500.000. Cota este o durată medie de viață, nu o limită strictă — multe obturatoare o depășesc cu mult, iar un număr mic pe un aparat prost întreținut poate ascunde totuși probleme."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "De ce nu pot verifica numărul de declanșări din fotografia mea Canon sau Sony?",
+          "answer": "Canon nu scrie deloc numărul de declanșări în fișierele imagine — există doar în memoria internă a aparatului. Sony îl scrie, dar criptează acea secțiune a metadatelor. În ambele cazuri, un instrument din browser nu îl poate citi dintr-o fotografie; soluția obișnuită sunt utilitarele desktop care se conectează la aparat prin USB."
+        }
+      }
+    }
+  }
+}

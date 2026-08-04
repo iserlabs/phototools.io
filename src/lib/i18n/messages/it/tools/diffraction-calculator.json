@@ -1,0 +1,39 @@
+{
+  "toolUI": {
+    "diffraction-calculator": {
+      "sensor": "Sensore",
+      "megapixels": "Risoluzione: {mp} MP",
+      "aperture": "Apertura",
+      "verdict": {
+        "sharp": "{f} è esente da diffrazione",
+        "borderline": "{f} è leggermente ammorbidito dalla diffrazione",
+        "soft": "{f} è visibilmente ammorbidito dalla diffrazione"
+      },
+      "verdictDetail": {
+        "sharp": "Sotto il limite di diffrazione di {limit} per questo sensore e questa risoluzione, è l'obiettivo — non la diffrazione — a determinare la nitidezza.",
+        "borderline": "Oltre il limite di diffrazione di {limit}, i dettagli fini a livello di pixel iniziano a sfocarsi. Accettabile quando ti serve la profondità di campo aggiuntiva.",
+        "soft": "Ben oltre il limite di diffrazione di {limit}. La profondità di campo continua ad aumentare, ma il dettaglio complessivo peggiora visibilmente — valuta il focus stacking invece di chiudere ulteriormente."
+      },
+      "stripLabel": "Scala delle aperture colorata in base all'impatto della diffrazione",
+      "pixelPitch": "Pixel pitch",
+      "airyDisk": "Diametro del disco di Airy",
+      "diffractionLimit": "Limite di diffrazione",
+      "tableTitle": "Limite di diffrazione per sensore e risoluzione",
+      "tableSensor": "Sensore",
+      "faq": {
+        "what-is-diffraction-in-photography": {
+          "question": "Che cos'è la diffrazione in fotografia?",
+          "answer": "La diffrazione è la deviazione delle onde luminose quando passano attraverso un'apertura piccola. Più l'apertura è piccola (numero f alto), più ogni punto di luce si allarga in un dischetto sfocato (il disco di Airy) sul sensore. Quando quel disco diventa più grande di un pixel, i dettagli fini si sfocano, per quanto buono sia l'obiettivo."
+        },
+        "what-aperture-is-sharpest": {
+          "question": "Qual è l'apertura più nitida?",
+          "answer": "La maggior parte degli obiettivi raggiunge il massimo due o tre stop dopo la massima apertura — in genere tra f/4 e f/8 su full frame. Quella zona ideale bilancia le aberrazioni dell'obiettivo (peggiori a tutta apertura) con la diffrazione (peggiore man mano che chiudi). I sensori ad alta risoluzione raggiungono prima il loro limite di diffrazione, quindi la loro zona utile è più stretta."
+        },
+        "does-diffraction-depend-on-sensor": {
+          "question": "La diffrazione dipende dal sensore?",
+          "answer": "L'effetto ottico dipende solo dall'apertura e dalla lunghezza d'onda della luce — ma quanto è visibile dipende dalla dimensione dei pixel. Un sensore full frame da 61 MP ha pixel di ~3,8 µm e mostra l'ammorbidimento da diffrazione intorno a f/5.6, mentre un sensore da 12 MP con pixel grandi resta nitido fino a f/11. I sensori più piccoli raggiungono il limite ad aperture più ampie a parità di megapixel."
+        }
+      }
+    }
+  }
+}

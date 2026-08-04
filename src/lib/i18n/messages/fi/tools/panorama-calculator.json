@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Kenno",
+      "orientation": "Kameran suunta",
+      "portrait": "Pysty",
+      "landscape": "Vaaka",
+      "overlap": "Limitys: {percent} %",
+      "targetWidth": "Panoraaman leveys",
+      "rows": "Rivit",
+      "megapixels": "Kameran tarkkuus: {mp} MP",
+      "fanLabel": "Kaavio ylhäältä: {frames} limittyvää ruutua",
+      "totalShots": "Kuvia yhteensä",
+      "perRow": "Ruudut × rivit",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Kierto kuvien välillä",
+      "coverage": "Kattavuus (H × V)",
+      "frameFov": "Yhden ruudun kuvakulma",
+      "stitchedSize": "Yhdistetyn kuvan koko",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Kuinka paljon limitystä panoraamakuvat tarvitsevat?",
+          "answer": "25–35 % on paras alue useimmille kohteille. Yhdistämisohjelmat tarvitsevat vierekkäisten ruutujen välille yhteisiä yksityiskohtia kontrollipisteiden löytämiseksi; alle 15 %:lla ruutujen kohdistus voi epäonnistua, kun taas yli 50 %:lla otat paljon ylimääräisiä kuvia vähäisellä hyödyllä. Käytä enemmän limitystä kohteissa, joissa on vähän erottuvia yksityiskohtia, kuten kirkas taivas tai tyyni vesi."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "Miksi panoraamat kannattaa kuvata pystysuunnassa?",
+          "answer": "Pystysuunta tallentaa enemmän pystysuuntaista kuvakulmaa ruutua kohden, joten valmis panoraama on korkeampi ja jättää tilaa rajaukselle ja horisontin suoristukselle. Hintana on muutama ylimääräinen kuva vaakasuunnassa — yleensä kannattava vaihtokauppa lisäjoustavuudesta ja -tarkkuudesta."
+        },
+        "what-is-nodal-point": {
+          "question": "Mikä on parallaksiton piste (nodaalipiste)?",
+          "answer": "Se on objektiivin sisällä oleva piste, jonka ympäri kameraa voi kiertää ilman, että lähellä ja kaukana olevat kohteet siirtyvät toisiinsa nähden ruutujen välillä. Jos kierto tapahtuu jalustakierteen ympäri, syntyy parallaksivirheitä, jotka vaikeuttavat yhdistämistä, etenkin lähellä olevien etualan kohteiden kanssa. Panoraamapäät mahdollistavat objektiivin parallaksittoman pisteen sijoittamisen kiertoakselin päälle."
+        }
+      }
+    }
+  }
+}

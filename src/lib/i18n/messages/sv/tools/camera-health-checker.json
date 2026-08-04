@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Släpp ett foto här eller klicka för att bläddra (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Släpp valfritt foto från kameran du vill granska. Allt läses i din webbläsare — filen lämnar aldrig din enhet.",
+      "errorRead": "Kunde inte läsa den här filen. Prova en oredigerad JPEG- eller RAW-fil direkt från kameran.",
+      "errorNoMetadata": "Den här filen innehåller ingen kamerametadata. Exporter från redigerings- eller meddelandeappar tar ofta bort den — prova en oredigerad originalfil.",
+      "sections": {
+        "body": "Kamerahus",
+        "age": "Ålder",
+        "shutter": "Slutarliv",
+        "lens": "Objektiv"
+      },
+      "cameraModel": "Modell",
+      "make": "Tillverkare",
+      "serialNumber": "Serienummer",
+      "firmware": "Firmware / programvara",
+      "bodyAge": "Husets ålder",
+      "ageValue": "~{years} år (lanserad {year})",
+      "ageUnknown": "Den här modellen finns inte i vår lanseringsdatabas, så dess ålder kunde inte uppskattas.",
+      "shotDate": "Fotot taget",
+      "shutterCount": "Slutarräkning",
+      "ratedLife": "Angiven livslängd",
+      "ratedAssumed": "(antagen)",
+      "lifeUsed": "{percent} % av angiven livslängd använd",
+      "verdict": {
+        "low": "Knappt använd",
+        "moderate": "Måttligt använd",
+        "high": "Flitigt använd",
+        "beyond": "Över angiven livslängd"
+      },
+      "shutterUnavailable": {
+        "supported": "Ingen slutarräkning hittades trots att {brand} normalt registrerar den. Prova en oredigerad originalfil — redigeringsprogram tar ofta bort tillverkarens metadata.",
+        "partial": "{brand} skriver bara en grov bildräknare till vissa filer, och den här har ingen. Kamerans egna menyer eller ett USB-program kan visa den.",
+        "unsupported": "{brand} lagrar ingen läsbar slutarräkning i bildfiler. Se verktygssidan Slutarräknare för märkesspecifika alternativ.",
+        "unknown": "Den här filen har ingen läsbar slutarräkning."
+      },
+      "lensModel": "Objektiv",
+      "lensSerial": "Objektivets serienummer",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Vad bör jag kontrollera när jag köper en begagnad kamera?",
+          "answer": "Utöver det yttre: slutarräkningen i förhållande till angiven livslängd, husets ålder och firmwareversion, att serienumret stämmer med säljarens papper (och inte är anmält stulet), sensorns skick (leta efter damm eller repor i ett testfoto av en klar himmel vid f/16) samt att alla rattar, portar och objektivfattningen fungerar smidigt."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Varifrån kommer dessa hälsodata?",
+          "answer": "Allt läses från metadatan som är inbäddad i ditt foto: standardiserade EXIF-fält (modell, serienummer, firmware, objektiv, tagningsdatum) plus tillverkarens maker notes där de finns (slutarräkning). Husets ålder uppskattas från en inbyggd databas över lanseringsår för populära kameramodeller."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Laddas mitt foto upp till en server?",
+          "answer": "Nej. Filen tolkas helt och hållet i din webbläsare med JavaScript — den lämnar aldrig din enhet och ingenting sparas. Du kan verifiera det genom att ladda sidan och sedan stänga av din uppkoppling innan du släpper en fil."
+        }
+      }
+    }
+  }
+}

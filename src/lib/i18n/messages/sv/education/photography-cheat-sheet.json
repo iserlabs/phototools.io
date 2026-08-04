@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Varje fotosituation — porträtt, vilda djur, Vintergatan — har en beprövad kombination av bländare, slutartid och ISO som erfarna fotografer griper till först. De här fusklapparna ger dig den utgångspunkten direkt, så att du kan lägga din uppmärksamhet på ljus och komposition i stället för att tveka vid rattarna.",
+      "deeper": "Varje recept här är en tillämpning av exponeringstriangeln med en sida prioriterad. Porträtt prioriterar bländaren: stora öppningar (f/1.8–f/2.8) skiljer motivet från bakgrunden, och allt annat anpassar sig runt det. Action prioriterar slutartiden: 1/1000s fryser rörelse, så bländaren öppnas och ISO stiger för att mata den med ljus. Landskap prioriterar bildkvaliteten: bas-ISO och en mellanbländare i objektivets bästa zon, med ett stativ som tar hand om den slutartid som blir resultatet. Nattscener pressar alla tre sidorna på en gång, och därför har de de mest strikta recepten — Vintergatan kräver på riktigt ett ljusstarkt objektiv på full öppning, en slutartid under ~20 sekunder (innan jordens rotation drar ut stjärnorna till streck) och det ISO som gör histogrammet användbart. Att förstå vilken sida varje scenario prioriterar är den verkliga lärdomen: när du ser prioriteten kan du anpassa vilket recept som helst till ljuset framför dig i stället för att följa det blint. Intervallen är utgångspunkter kalibrerade för typiska förhållanden; ditt histogram, inte lappen, har sista ordet.",
+      "keyFactors": {
+        "0": {
+          "label": "Scenariots prioritet",
+          "description": "Varje situation låser en exponeringsvariabel först — bländaren för porträtt, slutartiden för action, ISO för landskap — och låter de andra anpassa sig."
+        },
+        "1": {
+          "label": "Tillgängligt ljus",
+          "description": "Samma scenario kräver olika inställningar mitt på dagen och i skymningen. Se intervallen som ankare och flytta dig inom dem när ljuset ändras."
+        },
+        "2": {
+          "label": "Stöd & stabilitet",
+          "description": "Ett stativ låser upp bas-ISO och långa slutartider för statiska scener. På fri hand gäller en kortaste slutartid runt 1/(brännvidden) eller snabbare."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Ta en testbild och läs histogrammet, inte LCD-förhandsvisningen — skärmar ljuger i starkt solljus och på natten, men histogrammet gör det aldrig."
+        },
+        "1": {
+          "text": "Memorera ett recept per genre du fotograferar och öva sedan på att ändra en variabel i taget. Du lär dig avvägningarna mycket snabbare än genom att ändra allt på en gång."
+        },
+        "2": {
+          "text": "Ladda ner lappen för scenarier du sällan fotograferar — Vintergatans recept är svårt att minnas klockan 2 på natten på ett berg med kalla fingrar."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Bländare",
+          "definition": "Objektivöppningens storlek, i f-tal. Lägre tal = mer ljus och mer bakgrundsoskärpa; högre tal = större skärpedjup."
+        },
+        "shutter": {
+          "term": "Slutartid",
+          "definition": "Hur länge sensorn samlar ljus. Korta tider fryser rörelse; långa tider suddar den och kräver stabilisering eller stativ."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Sensorns förstärkning. Håll det så lågt som ljuset tillåter — att höja det gör bilden ljusare till priset av brus."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Du tar ett porträtt och vill ha den klassiska looken: skarpt motiv, bakgrund upplöst i oskärpa. Vilket inställningsval åstadkommer det?",
+          "hint": "Bakgrundsoskärpa kommer från skärpedjupet — vilken kontroll styr det?",
+          "successMessage": "Rätt! En stor bländaröppning (som f/1.8–f/2.8) skapar det korta skärpedjup som skiljer motivet från en oskarp bakgrund — det definierande porträttvalet.",
+          "failureMessage": "Bakgrundsoskärpa kommer från en stor bländaröppning (lågt f-tal) som f/1.8–f/2.8, som gör skärpedjupet kort. Små öppningar gör motsatsen.",
+          "options": {
+            "0": { "label": "En liten bländare som f/16" },
+            "1": { "label": "En stor bländare som f/2" },
+            "2": { "label": "En lång exponering på stativ" },
+            "3": { "label": "Maximalt ISO" }
+          }
+        },
+        "1": {
+          "scenario": "En häger lyfter från vattnet precis när du trycker av, och varje bild visar suddiga vingspetsar. Vad är lösningen?",
+          "hint": "Rörelseoskärpa är ett tidsproblem.",
+          "successMessage": "Rätt! Fåglar i flykt kräver korta slutartider — 1/2500s eller kortare fryser vingslagen. Öppna bländaren och låt Auto-ISO klättra för att mata den tid du behöver.",
+          "failureMessage": "Suddiga vingar betyder att slutartiden är för lång för rörelsen. Hoppa till 1/2500s eller kortare och låt bländare och ISO kompensera för det förlorade ljuset.",
+          "options": {
+            "0": { "label": "En längre slutartid för mer ljus" },
+            "1": { "label": "En mycket kortare slutartid" },
+            "2": { "label": "Blända ner till f/22" },
+            "3": { "label": "Byt vitbalans till glödlampa" }
+          }
+        },
+        "2": {
+          "scenario": "Du står riggad under en mörk himmel för att fotografera Vintergatan. Vilken kombination ger en användbar exponering av galaxkärnan?",
+          "hint": "Stjärnorna är svaga, i rörelse (med jordens rotation) och din enda ljuskälla.",
+          "successMessage": "Rätt! Full öppning (f/1.4–f/2.8), 10–25 sekunder, ISO 1600–6400: bländaren samlar maximalt med ljus, slutartiden stannar innan stjärnorna blir streck och högt ISO gör den svaga kärnan synlig.",
+          "failureMessage": "Vintergatan kräver allt: bländaren helt öppen, en exponering kort nog att stjärnorna inte blir streck (10–25s) och högt ISO (1600–6400). Små bländare eller bas-ISO lämnar himlen svart.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Full öppning, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Vilka inställningar som helst med ett ND-filter" }
+          }
+        }
+      }
+    }
+  }
+}

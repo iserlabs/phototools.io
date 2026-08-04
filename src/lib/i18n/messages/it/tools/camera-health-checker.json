@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Trascina una foto qui o clicca per sfogliare (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Trascina una foto qualsiasi della fotocamera che vuoi esaminare. Tutto viene letto nel tuo browser — il file non lascia mai il tuo dispositivo.",
+      "errorRead": "Impossibile leggere questo file. Prova un JPEG o un file RAW non modificato, appena uscito dalla fotocamera.",
+      "errorNoMetadata": "Questo file non contiene metadati della fotocamera. Le esportazioni delle app di editing o di messaggistica spesso li rimuovono — prova un file originale non modificato.",
+      "sections": {
+        "body": "Corpo macchina",
+        "age": "Età",
+        "shutter": "Vita dell'otturatore",
+        "lens": "Obiettivo"
+      },
+      "cameraModel": "Modello",
+      "make": "Marca",
+      "serialNumber": "Numero di serie",
+      "firmware": "Firmware / software",
+      "bodyAge": "Età del corpo",
+      "ageValue": "~{years} anni (uscita nel {year})",
+      "ageUnknown": "Questo modello non è nel nostro database delle uscite, quindi non è stato possibile stimarne l'età.",
+      "shotDate": "Foto scattata",
+      "shutterCount": "Conteggio scatti",
+      "ratedLife": "Durata nominale",
+      "ratedAssumed": "(presunta)",
+      "lifeUsed": "{percent}% della durata nominale utilizzata",
+      "verdict": {
+        "low": "Quasi mai usata",
+        "moderate": "Uso moderato",
+        "high": "Uso intenso",
+        "beyond": "Oltre la durata nominale"
+      },
+      "shutterUnavailable": {
+        "supported": "Nessun conteggio scatti trovato anche se {brand} di norma lo registra. Prova un file originale non modificato — le app di editing spesso rimuovono i metadati del produttore.",
+        "partial": "{brand} scrive solo un contatore fotogrammi approssimativo in alcuni file, e questo non ne contiene. I menu della fotocamera o una utility USB potrebbero riportarlo.",
+        "unsupported": "{brand} non memorizza un conteggio scatti leggibile nei file immagine. Consulta la pagina del Verificatore conteggio scatti per le alternative specifiche di ogni marca.",
+        "unknown": "Questo file non contiene un conteggio scatti leggibile."
+      },
+      "lensModel": "Obiettivo",
+      "lensSerial": "Numero di serie dell'obiettivo",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Cosa devo controllare quando compro una fotocamera usata?",
+          "answer": "Oltre all'estetica: il conteggio scatti rispetto alla durata nominale, l'età del corpo e la versione del firmware, la corrispondenza tra il numero di serie e i documenti del venditore (e che non risulti rubata), le condizioni del sensore (cerca polvere o graffi in una foto di prova di un cielo sereno a f/16), e il corretto funzionamento di ghiere, porte e baionetta dell'obiettivo."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Da dove arrivano questi dati sullo stato di salute?",
+          "answer": "Tutto viene letto dai metadati incorporati nella tua foto: i campi EXIF standard (modello, numero di serie, firmware, obiettivo, data di scatto) più le maker note proprietarie dei produttori dove disponibili (conteggio scatti). L'età del corpo è stimata da un database integrato degli anni di uscita dei modelli più diffusi."
+        },
+        "is-my-photo-uploaded": {
+          "question": "La mia foto viene caricata su un server?",
+          "answer": "No. Il file viene analizzato interamente nel tuo browser con JavaScript — non lascia mai il tuo dispositivo e nulla viene memorizzato. Puoi verificarlo caricando la pagina e poi disattivando la connessione prima di trascinare un file."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Vælg et scenarie",
+      "tipsTitle": "Felttips",
+      "labels": {
+        "aperture": "Blænde",
+        "shutter": "Lukkertid",
+        "iso": "ISO",
+        "whiteBalance": "Hvidbalance",
+        "focusMode": "Fokustilstand",
+        "driveMode": "Optagetilstand"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Dagslys",
+        "cloudy": "Overskyet",
+        "shade": "Skygge",
+        "tungsten": "Kunstlys (~3200K)",
+        "afSingle": "Enkelt AF (AF-S)",
+        "afContinuous": "Kontinuerlig AF (AF-C)",
+        "afTracking": "Kontinuerlig AF + motivsporing",
+        "manualFocus": "Manuel fokus",
+        "single": "Enkeltbillede",
+        "burstLow": "Langsom serieoptagelse",
+        "burstHigh": "Hurtig serieoptagelse",
+        "timer2s": "2 sek. selvudløser / fjernudløser",
+        "intervalometer": "Intervaloptagelse"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Portrætter",
+          "tips": {
+            "0": "Fokusér på det øje, der er nærmest kameraet — ved store blændeåbninger er dybdeskarpheden kun få centimeter.",
+            "1": "Gå tilbage og zoom ind (85mm+) for smigrende komprimering; vidvinkler tæt på forvrænger ansigtstræk."
+          }
+        },
+        "landscape": {
+          "name": "Landskaber",
+          "tips": {
+            "0": "Fokusér cirka en tredjedel inde i scenen, eller brug den hyperfokale afstand for skarphed fra forgrund til baggrund.",
+            "1": "Fotografér fra stativ med selvudløser eller fjernudløser for at fjerne rystelser ved lange lukkertider."
+          }
+        },
+        "street": {
+          "name": "Gadefoto",
+          "tips": {
+            "0": "Zonefokus: Forudindstil fokus på 3 m og f/8, og alt fra 2 m til 6 m bliver skarpt — uden AF-forsinkelse.",
+            "1": "Auto-ISO med en mindste lukkertid på 1/250s fastfryser gående mennesker, mens du koncentrerer dig om kompositionen."
+          }
+        },
+        "wildlife": {
+          "name": "Dyreliv & fugle",
+          "tips": {
+            "0": "Tilpas lukkertiden til motivet: 1/1000s til siddende fugle, 1/2500s eller hurtigere til fugle i flugt.",
+            "1": "Fotografér i øjenhøjde, og vent på hoveddrejninger — et lysglimt i øjet giver billedet liv."
+          }
+        },
+        "sports": {
+          "name": "Sport & action",
+          "tips": {
+            "0": "Forfokusér der, hvor handlingen vil ske (målet, kurvens apex), og start serieoptagelsen lige før højdepunktet.",
+            "1": "Panorering ved 1/60s–1/125s med kontinuerlig AF slører baggrunden, mens motivet forbliver skarpt."
+          }
+        },
+        "macro": {
+          "name": "Makro",
+          "tips": {
+            "0": "Ved høj forstørrelse er dybdeskarpheden papirtynd — fokusér ved at flytte kameraet, ikke fokusringen.",
+            "1": "Diffraktionen bider hårdt forbi f/16; brug focus stacking i stedet for at blænde længere ned."
+          }
+        },
+        "milkyWay": {
+          "name": "Mælkevejen",
+          "tips": {
+            "0": "Brug NPF- eller 500-reglen til den maksimale eksponering, før stjernerne trækker spor — omkring 15–20s ved 20mm på fuldformat.",
+            "1": "Fokusér manuelt på en klar stjerne med forstørret live view; sæt hvidbalancen omkring 3900K for en neutral himmel."
+          }
+        },
+        "nightCity": {
+          "name": "Byen om natten",
+          "tips": {
+            "0": "Fotografér ved basis-ISO fra stativ, og lad lukkeren stå åben længe — højlysene forbliver rene, og støjen holdes lav.",
+            "1": "f/11–f/16 forvandler punktlys til stjernetakker; fotografér i den blå time for farve på himlen."
+          }
+        },
+        "waterfall": {
+          "name": "Vandfald & lange eksponeringer",
+          "tips": {
+            "0": "Eksponeringer på 0,5–2s bevarer tekstur i vandet; 30s+ gør det til tåge. Brug et ND-filter i dagslys.",
+            "1": "Et cirkulært polarisationsfilter fjerner genskin fra våde sten og løv — og fungerer samtidig som et ND-filter på ~1,5 trin."
+          }
+        },
+        "goldenHour": {
+          "name": "Den gyldne time",
+          "tips": {
+            "0": "Eksponér efter højlysene, og løft skyggerne i efterbehandlingen — udbrændte varme højlys kan ikke reddes.",
+            "1": "Sæt motiver i modlys for kantlys og flare; hvidbalanceindstillingen 'Overskyet' holder scenen varm."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Hvilke kameraindstillinger skal jeg bruge til portrætter?",
+          "answer": "Start med en stor blændeåbning (f/1.8–f/2.8) for baggrundssløring, en lukkertid på mindst 1/200s for at undgå bevægelsessløring og den laveste ISO, lyset tillader (100–400). Brug enkeltpunkts-autofokus på det nærmeste øje, eller øjengenkendelses-AF hvis dit kamera har det."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Hvilke indstillinger skal jeg bruge for at fotografere Mælkevejen?",
+          "answer": "Et lysstærkt vidvinkelobjektiv ved fuld åbning (f/1.4–f/2.8), en eksponering på 10–25 sekunder (længere trækker stjernerne spor), ISO 1600–6400, manuel fokus på en klar stjerne og et stativ. En måneløs nat langt fra byens lys betyder mere end nogen kameraindstilling."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Er disse indstillinger præcise opskrifter?",
+          "answer": "Nej — de er gennemprøvede udgangspunkter. Lyset varierer enormt mellem scener, så betragt intervallerne som et første bud, tag et testbillede, tjek histogrammet og justér. Målet er at få dig hurtigt i den rigtige boldgade, ikke at erstatte din dømmekraft."
+        }
+      }
+    }
+  }
+}

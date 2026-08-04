@@ -1,0 +1,85 @@
+{
+  "education": {
+    "photography-cheat-sheet": {
+      "beginner": "Každá fotografická situace — portréty, divoká příroda, Mléčná dráha — má osvědčenou kombinaci clony, expozičního času a ISO, po které zkušení fotografové sáhnou jako první. Tyhle taháky ti takový výchozí bod dají okamžitě, takže můžeš pozornost věnovat světlu a kompozici místo dohadování se s ovladači.",
+      "deeper": "Každý zdejší recept je použití expozičního trojúhelníku s jednou upřednostněnou stranou. Portréty upřednostňují clonu: otevřené clony (f/1.8–f/2.8) oddělí objekt od pozadí a všechno ostatní se tomu přizpůsobí. Akce upřednostňuje expoziční čas: 1/1000s zmrazí pohyb, takže se clona otevře a ISO stoupne, aby dodaly potřebné světlo. Krajina upřednostňuje obrazovou kvalitu: základní ISO a střední clona ve sladkém bodě objektivu, přičemž stativ pohltí jakýkoli výsledný expoziční čas. Noční scény tlačí na všechny tři strany naráz, a proto mají nejpevnější recepty — Mléčná dráha opravdu potřebuje naplno otevřený světelný objektiv, expoziční čas pod ~20 sekund (než rotace Země roztáhne hvězdy do stop) a takové ISO, aby byl histogram použitelný. Skutečná lekce je pochopit, kterou stranu který scénář upřednostňuje: jakmile tu prioritu vidíš, dokážeš každý recept přizpůsobit světlu před sebou místo slepého následování. Rozsahy jsou výchozí body kalibrované pro typické podmínky; poslední slovo má histogram, ne tahák.",
+      "keyFactors": {
+        "0": {
+          "label": "Priorita scénáře",
+          "description": "Každá situace zamkne nejdřív jednu expoziční proměnnou — clonu u portrétů, expoziční čas u akce, ISO u krajiny — a ostatní nechá přizpůsobit."
+        },
+        "1": {
+          "label": "Dostupné světlo",
+          "description": "Stejný scénář potřebuje v poledne jiné hodnoty než za soumraku. Ber rozsahy jako kotvy a podle světla se v nich posouvej."
+        },
+        "2": {
+          "label": "Opora a stabilita",
+          "description": "Stativ odemkne základní ISO a dlouhé časy u statických scén. Z ruky platí spodní hranice expozičního času kolem 1/(ohnisková vzdálenost) nebo kratší."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Udělej zkušební snímek a čti histogram, ne náhled na displeji — obrazovky na ostrém slunci i v noci lžou, histogram nikdy."
+        },
+        "1": {
+          "text": "Zapamatuj si jeden recept pro každý žánr, který fotíš, a pak trénuj změnu vždy jen jedné proměnné. Kompromisy si osvojíš mnohem rychleji, než když měníš všechno naráz."
+        },
+        "2": {
+          "text": "Stáhni si tahák pro scénáře, které fotíš málokdy — recept na Mléčnou dráhu se ve dvě ráno na svahu s promrzlými prsty vybavuje těžko."
+        }
+      },
+      "tooltips": {
+        "aperture": {
+          "term": "Clona",
+          "definition": "Velikost otvoru v objektivu vyjádřená clonovým číslem. Nižší čísla = víc světla a rozostřenější pozadí; vyšší čísla = větší hloubka ostrosti."
+        },
+        "shutter": {
+          "term": "Expoziční čas",
+          "definition": "Jak dlouho snímač sbírá světlo. Krátké časy zmrazí pohyb; dlouhé ho rozmažou a vyžadují stabilizaci nebo stativ."
+        },
+        "iso": {
+          "term": "ISO",
+          "definition": "Zesílení signálu ze snímače. Drž ho tak nízko, jak světlo dovolí — jeho zvýšení snímek rozjasní za cenu šumu."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Fotíš portrét a chceš klasický vzhled: objekt ostrý, pozadí rozplynuté do neostrosti. Kterou volbou toho dosáhneš?",
+          "hint": "Rozostření pozadí vychází z hloubky ostrosti — který ovladač ji řídí?",
+          "successMessage": "Správně! Otevřená clona (třeba f/1.8–f/2.8) vytvoří malou hloubku ostrosti, která objekt oddělí od rozostřeného pozadí — určující volba portrétu.",
+          "failureMessage": "Rozostřené pozadí přinese otevřená clona (nízké clonové číslo) jako f/1.8–f/2.8, která zmenší hloubku ostrosti. Zavřené clony dělají pravý opak.",
+          "options": {
+            "0": { "label": "Zavřená clona jako f/16" },
+            "1": { "label": "Otevřená clona jako f/2" },
+            "2": { "label": "Dlouhá expozice ze stativu" },
+            "3": { "label": "Maximální ISO" }
+          }
+        },
+        "1": {
+          "scenario": "Volavka pokaždé vzlétne z hladiny přesně ve chvíli, kdy zmáčkneš spoušť, a na každém snímku máš rozmazané konce křídel. Jak to spravit?",
+          "hint": "Rozmazání pohybem je problém času.",
+          "successMessage": "Přesně tak! Ptáci v letu potřebují krátké časy — 1/2500s a kratší zmrazí i mávnutí křídel. Otevři clonu a nech Auto ISO vystoupat tak, aby ten čas mělo čím zaplatit.",
+          "failureMessage": "Rozmazaná křídla znamenají, že expoziční čas je na daný pohyb moc dlouhý. Skoč na 1/2500s nebo kratší a ztrátu světla dožeň clonou a ISO.",
+          "options": {
+            "0": { "label": "Delší expoziční čas kvůli většímu množství světla" },
+            "1": { "label": "Mnohem kratší expoziční čas" },
+            "2": { "label": "Zaclonit na f/22" },
+            "3": { "label": "Přepnout vyvážení bílé na žárovku" }
+          }
+        },
+        "2": {
+          "scenario": "Stojíš pod tmavou oblohou a chceš vyfotit Mléčnou dráhu. Která kombinace dá použitelnou expozici galaktického jádra?",
+          "hint": "Hvězdy jsou slabé, pohybují se (s rotací Země) a jsou tvým jediným zdrojem světla.",
+          "successMessage": "Správně! Naplno otevřená clona (f/1.4–f/2.8), 10–25 sekund, ISO 1600–6400: clona nasbírá maximum světla, expozice skončí dřív, než se hvězdy roztáhnou, a vysoké ISO zviditelní slabé jádro.",
+          "failureMessage": "Mléčná dráha potřebuje všechno: clonu naplno otevřenou, expozici dost krátkou, aby hvězdy netáhly stopy (10–25 s), a vysoké ISO (1600–6400). Malé clony nebo základní ISO nechají oblohu černou.",
+          "options": {
+            "0": { "label": "f/11, 30s, ISO 100" },
+            "1": { "label": "Naplno otevřená clona, 10–25s, ISO 1600–6400" },
+            "2": { "label": "f/8, 1/125s, ISO 400" },
+            "3": { "label": "Jakékoli hodnoty s ND filtrem" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "感光元件",
+      "orientation": "相機方向",
+      "portrait": "直幅",
+      "landscape": "橫幅",
+      "overlap": "重疊率：{percent}%",
+      "targetWidth": "全景寬度",
+      "rows": "列數",
+      "megapixels": "相機解析度：{mp} MP",
+      "fanLabel": "{frames} 張重疊影格的俯視示意圖",
+      "totalShots": "總拍攝張數",
+      "perRow": "張數 × 列數",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "每張之間的旋轉角度",
+      "coverage": "涵蓋範圍（水平 × 垂直）",
+      "frameFov": "單張視角",
+      "stitchedSize": "拼接後尺寸",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "全景照片需要多少重疊率？",
+          "answer": "對大多數場景來說，25–35% 是最理想的範圍。接圖軟體需要相鄰影格之間的共同細節來尋找控制點；低於 15% 可能無法對齊影格，而超過 50% 則會多拍許多張卻收效甚微。對於缺乏明顯特徵的場景（如晴朗天空或平靜水面），請使用更高的重疊率。"
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "為什麼全景照片要用直幅（垂直）方向拍？",
+          "answer": "直幅方向每張能捕捉更多垂直視角，因此最終拼接出的全景照片更高，留有裁切和修正地平線的餘裕。代價是水平方向要多拍幾張——為了換取額外的彈性和解析度，這通常很值得。"
+        },
+        "what-is-nodal-point": {
+          "question": "什麼是無視差點（節點）？",
+          "answer": "它是鏡頭內的一個點：相機繞著它旋轉時，近處和遠處的物體在影格之間不會相對移動。若改繞三腳架螺孔旋轉，就會產生視差誤差，讓拼接變得困難，尤其是有近距離前景物體時。全景雲台可以讓你將鏡頭的無視差點對準旋轉軸。"
+        }
+      }
+    }
+  }
+}

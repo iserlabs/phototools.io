@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Chaque fois que ton appareil prend une photo avec son obturateur mécanique, un compteur interne avance d'une unité. Ce nombre — le nombre de déclenchements — est comme le kilométrage d'une voiture : il indique l'intensité d'utilisation de l'appareil. Il compte surtout à l'achat ou à la vente de matériel d'occasion, car les obturateurs sont des pièces mobiles conçues pour un nombre fini d'actionnements.",
+      "deeper": "Un obturateur mécanique est une paire de rideaux à ressorts qui balayent physiquement le capteur à chaque exposition. Les fabricants testent l'endurance de ces mécanismes et publient des chiffres : environ 100 000 déclenchements pour les boîtiers d'entrée de gamme, 150 000 à 200 000 pour les modèles amateurs experts, et 300 000 à 500 000 pour les professionnels. Cette endurance est une moyenne statistique, pas une date de péremption — beaucoup d'obturateurs durent plusieurs fois leur endurance nominale, et un obturateur en panne est généralement une panne réparable (quoique coûteuse). L'emplacement du compteur varie selon la marque : Nikon l'écrit, sans chiffrement, dans les notes de fabricant de chaque fichier, c'est pourquoi cet outil peut le lire. Canon le garde uniquement en mémoire interne, Sony le chiffre, et Pentax le brouille. Les hybrides modernes compliquent encore le tableau : les images prises à l'obturateur électronique n'usent pas du tout le mécanisme, donc un boîtier utilisé surtout en mode silencieux peut avoir bien plus d'expositions totales que son compteur mécanique ne le suggère — et ce n'est pas un problème.",
+      "keyFactors": {
+        "0": {
+          "label": "Marque de l'appareil",
+          "description": "Détermine si le compteur est lisible depuis les fichiers. Nikon le stocke en clair ; Canon, Sony et Pentax non."
+        },
+        "1": {
+          "label": "Endurance nominale de l'obturateur",
+          "description": "La durée de vie moyenne testée par le fabricant pour le mécanisme d'obturation. Les boîtiers haut de gamme utilisent des mécanismes plus durables, à l'endurance plus élevée."
+        },
+        "2": {
+          "label": "Obturateur électronique vs mécanique",
+          "description": "Les images à l'obturateur électronique ne causent aucune usure mécanique et n'incrémentent généralement pas le compteur mécanique. Les adeptes du mode silencieux affichent des compteurs bas."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Vérifie toujours le compteur sur un fichier original non retouché, sorti directement de l'appareil. Les exports de Lightroom, des applis de messagerie ou des réseaux sociaux suppriment généralement les notes de fabricant qui contiennent le compteur."
+        },
+        "1": {
+          "text": "À l'achat d'occasion, compare le compteur à l'endurance : 40 000 sur un boîtier donné pour 300 000 est à peine rodé, tandis que 90 000 sur un boîtier donné pour 100 000 doit intégrer le prix d'un remplacement d'obturateur."
+        },
+        "2": {
+          "text": "Un compteur bas ne garantit pas un appareil en bonne santé — dégâts des eaux, rayures du capteur et chutes n'apparaissent pas dans le compteur. Inspecte aussi des photos test et le boîtier lui-même."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Nombre de déclenchements",
+          "definition": "Le nombre de fois où l'obturateur mécanique s'est actionné depuis la fabrication de l'appareil. Lu depuis les métadonnées que ton appareil intègre à chaque photo."
+        },
+        "ratedLife": {
+          "term": "Endurance nominale de l'obturateur",
+          "definition": "Le nombre moyen d'actionnements avant panne, testé par le fabricant. Une moyenne, pas une limite stricte — beaucoup d'obturateurs la dépassent largement."
+        },
+        "source": {
+          "term": "Source du compteur",
+          "definition": "L'origine du nombre affiché : le vrai champ de compteur de déclenchements, le compteur mécanique seul sur certains hybrides, ou un numéro d'image générique utilisé comme estimation approximative."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Tu prends 500 photos à un concert avec l'obturateur électronique silencieux de ton hybride. Quelle usure mécanique de l'obturateur cela a-t-il ajouté ?",
+          "hint": "Réfléchis à ce qui bouge physiquement pendant une exposition à l'obturateur électronique.",
+          "successMessage": "Correct ! L'obturateur électronique lit le capteur sans bouger aucun rideau, donc ces 500 images n'ont causé pratiquement aucune usure mécanique — et n'incrémentent généralement pas le compteur mécanique.",
+          "failureMessage": "L'obturateur électronique expose en lisant le capteur électroniquement — aucun rideau ne bouge, donc le mode silencieux n'ajoute aucune usure mécanique de l'obturateur.",
+          "options": {
+            "0": { "label": "500 déclenchements, comme toute photo" },
+            "1": { "label": "Aucune — seul l'obturateur mécanique compte" },
+            "2": { "label": "Seuls les fichiers RAW ajoutent de l'usure" },
+            "3": { "label": "Seules les photos au flash ajoutent de l'usure" }
+          }
+        },
+        "1": {
+          "scenario": "Un appareil est donné pour 200 000 déclenchements et en affiche actuellement 195 000. Que signifie réellement cette endurance pour ce boîtier ?",
+          "hint": "Les endurances viennent de tests statistiques de durée de vie, comme les heures annoncées des ampoules.",
+          "successMessage": "Exact ! L'endurance est la durée de vie moyenne issue des tests — cet obturateur pourrait lâcher la semaine prochaine ou tenir jusqu'à 400 000. C'est un signal de probabilité pour fixer un prix, pas un compte à rebours.",
+          "failureMessage": "L'endurance d'un obturateur est la durée de vie moyenne testée, pas une limite stricte ni une garantie. Beaucoup d'obturateurs la dépassent largement ; certains lâchent avant.",
+          "options": {
+            "0": { "label": "L'obturateur s'arrêtera à 200 000" },
+            "1": { "label": "C'est la durée de vie moyenne — le risque de panne augmente en s'en approchant" },
+            "2": { "label": "La garantie prend fin à 200 000" },
+            "3": { "label": "La batterie se dégrade après 200 000" }
+          }
+        },
+        "2": {
+          "scenario": "Tu compares deux appareils d'occasion du même modèle : un à 15 000 déclenchements avec de la corrosion visible près de la trappe de batterie, et un à 60 000 déclenchements en état impeccable. Lequel est l'achat le plus sûr ?",
+          "hint": "Le compteur n'enregistre qu'un seul type d'usure.",
+          "successMessage": "Exactement. Le nombre de déclenchements n'est qu'un signal parmi d'autres — la corrosion suggère une exposition à l'eau, qui tue bien plus d'appareils que les obturateurs usés. Le boîtier propre à 60 000 est l'achat le plus sûr.",
+          "failureMessage": "Le compteur ne mesure que l'usure de l'obturateur. La corrosion évoque un dégât des eaux, bien plus risqué qu'un obturateur modérément utilisé. Juge le compteur plus l'état général, jamais le compteur seul.",
+          "options": {
+            "0": { "label": "Le boîtier à 15 000 — plus bas, c'est toujours mieux" },
+            "1": { "label": "Le moins cher des deux" },
+            "2": { "label": "Le boîtier propre à 60 000 — l'état compte davantage" },
+            "3": { "label": "Aucun — les deux sont trop vieux" }
+          }
+        }
+      }
+    }
+  }
+}

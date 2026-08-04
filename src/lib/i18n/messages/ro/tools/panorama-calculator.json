@@ -1,0 +1,36 @@
+{
+  "toolUI": {
+    "panorama-calculator": {
+      "sensor": "Senzor",
+      "orientation": "Orientarea aparatului",
+      "portrait": "Portret",
+      "landscape": "Peisaj",
+      "overlap": "Suprapunere: {percent}%",
+      "targetWidth": "Lățimea panoramei",
+      "rows": "Rânduri",
+      "megapixels": "Rezoluția aparatului: {mp} MP",
+      "fanLabel": "Diagramă de sus a {frames} cadre suprapuse",
+      "totalShots": "Total cadre",
+      "perRow": "Cadre × rânduri",
+      "perRowValue": "{frames} × {rows}",
+      "rotateBetween": "Rotire între cadre",
+      "coverage": "Acoperire (O × V)",
+      "frameFov": "Câmpul vizual al unui cadru",
+      "stitchedSize": "Dimensiunea finală asamblată",
+      "faq": {
+        "how-much-overlap-for-panorama": {
+          "question": "Câtă suprapunere au nevoie cadrele unei panorame?",
+          "answer": "25–35% este intervalul ideal pentru majoritatea scenelor. Software-ul de asamblare (stitching) are nevoie de detalii comune între cadrele vecine pentru a găsi puncte de control; sub 15% poate eșua la aliniere, iar peste 50% faci multe cadre în plus cu beneficii minime. Folosește mai multă suprapunere pentru scene cu puține detalii distincte, precum cerul senin sau apa liniștită."
+        },
+        "why-shoot-panorama-vertical": {
+          "question": "De ce se fotografiază panoramele în orientare portret (verticală)?",
+          "answer": "Orientarea portret surprinde mai mult câmp vizual pe verticală în fiecare cadru, astfel că panorama finală asamblată este mai înaltă și lasă loc pentru decupare și corectarea orizontului. Costul: câteva cadre în plus pe orizontală — de obicei un schimb avantajos pentru flexibilitatea și rezoluția câștigate."
+        },
+        "what-is-nodal-point": {
+          "question": "Ce este punctul fără paralaxă (punctul nodal)?",
+          "answer": "Este punctul din interiorul obiectivului în jurul căruia aparatul poate fi rotit fără ca obiectele apropiate și cele îndepărtate să se deplaseze unele față de altele între cadre. Rotirea în jurul filetului trepiedului provoacă, în schimb, erori de paralaxă care îngreunează asamblarea, mai ales cu obiecte apropiate în prim-plan. Capetele panoramice îți permit să poziționezi punctul fără paralaxă al obiectivului pe axa de rotație."
+        }
+      }
+    }
+  }
+}

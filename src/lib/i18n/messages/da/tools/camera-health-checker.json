@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "Træk et foto hertil, eller klik for at gennemse (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "Træk et hvilket som helst foto hertil fra det kamera, du vil undersøge. Alt læses i din browser — filen forlader aldrig din enhed.",
+      "errorRead": "Filen kunne ikke læses. Prøv en uredigeret JPEG- eller RAW-fil direkte fra kameraet.",
+      "errorNoMetadata": "Denne fil indeholder ingen kamerametadata. Eksporter fra rediger- eller beskedapps fjerner dem ofte — prøv en uredigeret originalfil.",
+      "sections": {
+        "body": "Kamerahus",
+        "age": "Alder",
+        "shutter": "Lukkerlevetid",
+        "lens": "Objektiv"
+      },
+      "cameraModel": "Model",
+      "make": "Mærke",
+      "serialNumber": "Serienummer",
+      "firmware": "Firmware / software",
+      "bodyAge": "Husets alder",
+      "ageValue": "~{years} år (udgivet {year})",
+      "ageUnknown": "Denne model findes ikke i vores udgivelsesdatabase, så dens alder kunne ikke estimeres.",
+      "shotDate": "Foto taget",
+      "shutterCount": "Lukkertælling",
+      "ratedLife": "Angivet levetid",
+      "ratedAssumed": "(antaget)",
+      "lifeUsed": "{percent}% af den angivne levetid brugt",
+      "verdict": {
+        "low": "Næsten ubrugt",
+        "moderate": "Moderat brugt",
+        "high": "Hårdt brugt",
+        "beyond": "Over det angivne"
+      },
+      "shutterUnavailable": {
+        "supported": "Ingen lukkertælling fundet, selvom {brand} normalt registrerer den. Prøv en uredigeret originalfil — redigeringsapps fjerner ofte producentens metadata.",
+        "partial": "{brand} skriver kun en grov billedtæller til nogle filer, og denne har ingen. Kameraets egne menuer eller et USB-program kan muligvis vise den.",
+        "unsupported": "{brand} gemmer ikke en aflæselig lukkertælling i billedfiler. Se siden for Shutter Count Checker-værktøjet for mærkespecifikke alternativer.",
+        "unknown": "Denne fil har ingen aflæselig lukkertælling."
+      },
+      "lensModel": "Objektiv",
+      "lensSerial": "Objektivets serienummer",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Hvad skal jeg tjekke, når jeg køber et brugt kamera?",
+          "answer": "Ud over det kosmetiske: lukkertællingen i forhold til den angivne levetid, husets alder og firmwareversion, om serienummeret stemmer med sælgerens papirer (og ikke er meldt stjålet), sensorens tilstand (kig efter støv eller ridser i et testfoto af en klar himmel ved f/16), og at alle hjul, porte og objektivfatningen fungerer upåklageligt."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Hvor kommer disse tilstandsdata fra?",
+          "answer": "Alt læses fra de metadata, der er indlejret i dit foto: standard-EXIF-felter (model, serienummer, firmware, objektiv, optagelsesdato) plus producentens maker notes, hvor de findes (lukkertælling). Husets alder estimeres ud fra en indbygget database over udgivelsesår for populære kameramodeller."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Bliver mit foto uploadet til en server?",
+          "answer": "Nej. Filen behandles udelukkende i din browser med JavaScript — den forlader aldrig din enhed, og intet gemmes. Du kan selv tjekke det ved at indlæse siden og derefter slå din forbindelse fra, før du slipper en fil."
+        }
+      }
+    }
+  }
+}

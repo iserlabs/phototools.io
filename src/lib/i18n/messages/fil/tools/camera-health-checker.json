@@ -1,0 +1,56 @@
+{
+  "toolUI": {
+    "camera-health-checker": {
+      "dropPrompt": "I-drop ang photo dito o mag-click para mag-browse (JPEG, TIFF, NEF, DNG)",
+      "emptyState": "I-drop ang kahit anong photo mula sa camera na gusto mong suriin. Lahat ay binabasa sa browser mo — hindi kailanman umaalis ang file sa device mo.",
+      "errorRead": "Hindi mabasa ang file na ito. Subukan ang unedited na JPEG o RAW file na diretso mula sa camera.",
+      "errorNoMetadata": "Walang camera metadata ang file na ito. Madalas itong tinatanggal ng mga export mula sa editing o messaging app — subukan ang unedited na orihinal na file.",
+      "sections": {
+        "body": "Camera body",
+        "age": "Edad",
+        "shutter": "Shutter life",
+        "lens": "Lens"
+      },
+      "cameraModel": "Model",
+      "make": "Make",
+      "serialNumber": "Serial number",
+      "firmware": "Firmware / software",
+      "bodyAge": "Edad ng body",
+      "ageValue": "~{years} taon (inilabas noong {year})",
+      "ageUnknown": "Wala ang model na ito sa aming release database, kaya hindi matantiya ang edad nito.",
+      "shotDate": "Kinunan ang photo",
+      "shutterCount": "Shutter count",
+      "ratedLife": "Rated life",
+      "ratedAssumed": "(pagpapalagay)",
+      "lifeUsed": "{percent}% ng rated life ang nagamit na",
+      "verdict": {
+        "low": "Halos hindi nagamit",
+        "moderate": "Katamtamang gamit",
+        "high": "Matinding gamit",
+        "beyond": "Lampas na sa rating"
+      },
+      "shutterUnavailable": {
+        "supported": "Walang nakitang shutter count kahit karaniwang nirere-record ito ng {brand}. Subukan ang unedited na orihinal na file — madalas tinatanggal ng mga editing app ang maker metadata.",
+        "partial": "Nagsusulat lang ang {brand} ng magaspang na frame counter sa ilang file, at wala nito ang file na ito. Baka mai-report ito ng sariling menu ng camera o ng USB utility.",
+        "unsupported": "Hindi nag-iimbak ang {brand} ng nababasang shutter count sa mga image file. Tingnan ang page ng Shutter Count Checker tool para sa mga alternatibo kada brand.",
+        "unknown": "Walang nababasang shutter count ang file na ito."
+      },
+      "lensModel": "Lens",
+      "lensSerial": "Lens serial",
+      "faq": {
+        "what-to-check-buying-used-camera": {
+          "question": "Ano ang dapat kong i-check kapag bumibili ng segunda-manong camera?",
+          "answer": "Bukod sa itsura: ang shutter count kumpara sa rated life nito, ang edad ng body at firmware version, kung tugma ang serial number sa mga papeles ng nagbebenta (at hindi naka-report na ninakaw), ang kondisyon ng sensor (hanapin ang alikabok o gasgas sa test photo ng maaliwalas na langit sa f/16), at kung maayos gumagana ang lahat ng dial, port, at ang lens mount."
+        },
+        "where-does-health-data-come-from": {
+          "question": "Saan nanggagaling ang health data na ito?",
+          "answer": "Lahat ay binabasa mula sa metadata na naka-embed sa photo mo: mga standard na EXIF field (model, serial number, firmware, lens, petsa ng kuha) kasama ang mga maker note ng manufacturer kung available (shutter count). Ang edad ng body ay tinatantiya mula sa built-in na database ng mga taon ng paglabas ng mga sikat na camera model."
+        },
+        "is-my-photo-uploaded": {
+          "question": "Ina-upload ba ang photo ko sa isang server?",
+          "answer": "Hindi. Ang file ay pina-parse nang buo sa browser mo gamit ang JavaScript — hindi ito kailanman umaalis sa device mo, at walang iniimbak. Puwede mo itong i-verify sa pamamagitan ng pag-load ng page at pagkatapos ay pagpatay ng koneksyon mo bago mag-drop ng file."
+        }
+      }
+    }
+  }
+}

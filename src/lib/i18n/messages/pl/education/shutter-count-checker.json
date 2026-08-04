@@ -1,0 +1,85 @@
+{
+  "education": {
+    "shutter-count-checker": {
+      "beginner": "Za każdym razem, gdy aparat robi zdjęcie migawką mechaniczną, wewnętrzny licznik zwiększa się o jeden. Ta liczba — przebieg migawki — jest jak przebieg samochodu: mówi, jak intensywnie aparat był używany. Najbardziej liczy się przy kupnie i sprzedaży używanego sprzętu, bo migawka to ruchomy mechanizm zaprojektowany na skończoną liczbę zwolnień.",
+      "deeper": "Migawka mechaniczna to para sprężynowych kurtyn, które przy każdej ekspozycji fizycznie przesuwają się przed matrycą. Producenci testują żywotność tych mechanizmów i publikują deklaracje: około 100 000 zwolnień dla korpusów podstawowych, 150 000–200 000 dla modeli dla zaawansowanych amatorów i 300 000–500 000 dla profesjonalnych. Deklaracja to średnia statystyczna, a nie data przydatności — wiele migawek wytrzymuje kilkukrotność swojej normy, a uszkodzona migawka to zwykle usterka naprawialna (choć kosztowna). To, gdzie mieszka licznik, zależy od marki: Nikon zapisuje go bez szyfrowania w notatkach producenta każdego pliku — dlatego to narzędzie potrafi go odczytać. Canon trzyma go tylko w pamięci wewnętrznej, Sony szyfruje, a Pentax maskuje. Nowoczesne bezlusterkowce dodatkowo komplikują obraz: klatki wykonane migawką elektroniczną w ogóle nie zużywają mechanizmu, więc korpus używany głównie w trybie cichym może mieć znacznie więcej ekspozycji, niż sugeruje licznik mechaniczny — i to zupełnie w porządku.",
+      "keyFactors": {
+        "0": {
+          "label": "Marka aparatu",
+          "description": "Decyduje, czy przebieg da się w ogóle odczytać z plików. Nikon zapisuje go jawnie; Canon, Sony i Pentax nie."
+        },
+        "1": {
+          "label": "Deklarowana żywotność migawki",
+          "description": "Przetestowana przez producenta średnia żywotność mechanizmu migawki. Korpusy z wyższej półki mają trwalsze mechanizmy o wyższych normach."
+        },
+        "2": {
+          "label": "Migawka elektroniczna a mechaniczna",
+          "description": "Klatki wykonane migawką elektroniczną nie powodują żadnego zużycia mechanicznego i zwykle nie zwiększają licznika mechanicznego. Osoby często fotografujące w trybie cichym mają niskie przebiegi."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Zawsze sprawdzaj przebieg na nieedytowanym pliku prosto z aparatu. Eksporty z Lightrooma, komunikatorów czy mediów społecznościowych zwykle usuwają notatki producenta, w których siedzi licznik."
+        },
+        "1": {
+          "text": "Kupując używany sprzęt, zestaw przebieg z normą: 40 000 na korpusie z normą 300 000 to ledwie rozruch, a 90 000 na korpusie z normą 100 000 powinno mieć wliczoną w cenę wymianę migawki."
+        },
+        "2": {
+          "text": "Niski przebieg migawki nie gwarantuje zdrowego aparatu — zalanie, rysy na matrycy i upadki nie zostawiają śladu w liczniku. Obejrzyj też zdjęcia testowe i sam korpus."
+        }
+      },
+      "tooltips": {
+        "shutterCount": {
+          "term": "Przebieg migawki",
+          "definition": "Liczba zadziałań migawki mechanicznej w całym życiu aparatu. Odczytywana z metadanych, które aparat osadza w każdym zdjęciu."
+        },
+        "ratedLife": {
+          "term": "Deklarowana żywotność migawki",
+          "definition": "Przetestowana przez producenta średnia liczba zwolnień do awarii migawki. Średnia, nie sztywny limit — wiele migawek znacznie ją przekracza."
+        },
+        "source": {
+          "term": "Źródło odczytu",
+          "definition": "Skąd pochodzi liczba: z właściwego pola przebiegu migawki, z licznika wyłącznie mechanicznego w niektórych bezlusterkowcach albo z ogólnego numeru zdjęcia użytego jako przybliżenie."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Robisz 500 zdjęć na koncercie, używając cichej migawki elektronicznej bezlusterkowca. O ile zużyła się przez to migawka mechaniczna?",
+          "hint": "Pomyśl, co fizycznie się porusza podczas ekspozycji migawką elektroniczną.",
+          "successMessage": "Zgadza się! Migawka elektroniczna odczytuje matrycę bez poruszania kurtynami, więc te 500 klatek nie spowodowało praktycznie żadnego zużycia mechanicznego — i zwykle nie zwiększa licznika mechanicznego.",
+          "failureMessage": "Migawka elektroniczna naświetla, odczytując matrycę elektronicznie — żadna kurtyna się nie porusza, więc ciche fotografowanie nie zużywa migawki mechanicznej.",
+          "options": {
+            "0": { "label": "500 zwolnień, jak przy każdych zdjęciach" },
+            "1": { "label": "Wcale — liczy się tylko użycie migawki mechanicznej" },
+            "2": { "label": "Tylko pliki RAW powodują zużycie" },
+            "3": { "label": "Tylko zdjęcia z lampą powodują zużycie" }
+          }
+        },
+        "1": {
+          "scenario": "Aparat ma deklarowaną żywotność 200 000 zwolnień, a licznik pokazuje 195 000. Co ta norma faktycznie oznacza dla tego korpusu?",
+          "hint": "Normy pochodzą ze statystycznych testów żywotności, jak deklarowane godziny pracy żarówek.",
+          "successMessage": "Tak! Norma to średnia żywotność z testów — ta migawka może paść w przyszłym tygodniu albo dociągnąć do 400 000. To wskazówka do wyceny, a nie odliczanie do zera.",
+          "failureMessage": "Norma migawki to przetestowana średnia żywotność, a nie sztywny limit czy gwarancja. Wiele migawek wytrzymuje znacznie dłużej; niektóre psują się wcześniej.",
+          "options": {
+            "0": { "label": "Migawka zatrzyma się na 200 000" },
+            "1": { "label": "To średnia żywotność — w jej pobliżu rośnie ryzyko awarii" },
+            "2": { "label": "Gwarancja kończy się przy 200 000" },
+            "3": { "label": "Po 200 000 spada żywotność baterii" }
+          }
+        },
+        "2": {
+          "scenario": "Porównujesz dwa używane aparaty tego samego modelu: jeden z przebiegiem 15 000 i widoczną korozją przy klapce baterii, drugi z przebiegiem 60 000 w nienagannym stanie. Który jest bezpieczniejszym zakupem?",
+          "hint": "Licznik rejestruje tylko jeden rodzaj zużycia.",
+          "successMessage": "Dokładnie. Przebieg migawki to tylko jeden z sygnałów — korozja wskazuje na kontakt z wodą, który zabija aparaty znacznie częściej niż zużyta migawka. Czysty korpus z przebiegiem 60 000 to bezpieczniejszy zakup.",
+          "failureMessage": "Przebieg migawki mierzy tylko zużycie migawki. Korozja wskazuje na zalanie, które jest o wiele groźniejsze niż umiarkowanie zużyta migawka. Oceniaj przebieg razem ze stanem, nigdy sam przebieg.",
+          "options": {
+            "0": { "label": "Korpus z przebiegiem 15 000 — niższy zawsze lepszy" },
+            "1": { "label": "Ten, który jest tańszy" },
+            "2": { "label": "Czysty korpus z przebiegiem 60 000 — stan znaczy więcej" },
+            "3": { "label": "Żaden — oba są za stare" }
+          }
+        }
+      }
+    }
+  }
+}

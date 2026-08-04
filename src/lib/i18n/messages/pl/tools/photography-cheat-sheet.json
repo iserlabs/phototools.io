@@ -1,0 +1,118 @@
+{
+  "toolUI": {
+    "photography-cheat-sheet": {
+      "pickScenario": "Wybierz scenariusz",
+      "tipsTitle": "Wskazówki z terenu",
+      "labels": {
+        "aperture": "Przysłona",
+        "shutter": "Czas naświetlania",
+        "iso": "ISO",
+        "whiteBalance": "Balans bieli",
+        "focusMode": "Tryb ostrości",
+        "driveMode": "Tryb wyzwalania"
+      },
+      "values": {
+        "auto": "Auto",
+        "daylight": "Światło dzienne",
+        "cloudy": "Pochmurno",
+        "shade": "Cień",
+        "tungsten": "Żarowe (~3200K)",
+        "afSingle": "Pojedynczy AF (AF-S)",
+        "afContinuous": "Ciągły AF (AF-C)",
+        "afTracking": "Ciągły AF + śledzenie obiektu",
+        "manualFocus": "Ostrość ręczna",
+        "single": "Zdjęcie pojedyncze",
+        "burstLow": "Seria wolna",
+        "burstHigh": "Seria szybka",
+        "timer2s": "Samowyzwalacz 2 s / wężyk",
+        "intervalometer": "Interwałometr"
+      },
+      "scenarios": {
+        "portrait": {
+          "name": "Portrety",
+          "tips": {
+            "0": "Ustaw ostrość na oku bliższym aparatu — przy szerokich przysłonach głębia ostrości to zaledwie kilka centymetrów.",
+            "1": "Odsuń się i użyj dłuższej ogniskowej (85mm+), aby uzyskać korzystną kompresję; szerokie obiektywy z bliska zniekształcają rysy twarzy."
+          }
+        },
+        "landscape": {
+          "name": "Krajobrazy",
+          "tips": {
+            "0": "Ustaw ostrość mniej więcej w jednej trzeciej głębi sceny lub użyj odległości hiperfokalnej, aby uzyskać ostrość od przodu do tyłu.",
+            "1": "Fotografuj ze statywu z samowyzwalaczem lub wężykiem, aby wyeliminować drgania przy długich czasach naświetlania."
+          }
+        },
+        "street": {
+          "name": "Fotografia uliczna",
+          "tips": {
+            "0": "Ostrz strefowo: ustaw z góry ostrość na 3 m i f/8, a wszystko od 2 m do 6 m będzie ostre — bez opóźnienia AF.",
+            "1": "Auto ISO z minimalnym czasem 1/250 s zamraża idących ludzi, a Ty możesz skupić się na kadrowaniu."
+          }
+        },
+        "wildlife": {
+          "name": "Dzika przyroda i ptaki",
+          "tips": {
+            "0": "Dobierz czas naświetlania do obiektu: 1/1000 s dla siedzących ptaków, 1/2500 s lub krócej dla ptaków w locie.",
+            "1": "Fotografuj z poziomu oczu i czekaj na obrót głowy — błysk światła w oku ożywia zdjęcie."
+          }
+        },
+        "sports": {
+          "name": "Sport i akcja",
+          "tips": {
+            "0": "Ustaw ostrość z wyprzedzeniem tam, gdzie rozegra się akcja (bramka, szczyt zakrętu) i zacznij serię tuż przed kulminacją.",
+            "1": "Panning przy 1/60–1/125 s z ciągłym AF rozmywa tło, zachowując ostry obiekt."
+          }
+        },
+        "macro": {
+          "name": "Makro",
+          "tips": {
+            "0": "Przy dużym powiększeniu głębia ostrości jest cienka jak kartka — ostrz, przesuwając aparat, a nie pierścień ostrości.",
+            "1": "Dyfrakcja mocno daje się we znaki powyżej f/16; zamiast dalej przymykać, użyj focus stackingu."
+          }
+        },
+        "milkyWay": {
+          "name": "Droga Mleczna",
+          "tips": {
+            "0": "Użyj reguły NPF lub reguły 500, aby wyznaczyć maksymalny czas, zanim gwiazdy zaczną się rozciągać w smugi — około 15–20 s przy 20mm na pełnej klatce.",
+            "1": "Ostrz ręcznie na jasnej gwieździe w powiększonym podglądzie na żywo; ustaw balans bieli w okolicach 3900K dla neutralnego nieba."
+          }
+        },
+        "nightCity": {
+          "name": "Nocne miasto",
+          "tips": {
+            "0": "Fotografuj przy bazowym ISO ze statywu i pozwól migawce pracować długo — światła pozostają czyste, a szum niski.",
+            "1": "f/11–f/16 zamienia punktowe światła w gwiazdki; fotografuj w niebieskiej godzinie, aby mieć kolor na niebie."
+          }
+        },
+        "waterfall": {
+          "name": "Wodospady i długie czasy",
+          "tips": {
+            "0": "Ekspozycje 0,5–2 s zachowują fakturę wody; 30 s i więcej zamienia ją w mgłę. W dzień użyj filtra ND.",
+            "1": "Filtr polaryzacyjny kołowy usuwa odblaski z mokrych skał i liści — a przy okazji działa jak ND o sile ~1,5 stopnia."
+          }
+        },
+        "goldenHour": {
+          "name": "Złota godzina",
+          "tips": {
+            "0": "Naświetlaj na światła i podnieś cienie w obróbce — przepalone ciepłe światła są nie do odzyskania.",
+            "1": "Fotografuj obiekty pod światło, aby uzyskać obrysowe światło i flarę; balans bieli „pochmurno” utrzyma ciepłą tonację sceny."
+          }
+        }
+      },
+      "faq": {
+        "what-settings-for-portraits": {
+          "question": "Jakich ustawień aparatu użyć do portretów?",
+          "answer": "Zacznij od szerokiej przysłony (f/1.8–f/2.8) dla rozmytego tła, czasu naświetlania co najmniej 1/200 s, aby uniknąć rozmycia ruchu, i najniższego ISO, na jakie pozwala światło (100–400). Użyj punktowego autofokusa na bliższym oku albo AF z wykrywaniem oczu, jeśli aparat go ma."
+        },
+        "what-settings-for-milky-way": {
+          "question": "Jakich ustawień potrzebuję do fotografowania Drogi Mlecznej?",
+          "answer": "Szerokokątny, jasny obiektyw przy pełnym otwarciu (f/1.4–f/2.8), ekspozycja 10–25 sekund (dłuższa rozciąga gwiazdy w smugi), ISO 1600–6400, ostrość ustawiona ręcznie na jasnej gwieździe i statyw. Bezksiężycowa noc z dala od miejskich świateł znaczy więcej niż jakiekolwiek ustawienie aparatu."
+        },
+        "are-cheat-sheet-settings-exact": {
+          "question": "Czy te ustawienia to dokładne przepisy?",
+          "answer": "Nie — to sprawdzone punkty wyjścia. Światło ogromnie różni się między scenami, więc traktuj podane zakresy jako pierwsze przybliżenie: zrób zdjęcie próbne, sprawdź histogram i skoryguj. Celem jest szybkie doprowadzenie Cię w okolice właściwych ustawień, a nie zastąpienie własnej oceny."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "toolUI": {
+    "shutter-count-checker": {
+      "dropPrompt": "Přetáhni sem fotku nebo klikni a vyber soubor (JPEG, TIFF, NEF, DNG)",
+      "supportTitle": "Které značky ukládají počet expozic?",
+      "status": {
+        "supported": "Čitelný",
+        "partial": "Částečně",
+        "unsupported": "V souborech není"
+      },
+      "brands": {
+        "nikon": "Nikon zapisuje počet expozic do metadat každé fotky, a to nešifrovaně. Nejlepší výsledky dá neupravený originální soubor.",
+        "canon": "Canon počet expozic do souborů s fotkami nikdy nezapisuje — je uložený jen uvnitř fotoaparátu a čtou ho servisní nástroje nebo utility přes USB.",
+        "sony": "Sony ukládá počet expozic do šifrované části metadat, kterou v prohlížeči rozluštit nejde. Specializované počítačové utility ho dokážou přečíst přes USB.",
+        "fujifilm": "Těla Fujifilm skutečný počet expozic nezaznamenávají, ale některá zapisují počítadlo snímků, které dává hrubý spodní odhad.",
+        "pentax": "Pentax pole s počtem expozic maskuje šifrou, takže ho ze souborů nelze spolehlivě přečíst.",
+        "olympus": "Těla OM System / Olympus drží plný počet expozic v interním servisním menu; soubory někdy nesou počítadlo snímků, které opotřebení naznačuje.",
+        "panasonic": "Panasonic počet expozic do souborů nezapisuje. Zjistíš ho v servisním menu fotoaparátu.",
+        "leica": "Těla Leica počet expozic v souborech s fotkami většinou neukládají."
+      },
+      "countLabel": "Počet spuštění závěrky",
+      "source": {
+        "shutterCount": "Přečteno z metadat s počtem expozic fotoaparátu — jde o skutečné počítadlo mechanických spuštění.",
+        "mechanicalShutterCount": "Přečteno z počítadla mechanické závěrky — snímky pořízené elektronickou závěrkou se nepočítají.",
+        "imageNumber": "Odhadnuto z čísla snímku v souboru. Jde o hrubý spodní odhad, ne přesný počet spuštění — počítadlo se může vynulovat nebo přetéct."
+      },
+      "ratedLife": "Udávaná životnost závěrky",
+      "ratings": {
+        "entry": "Základní třída",
+        "enthusiast": "Pokročilá třída",
+        "advanced": "Vyšší třída",
+        "pro": "Profesionální",
+        "flagship": "Vlajková loď"
+      },
+      "lifeUsed": "Využito {percent} % udávané životnosti",
+      "verdict": {
+        "low": "Sotva používaný",
+        "moderate": "Střední opotřebení",
+        "high": "Silné opotřebení",
+        "beyond": "Za udávanou životností"
+      },
+      "noCountTitle": "V tomto souboru není počet expozic",
+      "noCountGeneric": "Tento soubor neobsahuje čitelný počet expozic. Zkus neupravenou originální fotku přímo z fotoaparátu — exporty z editačních aplikací často odstraňují metadata výrobce.",
+      "errorRead": "Tento soubor se nepodařilo přečíst. Zkus neupravený JPEG nebo RAW soubor přímo z fotoaparátu.",
+      "faq": {
+        "what-is-shutter-count": {
+          "question": "Co je počet expozic?",
+          "answer": "Počet expozic udává, kolikrát se spustila mechanická závěrka fotoaparátu — je to obdoba najetých kilometrů u auta. Při koupi nebo prodeji použitého fotoaparátu jde o nejsledovanější ukazatel opotřebení, protože závěrky jsou dimenzované na konečný počet spuštění."
+        },
+        "how-many-actuations-is-too-many": {
+          "question": "Kolik spuštění závěrky je už moc?",
+          "answer": "Záleží na třídě fotoaparátu. Závěrky základních modelů mají udávanou životnost kolem 100 000 spuštění, pokročilá těla 150 000–200 000 a profesionální těla 300 000–500 000. Údaj je průměrná životnost, ne tvrdý limit — mnoho závěrek vydrží daleko víc a nízký počet u špatně zacházeného těla stejně může znamenat problémy."
+        },
+        "why-no-canon-sony-shutter-count": {
+          "question": "Proč nemůžu zjistit počet expozic z fotky z Canonu nebo Sony?",
+          "answer": "Canon počet expozic do souborů s fotkami nezapisuje vůbec — existuje jen ve vnitřní paměti fotoaparátu. Sony ho zapisuje, ale tuto část metadat šifruje. V obou případech ho nástroj v prohlížeči z fotky nepřečte; obvyklým řešením jsou počítačové utility, které se k fotoaparátu připojí přes USB."
+        }
+      }
+    }
+  }
+}

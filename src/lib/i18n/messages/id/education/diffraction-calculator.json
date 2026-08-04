@@ -1,0 +1,85 @@
+{
+  "education": {
+    "diffraction-calculator": {
+      "beginner": "Menutup apertur menambah kedalaman bidang — tetapi melewati titik tertentu, ia justru mulai membuat seluruh gambar lebih lunak, bukan lebih tajam. Itulah difraksi: gelombang cahaya membelok saat menembus bukaan yang kecil. Kalkulator ini menunjukkan persis di mana titik itu untuk kamera Anda, sehingga Anda tahu seberapa jauh bisa menutup apertur sebelum membayar penalti ketajaman.",
+      "deeper": "Saat cahaya melewati apertur, setiap titik dalam pemandangan mendarat di sensor bukan sebagai titik melainkan sebagai pola difraksi kecil — inti terang yang disebut cakram Airy dikelilingi lingkaran cahaya samar. Diameter cakram tumbuh berbanding lurus dengan angka f: sekitar 2.44 × panjang gelombang × N, yang pada f/8 dalam cahaya hijau sudah mencapai ~10.7 µm. Apakah itu berarti, tergantung pada piksel Anda. Sensor full-frame 24 MP punya piksel ~6 µm; sensor 61 MP punya piksel ~3.8 µm. Begitu cakram Airy tumbuh jelas lebih besar dari satu piksel, detail yang seharusnya bisa dipecahkan sensor tersebar ke piksel tetangga, dan kualitas lensa mana pun tak bisa mengembalikannya. Inilah sebabnya f/11 yang sama yang tampak baik di bodi 12 MP lawas terlihat jelas melunakkan file dari sensor beresolusi tinggi modern, dan mengapa kamera saku dengan piksel mungil jarang menawarkan apertur di atas f/8. Aturan praktis industri yang dipakai di sini — batas ≈ pixel pitch / 0.67 — menandai di mana pelunakan mulai terukur, bukan di mana gambar hancur: menutup satu stop melewati batas sering kali pertukaran yang layak demi kedalaman bidang. Lewat dua stop, focus stacking lebih baik daripada terus menutup apertur.",
+      "keyFactors": {
+        "0": {
+          "label": "Apertur (angka f)",
+          "description": "Satu-satunya kendali atas difraksi itu sendiri: diameter cakram Airy naik linear dengan angka f. f/16 menyebarkan cahaya dua kali lebih lebar daripada f/8."
+        },
+        "1": {
+          "label": "Pixel Pitch",
+          "description": "Ukuran fisik satu piksel, ditentukan bersama oleh ukuran sensor dan megapiksel. Piksel lebih kecil memecahkan detail lebih banyak — dan memperlihatkan difraksi lebih cepat."
+        },
+        "2": {
+          "label": "Ukuran Keluaran",
+          "description": "Difraksi yang terlihat pada 100% di layar bisa tak kasatmata pada ekspor ukuran web atau cetakan sedang. Nilailah ketajaman pada ukuran yang benar-benar akan Anda gunakan."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Temukan titik ideal lensa Anda: potret pemandangan detail yang sama di setiap full stop dan bandingkan pada 100%. Kebanyakan lensa memuncak dua sampai tiga stop dari bukaan terlebar, tepat sebelum difraksi mengambil alih."
+        },
+        "1": {
+          "text": "Untuk lanskap yang butuh fokus dalam pada bodi beresolusi tinggi, coba jarak hiperfocal di f/8 sebelum beralih ke f/16 — penempatan fokus yang akurat sering memberi ketajaman lebih daripada apertur yang lebih kecil."
+        },
+        "2": {
+          "text": "Dalam pemotretan makro, apertur efektif membesar seiring perbesaran (f/11 pada 1:1 berperilaku seperti f/22), sehingga difraksi menggigit jauh lebih awal daripada yang ditunjukkan dial. Focus stacking pada apertur sedang adalah jalan keluar yang tajam."
+        }
+      },
+      "tooltips": {
+        "pixelPitch": {
+          "term": "Pixel Pitch",
+          "definition": "Lebar satu piksel pada sensor, dalam mikrometer. Dihitung dari lebar sensor dibagi jumlah piksel horizontal — full frame 24 MP ≈ 6 µm."
+        },
+        "airyDisk": {
+          "term": "Cakram Airy",
+          "definition": "Pola difraksi yang dibentuk satu titik cahaya setelah melewati apertur: inti terang dengan lingkaran samar. Diameternya ≈ 2.44 × panjang gelombang × angka f."
+        },
+        "diffractionLimit": {
+          "term": "Batas Difraksi",
+          "definition": "Angka f saat cakram Airy melampaui ukuran piksel dan ketajaman per piksel mulai turun — kira-kira pixel pitch (µm) ÷ 0.67."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Anda menutup lensa dari f/8 ke f/22 demi kedalaman bidang maksimum, tetapi detail halus gambar melunak di mana-mana — bahkan di bidang fokus. Apa yang terjadi?",
+          "hint": "Ini fisika, bukan cacat lensa.",
+          "successMessage": "Benar! Cahaya membelok (terdifraksi) saat melewati apertur kecil, menyebarkan tiap titik menjadi cakram yang lebih besar dari piksel. Pada f/22 pelunakan ini memengaruhi seluruh frame, termasuk bidang fokus.",
+          "failureMessage": "Ini difraksi: gelombang cahaya membelok di sekitar bilah apertur, menyebarkan tiap titik cahaya menjadi cakram buram. Ia memengaruhi seluruh gambar secara merata, apa pun kualitas lensanya.",
+          "options": {
+            "0": { "label": "Lensanya dibuat buruk" },
+            "1": { "label": "Cahaya membelok saat melewati bukaan kecil" },
+            "2": { "label": "Sensor kepanasan pada apertur kecil" },
+            "3": { "label": "Noise ISO meningkat" }
+          }
+        },
+        "1": {
+          "scenario": "Anda meningkatkan dari kamera full-frame 24 MP ke 61 MP. Apa yang terjadi pada apertur tempat difraksi menjadi terlihat?",
+          "hint": "Lebih banyak megapiksel pada area sensor yang sama berarti piksel lebih kecil.",
+          "successMessage": "Tepat! Piksel ~3.8 µm milik sensor 61 MP menangkap cakram Airy lebih cepat, sehingga batas difraksi turun dari sekitar f/9 ke sekitar f/5.6. Sensor beresolusi tinggi punya rentang apertur ideal yang lebih sempit.",
+          "failureMessage": "Piksel yang lebih kecil memperlihatkan difraksi lebih awal. Batas difraksi sensor 61 MP sekitar f/5.6, dibandingkan f/9 untuk sensor 24 MP — batasnya bergeser ke apertur lebih lebar.",
+          "options": {
+            "0": { "label": "Bergeser ke apertur lebih kecil (angka f lebih tinggi)" },
+            "1": { "label": "Bergeser ke apertur lebih lebar (angka f lebih rendah)" },
+            "2": { "label": "Tidak berubah" },
+            "3": { "label": "Difraksi hilang dengan megapiksel lebih banyak" }
+          }
+        },
+        "2": {
+          "scenario": "Anda memotret lanskap dengan kamera full-frame 45 MP dan ingin ketajaman keseluruhan maksimum dengan kedalaman bidang yang baik. Rentang apertur mana titik awal terbaiknya?",
+          "hint": "Seimbangkan aberasi lensa (buruk di bukaan terlebar) dengan difraksi (buruk saat apertur ditutup).",
+          "successMessage": "Benar! f/8–f/11 berada tepat di sekitar batas difraksi untuk piksel ~4.4 µm sambil memberi kedalaman bidang yang besar — titik ideal lanskap klasik pada full frame beresolusi tinggi.",
+          "failureMessage": "f/8–f/11 menyeimbangkan kedalaman bidang dan difraksi untuk sensor full-frame 45 MP. f/22 jelas melunakkan detail halus, dan bukaan terlebar kekurangan kedalaman bidang.",
+          "options": {
+            "0": { "label": "Selalu f/22 untuk kedalaman maksimum" },
+            "1": { "label": "f/8–f/11" },
+            "2": { "label": "Bukaan terlebar" },
+            "3": { "label": "Hanya bergantung pada ISO" }
+          }
+        }
+      }
+    }
+  }
+}
