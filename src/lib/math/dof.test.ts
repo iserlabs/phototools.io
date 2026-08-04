@@ -8,6 +8,7 @@ import {
   calcIsolationScore,
   calcStackingSequence,
   calcEquivalentSettings,
+  calcDefocusBlur,
 } from './dof'
 
 describe('calcHyperfocal', () => {
@@ -413,5 +414,28 @@ describe('calcEquivalentSettings', () => {
     })
     // equivFL = 10 × (1.0 / 5.6) ≈ 1.79mm
     expect(result.isFLRealistic).toBe(false)
+  })
+})
+
+describe('calcDefocusBlur', () => {
+  it('is zero at the focus plane', () => {
+    expect(calcDefocusBlur({ focalLength: 85, aperture: 2.8, focusDistance: 3, targetDistance: 3 })).toBe(0)
+  })
+  it('approaches f²/(N·(s1−f)) for far targets', () => {
+    const blur = calcDefocusBlur({ focalLength: 85, aperture: 2.8, focusDistance: 3, targetDistance: 10000 })
+    expect(blur).toBeCloseTo((85 * 85) / (2.8 * (3000 - 85)), 2)
+  })
+  it('is positive for targets in FRONT of focus (nose nearer than eyes)', () => {
+    const blur = calcDefocusBlur({ focalLength: 85, aperture: 1.4, focusDistance: 1.2, targetDistance: 1.15 })
+    expect(blur).toBeGreaterThan(0)
+  })
+  it('front and behind blur are asymmetric (front is larger at equal offset)', () => {
+    const front = calcDefocusBlur({ focalLength: 85, aperture: 1.4, focusDistance: 2, targetDistance: 1.9 })
+    const behind = calcDefocusBlur({ focalLength: 85, aperture: 1.4, focusDistance: 2, targetDistance: 2.1 })
+    expect(front).toBeGreaterThan(behind)
+  })
+  it('guards degenerate inputs', () => {
+    expect(calcDefocusBlur({ focalLength: 85, aperture: 2.8, focusDistance: 0.05, targetDistance: 1 })).toBe(0)
+    expect(calcDefocusBlur({ focalLength: 85, aperture: 2.8, focusDistance: 3, targetDistance: 0 })).toBe(0)
   })
 })

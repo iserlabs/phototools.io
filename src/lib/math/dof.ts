@@ -280,3 +280,22 @@ export function calcEquivalentSettings(input: EquivalenceInput): EquivalenceResu
     isFLRealistic: equivalentFL >= 8 && equivalentFL <= 800,
   }
 }
+
+export interface DefocusBlurParams {
+  focalLength: number   // mm
+  aperture: number      // f-number
+  focusDistance: number // meters (subject / focus plane)
+  targetDistance: number // meters (plane being evaluated)
+}
+
+/**
+ * Defocus CoC on the sensor (mm) for a plane at targetDistance while focused
+ * at focusDistance. Valid on BOTH sides of focus:
+ *   blur = f²/(N·(s1−f)) · |s2−s1|/s2   (all distances in mm)
+ */
+export function calcDefocusBlur({ focalLength, aperture, focusDistance, targetDistance }: DefocusBlurParams): number {
+  const s1 = focusDistance * 1000
+  const s2 = targetDistance * 1000
+  if (s1 <= focalLength || s2 <= 0 || aperture <= 0) return 0
+  return ((focalLength * focalLength) / (aperture * (s1 - focalLength))) * (Math.abs(s2 - s1) / s2)
+}
