@@ -17,6 +17,7 @@ import { DrilldownForm } from '../sections/DrilldownForm'
 import { ActiveFilterPills } from '../sections/ActiveFilterPills'
 import { ExportBar } from './ExportBar'
 import { MobileSectionDropdown } from '../nav/MobileSectionDropdown'
+import { ToolHeading } from '@/components/shared/ToolHeading'
 import styles from './LightroomCatalogAnalyzer.module.css'
 
 const DEMO_CATALOG_URL = '/demo-catalogs/phototools-demo.lrcat'
@@ -171,6 +172,7 @@ export function LightroomCatalogAnalyzer() {
   return (
     <AnalyzerProvider>
       <a href="#lrcat-main" className={styles.skipLink}>{t('skipToMain')}</a>
+      <ToolHeading slug="lightroom-catalog-analyzer" />
       <AnalyzerBody />
     </AnalyzerProvider>
   )

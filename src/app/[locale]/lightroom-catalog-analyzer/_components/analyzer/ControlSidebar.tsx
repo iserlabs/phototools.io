@@ -27,11 +27,17 @@ export function ControlSidebar({
 }: ControlSidebarProps) {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer')
   const tNav = useTranslations('toolUI.lightroom-catalog-analyzer.sectionNav')
+  const toolsT = useTranslations('tools')
   const { insightBlob, loadedFromCache } = useAnalyzer()
   const meta = insightBlob?.meta
 
   return (
     <div className={styles.inner}>
+      {/* ─── Tool title ─── visible name (the sr-only H1 lives in
+          LightroomCatalogAnalyzer via ToolHeading, matching other tools
+          where ToolActions renders the visible h2). */}
+      <h2 className={styles.toolTitle}>{toolsT('lightroom-catalog-analyzer.name')}</h2>
+
       {/* ─── Upload ─── */}
       <UploaderPanel onFile={onFile} onDemo={onDemo} />
 

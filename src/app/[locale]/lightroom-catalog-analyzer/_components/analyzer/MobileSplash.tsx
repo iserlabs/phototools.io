@@ -34,7 +34,9 @@ export function MobileSplash({ onDemo }: MobileSplashProps) {
   return (
     <section className={styles.mobileSplash} data-testid="mobile-splash">
       <header className={styles.mobileHeader}>
-        <h1 className={styles.mobileHeadline}>{t('mobile.headline')}</h1>
+        {/* h2, not h1 — the page's single H1 is the tool name (ToolHeading in
+            LightroomCatalogAnalyzer); this is a contextual notice. */}
+        <h2 className={styles.mobileHeadline}>{t('mobile.headline')}</h2>
         <PrivacyBadge />
       </header>
       <p className={styles.mobileBody}>{t('mobile.body')}</p>

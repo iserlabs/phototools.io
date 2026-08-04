@@ -7,6 +7,16 @@
   min-width: 0;
 }
 
+/* Visible tool title — mirrors ToolActions' .title band on other tools. */
+.toolTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .divider {
   border: none;
   border-top: 1px solid var(--border-subtle);
@@ -25,9 +35,10 @@
   to   { opacity: 1; transform: translateX(0); }
 }
 
-.group:nth-child(2) { animation-delay: 60ms; }
-.group:nth-child(3) { animation-delay: 120ms; }
-.group:nth-child(4) { animation-delay: 180ms; }
+/* Indices account for the .toolTitle heading as the first child. */
+.group:nth-child(3) { animation-delay: 60ms; }
+.group:nth-child(4) { animation-delay: 120ms; }
+.group:nth-child(5) { animation-delay: 180ms; }
 
 .groupTitle {
   margin: 0;

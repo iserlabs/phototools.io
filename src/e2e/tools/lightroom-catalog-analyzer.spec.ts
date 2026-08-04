@@ -27,9 +27,15 @@ test.describe('Lightroom Catalog Analyzer — empty state', () => {
   test('renders the desktop empty state with the FilePicker and demo button', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 })
     await page.goto(TOOL_PATH)
-    // The redesigned empty state has no headline — its anchors are the
-    // FilePicker drop target (aria-label from toolUI filePicker.ariaLabel),
-    // the privacy badge, and the demo button in the left sidebar.
+    // Sidebar title band (visible h2, tools.{slug}.name) + sr-only H1 via
+    // ToolHeading, matching the shared tool-page convention.
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Lightroom Catalog Analyzer' }),
+    ).toBeVisible()
+    await expect(page.locator('h1')).toHaveCount(1)
+    await expect(page.locator('h1')).toHaveText('Lightroom Catalog Analyzer')
+    // Empty-state anchors: the FilePicker drop target (aria-label from
+    // toolUI filePicker.ariaLabel), the privacy badge, and the demo button.
     await expect(
       page.getByRole('button', { name: /Lightroom Classic catalog file picker/i }),
     ).toBeVisible()
@@ -75,19 +81,20 @@ test.describe('Lightroom Catalog Analyzer — demo flow', () => {
   test('renders the concrete demo golden headline stats (m-9)', async ({ page }) => {
     await page.goto(DEMO_PATH)
     const overview = page.locator(SEC('overview')).first()
-    await expect(overview).toBeVisible({ timeout: DEMO_TIMEOUT })
 
     // The deterministic demo catalog (fixed PRNG seed) yields: totalPhotos=3000,
     // bodyCount=2, lensCount=5, years 2023–2025. Overview renders <dt>/<dd> tiles.
-    const overviewText = await overview.innerText()
-    expect(overviewText).toContain('3,000') // total photos, toLocaleString()
+    // Web-first assertions only: the section anchor is structurally present
+    // (and visible) BEFORE the parse finishes, so a one-shot innerText() read
+    // races the demo data landing — the CI flake this replaced.
+    await expect(overview).toContainText('3,000', { timeout: DEMO_TIMEOUT }) // total photos, toLocaleString()
 
     // Bodies (2) and lenses (5) are scoped to their labelled tiles to avoid
     // matching stray digits elsewhere in the section.
-    const tileValue = async (label: string) =>
-      overview.locator('div', { has: page.locator(`dt:text-is("${label}")`) }).locator('dd').first().innerText()
-    expect(await tileValue('Bodies')).toBe('2')
-    expect(await tileValue('Lenses')).toBe('5')
+    const tileValue = (label: string) =>
+      overview.locator('div', { has: page.locator(`dt:text-is("${label}")`) }).locator('dd').first()
+    await expect(tileValue('Bodies')).toHaveText('2')
+    await expect(tileValue('Lenses')).toHaveText('5')
   })
 
   test('applying a camera filter via DrilldownForm changes downstream stats', async ({ page }) => {

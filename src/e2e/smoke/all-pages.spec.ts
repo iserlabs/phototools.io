@@ -59,15 +59,6 @@ for (const page of pages) {
         await expect(p.locator('h1')).toHaveCount(1)
       } else if (page.url === '/en/learn/glossary') {
         await expect(p.locator('h1')).toBeVisible()
-      } else if (page.url === '/en/lightroom-catalog-analyzer') {
-        // The analyzer's redesigned desktop empty state shows no tool title
-        // (its name appears only in the display:none MobileSplash), so assert
-        // the content that actually defines the page: the FilePicker drop
-        // target and the privacy badge.
-        await expect(
-          p.getByRole('button', { name: /catalog file picker/i }),
-        ).toBeVisible()
-        await expect(p.getByText('100% Local · No Upload').first()).toBeVisible()
       } else {
         // Tool pages: tool name should appear VISIBLY somewhere on the page.
         // Filter to visible matches first — pages render hidden duplicates
