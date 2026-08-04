@@ -226,21 +226,33 @@ test.describe('Lightroom Catalog Analyzer — export bar', () => {
     expect(buf.subarray(0, 5).toString('latin1')).toBe('%PDF-') // PDF magic header
   })
 
-  test('copies the Markdown report (or downloads it as fallback)', async ({ page, context }) => {
-    // Grant clipboard permission so navigator.clipboard.writeText resolves in Chromium.
-    await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+  test('copies the Markdown report (or downloads it as fallback)', async ({ page, context, browserName }) => {
+    // Clipboard permissions are a Chromium-only Playwright capability —
+    // Firefox throws `Unknown permission: clipboard-read` on grantPermissions,
+    // which failed this spec on the CI firefox project before the page even
+    // loaded. Grant where supported; elsewhere the component's download
+    // fallback is the expected path.
+    if (browserName === 'chromium') {
+      await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+    }
     await page.goto(DEMO_PATH)
     await expect(page.locator(SEC('overview')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
 
     const mdButton = page.getByRole('button', { name: /Copy Markdown/i }).first()
     await mdButton.click()
 
-    // A success toast appears (clipboard path) — sonner renders it in the DOM.
-    await expect(page.getByText(/Markdown report copied/i)).toBeVisible({ timeout: 10_000 })
+    // Success surfaces as a sonner toast on BOTH paths: the clipboard copy
+    // ("Markdown report copied. ~N KB.") or the download fallback
+    // ("Clipboard unavailable — downloaded the report as a .md file instead.").
+    await expect(
+      page.getByText(/Markdown report copied|downloaded the report/i).first(),
+    ).toBeVisible({ timeout: 10_000 })
 
-    // The clipboard now holds the report (when permission granted).
-    const clip = await page.evaluate(() => navigator.clipboard.readText())
-    expect(clip.startsWith('# Lightroom Catalog Analysis')).toBe(true)
+    // Only Chromium lets the test read the clipboard back to verify content.
+    if (browserName === 'chromium') {
+      const clip = await page.evaluate(() => navigator.clipboard.readText())
+      expect(clip.startsWith('# Lightroom Catalog Analysis')).toBe(true)
+    }
   })
 
   test('the Share button is interactive and opens the disclosure modal (Plan 3)', async ({ page }) => {
