@@ -148,7 +148,7 @@
             "topFocalLength": "Lunghezza focale principale"
           },
           "caption": "Panoramica del catalogo: {totalPhotos} foto in {daysShot} giorni, {bodyCount} corpi, {lensCount} obiettivi.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} uniche · {bursts} in raffica"
         },
         "gear": {
           "title": "Attrezzatura",
@@ -174,7 +174,7 @@
           "noPrime": "Il tuo uso delle lunghezze focali è troppo distribuito perché un singolo obiettivo fisso possa dominare.",
           "caption": "Istogramma con intervalli di 1 mm da {min} mm a {max} mm; {peakCount} picchi principali etichettati.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "Grandangolo – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "Con il tuo {lens}, il {pct}% degli scatti è a {mm} mm.",
           "empty": "Nessun obiettivo zoom rilevato in questo catalogo.",
           "caption": "{n} istogrammi di obiettivi zoom con la lunghezza focale dominante evidenziata.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "Seleziona l'obiettivo zoom",
+          "shotCount": "{count} scatti"
         },
         "apertures": {
           "title": "Apertura ottimale",
           "callout": "Scatti con il {lens} a tutta apertura il {pct}% delle volte.",
           "empty": "Dati insufficienti — serve almeno un obiettivo con più di 100 foto.",
           "caption": "{n} istogrammi di apertura degli obiettivi.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "L'apertura che usi di più con il {lens} è {aperture} (il {pct}% degli scatti).",
+          "selectLens": "Seleziona l'obiettivo",
+          "shotCount": "{count} scatti"
         },
         "time-of-day": {
           "title": "Ora del giorno",
@@ -210,7 +210,7 @@
           "perGear": "Per corpo",
           "perGearPeak": "{gear} — ora di punta {hour}:00",
           "caption": "Conteggi delle foto nell'arco di 24 ore con suddivisione opzionale per angolo del sole.",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "ora di punta {hour}:00"
         },
         "heatmap": {
           "title": "Mappa di calore degli scatti",
@@ -273,8 +273,8 @@
             "count": "Foto"
           },
           "caption": "Distribuzione delle valutazioni con {colorLabelCount} etichette colorate e tassi di selezione per attrezzatura.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "Fotocamere",
+          "lenses": "Obiettivi"
         },
         "keywords": {
           "title": "Copertura delle parole chiave",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "Apri un altro catalogo",
+        "catalogMeta": "{count} foto · {first} – {last}"
       }
     }
   }

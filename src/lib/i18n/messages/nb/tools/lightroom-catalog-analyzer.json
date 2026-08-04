@@ -148,7 +148,7 @@
             "topFocalLength": "Viktigste brennvidde"
           },
           "caption": "Katalogoversikt: {totalPhotos} bilder fordelt på {daysShot} dager, {bodyCount} kamerahus, {lensCount} objektiver.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} enkeltopptak · {bursts} i serieopptak"
         },
         "gear": {
           "title": "Utstyr",
@@ -174,7 +174,7 @@
           "noPrime": "Bruken din av brennvidder er for spredt til at ett enkelt fastobjektiv kan dominere.",
           "caption": "Histogram med 1 mm-intervaller fra {min} mm til {max} mm; {peakCount} viktigste topper merket.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "Vidvinkel – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "På {lens} er {pct} % av opptakene ved {mm} mm.",
           "empty": "Ingen zoomobjektiver oppdaget i denne katalogen.",
           "caption": "{n} histogrammer over zoomobjektiver med den dominerende brennvidden uthevet.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "Velg zoomobjektiv",
+          "shotCount": "{count} opptak"
         },
         "apertures": {
           "title": "Optimal blender",
           "callout": "Du fotograferer med {lens} på full åpning {pct} % av tiden.",
           "empty": "Ikke nok data — det trengs minst ett objektiv med over 100 bilder.",
           "caption": "{n} blenderhistogrammer for objektiver.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "Den mest brukte blenderen din på {lens} er {aperture} ({pct} % av opptakene).",
+          "selectLens": "Velg objektiv",
+          "shotCount": "{count} opptak"
         },
         "time-of-day": {
           "title": "Tid på døgnet",
@@ -210,7 +210,7 @@
           "perGear": "Per kamerahus",
           "perGearPeak": "{gear} — topptime {hour}:00",
           "caption": "Antall bilder over 24 timer med valgfri fordeling etter solvinkel.",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "topptime {hour}:00"
         },
         "heatmap": {
           "title": "Fotograferingsvarmekart",
@@ -273,8 +273,8 @@
             "count": "Bilder"
           },
           "caption": "Vurderingsfordeling med {colorLabelCount} fargeetiketter og utvalgsrater per utstyr.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "Kameraer",
+          "lenses": "Objektiver"
         },
         "keywords": {
           "title": "Nøkkelorddekning",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "Åpne en annen katalog",
+        "catalogMeta": "{count} bilder · {first} – {last}"
       }
     }
   }

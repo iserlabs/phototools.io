@@ -148,7 +148,7 @@
             "topFocalLength": "Focale principale"
           },
           "caption": "Vue d'ensemble du catalogue : {totalPhotos} photos sur {daysShot} jours, {bodyCount} boîtiers, {lensCount} objectifs.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} uniques · {bursts} en rafale"
         },
         "gear": {
           "title": "Matériel",
@@ -174,7 +174,7 @@
           "noPrime": "Votre usage des focales est trop dispersé pour qu'une seule focale fixe domine.",
           "caption": "Histogramme par tranches de 1 mm de {min} mm à {max} mm ; {peakCount} pics principaux étiquetés.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "Grand-angle – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "Avec votre {lens}, {pct} % des prises de vue sont à {mm} mm.",
           "empty": "Aucun zoom détecté dans ce catalogue.",
           "caption": "{n} histogrammes de zooms avec la focale dominante mise en évidence.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "Sélectionner un zoom",
+          "shotCount": "{count} prises de vue"
         },
         "apertures": {
           "title": "Ouverture optimale",
           "callout": "Vous photographiez avec le {lens} à pleine ouverture {pct} % du temps.",
           "empty": "Données insuffisantes — il faut au moins un objectif avec plus de 100 photos.",
           "caption": "{n} histogrammes d'ouverture d'objectifs.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "Votre ouverture la plus utilisée avec le {lens} est {aperture} ({pct} % des prises de vue).",
+          "selectLens": "Sélectionner un objectif",
+          "shotCount": "{count} prises de vue"
         },
         "time-of-day": {
           "title": "Heure de la journée",
@@ -210,7 +210,7 @@
           "perGear": "Par boîtier",
           "perGearPeak": "{gear} — heure de pointe {hour}:00",
           "caption": "Nombre de photos sur 24 heures avec répartition optionnelle par angle solaire.",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "heure de pointe {hour}:00"
         },
         "heatmap": {
           "title": "Carte de chaleur des prises de vue",
@@ -273,8 +273,8 @@
             "count": "Photos"
           },
           "caption": "Répartition des notes avec {colorLabelCount} étiquettes de couleur et taux de sélection par matériel.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "Appareils",
+          "lenses": "Objectifs"
         },
         "keywords": {
           "title": "Couverture des mots-clés",
@@ -338,7 +338,7 @@
           "reset": "Réinitialiser",
           "activeFilters": "Filtres actifs",
           "removeFilter": "Supprimer le filtre {label}",
-          "filterDateRange": "Date {start} – {end}",
+          "filterDateRange": "Dates {start} – {end}",
           "filterCameras": "Appareil : {names}",
           "filterLenses": "Objectif : {names}",
           "filterFocalLength": "Focale {min}–{max} mm",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "Ouvrir un autre catalogue",
+        "catalogMeta": "{count} photos au total · {first} – {last}"
       }
     }
   }

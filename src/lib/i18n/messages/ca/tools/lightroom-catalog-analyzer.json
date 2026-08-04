@@ -148,7 +148,7 @@
             "topFocalLength": "Distància focal principal"
           },
           "caption": "Visió general del catàleg: {totalPhotos} fotografies en {daysShot} dies, {bodyCount} cossos, {lensCount} objectius.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} úniques · {bursts} en ràfegues"
         },
         "gear": {
           "title": "Equip",
@@ -174,7 +174,7 @@
           "noPrime": "El teu ús de distàncies focals està massa repartit perquè un sol objectiu fix domini.",
           "caption": "Histograma amb intervals d'1 mm de {min} mm a {max} mm; {peakCount} pics principals etiquetats.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "Gran angular – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "Amb el teu {lens}, el {pct} % de les fotografies són a {mm} mm.",
           "empty": "No s'ha detectat cap objectiu zoom en aquest catàleg.",
           "caption": "{n} histogrames d'objectius zoom amb la distància focal dominant ressaltada.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "Selecciona l'objectiu zoom",
+          "shotCount": "{count} fotografies"
         },
         "apertures": {
           "title": "Obertura òptima",
           "callout": "Fotografies amb el {lens} a obertura màxima el {pct} % de les vegades.",
           "empty": "No hi ha prou dades — cal almenys un objectiu amb més de 100 fotografies.",
           "caption": "{n} histogrames d'obertura d'objectius.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "L'obertura que més fas servir amb el {lens} és {aperture} (el {pct} % de les fotografies).",
+          "selectLens": "Selecciona l'objectiu",
+          "shotCount": "{count} fotografies"
         },
         "time-of-day": {
           "title": "Hora del dia",
@@ -210,7 +210,7 @@
           "perGear": "Per cos",
           "perGearPeak": "{gear} — hora punta {hour}:00",
           "caption": "Recomptes de fotografies al llarg de 24 hores amb desglossament opcional per angle solar.",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "hora punta {hour}:00"
         },
         "heatmap": {
           "title": "Mapa de calor de fotografies",
@@ -273,8 +273,8 @@
             "count": "Fotografies"
           },
           "caption": "Distribució de valoracions amb {colorLabelCount} etiquetes de color i taxes de selecció per equip.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "Càmeres",
+          "lenses": "Objectius"
         },
         "keywords": {
           "title": "Cobertura de paraules clau",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "Obre un altre catàleg",
+        "catalogMeta": "{count} fotografies · {first} – {last}"
       }
     }
   }

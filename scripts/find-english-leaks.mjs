@@ -21,8 +21,10 @@ const ALLOWLIST = new Set([
   'mm', 'fps', 'px', 'GB', 'MB', 'KB', 'K',
   // Sensor format proper nouns (kept English across all locales by project convention)
   'Full Frame', 'Medium Format (54x40)', 'Medium Format (44x33)', 'Medium Format (45x30)',
-  'APS-C (1.5x)', 'APS-C (Canon)', 'Micro Four Thirds', '1" Sensor',
+  'APS-C (1.5x)', 'APS-C (Canon)', 'APS-C', 'APS-H', 'Micro Four Thirds', '1" Sensor',
   'Smartphone Flagship (1/1.3")',
+  // Third-party product names + color notation kept English by convention
+  'Google AdSense', 'Epson (360)', 'Hex', 'APS-C (Nikon/Sony)',
   // Form placeholders
   'your@email.com', 'Email', 'Website', 'Name',
 ])
@@ -38,7 +40,60 @@ const ALLOW_PATTERNS = [
   /^-?\d+(\.\d+)?\s*(EV|stops?)$/i, // -2 EV, +1 stop
 ]
 
+/**
+ * Units and acronyms that stay untranslated by project convention.
+ * Used by isNotation() below, which allows any string built purely from
+ * placeholders, numbers, punctuation, units, and acronyms.
+ */
+const UNITS = new Set([
+  'mm', 'cm', 'm', 'km', 'in', 'ft', 'px', 'mp', 'gb', 'mb', 'kb', 'tb',
+  'k', 'ev', 'fps', 's', 'ms', 'nm', 'um', 'dpi', 'ppi', 'bit', 'x', 'vs', 'f',
+])
+
+/** Uppercase technical codes: ISO, GPS, JPEG, DPI, RGB, CSS, RAW, APS-H, HEIC, sRGB… */
+const ACRONYM = /^[A-Z][A-Z0-9]{1,6}(-[A-Z0-9]{1,4})?$/
+
+/**
+ * True when a string carries no translatable prose — only interpolation
+ * placeholders, numbers, punctuation, units, and technical acronyms.
+ * e.g. "{pct}%", "24mm", "12 MP", "100 mm+", "ISO", "f/2.8 – f/8", "RGB".
+ * Without this, notation dominates the report and buries real leaks.
+ */
+function isNotation(value, loanwords = new Set()) {
+  const stripped = value
+    .replace(/\{[a-zA-Z0-9_]+\}/g, ' ')  // interpolation placeholders
+    .replace(/%s|%d/g, ' ')              // printf-style tokens
+    // Dimension separators only between digits ("20x13", "3 × 2"). The literal
+    // "x" must NOT go in the class below, or it is stripped out of real words
+    // ("Pixel" → "Pi el") and the word check silently misreads them.
+    .replace(/(?<=\d)\s*[x×]\s*(?=\d)/g, ' ')
+    .replace(/[\d.,:/+×·–—~\-()[\]%°"'|@]/g, ' ')
+  const words = stripped.split(/\s+/).filter(Boolean)
+  if (words.length === 0) return true
+  return words.every(
+    (w) => UNITS.has(w.toLowerCase()) || ACRONYM.test(w) || ALLOWLIST.has(w)
+      || loanwords.has(w.toLowerCase()),
+  )
+}
+
 const STOPWORDS = ['the', 'and', 'of', 'is', 'to', 'in', 'a', 'with', 'for', 'on', 'at', 'by', 'from']
+
+/**
+ * Locales that do not use the Latin alphabet. The "short identical strings are
+ * probably cognates" assumption only holds for Latin-script languages — a bare
+ * ASCII word like "Cameras" or "Lenses" sitting in the Japanese or Russian
+ * bundle is a leak no matter how short it is. For these locales, short
+ * identical matches are escalated from SOFT to HARD.
+ *
+ * This blind spot let ~90 untranslated strings sit undetected in the Lightroom
+ * Catalog Analyzer bundles (fixed 2026-08-04).
+ */
+const NON_LATIN_LOCALES = new Set(['ja', 'ko', 'zh', 'zh-TW', 'th', 'hi', 'bn', 'ru', 'uk', 'el'])
+
+/** True when a value is pure ASCII (i.e. contains no character from the locale's own script). */
+function isAsciiOnly(value) {
+  return /^[\x20-\x7E]*$/.test(value) && /[A-Za-z]{2,}/.test(value)
+}
 
 function getLocales() {
   return readdirSync(MESSAGES_DIR, { withFileTypes: true })
@@ -65,13 +120,29 @@ function flatten(obj, prefix = '') {
   return out
 }
 
-function isAllowed(value) {
+/**
+ * Per-locale loanwords: English words a specific language genuinely uses.
+ * Scoped per locale on purpose — "Macro" is native Greek usage but would be a
+ * real leak in Japanese, so a global allowlist would hide regressions.
+ *
+ * Only add an entry with evidence: the word must already appear untranslated
+ * inside that locale's own translated prose. (The entries below were each
+ * verified that way — e.g. Greek uses "macro φακούς" 15 times and never μάκρο.)
+ */
+const LOCALE_LOANWORDS = {
+  el: new Set([
+    'bokeh', 'macro', 'kelvin', 'clipping', 'bracketing', 'stop', 'stops',
+    'cookies', 'pixel', 'binning', 'medium', 'format', 'web', 'crop',
+  ]),
+}
+
+function isAllowed(value, locale) {
   const trimmed = value.trim()
   if (ALLOWLIST.has(trimmed)) return true
   for (const pattern of ALLOW_PATTERNS) {
     if (pattern.test(trimmed)) return true
   }
-  return false
+  return isNotation(trimmed, LOCALE_LOANWORDS[locale] ?? new Set())
 }
 
 function countStopwords(value) {
@@ -116,7 +187,7 @@ function scanLocale(locale) {
       const locVal = locFlat[key]
       if (locVal === undefined) continue
       if (typeof locVal !== 'string') continue
-      if (isAllowed(locVal)) continue
+      if (isAllowed(locVal, locale)) continue
 
       // HARD flag: long strings identical to English source are real leaks.
       // Short strings (≤25 chars) identical to English are usually cross-language cognates
@@ -126,9 +197,12 @@ function scanLocale(locale) {
         continue
       }
 
-      // SOFT flag: short identical matches — worth a look but often legitimate
+      // Short identical matches. In a non-Latin-script locale an all-ASCII
+      // value can't be a cognate — flag it HARD. Elsewhere it's usually
+      // legitimate ("Total", "Start", "Sensor"), so keep it SOFT.
       if (enVal === locVal && enVal.length > 2) {
-        soft.push({ file, key, en: enVal, loc: locVal, reason: 'identical to en source (short)' })
+        const level = NON_LATIN_LOCALES.has(locale) && isAsciiOnly(locVal) ? hard : soft
+        level.push({ file, key, en: enVal, loc: locVal, reason: 'identical to en source (short)' })
         continue
       }
 

@@ -148,7 +148,7 @@
             "topFocalLength": "Tärkein polttoväli"
           },
           "caption": "Luettelon yleiskatsaus: {totalPhotos} kuvaa {daysShot} päivän aikana, {bodyCount} runkoa, {lensCount} objektiivia.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} yksittäiskuvaa · {bursts} sarjoissa"
         },
         "gear": {
           "title": "Kalusto",
@@ -174,7 +174,7 @@
           "noPrime": "Polttovälien käyttösi on liian hajanaista, jotta yksi kiinteäpolttovälinen objektiivi voisi hallita.",
           "caption": "Histogrammi 1 mm:n välein {min} mm:stä {max} mm:iin; {peakCount} tärkeintä huippua merkitty.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "Laajakulma – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "Objektiivilla {lens} {pct} % kuvista on otettu polttovälillä {mm} mm.",
           "empty": "Tästä luettelosta ei havaittu zoomobjektiiveja.",
           "caption": "{n} zoomobjektiivin histogrammia, joissa hallitseva polttoväli on korostettu.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "Valitse zoomobjektiivi",
+          "shotCount": "{count} kuvaa"
         },
         "apertures": {
           "title": "Optimaalinen aukko",
           "callout": "Kuvaat objektiivilla {lens} täysin aukaistuna {pct} % ajasta.",
           "empty": "Tietoja ei ole tarpeeksi — tarvitaan vähintään yksi objektiivi, jolla on yli 100 kuvaa.",
           "caption": "{n} objektiivin aukkohistogrammia.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "Eniten käyttämäsi aukko objektiivilla {lens} on {aperture} ({pct} % kuvista).",
+          "selectLens": "Valitse objektiivi",
+          "shotCount": "{count} kuvaa"
         },
         "time-of-day": {
           "title": "Vuorokaudenaika",
@@ -210,7 +210,7 @@
           "perGear": "Rungon mukaan",
           "perGearPeak": "{gear} — huipputunti {hour}:00",
           "caption": "Kuvamäärät 24 tunnin aikana valinnaisella auringon kulman mukaisella erittelyllä.",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "huipputunti {hour}:00"
         },
         "heatmap": {
           "title": "Kuvauslämpökartta",
@@ -273,8 +273,8 @@
             "count": "Kuvia"
           },
           "caption": "Arviointien jakauma {colorLabelCount} värimerkinnällä ja kalustokohtaisilla valintaprosenteilla.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "Kamerat",
+          "lenses": "Objektiivit"
         },
         "keywords": {
           "title": "Avainsanakattavuus",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "Avaa toinen luettelo",
+        "catalogMeta": "{count} kuvaa · {first} – {last}"
       }
     }
   }

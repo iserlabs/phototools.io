@@ -52,7 +52,7 @@
         },
         "sensor": {
           "term": "Kích thước cảm biến",
-          "definition": "Cảm biến lớn hơn có chiều sâu trường ảnh nông hơn m���i ảnh ở khung hình tương đương, có thể tăng số khung hình chồng cần thiết."
+          "definition": "Cảm biến lớn hơn có chiều sâu trường ảnh nông hơn mỗi ảnh ở khung hình tương đương, có thể tăng số khung hình chồng cần thiết."
         },
         "nearLimit": {
           "term": "Giới hạn gần",

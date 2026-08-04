@@ -117,7 +117,7 @@
         "definition": "採用失真壓縮的影像檔案格式。檔案小，但後製彈性不如 RAW。"
       },
       "kelvin": {
-        "term": "Kelvin",
+        "term": "克耳文（Kelvin）",
         "definition": "色溫的量測單位。攝影師以 Kelvin 值設定白平衡，以匹配環境光源的顏色。"
       },
       "lens-compression": {

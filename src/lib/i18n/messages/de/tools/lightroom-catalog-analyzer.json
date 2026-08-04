@@ -148,7 +148,7 @@
             "topFocalLength": "Wichtigste Brennweite"
           },
           "caption": "Katalogübersicht: {totalPhotos} Fotos an {daysShot} Tagen, {bodyCount} Gehäuse, {lensCount} Objektive.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} Einzelaufnahmen · {bursts} in Serien"
         },
         "gear": {
           "title": "Ausrüstung",
@@ -174,7 +174,7 @@
           "noPrime": "Deine Brennweitennutzung ist zu breit gestreut, als dass eine einzelne Festbrennweite dominieren könnte.",
           "caption": "Histogramm mit 1-mm-Klassen von {min} mm bis {max} mm; {peakCount} wichtigste Spitzen beschriftet.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "Weitwinkel – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "Mit deinem {lens} sind {pct} % der Aufnahmen bei {mm} mm.",
           "empty": "In diesem Katalog wurden keine Zoomobjektive erkannt.",
           "caption": "{n} Histogramme von Zoomobjektiven mit hervorgehobener dominanter Brennweite.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "Zoomobjektiv auswählen",
+          "shotCount": "{count} Aufnahmen"
         },
         "apertures": {
           "title": "Optimale Blende",
           "callout": "Du fotografierst mit dem {lens} {pct} % der Zeit bei Offenblende.",
           "empty": "Nicht genug Daten — es wird mindestens ein Objektiv mit über 100 Fotos benötigt.",
           "caption": "{n} Blenden-Histogramme von Objektiven.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "Deine meistgenutzte Blende mit dem {lens} ist {aperture} ({pct} % der Aufnahmen).",
+          "selectLens": "Objektiv auswählen",
+          "shotCount": "{count} Aufnahmen"
         },
         "time-of-day": {
           "title": "Tageszeit",
@@ -210,7 +210,7 @@
           "perGear": "Nach Gehäuse",
           "perGearPeak": "{gear} — Spitzenstunde {hour}:00",
           "caption": "Fotoanzahl über 24 Stunden mit optionaler Aufschlüsselung nach Sonnenstand.",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "Spitzenstunde {hour}:00"
         },
         "heatmap": {
           "title": "Aufnahme-Heatmap",
@@ -273,8 +273,8 @@
             "count": "Fotos"
           },
           "caption": "Bewertungsverteilung mit {colorLabelCount} Farbmarkierungen und Auswahlquoten nach Ausrüstung.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "Kameras",
+          "lenses": "Objektive"
         },
         "keywords": {
           "title": "Stichwortabdeckung",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "Anderen Katalog öffnen",
+        "catalogMeta": "{count} Fotos · {first} – {last}"
       }
     }
   }

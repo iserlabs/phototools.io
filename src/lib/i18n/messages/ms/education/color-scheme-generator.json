@@ -60,7 +60,7 @@
       "tooltips": {
         "Harmony Type": {
           "term": "Jenis Harmoni",
-          "definition": "Corak hubungan warna: Complementary (bertentangan), Analogous (jiran), Triadic (tiga hala), Split Complementary (bertentangan yang diserong), atau Tetradic (segi empat tepat empat hala)."
+          "definition": "Corak hubungan warna: Komplementari (bertentangan), Analogus (jiran), Triadik (tiga hala), Split Complementary (bertentangan yang diserong), atau Tetradik (segi empat tepat empat hala)."
         },
         "Key Color": {
           "term": "Warna Utama",
@@ -94,9 +94,9 @@
           "successMessage": "Betul! Warna komplementari duduk 180 darjah terpisah dan menghasilkan kontras paling tinggi — sempurna untuk komposisi yang berani dan menarik perhatian.",
           "failureMessage": "Harmoni komplementari meletakkan warna tepat bertentangan pada roda, mencipta kontras visual maksimum.",
           "options": {
-            "0": { "label": "Complementary" },
-            "1": { "label": "Analogous" },
-            "2": { "label": "Triadic" }
+            "0": { "label": "Komplementari" },
+            "1": { "label": "Analogus" },
+            "2": { "label": "Triadik" }
           }
         },
         "1": {
@@ -105,9 +105,9 @@
           "successMessage": "Betul! Harmoni analogus menggunakan warna bersebelahan, memberi anda palet hangat yang padu yang sempurna untuk golden hour.",
           "failureMessage": "Harmoni analogus mengekalkan semua warna sebagai jiran pada roda — sesuai untuk palet hangat atau sejuk yang bersatu.",
           "options": {
-            "0": { "label": "Complementary" },
-            "1": { "label": "Analogous" },
-            "2": { "label": "Tetradic" }
+            "0": { "label": "Komplementari" },
+            "1": { "label": "Analogus" },
+            "2": { "label": "Tetradik" }
           }
         },
         "2": {
@@ -117,8 +117,8 @@
           "failureMessage": "Split Complementary ialah jawapannya — ia menggantikan satu warna bertentangan dengan dua jiran bertentangan, melembutkan kontras sambil mengekalkan tenaga visual.",
           "options": {
             "0": { "label": "Split Complementary" },
-            "1": { "label": "Triadic" },
-            "2": { "label": "Analogous" }
+            "1": { "label": "Triadik" },
+            "2": { "label": "Analogus" }
           }
         },
         "3": {
@@ -138,9 +138,9 @@
           "successMessage": "Betul! Harmoni tetradik memberikan empat warna yang membentuk segi empat tepat pada roda. Cabaran utamanya ialah keseimbangan — dengan empat hue berbeza, satu warna perlu mendominasi sementara yang lain menjadi aksen. Tanpa hierarki, imej terasa kacau.",
           "failureMessage": "Tetradik (double-complementary) menyediakan empat warna dalam susunan segi empat tepat. Cabarannya ialah empat hue kuat bersaing untuk perhatian — anda perlu menetapkan satu warna dominan dan gunakan yang lain sebagai aksen.",
           "options": {
-            "0": { "label": "Tetradic — cabaran ialah mengekalkan hierarki visual antara empat hue" },
-            "1": { "label": "Triadic — cabaran ialah terlalu sedikit warna" },
-            "2": { "label": "Analogous — cabaran ialah kekurangan kontras" }
+            "0": { "label": "Tetradik — cabaran ialah mengekalkan hierarki visual antara empat hue" },
+            "1": { "label": "Triadik — cabaran ialah terlalu sedikit warna" },
+            "2": { "label": "Analogus — cabaran ialah kekurangan kontras" }
           }
         }
       }

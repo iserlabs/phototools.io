@@ -148,7 +148,7 @@
             "topFocalLength": "Distância focal principal"
           },
           "caption": "Visão geral do catálogo: {totalPhotos} fotos em {daysShot} dias, {bodyCount} corpos, {lensCount} lentes.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} únicas · {bursts} em rajadas"
         },
         "gear": {
           "title": "Equipamento",
@@ -174,7 +174,7 @@
           "noPrime": "Seu uso de distâncias focais é distribuído demais para que uma única lente fixa domine.",
           "caption": "Histograma com intervalos de 1 mm de {min} mm até {max} mm; {peakCount} picos principais rotulados.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "Grande angular – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "Na sua {lens}, {pct}% das fotos são em {mm} mm.",
           "empty": "Nenhuma lente zoom detectada neste catálogo.",
           "caption": "{n} histogramas de lentes zoom com a distância focal dominante destacada.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "Selecione a lente zoom",
+          "shotCount": "{count} fotos"
         },
         "apertures": {
           "title": "Abertura ideal",
           "callout": "Você fotografa com a {lens} na abertura máxima {pct}% das vezes.",
           "empty": "Dados insuficientes — é necessária pelo menos uma lente com mais de 100 fotos.",
           "caption": "{n} histogramas de abertura de lentes.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "Sua abertura mais usada na {lens} é {aperture} ({pct}% das fotos).",
+          "selectLens": "Selecione a lente",
+          "shotCount": "{count} fotos"
         },
         "time-of-day": {
           "title": "Hora do dia",
@@ -208,9 +208,9 @@
             "night": "Noite"
           },
           "perGear": "Por corpo",
-          "perGearPeak": "{gear} — pico de hora {hour}:00",
+          "perGearPeak": "{gear} — hora de pico {hour}:00",
           "caption": "Contagens de fotos ao longo de 24 horas com detalhamento opcional por ângulo solar.",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "hora de pico {hour}:00"
         },
         "heatmap": {
           "title": "Mapa de calor de fotos",
@@ -273,8 +273,8 @@
             "count": "Fotos"
           },
           "caption": "Distribuição de avaliações com {colorLabelCount} etiquetas de cor e taxas de seleção por equipamento.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "Câmeras",
+          "lenses": "Lentes"
         },
         "keywords": {
           "title": "Cobertura de palavras-chave",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "Abrir outro catálogo",
+        "catalogMeta": "{count} fotos · {first} – {last}"
       }
     }
   }

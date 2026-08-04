@@ -148,7 +148,7 @@
             "topFocalLength": "Panjang fokus teratas"
           },
           "caption": "Ikhtisar katalog: {totalPhotos} foto dalam {daysShot} hari, {bodyCount} bodi, {lensCount} lensa.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} unik · {bursts} dalam burst"
         },
         "gear": {
           "title": "Gear",
@@ -174,7 +174,7 @@
           "noPrime": "Penggunaan panjang fokus Anda terlalu tersebar untuk didominasi satu lensa prime.",
           "caption": "Histogram bin-1mm dari {min}mm hingga {max}mm; {peakCount} puncak teratas diberi label.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "Sudut lebar – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "Pada {lens} Anda, {pct}% jepretan berada di {mm}mm.",
           "empty": "Tidak ada lensa zoom yang terdeteksi di katalog ini.",
           "caption": "{n} histogram lensa zoom dengan panjang fokus dominan disorot.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "Pilih lensa zoom",
+          "shotCount": "{count} jepretan"
         },
         "apertures": {
           "title": "Sweet Spot Apertur",
           "callout": "Anda memotret {lens} bukaan penuh {pct}% dari waktu.",
           "empty": "Data tidak cukup — perlu setidaknya satu lensa dengan 100+ foto.",
           "caption": "{n} histogram apertur lensa.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "Apertur yang paling sering Anda gunakan pada {lens} adalah {aperture} ({pct}% jepretan).",
+          "selectLens": "Pilih lensa",
+          "shotCount": "{count} jepretan"
         },
         "time-of-day": {
           "title": "Waktu dalam Sehari",
@@ -210,7 +210,7 @@
           "perGear": "Berdasarkan bodi",
           "perGearPeak": "{gear} — jam puncak {hour}:00",
           "caption": "Jumlah foto sepanjang 24 jam dengan rincian sudut matahari opsional.",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "jam puncak {hour}:00"
         },
         "heatmap": {
           "title": "Heatmap Pemotretan",
@@ -273,8 +273,8 @@
             "count": "Foto"
           },
           "caption": "Distribusi rating dengan {colorLabelCount} label warna dan tingkat pilihan per gear.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "Kamera",
+          "lenses": "Lensa"
         },
         "keywords": {
           "title": "Cakupan Kata Kunci",
@@ -344,7 +344,7 @@
           "filterFocalLength": "Panjang fokus {min}–{max}mm",
           "filterAperture": "Apertur f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
-          "filterRatings": "Rating: {ratings}",
+          "filterRatings": "Rating bintang: {ratings}",
           "filterPicks": "Pilihan: {state}"
         },
         "period-comparison": {
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "Buka katalog lain",
+        "catalogMeta": "{count} foto · {first} – {last}"
       }
     }
   }

@@ -148,7 +148,7 @@
             "topFocalLength": "Самое частое фокусное расстояние"
           },
           "caption": "Обзор каталога: {totalPhotos} фотографий за {daysShot} дней, камер: {bodyCount}, объективов: {lensCount}.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} уникальных · {bursts} в сериях"
         },
         "gear": {
           "title": "Техника",
@@ -174,7 +174,7 @@
           "noPrime": "Ваше использование фокусных расстояний слишком разбросано, чтобы один фикс доминировал.",
           "caption": "Гистограмма с шагом 1 мм от {min}мм до {max}мм; отмечено {peakCount} основных пиков.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "Широкий угол – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "На объективе {lens} {pct}% кадров сняты на {mm}мм.",
           "empty": "В этом каталоге не обнаружено зум-объективов.",
           "caption": "{n} гистограмм зум-объективов с выделенным доминирующим фокусным расстоянием.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "Выберите зум-объектив",
+          "shotCount": "{count} кадров"
         },
         "apertures": {
           "title": "Оптимальная диафрагма",
           "callout": "Вы снимаете объективом {lens} на полностью открытой диафрагме в {pct}% случаев.",
           "empty": "Недостаточно данных — нужен как минимум один объектив со 100+ фотографиями.",
           "caption": "{n} гистограмм диафрагмы объективов.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "Чаще всего вы снимаете объективом {lens} на диафрагме {aperture} ({pct}% кадров).",
+          "selectLens": "Выберите объектив",
+          "shotCount": "{count} кадров"
         },
         "time-of-day": {
           "title": "Время суток",
@@ -210,7 +210,7 @@
           "perGear": "По камере",
           "perGearPeak": "{gear} — пиковый час {hour}:00",
           "caption": "Количество фотографий за 24 часа с дополнительной разбивкой по углу солнца.",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "пиковый час {hour}:00"
         },
         "heatmap": {
           "title": "Тепловая карта съёмки",
@@ -273,8 +273,8 @@
             "count": "Фотографии"
           },
           "caption": "Распределение рейтингов с {colorLabelCount} цветовыми метками и долями отбора по технике.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "Камеры",
+          "lenses": "Объективы"
         },
         "keywords": {
           "title": "Покрытие ключевыми словами",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "Открыть другой каталог",
+        "catalogMeta": "{count} фотографий · {first} – {last}"
       }
     }
   }

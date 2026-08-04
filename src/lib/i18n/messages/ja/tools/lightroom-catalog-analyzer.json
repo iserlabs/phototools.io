@@ -148,7 +148,7 @@
             "topFocalLength": "最も多い焦点距離"
           },
           "caption": "カタログ概要: {daysShot} 日間で {totalPhotos} 枚、ボディ {bodyCount} 台、レンズ {lensCount} 本。",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "単写 {unique} 枚 · 連写 {bursts} 枚"
         },
         "gear": {
           "title": "機材",
@@ -174,7 +174,7 @@
           "noPrime": "あなたの焦点距離の使い方は分散しすぎており、1本の単焦点では支配的になりません。",
           "caption": "{min}mm から {max}mm までの 1mm 刻みヒストグラム；上位 {peakCount} 件のピークにラベル付け。",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "広角 – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "{lens} では、{pct}% の写真が {mm}mm で撮影されています。",
           "empty": "このカタログにズームレンズは検出されませんでした。",
           "caption": "支配的な焦点距離を強調した {n} 本のズームレンズのヒストグラム。",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "ズームレンズを選択",
+          "shotCount": "{count} 枚"
         },
         "apertures": {
           "title": "絞りのスイートスポット",
           "callout": "{lens} を開放で撮影する割合は {pct}% です。",
           "empty": "データ不足 — 100 枚以上の写真があるレンズが少なくとも1本必要です。",
           "caption": "{n} 本のレンズの絞りのヒストグラム。",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "{lens} で最も多く使っている絞りは {aperture} です（全体の {pct}%）。",
+          "selectLens": "レンズを選択",
+          "shotCount": "{count} 枚"
         },
         "time-of-day": {
           "title": "時間帯",
@@ -210,7 +210,7 @@
           "perGear": "ボディ別",
           "perGearPeak": "{gear} — ピーク時刻 {hour}:00",
           "caption": "24時間の写真枚数（任意で太陽の角度による分類）。",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "ピーク時刻 {hour}:00"
         },
         "heatmap": {
           "title": "撮影ヒートマップ",
@@ -273,8 +273,8 @@
             "count": "写真"
           },
           "caption": "{colorLabelCount} 個のカラーラベルと機材別採用率を含むレーティング分布。",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "カメラ",
+          "lenses": "レンズ"
         },
         "keywords": {
           "title": "キーワードの網羅率",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "別のカタログを開く",
+        "catalogMeta": "写真 {count} 枚 · {first} – {last}"
       }
     }
   }

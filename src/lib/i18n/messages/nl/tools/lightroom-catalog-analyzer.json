@@ -148,7 +148,7 @@
             "topFocalLength": "Belangrijkste brandpuntsafstand"
           },
           "caption": "Catalogusoverzicht: {totalPhotos} foto's verspreid over {daysShot} dagen, {bodyCount} body's, {lensCount} lenzen.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} losse opnames · {bursts} in bursts"
         },
         "gear": {
           "title": "Apparatuur",
@@ -174,7 +174,7 @@
           "noPrime": "Je gebruik van brandpuntsafstanden is te verspreid om één enkele vaste lens te laten domineren.",
           "caption": "Histogram met klassen van 1mm van {min}mm tot {max}mm; {peakCount} belangrijkste pieken gelabeld.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "Groothoek – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "Op je {lens} is {pct}% van de opnames bij {mm}mm.",
           "empty": "Geen zoomlenzen gedetecteerd in deze catalogus.",
           "caption": "{n} histogrammen van zoomlenzen met de dominante brandpuntsafstand gemarkeerd.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "Zoomlens selecteren",
+          "shotCount": "{count} opnames"
         },
         "apertures": {
           "title": "Optimaal diafragma",
           "callout": "Je fotografeert met de {lens} {pct}% van de tijd op volledige opening.",
           "empty": "Niet genoeg gegevens — er is minstens één lens met meer dan 100 foto's nodig.",
           "caption": "{n} diafragmahistogrammen van lenzen.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "Je meestgebruikte diafragma op de {lens} is {aperture} ({pct}% van de opnames).",
+          "selectLens": "Lens selecteren",
+          "shotCount": "{count} opnames"
         },
         "time-of-day": {
           "title": "Tijdstip van de dag",
@@ -210,7 +210,7 @@
           "perGear": "Per body",
           "perGearPeak": "{gear} — piekuur {hour}:00",
           "caption": "Aantal foto's over 24 uur met optionele uitsplitsing naar zonnehoek.",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "piekuur {hour}:00"
         },
         "heatmap": {
           "title": "Opname-heatmap",
@@ -273,8 +273,8 @@
             "count": "Foto's"
           },
           "caption": "Beoordelingsverdeling met {colorLabelCount} kleurlabels en selectieratio's per apparatuur.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "Camera's",
+          "lenses": "Lenzen"
         },
         "keywords": {
           "title": "Trefwoorddekking",
@@ -339,8 +339,8 @@
           "activeFilters": "Actieve filters",
           "removeFilter": "Filter {label} verwijderen",
           "filterDateRange": "Datum {start} – {end}",
-          "filterCameras": "Camera: {names}",
-          "filterLenses": "Lens: {names}",
+          "filterCameras": "Camera's: {names}",
+          "filterLenses": "Lenzen: {names}",
           "filterFocalLength": "Brandpuntsafstand {min}–{max}mm",
           "filterAperture": "Diafragma f/{min}–f/{max}",
           "filterIso": "ISO {min}–{max}",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "Andere catalogus openen",
+        "catalogMeta": "{count} foto's · {first} – {last}"
       }
     }
   }

@@ -148,7 +148,7 @@
             "topFocalLength": "ทางยาวโฟกัสยอดนิยม"
           },
           "caption": "ภาพรวมแคตตาล็อก: {totalPhotos} ภาพใน {daysShot} วัน {bodyCount} บอดี้ {lensCount} เลนส์",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} ภาพเดี่ยว · {bursts} ภาพในการถ่ายต่อเนื่อง"
         },
         "gear": {
           "title": "อุปกรณ์",
@@ -174,7 +174,7 @@
           "noPrime": "การใช้ทางยาวโฟกัสของคุณกระจายเกินไปสำหรับเลนส์ไพรม์ตัวเดียวที่จะครอบงำ",
           "caption": "ฮิสโตแกรมแบบ bin 1mm จาก {min}mm ถึง {max}mm; ติดป้าย {peakCount} จุดสูงสุดยอดนิยม",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "มุมกว้าง – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "บน {lens} ของคุณ {pct}% ของภาพอยู่ที่ {mm}mm",
           "empty": "ไม่พบเลนส์ซูมในแคตตาล็อกนี้",
           "caption": "{n} ฮิสโตแกรมเลนส์ซูมโดยเน้นทางยาวโฟกัสที่โดดเด่น",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "เลือกเลนส์ซูม",
+          "shotCount": "{count} ภาพ"
         },
         "apertures": {
           "title": "จุดรูรับแสงที่ดีที่สุด",
           "callout": "คุณถ่าย {lens} เปิดกว้างสุด {pct}% ของเวลา",
           "empty": "ข้อมูลไม่เพียงพอ — ต้องมีเลนส์อย่างน้อยหนึ่งตัวที่มี 100+ ภาพ",
           "caption": "{n} ฮิสโตแกรมรูรับแสงเลนส์",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "รูรับแสงที่คุณใช้บ่อยที่สุดบน {lens} คือ {aperture} ({pct}% ของภาพทั้งหมด)",
+          "selectLens": "เลือกเลนส์",
+          "shotCount": "{count} ภาพ"
         },
         "time-of-day": {
           "title": "ช่วงเวลาในแต่ละวัน",
@@ -210,7 +210,7 @@
           "perGear": "ตามบอดี้",
           "perGearPeak": "{gear} — ชั่วโมงสูงสุด {hour}:00",
           "caption": "จำนวนภาพตลอด 24 ชั่วโมงพร้อมรายละเอียดมุมดวงอาทิตย์แบบเลือกได้",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "ชั่วโมงสูงสุด {hour}:00"
         },
         "heatmap": {
           "title": "ฮีตแมปการถ่ายภาพ",
@@ -273,8 +273,8 @@
             "count": "ภาพ"
           },
           "caption": "การกระจายการให้คะแนนพร้อม {colorLabelCount} ป้ายสีและอัตราการเลือกต่ออุปกรณ์",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "กล้อง",
+          "lenses": "เลนส์"
         },
         "keywords": {
           "title": "ความครอบคลุมคีย์เวิร์ด",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "เปิดแคตตาล็อกอื่น",
+        "catalogMeta": "{count} ภาพ · {first} – {last}"
       }
     }
   }

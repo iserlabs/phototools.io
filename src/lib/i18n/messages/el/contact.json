@@ -20,7 +20,7 @@
       "messagePlaceholder": "Το μήνυμά σου...",
       "submit": "Αποστολή μηνύματος",
       "sending": "Αποστολή...",
-      "honeypotLabel": "Website",
+      "honeypotLabel": "Ιστότοπος",
       "successToast": "Το μήνυμα στάλθηκε! Θα επικοινωνήσουμε σύντομα.",
       "errorToast": "Κάτι πήγε στραβά. Δοκίμασε ξανά.",
       "networkErrorToast": "Σφάλμα δικτύου. Έλεγξε τη σύνδεσή σου και δοκίμασε ξανά.",

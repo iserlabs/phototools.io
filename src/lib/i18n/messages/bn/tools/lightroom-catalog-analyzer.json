@@ -148,7 +148,7 @@
             "topFocalLength": "শীর্ষ ফোকাল দৈর্ঘ্য"
           },
           "caption": "ক্যাটালগ সংক্ষিপ্ত বিবরণ: {daysShot} দিনে {totalPhotos} ছবি, {bodyCount} বডি, {lensCount} লেন্স।",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "{unique} অনন্য · {bursts} বার্স্টে"
         },
         "gear": {
           "title": "গিয়ার",
@@ -174,7 +174,7 @@
           "noPrime": "আপনার ফোকাল-দৈর্ঘ্য ব্যবহার একটি একক প্রাইমের প্রাধান্য পাওয়ার জন্য খুব ছড়ানো।",
           "caption": "{min}mm থেকে {max}mm পর্যন্ত 1mm-বিন হিস্টোগ্রাম; {peakCount} শীর্ষ চূড়া লেবেল করা হয়েছে।",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "ওয়াইড-অ্যাঙ্গেল – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "আপনার {lens}-এ, {pct}% শট {mm}mm-এ।",
           "empty": "এই ক্যাটালগে কোনো জুম লেন্স সনাক্ত হয়নি।",
           "caption": "{n} জুম লেন্স হিস্টোগ্রাম যেখানে প্রভাবশালী ফোকাল দৈর্ঘ্য হাইলাইট করা হয়েছে।",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "জুম লেন্স নির্বাচন করুন",
+          "shotCount": "{count} শট"
         },
         "apertures": {
           "title": "অ্যাপারচার সুইট স্পট",
           "callout": "আপনি {lens} {pct}% সময় ওয়াইড ওপেন শুট করেন।",
           "empty": "যথেষ্ট ডেটা নেই — কমপক্ষে একটি লেন্সের ১০০+ ছবি প্রয়োজন।",
           "caption": "{n} লেন্স অ্যাপারচার হিস্টোগ্রাম।",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "{lens}-এ আপনার সবচেয়ে বেশি ব্যবহৃত অ্যাপারচার হলো {aperture} ({pct}% শট)।",
+          "selectLens": "লেন্স নির্বাচন করুন",
+          "shotCount": "{count} শট"
         },
         "time-of-day": {
           "title": "দিনের সময়",
@@ -210,7 +210,7 @@
           "perGear": "বডি অনুসারে",
           "perGearPeak": "{gear} — সর্বোচ্চ ঘণ্টা {hour}:00",
           "caption": "ঐচ্ছিক সূর্য-কোণ বিশ্লেষণ সহ ২৪ ঘণ্টা জুড়ে ছবির সংখ্যা।",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "সর্বোচ্চ ঘণ্টা {hour}:00"
         },
         "heatmap": {
           "title": "শুটিং হিটম্যাপ",
@@ -273,8 +273,8 @@
             "count": "ছবি"
           },
           "caption": "{colorLabelCount} রঙের লেবেল এবং প্রতি-গিয়ার পিক হার সহ রেটিং বণ্টন।",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "ক্যামেরা",
+          "lenses": "লেন্স"
         },
         "keywords": {
           "title": "কীওয়ার্ড কভারেজ",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "অন্য একটি ক্যাটালগ খুলুন",
+        "catalogMeta": "{count} ছবি · {first} – {last}"
       }
     }
   }

@@ -148,7 +148,7 @@
             "topFocalLength": "가장 많은 초점 거리"
           },
           "caption": "카탈로그 개요: {daysShot}일 동안 {totalPhotos}장, 바디 {bodyCount}대, 렌즈 {lensCount}개.",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "단일 컷 {unique}장 · 연사 {bursts}장"
         },
         "gear": {
           "title": "장비",
@@ -174,7 +174,7 @@
           "noPrime": "당신의 초점 거리 사용은 너무 분산되어 있어 단렌즈 하나로 지배적이지 않습니다.",
           "caption": "{min}mm부터 {max}mm까지 1mm 단위 히스토그램; 상위 {peakCount}개 피크에 레이블 표시.",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "광각 – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "{lens}에서는 사진의 {pct}%가 {mm}mm에서 촬영되었습니다.",
           "empty": "이 카탈로그에서 줌 렌즈가 감지되지 않았습니다.",
           "caption": "지배적인 초점 거리를 강조한 {n}개 줌 렌즈 히스토그램.",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "줌 렌즈 선택",
+          "shotCount": "{count}장"
         },
         "apertures": {
           "title": "조리개 스위트 스팟",
           "callout": "{lens}을(를) 개방으로 촬영하는 비율은 {pct}%입니다.",
           "empty": "데이터 부족 — 사진이 100장 이상인 렌즈가 최소 하나 필요합니다.",
           "caption": "{n}개 렌즈의 조리개 히스토그램.",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "{lens}에서 가장 많이 사용하는 조리개는 {aperture}입니다(전체의 {pct}%).",
+          "selectLens": "렌즈 선택",
+          "shotCount": "{count}장"
         },
         "time-of-day": {
           "title": "시간대",
@@ -210,7 +210,7 @@
           "perGear": "바디별",
           "perGearPeak": "{gear} — 피크 시각 {hour}:00",
           "caption": "24시간 동안의 사진 수(선택적 태양 고도별 분석 포함).",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "피크 시각 {hour}:00"
         },
         "heatmap": {
           "title": "촬영 히트맵",
@@ -273,8 +273,8 @@
             "count": "사진"
           },
           "caption": "{colorLabelCount}개 색상 레이블과 장비별 채택률을 포함한 별점 분포.",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "카메라",
+          "lenses": "렌즈"
         },
         "keywords": {
           "title": "키워드 커버리지",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "다른 카탈로그 열기",
+        "catalogMeta": "사진 {count}장 · {first} – {last}"
       }
     }
   }

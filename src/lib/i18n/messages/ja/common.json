@@ -85,8 +85,8 @@
     },
     "controls": {
       "focalLength": "焦点距離",
-      "aperture": "Aperture",
-      "distance": "Distance",
+      "aperture": "絞り",
+      "distance": "距離",
       "sensor": "センサー",
       "clickToEnterValue": "クリックして値を入力",
       "decrease": "減少",

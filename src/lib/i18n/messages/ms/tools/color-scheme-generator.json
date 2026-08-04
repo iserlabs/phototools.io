@@ -2,11 +2,11 @@
   "toolUI": {
     "color-scheme-generator": {
       "colorScheme": "Skema Warna",
-      "complementary": "Complementary",
-      "analogous": "Analogous",
-      "triadic": "Triadic",
+      "complementary": "Komplementari",
+      "analogous": "Analogus",
+      "triadic": "Triadik",
       "splitComplementary": "Split Complementary",
-      "tetradic": "Tetradic",
+      "tetradic": "Tetradik",
       "keyColor": "Warna Utama",
       "hue": "Hue:",
       "saturation": "Saturation:",
@@ -58,8 +58,8 @@
           "answer": "Harmoni warna merujuk kepada gabungan warna yang menyenangkan dari segi estetika berdasarkan kedudukannya pada roda warna. Warna yang harmoni mencipta keseimbangan visual dan boleh membangkitkan mood tertentu dalam foto anda."
         },
         "complementary-vs-analogous": {
-          "question": "Apakah perbezaan antara warna complementary dan analogous?",
-          "answer": "Warna complementary duduk bertentangan antara satu sama lain pada roda warna (seperti biru dan jingga) dan mencipta kontras tinggi. Warna analogous duduk bersebelahan (seperti biru, hijau-biru dan hijau) dan mencipta rasa yang lebih harmoni dan bersatu."
+          "question": "Apakah perbezaan antara warna komplementari dan analogus?",
+          "answer": "Warna komplementari duduk bertentangan antara satu sama lain pada roda warna (seperti biru dan jingga) dan mencipta kontras tinggi. Warna analogus duduk bersebelahan (seperti biru, hijau-biru dan hijau) dan mencipta rasa yang lebih harmoni dan bersatu."
         },
         "how-to-use-color-schemes-photography": {
           "question": "Bagaimana saya menggunakan skema warna dalam fotografi?",

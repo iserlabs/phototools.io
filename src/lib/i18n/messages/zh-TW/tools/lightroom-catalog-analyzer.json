@@ -148,7 +148,7 @@
             "topFocalLength": "最常用焦距"
           },
           "caption": "目錄概覽：{daysShot} 天內拍攝 {totalPhotos} 張照片，{bodyCount} 台機身，{lensCount} 支鏡頭。",
-          "burstSub": "{unique} unique · {bursts} in bursts"
+          "burstSub": "單張 {unique} 張 · 連拍 {bursts} 張"
         },
         "gear": {
           "title": "器材",
@@ -174,7 +174,7 @@
           "noPrime": "您的焦距使用過於分散，單支定焦鏡頭無法占主導。",
           "caption": "從 {min}mm 到 {max}mm、以 1mm 為間隔的直方圖；標註了 {peakCount} 個主要峰值。",
           "peakItem": "{mm}mm · {pct}%",
-          "wideRange": "Wide – 100 mm",
+          "wideRange": "廣角 – 100 mm",
           "teleRange": "100 mm+"
         },
         "focal-length-per-zoom": {
@@ -182,17 +182,17 @@
           "callout": "在您的 {lens} 上，{pct}% 的照片拍攝於 {mm}mm。",
           "empty": "此目錄中未偵測到變焦鏡頭。",
           "caption": "{n} 個變焦鏡頭的直方圖，並突顯主導焦距。",
-          "selectLens": "Select zoom lens",
-          "shotCount": "{count} shots"
+          "selectLens": "選擇變焦鏡頭",
+          "shotCount": "{count} 張"
         },
         "apertures": {
           "title": "光圈甜蜜點",
           "callout": "您有 {pct}% 的時間以最大光圈拍攝 {lens}。",
           "empty": "資料不足——至少需要一支擁有 100 張以上照片的鏡頭。",
           "caption": "{n} 支鏡頭的光圈直方圖。",
-          "mostUsedCallout": "Your most-used aperture on the {lens} is {aperture} ({pct}% of shots).",
-          "selectLens": "Select lens",
-          "shotCount": "{count} shots"
+          "mostUsedCallout": "您在 {lens} 上最常用的光圈是 {aperture}（佔 {pct}% 的照片）。",
+          "selectLens": "選擇鏡頭",
+          "shotCount": "{count} 張"
         },
         "time-of-day": {
           "title": "時段",
@@ -210,7 +210,7 @@
           "perGear": "依機身",
           "perGearPeak": "{gear}——高峰時段 {hour}:00",
           "caption": "24 小時內的照片數量，可選依太陽高度角分布。",
-          "perGearPeakHour": "peak hour {hour}:00"
+          "perGearPeakHour": "高峰時段 {hour}:00"
         },
         "heatmap": {
           "title": "拍攝熱力圖",
@@ -273,8 +273,8 @@
             "count": "照片"
           },
           "caption": "評分分布，含 {colorLabelCount} 個顏色標籤和依器材的精選率。",
-          "cameras": "Cameras",
-          "lenses": "Lenses"
+          "cameras": "相機",
+          "lenses": "鏡頭"
         },
         "keywords": {
           "title": "關鍵字覆蓋率",
@@ -604,8 +604,8 @@
         }
       },
       "controls": {
-        "openDifferent": "Open a different catalog",
-        "catalogMeta": "{count} photos · {first} – {last}"
+        "openDifferent": "開啟其他目錄",
+        "catalogMeta": "{count} 張照片 · {first} – {last}"
       }
     }
   }

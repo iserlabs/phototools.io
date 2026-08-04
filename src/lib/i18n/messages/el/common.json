@@ -46,7 +46,7 @@
       "whatIsThis": "Τι είναι αυτό;",
       "howItWorks": "Πώς λειτουργεί",
       "keyFactors": "Βασικοί παράγοντες",
-      "proTip": "Pro Tip",
+      "proTip": "Επαγγελματική συμβουλή",
       "challenge": "Πρόκληση",
       "hint": "Υπόδειξη: {hint}",
       "completed": "Ολοκληρώθηκε",
@@ -62,7 +62,7 @@
       "closeModal": "Κλείσιμο παραθύρου κοινοποίησης",
       "directLink": "Άμεσος σύνδεσμος",
       "markdown": "Markdown (Reddit, GitHub)",
-      "bbcode": "BBCode (Forums)",
+      "bbcode": "BBCode (Φόρουμ)",
       "htmlEmbed": "Ενσωμάτωση HTML",
       "copy": "Αντιγραφή",
       "copied": "Αντιγράφηκε"

@@ -1,7 +1,7 @@
 {
   "education": {
     "shutter-speed-visualizer": {
-      "beginner": "Hướng dẫn tốc độ màn trập giúp bạn tìm tốc độ màn trập chậm nhất có thể sử dụng mà vẫn có ảnh cầm tay sắc nét. Nếu tốc độ màn trập quá chậm, rung tay sẽ làm nhòe ảnh. Tốc độ an to��n tối thiểu phụ thuộc vào tiêu cự, liệu bạn có chống rung hay không, và tay bạn vững đến mức nào.",
+      "beginner": "Hướng dẫn tốc độ màn trập giúp bạn tìm tốc độ màn trập chậm nhất có thể sử dụng mà vẫn có ảnh cầm tay sắc nét. Nếu tốc độ màn trập quá chậm, rung tay sẽ làm nhòe ảnh. Tốc độ an toàn tối thiểu phụ thuộc vào tiêu cự, liệu bạn có chống rung hay không, và tay bạn vững đến mức nào.",
       "deeper": "Quy tắc \"nghịch đảo\" kinh điển nói rằng để có ảnh cầm tay sắc nét, tốc độ màn trập nên ít nhất 1/(tiêu cự) giây — ống 200mm cần ít nhất 1/200s. Trên máy cảm biến crop, bạn nên dùng tiêu cự tương đương (ví dụ: 200mm trên crop 1.5x = 1/300s). Chống rung trong thân máy (IBIS) và quang học (OIS) hiện đại có thể cho bạn thêm 3-7 stop cầm tay, nghĩa là ống 200mm có chống rung có thể nét ở 1/15s hoặc thậm chí chậm hơn. Tuy nhiên, chống rung chỉ bù rung máy, không phải chuyển động chủ thể. Người đi bộ về phía bạn ở 1/15s vẫn bị nhòe bất kể chống rung. Cho chủ thể di chuyển, bạn phải chọn tốc độ dựa trên vận tốc và khoảng cách chủ thể, không chỉ tiêu cự.",
       "keyFactors": {
         "0": {
@@ -80,7 +80,7 @@
           }
         },
         "2": {
-          "scenario": "Bạn có ống 200mm với OIS (4 stop chống rung) trên th��n máy full-frame có IBIS (5 stop). Cùng nhau chúng cung cấp khoảng 6 stop chống rung kết hợp. Cho chủ thể tĩnh, tốc độ màn trập tối thiểu xấp xỉ?",
+          "scenario": "Bạn có ống 200mm với OIS (4 stop chống rung) trên thân máy full-frame có IBIS (5 stop). Cùng nhau chúng cung cấp khoảng 6 stop chống rung kết hợp. Cho chủ thể tĩnh, tốc độ màn trập tối thiểu xấp xỉ?",
           "hint": "Bắt đầu từ quy tắc nghịch đảo (1/200s) rồi áp dụng 6 stop lợi ích chống rung.",
           "successMessage": "Chính xác! Bắt đầu ở 1/200s và được 6 stop: 1/200 -> 1/100 -> 1/50 -> 1/25 -> 1/13 -> 1/6 -> 1/3s. Khoảng 1/3 giây cầm tay với ống 200mm — ấn tượng nhưng khả thi với chống rung hiện đại!",
           "failureMessage": "Từ 1/200s, mỗi stop chống rung tăng gấp đôi thời gian sử dụng: 1/200 -> 1/100 -> 1/50 -> 1/25 -> 1/13 -> 1/6 -> 1/3s. Sáu stop chống rung với ống 200mm cho khoảng 1/3s.",
