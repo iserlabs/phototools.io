@@ -46,9 +46,12 @@ for (const page of pages) {
     })
 
     test('renders key content', async ({ page: p }) => {
-      // Every page should have the nav and footer
+      // Every page should have the nav and footer. Scope to .last(): tool
+      // content may legitimately nest its own <footer> inside <main> (e.g.
+      // the analyzer dashboard note), and the site footer is always the
+      // final one in DOM order (ThemeProvider renders it after <main>).
       await expect(p.locator('nav').first()).toBeVisible()
-      await expect(p.locator('footer')).toBeVisible()
+      await expect(p.locator('footer').last()).toBeVisible()
 
       // Check for page-specific content
       if (page.url === '/en') {
@@ -56,9 +59,24 @@ for (const page of pages) {
         await expect(p.locator('h1')).toHaveCount(1)
       } else if (page.url === '/en/learn/glossary') {
         await expect(p.locator('h1')).toBeVisible()
+      } else if (page.url === '/en/lightroom-catalog-analyzer') {
+        // The analyzer's redesigned desktop empty state shows no tool title
+        // (its name appears only in the display:none MobileSplash), so assert
+        // the content that actually defines the page: the FilePicker drop
+        // target and the privacy badge.
+        await expect(
+          p.getByRole('button', { name: /catalog file picker/i }),
+        ).toBeVisible()
+        await expect(p.getByText('100% Local · No Upload').first()).toBeVisible()
       } else {
-        // Tool pages: tool name should appear somewhere on the page
-        await expect(p.getByText(page.name, { exact: false }).first()).toBeVisible()
+        // Tool pages: tool name should appear VISIBLY somewhere on the page.
+        // Filter to visible matches first — pages render hidden duplicates
+        // (e.g. the analyzer's MobileSplash paragraph is display:none at
+        // desktop width but precedes any visible occurrence in DOM order,
+        // so a bare .first() picks the hidden one and fails).
+        await expect(
+          p.getByText(page.name, { exact: false }).filter({ visible: true }).first(),
+        ).toBeVisible()
       }
     })
 

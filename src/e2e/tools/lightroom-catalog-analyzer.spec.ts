@@ -27,9 +27,13 @@ test.describe('Lightroom Catalog Analyzer — empty state', () => {
   test('renders the desktop empty state with the FilePicker and demo button', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 })
     await page.goto(TOOL_PATH)
+    // The redesigned empty state has no headline — its anchors are the
+    // FilePicker drop target (aria-label from toolUI filePicker.ariaLabel),
+    // the privacy badge, and the demo button in the left sidebar.
     await expect(
-      page.getByRole('heading', { name: /Analyze your Lightroom Classic catalog/i }).first(),
+      page.getByRole('button', { name: /Lightroom Classic catalog file picker/i }),
     ).toBeVisible()
+    await expect(page.getByText('100% Local · No Upload').first()).toBeVisible()
     await expect(page.getByRole('button', { name: /Try the demo/i }).first()).toBeVisible()
     // FilePicker hidden file input lives inside the desktop empty state.
     await expect(page.locator('input[type="file"]')).toHaveCount(1)

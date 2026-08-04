@@ -10,7 +10,10 @@ import { makeFixtureBlob } from '../sections/__test-helpers__'
 
 // Dashboard now mounts the real section components, which read the analyzer
 // context. Provide a loaded context with the shared fixture blob.
-function renderDashboard(ui: ReactNode = <Dashboard />) {
+function renderDashboard(
+  ui: ReactNode = <Dashboard />,
+  overrides: Partial<AnalyzerContextValue> = {},
+) {
   const value: AnalyzerContextValue = {
     status: 'loaded',
     insightBlob: makeFixtureBlob(),
@@ -25,6 +28,7 @@ function renderDashboard(ui: ReactNode = <Dashboard />) {
     reset: () => {},
     setYearInReview: () => {},
     close: () => {},
+    ...overrides,
   }
   return render(
     <NextIntlClientProvider locale="en" messages={enMessages}>
@@ -52,6 +56,19 @@ describe('Dashboard', () => {
   it('renders the local-only footer note', () => {
     const { getByText } = renderDashboard()
     expect(getByText(/Computed in your browser/i)).toBeInTheDocument()
+  })
+
+  // In idle the dashboard shell is structurally present but empty — the note
+  // claims stats were "computed from your local catalog file", which is only
+  // true once a catalog is loaded. It also gave the idle page a second
+  // <footer>, tripping the strict-mode smoke assertion on the site footer.
+  it('does NOT render the footer note before a catalog is loaded', () => {
+    const { queryByText, container } = renderDashboard(<Dashboard />, {
+      status: 'idle',
+      insightBlob: null,
+    })
+    expect(queryByText(/Computed in your browser/i)).toBeNull()
+    expect(container.querySelector('footer')).toBeNull()
   })
 
   it('mounts period comparison inside its anchor (drilldown moved to sidebar)', () => {

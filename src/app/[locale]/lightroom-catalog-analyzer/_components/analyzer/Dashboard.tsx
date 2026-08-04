@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import type { ReactNode } from 'react'
 import { ALL_SECTION_IDS, anchorIdFor, type SectionId } from '../nav/sections'
+import { useAnalyzer } from './useAnalyzer'
 import styles from './LightroomCatalogAnalyzer.module.css'
 import '../sections/dashboard-polish.css'
 import { YearInReview } from '../sections/YearInReview'
@@ -70,6 +71,7 @@ const SECTION_BODIES: Record<SectionId, ReactNode> = {
 
 export function Dashboard() {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer')
+  const { insightBlob } = useAnalyzer()
 
   return (
     <div className={styles.dashboard}>
@@ -84,9 +86,14 @@ export function Dashboard() {
         </section>
       ))}
 
-      <footer className={styles.dashboardFooter}>
-        {t('dashboard.footerNote')}
-      </footer>
+      {/* Only once stats exist — the note claims they were computed from the
+          user's catalog, and an idle-state <footer> also collided with the
+          site footer in strict-mode e2e selectors. */}
+      {insightBlob && (
+        <footer className={styles.dashboardFooter}>
+          {t('dashboard.footerNote')}
+        </footer>
+      )}
     </div>
   )
 }
