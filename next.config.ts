@@ -8,9 +8,8 @@ const withNextIntl = createNextIntlPlugin('./src/lib/i18n/request.ts')
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })
 
 const nextConfig: NextConfig = {
-  experimental: {
-    viewTransition: true,
-  },
+  // View Transitions need no flag since Next 16.3 — the experimental
+  // `viewTransition` option was removed when the feature became default-on.
   async redirects() {
     return staticRedirects
   },
