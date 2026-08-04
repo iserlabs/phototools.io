@@ -70,6 +70,11 @@ input[type='number'] {
   --duration-slow: 0.35s;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Page widths */
+  --page-width-wide: 1760px;    /* browsing surfaces: homepage, future index pages */
+  --page-width-content: 1100px; /* structured two-column pages: glossary shell, contact */
+  --page-width-prose: 800px;    /* long-form reading: privacy, terms, about, glossary text */
 }
 
 [data-theme='light'] {

@@ -1,6 +1,6 @@
 .page {
   padding: var(--space-xl) var(--space-md);
-  max-width: 800px;
+  max-width: var(--page-width-prose);
   margin: 0 auto;
   overflow-y: auto;
 }
