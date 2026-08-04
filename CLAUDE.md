@@ -25,7 +25,7 @@ PhotoTools is an educational photography application — free calculators, simul
 - `npm run dev` — start dev server with Turbopack at `http://localhost:3200`
 - `npm run build` — production build via `next build`
 - `npm run start` — serve production build locally
-- `npm test` — run Vitest tests (870+ tests across 68 files)
+- `npm test` — run Vitest tests (1470+ tests across 166 files)
 - `npm run test:coverage` — run tests with coverage report
 - `npm run type-check` — run TypeScript compiler in noEmit mode
 - `npm run test:watch` — run tests in watch mode
@@ -43,8 +43,8 @@ All source code lives under `src/`, with `@/` aliased to `src/` in tsconfig.json
 - **Shared Components**: `src/components/` contains only shared/reusable code: `layout/` (Nav, Footer, ThemeProvider, ThemeToggle) and `shared/` (LearnPanel, ChallengeCard, ControlPanel, FocalLengthField, ApertureField, DistanceField, ToolIcon, InfoTooltip, ShareModal, ToolActions, FileDropZone, PhotoUploadPanel, ScenePicker, DraftBanner, JsonLd, DoFDiagram, DoFCanvas, AnimatedGrid, ModeToggle, AdUnit, AdScripts, MobileAdBanner, LanguageSwitcher, ApertureLogo, Calculator, FaqSection, RelatedTools).
 - **Tool Registry**: `src/lib/data/tools.ts` defines all tools with slug, name, description, `dev`/`prod` status fields (`'live'`/`'draft'`/`'disabled'`), and category. `getLiveTools()` returns live tools. `getVisibleTools()` returns live + draft. `getToolBySlug()` looks up by slug. `getAllTools()` returns all tools regardless of status.
 - **Education System**: `src/lib/data/education/` contains per-tool education skeletons (non-translatable data: IDs, difficulty levels, correct answers, option values). All translatable education text lives in `src/lib/i18n/messages/en/education/*.json`. `LearnPanel` and `ChallengeCard` render by combining skeleton data with translations.
-- **Pure Math Modules**: `src/lib/math/` contains pure functions for FOV, DOF, exposure (including shader math for CoC, motion blur, noise), diffraction, star trails, color (color.ts, color-harmony.ts, color-hsl.ts, color-kelvin.ts), histogram, compression, frame (frame.ts, frame-border.ts, frame-texture.ts), and grid (grid.ts, grid-basic.ts, grid-golden.ts) calculations. Each has co-located `.test.ts` files. TDD approach — math is tested independently from UI.
-- **Data**: `src/lib/data/` centralizes all pure data. Shared data files (with tests): tool registry, education skeletons, sensors, focal lengths, scenes, glossary, camera settings (apertures/shutter speeds/ISOs), ND filters, white balance presets, FAQ. Per-tool data files: `frameStudio.ts`, `exposureScenes.ts`, `fovSimulator.ts`, `colorSchemeGenerator.ts`, `exifViewer.ts`, `starTrailCalculator.ts`, `dofSimulator.ts`, `hyperfocalSimulator.ts`, `perspectiveCompression.ts`, `equivalentSettings.ts`, `focusStacking.ts`.
+- **Pure Math Modules**: `src/lib/math/` contains pure functions for FOV, DOF, exposure (including shader math for CoC, motion blur, noise), diffraction (incl. Airy disk + aperture verdict), panorama (frame count, rotation increment, stitched size), star trails, color (color.ts, color-harmony.ts, color-hsl.ts, color-kelvin.ts), histogram, compression, frame (frame.ts, frame-border.ts, frame-texture.ts), and grid (grid.ts, grid-basic.ts, grid-golden.ts) calculations. Each has co-located `.test.ts` files. TDD approach — math is tested independently from UI.
+- **Data**: `src/lib/data/` centralizes all pure data. Shared data files (with tests): tool registry, education skeletons, sensors, focal lengths, scenes, glossary, camera settings (apertures/shutter speeds/ISOs), ND filters, white balance presets, FAQ. Per-tool data files: `frameStudio.ts`, `exposureScenes.ts`, `fovSimulator.ts`, `colorSchemeGenerator.ts`, `exifViewer.ts`, `starTrailCalculator.ts`, `dofSimulator.ts`, `hyperfocalSimulator.ts`, `perspectiveCompression.ts`, `equivalentSettings.ts`, `focusStacking.ts`, `shutterCount.ts` (shutter-life ratings + per-brand metadata support), `cameraReleases.ts` (model → release year / rated actuations), `cheatSheet.ts`.
 
 ## Key Directories
 
@@ -257,7 +257,7 @@ A `file-tool` that diverges from the standard tool patterns — read this before
 - **DRY**: Avoid duplicating logic, styles, constants, or markup. Extract shared utilities, components, and data modules. When adding a feature, check if similar patterns already exist in the codebase and reuse them.
 - **200-line file limit**: Keep all `.ts`/`.tsx` files under 200 lines (test files exempt). If a file grows beyond this, break it into smaller focused modules (e.g. extract hooks, sub-components, helpers, constants, or types into separate files).
 - **Test files** co-located next to source files (`*.test.ts`)
-- **68 test files, 870+ tests** covering math, data, education, ads, i18n (including all 31 locales), sitemap, metadata helpers, observability, and component integration
+- **166 test files, 1470+ tests** covering math, data, education, ads, i18n (including all 31 locales), sitemap, metadata helpers, observability, and component integration
 - **After file changes in `src/app/`**, clear `.next` cache (`rm -rf .next`) and restart dev server to avoid stale MIME type and 404 errors
 - **i18n strings required**: Whenever a new user-facing string is added or an existing one is modified, create or update the corresponding translation in the appropriate JSON file under `src/lib/i18n/messages/en/`. Never hardcode user-facing text directly in components — always use `useTranslations` (client) or `getTranslations` (server) to reference translation keys.
 - **Privacy Sandbox is deprecated** — do not discuss, recommend, or implement any Privacy Sandbox APIs (Topics, Attribution Reporting, Protected Audience, etc.)
@@ -280,8 +280,16 @@ src/e2e/
   tools/exposure-simulator.spec.ts  Exposure Simulator interaction tests
   tools/hyperfocal.spec.ts       Hyperfocal Distance Simulator interaction tests
   tools/nd-filter.spec.ts        ND Filter Calculator interaction tests
+  tools/panorama-calculator.spec.ts     Panorama Calculator interaction tests
+  tools/diffraction-calculator.spec.ts  Diffraction Limit Calculator interaction tests
+  tools/photography-cheat-sheet.spec.ts Photography Cheat Sheet scenario tests
+  tools/camera-checkers.spec.ts         Shutter Count + Camera Health Checker tests
+  tools/lightroom-catalog-analyzer*.spec.ts  Lightroom Catalog Analyzer + demo/share/WAF
   fixtures/test-image.jpg        Minimal JPEG fixture for upload tests
 ```
+
+The smoke spec enumerates `TOOLS` from the registry, so a newly registered tool
+gets smoke coverage automatically — no edit needed there when adding a tool.
 
 ### Running
 
@@ -304,6 +312,8 @@ src/e2e/
 - **Console error filtering**: Smoke tests assert no console errors, but filter benign ones: favicon 404, cookieyes, adsense, adsbygoogle, `_vercel/speed-insights`. Add new benign patterns to the filter in `src/e2e/smoke/all-pages.spec.ts` as needed.
 - **i18n translated text**: UI labels come from `next-intl` message files (`src/lib/i18n/messages/en/`). If a placeholder or label changes, check the translation JSON, not just the component source.
 - **Select elements use value, not label**: For `<select>` dropdowns (e.g. sensor picker), use `selectOption('value_id')` not `selectOption({ label: '...' })`.
+- **Don't index controls positionally**: a sidebar with several `<select>`s breaks the moment one is added or reordered. Scope by the visible label instead — `sidebar.locator('[class*="field"]').filter({ has: page.locator('label:text-is("Rows")') }).locator('select')`. (Labels aren't wired with `htmlFor`/`id`, so `getByLabel` won't work.)
+- **Range inputs need an explicit event**: `fill()` alone may not trigger React state; follow with `dispatchEvent('input')`, then assert via `expect.poll` since the recompute is async.
 
 ### CI
 
@@ -320,3 +330,13 @@ Playwright runs in GitHub Actions after `npm run build`. See `.github/workflows/
 - GitHub Actions CI: `npm ci` → `npm audit` → `npm run lint` → `npm test` → `npm run build`
 - Custom domain: `www.phototools.io` (apex `phototools.io` redirects to www)
 - NEVER push to remote or deploy without explicit user instruction
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

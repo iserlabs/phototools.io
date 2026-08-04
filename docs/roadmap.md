@@ -1,13 +1,18 @@
 # PhotoTools.io — Technical Roadmap
 
-**Last updated:** 2026-04-06
-**Horizon:** 3–6 months (April – September 2026)
+**Last updated:** 2026-08-04
+**Horizon:** through Q4 2026
+
+> **Note:** the Phase 1–4 plan below was written 2026-04-06. Much of Phase 1/2's
+> tooling work is done; the phase sections are kept for the SEO/monetization
+> sequencing, which is still the live plan. The "Current State" block is
+> authoritative.
 
 ---
 
 ## Current State
 
-### Live in Production (7 tools)
+### Live in Production (8 tools)
 
 | Tool | Category | Tech |
 |------|----------|------|
@@ -16,48 +21,58 @@
 | Star Trail Calculator | Visualizer | Canvas API |
 | White Balance Visualizer | Visualizer | WebGL2 + GLSL shaders |
 | Sensor Size Comparison | Visualizer | Canvas API |
+| Megapixels Size Visualizer | Visualizer | Canvas API |
 | Frame Studio | File Tool | Canvas API |
 | EXIF Viewer | File Tool | Client-side EXIF parsing + Canvas histogram |
 
-### Dev-Only (7 tools)
+### Built, Awaiting Production Flip (14 tools, `prod: 'draft'`)
 
-| Tool | Category | Readiness | Blocker |
-|------|----------|-----------|---------|
-| Exposure Simulator | Visualizer | High | QA + production toggle |
-| DoF Simulator | Visualizer | High | Recently redesigned, needs stabilization |
-| Hyperfocal Simulator | Visualizer | High | Has spec + plan, needs final polish |
-| Shutter Speed Visualizer | Visualizer | Medium | Needs UX polish |
-| Focus Stacking Calculator | Calculator | Medium | Recent diagram fixes, needs testing |
-| Equivalent Settings Calculator | Calculator | Medium | Functional, needs review |
-| Perspective Compression Simulator | Visualizer | Medium | Functional, needs review |
+All are feature-complete and pass CI; flipping `prod` to `'live'` in
+`src/lib/data/tools.ts` publishes them.
 
-### Draft (1 tool)
+| Tool | Category | Notes |
+|------|----------|-------|
+| Lightroom Catalog Analyzer | File Tool | **Highest-value launch.** SQLite-WASM worker, 16 aggregators, hosted share links, PDF export. The only tool with a real moat + viral loop |
+| Exposure Simulator | Visualizer | High readiness |
+| DoF Simulator | Visualizer | High readiness |
+| Hyperfocal Simulator | Visualizer | High readiness |
+| Shutter Speed Visualizer | Visualizer | Needs UX polish |
+| Perspective Compression Simulator | Visualizer | Functional |
+| Focus Stacking Calculator | Calculator | Functional |
+| Equivalent Settings Calculator | Calculator | Functional |
+| ND Filter Calculator | Calculator | Functional |
+| Shutter Count Checker | File Tool | Added 2026-08-04. Nikon MakerNote parsing + per-brand support matrix |
+| Camera Health Checker | File Tool | Added 2026-08-04. Body age/firmware/serial/lens + shutter life |
+| Panorama Calculator | Calculator | Added 2026-08-04 |
+| Diffraction Limit Calculator | Calculator | Added 2026-08-04 |
+| Photography Cheat Sheet | Reference | Added 2026-08-04. First `reference`-category tool; PNG export + print |
 
-- **ND Filter Calculator** — partially built, needs full implementation
+### Orphan Routes
 
-### Orphan Routes (not in tool registry)
-
-- `color-harmony` — unclear status, not registered
-- `histogram` — unclear status, not registered
-- `hyperfocal-table` — unclear status, not registered
-
-**Action required:** Audit each. Either register in `src/lib/data/tools.ts` or delete the route directory.
+Resolved — `color-harmony`, `histogram`, and `hyperfocal-table` no longer exist
+as routes. (`histogram` survives only as an education/toolUI namespace consumed
+by the EXIF Viewer, which is intentional.)
 
 ### Infrastructure
 
 - **Framework:** Next.js 16 (App Router, Turbopack dev)
-- **i18n:** 16 locales via next-intl 4.x
-- **Testing:** 694 tests across 44 files (Vitest + Playwright)
+- **i18n:** 31 locales via next-intl 4.x
+- **Testing:** 1470+ unit tests across 166 files (Vitest) + Playwright e2e
+  (parameterized smoke over every registry tool, plus per-tool interaction specs)
 - **CI/CD:** GitHub Actions → Vercel auto-deploy from main
-- **Ads:** AdSense scaffolded (AdUnit, MobileAdBanner, AdScripts), feature-flagged, pending approval. CookieYes + GA4 Consent Mode v2 configured.
-- **SEO:** Sitemap with hreflang, OG image generation, metadata helpers, FAQ JSON-LD schema on tool pages, og:title/og:description fixed on all 7 tool pages
-- **Analytics:** GA4 active with custom events (tool_interaction, learn_panel_open, challenge_complete), Vercel Analytics enabled, Google Search Console set up
+- **Ads:** AdSense scaffolded, feature-flagged, pending approval. CookieYes + GA4 Consent Mode v2 configured
+- **SEO:** Multi-locale sitemap with hreflang, OG image generation per tool, metadata helpers, FAQ JSON-LD on tool pages
+- **Analytics:** GA4 with custom events, Vercel Analytics, Search Console
 
-### Known Issues
+### Known Issues / Next Actions
 
-- **Google indexing:** Only 1 of 7 live tool pages indexed. 2 pages flagged as not indexed. This is the highest-priority issue.
-- **GA ↔ Search Console not linked.**
-- **No Core Web Vitals data** in Search Console (insufficient traffic sample).
+- **Launch sequencing is the open question.** 14 built tools sit in draft. Recommended
+  order: Lightroom Catalog Analyzer first (authority + backlinks), then the
+  high-volume calculators that benefit from that domain authority.
+- **Indexing** was the top issue in April; re-check Search Console coverage before
+  and after any batch flip.
+- `scripts/find-english-leaks.mjs` is heuristic and reports SOFT hits that are
+  legitimate loanwords/notation — treat HARD hits as the actionable signal.
 
 ---
 
