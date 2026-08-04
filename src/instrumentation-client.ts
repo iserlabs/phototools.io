@@ -1,5 +1,9 @@
 import * as Sentry from '@sentry/nextjs'
-import { IGNORE_SENTRY_ERRORS, SENTRY_DENY_URLS } from '@/lib/sentry-filters'
+import {
+  IGNORE_SENTRY_ERRORS,
+  SENTRY_DENY_URLS,
+  isBotAutomationEvent,
+} from '@/lib/sentry-filters'
 import { installDomMutationGuard } from '@/lib/utils/dom-mutation-guard'
 
 // Harden Node.removeChild / insertBefore before React hydrates, so that browser
@@ -33,6 +37,12 @@ Sentry.init({
   // CookieYes consent banner's unhandled localStorage SecurityError), matched
   // by the culprit frame's URL rather than its message — see sentry-filters.ts.
   denyUrls: SENTRY_DENY_URLS,
+
+  // Drop crashes from scraper bots' own Playwright-injected scripts, detected
+  // by the UtilityScript frame marker in the stack — see sentry-filters.ts.
+  beforeSend(event) {
+    return isBotAutomationEvent(event) ? null : event
+  },
 })
 
 // Instrument App Router navigations

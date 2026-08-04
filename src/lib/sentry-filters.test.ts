@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest'
-import { IGNORE_SENTRY_ERRORS, SENTRY_DENY_URLS } from './sentry-filters'
+import type { ErrorEvent } from '@sentry/nextjs'
+import {
+  IGNORE_SENTRY_ERRORS,
+  SENTRY_DENY_URLS,
+  isBotAutomationEvent,
+} from './sentry-filters'
 
 // Mirror of Sentry's own matching (eventFilters.ts / string.ts): an event is
 // dropped if ANY ignore pattern matches ANY of its candidate messages — the
@@ -44,6 +49,11 @@ describe('IGNORE_SENTRY_ERRORS', () => {
         'SyntaxError',
         "Unexpected identifier 'https'",
       ],
+      [
+        'Safari-aborted RSC prefetch rejecting with undefined (PHOTOTOOLS-Q)',
+        'UnhandledRejection',
+        'Non-Error promise rejection captured with value: undefined',
+      ],
     ]
 
     it.each(noise)('drops: %s', (_name, type, value) => {
@@ -64,6 +74,14 @@ describe('IGNORE_SENTRY_ERRORS', () => {
       ['genuine async syntax error in our bundle', 'SyntaxError', "Unexpected identifier 'await'"],
       ['network failure', 'Error', 'Failed to fetch'],
       ['unrelated React error', 'Error', 'Minified React error #418'],
+      // A non-Error rejection carrying an actual VALUE may point at app code
+      // rejecting with a string/object — only the bare `undefined` shape is
+      // provably the Safari prefetch abort, so everything else must flow.
+      [
+        'non-Error rejection with a real value',
+        'UnhandledRejection',
+        'Non-Error promise rejection captured with value: Object Not Found Matching Id:3',
+      ],
     ]
 
     it.each(real)('keeps: %s', (_name, type, value) => {
@@ -116,5 +134,60 @@ describe('SENTRY_DENY_URLS', () => {
     it.each(kept)('keeps: %s', (_name, url) => {
       expect(isUrlDenied(url)).toBe(false)
     })
+  })
+})
+
+// Events raised by scraper bots that drive the site with Playwright and
+// evaluate their own crawler script in the page (issue PHOTOTOOLS-9: a
+// "LinkCollector" script crashing on `.trim()` of undefined). Playwright's
+// injected eval wrapper — `UtilityScript.evaluate` — appears in the stack of
+// every such error, and never in a real visitor's, so it is the drop signal.
+// The message alone ("Cannot read properties of undefined…") is far too
+// generic to ignore, which is why this is a frame filter, not a message one.
+function makeFrameEvent(functions: (string | undefined)[]): ErrorEvent {
+  return {
+    exception: {
+      values: [
+        {
+          type: 'TypeError',
+          value: "Cannot read properties of undefined (reading 'trim')",
+          stacktrace: { frames: functions.map((fn) => ({ function: fn })) },
+        },
+      ],
+    },
+  } as ErrorEvent
+}
+
+describe('isBotAutomationEvent', () => {
+  it('drops the observed PHOTOTOOLS-9 Playwright LinkCollector stack', () => {
+    // Verbatim frame functions from the production event (oldest → newest).
+    const event = makeFrameEvent([
+      'UtilityScript.<anonymous>',
+      'UtilityScript.evaluate',
+      'eval',
+      'window.startLinkCollector',
+      'SimPaginationDetector.detect',
+      'Array.forEach',
+      'eval',
+    ])
+    expect(isBotAutomationEvent(event)).toBe(true)
+  })
+
+  it('drops any stack containing a UtilityScript frame', () => {
+    expect(isBotAutomationEvent(makeFrameEvent(['UtilityScript.evaluate']))).toBe(true)
+  })
+
+  it('keeps the same TypeError raised by our own components', () => {
+    const event = makeFrameEvent(['onClick', 'DofSimulator', 'renderWithHooks'])
+    expect(isBotAutomationEvent(event)).toBe(false)
+  })
+
+  it('keeps events with anonymous/missing frame functions', () => {
+    expect(isBotAutomationEvent(makeFrameEvent([undefined, '<anonymous>', 'eval']))).toBe(false)
+  })
+
+  it('keeps events with no stacktrace at all', () => {
+    expect(isBotAutomationEvent({ exception: { values: [{ type: 'Error', value: 'x' }] } } as ErrorEvent)).toBe(false)
+    expect(isBotAutomationEvent({} as ErrorEvent)).toBe(false)
   })
 })

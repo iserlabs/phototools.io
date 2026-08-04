@@ -35,6 +35,13 @@ export const IGNORE_SENTRY_ERRORS: (string | RegExp)[] = [
   // stack, confirming it isn't our bundle (which never emits an unquoted
   // `https` token), so this only drops third-party injection noise.
   /Unexpected identifier 'https'/,
+  // Safari cancels in-flight App Router prefetches when the user navigates,
+  // and the aborted fetch rejects with `undefined`; Sentry's global
+  // onunhandledrejection handler wraps that as this synthesized message
+  // (PHOTOTOOLS-Q — breadcrumbs show the failed `GET /en?_rsc=…` immediately
+  // before every event). Anchored on `undefined$` so a non-Error rejection
+  // carrying a REAL value — which may implicate app code — still reports.
+  /Non-Error promise rejection captured with value: undefined$/,
 ]
 
 // Client-side Sentry `denyUrls` patterns — drop any event whose throwing frame
@@ -56,3 +63,29 @@ export const SENTRY_DENY_URLS: (string | RegExp)[] = [
   /cdn-cookieyes\.com/i,
   /\/client_data\/[^/]+\/banner\.js/i,
 ]
+
+// Scraper bots drive the site with Playwright and `evaluate()` their own
+// crawler scripts in the page; when those scripts crash (PHOTOTOOLS-9: a
+// "LinkCollector" link-harvester died on `.trim()` of undefined), the global
+// handlers attribute the error to our origin and Sentry reports it. The
+// message is far too generic to ignore and the frames are eval'd (no URL for
+// denyUrls to match), so we key on the one stable marker: Playwright's
+// injected eval wrapper, `UtilityScript`, which appears as the frame FUNCTION
+// name in every such stack and never in a real visitor's. Our own Playwright
+// e2e runs never report — Sentry's DSN is unset outside Vercel deploys.
+const BOT_AUTOMATION_FRAME = /\bUtilityScript\./
+
+// Shape-compatible with Sentry's ErrorEvent without importing SDK types into
+// a module that instrumentation-client.ts loads before Sentry.init runs.
+interface FrameCarryingEvent {
+  exception?: { values?: { stacktrace?: { frames?: { function?: string }[] } }[] }
+}
+
+export function isBotAutomationEvent(event: FrameCarryingEvent): boolean {
+  const values = event.exception?.values ?? []
+  return values.some((value) =>
+    (value.stacktrace?.frames ?? []).some(
+      (frame) => frame.function !== undefined && BOT_AUTOMATION_FRAME.test(frame.function),
+    ),
+  )
+}
