@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 import { extractShutterCount } from './shutter-count'
 
 /**
@@ -162,6 +164,16 @@ describe('extractShutterCount', () => {
     const tiff = buildTiff({ nikonShutterCount: 999 })
     const truncated = tiff.slice(0, tiff.length - 12)
     expect(() => extractShutterCount(asBuffer(truncated))).not.toThrow()
+  })
+
+  it('reads the e2e fixture, keeping it in sync with the parser', () => {
+    // Guards scripts/build-nikon-fixture.mjs: if the generator or the parser
+    // drifts, the e2e that depends on this file would otherwise fail with a
+    // confusing UI assertion instead of a clear parsing one.
+    const path = join(__dirname, '../../e2e/fixtures/nikon-shutter-count.jpg')
+    const buf = readFileSync(path)
+    const ab = buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength) as ArrayBuffer
+    expect(extractShutterCount(ab)).toEqual({ count: 48213, source: 'shutterCount' })
   })
 
   it('handles big-endian (MM) TIFF headers', () => {
