@@ -5,7 +5,9 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./test-setup.ts'],
-    exclude: ['node_modules', 'src/e2e'],
+    // Overriding vitest's default excludes, so globs must cover nested
+    // node_modules and .claude worktrees (their src/ would otherwise match).
+    exclude: ['**/node_modules/**', 'src/e2e/**', '.claude/**'],
     clearMocks: true,
     restoreMocks: true,
     coverage: {
