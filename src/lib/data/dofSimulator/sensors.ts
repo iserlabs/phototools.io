@@ -14,5 +14,5 @@ export function getDofSensor(id: string): SensorPreset {
 }
 
 export function sensorAspect(s: SensorPreset): number {
-  return s.w! / s.h!
+  return (s.w ?? 36) / (s.h ?? 24)
 }
