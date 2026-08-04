@@ -1,5 +1,6 @@
 import { TOOL_EDUCATION_SKELETONS } from './content'
 import { TOOL_EDUCATION_SKELETONS_2 } from './content2'
+import { safeStorageSet } from '@/lib/utils/safe-storage'
 import type { ToolEducationSkeleton, ChallengeProgress } from './types'
 
 const ALL_SKELETONS: ToolEducationSkeleton[] = [...TOOL_EDUCATION_SKELETONS, ...TOOL_EDUCATION_SKELETONS_2]
@@ -27,7 +28,9 @@ function getChallengeProgress(): ChallengeProgress {
 export function markChallengeComplete(challengeId: string): void {
   const progress = getChallengeProgress()
   progress[challengeId] = { completed: true, completedAt: new Date().toISOString() }
-  localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress))
+  // Guarded write: fires from a click handler, so an unguarded setItem crashes
+  // storage-blocked Safari (same failure class as Sentry PHOTOTOOLS-R).
+  safeStorageSet(PROGRESS_KEY, JSON.stringify(progress))
 }
 
 export function isChallengeComplete(challengeId: string): boolean {
@@ -37,7 +40,7 @@ export function isChallengeComplete(challengeId: string): boolean {
 export function clearChallengeProgressForTool(challengeIds: string[]): void {
   const progress = getChallengeProgress()
   for (const id of challengeIds) delete progress[id]
-  localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress))
+  safeStorageSet(PROGRESS_KEY, JSON.stringify(progress))
 }
 
 export type { ToolEducationSkeleton, ChallengeProgress, ChallengeSkeleton } from './types'

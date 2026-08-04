@@ -5,6 +5,7 @@ import { Toaster } from 'sonner'
 import { Nav } from './Nav'
 import { Footer } from './Footer'
 import { MobileAdBanner } from '@/components/shared/MobileAdBanner'
+import { safeStorageGet, safeStorageSet } from '@/lib/utils/safe-storage'
 import styles from './ThemeProvider.module.css'
 
 interface ThemeContextValue {
@@ -25,7 +26,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
-    const saved = localStorage.getItem('phototools-theme') as 'dark' | 'light' | null
+    // Guarded access: Safari with "Block All Cookies" throws a SecurityError
+    // on any localStorage read (Sentry PHOTOTOOLS-R) — fall back to 'dark'.
+    const saved = safeStorageGet('phototools-theme') as 'dark' | 'light' | null
     if (saved) setTheme(saved)
     setHydrated(true)
   }, [])
@@ -33,7 +36,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!hydrated) return
     document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('phototools-theme', theme)
+    safeStorageSet('phototools-theme', theme)
   }, [theme, hydrated])
 
   return (
