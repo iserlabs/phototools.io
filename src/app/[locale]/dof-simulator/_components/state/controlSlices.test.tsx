@@ -1,7 +1,8 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import { renderHook, act } from '@testing-library/react'
 import { useOptics } from './useOptics'
 import { useFraming } from './useFraming'
+import { useUiPrefs } from './useUiPrefs'
 
 describe('useOptics', () => {
   it('has spec defaults', () => {
@@ -30,5 +31,68 @@ describe('useFraming', () => {
     const { result } = renderHook(() => useFraming())
     expect(result.current.activePreset).toBeNull()
     expect(result.current.lockFov).toBe(false)
+  })
+})
+
+describe('useUiPrefs', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  it('defaults are false/false when storage is empty', () => {
+    const { result } = renderHook(() => useUiPrefs())
+    expect(result.current.advanced).toBe(false)
+    expect(result.current.imperial).toBe(false)
+  })
+
+  it('a saved value is adopted after mount (effect)', async () => {
+    // Pre-populate storage with advanced: true
+    const stored = { advanced: true, imperial: false }
+    localStorage.setItem('phototools.dof.uiprefs.v1', JSON.stringify(stored))
+
+    const { result } = renderHook(() => useUiPrefs())
+
+    // After effect runs: storage value adopted
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0))
+    })
+
+    expect(result.current.advanced).toBe(true)
+    expect(result.current.imperial).toBe(false)
+  })
+
+  it('corrupted JSON in storage falls back to defaults without throwing', async () => {
+    localStorage.setItem('phototools.dof.uiprefs.v1', 'not valid json')
+
+    const { result } = renderHook(() => useUiPrefs())
+
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0))
+    })
+
+    expect(result.current.advanced).toBe(false)
+    expect(result.current.imperial).toBe(false)
+  })
+
+  it('setAdvanced(true) persists to localStorage', async () => {
+    const { result } = renderHook(() => useUiPrefs())
+
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0))
+    })
+
+    act(() => {
+      result.current.setAdvanced(true)
+    })
+
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 0))
+    })
+
+    const stored = localStorage.getItem('phototools.dof.uiprefs.v1')
+    expect(stored).toBeTruthy()
+    const parsed = JSON.parse(stored!)
+    expect(parsed.advanced).toBe(true)
+    expect(parsed.imperial).toBe(false)
   })
 })
