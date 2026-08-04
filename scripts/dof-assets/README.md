@@ -14,7 +14,7 @@ node scripts/dof-assets/cutout.mjs <in.png> <out.webp>
 
 - **Green channel detection**: Pixels where `G > 150` AND `G > R × 1.5` AND `G > B × 1.5` are keyed to full transparency.
 - **Despill**: On pixels that are kept, if green is the dominant channel, it is reduced to the max of red and blue to remove green fringe.
-- **Alpha feather**: The alpha channel is blurred by 1 pixel (box blur) and composited back, creating a soft edge.
+- **Alpha feather**: The alpha channel is blurred by 1 pixel (Gaussian blur) and composited back, creating a soft edge.
 - **Output**: WebP with `quality: 90, alphaQuality: 90`.
 
 ### Convention
@@ -31,8 +31,8 @@ node scripts/dof-assets/slice.mjs <in.webp> <mask.svg> <out.webp>
 
 ### Behavior
 
-- **Mask resize**: The SVG is rasterized and resized to match the input dimensions.
-- **Blend mode**: Uses `dest-in` composite to apply the mask as an alpha channel.
+- **Mask luminance→alpha**: The SVG is rasterized, resized to match input dimensions, and converted to grayscale. Luminance values (0–255) directly become alpha multipliers: white (255) keeps full alpha, black (0) makes fully transparent, grays (1–254) create partial transparency.
+- **Alpha multiply**: Input alpha is multiplied by mask luminance via `Math.min()`, preserving the input's transparency while applying the mask's depth shape.
 - **Output**: WebP with `quality: 90, alphaQuality: 90`.
 
 ## SVG Mask Authoring
