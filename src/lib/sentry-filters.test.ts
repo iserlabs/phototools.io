@@ -54,6 +54,21 @@ describe('IGNORE_SENTRY_ERRORS', () => {
         'UnhandledRejection',
         'Non-Error promise rejection captured with value: undefined',
       ],
+      [
+        'Brave iOS __firefox__ userScript bridge, missing namespace (PHOTOTOOLS-S)',
+        'TypeError',
+        "undefined is not an object (evaluating 'window.__firefox__.reader')",
+      ],
+      [
+        'Brave iOS __firefox__ userScript bridge, bare reference (PHOTOTOOLS-T)',
+        'ReferenceError',
+        "Can't find variable: __firefox__",
+      ],
+      [
+        'Brave iOS wallet provider injection',
+        'TypeError',
+        "undefined is not an object (evaluating 'window.ethereum.selectedAddress = undefined')",
+      ],
     ]
 
     it.each(noise)('drops: %s', (_name, type, value) => {
@@ -81,6 +96,19 @@ describe('IGNORE_SENTRY_ERRORS', () => {
         'non-Error rejection with a real value',
         'UnhandledRejection',
         'Non-Error promise rejection captured with value: Object Not Found Matching Id:3',
+      ],
+      // The Brave-injection filters key on the injected global's NAME, never on
+      // WebKit's generic phrasing — otherwise they would swallow every
+      // ReferenceError and null-deref Safari reports from our own bundle.
+      [
+        'WebKit null-deref in our own bundle',
+        'TypeError',
+        "undefined is not an object (evaluating 'this.canvas.getContext')",
+      ],
+      [
+        'WebKit missing global in our own bundle',
+        'ReferenceError',
+        "Can't find variable: gtag",
       ],
     ]
 

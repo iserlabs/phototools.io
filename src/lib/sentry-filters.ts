@@ -42,6 +42,27 @@ export const IGNORE_SENTRY_ERRORS: (string | RegExp)[] = [
   // before every event). Anchored on `undefined$` so a non-Error rejection
   // carrying a REAL value — which may implicate app code — still reports.
   /Non-Error promise rejection captured with value: undefined$/,
+  // Brave for iOS injecting its own userScript bridge into the page's global
+  // scope (PHOTOTOOLS-S: `window.__firefox__.reader` read off an undefined
+  // namespace; PHOTOTOOLS-T: a bare `__firefox__` reference in the same
+  // session). Brave's iOS browser is a fork of Firefox for iOS, so it still
+  // injects its WKWebView scripts under the inherited `__firefox__` namespace —
+  // which is why a Brave-tagged event names Firefox. The injection lost its
+  // race with the page on this device and threw; `window.onerror` catches
+  // anything in page global scope regardless of origin, so Sentry attributes a
+  // browser-internal crash to our release. Every event was `browser: Brave` on
+  // iOS, and the frames sit at the DOCUMENT url line 1 (`app:///en/…:1:19`,
+  // `global code`) rather than in one of our `_next/static/chunks` bundles —
+  // both confirming it isn't our code. Anchored on the injected identifier
+  // itself, never on WebKit's generic `Can't find variable:` / `undefined is
+  // not an object` phrasing, which our own bundle's real errors also use.
+  /__firefox__/,
+  // Brave Wallet's Ethereum provider injection failing the same way, in the
+  // same iOS session (`window.ethereum.selectedAddress = undefined` assigned
+  // onto an undefined provider). We ship no web3 code whatsoever, so any event
+  // naming `window.ethereum` originates in a wallet extension or a wallet-
+  // bundling browser, never in ours.
+  /window\.ethereum/,
 ]
 
 // Client-side Sentry `denyUrls` patterns — drop any event whose throwing frame
