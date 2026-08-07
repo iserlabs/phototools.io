@@ -78,4 +78,10 @@ describe('TOOLS registry', () => {
       expect(tool.slug).toMatch(/^[a-z0-9-]+$/)
     }
   })
+
+  it('never uses the reserved "guides" slug (route segment for the Guides section)', () => {
+    for (const tool of TOOLS) {
+      expect(tool.slug).not.toBe('guides')
+    }
+  })
 })
