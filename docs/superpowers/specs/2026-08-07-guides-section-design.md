@@ -45,8 +45,9 @@ src/content/guides/<slug>/
   `src` structural, `alt` translatable), `sourceRef` (provenance note, never
   rendered).
 - Locale files carry only: `title`, `description`, `heroImageAlt` (when hero
-  exists), `sourceHash` (short hash of the English body the translation was
-  made from), plus the translated body. The content module merges structural
+  exists), `sourceHash` (short hash of the English body **plus translatable
+  frontmatter** — title, description, hero alt — the translation was made
+  from), plus the translated body. The content module merges structural
   (en) + translatable (locale) at read time.
 - Frontmatter is Zod-validated during static generation; invalid frontmatter
   fails the build.
@@ -66,11 +67,16 @@ src/content/guides/<slug>/
   enforces:
   1. Parity: every live guide has all 31 locale files.
   2. Allowed keys: locale files contain only the translatable keys.
-  3. **Component-tag parity:** each locale file contains the same set of
-     `<Callout>`/`<Figure>`/`<ToolCard>` tags with identical `src`/`slug`
-     attributes as `en.mdx`; only prose, alt, and caption text may differ.
-  4. **Staleness:** each locale file's `sourceHash` matches the current hash
-     of the English body; mismatch flags the translation as stale.
+  3. **Component-tag parity:** each locale file contains the same set of JSX
+     component tags — `<Callout>`, `<Figure>`, `<ToolCard>`, and any future
+     embed — with identical structural attributes (`src`, `slug`, `type`) as
+     `en.mdx`; only prose, alt, and caption text may differ.
+  4. **Staleness (warning, non-blocking):** each locale file's `sourceHash`
+     is compared against the current English hash; a mismatch is reported as
+     a CI-visible warning, not a failure — otherwise a typo fix in `en.mdx`
+     would block CI until 30 re-translations land. Rule: stale translations
+     must be refreshed before the next publish wave. Checks 1–3 are hard
+     failures.
 - Translations are agent-generated (en → 30 locales) using
   `src/lib/i18n/glossary.photography.json` for canonical terminology, with
   spot review of high-traffic locales.
