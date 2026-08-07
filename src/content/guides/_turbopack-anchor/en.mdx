@@ -1,0 +1,31 @@
+{/*
+  This is not a guide. It exists so the guide content directory has at
+  least one real nested mdx file on disk, two levels deep (a slug folder
+  containing a locale file), matching the shape every real guide uses.
+
+  src/app/[locale]/guides/[slug]/page.tsx loads guide bodies via a
+  template-literal dynamic import keyed by slug and locale. Turbopack
+  statically resolves that import into a "context module" covering every
+  file matching the pattern, and during Phase A, with zero real guides
+  published yet, that pattern had zero matches. Unlike webpack (which
+  builds an empty context that only throws if actually invoked at
+  runtime), Turbopack hard-fails next build at compile time when a
+  parameterized import's context has no matches at all. Confirmed
+  empirically while implementing the guide article page (Task 12): with
+  no guide content directory present, and again with an empty one, next
+  build errored Module not found on both the primary and the fallback
+  import; adding one real nested mdx file made the build succeed.
+
+  This directory name starts with an underscore, which fails SLUG_PATTERN
+  (see src/lib/guides/schema.ts), so getAllGuideSlugs() in
+  src/lib/guides/content.ts never returns it. It is invisible to
+  getVisibleGuides, getGuide, generateStaticParams, and the
+  translation-parity checker (scripts/check-guide-translations.mjs, which
+  only inspects directories that actually contain a live-status en.mdx
+  file). It carries no frontmatter, so it can never be parsed as a real
+  guide, and no SLUG_PATTERN-valid slug can ever collide with it.
+
+  Once the first real guide ships, this file becomes strictly unnecessary
+  for the build to pass, since a real match will already exist, but it is
+  harmless to leave in place. Deleting it then is safe, not required.
+*/}

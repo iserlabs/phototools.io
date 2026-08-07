@@ -1,0 +1,39 @@
+.section {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+}
+
+.heading {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  display: block;
+  padding: 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.link:hover {
+  background: var(--bg-secondary);
+  color: var(--accent);
+}
