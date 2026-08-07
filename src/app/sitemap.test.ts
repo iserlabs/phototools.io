@@ -4,20 +4,21 @@ import { locales, defaultLocale } from '@/lib/i18n/routing'
 import { getLiveTools } from '@/lib/data/tools'
 
 describe('sitemap()', () => {
-  const entries = sitemap()
-
-  it('returns a non-empty array', () => {
+  it('returns a non-empty array', async () => {
+    const entries = await sitemap()
     expect(Array.isArray(entries)).toBe(true)
     expect(entries.length).toBeGreaterThan(0)
   })
 
-  it('every URL is absolute and uses https://www.phototools.io', () => {
+  it('every URL is absolute and uses https://www.phototools.io', async () => {
+    const entries = await sitemap()
     for (const e of entries) {
       expect(e.url.startsWith('https://www.phototools.io/')).toBe(true)
     }
   })
 
-  it('every URL is locale-prefixed with a known locale', () => {
+  it('every URL is locale-prefixed with a known locale', async () => {
+    const entries = await sitemap()
     const localeSet = new Set<string>(locales)
     for (const e of entries) {
       const path = e.url.replace('https://www.phototools.io/', '')
@@ -26,14 +27,16 @@ describe('sitemap()', () => {
     }
   })
 
-  it('includes the homepage for every locale', () => {
+  it('includes the homepage for every locale', async () => {
+    const entries = await sitemap()
     for (const locale of locales) {
       const url = `https://www.phototools.io/${locale}`
       expect(entries.some((e) => e.url === url)).toBe(true)
     }
   })
 
-  it('includes every live tool for every locale', () => {
+  it('includes every live tool for every locale', async () => {
+    const entries = await sitemap()
     const toolSlugs = getLiveTools().map((t) => t.slug)
     for (const slug of toolSlugs) {
       for (const locale of locales) {
@@ -43,7 +46,8 @@ describe('sitemap()', () => {
     }
   })
 
-  it('includes static info pages (about, contact, privacy, terms, glossary) for every locale', () => {
+  it('includes static info pages (about, contact, privacy, terms, glossary) for every locale', async () => {
+    const entries = await sitemap()
     const staticPaths = ['about', 'contact', 'privacy', 'terms', 'learn/glossary']
     for (const path of staticPaths) {
       for (const locale of locales) {
@@ -53,7 +57,8 @@ describe('sitemap()', () => {
     }
   })
 
-  it('every entry has hreflang alternates including x-default', () => {
+  it('every entry has hreflang alternates including x-default', async () => {
+    const entries = await sitemap()
     for (const e of entries) {
       expect(e.alternates?.languages).toBeDefined()
       expect(e.alternates!.languages!['x-default']).toBeDefined()
@@ -68,10 +73,16 @@ describe('sitemap()', () => {
     }
   })
 
-  it('priority is in the [0, 1] range', () => {
+  it('priority is in the [0, 1] range', async () => {
+    const entries = await sitemap()
     for (const e of entries) {
       expect(e.priority).toBeGreaterThanOrEqual(0)
       expect(e.priority).toBeLessThanOrEqual(1)
     }
+  })
+
+  it('omits guide URLs when no guides are live', async () => {
+    const entries = await sitemap()
+    expect(entries.some((e) => e.url.includes('/guides'))).toBe(false)
   })
 })

@@ -87,6 +87,50 @@ export async function generateOgImage(slug: string, overrides?: { name?: string,
   )
 }
 
+export async function generateGuideOgImage(opts: { title: string; categoryLabel: string }) {
+  const { title, categoryLabel } = opts
+  return new ImageResponse(
+    (
+      <OgBackground>
+        <OgDiamonds emoji="📖" />
+        <div
+          style={{
+            position: 'absolute',
+            left: 80,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            maxWidth: '55%',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <OgBranding />
+          <div style={{ fontSize: 56, fontWeight: 800, color: '#e5e5e5', lineHeight: 1.15, marginBottom: 24 }}>
+            {title}
+          </div>
+          <div style={{ display: 'flex' }}>
+            <span
+              style={{
+                color: '#f59e0b',
+                fontSize: 16,
+                textTransform: 'uppercase' as const,
+                letterSpacing: 3,
+                border: '1.5px solid rgba(245, 158, 11, 0.25)',
+                padding: '6px 20px',
+                borderRadius: 100,
+              }}
+            >
+              {categoryLabel}
+            </span>
+          </div>
+        </div>
+        <OgAccentLine />
+      </OgBackground>
+    ),
+    { width: 1200, height: 630 },
+  )
+}
+
 export async function generateHomepageOgImage(opts: { title: string; description: string }) {
   const { title, description } = opts
   return new ImageResponse(
