@@ -5,8 +5,12 @@ import { getAllGuideSlugs, getGuide, getGuidesForTool, getLiveGuides, getVisible
 const FIXTURES = path.join(__dirname, '__fixtures__')
 
 describe('content module (NODE_ENV=test behaves like prod: drafts hidden)', () => {
+  // 'bad-related-guide' added for the relatedGuides-validation tests below —
+  // it is status: draft so it's excluded from every visibility-filtered
+  // assertion in this file (getVisibleGuides/getLiveGuides/getGuidesForTool);
+  // only the direct getGuide('bad-related-guide', ...) calls touch it.
   it('lists all slugs from directory names', () => {
-    expect(getAllGuideSlugs(FIXTURES).sort()).toEqual(['draft-guide', 'live-guide'])
+    expect(getAllGuideSlugs(FIXTURES).sort()).toEqual(['bad-related-guide', 'draft-guide', 'live-guide'])
   })
   it('getLiveGuides returns only live guides with locale titles', () => {
     const en = getLiveGuides('en', FIXTURES)
@@ -35,6 +39,14 @@ describe('content module (NODE_ENV=test behaves like prod: drafts hidden)', () =
   it('getGuide falls back to en body when a locale file is missing', () => {
     const guide = getGuide('live-guide', 'ja', FIXTURES)
     expect(guide?.title).toBe('Fixture Live Guide')
+  })
+  it('getGuide accepts a valid relatedGuides reference between existing fixtures', () => {
+    const guide = getGuide('live-guide', 'en', FIXTURES)
+    expect(guide?.relatedGuides).toEqual(['draft-guide'])
+  })
+  it('getGuide throws naming the guide and the bad relatedGuides slug', () => {
+    expect(() => getGuide('bad-related-guide', 'en', FIXTURES)).toThrow(/bad-related-guide/)
+    expect(() => getGuide('bad-related-guide', 'en', FIXTURES)).toThrow(/nope-not-a-real-guide/)
   })
   it('getGuidesForTool matches relatedTools across live guides only', () => {
     expect(getGuidesForTool('focus-stacking-calculator', 'en', FIXTURES)).toEqual([

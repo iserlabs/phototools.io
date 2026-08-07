@@ -65,6 +65,24 @@ function isVisible(fm: GuideFrontmatter): boolean {
   return fm.status === 'live' || isDev()
 }
 
+/**
+ * relatedGuides can't be validated in the Zod schema (schema.ts has no
+ * access to disk), so — matching how relatedTools fails the build via Zod —
+ * getGuide throws here at read time if a referenced slug doesn't exist.
+ * Only getGuide returns relatedGuides; getVisibleGuides/getLiveGuides/
+ * toListItem never read it, so this check has no reason to live anywhere
+ * else.
+ */
+function validateRelatedGuides(slug: string, relatedGuides: string[] | undefined, contentDir: string): void {
+  if (!relatedGuides || relatedGuides.length === 0) return
+  const allSlugs = new Set(getAllGuideSlugs(contentDir))
+  for (const related of relatedGuides) {
+    if (!allSlugs.has(related)) {
+      throw new Error(`Guide "${slug}" has relatedGuides entry "${related}" which does not match any guide slug`)
+    }
+  }
+}
+
 /** Builds a list item from already-read frontmatter/body — never touches disk. */
 function toListItem(
   slug: string,
@@ -117,6 +135,7 @@ export function hasVisibleGuides(contentDir: string = GUIDES_CONTENT_DIR): boole
 export function getGuide(slug: string, locale: Locale, contentDir: string = GUIDES_CONTENT_DIR): Guide | null {
   if (!getAllGuideSlugs(contentDir).includes(slug)) return null
   const { fm, body: enBody } = readEnFrontmatter(slug, contentDir)
+  validateRelatedGuides(slug, fm.relatedGuides, contentDir)
   if (!isVisible(fm)) return null
   const loc = resolveLocaleFile(slug, locale, contentDir)
   const body = loc?.body ?? enBody
