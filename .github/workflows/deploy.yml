@@ -26,6 +26,7 @@ jobs:
       - run: npm run lint
       - run: npm run type-check
       - run: node scripts/check-translations.mjs
+      - run: node scripts/check-guide-translations.mjs
       - run: npm test
       - run: npm run build
 

@@ -90,9 +90,9 @@ src/content/guides/<slug>/
 - **Zero live guides ⇒ the entire section 404s** (`/guides` included) and no
   nav/footer/homepage entries render. Gating is `getLiveGuides()` non-empty —
   automatic, no feature flag. No thin empty pages, ever.
-- The static `guides` segment wins over the dynamic `/[locale]/[slug]` tool
-  route (Next.js static-over-dynamic priority). `guides` becomes a **reserved
-  slug**: a tool-registry test asserts no tool may claim it.
+- Tool routes are literal directories under `src/app/[locale]/` (there is no
+  dynamic tool route), so `guides` is a free segment; the reserved-slug test
+  in `tools.test.ts` guards against a future tool claiming it.
 - Unpublishing a live guide goes through `src/lib/i18n/redirects.ts` (301 to
   `/guides` or a successor guide), not a bare 404.
 - Category index pages (`/guides/techniques` etc.) are deferred until counts
