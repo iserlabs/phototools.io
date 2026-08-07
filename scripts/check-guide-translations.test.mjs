@@ -21,9 +21,13 @@ describe('checkGuides', () => {
     const { errors } = checkGuides(CONTENT, MESSAGES)
     expect(errors.some((e) => e.includes('bad-live') && e.includes('category'))).toBe(true)
   })
-  it('errors on component-tag mismatch', () => {
+  it('errors on component-tag mismatch and names the differing tag signature', () => {
     const { errors } = checkGuides(CONTENT, MESSAGES)
-    expect(errors.some((e) => e.includes('bad-live') && e.includes('Callout'))).toBe(true)
+    // bad-live/es.mdx drops the <Callout type="tip"> that en.mdx has, so the
+    // error must name that specific signature, not just say "mismatch".
+    expect(
+      errors.some((e) => e.includes('bad-live') && e.includes('missing vs en') && e.includes('Callout(type=tip)'))
+    ).toBe(true)
   })
   it('warns (not errors) on stale sourceHash', () => {
     const { errors, warnings } = checkGuides(CONTENT, MESSAGES)

@@ -19,7 +19,7 @@ export function computeSourceHash(enRaw) {
   return createHash('sha256').update(basis).digest('hex').slice(0, 12)
 }
 
-function componentSignature(body) {
+function componentTags(body) {
   const tags = []
   for (const m of body.matchAll(TAG_PATTERN)) {
     const attrs = STRUCTURAL_ATTRS.map((a) => {
@@ -28,7 +28,7 @@ function componentSignature(body) {
     }).filter(Boolean)
     tags.push(`${m[1]}(${attrs.join(',')})`)
   }
-  return tags.sort().join('|')
+  return tags.sort()
 }
 
 export function checkGuides(contentDir, messagesDir) {
@@ -49,7 +49,8 @@ export function checkGuides(contentDir, messagesDir) {
     const enRaw = readFileSync(enPath, 'utf8')
     const en = matter(enRaw)
     const expectedHash = computeSourceHash(enRaw)
-    const enSignature = componentSignature(en.content)
+    const enTags = componentTags(en.content)
+    const enSignature = enTags.join('|')
     if (en.data.status !== 'live') continue
 
     for (const locale of locales) {
@@ -65,10 +66,15 @@ export function checkGuides(contentDir, messagesDir) {
       for (const key of REQUIRED_LOCALE_KEYS) {
         if (!loc.data[key]) errors.push(`${slug}/${locale}.mdx: missing required key "${key}"`)
       }
-      const locSignature = componentSignature(loc.content)
+      const locTags = componentTags(loc.content)
+      const locSignature = locTags.join('|')
       if (locSignature !== enSignature) {
+        const locSet = new Set(locTags)
+        const enSet = new Set(enTags)
+        const missing = enTags.filter((t) => !locSet.has(t))
+        const extra = locTags.filter((t) => !enSet.has(t))
         errors.push(
-          `${slug}/${locale}.mdx: component-tag mismatch (Callout/Figure/ToolCard set or structural attrs differ from en.mdx)`
+          `${slug}/${locale}.mdx: component-tag mismatch — missing vs en: [${missing.join(', ')}]; extra vs en: [${extra.join(', ')}]`
         )
       }
       if (loc.data.sourceHash && loc.data.sourceHash !== expectedHash) {
