@@ -1,0 +1,30 @@
+{
+  "guides": {
+    "indexTitle": "写真ガイド",
+    "indexSubtitle": "テスト用の固定ガイド。",
+    "categories": {
+      "techniques": {
+        "name": "テクニック",
+        "blurb": "テクニックの説明。"
+      },
+      "gear": {
+        "name": "機材",
+        "blurb": "機材の説明。"
+      },
+      "editing": {
+        "name": "編集",
+        "blurb": "編集の説明。"
+      }
+    },
+    "readTime": "読了時間 {minutes} 分",
+    "updated": "更新日 {date}",
+    "onThisPage": "このページの内容",
+    "relatedTools": "ツールを試す",
+    "relatedGuides": "関連ガイド",
+    "backToGuides": "すべてのガイド",
+    "byLabel": "{name} 著",
+    "teaserTitle": "写真ガイド",
+    "teaserSubtitle": "ツールと組み合わせて使える長編ガイド",
+    "teaserCta": "すべてのガイドを見る"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "guides": {
+    "indexTitle": "Guías de fotografía",
+    "indexSubtitle": "Guías fijas de prueba.",
+    "categories": {
+      "techniques": {
+        "name": "Técnicas",
+        "blurb": "Blurb de técnicas."
+      },
+      "gear": {
+        "name": "Equipo",
+        "blurb": "Blurb de equipo."
+      },
+      "editing": {
+        "name": "Edición",
+        "blurb": "Blurb de edición."
+      }
+    },
+    "readTime": "{minutes, plural, one {# min de lectura} other {# min de lectura}}",
+    "updated": "Actualizado {date}",
+    "onThisPage": "En esta página",
+    "relatedTools": "Prueba las herramientas",
+    "relatedGuides": "Guías relacionadas",
+    "backToGuides": "Todas las guías",
+    "byLabel": "Por {name}",
+    "teaserTitle": "Guías de fotografía",
+    "teaserSubtitle": "Guías extensas que acompañan a las herramientas",
+    "teaserCta": "Ver todas las guías"
+  }
+}

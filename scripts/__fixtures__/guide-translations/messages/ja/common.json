@@ -1,0 +1,16 @@
+{
+  "common": {
+    "nav": {
+      "guides": "ガイド"
+    },
+    "footer": {
+      "guides": "ガイド"
+    },
+    "learn": {
+      "guidesTitle": "関連ガイド"
+    },
+    "draft": {
+      "guideBanner": "プレビュー — このガイドはまだ公開されていません"
+    }
+  }
+}

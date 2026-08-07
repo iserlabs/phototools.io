@@ -1,0 +1,16 @@
+{
+  "common": {
+    "nav": {
+      "guides": ""
+    },
+    "footer": {
+      "guides": "Guías"
+    },
+    "learn": {
+      "guidesTitle": "Guías relacionadas"
+    },
+    "draft": {
+      "guideBanner": "Vista previa — Esta guía aún no es pública"
+    }
+  }
+}
