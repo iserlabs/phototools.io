@@ -97,6 +97,27 @@
   margin: 0;
 }
 
+/* Related guides */
+.guidesList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guidesLink {
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.guidesLink:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
 /* Key factors */
 .factors {
   display: flex;

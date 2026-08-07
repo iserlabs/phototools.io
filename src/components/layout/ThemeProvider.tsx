@@ -16,7 +16,7 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue>({ theme: 'dark', setTheme: () => {} })
 export function useTheme() { return useContext(ThemeContext) }
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
+export function ThemeProvider({ children, hasGuides = false }: { children: ReactNode; hasGuides?: boolean }) {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')
   // Tracks whether we've read the persisted theme from localStorage yet.
   // Without this, the write effect fires on initial mount with the default
@@ -41,9 +41,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   return (
     <ThemeContext value={{ theme, setTheme }}>
-      <Nav theme={theme} onThemeChange={setTheme} />
+      <Nav theme={theme} onThemeChange={setTheme} hasGuides={hasGuides} />
       <main className={styles.main}>{children}</main>
-      <Footer />
+      <Footer hasGuides={hasGuides} />
       <MobileAdBanner />
       <Toaster theme={theme} position="bottom-center" />
     </ThemeContext>

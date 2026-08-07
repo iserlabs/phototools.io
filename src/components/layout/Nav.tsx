@@ -15,6 +15,7 @@ import styles from './Nav.module.css'
 interface NavProps {
   theme: string
   onThemeChange: (theme: 'dark' | 'light') => void
+  hasGuides?: boolean
 }
 
 function useCategoryLabels(): Record<ToolCategory, string> {
@@ -37,7 +38,7 @@ function useCanHover() {
   return canHover
 }
 
-export function Nav({ theme, onThemeChange }: NavProps) {
+export function Nav({ theme, onThemeChange, hasGuides = false }: NavProps) {
   const t = useTranslations('common.nav')
   const toolsT = useTranslations('tools')
   const CATEGORY_LABELS = useCategoryLabels()
@@ -155,6 +156,16 @@ export function Nav({ theme, onThemeChange }: NavProps) {
           data-ph-capture-attribute-source="mega-menu"
           onClick={() => trackNavClick({ target: 'glossary', source: 'mega-menu' })}
         >{t('glossary')}</Link>
+        {hasGuides && (
+          <Link
+            href="/guides"
+            className={styles.navLink}
+            data-ph-capture-attribute-source="mega-menu"
+            onClick={() => trackNavClick({ target: 'guides', source: 'mega-menu' })}
+          >
+            {t('guides')}
+          </Link>
+        )}
         <div className={styles.spacer} />
         <Link href="/contact" prefetch={false} className={`${styles.navLink} ${styles.contactLink}`}>{t('contact')}</Link>
         <span className={styles.desktopThemeToggle}><ThemeToggle theme={theme} onChange={onThemeChange} /></span>

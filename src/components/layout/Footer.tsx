@@ -5,12 +5,19 @@ import { useTranslations } from 'next-intl'
 import { trackNavClick } from '@/lib/analytics'
 import styles from './Footer.module.css'
 
-export function Footer() {
+interface FooterProps {
+  hasGuides?: boolean
+}
+
+export function Footer({ hasGuides = false }: FooterProps) {
   const t = useTranslations('common.footer')
 
   return (
     <footer className={styles.footer}>
       <div className={styles.infoRow}>
+        {hasGuides && (
+          <Link href="/guides" className={styles.link} data-ph-capture-attribute-source="footer" onClick={() => trackNavClick({ target: 'guides', source: 'footer' })}>{t('guides')}</Link>
+        )}
         <Link href="/learn/glossary" className={styles.link} data-ph-capture-attribute-source="footer" onClick={() => trackNavClick({ target: 'glossary', source: 'footer' })}>{t('glossary')}</Link>
         <Link href="/about" className={styles.link} data-ph-capture-attribute-source="footer" onClick={() => trackNavClick({ target: 'about', source: 'footer' })}>{t('about')}</Link>
         {/* prefetch={false}: /contact owns a unique CSS chunk (ContactForm is

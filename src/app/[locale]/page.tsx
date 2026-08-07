@@ -3,7 +3,9 @@ import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { getLiveTools } from '@/lib/data/tools'
 import { ToolIcon } from '@/components/shared/ToolIcon'
 import { AnimatedGrid, AnimatedItem } from '@/components/shared/AnimatedGrid'
+import { GuidesTeaser } from '@/components/guides/GuidesTeaser'
 import type { ToolCategory } from '@/lib/types'
+import type { Locale } from '@/lib/i18n/routing'
 import { AdUnit } from '@/components/shared/AdUnit'
 import styles from './page.module.css'
 
@@ -59,6 +61,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </AnimatedGrid>
         </section>
       ))}
+
+      <GuidesTeaser locale={locale as Locale} />
     </main>
   )
 }

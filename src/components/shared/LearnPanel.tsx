@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/lib/i18n/navigation'
 import { getSkeletonBySlug, isChallengeComplete, clearChallengeProgressForTool } from '@/lib/data/education'
-import { trackLearnPanelOpen, trackLearnPanelSectionView } from '@/lib/analytics'
+import { trackLearnPanelOpen, trackLearnPanelSectionView, trackToolGuideClick } from '@/lib/analytics'
 import { useScrollDepth } from '@/lib/analytics/hooks/useScrollDepth'
 import { ChallengeCard, ChallengeNavDot } from './ChallengeCard'
 import { FaqSection } from './FaqSection'
@@ -13,9 +14,10 @@ import styles from './LearnPanel.module.css'
 interface LearnPanelProps {
   slug: string
   closable?: boolean
+  guides?: Array<{ slug: string; title: string }>
 }
 
-export function LearnPanel({ slug, closable = false }: LearnPanelProps) {
+export function LearnPanel({ slug, closable = false, guides = [] }: LearnPanelProps) {
   const t = useTranslations('common.learn')
   const et = useTranslations(`education.${slug}`)
   const skel = getSkeletonBySlug(slug)
@@ -148,6 +150,25 @@ export function LearnPanel({ slug, closable = false }: LearnPanelProps) {
             )}
           </div>
         </ChallengeCard>
+      )}
+      {guides.length > 0 && (
+        <section className={styles.section}>
+          <h3 className={styles.sectionTitle}>{t('guidesTitle')}</h3>
+          <ul className={styles.guidesList}>
+            {guides.map((guide) => (
+              <li key={guide.slug}>
+                <Link
+                  href={`/guides/${guide.slug}`}
+                  prefetch={false}
+                  className={styles.guidesLink}
+                  onClick={() => trackToolGuideClick({ tool_slug: slug, guide_slug: guide.slug })}
+                >
+                  {guide.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
       <FaqSection slug={slug} />
       <RelatedTools currentSlug={slug} />

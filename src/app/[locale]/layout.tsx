@@ -13,6 +13,7 @@ import { AdScripts } from '@/components/shared/AdScripts'
 import { routing, localeOpenGraph } from '@/lib/i18n/routing'
 import type { Locale } from '@/lib/i18n/routing'
 import { getCookieyesId } from '@/lib/ads'
+import { hasVisibleGuides } from '@/lib/guides/content'
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
@@ -123,7 +124,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <NextIntlClientProvider messages={messages}>
         <AnalyticsProvider>
           <JsonLd />
-          <ThemeProvider>
+          <ThemeProvider hasGuides={hasVisibleGuides()}>
             <ViewTransition>
               <div
                 id="main-content"
