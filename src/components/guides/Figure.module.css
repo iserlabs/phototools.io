@@ -1,0 +1,14 @@
+.figure {
+  margin: var(--space-lg) 0;
+}
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.caption {
+  margin-top: var(--space-xs);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  text-align: center;
+}
