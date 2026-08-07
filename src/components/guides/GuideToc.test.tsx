@@ -30,6 +30,9 @@ describe('GuideToc', () => {
     )
     expect(screen.getByRole('link', { name: 'Setup' })).toHaveAttribute('href', '#setup')
     expect(screen.getByRole('link', { name: 'Lighting' }).className).toContain('depth3')
+    // Regression guard: depth-2 entries have no depth class, so the
+    // className must never contain the literal string "undefined".
+    expect(screen.getByRole('link', { name: 'Setup' }).className).not.toContain('undefined')
   })
   it('renders nothing with fewer than 2 entries', () => {
     const { container } = render(

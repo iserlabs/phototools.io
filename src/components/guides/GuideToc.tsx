@@ -39,7 +39,13 @@ export function GuideToc({ entries }: GuideTocProps) {
           <li key={entry.id}>
             <a
               href={`#${entry.id}`}
-              className={`${styles.link} ${styles[`depth${entry.depth}`]} ${activeId === entry.id ? styles.active : ''}`}
+              className={[
+                styles.link,
+                entry.depth === 3 ? styles.depth3 : '',
+                activeId === entry.id ? styles.active : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
               onClick={(e) => {
                 e.preventDefault()
                 document.getElementById(entry.id)?.scrollIntoView({ behavior: 'smooth' })
