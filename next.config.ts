@@ -1,15 +1,23 @@
 import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
 import bundleAnalyzer from '@next/bundle-analyzer'
+import createMDX from '@next/mdx'
 import { withSentryConfig } from '@sentry/nextjs'
 import { staticRedirects } from './src/lib/i18n/redirects'
 
 const withNextIntl = createNextIntlPlugin('./src/lib/i18n/request.ts')
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: ['remark-frontmatter'],
+    rehypePlugins: ['rehype-slug'],
+  },
+})
 
 const nextConfig: NextConfig = {
   // View Transitions need no flag since Next 16.3 — the experimental
   // `viewTransition` option was removed when the feature became default-on.
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   async redirects() {
     return staticRedirects
   },
@@ -80,7 +88,7 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default withSentryConfig(withBundleAnalyzer(withNextIntl(nextConfig)), {
+export default withSentryConfig(withBundleAnalyzer(withNextIntl(withMDX(nextConfig))), {
   org: process.env.SENTRY_ORG,
   project: process.env.SENTRY_PROJECT,
   authToken: process.env.SENTRY_AUTH_TOKEN,
