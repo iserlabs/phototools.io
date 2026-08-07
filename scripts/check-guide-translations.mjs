@@ -31,6 +31,32 @@ function componentTags(body) {
   return tags.sort()
 }
 
+function tagCounts(tags) {
+  const counts = new Map()
+  for (const t of tags) counts.set(t, (counts.get(t) ?? 0) + 1)
+  return counts
+}
+
+// Multiset diff: two signatures with the same name but different repeat
+// counts (e.g. en.mdx has <Callout type="tip"> twice, the locale once) must
+// still be reported — plain Set membership would treat the signature as
+// present on both sides and report an empty diff even though a mismatch fired.
+function tagMultisetDiff(enTags, locTags) {
+  const enCounts = tagCounts(enTags)
+  const locCounts = tagCounts(locTags)
+  const signatures = new Set([...enCounts.keys(), ...locCounts.keys()])
+  const missing = []
+  const extra = []
+  for (const sig of signatures) {
+    const enCount = enCounts.get(sig) ?? 0
+    const locCount = locCounts.get(sig) ?? 0
+    const deficit = enCount - locCount
+    if (deficit > 0) missing.push(deficit > 1 ? `${sig}×${deficit}` : sig)
+    if (deficit < 0) extra.push(-deficit > 1 ? `${sig}×${-deficit}` : sig)
+  }
+  return { missing: missing.sort(), extra: extra.sort() }
+}
+
 export function checkGuides(contentDir, messagesDir) {
   const errors = []
   const warnings = []
@@ -69,10 +95,7 @@ export function checkGuides(contentDir, messagesDir) {
       const locTags = componentTags(loc.content)
       const locSignature = locTags.join('|')
       if (locSignature !== enSignature) {
-        const locSet = new Set(locTags)
-        const enSet = new Set(enTags)
-        const missing = enTags.filter((t) => !locSet.has(t))
-        const extra = locTags.filter((t) => !enSet.has(t))
+        const { missing, extra } = tagMultisetDiff(enTags, locTags)
         errors.push(
           `${slug}/${locale}.mdx: component-tag mismatch — missing vs en: [${missing.join(', ')}]; extra vs en: [${extra.join(', ')}]`
         )

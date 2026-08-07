@@ -29,6 +29,16 @@ describe('checkGuides', () => {
       errors.some((e) => e.includes('bad-live') && e.includes('missing vs en') && e.includes('Callout(type=tip)'))
     ).toBe(true)
   })
+  it('diffs tags as a multiset so a duplicate signature is not lost to Set membership', () => {
+    // dup-live/en.mdx has <Callout type="tip"> TWICE; es.mdx has it once.
+    // A naive Set-based diff would see the signature present on both sides
+    // and report empty brackets even though the mismatch fired.
+    const { errors } = checkGuides(CONTENT, MESSAGES)
+    const msg = errors.find((e) => e.includes('dup-live') && e.includes('es.mdx'))
+    expect(msg).toBeDefined()
+    expect(msg).toContain('missing vs en: [Callout(type=tip)]')
+    expect(msg).not.toContain('missing vs en: []')
+  })
   it('warns (not errors) on stale sourceHash', () => {
     const { errors, warnings } = checkGuides(CONTENT, MESSAGES)
     expect(warnings.some((w) => w.includes('good-live') && w.includes('ja.mdx'))).toBe(true)
