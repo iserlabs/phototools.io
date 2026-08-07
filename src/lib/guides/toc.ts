@@ -19,9 +19,14 @@ export function extractToc(body: string): TocEntry[] {
   const slugger = new GithubSlugger()
   const entries: TocEntry[] = []
   visit(tree, 'heading', (node: Heading) => {
-    if (node.depth !== 2 && node.depth !== 3) return
+    // rehype-slug slugs EVERY heading (h1-h6) to advance its counter, so we
+    // must do the same here even for depths we don't include in the TOC —
+    // otherwise our ids drift out of sync with the ids actually rendered on
+    // the page and TOC links anchor to the wrong heading.
     const text = headingText(node)
-    entries.push({ id: slugger.slug(text), text, depth: node.depth })
+    const id = slugger.slug(text)
+    if (node.depth !== 2 && node.depth !== 3) return
+    entries.push({ id, text, depth: node.depth })
   })
   return entries
 }

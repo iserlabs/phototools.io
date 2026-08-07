@@ -14,6 +14,14 @@ describe('extractToc', () => {
     const body = '## Setup\n\n## Setup\n'
     expect(extractToc(body).map((e) => e.id)).toEqual(['setup', 'setup-1'])
   })
+  it('advances the slug counter for non-h2/h3 headings too, matching rehype-slug', () => {
+    // rehype-slug runs every heading (h1-h6) through its slugger, so the h4
+    // in the middle must still consume a counter slot even though it's
+    // excluded from the TOC — otherwise the second h2's id (here `setup-1`)
+    // would collide with what rehype-slug actually assigned the h4.
+    const body = '## Setup\n#### Setup\n## Setup\n'
+    expect(extractToc(body).map((e) => e.id)).toEqual(['setup', 'setup-2'])
+  })
   it('handles MDX with JSX blocks without crashing', () => {
     const body = '## Intro\n\n<Callout type="tip">Use a tripod.</Callout>\n\n## Gear\n'
     expect(extractToc(body).map((e) => e.text)).toEqual(['Intro', 'Gear'])
