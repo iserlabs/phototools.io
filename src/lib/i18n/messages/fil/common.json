@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Tools",
       "glossary": "Glossary",
+      "guides": "",
       "closeMenu": "Isara ang menu",
       "comingSoon": "Malapit na",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Glossary",
+      "guides": "",
       "about": "Tungkol",
       "contact": "Contact",
       "privacy": "Patakaran sa Privacy",
@@ -55,7 +57,8 @@
       "tryAgain": "Subukan Ulit",
       "resetAll": "I-reset Lahat",
       "resetAllChallenges": "I-reset lahat ng challenge",
-      "challengeNumber": "Challenge {number}"
+      "challengeNumber": "Challenge {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "I-share at I-embed",
@@ -68,7 +71,8 @@
       "copied": "Na-copy"
     },
     "draft": {
-      "banner": "Preview — Hindi pa public ang tool na ito"
+      "banner": "Preview — Hindi pa public ang tool na ito",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "I-drop ang litrato dito o i-click para mag-browse",

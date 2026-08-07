@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Verktøy",
       "glossary": "Ordliste",
+      "guides": "",
       "closeMenu": "Lukk meny",
       "comingSoon": "Snart",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Ordliste",
+      "guides": "",
       "about": "Om",
       "contact": "Kontakt",
       "privacy": "Personvern",
@@ -55,7 +57,8 @@
       "tryAgain": "Prøv igjen",
       "resetAll": "Nullstill alt",
       "resetAllChallenges": "Nullstill alle oppgaver",
-      "challengeNumber": "Oppgave {number}"
+      "challengeNumber": "Oppgave {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Del og bygg inn",
@@ -68,7 +71,8 @@
       "copied": "Kopiert"
     },
     "draft": {
-      "banner": "Forhåndsvisning — dette verktøyet er ikke publisert ennå"
+      "banner": "Forhåndsvisning — dette verktøyet er ikke publisert ennå",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Slipp et bilde her, eller klikk for å bla",

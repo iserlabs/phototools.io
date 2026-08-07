@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Cheat sheet di fotografia — impostazioni per scenario",
       "description": "Schede di impostazioni per ritratti, paesaggi, natura, Via Lattea e altro. Punti di partenza collaudati da scaricare come immagine o stampare."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

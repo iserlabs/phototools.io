@@ -2,7 +2,7 @@ import { getRequestConfig } from 'next-intl/server'
 import { hasLocale } from 'next-intl'
 import { routing } from './routing'
 
-const CORE_FILES = ['common', 'home', 'tools', 'glossary', 'about', 'contact', 'privacy', 'terms', 'metadata'] as const
+const CORE_FILES = ['common', 'home', 'tools', 'glossary', 'about', 'contact', 'privacy', 'terms', 'metadata', 'guides'] as const
 
 /** Tools that have BOTH education and toolUI message files. */
 const TOOL_SLUGS = [

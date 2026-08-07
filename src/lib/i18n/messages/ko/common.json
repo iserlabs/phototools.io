@@ -4,6 +4,7 @@
     "nav": {
       "tools": "도구",
       "glossary": "용어 사전",
+      "guides": "",
       "closeMenu": "메뉴 닫기",
       "comingSoon": "곧 출시",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "용어 사전",
+      "guides": "",
       "about": "소개",
       "contact": "문의",
       "privacy": "개인정보 처리방침",
@@ -55,7 +57,8 @@
       "tryAgain": "다시 시도",
       "resetAll": "전체 초기화",
       "resetAllChallenges": "모든 문제 초기화",
-      "challengeNumber": "문제 {number}"
+      "challengeNumber": "문제 {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "공유 및 임베드",
@@ -68,7 +71,8 @@
       "copied": "복사됨"
     },
     "draft": {
-      "banner": "미리 보기 — 이 도구는 아직 공개되지 않았습니다"
+      "banner": "미리 보기 — 이 도구는 아직 공개되지 않았습니다",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "이미지를 여기에 놓거나 클릭하여 찾아보기",

@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Công cụ",
       "glossary": "Thuật ngữ",
+      "guides": "",
       "closeMenu": "Đóng menu",
       "comingSoon": "Sắp ra",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Thuật ngữ",
+      "guides": "",
       "about": "Giới thiệu",
       "contact": "Liên hệ",
       "privacy": "Chính sách bảo mật",
@@ -55,7 +57,8 @@
       "tryAgain": "Thử lại",
       "resetAll": "Đặt lại tất cả",
       "resetAllChallenges": "Đặt lại tất cả thử thách",
-      "challengeNumber": "Thử thách {number}"
+      "challengeNumber": "Thử thách {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Chia sẻ & Nhúng",
@@ -68,7 +71,8 @@
       "copied": "Đã sao chép"
     },
     "draft": {
-      "banner": "Xem trước — Công cụ này chưa được công khai"
+      "banner": "Xem trước — Công cụ này chưa được công khai",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Thả ảnh vào đây hoặc nhấn để duyệt",

@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Photography Cheat Sheet — Camera Settings by Scenario",
       "description": "Camera settings cheat sheets for portraits, landscapes, wildlife, the Milky Way, and more. Proven starting points you can download as an image or print."
+    },
+    "guides": {
+      "title": "Photography Guides — Techniques, Gear & Editing",
+      "description": "Free in-depth photography guides: shooting techniques, gear-buying advice, and editing walkthroughs — gear-neutral and paired with interactive tools."
     }
   }
 }

@@ -4,6 +4,7 @@
     "nav": {
       "tools": "ツール",
       "glossary": "用語集",
+      "guides": "",
       "closeMenu": "メニューを閉じる",
       "comingSoon": "近日公開",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "用語集",
+      "guides": "",
       "about": "概要",
       "contact": "お問い合わせ",
       "privacy": "プライバシーポリシー",
@@ -55,7 +57,8 @@
       "tryAgain": "もう一度",
       "resetAll": "すべてリセット",
       "resetAllChallenges": "すべてのチャレンジをリセット",
-      "challengeNumber": "チャレンジ {number}"
+      "challengeNumber": "チャレンジ {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "共有と埋め込み",
@@ -68,7 +71,8 @@
       "copied": "コピー済み"
     },
     "draft": {
-      "banner": "プレビュー — このツールはまだ公開されていません"
+      "banner": "プレビュー — このツールはまだ公開されていません",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "画像をここにドロップするか、クリックして選択",

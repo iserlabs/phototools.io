@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Tools",
       "glossary": "Glossary",
+      "guides": "Guides",
       "contact": "Contact",
       "closeMenu": "Close menu",
       "comingSoon": "Soon",
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Glossary",
+      "guides": "Guides",
       "about": "About",
       "contact": "Contact",
       "privacy": "Privacy Policy",
@@ -55,7 +57,8 @@
       "tryAgain": "Try Again",
       "resetAll": "Reset all",
       "resetAllChallenges": "Reset all challenges",
-      "challengeNumber": "Challenge {number}"
+      "challengeNumber": "Challenge {number}",
+      "guidesTitle": "Related guides"
     },
     "share": {
       "title": "Share & Embed",
@@ -68,7 +71,8 @@
       "copied": "Copied"
     },
     "draft": {
-      "banner": "Preview — This tool is not yet public"
+      "banner": "Preview — This tool is not yet public",
+      "guideBanner": "Preview — This guide is not yet public"
     },
     "fileUpload": {
       "dropPrompt": "Drop an image here or click to browse",

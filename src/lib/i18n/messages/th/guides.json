@@ -1,0 +1,30 @@
+{
+  "guides": {
+    "indexTitle": "",
+    "indexSubtitle": "",
+    "categories": {
+      "techniques": {
+        "name": "",
+        "blurb": ""
+      },
+      "gear": {
+        "name": "",
+        "blurb": ""
+      },
+      "editing": {
+        "name": "",
+        "blurb": ""
+      }
+    },
+    "readTime": "",
+    "updated": "",
+    "onThisPage": "",
+    "relatedTools": "",
+    "relatedGuides": "",
+    "backToGuides": "",
+    "byLabel": "",
+    "teaserTitle": "",
+    "teaserSubtitle": "",
+    "teaserCta": ""
+  }
+}

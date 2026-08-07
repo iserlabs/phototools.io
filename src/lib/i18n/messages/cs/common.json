@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Nástroje",
       "glossary": "Slovníček",
+      "guides": "",
       "closeMenu": "Zavřít menu",
       "comingSoon": "Brzy",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Slovníček",
+      "guides": "",
       "about": "O projektu",
       "contact": "Kontakt",
       "privacy": "Zásady ochrany soukromí",
@@ -55,7 +57,8 @@
       "tryAgain": "Zkusit znovu",
       "resetAll": "Resetovat vše",
       "resetAllChallenges": "Resetovat všechny úkoly",
-      "challengeNumber": "Úkol {number}"
+      "challengeNumber": "Úkol {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Sdílet a vložit",
@@ -68,7 +71,8 @@
       "copied": "Zkopírováno"
     },
     "draft": {
-      "banner": "Náhled — tento nástroj zatím není veřejný"
+      "banner": "Náhled — tento nástroj zatím není veřejný",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Přetáhni sem obrázek nebo klikni pro výběr",

@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "摄影速查表 — 按场景查相机设置",
       "description": "涵盖人像、风光、野生动物、银河等场景的相机设置速查表。可下载为图片或打印的可靠拍摄起点。"
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Folha de Referência de Fotografia — Configurações de Câmera por Cenário",
       "description": "Folhas de referência com configurações de câmera para retratos, paisagens, vida selvagem, a Via Láctea e mais. Pontos de partida comprovados para baixar como imagem ou imprimir."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

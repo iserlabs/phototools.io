@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Eines",
       "glossary": "Glossari",
+      "guides": "",
       "closeMenu": "Tanca el menú",
       "comingSoon": "Aviat",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Glossari",
+      "guides": "",
       "about": "Qui som",
       "contact": "Contacte",
       "privacy": "Política de privacitat",
@@ -55,7 +57,8 @@
       "tryAgain": "Torna-ho a provar",
       "resetAll": "Reinicia-ho tot",
       "resetAllChallenges": "Reinicia tots els reptes",
-      "challengeNumber": "Repte {number}"
+      "challengeNumber": "Repte {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Comparteix i incrusta",
@@ -68,7 +71,8 @@
       "copied": "Copiat"
     },
     "draft": {
-      "banner": "Previsualització — aquesta eina encara no és pública"
+      "banner": "Previsualització — aquesta eina encara no és pública",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Arrossega una imatge aquí o fes clic per examinar",

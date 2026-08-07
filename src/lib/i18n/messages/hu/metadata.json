@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Fotós puska — kamerabeállítások helyzetenként",
       "description": "Kamerabeállítási puskák portréhoz, tájképhez, vadfotózáshoz, a Tejúthoz és még sok máshoz. Bevált kiindulópontok, amelyeket képként letölthetsz vagy kinyomtathatsz."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

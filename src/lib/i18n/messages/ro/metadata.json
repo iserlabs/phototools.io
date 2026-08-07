@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Fișă de setări foto — setări de aparat pe scenarii",
       "description": "Fișe cu setări de aparat pentru portrete, peisaje, animale sălbatice, Calea Lactee și altele. Puncte de plecare verificate, de descărcat ca imagine sau de imprimat."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

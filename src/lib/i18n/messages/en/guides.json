@@ -1,0 +1,30 @@
+{
+  "guides": {
+    "indexTitle": "Photography Guides",
+    "indexSubtitle": "In-depth, gear-neutral photography guides — techniques, gear advice, and editing walkthroughs, each paired with our free interactive tools.",
+    "categories": {
+      "techniques": {
+        "name": "Techniques",
+        "blurb": "Field-tested shooting techniques, from macro to birds in flight."
+      },
+      "gear": {
+        "name": "Gear",
+        "blurb": "How to choose equipment by the criteria that matter — not the brand."
+      },
+      "editing": {
+        "name": "Editing",
+        "blurb": "Post-processing and color grading, explained from first principles."
+      }
+    },
+    "readTime": "{minutes, plural, one {# min read} other {# min read}}",
+    "updated": "Updated {date}",
+    "onThisPage": "On this page",
+    "relatedTools": "Try the tools",
+    "relatedGuides": "Related guides",
+    "backToGuides": "All guides",
+    "byLabel": "By {name}",
+    "teaserTitle": "Photography Guides",
+    "teaserSubtitle": "Long-form guides that pair with the tools",
+    "teaserCta": "Browse all guides"
+  }
+}

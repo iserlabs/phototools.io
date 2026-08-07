@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Værktøjer",
       "glossary": "Ordliste",
+      "guides": "",
       "closeMenu": "Luk menu",
       "comingSoon": "Snart",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Ordliste",
+      "guides": "",
       "about": "Om",
       "contact": "Kontakt",
       "privacy": "Privatlivspolitik",
@@ -55,7 +57,8 @@
       "tryAgain": "Prøv igen",
       "resetAll": "Nulstil alt",
       "resetAllChallenges": "Nulstil alle udfordringer",
-      "challengeNumber": "Udfordring {number}"
+      "challengeNumber": "Udfordring {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Del og indlejr",
@@ -68,7 +71,8 @@
       "copied": "Kopieret"
     },
     "draft": {
-      "banner": "Forhåndsvisning — dette værktøj er endnu ikke offentligt"
+      "banner": "Forhåndsvisning — dette værktøj er endnu ikke offentligt",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Træk et billede hertil, eller klik for at vælge",

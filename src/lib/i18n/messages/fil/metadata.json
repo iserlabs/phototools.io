@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Photography Cheat Sheet — Mga Camera Setting Kada Scenario",
       "description": "Mga cheat sheet ng camera setting para sa mga portrait, landscape, wildlife, Milky Way, at iba pa. Mga napatunayang panimulang punto na mada-download bilang imahe o mapi-print."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

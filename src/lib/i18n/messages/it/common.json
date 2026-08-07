@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Strumenti",
       "glossary": "Glossario",
+      "guides": "",
       "closeMenu": "Chiudi menu",
       "comingSoon": "In arrivo",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Glossario",
+      "guides": "",
       "about": "Chi siamo",
       "contact": "Contatti",
       "privacy": "Informativa sulla privacy",
@@ -55,7 +57,8 @@
       "tryAgain": "Riprova",
       "resetAll": "Ripristina tutto",
       "resetAllChallenges": "Ripristina tutte le sfide",
-      "challengeNumber": "Sfida {number}"
+      "challengeNumber": "Sfida {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Condividi e Incorpora",
@@ -68,7 +71,8 @@
       "copied": "Copiato"
     },
     "draft": {
-      "banner": "Anteprima — Questo strumento non è ancora pubblico"
+      "banner": "Anteprima — Questo strumento non è ancora pubblico",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Trascina un'immagine qui o clicca per sfogliare",

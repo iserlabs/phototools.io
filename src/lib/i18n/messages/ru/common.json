@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Инструменты",
       "glossary": "Глоссарий",
+      "guides": "",
       "closeMenu": "Закрыть меню",
       "comingSoon": "Скоро",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Глоссарий",
+      "guides": "",
       "about": "О проекте",
       "contact": "Контакты",
       "privacy": "Политика конфиденциальности",
@@ -55,7 +57,8 @@
       "tryAgain": "Попробовать снова",
       "resetAll": "Сбросить всё",
       "resetAllChallenges": "Сбросить все задания",
-      "challengeNumber": "Задание {number}"
+      "challengeNumber": "Задание {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Поделиться и встроить",
@@ -68,7 +71,8 @@
       "copied": "Скопировано"
     },
     "draft": {
-      "banner": "Предпросмотр — инструмент пока недоступен публично"
+      "banner": "Предпросмотр — инструмент пока недоступен публично",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Перетащи изображение сюда или нажми, чтобы выбрать",

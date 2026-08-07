@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "攝影速查表 — 依場景查相機設定",
       "description": "涵蓋人像、風景、野生動物、銀河等場景的相機設定速查表。經得起實戰的起始設定，可下載為圖片或直接列印。"
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

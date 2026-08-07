@@ -4,6 +4,7 @@
     "nav": {
       "tools": "เครื่องมือ",
       "glossary": "อภิธานศัพท์",
+      "guides": "",
       "closeMenu": "ปิดเมนู",
       "comingSoon": "เร็วๆ นี้",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "อภิธานศัพท์",
+      "guides": "",
       "about": "เกี่ยวกับ",
       "contact": "ติดต่อ",
       "privacy": "นโยบายความเป็นส่วนตัว",
@@ -55,7 +57,8 @@
       "tryAgain": "ลองอีกครั้ง",
       "resetAll": "รีเซ็ตทั้งหมด",
       "resetAllChallenges": "รีเซ็ตโจทย์ทั้งหมด",
-      "challengeNumber": "โจทย์ที่ {number}"
+      "challengeNumber": "โจทย์ที่ {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "แชร์ & ฝังตัว",
@@ -68,7 +71,8 @@
       "copied": "คัดลอกแล้ว"
     },
     "draft": {
-      "banner": "ตัวอย่าง — เครื่องมือนี้ยังไม่เปิดใช้งานสาธารณะ"
+      "banner": "ตัวอย่าง — เครื่องมือนี้ยังไม่เปิดใช้งานสาธารณะ",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "ลากรูปภาพมาวางที่นี่หรือคลิกเพื่อเลือกไฟล์",

@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Araçlar",
       "glossary": "Sözlük",
+      "guides": "",
       "closeMenu": "Menüyü kapat",
       "comingSoon": "Yakında",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Sözlük",
+      "guides": "",
       "about": "Hakkında",
       "contact": "İletişim",
       "privacy": "Gizlilik Politikası",
@@ -55,7 +57,8 @@
       "tryAgain": "Tekrar Dene",
       "resetAll": "Tümünü sıfırla",
       "resetAllChallenges": "Tüm meydan okumaları sıfırla",
-      "challengeNumber": "Meydan Okuma {number}"
+      "challengeNumber": "Meydan Okuma {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Paylaş ve Göm",
@@ -68,7 +71,8 @@
       "copied": "Kopyalandı"
     },
     "draft": {
-      "banner": "Önizleme — Bu araç henüz herkese açık değil"
+      "banner": "Önizleme — Bu araç henüz herkese açık değil",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Bir görsel sürükleyin veya göz atmak için tıklayın",

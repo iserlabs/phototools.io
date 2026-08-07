@@ -4,6 +4,7 @@
     "nav": {
       "tools": "टूल्स",
       "glossary": "शब्दावली",
+      "guides": "",
       "closeMenu": "मेनू बंद करें",
       "comingSoon": "जल्द",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "शब्दावली",
+      "guides": "",
       "about": "हमारे बारे में",
       "contact": "संपर्क",
       "privacy": "गोपनीयता नीति",
@@ -55,7 +57,8 @@
       "tryAgain": "फिर से कोशिश करें",
       "resetAll": "सब रीसेट करें",
       "resetAllChallenges": "सभी चुनौतियाँ रीसेट करें",
-      "challengeNumber": "चुनौती {number}"
+      "challengeNumber": "चुनौती {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "शेयर और एम्बेड",
@@ -68,7 +71,8 @@
       "copied": "कॉपी हो गया"
     },
     "draft": {
-      "banner": "प्रीव्यू — यह टूल अभी सार्वजनिक नहीं है"
+      "banner": "प्रीव्यू — यह टूल अभी सार्वजनिक नहीं है",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "यहाँ इमेज ड्रॉप करें या ब्राउज़ करने के लिए क्लिक करें",

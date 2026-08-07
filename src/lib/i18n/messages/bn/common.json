@@ -4,6 +4,7 @@
     "nav": {
       "tools": "টুলস",
       "glossary": "শব্দকোষ",
+      "guides": "",
       "closeMenu": "মেনু বন্ধ করো",
       "comingSoon": "শীঘ্রই",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "শব্দকোষ",
+      "guides": "",
       "about": "আমাদের সম্পর্কে",
       "contact": "যোগাযোগ",
       "privacy": "গোপনীয়তা নীতি",
@@ -55,7 +57,8 @@
       "tryAgain": "আবার চেষ্টা করো",
       "resetAll": "সব রিসেট করো",
       "resetAllChallenges": "সব চ্যালেঞ্জ রিসেট করো",
-      "challengeNumber": "চ্যালেঞ্জ {number}"
+      "challengeNumber": "চ্যালেঞ্জ {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "শেয়ার ও এমবেড",
@@ -68,7 +71,8 @@
       "copied": "কপি হয়েছে"
     },
     "draft": {
-      "banner": "প্রিভিউ — এই টুলটি এখনো সর্বসাধারণের জন্য প্রকাশিত হয়নি"
+      "banner": "প্রিভিউ — এই টুলটি এখনো সর্বসাধারণের জন্য প্রকাশিত হয়নি",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "এখানে একটি ছবি ড্রপ করো বা ব্রাউজ করতে ক্লিক করো",

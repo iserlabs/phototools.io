@@ -4,6 +4,7 @@
     "nav": {
       "tools": "工具",
       "glossary": "術語表",
+      "guides": "",
       "closeMenu": "關閉選單",
       "comingSoon": "即將推出",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "術語表",
+      "guides": "",
       "about": "關於",
       "contact": "聯絡我們",
       "privacy": "隱私權政策",
@@ -55,7 +57,8 @@
       "tryAgain": "再試一次",
       "resetAll": "全部重設",
       "resetAllChallenges": "重設所有挑戰",
-      "challengeNumber": "挑戰 {number}"
+      "challengeNumber": "挑戰 {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "分享與嵌入",
@@ -68,7 +71,8 @@
       "copied": "已複製"
     },
     "draft": {
-      "banner": "預覽 — 此工具尚未公開"
+      "banner": "預覽 — 此工具尚未公開",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "將圖片拖曳到此處，或點擊瀏覽",

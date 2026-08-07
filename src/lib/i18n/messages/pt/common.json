@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Ferramentas",
       "glossary": "Glossário",
+      "guides": "",
       "closeMenu": "Fechar menu",
       "comingSoon": "Em breve",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Glossário",
+      "guides": "",
       "about": "Sobre",
       "contact": "Contato",
       "privacy": "Política de Privacidade",
@@ -55,7 +57,8 @@
       "tryAgain": "Tentar Novamente",
       "resetAll": "Redefinir tudo",
       "resetAllChallenges": "Redefinir todos os desafios",
-      "challengeNumber": "Desafio {number}"
+      "challengeNumber": "Desafio {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Compartilhar e Incorporar",
@@ -68,7 +71,8 @@
       "copied": "Copiado"
     },
     "draft": {
-      "banner": "Prévia — Esta ferramenta ainda não é pública"
+      "banner": "Prévia — Esta ferramenta ainda não é pública",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Arraste uma imagem aqui ou clique para procurar",

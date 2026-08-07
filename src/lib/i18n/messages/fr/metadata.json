@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Aide-mémoire photo — réglages par scénario",
       "description": "Fiches de réglages photo pour les portraits, les paysages, l'animalier, la Voie lactée et plus. Des points de départ éprouvés à télécharger en image ou à imprimer."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

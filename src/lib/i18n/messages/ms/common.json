@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Alat",
       "glossary": "Glosari",
+      "guides": "",
       "closeMenu": "Tutup menu",
       "comingSoon": "Akan Datang",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Glosari",
+      "guides": "",
       "about": "Mengenai",
       "contact": "Hubungi",
       "privacy": "Dasar Privasi",
@@ -55,7 +57,8 @@
       "tryAgain": "Cuba Lagi",
       "resetAll": "Set semula semua",
       "resetAllChallenges": "Set semula semua cabaran",
-      "challengeNumber": "Cabaran {number}"
+      "challengeNumber": "Cabaran {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Kongsi & Benamkan",
@@ -68,7 +71,8 @@
       "copied": "Disalin"
     },
     "draft": {
-      "banner": "Pratonton — Alat ini belum dilancarkan kepada umum"
+      "banner": "Pratonton — Alat ini belum dilancarkan kepada umum",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Lepaskan imej di sini atau klik untuk melayari",

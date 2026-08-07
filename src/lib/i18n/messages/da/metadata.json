@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Foto-huskeseddel — kameraindstillinger efter scenarie",
       "description": "Huskesedler med kameraindstillinger til portrætter, landskaber, dyreliv, Mælkevejen og meget mere. Gennemprøvede udgangspunkter, du kan downloade som billede eller printe."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Foto-jukselapp — kamerainnstillinger etter scenario",
       "description": "Jukselapper med kamerainnstillinger for portretter, landskap, dyreliv, Melkeveien og mer. Utprøvde utgangspunkter du kan laste ned som bilde eller skrive ut."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Werkzeuge",
       "glossary": "Glossar",
+      "guides": "",
       "closeMenu": "Menü schließen",
       "comingSoon": "Bald",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Glossar",
+      "guides": "",
       "about": "Über uns",
       "contact": "Kontakt",
       "privacy": "Datenschutzrichtlinie",
@@ -55,7 +57,8 @@
       "tryAgain": "Nochmal versuchen",
       "resetAll": "Alle zurücksetzen",
       "resetAllChallenges": "Alle Aufgaben zurücksetzen",
-      "challengeNumber": "Aufgabe {number}"
+      "challengeNumber": "Aufgabe {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Teilen & Einbetten",
@@ -68,7 +71,8 @@
       "copied": "Kopiert"
     },
     "draft": {
-      "banner": "Vorschau — Dieses Werkzeug ist noch nicht öffentlich"
+      "banner": "Vorschau — Dieses Werkzeug ist noch nicht öffentlich",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Bild hier ablegen oder klicken zum Durchsuchen",

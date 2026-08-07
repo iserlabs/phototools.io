@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Fotografie-Spickzettel — Kameraeinstellungen nach Szenario",
       "description": "Spickzettel mit Kameraeinstellungen für Porträts, Landschaften, Wildtiere, die Milchstraße und mehr. Bewährte Ausgangspunkte zum Herunterladen als Bild oder Ausdrucken."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

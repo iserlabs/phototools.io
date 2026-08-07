@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Eszközök",
       "glossary": "Fogalomtár",
+      "guides": "",
       "closeMenu": "Menü bezárása",
       "comingSoon": "Hamarosan",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Fogalomtár",
+      "guides": "",
       "about": "Rólunk",
       "contact": "Kapcsolat",
       "privacy": "Adatvédelem",
@@ -55,7 +57,8 @@
       "tryAgain": "Próbáld újra",
       "resetAll": "Összes törlése",
       "resetAllChallenges": "Összes feladat törlése",
-      "challengeNumber": "{number}. feladat"
+      "challengeNumber": "{number}. feladat",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Megosztás és beágyazás",
@@ -68,7 +71,8 @@
       "copied": "Kimásolva"
     },
     "draft": {
-      "banner": "Előnézet — ez az eszköz még nem publikus"
+      "banner": "Előnézet — ez az eszköz még nem publikus",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Húzz ide egy képet, vagy kattints a tallózáshoz",

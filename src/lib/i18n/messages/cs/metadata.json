@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Fotografický tahák — nastavení fotoaparátu podle situace",
       "description": "Taháky s nastavením fotoaparátu na portréty, krajinu, divokou přírodu, Mléčnou dráhu a další situace. Osvědčené výchozí body, které si stáhneš jako obrázek nebo vytiskneš."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

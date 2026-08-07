@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Ściąga fotograficzna — ustawienia aparatu według sytuacji",
       "description": "Ściągi z ustawieniami aparatu na portrety, krajobrazy, dziką przyrodę, Drogę Mleczną i więcej. Sprawdzone punkty wyjścia, które pobierzesz jako obraz lub wydrukujesz."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

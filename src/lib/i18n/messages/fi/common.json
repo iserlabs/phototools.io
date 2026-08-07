@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Työkalut",
       "glossary": "Sanasto",
+      "guides": "",
       "closeMenu": "Sulje valikko",
       "comingSoon": "Pian",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Sanasto",
+      "guides": "",
       "about": "Tietoja",
       "contact": "Yhteystiedot",
       "privacy": "Tietosuojaseloste",
@@ -55,7 +57,8 @@
       "tryAgain": "Yritä uudelleen",
       "resetAll": "Nollaa kaikki",
       "resetAllChallenges": "Nollaa kaikki tehtävät",
-      "challengeNumber": "Tehtävä {number}"
+      "challengeNumber": "Tehtävä {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Jaa ja upota",
@@ -68,7 +71,8 @@
       "copied": "Kopioitu"
     },
     "draft": {
-      "banner": "Esikatselu — tämä työkalu ei ole vielä julkinen"
+      "banner": "Esikatselu — tämä työkalu ei ole vielä julkinen",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Pudota kuva tähän tai selaa klikkaamalla",

@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Tools",
       "glossary": "Woordenlijst",
+      "guides": "",
       "closeMenu": "Menu sluiten",
       "comingSoon": "Binnenkort",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Woordenlijst",
+      "guides": "",
       "about": "Over ons",
       "contact": "Contact",
       "privacy": "Privacybeleid",
@@ -55,7 +57,8 @@
       "tryAgain": "Nog eens proberen",
       "resetAll": "Alles resetten",
       "resetAllChallenges": "Alle uitdagingen resetten",
-      "challengeNumber": "Uitdaging {number}"
+      "challengeNumber": "Uitdaging {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Delen & insluiten",
@@ -68,7 +71,8 @@
       "copied": "Gekopieerd"
     },
     "draft": {
-      "banner": "Voorbeeld — Dit gereedschap is nog niet openbaar"
+      "banner": "Voorbeeld — Dit gereedschap is nog niet openbaar",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Sleep een afbeelding hierheen of klik om te bladeren",

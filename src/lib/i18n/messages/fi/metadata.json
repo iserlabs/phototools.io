@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Valokuvauksen muistilista — kamera-asetukset tilanteittain",
       "description": "Kamera-asetusten muistilistat muotokuviin, maisemiin, villieläimiin, Linnunrataan ja moneen muuhun. Hyväksi havaittuja lähtökohtia, jotka voit ladata kuvana tai tulostaa."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

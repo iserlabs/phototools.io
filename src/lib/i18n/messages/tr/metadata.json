@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Fotoğrafçılık Kopya Kağıdı — Senaryoya Göre Kamera Ayarları",
       "description": "Portre, manzara, yaban hayatı, Samanyolu ve daha fazlası için kamera ayarı kopya kağıtları. Görsel olarak indirebileceğiniz veya yazdırabileceğiniz, kendini kanıtlamış başlangıç noktaları."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

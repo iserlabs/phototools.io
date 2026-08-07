@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Інструменти",
       "glossary": "Глосарій",
+      "guides": "",
       "closeMenu": "Закрити меню",
       "comingSoon": "Скоро",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Глосарій",
+      "guides": "",
       "about": "Про проєкт",
       "contact": "Контакти",
       "privacy": "Політика конфіденційності",
@@ -55,7 +57,8 @@
       "tryAgain": "Спробувати ще раз",
       "resetAll": "Скинути все",
       "resetAllChallenges": "Скинути всі завдання",
-      "challengeNumber": "Завдання {number}"
+      "challengeNumber": "Завдання {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Поділитися і вбудувати",
@@ -68,7 +71,8 @@
       "copied": "Скопійовано"
     },
     "draft": {
-      "banner": "Попередній перегляд — цей інструмент ще не опубліковано"
+      "banner": "Попередній перегляд — цей інструмент ще не опубліковано",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Перетягни зображення сюди або натисни, щоб вибрати",

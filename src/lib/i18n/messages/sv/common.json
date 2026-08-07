@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Verktyg",
       "glossary": "Ordlista",
+      "guides": "",
       "closeMenu": "Stäng meny",
       "comingSoon": "Snart",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Ordlista",
+      "guides": "",
       "about": "Om oss",
       "contact": "Kontakt",
       "privacy": "Integritetspolicy",
@@ -55,7 +57,8 @@
       "tryAgain": "Försök igen",
       "resetAll": "Nollställ alla",
       "resetAllChallenges": "Nollställ alla utmaningar",
-      "challengeNumber": "Utmaning {number}"
+      "challengeNumber": "Utmaning {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Dela och bädda in",
@@ -68,7 +71,8 @@
       "copied": "Kopierat"
     },
     "draft": {
-      "banner": "Förhandsversion — verktyget är ännu inte publikt"
+      "banner": "Förhandsversion — verktyget är ännu inte publikt",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Släpp en bild här eller klicka för att bläddra",

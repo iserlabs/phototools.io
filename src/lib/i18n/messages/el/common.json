@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Εργαλεία",
       "glossary": "Γλωσσάρι",
+      "guides": "",
       "closeMenu": "Κλείσιμο μενού",
       "comingSoon": "Σύντομα",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Γλωσσάρι",
+      "guides": "",
       "about": "Σχετικά",
       "contact": "Επικοινωνία",
       "privacy": "Πολιτική απορρήτου",
@@ -55,7 +57,8 @@
       "tryAgain": "Δοκίμασε ξανά",
       "resetAll": "Επαναφορά όλων",
       "resetAllChallenges": "Επαναφορά όλων των προκλήσεων",
-      "challengeNumber": "Πρόκληση {number}"
+      "challengeNumber": "Πρόκληση {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Κοινοποίηση & Ενσωμάτωση",
@@ -68,7 +71,8 @@
       "copied": "Αντιγράφηκε"
     },
     "draft": {
-      "banner": "Προεπισκόπηση — Αυτό το εργαλείο δεν είναι ακόμα δημόσιο"
+      "banner": "Προεπισκόπηση — Αυτό το εργαλείο δεν είναι ακόμα δημόσιο",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Σύρε μια εικόνα εδώ ή κάνε κλικ για αναζήτηση",

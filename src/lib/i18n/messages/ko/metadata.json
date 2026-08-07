@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "사진 촬영 치트 시트 — 상황별 카메라 설정",
       "description": "인물, 풍경, 야생동물, 은하수 등 상황별 카메라 설정 치트 시트. 이미지로 다운로드하거나 인쇄할 수 있는 검증된 출발점입니다."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

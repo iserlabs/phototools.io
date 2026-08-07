@@ -113,6 +113,10 @@
     "photography-cheat-sheet": {
       "title": "Fotofusklapp — kamerainställningar per scenario",
       "description": "Fusklappar med kamerainställningar för porträtt, landskap, vilda djur, Vintergatan och mycket mer. Beprövade utgångspunkter som du kan ladda ner som bild eller skriva ut."
+    },
+    "guides": {
+      "title": "",
+      "description": ""
     }
   }
 }

@@ -4,6 +4,7 @@
     "nav": {
       "tools": "Alat",
       "glossary": "Glosarium",
+      "guides": "",
       "closeMenu": "Tutup menu",
       "comingSoon": "Segera",
       "categories": {
@@ -16,6 +17,7 @@
     },
     "footer": {
       "glossary": "Glosarium",
+      "guides": "",
       "about": "Tentang",
       "contact": "Kontak",
       "privacy": "Kebijakan Privasi",
@@ -55,7 +57,8 @@
       "tryAgain": "Coba Lagi",
       "resetAll": "Reset semua",
       "resetAllChallenges": "Reset semua tantangan",
-      "challengeNumber": "Tantangan {number}"
+      "challengeNumber": "Tantangan {number}",
+      "guidesTitle": ""
     },
     "share": {
       "title": "Bagikan & Sematkan",
@@ -68,7 +71,8 @@
       "copied": "Disalin"
     },
     "draft": {
-      "banner": "Pratinjau — Alat ini belum dipublikasikan"
+      "banner": "Pratinjau — Alat ini belum dipublikasikan",
+      "guideBanner": ""
     },
     "fileUpload": {
       "dropPrompt": "Letakkan gambar di sini atau klik untuk memilih",
