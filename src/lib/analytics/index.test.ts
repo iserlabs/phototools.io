@@ -28,6 +28,8 @@ import {
   trackToolInteraction,
   trackLearnPanelOpen,
   trackChallengeComplete,
+  trackGuideToolClick,
+  trackToolGuideClick,
 } from './index'
 
 describe('analytics dispatcher', () => {
@@ -95,5 +97,34 @@ describe('analytics dispatcher', () => {
     expect(trackPostHog).toHaveBeenCalledWith('challenge_complete', expect.objectContaining({
       attempt_number: 3,
     }))
+  })
+
+  it('trackGuideToolClick calls dispatch with correct event', () => {
+    trackGuideToolClick({ guide_slug: 'astrophotography-basics', tool_slug: 'star-trail-calculator', source: 'tool-card' })
+    expect(trackPostHog).toHaveBeenCalledWith('guide_tool_click', expect.objectContaining({
+      guide_slug: 'astrophotography-basics',
+      tool_slug: 'star-trail-calculator',
+      source: 'tool-card',
+    }))
+  })
+
+  it('trackGuideToolClick is PostHog-only and skips GA4', () => {
+    trackGuideToolClick({ guide_slug: 'astrophotography-basics', tool_slug: 'star-trail-calculator', source: 'related-rail' })
+    expect(trackPostHog).toHaveBeenCalled()
+    expect(trackGA4).not.toHaveBeenCalled()
+  })
+
+  it('trackToolGuideClick calls dispatch with correct event', () => {
+    trackToolGuideClick({ tool_slug: 'star-trail-calculator', guide_slug: 'astrophotography-basics' })
+    expect(trackPostHog).toHaveBeenCalledWith('tool_guide_click', expect.objectContaining({
+      tool_slug: 'star-trail-calculator',
+      guide_slug: 'astrophotography-basics',
+    }))
+  })
+
+  it('trackToolGuideClick is PostHog-only and skips GA4', () => {
+    trackToolGuideClick({ tool_slug: 'star-trail-calculator', guide_slug: 'astrophotography-basics' })
+    expect(trackPostHog).toHaveBeenCalled()
+    expect(trackGA4).not.toHaveBeenCalled()
   })
 })

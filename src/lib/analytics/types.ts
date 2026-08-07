@@ -58,6 +58,17 @@ export type NavClickEvent = {
   source: 'mega-menu' | 'footer' | 'homepage-card'
 }
 
+export type GuideToolClickEvent = {
+  guide_slug: string
+  tool_slug: string
+  source: 'tool-card' | 'related-rail'
+}
+
+export type ToolGuideClickEvent = {
+  tool_slug: string
+  guide_slug: string
+}
+
 export type ShareClickEvent = {
   method: 'copy-link' | 'embed' | 'markdown' | 'bbcode'
 }
@@ -148,6 +159,8 @@ export type AnalyticsEvent =
   | { name: 'challenge_start'; properties: ChallengeStartEvent }
   | { name: 'challenge_complete'; properties: ChallengeCompleteEvent }
   | { name: 'nav_click'; properties: NavClickEvent }
+  | { name: 'guide_tool_click'; properties: GuideToolClickEvent }
+  | { name: 'tool_guide_click'; properties: ToolGuideClickEvent }
   | { name: 'share_click'; properties: ShareClickEvent }
   | { name: 'language_switch'; properties: LanguageSwitchEvent }
   | { name: 'theme_toggle'; properties: ThemeToggleEvent }
@@ -178,4 +191,6 @@ export const POSTHOG_ONLY_EVENTS: Set<AnalyticsEvent['name']> = new Set([
   'theme_toggle',
   'mobile_menu_toggle',
   'mobile_controls_toggle',
+  'guide_tool_click',
+  'tool_guide_click',
 ])

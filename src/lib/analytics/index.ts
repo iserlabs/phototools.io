@@ -11,6 +11,8 @@ import {
   type ChallengeStartEvent,
   type ChallengeCompleteEvent,
   type NavClickEvent,
+  type GuideToolClickEvent,
+  type ToolGuideClickEvent,
   type ShareClickEvent,
   type LanguageSwitchEvent,
   type ThemeToggleEvent,
@@ -102,6 +104,14 @@ export function trackChallengeComplete(props: ChallengeCompleteEvent | {
 
 export function trackNavClick(props: NavClickEvent): void {
   dispatch('nav_click', props)
+}
+
+export function trackGuideToolClick(props: GuideToolClickEvent): void {
+  dispatch('guide_tool_click', props)
+}
+
+export function trackToolGuideClick(props: ToolGuideClickEvent): void {
+  dispatch('tool_guide_click', props)
 }
 
 export function trackShareClick(props: ShareClickEvent): void {
