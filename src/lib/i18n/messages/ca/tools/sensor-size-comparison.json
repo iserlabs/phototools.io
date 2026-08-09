@@ -46,6 +46,19 @@
       "tableCropFactor": "Factor de retall",
       "tableAspectCrop": "Retall per aspecte",
       "canvasAriaLabel": "Comparació de mides de sensor en mode {mode}",
+      "compare": {
+        "title": "Comparació",
+        "compareWith": "Compara amb…",
+        "compareTheseTwo": "Compara aquests dos sensors",
+        "close": "Tanca la comparació",
+        "representativeResolution": "Resolució",
+        "notApplicable": "—",
+        "verdictLight": "{larger} capta aproximadament {ratio}× la llum ({ev}).",
+        "verdictReach": "{smaller} dona {factor}× més abast amb el mateix objectiu.",
+        "verdictNearEqual": "Aquests dos capten pràcticament la mateixa llum per a la seva àrea.",
+        "crossFocal": "Un objectiu de {focal}mm a {from} enquadra com un {eqFocal}mm a {to}.",
+        "areaRelation": "{a} té {ratio}× l'àrea de {b}."
+      },
       "detail": {
         "diagonal": "Diagonal",
         "area": "Àrea",

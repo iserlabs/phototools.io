@@ -46,6 +46,19 @@
       "tableCropFactor": "Crop faktor",
       "tableAspectCrop": "Crop podle poměru",
       "canvasAriaLabel": "Porovnání velikostí snímačů v režimu {mode}",
+      "compare": {
+        "title": "Porovnání",
+        "compareWith": "Porovnat s…",
+        "compareTheseTwo": "Porovnat tyto dva snímače",
+        "close": "Zavřít porovnání",
+        "representativeResolution": "Rozlišení",
+        "notApplicable": "—",
+        "verdictLight": "{larger} sbírá zhruba {ratio}× světla ({ev}).",
+        "verdictReach": "{smaller} má se stejným objektivem {factor}× větší dosah.",
+        "verdictNearEqual": "Tyto dva snímače sbírají prakticky stejné množství světla vzhledem ke své ploše.",
+        "crossFocal": "{from}: objektiv {focal}mm zabírá jako {eqFocal}mm ({to}).",
+        "areaRelation": "{a}: plocha {ratio}× ({b})."
+      },
       "detail": {
         "diagonal": "Úhlopříčka",
         "area": "Plocha",

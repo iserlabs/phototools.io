@@ -46,6 +46,19 @@
       "tableCropFactor": "Συντελεστής crop",
       "tableAspectCrop": "Crop αναλογίας",
       "canvasAriaLabel": "Σύγκριση μεγέθους αισθητήρα σε λειτουργία {mode}",
+      "compare": {
+        "title": "Σύγκριση",
+        "compareWith": "Σύγκριση με…",
+        "compareTheseTwo": "Σύγκριση αυτών των δύο",
+        "close": "Κλείσιμο σύγκρισης",
+        "representativeResolution": "Ανάλυση",
+        "notApplicable": "—",
+        "verdictLight": "{larger} συγκεντρώνει περίπου {ratio}× το φως ({ev}).",
+        "verdictReach": "{smaller} δίνει {factor}× μεγαλύτερη εμβέλεια με τον ίδιο φακό.",
+        "verdictNearEqual": "Αυτοί οι δύο συγκεντρώνουν σχεδόν πανομοιότυπο φως σε σχέση με την επιφάνειά τους.",
+        "crossFocal": "{from}: φακός {focal}mm κάνει κάδρο σαν {eqFocal}mm ({to}).",
+        "areaRelation": "{a}: επιφάνεια {ratio}× ({b})."
+      },
       "detail": {
         "diagonal": "Διαγώνιος",
         "area": "Επιφάνεια",

@@ -46,6 +46,19 @@
       "tableCropFactor": "Crop faktor",
       "tableAspectCrop": "Arány/crop",
       "canvasAriaLabel": "Érzékelőméret-összehasonlítás {mode} módban",
+      "compare": {
+        "title": "Összehasonlítás",
+        "compareWith": "Összehasonlítás mással…",
+        "compareTheseTwo": "E kettő összehasonlítása",
+        "close": "Összehasonlítás bezárása",
+        "representativeResolution": "Felbontás",
+        "notApplicable": "—",
+        "verdictLight": "{larger} kb. {ratio}× annyi fényt gyűjt ({ev}).",
+        "verdictReach": "{smaller} ugyanazzal az objektívvel {factor}× nagyobb hatótávolságot ad.",
+        "verdictNearEqual": "Ez a két érzékelő a területükhöz képest gyakorlatilag azonos mennyiségű fényt gyűjt.",
+        "crossFocal": "{from}: {focal}mm-es objektív úgy keretez, mint {eqFocal}mm ({to}).",
+        "areaRelation": "{a}: terület {ratio}× ({b})."
+      },
       "detail": {
         "diagonal": "Átló",
         "area": "Terület",
