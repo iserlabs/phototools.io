@@ -101,6 +101,16 @@ export function useStackingState() {
     setFarLimit(isFinite(farLimit) && newNear >= farLimit ? newNear : farLimit)
   }, [nearLimit, farLimit, trackParam])
 
+  // Any parameter setter (focal length, aperture, limits, overlap,
+  // magnification, depth) can shrink the active mode's row count — only
+  // setMode explicitly resets hoveredShot. Rather than repeat that reset in
+  // every setter (and risk a future one forgetting it), clamp on the way
+  // out: derive the active row count and null out a hoveredShot that no
+  // longer indexes into it. This is plain render-time derivation, not an
+  // effect, so there's no transient frame where a stale index is visible.
+  const activeRowCount = mode === 'distance' ? stackingResult.shots.length : macroRows.length
+  const clampedHoveredShot = hoveredShot !== null && hoveredShot >= activeRowCount ? null : hoveredShot
+
   return {
     mode, setMode,
     focalLength, aperture, sensorId, nearLimit, farLimit, overlapPct, magnification, depthMm,
@@ -113,7 +123,7 @@ export function useStackingState() {
     onMagnificationChange: (v: number) => { trackParam({ param_name: 'magnification', param_value: String(v), input_type: 'slider' }); setMagnification(v) },
     onDepthChange: setDepthMm,
     sensor, coc, stackingResult, macroResult, macroRows,
-    hoveredShot, setHoveredShot, trackParam,
+    hoveredShot: clampedHoveredShot, setHoveredShot, trackParam,
   }
 }
 
