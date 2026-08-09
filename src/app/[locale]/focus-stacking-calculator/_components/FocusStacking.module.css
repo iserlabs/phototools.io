@@ -182,6 +182,9 @@
   line-height: 1.4;
 }
 
+.exportRow { display: flex; gap: 6px; }
+.exportRow > button { flex: 1; }
+
 /* -- Copy button -- */
 .copyBtn {
   width: 100%;

@@ -1,22 +1,64 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { buildMacroCsv, buildStackJson, formatMm, downloadTextFile } from '@/lib/utils/stackingExport'
 import type { StackingState } from './useStackingState'
 import s from './FocusStacking.module.css'
 
-interface MacroResultsPanelProps {
-  state: StackingState
-}
-
-// Placeholder — full macro results UI (shot count, rail travel, diffraction
-// warning, exports) lands in Task 8. This stub only needs to render without
-// crashing so mode switching compiles end-to-end.
-export function MacroResultsPanel({ state: _state }: MacroResultsPanelProps) {
+export function MacroResultsPanel({ state }: { state: StackingState }) {
   const t = useTranslations('toolUI.focus-stacking-calculator')
-
+  const r = state.macroResult
+  const meta = {
+    tool: 'focus-stacking-calculator', mode: 'macro',
+    magnification: state.magnification, aperture: state.aperture,
+    effectiveAperture: Number(r.effectiveAperture.toFixed(1)),
+    sensor: state.sensor.name, overlapPct: state.overlapPct,
+  }
   return (
     <div className={s.panel}>
       <h3 className={s.panelTitle}>{t('results')}</h3>
+      <div className={s.resultCard}>
+        <span className={s.resultLabel}>{t('shotCount')}</span>
+        <span className={s.resultLarge}>{r.shotCount}</span>
+      </div>
+      <div className={s.resultsGrid}>
+        <div className={s.resultCard}>
+          <span className={s.resultLabel}>{t('railStep')}</span>
+          <span className={s.resultValue}>{formatMm(r.stepMm)}</span>
+        </div>
+        <div className={s.resultCard}>
+          <span className={s.resultLabel}>{t('sliceDoF')}</span>
+          <span className={s.resultValue}>{formatMm(r.sliceDofMm)}</span>
+        </div>
+        <div className={s.resultCard}>
+          <span className={s.resultLabel}>{t('effectiveAperture')}</span>
+          <span className={s.resultValue}>f/{r.effectiveAperture.toFixed(1)}</span>
+        </div>
+        <div className={s.resultCard}>
+          <span className={s.resultLabel}>{t('railTravel')}</span>
+          <span className={s.resultValue}>{formatMm(r.railTravelMm)}</span>
+        </div>
+      </div>
+      {r.diffractionLimited && (
+        <div className={s.warningBanner}>
+          {t('diffractionWarningMacro', {
+            magnification: state.magnification, aperture: state.aperture,
+            effective: r.effectiveAperture.toFixed(0), max: r.maxSharpAperture.toFixed(1),
+          })}
+        </div>
+      )}
+      {r.shotCount >= 100 && <div className={s.warningBanner}>{t('tooManyShots')}</div>}
+      {!r.coverageComplete && <div className={s.warningBanner}>{t('coverageWarning')}</div>}
+      <div className={s.exportRow}>
+        <button className={s.copyBtn} onClick={() => {
+          state.trackParam({ param_name: 'export', param_value: 'csv', input_type: 'button' })
+          downloadTextFile('macro-stack.csv', buildMacroCsv(state.macroRows), 'text/csv')
+        }}>{t('exportCSV')}</button>
+        <button className={s.copyBtn} onClick={() => {
+          state.trackParam({ param_name: 'export', param_value: 'json', input_type: 'button' })
+          downloadTextFile('macro-stack.json', buildStackJson(meta, state.macroRows), 'application/json')
+        }}>{t('exportJSON')}</button>
+      </div>
     </div>
   )
 }
