@@ -77,7 +77,17 @@
       "lockFov": "Lås bildvinkel",
       "minFocusWarning": "Under minsta fokuseringsavstånd ({value})",
       "customCoc": "Anpassad CoC",
-      "backgroundDistance": "Bakgrundsavstånd"
+      "backgroundDistance": "Bakgrundsavstånd",
+      "inFront": "Framför",
+      "behind": "Bakom",
+      "equivalentSettings": "Ekvivalent på fullformat",
+      "effectiveFocalLength": "Effektiv brännvidd",
+      "fullFrameEquivalentFocalLength": "35 mm-ekvivalent brännvidd",
+      "belowMinFocusWarning": "Fokuseringsavståndet är kortare än det här objektivets minsta fokuseringsavstånd",
+      "savedSettings": "Sparade inställningar",
+      "saveSettings": "Spara inställningar",
+      "removeSaved": "Ta bort sparad inställning",
+      "noSavedSettings": "Inga sparade inställningar än"
     }
   }
 }

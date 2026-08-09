@@ -77,7 +77,17 @@
       "lockFov": "I-lock ang Field of View",
       "minFocusWarning": "Mas malapit sa minimum focus distance ({value})",
       "customCoc": "Custom CoC",
-      "backgroundDistance": "Background Distance"
+      "backgroundDistance": "Background Distance",
+      "inFront": "Sa Harap",
+      "behind": "Sa Likod",
+      "equivalentSettings": "Katumbas sa Full Frame",
+      "effectiveFocalLength": "Epektibong Focal Length",
+      "fullFrameEquivalentFocalLength": "35mm na Katumbas na Focal Length",
+      "belowMinFocusWarning": "Mas malapit ang focus distance kaysa sa minimum focus distance ng lens na ito",
+      "savedSettings": "Mga Naka-save na Setting",
+      "saveSettings": "I-save ang mga setting",
+      "removeSaved": "Alisin ang naka-save na setting",
+      "noSavedSettings": "Wala pang naka-save na setting"
     }
   }
 }

@@ -77,7 +77,17 @@
       "lockFov": "Lukitse kuvakulma",
       "minFocusWarning": "Alle vähimmäistarkennusetäisyyden ({value})",
       "customCoc": "Mukautettu CoC",
-      "backgroundDistance": "Taustan etäisyys"
+      "backgroundDistance": "Taustan etäisyys",
+      "inFront": "Edessä",
+      "behind": "Takana",
+      "equivalentSettings": "Ekvivalentti täyskennolla",
+      "effectiveFocalLength": "Tehollinen polttoväli",
+      "fullFrameEquivalentFocalLength": "Ekvivalentti polttoväli (35 mm)",
+      "belowMinFocusWarning": "Tarkennusetäisyys on alle objektiivin vähimmäistarkennusetäisyyden",
+      "savedSettings": "Tallennetut asetukset",
+      "saveSettings": "Tallenna asetukset",
+      "removeSaved": "Poista tallennettu asetus",
+      "noSavedSettings": "Ei vielä tallennettuja asetuksia"
     }
   }
 }

@@ -169,3 +169,109 @@
     min-height: 44px;
   }
 }
+
+/* ── ResultsPanel: definition list + bokeh-shape glyph ── */
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+}
+
+.bokehGlyph {
+  flex-shrink: 0;
+  fill: var(--text-secondary);
+}
+
+.bokehGlyphHole {
+  fill: var(--bg-surface);
+}
+
+/* ── SavedSettingsPanel: sortable table ── */
+
+.savedTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.savedTable th,
+.savedTable td {
+  padding: 4px 6px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.savedSortBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+.savedSortBtn:hover {
+  color: var(--text-primary);
+}
+
+.savedRow {
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.savedRow:hover,
+.savedRow:focus-visible {
+  background: var(--border);
+}
+
+.savedRemoveBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.savedRemoveBtn:hover {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.savedSaveBtn {
+  align-self: flex-start;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.savedSaveBtn:hover {
+  opacity: 0.9;
+}
+
+.savedEmpty {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 1023px) {
+  .savedSortBtn,
+  .savedRemoveBtn {
+    min-height: 32px;
+  }
+}

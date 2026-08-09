@@ -77,7 +77,17 @@
       "lockFov": "Bloqueja l'angle de visió",
       "minFocusWarning": "Per sota de la distància mínima d'enfocament ({value})",
       "customCoc": "CoC personalitzat",
-      "backgroundDistance": "Distància del fons"
+      "backgroundDistance": "Distància del fons",
+      "inFront": "Davant",
+      "behind": "Darrere",
+      "equivalentSettings": "Equivalent en Full Frame",
+      "effectiveFocalLength": "Distància focal efectiva",
+      "fullFrameEquivalentFocalLength": "Distància focal equivalent (35mm)",
+      "belowMinFocusWarning": "La distància d'enfocament és inferior a la distància mínima d'enfocament d'aquest objectiu",
+      "savedSettings": "Ajustos desats",
+      "saveSettings": "Desa els ajustos",
+      "removeSaved": "Elimina l'ajust desat",
+      "noSavedSettings": "Encara no hi ha ajustos desats"
     }
   }
 }

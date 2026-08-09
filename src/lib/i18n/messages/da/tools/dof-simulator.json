@@ -77,7 +77,17 @@
       "lockFov": "Lås billedvinkel",
       "minFocusWarning": "Under mindste fokuseringsafstand ({value})",
       "customCoc": "Brugerdefineret CoC",
-      "backgroundDistance": "Baggrundsafstand"
+      "backgroundDistance": "Baggrundsafstand",
+      "inFront": "Foran",
+      "behind": "Bagved",
+      "equivalentSettings": "Ækvivalent på fuldformat",
+      "effectiveFocalLength": "Effektiv brændvidde",
+      "fullFrameEquivalentFocalLength": "35 mm-ækvivalent brændvidde",
+      "belowMinFocusWarning": "Fokuseringsafstanden er under dette objektivs mindste fokuseringsafstand",
+      "savedSettings": "Gemte indstillinger",
+      "saveSettings": "Gem indstillinger",
+      "removeSaved": "Fjern gemt indstilling",
+      "noSavedSettings": "Ingen gemte indstillinger endnu"
     }
   }
 }

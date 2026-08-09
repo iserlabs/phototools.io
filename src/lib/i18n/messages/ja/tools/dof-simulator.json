@@ -77,7 +77,17 @@
       "lockFov": "画角を固定",
       "minFocusWarning": "最短撮影距離より近づいています（{value}）",
       "customCoc": "カスタムCoC",
-      "backgroundDistance": "背景距離"
+      "backgroundDistance": "背景距離",
+      "inFront": "前方",
+      "behind": "後方",
+      "equivalentSettings": "フルサイズ換算",
+      "effectiveFocalLength": "実効焦点距離",
+      "fullFrameEquivalentFocalLength": "35mm判換算焦点距離",
+      "belowMinFocusWarning": "ピント距離がレンズの最短撮影距離を下回っています",
+      "savedSettings": "保存した設定",
+      "saveSettings": "設定を保存",
+      "removeSaved": "保存した設定を削除",
+      "noSavedSettings": "保存した設定はまだありません"
     }
   }
 }

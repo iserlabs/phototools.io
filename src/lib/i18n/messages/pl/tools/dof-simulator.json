@@ -77,7 +77,17 @@
       "lockFov": "Zablokuj pole widzenia",
       "minFocusWarning": "Poniżej minimalnej odległości ostrzenia ({value})",
       "customCoc": "Niestandardowy CoC",
-      "backgroundDistance": "Odległość tła"
+      "backgroundDistance": "Odległość tła",
+      "inFront": "Przed",
+      "behind": "Za",
+      "equivalentSettings": "Odpowiednik na pełnej klatce",
+      "effectiveFocalLength": "Efektywna ogniskowa",
+      "fullFrameEquivalentFocalLength": "Ogniskowa ekwiwalentna 35 mm",
+      "belowMinFocusWarning": "Odległość ostrzenia jest mniejsza niż minimalna odległość ostrzenia tego obiektywu",
+      "savedSettings": "Zapisane ustawienia",
+      "saveSettings": "Zapisz ustawienia",
+      "removeSaved": "Usuń zapisane ustawienie",
+      "noSavedSettings": "Brak zapisanych ustawień"
     }
   }
 }

@@ -77,7 +77,17 @@
       "lockFov": "화각 고정",
       "minFocusWarning": "최단 촬영 거리보다 가깝습니다 ({value})",
       "customCoc": "커스텀 CoC",
-      "backgroundDistance": "배경 거리"
+      "backgroundDistance": "배경 거리",
+      "inFront": "앞쪽",
+      "behind": "뒤쪽",
+      "equivalentSettings": "풀프레임 환산",
+      "effectiveFocalLength": "유효 초점 거리",
+      "fullFrameEquivalentFocalLength": "35mm 환산 초점 거리",
+      "belowMinFocusWarning": "초점 거리가 이 렌즈의 최단 촬영 거리보다 가깝습니다",
+      "savedSettings": "저장된 설정",
+      "saveSettings": "설정 저장",
+      "removeSaved": "저장된 설정 삭제",
+      "noSavedSettings": "저장된 설정이 없습니다"
     }
   }
 }

@@ -77,7 +77,17 @@
       "lockFov": "Bildwinkel festhalten",
       "minFocusWarning": "Unterhalb der Naheinstellgrenze ({value})",
       "customCoc": "Benutzerdefinierter CoC",
-      "backgroundDistance": "Hintergrundabstand"
+      "backgroundDistance": "Hintergrundabstand",
+      "inFront": "Davor",
+      "behind": "Dahinter",
+      "equivalentSettings": "Vollformat-Äquivalent",
+      "effectiveFocalLength": "Effektive Brennweite",
+      "fullFrameEquivalentFocalLength": "35-mm-äquivalente Brennweite",
+      "belowMinFocusWarning": "Der Fokusabstand liegt unterhalb der Naheinstellgrenze des Objektivs",
+      "savedSettings": "Gespeicherte Einstellungen",
+      "saveSettings": "Einstellungen speichern",
+      "removeSaved": "Gespeicherte Einstellung entfernen",
+      "noSavedSettings": "Noch keine gespeicherten Einstellungen"
     }
   }
 }

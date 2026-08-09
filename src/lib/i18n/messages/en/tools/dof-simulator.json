@@ -77,7 +77,17 @@
       "lockFov": "Lock field of view",
       "minFocusWarning": "Below minimum focus distance ({value})",
       "customCoc": "Custom CoC",
-      "backgroundDistance": "Background Distance"
+      "backgroundDistance": "Background Distance",
+      "inFront": "In Front",
+      "behind": "Behind",
+      "equivalentSettings": "Equivalent on Full Frame",
+      "effectiveFocalLength": "Effective Focal Length",
+      "fullFrameEquivalentFocalLength": "35mm Equivalent Focal Length",
+      "belowMinFocusWarning": "Focus distance is below this lens's minimum focus distance",
+      "savedSettings": "Saved Settings",
+      "saveSettings": "Save settings",
+      "removeSaved": "Remove saved setting",
+      "noSavedSettings": "No saved settings yet"
     }
   }
 }

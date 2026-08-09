@@ -77,7 +77,17 @@
       "lockFov": "Blochează unghiul de vizualizare",
       "minFocusWarning": "Sub distanța minimă de focalizare ({value})",
       "customCoc": "CoC personalizat",
-      "backgroundDistance": "Distanța fundalului"
+      "backgroundDistance": "Distanța fundalului",
+      "inFront": "În față",
+      "behind": "În spate",
+      "equivalentSettings": "Echivalent pe full-frame",
+      "effectiveFocalLength": "Distanță focală efectivă",
+      "fullFrameEquivalentFocalLength": "Distanță focală echivalentă (35mm)",
+      "belowMinFocusWarning": "Distanța de focalizare este sub distanța minimă de focalizare a acestui obiectiv",
+      "savedSettings": "Setări salvate",
+      "saveSettings": "Salvează setările",
+      "removeSaved": "Șterge setarea salvată",
+      "noSavedSettings": "Nicio setare salvată încă"
     }
   }
 }

@@ -77,7 +77,17 @@
       "lockFov": "Зафіксувати кут огляду",
       "minFocusWarning": "Ближче мінімальної дистанції фокусування ({value})",
       "customCoc": "Свій CoC",
-      "backgroundDistance": "Дистанція фону"
+      "backgroundDistance": "Дистанція фону",
+      "inFront": "Попереду",
+      "behind": "Позаду",
+      "equivalentSettings": "Еквівалент на повному кадрі",
+      "effectiveFocalLength": "Ефективна фокусна відстань",
+      "fullFrameEquivalentFocalLength": "Еквівалентна фокусна відстань (35 мм)",
+      "belowMinFocusWarning": "Дистанція фокусування менша за мінімальну дистанцію фокусування цього об'єктива",
+      "savedSettings": "Збережені налаштування",
+      "saveSettings": "Зберегти налаштування",
+      "removeSaved": "Видалити збережене налаштування",
+      "noSavedSettings": "Поки немає збережених налаштувань"
     }
   }
 }

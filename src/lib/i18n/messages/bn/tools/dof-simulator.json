@@ -77,7 +77,17 @@
       "lockFov": "দৃষ্টিক্ষেত্র লক করো",
       "minFocusWarning": "সর্বনিম্ন ফোকাস দূরত্বের নিচে ({value})",
       "customCoc": "কাস্টম CoC",
-      "backgroundDistance": "ব্যাকগ্রাউন্ড দূরত্ব"
+      "backgroundDistance": "ব্যাকগ্রাউন্ড দূরত্ব",
+      "inFront": "সামনে",
+      "behind": "পেছনে",
+      "equivalentSettings": "ফুল ফ্রেমে সমতুল্য",
+      "effectiveFocalLength": "কার্যকর ফোকাল দৈর্ঘ্য",
+      "fullFrameEquivalentFocalLength": "35mm সমতুল্য ফোকাল দৈর্ঘ্য",
+      "belowMinFocusWarning": "ফোকাস দূরত্ব এই লেন্সের সর্বনিম্ন ফোকাস দূরত্বের চেয়ে কম",
+      "savedSettings": "সংরক্ষিত সেটিংস",
+      "saveSettings": "সেটিংস সংরক্ষণ করো",
+      "removeSaved": "সংরক্ষিত সেটিং মুছুন",
+      "noSavedSettings": "এখনও কোনো সংরক্ষিত সেটিংস নেই"
     }
   }
 }

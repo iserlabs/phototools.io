@@ -77,7 +77,17 @@
       "lockFov": "Bloquear campo de visión",
       "minFocusWarning": "Por debajo de la distancia mínima de enfoque ({value})",
       "customCoc": "CoC personalizado",
-      "backgroundDistance": "Distancia del fondo"
+      "backgroundDistance": "Distancia del fondo",
+      "inFront": "Delante",
+      "behind": "Detrás",
+      "equivalentSettings": "Equivalente en formato completo",
+      "effectiveFocalLength": "Distancia focal efectiva",
+      "fullFrameEquivalentFocalLength": "Distancia focal equivalente en 35mm",
+      "belowMinFocusWarning": "La distancia de enfoque está por debajo de la distancia mínima de enfoque de este objetivo",
+      "savedSettings": "Ajustes guardados",
+      "saveSettings": "Guardar ajustes",
+      "removeSaved": "Eliminar ajuste guardado",
+      "noSavedSettings": "Aún no hay ajustes guardados"
     }
   }
 }

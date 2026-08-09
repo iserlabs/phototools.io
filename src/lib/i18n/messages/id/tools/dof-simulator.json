@@ -77,7 +77,17 @@
       "lockFov": "Kunci bidang pandang",
       "minFocusWarning": "Di bawah jarak fokus minimum ({value})",
       "customCoc": "CoC Kustom",
-      "backgroundDistance": "Jarak Latar Belakang"
+      "backgroundDistance": "Jarak Latar Belakang",
+      "inFront": "Depan",
+      "behind": "Belakang",
+      "equivalentSettings": "Setara Full Frame",
+      "effectiveFocalLength": "Panjang Fokus Efektif",
+      "fullFrameEquivalentFocalLength": "Panjang Fokus Setara 35mm",
+      "belowMinFocusWarning": "Jarak fokus berada di bawah jarak fokus minimum lensa ini",
+      "savedSettings": "Pengaturan Tersimpan",
+      "saveSettings": "Simpan pengaturan",
+      "removeSaved": "Hapus pengaturan tersimpan",
+      "noSavedSettings": "Belum ada pengaturan tersimpan"
     }
   }
 }

@@ -77,7 +77,17 @@
       "lockFov": "锁定视场角",
       "minFocusWarning": "近于最近对焦距离（{value}）",
       "customCoc": "自定义CoC",
-      "backgroundDistance": "背景距离"
+      "backgroundDistance": "背景距离",
+      "inFront": "前方",
+      "behind": "后方",
+      "equivalentSettings": "全画幅等效",
+      "effectiveFocalLength": "有效焦距",
+      "fullFrameEquivalentFocalLength": "35mm等效焦距",
+      "belowMinFocusWarning": "对焦距离小于该镜头的最近对焦距离",
+      "savedSettings": "已保存的设置",
+      "saveSettings": "保存设置",
+      "removeSaved": "删除已保存的设置",
+      "noSavedSettings": "暂无已保存的设置"
     }
   }
 }

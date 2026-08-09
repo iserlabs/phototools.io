@@ -77,7 +77,17 @@
       "lockFov": "Κλείδωμα οπτικού πεδίου",
       "minFocusWarning": "Κάτω από την ελάχιστη απόσταση εστίασης ({value})",
       "customCoc": "Προσαρμοσμένος CoC",
-      "backgroundDistance": "Απόσταση φόντου"
+      "backgroundDistance": "Απόσταση φόντου",
+      "inFront": "Μπροστά",
+      "behind": "Πίσω",
+      "equivalentSettings": "Ισοδύναμο σε Full Frame",
+      "effectiveFocalLength": "Ενεργή εστιακή απόσταση",
+      "fullFrameEquivalentFocalLength": "Ισοδύναμη εστιακή απόσταση (35mm)",
+      "belowMinFocusWarning": "Η απόσταση εστίασης είναι κάτω από την ελάχιστη απόσταση εστίασης αυτού του φακού",
+      "savedSettings": "Αποθηκευμένες ρυθμίσεις",
+      "saveSettings": "Αποθήκευση ρυθμίσεων",
+      "removeSaved": "Αφαίρεση αποθηκευμένης ρύθμισης",
+      "noSavedSettings": "Δεν υπάρχουν ακόμη αποθηκευμένες ρυθμίσεις"
     }
   }
 }

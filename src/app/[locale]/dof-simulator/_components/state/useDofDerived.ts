@@ -24,6 +24,7 @@ export interface DofDerived {
   sensorHMm: number
   effectiveFl: number
   effectiveMaxAperture: number | null
+  teleconverterActive: boolean
   cocMm: number
   dof: ReturnType<typeof calcDoF>
   backgroundBlurMm: number
@@ -52,6 +53,7 @@ export function computeDerived(input: DerivedInput): DofDerived {
 
   const tc = TELECONVERTERS.find((t) => t.id === optics.teleconverterId) ?? TELECONVERTERS[0]
   const effectiveFl = optics.focalLength * tc.flFactor
+  const teleconverterActive = tc.id !== 'none'
 
   const lens = optics.lensId ? getLensById(optics.lensId) : undefined
   // TC stops applied via the same flFactor used for effectiveFl: at a fixed entrance
@@ -105,6 +107,7 @@ export function computeDerived(input: DerivedInput): DofDerived {
     sensorHMm,
     effectiveFl,
     effectiveMaxAperture,
+    teleconverterActive,
     cocMm,
     dof,
     backgroundBlurMm,

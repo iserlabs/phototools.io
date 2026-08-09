@@ -77,7 +77,17 @@
       "lockFov": "Зафиксировать угол обзора",
       "minFocusWarning": "Ближе минимальной дистанции фокусировки ({value})",
       "customCoc": "Свой CoC",
-      "backgroundDistance": "Дистанция фона"
+      "backgroundDistance": "Дистанция фона",
+      "inFront": "Впереди",
+      "behind": "Позади",
+      "equivalentSettings": "Эквивалент на полном кадре",
+      "effectiveFocalLength": "Эффективное фокусное расстояние",
+      "fullFrameEquivalentFocalLength": "Эквивалентное фокусное расстояние (35 мм)",
+      "belowMinFocusWarning": "Дистанция фокусировки меньше минимальной дистанции фокусировки этого объектива",
+      "savedSettings": "Сохранённые настройки",
+      "saveSettings": "Сохранить настройки",
+      "removeSaved": "Удалить сохранённую настройку",
+      "noSavedSettings": "Пока нет сохранённых настроек"
     }
   }
 }
