@@ -15,27 +15,6 @@ export interface BlurInput {
   targetDistance: number // meters
 }
 
-export interface StackingInput {
-  focalLength: number
-  aperture: number
-  coc: number
-  nearLimit: number // meters
-  farLimit: number // meters
-  overlapPct: number // 0-1
-}
-
-export interface StackingShot {
-  number: number
-  focusDistance: number // meters
-  nearFocus: number // meters
-  farFocus: number // meters
-}
-
-export interface StackingResult {
-  shots: StackingShot[]
-  totalDepth: number // meters
-}
-
 export interface EquivalenceInput {
   focalLength: number // mm
   aperture: number // f-number
@@ -204,55 +183,6 @@ export function calcIsolationScore(backgroundBlurMm: number, _coc: number): numb
   if (backgroundBlurMm <= 0) return 0
   const raw = Math.sqrt(backgroundBlurMm / 0.5) * 100
   return Math.min(Math.max(raw, 0), 100)
-}
-
-/**
- * Calculate focus stacking sequence to cover a depth range.
- *
- * Algorithm: Start at nearLimit, compute DoF at that focus distance,
- * step forward by dofRange × (1 - overlapPct), repeat until farFocus >= farLimit.
- * Capped at 100 shots.
- *
- * @param input - Stacking parameters
- * @returns Array of shots and total depth covered
- */
-export function calcStackingSequence(input: StackingInput): StackingResult {
-  const { focalLength, aperture, coc, nearLimit, farLimit, overlapPct } = input
-  const shots: StackingShot[] = []
-  const MAX_SHOTS = 100
-
-  let currentFocus = nearLimit
-
-  while (shots.length < MAX_SHOTS) {
-    const dof = calcDoF({
-      focalLength,
-      aperture,
-      distance: currentFocus,
-      coc,
-    })
-
-    const shot: StackingShot = {
-      number: shots.length + 1,
-      focusDistance: currentFocus,
-      nearFocus: dof.nearFocus,
-      farFocus: dof.farFocus === Infinity ? farLimit : dof.farFocus,
-    }
-    shots.push(shot)
-
-    // If this shot's far focus already covers the far limit, we're done
-    if (dof.farFocus >= farLimit) break
-
-    // Step forward: advance by the usable (non-overlapping) portion of DoF
-    const dofRange = dof.farFocus - dof.nearFocus
-    const step = dofRange * (1 - overlapPct)
-    if (step <= 0) break // safety: prevent infinite loop
-
-    currentFocus = currentFocus + step
-  }
-
-  const totalDepth = farLimit - nearLimit
-
-  return { shots, totalDepth }
 }
 
 /**

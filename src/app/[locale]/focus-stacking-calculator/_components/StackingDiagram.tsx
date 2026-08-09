@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react'
 import { useTranslations } from 'next-intl'
-import type { StackingResult } from '@/lib/math/dof'
+import type { StackingResult } from '@/lib/math/stacking'
 
 interface StackingDiagramProps {
   result: StackingResult

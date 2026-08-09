@@ -7,7 +7,7 @@ import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { getSkeletonBySlug } from '@/lib/data/education'
 import { formatDistance } from '@/components/shared/DistanceField'
 import { formatStackingExport } from '@/lib/data/focusStacking'
-import type { StackingResult } from '@/lib/math/dof'
+import type { StackingResult } from '@/lib/math/stacking'
 import s from './FocusStacking.module.css'
 
 interface StackingResultsPanelProps {

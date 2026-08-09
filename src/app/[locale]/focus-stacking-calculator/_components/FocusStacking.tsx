@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
-import { calcStackingSequence } from '@/lib/math/dof'
+import { calcStackingSequence } from '@/lib/math/stacking'
 import { getSensor } from '@/lib/data/sensors'
 import { useQueryInit, useToolQuerySync } from '@/lib/utils/querySync'
 import { PARAM_SCHEMA } from './querySync'
