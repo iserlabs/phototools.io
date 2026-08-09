@@ -86,17 +86,25 @@ export function getSensor(id: string): SensorPreset {
 // Model/MP lineups current as of 2026-08-09 (Appendix A, Task 1). phone_mid
 // and phone_uw are nominal/representative categories (not single chips), so
 // their entries name product lines/module classes rather than one exact SKU.
+//
+// IMPORTANT: lightroom-catalog-analyzer's crop-factor.ts builds its exact-match
+// crop-factor table by iterating ALL of POPULAR_MODELS (not just one format).
+// Removing a model string here (not just in `m43`) silently breaks that
+// lookup for real EXIF model strings unless a heuristic branch also covers
+// it. When refreshing a lineup to a newer model, keep the older name
+// alongside it (as done below for mf/apsc_n/phone/m43) rather than replacing
+// it outright, unless you also add/verify a heuristic branch in crop-factor.ts.
 export const POPULAR_MODELS: Record<string, string[]> = {
   mf_645: ['Phase One IQ4 150MP'],
-  mf: ['Hasselblad X2D II 100C', 'Fujifilm GFX 100S II'],
+  mf: ['Hasselblad X2D', 'Hasselblad X2D II 100C', 'Fujifilm GFX 100S II'],
   mf_leica: ['Leica S3'],
   ff: ['Sony A7 IV', 'Sony A7 V', 'Nikon Z8', 'Canon R5 Mark II', 'Leica Q3'],
   apsh: ['Canon EOS-1D Mark IV', 'Canon EOS-1D Mark III'],
-  apsc_n: ['Sony A6700', 'Fujifilm X-T5', 'Nikon Z50II'],
+  apsc_n: ['Sony A6700', 'Fujifilm X-T5', 'Nikon Z50II', 'Leica CL'],
   apsc_c: ['Canon R7', 'Canon R10'],
   m43: ['OM System OM-1 Mark II', 'Panasonic GH6', 'Panasonic GH7'],
   '1in': ['Sony RX100 VII'],
-  phone: ['iPhone 17 Pro', 'Samsung S26 Ultra'],
+  phone: ['iPhone 16 Pro', 'iPhone 17 Pro', 'Samsung S24 Ultra', 'Samsung S26 Ultra'],
   '1_1_7in': ['Canon PowerShot S120', 'Panasonic LX7'],
   '1_2_3in': ['DJI Mini 2', 'Nikon P1000'],
   phone_mid: ['Google Pixel a-series', 'Samsung Galaxy A-series'],
@@ -179,6 +187,8 @@ export const COMMON_MP: Record<string, MpEntry[]> = {
     { mp: 12, models: 'Typical ultra-wide module' },
     { mp: 48, models: 'High-res ultra-wide module' },
   ],
+  // 19.9MP: RED's own published spec for KOMODO 6K (6144x3240 effective
+  // pixels), confirmed via Film & Digital Times' spec reprint (2026-08-09).
   cine_s35: [{ mp: 19.9, models: 'RED KOMODO 6K S35' }],
   cine_vv: [{ mp: 35.4, models: 'RED V-RAPTOR 8K VV' }],
   cine_a65: [{ mp: 20.3, models: 'ARRI ALEXA 65' }],
