@@ -77,8 +77,12 @@ export function useImageExport(deps: UseImageExportDeps): UseImageExportApi {
       // Background: the WebGL shaped-bokeh canvas, scaled up to export size.
       ctx.drawImage(sourceCanvas, 0, 0, layout.canvasW, viewportHPx)
 
-      // Subject slices, near -> far, each individually blurred to match ModelLayer.
-      for (const slice of layout.slices) {
+      // Subject slices: `layout.slices` is in manifest (near -> far) order,
+      // matching ModelLayer's DOM stack where near sits on top via
+      // `zIndex: sliceCount - index`. Canvas has no z-index — the last
+      // `drawImage` wins — so paint back-to-front (far first, near last) to
+      // reproduce the same on-top-of-stack result the DOM gives.
+      for (const slice of [...layout.slices].reverse()) {
         const img = await loadImage(slice.src)
         const drawW = slice.h * (img.naturalWidth / img.naturalHeight)
         const dx = slice.x + (slice.w - drawW) / 2

@@ -1,6 +1,5 @@
-import { modelLayout, blurMmToPx } from '@/lib/math/projection'
+import { modelLayout, blurMmToPx, MAX_BLUR_PX, BLUR_VISIBLE_THRESHOLD_PX } from '@/lib/math/projection'
 import { calcDefocusBlur } from '@/lib/math/dof'
-import { MAX_BLUR_PX, BLUR_VISIBLE_THRESHOLD_PX } from '../viewport/ModelLayer'
 import type { DofSubject } from '@/lib/data/dofSimulator/types'
 import type { DofDerived } from '../state/useDofDerived'
 import type { OpticsState } from '../state/useOptics'

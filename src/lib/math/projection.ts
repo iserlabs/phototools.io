@@ -31,3 +31,12 @@ export function modelLayout(figurePx: number, viewportPx: number, eyeLineRatio: 
 export function blurMmToPx(blurMm: number, sensorWMm: number, viewportWPx: number): number {
   return sensorWMm > 0 ? (blurMm / sensorWMm) * viewportWPx : 0
 }
+
+// Shared blur-rendering constants: kept here (alongside `blurMmToPx`) rather
+// than in `ModelLayer.tsx` so that framework-agnostic consumers — like the
+// PNG export layout (`export/exportLayout.ts`) — can depend on a pure math
+// module instead of a `'use client'` React component.
+/** CSS-filter blur radius cap, in px, at viewport (1x) scale. */
+export const MAX_BLUR_PX = 24
+/** Minimum blur radius, in px, below which no blur filter is applied. */
+export const BLUR_VISIBLE_THRESHOLD_PX = 0.5

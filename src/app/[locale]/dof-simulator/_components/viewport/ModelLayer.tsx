@@ -2,7 +2,7 @@
 
 import { useState, type CSSProperties } from 'react'
 import { calcDefocusBlur } from '@/lib/math/dof'
-import { modelLayout, blurMmToPx } from '@/lib/math/projection'
+import { modelLayout, blurMmToPx, MAX_BLUR_PX, BLUR_VISIBLE_THRESHOLD_PX } from '@/lib/math/projection'
 import type { DofSubject, SubjectSlice } from '@/lib/data/dofSimulator/types'
 import type { DofDerived } from '../state/useDofDerived'
 import type { OpticsState } from '../state/useOptics'
@@ -14,12 +14,6 @@ export interface ModelLayerProps {
   viewportPx: { w: number; h: number }
   side?: 'a' | 'b'
 }
-
-// Exported so the PNG export layout (`export/exportLayout.ts`) can mirror
-// this component's on-screen blur semantics exactly instead of re-deriving
-// its own copies of these thresholds.
-export const MAX_BLUR_PX = 24
-export const BLUR_VISIBLE_THRESHOLD_PX = 0.5
 
 function sliceStyle(
   slice: SubjectSlice,
