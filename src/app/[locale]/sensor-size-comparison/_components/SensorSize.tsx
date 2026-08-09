@@ -32,7 +32,7 @@ export function SensorSize() {
   const { hoveredSensor, setHoveredSensor, expandedId, setExpandedId, handleMouseMove, handleCanvasClick } =
     useSensorCanvas({ canvasRef, mode, resolution, allSensors, visible })
 
-  const { isDesktop, handleCompare, compareA, compareB } =
+  const { isDesktop, handleCompare, compareA, compareB, focusToken } =
     useCompareEntry({ allSensors, comparePair, setComparePair, trackParam })
 
   const handleToggleExpand = (id: string) => setExpandedId((prev) => (prev === id ? null : id))
@@ -66,7 +66,7 @@ export function SensorSize() {
   // rendering it at both call sites (like `SensorControlsPanel` already
   // does) is harmless.
   const drawer = compareA && compareB
-    ? <CompareDrawer a={compareA} b={compareB} onClose={() => setComparePair(null)} />
+    ? <CompareDrawer a={compareA} b={compareB} onClose={() => setComparePair(null)} focusToken={focusToken} />
     : null
   const compareTwoBtn = visibleSensors.length === 2 ? (
     <button type="button" className={ss.compareTwoBtn} onClick={() => handleCompare(visibleSensors[0].id, visibleSensors[1].id)}>

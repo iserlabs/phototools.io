@@ -40,9 +40,23 @@ export function useCompareEntry({ allSensors, comparePair, setComparePair, track
     return () => mql.removeEventListener('change', onChange)
   }, [])
 
+  // Increments once per user-initiated compare action (the row's "Compare
+  // with…" select, or the "Compare these two" button) — never for the
+  // initial `?vs=` URL hydration, which leaves this at 0 for the life of
+  // that mount. `CompareDrawer` reads it to decide whether to move focus
+  // into itself: a page opened from a shared link shouldn't steal focus,
+  // but a drawer the user just triggered (including picking a *new* compare
+  // target while it's already open) should. A plain boolean would saturate
+  // to `true` after the first click and stop distinguishing further
+  // user-initiated changes from any other re-render — an ever-incrementing
+  // token stays a distinct value every time, so an effect keyed on it fires
+  // on every user action, not just the first.
+  const [focusToken, setFocusToken] = useState(0)
+
   const handleCompare = useCallback((aId: string, bId: string) => {
     trackParam({ param_name: 'compare', param_value: `${aId},${bId}`, input_type: 'select' })
     setComparePair([aId, bId])
+    setFocusToken((n) => n + 1)
   }, [trackParam, setComparePair])
 
   // An id can go stale (e.g. its custom sensor was deleted) after landing in
@@ -53,5 +67,5 @@ export function useCompareEntry({ allSensors, comparePair, setComparePair, track
     ? [allSensors.find((s) => s.id === comparePair[0]), allSensors.find((s) => s.id === comparePair[1])]
     : [undefined, undefined]
 
-  return { isDesktop, handleCompare, compareA, compareB }
+  return { isDesktop, handleCompare, compareA, compareB, focusToken }
 }
