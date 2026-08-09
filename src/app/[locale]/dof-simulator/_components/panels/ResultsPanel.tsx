@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 import { ControlPanel, controlPanelStyles as cp } from '@/components/shared/ControlPanel'
 import { ngonVertices, type BokehShapeId } from '@/lib/math/bokehKernel'
 import { formatAperture } from '@/lib/math/aperture'
-import { formatDistance, formatMm } from '../state/formatters'
+import { formatDistance, formatMm, formatPreciseMm } from '../state/formatters'
 import type { DofDerived } from '../state/useDofDerived'
 import panelStyles from './panels.module.css'
 import controlStyles from './controls.module.css'
@@ -122,13 +122,13 @@ export function ResultsPanel({ derived, imperial, bokeh, labels = DEFAULT_LABELS
         />
         <Row label={labels.behind} value={`${formatDistance(derived.behindM, imperial)} (${Math.round(behindPct)}%)`} />
         <Row label={labels.hyperfocal} value={formatDistance(derived.dof.hyperfocal, imperial)} />
-        <Row label={labels.coc} value={formatMm(derived.cocMm)} />
+        <Row label={labels.coc} value={formatPreciseMm(derived.cocMm)} />
         <Row
           label={labels.backgroundBlur}
           value={
             <>
               <BokehGlyph shape={bokeh} />
-              {formatMm(derived.backgroundBlurMm)} ({derived.backgroundBlurPct.toFixed(1)}%)
+              {formatPreciseMm(derived.backgroundBlurMm)} ({derived.backgroundBlurPct.toFixed(1)}%)
             </>
           }
         />

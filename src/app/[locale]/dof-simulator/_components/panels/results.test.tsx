@@ -78,6 +78,24 @@ describe('ResultsPanel', () => {
     expect(container.textContent).not.toMatch(/diffraction/i)
     expect(container.textContent).not.toMatch(/minimum focus/i)
   })
+  it('renders a non-zero, meaningful CoC value instead of rounding it away to "0mm"', () => {
+    // FF's default CoC is 0.03/1 = 0.03mm — a whole-mm formatter rounds this
+    // (and every other reachable CoC, down to the 0.0081mm phone-sensor floor)
+    // to "0mm". A sub-mm-aware formatter must show real digits instead.
+    const { getByText } = render(<ResultsPanel derived={derivedFor('ff')} imperial={false} bokeh="disc" />)
+    const cocRow = getByText('Circle of Confusion').closest('div')
+    expect(cocRow?.textContent).not.toMatch(/\b0mm\b/)
+    expect(cocRow?.textContent).toMatch(/0\.\d+mm/)
+  })
+  it('renders a non-zero background-blur mm value alongside its percentage', () => {
+    // A wide, stopped-down setup keeps blur sub-mm while the % figure is
+    // clearly non-zero — the same whole-mm rounding bug printed "0mm (0.5%)".
+    const derived = derivedFor('ff', { focalLength: 8, aperture: 8 })
+    const { getByText } = render(<ResultsPanel derived={derived} imperial={false} bokeh="disc" />)
+    const blurRow = getByText('Background Blur').closest('div')
+    expect(blurRow?.textContent).not.toMatch(/\b0mm\b/)
+    expect(blurRow?.textContent).toMatch(/0\.\d+mm/)
+  })
 })
 
 describe('SavedSettingsPanel', () => {
