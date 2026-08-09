@@ -1,9 +1,10 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { COMMON_MP, POPULAR_MODELS } from '@/lib/data/sensors'
+import { calcCropFactor, COMMON_MP, POPULAR_MODELS } from '@/lib/data/sensors'
 import { pixelPitch } from '@/lib/math/diffraction'
 import { formatAspectRatio } from '@/lib/math/resolution'
+import { pickTopMp } from './sensorSizeHelpers'
 import type { ResolvedSensor, CustomSensor } from './sensorSizeTypes'
 import ss from './SensorSize.module.css'
 
@@ -29,15 +30,11 @@ export function CompareColumn({ sensor: s }: CompareColumnProps) {
   const cameraModels = isCustom ? [] : (POPULAR_MODELS[s.id] ?? [])
 
   // Representative resolution = the HIGHEST mp figure in COMMON_MP for this
-  // preset (the current flagship). Film-group presets and cine_s16 have no
-  // COMMON_MP entry at all (see sensors.ts) — render notApplicable and never
-  // call pixelPitch, which would otherwise divide by a zero/NaN pixel count.
-  const commonMpEntries = isCustom ? undefined : COMMON_MP[s.id]
-  const topMp = isCustom
-    ? (s as CustomSensor).mp
-    : commonMpEntries && commonMpEntries.length > 0
-      ? Math.max(...commonMpEntries.map((entry) => entry.mp))
-      : undefined
+  // preset (the current flagship), picked by `pickTopMp` rather than
+  // trusting entry order. Film-group presets and cine_s16 have no COMMON_MP
+  // entry at all (see sensors.ts) — render notApplicable and never call
+  // pixelPitch, which would otherwise divide by a zero/NaN pixel count.
+  const topMp = isCustom ? (s as CustomSensor).mp : pickTopMp(COMMON_MP[s.id])
   const resolution = topMp
     ? `${topMp} MP · ${pixelPitch(s.w, topMp, s.h).toFixed(1)} µm`
     : t('compare.notApplicable')
@@ -50,7 +47,7 @@ export function CompareColumn({ sensor: s }: CompareColumnProps) {
         <div className={ss.specItem}><dt>{t('detail.diagonal')}</dt><dd>{diagonal.toFixed(1)} mm</dd></div>
         <div className={ss.specItem}><dt>{t('detail.area')}</dt><dd>{area.toFixed(1)} mm²</dd></div>
         <div className={ss.specItem}><dt>{t('detail.aspect')}</dt><dd>{formatAspectRatio(s.w, s.h)}</dd></div>
-        <div className={ss.specItem}><dt>{t('tableCropFactor')}</dt><dd>{s.cropFactor.toFixed(2)}x</dd></div>
+        <div className={ss.specItem}><dt>{t('tableCropFactor')}</dt><dd>{calcCropFactor(s.w, s.h).toFixed(2)}x</dd></div>
         <div className={ss.specItem}><dt>{t('compare.representativeResolution')}</dt><dd>{resolution}</dd></div>
       </dl>
       {cameraModels.length > 0 && (

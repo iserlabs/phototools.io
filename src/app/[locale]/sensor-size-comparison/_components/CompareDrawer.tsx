@@ -13,6 +13,13 @@ type CompareDrawerProps = {
   onClose: () => void
 }
 
+// Single source for the focal length used in both the cross-focal-equivalence
+// computation and its displayed sentence — passed explicitly to
+// `compareSensors` rather than relying on its own default (`sensorComparison.ts`),
+// so the number shown on screen can never drift from the number that was
+// actually used to compute `focalAonB`/`focalBonA`.
+const EQUIVALENCE_FOCAL = 50
+
 /**
  * Two-sensor comparison panel: a spec column per sensor (`CompareColumn`)
  * plus a plain-language relationship block — area ratio, both directions of
@@ -28,7 +35,7 @@ export function CompareDrawer({ a, b, onClose }: CompareDrawerProps) {
   const sensorsT = useTranslations('common.sensors')
   const nameOf = (s: ResolvedSensor) => (sensorsT.has(s.id) ? sensorsT(s.id) : s.name)
 
-  const cmp = compareSensors(a, b)
+  const cmp = compareSensors(a, b, EQUIVALENCE_FOCAL)
 
   const verdict = cmp.nearEqual
     ? t('compare.verdictNearEqual')
@@ -63,8 +70,8 @@ export function CompareDrawer({ a, b, onClose }: CompareDrawerProps) {
       </div>
       <div className={ss.compareRelation}>
         <p>{t('compare.areaRelation', { a: nameOf(a), b: nameOf(b), ratio: cmp.areaRatioAB.toFixed(2) })}</p>
-        <p>{t('compare.crossFocal', { focal: 50, from: nameOf(a), to: nameOf(b), eqFocal: cmp.focalAonB })}</p>
-        <p>{t('compare.crossFocal', { focal: 50, from: nameOf(b), to: nameOf(a), eqFocal: cmp.focalBonA })}</p>
+        <p>{t('compare.crossFocal', { focal: EQUIVALENCE_FOCAL, from: nameOf(a), to: nameOf(b), eqFocal: cmp.focalAonB })}</p>
+        <p>{t('compare.crossFocal', { focal: EQUIVALENCE_FOCAL, from: nameOf(b), to: nameOf(a), eqFocal: cmp.focalBonA })}</p>
         <p className={ss.compareVerdict} data-testid="compare-verdict">{verdict}</p>
       </div>
     </div>

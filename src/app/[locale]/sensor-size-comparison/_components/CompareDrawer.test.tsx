@@ -5,7 +5,7 @@ import commonMessages from '@/lib/i18n/messages/en/common.json'
 import toolMessages from '@/lib/i18n/messages/en/tools/sensor-size-comparison.json'
 import { ALL_SENSORS } from '@/lib/data/sensors'
 import { CompareDrawer } from './CompareDrawer'
-import type { ResolvedSensor } from './sensorSizeTypes'
+import type { ResolvedSensor, CustomSensor } from './sensorSizeTypes'
 
 const messages = {
   common: commonMessages.common,
@@ -13,6 +13,10 @@ const messages = {
 }
 
 const byId = (id: string) => ALL_SENSORS.find((s) => s.id === id) as ResolvedSensor
+
+const customSensorNoMp: CustomSensor = {
+  id: 'custom_2', name: 'No MP Sensor', w: 30, h: 20, cropFactor: 1.44, color: '#ffffff',
+}
 
 function Wrapped({ children }: { children: React.ReactNode }) {
   return (
@@ -49,6 +53,12 @@ describe('CompareDrawer', () => {
 
   it('shows no resolution figure for a film sensor and does not render NaN', () => {
     render(<Wrapped><CompareDrawer a={byId('film_6x7')} b={byId('ff')} onClose={() => {}} /></Wrapped>)
+    expect(document.body.textContent).not.toMatch(/NaN|undefined/)
+    expect(screen.getAllByText('—').length).toBeGreaterThan(0)
+  })
+
+  it('shows no resolution figure for a custom sensor with no mp and does not render NaN', () => {
+    render(<Wrapped><CompareDrawer a={customSensorNoMp} b={byId('ff')} onClose={() => {}} /></Wrapped>)
     expect(document.body.textContent).not.toMatch(/NaN|undefined/)
     expect(screen.getAllByText('—').length).toBeGreaterThan(0)
   })

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import {
   encodeCustomParam, decodeCustomParam, loadCustomSensors, saveCustomSensors,
-  ALL_SENSOR_ID_SET, orderForRender,
+  ALL_SENSOR_ID_SET, orderForRender, pickTopMp,
 } from './sensorSizeHelpers'
 import { COMMON_MP } from '@/lib/data/sensors'
 import { STORAGE_KEY } from './sensorSizeTypes'
@@ -75,5 +75,23 @@ describe('sensorSizeHelpers', () => {
       { id: 'apsh', name: 'APS-H', w: 27.9, h: 18.6, cropFactor: 1.29, color: '#x', group: 'ff-aps' },
     ]
     expect(orderForRender(sensors).map((s) => s.id)).toEqual(['mf', 'ff', 'apsh', 'm43', 'custom_1'])
+  })
+
+  it('pickTopMp returns the highest mp, not the last array element', () => {
+    // Every real COMMON_MP array is authored ascending today, so a naive
+    // `entries.at(-1)` would coincidentally pass — this fixture is
+    // deliberately out of order to prove the selection is by value, not
+    // position.
+    const outOfOrder = [
+      { mp: 24, models: 'mid' },
+      { mp: 61, models: 'flagship' },
+      { mp: 12, models: 'base' },
+    ]
+    expect(pickTopMp(outOfOrder)).toBe(61)
+  })
+
+  it('pickTopMp returns undefined for missing or empty entries', () => {
+    expect(pickTopMp(undefined)).toBeUndefined()
+    expect(pickTopMp([])).toBeUndefined()
   })
 })
