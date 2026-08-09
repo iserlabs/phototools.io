@@ -51,7 +51,8 @@
       "depthRulerFar": "Llunyà",
       "depthRulerInFocus": "En enfocament",
       "depthRulerSubject": "Subjecte",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Les formes de bokeh necessiten WebGL — es mostra un desenfocament simplificat."
     }
   }
 }

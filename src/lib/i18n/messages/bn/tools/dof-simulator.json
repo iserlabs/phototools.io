@@ -51,7 +51,8 @@
       "depthRulerFar": "দূর",
       "depthRulerInFocus": "ফোকাসে",
       "depthRulerSubject": "সাবজেক্ট",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "বোকে আকৃতির জন্য WebGL প্রয়োজন — একটি সরলীকৃত ব্লার দেখানো হচ্ছে।"
     }
   }
 }

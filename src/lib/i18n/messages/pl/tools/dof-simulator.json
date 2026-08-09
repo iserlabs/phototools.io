@@ -51,7 +51,8 @@
       "depthRulerFar": "Daleko",
       "depthRulerInFocus": "W ostrości",
       "depthRulerSubject": "Obiekt",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Kształty bokeh wymagają WebGL — wyświetlane jest uproszczone rozmycie."
     }
   }
 }

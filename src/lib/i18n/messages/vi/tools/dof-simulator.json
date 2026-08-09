@@ -51,7 +51,8 @@
       "depthRulerFar": "Xa",
       "depthRulerInFocus": "Trong vùng nét",
       "depthRulerSubject": "Chủ thể",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Hình dạng bokeh cần WebGL — đang hiển thị hiệu ứng mờ đơn giản hóa."
     }
   }
 }

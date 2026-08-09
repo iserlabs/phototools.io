@@ -51,7 +51,8 @@
       "depthRulerInFocus": "ピント範囲",
       "depthRulerSubject": "被写体",
       "infinity": "∞",
-      "simulateDiffraction": "回折をシミュレート"
+      "simulateDiffraction": "回折をシミュレート",
+      "webglFallbackNotice": "ボケの形状にはWebGLが必要です — 簡易的なぼかしを表示しています。"
     }
   }
 }

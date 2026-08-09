@@ -51,7 +51,8 @@
       "depthRulerFar": "Departe",
       "depthRulerInFocus": "În focalizare",
       "depthRulerSubject": "Subiect",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Formele bokeh necesită WebGL — se afișează o neclaritate simplificată."
     }
   }
 }

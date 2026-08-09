@@ -51,7 +51,8 @@
       "depthRulerFar": "Far",
       "depthRulerInFocus": "In Focus",
       "depthRulerSubject": "Subject",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Kailangan ng WebGL ang mga hugis ng bokeh — nagpapakita ng pinasimpleng blur."
     }
   }
 }

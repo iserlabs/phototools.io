@@ -51,7 +51,8 @@
       "depthRulerFar": "Jauh",
       "depthRulerInFocus": "Dalam Fokus",
       "depthRulerSubject": "Subjek",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Bentuk bokeh memerlukan WebGL — menampilkan blur yang disederhanakan."
     }
   }
 }

@@ -51,7 +51,8 @@
       "depthRulerFar": "ไกล",
       "depthRulerInFocus": "ในโฟกัส",
       "depthRulerSubject": "ซับเจกต์",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "รูปทรงโบเก้ต้องใช้ WebGL — กำลังแสดงภาพเบลอแบบง่าย"
     }
   }
 }

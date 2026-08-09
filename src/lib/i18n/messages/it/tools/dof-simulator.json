@@ -51,7 +51,8 @@
       "depthRulerInFocus": "A fuoco",
       "depthRulerSubject": "Soggetto",
       "infinity": "∞",
-      "simulateDiffraction": "Simula diffrazione"
+      "simulateDiffraction": "Simula diffrazione",
+      "webglFallbackNotice": "Le forme del bokeh richiedono WebGL — viene mostrata una sfocatura semplificata."
     }
   }
 }

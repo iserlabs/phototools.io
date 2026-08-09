@@ -51,7 +51,8 @@
       "depthRulerFar": "Fjern",
       "depthRulerInFocus": "I fokus",
       "depthRulerSubject": "Motiv",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Bokehformer kræver WebGL — der vises en forenklet slørhed."
     }
   }
 }

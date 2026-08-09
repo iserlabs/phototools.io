@@ -51,7 +51,8 @@
       "depthRulerFar": "Kauko",
       "depthRulerInFocus": "Tarkennuksessa",
       "depthRulerSubject": "Kohde",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Bokeh-muodot vaativat WebGL:n — näytetään yksinkertaistettu sumennus."
     }
   }
 }

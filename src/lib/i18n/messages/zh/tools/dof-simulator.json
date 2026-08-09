@@ -51,7 +51,8 @@
       "depthRulerFar": "远",
       "depthRulerInFocus": "对焦区",
       "depthRulerSubject": "主体",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "散景形状需要 WebGL — 正在显示简化模糊效果。"
     }
   }
 }

@@ -51,7 +51,8 @@
       "depthRulerInFocus": "초점 영역",
       "depthRulerSubject": "피사체",
       "infinity": "∞",
-      "simulateDiffraction": "회절 시뮬레이션"
+      "simulateDiffraction": "회절 시뮬레이션",
+      "webglFallbackNotice": "보케 모양에는 WebGL이 필요합니다 — 단순화된 블러를 표시합니다."
     }
   }
 }

@@ -51,7 +51,8 @@
       "depthRulerFar": "Μακριά",
       "depthRulerInFocus": "Σε εστίαση",
       "depthRulerSubject": "Θέμα",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Τα σχήματα bokeh απαιτούν WebGL — εμφανίζεται απλοποιημένη θόλωση."
     }
   }
 }

@@ -51,7 +51,8 @@
       "depthRulerFar": "Далі",
       "depthRulerInFocus": "У фокусі",
       "depthRulerSubject": "Об'єкт",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Для форм боке потрібен WebGL — показано спрощене розмиття."
     }
   }
 }

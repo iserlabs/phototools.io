@@ -51,7 +51,8 @@
       "depthRulerFar": "Távoli",
       "depthRulerInFocus": "Fókuszban",
       "depthRulerSubject": "Téma",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "A bokeh alakzatokhoz WebGL szükséges — egyszerűsített elmosás jelenik meg."
     }
   }
 }

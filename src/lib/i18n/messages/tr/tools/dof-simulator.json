@@ -51,7 +51,8 @@
       "depthRulerFar": "Uzak",
       "depthRulerInFocus": "Odakta",
       "depthRulerSubject": "Konu",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Bokeh şekilleri için WebGL gereklidir — basitleştirilmiş bir bulanıklık gösteriliyor."
     }
   }
 }

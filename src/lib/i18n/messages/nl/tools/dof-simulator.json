@@ -51,7 +51,8 @@
       "depthRulerInFocus": "Scherp",
       "depthRulerSubject": "Onderwerp",
       "infinity": "∞",
-      "simulateDiffraction": "Diffractie simuleren"
+      "simulateDiffraction": "Diffractie simuleren",
+      "webglFallbackNotice": "Bokehvormen vereisen WebGL — er wordt een vereenvoudigde vervaging weergegeven."
     }
   }
 }

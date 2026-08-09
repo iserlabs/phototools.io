@@ -51,7 +51,8 @@
       "depthRulerInFocus": "Net",
       "depthRulerSubject": "Sujet",
       "infinity": "∞",
-      "simulateDiffraction": "Simuler la diffraction"
+      "simulateDiffraction": "Simuler la diffraction",
+      "webglFallbackNotice": "Les formes de bokeh nécessitent WebGL — affichage d'un flou simplifié."
     }
   }
 }

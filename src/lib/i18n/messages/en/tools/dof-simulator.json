@@ -51,7 +51,8 @@
       "depthRulerFar": "Far",
       "depthRulerInFocus": "In Focus",
       "depthRulerSubject": "Subject",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Bokeh shapes need WebGL — showing a simplified blur."
     }
   }
 }

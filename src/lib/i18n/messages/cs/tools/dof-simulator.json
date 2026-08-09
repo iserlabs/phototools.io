@@ -51,7 +51,8 @@
       "depthRulerFar": "Daleko",
       "depthRulerInFocus": "V zaostřené zóně",
       "depthRulerSubject": "Subjekt",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Tvary bokeh vyžadují WebGL — zobrazuje se zjednodušené rozostření."
     }
   }
 }

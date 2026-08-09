@@ -51,7 +51,8 @@
       "depthRulerInFocus": "Im Fokus",
       "depthRulerSubject": "Motiv",
       "infinity": "∞",
-      "simulateDiffraction": "Beugung simulieren"
+      "simulateDiffraction": "Beugung simulieren",
+      "webglFallbackNotice": "Bokeh-Formen benötigen WebGL — es wird ein vereinfachter Weichzeichner angezeigt."
     }
   }
 }

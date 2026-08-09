@@ -51,7 +51,8 @@
       "depthRulerFar": "Дальше",
       "depthRulerInFocus": "В фокусе",
       "depthRulerSubject": "Объект",
-      "infinity": "∞"
+      "infinity": "∞",
+      "webglFallbackNotice": "Для форм боке требуется WebGL — показано упрощённое размытие."
     }
   }
 }
