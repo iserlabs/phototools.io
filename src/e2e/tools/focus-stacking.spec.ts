@@ -42,6 +42,24 @@ test.describe('Focus Stacking Calculator', () => {
     expect(download.suggestedFilename()).toBe('focus-stack.csv')
   })
 
+  test('JSON export downloads a plan in distance mode', async ({ page }) => {
+    await page.goto(URL)
+    const sidebar = page.locator('[class*="sidebar"]').first()
+    const downloadPromise = page.waitForEvent('download')
+    await sidebar.locator('button:text-is("Export as JSON")').click()
+    const download = await downloadPromise
+    expect(download.suggestedFilename()).toBe('focus-stack.json')
+  })
+
+  test('CSV export downloads a plan in macro mode', async ({ page }) => {
+    await page.goto(`${URL}?mode=macro`)
+    const sidebar = page.locator('[class*="sidebar"]').first()
+    const downloadPromise = page.waitForEvent('download')
+    await sidebar.locator('button:text-is("Export as CSV")').click()
+    const download = await downloadPromise
+    expect(download.suggestedFilename()).toBe('macro-stack.csv')
+  })
+
   test('table row hover highlights a diagram band', async ({ page }) => {
     await page.goto(URL)
     const firstRow = page.locator('[class*="tableWrap"] tbody tr').first()

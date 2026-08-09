@@ -7,6 +7,7 @@ import { ApertureField } from '@/components/shared/ApertureField'
 import { DistanceField } from '@/components/shared/DistanceField'
 import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { getSkeletonBySlug } from '@/lib/data/education'
+import { minFocusableDistance } from '@/lib/math/stacking'
 import type { StackingState } from './useStackingState'
 import s from './FocusStacking.module.css'
 
@@ -37,7 +38,7 @@ export function StackingSettingsPanel({ state }: StackingSettingsPanelProps) {
   const overlapInt = Math.round(overlapPct * 100)
   const isInf = !isFinite(farLimit)
   // Physically focusable floor: just beyond the lens itself.
-  const nearMin = Math.max(0.1, (focalLength / 1000) * 1.05)
+  const nearMin = Math.max(0.1, minFocusableDistance(focalLength))
   // Near's ceiling tracks the far limit so the range can't invert; if the
   // floor above ever rises past the current far limit, hold the ceiling at
   // the floor instead of letting max < min reach the slider. (The actual

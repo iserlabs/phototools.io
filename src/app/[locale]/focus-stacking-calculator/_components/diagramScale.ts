@@ -6,7 +6,6 @@ export const DIAGRAM_PAD = { top: 28, right: 24, bottom: 40, left: 56 }
 export interface DiagramScale {
   toX: (d: number) => number
   ticks: number[]
-  min: number
   max: number
   infinite: boolean
 }
@@ -24,7 +23,7 @@ export function buildDistanceScale(
   const logMin = Math.log(min)
   const logRange = Math.log(max) - logMin
   return {
-    min, max, infinite,
+    max, infinite,
     toX: (d) => padLeft + ((Math.log(Math.min(Math.max(d, min), max)) - logMin) / logRange) * drawW,
     ticks: DISTANCE_TICKS.filter((t) => t >= min * 0.9 && t <= max * 1.1),
   }
@@ -40,7 +39,7 @@ export function buildMacroScale(
   const ticks: number[] = []
   for (let v = 0; v <= max; v += step) ticks.push(Number(v.toFixed(3)))
   return {
-    min: 0, max, infinite: false,
+    max, infinite: false,
     toX: (d) => padLeft + (Math.min(Math.max(d, 0), max) / max) * drawW,
     ticks,
   }

@@ -1,6 +1,5 @@
 'use client'
 
-import { useMemo } from 'react'
 import { useTranslations } from 'next-intl'
 import type { StackingState } from './useStackingState'
 import type { DiagramScale } from './diagramScale'
@@ -40,7 +39,7 @@ const FOCUS_H = 28
 export function StackingDiagram({ state, scale, playing }: StackingDiagramProps) {
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const { hoveredShot, setHoveredShot, mode } = state
-  const rows = useMemo(() => buildRows(state), [state])
+  const rows = buildRows(state)
   const showBands = rows.length <= MAX_BAND_SHOTS
   const { svgRef, onMouseMove, onMouseLeave } = useDiagramHover(rows, scale, setHoveredShot, playing)
 

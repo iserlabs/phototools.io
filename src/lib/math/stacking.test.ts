@@ -1,7 +1,15 @@
 import { describe, it, expect } from 'vitest'
-import { calcStackingSequence, focusForNearLimit } from './stacking'
+import { calcStackingSequence, focusForNearLimit, minFocusableDistance } from './stacking'
 
 const BASE = { focalLength: 100, aperture: 8, coc: 0.03, nearLimit: 1, farLimit: 5, overlapPct: 0.3 }
+
+describe('minFocusableDistance', () => {
+  it('returns 5% beyond the focal length, converted to meters', () => {
+    expect(minFocusableDistance(100)).toBeCloseTo(0.105, 6)
+    expect(minFocusableDistance(24)).toBeCloseTo(0.0252, 6)
+    expect(minFocusableDistance(200)).toBeCloseTo(0.21, 6)
+  })
+})
 
 describe('focusForNearLimit', () => {
   it('inverts the near-limit formula: DoF at the returned focus has nearFocus == requested edge', () => {

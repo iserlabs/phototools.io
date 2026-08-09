@@ -1,5 +1,4 @@
-/** Wavelength of green light in mm (550nm) — mirrors the private constant in dof.ts */
-const LAMBDA_MM = 0.00055
+import { calcAiryDisk } from './dof'
 
 export interface MacroStackInput {
   magnification: number
@@ -44,7 +43,7 @@ export function calcMacroStack(input: MacroStackInput): MacroStackResult {
   const coverageComplete = shotCount <= MAX_MACRO_SHOTS
   if (!coverageComplete) shotCount = MAX_MACRO_SHOTS
   const railTravelMm = (shotCount - 1) * stepMm
-  const airy = 2.44 * LAMBDA_MM * effectiveAperture
+  const airy = calcAiryDisk(effectiveAperture)
   return {
     effectiveAperture,
     sliceDofMm,
@@ -52,7 +51,10 @@ export function calcMacroStack(input: MacroStackInput): MacroStackResult {
     shotCount,
     railTravelMm,
     diffractionLimited: airy > c,
-    maxSharpAperture: c / (2.44 * LAMBDA_MM * (1 + m)),
+    // calcAiryDisk(N) = 2.44·λ·N, so calcAiryDisk(1) == 2.44·λ exactly —
+    // reusing it here avoids re-declaring dof.ts's private wavelength
+    // constant a second time just to get that one coefficient back out.
+    maxSharpAperture: c / (calcAiryDisk(1) * (1 + m)),
     coverageComplete,
   }
 }

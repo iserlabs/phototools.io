@@ -2,7 +2,7 @@
 
 import { useMemo, useState, useCallback } from 'react'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
-import { calcStackingSequence } from '@/lib/math/stacking'
+import { calcStackingSequence, minFocusableDistance } from '@/lib/math/stacking'
 import { calcMacroStack, macroShots } from '@/lib/math/macroStack'
 import { getSensor } from '@/lib/data/sensors'
 import { useQueryInit, useToolQuerySync } from '@/lib/utils/querySync'
@@ -41,7 +41,7 @@ export function useStackingState() {
       return
     }
     // far can never be lowered past the physical near floor
-    const floor = Math.max(0.1, (focalLength / 1000) * 1.05)
+    const floor = Math.max(0.1, minFocusableDistance(focalLength))
     const farNew = Math.max(v, floor)
     setFarLimit(farNew)
     // lowering far below the current near limit lowers near to match,
@@ -92,7 +92,7 @@ export function useStackingState() {
     trackParam({ param_name: 'focal_length', param_value: String(v), input_type: 'slider' })
     setFocalLength(v)
     // near limit must stay physically focusable: just beyond the lens
-    const minNear = (v / 1000) * 1.05
+    const minNear = minFocusableDistance(v)
     const newNear = nearLimit < minNear ? minNear : nearLimit
     setNearLimit(newNear)
     // keep the range valid in this same batched render: a near limit raised
@@ -116,13 +116,13 @@ export function useStackingState() {
     focalLength, aperture, sensorId, nearLimit, farLimit, overlapPct, magnification, depthMm,
     onFocalLengthChange,
     onApertureChange: (v: number) => { trackParam({ param_name: 'aperture', param_value: String(v), input_type: 'select' }); setAperture(v) },
-    onSensorChange: setSensorId,
+    onSensorChange: (v: string) => { trackParam({ param_name: 'sensor', param_value: v, input_type: 'select' }); setSensorId(v) },
     onNearLimitChange,
     onFarLimitChange,
-    onOverlapChange: setOverlapPct,
+    onOverlapChange: (v: number) => { trackParam({ param_name: 'overlap', param_value: String(v), input_type: 'slider' }); setOverlapPct(v) },
     onMagnificationChange: (v: number) => { trackParam({ param_name: 'magnification', param_value: String(v), input_type: 'slider' }); setMagnification(v) },
-    onDepthChange: setDepthMm,
-    sensor, coc, stackingResult, macroResult, macroRows,
+    onDepthChange: (v: number) => { trackParam({ param_name: 'depth', param_value: String(v), input_type: 'slider' }); setDepthMm(v) },
+    sensor, coc, stackingResult, macroResult, macroRows, activeRowCount,
     hoveredShot: clampedHoveredShot, setHoveredShot, trackParam,
   }
 }

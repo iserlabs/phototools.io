@@ -3,6 +3,8 @@
 import { useCallback } from 'react'
 import { toast } from 'sonner'
 import { useTranslations } from 'next-intl'
+import { InfoTooltip } from '@/components/shared/InfoTooltip'
+import { getSkeletonBySlug } from '@/lib/data/education'
 import { buildMacroText, buildMacroCsv, buildStackJson, formatMm, downloadTextFile } from '@/lib/utils/stackingExport'
 import type { StackingState } from './useStackingState'
 import s from './FocusStacking.module.css'
@@ -10,6 +12,16 @@ import s from './FocusStacking.module.css'
 export function MacroResultsPanel({ state }: { state: StackingState }) {
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const commonT = useTranslations('common')
+  const et = useTranslations('education.focus-stacking-calculator')
+  const skel = getSkeletonBySlug('focus-stacking-calculator')
+  const tooltips = skel
+    ? Object.fromEntries(
+        skel.tooltipKeys.map((key) => [
+          key,
+          { term: et(`tooltips.${key}.term`), definition: et(`tooltips.${key}.definition`) },
+        ]),
+      )
+    : undefined
   const r = state.macroResult
   const meta = {
     tool: 'focus-stacking-calculator', mode: 'macro',
@@ -30,12 +42,18 @@ export function MacroResultsPanel({ state }: { state: StackingState }) {
     <div className={s.panel}>
       <h3 className={s.panelTitle}>{t('results')}</h3>
       <div className={s.resultCard}>
-        <span className={s.resultLabel}>{t('shotCount')}</span>
+        <span className={s.resultLabel}>
+          {t('shotCount')}
+          {tooltips?.shotCount && <InfoTooltip tooltip={tooltips.shotCount} />}
+        </span>
         <span className={s.resultLarge}>{r.shotCount}</span>
       </div>
       <div className={s.resultsGrid}>
         <div className={s.resultCard}>
-          <span className={s.resultLabel}>{t('railStep')}</span>
+          <span className={s.resultLabel}>
+            {t('railStep')}
+            {tooltips?.railStep && <InfoTooltip tooltip={tooltips.railStep} />}
+          </span>
           <span className={s.resultValue}>{formatMm(r.stepMm)}</span>
         </div>
         <div className={s.resultCard}>
@@ -43,7 +61,10 @@ export function MacroResultsPanel({ state }: { state: StackingState }) {
           <span className={s.resultValue}>{formatMm(r.sliceDofMm)}</span>
         </div>
         <div className={s.resultCard}>
-          <span className={s.resultLabel}>{t('effectiveAperture')}</span>
+          <span className={s.resultLabel}>
+            {t('effectiveAperture')}
+            {tooltips?.effectiveAperture && <InfoTooltip tooltip={tooltips.effectiveAperture} />}
+          </span>
           <span className={s.resultValue}>f/{r.effectiveAperture.toFixed(1)}</span>
         </div>
         <div className={s.resultCard}>

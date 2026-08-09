@@ -25,6 +25,18 @@ export interface StackingResult {
 const MAX_SHOTS = 100
 
 /**
+ * Closest distance a lens can be treated as focusing at, given its focal
+ * length. A lens cannot focus at or inside its own focal length, so this is
+ * a small (5%) margin beyond it — used as the physical near-limit floor
+ * everywhere the tool needs one: sequence generation here, the near/far
+ * invariant handlers in useStackingState, and the settings panel's slider
+ * bounds.
+ */
+export function minFocusableDistance(focalLengthMm: number): number {
+  return (focalLengthMm / 1000) * 1.05
+}
+
+/**
  * Invert the DoF near-limit formula: given a desired near edge Dn (meters),
  * return the focus distance s (meters) whose DoF starts exactly there.
  * Dn = s(H-f)/(H+s-2f)  ⇒  s = Dn(H-2f)/(H-f-Dn), all in mm.
@@ -49,7 +61,7 @@ export function calcStackingSequence(input: StackingInput): StackingResult {
   const { focalLength, aperture, coc, nearLimit, farLimit, overlapPct } = input
   const H = calcHyperfocal(focalLength, aperture, coc)
   // Physically focusable floor: just beyond the lens itself
-  let targetNear = Math.max(nearLimit, (focalLength / 1000) * 1.05)
+  let targetNear = Math.max(nearLimit, minFocusableDistance(focalLength))
   const shots: StackingShot[] = []
   let coverageComplete = false
 

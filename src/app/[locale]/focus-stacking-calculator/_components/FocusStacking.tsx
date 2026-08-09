@@ -24,8 +24,7 @@ const DRAW_W = VB_W - DIAGRAM_PAD.left - DIAGRAM_PAD.right
 export function FocusStacking() {
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const st = useStackingState()
-  const shotCount = st.mode === 'distance' ? st.stackingResult.shots.length : st.macroRows.length
-  const { playing, toggle } = useStackSweep(shotCount, st.setHoveredShot)
+  const { playing, toggle } = useStackSweep(st.activeRowCount, st.setHoveredShot)
 
   // Built once here and passed down to both SceneStrip and StackingDiagram —
   // sharing this exact instance is what keeps the scene strip's markers and
