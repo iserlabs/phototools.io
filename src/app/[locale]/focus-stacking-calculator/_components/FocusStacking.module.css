@@ -217,6 +217,24 @@
   padding: 24px;
 }
 
+/* -- Shot table -- */
+.tableWrap { width: 100%; max-width: 900px; }
+.tableSummary {
+  cursor: pointer; font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--accent); padding: 8px 0;
+}
+.tableScroll { max-height: 220px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; }
+.table { width: 100%; border-collapse: collapse; font-size: 12px; font-family: var(--font-mono); }
+.table th {
+  position: sticky; top: 0; background: var(--bg-surface); text-align: left;
+  padding: 6px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--text-secondary); border-bottom: 1px solid var(--border);
+}
+.table td { padding: 4px 10px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+.table tr:last-child td { border-bottom: none; }
+.rowActive td { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+@media (max-width: 1023px) { .tableScroll { max-height: 180px; } }
+
 /* -- Mobile controls (hidden on desktop) -- */
 .mobileControls {
   display: none;

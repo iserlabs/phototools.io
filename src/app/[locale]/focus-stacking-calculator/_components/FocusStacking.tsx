@@ -7,6 +7,7 @@ import { StackingResultsPanel } from './StackingResultsPanel'
 import { MacroSettingsPanel } from './MacroSettingsPanel'
 import { MacroResultsPanel } from './MacroResultsPanel'
 import { StackingDiagram } from './StackingDiagram'
+import { ShotTable } from './ShotTable'
 import { ModeToggle } from '@/components/shared/ModeToggle'
 import { LearnPanel } from '@/components/shared/LearnPanel'
 import { RelatedTools } from '@/components/shared/RelatedTools'
@@ -48,6 +49,7 @@ export function FocusStacking() {
         </div>
         <div className={s.canvasArea}>
           <StackingDiagram state={st} />
+          <ShotTable state={st} playing={false} />
         </div>
         <div className={s.desktopOnly}>
           <LearnPanel slug="focus-stacking-calculator" />
