@@ -5,11 +5,17 @@ import Image from 'next/image'
 import type { DofSubject } from '@/lib/data/dofSimulator/types'
 import styles from './panels.module.css'
 
-// This component intentionally does not call useTranslations: Task 19's
-// fixed test (appearance.test.tsx, from the task brief) mounts it — via
-// AppearancePanel — with no NextIntlClientProvider, and next-intl's
-// useTranslations() throws synchronously without one. See task-19-report.md
-// for the full rationale (the same constraint task-18 hit on BokehInset).
+// Takes pre-translated chrome via the optional `labels` prop instead of
+// calling useTranslations() itself, so it stays mountable (via
+// AppearancePanel) inside appearance.test.tsx's fixed render with no
+// NextIntlClientProvider. `labels` defaults to the English literals;
+// AppearancePanelConnected.tsx supplies real translations for production.
+export interface PickerLabels {
+  title: string
+  close: string
+}
+
+const DEFAULT_LABELS: PickerLabels = { title: 'Choose a Model', close: 'Close' }
 
 interface ModelPickerModalProps {
   open: boolean
@@ -17,9 +23,10 @@ interface ModelPickerModalProps {
   activeId: string
   onSelect(id: string): void
   onClose(): void
+  labels?: PickerLabels
 }
 
-export function ModelPickerModal({ open, subjects, activeId, onSelect, onClose }: ModelPickerModalProps) {
+export function ModelPickerModal({ open, subjects, activeId, onSelect, onClose, labels = DEFAULT_LABELS }: ModelPickerModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
@@ -41,8 +48,8 @@ export function ModelPickerModal({ open, subjects, activeId, onSelect, onClose }
       {open && (
         <>
           <div className={styles.dialogHeader}>
-            <h2 id="dof-model-picker-title" className={styles.dialogTitle}>Choose a Model</h2>
-            <button type="button" className={styles.dialogClose} onClick={onClose} aria-label="Close">
+            <h2 id="dof-model-picker-title" className={styles.dialogTitle}>{labels.title}</h2>
+            <button type="button" className={styles.dialogClose} onClick={onClose} aria-label={labels.close}>
               &times;
             </button>
           </div>

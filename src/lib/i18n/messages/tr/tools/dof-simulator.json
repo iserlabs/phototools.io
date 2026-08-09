@@ -59,7 +59,13 @@
       "basic": "Temel",
       "advanced": "Gelişmiş",
       "metric": "Metrik",
-      "imperial": "İnç"
+      "imperial": "İnç",
+      "appearance": "Görünüm",
+      "model": "Model",
+      "background": "Arka Plan",
+      "chooseModel": "Model seç",
+      "chooseBackground": "Arka plan seç",
+      "close": "Kapat"
     }
   }
 }

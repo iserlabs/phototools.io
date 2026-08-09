@@ -59,7 +59,13 @@
       "basic": "Dasar",
       "advanced": "Lanjutan",
       "metric": "Metrik",
-      "imperial": "Imperial"
+      "imperial": "Imperial",
+      "appearance": "Tampilan",
+      "model": "Model",
+      "background": "Latar Belakang",
+      "chooseModel": "Pilih model",
+      "chooseBackground": "Pilih latar belakang",
+      "close": "Tutup"
     }
   }
 }

@@ -59,7 +59,13 @@
       "basic": "基本",
       "advanced": "詳細設定",
       "metric": "メトリック",
-      "imperial": "インペリアル"
+      "imperial": "インペリアル",
+      "appearance": "外観",
+      "model": "モデル",
+      "background": "背景",
+      "chooseModel": "モデルを選択",
+      "chooseBackground": "背景を選択",
+      "close": "閉じる"
     }
   }
 }

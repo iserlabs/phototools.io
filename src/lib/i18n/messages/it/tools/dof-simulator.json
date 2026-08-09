@@ -59,7 +59,13 @@
       "basic": "Base",
       "advanced": "Avanzato",
       "metric": "Metrico",
-      "imperial": "Imperiale"
+      "imperial": "Imperiale",
+      "appearance": "Aspetto",
+      "model": "Modello",
+      "background": "Sfondo",
+      "chooseModel": "Scegli un modello",
+      "chooseBackground": "Scegli uno sfondo",
+      "close": "Chiudi"
     }
   }
 }

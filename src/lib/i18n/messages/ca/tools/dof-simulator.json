@@ -59,7 +59,13 @@
       "basic": "Bàsic",
       "advanced": "Avançat",
       "metric": "Mètric",
-      "imperial": "Imperial"
+      "imperial": "Imperial",
+      "appearance": "Aparença",
+      "model": "Model",
+      "background": "Fons",
+      "chooseModel": "Tria un model",
+      "chooseBackground": "Tria un fons",
+      "close": "Tanca"
     }
   }
 }

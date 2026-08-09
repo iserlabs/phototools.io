@@ -59,7 +59,13 @@
       "basic": "Βασικό",
       "advanced": "Για προχωρημένους",
       "metric": "Μετρικό",
-      "imperial": "Αγγλοσαξονικό"
+      "imperial": "Αγγλοσαξονικό",
+      "appearance": "Εμφάνιση",
+      "model": "Μοντέλο",
+      "background": "Φόντο",
+      "chooseModel": "Επιλογή μοντέλου",
+      "chooseBackground": "Επιλογή φόντου",
+      "close": "Κλείσιμο"
     }
   }
 }

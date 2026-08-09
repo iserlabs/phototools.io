@@ -59,7 +59,13 @@
       "basic": "Базовые",
       "advanced": "Расширенные",
       "metric": "Метрические",
-      "imperial": "Имперские"
+      "imperial": "Имперские",
+      "appearance": "Внешний вид",
+      "model": "Модель",
+      "background": "Фон",
+      "chooseModel": "Выбрать модель",
+      "chooseBackground": "Выбрать фон",
+      "close": "Закрыть"
     }
   }
 }

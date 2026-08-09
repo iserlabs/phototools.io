@@ -59,7 +59,13 @@
       "basic": "बेसिक",
       "advanced": "एडवांस्ड",
       "metric": "मीट्रिक",
-      "imperial": "इम्पीरियल"
+      "imperial": "इम्पीरियल",
+      "appearance": "दिखावट",
+      "model": "मॉडल",
+      "background": "बैकग्राउंड",
+      "chooseModel": "मॉडल चुनें",
+      "chooseBackground": "बैकग्राउंड चुनें",
+      "close": "बंद करें"
     }
   }
 }

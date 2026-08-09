@@ -59,7 +59,13 @@
       "basic": "기본",
       "advanced": "고급",
       "metric": "미터법",
-      "imperial": "인치법"
+      "imperial": "인치법",
+      "appearance": "외관",
+      "model": "모델",
+      "background": "배경",
+      "chooseModel": "모델 선택",
+      "chooseBackground": "배경 선택",
+      "close": "닫기"
     }
   }
 }

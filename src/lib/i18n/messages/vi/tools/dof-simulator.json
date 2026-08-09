@@ -59,7 +59,13 @@
       "basic": "Cơ bản",
       "advanced": "Nâng cao",
       "metric": "Mét",
-      "imperial": "Inch"
+      "imperial": "Inch",
+      "appearance": "Diện mạo",
+      "model": "Người mẫu",
+      "background": "Hậu cảnh",
+      "chooseModel": "Chọn người mẫu",
+      "chooseBackground": "Chọn hậu cảnh",
+      "close": "Đóng"
     }
   }
 }

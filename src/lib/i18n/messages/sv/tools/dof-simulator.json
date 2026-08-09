@@ -59,7 +59,13 @@
       "basic": "Grundläggande",
       "advanced": "Avancerat",
       "metric": "Metriska",
-      "imperial": "Imperiala"
+      "imperial": "Imperiala",
+      "appearance": "Utseende",
+      "model": "Modell",
+      "background": "Bakgrund",
+      "chooseModel": "Välj en modell",
+      "chooseBackground": "Välj en bakgrund",
+      "close": "Stäng"
     }
   }
 }

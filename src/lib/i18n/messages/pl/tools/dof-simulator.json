@@ -59,7 +59,13 @@
       "basic": "Podstawowe",
       "advanced": "Zaawansowane",
       "metric": "Metryczne",
-      "imperial": "Calowe"
+      "imperial": "Calowe",
+      "appearance": "Wygląd",
+      "model": "Model",
+      "background": "Tło",
+      "chooseModel": "Wybierz model",
+      "chooseBackground": "Wybierz tło",
+      "close": "Zamknij"
     }
   }
 }

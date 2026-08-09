@@ -59,7 +59,13 @@
       "basic": "Grundlæggende",
       "advanced": "Avanceret",
       "metric": "Metrisk",
-      "imperial": "Imperial"
+      "imperial": "Imperial",
+      "appearance": "Udseende",
+      "model": "Model",
+      "background": "Baggrund",
+      "chooseModel": "Vælg en model",
+      "chooseBackground": "Vælg en baggrund",
+      "close": "Luk"
     }
   }
 }

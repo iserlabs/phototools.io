@@ -59,7 +59,13 @@
       "basic": "พื้นฐาน",
       "advanced": "ขั้นสูง",
       "metric": "เมตริก",
-      "imperial": "นิ้ว"
+      "imperial": "นิ้ว",
+      "appearance": "รูปลักษณ์",
+      "model": "โมเดล",
+      "background": "พื้นหลัง",
+      "chooseModel": "เลือกโมเดล",
+      "chooseBackground": "เลือกพื้นหลัง",
+      "close": "ปิด"
     }
   }
 }

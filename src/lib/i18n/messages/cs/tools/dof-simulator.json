@@ -59,7 +59,13 @@
       "basic": "Základní",
       "advanced": "Pokročilé",
       "metric": "Metrické",
-      "imperial": "Imperiální"
+      "imperial": "Imperiální",
+      "appearance": "Vzhled",
+      "model": "Model",
+      "background": "Pozadí",
+      "chooseModel": "Vybrat model",
+      "chooseBackground": "Vybrat pozadí",
+      "close": "Zavřít"
     }
   }
 }

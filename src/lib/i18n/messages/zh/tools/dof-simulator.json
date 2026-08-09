@@ -59,7 +59,13 @@
       "basic": "基础",
       "advanced": "高级",
       "metric": "公制",
-      "imperial": "英制"
+      "imperial": "英制",
+      "appearance": "外观",
+      "model": "模特",
+      "background": "背景",
+      "chooseModel": "选择模特",
+      "chooseBackground": "选择背景",
+      "close": "关闭"
     }
   }
 }

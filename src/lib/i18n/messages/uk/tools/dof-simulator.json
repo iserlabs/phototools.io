@@ -59,7 +59,13 @@
       "basic": "Базові",
       "advanced": "Розширені",
       "metric": "Метричні",
-      "imperial": "Імперські"
+      "imperial": "Імперські",
+      "appearance": "Зовнішній вигляд",
+      "model": "Модель",
+      "background": "Фон",
+      "chooseModel": "Вибрати модель",
+      "chooseBackground": "Вибрати фон",
+      "close": "Закрити"
     }
   }
 }

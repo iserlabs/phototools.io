@@ -3,6 +3,7 @@ import { render, fireEvent } from '@testing-library/react'
 import { NextIntlClientProvider } from 'next-intl'
 import enMessages from '@/lib/i18n/messages/en/tools/dof-simulator.json'
 import { AppearancePanel } from './AppearancePanel'
+import { AppearancePanelConnected } from './AppearancePanelConnected'
 import { InterfacePanel } from './InterfacePanel'
 import { DOF_SUBJECTS } from '@/lib/data/dofSimulator/models'
 import { DOF_BACKGROUNDS } from '@/lib/data/dofSimulator/backgrounds'
@@ -57,6 +58,24 @@ describe('AppearancePanel', () => {
     )
     fireEvent.click(getByRole('button', { name: /portrait/i }))
     expect(appearance.setOrientation).toHaveBeenCalledWith('portrait')
+  })
+})
+
+describe('AppearancePanelConnected', () => {
+  it('renders real translated labels from the en messages, not the English-literal defaults', () => {
+    const appearance = makeAppearance()
+    const { getByText, getByRole } = renderWithIntl(
+      <AppearancePanelConnected appearance={appearance} subjects={DOF_SUBJECTS} backgrounds={DOF_BACKGROUNDS} />,
+    )
+    // en happens to match the hardcoded default strings, so this only proves
+    // the wiring reaches useTranslations() successfully (it would throw before
+    // rendering anything if the keys were missing) and renders the expected
+    // translated chrome, not that translation actually occurred.
+    expect(getByText(enMessages.toolUI['dof-simulator'].appearance)).toBeInTheDocument()
+    expect(getByText(enMessages.toolUI['dof-simulator'].model)).toBeInTheDocument()
+    fireEvent.click(getByText(DOF_SUBJECTS[0].name))
+    expect(getByRole('heading', { name: enMessages.toolUI['dof-simulator'].chooseModel })).toBeInTheDocument()
+    expect(getByRole('button', { name: enMessages.toolUI['dof-simulator'].close })).toBeInTheDocument()
   })
 })
 

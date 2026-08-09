@@ -59,7 +59,13 @@
       "basic": "Perusasetukset",
       "advanced": "Lisäasetukset",
       "metric": "Metrinen",
-      "imperial": "Imperiaalinen"
+      "imperial": "Imperiaalinen",
+      "appearance": "Ulkoasu",
+      "model": "Malli",
+      "background": "Tausta",
+      "chooseModel": "Valitse malli",
+      "chooseBackground": "Valitse tausta",
+      "close": "Sulje"
     }
   }
 }

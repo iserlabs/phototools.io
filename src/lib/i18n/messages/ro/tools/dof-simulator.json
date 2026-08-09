@@ -59,7 +59,13 @@
       "basic": "De bază",
       "advanced": "Avansat",
       "metric": "Metric",
-      "imperial": "Imperial"
+      "imperial": "Imperial",
+      "appearance": "Aspect",
+      "model": "Model",
+      "background": "Fundal",
+      "chooseModel": "Alege un model",
+      "chooseBackground": "Alege un fundal",
+      "close": "Închide"
     }
   }
 }

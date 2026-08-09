@@ -59,7 +59,13 @@
       "basic": "Basic",
       "advanced": "Advanced",
       "metric": "Metric",
-      "imperial": "Imperial"
+      "imperial": "Imperial",
+      "appearance": "Appearance",
+      "model": "Model",
+      "background": "Background",
+      "chooseModel": "Pumili ng Model",
+      "chooseBackground": "Pumili ng Background",
+      "close": "Isara"
     }
   }
 }

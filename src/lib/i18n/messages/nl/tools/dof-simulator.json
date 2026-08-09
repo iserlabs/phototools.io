@@ -59,7 +59,13 @@
       "basic": "Eenvoudig",
       "advanced": "Geavanceerd",
       "metric": "Metrisch",
-      "imperial": "Imperiaal"
+      "imperial": "Imperiaal",
+      "appearance": "Uiterlijk",
+      "model": "Model",
+      "background": "Achtergrond",
+      "chooseModel": "Kies een model",
+      "chooseBackground": "Kies een achtergrond",
+      "close": "Sluiten"
     }
   }
 }

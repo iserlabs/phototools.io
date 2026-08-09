@@ -59,7 +59,13 @@
       "basic": "Alap",
       "advanced": "Haladó",
       "metric": "Metrikus",
-      "imperial": "Angolszász"
+      "imperial": "Angolszász",
+      "appearance": "Megjelenés",
+      "model": "Modell",
+      "background": "Háttér",
+      "chooseModel": "Modell kiválasztása",
+      "chooseBackground": "Háttér kiválasztása",
+      "close": "Bezárás"
     }
   }
 }

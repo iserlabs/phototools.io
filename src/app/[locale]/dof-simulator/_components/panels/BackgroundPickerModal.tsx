@@ -3,11 +3,13 @@
 import { useRef, useEffect } from 'react'
 import Image from 'next/image'
 import type { DofBackground } from '@/lib/data/dofSimulator/types'
+import type { PickerLabels } from './ModelPickerModal'
 import styles from './panels.module.css'
 
-// See ModelPickerModal.tsx — same constraint: no useTranslations here, this
-// component is mounted by Task 19's fixed, non-editable test with no
-// NextIntlClientProvider. Text is hardcoded English; see task-19-report.md.
+// See ModelPickerModal.tsx — same `labels` prop pattern, defaulted to the
+// English literals so it stays mountable (via AppearancePanel) inside
+// appearance.test.tsx's fixed render with no NextIntlClientProvider.
+const DEFAULT_LABELS: PickerLabels = { title: 'Choose a Background', close: 'Close' }
 
 interface BackgroundPickerModalProps {
   open: boolean
@@ -15,9 +17,10 @@ interface BackgroundPickerModalProps {
   activeId: string
   onSelect(id: string): void
   onClose(): void
+  labels?: PickerLabels
 }
 
-export function BackgroundPickerModal({ open, backgrounds, activeId, onSelect, onClose }: BackgroundPickerModalProps) {
+export function BackgroundPickerModal({ open, backgrounds, activeId, onSelect, onClose, labels = DEFAULT_LABELS }: BackgroundPickerModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
@@ -39,8 +42,8 @@ export function BackgroundPickerModal({ open, backgrounds, activeId, onSelect, o
       {open && (
         <>
           <div className={styles.dialogHeader}>
-            <h2 id="dof-background-picker-title" className={styles.dialogTitle}>Choose a Background</h2>
-            <button type="button" className={styles.dialogClose} onClick={onClose} aria-label="Close">
+            <h2 id="dof-background-picker-title" className={styles.dialogTitle}>{labels.title}</h2>
+            <button type="button" className={styles.dialogClose} onClick={onClose} aria-label={labels.close}>
               &times;
             </button>
           </div>

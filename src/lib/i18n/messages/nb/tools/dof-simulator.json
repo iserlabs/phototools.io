@@ -59,7 +59,13 @@
       "basic": "Grunnleggende",
       "advanced": "Avansert",
       "metric": "Metrisk",
-      "imperial": "Imperial"
+      "imperial": "Imperial",
+      "appearance": "Utseende",
+      "model": "Modell",
+      "background": "Bakgrunn",
+      "chooseModel": "Velg en modell",
+      "chooseBackground": "Velg en bakgrunn",
+      "close": "Lukk"
     }
   }
 }
