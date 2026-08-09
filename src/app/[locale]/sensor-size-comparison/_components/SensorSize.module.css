@@ -233,6 +233,93 @@
   color: var(--accent);
 }
 
+/* ── Collapsible sensor groups ── */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 6px 8px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.groupHeader:hover {
+  background: var(--bg-surface);
+}
+
+.groupChevron {
+  display: inline-flex;
+  color: var(--text-secondary);
+  font-size: 10px;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.groupChevron[data-open='true'] {
+  transform: rotate(90deg);
+}
+
+.groupName {
+  flex: 1;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.groupCount {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+/* ── Quick-compare presets ── */
+.presetRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.presetBtn {
+  padding: 5px 10px;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out);
+}
+
+.presetBtn:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.presetBtnActive,
+.presetBtnActive:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+
 /* ── Mobile ── */
 @media (max-width: 1023px) {
   .app {
@@ -277,6 +364,14 @@
 
   .checkLabel {
     padding: 6px 8px;
+  }
+
+  .groupHeader {
+    min-height: 44px;
+  }
+
+  .presetBtn {
+    min-height: 44px;
   }
 
   .resolutionField input {

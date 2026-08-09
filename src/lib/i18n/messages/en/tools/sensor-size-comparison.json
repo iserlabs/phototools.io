@@ -6,6 +6,23 @@
       "modeSideBySide": "Side by Side",
       "modePixelDensity": "Pixel Density",
       "pixelDensityDescription": "Showing common megapixel counts for each sensor. Larger pixels (bigger cells) capture more light.",
+      "quickCompare": "Quick Compare",
+      "presetReplacesNote": "Replaces the current selection",
+      "presets": {
+        "phone_vs_ff": "Phone vs Full Frame",
+        "crop_vs_ff": "Crop vs Full Frame",
+        "film_vs_digital": "Film vs Digital",
+        "mf_family": "Medium Format Family",
+        "cine_vs_stills": "Cine vs Stills"
+      },
+      "groups": {
+        "medium-format": "Medium Format",
+        "ff-aps": "Full Frame & APS",
+        "compact": "Compact & 1\"",
+        "phone": "Smartphone",
+        "film": "Film",
+        "cine": "Cinema"
+      },
       "sensors": "Sensors",
       "customSensors": "Custom Sensors",
       "placeholderName": "Name",

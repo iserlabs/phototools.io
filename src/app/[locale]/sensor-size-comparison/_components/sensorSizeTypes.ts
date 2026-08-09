@@ -42,4 +42,9 @@ export type ControlsPanelProps = {
   onRemoveCustom: (id: string) => void
   onRemoveAllCustom: () => void
   onEditCustom: (id: string, name: string, w: number, h: number, mp: number) => void
+  // Optional here (not yet supplied by SensorSize.tsx) so the grouped picker
+  // added in Task 6 stays green through type-check; SensorSize.tsx wires
+  // real handlers through in Task 7, at which point these can be required.
+  onHoverSensor?: (id: string | null) => void
+  onApplyPreset?: (sensorIds: string[]) => void
 }
