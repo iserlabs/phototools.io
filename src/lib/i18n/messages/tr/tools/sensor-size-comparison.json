@@ -6,6 +6,24 @@
       "modeSideBySide": "Yan Yana",
       "modePixelDensity": "Piksel Yoğunluğu",
       "pixelDensityDescription": "Her sensör için yaygın megapiksel sayılarını gösteriyor. Daha büyük pikseller (büyük hücreler) daha fazla ışık yakalar.",
+      "filmPixelDensityNote": "Film ve Super 16'nın tanımlı bir piksel sayısı yoktur, bu yüzden bu modda gizlenirler — bunun yerine Kaplama veya Yan Yana modunda görüntüleyin.",
+      "quickCompare": "Hızlı Karşılaştırma",
+      "presetReplacesNote": "Mevcut seçimin yerini alır",
+      "presets": {
+        "phone_vs_ff": "Telefon vs Tam Kare",
+        "crop_vs_ff": "Kırpma vs Tam Kare",
+        "film_vs_digital": "Film vs Dijital",
+        "mf_family": "Orta Format Ailesi",
+        "cine_vs_stills": "Sinema vs Fotoğraf"
+      },
+      "groups": {
+        "medium-format": "Orta Format",
+        "ff-aps": "Tam Kare ve APS",
+        "compact": "Kompakt ve 1\"",
+        "phone": "Akıllı Telefon",
+        "film": "Film",
+        "cine": "Sinema"
+      },
       "sensors": "Sensörler",
       "customSensors": "Özel Sensörler",
       "placeholderName": "Ad",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Kırpma Faktörü",
       "tableAspectCrop": "Oran Kırpması",
       "canvasAriaLabel": "{mode} modunda sensör boyutu karşılaştırması",
+      "detail": {
+        "diagonal": "Köşegen",
+        "area": "Alan",
+        "aspect": "En-Boy",
+        "vsFullFrame": "vs Tam Kare",
+        "referenceSensor": "Referans sensör (tam kare)",
+        "equivalence": "Buradaki {focal}mm f/{ap} lens, tam karede yaklaşık ~{eqFocal}mm ve f/{eqAp} alan derinliğine sahip bir lens gibi kadrajlar.",
+        "resolutions": "Yaygın çözünürlükler",
+        "cameras": "Popüler kameralar",
+        "character": "Özellikler",
+        "context": "Bağlam",
+        "customNoProfile": "Özel sensör — yalnızca hesaplanmış veriler."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Kırpma faktörü nedir ve neden önemlidir?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Sensör boyutu alan derinliğini nasıl etkiler?",
           "answer": "Büyük sensörler, eşdeğer kadrajda daha sığ alan derinliği üretir. Daha küçük bir sensörle aynı kadrajı elde etmek için daha kısa odak uzaklığı (daha derin alan derinliği) veya daha uzak mesafe (daha derin alan derinliği) kullanırsınız; her ikisi de arka plan bulanıklığını azaltır."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Film kare boyutları modern dijital sensörlerle nasıl karşılaştırılır?",
+          "answer": "Standart 35mm film, boyut olarak tam kare bir dijital sensörle (36×24mm) birebir aynıdır, bu yüzden film dönemi lensleri onu kırpmadan kaplar. Orta format film çok daha büyüktür — 645 negatif 56×41.5mm, 6×7 ise 70×56mm ölçülerindedir; ikisi de herhangi bir tam kare dijital sensörün alanının çok ötesindedir — yarım kare film ise standart bir 35mm kareyi ikiye bölerek büyük bir APS-C sensörünün alanına yakın bir sonuç verir."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Super 35 ve ALEXA 65, fotoğraf sensörleri açısından neye karşılık gelir?",
+          "answer": "Super 35 (24.9×14.0mm, 1.51x kırpma) neredeyse tam olarak APS-C boyutuna denk gelir; bu yüzden S35 sinema lensleri ile APS-C fotoğraf lensleri benzer görüntü dairelerini kaplar. ALEXA 65'in 54.12×25.58mm sensörü çok daha büyüktür — tam kareden çok, 44×33mm'lik orta format fotoğraf sensörüne yakındır, bu yüzden kendine özgü, ayrı bir büyük format lens serisine ihtiyaç duyar."
+        },
+        "why-inch-fractions": {
+          "question": "Küçük sensörler neden 1/2.3\" gibi inç kesirleriyle adlandırılır?",
+          "answer": "Bu kesirler sensörün kendisini değil, 1950'lerin video kamera tüplerinin dış çapını tanımlar — \"1 inç\"lik bir tüp, o çapın yaklaşık üçte ikisi kadar kullanılabilir görüntü alanı üretirdi. Katı hal sensörler tüplerin yerini aldığında, üreticiler tüp döneminden kalma adlandırma geleneğini korudu; oysa günümüzün \"1 inç\" sensörünün gerçek köşegeni yaklaşık 15.86mm'dir, gerçek bir inçten hayli uzaktır."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "53.4×40mm ile bu, çoğu profesyonel fotoğrafçının hayatında dokunacağı en büyük sensördür. Stüdyo, ürün ve manzara fotoğrafçıları onu hız için değil, çözünürlük ve tonal aralık için tethered (kabloyla bilgisayara bağlı) çalıştırır — otomatik odaklama ve seri çekim hızı tam kareden büyük farkla geride kalır. Bir Phase One IQ4 arkalığından gelen 150 megapiksellik bir dosya, hem depolamanızı hem bilgisayarınızı zorlayacaktır.",
+          "context": "Bu sensör sınıfının soyağacındaki \"645\" ismi 6×4.5cm rulo film arkalıklarına dayanır, ama bunu listenin başka bir yerindeki 645 film ön ayarıyla karıştırmayın. 53.4×40mm ile Phase One ve Hasselblad'ın dijital 645 serisi sensörleri, aynı adı taşımalarına rağmen, türedikleri 56×41.5mm'lik film karesinden aslında daha küçüktür."
+        },
+        "mf": {
+          "character": "Bu boyut sınıfı, orta formatı stüdyo dışında da pratik hale getirdi. Fujifilm'in GFX'i ve Hasselblad'ın X serisi, elde taşınabilecek ve yürüyüşe çıkarılabilecek kadar küçük olan 43.8×32.9mm'lik bir sensör etrafında inşa edilir; 50 ile 100 megapiksel arasında çalışır ve otomatik odaklama aynasız makinelerle arasındaki farkın çoğunu kapatmıştır. Yerel lensler tam kare eşdeğerlerinden hâlâ daha büyük ve pahalıdır, kayan deklanşör okuması ise hızlı aksiyonu sınırlar.",
+          "context": "Fujifilm ve Hasselblad burada doğrudan rekabet eder, ama sensör donanımı üzerinden değil — GFX 100 II ve X2D 100C, Sony tarafından üretilen aynı 44×33mm çipi kullanır. Sistemleri birbirinden ayıran şey gövde tasarımı, lens render'ı ve menü felsefesidir, altındaki silikon değil."
+        },
+        "mf_leica": {
+          "character": "Leica'nın S sistemi, 45×30mm'lik bir sensörü stüdyo view kamerası yerine büyütülmüş bir 35mm SLR'ye benzeyen bir gövdeye yerleştirir ki asıl fikir de budur — röportaj ve mekân portresi için elde taşınabilir orta format. 64 megapiksellik S3, GFX ve Hasselblad rakiplerine karşı biraz çözünürlük payından fedakârlık ederek, tek lens mount'lu, aralarından seçim yapılacak daha az gövdeye sahip daha basit bir sistem sunar.",
+          "context": "2009'da piyasaya sürülen Leica S2, tripod'a bağlı stüdyo çalışması yerine açık havada elde taşınarak kullanılmak üzere tasarlanmış ilk orta format kamera olarak açıkça pazarlandı. S3, 2020'de doğrudan halefi olarak geldi; Leica, S3'ü 2023'te üretimden kaldırdı ve henüz bir S4 piyasaya sürülmedi, bu da serinin geleceğini belirsiz bırakıyor."
+        },
+        "ff": {
+          "character": "Buradaki her şeyin referans noktası. Tam kare; ışık toplama alanı, alan derinliği kontrolü ve lens boyutu arasında denge kurar — modern lens serilerinin çoğu onun etrafında tasarlanır. APS-C'ye kıyasla gövde ve lens hacmi için bedel ödersiniz, ama karşılığında aynı kadrajda yaklaşık bir stop'luk düşük ışık payı ve daha sığ odaklama kazanırsınız.",
+          "context": "36×24 mm kare, 1920'lerde Leica tarafından yan çevrilmiş sinema film stoğundan standartlaştırılan 35mm fotoğraf filminden doğrudan miras kalmıştır. Tam kare dijital sensör, boyut olarak 35mm film karesiyle birebir aynıdır — film dönemi lenslerin üzerine kırpmadan oturmasının nedeni de budur."
+        },
+        "apsh": {
+          "character": "Canon'un çözünürlük yerine hızı önceleyerek ürettiği geçici bir boyut — daha büyük pikseller ve daha hızlı okuma, görüntü kalitesinden çok spor ve foto muhabirliğine yönelik bir gövdede. 1.29x kırpma, tam karenin erişim dezavantajı ile APS-C'nin düşük ışık cezası arasındaki farkı, başka hiçbir üreticinin asla benimsemediği bir sensör pahasına ortadan kaldırdı.",
+          "context": "APS-H yalnızca Canon'a özgü bir formattı ve yalnızca EOS-1D serisinde kullanıldı — 1D, 1D Mark II, Mark II N, Mark III ve son olarak 2009'daki Mark IV; bunun ardından Canon bu boyutu tamamen terk ederek 1 serisini tam kareye geri döndürdü. Canon'un kendisi dışında hiçbir lens veya aksesuar ekosistemi onu hiçbir zaman hedeflemedi."
+        },
+        "apsc_n": {
+          "character": "Sony, Nikon ve Fujifilm için varsayılan meraklı ve orta segment aynasız boyutu; 50mm bir lensi yaklaşık 75mm eşdeğerine dönüştüren 1.53x kırpma oranına sahiptir. Gövdeler ve lensler tam kareden belirgin şekilde daha küçük ve daha ucuzdur, uzun lenslerle çalışan yaban hayatı ve spor fotoğrafçıları için ekstra erişim gerçek bir avantajdır.",
+          "context": "APS-C adı, 1996'nın tüketici Advanced Photo System filminden, özellikle onun \"Classic\" 3:2 baskı formatından ödünç alınmıştır — ama dijital sensör, APS filmiyle aynı fiziksel boyutta değildir, sadece uzaktan bir adaştır. Fujifilm, tüm X sistemini giriş seviyesi bir katman olarak değil, bu sensör boyutu etrafında inşa etmiştir."
+        },
+        "apsc_c": {
+          "character": "Canon'un kendi APS-C standardı, 22.3×14.8mm ile — çoğu rakibin kullandığı 23.5×15.6mm boyutundan daha küçük, bu yüzden Canon'un kırpma oranı 1.5x yerine 1.62x olarak okunur. Pratikte bu, her lens için biraz daha fazla telefoto erişimi anlamına gelir; bedeli ise daha büyük APS-C varyantına kıyasla gürültü ve dinamik aralıkta küçük bir kayıptır.",
+          "context": "Canon, formatın en erken dijital SLR'lerinden bu yana kendi APS-C sensör boyutlarını kullanmış, neredeyse herkesin üzerinde uzlaştığı 1.5x kırpmaya hiçbir zaman yakınsamamıştır. R7 ve R10, bu boyutu bugün Canon'un aynasız RF mount'una taşımaya devam ediyor."
+        },
+        "m43": {
+          "character": "Gerçek anlamda küçük, gerçek anlamda eksiksiz bir sistem — 2x kırpma her lensin fiziksel olarak kompakt olması demektir ve 17.3×13mm sensör, tam kare kadar sığ olmasa da hızlı, keskin optikleri ve gerçek konu ayrışmasını hâlâ destekler. Düşük ışık ve dinamik aralık daha büyük sensörlerin gerisinde kalır; bu da boyut ve ağırlıktan tasarrufun dürüst bedelidir.",
+          "context": "Mikro Dört Üçlü, tescilli bir format değil, açık bir standarttır — Olympus ve Panasonic bunu 2008'de birlikte duyurdu ve herhangi bir üretici aynı lens mount ve sensör özelliklerine göre üretim yapabilir. OM System (eski adıyla Olympus) ve Panasonic, bugün hâlâ bu standart üzerinde üretim yapan iki aktif kamera üreticisidir."
+        },
+        "1in": {
+          "character": "Cepte taşınabilir kalırken akıllı telefon sensörlerine göre anlamlı bir sıçrama — RX100 serisi, 13.2×8.8mm'lik bir sensörün, gerçekten yanınızda taşıyacağınız bir kompaktta gerçek görüntü kalitesi üretebileceğini kanıtladı. f/1.8'de bile arka plan bulanıklığı sınırlı kalır ve düşük ışıkta özen gerekir, ama seyahat için boyut-kalite oranını yenmek zordur.",
+          "context": "\"1 inç\" etiketi, 1950'lerin video kamera tüplerinden kalma bir isim olup gerçek bir ölçüm değildir — dış çapı 1 inç olan bir tüp, o çapın yaklaşık üçte ikisi kadar, yani yaklaşık 16mm köşegenli, kullanılabilir bir görüntü alanı üretirdi. CCD ve CMOS sensörler tüplerin yerini aldığında, kamera üreticileri, günümüz sensörlerinin içinde hiç tüp olmamasına rağmen tüp dönemi adlandırmasını korudu."
+        },
+        "phone": {
+          "character": "Modern amiral gemisi telefonlar, sensöre dayalı kameralarla arasındaki farkı boyutla değil hesaplamayla kapatır — 9.8×7.3mm'lik bir çip, 1 inçlik bir sensörün ham ışık toplama gücüne yetişemez, bu yüzden ağır işi çoklu kare istifleme, yapay zekâ gürültü giderme ve sentetik bokeh üstlenir. Sonuç telefon ekranında mükemmel görünür ve düşük ışıkta tam çözünürlükte sınırlarını göstermeye başlar.",
+          "context": "Buradaki \"amiral gemisi\" tek bir kesin çip yerine markalar ve yıllar arasında benzer ama tam olarak aynı olmayan boyutta birkaç gerçek sensörü kapsar — iPhone 17 Pro'nun ana kamerası yaklaşık 1/1.28 inç ölçülürken, Samsung'un amiral gemisi serisi 1/1.3 inçe daha yakındır ve ikisi de bu ön ayarın temsili 9.8×7.3mm rakamına yuvarlanır."
+        },
+        "1_1_7in": {
+          "character": "7.6×5.7mm'lik sensör, 2000'lerin sonundaki meraklı kompaktı tanımladı — Canon S120 ve Panasonic LX7 gibi kameralar bunu, az sayıda kompaktın eşleşebildiği hızlı bir lensle birleştirerek, ceket cebinde manuel kontrol isteyen fotoğrafçıları hedef aldı. Akıllı telefonlar bu pazarın çoğunu emdi, ama formatın boyut ve kontrol arasındaki dengesi hâlâ geçerliliğini koruyor.",
+          "context": "Sensör alanı açısından bu format, 1 inçlik kompaktların bir basamak altında ve Mikro Dört Üçlü'nün iki basamak altında yer alır; aynı döneme ait tipik point-and-shoot'lardan daha hızlı diyaframlara sahip cepte taşınabilir kameralar için bir niş oluşturur. Günümüzde çok az kamera onu kullanıyor — artık büyük ölçüde ikinci el piyasası ve koleksiyoncu boyutu."
+        },
+        "1_2_3in": {
+          "character": "Drone'lar ve aksiyon kameraları bu boyut etrafında inşa edilir, çünkü anlamlı bir ağırlık eklemeden uçurulacak veya monte edilecek kadar küçük ve hafiftir — bedeli, bu listedeki daha büyük herhangi bir sensöre kıyasla gürültülü yüksek ISO görüntüsü ve sınırlı dinamik aralıktır. DJI ve çoğu aksiyon kamerası üreticisi temel ürün gamlarını burada konumlandırır.",
+          "context": "6.17×4.55mm olarak listelenen bu değer, tam 4:3 orana indirgenmese de üretici teknik tablolarında baskın gerçek dünya kuralıdır — bazı kaynaklarda 6.17×4.63mm'de matematiksel olarak \"gerçek\" bir 4:3 versiyonu bulunsa da, satılan drone veya aksiyon kamerası sensörlerinin neredeyse hiçbiri bu değeri gerçekten belirtmez."
+        },
+        "phone_mid": {
+          "character": "Orta seviye telefonlar, amiral gemisi kardeşlerinin boyutunun oldukça altında sensörler taşır ve bu, iyi aydınlatılmış gündüz çekimlerinin ötesine geçildiğinde en çok düşük ışıkta ve dinamik aralıkta kendini gösterir. Üreticiler bunu telafi etmek için hesaplamalı işlemeye daha da fazla yaslanır; bu da iyi koşullarda görünür farkı daraltır ama karanlıkta tamamen kapatamaz.",
+          "context": "Bu, herhangi bir üreticinin kesin çipi değil, temsili bir boyuttur — Samsung'un ISOCELL GM5 gibi parçalar da dahil gerçek orta segment ana sensörler bu 5.6×4.2mm rakamı etrafında kümelenir, ama tek bir teknik tablo buna tam olarak uymaz, çünkü \"orta segment\" markalar ve yıllar arasında birçok gerçek sensörü kapsar."
+        },
+        "phone_uw": {
+          "character": "Telefonların ultra geniş açı lensleri, tipik bir telefon kamera dizisindeki en küçük, en tavizli sensörü taşır — piksel başına kaliteden çok daha geniş görüş alanının önemli olduğu mimari ve manzara çekimleri için kullanışlıdır, ama aynı karede ana kameraya kıyasla belirgin şekilde daha yumuşak ve gürültülüdür.",
+          "context": "Buradaki diğer telefon katmanları gibi, bu 4.0×3.0mm rakamı belirli bir çipi değil, markalar arasında benzer boyuttaki bir ultra geniş açı modül sınıfını temsil eder. Ultra geniş açı kameralar, 2010'ların ortasında telefon kamera dizilerine eklendi ve çoğu çoklu kamera sisteminde en zayıf halka olmaya devam ediyor."
+        },
+        "film_half": {
+          "character": "Yarım kare çekim yapmak, normalde bir karenin kapladığı alana iki kareyi sığdırarak rulo başına çekim sayısını ikiye katlamak demektir — film maliyeti açısından cazip, ama bedeli, negatif alanının yarısıyla çalıştığınız için standart 35mm tam kareye kıyasla büyütmede daha taneli, daha yumuşak bir sonuçtur.",
+          "context": "Standart bir 35mm karenin yarısı — formatın kareleri doğal olarak dikeydir (18×24), çünkü yatay film karesini ikiye böler. 1959'da Olympus Pen tarafından rulo başına çekim sayısını ikiye katlamak için popülerleştirildi ve 2024'te Pentax 17 tarafından yeniden canlandırıldı."
+        },
+        "film_645": {
+          "character": "645 filme geçmek, 35mm'den belirgin şekilde daha fazla detay ve tonal aralığa sahip 56×41.5mm'lik bir negatif anlamına gelirken, yine de bir 120 film rulosuna 15 veya 16 kare sığdırır. Mamiya 645 gibi gövdeler, yalnızca stüdyoya özel bir düzenek yerine neredeyse büyütülmüş bir SLR gibi kullanılır.",
+          "context": "Listenin başka bir yerindeki dijital \"645\" soyundan orta format sensörlerle karıştırılmamalıdır — bu, ismin geldiği gerçek 6×4.5cm rulo film karesidir ve Pentax 645NII ile Contax 645 gibi gövdelerde 120 veya 220 film üzerine çekilir."
+        },
+        "film_6x6": {
+          "character": "Kare kadraj bir kararı ortadan kaldırır — dikey ile yatay arasında kamerayı çevirmeye gerek yoktur — bu da onun bel hizasından bakılan çift lensli kameralara neden bu kadar uygun düştüğünün bir parçasıdır. Bedeli baskı aşamasında ortaya çıkar: çoğu kağıt ve ekran formatı kare değildir, bu yüzden er ya da geç bir şekilde kırpma yapmak zorunda kalırsınız.",
+          "context": "Hasselblad'ın 500 serisi ve Rolleiflex'in çift lensli reflekslerinin popülerleştirdiği klasik kare format kamera. Değiştirilmiş bir Hasselblad 500EL, NASA'nın 1962 ve 1963'teki Mercury görevlerinde daha önce kullanılan Hasselblad 500C'lerin ardından, bu formatı Apollo 11 ile Ay yüzeyine taşıdı."
+        },
+        "film_6x7": {
+          "character": "35mm veya yarım kareden daha ağır, daha yavaş bir sistem — Mamiya RB67'nin körük odaklaması ve döner arkalığı, elde tutarak anlık çekim yerine kasıtlı, tripoda uygun bir temposu ödüllendirir. Karşılığında, tam karenin dört katından fazla alana sahip, buna karşılık daha ince taneli ve daha yumuşak tonal geçişli bir negatif elde edersiniz.",
+          "context": "1960'lar ve 70'lerde \"ideal format\" lakabıyla anıldı, çünkü 5:4 oranları minimum israfla 8×10 ve diğer standart baskı boyutlarına temiz bir şekilde kırpılır. Mamiya RB67, adını doğrudan imza özelliğinden alır — döner bir arkalık, dolayısıyla \"RB\" — bu da tüm kamerayı çevirmeden yönü değiştirmenizi sağlar."
+        },
+        "film_4x5": {
+          "character": "Düz film, ne yakaladığınız kadar nasıl çalıştığınızı da değiştirir — holder başına bir pozlama, baş aşağı ve ters çevrilmiş buzlu cam görüntüsü ve buradaki hiçbir dijital sensörün dikişleme veya shift lens olmadan eşleyemeyeceği şekillerde perspektifi düzeltmenize ve odağı kontrol etmenize olanak tanıyan hareketler (rise, shift, tilt).",
+          "context": "20. yüzyılın ortalarına foto muhabirliğini taşıyan format — Joe Rosenthal, Iwo Jima'daki bayrak dikme anını 4×5 düz filmle yüklü bir Graflex Speed Graphic ile çekti. Büyük format film, katlanabilir Intrepid 4×5 gibi gövdelerde, çoğunlukla manzara ve ince sanat çalışmaları için bugün hâlâ var olmaya devam ediyor."
+        },
+        "cine_s16": {
+          "character": "Bir çalışma formatı uzlaşması — Super 16, 35mm filmin maliyetinin ve kamera hacminin bir kesri içinde standart 16mm'den anlamlı ölçüde daha iyi görüntü kalitesi sıkıştırır; belgesel, bağımsız ve yayın yapımlarının onyıllardır ona yaslanmasının nedeni de budur. Bu araçta sabit bir dijital piksel sayısı yoktur, çünkü bir sensör değil, bir film ölçüsüdür.",
+          "context": "1969'da İsveçli sinematograf Rune Ericson tarafından icat edilen Super 16, normalde optik ses parçası için ayrılan film şeridini geri kazanarak standart 16mm'nin kullanılabilir karesini genişletir — ham boyutlarla yaklaşık 1.69:1 olan sıradan 16mm'nin daha dar karesine karşı 12.52×7.41mm'lik bir görüntü alanı. Yapımlar geleneksel olarak formatın gerçek oranı yerine 35mm'ye 1.66:1 büyütme için kadraj yaptı."
+        },
+        "cine_s35": {
+          "character": "Profesyonel sinema yapımı, başka herhangi bir sensör boyutundan çok bu boyuta dayanır — ARRI ALEXA 35 ve RED Komodo gibi kameralar onun etrafında inşa edilir, çünkü sığ odak kontrolü, lens seçimi ve yönetilebilir dosya boyutları arasında hem daha küçük yayın formatlarından hem de daha büyük büyük format sinema sensörlerinden daha iyi bir denge kurar.",
+          "context": "Super 35, 4 perforasyonlu 35mm sinema filminin tam karesine dayanır — esasen ses parçaları kareyi işgal etmeden önce sessiz sinema dönemi kameralarının kullandığı aynı alan; 1980'lerde yalnızca kameraya özgü bir format olarak yeniden canlandırıldı. Buradaki 24.9×14.0mm rakamı, ARRI'nin kendi kameralarının belirttiği 16:9 aktif görüntü alanı kırpmasıdır, daha büyük open-gate kare değil."
+        },
+        "cine_vv": {
+          "character": "RED'in VV sensörü, tam kareye yakın bir boyutta büyük format sinema için tasarlanmıştır ve aynı odak uzaklığında Super 35'ten daha sığ alan derinliği ile daha geniş dinamik aralık sunar — bedeli, daha büyük görüntü dairesini kaplamak üzere tasarlanmış daha ağır, daha pahalı optiklerdir.",
+          "context": "\"VV\", RED'in Paramount'un 1950'lerdeki büyük kareli 35mm sürecinden ödünç aldığı bir isim olan VistaVision'ın kısaltmasıdır; bu süreç kendisi de döneminin geniş ekran sinema formatlarıyla rekabet etmek üzere tasarlanmıştı. V-RAPTOR'ın 40.96×21.6mm'lik sensörü, o onlarca yıllık film formatıyla yalnızca ismi ve kabaca boyut sınıfını paylaşır, spesifik ölçülerini değil."
+        },
+        "cine_a65": {
+          "character": "ARRI, ALEXA 65'i en büyük ölçekli sinema yapımları için inşa etti — V-RAPTOR VV gibi VistaVision sınıfı dijital sinema kameralarını bile cüceleştiren 54.12×25.58mm'lik bir sensör. Gövdeler, ARRI'nin özel programı aracılığıyla sahiplenilmek yerine kiralanır ve format, blockbuster bütçeleri dışındaki çok az yapımın gerekçelendirebileceği büyük format optikler gerektirir.",
+          "context": "2.12:1 en-boy oranıyla ALEXA 65'in 20.3 megapiksellik sensörü, bu listedeki başka herhangi bir sinema kamerasından çok, orta format fotoğraf makinelerine boyut olarak daha yakındır. ARRI'nin hâlâ en büyük sensörlü kamerasıdır, ALEXA LF'nin üzerinde konumlandırılmıştır ve doğrudan satış yerine yalnızca kiralama programına ayrılmıştır."
         }
       }
     }
