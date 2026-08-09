@@ -79,6 +79,16 @@ describe('cropFactorForModel', () => {
     expect(cropFactorForModel('Hasselblad X2D')).toBeGreaterThan(0.7) // mf
     expect(cropFactorForModel('Hasselblad X2D')).toBeLessThan(0.9)
     expect(cropFactorForModel('Panasonic GH6')).toBeCloseTo(2.0, 1) // m43
+
+    // 'Canon R5' -> 'Canon R5 Mark II' and 'OM System OM-1' ->
+    // 'OM System OM-1 Mark II' were dropped from POPULAR_MODELS by this
+    // branch's currency refresh (sensors.ts). Both still resolve correctly
+    // via the name-based heuristic below (bare "canon" falls through to the
+    // full-frame default; "om system" matches the M43 branch), so nothing is
+    // broken today — but pin it with assertions rather than relying on
+    // exact-match coverage that no longer exists.
+    expect(cropFactorForModel('Canon R5')).toBeCloseTo(1.0, 2) // heuristic: bare "canon" -> full-frame
+    expect(cropFactorForModel('OM System OM-1')).toBeCloseTo(2.0, 1) // heuristic: "om system" -> m43
   })
 })
 
