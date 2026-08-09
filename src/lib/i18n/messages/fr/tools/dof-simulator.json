@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Les formes de bokeh nécessitent WebGL — affichage d'un flou simplifié.",
       "dividerLabel": "Séparateur de comparaison A/B",
       "sweepPlay": "Lancer le balayage d'ouverture",
-      "sweepStop": "Arrêter le balayage d'ouverture"
+      "sweepStop": "Arrêter le balayage d'ouverture",
+      "basic": "Simple",
+      "advanced": "Avancé",
+      "metric": "Métrique",
+      "imperial": "Impérial"
     }
   }
 }

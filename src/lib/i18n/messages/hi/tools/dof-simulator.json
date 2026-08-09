@@ -55,7 +55,11 @@
       "webglFallbackNotice": "बोके आकारों के लिए WebGL आवश्यक है — एक सरल ब्लर दिखाया जा रहा है।",
       "dividerLabel": "A/B तुलना विभाजक",
       "sweepPlay": "अपर्चर स्वीप चलाएँ",
-      "sweepStop": "अपर्चर स्वीप रोकें"
+      "sweepStop": "अपर्चर स्वीप रोकें",
+      "basic": "बेसिक",
+      "advanced": "एडवांस्ड",
+      "metric": "मीट्रिक",
+      "imperial": "इम्पीरियल"
     }
   }
 }

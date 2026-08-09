@@ -55,7 +55,11 @@
       "webglFallbackNotice": "ボケの形状にはWebGLが必要です — 簡易的なぼかしを表示しています。",
       "dividerLabel": "A/B比較の仕切り",
       "sweepPlay": "絞りスイープを再生",
-      "sweepStop": "絞りスイープを停止"
+      "sweepStop": "絞りスイープを停止",
+      "basic": "基本",
+      "advanced": "詳細設定",
+      "metric": "メトリック",
+      "imperial": "インペリアル"
     }
   }
 }

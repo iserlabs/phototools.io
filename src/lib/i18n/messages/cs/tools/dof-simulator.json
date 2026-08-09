@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Tvary bokeh vyžadují WebGL — zobrazuje se zjednodušené rozostření.",
       "dividerLabel": "Dělič porovnání A/B",
       "sweepPlay": "Přehrát průběh clony",
-      "sweepStop": "Zastavit průběh clony"
+      "sweepStop": "Zastavit průběh clony",
+      "basic": "Základní",
+      "advanced": "Pokročilé",
+      "metric": "Metrické",
+      "imperial": "Imperiální"
     }
   }
 }

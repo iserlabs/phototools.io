@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Kształty bokeh wymagają WebGL — wyświetlane jest uproszczone rozmycie.",
       "dividerLabel": "Rozdzielacz porównania A/B",
       "sweepPlay": "Odtwórz przemiatanie przysłony",
-      "sweepStop": "Zatrzymaj przemiatanie przysłony"
+      "sweepStop": "Zatrzymaj przemiatanie przysłony",
+      "basic": "Podstawowe",
+      "advanced": "Zaawansowane",
+      "metric": "Metryczne",
+      "imperial": "Calowe"
     }
   }
 }

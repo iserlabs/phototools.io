@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Formele bokeh necesită WebGL — se afișează o neclaritate simplificată.",
       "dividerLabel": "Separator comparație A/B",
       "sweepPlay": "Redă baleiajul diafragmei",
-      "sweepStop": "Oprește baleiajul diafragmei"
+      "sweepStop": "Oprește baleiajul diafragmei",
+      "basic": "De bază",
+      "advanced": "Avansat",
+      "metric": "Metric",
+      "imperial": "Imperial"
     }
   }
 }

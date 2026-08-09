@@ -55,7 +55,11 @@
       "webglFallbackNotice": "보케 모양에는 WebGL이 필요합니다 — 단순화된 블러를 표시합니다.",
       "dividerLabel": "A/B 비교 구분선",
       "sweepPlay": "조리개 스윕 재생",
-      "sweepStop": "조리개 스윕 정지"
+      "sweepStop": "조리개 스윕 정지",
+      "basic": "기본",
+      "advanced": "고급",
+      "metric": "미터법",
+      "imperial": "인치법"
     }
   }
 }

@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Bokeh şekilleri için WebGL gereklidir — basitleştirilmiş bir bulanıklık gösteriliyor.",
       "dividerLabel": "A/B karşılaştırma ayırıcısı",
       "sweepPlay": "Diyafram taramasını oynat",
-      "sweepStop": "Diyafram taramasını durdur"
+      "sweepStop": "Diyafram taramasını durdur",
+      "basic": "Temel",
+      "advanced": "Gelişmiş",
+      "metric": "Metrik",
+      "imperial": "İnç"
     }
   }
 }

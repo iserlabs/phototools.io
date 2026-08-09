@@ -55,7 +55,11 @@
       "webglFallbackNotice": "A bokeh alakzatokhoz WebGL szükséges — egyszerűsített elmosás jelenik meg.",
       "dividerLabel": "A/B összehasonlító elválasztó",
       "sweepPlay": "Rekesz-végigfuttatás lejátszása",
-      "sweepStop": "Rekesz-végigfuttatás leállítása"
+      "sweepStop": "Rekesz-végigfuttatás leállítása",
+      "basic": "Alap",
+      "advanced": "Haladó",
+      "metric": "Metrikus",
+      "imperial": "Angolszász"
     }
   }
 }

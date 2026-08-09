@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Bokehformer krever WebGL — en forenklet uskarphet vises.",
       "dividerLabel": "A/B-sammenligningsdeler",
       "sweepPlay": "Spill av blenderfeiing",
-      "sweepStop": "Stopp blenderfeiing"
+      "sweepStop": "Stopp blenderfeiing",
+      "basic": "Grunnleggende",
+      "advanced": "Avansert",
+      "metric": "Metrisk",
+      "imperial": "Imperial"
     }
   }
 }

@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Les formes de bokeh necessiten WebGL — es mostra un desenfocament simplificat.",
       "dividerLabel": "Divisor de comparació A/B",
       "sweepPlay": "Reprodueix l'escombratge d'obertura",
-      "sweepStop": "Atura l'escombratge d'obertura"
+      "sweepStop": "Atura l'escombratge d'obertura",
+      "basic": "Bàsic",
+      "advanced": "Avançat",
+      "metric": "Mètric",
+      "imperial": "Imperial"
     }
   }
 }

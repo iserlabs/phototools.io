@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Bentuk bokeh memerlukan WebGL — kabur ringkas dipaparkan.",
       "dividerLabel": "Pembahagi perbandingan A/B",
       "sweepPlay": "Main imbasan aperture",
-      "sweepStop": "Hentikan imbasan aperture"
+      "sweepStop": "Hentikan imbasan aperture",
+      "basic": "Asas",
+      "advanced": "Lanjutan",
+      "metric": "Metrik",
+      "imperial": "Imperial"
     }
   }
 }

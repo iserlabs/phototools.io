@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Bokeh-Formen benötigen WebGL — es wird ein vereinfachter Weichzeichner angezeigt.",
       "dividerLabel": "A/B-Vergleichstrenner",
       "sweepPlay": "Blendendurchlauf abspielen",
-      "sweepStop": "Blendendurchlauf stoppen"
+      "sweepStop": "Blendendurchlauf stoppen",
+      "basic": "Einfach",
+      "advanced": "Erweitert",
+      "metric": "Metrisch",
+      "imperial": "Imperial"
     }
   }
 }

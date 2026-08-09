@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Bokehvormen vereisen WebGL — er wordt een vereenvoudigde vervaging weergegeven.",
       "dividerLabel": "A/B-vergelijkingsscheiding",
       "sweepPlay": "Diafragma-doorloop afspelen",
-      "sweepStop": "Diafragma-doorloop stoppen"
+      "sweepStop": "Diafragma-doorloop stoppen",
+      "basic": "Eenvoudig",
+      "advanced": "Geavanceerd",
+      "metric": "Metrisch",
+      "imperial": "Imperiaal"
     }
   }
 }

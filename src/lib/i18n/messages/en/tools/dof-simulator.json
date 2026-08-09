@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Bokeh shapes need WebGL — showing a simplified blur.",
       "dividerLabel": "A/B comparison divider",
       "sweepPlay": "Play aperture sweep",
-      "sweepStop": "Stop aperture sweep"
+      "sweepStop": "Stop aperture sweep",
+      "basic": "Basic",
+      "advanced": "Advanced",
+      "metric": "Metric",
+      "imperial": "Imperial"
     }
   }
 }

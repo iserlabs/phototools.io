@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Bokeh-muodot vaativat WebGL:n — näytetään yksinkertaistettu sumennus.",
       "dividerLabel": "A/B-vertailun jakaja",
       "sweepPlay": "Toista aukon pyyhkäisy",
-      "sweepStop": "Pysäytä aukon pyyhkäisy"
+      "sweepStop": "Pysäytä aukon pyyhkäisy",
+      "basic": "Perusasetukset",
+      "advanced": "Lisäasetukset",
+      "metric": "Metrinen",
+      "imperial": "Imperiaalinen"
     }
   }
 }

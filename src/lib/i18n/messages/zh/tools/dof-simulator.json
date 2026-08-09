@@ -55,7 +55,11 @@
       "webglFallbackNotice": "散景形状需要 WebGL — 正在显示简化模糊效果。",
       "dividerLabel": "A/B 对比分隔线",
       "sweepPlay": "播放光圈扫描",
-      "sweepStop": "停止光圈扫描"
+      "sweepStop": "停止光圈扫描",
+      "basic": "基础",
+      "advanced": "高级",
+      "metric": "公制",
+      "imperial": "英制"
     }
   }
 }

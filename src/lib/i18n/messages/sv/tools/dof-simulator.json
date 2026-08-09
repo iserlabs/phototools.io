@@ -55,7 +55,11 @@
       "webglFallbackNotice": "Bokehformer kräver WebGL — en förenklad oskärpa visas.",
       "dividerLabel": "A/B-jämförelsedelare",
       "sweepPlay": "Spela upp bländarsvep",
-      "sweepStop": "Stoppa bländarsvep"
+      "sweepStop": "Stoppa bländarsvep",
+      "basic": "Grundläggande",
+      "advanced": "Avancerat",
+      "metric": "Metriska",
+      "imperial": "Imperiala"
     }
   }
 }
