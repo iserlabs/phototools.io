@@ -330,6 +330,10 @@ test.describe('Sensor Size Comparison', () => {
     await expect(page.locator(`[id="${desktopDetailId}"]`)).not.toBeVisible()
   })
 
+  // None of these four tests assert the verdict sentence's text content —
+  // that's covered by CompareDrawer.test.tsx's unit tests (verdictLight/
+  // verdictReach/verdictNearEqual interpolation, near-equal branch, etc.).
+  // Here we only prove the drawer mounts/unmounts and the URL round-trips.
   test('compare drawer opens from an expanded row and round-trips through ?vs=', async ({ page }) => {
     await page.goto('/en/sensor-size-comparison')
     await page.locator('[id="sensor-row-desktop-ff"] button').first().click()
@@ -339,16 +343,30 @@ test.describe('Sensor Size Comparison', () => {
 
     await page.reload()
     await expect(page.getByTestId('compare-verdict')).toBeVisible()
+    await expect(page).toHaveURL(/vs=ff%2Capsc_n/)
   })
 
   test('closing the drawer drops ?vs= without changing the selection', async ({ page }) => {
-    await page.goto('/en/sensor-size-comparison?vs=ff,apsc_n')
+    // Start from a non-default selection (mf+ff+apsc_n, via `show=`) rather
+    // than letting `visible` sit at DEFAULT_VISIBLE_IDS (mf+ff+apsc_n+m43+
+    // phone). DEFAULT_VISIBLE_IDS is a superset of this selection, so if we
+    // started from the default a regression that reset `visible` to the
+    // default on close (e.g. `onClose` accidentally wired to the same
+    // handler as the "Reset" button, which does both `setVisible(default)`
+    // and `setComparePair(null)` — see SensorSize.tsx's onReset) would still
+    // leave the row *count* unchanged and this test would stay green. Only
+    // comparing the exact surviving id set catches that.
+    await page.goto('/en/sensor-size-comparison?vs=ff,apsc_n&show=ff+apsc_n+mf')
     await expect(page.getByTestId('compare-verdict')).toBeVisible()
-    const before = await page.locator('[id^="sensor-row-desktop-"]').count()
+    const rowIds = () =>
+      page.locator('[id^="sensor-row-desktop-"]').evaluateAll((rows) => rows.map((r) => r.id).sort())
+    const before = await rowIds()
+
     await page.getByRole('button', { name: /close comparison/i }).click()
+
     await expect(page.getByTestId('compare-verdict')).toHaveCount(0)
     await expect(page).not.toHaveURL(/vs=/)
-    expect(await page.locator('[id^="sensor-row-desktop-"]').count()).toBe(before)
+    expect(await rowIds()).toEqual(before)
   })
 
   test('an invalid ?vs= is ignored and dropped', async ({ page }) => {
