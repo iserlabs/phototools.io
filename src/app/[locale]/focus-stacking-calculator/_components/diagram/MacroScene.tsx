@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl'
 import type { StackingState } from '../useStackingState'
 import type { DiagramScale } from '../diagramScale'
 import { SceneCamera } from './SceneCamera'
+import s from '../FocusStacking.module.css'
 
 interface MacroSceneProps {
   state: StackingState
@@ -37,7 +38,7 @@ export function MacroScene({ state, scale }: MacroSceneProps) {
 
   return (
     <>
-      <ellipse cx={subjectCx} cy={SUBJECT_CY} rx={subjectRx} ry={SUBJECT_RY}
+      <ellipse className={s.bandRect} cx={subjectCx} cy={SUBJECT_CY} rx={subjectRx} ry={SUBJECT_RY}
         fill="color-mix(in srgb, var(--accent) 10%, transparent)" stroke="var(--text-secondary)" strokeWidth={1.5} />
       <text x={subjectCx} y={LABEL_Y} fill="var(--text-secondary)" fontSize={9}
         textAnchor="middle" fontWeight={500}>{t('diagramSubject')}</text>
@@ -47,16 +48,16 @@ export function MacroScene({ state, scale }: MacroSceneProps) {
         if (i % capStep !== 0 && !isHovered) return null
         const x = scale.toX(row.sliceStartMm)
         return (
-          <line key={row.number} x1={x} y1={PLANE_TOP} x2={x} y2={PLANE_BOTTOM}
+          <line key={row.number} className={s.dotCircle} x1={x} y1={PLANE_TOP} x2={x} y2={PLANE_BOTTOM}
             stroke="var(--accent)" strokeWidth={isHovered ? 2 : 1} opacity={isHovered ? 1 : 0.3} />
         )
       })}
 
-      <line x1={railStartX} y1={RAIL_Y} x2={railEndX} y2={RAIL_Y}
+      <line className={s.bandRect} x1={railStartX} y1={RAIL_Y} x2={railEndX} y2={RAIL_Y}
         stroke="var(--text-secondary)" strokeWidth={1.5} />
-      <line x1={railEndX - 6} y1={RAIL_Y - 4} x2={railEndX} y2={RAIL_Y}
+      <line className={s.bandRect} x1={railEndX - 6} y1={RAIL_Y - 4} x2={railEndX} y2={RAIL_Y}
         stroke="var(--text-secondary)" strokeWidth={1.5} />
-      <line x1={railEndX - 6} y1={RAIL_Y + 4} x2={railEndX} y2={RAIL_Y}
+      <line className={s.bandRect} x1={railEndX - 6} y1={RAIL_Y + 4} x2={railEndX} y2={RAIL_Y}
         stroke="var(--text-secondary)" strokeWidth={1.5} />
       <text x={(railStartX + railEndX) / 2} y={RAIL_Y - 6} fill="var(--text-secondary)"
         fontSize={9} textAnchor="middle" fontWeight={500}>{t('sceneRail')}</text>

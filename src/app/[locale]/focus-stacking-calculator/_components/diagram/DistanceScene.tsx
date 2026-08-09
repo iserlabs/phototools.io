@@ -15,6 +15,7 @@ interface DistanceSceneProps {
 const WEDGE_TOP = 20
 const GROUND_Y = 64
 const CAMERA_X = DIAGRAM_PAD.left - 36
+const GROUND_LEFT = 4
 const LABEL_Y = 10
 
 /**
@@ -52,7 +53,7 @@ export function DistanceScene({ state, scale }: DistanceSceneProps) {
         height={GROUND_Y - WEDGE_TOP}
         fill={scale.infinite ? 'url(#sceneWedgeFade)' : 'color-mix(in srgb, var(--accent) 18%, transparent)'} />
 
-      <line x1={4} y1={GROUND_Y} x2={edge} y2={GROUND_Y} stroke="var(--border)" strokeWidth={1} />
+      <line x1={GROUND_LEFT} y1={GROUND_Y} x2={edge} y2={GROUND_Y} stroke="var(--border)" strokeWidth={1} />
 
       <SceneCamera x={CAMERA_X} groundY={GROUND_Y} label={t('sceneCamera')} />
 
