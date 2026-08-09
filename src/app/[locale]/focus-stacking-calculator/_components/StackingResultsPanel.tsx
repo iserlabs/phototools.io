@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { getSkeletonBySlug } from '@/lib/data/education'
 import { formatDistance } from '@/components/shared/DistanceField'
-import { formatStackingExport } from '@/lib/data/focusStacking'
+import { buildDistanceText } from '@/lib/utils/stackingExport'
 import type { StackingResult } from '@/lib/math/stacking'
 import s from './FocusStacking.module.css'
 
@@ -52,7 +52,7 @@ export function StackingResultsPanel({
     : 0
 
   const handleCopy = useCallback(async () => {
-    const text = formatStackingExport(focalLength, aperture, sensorName, shots)
+    const text = buildDistanceText(focalLength, aperture, sensorName, shots)
     try {
       await navigator.clipboard.writeText(text)
       toast(commonT('toast.linkCopied'))
