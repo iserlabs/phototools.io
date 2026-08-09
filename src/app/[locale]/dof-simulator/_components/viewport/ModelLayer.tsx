@@ -15,8 +15,11 @@ export interface ModelLayerProps {
   side?: 'a' | 'b'
 }
 
-const MAX_BLUR_PX = 24
-const BLUR_VISIBLE_THRESHOLD_PX = 0.5
+// Exported so the PNG export layout (`export/exportLayout.ts`) can mirror
+// this component's on-screen blur semantics exactly instead of re-deriving
+// its own copies of these thresholds.
+export const MAX_BLUR_PX = 24
+export const BLUR_VISIBLE_THRESHOLD_PX = 0.5
 
 function sliceStyle(
   slice: SubjectSlice,
