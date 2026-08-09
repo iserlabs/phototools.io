@@ -367,6 +367,96 @@
   color: var(--accent);
 }
 
+/* ── Compare Drawer ── */
+.compareDrawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  animation: fadeIn var(--duration-fast) var(--ease-out) both;
+}
+
+.compareHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.compareTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.compareClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+
+.compareClose:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.compareColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.compareColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+.compareColumnName {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.compareRelation {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.compareRelation p {
+  margin: 0;
+}
+
+.compareVerdict {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
 /* ── Collapsible sensor groups ── */
 .group {
   display: flex;
@@ -522,6 +612,15 @@
   }
 
   .rowToggle {
+    min-height: 44px;
+  }
+
+  .compareColumns {
+    grid-template-columns: 1fr;
+  }
+
+  .compareClose {
+    min-width: 44px;
     min-height: 44px;
   }
 }

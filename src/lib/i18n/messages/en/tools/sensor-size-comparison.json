@@ -46,6 +46,19 @@
       "tableCropFactor": "Crop Factor",
       "tableAspectCrop": "Aspect Crop",
       "canvasAriaLabel": "Sensor size comparison in {mode} mode",
+      "compare": {
+        "title": "Compare",
+        "compareWith": "Compare with…",
+        "compareTheseTwo": "Compare these two",
+        "close": "Close comparison",
+        "representativeResolution": "Resolution",
+        "notApplicable": "—",
+        "verdictLight": "{larger} gathers about {ratio}× the light ({ev}).",
+        "verdictReach": "{smaller} gives {factor}× more reach from the same lens.",
+        "verdictNearEqual": "These two gather virtually identical light for their area.",
+        "crossFocal": "A {focal}mm lens on {from} frames like {eqFocal}mm on {to}.",
+        "areaRelation": "{a} has {ratio}× the area of {b}."
+      },
       "detail": {
         "diagonal": "Diagonal",
         "area": "Area",
