@@ -21,13 +21,41 @@ export function useStackingState() {
   const [depthMm, setDepthMm] = useState(10)
   const [hoveredShot, setHoveredShot] = useState<number | null>(null)
 
+  // These two are the invariant-preserving source of truth for nearLimit <=
+  // farLimit: they're used both as the panel's onChange handlers AND as the
+  // useQueryInit setters below, so the pair stays valid no matter who sets
+  // it or in what order (useQueryInit runs both from a single crafted URL
+  // in an unspecified order). Each uses a functional updater for the OTHER
+  // field so it always reconciles against whatever that field's queue has
+  // accumulated so far, converging to a valid pair regardless of order.
+  const onNearLimitChange = useCallback((v: number) => {
+    setNearLimit(v)
+    // raising near to meet/exceed a finite far limit raises far to match;
+    // an infinite far limit is left untouched
+    setFarLimit((f) => (isFinite(f) && v >= f ? v : f))
+  }, [])
+
+  const onFarLimitChange = useCallback((v: number) => {
+    if (!isFinite(v)) {
+      setFarLimit(Infinity)
+      return
+    }
+    // far can never be lowered past the physical near floor
+    const floor = Math.max(0.1, (focalLength / 1000) * 1.05)
+    const farNew = Math.max(v, floor)
+    setFarLimit(farNew)
+    // lowering far below the current near limit lowers near to match,
+    // clamped so it never drops below floor (farNew is already >= floor)
+    setNearLimit((n) => Math.min(n, farNew))
+  }, [focalLength])
+
   useQueryInit(PARAM_SCHEMA, {
     mode: setModeRaw,
     fl: setFocalLength,
     f: setAperture,
     s: setSensorId,
-    near: setNearLimit,
-    far: setFarLimit,
+    near: onNearLimitChange,
+    far: onFarLimitChange,
     overlap: (v: number) => setOverlapPct(v / 100),
     m: setMagnification,
     depth: setDepthMm,
@@ -57,24 +85,21 @@ export function useStackingState() {
     setModeRaw(m)
   }, [trackParam])
 
+  // A single call, so unlike the pair above it can just read the current
+  // nearLimit/farLimit straight from the closure (kept fresh via deps) and
+  // compute explicit values — no cross-updater coupling to reason about.
   const onFocalLengthChange = useCallback((v: number) => {
     trackParam({ param_name: 'focal_length', param_value: String(v), input_type: 'slider' })
     setFocalLength(v)
     // near limit must stay physically focusable: just beyond the lens
     const minNear = (v / 1000) * 1.05
-    let newNear = minNear
-    setNearLimit((n) => {
-      newNear = n < minNear ? minNear : n
-      return newNear
-    })
-    // Keep the depth range valid in this same batched render: a near limit
-    // raised above (or equal to) a *finite* far limit would otherwise paint
-    // a negative totalDepth for one frame. Leave an infinite far limit
-    // alone. (Relies on nearLimit's useState above being declared before
-    // farLimit's, so its updater runs first and sets `newNear` before this
-    // one reads it — both updaters are applied during the same render.)
-    setFarLimit((f) => (isFinite(f) && newNear >= f ? newNear : f))
-  }, [trackParam])
+    const newNear = nearLimit < minNear ? minNear : nearLimit
+    setNearLimit(newNear)
+    // keep the range valid in this same batched render: a near limit raised
+    // to meet/exceed a *finite* far limit raises far to match; an infinite
+    // far limit is left untouched
+    setFarLimit(isFinite(farLimit) && newNear >= farLimit ? newNear : farLimit)
+  }, [nearLimit, farLimit, trackParam])
 
   return {
     mode, setMode,
@@ -82,8 +107,8 @@ export function useStackingState() {
     onFocalLengthChange,
     onApertureChange: (v: number) => { trackParam({ param_name: 'aperture', param_value: String(v), input_type: 'select' }); setAperture(v) },
     onSensorChange: setSensorId,
-    onNearLimitChange: setNearLimit,
-    onFarLimitChange: setFarLimit,
+    onNearLimitChange,
+    onFarLimitChange,
     onOverlapChange: setOverlapPct,
     onMagnificationChange: (v: number) => { trackParam({ param_name: 'magnification', param_value: String(v), input_type: 'slider' }); setMagnification(v) },
     onDepthChange: setDepthMm,

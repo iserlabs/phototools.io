@@ -41,9 +41,10 @@ export function StackingSettingsPanel({ state }: StackingSettingsPanelProps) {
   // Near's ceiling tracks the far limit so the range can't invert; if the
   // floor above ever rises past the current far limit, hold the ceiling at
   // the floor instead of letting max < min reach the slider. (The actual
-  // nearLimit <= farLimit invariant itself is enforced at the source, in
-  // useStackingState.onFocalLengthChange — these bounds are the first line
-  // of defense against a direct drag on either slider.)
+  // nearLimit <= farLimit invariant is enforced at the source, in
+  // useStackingState's onFocalLengthChange/onNearLimitChange/
+  // onFarLimitChange — these bounds are only the first line of defense
+  // against a direct drag on either slider.)
   const nearMax = isInf ? 100 : Math.max(nearMin, farLimit)
   // Far's floor tracks the current near limit for the same reason, clamped
   // so it can never exceed the far field's own max of 100.
