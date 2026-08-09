@@ -1,10 +1,10 @@
-import type { SensorPreset } from '@/lib/types'
+import type { ResolvedSensor } from './sensorSizeTypes'
 import { pixelPitch } from '@/lib/math/diffraction'
 import { rgba, roundRect } from './sensorSizeHelpers'
 
 export function drawPixelGrid(
   ctx: CanvasRenderingContext2D,
-  s: Required<SensorPreset>,
+  s: ResolvedSensor,
   sensorScale: number,
   mp: number,
   rx: number, ry: number,

@@ -3,12 +3,11 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { useTranslations } from 'next-intl'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
-import type { DisplayMode } from './sensorSizeTypes'
+import type { DisplayMode, ResolvedSensor } from './sensorSizeTypes'
 import { LearnPanel } from '@/components/shared/LearnPanel'
 import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
-import type { SensorPreset } from '@/lib/types'
 import ss from './SensorSize.module.css'
 import { ANIM_DURATION, DEFAULT_VISIBLE_IDS } from './sensorSizeTypes'
 import { easeOut } from './sensorSizeHelpers'
@@ -43,7 +42,7 @@ export function SensorSize() {
     prevVisibleRef.current = new Set(visible)
   }, [visible])
 
-  const getRenderSensors = useCallback((): { sensors: Required<SensorPreset>[]; alphaMap: Map<string, number> } => {
+  const getRenderSensors = useCallback((): { sensors: ResolvedSensor[]; alphaMap: Map<string, number> } => {
     const alphaMap = new Map<string, number>()
     const ids = new Set(visible)
     for (const [id, anim] of animRef.current) {

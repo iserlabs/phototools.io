@@ -23,7 +23,10 @@ export function formatAspectRatio(w: number, h: number): string {
   if (Math.abs(r - 1) < 0.02) return '1:1'
   if (Math.abs(r - 7 / 5) < 0.02) return '7:5'
   const g = gcd(Math.round(w * 10), Math.round(h * 10))
-  return `${Math.round(w * 10 / g)}:${Math.round(h * 10 / g)}`
+  const rw = Math.round(w * 10 / g)
+  const rh = Math.round(h * 10 / g)
+  if (rw > 21 || rh > 21) return `${r.toFixed(2)}:1`
+  return `${rw}:${rh}`
 }
 
 function gcd(a: number, b: number): number {

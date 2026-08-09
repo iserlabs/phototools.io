@@ -3,11 +3,11 @@
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { COMMON_MP } from '@/lib/data/sensors'
-import type { SensorPreset } from '@/lib/types'
+import type { ResolvedSensor } from './sensorSizeTypes'
 import ss from './SensorSize.module.css'
 
 export function EditSensorRow({ sensor, onSave, onCancel }: {
-  sensor: Required<SensorPreset>
+  sensor: ResolvedSensor
   onSave: (id: string, name: string, w: number, h: number, mp: number) => void
   onCancel: () => void
 }) {

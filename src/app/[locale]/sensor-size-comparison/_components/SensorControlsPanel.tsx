@@ -4,8 +4,7 @@ import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { ModeToggle } from '@/components/shared/ModeToggle'
 import { SENSORS, POPULAR_MODELS } from '@/lib/data/sensors'
-import type { SensorPreset } from '@/lib/types'
-import type { ControlsPanelProps } from './sensorSizeTypes'
+import type { ControlsPanelProps, ResolvedSensor } from './sensorSizeTypes'
 import { CustomSensorForm } from './CustomSensorForm'
 import { EditSensorRow } from './EditSensorRow'
 import ss from './SensorSize.module.css'
@@ -38,7 +37,7 @@ export function SensorControlsPanel({
 
       <div className={ss.sectionLabel}>{t('sensors')}</div>
       <div className={ss.checkboxes}>
-        {(SENSORS as Required<SensorPreset>[]).map((s) => {
+        {(SENSORS as ResolvedSensor[]).map((s) => {
           const models = POPULAR_MODELS[s.id]
           return (
             <label key={s.id} className={ss.checkLabel}>

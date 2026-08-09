@@ -1,11 +1,11 @@
-import type { SensorPreset } from '@/lib/types'
+import type { ResolvedSensor } from './sensorSizeTypes'
 import { COMMON_MP, type MpEntry } from '@/lib/data/sensors'
 import { pixelPitch } from '@/lib/math/diffraction'
 import { drawPixelGrid, drawEntryLabel } from './drawPixelGrid'
 
-type ColumnGroup = { title: string, color: string, items: { sensor: Required<SensorPreset>, entries: MpEntry[] }[] }
+type ColumnGroup = { title: string, color: string, items: { sensor: ResolvedSensor, entries: MpEntry[] }[] }
 
-function buildColumns(sensors: Required<SensorPreset>[], resolution: number): ColumnGroup[] {
+function buildColumns(sensors: ResolvedSensor[], resolution: number): ColumnGroup[] {
   const columns: ColumnGroup[] = []
   for (const s of sensors) {
     const entries = COMMON_MP[s.id] ?? [{ mp: resolution, models: '' }]
@@ -35,7 +35,7 @@ function drawMobileGrid(
   ctx: CanvasRenderingContext2D, W: number, pad: number,
   columns: ColumnGroup[], maxSensorW: number, alphaMap?: Map<string, number>,
 ): number {
-  type FlatEntry = { sensor: Required<SensorPreset>, mp: number, models: string, title?: string }
+  type FlatEntry = { sensor: ResolvedSensor, mp: number, models: string, title?: string }
   const flatEntries: FlatEntry[] = []
   for (const col of columns) {
     let first = true
@@ -139,7 +139,7 @@ function drawDesktopGrid(
 
 export function drawPixelDensity(
   ctx: CanvasRenderingContext2D, W: number, _H: number, pad: number,
-  sensors: Required<SensorPreset>[], resolution: number, alphaMap?: Map<string, number>,
+  sensors: ResolvedSensor[], resolution: number, alphaMap?: Map<string, number>,
 ): number {
   const columns = buildColumns(sensors, resolution)
   const maxSensorW = Math.max(...sensors.map((s) => s.w))

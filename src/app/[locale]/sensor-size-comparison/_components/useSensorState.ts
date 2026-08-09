@@ -2,9 +2,8 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { SENSORS, COMMON_MP, calcCropFactor } from '@/lib/data/sensors'
-import type { SensorPreset } from '@/lib/types'
 import { CUSTOM_COLORS, DEFAULT_VISIBLE_IDS, DEFAULT_VISIBLE } from './sensorSizeTypes'
-import type { DisplayMode } from './sensorSizeTypes'
+import type { DisplayMode, ResolvedSensor } from './sensorSizeTypes'
 import {
   ALL_SENSOR_ID_SET, customColorIdx, setCustomColorIdx,
   encodeCustomParam, decodeCustomParam, loadCustomSensors, saveCustomSensors,
@@ -14,13 +13,13 @@ export function useSensorState() {
   const [visible, setVisible] = useState<Set<string>>(() => new Set(DEFAULT_VISIBLE_IDS))
   const [mode, setMode] = useState<DisplayMode>('overlay')
   const [resolution, setResolution] = useState(24)
-  const [customSensors, setCustomSensors] = useState<Required<SensorPreset>[]>([])
+  const [customSensors, setCustomSensors] = useState<ResolvedSensor[]>([])
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const customParam = params.get('custom')
-    let loadedCustom: Required<SensorPreset>[] = []
+    let loadedCustom: ResolvedSensor[] = []
     if (customParam) { loadedCustom = decodeCustomParam(customParam); setCustomColorIdx(loadedCustom.length) }
     else { loadedCustom = loadCustomSensors() }
 
@@ -64,7 +63,7 @@ export function useSensorState() {
     return () => { if (urlTimerRef.current) clearTimeout(urlTimerRef.current) }
   }, [visible, mode, resolution, customSensors, hydrated])
 
-  const allSensors = useMemo(() => [...SENSORS as Required<SensorPreset>[], ...customSensors], [customSensors])
+  const allSensors = useMemo(() => [...SENSORS as ResolvedSensor[], ...customSensors], [customSensors])
   const visibleSensors = useMemo(() => allSensors.filter((s) => visible.has(s.id)), [allSensors, visible])
 
   const toggleSensor = useCallback((id: string) => {

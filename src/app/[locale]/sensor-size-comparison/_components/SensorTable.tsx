@@ -2,11 +2,11 @@
 
 import { useTranslations } from 'next-intl'
 import { calcCropFactor, calcAspectCropFactor } from '@/lib/data/sensors'
-import type { SensorPreset } from '@/lib/types'
+import type { ResolvedSensor } from './sensorSizeTypes'
 import { formatAspectRatio } from '@/lib/math/resolution'
 import ss from './SensorSize.module.css'
 
-export function SensorTable({ sensors }: { sensors: Required<SensorPreset>[] }) {
+export function SensorTable({ sensors }: { sensors: ResolvedSensor[] }) {
   const t = useTranslations('toolUI.sensor-size-comparison')
   const sorted = [...sensors].sort((a, b) => (b.w * b.h) - (a.w * a.h))
   return (

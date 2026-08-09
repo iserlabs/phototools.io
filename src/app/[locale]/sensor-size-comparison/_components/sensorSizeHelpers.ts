@@ -1,7 +1,6 @@
-import type { SensorPreset } from '@/lib/types'
 import { SENSORS, COMMON_MP, calcCropFactor } from '@/lib/data/sensors'
 import { CUSTOM_COLORS, STORAGE_KEY } from './sensorSizeTypes'
-import type { StoredCustomSensor } from './sensorSizeTypes'
+import type { StoredCustomSensor, ResolvedSensor } from './sensorSizeTypes'
 
 export let customColorIdx = 0
 export function setCustomColorIdx(n: number) { customColorIdx = n }
@@ -35,14 +34,14 @@ export function easeOut(t: number): number {
   return 1 - (1 - t) ** 3
 }
 
-export function encodeCustomParam(sensors: Required<SensorPreset>[]): string {
+export function encodeCustomParam(sensors: ResolvedSensor[]): string {
   return sensors.map(s => {
     const mp = COMMON_MP[s.id]?.[0]?.mp ?? 0
     return `${s.name}~${s.w}~${s.h}~${mp}`
   }).join(',')
 }
 
-export function decodeCustomParam(raw: string): Required<SensorPreset>[] {
+export function decodeCustomParam(raw: string): ResolvedSensor[] {
   if (!raw) return []
   return raw.split(',').map((entry, i) => {
     const [name, ws, hs, mps] = entry.split('~')
@@ -54,11 +53,11 @@ export function decodeCustomParam(raw: string): Required<SensorPreset>[] {
     const color = CUSTOM_COLORS[i % CUSTOM_COLORS.length]
     const cropFactor = calcCropFactor(w, h)
     if (mp > 0) COMMON_MP[id] = [{ mp, models: name }]
-    return { id, name, w, h, cropFactor, color } as Required<SensorPreset>
-  }).filter(Boolean) as Required<SensorPreset>[]
+    return { id, name, w, h, cropFactor, color } as ResolvedSensor
+  }).filter(Boolean) as ResolvedSensor[]
 }
 
-export function loadCustomSensors(): Required<SensorPreset>[] {
+export function loadCustomSensors(): ResolvedSensor[] {
   if (typeof window === 'undefined') return []
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
@@ -76,7 +75,7 @@ export function loadCustomSensors(): Required<SensorPreset>[] {
   } catch { return [] }
 }
 
-export function saveCustomSensors(sensors: Required<SensorPreset>[]) {
+export function saveCustomSensors(sensors: ResolvedSensor[]) {
   try {
     const stored: StoredCustomSensor[] = sensors.map(s => ({
       id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: s.cropFactor, color: s.color,

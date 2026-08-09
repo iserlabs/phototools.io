@@ -1,5 +1,4 @@
-import type { SensorPreset } from '@/lib/types'
-import type { SensorRect } from './sensorSizeTypes'
+import type { ResolvedSensor, SensorRect } from './sensorSizeTypes'
 import { rgba, roundRect } from './sensorSizeHelpers'
 
 export let overlayRects: SensorRect[] = []
@@ -7,7 +6,7 @@ export let overlayRects: SensorRect[] = []
 export function drawOverlay(
   ctx: CanvasRenderingContext2D,
   W: number, _H: number, pad: number,
-  sensors: Required<SensorPreset>[],
+  sensors: ResolvedSensor[],
   alphaMap?: Map<string, number>,
   hoveredId?: string | null,
 ): number {
@@ -110,7 +109,7 @@ export function drawOverlay(
 
 function drawOverlayMobileLabels(
   ctx: CanvasRenderingContext2D,
-  sorted: Required<SensorPreset>[],
+  sorted: ResolvedSensor[],
   alphaMap: Map<string, number> | undefined,
   cx: number, cy: number, scale: number,
   pillWidths: number[], pillH: number, labelGap: number, pad: number,
@@ -146,7 +145,7 @@ function drawOverlayMobileLabels(
 
 function drawOverlayDesktopLabels(
   ctx: CanvasRenderingContext2D,
-  sorted: Required<SensorPreset>[],
+  sorted: ResolvedSensor[],
   alphaMap: Map<string, number> | undefined,
   cx: number, cy: number, scale: number,
   rectsH: number, totalLabelH: number,
