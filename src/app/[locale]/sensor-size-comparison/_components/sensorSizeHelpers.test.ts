@@ -3,7 +3,7 @@ import {
   encodeCustomParam, decodeCustomParam, loadCustomSensors, saveCustomSensors,
   ALL_SENSOR_ID_SET, orderForRender, pickTopMp,
 } from './sensorSizeHelpers'
-import { COMMON_MP } from '@/lib/data/sensors'
+import { COMMON_MP, calcCropFactor } from '@/lib/data/sensors'
 import { STORAGE_KEY } from './sensorSizeTypes'
 import type { CustomSensor, ResolvedSensor } from './sensorSizeTypes'
 
@@ -64,6 +64,23 @@ describe('sensorSizeHelpers', () => {
     expect(loaded[0].mp).toBe(61)
     expect(COMMON_MP['custom_old_1']).toBeUndefined()
     expect(Object.keys(COMMON_MP).length).toBe(before)
+  })
+
+  it('loadCustomSensors recomputes cropFactor from w/h rather than trusting a stale stored value', () => {
+    // A deliberately wrong cropFactor simulates a payload written before a
+    // crop-factor formula fix (or hand-edited localStorage) — the loader
+    // must not trust it verbatim, since the math path (CompareDrawer ->
+    // compareSensors -> reachFactor/crossFocal) consumes this field
+    // directly, unlike CompareColumn/SensorRowDetail which already
+    // recompute for display.
+    const staleShapePayload = [
+      { id: 'custom_stale_1', name: 'Stale Crop Sensor', w: 36, h: 24, cropFactor: 999, color: '#3b82f6', mp: 24 },
+    ]
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(staleShapePayload))
+    const loaded = loadCustomSensors()
+    expect(loaded).toHaveLength(1)
+    expect(loaded[0].cropFactor).toBe(calcCropFactor(36, 24))
+    expect(loaded[0].cropFactor).not.toBe(999)
   })
 
   it('orderForRender sorts by SENSOR_GROUP_ORDER then area desc, with ungrouped customs last', () => {

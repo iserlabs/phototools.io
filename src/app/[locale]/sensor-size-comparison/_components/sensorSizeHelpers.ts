@@ -92,8 +92,15 @@ export function loadCustomSensors(): CustomSensor[] {
     if (!Array.isArray(parsed)) return []
     const stored = parsed as StoredCustomSensor[]
     customColorIdx = stored.length
+    // Recompute cropFactor from w/h rather than trusting the stored value —
+    // a payload written before a crop-factor formula fix (or otherwise
+    // hand-edited) would carry a stale figure that silently diverges from
+    // what CompareColumn/SensorRowDetail display, since both of those
+    // already recompute via calcCropFactor. This keeps the math path
+    // (CompareDrawer -> compareSensors -> reachFactor/crossFocal) in sync
+    // with the display path from the same source of truth.
     return stored.map(s => ({
-      id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: s.cropFactor, color: s.color,
+      id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: calcCropFactor(s.w, s.h), color: s.color,
       mp: s.mp,
     }))
   } catch { return [] }
