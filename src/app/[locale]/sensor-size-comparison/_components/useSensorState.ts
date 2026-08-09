@@ -12,17 +12,20 @@ import {
 /**
  * Parses a `?vs=` param into an ordered pair of distinct, known sensor ids.
  * Returns null unless it yields exactly two non-empty, distinct ids that
- * both pass `isKnownId` — whitespace around ids is tolerated.
+ * both pass `isKnownId` — whitespace around ids is tolerated. Arity is
+ * checked on the raw comma split (before trimming/filtering) so a stray or
+ * trailing empty segment (`ff,,apsc_n`, `ff,apsc_n,`) is rejected rather
+ * than silently swallowed into a clean pair.
  */
 export function parseVsParam(
   raw: string | null,
   isKnownId: (id: string) => boolean,
 ): [string, string] | null {
   if (!raw) return null
-  const ids = raw.split(',').map(id => id.trim()).filter(Boolean)
-  if (ids.length !== 2) return null
-  const [a, b] = ids
-  if (a === b) return null
+  const parts = raw.split(',')
+  if (parts.length !== 2) return null
+  const [a, b] = parts.map(id => id.trim())
+  if (!a || !b || a === b) return null
   if (!isKnownId(a) || !isKnownId(b)) return null
   return [a, b]
 }
@@ -73,14 +76,15 @@ export function useSensorState() {
     if (urlTimerRef.current) clearTimeout(urlTimerRef.current)
     urlTimerRef.current = setTimeout(() => {
       const url = new URL(window.location.href)
-      const showVal = Array.from(visible).filter(id => ALL_SENSOR_ID_SET.has(id) || customSensors.some(s => s.id === id)).join('+')
+      const idResolves = (id: string) => ALL_SENSOR_ID_SET.has(id) || customSensors.some(s => s.id === id)
+      const showVal = Array.from(visible).filter(idResolves).join('+')
       if (showVal && showVal !== DEFAULT_VISIBLE) url.searchParams.set('show', showVal)
       else url.searchParams.delete('show')
       if (mode !== 'overlay') url.searchParams.set('mode', mode); else url.searchParams.delete('mode')
       if (resolution !== 24) url.searchParams.set('mp', String(resolution)); else url.searchParams.delete('mp')
       const cp = customSensors.length > 0 ? encodeCustomParam(customSensors) : ''
       if (cp) url.searchParams.set('custom', cp); else url.searchParams.delete('custom')
-      if (comparePair && comparePair.every(id => ALL_SENSOR_ID_SET.has(id) || customSensors.some(s => s.id === id))) {
+      if (comparePair && comparePair.every(idResolves)) {
         url.searchParams.set('vs', comparePair.join(','))
       } else url.searchParams.delete('vs')
       window.history.replaceState(null, '', url.toString())

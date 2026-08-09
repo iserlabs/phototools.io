@@ -22,4 +22,10 @@ describe('parseVsParam', () => {
   it('tolerates surrounding whitespace', () => {
     expect(parseVsParam(' ff , apsc_n ', known)).toEqual(['ff', 'apsc_n'])
   })
+  it('rejects malformed multi-comma input instead of swallowing stray/empty segments', () => {
+    expect(parseVsParam('ff,,apsc_n', known)).toBeNull()
+    expect(parseVsParam('ff,apsc_n,', known)).toBeNull()
+    expect(parseVsParam(',,', known)).toBeNull()
+    expect(parseVsParam('ff, apsc_n ,', known)).toBeNull()
+  })
 })
