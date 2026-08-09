@@ -52,7 +52,10 @@
       "depthRulerInFocus": "В фокусе",
       "depthRulerSubject": "Объект",
       "infinity": "∞",
-      "webglFallbackNotice": "Для форм боке требуется WebGL — показано упрощённое размытие."
+      "webglFallbackNotice": "Для форм боке требуется WebGL — показано упрощённое размытие.",
+      "dividerLabel": "Разделитель сравнения A/B",
+      "sweepPlay": "Запустить развёртку диафрагмы",
+      "sweepStop": "Остановить развёртку диафрагмы"
     }
   }
 }

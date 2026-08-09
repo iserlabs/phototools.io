@@ -52,7 +52,10 @@
       "depthRulerInFocus": "I fokus",
       "depthRulerSubject": "Motiv",
       "infinity": "∞",
-      "webglFallbackNotice": "Bokehformer kräver WebGL — en förenklad oskärpa visas."
+      "webglFallbackNotice": "Bokehformer kräver WebGL — en förenklad oskärpa visas.",
+      "dividerLabel": "A/B-jämförelsedelare",
+      "sweepPlay": "Spela upp bländarsvep",
+      "sweepStop": "Stoppa bländarsvep"
     }
   }
 }

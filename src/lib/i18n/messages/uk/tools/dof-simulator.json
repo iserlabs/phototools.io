@@ -52,7 +52,10 @@
       "depthRulerInFocus": "У фокусі",
       "depthRulerSubject": "Об'єкт",
       "infinity": "∞",
-      "webglFallbackNotice": "Для форм боке потрібен WebGL — показано спрощене розмиття."
+      "webglFallbackNotice": "Для форм боке потрібен WebGL — показано спрощене розмиття.",
+      "dividerLabel": "Розділювач порівняння A/B",
+      "sweepPlay": "Відтворити розгортку діафрагми",
+      "sweepStop": "Зупинити розгортку діафрагми"
     }
   }
 }

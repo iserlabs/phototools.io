@@ -52,7 +52,10 @@
       "depthRulerInFocus": "Tarkennuksessa",
       "depthRulerSubject": "Kohde",
       "infinity": "∞",
-      "webglFallbackNotice": "Bokeh-muodot vaativat WebGL:n — näytetään yksinkertaistettu sumennus."
+      "webglFallbackNotice": "Bokeh-muodot vaativat WebGL:n — näytetään yksinkertaistettu sumennus.",
+      "dividerLabel": "A/B-vertailun jakaja",
+      "sweepPlay": "Toista aukon pyyhkäisy",
+      "sweepStop": "Pysäytä aukon pyyhkäisy"
     }
   }
 }

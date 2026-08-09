@@ -52,7 +52,10 @@
       "depthRulerInFocus": "W ostrości",
       "depthRulerSubject": "Obiekt",
       "infinity": "∞",
-      "webglFallbackNotice": "Kształty bokeh wymagają WebGL — wyświetlane jest uproszczone rozmycie."
+      "webglFallbackNotice": "Kształty bokeh wymagają WebGL — wyświetlane jest uproszczone rozmycie.",
+      "dividerLabel": "Rozdzielacz porównania A/B",
+      "sweepPlay": "Odtwórz przemiatanie przysłony",
+      "sweepStop": "Zatrzymaj przemiatanie przysłony"
     }
   }
 }

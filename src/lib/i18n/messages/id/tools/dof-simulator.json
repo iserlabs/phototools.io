@@ -52,7 +52,10 @@
       "depthRulerInFocus": "Dalam Fokus",
       "depthRulerSubject": "Subjek",
       "infinity": "∞",
-      "webglFallbackNotice": "Bentuk bokeh memerlukan WebGL — menampilkan blur yang disederhanakan."
+      "webglFallbackNotice": "Bentuk bokeh memerlukan WebGL — menampilkan blur yang disederhanakan.",
+      "dividerLabel": "Pemisah perbandingan A/B",
+      "sweepPlay": "Putar penyapuan aperture",
+      "sweepStop": "Hentikan penyapuan aperture"
     }
   }
 }

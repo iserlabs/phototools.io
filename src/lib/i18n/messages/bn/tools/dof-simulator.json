@@ -52,7 +52,10 @@
       "depthRulerInFocus": "ফোকাসে",
       "depthRulerSubject": "সাবজেক্ট",
       "infinity": "∞",
-      "webglFallbackNotice": "বোকে আকৃতির জন্য WebGL প্রয়োজন — একটি সরলীকৃত ব্লার দেখানো হচ্ছে।"
+      "webglFallbackNotice": "বোকে আকৃতির জন্য WebGL প্রয়োজন — একটি সরলীকৃত ব্লার দেখানো হচ্ছে।",
+      "dividerLabel": "A/B তুলনা বিভাজক",
+      "sweepPlay": "অ্যাপারচার সুইপ চালান",
+      "sweepStop": "অ্যাপারচার সুইপ থামান"
     }
   }
 }

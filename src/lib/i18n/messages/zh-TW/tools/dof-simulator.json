@@ -52,7 +52,10 @@
       "depthRulerInFocus": "清晰範圍",
       "depthRulerSubject": "主體",
       "infinity": "∞",
-      "webglFallbackNotice": "散景形狀需要 WebGL — 正在顯示簡化的模糊效果。"
+      "webglFallbackNotice": "散景形狀需要 WebGL — 正在顯示簡化的模糊效果。",
+      "dividerLabel": "A/B 比較分隔線",
+      "sweepPlay": "播放光圈掃描",
+      "sweepStop": "停止光圈掃描"
     }
   }
 }

@@ -52,7 +52,10 @@
       "depthRulerInFocus": "I fokus",
       "depthRulerSubject": "Motiv",
       "infinity": "∞",
-      "webglFallbackNotice": "Bokehformer kræver WebGL — der vises en forenklet slørhed."
+      "webglFallbackNotice": "Bokehformer kræver WebGL — der vises en forenklet slørhed.",
+      "dividerLabel": "A/B-sammenligningsdeler",
+      "sweepPlay": "Afspil blændegennemløb",
+      "sweepStop": "Stop blændegennemløb"
     }
   }
 }

@@ -52,7 +52,10 @@
       "depthRulerInFocus": "În focalizare",
       "depthRulerSubject": "Subiect",
       "infinity": "∞",
-      "webglFallbackNotice": "Formele bokeh necesită WebGL — se afișează o neclaritate simplificată."
+      "webglFallbackNotice": "Formele bokeh necesită WebGL — se afișează o neclaritate simplificată.",
+      "dividerLabel": "Separator comparație A/B",
+      "sweepPlay": "Redă baleiajul diafragmei",
+      "sweepStop": "Oprește baleiajul diafragmei"
     }
   }
 }

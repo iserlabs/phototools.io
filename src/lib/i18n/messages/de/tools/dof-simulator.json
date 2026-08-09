@@ -52,7 +52,10 @@
       "depthRulerSubject": "Motiv",
       "infinity": "∞",
       "simulateDiffraction": "Beugung simulieren",
-      "webglFallbackNotice": "Bokeh-Formen benötigen WebGL — es wird ein vereinfachter Weichzeichner angezeigt."
+      "webglFallbackNotice": "Bokeh-Formen benötigen WebGL — es wird ein vereinfachter Weichzeichner angezeigt.",
+      "dividerLabel": "A/B-Vergleichstrenner",
+      "sweepPlay": "Blendendurchlauf abspielen",
+      "sweepStop": "Blendendurchlauf stoppen"
     }
   }
 }

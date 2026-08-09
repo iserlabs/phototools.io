@@ -52,7 +52,10 @@
       "depthRulerInFocus": "In Focus",
       "depthRulerSubject": "Subject",
       "infinity": "∞",
-      "webglFallbackNotice": "Kailangan ng WebGL ang mga hugis ng bokeh — nagpapakita ng pinasimpleng blur."
+      "webglFallbackNotice": "Kailangan ng WebGL ang mga hugis ng bokeh — nagpapakita ng pinasimpleng blur.",
+      "dividerLabel": "Panghati ng paghahambing A/B",
+      "sweepPlay": "I-play ang sweep ng aperture",
+      "sweepStop": "Itigil ang sweep ng aperture"
     }
   }
 }

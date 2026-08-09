@@ -52,7 +52,10 @@
       "depthRulerInFocus": "Odakta",
       "depthRulerSubject": "Konu",
       "infinity": "∞",
-      "webglFallbackNotice": "Bokeh şekilleri için WebGL gereklidir — basitleştirilmiş bir bulanıklık gösteriliyor."
+      "webglFallbackNotice": "Bokeh şekilleri için WebGL gereklidir — basitleştirilmiş bir bulanıklık gösteriliyor.",
+      "dividerLabel": "A/B karşılaştırma ayırıcısı",
+      "sweepPlay": "Diyafram taramasını oynat",
+      "sweepStop": "Diyafram taramasını durdur"
     }
   }
 }
