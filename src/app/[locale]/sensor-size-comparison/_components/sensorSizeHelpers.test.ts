@@ -1,9 +1,9 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import {
   encodeCustomParam, decodeCustomParam, loadCustomSensors, saveCustomSensors,
-  ALL_SENSOR_ID_SET, orderForRender,
+  ALL_SENSOR_ID_SET, orderForRender, pickTopMp,
 } from './sensorSizeHelpers'
-import { COMMON_MP } from '@/lib/data/sensors'
+import { COMMON_MP, calcCropFactor } from '@/lib/data/sensors'
 import { STORAGE_KEY } from './sensorSizeTypes'
 import type { CustomSensor, ResolvedSensor } from './sensorSizeTypes'
 
@@ -66,6 +66,23 @@ describe('sensorSizeHelpers', () => {
     expect(Object.keys(COMMON_MP).length).toBe(before)
   })
 
+  it('loadCustomSensors recomputes cropFactor from w/h rather than trusting a stale stored value', () => {
+    // A deliberately wrong cropFactor simulates a payload written before a
+    // crop-factor formula fix (or hand-edited localStorage) — the loader
+    // must not trust it verbatim, since the math path (CompareDrawer ->
+    // compareSensors -> reachFactor/crossFocal) consumes this field
+    // directly, unlike CompareColumn/SensorRowDetail which already
+    // recompute for display.
+    const staleShapePayload = [
+      { id: 'custom_stale_1', name: 'Stale Crop Sensor', w: 36, h: 24, cropFactor: 999, color: '#3b82f6', mp: 24 },
+    ]
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(staleShapePayload))
+    const loaded = loadCustomSensors()
+    expect(loaded).toHaveLength(1)
+    expect(loaded[0].cropFactor).toBe(calcCropFactor(36, 24))
+    expect(loaded[0].cropFactor).not.toBe(999)
+  })
+
   it('orderForRender sorts by SENSOR_GROUP_ORDER then area desc, with ungrouped customs last', () => {
     const sensors: ResolvedSensor[] = [
       { id: 'm43', name: 'MFT', w: 17.3, h: 13, cropFactor: 2, color: '#x', group: 'compact' },
@@ -75,5 +92,23 @@ describe('sensorSizeHelpers', () => {
       { id: 'apsh', name: 'APS-H', w: 27.9, h: 18.6, cropFactor: 1.29, color: '#x', group: 'ff-aps' },
     ]
     expect(orderForRender(sensors).map((s) => s.id)).toEqual(['mf', 'ff', 'apsh', 'm43', 'custom_1'])
+  })
+
+  it('pickTopMp returns the highest mp, not the last array element', () => {
+    // Every real COMMON_MP array is authored ascending today, so a naive
+    // `entries.at(-1)` would coincidentally pass — this fixture is
+    // deliberately out of order to prove the selection is by value, not
+    // position.
+    const outOfOrder = [
+      { mp: 24, models: 'mid' },
+      { mp: 61, models: 'flagship' },
+      { mp: 12, models: 'base' },
+    ]
+    expect(pickTopMp(outOfOrder)).toBe(61)
+  })
+
+  it('pickTopMp returns undefined for missing or empty entries', () => {
+    expect(pickTopMp(undefined)).toBeUndefined()
+    expect(pickTopMp([])).toBeUndefined()
   })
 })

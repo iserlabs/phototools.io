@@ -46,6 +46,19 @@
       "tableCropFactor": "Кроп-фактор",
       "tableAspectCrop": "Кроп по сторонах",
       "canvasAriaLabel": "Порівняння розмірів матриць у режимі {mode}",
+      "compare": {
+        "title": "Порівняння",
+        "compareWith": "Порівняти з…",
+        "compareTheseTwo": "Порівняти ці дві матриці",
+        "close": "Закрити порівняння",
+        "representativeResolution": "Роздільна здатність",
+        "notApplicable": "—",
+        "verdictLight": "{larger} збирає приблизно {ratio}× світла ({ev}).",
+        "verdictReach": "{smaller} дає {factor}× більший \"виліт\" із тим самим об'єктивом.",
+        "verdictNearEqual": "Ці дві матриці збирають практично однакову кількість світла для своєї площі.",
+        "crossFocal": "{from}: об'єктив {focal}mm кадрує як {eqFocal}mm ({to}).",
+        "areaRelation": "{a}: площа {ratio}× ({b})."
+      },
       "detail": {
         "diagonal": "Діагональ",
         "area": "Площа",

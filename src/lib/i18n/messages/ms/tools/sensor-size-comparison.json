@@ -46,6 +46,19 @@
       "tableCropFactor": "Faktor Crop",
       "tableAspectCrop": "Crop Aspek",
       "canvasAriaLabel": "Perbandingan saiz sensor dalam mod {mode}",
+      "compare": {
+        "title": "Perbandingan",
+        "compareWith": "Bandingkan dengan…",
+        "compareTheseTwo": "Bandingkan kedua-dua sensor ini",
+        "close": "Tutup perbandingan",
+        "representativeResolution": "Resolusi",
+        "notApplicable": "—",
+        "verdictLight": "{larger} mengumpul kira-kira {ratio}× cahaya ({ev}).",
+        "verdictReach": "{smaller} memberikan {factor}× lebih jangkauan dengan lensa yang sama.",
+        "verdictNearEqual": "Kedua-dua ini mengumpul cahaya yang hampir sama banyak berbanding kawasannya.",
+        "crossFocal": "Lensa {focal}mm pada {from} membingkai seperti {eqFocal}mm pada {to}.",
+        "areaRelation": "{a} mempunyai {ratio}× kawasan {b}."
+      },
       "detail": {
         "diagonal": "Pepenjuru",
         "area": "Kawasan",

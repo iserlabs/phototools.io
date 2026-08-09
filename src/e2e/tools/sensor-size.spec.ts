@@ -329,4 +329,88 @@ test.describe('Sensor Size Comparison', () => {
     const desktopDetailId = await expandedDesktopButtons.getAttribute('aria-controls')
     await expect(page.locator(`[id="${desktopDetailId}"]`)).not.toBeVisible()
   })
+
+  // None of these four tests assert the verdict sentence's text content —
+  // that's covered by CompareDrawer.test.tsx's unit tests (verdictLight/
+  // verdictReach/verdictNearEqual interpolation, near-equal branch, etc.).
+  // Here we only prove the drawer mounts/unmounts and the URL round-trips.
+  test('compare drawer opens from an expanded row and round-trips through ?vs=', async ({ page }) => {
+    await page.goto('/en/sensor-size-comparison')
+    await page.locator('[id="sensor-row-desktop-ff"] button').first().click()
+    await page.locator('[id="sensor-detail-desktop-ff"] select').selectOption('apsc_n')
+    await expect(page.getByTestId('compare-verdict')).toBeVisible()
+    await expect(page).toHaveURL(/vs=ff%2Capsc_n/)
+
+    await page.reload()
+    await expect(page.getByTestId('compare-verdict')).toBeVisible()
+    await expect(page).toHaveURL(/vs=ff%2Capsc_n/)
+  })
+
+  test('closing the drawer drops ?vs= without changing the selection', async ({ page }) => {
+    // Start from a non-default selection (mf+ff+apsc_n, via `show=`) rather
+    // than letting `visible` sit at DEFAULT_VISIBLE_IDS (mf+ff+apsc_n+m43+
+    // phone). DEFAULT_VISIBLE_IDS is a superset of this selection, so if we
+    // started from the default a regression that reset `visible` to the
+    // default on close (e.g. `onClose` accidentally wired to the same
+    // handler as the "Reset" button, which does both `setVisible(default)`
+    // and `setComparePair(null)` — see SensorSize.tsx's onReset) would still
+    // leave the row *count* unchanged and this test would stay green. Only
+    // comparing the exact surviving id set catches that.
+    await page.goto('/en/sensor-size-comparison?vs=ff,apsc_n&show=ff+apsc_n+mf')
+    await expect(page.getByTestId('compare-verdict')).toBeVisible()
+    const rowIds = () =>
+      page.locator('[id^="sensor-row-desktop-"]').evaluateAll((rows) => rows.map((r) => r.id).sort())
+    const before = await rowIds()
+
+    await page.getByRole('button', { name: /close comparison/i }).click()
+
+    await expect(page.getByTestId('compare-verdict')).toHaveCount(0)
+    await expect(page).not.toHaveURL(/vs=/)
+    expect(await rowIds()).toEqual(before)
+  })
+
+  test('an invalid ?vs= is ignored and dropped', async ({ page }) => {
+    await page.goto('/en/sensor-size-comparison?vs=ff,not_a_sensor')
+    await expect(page.getByTestId('compare-verdict')).toHaveCount(0)
+    await expect(page).not.toHaveURL(/vs=/)
+  })
+
+  test('compare drawer opens from "Compare these two" when exactly two sensors are selected, and only one verdict mounts', async ({ page }) => {
+    await page.goto('/en/sensor-size-comparison')
+    const panel = sidebar(page)
+
+    // Default visible set is 5 sensors (mf, ff, apsc_n, m43, phone) whose
+    // groups are all already expanded (a group auto-opens the moment one of
+    // its members is visible, and never auto-collapses). Uncheck three,
+    // leaving exactly ff + apsc_n, so the "Compare these two" button (entry
+    // point b) appears.
+    await panel.locator('label').filter({ hasText: 'Medium Format (44x33)' }).click()
+    await panel.locator('label').filter({ hasText: 'Micro Four Thirds' }).click()
+    await panel.locator('label').filter({ hasText: 'Smartphone Flagship' }).click()
+
+    // "Compare these two" renders twice (once for the desktop layout, once
+    // for the mobile layout) — the mobile copy's ancestor is display:none
+    // above the 1024px breakpoint, so scope to the desktop-visible one.
+    const compareBtn = page.locator('[class*="desktopOnly"]').getByRole('button', { name: 'Compare these two' })
+    await expect(compareBtn).toBeVisible()
+    await compareBtn.click()
+
+    // Only one CompareDrawer is ever mounted (gated by isDesktop, not CSS) —
+    // toHaveCount(1) proves that, not just toBeVisible().
+    await expect(page.getByTestId('compare-verdict')).toHaveCount(1)
+    await expect(page).toHaveURL(/vs=ff%2Capsc_n/)
+  })
+
+  test('opening a shared ?vs= link at a mobile viewport mounts exactly one drawer', async ({ page }) => {
+    // The headline entry path for a shared comparison link is a phone, not
+    // a laptop — every other compare-drawer e2e test above runs at the
+    // default desktop viewport, so `useCompareEntry`'s `!isDesktop` mount
+    // branch (SensorSize.tsx's `ss.mobileControls`) was only exercised by a
+    // `matchMedia` stub in a unit test. This proves the mobile branch
+    // actually mounts on a real navigation, and that the isDesktop gate
+    // still keeps the desktop branch from double-mounting a second drawer.
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/en/sensor-size-comparison?vs=ff,apsc_n')
+    await expect(page.getByTestId('compare-verdict')).toHaveCount(1)
+  })
 })

@@ -46,6 +46,19 @@
       "tableCropFactor": "Кроп-фактор",
       "tableAspectCrop": "Кроп по соотношению",
       "canvasAriaLabel": "Сравнение размеров матриц в режиме {mode}",
+      "compare": {
+        "title": "Сравнение",
+        "compareWith": "Сравнить с…",
+        "compareTheseTwo": "Сравнить эти две матрицы",
+        "close": "Закрыть сравнение",
+        "representativeResolution": "Разрешение",
+        "notApplicable": "—",
+        "verdictLight": "{larger} собирает примерно {ratio}× света ({ev}).",
+        "verdictReach": "{smaller} даёт {factor}× больший «вылет» с тем же объективом.",
+        "verdictNearEqual": "Эти две матрицы собирают практически одинаковое количество света для своей площади.",
+        "crossFocal": "{from}: объектив {focal}mm даёт кадр как {eqFocal}mm ({to}).",
+        "areaRelation": "{a}: площадь {ratio}× ({b})."
+      },
       "detail": {
         "diagonal": "Диагональ",
         "area": "Площадь",

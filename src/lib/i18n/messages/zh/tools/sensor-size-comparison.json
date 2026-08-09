@@ -46,6 +46,19 @@
       "tableCropFactor": "裁切系数",
       "tableAspectCrop": "宽高比裁切",
       "canvasAriaLabel": "传感器尺寸{mode}模式对比",
+      "compare": {
+        "title": "对比",
+        "compareWith": "选择对比对象…",
+        "compareTheseTwo": "对比这两个",
+        "close": "关闭对比",
+        "representativeResolution": "分辨率",
+        "notApplicable": "—",
+        "verdictLight": "{larger}的集光量约为{ratio}倍（{ev}）。",
+        "verdictReach": "{smaller}用同一支镜头能提供{factor}倍的额外拍摄距离。",
+        "verdictNearEqual": "按面积计算，这两者的集光量几乎相同。",
+        "crossFocal": "{from}上的{focal}mm镜头取景效果，相当于{to}上的{eqFocal}mm。",
+        "areaRelation": "{a}的面积是{b}的{ratio}倍。"
+      },
       "detail": {
         "diagonal": "对角线",
         "area": "面积",

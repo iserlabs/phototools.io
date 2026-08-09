@@ -46,6 +46,19 @@
       "tableCropFactor": "裁切係數",
       "tableAspectCrop": "長寬比裁切",
       "canvasAriaLabel": "以{mode}模式顯示感光元件尺寸比較",
+      "compare": {
+        "title": "比較",
+        "compareWith": "比較對象…",
+        "compareTheseTwo": "比較這兩個感光元件",
+        "close": "關閉比較",
+        "representativeResolution": "解析度",
+        "notApplicable": "—",
+        "verdictLight": "{larger} 的收光量約為 {ratio}×（{ev}）。",
+        "verdictReach": "使用同一顆鏡頭，{smaller} 的焦段延伸多 {factor}×。",
+        "verdictNearEqual": "就面積而言，這兩者的收光量幾乎相同。",
+        "crossFocal": "{from} 上的 {focal}mm 鏡頭，取景效果相當於 {to} 上的 {eqFocal}mm。",
+        "areaRelation": "{a} 的面積是 {b} 的 {ratio}×。"
+      },
       "detail": {
         "diagonal": "對角線",
         "area": "面積",

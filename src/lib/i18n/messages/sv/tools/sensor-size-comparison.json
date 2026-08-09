@@ -46,6 +46,19 @@
       "tableCropFactor": "Cropfaktor",
       "tableAspectCrop": "Aspect crop",
       "canvasAriaLabel": "Jämförelse av sensorstorlek i läge {mode}",
+      "compare": {
+        "title": "Jämförelse",
+        "compareWith": "Jämför med…",
+        "compareTheseTwo": "Jämför dessa två sensorer",
+        "close": "Stäng jämförelsen",
+        "representativeResolution": "Upplösning",
+        "notApplicable": "—",
+        "verdictLight": "{larger} samlar in ungefär {ratio}× ljuset ({ev}).",
+        "verdictReach": "{smaller} ger {factor}× mer räckvidd med samma objektiv.",
+        "verdictNearEqual": "De här två samlar in praktiskt taget lika mycket ljus i förhållande till sin yta.",
+        "crossFocal": "Ett {focal}mm-objektiv på {from} ramar in som {eqFocal}mm på {to}.",
+        "areaRelation": "{a} har {ratio}× ytan av {b}."
+      },
       "detail": {
         "diagonal": "Diagonal",
         "area": "Yta",

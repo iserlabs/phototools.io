@@ -46,6 +46,19 @@
       "tableCropFactor": "Factor de crop",
       "tableAspectCrop": "Crop de raport",
       "canvasAriaLabel": "Comparație dimensiuni senzor în modul {mode}",
+      "compare": {
+        "title": "Comparație",
+        "compareWith": "Compară cu…",
+        "compareTheseTwo": "Compară acești doi senzori",
+        "close": "Închide comparația",
+        "representativeResolution": "Rezoluție",
+        "notApplicable": "—",
+        "verdictLight": "{larger} captează aproximativ {ratio}× lumina ({ev}).",
+        "verdictReach": "{smaller} oferă {factor}× mai multă rază cu același obiectiv.",
+        "verdictNearEqual": "Acești doi captează practic aceeași cantitate de lumină pentru suprafața lor.",
+        "crossFocal": "Un obiectiv de {focal}mm pe {from} încadrează ca un {eqFocal}mm pe {to}.",
+        "areaRelation": "{a} are {ratio}× suprafața lui {b}."
+      },
       "detail": {
         "diagonal": "Diagonală",
         "area": "Suprafață",

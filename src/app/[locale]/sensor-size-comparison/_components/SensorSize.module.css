@@ -341,6 +341,51 @@
   color: var(--text-primary);
 }
 
+/* ── Compare entry point (a) — "Compare with…" select in a row's detail ── */
+.compareEntry {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.compareSelect {
+  padding: 6px 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: inherit;
+  max-width: 260px;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.compareSelect:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* ── Compare entry point (b) — "Compare these two" button ── */
+.compareTwoBtn {
+  align-self: flex-start;
+  padding: 8px 14px;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.compareTwoBtn:hover {
+  background: var(--accent-hover);
+}
+
 /* ── Copy image button ── */
 .copyBtn {
   padding: 6px 12px;
@@ -365,6 +410,96 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--accent);
+}
+
+/* ── Compare Drawer ── */
+.compareDrawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  animation: fadeIn var(--duration-fast) var(--ease-out) both;
+}
+
+.compareHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.compareTitle {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.compareClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+
+.compareClose:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.compareColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.compareColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+.compareColumnName {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.compareRelation {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.compareRelation p {
+  margin: 0;
+}
+
+.compareVerdict {
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
 /* ── Collapsible sensor groups ── */
@@ -524,6 +659,26 @@
   .rowToggle {
     min-height: 44px;
   }
+
+  .compareColumns {
+    grid-template-columns: 1fr;
+  }
+
+  .compareClose {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .compareSelect {
+    min-height: 44px;
+    font-size: 16px;
+    max-width: none;
+  }
+
+  .compareTwoBtn {
+    min-height: 44px;
+    align-self: stretch;
+  }
 }
 
 /* ── Custom Sensor Form ── */
@@ -632,7 +787,10 @@
   bottom: calc(100% + 6px);
   right: 0;
   background: rgba(0, 0, 0, 0.9);
-  color: var(--text-primary);
+  /* The scrim is a fixed dark overlay in both themes, so the text is fixed
+     light. Using var(--text-primary) here renders near-black on near-black
+     in light theme. */
+  color: #f5f5f5;
   font-size: 11px;
   font-weight: 400;
   padding: 6px 10px;

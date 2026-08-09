@@ -46,6 +46,19 @@
       "tableCropFactor": "Crop Factor",
       "tableAspectCrop": "Aspect Crop",
       "canvasAriaLabel": "Sensor size comparison sa {mode} mode",
+      "compare": {
+        "title": "Paghambing",
+        "compareWith": "Ihambing sa…",
+        "compareTheseTwo": "Ihambing itong dalawang sensor",
+        "close": "Isara ang paghambing",
+        "representativeResolution": "Resolution",
+        "notApplicable": "—",
+        "verdictLight": "{larger} ay kumukuha ng humigit-kumulang {ratio}× na liwanag ({ev}).",
+        "verdictReach": "{smaller} ay may {factor}× na mas malaking reach gamit ang parehong lens.",
+        "verdictNearEqual": "Halos magkapareho ang liwanag na nakukuha ng dalawang ito para sa laki ng area nila.",
+        "crossFocal": "Ang {focal}mm na lens sa {from} ay parang {eqFocal}mm sa {to}.",
+        "areaRelation": "Ang {a} ay may {ratio}× na area ng {b}."
+      },
       "detail": {
         "diagonal": "Diagonal",
         "area": "Area",

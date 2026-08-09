@@ -46,6 +46,19 @@
       "tableCropFactor": "Fattore di crop",
       "tableAspectCrop": "Crop d'aspetto",
       "canvasAriaLabel": "Confronto dimensioni sensore in modalità {mode}",
+      "compare": {
+        "title": "Confronto",
+        "compareWith": "Confronta con…",
+        "compareTheseTwo": "Confronta questi due",
+        "close": "Chiudi confronto",
+        "representativeResolution": "Risoluzione",
+        "notApplicable": "—",
+        "verdictLight": "{larger} raccoglie circa {ratio}× la luce ({ev}).",
+        "verdictReach": "{smaller} offre un tiro {factor}× maggiore con lo stesso obiettivo.",
+        "verdictNearEqual": "Questi due raccolgono una quantità di luce praticamente identica in rapporto alla loro area.",
+        "crossFocal": "Un obiettivo da {focal}mm su {from} inquadra come un {eqFocal}mm su {to}.",
+        "areaRelation": "{a} ha un'area pari a {ratio}× quella di {b}."
+      },
       "detail": {
         "diagonal": "Diagonale",
         "area": "Area",

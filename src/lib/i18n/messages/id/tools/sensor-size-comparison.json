@@ -46,6 +46,19 @@
       "tableCropFactor": "Crop Factor",
       "tableAspectCrop": "Aspect Crop",
       "canvasAriaLabel": "Perbandingan ukuran sensor dalam mode {mode}",
+      "compare": {
+        "title": "Bandingkan",
+        "compareWith": "Bandingkan dengan…",
+        "compareTheseTwo": "Bandingkan kedua ini",
+        "close": "Tutup perbandingan",
+        "representativeResolution": "Resolusi",
+        "notApplicable": "—",
+        "verdictLight": "{larger} menangkap sekitar {ratio}× lebih banyak cahaya ({ev}).",
+        "verdictReach": "{smaller} memberikan jangkauan {factor}× lebih jauh dengan lensa yang sama.",
+        "verdictNearEqual": "Kedua sensor ini menangkap jumlah cahaya yang hampir identik jika dihitung per satuan area.",
+        "crossFocal": "Lensa {focal}mm pada {from} membingkai seperti {eqFocal}mm pada {to}.",
+        "areaRelation": "Luas area {a} adalah {ratio}× luas area {b}."
+      },
       "detail": {
         "diagonal": "Diagonal",
         "area": "Area",

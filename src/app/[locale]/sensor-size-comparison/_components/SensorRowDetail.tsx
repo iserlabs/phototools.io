@@ -10,6 +10,18 @@ import ss from './SensorSize.module.css'
 
 type SensorRowDetailProps = {
   sensor: ResolvedSensor
+  // Namespaces the compare-select's id the same way `SensorTable` namespaces
+  // row/detail ids (`sensor-row-${variant}-${id}` / `sensor-detail-${variant}-${id}`)
+  // — `SensorTable` renders twice (desktop + mobile, both live in the DOM at
+  // once), so an unscoped id here would collide the moment the same row is
+  // expanded in both copies simultaneously.
+  variant: 'desktop' | 'mobile'
+  // Entry point (a) — "Compare with…" select inside an expanded row. Both
+  // undefined when the caller doesn't wire compare (kept optional so this
+  // component doesn't hard-require the feature), or `compareCandidates` is
+  // empty (nothing to compare against).
+  onCompare?: (otherId: string) => void
+  compareCandidates?: ResolvedSensor[]
 }
 
 /**
@@ -20,8 +32,10 @@ type SensorRowDetailProps = {
  * `sensorSizeTypes.ts`), which is how this component tells them apart
  * without a separate `isCustom` flag threaded through props.
  */
-export function SensorRowDetail({ sensor: s }: SensorRowDetailProps) {
+export function SensorRowDetail({ sensor: s, variant, onCompare, compareCandidates }: SensorRowDetailProps) {
   const t = useTranslations('toolUI.sensor-size-comparison')
+  const sensorsT = useTranslations('common.sensors')
+  const nameOf = (sensor: ResolvedSensor) => (sensorsT.has(sensor.id) ? sensorsT(sensor.id) : sensor.name)
   const isCustom = !s.group
 
   const diagonal = Math.hypot(s.w, s.h)
@@ -89,6 +103,29 @@ export function SensorRowDetail({ sensor: s }: SensorRowDetailProps) {
           <p><strong>{t('detail.context')}:</strong> {t(`sensorProfiles.${s.id}.context`)}</p>
         </div>
       ) : null}
+      {onCompare && compareCandidates && compareCandidates.length > 0 && (
+        <div className={ss.compareEntry}>
+          <label htmlFor={`compare-select-${variant}-${s.id}`} className={ss.sectionLabel}>
+            {t('compare.compareWith')}
+          </label>
+          <select
+            id={`compare-select-${variant}-${s.id}`}
+            className={ss.compareSelect}
+            defaultValue=""
+            onChange={(e) => {
+              const otherId = e.target.value
+              if (!otherId) return
+              onCompare(otherId)
+              e.target.value = ''
+            }}
+          >
+            <option value="" disabled>{t('compare.compareWith')}</option>
+            {compareCandidates.map((c) => (
+              <option key={c.id} value={c.id}>{nameOf(c)}</option>
+            ))}
+          </select>
+        </div>
+      )}
     </div>
   )
 }

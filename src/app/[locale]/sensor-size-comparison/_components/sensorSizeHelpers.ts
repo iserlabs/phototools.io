@@ -1,6 +1,7 @@
 import { ALL_SENSORS, SENSOR_GROUP_ORDER, calcCropFactor } from '@/lib/data/sensors'
 import { CUSTOM_COLORS, STORAGE_KEY } from './sensorSizeTypes'
 import type { StoredCustomSensor, CustomSensor, ResolvedSensor } from './sensorSizeTypes'
+import type { MpEntry } from '@/lib/data/sensors'
 
 export let customColorIdx = 0
 export function setCustomColorIdx(n: number) { customColorIdx = n }
@@ -91,11 +92,31 @@ export function loadCustomSensors(): CustomSensor[] {
     if (!Array.isArray(parsed)) return []
     const stored = parsed as StoredCustomSensor[]
     customColorIdx = stored.length
+    // Recompute cropFactor from w/h rather than trusting the stored value —
+    // a payload written before a crop-factor formula fix (or otherwise
+    // hand-edited) would carry a stale figure that silently diverges from
+    // what CompareColumn/SensorRowDetail display, since both of those
+    // already recompute via calcCropFactor. This keeps the math path
+    // (CompareDrawer -> compareSensors -> reachFactor/crossFocal) in sync
+    // with the display path from the same source of truth.
     return stored.map(s => ({
-      id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: s.cropFactor, color: s.color,
+      id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: calcCropFactor(s.w, s.h), color: s.color,
       mp: s.mp,
     }))
   } catch { return [] }
+}
+
+/**
+ * Pick the representative resolution for a sensor's `COMMON_MP` entries: the
+ * HIGHEST `mp` figure (the current flagship), never the first or last array
+ * element. `COMMON_MP` arrays happen to be authored in ascending order today,
+ * so a naive `entries.at(-1)` would coincidentally return the same value —
+ * this makes the "highest, not last" selection explicit and independently
+ * testable regardless of entry order.
+ */
+export function pickTopMp(entries: MpEntry[] | undefined): number | undefined {
+  if (!entries || entries.length === 0) return undefined
+  return Math.max(...entries.map((e) => e.mp))
 }
 
 export function saveCustomSensors(sensors: CustomSensor[]) {

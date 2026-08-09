@@ -46,6 +46,19 @@
       "tableCropFactor": "Kerroin",
       "tableAspectCrop": "Kuvasuhderajaus",
       "canvasAriaLabel": "Kennokokojen vertailu {mode}-tilassa",
+      "compare": {
+        "title": "Vertailu",
+        "compareWith": "Vertaa kennoon…",
+        "compareTheseTwo": "Vertaa näitä kahta kennoa",
+        "close": "Sulje vertailu",
+        "representativeResolution": "Resoluutio",
+        "notApplicable": "—",
+        "verdictLight": "{larger} kerää noin {ratio}× valoa ({ev}).",
+        "verdictReach": "{smaller} antaa {factor}× enemmän kantamaa samalla objektiivilla.",
+        "verdictNearEqual": "Nämä kaksi kennoa keräävät pinta-alaansa nähden lähes yhtä paljon valoa.",
+        "crossFocal": "{from}: {focal}mm-objektiivi rajaa kuin {eqFocal}mm ({to}).",
+        "areaRelation": "{a}: pinta-ala {ratio}× ({b})."
+      },
       "detail": {
         "diagonal": "Lävistäjä",
         "area": "Pinta-ala",

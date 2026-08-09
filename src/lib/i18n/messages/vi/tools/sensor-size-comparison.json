@@ -46,6 +46,19 @@
       "tableCropFactor": "Hệ số crop",
       "tableAspectCrop": "Crop tỷ lệ",
       "canvasAriaLabel": "So sánh kích thước cảm biến ở chế độ {mode}",
+      "compare": {
+        "title": "So sánh",
+        "compareWith": "So sánh với…",
+        "compareTheseTwo": "So sánh hai cảm biến này",
+        "close": "Đóng so sánh",
+        "representativeResolution": "Độ phân giải",
+        "notApplicable": "—",
+        "verdictLight": "{larger} thu được lượng ánh sáng nhiều hơn khoảng {ratio}× ({ev}).",
+        "verdictReach": "{smaller} cho tầm xa hơn {factor}× với cùng một ống kính.",
+        "verdictNearEqual": "Xét theo diện tích, hai cảm biến này thu ánh sáng gần như bằng nhau.",
+        "crossFocal": "Ống kính {focal}mm trên {from} lấy khung hình tương đương {eqFocal}mm trên {to}.",
+        "areaRelation": "{a} có diện tích gấp {ratio}× {b}."
+      },
       "detail": {
         "diagonal": "Đường chéo",
         "area": "Diện tích",
