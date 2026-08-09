@@ -65,7 +65,19 @@
       "background": "Háttér",
       "chooseModel": "Modell kiválasztása",
       "chooseBackground": "Háttér kiválasztása",
-      "close": "Bezárás"
+      "close": "Bezárás",
+      "camera": "Kamera",
+      "lens": "Objektív",
+      "cropFactor": "Crop faktor",
+      "cameraSearchPlaceholder": "Keresés a kamerák között...",
+      "lensSearchPlaceholder": "Keresés az objektívek között...",
+      "clear": "Törlés",
+      "teleconverter": "Telekonverter",
+      "teleconverterNone": "Nincs",
+      "lockFov": "Látószög rögzítése",
+      "minFocusWarning": "A minimális fókusztávolság alatt ({value})",
+      "customCoc": "Egyedi CoC",
+      "backgroundDistance": "Háttértávolság"
     }
   }
 }

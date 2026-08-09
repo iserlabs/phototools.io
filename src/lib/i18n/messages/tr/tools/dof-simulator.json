@@ -65,7 +65,19 @@
       "background": "Arka Plan",
       "chooseModel": "Model seç",
       "chooseBackground": "Arka plan seç",
-      "close": "Kapat"
+      "close": "Kapat",
+      "camera": "Kamera",
+      "lens": "Objektif",
+      "cropFactor": "Kırpma Faktörü",
+      "cameraSearchPlaceholder": "Kamera ara...",
+      "lensSearchPlaceholder": "Objektif ara...",
+      "clear": "Temizle",
+      "teleconverter": "Teleconverter",
+      "teleconverterNone": "Yok",
+      "lockFov": "Görüş alanını kilitle",
+      "minFocusWarning": "Minimum odaklanma mesafesinin altında ({value})",
+      "customCoc": "Özel CoC",
+      "backgroundDistance": "Arka Plan Mesafesi"
     }
   }
 }

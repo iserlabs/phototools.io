@@ -65,7 +65,19 @@
       "background": "Baggrund",
       "chooseModel": "Vælg en model",
       "chooseBackground": "Vælg en baggrund",
-      "close": "Luk"
+      "close": "Luk",
+      "camera": "Kamera",
+      "lens": "Linse",
+      "cropFactor": "Cropfaktor",
+      "cameraSearchPlaceholder": "Søg i kameraer …",
+      "lensSearchPlaceholder": "Søg i linser …",
+      "clear": "Ryd",
+      "teleconverter": "Telekonverter",
+      "teleconverterNone": "Ingen",
+      "lockFov": "Lås billedvinkel",
+      "minFocusWarning": "Under mindste fokuseringsafstand ({value})",
+      "customCoc": "Brugerdefineret CoC",
+      "backgroundDistance": "Baggrundsafstand"
     }
   }
 }

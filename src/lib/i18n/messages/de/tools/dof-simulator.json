@@ -65,7 +65,19 @@
       "background": "Hintergrund",
       "chooseModel": "Model auswählen",
       "chooseBackground": "Hintergrund auswählen",
-      "close": "Schließen"
+      "close": "Schließen",
+      "camera": "Kamera",
+      "lens": "Objektiv",
+      "cropFactor": "Crop-Faktor",
+      "cameraSearchPlaceholder": "Kameras suchen...",
+      "lensSearchPlaceholder": "Objektive suchen...",
+      "clear": "Löschen",
+      "teleconverter": "Telekonverter",
+      "teleconverterNone": "Keine",
+      "lockFov": "Bildwinkel festhalten",
+      "minFocusWarning": "Unterhalb der Naheinstellgrenze ({value})",
+      "customCoc": "Benutzerdefinierter CoC",
+      "backgroundDistance": "Hintergrundabstand"
     }
   }
 }

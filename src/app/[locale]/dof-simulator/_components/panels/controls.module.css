@@ -1,0 +1,56 @@
+/* Shared bits for CameraPanel/LensPanel/DistancePanel/FramingPanel/AdvancedPanel
+   that aren't already covered by ControlPanel.module.css's exported classes
+   (fieldRow, fieldLabel, fieldValue, slider, sliderWrap, select, input,
+   presets/preset/presetActive — imported directly where those fit). */
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.checkboxRow input[type='checkbox'] {
+  accent-color: var(--accent);
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Distance panel: value readout + MFD warning ── */
+
+.readoutRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.warningChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: color-mix(in srgb, #f59e0b 12%, transparent);
+  border: 1px solid color-mix(in srgb, #f59e0b 30%, transparent);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: var(--text-primary);
+}
+
+/* ── Advanced panel: override rows (checkbox + conditional control) ── */
+
+.overrideField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+@media (max-width: 1023px) {
+  .checkboxRow input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+  }
+}

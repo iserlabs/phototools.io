@@ -65,7 +65,19 @@
       "background": "배경",
       "chooseModel": "모델 선택",
       "chooseBackground": "배경 선택",
-      "close": "닫기"
+      "close": "닫기",
+      "camera": "카메라",
+      "lens": "렌즈",
+      "cropFactor": "크롭 팩터",
+      "cameraSearchPlaceholder": "카메라 검색...",
+      "lensSearchPlaceholder": "렌즈 검색...",
+      "clear": "지우기",
+      "teleconverter": "텔레컨버터",
+      "teleconverterNone": "없음",
+      "lockFov": "화각 고정",
+      "minFocusWarning": "최단 촬영 거리보다 가깝습니다 ({value})",
+      "customCoc": "커스텀 CoC",
+      "backgroundDistance": "배경 거리"
     }
   }
 }

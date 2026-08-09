@@ -65,7 +65,19 @@
       "background": "Hậu cảnh",
       "chooseModel": "Chọn người mẫu",
       "chooseBackground": "Chọn hậu cảnh",
-      "close": "Đóng"
+      "close": "Đóng",
+      "camera": "Máy ảnh",
+      "lens": "Ống kính",
+      "cropFactor": "Hệ số crop",
+      "cameraSearchPlaceholder": "Tìm máy ảnh...",
+      "lensSearchPlaceholder": "Tìm ống kính...",
+      "clear": "Xóa",
+      "teleconverter": "Teleconverter",
+      "teleconverterNone": "Không",
+      "lockFov": "Khóa góc nhìn",
+      "minFocusWarning": "Dưới khoảng cách lấy nét tối thiểu ({value})",
+      "customCoc": "CoC tùy chỉnh",
+      "backgroundDistance": "Khoảng cách hậu cảnh"
     }
   }
 }

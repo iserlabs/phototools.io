@@ -65,7 +65,19 @@
       "background": "Achtergrond",
       "chooseModel": "Kies een model",
       "chooseBackground": "Kies een achtergrond",
-      "close": "Sluiten"
+      "close": "Sluiten",
+      "camera": "Camera",
+      "lens": "Lens",
+      "cropFactor": "Cropfactor",
+      "cameraSearchPlaceholder": "Zoek camera's...",
+      "lensSearchPlaceholder": "Zoek lenzen...",
+      "clear": "Wissen",
+      "teleconverter": "Teleconverter",
+      "teleconverterNone": "Geen",
+      "lockFov": "Beeldhoek vergrendelen",
+      "minFocusWarning": "Onder de minimale scherpstelafstand ({value})",
+      "customCoc": "Aangepaste CoC",
+      "backgroundDistance": "Achtergrondafstand"
     }
   }
 }

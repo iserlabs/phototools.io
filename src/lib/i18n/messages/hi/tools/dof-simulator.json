@@ -65,7 +65,19 @@
       "background": "बैकग्राउंड",
       "chooseModel": "मॉडल चुनें",
       "chooseBackground": "बैकग्राउंड चुनें",
-      "close": "बंद करें"
+      "close": "बंद करें",
+      "camera": "कैमरा",
+      "lens": "लेंस",
+      "cropFactor": "क्रॉप फैक्टर",
+      "cameraSearchPlaceholder": "कैमरा खोजें...",
+      "lensSearchPlaceholder": "लेंस खोजें...",
+      "clear": "साफ़ करें",
+      "teleconverter": "टेलीकनवर्टर",
+      "teleconverterNone": "कोई नहीं",
+      "lockFov": "फील्ड ऑफ व्यू लॉक करें",
+      "minFocusWarning": "न्यूनतम फ़ोकस दूरी से कम ({value})",
+      "customCoc": "कस्टम CoC",
+      "backgroundDistance": "बैकग्राउंड दूरी"
     }
   }
 }

@@ -65,7 +65,19 @@
       "background": "Background",
       "chooseModel": "Choose a Model",
       "chooseBackground": "Choose a Background",
-      "close": "Close"
+      "close": "Close",
+      "camera": "Camera",
+      "lens": "Lens",
+      "cropFactor": "Crop Factor",
+      "cameraSearchPlaceholder": "Search cameras...",
+      "lensSearchPlaceholder": "Search lenses...",
+      "clear": "Clear",
+      "teleconverter": "Teleconverter",
+      "teleconverterNone": "None",
+      "lockFov": "Lock field of view",
+      "minFocusWarning": "Below minimum focus distance ({value})",
+      "customCoc": "Custom CoC",
+      "backgroundDistance": "Background Distance"
     }
   }
 }

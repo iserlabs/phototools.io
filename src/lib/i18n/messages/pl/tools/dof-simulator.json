@@ -65,7 +65,19 @@
       "background": "Tło",
       "chooseModel": "Wybierz model",
       "chooseBackground": "Wybierz tło",
-      "close": "Zamknij"
+      "close": "Zamknij",
+      "camera": "Aparat",
+      "lens": "Obiektyw",
+      "cropFactor": "Współczynnik kadrowania",
+      "cameraSearchPlaceholder": "Szukaj aparatów...",
+      "lensSearchPlaceholder": "Szukaj obiektywów...",
+      "clear": "Wyczyść",
+      "teleconverter": "Telekonwerter",
+      "teleconverterNone": "Brak",
+      "lockFov": "Zablokuj pole widzenia",
+      "minFocusWarning": "Poniżej minimalnej odległości ostrzenia ({value})",
+      "customCoc": "Niestandardowy CoC",
+      "backgroundDistance": "Odległość tła"
     }
   }
 }

@@ -65,7 +65,19 @@
       "background": "พื้นหลัง",
       "chooseModel": "เลือกโมเดล",
       "chooseBackground": "เลือกพื้นหลัง",
-      "close": "ปิด"
+      "close": "ปิด",
+      "camera": "กล้อง",
+      "lens": "เลนส์",
+      "cropFactor": "ครอปแฟกเตอร์",
+      "cameraSearchPlaceholder": "ค้นหากล้อง...",
+      "lensSearchPlaceholder": "ค้นหาเลนส์...",
+      "clear": "ล้าง",
+      "teleconverter": "เทเลคอนเวอร์เตอร์",
+      "teleconverterNone": "ไม่มี",
+      "lockFov": "ล็อกมุมรับภาพ",
+      "minFocusWarning": "ใกล้กว่าระยะโฟกัสใกล้สุด ({value})",
+      "customCoc": "CoC ที่กำหนดเอง",
+      "backgroundDistance": "ระยะทางพื้นหลัง"
     }
   }
 }

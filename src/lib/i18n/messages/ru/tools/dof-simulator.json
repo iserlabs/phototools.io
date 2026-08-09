@@ -65,7 +65,19 @@
       "background": "Фон",
       "chooseModel": "Выбрать модель",
       "chooseBackground": "Выбрать фон",
-      "close": "Закрыть"
+      "close": "Закрыть",
+      "camera": "Камера",
+      "lens": "Объектив",
+      "cropFactor": "Кроп-фактор",
+      "cameraSearchPlaceholder": "Искать камеру...",
+      "lensSearchPlaceholder": "Искать объектив...",
+      "clear": "Очистить",
+      "teleconverter": "Телеконвертер",
+      "teleconverterNone": "Нет",
+      "lockFov": "Зафиксировать угол обзора",
+      "minFocusWarning": "Ближе минимальной дистанции фокусировки ({value})",
+      "customCoc": "Свой CoC",
+      "backgroundDistance": "Дистанция фона"
     }
   }
 }

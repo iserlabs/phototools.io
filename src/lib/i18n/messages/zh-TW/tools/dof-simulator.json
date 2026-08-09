@@ -65,7 +65,19 @@
       "background": "背景",
       "chooseModel": "選擇模特兒",
       "chooseBackground": "選擇背景",
-      "close": "關閉"
+      "close": "關閉",
+      "camera": "相機",
+      "lens": "鏡頭",
+      "cropFactor": "裁切係數",
+      "cameraSearchPlaceholder": "搜尋相機...",
+      "lensSearchPlaceholder": "搜尋鏡頭...",
+      "clear": "清除",
+      "teleconverter": "增距鏡",
+      "teleconverterNone": "無",
+      "lockFov": "鎖定視角",
+      "minFocusWarning": "近於最近對焦距離（{value}）",
+      "customCoc": "自訂CoC",
+      "backgroundDistance": "背景距離"
     }
   }
 }

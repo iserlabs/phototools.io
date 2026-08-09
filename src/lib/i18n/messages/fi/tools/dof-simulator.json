@@ -65,7 +65,19 @@
       "background": "Tausta",
       "chooseModel": "Valitse malli",
       "chooseBackground": "Valitse tausta",
-      "close": "Sulje"
+      "close": "Sulje",
+      "camera": "Kamera",
+      "lens": "Objektiivi",
+      "cropFactor": "Kerroin",
+      "cameraSearchPlaceholder": "Hae kameroita...",
+      "lensSearchPlaceholder": "Hae objektiiveja...",
+      "clear": "Tyhjennä",
+      "teleconverter": "Telekonvertteri",
+      "teleconverterNone": "Ei mitään",
+      "lockFov": "Lukitse kuvakulma",
+      "minFocusWarning": "Alle vähimmäistarkennusetäisyyden ({value})",
+      "customCoc": "Mukautettu CoC",
+      "backgroundDistance": "Taustan etäisyys"
     }
   }
 }

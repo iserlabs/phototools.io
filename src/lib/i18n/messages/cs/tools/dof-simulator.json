@@ -65,7 +65,19 @@
       "background": "Pozadí",
       "chooseModel": "Vybrat model",
       "chooseBackground": "Vybrat pozadí",
-      "close": "Zavřít"
+      "close": "Zavřít",
+      "camera": "Fotoaparát",
+      "lens": "Objektiv",
+      "cropFactor": "Crop faktor",
+      "cameraSearchPlaceholder": "Hledej fotoaparáty...",
+      "lensSearchPlaceholder": "Hledej objektivy...",
+      "clear": "Vymazat",
+      "teleconverter": "Telekonvertor",
+      "teleconverterNone": "Žádný",
+      "lockFov": "Zamknout zorný úhel",
+      "minFocusWarning": "Pod minimální ostřicí vzdáleností ({value})",
+      "customCoc": "Vlastní CoC",
+      "backgroundDistance": "Vzdálenost pozadí"
     }
   }
 }

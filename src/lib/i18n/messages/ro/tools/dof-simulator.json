@@ -65,7 +65,19 @@
       "background": "Fundal",
       "chooseModel": "Alege un model",
       "chooseBackground": "Alege un fundal",
-      "close": "Închide"
+      "close": "Închide",
+      "camera": "Aparat",
+      "lens": "Obiectiv",
+      "cropFactor": "Factor de crop",
+      "cameraSearchPlaceholder": "Caută aparate...",
+      "lensSearchPlaceholder": "Caută obiective...",
+      "clear": "Șterge",
+      "teleconverter": "Teleconvertor",
+      "teleconverterNone": "Niciunul",
+      "lockFov": "Blochează unghiul de vizualizare",
+      "minFocusWarning": "Sub distanța minimă de focalizare ({value})",
+      "customCoc": "CoC personalizat",
+      "backgroundDistance": "Distanța fundalului"
     }
   }
 }

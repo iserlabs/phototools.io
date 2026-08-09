@@ -65,7 +65,19 @@
       "background": "Φόντο",
       "chooseModel": "Επιλογή μοντέλου",
       "chooseBackground": "Επιλογή φόντου",
-      "close": "Κλείσιμο"
+      "close": "Κλείσιμο",
+      "camera": "Κάμερα",
+      "lens": "Φακός",
+      "cropFactor": "Συντελεστής crop",
+      "cameraSearchPlaceholder": "Αναζήτηση καμερών...",
+      "lensSearchPlaceholder": "Αναζήτηση φακών...",
+      "clear": "Καθαρισμός",
+      "teleconverter": "Τηλεμετατροπέας",
+      "teleconverterNone": "Καμία",
+      "lockFov": "Κλείδωμα οπτικού πεδίου",
+      "minFocusWarning": "Κάτω από την ελάχιστη απόσταση εστίασης ({value})",
+      "customCoc": "Προσαρμοσμένος CoC",
+      "backgroundDistance": "Απόσταση φόντου"
     }
   }
 }

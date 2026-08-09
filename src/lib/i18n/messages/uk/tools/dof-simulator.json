@@ -65,7 +65,19 @@
       "background": "Фон",
       "chooseModel": "Вибрати модель",
       "chooseBackground": "Вибрати фон",
-      "close": "Закрити"
+      "close": "Закрити",
+      "camera": "Камера",
+      "lens": "Об'єктив",
+      "cropFactor": "Кроп-фактор",
+      "cameraSearchPlaceholder": "Пошук камер...",
+      "lensSearchPlaceholder": "Пошук об'єктивів...",
+      "clear": "Очистити",
+      "teleconverter": "Телеконвертер",
+      "teleconverterNone": "Немає",
+      "lockFov": "Зафіксувати кут огляду",
+      "minFocusWarning": "Ближче мінімальної дистанції фокусування ({value})",
+      "customCoc": "Свій CoC",
+      "backgroundDistance": "Дистанція фону"
     }
   }
 }

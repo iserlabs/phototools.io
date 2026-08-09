@@ -65,7 +65,19 @@
       "background": "Fons",
       "chooseModel": "Tria un model",
       "chooseBackground": "Tria un fons",
-      "close": "Tanca"
+      "close": "Tanca",
+      "camera": "Càmera",
+      "lens": "Objectiu",
+      "cropFactor": "Factor de retall",
+      "cameraSearchPlaceholder": "Cerca càmeres...",
+      "lensSearchPlaceholder": "Cerca objectius...",
+      "clear": "Esborra",
+      "teleconverter": "Teleconvertidor",
+      "teleconverterNone": "Cap",
+      "lockFov": "Bloqueja l'angle de visió",
+      "minFocusWarning": "Per sota de la distància mínima d'enfocament ({value})",
+      "customCoc": "CoC personalitzat",
+      "backgroundDistance": "Distància del fons"
     }
   }
 }

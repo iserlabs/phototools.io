@@ -65,7 +65,19 @@
       "background": "Latar Belakang",
       "chooseModel": "Pilih model",
       "chooseBackground": "Pilih latar belakang",
-      "close": "Tutup"
+      "close": "Tutup",
+      "camera": "Kamera",
+      "lens": "Lensa",
+      "cropFactor": "Crop Factor",
+      "cameraSearchPlaceholder": "Cari kamera...",
+      "lensSearchPlaceholder": "Cari lensa...",
+      "clear": "Hapus",
+      "teleconverter": "Teleconverter",
+      "teleconverterNone": "Tidak Ada",
+      "lockFov": "Kunci bidang pandang",
+      "minFocusWarning": "Di bawah jarak fokus minimum ({value})",
+      "customCoc": "CoC Kustom",
+      "backgroundDistance": "Jarak Latar Belakang"
     }
   }
 }

@@ -65,7 +65,19 @@
       "background": "背景",
       "chooseModel": "モデルを選択",
       "chooseBackground": "背景を選択",
-      "close": "閉じる"
+      "close": "閉じる",
+      "camera": "カメラ",
+      "lens": "レンズ",
+      "cropFactor": "クロップファクター",
+      "cameraSearchPlaceholder": "カメラを検索...",
+      "lensSearchPlaceholder": "レンズを検索...",
+      "clear": "クリア",
+      "teleconverter": "テレコンバーター",
+      "teleconverterNone": "なし",
+      "lockFov": "画角を固定",
+      "minFocusWarning": "最短撮影距離より近づいています（{value}）",
+      "customCoc": "カスタムCoC",
+      "backgroundDistance": "背景距離"
     }
   }
 }

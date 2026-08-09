@@ -65,7 +65,19 @@
       "background": "Background",
       "chooseModel": "Pumili ng Model",
       "chooseBackground": "Pumili ng Background",
-      "close": "Isara"
+      "close": "Isara",
+      "camera": "Camera",
+      "lens": "Lens",
+      "cropFactor": "Crop Factor",
+      "cameraSearchPlaceholder": "Maghanap ng camera...",
+      "lensSearchPlaceholder": "Maghanap ng lens...",
+      "clear": "I-clear",
+      "teleconverter": "Teleconverter",
+      "teleconverterNone": "None",
+      "lockFov": "I-lock ang Field of View",
+      "minFocusWarning": "Mas malapit sa minimum focus distance ({value})",
+      "customCoc": "Custom CoC",
+      "backgroundDistance": "Background Distance"
     }
   }
 }

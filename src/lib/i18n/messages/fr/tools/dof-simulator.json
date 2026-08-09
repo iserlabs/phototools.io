@@ -65,7 +65,19 @@
       "background": "Arrière-plan",
       "chooseModel": "Choisir un modèle",
       "chooseBackground": "Choisir un arrière-plan",
-      "close": "Fermer"
+      "close": "Fermer",
+      "camera": "Appareil",
+      "lens": "Objectif",
+      "cropFactor": "Facteur de recadrage",
+      "cameraSearchPlaceholder": "Rechercher un appareil...",
+      "lensSearchPlaceholder": "Rechercher un objectif...",
+      "clear": "Effacer",
+      "teleconverter": "Multiplicateur de focale",
+      "teleconverterNone": "Aucun",
+      "lockFov": "Verrouiller le champ de vision",
+      "minFocusWarning": "En dessous de la distance minimale de mise au point ({value})",
+      "customCoc": "CoC personnalisé",
+      "backgroundDistance": "Distance d'arrière-plan"
     }
   }
 }

@@ -65,7 +65,19 @@
       "background": "ব্যাকগ্রাউন্ড",
       "chooseModel": "মডেল বেছে নিন",
       "chooseBackground": "ব্যাকগ্রাউন্ড বেছে নিন",
-      "close": "বন্ধ করো"
+      "close": "বন্ধ করো",
+      "camera": "ক্যামেরা",
+      "lens": "লেন্স",
+      "cropFactor": "ক্রপ ফ্যাক্টর",
+      "cameraSearchPlaceholder": "ক্যামেরা খোঁজো...",
+      "lensSearchPlaceholder": "লেন্স খোঁজো...",
+      "clear": "মুছুন",
+      "teleconverter": "টেলিকনভার্টার",
+      "teleconverterNone": "কিছু না",
+      "lockFov": "দৃষ্টিক্ষেত্র লক করো",
+      "minFocusWarning": "সর্বনিম্ন ফোকাস দূরত্বের নিচে ({value})",
+      "customCoc": "কাস্টম CoC",
+      "backgroundDistance": "ব্যাকগ্রাউন্ড দূরত্ব"
     }
   }
 }
