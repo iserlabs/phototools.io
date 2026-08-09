@@ -46,6 +46,14 @@ export function useSensorCanvas({ canvasRef, mode, resolution, allSensors, visib
     prevVisibleRef.current = new Set(visible)
   }, [visible])
 
+  // Hiding an expanded sensor (toggling it off, Reset, removing a custom
+  // sensor, applying a quick-compare preset that drops it, …) should collapse
+  // its deep-dive row rather than leaving stale state that reappears
+  // pre-expanded if the sensor is re-selected later.
+  useEffect(() => {
+    setExpandedId((prev) => (prev && !visible.has(prev) ? null : prev))
+  }, [visible])
+
   const getRenderSensors = useCallback((): { sensors: ResolvedSensor[]; alphaMap: Map<string, number> } => {
     const alphaMap = new Map<string, number>()
     const ids = new Set(visible)
@@ -111,16 +119,15 @@ export function useSensorCanvas({ canvasRef, mode, resolution, allSensors, visib
     if (animating) rafRef.current = requestAnimationFrame(drawFrame)
   }, [canvasRef, mode, resolution, getRenderSensors, hoveredSensor])
 
+  // `drawFrame`'s identity already changes whenever `visible` does (it flows
+  // through `getRenderSensors`'s `[visible, allSensors]` deps), so this one
+  // effect covers both the initial draw and every visibility change — a
+  // second effect keyed on `[visible, drawFrame]` would fire redundantly.
   useEffect(() => {
     if (rafRef.current) cancelAnimationFrame(rafRef.current)
     rafRef.current = requestAnimationFrame(drawFrame)
     return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current) }
   }, [drawFrame])
-
-  useEffect(() => {
-    if (rafRef.current) cancelAnimationFrame(rafRef.current)
-    rafRef.current = requestAnimationFrame(drawFrame)
-  }, [visible, drawFrame])
 
   useEffect(() => {
     const canvas = canvasRef.current
