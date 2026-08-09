@@ -18,6 +18,7 @@ import s from './FocusStacking.module.css'
 interface StackingDiagramProps {
   state: StackingState
   scale: DiagramScale
+  playing: boolean
 }
 
 const DRAW_W = VB_W - DIAGRAM_PAD.left - DIAGRAM_PAD.right
@@ -36,12 +37,12 @@ const FOCUS_H = 28
  * ShotTable also reads and writes — the diagram and the table never fight
  * over which shot is "active".
  */
-export function StackingDiagram({ state, scale }: StackingDiagramProps) {
+export function StackingDiagram({ state, scale, playing }: StackingDiagramProps) {
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const { hoveredShot, setHoveredShot, mode } = state
   const rows = useMemo(() => buildRows(state), [state])
   const showBands = rows.length <= MAX_BAND_SHOTS
-  const { svgRef, onMouseMove, onMouseLeave } = useDiagramHover(rows, scale, setHoveredShot)
+  const { svgRef, onMouseMove, onMouseLeave } = useDiagramHover(rows, scale, setHoveredShot, playing)
 
   let y = DIAGRAM_PAD.top
   const covY = y; y += COV_H + 10

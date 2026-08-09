@@ -10,6 +10,7 @@ import { MacroResultsPanel } from './MacroResultsPanel'
 import { StackingDiagram } from './StackingDiagram'
 import { SceneStrip } from './SceneStrip'
 import { ShotTable } from './ShotTable'
+import { useStackSweep } from './useStackSweep'
 import { buildDistanceScale, buildMacroScale, VB_W, DIAGRAM_PAD } from './diagramScale'
 import { ModeToggle } from '@/components/shared/ModeToggle'
 import { LearnPanel } from '@/components/shared/LearnPanel'
@@ -23,6 +24,8 @@ const DRAW_W = VB_W - DIAGRAM_PAD.left - DIAGRAM_PAD.right
 export function FocusStacking() {
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const st = useStackingState()
+  const shotCount = st.mode === 'distance' ? st.stackingResult.shots.length : st.macroRows.length
+  const { playing, toggle } = useStackSweep(shotCount, st.setHoveredShot)
 
   // Built once here and passed down to both SceneStrip and StackingDiagram —
   // sharing this exact instance is what keeps the scene strip's markers and
@@ -61,9 +64,19 @@ export function FocusStacking() {
           {results}
         </div>
         <div className={s.canvasArea}>
+          <button
+            type="button"
+            className={s.playBtn}
+            onClick={() => {
+              st.trackParam({ param_name: 'animate_stack', param_value: playing ? 'pause' : 'play', input_type: 'button' })
+              toggle()
+            }}
+          >
+            {playing ? t('pauseStack') : t('animateStack')}
+          </button>
           <SceneStrip state={st} scale={scale} />
-          <StackingDiagram state={st} scale={scale} />
-          <ShotTable state={st} playing={false} />
+          <StackingDiagram state={st} scale={scale} playing={playing} />
+          <ShotTable state={st} playing={playing} />
         </div>
         <div className={s.desktopOnly}>
           <LearnPanel slug="focus-stacking-calculator" />

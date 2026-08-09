@@ -29,7 +29,7 @@ export function ShotTable({ state, playing }: ShotTableProps) {
   return (
     <details className={s.tableWrap} open>
       <summary className={s.tableSummary}>{t('shotTable')} ({rows.length})</summary>
-      <div className={s.tableScroll} onMouseLeave={() => setHoveredShot(null)}>
+      <div className={s.tableScroll} onMouseLeave={() => { if (!playing) setHoveredShot(null) }}>
         <table className={s.table}>
           <thead>
             <tr>
@@ -45,7 +45,7 @@ export function ShotTable({ state, playing }: ShotTableProps) {
               ? state.stackingResult.shots.map((shot, i) => (
                 <tr key={shot.number}
                   className={hoveredShot === i ? s.rowActive : undefined}
-                  onMouseEnter={() => setHoveredShot(i)}>
+                  onMouseEnter={() => { if (!playing) setHoveredShot(i) }}>
                   <td>{shot.number}</td>
                   <td>{formatDistance(shot.focusDistance)}</td>
                   <td>{formatDistance(shot.nearFocus)}</td>
@@ -56,7 +56,7 @@ export function ShotTable({ state, playing }: ShotTableProps) {
               : state.macroRows.map((row, i) => (
                 <tr key={row.number}
                   className={hoveredShot === i ? s.rowActive : undefined}
-                  onMouseEnter={() => setHoveredShot(i)}>
+                  onMouseEnter={() => { if (!playing) setHoveredShot(i) }}>
                   <td>{row.number}</td>
                   <td>{formatMm(row.railPositionMm)}</td>
                   <td>{i === 0 ? '—' : formatMm(state.macroResult.stepMm)}</td>

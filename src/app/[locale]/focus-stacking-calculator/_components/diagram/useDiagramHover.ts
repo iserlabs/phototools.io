@@ -15,10 +15,12 @@ export function useDiagramHover(
   rows: DiagramRow[],
   scale: DiagramScale,
   setHoveredShot: (i: number | null) => void,
+  playing: boolean,
 ) {
   const svgRef = useRef<SVGSVGElement>(null)
 
   const onMouseMove = useCallback((e: React.MouseEvent<SVGRectElement>) => {
+    if (playing) return
     const svg = svgRef.current
     if (!svg || rows.length === 0) return
     const ctm = svg.getScreenCTM()
@@ -38,9 +40,12 @@ export function useDiagramHover(
       }
     })
     setHoveredShot(nearest)
-  }, [rows, scale, setHoveredShot])
+  }, [rows, scale, setHoveredShot, playing])
 
-  const onMouseLeave = useCallback(() => setHoveredShot(null), [setHoveredShot])
+  const onMouseLeave = useCallback(() => {
+    if (playing) return
+    setHoveredShot(null)
+  }, [setHoveredShot, playing])
 
   return { svgRef, onMouseMove, onMouseLeave }
 }

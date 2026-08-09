@@ -217,6 +217,28 @@
   padding: 24px;
 }
 
+/* -- Play sweep button -- */
+.playBtn {
+  align-self: flex-start;
+  width: auto;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 500;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  margin-bottom: 10px;
+}
+
+.playBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* -- Diagram -- */
 .diagramWrap { position: relative; width: 100%; max-width: 900px; }
 .sceneStripWrap { margin-bottom: 10px; }
