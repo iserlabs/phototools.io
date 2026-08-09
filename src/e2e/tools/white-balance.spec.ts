@@ -77,10 +77,12 @@ test.describe('White Balance Visualizer', () => {
 
     // Set temperature to 3500K
     await panel.locator('input[type="range"]').first().fill('3500')
-    await page.waitForTimeout(300)
+
+    // useToolQuerySync throttles the replaceState write, so poll rather than
+    // sleeping a fixed interval — a fixed wait races the throttle under load.
+    await expect.poll(() => page.url()).toContain('k=')
 
     const url = page.url()
-    expect(url).toContain('k=')
 
     // Reload and verify
     await page.goto(url)

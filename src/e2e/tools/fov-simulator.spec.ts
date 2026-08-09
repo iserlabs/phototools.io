@@ -143,12 +143,12 @@ test.describe('FOV Simulator', () => {
     const sensorSelect = sidebar.locator('select[aria-label="Lens A sensor"]')
     await sensorSelect.selectOption('apsc_n')
 
-    // Wait for URL to update
-    await page.waitForTimeout(300)
+    // useToolQuerySync throttles the replaceState write, so poll rather than
+    // sleeping a fixed interval — a fixed wait races the throttle under load.
+    await expect.poll(() => page.url()).toContain('a=85')
 
     // Read the current URL
     const url = page.url()
-    expect(url).toContain('a=85')
 
     // Navigate to the URL directly
     await page.goto(url)

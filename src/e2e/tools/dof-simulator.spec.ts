@@ -353,14 +353,17 @@ test.describe('DOF Simulator', () => {
     // Click a scene
     await page.locator('button:text-is("Macro")').click()
 
-    // Wait for URL to update
-    await page.waitForTimeout(400)
+    // useToolQuerySync writes a single throttled snapshot of the FULL state,
+    // not one write per field. Three separate actions can land as separate
+    // snapshots under load, so poll on the LAST-set param (scene=macro) —
+    // once it appears, the write is guaranteed to include everything set
+    // before it too.
+    await expect.poll(() => page.url()).toContain('scene=macro')
 
     // Verify URL contains query params
     const url = page.url()
     expect(url).toContain('fl=135')
     expect(url).toContain('s=apsc_n')
-    expect(url).toContain('scene=macro')
 
     // Navigate to the same URL directly
     await page.goto(url)
@@ -382,11 +385,12 @@ test.describe('DOF Simulator', () => {
 
     // Set aperture to f/8
     await panel.locator('button:text-is("8")').first().click()
-    await page.waitForTimeout(300)
 
-    // Read URL
+    // useToolQuerySync throttles the replaceState write, so poll rather than
+    // sleeping a fixed interval — a fixed wait races the throttle under load.
+    await expect.poll(() => page.url()).toContain('f=8')
+
     const url = page.url()
-    expect(url).toContain('f=8')
 
     // Navigate directly and verify
     await page.goto(url)

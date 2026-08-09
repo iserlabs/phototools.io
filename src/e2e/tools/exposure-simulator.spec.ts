@@ -194,11 +194,16 @@ test.describe('Exposure Simulator', () => {
     // Set aperture to f/2 (index 1), lock to shutter
     await panel.locator('input[type="range"]').first().fill('1')
     await panel.locator('button[aria-pressed]', { hasText: 'Shutter' }).first().click()
-    await page.waitForTimeout(300)
+
+    // useToolQuerySync writes a single throttled snapshot of the FULL state,
+    // not one write per field. Polling on the first-set param (ai=1) can
+    // resolve on an earlier snapshot taken before the second action (the lock
+    // click) has landed, so poll on the LAST-set param instead — once it
+    // appears, the write is guaranteed to be the full cumulative state.
+    await expect.poll(() => page.url()).toContain('lock=shutter')
 
     const url = page.url()
     expect(url).toContain('ai=1')
-    expect(url).toContain('lock=shutter')
 
     // Navigate to the URL and verify state is restored
     await page.goto(url)
