@@ -136,6 +136,19 @@ export function sensorParam(defaultVal: string = 'ff'): ParamDef<string> {
   }
 }
 
+/** Distance param that also round-trips Infinity as the literal "inf". */
+export function distanceOrInfParam(defaultVal: number, min: number, max: number): ParamDef<number> {
+  return {
+    default: defaultVal,
+    parse: (raw) => {
+      if (raw === 'inf') return Infinity
+      const n = Number(raw)
+      return !isNaN(n) && n >= min && n <= max ? n : undefined
+    },
+    serialize: (v) => (v === Infinity ? 'inf' : String(v)),
+  }
+}
+
 export function idSetParam(defaultIds: readonly string[]): ParamDef<Set<string>> {
   const defaultSet = new Set(defaultIds)
   return {

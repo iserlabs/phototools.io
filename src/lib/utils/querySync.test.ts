@@ -1,5 +1,5 @@
 import { describe, it, expect, afterEach, vi } from 'vitest'
-import { numParam, intParam, strParam, sensorParam, parseQueryState, stateToQuery, idSetParam } from './querySync'
+import { numParam, intParam, strParam, sensorParam, parseQueryState, stateToQuery, idSetParam, distanceOrInfParam } from './querySync'
 
 describe('numParam', () => {
   const param = numParam(50, 10, 200)
@@ -321,4 +321,14 @@ describe('ParamDef.equals', () => {
     const qs = stateToQuery({ s: new Set(['a']) }, schema as any)
     expect(qs).toBe('')
   })
+})
+
+describe('distanceOrInfParam', () => {
+  const p = distanceOrInfParam(5, 0.1, 100)
+  it('parses "inf" as Infinity', () => { expect(p.parse('inf')).toBe(Infinity) })
+  it('serializes Infinity as "inf"', () => { expect(p.serialize(Infinity)).toBe('inf') })
+  it('parses finite in-range values', () => { expect(p.parse('12.5')).toBe(12.5) })
+  it('rejects out-of-range finite values', () => { expect(p.parse('500')).toBeUndefined() })
+  it('rejects garbage', () => { expect(p.parse('banana')).toBeUndefined() })
+  it('round-trips a finite value', () => { expect(p.parse(p.serialize(42))).toBe(42) })
 })
