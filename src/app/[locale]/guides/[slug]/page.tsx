@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
@@ -92,6 +93,13 @@ export default async function GuidePage({ params }: { params: Promise<{ locale: 
                 <Figure src={props.src ?? ''} alt={props.alt ?? ''} />
               ),
               a: MdxA,
+              // Prose column is narrower than most tables; give each its own
+              // scroll box so the article never scrolls sideways.
+              table: (props: { children?: ReactNode }) => (
+                <div className={styles.tableScroll}>
+                  <table>{props.children}</table>
+                </div>
+              ),
             }}
           />
         </div>

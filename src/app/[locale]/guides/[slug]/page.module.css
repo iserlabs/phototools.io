@@ -32,6 +32,28 @@
   margin-top: var(--space-lg);
   scroll-margin-top: var(--space-lg);
 }
+/* Guide bodies are prose-width, so a wide table has to scroll in its own
+   box rather than widening the article and forcing a page-level scrollbar. */
+.tableScroll {
+  overflow-x: auto;
+  margin-top: var(--space-md);
+}
+.body table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: var(--text-sm);
+}
+.body th,
+.body td {
+  border: 1px solid var(--border-subtle);
+  padding: var(--space-xs) var(--space-sm);
+  text-align: left;
+  vertical-align: top;
+}
+.body th {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
 .rail {
   width: 300px;
   min-width: 300px;
