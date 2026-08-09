@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Görseli dışa aktar",
-      "exportImageBusy": "Dışa aktarılıyor..."
+      "exportImageBusy": "Dışa aktarılıyor...",
+      "bokehShapeDisc": "Dairesel",
+      "bokehShapeBlade5": "5 Yapraklı",
+      "bokehShapeBlade6": "6 Yapraklı",
+      "bokehShapeBlade7": "7 Yapraklı",
+      "bokehShapeBlade8": "8 Yapraklı",
+      "bokehShapeBlade9": "9 Yapraklı",
+      "bokehShapeCata": "Katadiyoptrik"
     }
   }
 }

@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "이미지 내보내기",
-      "exportImageBusy": "내보내는 중..."
+      "exportImageBusy": "내보내는 중...",
+      "bokehShapeDisc": "원형",
+      "bokehShapeBlade5": "5매",
+      "bokehShapeBlade6": "6매",
+      "bokehShapeBlade7": "7매",
+      "bokehShapeBlade8": "8매",
+      "bokehShapeBlade9": "9매",
+      "bokehShapeCata": "반사굴절식"
     }
   }
 }

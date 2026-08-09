@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Экспортировать изображение",
-      "exportImageBusy": "Экспорт..."
+      "exportImageBusy": "Экспорт...",
+      "bokehShapeDisc": "Круглая",
+      "bokehShapeBlade5": "5 лепестков",
+      "bokehShapeBlade6": "6 лепестков",
+      "bokehShapeBlade7": "7 лепестков",
+      "bokehShapeBlade8": "8 лепестков",
+      "bokehShapeBlade9": "9 лепестков",
+      "bokehShapeCata": "Катадиоптрическая"
     }
   }
 }

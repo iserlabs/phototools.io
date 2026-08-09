@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Exportovat obrázek",
-      "exportImageBusy": "Exportuji..."
+      "exportImageBusy": "Exportuji...",
+      "bokehShapeDisc": "Kruhová",
+      "bokehShapeBlade5": "5 lamel",
+      "bokehShapeBlade6": "6 lamel",
+      "bokehShapeBlade7": "7 lamel",
+      "bokehShapeBlade8": "8 lamel",
+      "bokehShapeBlade9": "9 lamel",
+      "bokehShapeCata": "Katadioptrický"
     }
   }
 }

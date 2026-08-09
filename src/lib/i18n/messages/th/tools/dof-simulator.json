@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "ส่งออกรูปภาพ",
-      "exportImageBusy": "กำลังส่งออก..."
+      "exportImageBusy": "กำลังส่งออก...",
+      "bokehShapeDisc": "วงกลม",
+      "bokehShapeBlade5": "5 กลีบ",
+      "bokehShapeBlade6": "6 กลีบ",
+      "bokehShapeBlade7": "7 กลีบ",
+      "bokehShapeBlade8": "8 กลีบ",
+      "bokehShapeBlade9": "9 กลีบ",
+      "bokehShapeCata": "แบบกระจก"
     }
   }
 }

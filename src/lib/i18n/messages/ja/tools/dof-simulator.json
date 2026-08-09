@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "画像をエクスポート",
-      "exportImageBusy": "エクスポート中..."
+      "exportImageBusy": "エクスポート中...",
+      "bokehShapeDisc": "円形",
+      "bokehShapeBlade5": "5枚羽根",
+      "bokehShapeBlade6": "6枚羽根",
+      "bokehShapeBlade7": "7枚羽根",
+      "bokehShapeBlade8": "8枚羽根",
+      "bokehShapeBlade9": "9枚羽根",
+      "bokehShapeCata": "反射式"
     }
   }
 }

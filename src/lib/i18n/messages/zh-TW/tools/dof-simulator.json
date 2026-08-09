@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "匯出圖片",
-      "exportImageBusy": "匯出中..."
+      "exportImageBusy": "匯出中...",
+      "bokehShapeDisc": "圓形",
+      "bokehShapeBlade5": "5葉片",
+      "bokehShapeBlade6": "6葉片",
+      "bokehShapeBlade7": "7葉片",
+      "bokehShapeBlade8": "8葉片",
+      "bokehShapeBlade9": "9葉片",
+      "bokehShapeCata": "折反式"
     }
   }
 }

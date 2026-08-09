@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Export image",
-      "exportImageBusy": "Exporting…"
+      "exportImageBusy": "Exporting…",
+      "bokehShapeDisc": "Circular",
+      "bokehShapeBlade5": "5 Blades",
+      "bokehShapeBlade6": "6 Blades",
+      "bokehShapeBlade7": "7 Blades",
+      "bokehShapeBlade8": "8 Blades",
+      "bokehShapeBlade9": "9 Blades",
+      "bokehShapeCata": "Catadioptric"
     }
   }
 }

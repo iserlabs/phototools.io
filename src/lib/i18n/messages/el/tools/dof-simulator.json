@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Εξαγωγή εικόνας",
-      "exportImageBusy": "Εξαγωγή..."
+      "exportImageBusy": "Εξαγωγή...",
+      "bokehShapeDisc": "Κυκλικό",
+      "bokehShapeBlade5": "5 πέταλα",
+      "bokehShapeBlade6": "6 πέταλα",
+      "bokehShapeBlade7": "7 πέταλα",
+      "bokehShapeBlade8": "8 πέταλα",
+      "bokehShapeBlade9": "9 πέταλα",
+      "bokehShapeCata": "Καταδιοπτρικό"
     }
   }
 }

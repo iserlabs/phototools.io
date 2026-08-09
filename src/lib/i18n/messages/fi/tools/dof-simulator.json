@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Vie kuva",
-      "exportImageBusy": "Viedään..."
+      "exportImageBusy": "Viedään...",
+      "bokehShapeDisc": "Pyöreä",
+      "bokehShapeBlade5": "5 lamellia",
+      "bokehShapeBlade6": "6 lamellia",
+      "bokehShapeBlade7": "7 lamellia",
+      "bokehShapeBlade8": "8 lamellia",
+      "bokehShapeBlade9": "9 lamellia",
+      "bokehShapeCata": "Katadioptrinen"
     }
   }
 }

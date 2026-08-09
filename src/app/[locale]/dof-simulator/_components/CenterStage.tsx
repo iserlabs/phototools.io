@@ -16,6 +16,7 @@ import { blurMmToPx, MAX_BLUR_PX } from '@/lib/math/projection'
 import { formatAperture } from '@/lib/math/aperture'
 import { formatMm, formatDistance } from './state/formatters'
 import type { DofStateApi } from './state/useDofState'
+import type { OpticsState } from './state/useOptics'
 import type { DofSubject, DofBackground } from '@/lib/data/dofSimulator/types'
 import styles from './DofSimulator.module.css'
 
@@ -30,6 +31,24 @@ interface CenterStageProps {
   subject: DofSubject
   background: DofBackground
   onDistanceChange(v: number): void
+}
+
+/**
+ * Optics as the subject-blur math (ModelLayer's per-slice `calcDefocusBlur`,
+ * and `computeExportLayout`'s mirror of it) expects them: the teleconverter-
+ * adjusted `effectiveFl` substituted for the raw `optics.focalLength`, per
+ * `ModelLayerProps`' documented contract ("effectiveFl passed as
+ * focalLength", Task 17). `derived.backgroundBlurMm`/`derived.dof` already
+ * key off `effectiveFl` internally — the subject's per-slice defocus blur
+ * must use the same value, or engaging a teleconverter visibly under-blurs
+ * the subject relative to the correctly-blurred background (on screen and
+ * in the exported PNG).
+ */
+export function subjectOptics(
+  optics: Pick<OpticsState, 'aperture' | 'distanceM'>,
+  effectiveFl: number,
+): Pick<OpticsState, 'focalLength' | 'aperture' | 'distanceM'> {
+  return { focalLength: effectiveFl, aperture: optics.aperture, distanceM: optics.distanceM }
 }
 
 /** Viewport + subject overlay + A/B divider + sweep/export toolbar + ruler. */
@@ -54,9 +73,13 @@ export function CenterStage({ dofState, subject, background, onDistanceChange }:
   }, [ab.mode, derivedB, bokeh, uvRect])
 
   const fallbackBlurPx = Math.min(MAX_BLUR_PX, blurMmToPx(derived.backgroundBlurMm, derived.sensorWMm, viewportPx.w))
+  const modelOptics = useMemo(
+    () => subjectOptics(optics, derived.effectiveFl),
+    [optics, derived.effectiveFl],
+  )
 
   const captionText = `${formatMm(derived.effectiveFl)} · ${formatAperture(optics.aperture)} · ${formatDistance(optics.distanceM, uiPrefs.imperial)} · ${derived.sensor.name} — phototools.io`
-  const exporter = useImageExport({ canvasRef, subject, derived, optics, viewportPx, captionText })
+  const exporter = useImageExport({ canvasRef, subject, derived, optics: modelOptics, viewportPx, captionText })
   const sweep = useApertureSweep(optics.setAperture)
 
   return (
@@ -93,7 +116,7 @@ export function CenterStage({ dofState, subject, background, onDistanceChange }:
         >
           <div ref={overlayRef} className={styles.overlayLayer}>
             {viewportPx.w > 0 && viewportPx.h > 0 && (
-              <ModelLayer subject={subject} derived={derived} optics={optics} viewportPx={viewportPx} />
+              <ModelLayer subject={subject} derived={derived} optics={modelOptics} viewportPx={viewportPx} />
             )}
             <BokehInset bokeh={bokeh} blurPx={fallbackBlurPx} />
             {ab.mode !== 'off' && <AbDivider pos={ab.dividerPos} onChange={ab.setDividerPos} />}

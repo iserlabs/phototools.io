@@ -6,6 +6,7 @@ import { ControlPanel } from '@/components/shared/ControlPanel'
 import { ModeToggle } from '@/components/shared/ModeToggle'
 import { InterfacePanel } from './panels/InterfacePanel'
 import { AppearancePanelConnected } from './panels/AppearancePanelConnected'
+import { BokehPanelConnected } from './panels/BokehPanelConnected'
 import { CameraPanelConnected } from './panels/CameraPanelConnected'
 import { LensPanelConnected } from './panels/LensPanelConnected'
 import { DistancePanelConnected } from './panels/DistancePanelConnected'
@@ -79,6 +80,7 @@ export function Sidebar({ dofState, background, onFocalLengthChange, onDistanceC
         {ab.mode !== 'off' && <ModeToggle options={abSetOptions} value={ab.activeSet} onChange={ab.setActiveSet} />}
       </ControlPanel>
       <AppearancePanelConnected appearance={appearance} subjects={DOF_SUBJECTS} backgrounds={DOF_BACKGROUNDS} />
+      <BokehPanelConnected bokeh={bokeh} onChange={setBokeh} />
       <CameraPanelConnected optics={activeOptics} derived={activeDerived} />
       <LensPanelConnected optics={activeOptics} derived={activeDerived} uiPrefs={uiPrefs} onFocalLengthChange={handleFocalLengthChange} />
       <DistancePanelConnected optics={activeOptics} derived={activeDerived} uiPrefs={uiPrefs} onDistanceChange={handleDistanceChange} />

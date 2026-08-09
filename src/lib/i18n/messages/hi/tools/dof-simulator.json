@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "इमेज एक्सपोर्ट करें",
-      "exportImageBusy": "एक्सपोर्ट हो रहा है..."
+      "exportImageBusy": "एक्सपोर्ट हो रहा है...",
+      "bokehShapeDisc": "गोलाकार",
+      "bokehShapeBlade5": "5 ब्लेड",
+      "bokehShapeBlade6": "6 ब्लेड",
+      "bokehShapeBlade7": "7 ब्लेड",
+      "bokehShapeBlade8": "8 ब्लेड",
+      "bokehShapeBlade9": "9 ब्लेड",
+      "bokehShapeCata": "कैटाडायोप्ट्रिक"
     }
   }
 }

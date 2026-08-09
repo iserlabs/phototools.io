@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "ছবি এক্সপোর্ট করো",
-      "exportImageBusy": "এক্সপোর্ট হচ্ছে..."
+      "exportImageBusy": "এক্সপোর্ট হচ্ছে...",
+      "bokehShapeDisc": "বৃত্তাকার",
+      "bokehShapeBlade5": "5 ব্লেড",
+      "bokehShapeBlade6": "6 ব্লেড",
+      "bokehShapeBlade7": "7 ব্লেড",
+      "bokehShapeBlade8": "8 ব্লেড",
+      "bokehShapeBlade9": "9 ব্লেড",
+      "bokehShapeCata": "ক্যাটাডাইঅপ্ট্রিক"
     }
   }
 }

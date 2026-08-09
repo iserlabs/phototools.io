@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Exporta la imatge",
-      "exportImageBusy": "Exportant..."
+      "exportImageBusy": "Exportant...",
+      "bokehShapeDisc": "Circular",
+      "bokehShapeBlade5": "5 làmines",
+      "bokehShapeBlade6": "6 làmines",
+      "bokehShapeBlade7": "7 làmines",
+      "bokehShapeBlade8": "8 làmines",
+      "bokehShapeBlade9": "9 làmines",
+      "bokehShapeCata": "Catadiòptric"
     }
   }
 }

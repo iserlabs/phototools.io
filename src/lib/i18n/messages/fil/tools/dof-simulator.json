@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "I-export ang larawan",
-      "exportImageBusy": "Nag-e-export..."
+      "exportImageBusy": "Nag-e-export...",
+      "bokehShapeDisc": "Bilog",
+      "bokehShapeBlade5": "5 Talim",
+      "bokehShapeBlade6": "6 Talim",
+      "bokehShapeBlade7": "7 Talim",
+      "bokehShapeBlade8": "8 Talim",
+      "bokehShapeBlade9": "9 Talim",
+      "bokehShapeCata": "Katadioptriko"
     }
   }
 }

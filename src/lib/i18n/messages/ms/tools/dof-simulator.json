@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Eksport imej",
-      "exportImageBusy": "Mengeksport..."
+      "exportImageBusy": "Mengeksport...",
+      "bokehShapeDisc": "Bulat",
+      "bokehShapeBlade5": "5 bilah",
+      "bokehShapeBlade6": "6 bilah",
+      "bokehShapeBlade7": "7 bilah",
+      "bokehShapeBlade8": "8 bilah",
+      "bokehShapeBlade9": "9 bilah",
+      "bokehShapeCata": "Katadioptrik"
     }
   }
 }

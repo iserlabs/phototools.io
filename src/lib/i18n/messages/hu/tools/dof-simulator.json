@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Kép exportálása",
-      "exportImageBusy": "Exportálás..."
+      "exportImageBusy": "Exportálás...",
+      "bokehShapeDisc": "Kerek",
+      "bokehShapeBlade5": "5 lamellás",
+      "bokehShapeBlade6": "6 lamellás",
+      "bokehShapeBlade7": "7 lamellás",
+      "bokehShapeBlade8": "8 lamellás",
+      "bokehShapeBlade9": "9 lamellás",
+      "bokehShapeCata": "Katadioptrikus"
     }
   }
 }

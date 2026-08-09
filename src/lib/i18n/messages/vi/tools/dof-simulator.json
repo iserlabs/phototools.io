@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Xuất ảnh",
-      "exportImageBusy": "Đang xuất..."
+      "exportImageBusy": "Đang xuất...",
+      "bokehShapeDisc": "Tròn",
+      "bokehShapeBlade5": "5 lá khẩu",
+      "bokehShapeBlade6": "6 lá khẩu",
+      "bokehShapeBlade7": "7 lá khẩu",
+      "bokehShapeBlade8": "8 lá khẩu",
+      "bokehShapeBlade9": "9 lá khẩu",
+      "bokehShapeCata": "Gương-thấu kính"
     }
   }
 }

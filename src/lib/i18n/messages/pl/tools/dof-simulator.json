@@ -93,7 +93,14 @@
       "setA": "A",
       "setB": "B",
       "exportImage": "Eksportuj obraz",
-      "exportImageBusy": "Eksportowanie..."
+      "exportImageBusy": "Eksportowanie...",
+      "bokehShapeDisc": "Okrągły",
+      "bokehShapeBlade5": "5 lamelek",
+      "bokehShapeBlade6": "6 lamelek",
+      "bokehShapeBlade7": "7 lamelek",
+      "bokehShapeBlade8": "8 lamelek",
+      "bokehShapeBlade9": "9 lamelek",
+      "bokehShapeCata": "Katadioptryczny"
     }
   }
 }
