@@ -2,15 +2,21 @@
 
 import { useEffect, useState } from 'react'
 
-/** Total wall-clock time the sweep should take, independent of shot count. */
+/** Duration ceiling — the sweep completes in AT MOST this long. */
 const SWEEP_DURATION_MS = 4000
 /** Ceiling on how many highlight steps a sweep will take — bounds the per-step
  * interval so a run with hundreds of shots doesn't blow the duration budget. */
 const MAX_STEPS = 100
+/** Per-step interval bounds: a floor keeps large sweeps perceptible (never
+ * faster than one highlight per 40ms), a ceiling keeps small sweeps snappy
+ * instead of dragging a 1-shot stack out to the full duration budget. */
+const MIN_INTERVAL_MS = 40
+const MAX_INTERVAL_MS = 250
 
 /**
- * Sweeps the hover highlight through the shot sequence in a fixed ~4s window,
- * regardless of shot count, respecting reduced motion.
+ * Sweeps the hover highlight through the shot sequence, completing in AT
+ * MOST ~4s — shorter stacks finish sooner rather than being artificially
+ * stretched to fill the window. Respects reduced motion.
  *
  * When `count` exceeds `MAX_STEPS`, the sweep doesn't visit every index —
  * it steps through `MAX_STEPS` evenly-spaced indices across the full range
@@ -27,7 +33,11 @@ export function useStackSweep(count: number, setHovered: (i: number | null) => v
       return
     }
     const steps = Math.min(count, MAX_STEPS)
-    const interval = SWEEP_DURATION_MS / steps
+    // +1 accounts for the terminating tick (which clears the highlight after
+    // the last shot), so the full run — including termination — is what's
+    // bounded by the duration budget, not just the shot-visiting portion.
+    const rawInterval = SWEEP_DURATION_MS / (steps + 1)
+    const interval = Math.min(MAX_INTERVAL_MS, Math.max(MIN_INTERVAL_MS, rawInterval))
     let k = 0
     const id = setInterval(() => {
       if (k >= steps) {

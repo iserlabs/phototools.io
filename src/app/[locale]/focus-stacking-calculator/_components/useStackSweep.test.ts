@@ -83,4 +83,40 @@ describe('useStackSweep', () => {
     expect(result.current.playing).toBe(false)
     expect(setHovered).toHaveBeenLastCalledWith(null)
   })
+
+  // The ~4s figure is a ceiling, not a target — a 1-shot stack shouldn't be
+  // artificially stretched to fill the full window. macroShots() genuinely
+  // returns a count of 1 whenever subjectDepthMm <= sliceDofMm, so this is a
+  // reachable real-world case, not just an edge case. Confirmed by hand
+  // against the interim (pre-this-fix) hook, which derived the interval as
+  // `4000 / steps` with no ceiling clamp: for count=1 that's a bare 4000ms
+  // interval and an 8s total (two ticks including termination) — this same
+  // "well under 4.2s" assertion failed there (playing was still true).
+  it('(e) a count of 1 completes quickly rather than stretching to fill the ~4s budget', () => {
+    const setHovered = vi.fn()
+    const { result } = renderHook(() => useStackSweep(1, setHovered))
+
+    act(() => { result.current.toggle() })
+    // 2 ticks at 250ms (1 shot + termination) land at 500ms; stop short of
+    // the next tick (750ms) for the same reason as test (f) below.
+    act(() => { vi.advanceTimersByTime(600) })
+
+    expect(result.current.playing).toBe(false)
+    expect(setHovered.mock.calls.map(([i]) => i)).toEqual([0, null])
+  })
+
+  it('(f) a small count (4) completes well under the ~4.2s ceiling', () => {
+    const setHovered = vi.fn()
+    const { result } = renderHook(() => useStackSweep(4, setHovered))
+
+    act(() => { result.current.toggle() })
+    // 5 ticks at 250ms (4 shots + termination) land at 1250ms; stop the
+    // advance short of the next tick (1500ms) so a still-registered
+    // interval firing once more before React flushes the cleanup effect
+    // doesn't record a spurious extra `null` call.
+    act(() => { vi.advanceTimersByTime(1300) })
+
+    expect(result.current.playing).toBe(false)
+    expect(setHovered.mock.calls.map(([i]) => i)).toEqual([0, 1, 2, 3, null])
+  })
 })
