@@ -57,7 +57,7 @@
         "verdictReach": "{smaller}, aynı lensle {factor}× daha fazla erişim sağlar.",
         "verdictNearEqual": "Bu ikisi, alanlarına göre neredeyse aynı miktarda ışık toplar.",
         "crossFocal": "{from} için {focal}mm'lik bir lens, {to} için {eqFocal}mm gibi kadraj verir.",
-        "areaRelation": "{a}, {b} ile karşılaştırıldığında {ratio}× daha büyük bir alana sahiptir."
+        "areaRelation": "{a}, {b} ile karşılaştırıldığında {ratio}× alana sahiptir."
       },
       "detail": {
         "diagonal": "Köşegen",

@@ -57,7 +57,7 @@
         "verdictReach": "{smaller} একই লেন্সে {factor}× বেশি রিচ দেয়।",
         "verdictNearEqual": "এই দুটো তাদের এলাকার তুলনায় প্রায় একই পরিমাণ আলো ধারণ করে।",
         "crossFocal": "{from} সেন্সরে একটা {focal}mm লেন্স {to} সেন্সরে {eqFocal}mm-এর মতো ফ্রেম করে।",
-        "areaRelation": "{a} সেন্সরের এলাকা {b} সেন্সরের চেয়ে {ratio}× বেশি।"
+        "areaRelation": "{a} সেন্সরের এলাকা {b} সেন্সরের এলাকার {ratio}× হয়।"
       },
       "detail": {
         "diagonal": "ডায়াগোনাল",

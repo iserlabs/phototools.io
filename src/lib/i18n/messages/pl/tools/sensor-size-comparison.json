@@ -57,7 +57,7 @@
         "verdictReach": "{smaller} zapewnia {factor}× większy zasięg przy tym samym obiektywie.",
         "verdictNearEqual": "Te dwie matryce zbierają niemal identyczną ilość światła w przeliczeniu na powierzchnię.",
         "crossFocal": "Obiektyw {focal}mm ({from}) kadruje tak samo jak {eqFocal}mm ({to}).",
-        "areaRelation": "{a} ma {ratio}× większą powierzchnię niż {b}."
+        "areaRelation": "{a} ma {ratio}× tyle powierzchni, co {b}."
       },
       "detail": {
         "diagonal": "Przekątna",

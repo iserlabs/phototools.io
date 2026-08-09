@@ -57,7 +57,7 @@
         "verdictReach": "{smaller} ให้ระยะเพิ่มขึ้น {factor}× ด้วยเลนส์ตัวเดียวกัน",
         "verdictNearEqual": "ทั้งสองตัวนี้เก็บแสงได้ใกล้เคียงกันมากเมื่อเทียบตามพื้นที่",
         "crossFocal": "เลนส์ {focal}mm บน {from} ให้มุมภาพเทียบเท่ากับ {eqFocal}mm บน {to}",
-        "areaRelation": "{a} มีพื้นที่มากกว่า {b} อยู่ {ratio}×"
+        "areaRelation": "{a} มีพื้นที่เป็น {ratio}× ของพื้นที่ {b}"
       },
       "detail": {
         "diagonal": "เส้นทแยงมุม",
