@@ -6,6 +6,24 @@
       "modeSideBySide": "Costat a costat",
       "modePixelDensity": "Densitat de píxels",
       "pixelDensityDescription": "Mostra nombres de megapíxels habituals per a cada sensor. Els píxels més grans (cel·les més grans) capturen més llum.",
+      "filmPixelDensityNote": "La pel·lícula i el Super 16 no tenen un nombre de píxels definit, així que es queden amagats en aquest mode — consulta'ls al mode Superposat o Costat a costat.",
+      "quickCompare": "Comparació ràpida",
+      "presetReplacesNote": "Substitueix la selecció actual",
+      "presets": {
+        "phone_vs_ff": "Mòbil vs Full Frame",
+        "crop_vs_ff": "Retall vs Full Frame",
+        "film_vs_digital": "Pel·lícula vs Digital",
+        "mf_family": "Família de Mitjà Format",
+        "cine_vs_stills": "Cinema vs Fotografia"
+      },
+      "groups": {
+        "medium-format": "Mitjà Format",
+        "ff-aps": "Full Frame i APS",
+        "compact": "Compactes i 1\"",
+        "phone": "Mòbil",
+        "film": "Pel·lícula",
+        "cine": "Cinema"
+      },
       "sensors": "Sensors",
       "customSensors": "Sensors personalitzats",
       "placeholderName": "Nom",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Factor de retall",
       "tableAspectCrop": "Retall per aspecte",
       "canvasAriaLabel": "Comparació de mides de sensor en mode {mode}",
+      "detail": {
+        "diagonal": "Diagonal",
+        "area": "Àrea",
+        "aspect": "Aspecte",
+        "vsFullFrame": "vs Full Frame",
+        "referenceSensor": "Sensor de referència (full frame)",
+        "equivalence": "Un objectiu de {focal}mm f/{ap} aquí enquadra com un ~{eqFocal}mm amb una profunditat de camp f/{eqAp} en full frame.",
+        "resolutions": "Resolucions habituals",
+        "cameras": "Càmeres populars",
+        "character": "Característiques",
+        "context": "Context",
+        "customNoProfile": "Sensor personalitzat — només dades calculades."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Què és el factor de retall i per què importa?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Com afecta la mida del sensor la profunditat de camp?",
           "answer": "Els sensors més grans produeixen menys profunditat de camp amb enquadrament equivalent. Per obtenir el mateix enquadrament amb un sensor més petit, fas servir una distància focal més curta (més profunditat de camp) o t'allunyes (més profunditat de camp), reduint el desenfocament del fons."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Com es comparen les mides dels fotogrames de pel·lícula amb els sensors digitals moderns?",
+          "answer": "La pel·lícula estàndard de 35mm és idèntica en dimensions a un sensor digital full frame (36×24mm), així que els objectius de l'era de la pel·lícula la cobreixen sense retall. La pel·lícula de mitjà format va molt més gran — un negatiu 645 fa 56×41.5mm i el 6×7 fa 70×56mm, tots dos molt per sobre de l'àrea de qualsevol sensor digital full frame — mentre que la pel·lícula de mig fotograma divideix un fotograma estàndard de 35mm en dos, per a una àrea semblant a la d'un sensor APS-C gran."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "A què corresponen el Super 35 i l'ALEXA 65 en termes de fotografia?",
+          "answer": "El Super 35 (24.9×14.0mm, retall d'1.51x) cau gairebé exactament a la mida APS-C, per això els objectius de cinema S35 i els objectius fotogràfics APS-C cobreixen cercles d'imatge similars. El sensor de 54.12×25.58mm de l'ALEXA 65 és molt més gran — més a prop d'un sensor fotogràfic de mitjà format de 44×33mm que del full frame, per això necessita la seva pròpia gamma dedicada d'objectius de format gran."
+        },
+        "why-inch-fractions": {
+          "question": "Per què els sensors petits es diuen amb fraccions de polzada com 1/2.3\"?",
+          "answer": "Aquestes fraccions descriuen el diàmetre exterior dels tubs de videocàmera dels anys 1950, no el sensor en si — un tub «d'1 polzada» produïa una àrea d'imatge utilitzable d'aproximadament dos terços d'aquest diàmetre. Quan els sensors d'estat sòlid van substituir els tubs, els fabricants van mantenir la convenció de denominació de l'era dels tubs, tot i que la diagonal real d'un sensor modern «d'1 polzada» és d'uns 15.86mm, lluny d'una polzada literal."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "Amb 53.4×40mm, aquest és el sensor més gran que la majoria de fotògrafs professionals arribaran a tocar mai. Els fotògrafs d'estudi, de producte i de paisatge l'utilitzen connectat a l'ordinador (tethered) per la resolució i el rang tonal, no per la velocitat — l'enfocament automàtic i la ràfega queden molt per darrere del full frame. Un fitxer de 150 megapíxels d'un dors Phase One IQ4 posarà a prova tant el teu emmagatzematge com el teu ordinador.",
+          "context": "El «645» en la nissaga d'aquesta classe de sensors ve dels dorsos de pel·lícula en rotlle de 6×4.5cm, però no el confonguis amb el preset de pel·lícula 645 més avall en aquesta llista. Amb 53.4×40mm, els sensors digitals de la sèrie 645 de Phase One i Hasselblad són en realitat més petits que el fotograma de pel·lícula de 56×41.5mm del qual descendeixen, tot i compartir el nom."
+        },
+        "mf": {
+          "character": "Aquesta classe de mida va fer que el mitjà format fos pràctic fora de l'estudi. Tant la GFX de Fujifilm com la sèrie X de Hasselblad es construeixen al voltant d'un sensor de 43.8×32.9mm prou petit per portar a mà i d'excursió, amb 50 a 100 megapíxels i un enfocament automàtic que ha tancat la major part de la distància amb les mirrorless. Els objectius natius es mantenen més grans i cars que els equivalents en full frame, i la lectura rolling-shutter limita l'acció ràpida.",
+          "context": "Fujifilm i Hasselblad competeixen directament aquí, però no en el maquinari del sensor — tant la GFX 100 II com la X2D 100C fan servir el mateix xip de 44×33mm fabricat per Sony. El que separa els dos sistemes és el disseny del cos, la representació dels objectius i la filosofia dels menús, no el silici de darrere."
+        },
+        "mf_leica": {
+          "character": "El sistema S de Leica posa un sensor de 45×30mm en un cos amb forma de rèflex de 35mm sobredimensionada, en lloc d'una càmera de banc d'estudi — i aquest n'és tot l'atractiu: mitjà format a mà per a reportatge i retrat en localització. La S3, amb 64 megapíxels, cedeix una mica de marge de resolució davant les rivals GFX i Hasselblad a canvi d'un sistema més senzill, amb una sola muntura d'objectius i menys cossos entre els quals triar.",
+          "context": "La Leica S2, llançada el 2009, es va presentar explícitament com la primera càmera de mitjà format construïda per a ús a l'aire lliure i a mà, en lloc de treball d'estudi lligat a trípode. La S3 va arribar el 2020 com a successora directa; Leica va descontinuar la S3 el 2023, i cap S4 no ha arribat mai al mercat, deixant el futur de la línia incert."
+        },
+        "ff": {
+          "character": "El punt de referència per a tota la resta d'aquí. El full frame equilibra la superfície de captació de llum, el control de la profunditat de camp i la mida dels objectius — la majoria de gammes d'objectius moderns es dissenyen al seu voltant. Pagues en volum de cos i objectius respecte a l'APS-C, però guanyes aproximadament un stop de marge en poca llum i un enfocament més superficial al mateix enquadrament.",
+          "context": "El fotograma de 36×24 mm és una herència directa de la pel·lícula fotogràfica de 35mm, estandarditzada per Leica als anys 1920 a partir de pel·lícula de cinema girada de costat. Un sensor digital full frame és idèntic en dimensions a un fotograma de pel·lícula de 35mm — per això els objectius de l'era de la pel·lícula hi encaixen sense retall."
+        },
+        "apsh": {
+          "character": "Una mida provisional que Canon va construir prioritzant la velocitat per sobre de la resolució — píxels més grans i lectura més ràpida, en un cos pensat per a l'esport i el fotoperiodisme més que per la qualitat d'imatge en si mateixa. El retall d'1.29x repartia la diferència entre el desavantatge d'abast del full frame i la penalització en poca llum de l'APS-C, al cost d'un sensor que cap altre fabricant va adoptar mai.",
+          "context": "L'APS-H va ser un format exclusiu de Canon, utilitzat únicament a la línia EOS-1D — la 1D, la 1D Mark II, la Mark II N, la Mark III, i finalment la Mark IV del 2009, després de la qual Canon va abandonar del tot aquesta mida i va reintegrar la sèrie 1 al full frame. Cap ecosistema d'objectius o accessoris fora de la mateixa Canon el va tenir mai com a objectiu."
+        },
+        "apsc_n": {
+          "character": "La mida mirrorless per defecte per a aficionats i gamma mitjana de Sony, Nikon i Fujifilm, amb un retall d'1.53x que converteix un objectiu de 50mm en un equivalent d'uns 75mm. Els cossos i objectius són notablement més petits i barats que el full frame, i l'abast extra és un avantatge real per a fotògrafs de fauna i esport que treballen amb òptiques llargues.",
+          "context": "El nom APS-C prové de la pel·lícula de consum Advanced Photo System de 1996, concretament del seu format d'impressió «Classic» 3:2 — però el sensor digital no té la mateixa mida física que la pel·lícula APS, només n'és un homònim llunyà. Fujifilm ha construït tot el seu sistema X al voltant d'aquesta mida de sensor, en lloc de tractar-la com un nivell d'entrada."
+        },
+        "apsc_c": {
+          "character": "L'estàndard APS-C propi de Canon, de 22.3×14.8mm — més petit que la mida de 23.5×15.6mm que fan servir la majoria de competidors, per això el retall de Canon és d'1.62x en lloc d'1.5x. A la pràctica, això significa una mica més d'abast de teleobjectiu per objectiu, amb un petit cost en soroll i rang dinàmic respecte a la variant APS-C més gran.",
+          "context": "Canon utilitza les seves pròpies dimensions de sensor APS-C des de les primeres rèflex digitals del format, sense convergir mai amb el retall d'1.5x en què es van establir gairebé tots els altres. La R7 i la R10 continuen avui aquesta mida a la muntura mirrorless RF de Canon."
+        },
+        "m43": {
+          "character": "Un sistema veritablement petit i veritablement complet — el retall de 2x significa que cada objectiu és físicament compacte, i el sensor de 17.3×13mm continua suportant òptiques lluminoses i nítides amb una separació real del subjecte, només que no tan superficial com la profunditat de camp del full frame. La poca llum i el rang dinàmic queden per darrere dels sensors més grans, un compromís honest a canvi de l'estalvi de mida i pes.",
+          "context": "El Micro Quatre Terços és un estàndard obert, no un format propietari — Olympus i Panasonic el van anunciar conjuntament el 2008, i qualsevol fabricant pot construir seguint la mateixa especificació de muntura d'objectius i sensor. OM System (abans Olympus) i Panasonic continuen sent els dos fabricants de càmeres actius que hi construeixen a sobre."
+        },
+        "1in": {
+          "character": "Un salt significatiu respecte als sensors de mòbil tot mantenint-se de butxaca — la línia RX100 va demostrar que un sensor de 13.2×8.8mm podia produir una qualitat d'imatge real en una compacta que realment portaries amb tu. El desenfocament de fons continua sent limitat fins i tot a f/1.8, i la poca llum requereix atenció, però la relació mida-qualitat és difícil de superar per viatjar.",
+          "context": "L'etiqueta «1 polzada» és una relíquia dels tubs de videocàmera dels anys 1950, no una mesura real — un tub amb un diàmetre exterior d'1 polzada produïa una àrea d'imatge utilitzable d'aproximadament dos terços d'aquest diàmetre. Quan els sensors CCD i CMOS van substituir els tubs, els fabricants de càmeres van mantenir la denominació de l'era dels tubs, tot i que la diagonal real d'un sensor modern «d'1 polzada» és d'uns 15.86mm, lluny d'una polzada literal."
+        },
+        "phone": {
+          "character": "Els mòbils de gamma alta moderns redueixen la distància amb les càmeres basades només en el sensor mitjançant el càlcul, no la mida — un xip de 9.8×7.3mm no pot igualar la captació de llum bruta d'un sensor d'1 polzada, així que l'apilament multi-fotograma, la reducció de soroll per IA i el bokeh sintètic fan la feina pesada en el seu lloc. El resultat es veu excel·lent a la pantalla del mòbil i comença a mostrar els seus límits a resolució completa amb poca llum.",
+          "context": "«Gamma alta» aquí engloba diversos sensors reals de mida semblant però no idèntica entre marques i anys, en lloc d'un xip exacte — la càmera principal de l'iPhone 17 Pro fa aproximadament 1/1.28 de polzada, la línia de gamma alta de Samsung s'acosta més a 1/1.3 de polzada, i totes dues s'arrodoneixen a la xifra representativa de 9.8×7.3mm d'aquest preset."
+        },
+        "1_1_7in": {
+          "character": "El sensor de 7.6×5.7mm va definir la compacta per a aficionats de finals dels anys 2000 — càmeres com la Canon S120 i la Panasonic LX7 el combinaven amb un objectiu lluminós que poques compactes podien igualar, dirigides a fotògrafs que volien control manual en una butxaca de jaqueta. Els mòbils van absorbir la major part d'aquest mercat, però l'equilibri de mida i control del format encara es manté.",
+          "context": "En superfície de sensor, aquest format se situa un graó per sota de les compactes d'1 polzada i dos graons per sota del Micro Quatre Terços, obrint-se un nínxol per a càmeres de butxaca amb obertures més lluminoses que les point-and-shoot típiques de la mateixa època. Poques càmeres actuals l'utilitzen — avui és sobretot una mida de mercat de segona mà i col·leccionistes."
+        },
+        "1_2_3in": {
+          "character": "Els drons i les càmeres d'acció es construeixen al voltant d'aquesta mida perquè és prou petita i lleugera per volar o muntar-se sense afegir un pes significatiu — el cost és un metratge sorollós a ISO alt i un rang dinàmic limitat en comparació amb qualsevol sensor més gran d'aquesta llista. DJI i la majoria de fabricants de càmeres d'acció ancoren aquí les seves gammes principals.",
+          "context": "Llistada com a 6.17×4.55mm, aquesta és la convenció dominant a la pràctica en les fitxes tècniques dels fabricants, tot i que no es redueix a una relació 4:3 exacta — una versió matemàticament «vertadera» de 4:3, a 6.17×4.63mm, existeix en algunes referències, però gairebé cap sensor de dron o càmera d'acció que es comercialitzi la cita realment."
+        },
+        "phone_mid": {
+          "character": "Els mòbils de gamma mitjana porten sensors molt per sota de la mida dels seus germans de gamma alta, i això es nota més en poca llum i rang dinàmic tan bon punt superes les fotos diürnes ben il·luminades. Els fabricants es recolzen encara més en el processament computacional per compensar, cosa que redueix la diferència visible en bones condicions però no la pot tancar del tot després de fosc.",
+          "context": "Aquesta és una mida representativa, no el xip exacte d'un fabricant — els sensors principals reals de gamma mitjana, incloent-hi peces com l'ISOCELL GM5 de Samsung, s'agrupen al voltant d'aquesta xifra de 5.6×4.2mm sense que cap full de dades hi coincideixi amb precisió, ja que «gamma mitjana» engloba molts sensors reals entre marques i anys."
+        },
+        "phone_uw": {
+          "character": "Els objectius ultra gran angular dels mòbils porten el sensor més petit i més compromès de la configuració de càmeres d'un mòbil típic — útil per a arquitectura i paisatges on el camp de visió més ampli importa més que la qualitat per píxel, però visiblement més tou i sorollós que la càmera principal en la mateixa foto.",
+          "context": "Com els altres nivells de mòbil d'aquí, aquesta xifra de 4.0×3.0mm representa una classe de mòduls ultra gran angular de mida similar entre marques, en lloc d'un xip específic. Les càmeres ultra gran angular van ser una addició de mitjans dels anys 2010 a les configuracions de càmera dels mòbils i continuen sent l'enllaç més feble en la majoria de sistemes multicàmera."
+        },
+        "film_half": {
+          "character": "Disparar en mig fotograma significa doblar les fotos per rotlle encabint dos fotogrames a l'espai que normalment n'ocupa un — atractiu per motius de cost de pel·lícula, però el compromís és un resultat més granulat i tou en ampliar-lo en comparació amb el 35mm complet, ja que treballes amb la meitat de l'àrea del negatiu.",
+          "context": "La meitat d'un fotograma estàndard de 35mm — els fotogrames del format són nativament verticals (18×24) perquè divideixen en dos el fotograma horitzontal de la pel·lícula. Popularitzat per l'Olympus Pen el 1959 per doblar les fotos per rotlle, i recuperat per la Pentax 17 el 2024."
+        },
+        "film_645": {
+          "character": "Passar a la pel·lícula 645 significa un negatiu de 56×41.5mm amb notablement més detall i rang tonal que el 35mm, mentre encara hi caben 15 o 16 fotogrames en un rotlle de pel·lícula 120. Cossos com la Mamiya 645 es manegen gairebé com una rèflex sobredimensionada, no com un aparell exclusiu d'estudi.",
+          "context": "No s'ha de confondre amb els sensors digitals de mitjà format de la nissaga «645» d'una altra part d'aquesta llista — aquest és el fotograma real de pel·lícula en rotlle de 6×4.5cm del qual ve el nom, disparat en pel·lícula 120 o 220 amb cossos com la Pentax 645NII i la Contax 645."
+        },
+        "film_6x6": {
+          "character": "L'enquadrament quadrat elimina una decisió — no cal girar la càmera per a vertical o horitzontal — cosa que explica en part per què s'adaptava tan bé a les càmeres de doble objectiu a alçada de cintura. El compromís apareix a l'hora d'imprimir: la majoria de formats de paper i pantalla no són quadrats, així que tard o d'hora acabes retallant d'una manera o altra.",
+          "context": "La clàssica càmera de format quadrat, popularitzada per la sèrie 500 de Hasselblad i les rèflex de doble objectiu de Rolleiflex. Una Hasselblad 500EL modificada va portar aquest format a la superfície lunar a l'Apollo 11, després que les Hasselblad 500C anteriors s'utilitzessin a les missions Mercury de la NASA el 1962 i el 1963."
+        },
+        "film_6x7": {
+          "character": "Un sistema més pesat i lent que el 35mm o el mig fotograma — l'enfocament amb manxa i el dors giratori de la Mamiya RB67 recompensen un ritme deliberat i amic del trípode per sobre de l'espontaneïtat a mà. A canvi, obtens un negatiu amb més de quatre vegades l'àrea del full frame, amb un gra corresponentment més fi i transicions tonals més suaus.",
+          "context": "Anomenat «el format ideal» als anys 1960 i 70 perquè les seves proporcions 5:4 es retallen netament a 8×10 i altres mides d'impressió estàndard amb un malbaratament mínim. La Mamiya RB67 pren el nom directament de la seva característica distintiva — un dors giratori, d'aquí «RB» — que et permet canviar l'orientació sense girar tota la càmera."
+        },
+        "film_4x5": {
+          "character": "La pel·lícula en full canvia tant la manera de treballar com el que captures — una exposició per xassís, una visualització en vidre esmerilat que és cap per avall i invertida, i moviments (rise, shift, tilt) que et permeten corregir la perspectiva i controlar l'enfocament de maneres que cap sensor digital d'aquí pot igualar sense stitching o objectius de descentrament (shift).",
+          "context": "El format que va sostenir el fotoperiodisme durant bona part del segle XX — Joe Rosenthal va fotografiar l'hissada de la bandera a Iwo Jima amb una Graflex Speed Graphic carregada amb pel·lícula en full 4×5. La pel·lícula de format gran encara existeix avui, en cossos com la plegable Intrepid 4×5, sobretot per a treball de paisatge i fine art."
+        },
+        "cine_s16": {
+          "character": "Un compromís de format de treball — el Super 16 encabeix una qualitat d'imatge notablement millor que el 16mm estàndard en una fracció del cost i el volum de càmera de la pel·lícula de 35mm, per això les produccions documentals, indie i de televisió s'hi han recolzat durant dècades. No té un nombre fix de píxels digitals en aquesta eina perquè és un calibre de pel·lícula, no un sensor.",
+          "context": "Inventat el 1969 pel director de fotografia suec Rune Ericson, el Super 16 eixampla el fotograma útil del 16mm estàndard recuperant la franja de pel·lícula normalment reservada per a una banda sonora òptica — una àrea d'imatge de 12.52×7.41mm enfront del fotograma més estret del 16mm normal, aproximadament 1.69:1 en dimensions brutes. Les produccions històricament enquadraven per a una ampliació 1.66:1 a 35mm en lloc de la relació literal del format."
+        },
+        "cine_s35": {
+          "character": "La producció cinematogràfica professional es basa en aquesta mida de sensor més que en cap altra — càmeres com l'ARRI ALEXA 35 i la RED Komodo es construeixen al seu voltant perquè equilibra el control d'enfocament superficial, l'elecció d'objectius i mides de fitxer gestionables millor que els formats de televisió més petits o els sensors cine de format gran més grans.",
+          "context": "El Super 35 es remunta al fotograma complet de la pel·lícula cine de 35mm de 4 perforacions — essencialment la mateixa àrea que feien servir les càmeres de l'era muda abans que les bandes sonores mengessin part del fotograma, recuperat com a format exclusiu de captura als anys 1980. La xifra de 24.9×14.0mm aquí és el retall d'àrea d'imatge activa 16:9 que citen les mateixes càmeres ARRI, no el fotograma open-gate més gran."
+        },
+        "cine_vv": {
+          "character": "El sensor VV de RED es construeix per al cinema de format gran, a una mida propera a la del full frame, donant una profunditat de camp més superficial i un rang dinàmic més ampli que el Super 35 a la mateixa distància focal — el compromís és una òptica més pesada i cara, dissenyada per cobrir el cercle d'imatge més gran.",
+          "context": "«VV» vol dir VistaVision, un nom que RED va manllevar del procés de 35mm de fotograma gran de Paramount dels anys 1950, ell mateix dissenyat per rivalitzar amb els formats de cinema panoràmic de la seva època. El sensor de 40.96×21.6mm de la V-RAPTOR només comparteix el nom i la classe de mida aproximada amb aquell format de pel·lícula de fa dècades, no les seves dimensions específiques."
+        },
+        "cine_a65": {
+          "character": "ARRI va construir l'ALEXA 65 per a les produccions cinematogràfiques a més gran escala — un sensor de 54.12×25.58mm que fa semblar petites fins i tot les càmeres de cinema digital de classe VistaVision com la V-RAPTOR VV. Els cossos es lloguen en lloc de comprar-se mitjançant el programa dedicat d'ARRI, i el format exigeix òptiques de format gran que poques produccions fora dels pressupostos de blockbuster poden justificar.",
+          "context": "Amb una relació d'aspecte de 2.12:1, el sensor de 20.3 megapíxels de l'ALEXA 65 se situa en mida més a prop de les càmeres fotogràfiques de mitjà format que de qualsevol altra càmera de cinema d'aquesta llista. Continua sent la càmera amb el sensor més gran d'ARRI, posicionada per sobre de l'ALEXA LF i reservada al seu programa exclusiu de lloguer en lloc de venda directa."
         }
       }
     }

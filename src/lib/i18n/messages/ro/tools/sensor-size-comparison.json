@@ -6,6 +6,24 @@
       "modeSideBySide": "Alăturat",
       "modePixelDensity": "Densitate pixeli",
       "pixelDensityDescription": "Arată numărul comun de megapixeli pentru fiecare senzor. Pixelii mai mari (celule mai mari) captează mai multă lumină.",
+      "filmPixelDensityNote": "Filmul și Super 16 nu au un număr de pixeli definit, așa că sunt ascunse în acest mod — vizualizează-le în modul Suprapunere sau Alăturat.",
+      "quickCompare": "Comparație rapidă",
+      "presetReplacesNote": "Înlocuiește selecția curentă",
+      "presets": {
+        "phone_vs_ff": "Telefon vs Full Frame",
+        "crop_vs_ff": "Crop vs Full Frame",
+        "film_vs_digital": "Film vs Digital",
+        "mf_family": "Familia Format Mediu",
+        "cine_vs_stills": "Cinema vs Foto"
+      },
+      "groups": {
+        "medium-format": "Format Mediu",
+        "ff-aps": "Full Frame și APS",
+        "compact": "Compact și 1\"",
+        "phone": "Smartphone",
+        "film": "Film",
+        "cine": "Cinema"
+      },
       "sensors": "Senzori",
       "customSensors": "Senzori personalizați",
       "placeholderName": "Nume",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Factor de crop",
       "tableAspectCrop": "Crop de raport",
       "canvasAriaLabel": "Comparație dimensiuni senzor în modul {mode}",
+      "detail": {
+        "diagonal": "Diagonală",
+        "area": "Suprafață",
+        "aspect": "Aspect",
+        "vsFullFrame": "vs Full Frame",
+        "referenceSensor": "Senzor de referință (full frame)",
+        "equivalence": "Un obiectiv de {focal}mm f/{ap} încadrează aici ca ~{eqFocal}mm cu profunzimea de câmp de f/{eqAp} pe full frame.",
+        "resolutions": "Rezoluții comune",
+        "cameras": "Camere populare",
+        "character": "Caracteristici",
+        "context": "Context",
+        "customNoProfile": "Senzor personalizat — doar date calculate."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Ce este factorul de crop și de ce contează?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Cum afectează dimensiunea senzorului adâncimea câmpului?",
           "answer": "Senzorii mai mari produc o adâncime a câmpului mai mică la încadrare echivalentă. Ca să obții aceeași încadrare cu un senzor mai mic, fie folosești o distanță focală mai scurtă, fie te îndepărtezi — ambele variante măresc profunzime de câmp-ul și reduc blurul de fundal."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Cum se compară dimensiunile cadrelor de film cu senzorii digitali moderni?",
+          "answer": "Filmul standard de 35mm este identic ca dimensiuni cu un senzor digital full-frame (36×24mm), așa că obiectivele din era filmului îl acoperă fără crop. Filmul de format mediu merge mult mai mare — un negativ 645 are 56×41.5mm, iar 6×7 are 70×56mm, ambele cu mult peste suprafața oricărui senzor digital full-frame — în timp ce filmul semi-cadru împarte în două un cadru standard de 35mm, pentru o suprafață apropiată de cea a unui senzor APS-C mare."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Cu ce corespund Super 35 și ALEXA 65 în termeni de fotografie still?",
+          "answer": "Super 35 (24.9×14.0mm, crop 1.51x) ajunge aproape exact la dimensiunea APS-C, motiv pentru care obiectivele cine S35 și obiectivele foto APS-C acoperă cercuri de imagine similare. Senzorul de 54.12×25.58mm al ALEXA 65 este mult mai mare — mai aproape de un senzor foto de format mediu de 44×33mm decât de full-frame, motiv pentru care are nevoie de propria gamă dedicată de obiective de format mare."
+        },
+        "why-inch-fractions": {
+          "question": "De ce senzorii mici sunt denumiți în fracțiuni de inch, precum 1/2.3\"?",
+          "answer": "Aceste fracțiuni descriu diametrul exterior al tuburilor camerelor video din anii 1950, nu senzorul în sine — un tub de „1 inch” producea o suprafață de imagine utilizabilă de aproximativ două treimi din acel diametru. Când senzorii solizi au înlocuit tuburile, producătorii au păstrat convenția de denumire din era tuburilor, deși diagonala reală a unui senzor modern de „1 inch” este de circa 15.86mm, departe de un inch literal."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "La 53.4×40mm, acesta este cel mai mare senzor pe care majoritatea fotografilor profesioniști îl vor atinge vreodată. Fotografii de studio, de produs și de peisaj îl folosesc conectat la calculator (tethered) pentru rezoluție și gamă tonală, nu pentru viteză — autofocusul și rafala rămân cu mult în urma senzorilor full-frame. Un fișier de 150 de megapixeli de la un back Phase One IQ4 va pune la încercare deopotrivă spațiul de stocare și calculatorul.",
+          "context": "„645” din denumirea acestei clase de senzori provine de la casetele de film rolă 6×4.5cm, dar nu-l confunda cu presetarea de film 645 de mai jos, din aceeași listă. La 53.4×40mm, senzorii digitali din seria 645 de la Phase One și Hasselblad sunt de fapt mai mici decât cadrul de film de 56×41.5mm din care descind, deși poartă același nume."
+        },
+        "mf": {
+          "character": "Această clasă de dimensiuni a făcut ca formatul mediu să devină practic și în afara studioului. Atât seria GFX de la Fujifilm, cât și seria X de la Hasselblad se construiesc în jurul unui senzor de 43.8×32.9mm suficient de mic pentru a fi folosit la mână și în drumeții, cu rezoluții de la 50 la 100 de megapixeli și un autofocus care a redus cea mai mare parte a decalajului față de mirrorless. Obiectivele native rămân mai mari și mai scumpe decât echivalentele full-frame, iar citirea rolling-shutter limitează acțiunea rapidă.",
+          "context": "Fujifilm și Hasselblad se află aici în competiție directă, dar nu concurează pe hardware-ul senzorului — atât GFX 100 II, cât și X2D 100C folosesc același cip de 44×33mm, fabricat de Sony. Ceea ce separă cele două sisteme sunt designul corpului, redarea obiectivelor și filosofia meniurilor, nu siliciul din spate."
+        },
+        "mf_leica": {
+          "character": "Sistemul S de la Leica pune un senzor de 45×30mm într-un corp cu forma unei reflex 35mm supradimensionate, nu a unei camere de studio de tip view camera — și tocmai aici stă ideea: format mediu la mână, pentru reportaj și portrete în locație. S3, cu 64 de megapixeli, cedează din marja de rezoluție față de rivalii GFX și Hasselblad în schimbul unui sistem mai simplu, cu o singură montură de obiectiv și mai puține corpuri din care să alegi.",
+          "context": "Leica S2, lansată în 2009, a fost prezentată explicit drept prima cameră de format mediu construită pentru utilizare la mână, în aer liber, nu pentru lucrul de studio pe trepied. S3 a apărut în 2020 ca succesor direct; Leica a retras S3 din producție în 2023, iar niciun S4 nu a fost lansat, lăsând viitorul liniei incert."
+        },
+        "ff": {
+          "character": "Punctul de referință pentru tot ce urmează aici. Full-frame echilibrează suprafața de captare a luminii, controlul profunzimii de câmp și dimensiunea obiectivelor — majoritatea gamelor moderne de obiective sunt proiectate în jurul lui. Plătești în volum de corp și obiective față de APS-C, dar câștigi aproximativ un stop în plus la lumină slabă și o profunzime de câmp mai mică, la aceeași încadrare.",
+          "context": "Cadrul de 36×24 mm este o moștenire directă a filmului foto de 35mm, standardizat de Leica în anii 1920, pornind de la peliculă de cinema rotită pe lateral. Un senzor digital full-frame este identic ca dimensiuni cu un cadru de film de 35mm — motiv pentru care obiectivele din era filmului se proiectează pe el fără crop."
+        },
+        "apsh": {
+          "character": "O dimensiune de compromis, construită de Canon pentru viteză mai degrabă decât pentru rezoluție — pixeli mai mari și citire mai rapidă, într-un corp gândit pentru sport și fotojurnalism, nu pentru calitatea imaginii de dragul ei. Crop-ul de 1.29x a împărțit diferența dintre dezavantajul de rază al full-frame-ului și penalizarea la lumină slabă a APS-C, cu prețul unui senzor pe care niciun alt producător nu l-a adoptat vreodată.",
+          "context": "APS-H a fost un format exclusiv Canon, folosit doar în seria EOS-1D — 1D, 1D Mark II, Mark II N, Mark III și, în final, Mark IV din 2009, după care Canon a abandonat complet această dimensiune și a reintegrat seria 1 în full-frame. Niciun ecosistem de obiective sau accesorii din afara Canon nu a vizat vreodată acest format."
+        },
+        "apsc_n": {
+          "character": "Dimensiunea implicită pentru mirrorless de nivel amator avansat și mediu la Sony, Nikon și Fujifilm, cu un crop de 1.53x care transformă un obiectiv de 50mm într-un echivalent de aproximativ 75mm. Corpurile și obiectivele rămân vizibil mai mici și mai ieftine decât full-frame, iar raza suplimentară e un avantaj real pentru cei care fotografiază faună sălbatică și sport cu teleobiective lungi.",
+          "context": "Numele APS-C provine de la filmul consumer Advanced Photo System din 1996, mai exact de la formatul de printare „Classic” 3:2 al acestuia — dar senzorul digital nu are aceeași dimensiune fizică precum filmul APS, fiind doar un omonim îndepărtat. Fujifilm și-a construit întregul sistem X în jurul acestei dimensiuni de senzor, fără să o trateze ca pe un nivel de intrare."
+        },
+        "apsc_c": {
+          "character": "Standardul propriu Canon pentru APS-C, de 22.3×14.8mm — mai mic decât dimensiunea de 23.5×15.6mm folosită de majoritatea competitorilor, motiv pentru care crop-ul Canon este 1.62x, nu 1.5x. În practică, asta înseamnă puțin mai multă rază telefoto la fiecare obiectiv, cu un mic cost în zgomot și gamă dinamică față de varianta APS-C mai mare.",
+          "context": "Canon folosește propriile dimensiuni pentru senzorii APS-C încă de la primele sale reflexe digitale, fără a converge vreodată către crop-ul de 1.5x adoptat de aproape toți ceilalți. R7 și R10 duc astăzi mai departe această dimensiune, pe montura mirrorless RF a Canon."
+        },
+        "m43": {
+          "character": "Un sistem cu adevărat mic și cu adevărat complet — crop-ul de 2x înseamnă că fiecare obiectiv este fizic compact, iar senzorul de 17.3×13mm susține totuși obiective luminoase și clare, cu separare reală a subiectului, doar că nu la fel de superficială ca profunzimea de câmp de pe full-frame. Lumina slabă și gama dinamică rămân în urma senzorilor mai mari, un compromis onest pentru economia de dimensiune și greutate.",
+          "context": "Micro Four Thirds este un standard deschis, nu un format proprietar — Olympus și Panasonic l-au anunțat împreună în 2008, iar orice producător poate construi după aceeași specificație de montură și senzor. OM System (fost Olympus) și Panasonic rămân cei doi producători activi de camere care continuă să construiască pe acest standard."
+        },
+        "1in": {
+          "character": "Un pas real în față față de senzorii de smartphone, rămânând totuși de buzunar — seria RX100 a demonstrat că un senzor de 13.2×8.8mm poate produce o calitate reală a imaginii într-o compactă pe care chiar o porți cu tine. Blurul de fundal rămâne limitat chiar și la f/1.8, iar lumina slabă cere atenție, dar raportul dimensiune-calitate e greu de bătut pentru călătorii.",
+          "context": "Eticheta „1 inch” este o rămășiță de la tuburile camerelor video din anii 1950, nu o măsurătoare reală — un tub cu diametrul exterior de 1 inch producea o arie de imagine utilizabilă de aproximativ două treimi din acel diametru, în jur de 16mm pe diagonală. Când senzorii CCD și CMOS au înlocuit tuburile, producătorii de camere au păstrat denumirea din era tuburilor, deși senzorii de azi nu mai au niciun tub în interior."
+        },
+        "phone": {
+          "character": "Telefoanele flagship moderne reduc diferența față de camerele care se bazează doar pe senzor prin calcul, nu prin dimensiune — un cip de 9.8×7.3mm nu poate egala captarea brută de lumină a unui senzor de 1 inch, așa că stivuirea multi-cadru, reducerea de zgomot prin AI și bokeh-ul sintetic fac treaba grea în loc de el. Rezultatul arată excelent pe ecranul telefonului și începe să-și arate limitele la rezoluție completă, în lumină slabă.",
+          "context": "„Flagship” acoperă aici mai mulți senzori reali, de dimensiuni similare dar nu identice, pe branduri și ani diferiți, nu un singur cip exact — camera principală a iPhone 17 Pro măsoară aproximativ 1/1.28 inch, gama flagship Samsung se apropie de 1/1.3 inch, iar ambele se rotunjesc la cifra reprezentativă de 9.8×7.3mm din această presetare."
+        },
+        "1_1_7in": {
+          "character": "Senzorul de 7.6×5.7mm a definit compacta pentru pasionați de la sfârșitul anilor 2000 — camere precum Canon S120 și Panasonic LX7 îl combinau cu un obiectiv luminos pe care puține compacte îl puteau egala, vizând fotografi care își doreau control manual într-un buzunar de geacă. Smartphone-urile au absorbit cea mai mare parte a acestei piețe, dar echilibrul dintre dimensiune și control al formatului rezistă și azi.",
+          "context": "Ca suprafață de senzor, acest format se situează cu o treaptă sub compactele de 1 inch și cu două trepte sub Micro Four Thirds, ocupând o nișă pentru camere de buzunar cu diafragme mai luminoase decât compactele obișnuite point-and-shoot din aceeași epocă. Puține camere actuale îl mai folosesc — a rămas mai ales o dimensiune de piață second-hand și de colecționari."
+        },
+        "1_2_3in": {
+          "character": "Dronele și camerele de acțiune sunt construite în jurul acestei dimensiuni pentru că e suficient de mică și de ușoară pentru a zbura sau a fi montată fără a adăuga o greutate semnificativă — costul este material filmat zgomotos la ISO ridicat și o gamă dinamică limitată, comparativ cu orice senzor mai mare din această listă. DJI și majoritatea producătorilor de camere de acțiune își ancorează aici gamele principale.",
+          "context": "Trecut ca 6.17×4.55mm, aceasta este convenția dominantă în practică, pe fișele tehnice ale producătorilor, deși nu se reduce la un raport 4:3 exact — o variantă matematic „adevărată” de 4:3, la 6.17×4.63mm, apare în unele surse, dar aproape niciun senzor de dronă sau cameră de acțiune aflat efectiv pe piață nu o folosește."
+        },
+        "phone_mid": {
+          "character": "Telefoanele de gamă medie au senzori mult sub dimensiunea fraților lor flagship, iar asta se vede cel mai mult la lumină slabă și în gama dinamică, imediat ce depășești cadrele de zi, bine luminate. Producătorii se bazează și mai mult pe procesarea computațională pentru a compensa, ceea ce reduce diferența vizibilă în condiții bune, dar nu o poate elimina complet după lăsarea întunericului.",
+          "context": "Aceasta este o dimensiune reprezentativă, nu cipul exact al unui anumit producător — senzorii principali reali de gamă medie, inclusiv piese precum ISOCELL GM5 de la Samsung, se grupează în jurul acestei cifre de 5.6×4.2mm, fără ca vreo fișă tehnică să corespundă exact, întrucât „gama medie” acoperă mulți senzori reali, pe branduri și ani diferiți."
+        },
+        "phone_uw": {
+          "character": "Obiectivele ultra-grandangulare de pe telefoane au cel mai mic și mai compromis senzor din sistemul de camere al unui telefon obișnuit — util pentru arhitectură și peisaje, unde câmpul vizual mai larg contează mai mult decât calitatea per-pixel, dar vizibil mai moale și mai zgomotos decât camera principală, în același cadru.",
+          "context": "Ca și celelalte niveluri de telefon de aici, cifra de 4.0×3.0mm reprezintă o clasă de module ultra-grandangulare de dimensiuni similare, pe mai multe branduri, nu un cip anume. Camerele ultra-grandangulare au fost o adiție de la mijlocul anilor 2010 la sistemele de cameră ale telefoanelor și rămân veriga cea mai slabă în majoritatea sistemelor multi-cameră."
+        },
+        "film_half": {
+          "character": "Fotografia pe semi-cadru înseamnă dublarea numărului de cadre pe rolă, încadrând două cadre în spațiul ocupat în mod normal de unul singur — atractiv din motive de cost al filmului, dar compromisul este un rezultat mai granulat și mai moale la mărire, comparativ cu 35mm full-frame, întrucât lucrezi cu jumătate din suprafața negativului.",
+          "context": "Jumătate dintr-un cadru standard de 35mm — cadrele formatului sunt native pe verticală (18×24), pentru că împart în două cadrul orizontal al filmului. Popularizat de Olympus Pen în 1959, pentru dublarea numărului de cadre pe rolă, și readus în actualitate de Pentax 17 în 2024."
+        },
+        "film_645": {
+          "character": "Trecerea la filmul 645 înseamnă un negativ de 56×41.5mm, cu mult mai mult detaliu și gamă tonală decât 35mm, dar care încă încape în 15 sau 16 cadre pe o rolă de film 120. Corpuri precum Mamiya 645 se manevrează aproape ca o reflex supradimensionată, nu ca un utilaj strict de studio.",
+          "context": "A nu se confunda cu senzorii digitali de format mediu din linia „645” de mai sus, din aceeași listă — acesta este cadrul real de film rolă 6×4.5cm de la care provine numele, fotografiat pe film 120 sau 220, în corpuri precum Pentax 645NII și Contax 645."
+        },
+        "film_6x6": {
+          "character": "Încadrarea pătrată elimină o decizie — nu mai rotești camera pentru portret sau landscape — motiv pentru care s-a potrivit atât de bine camerelor cu bi-obiectiv, ținute la nivelul taliei. Compromisul apare la print: majoritatea formatelor de hârtie și de ecran nu sunt pătrate, așa că, într-un fel sau altul, tot decupezi până la urmă.",
+          "context": "Camera clasică de format pătrat, popularizată de seria 500 a Hasselblad și de reflexele cu bi-obiectiv Rolleiflex. O Hasselblad 500EL modificată a dus acest format pe suprafața Lunii, în misiunea Apollo 11, după ce Hasselblad 500C fusese deja folosită în misiunile Mercury ale NASA, în 1962 și 1963."
+        },
+        "film_6x7": {
+          "character": "Un sistem mai greu și mai lent decât 35mm sau semi-cadrul — focalizarea cu burduf și spatele rotativ ale Mamiya RB67 recompensează un ritm deliberat, prietenos cu trepiedul, mai degrabă decât spontaneitatea la mână. În schimb, obții un negativ cu o suprafață de peste patru ori mai mare decât full-frame, cu granulație corespunzător mai fină și tranziții tonale mai line.",
+          "context": "Poreclit „formatul ideal” în anii 1960 și '70, pentru că proporțiile sale de 5:4 se decupează curat la 8×10 și alte dimensiuni standard de print, cu pierderi minime. Mamiya RB67 își ia numele direct de la caracteristica sa distinctivă — un spate rotativ, de unde „RB” —, care îți permite să schimbi orientarea fără să rotești întreaga cameră."
+        },
+        "film_4x5": {
+          "character": "Filmul plan îți schimbă modul de lucru la fel de mult ca ceea ce surprinzi — o singură expunere per casetă, o vizualizare pe sticla mată, răsturnată și inversată, și mișcări (rise, shift, tilt) care îți permit să corectezi perspectiva și să controlezi focalizarea în moduri pe care niciun senzor digital de aici nu le poate egala fără stitching sau obiective decentrabile (shift).",
+          "context": "Formatul care a purtat fotojurnalismul de-a lungul secolului XX — Joe Rosenthal a fotografiat ridicarea drapelului de la Iwo Jima cu o Graflex Speed Graphic încărcată cu film plan 4×5. Filmul de format mare există și azi, în corpuri precum pliabila Intrepid 4×5, mai ales pentru peisaj și fine-art."
+        },
+        "cine_s16": {
+          "character": "Un compromis de format de lucru — Super 16 aduce o calitate a imaginii semnificativ mai bună decât 16mm standard, la o fracțiune din costul și din volumul camerei față de filmul de 35mm, motiv pentru care producțiile documentare, indie și de televiziune s-au bazat pe el timp de decenii. Nu are un număr fix de pixeli digitali în acest instrument, întrucât este un calibru de film, nu un senzor.",
+          "context": "Inventat în 1969 de directorul de imagine suedez Rune Ericson, Super 16 lărgește cadrul utilizabil al filmului 16mm standard, recuperând banda de film rezervată în mod normal pentru o coloană sonoră optică — o suprafață de imagine de 12.52×7.41mm, față de cadrul mai îngust al 16mm obișnuit, cu un raport de aproximativ 1.69:1 în dimensiuni brute. Producțiile au încadrat, în mod istoric, pentru un blow-up la 1.66:1 pe 35mm, nu pentru raportul literal al formatului."
+        },
+        "cine_s35": {
+          "character": "Producția cinematografică profesionistă se bazează pe această dimensiune de senzor mai mult decât pe oricare alta — camere precum ARRI ALEXA 35 și RED Komodo se construiesc în jurul ei, pentru că echilibrează controlul profunzimii mici de câmp, alegerea obiectivelor și dimensiunea gestionabilă a fișierelor mai bine decât fie formatele broadcast mai mici, fie senzorii cine de format mare, mai mari.",
+          "context": "Super 35 provine din cadrul complet al filmului cine de 35mm cu 4 perforații — practic aceeași suprafață folosită de camerele din era filmului mut, înainte ca coloanele sonore să „mănânce” din cadru, readus la viață ca format exclusiv de captură în anii 1980. Cifra de 24.9×14.0mm de aici este decuparea zonei active de imagine 16:9 citată chiar de camerele ARRI, nu cadrul open-gate, mai mare."
+        },
+        "cine_vv": {
+          "character": "Senzorul VV de la RED este construit pentru cinema de format mare, la o dimensiune apropiată de full-frame, oferind o profunzime de câmp mai mică și o gamă dinamică mai largă decât Super 35, la aceeași distanță focală — compromisul este obiective mai grele și mai scumpe, proiectate să acopere cercul de imagine mai mare.",
+          "context": "„VV” vine de la VistaVision, un nume pe care RED l-a împrumutat de la procesul Paramount de 35mm cu cadru mare, din anii 1950, gândit la rândul lui să rivalizeze cu formatele cinema widescreen ale epocii. Senzorul de 40.96×21.6mm al V-RAPTOR împarte cu acel format de film vechi de decenii doar numele și clasa aproximativă de dimensiune, nu și dimensiunile specifice."
+        },
+        "cine_a65": {
+          "character": "ARRI a construit ALEXA 65 pentru producțiile cinematografice de cea mai mare amploare — un senzor de 54.12×25.58mm care le face să pară mici chiar și pe camerele digitale de cinema din clasa VistaVision, precum V-RAPTOR VV. Corpurile se închiriază, nu se cumpără, printr-un program dedicat ARRI, iar formatul cere obiective de format mare, pe care puține producții, în afara bugetelor de blockbuster, și le pot justifica.",
+          "context": "La un raport de aspect de 2.12:1, senzorul de 20.3 megapixeli al ALEXA 65 se apropie ca dimensiune mai mult de camerele foto de format mediu decât de orice altă cameră de cinema din această listă. Rămâne camera ARRI cu cel mai mare senzor, poziționată deasupra ALEXA LF și rezervată exclusiv programului său de închiriere, nu vânzării directe."
         }
       }
     }

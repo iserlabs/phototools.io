@@ -6,6 +6,24 @@
       "modeSideBySide": "Side by Side",
       "modePixelDensity": "Pixel Density",
       "pixelDensityDescription": "Ipinapakita ang typical na megapixel count para sa bawat sensor. Mas malaki ang pixels (mas malaking cells), mas maraming light ang nakukuha.",
+      "filmPixelDensityNote": "Walang defined na pixel count ang Film at Super 16, kaya nakatago sila sa mode na ito — tingnan na lang sila sa Overlay o Side by Side.",
+      "quickCompare": "Mabilisang Paghambing",
+      "presetReplacesNote": "Papalitan ang kasalukuyang seleksyon",
+      "presets": {
+        "phone_vs_ff": "Phone laban sa Full Frame",
+        "crop_vs_ff": "Crop laban sa Full Frame",
+        "film_vs_digital": "Film laban sa Digital",
+        "mf_family": "Medium Format Family",
+        "cine_vs_stills": "Cine laban sa Stills"
+      },
+      "groups": {
+        "medium-format": "Medium Format",
+        "ff-aps": "Full Frame at APS",
+        "compact": "Compact at 1\"",
+        "phone": "Smartphone",
+        "film": "Film",
+        "cine": "Cinema"
+      },
       "sensors": "Sensors",
       "customSensors": "Custom Sensors",
       "placeholderName": "Pangalan",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Crop Factor",
       "tableAspectCrop": "Aspect Crop",
       "canvasAriaLabel": "Sensor size comparison sa {mode} mode",
+      "detail": {
+        "diagonal": "Diagonal",
+        "area": "Area",
+        "aspect": "Aspect",
+        "vsFullFrame": "vs Full Frame",
+        "referenceSensor": "Reference na sensor (full frame)",
+        "equivalence": "Ang {focal}mm f/{ap} na lens dito ay nagfa-frame na parang ~{eqFocal}mm na may f/{eqAp} depth of field sa full frame.",
+        "resolutions": "Karaniwang resolutions",
+        "cameras": "Popular na camera",
+        "character": "Katangian",
+        "context": "Konteksto",
+        "customNoProfile": "Custom na sensor — computed data lang."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Ano ang crop factor at bakit mahalaga ito?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Paano apektado ng sensor size ang depth of field?",
           "answer": "Mas malaki ang sensor, mas shallow ang depth of field sa equivalent framing. Para makuha ang parehong framing gamit ang mas maliit na sensor, kailangan mo ng mas maikling focal length (mas deep ang depth of field) o lumayo (mas deep din ang depth of field) — parehong nagpapababa sa background blur."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Paano ikinukumpara ang sukat ng film frame sa mga modernong digital sensor?",
+          "answer": "Magkapareho ang sukat ng standard 35mm film at full-frame digital sensor (36×24mm), kaya sinasaklaw ito ng mga lens mula sa film era nang walang crop. Mas malaki pa ang medium-format film — 56×41.5mm ang 645 negative at 70×56mm ang 6×7, parehong lampas nang malayo sa area ng kahit anong full-frame digital sensor — habang hinahati ng half-frame film ang standard 35mm frame sa dalawa, humigit-kumulang kapareho ng area ng malaking APS-C sensor."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Ano ang katumbas ng Super 35 at ALEXA 65 sa terms ng stills photography?",
+          "answer": "Halos eksaktong bumabagsak ang Super 35 (24.9×14.0mm, 1.51x crop) sa sukat ng APS-C, kaya magkatulad ang na-cover na image circle ng S35 cinema lens at APS-C stills lens. Mas malaki nang malaki ang 54.12×25.58mm na sensor ng ALEXA 65 — mas malapit ito sa 44×33mm na medium-format stills sensor kaysa full frame, kaya kailangan nito ng sarili at dedicated na large-format lens lineup."
+        },
+        "why-inch-fractions": {
+          "question": "Bakit pinapangalanan ang maliliit na sensor sa inch fractions tulad ng 1/2.3\"?",
+          "answer": "Inilalarawan ng mga fraction na ito ang outer diameter ng video-camera tube noong 1950s, hindi ang sensor mismo — ang «1-inch» na tube ay nagbibigay ng usable image area na humigit-kumulang two-thirds ng diameter na iyon. Nang palitan ng solid-state sensor ang mga tube, pinanatili ng mga manufacturer ang naming convention mula sa tube era kahit ang totoong diagonal ng modernong «1-inch» na sensor ay mga 15.86mm lang, malayung-malayo sa literal na isang inch."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "Sa 53.4×40mm, ito ang pinakamalaking sensor na maaabot ng karamihan sa mga working photographer. Ginagamit ito ng mga studio, product, at landscape photographer nang naka-tether sa computer para sa resolution at tonal range, hindi para sa speed — malayong naiiwan ng autofocus at burst rate nito kumpara sa full frame. Ang 150-megapixel na file mula sa Phase One IQ4 back ay magiging matindi sa storage at computer mo.",
+          "context": "Ang «645» sa pangalan ng sensor class na ito ay nagmula sa 6×4.5cm roll-film backs, pero huwag itong ipagkamali sa 645 film preset na nasa ibang bahagi ng listahang ito. Sa 53.4×40mm, ang digital 645-series sensors ng Phase One at Hasselblad ay mas maliit pa nga kaysa sa 56×41.5mm film frame na pinagmulan nila, kahit magkapareho ang pangalan."
+        },
+        "mf": {
+          "character": "Ginawang practical ng size class na ito ang medium format kahit sa labas ng studio. Ang GFX ng Fujifilm at X series ng Hasselblad ay parehong nakabuo sa paligid ng 43.8×32.9mm sensor na sapat kaliit para hawakan at dalhin sa hike, may 50 hanggang 100 megapixels at autofocus na halos naisara na ang gap kumpara sa mirrorless. Mas malaki at mas mahal ang native lenses kaysa sa full-frame equivalents, at limitado ang rolling-shutter readout para sa mabilis na aksyon.",
+          "context": "Direktang naglalaban ang Fujifilm at Hasselblad dito, pero hindi sila naglalaban sa sensor hardware — parehong gumagamit ng kaparehong 44×33mm chip na ginawa ng Sony ang GFX 100 II at X2D 100C. Ang naghihiwalay sa dalawang system ay ang body design, lens rendering, at menu philosophy, hindi ang silicon sa loob."
+        },
+        "mf_leica": {
+          "character": "Inilalagay ng S system ng Leica ang isang 45×30mm sensor sa body na hugis oversized 35mm SLR sa halip na studio view camera, na siya mismong buong pitch — handheld medium format para sa reportage at location portraiture. Sinasakripisyo ng 64-megapixel S3 ang ilang resolution headroom kumpara sa GFX at Hasselblad rivals para sa mas simpleng system na may iisang lens mount at mas kaunting body na pagpipilian.",
+          "context": "Ang Leica S2, na inilunsad noong 2009, ay direktang ipinakilala bilang ang unang medium-format camera na ginawa para sa outdoor, handheld na gamit sa halip na tripod-bound studio work. Dumating ang S3 noong 2020 bilang direktang successor nito; itinigil ng Leica ang S3 noong 2023, at wala pang S4 na inilabas, kaya hindi malinaw ang future ng line na ito."
+        },
+        "ff": {
+          "character": "Ang reference point para sa lahat ng iba pa dito. Bina-balance ng full frame ang light-gathering area, depth-of-field control, at lens size — karamihan sa mga modernong lens lineup ay dinisenyo base dito. Nagbabayad ka sa laki ng body at lens kumpara sa APS-C, pero may nakukuha kang mga isang stop na low-light headroom at mas shallow na focus sa parehong framing.",
+          "context": "Ang 36×24 mm na frame ay direktang minana mula sa 35mm still film, na na-standardize ng Leica noong 1920s mula sa cinema film stock na binaligtad. Magkatulad ang sukat ng full-frame digital sensor at 35mm film frame — kaya naaangkop dito ang mga lens mula sa film era nang walang crop."
+        },
+        "apsh": {
+          "character": "Isang stopgap na sukat na ginawa ng Canon para sa speed kaysa resolution — mas malalaking pixel at mas mabilis na readout, sa body na naka-target sa sports at photojournalism kaysa sa image quality mismo. Hinati ng 1.29x crop ang pagkakaiba sa pagitan ng reach disadvantage ng full frame at low-light penalty ng APS-C, sa halaga ng sensor na hindi kailanman ginamit ng ibang manufacturer.",
+          "context": "Ang APS-H ay Canon-only na format, ginamit lang sa EOS-1D line — ang 1D, 1D Mark II, Mark II N, Mark III, at sa wakas ang 2009 Mark IV, pagkatapos noon ay ganap na iniwan ng Canon ang sukat na ito at ibinalik ang 1-series sa full frame. Walang lens o accessory ecosystem sa labas ng Canon ang nag-target dito."
+        },
+        "apsc_n": {
+          "character": "Ang default na enthusiast at mid-range mirrorless size para sa Sony, Nikon, at Fujifilm, may 1.53x crop na ginagawang humigit-kumulang 75mm equivalent ang 50mm lens. Mas maliit at mas mura ang mga body at lens kumpara sa full frame, at ang extra reach ay tunay na advantage para sa mga wildlife at sports photographer na gumagamit ng mas mahahabang lens.",
+          "context": "Ang pangalan ng APS-C ay hiram mula sa consumer Advanced Photo System film noong 1996, partikular sa «Classic» 3:2 print format nito — pero hindi pareho ang physical size ng digital sensor sa APS film, malayong namesake lang ito. Buong itinayo ng Fujifilm ang X system nito sa paligid ng sensor size na ito sa halip na ituring itong entry tier."
+        },
+        "apsc_c": {
+          "character": "Ang sariling APS-C standard ng Canon, sa 22.3×14.8mm — mas maliit kaysa sa 23.5×15.6mm na sukat na ginagamit ng karamihan ng competitor, kaya 1.62x ang crop ng Canon sa halip na 1.5x. Sa praktikal, nangangahulugan ito ng kaunting dagdag na telephoto reach kada lens, sa maliit na halaga sa noise at dynamic range kumpara sa mas malaking APS-C variant.",
+          "context": "Ginagamit ng Canon ang sarili nitong APS-C sensor dimensions mula pa sa pinakaunang digital SLR ng format, kailanman hindi nag-converge sa 1.5x crop na pinagtibay ng halos lahat. Dinadala ng R7 at R10 ang sukat na ito ngayon sa mirrorless RF mount ng Canon."
+        },
+        "m43": {
+          "character": "Isang tunay na maliit, tunay na kumpletong system — ang 2x crop ay nangangahulugang physically compact ang bawat lens, at sinusuportahan pa rin ng 17.3×13mm sensor ang fast, sharp na glass na may totoong subject separation, hindi lang kasing-shallow ng depth of field ng full frame. Naiiwan ang low light at dynamic range kumpara sa mas malalaking sensor, na siyang honest tradeoff para sa size at weight savings.",
+          "context": "Ang Micro Four Thirds ay open standard, hindi proprietary na format — magkasamang inanunsyo ito ng Olympus at Panasonic noong 2008, at kahit sinong manufacturer ay puwedeng gumawa base sa parehong lens-mount at sensor specification. Ang OM System (dating Olympus) at Panasonic ang natitirang dalawang aktibong camera maker na gumagawa base dito."
+        },
+        "1in": {
+          "character": "Isang malaking step-up mula sa mga smartphone sensor habang nananatiling pocketable — pinatunayan ng RX100 line na kaya ng 13.2×8.8mm sensor na magbigay ng tunay na image quality sa compact na talagang dadalhin mo. Limitado pa rin ang background blur kahit sa f/1.8, at kailangan ng ingat sa low light, pero mahirap talunin ang size-to-quality ratio nito para sa travel.",
+          "context": "Ang «1-inch» na label ay holdover mula sa video-camera tubes noong 1950s, hindi totoong measurement — ang tube na may 1-inch outer diameter ay nagbibigay ng usable image area na humigit-kumulang two-thirds ng diameter na iyon. Nang palitan ng CCD at CMOS sensors ang mga tube, pinanatili ng mga camera maker ang naming mula sa tube era kahit wala nang tube sa loob ang mga sensor ngayon."
+        },
+        "phone": {
+          "character": "Sinasarhan ng mga modernong flagship phone ang gap sa mga sensor-only camera sa pamamagitan ng computation, hindi size — hindi matatalo ng 9.8×7.3mm chip ang raw light-gathering ng 1-inch sensor, kaya ang multi-frame stacking, AI denoising, at synthetic bokeh ang gumagawa ng heavy lifting sa halip. Maganda ang resulta sa screen ng phone pero nagsisimulang lumabas ang mga limitasyon nito sa full resolution kapag low light.",
+          "context": "Sinasaklaw ng «flagship» dito ang ilang totoong sensor na magkatulad pero hindi eksaktong magkapareho ang size sa iba't ibang brand at taon, hindi iisang eksaktong chip — ang main camera ng iPhone 17 Pro ay humigit-kumulang 1/1.28-inch, mas malapit sa 1/1.3-inch ang flagship line ng Samsung, at pareho itong bumabagay sa representative na 9.8×7.3mm figure ng preset na ito."
+        },
+        "1_1_7in": {
+          "character": "Ang 7.6×5.7mm sensor ang nagdefine sa enthusiast compact noong late-2000s — pinagsama ito ng mga camera tulad ng Canon S120 at Panasonic LX7 sa fast na lens na kaunti lang ang compact ang kayang tumapat, para sa mga photographer na gustong mag-manual control kahit nasa bulsa ng jacket. Sinipsip ng mga smartphone ang karamihan sa market na ito, pero valid pa rin ang balance ng size at control ng format na ito.",
+          "context": "Sa sensor area, isang notch mas mababa ang format na ito kaysa sa 1-inch compact at dalawang notch mas mababa kaysa Micro Four Thirds, gumagawa ng niche para sa mga pocketable camera na may mas mabilis na aperture kaysa karaniwang point-and-shoot noong panahong iyon. Kaunti na lang ang kasalukuyang camera na gumagamit nito — kadalasan na lang itong sukat para sa used-market at collector."
+        },
+        "1_2_3in": {
+          "character": "Ginagawa ang mga drone at action camera base sa sukat na ito dahil sapat itong liit at gaan para lumipad o i-mount nang hindi nagdaragdag ng malaking bigat — ang kapalit ay maingay na high-ISO footage at limitadong dynamic range kumpara sa mas malalaking sensor sa listahang ito. Dito ina-anchor ng DJI at karamihan ng action-cam maker ang core lineup nila.",
+          "context": "Nakalista bilang 6.17×4.55mm, ito ang dominanteng real-world convention sa mga spec sheet ng manufacturer, kahit hindi ito eksaktong 4:3 ratio — may «totoong» 4:3 version na 6.17×4.63mm sa ilang reference pero halos walang shipping na drone o action-cam sensor ang gumagamit nito."
+        },
+        "phone_mid": {
+          "character": "May mga sensor ang mid-range phone na mas maliit kaysa sa flagship kapatid nila, at pinaka-halata ito sa low light at dynamic range kapag lumagpas ka na sa well-lit na daytime shots. Mas umaasa pa ang mga manufacturer sa computational processing para tumumbas, na nagpapaliit sa visible gap sa magandang kondisyon pero hindi kayang isara nang tuluyan kapag madilim na.",
+          "context": "Isang representative na sukat ito, hindi eksaktong chip ng isang manufacturer — ang mga totoong mid-range main sensor, kasama ang mga parte tulad ng ISOCELL GM5 ng Samsung, ay nagkukumpulan sa paligid ng 5.6×4.2mm figure na ito nang walang eksaktong tumutugmang datasheet, dahil sinasaklaw ng «mid-range» ang maraming totoong sensor sa iba't ibang brand at taon."
+        },
+        "phone_uw": {
+          "character": "May pinakamaliit at pinaka-compromised na sensor ang ultra-wide phone lens sa karaniwang camera array ng phone — kapaki-pakinabang para sa architecture at landscape kung saan mas mahalaga ang mas malawak na field of view kaysa per-pixel quality, pero halatang mas malabo at mas maingay kaysa sa main camera sa parehong shot.",
+          "context": "Tulad ng ibang phone tier dito, kinakatawan ng 4.0×3.0mm figure na ito ang isang klase ng magkatulad na sukat na ultra-wide module sa iba't ibang brand sa halip na iisang specific na chip. Ang ultra-wide camera ay dagdag noong kalagitnaan ng 2010s sa camera array ng phone at nananatiling pinakamahinang link sa karamihan ng multi-camera system."
+        },
+        "film_half": {
+          "character": "Ang pag-shoot ng half-frame ay nangangahulugan ng pagdodoble ng shots kada roll sa pamamagitan ng pagsingit ng dalawang frame sa espasyong karaniwang inookupahan ng isa — attractive dahil sa film cost, pero ang tradeoff ay mas grainy at mas malabo na resulta kapag pinalaki kumpara sa full-frame 35mm, dahil kalahati lang ng negative area ang ginagamit mo.",
+          "context": "Kalahati ng standard 35mm frame — natural na vertical (18×24) ang mga frame ng format na ito dahil hinahati nila sa dalawa ang horizontal na film frame. Pinasikat ng Olympus Pen noong 1959 para sa pagdodoble ng shots kada roll, at binuhay muli ng Pentax 17 noong 2024."
+        },
+        "film_645": {
+          "character": "Ang pag-upgrade sa 645 film ay nangangahulugan ng 56×41.5mm negative na may kapansin-pansing mas maraming detail at tonal range kaysa 35mm, habang kasya pa rin ang 15 o 16 frame sa isang roll ng 120 film. Ang mga body tulad ng Mamiya 645 ay parang oversized SLR ang dating sa halip na studio-only rig.",
+          "context": "Huwag ipagkamali sa digital «645»-lineage na medium-format sensor sa ibang bahagi ng listahang ito — ito ang aktwal na 6×4.5cm roll-film frame na pinagmulan ng pangalan, na kinukunan sa 120 o 220 film gamit ang mga body tulad ng Pentax 645NII at Contax 645."
+        },
+        "film_6x6": {
+          "character": "Inaalis ng square framing ang isang desisyon — hindi mo na kailangang i-rotate ang camera para sa portrait laban sa landscape — kaya bagay na bagay ito sa waist-level twin-lens camera noon. Lumalabas ang tradeoff sa print: karamihan sa paper at screen format ay hindi square, kaya sa huli mag-c-crop ka rin sa isang paraan o iba.",
+          "context": "Ang classic na square-format camera, na pinasikat ng 500 series ng Hasselblad at twin-lens reflex ng Rolleiflex. Dinala ng modified na Hasselblad 500EL ang format na ito sa ibabaw ng buwan sa Apollo 11, kasunod ng mas naunang Hasselblad 500C na ginamit sa Mercury missions ng NASA noong 1962 at 1963."
+        },
+        "film_6x7": {
+          "character": "Mas mabigat at mas mabagal na system kaysa 35mm o half-frame — ang bellows focusing at rotating back ng Mamiya RB67 ay ginagantimpalaan ang deliberate, tripod-friendly na bilis kaysa sa spontaneity ng handheld. Kapalit, may makukuha kang negative na mahigit apat na beses ang laki kumpara sa full frame, na may mas pino ring grain at mas smooth na tonal transitions.",
+          "context": "Tinawag na «the ideal format» noong 1960s at '70s dahil malinis na naka-crop ang 5:4 proportion nito sa 8×10 at iba pang standard print size na may kaunting waste. Kinuha ng Mamiya RB67 ang pangalan nito direkta mula sa signature feature nito — isang rotating back, kaya «RB» — na nagpapahintulot sa'yong palitan ang orientation nang hindi iniikot ang buong camera."
+        },
+        "film_4x5": {
+          "character": "Binabago ng sheet film kung paano ka nagtatrabaho kasing dami ng binabago nito sa kinukunan mo — isang exposure kada holder, ground-glass view na patiwarik at reversed, at mga movement (rise, shift, tilt) na nagpapahintulot sa'yong itama ang perspective at kontrolin ang focus sa paraang hindi matutumbasan ng kahit anong digital sensor dito nang walang stitching o shift lens.",
+          "context": "Ang format na nagdala sa photojournalism sa kalagitnaan ng ika-20 siglo — kinunan ni Joe Rosenthal ang Iwo Jima flag-raising gamit ang Graflex Speed Graphic na may laman na 4×5 sheet film. May large-format film pa rin ngayon sa mga body tulad ng foldable na Intrepid 4×5, kadalasan para sa landscape at fine-art work."
+        },
+        "cine_s16": {
+          "character": "Isang working-format na kompromiso — mas magandang image quality ang nailalagay ng Super 16 kaysa sa standard 16mm sa maliit na parte lang ng cost at camera bulk ng 35mm film, kaya inasahan ito ng mga documentary, indie, at broadcast production sa loob ng ilang dekada. Walang fixed na digital pixel count dito sa tool na ito dahil film gauge ito, hindi sensor.",
+          "context": "Naimbento noong 1969 ng Swedish cinematographer na si Rune Ericson, pinalapad ng Super 16 ang usable frame ng standard 16mm sa pamamagitan ng pagbawi sa strip ng film na karaniwang nakalaan para sa optical soundtrack — isang 12.52×7.41mm na image area kumpara sa mas makitid na frame ng regular na 16mm, humigit-kumulang 1.69:1 sa raw dimensions. Sa kasaysayan, nag-frame ang mga production para sa 1.66:1 blow-up sa 35mm sa halip na literal na ratio ng format."
+        },
+        "cine_s35": {
+          "character": "Umaasa ang professional cinema production sa sukat ng sensor na ito higit sa kahit ano pa — ang mga camera tulad ng ARRI ALEXA 35 at RED Komodo ay nakabuo sa paligid nito dahil mas maganda nitong bina-balance ang shallow-focus control, lens choice, at manageable na file size kaysa sa mas maliit na broadcast format o mas malaking large-format cine sensor.",
+          "context": "Nagmula ang Super 35 sa full frame ng 4-perf 35mm cine film — halos parehong area na ginamit ng mga camera noong silent era bago pumasok ang sound track sa frame, na binuhay muli bilang camera-only format noong 1980s. Ang 24.9×14.0mm figure dito ay ang 16:9 active-image-area crop na sinisipi mismo ng mga camera ng ARRI, hindi ang mas malaking open-gate frame."
+        },
+        "cine_vv": {
+          "character": "Ang VV sensor ng RED ay ginawa para sa large-format cinema sa sukat na malapit sa full frame, na nagbibigay ng mas shallow na depth of field at mas malawak na dynamic range kaysa Super 35 sa parehong focal length — ang tradeoff ay mas mabigat at mas mahal na glass na dinisenyo para saklawin ang mas malaking image circle.",
+          "context": "Ang «VV» ay para sa VistaVision, isang pangalang hiniram ng RED mula sa large-frame 35mm process ng Paramount noong 1950s, na dinisenyo din para makipagsabayan sa widescreen cinema format noong panahong iyon. Ang 40.96×21.6mm sensor ng V-RAPTOR ay pareho lang ng pangalan at rough size class sa dekada-lumang film format na iyon, hindi ang specific dimensions nito."
+        },
+        "cine_a65": {
+          "character": "Ginawa ng ARRI ang ALEXA 65 para sa pinakamalaking sukat ng cinema production — isang 54.12×25.58mm na sensor na nakakapagpaliit kahit sa VistaVision-class na digital cinema camera tulad ng V-RAPTOR VV. Ang mga body ay renta sa halip na pag-aari sa pamamagitan ng dedicated program ng ARRI, at kailangan ng format na ito ng large-format na glass na kaunting production lang sa labas ng blockbuster budget ang makapagbibigay-katwiran.",
+          "context": "Sa 2.12:1 aspect ratio, mas malapit sa sukat ng medium-format stills camera ang 20.3-megapixel na sensor ng ALEXA 65 kaysa sa kahit anong ibang cinema camera sa listahang ito. Nananatili itong pinakamalaking sensor na camera ng ARRI, nakaposisyon sa itaas ng ALEXA LF at nakalaan lang para sa rental-only na programa sa halip na direktang benta."
         }
       }
     }

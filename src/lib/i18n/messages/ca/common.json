@@ -126,7 +126,7 @@
       "heading": "Preguntes freqüents"
     },
     "sensors": {
-      "mf_645": "Mitjà format (54x40)",
+      "mf_645": "Mitjà format (53.4x40)",
       "mf": "Mitjà format (44x33)",
       "mf_leica": "Mitjà format (45x30)",
       "ff": "Full Frame",
@@ -135,7 +135,20 @@
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Quatre Terços",
       "1in": "Sensor d'1\"",
-      "phone": "Mòbil de gamma alta (1/1.3\")"
+      "phone": "Mòbil de gamma alta (1/1.3\")",
+      "1_1_7in": "1/1.7\" Compacta",
+      "1_2_3in": "1/2.3\" (Drons i càmeres d'acció)",
+      "phone_mid": "Mòbil de gamma mitjana (1/2.55\")",
+      "phone_uw": "Mòbil ultra gran angular (1/3.5\")",
+      "film_half": "Pel·lícula de mig fotograma",
+      "film_645": "Pel·lícula 645",
+      "film_6x6": "Pel·lícula 6×6",
+      "film_6x7": "Pel·lícula 6×7",
+      "film_4x5": "Format gran 4×5",
+      "cine_s16": "Super 16",
+      "cine_s35": "Super 35 (16:9)",
+      "cine_vv": "RED V-RAPTOR VV",
+      "cine_a65": "ARRI ALEXA 65"
     },
     "legalTranslationDisclaimer": "Aquesta és una traducció de cortesia. La versió en anglès és la jurídicament vinculant. Consulta /en/privacy.",
     "error": {
