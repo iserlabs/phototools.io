@@ -1,0 +1,98 @@
+---
+title: "Focus Stacking for Macro Photography: Step Size, Capture, and the Merge"
+description: "Why macro depth of field runs out, how to choose a focus step size, how to shoot a clean stack, and how depth-map and pyramid merges differ."
+category: techniques
+tags: [focus-stacking, macro, sharpness]
+relatedTools: [focus-stacking-calculator, dof-simulator, diffraction-calculator]
+relatedGuides: [macro-photography-getting-started]
+publishedAt: 2026-08-09
+updatedAt: 2026-08-09
+status: draft
+sourceRef: "adapted from robin sources: helicon-vs-zerene, photo-crystal-slide-preparation, photo-macro-sharpness-budget"
+---
+
+## Why a Single Frame Can't Hold the Subject
+
+Focus stacking is a simple idea with fussy execution: photograph the same subject several times, moving the plane of focus a little deeper with each frame, then let software combine the sharp band of every frame into one image. The composite ends up with more depth of field than any single exposure could produce at close range.
+
+Macro photographers depend on it because the numbers leave no choice. Depth of field shrinks close to the square of magnification. At life size (1:1) and f/8, the band of acceptable sharpness is roughly one millimeter deep. At twice life size it is around a third of a millimeter, about the thickness of three sheets of paper. Almost any real subject at that scale is deeper than that — an insect's head, the raised relief on a coin. Focus on the nearest point and everything behind it dissolves. Focus in the middle and both ends go.
+
+So a single macro frame is a sliver of sharpness with blur on either side. That can be exactly what you want, when the sliver lands well. When the picture needs the whole subject sharp, the sliver has to sweep the subject's full depth, one frame at a time. That sweep is the stack.
+
+<ToolCard slug="dof-simulator" />
+
+## The Stopping-Down Trap
+
+The obvious alternative is a smaller aperture, and at close range it disappoints twice.
+
+First, the aperture you set is not the aperture you get. As magnification rises, the effective aperture becomes the marked f-number multiplied by (1 + magnification). At 1:1, a marked f/8 behaves like f/16, for exposure and for optics alike. At twice life size, that same f/8 is working at f/24. The light cost alone is steep: two stops at life size, more than three at 2×.
+
+Second, diffraction follows the effective aperture, not the marking. Softening that would appear around f/16 or f/22 at normal shooting distances arrives at a marked f/8 or f/11 once you reach 1:1. Stopping down keeps buying a slightly deeper sharp zone, but past that threshold it pays with softness everywhere, and total detail in the frame starts falling.
+
+<Callout type="warning">
+At macro distances, judge everything by the effective aperture. A "safe" marked f/11 at 1:1 is an effective f/22, well into visible diffraction on a modern high-resolution sensor. If a stopped-down single frame comes back uniformly soft, with no sharp plane anywhere, diffraction is the cause — the fix is opening up, not sharpening in post.
+</Callout>
+
+<ToolCard slug="diffraction-calculator" />
+
+Stacking is the way out. Each frame is shot at the aperture where the lens performs best — at high magnification that is often within a stop or two of wide open — and depth comes from the number of frames rather than the aperture. You get the lens at its sharpest and the depth of field of an aperture that doesn't exist.
+
+## Choosing a Step Size
+
+Two numbers define a stack: how far focus moves between frames (the step) and how many frames that requires. Too large a step leaves soft gaps between the sharp bands, and no software can fill them. Too small a step wastes frames and time without adding sharpness.
+
+The rule is that the step must be smaller than the depth of field of a single frame, so the sharp bands overlap. An overlap of 20 to 40 percent of the per-frame depth of field is the working range; 30 percent is a sound default, which puts the step at about 0.7× the per-frame depth of field. In practice:
+
+- At 1:1 and f/8, one frame holds roughly 0.95 mm, so step about 0.65 mm.
+- At 2× and f/5.6, one frame holds about 0.25 mm, so step about 0.18 mm.
+
+Frame count is then subject depth divided by step, plus two or three extra frames past the point of first sharpness at each end. The merge needs that run-out; stacks that begin exactly at the first sharp detail often show a slightly soft leading edge.
+
+One caveat trips up careful people: depth of field depends on what you count as sharp. The figures above use the conventional print-viewing standard, a 0.03 mm circle of confusion on full frame, which is also what the calculator below assumes. Judge the file at 100% on a high-resolution monitor and the genuinely crisp band is several times thinner, so a frame that passes at print size can fail at the pixel level. Stacking is usually done precisely because the result will be examined closely, so halving the step from the printed figure is a reasonable default rather than an excess of caution.
+
+Two more numbers earn their keep. If the subject is transparent — a crystal, ice, glass — focus travels farther inside the material than the camera moves, by roughly the refractive index (around 1.5×), so a deep transparent subject needs fewer frames than its geometric depth suggests. And because depth of field per frame grows quickly as magnification drops, a subject that needs thirty frames at 2× may need around a dozen at 1×. Shooting looser and cropping is often the cheaper stack.
+
+<ToolCard slug="focus-stacking-calculator" />
+
+## Shooting the Stack
+
+There are two ways to move focus between frames. In-camera focus bracketing (some brands call it focus shift) steps the lens's focus motor automatically, which is the most convenient path but requires a lens with electronic focus. Manual-focus macro lenses, common at high magnification, can't be bracketed by any camera body; for those, a focus rail moves the entire camera in millimeter or finer increments instead. Rails carry one side effect: because the camera-to-subject distance changes each frame, magnification drifts slightly across the sequence, and the stacking software has to correct for scale during alignment. Both major stackers do this automatically.
+
+However focus moves, the capture rules are the same:
+
+- Lock everything. Manual exposure, manual white balance, fixed ISO. Brightness drift between frames shows up in the merge.
+- Use steady light. Dimmed LED panels often flicker in ways that vary frame to frame; run continuous lights at full power, or use flash.
+- Step in one direction, front to back, without skips. A missed slice becomes a soft band.
+- Work briskly. Flowers wilt, dew evaporates, tripods creep. A sequence that takes seven minutes by hand invites drift that a two-minute automated one avoids.
+- Feed the stacker 16-bit TIFFs, not raw files. Develop the raws in your usual editor with one consistent profile, export TIFFs, stack, and bring a 16-bit TIFF back into your catalog. Stacking software's internal raw conversion is a known source of color shifts.
+- Never denoise the individual frames first. AI denoising imprints a faint pixel-level pattern into each frame, and depth-map merging amplifies it into visible checkerboard texture. Denoise the finished merge instead.
+
+## Merging: Depth-Map and Pyramid Methods
+
+Two dedicated stackers dominate this niche, Helicon Focus and Zerene Stacker, and the useful way to understand them is by method family rather than by brand. Each offers a depth-map method (Zerene's DMap, Helicon's Method B) and a pyramid method (Zerene's PMax, Helicon's Method C); Helicon adds a weighted-average Method A.
+
+Depth-map methods estimate, for every pixel, which frame was sharpest there and copy from it. Because output pixels come straight from source frames, the result keeps honest color and contrast and adds no noise. Their weakness is edges: where sharp foreground detail sits in front of distant blur, the depth estimate cannot jump instantly, so it ramps through intermediate frames where nothing was in focus and prints a soft halo band around the edge.
+
+Pyramid methods decompose every frame into detail at multiple scales and keep the strongest detail found anywhere. They resolve structures that defeat depth maps — crossed bristles, fine hairs, tangles where near and far interleave — but they are not photometrically faithful. Contrast and saturation creep upward, noise accumulates over deep stacks, and strongly contrasting edges grow fuzzy halos of their own.
+
+Neither family is sufficient alone on a hard subject, which is why the standard high-end workflow uses both: render the depth-map result and the pyramid result, keep the depth-map version as the base for its honest tones, and paint the pyramid version's detail into the trouble zones with the retouching brush. That retouch pass is the last step of the merge, not optional polish. The automatic output is a draft.
+
+Subject type decides which tool has the higher ceiling. On organic subjects where sharp foreground structure overlaps deeper blur (insects and flowers, most product work), the retouched depth-map workflow wins, and Zerene's retouching is the stronger of the two: its brush clones from any frame or intermediate output through the stack's own alignment. On specular or transparent subjects — minerals and crystals, wet or polished surfaces — the ranking tends to invert toward Helicon's B and C, sometimes combined. A plain contrast-based blend such as Photoshop's Auto-Blend still holds a narrow niche on fully transparent subjects, where preserving original tone matters more than recovering every last sharp pixel.
+
+<Callout type="tip">
+Both stackers offer full-function 30-day trials. Before buying either, run one of your own difficult stacks through both — the same frames, every method — and compare at 100%. The differences that matter are subject-dependent, and your subjects are the only benchmark that counts.
+</Callout>
+
+## How Stacks Fail
+
+Most failed stacks fail one of a few ways, and the diagnosis is usually visible in the file.
+
+Soft bands between sharp bands mean the step was too large. The sharp zones never overlapped, so the merge had nothing to select in the gaps. There is no software recovery; reshoot with a smaller step.
+
+A flat subject that comes back uniformly soft after stacking almost always means tilt, not depth. If the subject is a plane (a coin, a pressed leaf, a prepared slide) and it isn't parallel to the sensor, part of it sits outside the focus zone at every frame position, and stacking launders the levelling error into every slice. Re-level it, and a flat subject may need only one frame.
+
+Halos around foreground edges come in two kinds. Method halos — the depth-map ramps and pyramid fringes described above — respond to retouching or a change of method. Optical contamination does not: when a foreground structure goes out of focus, its blur spreads over the background behind it, and those background pixels are never captured both sharp and clean in any frame. No merge can fix that, because the information was never recorded. The fix happens at capture — more separation between subject and background, lighting that holds the background darker, or a textured backdrop that gives the algorithm something better than featureless blur to choose from.
+
+A merged result that looks flat and dull often traces to brightness correction during alignment. If the software normalizes every frame to a reference that happens to be a heavily out-of-focus frame, the whole stack's contrast is crushed to match. Under constant light, turn brightness correction off — and as a general rule, disable whichever alignment corrections your setup makes physically impossible, such as rotation on a rail. Every unnecessary degree of freedom is one more chance to misalign.
+
+The last failure is the stack that never needed to exist. Before shooting, ask three questions in order. Is the subject flat? Level it and shoot one frame. Is its depth less than one frame's depth of field? Stop down a stop and shoot one frame. Only when both answers are no is a stack worth the frames — and then it's worth shooting at the lowest magnification that still gives the subject the pixels it deserves.

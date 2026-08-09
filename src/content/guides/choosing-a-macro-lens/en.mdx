@@ -1,0 +1,110 @@
+---
+title: "How to Choose a Macro Lens"
+description: "How to choose a macro lens: what magnification ratio you need, why focal length sets working distance, when autofocus matters, which optical flaws show at 1:1, and when extension tubes do the job instead."
+category: gear
+tags: [macro, lenses, close-up]
+relatedTools: [dof-simulator, diffraction-calculator]
+relatedGuides: [macro-photography-getting-started]
+publishedAt: 2026-08-09
+updatedAt: 2026-08-09
+status: draft
+sourceRef: "adapted from robin knowledge notes lens-analysis/laowa-90mm-f2.8-2x-ultra-macro-apo and photo-flower-lens-decision-2026-08"
+---
+
+## Sharpness Won't Decide This
+
+Dedicated macro lenses are, as a group, among the best-corrected lenses in any system. Sharpness comparisons rarely separate them in a way that survives real shooting, which is inconvenient, because sharpness is what most reviews lead with. The differences that determine whether a lens fits you live elsewhere: how much magnification it reaches, how far it lets you stand from the subject, whether it focuses itself, how it behaves at close range where flaws hide from ordinary tests, and how it handles in the conditions you shoot most.
+
+This guide works through those criteria one at a time. None of it is specific to a brand or mount. The aim is that you can put any macro lens's spec sheet next to your own shooting habits and see quickly whether the two match.
+
+## How Much Magnification You Need
+
+Magnification, or reproduction ratio, is the headline number on every macro lens and the easiest one to overbuy. At 1:1, a 10mm insect is recorded 10mm wide on the sensor. At 1:2 it is recorded at 5mm, and at 2:1 at 20mm.
+
+Each ratio maps to a different kind of subject:
+
+- **1:2** (half life-size) covers flowers, food, product detail, and most subjects larger than a thumbnail. Plenty of photographers who describe their work as macro never need more than this.
+- **1:1** (life-size) is the conventional threshold for true macro and the standard for dedicated macro lenses. It handles insects, small blooms, coins, and surface texture.
+- **2:1** and beyond is specialist ground: insect eyes, snowflakes, watch movements, crystal and mineral detail. A handful of lenses reach 2:1 natively; past that you are into bellows and microscope-objective rigs.
+
+The reason not to default to the highest number is that every step up in magnification makes the lens harder to use. Depth of field collapses: at 1:1 it is measured in millimeters, at 2:1 in fractions of one. Working distance shrinks. And the light path itself changes. As magnification rises, the effective aperture darkens beyond the marked f-number — about two stops at 1:1, closer to three at 2:1. A lens set to f/8 at 2:1 is behaving like roughly f/22, which means diffraction softens the image long before the aperture ring says it should. High-magnification work therefore happens at wider marked apertures than instinct suggests, and extra depth of field usually comes from stacking frames rather than stopping down further.
+
+Where that softening threshold sits depends on your sensor and aperture, and it is worth calculating rather than guessing:
+
+<ToolCard slug="diffraction-calculator" />
+
+<Callout type="warning">
+The word "macro" on a lens barrel is marketing, not a specification. Zooms wearing a macro badge often top out at 1:3 or 1:4 — useful close focusing, but a different class of tool. Check the stated maximum reproduction ratio before assuming a lens reaches 1:1.
+</Callout>
+
+## Focal Length Buys Working Distance
+
+Macro lenses cluster around three focal ranges, and the choice between them is less about perspective than about where you get to stand. At the same magnification, a longer focal length reaches it from farther away.
+
+Short macros, around 50-60mm, are compact and light. At 1:1 the front element sits within a few centimeters of the subject — fine for copy work and desk setups, awkward for lighting, hopeless for anything alive. Mid-length macros in the 90-105mm class are the default recommendation for a reason: at 1:1 they hold about a hand's width of working distance, enough room for a diffuser and enough distance that many insects tolerate you. Long macros in the 150-200mm range double that again. They suit skittish subjects and elaborate lighting rigs, at the price of weight and bulk.
+
+Working distance is the space between the front of the lens and the subject. It is not the minimum focus distance printed in the specifications, and confusing the two trips people constantly.
+
+<Callout type="tip">
+Minimum focus distance is measured from the sensor plane, not from the front of the lens. A lens with a 30cm minimum focus distance can leave you barely 10cm of actual working room once the barrel and hood are subtracted. When comparing lenses, find the working distance figure, or subtract the lens's physical length yourself.
+</Callout>
+
+Focal length also changes what happens behind the subject. At the same framing and f-number, a longer lens sees a narrower slice of the background and renders it larger and more blurred, which makes cluttered settings much easier to clean up. Depth of field itself stays put, though: at equal framing and equal f-number, the sharp zone is close to identical regardless of focal length. If that sounds wrong, spend ten minutes testing it:
+
+<ToolCard slug="dof-simulator" />
+
+## Does Autofocus Matter for What You Shoot?
+
+At high magnification, almost nobody focuses with the focus ring. The standard technique is to set the lens to the magnification you want and then move the whole camera — rocking forward and back handheld, or riding a focus rail on a tripod — until the subject crosses the plane of focus. For tripod and studio work at 1:1 and beyond, a manual-focus lens gives up very little.
+
+Manual-focus macro lenses are common, especially at high ratios, and a few omit electronic contacts entirely. That omission has consequences worth understanding up front: the body records no aperture in EXIF, in-body stabilization has to be configured by hand, and automated focus bracketing, where the camera steps focus through a stack for you, is unavailable, because bodies drive it through the autofocus system. If you stack, that last point is the difference between the camera shooting a forty-frame stack on its own and you advancing a rail forty times.
+
+Autofocus earns its price in the field. Handheld work at moderate magnification, subjects that move, tracking a bee across a flower bed: these are situations where modern autofocus genuinely helps. So does the lens's second life. A 90-105mm macro doubles as a portrait and detail lens, and manual focus is a real limitation there in a way it never is on a copy stand.
+
+Ask what the lens will be doing the other half of the time. If the answer is living on a tripod, autofocus is optional. If it is riding in a bag on walks, it probably is not.
+
+## Flaws That Hide at Normal Distances
+
+Lens reviews are mostly shot at ordinary distances, and a macro lens spends its life somewhere else. Three optical traits show up close that a normal-distance test barely touches.
+
+**Chromatic aberration.** Close-up subjects are full of exactly the edges that provoke color fringing: dew drops, wet petals against sky, metallic or crystalline surfaces. The macro-relevant kind is longitudinal chromatic aberration, the magenta and green tinting just in front of and behind the focus plane, because at close range nearly everything sits just in front of or behind the focus plane. Well-corrected apochromatic designs keep those edges clean. Treat "APO" on a barrel as a design claim rather than a guarantee, and look at high-contrast close-range sample images before deciding.
+
+**Field curvature.** A true macro design is corrected for a flat field: focus on a flat subject and the corners share a plane with the center. That matters enormously if you photograph flat things — documents, stamps, textures, film digitizing — and hardly at all for three-dimensional subjects, where the focus plane slices through the subject anyway. Decide which camp you are in before paying, or refusing to pay, for it.
+
+**Focus breathing.** Most lenses change their effective focal length as they focus close, some dramatically. In a single frame it is invisible. In a focus stack it means the framing crawls between the first frame and the last, so the stacking software must realign and crop; you lose edge pixels, and tight compositions get tighter. Video shooters feel it as the image pumping during focus pulls. Breathing varies widely between designs and rarely appears in published specifications, so stacking-oriented reviews and user reports are the practical source.
+
+## Stabilization, Weight, and Sealing
+
+### Stabilization
+
+Optical stabilization reads as a headline feature, and at normal distances it is one. At macro distances its value shrinks. Close in, blur comes less from angular shake (the kind stabilizers correct best) and more from the camera translating up-down and side-to-side, which most systems correct poorly or not at all. Some macro designs add hybrid stabilization that addresses shift movement too, and it helps, but nothing hands you tripod-grade stillness at 1:1.
+
+<Callout type="warning">
+Stabilization ratings are measured at normal shooting distances under standardized test conditions. Expect a fraction of the rated benefit at 1:1, and none worth planning around at 2:1. For high-magnification work, the stabilizer is a tripod.
+</Callout>
+
+Where stabilization does pay is moderate-magnification handheld work — flowers at 1:4 to 1:2, found detail in the field — which for many photographers is most of what a macro lens ends up doing. Weigh it against how much of your shooting is honestly handheld.
+
+### Weight
+
+Weight decides whether the lens comes along, and macro amplifies it because the lens rarely travels alone: add a flash and a diffuser, sometimes a focus rail, and the working rig weighs far more than the lens by itself. Length matters as much as grams, too. A long-barreled lens puts its mass farther from your grip, and a wrist feels leverage, not weight. A mid-length macro you carry beats a long one you leave home, whatever the working-distance numbers say. If your macro work happens on a tripod, most of this stops mattering and you can shop on other criteria.
+
+### Weather sealing
+
+Macro hours are wet hours: dew-covered meadows at dawn, the minutes after rain when everything is beaded and saturated. Sealing is one of the places budget and specialist macro designs commonly economize, including some otherwise excellent manual-focus lenses. If your subjects live outdoors, treat sealing as a working requirement and check for it explicitly. If your macro happens on a copy stand, ignore it.
+
+## The Cheaper Question: Tubes and Close-Up Lenses
+
+Before buying a macro lens at all, ask whether an attachment on a lens you already own gets you there.
+
+Extension tubes are hollow rings that mount between the camera and lens. Moving the lens away from the sensor makes it focus closer, and the magnification gain is roughly the added extension divided by the focal length, so tubes act most strongly on short and normal lenses. They contain no glass and add no optical flaws of their own. The costs are practical: you lose distant focus while the tubes are mounted, some light, and some convenience. Versions with electronic contacts keep autofocus and aperture control working.
+
+Close-up lenses screw onto the front filter thread and work like a magnifying glass for the lens. Two-element achromatic versions are optically respectable; cheap single-element ones are not, and they earned the category its poor reputation. They cost no light, suit longer focal lengths, and mount on zooms: a telephoto zoom plus a quality achromat is a legitimate field close-up rig.
+
+The honest dividing line: if macro is an occasional register and 1:2-ish magnification covers your subjects, tubes or a good achromat may be everything you need. A dedicated macro lens earns its place when close work becomes a habit — continuous focusing from infinity to 1:1, flat-field correction, designed-in working distance, handling built for the job. The attachment route provides none of those.
+
+## A Short Way to Decide
+
+Work the criteria in order. Subject first: what do you shoot, and how big is it? That sets magnification. Live subjects and lighting rigs push you toward longer focal lengths; desk and copy work tolerates short ones. Tripod shooters can ignore autofocus and stabilization almost entirely, while field shooters usually cannot. Then let the secondary traits — corrections, sealing, weight — break ties among whatever lenses are still standing.
+
+And if you can, rent or borrow before committing. An afternoon at 1:1 teaches you more about working distance, focus habits, and how much magnification you honestly use than any spec sheet will.
