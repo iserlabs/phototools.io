@@ -16,6 +16,7 @@ export const FOCUS_STACKING_SKELETON: ToolEducationSkeleton = {
     'magnification',
     'effectiveAperture',
     'railStep',
+    'subjectDepth',
   ],
   challenges: [
     {

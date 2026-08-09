@@ -76,7 +76,7 @@ export function MacroSettingsPanel({ state }: { state: StackingState }) {
         <div className={s.field}>
           <label className={s.fieldLabel}>
             {t('subjectDepth')}
-            {tooltips?.railStep && <InfoTooltip tooltip={tooltips.railStep} />}
+            {tooltips?.subjectDepth && <InfoTooltip tooltip={tooltips.subjectDepth} />}
           </label>
           <div className={s.numRow}>
             <input type="range" className={s.slider} min={0.5} max={100} step={0.5}

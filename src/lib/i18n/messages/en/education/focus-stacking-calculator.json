@@ -85,6 +85,10 @@
         "railStep": {
           "term": "Rail Step",
           "definition": "How far the focusing rail advances between shots: slice depth of field × (1 − overlap). Sub-millimeter at high magnification."
+        },
+        "subjectDepth": {
+          "term": "Subject Depth",
+          "definition": "The front-to-back depth of your subject, measured in millimeters — the total distance the stack must cover from the nearest point you want sharp to the farthest."
         }
       },
       "challenges": {

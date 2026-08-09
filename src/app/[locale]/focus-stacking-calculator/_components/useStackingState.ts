@@ -62,7 +62,18 @@ export function useStackingState() {
     setFocalLength(v)
     // near limit must stay physically focusable: just beyond the lens
     const minNear = (v / 1000) * 1.05
-    setNearLimit((n) => (n < minNear ? minNear : n))
+    let newNear = minNear
+    setNearLimit((n) => {
+      newNear = n < minNear ? minNear : n
+      return newNear
+    })
+    // Keep the depth range valid in this same batched render: a near limit
+    // raised above (or equal to) a *finite* far limit would otherwise paint
+    // a negative totalDepth for one frame. Leave an infinite far limit
+    // alone. (Relies on nearLimit's useState above being declared before
+    // farLimit's, so its updater runs first and sets `newNear` before this
+    // one reads it — both updaters are applied during the same render.)
+    setFarLimit((f) => (isFinite(f) && newNear >= f ? newNear : f))
   }, [trackParam])
 
   return {

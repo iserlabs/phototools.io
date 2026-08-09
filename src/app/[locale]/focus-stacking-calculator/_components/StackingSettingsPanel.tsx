@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { SENSORS } from '@/lib/data/sensors'
 import { FocalLengthField } from '@/components/shared/FocalLengthField'
@@ -41,20 +40,14 @@ export function StackingSettingsPanel({ state }: StackingSettingsPanelProps) {
   const nearMin = Math.max(0.1, (focalLength / 1000) * 1.05)
   // Near's ceiling tracks the far limit so the range can't invert; if the
   // floor above ever rises past the current far limit, hold the ceiling at
-  // the floor instead of letting max < min reach the slider.
+  // the floor instead of letting max < min reach the slider. (The actual
+  // nearLimit <= farLimit invariant itself is enforced at the source, in
+  // useStackingState.onFocalLengthChange — these bounds are the first line
+  // of defense against a direct drag on either slider.)
   const nearMax = isInf ? 100 : Math.max(nearMin, farLimit)
-  // Far's floor tracks the current near limit for the same reason.
-  const farMin = nearLimit
-
-  // A focal-length increase can push nearMin above an already-set farLimit
-  // (e.g. farLimit was pulled down near the old nearLimit, then focalLength
-  // grew a lot). onFocalLengthChange only raises nearLimit — nothing else
-  // reconciles farLimit, so totalDepth = farLimit - nearLimit could go
-  // negative. Self-heal by raising farLimit to match whenever that happens,
-  // keeping the invariant nearLimit <= farLimit unreachable-to-violate.
-  useEffect(() => {
-    if (!isInf && nearLimit > farLimit) onFarLimitChange(nearLimit)
-  }, [isInf, nearLimit, farLimit, onFarLimitChange])
+  // Far's floor tracks the current near limit for the same reason, clamped
+  // so it can never exceed the far field's own max of 100.
+  const farMin = Math.min(100, nearLimit)
 
   return (
     <>
@@ -135,7 +128,10 @@ export function StackingSettingsPanel({ state }: StackingSettingsPanelProps) {
               className={`${s.infBtn} ${isInf ? s.infBtnActive : ''}`}
               aria-pressed={isInf}
               aria-label={t('farLimitInfinity')}
-              onClick={() => onFarLimitChange(isInf ? 5 : Infinity)}
+              // Turning ∞ off must land on a valid distance: the plain
+              // default of 5 could sit below a nearLimit that a large
+              // focal length has since raised, so pick whichever is larger.
+              onClick={() => onFarLimitChange(isInf ? Math.max(5, nearLimit) : Infinity)}
             >
               {t('infinity')}
             </button>
