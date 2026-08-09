@@ -2,7 +2,7 @@ import 'server-only'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import Image from 'next/image'
-import { imageSize } from 'image-size'
+import { imageDimensions } from '@/lib/utils/imageDimensions'
 import styles from './Figure.module.css'
 
 interface FigureProps {
@@ -13,7 +13,7 @@ interface FigureProps {
 
 export function Figure({ src, alt, caption }: FigureProps) {
   const buffer = readFileSync(path.join(process.cwd(), 'public', src))
-  const { width, height } = imageSize(buffer)
+  const { width, height } = imageDimensions(buffer)
   return (
     <figure className={styles.figure}>
       <Image
