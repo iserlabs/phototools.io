@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { SENSORS } from '@/lib/data/sensors'
 import { FocalLengthField } from '@/components/shared/FocalLengthField'
@@ -35,6 +36,25 @@ export function StackingSettingsPanel({ state }: StackingSettingsPanelProps) {
     : undefined
 
   const overlapInt = Math.round(overlapPct * 100)
+  const isInf = !isFinite(farLimit)
+  // Physically focusable floor: just beyond the lens itself.
+  const nearMin = Math.max(0.1, (focalLength / 1000) * 1.05)
+  // Near's ceiling tracks the far limit so the range can't invert; if the
+  // floor above ever rises past the current far limit, hold the ceiling at
+  // the floor instead of letting max < min reach the slider.
+  const nearMax = isInf ? 100 : Math.max(nearMin, farLimit)
+  // Far's floor tracks the current near limit for the same reason.
+  const farMin = nearLimit
+
+  // A focal-length increase can push nearMin above an already-set farLimit
+  // (e.g. farLimit was pulled down near the old nearLimit, then focalLength
+  // grew a lot). onFocalLengthChange only raises nearLimit — nothing else
+  // reconciles farLimit, so totalDepth = farLimit - nearLimit could go
+  // negative. Self-heal by raising farLimit to match whenever that happens,
+  // keeping the invariant nearLimit <= farLimit unreachable-to-violate.
+  useEffect(() => {
+    if (!isInf && nearLimit > farLimit) onFarLimitChange(nearLimit)
+  }, [isInf, nearLimit, farLimit, onFarLimitChange])
 
   return (
     <>
@@ -89,8 +109,8 @@ export function StackingSettingsPanel({ state }: StackingSettingsPanelProps) {
           <DistanceField
             value={nearLimit}
             onChange={onNearLimitChange}
-            min={0.1}
-            max={100}
+            min={nearMin}
+            max={nearMax}
             label={t('nearLimit')}
           />
         </div>
@@ -100,13 +120,26 @@ export function StackingSettingsPanel({ state }: StackingSettingsPanelProps) {
             {t('farLimit')}
             {tooltips?.farLimit && <InfoTooltip tooltip={tooltips.farLimit} />}
           </label>
-          <DistanceField
-            value={farLimit}
-            onChange={onFarLimitChange}
-            min={0.1}
-            max={100}
-            label={t('farLimit')}
-          />
+          <div className={s.farRow}>
+            <div className={isInf ? s.fieldDisabled : undefined}>
+              <DistanceField
+                value={isInf ? 100 : farLimit}
+                onChange={onFarLimitChange}
+                min={farMin}
+                max={100}
+                label={t('farLimit')}
+              />
+            </div>
+            <button
+              type="button"
+              className={`${s.infBtn} ${isInf ? s.infBtnActive : ''}`}
+              aria-pressed={isInf}
+              aria-label={t('farLimitInfinity')}
+              onClick={() => onFarLimitChange(isInf ? 5 : Infinity)}
+            >
+              {t('infinity')}
+            </button>
+          </div>
         </div>
 
         <div className={s.field}>

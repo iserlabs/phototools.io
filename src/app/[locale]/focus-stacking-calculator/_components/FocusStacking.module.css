@@ -93,6 +93,31 @@
   color: var(--text-primary);
 }
 
+.farRow { display: flex; gap: 6px; align-items: flex-start; }
+.farRow > div:first-child { flex: 1; min-width: 0; }
+.fieldDisabled { opacity: 0.45; pointer-events: none; }
+.infBtn {
+  padding: 6px 10px; font-size: 14px; font-family: inherit;
+  background: var(--bg-primary); color: var(--text-secondary);
+  border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
+}
+.infBtn:hover { border-color: var(--accent); color: var(--accent); }
+.infBtnActive { background: color-mix(in srgb, var(--accent) 18%, transparent); border-color: var(--accent); color: var(--accent); }
+.presetRow { display: flex; gap: 4px; }
+.presetBtn {
+  flex: 1; padding: 4px 0; font-size: 11px; font-family: var(--font-mono);
+  background: var(--bg-primary); color: var(--text-secondary);
+  border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
+}
+.presetBtn:hover { border-color: var(--accent); color: var(--accent); }
+.presetBtnActive { background: color-mix(in srgb, var(--accent) 18%, transparent); border-color: var(--accent); color: var(--accent); }
+.numRow { display: flex; align-items: center; gap: 8px; }
+.numInput {
+  width: 64px; padding: 4px 6px; font-size: 12px; font-family: var(--font-mono);
+  background: var(--bg-primary); color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: 6px;
+}
+
 /* -- Result cards -- */
 .resultsGrid {
   display: grid;
