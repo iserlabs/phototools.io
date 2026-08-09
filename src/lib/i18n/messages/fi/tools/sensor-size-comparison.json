@@ -6,6 +6,24 @@
       "modeSideBySide": "Rinnakkain",
       "modePixelDensity": "Pikselitiheys",
       "pixelDensityDescription": "Näyttää tavallisimmat megapikselimäärät kullekin kennolle. Suuret pikselit (isommat kennosolut) keräävät enemmän valoa.",
+      "filmPixelDensityNote": "Filmillä ja Super 16:lla ei ole määriteltyä pikselimäärää, joten ne on piilotettu tässä tilassa — katso niitä sen sijaan Päällekkäin- tai Rinnakkain-tilassa.",
+      "quickCompare": "Pikavertailu",
+      "presetReplacesNote": "Korvaa nykyisen valinnan",
+      "presets": {
+        "phone_vs_ff": "Puhelin vs. täyskenno",
+        "crop_vs_ff": "Kerroin vs. täyskenno",
+        "film_vs_digital": "Filmi vs. digitaalinen",
+        "mf_family": "Keskiformaattiperhe",
+        "cine_vs_stills": "Elokuva vs. valokuva"
+      },
+      "groups": {
+        "medium-format": "Keskiformaatti",
+        "ff-aps": "Täyskenno ja APS",
+        "compact": "Kompakti ja 1\"",
+        "phone": "Puhelin",
+        "film": "Filmi",
+        "cine": "Elokuva"
+      },
       "sensors": "Kennot",
       "customSensors": "Mukautetut kennot",
       "placeholderName": "Nimi",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Kerroin",
       "tableAspectCrop": "Kuvasuhderajaus",
       "canvasAriaLabel": "Kennokokojen vertailu {mode}-tilassa",
+      "detail": {
+        "diagonal": "Lävistäjä",
+        "area": "Pinta-ala",
+        "aspect": "Kuvasuhde",
+        "vsFullFrame": "vs. täyskenno",
+        "referenceSensor": "Vertailukenno (täyskenno)",
+        "equivalence": "{focal}mm f/{ap} -objektiivi rajaa tässä kuvan kuin ~{eqFocal}mm objektiivi f/{eqAp}-syväterävyydellä täyskennolla.",
+        "resolutions": "Yleiset resoluutiot",
+        "cameras": "Suositut kamerat",
+        "character": "Luonne",
+        "context": "Tausta",
+        "customNoProfile": "Mukautettu kenno — vain laskettua dataa."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Mikä on kerroin ja miksi sillä on merkitystä?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Miten kennokoko vaikuttaa syväterävyyteen?",
           "answer": "Suurempi kenno tuottaa matalamman syväterävyyden samassa rajauksessa. Jotta saat saman rajauksen pienemmällä kennolla, joudut joko lyhentämään polttoväliä tai siirtymään kauemmas — molemmat kasvattavat syväterävyyttä ja vähentävät taustan sumennusta."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Miten filmikoot vertautuvat nykyaikaisiin digitaalisiin kennoihin?",
+          "answer": "Vakio 35mm-filmi on mitoiltaan identtinen digitaalisen täyskennon kanssa (36×24mm), joten filmiajan objektiivit peittävät sen ilman kerrointa. Keskiformaattifilmi menee paljon suuremmaksi — 645-negatiivi on 56×41.5mm ja 6×7 on 70×56mm, molemmat reilusti suurempia kuin minkään täyskennon pinta-ala — kun taas puolikuvafilmi jakaa vakio 35mm-kuvan kahtia, jolloin pinta-ala vastaa suunnilleen suurta APS-C-kennoa."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Mitä Super 35 ja ALEXA 65 vastaavat valokuvauksen termein?",
+          "answer": "Super 35 (24.9×14.0mm, 1.51x kerroin) osuu lähes tarkalleen APS-C-kokoon, minkä vuoksi S35-elokuvaobjektiivit ja APS-C-valokuvaobjektiivit peittävät samankaltaisen kuvaympyrän. ALEXA 65:n 54.12×25.58mm kenno on paljon suurempi — lähempänä 44×33mm keskiformaatin valokuvakennoa kuin täyskennoa, minkä vuoksi se tarvitsee oman erillisen suurformaatin objektiivivalikoimansa."
+        },
+        "why-inch-fractions": {
+          "question": "Miksi pienet kennot nimetään tuumamurtoluvuilla, kuten 1/2.3\"?",
+          "answer": "Nämä murtoluvut kuvaavat 1950-luvun videokameraputkien ulkohalkaisijaa, ei itse kennoa — \"1 tuuman\" putki tuotti käyttökelpoisen kuva-alan, joka oli noin kaksi kolmasosaa siitä halkaisijasta. Kun puolijohdekennot korvasivat putket, valmistajat säilyttivät putkiajan nimeämiskäytännön, vaikka nykyaikaisen \"1 tuuman\" kennon todellinen lävistäjä on noin 15.86mm — kaukana varsinaisesta tuumasta."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "53.4×40mm on suurin kenno, johon useimmat ammattikuvaajat koskaan kajoavat. Studio-, tuote- ja maisemakuvaajat käyttävät sitä kaapelilla kytkettynä resoluution ja sävylaajuuden vuoksi, ei nopeuden — autotarkennus ja sarjakuvausnopeus jäävät kauas täyskennosta. 150-megapikselinen tiedosto Phase One IQ4 -takaosasta kuormittaa sekä tallennustilaasi että tietokonettasi.",
+          "context": "Tämän kennoluokan nimessä oleva \"645\" juontuu 6×4.5cm rullafilmitakaosista, mutta älä sekoita sitä listan filmi-645-esiasetukseen. 53.4×40mm-koossaan Phase Onen ja Hasselbladin digitaaliset 645-sarjan kennot ovat itse asiassa pienempiä kuin 56×41.5mm filmikuva, josta ne polveutuvat, yhteisestä nimestä huolimatta."
+        },
+        "mf": {
+          "character": "Tämä kokoluokka teki keskiformaatista käytännöllisen studion ulkopuolella. Fujifilmin GFX ja Hasselbladin X-sarja rakentuvat molemmat 43.8×32.9mm-kennon ympärille, joka on tarpeeksi pieni käsivaralla kuvattavaksi ja vaellukselle mukaan otettavaksi, ja tuottavat 50–100 megapikseliä autotarkennuksella, joka on kuronut suurimman osan erosta järjestelmäkameroihin kiinni. Alkuperäiset objektiivit pysyvät suurempina ja kalliimpina kuin täyskennon vastineet, ja rolling shutter -lukutapa rajoittaa nopean toiminnan kuvaamista.",
+          "context": "Fujifilm ja Hasselblad kilpailevat tässä luokassa suoraan, mutta eivät kennolaitteiston osalta — GFX 100 II ja X2D 100C käyttävät molemmat samaa Sonyn valmistamaa 44×33mm-sirua. Järjestelmät erottaa runkosuunnittelu, objektiivien rendausominaisuudet ja valikkofilosofia, ei piisiru sisällä."
+        },
+        "mf_leica": {
+          "character": "Leican S-järjestelmä laittaa 45×30mm-kennon runkoon, joka on muodoltaan kuin ylikokoinen 35mm-järjestelmäkamera pikemminkin kuin studiokamera — ja juuri se onkin koko idea: käsivarainen keskiformaatti reportaasiin ja paikan päällä kuvattaviin muotokuviin. 64-megapikselinen S3 uhraa hieman resoluutiovaraa GFX- ja Hasselblad-kilpailijoihin verrattuna yksinkertaisemman, yhden objektiivikiinnityksen järjestelmän hyväksi, jossa on vähemmän runkoja valittavana.",
+          "context": "Vuonna 2009 julkaistua Leica S2:ta markkinoitiin nimenomaan ensimmäisenä keskiformaattikamerana, joka oli rakennettu ulkokäyttöön käsivaralla eikä jalustaan sidottuun studiotyöhön. S3 saapui 2020 sen suorana seuraajana; Leica lopetti S3:n valmistuksen 2023, eikä S4:ää ole julkaistu, joten sarjan tulevaisuus on epävarma."
+        },
+        "ff": {
+          "character": "Vertailukohta kaikelle muulle tässä listassa. Täyskenno tasapainottaa valonkeruualan, syväterävyyden hallinnan ja objektiivikoon — useimmat nykyaikaiset objektiivivalikoimat on suunniteltu sen ympärille. Maksat suuremmasta runko- ja objektiivikoosta APS-C:hen verrattuna, mutta saat noin yhden f-luvun verran lisää liikkumavaraa hämärässä ja matalamman syväterävyyden samalla rajauksella.",
+          "context": "36×24 mm -kuva on suora perintö 35mm-valokuvausfilmiltä, jonka Leica standardoi 1920-luvulla kääntämällä elokuvafilmin kyljelleen. Digitaalinen täyskenno on mitoiltaan identtinen 35mm-filmikuvan kanssa — siksi filmiajan objektiivit sopivat siihen ilman kerrointa."
+        },
+        "apsh": {
+          "character": "Canonin väliaikaisratkaisuksi rakentama koko, jossa nopeus voitti resoluution — isommat pikselit ja nopeampi lukunopeus rungossa, joka oli suunnattu urheiluun ja kuvajournalismiin eikä kuvanlaatuun sinänsä. 1.29x kerroin jäi puoliväliin täyskennon kantamahaitan ja APS-C:n hämäräkuvausrangaistuksen välille, hintana kenno, jota mikään muu valmistaja ei koskaan ottanut käyttöön.",
+          "context": "APS-H oli pelkästään Canonin formaatti, jota käytettiin yksinomaan EOS-1D-sarjassa — 1D, 1D Mark II, Mark II N, Mark III ja lopulta vuoden 2009 Mark IV, minkä jälkeen Canon hylkäsi koon kokonaan ja palautti 1-sarjan täyskennoon. Mikään objektiivi- tai lisävarusteekosysteemi Canonin oman ulkopuolella ei koskaan tähdännyt siihen."
+        },
+        "apsc_n": {
+          "character": "Sonyn, Nikonin ja Fujifilmin harrastaja- ja keskitason järjestelmäkameroiden oletuskoko, jonka kerroin on 1.53x ja joka muuttaa 50mm-objektiivin noin 75mm vastaavuudeksi. Rungot ja objektiivit ovat huomattavasti pienempiä ja edullisempia kuin täyskennossa, ja lisäkantama on todellinen etu villieläin- ja urheilukuvaajille, jotka käyttävät pidempää optiikkaa.",
+          "context": "APS-C:n nimi on lainattu vuoden 1996 kuluttaja-Advanced Photo System -filmiltä, tarkemmin sen \"Classic\" 3:2-vedostusformaatilta — mutta digitaalinen kenno ei ole fyysiseltä kooltaan sama kuin APS-filmi, vaan vain kaukainen kaima. Fujifilm on rakentanut koko X-järjestelmänsä tämän kennokoon ympärille sen sijaan, että kohtelisi sitä aloitustasona."
+        },
+        "apsc_c": {
+          "character": "Canonin oma APS-C-standardi, kooltaan 22.3×14.8mm — pienempi kuin useimpien kilpailijoiden käyttämä 23.5×15.6mm, minkä vuoksi Canonin kerroin on 1.62x eikä 1.5x. Käytännössä tämä tarkoittaa hieman enemmän telekantamaa per objektiivi pienellä kohinan ja dynamiikka-alueen menetyksellä suurempaan APS-C-versioon verrattuna.",
+          "context": "Canon on käyttänyt omia APS-C-kennomittojaan formaatin varhaisimmista digitaalisista järjestelmäkameroista lähtien, eikä ole koskaan lähentynyt 1.5x-kerrointa, johon lähes kaikki muut päätyivät. R7 ja R10 vievät tätä kokoa eteenpäin Canonin nykyiseen järjestelmäkameroiden RF-kiinnitykseen."
+        },
+        "m43": {
+          "character": "Aidosti pieni, aidosti täysipainoinen järjestelmä — 2x kerroin tarkoittaa, että jokainen objektiivi on fyysisesti kompakti, ja 17.3×13mm-kenno tukee silti nopeaa, tarkkaa optiikkaa aidolla kohteen erottumisella, joskaan ei täyskennon tapaan matalalla syväterävyydellä. Hämäräkuvaus ja dynamiikka-alue jäävät jälkeen suuremmista kennoista, mikä on rehellinen kompromissi koossa ja painossa säästämisestä.",
+          "context": "Micro Four Thirds on avoin standardi, ei kenenkään omistama formaatti — Olympus ja Panasonic esittelivät sen yhdessä vuonna 2008, ja mikä tahansa valmistaja voi rakentaa samaan objektiivikiinnitys- ja kennospesifikaatioon. OM System (entinen Olympus) ja Panasonic ovat edelleen kaksi aktiivista kameravalmistajaa, jotka rakentavat sen varaan."
+        },
+        "1in": {
+          "character": "Merkittävä askel ylöspäin älypuhelinkennoista, mutta silti taskukokoinen — RX100-sarja todisti, että 13.2×8.8mm-kenno voi tuottaa aitoa kuvanlaatua kompaktikamerassa, jota todella kantaisi mukanaan. Taustan sumennus pysyy rajallisena jopa f/1.8:lla, ja hämäräkuvaus vaatii tarkkuutta, mutta koon ja laadun suhde on vaikea voittaa matkoilla.",
+          "context": "\"1 tuuman\" nimitys on jäänne 1950-luvun videokameraputkista, ei todellinen mitta — putki, jonka ulkohalkaisija oli 1 tuuma, tuotti käyttökelpoisen kuva-alan, joka oli noin kaksi kolmasosaa siitä, halkaisijaltaan noin 16mm. Kun CCD- ja CMOS-kennot korvasivat putket, kameravalmistajat säilyttivät putkiajan nimeämisen, vaikka nykyisissä kennoissa ei ole lainkaan putkea sisällä."
+        },
+        "phone": {
+          "character": "Nykyaikaiset huippuluokan puhelimet kuroivat eroa pelkkään kennoon luottaviin kameroihin laskennalla, ei koolla — 9.8×7.3mm siru ei voi vastata 1 tuuman kennon raakaa valonkeruutehoa, joten monikuvapinoaminen, AI-kohinanpoisto ja synteettinen bokeh tekevät raskaan työn sen sijaan. Lopputulos näyttää erinomaiselta puhelimen näytöllä ja alkaa paljastaa rajansa täydellä resoluutiolla hämärässä.",
+          "context": "\"Huippuluokka\" kattaa tässä useita todellisia, samankaltaisen mutta ei identtisen kokoisia kennoja eri merkeissä ja vuosina, ei yhtä tarkkaa sirua — iPhone 17 Pron pääkamera on kooltaan noin 1/1.28 tuumaa, Samsungin lippulaivasarja lähempänä 1/1.3 tuumaa, ja molemmat pyöristyvät tämän esiasetuksen edustavaan 9.8×7.3mm-lukuun."
+        },
+        "1_1_7in": {
+          "character": "7.6×5.7mm-kenno määritteli 2000-luvun lopun harrastajakompaktikameran — kamerat kuten Canon S120 ja Panasonic LX7 yhdistivät sen valovoimaiseen objektiiviin, jota harvat kompaktikamerat pystyivät vastaamaan, tähdäten kuvaajiin, jotka halusivat manuaalisen hallinnan takin taskussa. Älypuhelimet imivät suurimman osan tästä markkinasta, mutta formaatin koon ja hallinnan tasapaino pitää yhä pintansa.",
+          "context": "Kennon pinta-alaltaan tämä formaatti sijoittuu askeleen 1 tuuman kompaktikameroiden alapuolelle ja kaksi askelta Micro Four Thirdsin alapuolelle, ja se muodosti markkinaraon taskukokoisille kameroille, joissa oli valovoimaisemmat aukot kuin tyypillisissä saman ajan osoita-ja-kuvaa-kameroissa. Harvat nykyiset kamerat käyttävät sitä — nykyään se on lähinnä käytetyn markkinan ja keräilijöiden koko."
+        },
+        "1_2_3in": {
+          "character": "Droonit ja actionkamerat rakennetaan tämän koon ympärille, koska se on tarpeeksi pieni ja kevyt lennettäväksi tai kiinnitettäväksi lisäämättä merkittävää painoa — hintana on kohiseva korkean ISOn video ja rajallinen dynamiikka-alue verrattuna mihin tahansa tämän listan suurempaan kennoon. DJI ja useimmat action-kameravalmistajat ankkuroivat ydinmallistonsa tähän.",
+          "context": "Ilmoitettuna 6.17×4.55mm:nä tämä on hallitseva käytännön konventio valmistajien teknisissä tiedoissa, vaikka se ei mene tasan 4:3-suhteeseen — matemaattisesti \"tosi\" 4:3-versio kokoa 6.17×4.63mm esiintyy joissakin lähteissä, mutta lähes mikään myynnissä oleva drooni- tai action-kamerakenno ei todellisuudessa ilmoita sitä."
+        },
+        "phone_mid": {
+          "character": "Keskiluokan puhelimissa on kennot selvästi lippulaivasisarustensa kokoa pienemmät, ja se näkyy eniten hämärässä ja dynamiikka-alueessa heti, kun ylität hyvin valaistut päiväkuvat. Valmistajat nojaavat vielä enemmän laskennalliseen käsittelyyn kompensoidakseen tätä, mikä kaventaa näkyvää eroa hyvissä olosuhteissa, mutta ei voi sulkea sitä kokonaan pimeän tultua.",
+          "context": "Tämä on edustava koko, ei minkään valmistajan tarkka siru — todelliset keskiluokan pääkennot, mukaan lukien osat kuten Samsungin ISOCELL GM5, ryhmittyvät tämän 5.6×4.2mm-luvun ympärille ilman, että mikään yksittäinen tietolehti vastaa sitä täsmällisesti, koska \"keskiluokka\" kattaa monia todellisia kennoja eri merkeissä ja vuosina."
+        },
+        "phone_uw": {
+          "character": "Puhelimen ultralaajakulmaobjektiiveissa on pienin, eniten kompromisseja sisältävä kenno tyypillisen puhelimen kameravalikoimassa — hyödyllinen arkkitehtuurille ja maisemille, joissa laajempi kuvakulma merkitsee enemmän kuin pikselikohtainen laatu, mutta selvästi pehmeämpi ja kohisevampi kuin pääkamera samassa kuvassa.",
+          "context": "Kuten muutkin tämän listan puhelintasot, tämä 4.0×3.0mm-luku edustaa samankokoisten ultralaajakulmamoduulien luokkaa eri merkeissä eikä yhtä tiettyä sirua. Ultralaajakulmakamerat lisättiin puhelinten kameravalikoimiin 2010-luvun puolivälissä, ja ne ovat edelleen heikoin lenkki useimmissa monikamerajärjestelmissä."
+        },
+        "film_half": {
+          "character": "Puolikuvakuvaaminen tarkoittaa kaksinkertaista kuvamäärää rullaa kohti mahduttamalla kaksi kuvaa tilaan, jonka yksi kuva normaalisti vie — houkuttelevaa filmikustannusten vuoksi, mutta kompromissina on rakeisempi, pehmeämpi lopputulos suurennettaessa verrattuna täysikokoiseen 35mm-filmiin, koska työskentelet puolet negatiivin pinta-alasta.",
+          "context": "Puolet vakio 35mm-kuvasta — formaatin kuvat ovat luonnostaan pystysuuntaisia (18×24), koska ne jakavat vaakasuuntaisen filmikuvan kahtia. Olympus Pen teki formaatin suosituksi vuonna 1959 kaksinkertaistaakseen kuvamäärän rullaa kohti, ja Pentax 17 herätti sen henkiin uudelleen vuonna 2024."
+        },
+        "film_645": {
+          "character": "Siirtyminen 645-filmiin tarkoittaa 56×41.5mm-negatiivia, jossa on selvästi enemmän yksityiskohtia ja sävylaajuutta kuin 35mm:ssä, samalla kun 120-filmirullaan mahtuu silti 15 tai 16 kuvaa. Kamerat kuten Mamiya 645 tuntuvat käsittelyltään lähes ylikokoiselta järjestelmäkameralta pikemminkin kuin pelkältä studiolaitteelta.",
+          "context": "Älä sekoita tätä listan muihin kohtiin, joissa esiintyy digitaalisten \"645\"-sukuisten keskiformaattikennojen nimi — tämä on se varsinainen 6×4.5cm rullafilmikuva, josta nimi on peräisin, kuvattu 120- tai 220-filmille kameroilla kuten Pentax 645NII ja Contax 645."
+        },
+        "film_6x6": {
+          "character": "Neliömäinen rajaus poistaa yhden päätöksen — kameraa ei tarvitse kääntää pysty- tai vaakakuvan välillä — mikä on osa syytä siihen, miksi se sopi niin hyvin vyötärökorkeudelta kuvattaville twin-lens-kameroille. Kompromissi näkyy vedostusvaiheessa: useimmat paperi- ja näyttöformaatit eivät ole neliön muotoisia, joten rajaat kuvan jompaankumpaan suuntaan ennemmin tai myöhemmin.",
+          "context": "Klassinen neliöformaatin kamera, jonka teki suosituksi Hasselbladin 500-sarja ja Rolleiflexin twin-lens-peilikamerat. Muunneltu Hasselblad 500EL kuljetti tämän formaatin Kuun pinnalle Apollo 11 -lennolla, aiempien NASAn Mercury-lennoilla 1962 ja 1963 käytettyjen Hasselblad 500C -kameroiden jälkeen."
+        },
+        "film_6x7": {
+          "character": "Raskaampi, hitaampi järjestelmä kuin 35mm tai puolikuva — Mamiya RB67:n palkeistotarkennus ja pyörivä takaosa palkitsevat harkitusta, jalustaystävällisestä tahdista käsivaraisen spontaaniuden sijaan. Vastineeksi saat negatiivin, jonka pinta-ala on yli neljä kertaa täyskennon, vastaavasti hienojakoisemmalla rakeella ja sulavammilla sävysiirtymillä.",
+          "context": "1960- ja 1970-luvuilla lempinimeltään \"ihanteellinen formaatti\", koska sen 5:4-mittasuhteet rajautuvat siististi kokoon 8×10 ja muihin vakiovedoskokoihin minimaalisella hukalla. Mamiya RB67 saa nimensä suoraan tunnusomaisesta ominaisuudestaan — pyörivästä takaosasta (rotating back, siitä \"RB\") — joka antaa vaihtaa suuntaa kääntämättä koko kameraa."
+        },
+        "film_4x5": {
+          "character": "Arkkifilmi muuttaa yhtä lailla sitä, miten työskentelet, kuin sitä, mitä kuvaat — yksi valotus per kasetti, mattalasinäkymä, joka on ylösalaisin ja peilikuvana, sekä liikkeet (nosto, siirto, kallistus), joilla voit korjata perspektiiviä ja hallita tarkennusta tavoilla, joihin mikään tämän listan digitaalinen kenno ei pysty ilman panoraamaompelua tai objektiivien siirtämistä.",
+          "context": "Formaatti, joka kantoi kuvajournalismia 1900-luvun puoliväliin asti — Joe Rosenthal kuvasi Iwo Jiman lipunnoston Graflex Speed Graphic -kameralla, joka oli ladattu 4×5-arkkifilmillä. Suurformaattifilmi on edelleen olemassa nykyään kameroissa kuten taittuva Intrepid 4×5, lähinnä maisema- ja taidevalokuvaukseen."
+        },
+        "cine_s16": {
+          "character": "Työformaattikompromissi — Super 16 pakkaa merkittävästi paremman kuvanlaadun kuin tavallinen 16mm murto-osaan 35mm-filmin kustannuksista ja kamerakoosta, minkä vuoksi dokumentti-, indie- ja lähetystuotannot turvautuivat siihen vuosikymmenten ajan. Sillä ei ole kiinteää digitaalista pikselimäärää tässä työkalussa, koska se on filmiformaatti, ei kenno.",
+          "context": "Ruotsalaisen kuvaaja Rune Ericsonin vuonna 1969 keksimä Super 16 laajentaa tavallisen 16mm:n käyttökelpoista kuvaa valtaamalla takaisin filmikaistaleen, joka on tavallisesti varattu optiselle äänelle — kuva-ala 12.52×7.41mm verrattuna tavallisen 16mm:n kapeampaan kuvaan, suunnilleen 1.69:1 raakamitoilla. Tuotannot rajasivat historiallisesti 1.66:1-suurennokseen 35mm:lle formaatin kirjaimellisen suhteen sijaan."
+        },
+        "cine_s35": {
+          "character": "Ammattimainen elokuvatuotanto käyttää tätä kennokokoa enemmän kuin mitään muuta — kamerat kuten ARRI ALEXA 35 ja RED Komodo rakentuvat sen ympärille, koska se tasapainottaa matalan syväterävyyden hallinnan, objektiivivalikoiman ja hallittavat tiedostokoot paremmin kuin pienemmät lähetysformaatit tai suuremmat suurformaatin elokuvakennot.",
+          "context": "Super 35 juontuu 4-reikäisen 35mm-elokuvafilmin täydestä kuvasta — käytännössä samasta alasta, jota mykkäelokuva-ajan kamerat käyttivät ennen kuin äänirata söi osan kuvasta, ja se herätettiin henkiin puhtaana kamerormaattina 1980-luvulla. 24.9×14.0mm-luku tässä on ARRI:n omien kameroiden ilmoittama 16:9-aktiivikuva-alan rajaus, ei suurempi open gate -kuva."
+        },
+        "cine_vv": {
+          "character": "REDin VV-kenno on rakennettu suurformaatin elokuvakuvaukseen kokoon, joka on lähellä täyskennoa, tarjoten matalamman syväterävyyden ja laajemman dynamiikka-alueen kuin Super 35 samalla polttovälillä — hintana on painavampi, kalliimpi optiikka, joka on suunniteltu peittämään suurempi kuvaympyrä.",
+          "context": "\"VV\" tarkoittaa VistaVisionia, nimeä, jonka RED lainasi Paramountin 1950-luvun suurikuvaisesta 35mm-prosessista, joka itsessään oli suunniteltu kilpailemaan aikansa laajakuvaelokuvaformaattien kanssa. V-RAPTORin 40.96×21.6mm-kenno jakaa tuon vuosikymmenien takaisen filmiformaatin kanssa vain nimen ja karkean kokoluokan, ei sen tarkkoja mittoja."
+        },
+        "cine_a65": {
+          "character": "ARRI rakensi ALEXA 65:n suurimman mittakaavan elokuvatuotantoihin — 54.12×25.58mm-kenno, joka jättää varjoonsa jopa VistaVision-luokan digitaaliset elokuvakamerat kuten V-RAPTOR VV:n. Rungot vuokrataan pikemminkin kuin omistetaan ARRI:n oman ohjelman kautta, ja formaatti vaatii suurformaatin optiikkaa, jota harvat tuotannot blockbuster-budjettien ulkopuolella voivat perustella.",
+          "context": "2.12:1-kuvasuhteellaan ALEXA 65:n 20.3-megapikselinen kenno on kooltaan lähempänä keskiformaatin valokuvakameroita kuin mitään muuta tämän listan elokuvakameraa. Se on edelleen ARRI:n suurikennoisin kamera, sijoittuen ALEXA LF:n yläpuolelle ja varattuna vain sen vuokrausohjelmaan suoran myynnin sijaan."
         }
       }
     }

@@ -126,7 +126,7 @@
       "heading": "Usein kysytyt kysymykset"
     },
     "sensors": {
-      "mf_645": "Keskiformaatti (54x40)",
+      "mf_645": "Keskiformaatti (53.4x40)",
       "mf": "Keskiformaatti (44x33)",
       "mf_leica": "Keskiformaatti (45x30)",
       "ff": "Täyskenno",
@@ -135,7 +135,20 @@
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",
       "1in": "1\" kenno",
-      "phone": "Huippupuhelin (1/1.3\")"
+      "phone": "Huippupuhelin (1/1.3\")",
+      "1_1_7in": "1/1.7\" kompakti",
+      "1_2_3in": "1/2.3\" (droonit ja action-kamerat)",
+      "phone_mid": "Keskiluokan puhelin (1/2.55\")",
+      "phone_uw": "Superlaajakulmapuhelin (1/3.5\")",
+      "film_half": "Puolikuvafilmi",
+      "film_645": "645-filmi",
+      "film_6x6": "6×6-filmi",
+      "film_6x7": "6×7-filmi",
+      "film_4x5": "4×5 suurformaatti",
+      "cine_s16": "Super 16",
+      "cine_s35": "Super 35 (16:9)",
+      "cine_vv": "RED V-RAPTOR VV",
+      "cine_a65": "ARRI ALEXA 65"
     },
     "legalTranslationDisclaimer": "Tämä sivu näytetään alkuperäisellä kielellään.",
     "error": {

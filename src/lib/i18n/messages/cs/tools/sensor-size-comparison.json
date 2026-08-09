@@ -6,6 +6,24 @@
       "modeSideBySide": "Vedle sebe",
       "modePixelDensity": "Hustota pixelů",
       "pixelDensityDescription": "Zobrazuje běžné počty megapixelů pro každý snímač. Větší pixely (větší buňky) zachytí víc světla.",
+      "filmPixelDensityNote": "Film a Super 16 nemají definovaný počet pixelů, takže jsou v tomto režimu skryté — zobraz si je místo toho v režimu Překryv nebo Vedle sebe.",
+      "quickCompare": "Rychlé porovnání",
+      "presetReplacesNote": "Nahradí aktuální výběr",
+      "presets": {
+        "phone_vs_ff": "Telefon vs. full frame",
+        "crop_vs_ff": "Crop vs. full frame",
+        "film_vs_digital": "Film vs. digitál",
+        "mf_family": "Rodina středního formátu",
+        "cine_vs_stills": "Kino vs. fotografie"
+      },
+      "groups": {
+        "medium-format": "Střední formát",
+        "ff-aps": "Full Frame a APS",
+        "compact": "Kompakt a 1\"",
+        "phone": "Smartphone",
+        "film": "Film",
+        "cine": "Kino"
+      },
       "sensors": "Snímače",
       "customSensors": "Vlastní snímače",
       "placeholderName": "Název",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Crop faktor",
       "tableAspectCrop": "Crop podle poměru",
       "canvasAriaLabel": "Porovnání velikostí snímačů v režimu {mode}",
+      "detail": {
+        "diagonal": "Úhlopříčka",
+        "area": "Plocha",
+        "aspect": "Poměr stran",
+        "vsFullFrame": "vs. full frame",
+        "referenceSensor": "Referenční snímač (full frame)",
+        "equivalence": "Objektiv {focal}mm f/{ap} tady zabírá jako ~{eqFocal}mm s hloubkou ostrosti f/{eqAp} na full frame.",
+        "resolutions": "Běžná rozlišení",
+        "cameras": "Oblíbené fotoaparáty",
+        "character": "Charakter",
+        "context": "Kontext",
+        "customNoProfile": "Vlastní snímač — jen vypočítaná data."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Co je crop faktor a proč na něm záleží?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Jak velikost snímače ovlivňuje hloubku ostrosti?",
           "answer": "Větší snímače mají při stejné kompozici menší hloubku ostrosti. Abys s menším snímačem dostal stejný výřez, musíš použít kratší ohniskovou vzdálenost (větší hloubka ostrosti) nebo se vzdálit (také větší hloubka ostrosti) — v obou případech se pozadí rozmaže méně."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Jak se velikosti filmového políčka srovnávají s dnešními digitálními snímači?",
+          "answer": "Standardní 35mm film má rozměrově stejnou velikost jako full frame digitální snímač (36×24mm), takže objektivy z filmové éry ho pokrývají bez cropu. Střední formát na filmu jde mnohem dál — negativ 645 měří 56×41.5mm a 6×7 dokonce 70×56mm, oba daleko za plochou jakéhokoli full frame digitálního snímače — zatímco poloformátový film dělí standardní 35mm políčko na dvě poloviny, což odpovídá zhruba ploše velkého APS-C snímače."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Čemu odpovídají Super 35 a ALEXA 65 ve fotografických termínech?",
+          "answer": "Super 35 (24.9×14.0mm, crop 1.51×) se téměř přesně shoduje s velikostí APS-C, a proto filmové objektivy S35 a fotografické objektivy APS-C pokrývají podobný obrazový kruh. Snímač ALEXA 65 o rozměrech 54.12×25.58mm je mnohem větší — blíž k 44×33mm snímači středního formátu ve fotografii než k full frame, a proto potřebuje vlastní dedikovanou řadu velkoformátových objektivů."
+        },
+        "why-inch-fractions": {
+          "question": "Proč se malé snímače pojmenovávají palcovými zlomky jako 1/2.3\"?",
+          "answer": "Tyto zlomky popisují vnější průměr obrazových snímacích trubic videokamer z 50. let, ne samotný snímač — trubice o průměru „1 palec\" produkovala využitelnou plochu obrazu zhruba dvou třetin tohoto průměru. Když polovodičové snímače nahradily trubice, výrobci si ponechali pojmenování z éry trubic, přestože skutečná úhlopříčka moderního „1palcového\" snímače je asi 15.86mm — zdaleka ne skutečný palec."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "Při rozměru 53.4×40mm jde o největší snímač, na jaký většina pracujících fotografů kdy sáhne. Studioví, produktoví a krajinářští fotografové ho používají přivázaný kabelem kvůli rozlišení a tonálnímu rozsahu, ne kvůli rychlosti — autofokus a rychlost sekvenčního snímání zaostávají za full frame o hodně. 150megapixelový soubor ze zadní části Phase One IQ4 zatíží stejnou měrou úložiště i počítač.",
+          "context": "„645\" v názvu této třídy snímačů odkazuje na svitkové filmové zadní díly 6×4.5cm, ale neplet si ho s filmovým presetem 645 jinde v tomto seznamu. Při 53.4×40mm jsou digitální snímače řady 645 od Phase One a Hasselbladu ve skutečnosti menší než filmové políčko 56×41.5mm, ze kterého vycházejí, navzdory sdílenému názvu."
+        },
+        "mf": {
+          "character": "Tato velikostní třída udělala střední formát prakticky použitelným i mimo studio. Fujifilm GFX i Hasselblad série X stavějí na snímači 43.8×32.9mm, dost malém na to, aby se dal držet v ruce a brát na túru, s 50 až 100 megapixely a autofokusem, který dohnal většinu rozdílu oproti bezzrcadlovkám plného formátu. Originální objektivy zůstávají větší a dražší než ekvivalenty pro full frame a rolling shutter omezuje rychlou akci.",
+          "context": "Fujifilm a Hasselblad si tu konkurují přímo, ale nekonkurují si hardwarem snímače — GFX 100 II i X2D 100C používají stejný čip 44×33mm vyrobený Sony. Systémy odlišuje design těla, vykreslování objektivů a filozofie menu, ne křemík uvnitř."
+        },
+        "mf_leica": {
+          "character": "Systém Leica S vkládá snímač 45×30mm do těla ve tvaru zvětšené 35mm zrcadlovky spíš než studiové kamery, což je celý smysl — ruční střední formát pro reportáž a portréty v terénu. 64megapixelová S3 obětuje část rozlišovací rezervy oproti konkurentům GFX a Hasselblad výměnou za jednodušší systém s jedním bajonetem a méně těly na výběr.",
+          "context": "Leica S2, uvedená v roce 2009, byla propagovaná výslovně jako první středoformátový fotoaparát postavený pro venkovní použití z ruky, ne pro studiovou práci na stativu. S3 přišla v roce 2020 jako její přímý nástupce; Leica S3 v roce 2023 ukončila výrobu a žádná S4 zatím nevyšla, takže budoucnost řady zůstává nejistá."
+        },
+        "ff": {
+          "character": "Referenční bod pro všechno ostatní tady. Full frame vyvažuje plochu pro sběr světla, kontrolu hloubky ostrosti a velikost objektivů — většina moderních řad objektivů je navržená právě kolem něj. Platíš větším tělem a objektivy oproti APS-C, ale získáváš zhruba clonový stupeň navíc ve slabém světle a menší hloubku ostrosti při stejném výřezu.",
+          "context": "Políčko 36×24 mm je přímé dědictví 35mm filmu, které Leica standardizovala ve 20. letech 20. století z kinofilmu otočeného na bok. Full frame digitální snímač má rozměrově stejnou velikost jako 35mm filmové políčko — proto na něj objektivy z filmové éry sedí bez cropu."
+        },
+        "apsh": {
+          "character": "Přechodná velikost, kterou Canon postavil pro rychlost na úkor rozlišení — větší pixely a rychlejší výčet dat v těle mířeném na sport a fotožurnalistiku, ne na kvalitu obrazu jako takovou. Crop 1.29× byl kompromisem mezi nevýhodou dosahu full frame a horším výkonem APS-C ve slabém světle, za cenu snímače, který žádný jiný výrobce nikdy nepřijal.",
+          "context": "APS-H byl formát výhradně od Canonu, používaný pouze v řadě EOS-1D — 1D, 1D Mark II, Mark II N, Mark III a nakonec Mark IV z roku 2009, po kterém Canon tuto velikost úplně opustil a vrátil řadu 1 zpátky k full frame. Žádný ekosystém objektivů ani příslušenství mimo samotný Canon na něj nikdy necílil."
+        },
+        "apsc_n": {
+          "character": "Výchozí velikost pro nadšenecké a středněpolohové bezzrcadlovky od Sony, Nikonu a Fujifilmu s cropem 1.53×, který mění 50mm objektiv na ekvivalent zhruba 75mm. Těla a objektivy jsou znatelně menší a levnější než full frame a přídavný dosah je reálnou výhodou pro fotografy zvěře a sportu, kteří pracují s delší optikou.",
+          "context": "Název APS-C je vypůjčený z filmu Advanced Photo System pro spotřebitele z roku 1996, konkrétně z jeho tiskového formátu „Classic\" 3:2 — digitální snímač ale nemá stejnou fyzickou velikost jako film APS, je to jen vzdálený jmenovec. Fujifilm kolem téhle velikosti snímače postavil celý systém X, místo aby ji bral jako vstupní úroveň."
+        },
+        "apsc_c": {
+          "character": "Vlastní standard APS-C od Canonu, 22.3×14.8mm — menší než 23.5×15.6mm, které používá většina konkurence, a proto vychází Canonu crop 1.62× místo 1.5×. V praxi to znamená trochu víc telefoto dosahu na objektiv za malou daň v šumu a dynamickém rozsahu oproti větší variantě APS-C.",
+          "context": "Canon jede na vlastních rozměrech snímače APS-C od nejranějších digitálních zrcadlovek tohoto formátu a nikdy nekonvergoval k cropu 1.5×, u kterého skončila skoro celá zbylá konkurence. R7 a R10 dnes tuto velikost nesou dál do Canonova bezzrcadlového bajonetu RF."
+        },
+        "m43": {
+          "character": "Opravdu malý, opravdu kompletní systém — crop 2× znamená, že každý objektiv je fyzicky kompaktní, a snímač 17.3×13mm přesto zvládá rychlou, ostrou optiku se skutečným odclonění pozadí, jen ne s tak mělkou hloubkou ostrosti jako full frame. Slabé světlo a dynamický rozsah zaostávají za většími snímači, což je poctivý kompromis za úsporu velikosti a hmotnosti.",
+          "context": "Micro Four Thirds je otevřený standard, ne proprietární formát — Olympus a Panasonic ho společně oznámili v roce 2008 a kterýkoli výrobce může stavět podle stejné specifikace bajonetu a snímače. OM System (dřív Olympus) a Panasonic zůstávají dvěma aktivními výrobci fotoaparátů, kteří na něm dál staví."
+        },
+        "1in": {
+          "character": "Citelný krok nahoru od telefonních snímačů při zachování kapesní velikosti — řada RX100 dokázala, že snímač 13.2×8.8mm umí dodat skutečnou kvalitu obrazu v kompaktu, který si opravdu vezmeš s sebou. Rozostření pozadí zůstává omezené i při f/1.8 a slabé světlo vyžaduje opatrnost, ale poměr velikosti ke kvalitě se na cesty těžko překonává.",
+          "context": "Označení „1 palec\" je pozůstatek z videokamerových trubic 50. let, ne skutečná míra — trubice s vnějším průměrem 1 palec produkovala využitelnou plochu obrazu zhruba dvou třetin tohoto průměru, kolem 16mm úhlopříčky. Když CCD a CMOS snímače nahradily trubice, výrobci fotoaparátů si ponechali pojmenování z éry trubic, přestože dnešní snímače žádnou trubici uvnitř vůbec nemají."
+        },
+        "phone": {
+          "character": "Moderní vlajkové telefony stahují náskok čistě senzorových fotoaparátů výpočtem, ne velikostí — čip 9.8×7.3mm se nemůže rovnat surovému sběru světla 1palcového snímače, takže hlavní práci odvádí skládání víc snímků, AI odšumění a syntetické bokeh. Výsledek vypadá skvěle na displeji telefonu a při plném rozlišení ve slabém světle začíná ukazovat své limity.",
+          "context": "„Vlajkový\" tady pokrývá několik reálných snímačů podobné, ale ne identické velikosti napříč značkami a roky, ne jeden přesný čip — hlavní fotoaparát iPhone 17 Pro měří zhruba 1/1.28 palce, vlajková řada Samsungu je blíž 1/1.3 palce a oba se zaokrouhlují na reprezentativní hodnotu tohoto presetu 9.8×7.3mm."
+        },
+        "1_1_7in": {
+          "character": "Snímač 7.6×5.7mm definoval nadšenecký kompakt konce dekády 2000. Fotoaparáty jako Canon S120 a Panasonic LX7 ho spojily se světelným objektivem, kterému se mohlo rovnat jen málo kompaktů, a mířily na fotografy, kteří chtěli manuální ovládání v kapse bundy. Smartphony pohltily většinu tohoto trhu, ale rovnováha velikosti a ovládání tohoto formátu pořád obstojí.",
+          "context": "Plochou snímače se tento formát řadí o stupeň pod 1palcové kompakty a o dva stupně pod Micro Four Thirds, čímž si vytvořil mezeru pro kapesní fotoaparáty se světelnějšími clonami než u typických kompaktů stejné éry. Málokterý dnešní fotoaparát ho používá — dnes je to hlavně velikost bazaru a sběratelů."
+        },
+        "1_2_3in": {
+          "character": "Drony a akční kamery se staví kolem této velikosti, protože je dost malá a lehká na to, aby létala nebo se dala připevnit bez znatelného přidání hmotnosti — cenou je zašuměné video při vysokém ISO a omezený dynamický rozsah oproti jakémukoli většímu snímači na tomto seznamu. DJI a většina výrobců akčních kamer na ní staví svoje hlavní řady.",
+          "context": "Uváděná jako 6.17×4.55mm, což je dominantní praktická konvence napříč specifikacemi výrobců, i když nedává přesně poměr 4:3 — matematicky „správná\" verze 4:3 o rozměrech 6.17×4.63mm se v některých pramenech objevuje, ale téměř žádný vyráběný snímač dronu nebo akční kamery ji ve skutečnosti neuvádí."
+        },
+        "phone_mid": {
+          "character": "Telefony střední třídy mají snímače citelně menší než jejich vlajkoví sourozenci, a nejvíc se to projeví ve slabém světle a v dynamickém rozsahu, jakmile se dostaneš za dobře osvětlené denní záběry. Výrobci se ještě víc opírají o výpočetní zpracování, aby to kompenzovali, což zužuje viditelný rozdíl za dobrých podmínek, ale po setmění ho nedokáže úplně zavřít.",
+          "context": "Jde o reprezentativní velikost, ne přesný čip jednoho výrobce — reálné hlavní snímače střední třídy, včetně součástek jako Samsung ISOCELL GM5, se seskupují kolem hodnoty 5.6×4.2mm, aniž by ji přesně odpovídal jediný konkrétní datový list, protože „střední třída\" pokrývá spoustu reálných snímačů napříč značkami a roky."
+        },
+        "phone_uw": {
+          "character": "Ultraširokoúhlé objektivy telefonů nesou nejmenší a nejvíc kompromisní snímač v typické sestavě fotoaparátů telefonu — užitečný pro architekturu a krajinu, kde větší zorné pole váží víc než kvalita na úrovni pixelu, ale znatelně měkčí a zašuměnější než hlavní fotoaparát ve stejném záběru.",
+          "context": "Stejně jako ostatní telefonní úrovně tady i tato hodnota 4.0×3.0mm zastupuje třídu podobně velkých ultraširokoúhlých modulů napříč značkami, ne jeden konkrétní čip. Ultraširokoúhlé fotoaparáty přibyly do sestav telefonních fotoaparátů v polovině 10. let a zůstávají nejslabším článkem ve většině vícefotoaparátových systémů."
+        },
+        "film_half": {
+          "character": "Fotografování na poloformát znamená zdvojnásobit počet záběrů na kinofilmu tím, že se do prostoru jednoho políčka vejdou dvě — lákavé kvůli ceně filmu, ale za cenu zrnitějšího, měkčího výsledku při zvětšení ve srovnání s plnoformátovým 35mm, protože pracuješ s poloviční plochou negativu.",
+          "context": "Polovina standardního políčka 35mm — políčka tohoto formátu jsou přirozeně na výšku (18×24), protože dělí vodorovné filmové políčko na dvě. Formát zpopularizoval Olympus Pen v roce 1959 kvůli zdvojnásobení počtu záběrů na kinofilmu a znovu ho oživil Pentax 17 v roce 2024."
+        },
+        "film_645": {
+          "character": "Přechod na film 645 znamená negativ 56×41.5mm se znatelně větší kresbou detailů a tonálním rozsahem než 35mm, přičemž na svitek filmu 120 se pořád vejde 15 nebo 16 políček. Přístroje jako Mamiya 645 se ovládají skoro jako zvětšená zrcadlovka, ne jako čistě studiová sestava.",
+          "context": "Neplet si to s digitálními středoformátovými snímači řady „645\" jinde v tomto seznamu — tady jde o skutečné svitkové filmové políčko 6×4.5cm, ze kterého název pochází, snímané na film 120 nebo 220 v přístrojích jako Pentax 645NII a Contax 645."
+        },
+        "film_6x6": {
+          "character": "Čtvercový výřez odstraňuje jedno rozhodnutí — nemusíš otáčet fotoaparát mezi portrétem a krajinou — což je částečně důvod, proč se tak hodil pro dvouobjektivové přístroje ovládané od pasu. Kompromis se projeví u tisku: většina papírových i obrazovkových formátů není čtvercová, takže dřív nebo později stejně oříznu jedním nebo druhým směrem.",
+          "context": "Klasický fotoaparát čtvercového formátu, zpopularizovaný řadou Hasselblad 500 a dvouobjektivovými zrcadlovkami Rolleiflex. Upravený Hasselblad 500EL dopravil tento formát na povrch Měsíce v misi Apollo 11, po dřívějších Hasselbladech 500C používaných na misích NASA Mercury v letech 1962 a 1963."
+        },
+        "film_6x7": {
+          "character": "Těžší a pomalejší systém než 35mm nebo poloformát — vlnovcové zaostřování a otočná záda Mamiyi RB67 odměňují promyšlené, na stativ vázané tempo místo spontánní práce z ruky. Výměnou dostaneš negativ přes čtyřikrát větší než full frame, s odpovídajícím jemnějším zrnem a plynulejšími tonálními přechody.",
+          "context": "V 60. a 70. letech přezdívaný „ideální formát\", protože jeho poměr stran 5:4 se čistě ořízne na 8×10 a další standardní velikosti tisku s minimálním odpadem. Mamiya RB67 má název přímo podle své charakteristické funkce — otočných zad (rotating back, odtud „RB\") — díky které můžeš měnit orientaci bez otáčení celého fotoaparátu."
+        },
+        "film_4x5": {
+          "character": "Plošný film mění, jak pracuješ, stejnou měrou jako to, co snímáš — jedna expozice na kazetu, obraz na matnici vzhůru nohama a zrcadlově obrácený a posuny (rise, shift, tilt), které ti umožní opravovat perspektivu a řídit zaostření způsoby, jaké tady žádný digitální snímač nezvládne bez sešívání panoramat nebo posuvných objektivů.",
+          "context": "Formát, který nesl fotožurnalistiku polovinou 20. století — Joe Rosenthal fotil vztyčení vlajky na Iwo Jimě na Graflex Speed Graphic nabitý plošným filmem 4×5. Velkoformátový film existuje dodnes v přístrojích jako skládací Intrepid 4×5, hlavně pro krajinářskou a uměleckou fotografii."
+        },
+        "cine_s16": {
+          "character": "Kompromis pracovního formátu — Super 16 vměstná znatelně lepší kvalitu obrazu než standardní 16mm do zlomku ceny a objemu kamery oproti 35mm, a proto se na něj dokumentární, nezávislá i vysílací produkce spoléhaly celá desetiletí. V tomto nástroji nemá pevný počet digitálních pixelů, protože jde o filmový formát, ne snímač.",
+          "context": "Vynalezený v roce 1969 švédským kameramanem Rune Ericsonem, Super 16 rozšiřuje využitelné políčko standardního 16mm tím, že zabírá zpět pás filmu normálně vyhrazený pro optickou zvukovou stopu — obrazová plocha 12.52×7.41mm oproti užšímu políčku běžného 16mm, zhruba 1.69:1 v surových rozměrech. Produkce historicky komponovaly na poměr 1.66:1 pro zvětšení na 35mm, ne na doslovný poměr formátu."
+        },
+        "cine_s35": {
+          "character": "Profesionální filmová produkce jede na této velikosti snímače víc než na jakékoli jiné — kamery jako ARRI ALEXA 35 a RED Komodo se kolem ní stavějí, protože lépe vyvažuje kontrolu mělké hloubky ostrosti, výběr objektivů a zvládnutelné velikosti souborů než menší vysílací formáty nebo větší velkoformátové filmové snímače.",
+          "context": "Super 35 se odvíjí od plného políčka 4perforačního 35mm kinofilmu — v podstatě té samé plochy, jakou používaly kamery éry němého filmu předtím, než zvuková stopa ukousla část políčka, a jako čistě kamerový formát byl znovu oživen v 80. letech. Hodnota 24.9×14.0mm tady je ořez aktivní obrazové plochy 16:9, který uvádějí přímo kamery ARRI, ne větší políčko open gate."
+        },
+        "cine_vv": {
+          "character": "Snímač VV od REDu je stavěný pro velkoformátové filmování ve velikosti blízké full frame, což dává menší hloubku ostrosti a širší dynamický rozsah než Super 35 při stejné ohniskové vzdálenosti — cenou je těžší a dražší optika navržená tak, aby pokryla větší obrazový kruh.",
+          "context": "„VV\" znamená VistaVision, název, který si RED vypůjčil od velkoplošného 35mm procesu Paramountu z 50. let, jenž byl sám navržený tak, aby konkuroval širokoúhlým filmovým formátům své doby. Snímač V-RAPTORu o rozměrech 40.96×21.6mm sdílí s tím desítky let starým filmovým formátem jen název a hrubou velikostní třídu, ne jeho konkrétní rozměry."
+        },
+        "cine_a65": {
+          "character": "ARRI postavil ALEXA 65 pro filmovou produkci toho nejvyššího rozsahu — snímač 54.12×25.58mm, který zastíní i digitální filmové kamery třídy VistaVision jako V-RAPTOR VV. Přístroje se pronajímají, spíš než vlastní, přes vyhrazený program ARRI, a formát vyžaduje velkoformátovou optiku, kterou dokáže ospravedlnit jen málo produkcí mimo rozpočty blockbusterů.",
+          "context": "Při poměru stran 2.12:1 sedí 20.3megapixelový snímač ALEXA 65 velikostně blíž ke středoformátovým fotoaparátům než k jakékoli jiné filmové kameře na tomto seznamu. Zůstává kamerou ARRI s největším snímačem, umístěnou nad ALEXA LF a vyhrazenou jen pro jeho pronájmový program, ne pro přímý prodej."
         }
       }
     }

@@ -126,7 +126,7 @@
       "heading": "Ofte stilte spørsmål"
     },
     "sensors": {
-      "mf_645": "Mellomformat (54x40)",
+      "mf_645": "Mellomformat (53.4x40)",
       "mf": "Mellomformat (44x33)",
       "mf_leica": "Mellomformat (45x30)",
       "ff": "Fullformat",
@@ -135,7 +135,20 @@
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",
       "1in": "1\"-sensor",
-      "phone": "Flaggskip-mobil (1/1,3\")"
+      "phone": "Flaggskip-mobil (1/1,3\")",
+      "1_1_7in": "1/1.7\" kompakt",
+      "1_2_3in": "1/2.3\" (droner og actionkameraer)",
+      "phone_mid": "Mellomklasse-mobil (1/2.55\")",
+      "phone_uw": "Ultravidvinkel-mobil (1/3.5\")",
+      "film_half": "Halvformatfilm",
+      "film_645": "645-film",
+      "film_6x6": "6×6-film",
+      "film_6x7": "6×7-film",
+      "film_4x5": "4×5 storformat",
+      "cine_s16": "Super 16",
+      "cine_s35": "Super 35 (16:9)",
+      "cine_vv": "RED V-RAPTOR VV",
+      "cine_a65": "ARRI ALEXA 65"
     },
     "legalTranslationDisclaimer": "Dette er en oversettelse for å gjøre innholdet mer lesbart. Den engelske versjonen er den juridisk bindende. Se /en/privacy.",
     "error": {
