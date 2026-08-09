@@ -6,6 +6,24 @@
       "modeSideBySide": "Zij aan zij",
       "modePixelDensity": "Pixeldichtheid",
       "pixelDensityDescription": "Veelvoorkomende megapixelaantallen voor elke sensor worden getoond. Grotere pixels (grotere cellen) vangen meer licht op.",
+      "filmPixelDensityNote": "Film en Super 16 hebben geen vastgesteld pixelaantal, dus ze zijn verborgen in deze modus — bekijk ze in plaats daarvan in Overlay of Zij aan zij.",
+      "quickCompare": "Snel vergelijken",
+      "presetReplacesNote": "Vervangt de huidige selectie",
+      "presets": {
+        "phone_vs_ff": "Telefoon vs Full Frame",
+        "crop_vs_ff": "Crop vs Full Frame",
+        "film_vs_digital": "Film vs Digitaal",
+        "mf_family": "Middenformaatfamilie",
+        "cine_vs_stills": "Cine vs Stills"
+      },
+      "groups": {
+        "medium-format": "Middenformaat",
+        "ff-aps": "Full Frame & APS",
+        "compact": "Compact & 1\"",
+        "phone": "Smartphone",
+        "film": "Film",
+        "cine": "Cinema"
+      },
       "sensors": "Sensoren",
       "customSensors": "Aangepaste sensoren",
       "placeholderName": "Naam",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Cropfactor",
       "tableAspectCrop": "Beeldverhouding-crop",
       "canvasAriaLabel": "Sensorformaatvergelijking in {mode}-modus",
+      "detail": {
+        "diagonal": "Diagonaal",
+        "area": "Oppervlak",
+        "aspect": "Beeldverhouding",
+        "vsFullFrame": "vs Full Frame",
+        "referenceSensor": "Referentiesensor (fullframe)",
+        "equivalence": "Een {focal}mm f/{ap}-objectief kadreert hier zoals ~{eqFocal}mm met f/{eqAp} scherptediepte op fullframe.",
+        "resolutions": "Veelvoorkomende resoluties",
+        "cameras": "Populaire camera's",
+        "character": "Karakter",
+        "context": "Context",
+        "customNoProfile": "Aangepaste sensor — alleen berekende gegevens."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Wat is cropfactor en waarom is het belangrijk?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Hoe beïnvloedt sensorformaat de scherptediepte?",
           "answer": "Grotere sensoren produceren een geringere scherptediepte bij gelijkwaardige kadrering. Om dezelfde kadrering te krijgen met een kleinere sensor, gebruik je een kortere brandpuntsafstand (diepere scherptediepte) of ga je verder weg staan (diepere scherptediepte), wat beide de achtergrondvervaging vermindert."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Hoe verhouden filmformaten zich tot moderne digitale sensoren?",
+          "answer": "Standaard 35mm-film heeft dezelfde afmetingen als een fullframe digitale sensor (36×24mm), waardoor objectieven uit het filmtijdperk hem zonder crop dekken. Middenformaatfilm is veel groter — een 645-negatief is 56×41.5mm en 6×7 is 70×56mm, beide ruim boven het oppervlak van elke fullframe digitale sensor — terwijl halfformaatfilm een standaard 35mm-frame in tweeën splitst, voor ongeveer het oppervlak van een grote APS-C-sensor."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Wat zijn Super 35 en de ALEXA 65 in stills-termen?",
+          "answer": "Super 35 (24.9×14.0mm, 1.51x crop) komt bijna precies overeen met het formaat van APS-C, waardoor S35-cinema-objectieven en APS-C-stills-objectieven vergelijkbare beeldcirkels dekken. De 54.12×25.58mm-sensor van de ALEXA 65 is veel groter — dichter bij een 44×33mm middenformaat-stillssensor dan bij fullframe, waardoor hij zijn eigen toegewijde grootformaat-objectievenlijn nodig heeft."
+        },
+        "why-inch-fractions": {
+          "question": "Waarom worden kleine sensoren aangeduid met inch-breuken zoals 1/2.3\"?",
+          "answer": "Deze breuken beschrijven de buitendiameter van videocamerabuizen uit de jaren 50, niet de sensor zelf — een \"1-inch\"-buis produceerde een bruikbaar beeldoppervlak van ongeveer tweederde van die diameter. Toen solid-state sensoren de buizen vervingen, hielden fabrikanten de naamgevingsconventie uit het buizentijdperk aan, ook al is de werkelijke diagonaal van een moderne \"1-inch\"-sensor ongeveer 15.86mm — verre van een letterlijke inch."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "Met 53.4×40mm is dit de grootste sensor die de meeste werkende fotografen ooit zullen aanraken. Studio-, product- en landschapsfotografen gebruiken hem tethered voor resolutie en tonaliteit, niet voor snelheid — autofocus en burstsnelheden blijven ver achter bij fullframe. Een 150-megapixel bestand van een Phase One IQ4-back zet zowel je opslag als je computer onder druk.",
+          "context": "De \"645\" in de afkomst van deze sensorklasse verwijst naar 6×4.5cm-rolfilmbacks, maar verwar dit niet met de 645-filmpreset elders in deze lijst. Met 53.4×40mm zijn de digitale 645-serie-sensoren van Phase One en Hasselblad eigenlijk kleiner dan het 56×41.5mm-filmframe waar ze van afstammen, ondanks het delen van een naam."
+        },
+        "mf": {
+          "character": "Deze formaatklasse maakte middenformaat praktisch bruikbaar buiten de studio. De GFX van Fujifilm en de X-serie van Hasselblad zijn beide gebouwd rond een 43.8×32.9mm-sensor die klein genoeg is om vast te houden en mee te wandelen, met 50 tot 100 megapixels en autofocus die het grootste deel van de achterstand op mirrorless heeft ingelopen. Native objectieven blijven groter en duurder dan fullframe-equivalenten, en rolling-shutter-uitlezing beperkt snelle actie.",
+          "context": "Fujifilm en Hasselblad concurreren hier rechtstreeks met elkaar, maar niet op sensorhardware — de GFX 100 II en de X2D 100C gebruiken beide dezelfde door Sony gefabriceerde 44×33mm-chip. Wat de systemen onderscheidt is het bodyontwerp, de objectiefrendering en de menufilosofie, niet de silicium eronder."
+        },
+        "mf_leica": {
+          "character": "Het S-systeem van Leica plaatst een 45×30mm-sensor in een body die is vormgegeven als een uitvergrote 35mm-spiegelreflexcamera in plaats van een studio-viewcamera, en dat is precies de insteek — handheld middenformaat voor reportage en locatieportretten. De 64-megapixel S3 levert wat resolutiemarge in ten opzichte van rivalen als GFX en Hasselblad, in ruil voor een eenvoudiger systeem met één objectiefvatting en minder bodies om uit te kiezen.",
+          "context": "De Leica S2, geïntroduceerd in 2009, werd expliciet gepositioneerd als de eerste middenformaatcamera gebouwd voor handheld gebruik buiten, in plaats van statiefgebonden studiowerk. De S3 volgde in 2020 als directe opvolger; Leica staakte de S3 in 2023, en er is geen S4 verschenen, waardoor de toekomst van de lijn onzeker is."
+        },
+        "ff": {
+          "character": "Het referentiepunt voor al het andere hier. Fullframe balanceert lichtvangend oppervlak, controle over de scherptediepte en objectiefgrootte — de meeste moderne objectievenlijnen zijn hierop ontworpen. Je betaalt in body- en objectiefomvang vergeleken met APS-C, maar wint ongeveer een stop extra ruimte bij weinig licht en een geringere scherptediepte bij dezelfde kadrering.",
+          "context": "Het 36×24 mm-frame is een directe erfenis van 35mm-filmfotografie, gestandaardiseerd door Leica in de jaren 20 op basis van zijwaarts gedraaide cinefilmvoorraad. Een fullframe digitale sensor heeft dezelfde afmetingen als een 35mm-filmframe — daarom passen objectieven uit het filmtijdperk er zonder crop op."
+        },
+        "apsh": {
+          "character": "Een overgangsformaat dat Canon bouwde voor snelheid boven resolutie — grotere pixels en snellere uitlezing, in een body gericht op sport en fotojournalistiek, niet op beeldkwaliteit als doel op zich. De 1.29x crop zat precies tussen het bereiknadeel van fullframe en het lichtnadeel van APS-C in, ten koste van een sensor die geen enkele andere fabrikant ooit heeft overgenomen.",
+          "context": "APS-H was een formaat exclusief voor Canon, uitsluitend gebruikt in de EOS-1D-lijn — de 1D, 1D Mark II, Mark II N, Mark III, en ten slotte de 2009 Mark IV, waarna Canon het formaat volledig liet vallen en de 1-serie weer liet opgaan in fullframe. Geen enkel objectief- of accessoire-ecosysteem buiten dat van Canon zelf heeft dit formaat ooit als doelgroep gehad."
+        },
+        "apsc_n": {
+          "character": "Het standaardformaat voor enthousiasteling- en middenklasse-mirrorless bij Sony, Nikon en Fujifilm, met een 1.53x crop die een 50mm-objectief omzet in een equivalent van ongeveer 75mm. Bodies en objectieven zijn merkbaar kleiner en goedkoper dan fullframe, en het extra bereik is een reëel voordeel voor natuur- en sportfotografen die met langere brandpuntsafstanden werken.",
+          "context": "De naam APS-C is ontleend aan het consumenten-Advanced Photo System-film uit 1996, specifiek het \"Classic\" 3:2-printformaat — maar de digitale sensor heeft niet dezelfde fysieke afmetingen als APS-film, het is slechts een verre naamgenoot. Fujifilm heeft zijn hele X-systeem rond dit sensorformaat gebouwd in plaats van het als instapniveau te behandelen."
+        },
+        "apsc_c": {
+          "character": "Canon's eigen APS-C-standaard, op 22.3×14.8mm — kleiner dan de 23.5×15.6mm die de meeste concurrenten gebruiken, waardoor Canon's crop op 1.62x uitkomt in plaats van 1.5x. In de praktijk betekent dit iets meer telebereik per objectief, tegen een kleine prijs in ruis en dynamisch bereik ten opzichte van de grotere APS-C-variant.",
+          "context": "Canon gebruikt al sinds de vroegste digitale spiegelreflexcamera's van het formaat zijn eigen APS-C-sensorafmetingen, zonder ooit te convergeren naar de 1.5x crop waar bijna iedereen anders op uitkwam. De R7 en R10 zetten dit formaat vandaag voort in Canon's mirrorless RF-vatting."
+        },
+        "m43": {
+          "character": "Een echt klein, echt compleet systeem — een 2x crop betekent dat elk objectief fysiek compact is, en de 17.3×13mm-sensor ondersteunt nog altijd snelle, scherpe optiek met echte onderwerpscheiding, alleen niet de geringe scherptediepte van fullframe. Prestaties bij weinig licht en dynamisch bereik blijven achter bij grotere sensoren, wat de eerlijke afweging is voor de winst in formaat en gewicht.",
+          "context": "Micro Four Thirds is een open standaard, geen eigendomsformaat — Olympus en Panasonic kondigden het gezamenlijk aan in 2008, en elke fabrikant kan bouwen volgens dezelfde objectiefvatting- en sensorspecificatie. OM System (voorheen Olympus) en Panasonic blijven de twee actieve camerafabrikanten die erop voortbouwen."
+        },
+        "1in": {
+          "character": "Een betekenisvolle stap boven smartphonesensoren, terwijl hij zakformaat blijft — de RX100-lijn bewees dat een 13.2×8.8mm-sensor echte beeldkwaliteit kon leveren in een compact die je ook daadwerkelijk meeneemt. Achtergrondvervaging blijft beperkt, zelfs bij f/1.8, en bij weinig licht is voorzichtigheid geboden, maar de verhouding tussen formaat en kwaliteit is moeilijk te verslaan voor reizen.",
+          "context": "Het label \"1-inch\" is een overblijfsel uit de videocamerabuizen van de jaren 50, geen echte meting — een buis met een buitendiameter van 1 inch produceerde een bruikbaar beeldoppervlak van ongeveer tweederde daarvan, rond 16mm diagonaal. Toen CCD- en CMOS-sensoren de buizen vervingen, hielden camerafabrikanten de naamgeving uit het buizentijdperk aan, ook al zit er in de sensoren van vandaag helemaal geen buis meer."
+        },
+        "phone": {
+          "character": "Moderne vlaggenschiptelefoons dichten de kloof met sensor-only camera's door berekening, niet door formaat — een 9.8×7.3mm-chip kan de ruwe lichtvangst van een 1-inch-sensor niet evenaren, dus multi-frame stacking, AI-ruisonderdrukking en synthetische bokeh doen in plaats daarvan het zware werk. Het resultaat ziet er uitstekend uit op een telefoonscherm en begint zijn grenzen te tonen op volledige resolutie bij weinig licht.",
+          "context": "\"Vlaggenschip\" omvat hier meerdere echte sensoren van vergelijkbaar-maar-niet-identiek formaat over merken en jaren heen, in plaats van één exacte chip — de hoofdcamera van de iPhone 17 Pro meet ongeveer 1/1.28-inch, de vlaggenschiplijn van Samsung zit dichter bij 1/1.3-inch, en beide worden afgerond naar het representatieve cijfer van 9.8×7.3mm in deze preset."
+        },
+        "1_1_7in": {
+          "character": "De 7.6×5.7mm-sensor definieerde de enthousiastelingcompact van de late jaren 2000 — camera's zoals de Canon S120 en de Panasonic LX7 combineerden hem met een snel objectief dat weinig compacts konden evenaren, gericht op fotografen die handmatige controle in een jaszak wilden. Smartphones hebben het grootste deel van deze markt overgenomen, maar de balans tussen formaat en bediening blijft overeind.",
+          "context": "Qua sensoroppervlak zit dit formaat net onder 1-inch-compacts en twee stappen onder Micro Four Thirds, en het vulde een niche voor zakformaat-camera's met snellere diafragma's dan typische point-and-shoots uit dezelfde periode. Weinig huidige camera's gebruiken het nog — het is nu vooral een tweedehands- en verzamelformaat."
+        },
+        "1_2_3in": {
+          "character": "Drones en actioncams zijn rond dit formaat gebouwd omdat het klein en licht genoeg is om te vliegen of te monteren zonder noemenswaardig gewicht toe te voegen — de prijs is ruisig beeldmateriaal bij hoge ISO en beperkt dynamisch bereik vergeleken met elke grotere sensor op deze lijst. DJI en de meeste actioncam-fabrikanten baseren hun kernassortiment hierop.",
+          "context": "Vermeld als 6.17×4.55mm, dit is de dominante praktijkconventie in specificatiebladen van fabrikanten, ook al komt het niet exact uit op een 4:3-verhouding — een wiskundig \"echte\" 4:3-versie op 6.17×4.63mm bestaat in sommige bronnen, maar bijna geen enkele geleverde drone- of actioncam-sensor vermeldt die daadwerkelijk."
+        },
+        "phone_mid": {
+          "character": "Middenklassetelefoons hebben sensoren die duidelijk kleiner zijn dan die van hun vlaggenschipbroertjes, en dat is het meest zichtbaar bij weinig licht en in dynamisch bereik zodra je verder gaat dan goed belichte dagfoto's. Fabrikanten leunen nog zwaarder op computationele verwerking om dit te compenseren, wat het zichtbare verschil onder goede omstandigheden verkleint, maar het niet volledig wegneemt na donker.",
+          "context": "Dit is een representatief formaat, niet de exacte chip van één fabrikant — echte middenklasse-hoofdsensoren, waaronder onderdelen zoals Samsung's ISOCELL GM5, clusteren rond dit cijfer van 5.6×4.2mm zonder dat één specifiek datasheet er precies mee overeenkomt, omdat \"middenklasse\" veel verschillende sensoren over merken en jaren omvat."
+        },
+        "phone_uw": {
+          "character": "Ultragroothoek-objectieven op telefoons hebben de kleinste, meest gecompromitteerde sensor in de camera-array van een typische telefoon — nuttig voor architectuur en landschappen waar de bredere beeldhoek belangrijker is dan kwaliteit per pixel, maar zichtbaar zachter en ruisiger dan de hoofdcamera in dezelfde opname.",
+          "context": "Net als bij de andere telefoonsegmenten hier staat dit cijfer van 4.0×3.0mm voor een klasse van vergelijkbaar formaat ultragroothoekmodules over merken heen, niet voor één specifieke chip. Ultragroothoekcamera's waren een toevoeging uit het midden van de jaren 2010 aan telefooncamera-arrays en blijven de zwakste schakel in de meeste multi-camerasystemen."
+        },
+        "film_half": {
+          "character": "Half-frame fotograferen betekent het verdubbelen van je opnamen per rolletje door twee frames te passen in de ruimte die er normaal één inneemt — aantrekkelijk om filmkosten te besparen, maar de afweging is een korreliger, zachter resultaat bij vergroting vergeleken met fullframe 35mm, omdat je met de helft van het negatiefoppervlak werkt.",
+          "context": "De helft van een standaard 35mm-frame — de frames van dit formaat zijn van nature verticaal (18×24) omdat ze het horizontale filmframe in tweeën splitsen. Gepopulariseerd door de Olympus Pen in 1959 om het aantal opnamen per rolletje te verdubbelen, en nieuw leven ingeblazen door de Pentax 17 in 2024."
+        },
+        "film_645": {
+          "character": "Overstappen naar 645-film betekent een 56×41.5mm-negatief met merkbaar meer detail en tonaliteit dan 35mm, terwijl er nog steeds 15 of 16 frames op een rolletje 120-film passen. Bodies zoals de Mamiya 645 voelen bijna als een uitvergrote spiegelreflexcamera aan in plaats van een studio-only rig.",
+          "context": "Niet te verwarren met de digitale sensoren uit de \"645\"-lijn elders in deze lijst — dit is het daadwerkelijke 6×4.5cm-rolfilmframe waar de naam vandaan komt, gefotografeerd op 120- of 220-film in bodies zoals de Pentax 645NII en de Contax 645."
+        },
+        "film_6x6": {
+          "character": "Vierkant kadreren neemt een beslissing weg — geen camera draaien voor portret versus landschap — wat deels verklaart waarom het zo goed paste bij twin-lens-camera's op heuphoogte. De afweging komt naar voren bij het afdrukken: de meeste papier- en schermformaten zijn niet vierkant, dus uiteindelijk crop je toch de ene of de andere kant op.",
+          "context": "De klassieke vierkant-formaatcamera, gepopulariseerd door de 500-serie van Hasselblad en de twin-lens-reflexcamera's van Rolleiflex. Een aangepaste Hasselblad 500EL bracht dit formaat naar het maanoppervlak tijdens Apollo 11, na eerdere Hasselblad 500C's die werden gebruikt tijdens de Mercury-missies van NASA in 1962 en 1963."
+        },
+        "film_6x7": {
+          "character": "Een zwaarder, trager systeem dan 35mm of half-frame — de balgscherpstelling en draaibare achterkant van de Mamiya RB67 belonen een weloverwogen, statiefvriendelijk tempo boven handheld spontaniteit. Daar krijg je in ruil een negatief voor terug dat meer dan vier keer het oppervlak van fullframe heeft, met navenant fijnere korrel en vloeiendere tonale overgangen.",
+          "context": "In de jaren 60 en 70 bijgenaamd \"het ideale formaat\" omdat de 5:4-verhoudingen netjes uitkomen op 8×10 en andere standaard afdrukformaten, met minimale verspilling. De naam van de Mamiya RB67 komt direct van zijn kenmerkende functie — een draaibare achterkant, vandaar \"RB\" — waarmee je van oriëntatie kunt wisselen zonder de hele camera te draaien."
+        },
+        "film_4x5": {
+          "character": "Sheetfilm verandert net zo goed hoe je werkt als wat je vastlegt — één belichting per holder, een matglasbeeld dat ondersteboven en gespiegeld is, en camerabewegingen (rise, shift, tilt) waarmee je perspectief corrigeert en scherpstelling controleert op manieren die geen enkele digitale sensor hier kan evenaren zonder stitching of shiftobjectieven.",
+          "context": "Het formaat dat de fotojournalistiek door het midden van de 20e eeuw droeg — Joe Rosenthal fotografeerde het hijsen van de vlag op Iwo Jima met een Graflex Speed Graphic geladen met 4×5-sheetfilm. Grootformaatfilm bestaat vandaag nog steeds, in bodies zoals de opvouwbare Intrepid 4×5, vooral voor landschaps- en fine-artwerk."
+        },
+        "cine_s16": {
+          "character": "Een compromisformaat voor productiewerk — Super 16 biedt merkbaar betere beeldkwaliteit dan standaard 16mm, voor een fractie van de kosten en cameraomvang van 35mm-film, wat verklaart waarom documentaire-, indie- en omroepproducties er decennialang op leunden. Het heeft in deze tool geen vast digitaal pixelaantal, omdat het een filmformaat is, geen sensor.",
+          "context": "Uitgevonden in 1969 door de Zweedse cinematograaf Rune Ericson, verbreedt Super 16 het bruikbare frame van standaard 16mm door de strook film terug te winnen die normaal gereserveerd is voor een optische geluidsband — een beeldoppervlak van 12.52×7.41mm tegenover het smallere frame van regulier 16mm, ongeveer 1.69:1 op basis van de ruwe afmetingen. Producties kaderden historisch voor een 1.66:1-blow-up naar 35mm, in plaats van de letterlijke verhouding van het formaat."
+        },
+        "cine_s35": {
+          "character": "Professionele filmproductie draait meer op dit sensorformaat dan op enig ander — camera's zoals de ARRI ALEXA 35 en de RED Komodo zijn hierop gebouwd omdat het een betere balans biedt tussen controle over geringe scherptediepte, objectiefkeuze en beheersbare bestandsgroottes dan zowel kleinere broadcastformaten als grotere grootformaat-cinesensoren.",
+          "context": "Super 35 gaat terug op het volledige frame van 4-perf 35mm-cinefilm — in essentie hetzelfde oppervlak dat camera's uit het stomme-filmtijdperk gebruikten voordat geluidsbanden een deel van het frame opslokten, nieuw leven ingeblazen als camera-only formaat in de jaren 80. Het cijfer 24.9×14.0mm hier is de 16:9-crop van het actieve beeldoppervlak die ARRI's eigen camera's hanteren, niet het grotere open-gate-frame."
+        },
+        "cine_vv": {
+          "character": "De VV-sensor van RED is gebouwd voor grootformaat-cinema, met een formaat dat dicht bij dat van fullframe ligt, wat een geringere scherptediepte en breder dynamisch bereik oplevert dan Super 35 bij dezelfde brandpuntsafstand — de prijs is zwaardere, duurdere optiek ontworpen om de grotere beeldcirkel te dekken.",
+          "context": "\"VV\" staat voor VistaVision, een naam die RED leende van het grootformaat-35mm-proces van Paramount uit de jaren 50, dat zelf was ontworpen om te concurreren met de breedbeeld-cinemaformaten van die tijd. De 40.96×21.6mm-sensor van de V-RAPTOR deelt alleen de naam en de ruwe formaatklasse met dat decennialange filmformaat, niet de specifieke afmetingen."
+        },
+        "cine_a65": {
+          "character": "ARRI bouwde de ALEXA 65 voor de grootschaligste filmproducties — een 54.12×25.58mm-sensor die zelfs VistaVision-klasse digitale cinemacamera's zoals de V-RAPTOR VV overtreft. Bodies worden gehuurd in plaats van gekocht via het toegewijde programma van ARRI, en het formaat vereist grootformaatoptiek die weinig producties buiten blockbusterbudgetten kunnen rechtvaardigen.",
+          "context": "Met een beeldverhouding van 2.12:1 ligt de 20.3-megapixel sensor van de ALEXA 65 qua formaat dichter bij middenformaat-stillscamera's dan bij enige andere cinemacamera op deze lijst. Het blijft de camera van ARRI met de grootste sensor, gepositioneerd boven de ALEXA LF en gereserveerd voor het rental-only-programma in plaats van directe verkoop."
         }
       }
     }

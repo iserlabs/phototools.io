@@ -23,6 +23,9 @@ const ALLOWLIST = new Set([
   'Full Frame', 'Medium Format (54x40)', 'Medium Format (44x33)', 'Medium Format (45x30)',
   'APS-C (1.5x)', 'APS-C (Canon)', 'APS-C', 'APS-H', 'Micro Four Thirds', '1" Sensor',
   'Smartphone Flagship (1/1.3")',
+  // Cinema sensor/format proper nouns (kept English across all locales; flagged HARD in
+  // non-Latin-script locales by NON_LATIN_LOCALES since they're short ASCII exact matches)
+  'Super 16', 'Super 35 (16:9)', 'RED V-RAPTOR VV', 'ARRI ALEXA 65',
   // Third-party product names + color notation kept English by convention
   'Google AdSense', 'Epson (360)', 'Hex', 'APS-C (Nikon/Sony)',
   // Form placeholders
