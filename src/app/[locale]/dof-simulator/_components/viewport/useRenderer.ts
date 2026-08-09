@@ -38,13 +38,16 @@ export function useRenderer(
   dividerPos: number,
 ): RendererApi {
   const [status, setStatus] = useState<RendererApi['status']>('loading')
+  // Bumped after a post-restore rebuild so the texture-load effect below
+  // re-runs even though `textureUrl` is unchanged (the GPU texture was
+  // invalidated along with everything else on the lost context).
+  const [restoreGeneration, setRestoreGeneration] = useState(0)
   const handleRef = useRef<GlHandle | null>(null)
   const programRef = useRef<WebGLProgram | null>(null)
   const uniformsRef = useRef<FrameUniforms | null>(null)
   const textureRef = useRef<WebGLTexture | null>(null)
   const getTapsRef = useRef(createTapsCache())
   const drawRef = useRef<() => void>(() => {})
-  const loadTexRef = useRef<() => void>(() => {})
 
   // Primitive fields only — RenderSide objects from the state facade are
   // referentially unstable (fresh object per parent render), so `draw` below
@@ -101,10 +104,10 @@ export function useRenderer(
     attempt()
     return () => { cancelled = true }
   }, [textureUrl])
-  loadTexRef.current = loadTex
 
   // Mount-only: create the GL context, build the program, wire context-loss
-  // recovery, and size the canvas via ResizeObserver.
+  // recovery, size the canvas. Does NOT load the texture — that's owned
+  // solely by the loadTex effect below (one cancellable chain per mount).
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
@@ -113,20 +116,22 @@ export function useRenderer(
     if (!handle) { setStatus('fallback'); return }
     handleRef.current = handle
 
-    const initResources = () => {
-      if (handle.lost) return
+    // Builds GL resources (program + uniforms) only. Returns whether it
+    // succeeded so callers can decide whether a texture (re)load is warranted.
+    const initResources = (): boolean => {
+      if (handle.lost) return false
       try {
         const program = buildProgram(handle.gl, PASSTHROUGH_VERT, BOKEH_BLUR_FRAG)
         programRef.current = program
         uniformsRef.current = getFrameUniforms(handle.gl, program)
+        return true
       } catch (err) {
         // Gated on !handle.lost above, so a throw here is a genuine compile/link
         // bug on a live context — actionable, worth reporting.
         reportError(err, 'buildProgram')
         setStatus('error')
-        return
+        return false
       }
-      loadTexRef.current()
     }
 
     // preventDefault() (inside attachLossHandlers) is required for the browser
@@ -142,7 +147,10 @@ export function useRenderer(
       // createGl built on the (identical, per spec) restored context — rebuild
       // it via the same call, discarding the returned handle wrapper.
       if (!createGl(canvas)) return
-      initResources()
+      // Only reload when the rebuild succeeded (a failed rebuild never loaded
+      // a texture either). Bumping state — not calling loadTex directly —
+      // routes the reload through the single owning effect below.
+      if (initResources()) setRestoreGeneration((g) => g + 1)
     }
     const detachLoss = attachLossHandlers(handle, handleLost, handleRestored)
 
@@ -173,10 +181,13 @@ export function useRenderer(
     }
   }, [canvasRef])
 
+  // The only place `loadTex` is invoked. Reruns on textureUrl change (new
+  // `loadTex` identity) or a restore-triggered `restoreGeneration` bump; the
+  // returned cleanup cancels the in-flight chain first either way.
   useEffect(() => {
     const cleanup = loadTex()
     return cleanup
-  }, [loadTex])
+  }, [loadTex, restoreGeneration])
 
   useEffect(() => { draw() }, [draw])
 
