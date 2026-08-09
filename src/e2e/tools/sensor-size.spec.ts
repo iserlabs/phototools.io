@@ -329,4 +329,57 @@ test.describe('Sensor Size Comparison', () => {
     const desktopDetailId = await expandedDesktopButtons.getAttribute('aria-controls')
     await expect(page.locator(`[id="${desktopDetailId}"]`)).not.toBeVisible()
   })
+
+  test('compare drawer opens from an expanded row and round-trips through ?vs=', async ({ page }) => {
+    await page.goto('/en/sensor-size-comparison')
+    await page.locator('[id="sensor-row-desktop-ff"] button').first().click()
+    await page.locator('[id="sensor-detail-desktop-ff"] select').selectOption('apsc_n')
+    await expect(page.getByTestId('compare-verdict')).toBeVisible()
+    await expect(page).toHaveURL(/vs=ff%2Capsc_n/)
+
+    await page.reload()
+    await expect(page.getByTestId('compare-verdict')).toBeVisible()
+  })
+
+  test('closing the drawer drops ?vs= without changing the selection', async ({ page }) => {
+    await page.goto('/en/sensor-size-comparison?vs=ff,apsc_n')
+    await expect(page.getByTestId('compare-verdict')).toBeVisible()
+    const before = await page.locator('[id^="sensor-row-desktop-"]').count()
+    await page.getByRole('button', { name: /close comparison/i }).click()
+    await expect(page.getByTestId('compare-verdict')).toHaveCount(0)
+    await expect(page).not.toHaveURL(/vs=/)
+    expect(await page.locator('[id^="sensor-row-desktop-"]').count()).toBe(before)
+  })
+
+  test('an invalid ?vs= is ignored and dropped', async ({ page }) => {
+    await page.goto('/en/sensor-size-comparison?vs=ff,not_a_sensor')
+    await expect(page.getByTestId('compare-verdict')).toHaveCount(0)
+    await expect(page).not.toHaveURL(/vs=/)
+  })
+
+  test('compare drawer opens from "Compare these two" when exactly two sensors are selected, and only one verdict mounts', async ({ page }) => {
+    await page.goto('/en/sensor-size-comparison')
+    const panel = sidebar(page)
+
+    // Default visible set is 5 sensors (mf, ff, apsc_n, m43, phone) whose
+    // groups are all already expanded (a group auto-opens the moment one of
+    // its members is visible, and never auto-collapses). Uncheck three,
+    // leaving exactly ff + apsc_n, so the "Compare these two" button (entry
+    // point b) appears.
+    await panel.locator('label').filter({ hasText: 'Medium Format (44x33)' }).click()
+    await panel.locator('label').filter({ hasText: 'Micro Four Thirds' }).click()
+    await panel.locator('label').filter({ hasText: 'Smartphone Flagship' }).click()
+
+    // "Compare these two" renders twice (once for the desktop layout, once
+    // for the mobile layout) — the mobile copy's ancestor is display:none
+    // above the 1024px breakpoint, so scope to the desktop-visible one.
+    const compareBtn = page.locator('[class*="desktopOnly"]').getByRole('button', { name: 'Compare these two' })
+    await expect(compareBtn).toBeVisible()
+    await compareBtn.click()
+
+    // Only one CompareDrawer is ever mounted (gated by isDesktop, not CSS) —
+    // toHaveCount(1) proves that, not just toBeVisible().
+    await expect(page.getByTestId('compare-verdict')).toHaveCount(1)
+    await expect(page).toHaveURL(/vs=ff%2Capsc_n/)
+  })
 })
