@@ -37,7 +37,23 @@ describe('formatAspectRatio', () => {
     expect(formatAspectRatio(10, 10)).toBe('1:1')
   })
   it('returns raw ratio for uncommon inputs', () => {
-    expect(formatAspectRatio(31, 19)).toMatch(/^\d+:\d+$/)
+    // 31:19 reduces to a large fraction (31 > 21), so it now hits the
+    // decimal fallback (see 'formatAspectRatio decimal fallback' below).
+    expect(formatAspectRatio(31, 19)).toMatch(/^\d+(\.\d+)?:\d+$/)
+  })
+})
+
+describe('formatAspectRatio decimal fallback', () => {
+  it('keeps common snaps', () => {
+    expect(formatAspectRatio(36, 24)).toBe('3:2')
+    expect(formatAspectRatio(56, 41.5)).toBe('4:3')   // 645 film, 1.349 within 2% of 4:3
+    expect(formatAspectRatio(120, 95)).toBe('5:4')    // 4x5, 1.263 within 2% of 5:4
+    expect(formatAspectRatio(56, 56)).toBe('1:1')
+  })
+  it('falls back to decimal for large reduced fractions', () => {
+    expect(formatAspectRatio(54.12, 25.58)).toBe('2.12:1') // ALEXA 65 — was "541:256"
+    expect(formatAspectRatio(40.96, 21.6)).toBe('1.90:1')  // RED VV — was "205:108"
+    expect(formatAspectRatio(12.52, 7.41)).toBe('1.69:1')  // Super 16 — was "125:74"
   })
 })
 

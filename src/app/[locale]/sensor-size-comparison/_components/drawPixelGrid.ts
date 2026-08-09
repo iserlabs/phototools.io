@@ -1,10 +1,10 @@
-import type { SensorPreset } from '@/lib/types'
+import type { ResolvedSensor } from './sensorSizeTypes'
 import { pixelPitch } from '@/lib/math/diffraction'
 import { rgba, roundRect } from './sensorSizeHelpers'
 
 export function drawPixelGrid(
   ctx: CanvasRenderingContext2D,
-  s: Required<SensorPreset>,
+  s: ResolvedSensor,
   sensorScale: number,
   mp: number,
   rx: number, ry: number,
@@ -25,14 +25,21 @@ export function drawPixelGrid(
 
   const maxCells = 2000
   if (gridCols * gridRows <= maxCells) {
+    // Hoisted out of the per-cell loop: `rgba()` does a `parseInt` + template
+    // allocation per call, and this loop can run up to `maxCells` (2000)
+    // times per entry — up to ~37 entries in the mobile pixel-density grid
+    // with everything selected, so up to ~148k allocations per animation
+    // frame if left inside.
+    const cellFill = rgba(s.color, 0.12)
+    const cellStroke = rgba(s.color, 0.25)
+    ctx.lineWidth = 0.3
     for (let r = 0; r < gridRows; r++) {
       for (let c = 0; c < gridCols; c++) {
         const cx = gridOffX + c * cellSize
         const cy = gridOffY + r * cellSize
-        ctx.fillStyle = rgba(s.color, 0.12)
+        ctx.fillStyle = cellFill
         ctx.fillRect(cx, cy, cellSize, cellSize)
-        ctx.strokeStyle = rgba(s.color, 0.25)
-        ctx.lineWidth = 0.3
+        ctx.strokeStyle = cellStroke
         ctx.strokeRect(cx, cy, cellSize, cellSize)
       }
     }

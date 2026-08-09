@@ -6,6 +6,24 @@
       "modeSideBySide": "Side om side",
       "modePixelDensity": "Pixeltæthed",
       "pixelDensityDescription": "Viser typiske megapixelantal for hver sensor. Større pixels (større celler) fanger mere lys.",
+      "filmPixelDensityNote": "Film og Super 16 har ikke et defineret pixelantal, så de er skjult i denne tilstand — se dem i Overlay eller Side om side i stedet.",
+      "quickCompare": "Hurtig sammenligning",
+      "presetReplacesNote": "Erstatter det aktuelle valg",
+      "presets": {
+        "phone_vs_ff": "Mobil vs fuldformat",
+        "crop_vs_ff": "Crop vs fuldformat",
+        "film_vs_digital": "Film vs digitalt",
+        "mf_family": "Mellemformat-familien",
+        "cine_vs_stills": "Film vs stillbilleder"
+      },
+      "groups": {
+        "medium-format": "Mellemformat",
+        "ff-aps": "Fuldformat & APS",
+        "compact": "Kompakt & 1\"",
+        "phone": "Smartphone",
+        "film": "Film",
+        "cine": "Filmkamera"
+      },
       "sensors": "Sensorer",
       "customSensors": "Brugerdefinerede sensorer",
       "placeholderName": "Navn",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Cropfaktor",
       "tableAspectCrop": "Aspect crop",
       "canvasAriaLabel": "Sensor-sammenligning i {mode}-tilstand",
+      "detail": {
+        "diagonal": "Diagonal",
+        "area": "Areal",
+        "aspect": "Billedformat",
+        "vsFullFrame": "vs fuldformat",
+        "referenceSensor": "Referencesensor (fuldformat)",
+        "equivalence": "Et {focal}mm f/{ap}-objektiv giver her samme udsnit som ~{eqFocal}mm med f/{eqAp} dybdeskarphed på fuldformat.",
+        "resolutions": "Almindelige opløsninger",
+        "cameras": "Populære kameraer",
+        "character": "Karakter",
+        "context": "Kontekst",
+        "customNoProfile": "Brugerdefineret sensor — kun beregnede data."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Hvad er cropfaktor, og hvorfor betyder den noget?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Hvordan påvirker sensorstørrelsen dybdeskarpheden?",
           "answer": "Større sensorer giver mindre dybdeskarphed ved samme udsnit. For at få samme udsnit med en mindre sensor skal du enten bruge en kortere brændvidde eller gå længere væk — og begge dele øger dybdeskarpheden og reducerer baggrundsuskarpheden."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Hvordan sammenlignes filmformater med moderne digitale sensorer?",
+          "answer": "Standard 35mm-film har præcis samme mål som en digital fuldformatsensor (36×24mm), så objektiver fra filmæraen dækker den uden crop. Mellemformatfilm går meget større — et 645-negativ måler 56×41.5mm, og 6×7 er 70×56mm, begge langt ud over arealet på nogen digital fuldformatsensor — mens halvformatfilm deler et standard 35mm-billede i to, for et areal nogenlunde som en stor APS-C-sensor."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Hvad svarer Super 35 og ALEXA 65 til i stillbilledtermer?",
+          "answer": "Super 35 (24.9×14.0mm, 1.51x crop) lander næsten præcis på APS-C-størrelse, hvilket er grunden til, at S35-filmobjektiver og APS-C-stillbilledobjektiver dækker lignende billedcirkler. ALEXA 65's 54.12×25.58mm-sensor er meget større — tættere på en 44×33mm mellemformat-stillbilledsensor end på fuldformat, hvilket er grunden til, at den kræver sin egen dedikerede storformat-objektivserie."
+        },
+        "why-inch-fractions": {
+          "question": "Hvorfor navngives små sensorer i tommebrøker som 1/2.3\"?",
+          "answer": "Disse brøker beskriver yderdiameteren på 1950'ernes videokamerarør, ikke selve sensoren — et \"1-tommer\"-rør gav et brugbart billedareal på omkring to tredjedele af den diameter. Da halvlederensorer erstattede rørene, beholdt producenterne navngivningskonventionen fra rørenes æra, selvom en moderne \"1-tommer\"-sensors faktiske diagonal er omkring 15.86mm, langt fra en bogstavelig tomme."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "Ved 53.4×40mm er det her den største sensor, de fleste fotografer nogensinde kommer i berøring med. Studie-, produkt- og landskabsfotografer kører den tethered for opløsning og tonaleomfang, ikke for hastighed — autofokus og seriehastighed halter langt bagefter fuldformat. En 150-megapixelfil fra en Phase One IQ4-bagvæg belaster både din lagerplads og din computer.",
+          "context": "\"645\" i denne sensorklasses navn stammer fra 6×4.5cm rullefilmbagvægge, men forveksl den ikke med 645-filmpresettet andetsteds på denne liste. Ved 53.4×40mm er Phase Ones og Hasselblads digitale 645-seriesensorer faktisk mindre end det 56×41.5mm filmbillede, de nedstammer fra, på trods af det fælles navn."
+        },
+        "mf": {
+          "character": "Denne størrelsesklasse gjorde mellemformat praktisk uden for studiet. Fujifilms GFX og Hasselblads X-serie bygger begge omkring en 43.8×32.9mm-sensor, lille nok til at holde i hånden og gå på tur med, med 50 til 100 megapixel og autofokus, der har lukket det meste af hullet til spejlløse kameraer. Egne objektiver forbliver større og dyrere end fuldformats-modstykker, og rolling shutter-udlæsning begrænser hurtig action.",
+          "context": "Fujifilm og Hasselblad konkurrerer direkte her, men de konkurrerer ikke på sensorhardware — GFX 100 II og X2D 100C bruger begge den samme Sony-fremstillede 44×33mm-chip. Det, der adskiller systemerne, er husdesign, objektivgengivelse og menufilosofi, ikke siliciummet indeni."
+        },
+        "mf_leica": {
+          "character": "Leicas S-system placerer en 45×30mm-sensor i et hus formet som et overdimensioneret 35mm-spejlreflekskamera snarere end et studiekamera, hvilket er hele pointen — håndholdt mellemformat til reportage og portrætter på location. Den 64-megapixel S3 ofrer noget opløsningsmargin mod GFX- og Hasselblad-konkurrenter til fordel for et enklere system med en enkelt objektivfatning og færre huse at vælge mellem.",
+          "context": "Leica S2, lanceret i 2009, blev markedsført eksplicit som det første mellemformatkamera bygget til udendørs, håndholdt brug snarere end stativbundet studiearbejde. S3 kom i 2020 som dens direkte efterfølger; Leica udgik S3 i 2023, og ingen S4 er lanceret, hvilket efterlader seriens fremtid usikker."
+        },
+        "ff": {
+          "character": "Referencepunktet for alt andet her. Fuldformat balancerer lysindsamlingsareal, dybdeskarphedskontrol og objektivstørrelse — de fleste moderne objektivserier er designet omkring det. Du betaler i hus- og objektivstørrelse sammenlignet med APS-C, men opnår cirka et trin i margin i svagt lys og lavere dybdeskarphed ved samme udsnit.",
+          "context": "36×24 mm-billedet er en direkte arv fra 35mm-stillbilledfilm, standardiseret af Leica i 1920'erne ud fra filmstrimmel drejet på siden. En digital fuldformatsensor har præcis samme mål som et 35mm-filmbillede — hvilket er grunden til, at objektiver fra filmæraen passer den uden crop."
+        },
+        "apsh": {
+          "character": "En midlertidig størrelse, som Canon byggede for hastighed frem for opløsning — større pixels og hurtigere udlæsning, i et hus rettet mod sport og fotojournalistik snarere end billedkvalitet for dens egen skyld. 1.29x-croppen delte forskellen mellem fuldformats rækkeviddeulempe og APS-C's straf i svagt lys, på bekostning af en sensor, som ingen anden producent nogensinde vedtog.",
+          "context": "APS-H var et rent Canon-format, brugt udelukkende i EOS-1D-serien — 1D, 1D Mark II, Mark II N, Mark III og til sidst 2009-udgaven Mark IV, hvorefter Canon helt opgav størrelsen og lagde 1-serien tilbage til fuldformat. Intet objektiv- eller tilbehørsøkosystem uden for Canons eget rettede sig nogensinde mod den."
+        },
+        "apsc_n": {
+          "character": "Standardstørrelsen for entusiast- og mellemklasse-spejlløse kameraer fra Sony, Nikon og Fujifilm, med en 1.53x crop, der gør et 50mm-objektiv til cirka 75mm ækvivalent. Huse og objektiver bliver markant mindre og billigere end fuldformat, og den ekstra rækkevidde er en reel fordel for fotografer, der arbejder med vildt og sport med længere optik.",
+          "context": "APS-C's navn er lånt fra 1996's forbruger-Advanced Photo System-film, specifikt dens \"Classic\" 3:2-printformat — men den digitale sensor har ikke samme fysiske størrelse som APS-film, kun et fjernt navnefællesskab. Fujifilm har bygget hele sit X-system omkring denne sensorstørrelse i stedet for at behandle den som et instegsniveau."
+        },
+        "apsc_c": {
+          "character": "Canons egen APS-C-standard, på 22.3×14.8mm — mindre end den 23.5×15.6mm-størrelse, de fleste konkurrenter bruger, hvilket er grunden til, at Canons crop lyder 1.62x i stedet for 1.5x. I praksis betyder det lidt mere telerækkevidde per objektiv, til en lille pris i støj og dynamikomfang sammenlignet med den større APS-C-variant.",
+          "context": "Canon har kørt sine egne APS-C-sensormål siden formatets tidligste digitale spejlreflekskameraer og har aldrig konvergeret mod den 1.5x-crop, som næsten alle andre landede på. R7 og R10 fører denne størrelse videre ind i Canons spejlløse RF-fatning i dag."
+        },
+        "m43": {
+          "character": "Et ægte lille, ægte komplet system — 2x crop betyder, at hvert objektiv er fysisk kompakt, og den 17.3×13mm-sensor understøtter stadig hurtig, skarp optik med reel motivadskillelse, bare ikke fuldformats-lav dybdeskarphed. Svagt lys og dynamikomfang halter efter større sensorer, hvilket er den ærlige afvejning for besparelserne i størrelse og vægt.",
+          "context": "Micro Four Thirds er en åben standard, ikke et proprietært format — Olympus og Panasonic annoncerede den i fællesskab i 2008, og enhver producent kan bygge efter samme objektivfatnings- og sensorspecifikation. OM System (tidligere Olympus) og Panasonic er stadig de to aktive kameraproducenter, der bygger videre på den."
+        },
+        "1in": {
+          "character": "Et betydeligt skridt op fra smartphone-sensorer, mens den forbliver lommestørrelse — RX100-serien beviste, at en 13.2×8.8mm-sensor kunne producere reel billedkvalitet i en kompaktkamera, man rent faktisk ville bære med sig. Baggrundsudsløring forbliver begrænset selv ved f/1.8, og svagt lys kræver omhu, men forholdet mellem størrelse og kvalitet er svært at slå til rejser.",
+          "context": "\"1-tommer\"-betegnelsen er en rest fra 1950'ernes videokamerarør, ikke et reelt mål — et rør med 1 tommes yderdiameter gav et brugbart billedareal på omkring to tredjedele af det, cirka 16mm diagonalt. Da CCD- og CMOS-sensorer erstattede rørene, beholdt kameraproducenterne navngivningen fra rørenes æra, selvom nutidens sensorer slet ikke har noget rør indeni."
+        },
+        "phone": {
+          "character": "Moderne flagskibsmobiler lukker hullet til rene sensorkameraer gennem beregning, ikke størrelse — en 9.8×7.3mm-chip kan ikke matche en 1-tommer-sensors rå lysindsamling, så flerbilledstakning, AI-støjreduktion og syntetisk bokeh gør det tunge løft i stedet. Resultatet ser fremragende ud på en mobilskærm og begynder at vise sine grænser i fuld opløsning i svagt lys.",
+          "context": "\"Flagskib\" spænder her over flere reelle sensorer af lignende, men ikke identisk størrelse på tværs af mærker og år snarere end én præcis chip — iPhone 17 Pros hovedkamera måler cirka 1/1.28 tomme, Samsungs flagskibsserie ligger tættere på 1/1.3 tomme, og begge afrundes til dette presets repræsentative 9.8×7.3mm-tal."
+        },
+        "1_1_7in": {
+          "character": "7.6×5.7mm-sensoren definerede slutningen af 2000'ernes entusiastkompaktkamera — kameraer som Canon S120 og Panasonic LX7 parrede den med et lysstærkt objektiv, som få kompaktkameraer kunne matche, målrettet fotografer, der ønskede manuel kontrol i en jakkelomme. Smartphones opslugte det meste af dette marked, men formatets balance mellem størrelse og kontrol holder stadig.",
+          "context": "I sensorareal rangerer dette format et hak under 1-tommer-kompaktkameraer og to hak under Micro Four Thirds, og skaber en niche for lommevenlige kameraer med hurtigere blændere end typiske pointkameraer fra samme æra. Få nuværende kameraer bruger det — det er nu mest en brugtmarkeds- og samlerstørrelse."
+        },
+        "1_2_3in": {
+          "character": "Droner og actionkameraer er bygget omkring denne størrelse, fordi den er lille og let nok til at flyve eller montere uden at tilføje mærkbar vægt — prisen er støjende høj-ISO-video og begrænset dynamikomfang sammenlignet med enhver større sensor på denne liste. DJI og de fleste actionkameraproducenter forankrer deres kerneserier her.",
+          "context": "Angivet som 6.17×4.55mm, er det her den dominerende virkelighedskonvention på tværs af producenters specifikationsark, selvom den ikke går præcist op i et 4:3-forhold — en matematisk \"sand\" 4:3-version på 6.17×4.63mm findes i nogle referencer, men næsten ingen droner eller actionkamerasensorer i produktion angiver den faktisk."
+        },
+        "phone_mid": {
+          "character": "Mellemklassemobiler bærer sensorer, der ligger klart under deres flagskibssøskendes størrelse, og det ses tydeligst i svagt lys og dynamikomfang, så snart du bevæger dig forbi veloplyste dagsbilleder. Producenterne læner sig endnu hårdere op ad beregningsbehandling for at kompensere, hvilket indsnævrer det synlige hul under gode forhold, men ikke kan lukke det helt efter mørkets frembrud.",
+          "context": "Dette er en repræsentativ størrelse, ikke en producents præcise chip — reelle mellemklasse-hovedsensorer, herunder dele som Samsungs ISOCELL GM5, klynger sig omkring dette 5.6×4.2mm-tal, uden at noget specifikt datablad matcher det præcist, da \"mellemklasse\" spænder over mange reelle sensorer på tværs af mærker og år."
+        },
+        "phone_uw": {
+          "character": "Ultravidvinkel-mobilobjektiver bærer den mindste, mest kompromitterede sensor i en typisk mobils kameraarray — nyttig til arkitektur og landskaber, hvor det bredere synsfelt betyder mere end pixelkvalitet, men synligt blødere og mere støjende end hovedkameraet i samme billede.",
+          "context": "Ligesom de andre mobilniveauer her repræsenterer dette 4.0×3.0mm-tal en klasse af lignende store ultravidvinkelmoduler på tværs af mærker snarere end én bestemt chip. Ultravidvinkelkameraer var et midt-2010'er-tilføjelse til mobilkameraarrays og forbliver det svageste led i de fleste flerkamerasystemer."
+        },
+        "film_half": {
+          "character": "At fotografere halvformat betyder at fordoble antallet af billeder per rulle ved at få plads til to billeder i den plads, ét normalt optager — attraktivt af filmomkostningsgrunde, men afvejningen er et mere kornet, blødere resultat ved forstørrelse sammenlignet med fuldformat-35mm, da du arbejder med halvdelen af negativarealet.",
+          "context": "Halvdelen af et standard 35mm-billede — formatets billeder er naturligt stående (18×24), fordi de deler det liggende filmbillede i to. Populariseret af Olympus Pen i 1959 for at fordoble antallet af billeder per rulle, og genoplivet af Pentax 17 i 2024."
+        },
+        "film_645": {
+          "character": "At gå op til 645-film betyder et 56×41.5mm-negativ med markant mere detalje og tonaleomfang end 35mm, mens der stadig er plads til 15 eller 16 billeder på en rulle 120-film. Kameraer som Mamiya 645 håndteres næsten som et overdimensioneret spejlreflekskamera snarere end en ren studierig.",
+          "context": "Skal ikke forveksles med de digitale mellemformatsensorer af \"645\"-slægten andetsteds på denne liste — det her er det reelle 6×4.5cm rullefilmbillede, som navnet stammer fra, fotograferet på 120- eller 220-film i kameraer som Pentax 645NII og Contax 645."
+        },
+        "film_6x6": {
+          "character": "Kvadratisk billedudsnit fjerner en beslutning — ingen rotation af kameraet for stående kontra liggende — hvilket er en del af grunden til, at det passede så godt til twin-lens-kameraer i taljehøjde. Afvejningen viser sig ved udskrivning: de fleste papir- og skærmformater er ikke kvadratiske, så du beskærer den ene eller anden vej før eller siden.",
+          "context": "Det klassiske kvadratformatkamera, populariseret af Hasselblads 500-serie og Rolleiflex' twin-lens-spejlreflekskameraer. Et modificeret Hasselblad 500EL bragte dette format til måneoverfladen på Apollo 11, efter tidligere Hasselblad 500C'er brugt på NASA's Mercury-missioner i 1962 og 1963."
+        },
+        "film_6x7": {
+          "character": "Et tungere, langsommere system end 35mm eller halvformat — Mamiya RB67's bælgfokusering og roterende bagvæg belønner et bevidst, stativvenligt tempo frem for håndholdt spontanitet. Til gengæld får du et negativ mere end fire gange arealet af fuldformat, med tilsvarende finere korn og glattere toneovergange.",
+          "context": "Kaldet \"det ideelle format\" i 1960'erne og 70'erne, fordi dets 5:4-proportioner beskæres pænt til 8×10 og andre standardudskriftsstørrelser med minimalt spild. Mamiya RB67 tager sit navn direkte fra sin signaturfunktion — en roterende bagvæg, deraf \"RB\" — som lader dig skifte retning uden at dreje hele kameraet."
+        },
+        "film_4x5": {
+          "character": "Planfilm ændrer, hvordan du arbejder, lige så meget som hvad du fanger — en eksponering per kassette, en mattglasvisning, der er på hovedet og spejlvendt, og bevægelser (rise, shift, tilt), der lader dig korrigere perspektiv og styre skarphed på måder, ingen digital sensor her kan matche uden at panoramastitche eller forskyde objektiver.",
+          "context": "Formatet, der bar fotojournalistikken gennem midten af det 20. århundrede — Joe Rosenthal fotograferede flaghejsningen på Iwo Jima på et Graflex Speed Graphic ladet med 4×5 planfilm. Storformatfilm findes stadig i dag i kameraer som det sammenklappelige Intrepid 4×5, mest til landskabs- og kunstfotografi."
+        },
+        "cine_s16": {
+          "character": "Et arbejdsformatkompromis — Super 16 pakker mærkbart bedre billedkvalitet end standard 16mm ind i en brøkdel af 35mm-films omkostning og kameravolumen, hvilket er grunden til, at dokumentar-, indie- og broadcastproduktioner byggede på det i årtier. Det har intet fast digitalt pixelantal i dette værktøj, da det er et filmformat, ikke en sensor.",
+          "context": "Opfundet i 1969 af den svenske filmfotograf Rune Ericson, udvider Super 16 standard 16mm's brugbare billede ved at generobre filmstrimlen, der normalt er reserveret til et optisk lydspor — et 12.52×7.41mm billedareal mod almindelig 16mm's smallere billede, cirka 1.69:1 i rå dimensioner. Produktioner rammede historisk ind til en 1.66:1-opforstørrelse til 35mm snarere end formatets bogstavelige forhold."
+        },
+        "cine_s35": {
+          "character": "Professionel filmproduktion kører på denne sensorstørrelse mere end nogen anden — kameraer som ARRI ALEXA 35 og RED Komodo bygger omkring den, fordi den balancerer lav dybdeskarphedskontrol, objektivvalg og håndterbare filstørrelser bedre end både mindre broadcastformater og større storformat-filmsensorer.",
+          "context": "Super 35 kan spores tilbage til 4-perf 35mm-filmens fulde billede — i bund og grund det samme areal, stumfilmsæraens kameraer brugte, før lydspor spiste sig ind i billedet, genoplivet som et rent kameraformat i 1980'erne. 24.9×14.0mm-tallet her er den 16:9-beskæring af det aktive billedareal, som ARRIs egne kameraer angiver, ikke det større open gate-billede."
+        },
+        "cine_vv": {
+          "character": "REDs VV-sensor er bygget til storformatfilm i en størrelse tæt på fuldformatets, hvilket giver lavere dybdeskarphed og bredere dynamikomfang end Super 35 ved samme brændvidde — prisen er tungere, dyrere optik designet til at dække den større billedcirkel.",
+          "context": "\"VV\" står for VistaVision, et navn RED lånte fra Paramounts storbilledproces til 35mm fra 1950'erne, som selv var designet til at konkurrere med den æras widescreen-filmformater. V-RAPTORs 40.96×21.6mm-sensor deler kun navnet og den omtrentlige størrelsesklasse med det årtier gamle filmformat, ikke dets specifikke mål."
+        },
+        "cine_a65": {
+          "character": "ARRI byggede ALEXA 65 til de mest storskala filmproduktioner — en 54.12×25.58mm-sensor, der overgår selv VistaVision-klasse digitale filmkameraer som V-RAPTOR VV. Huse lejes snarere end ejes gennem ARRIs dedikerede program, og formatet kræver storformatoptik, som kun få produktioner uden for blockbuster-budgetter kan retfærdiggøre.",
+          "context": "Med et billedformat på 2.12:1 sidder ALEXA 65's 20.3-megapixelsensor størrelsesmæssigt tættere på mellemformat-stillbilledkameraer end på noget andet filmkamera på denne liste. Den forbliver ARRIs kamera med den største sensor, placeret over ALEXA LF og forbeholdt dens udlejningsprogram frem for direkte salg."
         }
       }
     }

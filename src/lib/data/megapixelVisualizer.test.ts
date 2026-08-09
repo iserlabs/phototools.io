@@ -28,6 +28,15 @@ describe('MP_PRESETS', () => {
     const mps = MP_PRESETS.map(p => p.mp)
     expect(mps).toEqual(expect.arrayContaining([12, 24, 45, 100]))
   })
+  it('models never include phone_mid/phone_uw category labels (not real cameras)', () => {
+    // Regression: phone_mid/phone_uw's COMMON_MP entries name representative
+    // categories ("Typical mid-range main sensor", "High-res ultra-wide
+    // module"), not real product names. They must never leak into this
+    // tool's `models` tooltip, which is captioned as a list of cameras.
+    for (const p of MP_PRESETS) {
+      if (p.models) expect(p.models).not.toMatch(/typical|high-res/i)
+    }
+  })
 })
 
 describe('DEFAULT_VISIBLE_MP_IDS', () => {

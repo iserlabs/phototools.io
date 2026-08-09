@@ -3,19 +3,29 @@
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { ModeToggle } from '@/components/shared/ModeToggle'
-import { SENSORS, POPULAR_MODELS } from '@/lib/data/sensors'
-import type { SensorPreset } from '@/lib/types'
-import type { ControlsPanelProps } from './sensorSizeTypes'
+import { SENSOR_GROUP_ORDER, sensorsInGroup } from '@/lib/data/sensors'
+import type { ControlsPanelProps, ResolvedSensor } from './sensorSizeTypes'
 import { CustomSensorForm } from './CustomSensorForm'
 import { EditSensorRow } from './EditSensorRow'
+import { QuickComparePresets } from './QuickComparePresets'
+import { SensorGroupSection } from './SensorGroupSection'
 import ss from './SensorSize.module.css'
+
+// Pixel-density mode excludes any sensor with no defensible megapixel
+// reference: every `film` preset (no fixed pixel count by design) and
+// `cine_s16` (its only period-correct digital reference failed the Appendix A
+// currency check — see sensors.ts). Keep this predicate in sync with
+// `drawPixelDensity.isPixelDensityEligible`.
+function hasPixelDensityExcludedSensor(visible: Set<string>): boolean {
+  return sensorsInGroup('film').some((s) => visible.has(s.id)) || visible.has('cine_s16')
+}
 
 export function SensorControlsPanel({
   visible, mode, customSensors,
   onToggleSensor, onModeChange, onAddCustom, onRemoveCustom, onRemoveAllCustom, onEditCustom,
+  onHoverSensor, onApplyPreset,
 }: ControlsPanelProps) {
   const t = useTranslations('toolUI.sensor-size-comparison')
-  const sensorsT = useTranslations('common.sensors')
   const [editingId, setEditingId] = useState<string | null>(null)
   return (
     <>
@@ -36,27 +46,30 @@ export function SensorControlsPanel({
         </p>
       )}
 
+      {mode === 'pixel-density' && hasPixelDensityExcludedSensor(visible) && (
+        <p style={{ fontSize: 11, color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
+          {t('filmPixelDensityNote')}
+        </p>
+      )}
+
+      <QuickComparePresets visible={visible} onApplyPreset={onApplyPreset} />
+
       <div className={ss.sectionLabel}>{t('sensors')}</div>
-      <div className={ss.checkboxes}>
-        {(SENSORS as Required<SensorPreset>[]).map((s) => {
-          const models = POPULAR_MODELS[s.id]
-          return (
-            <label key={s.id} className={ss.checkLabel}>
-              <input
-                type="checkbox"
-                checked={visible.has(s.id)}
-                onChange={() => onToggleSensor(s.id)}
-              />
-              <span className={ss.checkDot} style={{ backgroundColor: s.color }} />
-              <span className={ss.checkName}>{sensorsT.has(s.id) ? sensorsT(s.id) : s.name}</span>
-              {models && models.length > 0 && (
-                <span className={ss.modelTooltip} data-models={models.join(' · ')}>?</span>
-              )}
-              <span className={ss.checkOutline} />
-            </label>
-          )
-        })}
-      </div>
+      {SENSOR_GROUP_ORDER.map((group) => {
+        const sensors = sensorsInGroup(group) as ResolvedSensor[]
+        const forceOpen = sensors.some((s) => visible.has(s.id))
+        return (
+          <SensorGroupSection
+            key={group}
+            group={group}
+            sensors={sensors}
+            visible={visible}
+            onToggleSensor={onToggleSensor}
+            onHoverSensor={onHoverSensor}
+            forceOpen={forceOpen}
+          />
+        )
+      })}
 
       <div className={ss.sectionLabel}>{t('customSensors')}</div>
       {customSensors.length > 0 && (

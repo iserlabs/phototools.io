@@ -22,10 +22,10 @@ const FORMAT_CROP: Record<string, number> = Object.fromEntries(
 )
 
 const APSC_NIKON = FORMAT_CROP.apsc_n ?? 1.53
-const APSC_CANON = FORMAT_CROP.apsc_c ?? 1.61
+const APSC_CANON = FORMAT_CROP.apsc_c ?? 1.62
 const M43 = FORMAT_CROP.m43 ?? 2.0
-const APSH = FORMAT_CROP.apsh ?? 1.26
-const ONE_INCH = FORMAT_CROP['1in'] ?? 2.7
+const APSH = FORMAT_CROP.apsh ?? 1.29
+const ONE_INCH = FORMAT_CROP['1in'] ?? 2.73
 const FULL_FRAME = FORMAT_CROP.ff ?? 1.0
 
 // Exact-match table from the curated model lists in sensors.ts.

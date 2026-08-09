@@ -6,6 +6,24 @@
       "modeSideBySide": "Cạnh nhau",
       "modePixelDensity": "Mật độ điểm ảnh",
       "pixelDensityDescription": "Hiển thị số megapixel phổ biến cho mỗi cảm biến. Pixel lớn hơn (ô lớn hơn) thu nhiều ánh sáng hơn.",
+      "filmPixelDensityNote": "Phim và Super 16 không có số điểm ảnh xác định, nên bị ẩn ở chế độ này — hãy xem chúng ở chế độ Chồng lớp hoặc Cạnh nhau.",
+      "quickCompare": "So sánh nhanh",
+      "presetReplacesNote": "Thay thế lựa chọn hiện tại",
+      "presets": {
+        "phone_vs_ff": "Smartphone vs Full Frame",
+        "crop_vs_ff": "Crop vs Full Frame",
+        "film_vs_digital": "Phim vs Kỹ thuật số",
+        "mf_family": "Họ Medium Format",
+        "cine_vs_stills": "Điện ảnh vs Ảnh tĩnh"
+      },
+      "groups": {
+        "medium-format": "Medium Format",
+        "ff-aps": "Full Frame & APS",
+        "compact": "Compact & 1\"",
+        "phone": "Smartphone",
+        "film": "Phim",
+        "cine": "Điện ảnh"
+      },
       "sensors": "Cảm biến",
       "customSensors": "Cảm biến tùy chỉnh",
       "placeholderName": "Tên",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Hệ số crop",
       "tableAspectCrop": "Crop tỷ lệ",
       "canvasAriaLabel": "So sánh kích thước cảm biến ở chế độ {mode}",
+      "detail": {
+        "diagonal": "Đường chéo",
+        "area": "Diện tích",
+        "aspect": "Tỷ lệ",
+        "vsFullFrame": "so với Full Frame",
+        "referenceSensor": "Cảm biến tham chiếu (full frame)",
+        "equivalence": "Ống kính {focal}mm f/{ap} ở đây lấy khung hình tương đương ~{eqFocal}mm với độ sâu trường ảnh f/{eqAp} trên full frame.",
+        "resolutions": "Độ phân giải phổ biến",
+        "cameras": "Máy ảnh phổ biến",
+        "character": "Đặc điểm",
+        "context": "Bối cảnh",
+        "customNoProfile": "Cảm biến tùy chỉnh — chỉ có dữ liệu tính toán."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Hệ số crop là gì và tại sao nó quan trọng?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Kích thước cảm biến ảnh hưởng đến độ sâu trường ảnh như thế nào?",
           "answer": "Cảm biến lớn hơn tạo ra độ sâu trường ảnh nông hơn ở cùng một khung hình. Để có cùng khung hình với cảm biến nhỏ hơn, bạn dùng tiêu cự ngắn hơn (chiều sâu trường ảnh sâu hơn) hoặc lùi xa hơn (chiều sâu trường ảnh sâu hơn), cả hai đều giảm mờ hậu cảnh."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Kích thước khung hình phim so với cảm biến kỹ thuật số hiện đại như thế nào?",
+          "answer": "Phim 35mm tiêu chuẩn có kích thước giống hệt cảm biến kỹ thuật số full frame (36×24mm), nên ống kính thời phim phủ kín nó mà không bị crop. Phim Medium Format lớn hơn nhiều — âm bản 645 có kích thước 56×41.5mm và 6×7 là 70×56mm, cả hai đều vượt xa diện tích của bất kỳ cảm biến full frame kỹ thuật số nào — trong khi phim half-frame chia đôi một khung hình 35mm tiêu chuẩn, cho diện tích tương đương một cảm biến APS-C lớn."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Super 35 và ALEXA 65 tương ứng với điều gì trong nhiếp ảnh tĩnh?",
+          "answer": "Super 35 (24.9×14.0mm, crop 1.51x) gần như trùng khớp với kích thước APS-C, đó là lý do ống kính điện ảnh S35 và ống kính chụp ảnh tĩnh APS-C phủ vòng tròn hình ảnh tương tự nhau. Cảm biến 54.12×25.58mm của ALEXA 65 lớn hơn nhiều — gần với cảm biến chụp ảnh tĩnh Medium Format 44×33mm hơn là full frame, đó là lý do máy cần dàn ống kính large format chuyên biệt riêng."
+        },
+        "why-inch-fractions": {
+          "question": "Vì sao cảm biến nhỏ được đặt tên theo phân số inch như 1/2.3\"?",
+          "answer": "Những phân số này mô tả đường kính ngoài của ống camera video thập niên 1950, không phải chính cảm biến — một ống \"1 inch\" tạo ra diện tích hình ảnh khả dụng chỉ bằng khoảng hai phần ba đường kính đó. Khi cảm biến bán dẫn thay thế ống chân không, các nhà sản xuất vẫn giữ quy ước đặt tên thời ống chân không dù đường chéo thực tế của cảm biến \"1 inch\" hiện đại chỉ khoảng 15.86mm, không hề gần một inch thật."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "Ở kích thước 53.4×40mm, đây là cảm biến lớn nhất mà hầu hết nhiếp ảnh gia chuyên nghiệp từng chạm tới. Người chụp studio, sản phẩm và phong cảnh dùng nó ở chế độ tethered vì độ phân giải và dải tông màu, không phải vì tốc độ — lấy nét tự động và tốc độ chụp liên tiếp thua kém full frame khá xa. Một tệp 150 megapixel từ back Phase One IQ4 sẽ gây áp lực lên cả bộ nhớ lẫn máy tính của bạn.",
+          "context": "Chữ \"645\" trong dòng dõi của lớp cảm biến này bắt nguồn từ back phim cuộn 6×4.5cm, nhưng đừng nhầm với preset Phim 645 ở chỗ khác trong danh sách này. Ở kích thước 53.4×40mm, cảm biến kỹ thuật số dòng 645 của Phase One và Hasselblad thực ra nhỏ hơn khung phim 56×41.5mm mà chúng kế thừa, dù chung tên gọi."
+        },
+        "mf": {
+          "character": "Lớp kích thước này giúp Medium Format trở nên thực dụng bên ngoài studio. Dòng GFX của Fujifilm và series X của Hasselblad đều xây dựng quanh cảm biến 43.8×32.9mm đủ nhỏ để cầm tay và mang theo leo núi, chạy 50 đến 100 megapixel với lấy nét tự động đã thu hẹp phần lớn khoảng cách với mirrorless. Ống kính native vẫn lớn và đắt hơn so với tương đương full frame, và cách đọc rolling shutter giới hạn khả năng chụp hành động nhanh.",
+          "context": "Fujifilm và Hasselblad cạnh tranh trực tiếp ở đây, nhưng không cạnh tranh về phần cứng cảm biến — GFX 100 II và X2D 100C đều dùng chung chip 44×33mm do Sony sản xuất. Điều phân biệt hai hệ thống là thiết kế thân máy, cách ống kính thể hiện hình ảnh và triết lý menu, chứ không phải con chip bên trong."
+        },
+        "mf_leica": {
+          "character": "Hệ thống S của Leica đặt cảm biến 45×30mm trong thân máy có hình dáng như một chiếc SLR 35mm cỡ lớn thay vì máy ảnh view studio, và đó chính là điểm bán hàng — Medium Format cầm tay cho phóng sự và chân dung tại hiện trường. S3 với 64 megapixel đánh đổi một phần dư địa độ phân giải so với đối thủ GFX và Hasselblad để lấy một hệ thống đơn giản hơn với một ngàm ống kính duy nhất và ít thân máy để chọn hơn.",
+          "context": "Leica S2, ra mắt năm 2009, được quảng bá rõ ràng là máy ảnh Medium Format đầu tiên được chế tạo cho việc sử dụng ngoài trời, cầm tay thay vì công việc studio gắn với tripod. S3 xuất hiện năm 2020 như người kế nhiệm trực tiếp; Leica ngừng sản xuất S3 năm 2023, và chưa có S4 nào ra mắt, khiến tương lai của dòng máy này không chắc chắn."
+        },
+        "ff": {
+          "character": "Điểm tham chiếu cho mọi thứ khác ở đây. Full frame cân bằng diện tích thu sáng, khả năng kiểm soát độ sâu trường ảnh và kích thước ống kính — hầu hết các dòng ống kính hiện đại được thiết kế xoay quanh nó. Bạn phải trả giá bằng thân máy và ống kính cồng kềnh hơn so với APS-C, nhưng đổi lại khoảng một stop dư địa ánh sáng yếu và focus nông hơn ở cùng một khung hình.",
+          "context": "Khung hình 36×24mm là sự kế thừa trực tiếp từ phim ảnh tĩnh 35mm, được Leica chuẩn hóa vào thập niên 1920 từ phim điện ảnh xoay ngang. Cảm biến kỹ thuật số full frame có kích thước giống hệt khung phim 35mm — đó là lý do ống kính thời phim gắn vừa lên nó mà không bị crop."
+        },
+        "apsh": {
+          "character": "Một kích thước tình thế mà Canon chế tạo để ưu tiên tốc độ hơn độ phân giải — pixel lớn hơn và tốc độ đọc nhanh hơn, trong một thân máy nhắm đến thể thao và báo chí ảnh hơn là chất lượng hình ảnh vì bản thân nó. Crop 1.29x này chia đôi khoảng cách giữa bất lợi về tầm xa của full frame và hình phạt thiếu sáng của APS-C, với cái giá là một cảm biến không hãng nào khác từng áp dụng.",
+          "context": "APS-H là định dạng chỉ có ở Canon, dùng riêng cho dòng EOS-1D — 1D, 1D Mark II, Mark II N, Mark III, và cuối cùng là Mark IV năm 2009, sau đó Canon từ bỏ hoàn toàn kích thước này và đưa dòng 1-series trở lại full frame. Không có hệ sinh thái ống kính hay phụ kiện nào ngoài chính Canon từng nhắm đến nó."
+        },
+        "apsc_n": {
+          "character": "Kích thước mirrorless mặc định cho người chơi ảnh nghiệp dư nghiêm túc và phân khúc tầm trung của Sony, Nikon và Fujifilm, với crop 1.53x biến ống kính 50mm thành tương đương khoảng 75mm. Thân máy và ống kính nhỏ và rẻ hơn hẳn so với full frame, và tầm xa thêm là lợi thế thực sự cho người chụp động vật hoang dã và thể thao dùng ống kính dài.",
+          "context": "Tên APS-C mượn từ phim Advanced Photo System dành cho người tiêu dùng năm 1996, cụ thể là định dạng in \"Classic\" tỷ lệ 3:2 của nó — nhưng cảm biến kỹ thuật số không có kích thước vật lý giống phim APS, chỉ trùng tên một cách xa xôi. Fujifilm đã xây dựng toàn bộ hệ thống X quanh kích thước cảm biến này thay vì coi nó là phân khúc phổ thông."
+        },
+        "apsc_c": {
+          "character": "Chuẩn APS-C riêng của Canon, kích thước 22.3×14.8mm — nhỏ hơn kích thước 23.5×15.6mm mà hầu hết đối thủ dùng, đó là lý do crop của Canon đọc là 1.62x thay vì 1.5x. Trong thực tế điều này có nghĩa là tầm tele xa hơn một chút cho mỗi ống kính, đổi lại một chút thiệt hại về nhiễu và dynamic range so với biến thể APS-C lớn hơn.",
+          "context": "Canon dùng kích thước cảm biến APS-C riêng của mình từ những chiếc DSLR kỹ thuật số đầu tiên của định dạng này, chưa bao giờ hội tụ về crop 1.5x mà gần như mọi hãng khác đã chọn. R7 và R10 tiếp tục mang kích thước này vào ngàm mirrorless RF của Canon ngày nay."
+        },
+        "m43": {
+          "character": "Một hệ thống thực sự nhỏ, thực sự hoàn chỉnh — crop 2x nghĩa là mọi ống kính đều nhỏ gọn về mặt vật lý, và cảm biến 17.3×13mm vẫn hỗ trợ ống kính nhanh, sắc nét với khả năng tách chủ thể thực sự, chỉ là không nông sâu như độ sâu trường ảnh của full frame. Hiệu năng thiếu sáng và dynamic range thua kém các cảm biến lớn hơn, đó là sự đánh đổi trung thực cho việc tiết kiệm kích thước và trọng lượng.",
+          "context": "Micro Four Thirds là một chuẩn mở, không phải định dạng độc quyền — Olympus và Panasonic cùng công bố nó năm 2008, và bất kỳ hãng nào cũng có thể chế tạo theo cùng thông số ngàm ống kính và cảm biến. OM System (trước đây là Olympus) và Panasonic vẫn là hai nhà sản xuất máy ảnh đang hoạt động phát triển trên chuẩn này."
+        },
+        "1in": {
+          "character": "Một bước tiến đáng kể so với cảm biến smartphone trong khi vẫn bỏ túi được — dòng RX100 chứng minh cảm biến 13.2×8.8mm có thể tạo ra chất lượng hình ảnh thực sự trong một máy compact mà bạn thực sự sẽ mang theo. Xóa phông vẫn còn hạn chế ngay cả ở f/1.8, và thiếu sáng cần cẩn thận, nhưng tỷ lệ kích thước-trên-chất lượng khó ai vượt qua cho du lịch.",
+          "context": "Nhãn \"1 inch\" là di sản từ ống camera video thập niên 1950, không phải một phép đo thực sự — một ống có đường kính ngoài 1 inch tạo ra diện tích hình ảnh khả dụng chỉ khoảng hai phần ba đường kính đó, chừng 16mm đường chéo. Khi cảm biến CCD và CMOS thay thế ống chân không, các hãng máy ảnh vẫn giữ cách đặt tên thời ống chân không dù cảm biến ngày nay hoàn toàn không có ống nào bên trong."
+        },
+        "phone": {
+          "character": "Điện thoại flagship hiện đại thu hẹp khoảng cách với máy ảnh thuần cảm biến qua tính toán, chứ không phải kích thước — chip 9.8×7.3mm không thể sánh với khả năng thu sáng thô của cảm biến 1 inch, nên xếp chồng đa khung hình, khử nhiễu bằng AI và xóa phông tổng hợp mới là thứ gánh vác phần việc nặng nhọc. Kết quả trông tuyệt vời trên màn hình điện thoại và bắt đầu bộc lộ giới hạn ở độ phân giải đầy đủ trong điều kiện thiếu sáng.",
+          "context": "\"Flagship\" ở đây bao gồm nhiều cảm biến thực tế có kích thước tương tự nhưng không giống hệt nhau giữa các hãng và các năm, chứ không phải một con chip chính xác — camera chính của iPhone 17 Pro có kích thước khoảng 1/1.28 inch, dòng flagship của Samsung gần với 1/1.3 inch hơn, và cả hai được làm tròn thành con số đại diện 9.8×7.3mm của preset này."
+        },
+        "1_1_7in": {
+          "character": "Cảm biến 7.6×5.7mm định hình dòng máy compact cho người nghiêm túc cuối thập niên 2000 — những máy như Canon S120 và Panasonic LX7 kết hợp nó với ống kính nhanh mà ít máy compact nào sánh được, nhắm đến người chụp muốn kiểm soát thủ công gọn trong túi áo khoác. Smartphone đã hấp thụ phần lớn thị trường này, nhưng sự cân bằng giữa kích thước và khả năng kiểm soát của định dạng này vẫn còn giá trị.",
+          "context": "Về diện tích cảm biến, định dạng này xếp dưới một bậc so với máy compact 1 inch và dưới hai bậc so với Micro Four Thirds, tạo ra một khoảng thị trường ngách cho máy ảnh bỏ túi với khẩu độ nhanh hơn các máy point-and-shoot thông thường cùng thời. Rất ít máy ảnh hiện tại còn dùng nó — nay nó chủ yếu là kích thước của thị trường máy cũ và giới sưu tầm."
+        },
+        "1_2_3in": {
+          "character": "Drone và camera hành động được chế tạo quanh kích thước này vì đủ nhỏ và nhẹ để bay hoặc gắn lên mà không thêm trọng lượng đáng kể — cái giá phải trả là cảnh quay nhiễu ở ISO cao và dynamic range hạn chế so với bất kỳ cảm biến lớn hơn nào trong danh sách này. DJI và hầu hết các hãng camera hành động neo dòng sản phẩm cốt lõi của họ ở đây.",
+          "context": "Được ghi là 6.17×4.55mm, đây là quy ước thống trị trong thực tế trên các bảng thông số của nhà sản xuất, dù nó không rút gọn đúng thành tỷ lệ 4:3 — một phiên bản 4:3 \"chuẩn\" về mặt toán học ở mức 6.17×4.63mm tồn tại trong một số tài liệu tham khảo nhưng gần như không cảm biến drone hay camera hành động thương mại nào thực sự ghi con số đó."
+        },
+        "phone_mid": {
+          "character": "Điện thoại tầm trung mang cảm biến nhỏ hơn hẳn so với người anh em flagship, và điều này thể hiện rõ nhất ở khả năng thiếu sáng và dynamic range một khi bạn vượt qua những bức ảnh ban ngày đủ sáng. Các hãng càng dựa nhiều hơn vào xử lý tính toán để bù đắp, điều này thu hẹp khoảng cách nhìn thấy được trong điều kiện tốt nhưng không thể lấp đầy hoàn toàn khi trời tối.",
+          "context": "Đây là kích thước đại diện, không phải con chip chính xác của một hãng nào — các cảm biến chính tầm trung thực tế, bao gồm những linh kiện như Samsung ISOCELL GM5, tập trung quanh con số 5.6×4.2mm này mà không có bảng thông số nào khớp chính xác, vì \"tầm trung\" bao trùm nhiều cảm biến thực tế khác nhau giữa các hãng và các năm."
+        },
+        "phone_uw": {
+          "character": "Ống kính góc siêu rộng trên điện thoại mang cảm biến nhỏ nhất, bị đánh đổi nhiều nhất trong dàn camera của một chiếc điện thoại thông thường — hữu ích cho kiến trúc và phong cảnh nơi góc nhìn rộng hơn quan trọng hơn chất lượng từng pixel, nhưng rõ ràng mềm hơn và nhiễu hơn camera chính trong cùng một bức ảnh.",
+          "context": "Giống các phân khúc điện thoại khác ở đây, con số 4.0×3.0mm này đại diện cho một nhóm module góc siêu rộng có kích thước tương tự nhau giữa các hãng, chứ không phải một con chip cụ thể. Camera góc siêu rộng là bổ sung của giữa thập niên 2010 vào dàn camera điện thoại và vẫn là mắt xích yếu nhất trong hầu hết các hệ thống đa camera."
+        },
+        "film_half": {
+          "character": "Chụp half-frame nghĩa là nhân đôi số kiểu chụp mỗi cuộn phim bằng cách nhét hai khung hình vào không gian mà bình thường một khung chiếm — hấp dẫn vì lý do chi phí phim, nhưng đánh đổi là kết quả nhiều hạt hơn, mềm hơn khi phóng lớn so với 35mm full frame, vì bạn đang làm việc với chỉ một nửa diện tích âm bản.",
+          "context": "Một nửa khung hình 35mm tiêu chuẩn — khung hình của định dạng này vốn dĩ dọc (18×24) vì chúng chia đôi khung phim ngang. Được Olympus Pen phổ biến năm 1959 để nhân đôi số kiểu chụp mỗi cuộn, và được Pentax 17 hồi sinh năm 2024."
+        },
+        "film_645": {
+          "character": "Nâng cấp lên Phim 645 nghĩa là một âm bản 56×41.5mm với chi tiết và dải tông màu rõ rệt hơn 35mm, trong khi vẫn nhét được 15 hoặc 16 khung hình trên một cuộn phim 120. Các thân máy như Mamiya 645 cầm gần như một chiếc SLR cỡ lớn thay vì một bộ máy chỉ dành cho studio.",
+          "context": "Đừng nhầm với cảm biến Medium Format kỹ thuật số dòng dõi \"645\" ở chỗ khác trong danh sách này — đây là khung phim cuộn 6×4.5cm thực sự mà cái tên bắt nguồn, chụp trên phim 120 hoặc 220 trong các thân máy như Pentax 645NII và Contax 645."
+        },
+        "film_6x6": {
+          "character": "Khung hình vuông loại bỏ một quyết định — không cần xoay máy ảnh giữa chân dung và phong cảnh — đó là một phần lý do nó phù hợp với máy ảnh twin-lens waist-level đến vậy. Sự đánh đổi lộ ra khi in ảnh: hầu hết định dạng giấy và màn hình không vuông, nên cuối cùng bạn vẫn phải crop theo cách này hay cách khác.",
+          "context": "Chiếc máy ảnh định dạng vuông kinh điển, được phổ biến bởi series 500 của Hasselblad và các máy twin-lens reflex của Rolleiflex. Một chiếc Hasselblad 500EL đã được sửa đổi mang định dạng này lên bề mặt Mặt Trăng trong sứ mệnh Apollo 11, tiếp nối những chiếc Hasselblad 500C được dùng trước đó trong các sứ mệnh Mercury của NASA năm 1962 và 1963."
+        },
+        "film_6x7": {
+          "character": "Một hệ thống nặng hơn, chậm hơn so với 35mm hay half-frame — cơ chế lấy nét bellows và back xoay của Mamiya RB67 khuyến khích một nhịp độ cẩn trọng, thân thiện với tripod hơn là sự ngẫu hứng cầm tay. Đổi lại bạn có một âm bản với diện tích hơn gấp bốn lần full frame, cùng hạt mịn hơn và chuyển tông màu mượt hơn tương ứng.",
+          "context": "Được đặt biệt danh \"định dạng lý tưởng\" trong thập niên 1960 và 70 vì tỷ lệ 5:4 của nó crop gọn gàng thành 8×10 và các cỡ in tiêu chuẩn khác với ít lãng phí nhất. Mamiya RB67 lấy tên trực tiếp từ tính năng đặc trưng của nó — back xoay, do đó có \"RB\" — cho phép bạn đổi hướng chụp mà không cần xoay cả máy ảnh."
+        },
+        "film_4x5": {
+          "character": "Sheet film thay đổi cách bạn làm việc cũng nhiều như những gì bạn ghi lại — một lần phơi sáng mỗi holder, một khung ngắm ground-glass bị lộn ngược và đảo chiều, cùng các chuyển động (rise, shift, tilt) cho phép bạn sửa phối cảnh và kiểm soát focus theo những cách mà không cảm biến kỹ thuật số nào ở đây sánh được nếu không ghép ảnh hay dùng ống kính shift.",
+          "context": "Định dạng đã gánh vác báo chí ảnh suốt giữa thế kỷ 20 — Joe Rosenthal đã chụp cảnh cắm cờ ở Iwo Jima bằng một chiếc Graflex Speed Graphic nạp sheet film 4×5. Phim large format vẫn tồn tại đến ngày nay trong các thân máy như Intrepid 4×5 dạng gấp, chủ yếu dùng cho phong cảnh và nhiếp ảnh nghệ thuật."
+        },
+        "cine_s16": {
+          "character": "Một sự thỏa hiệp định dạng làm việc — Super 16 mang lại chất lượng hình ảnh tốt hơn hẳn 16mm tiêu chuẩn chỉ với một phần nhỏ chi phí và cồng kềnh của máy quay phim 35mm, đó là lý do các sản phẩm tài liệu, độc lập và truyền hình dựa vào nó suốt nhiều thập kỷ. Nó không có số điểm ảnh kỹ thuật số cố định trong công cụ này vì đây là một khổ phim, không phải cảm biến.",
+          "context": "Được phát minh năm 1969 bởi nhà quay phim người Thụy Điển Rune Ericson, Super 16 mở rộng khung hình khả dụng của 16mm tiêu chuẩn bằng cách lấy lại dải phim thường dành cho rãnh âm thanh quang học — diện tích hình ảnh 12.52×7.41mm so với khung 16mm thường hẹp hơn, khoảng 1.69:1 theo kích thước thô. Các sản xuất trước đây thường lấy khung cho việc phóng lên 35mm ở tỷ lệ 1.66:1 thay vì tỷ lệ đúng nghĩa của định dạng."
+        },
+        "cine_s35": {
+          "character": "Sản xuất điện ảnh chuyên nghiệp vận hành trên kích thước cảm biến này nhiều hơn bất kỳ kích thước nào khác — các máy như ARRI ALEXA 35 và RED Komodo được xây dựng quanh nó vì nó cân bằng khả năng kiểm soát focus nông, lựa chọn ống kính và kích thước tệp dễ quản lý tốt hơn cả các định dạng truyền hình nhỏ hơn lẫn các cảm biến điện ảnh large format lớn hơn.",
+          "context": "Super 35 bắt nguồn từ khung hình đầy đủ của phim điện ảnh 35mm 4-perf — về cơ bản là diện tích mà các máy quay thời phim câm dùng trước khi rãnh âm thanh chiếm mất một phần khung hình, được hồi sinh như một định dạng chỉ dành cho máy quay vào thập niên 1980. Con số 24.9×14.0mm ở đây là phần crop diện tích hình ảnh hoạt động 16:9 mà chính các máy ARRI trích dẫn, không phải khung open-gate lớn hơn."
+        },
+        "cine_vv": {
+          "character": "Cảm biến VV của RED được chế tạo cho điện ảnh large format với kích thước gần với full frame, mang lại độ sâu trường ảnh nông hơn và dynamic range rộng hơn Super 35 ở cùng tiêu cự — cái giá phải trả là ống kính nặng hơn, đắt hơn được thiết kế để phủ vòng tròn hình ảnh lớn hơn.",
+          "context": "\"VV\" là viết tắt của VistaVision, một cái tên RED mượn từ quy trình phim 35mm khung lớn của Paramount thập niên 1950, vốn được thiết kế để cạnh tranh với các định dạng điện ảnh màn ảnh rộng cùng thời. Cảm biến 40.96×21.6mm của V-RAPTOR chỉ chia sẻ cái tên và tầm cỡ kích thước với định dạng phim hàng chục năm tuổi đó, chứ không phải kích thước cụ thể của nó."
+        },
+        "cine_a65": {
+          "character": "ARRI chế tạo ALEXA 65 cho các sản xuất điện ảnh quy mô lớn nhất — một cảm biến 54.12×25.58mm vượt trội hơn cả những máy quay điện ảnh kỹ thuật số cỡ VistaVision như V-RAPTOR VV. Thân máy được cho thuê thay vì sở hữu qua chương trình chuyên biệt của ARRI, và định dạng này đòi hỏi ống kính large format mà chỉ ít sản xuất ngoài ngân sách bom tấn mới có thể biện minh được.",
+          "context": "Với tỷ lệ khung hình 2.12:1, cảm biến 20.3 megapixel của ALEXA 65 có kích thước gần với máy ảnh chụp tĩnh Medium Format hơn là bất kỳ máy quay điện ảnh nào khác trong danh sách này. Nó vẫn là chiếc máy có cảm biến lớn nhất của ARRI, được định vị trên cả ALEXA LF và chỉ dành riêng cho chương trình cho thuê thay vì bán đứt."
         }
       }
     }

@@ -130,7 +130,7 @@
       "heading": "Questions fréquentes"
     },
     "sensors": {
-      "mf_645": "Moyen format (54x40)",
+      "mf_645": "Moyen format (53.4x40)",
       "mf": "Moyen format (44x33)",
       "mf_leica": "Moyen format (45x30)",
       "ff": "Plein format",
@@ -139,7 +139,20 @@
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",
       "1in": "Capteur 1\"",
-      "phone": "Smartphone Flagship (1/1.3\")"
+      "phone": "Smartphone Flagship (1/1.3\")",
+      "1_1_7in": "Compact 1/1.7\"",
+      "1_2_3in": "Drones et caméras d'action (1/2.3\")",
+      "phone_mid": "Smartphone milieu de gamme (1/2.55\")",
+      "phone_uw": "Smartphone ultra grand-angle (1/3.5\")",
+      "film_half": "Argentique demi-format",
+      "film_645": "Argentique 645",
+      "film_6x6": "Argentique 6×6",
+      "film_6x7": "Argentique 6×7",
+      "film_4x5": "Grand format 4×5",
+      "cine_s16": "Super 16",
+      "cine_s35": "Super 35 (16:9)",
+      "cine_vv": "RED V-RAPTOR VV",
+      "cine_a65": "ARRI ALEXA 65"
     },
     "legalTranslationDisclaimer": "Ceci est une traduction de courtoisie. La version anglaise fait foi sur le plan juridique. Voir /en/privacy.",
     "error": {

@@ -6,6 +6,24 @@
       "modeSideBySide": "Côte à côte",
       "modePixelDensity": "Densité de pixels",
       "pixelDensityDescription": "Affichage des résolutions courantes pour chaque capteur. Les pixels plus grands (cellules plus grandes) captent plus de lumière.",
+      "filmPixelDensityNote": "Le film et le Super 16 n'ont pas de nombre de pixels défini ; ils sont donc masqués dans ce mode — utilisez le mode Superposition ou Côte à côte pour les voir.",
+      "quickCompare": "Comparaison rapide",
+      "presetReplacesNote": "Remplace la sélection actuelle",
+      "presets": {
+        "phone_vs_ff": "Smartphone vs plein format",
+        "crop_vs_ff": "Capteur recadré vs plein format",
+        "film_vs_digital": "Argentique vs numérique",
+        "mf_family": "Famille moyen format",
+        "cine_vs_stills": "Ciné vs photo"
+      },
+      "groups": {
+        "medium-format": "Moyen format",
+        "ff-aps": "Plein format et APS",
+        "compact": "Compact et 1\"",
+        "phone": "Smartphone",
+        "film": "Argentique",
+        "cine": "Cinéma"
+      },
       "sensors": "Capteurs",
       "customSensors": "Capteurs personnalisés",
       "placeholderName": "Nom",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Facteur de recadrage",
       "tableAspectCrop": "Recadrage d'aspect",
       "canvasAriaLabel": "Comparaison de tailles de capteur en mode {mode}",
+      "detail": {
+        "diagonal": "Diagonale",
+        "area": "Surface",
+        "aspect": "Aspect",
+        "vsFullFrame": "vs plein format",
+        "referenceSensor": "Capteur de référence (plein format)",
+        "equivalence": "Un objectif de {focal}mm à f/{ap} ici cadre comme un ~{eqFocal}mm avec une profondeur de champ à f/{eqAp} en plein format.",
+        "resolutions": "Résolutions courantes",
+        "cameras": "Appareils populaires",
+        "character": "Caractère",
+        "context": "Contexte",
+        "customNoProfile": "Capteur personnalisé — données calculées uniquement."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Qu'est-ce que le facteur de recadrage et pourquoi compte-t-il ?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Comment la taille du capteur joue-t-elle sur la profondeur de champ ?",
           "answer": "Les grands capteurs donnent une profondeur de champ plus faible à cadrage équivalent. Pour obtenir le même cadrage avec un capteur plus petit, on prend une focale plus courte ou on recule — les deux augmentent la profondeur de champ et réduisent le flou d'arrière-plan."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Comment les formats de pellicule se comparent-ils aux capteurs numériques modernes ?",
+          "answer": "La pellicule 35mm standard a exactement les mêmes dimensions qu'un capteur numérique plein format (36×24mm), donc les objectifs de l'ère argentique le couvrent sans recadrage. Le moyen format argentique va bien plus loin — un négatif 645 mesure 56×41.5mm et le 6×7 fait 70×56mm, tous deux largement au-delà de la surface de n'importe quel capteur plein format numérique — tandis que le demi-format divise une image 35mm standard en deux, pour une surface proche de celle d'un grand capteur APS-C."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "À quoi correspondent le Super 35 et l'ALEXA 65 en termes de photo fixe ?",
+          "answer": "Le Super 35 (24.9×14.0mm, facteur 1.51x) tombe presque exactement sur la taille de l'APS-C, ce qui explique pourquoi les objectifs ciné S35 et les objectifs photo APS-C couvrent des cercles d'image similaires. Le capteur de 54.12×25.58mm de l'ALEXA 65 est bien plus grand — plus proche d'un capteur moyen format photo de 44×33mm que du plein format, ce qui explique pourquoi il nécessite sa propre gamme d'objectifs grand format dédiés."
+        },
+        "why-inch-fractions": {
+          "question": "Pourquoi les petits capteurs sont-ils nommés avec des fractions de pouce comme 1/2.3\" ?",
+          "answer": "Ces fractions décrivent le diamètre extérieur des tubes de caméra vidéo des années 1950, pas le capteur lui-même — un tube « 1 pouce » produisait une zone d'image utile d'environ deux tiers de ce diamètre. Quand les capteurs à semi-conducteurs ont remplacé les tubes, les fabricants ont conservé cette convention de nommage héritée des tubes, même si la diagonale réelle d'un capteur « 1 pouce » moderne est d'environ 15.86mm, loin d'être un pouce au sens propre."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "À 53.4×40mm, c'est le plus grand capteur que la plupart des photographes professionnels toucheront jamais. Les photographes de studio, de produit et de paysage l'utilisent en tethering pour la résolution et la richesse tonale, pas pour la vitesse — l'autofocus et la cadence de rafale accusent un net retard sur le plein format. Un fichier de 150 mégapixels issu d'un dos Phase One IQ4 mettra à rude épreuve votre stockage autant que votre ordinateur.",
+          "context": "Le « 645 » de cette famille de capteurs vient des dos à film 6×4.5cm — à ne pas confondre avec le préréglage argentique 645 présent ailleurs dans cette liste. À 53.4×40mm, les capteurs numériques de la série 645 de Phase One et Hasselblad sont en réalité plus petits que le format argentique 56×41.5mm dont ils descendent, malgré le nom partagé."
+        },
+        "mf": {
+          "character": "Cette classe de taille a rendu le moyen format praticable hors studio. Le GFX de Fujifilm et la série X de Hasselblad s'articulent tous deux autour d'un capteur de 43.8×32.9mm assez compact pour être utilisé à main levée et en randonnée, avec 50 à 100 mégapixels et un autofocus qui a comblé l'essentiel de son retard sur les hybrides plein format. Les objectifs natifs restent plus volumineux et plus chers que leurs équivalents plein format, et la lecture en obturation déroulante (rolling shutter) limite l'action rapide.",
+          "context": "Fujifilm et Hasselblad se livrent ici une concurrence directe, mais pas sur le matériel du capteur — le GFX 100 II et le X2D 100C utilisent la même puce de 44×33mm fabriquée par Sony. Ce qui distingue les deux systèmes, c'est la conception du boîtier, le rendu des objectifs et la philosophie des menus, pas le silicium sous-jacent."
+        },
+        "mf_leica": {
+          "character": "Le système S de Leica loge un capteur de 45×30mm dans un boîtier en forme de reflex 35mm surdimensionné plutôt qu'une chambre de studio, et c'est bien tout l'argument de vente — du moyen format à main levée pour le reportage et le portrait en extérieur. Le S3, avec ses 64 mégapixels, sacrifie un peu de marge de résolution face aux rivaux GFX et Hasselblad pour un système plus simple, à monture unique, avec moins de boîtiers parmi lesquels choisir.",
+          "context": "Le Leica S2, lancé en 2009, a été présenté explicitement comme le premier appareil moyen format conçu pour un usage extérieur à main levée plutôt que pour le travail en studio sur trépied. Le S3 est arrivé en 2020 comme son successeur direct ; Leica a arrêté le S3 en 2023, et aucun S4 n'a été commercialisé, ce qui laisse l'avenir de la gamme incertain."
+        },
+        "ff": {
+          "character": "Le point de référence pour tout le reste de cette liste. Le plein format équilibre surface de captation de lumière, contrôle de la profondeur de champ et encombrement des objectifs — la plupart des gammes d'objectifs modernes sont conçues autour de lui. Vous payez en volume de boîtier et d'objectifs par rapport à l'APS-C, mais gagnez environ un diaphragme de marge en basse lumière et une mise au point plus superficielle à cadrage égal.",
+          "context": "Le format 36×24 mm est un héritage direct du film argentique 35mm, standardisé par Leica dans les années 1920 à partir de pellicule cinéma tournée à l'horizontale. Un capteur numérique plein format a exactement les mêmes dimensions qu'une image argentique 35mm — c'est pourquoi les objectifs de l'ère argentique s'y adaptent sans recadrage."
+        },
+        "apsh": {
+          "character": "Un format de transition conçu par Canon pour privilégier la vitesse sur la résolution — des pixels plus grands et une lecture plus rapide, dans un boîtier pensé pour le sport et le photojournalisme plutôt que pour la qualité d'image en soi. Le facteur 1.29x faisait le compromis entre le manque d'allonge du plein format et la pénalité en basse lumière de l'APS-C, au prix d'un capteur qu'aucun autre fabricant n'a jamais adopté.",
+          "context": "L'APS-H était un format exclusif à Canon, utilisé uniquement dans la gamme EOS-1D — le 1D, le 1D Mark II, le Mark II N, le Mark III, et enfin le Mark IV en 2009, après quoi Canon a totalement abandonné ce format et ramené la série 1 au plein format. Aucun écosystème d'objectifs ou d'accessoires en dehors de celui de Canon ne l'a jamais ciblé."
+        },
+        "apsc_n": {
+          "character": "Le format hybride grand public et milieu de gamme par défaut chez Sony, Nikon et Fujifilm, avec un facteur de recadrage de 1.53x qui transforme un 50mm en un équivalent d'environ 75mm. Boîtiers et objectifs sont nettement plus compacts et moins chers qu'en plein format, et l'allonge supplémentaire est un vrai atout pour les photographes animaliers et sportifs qui travaillent avec de longues focales.",
+          "context": "Le nom APS-C vient du film argentique grand public Advanced Photo System de 1996, plus précisément de son format d'impression « Classic » en 3:2 — mais le capteur numérique n'a pas la même taille physique que le film APS, ce n'est qu'un lointain homonyme. Fujifilm a construit tout son système X autour de cette taille de capteur, plutôt que de la traiter comme un simple niveau d'entrée de gamme."
+        },
+        "apsc_c": {
+          "character": "Le standard APS-C propre à Canon, à 22.3×14.8mm — plus petit que le format de 23.5×15.6mm utilisé par la plupart des concurrents, ce qui explique pourquoi le facteur de recadrage de Canon est de 1.62x au lieu de 1.5x. En pratique, cela donne un peu plus d'allonge en téléobjectif pour chaque focale, au prix d'un léger surcroît de bruit et d'une plage dynamique un peu réduite par rapport à la variante APS-C plus grande.",
+          "context": "Canon utilise ses propres dimensions de capteur APS-C depuis les tout premiers reflex numériques du format, sans jamais converger vers le facteur 1.5x adopté par presque tous les autres. Le R7 et le R10 perpétuent aujourd'hui cette taille dans la monture hybride RF de Canon."
+        },
+        "m43": {
+          "character": "Un système vraiment compact et vraiment complet — le facteur 2x signifie que chaque objectif est physiquement réduit, et le capteur de 17.3×13mm permet quand même des optiques lumineuses et piquées offrant une vraie séparation du sujet, juste pas une profondeur de champ aussi faible qu'en plein format. La basse lumière et la plage dynamique restent en retrait par rapport aux capteurs plus grands, ce qui est le compromis honnête à payer pour le gain de taille et de poids.",
+          "context": "Micro Four Thirds est un standard ouvert, pas un format propriétaire — Olympus et Panasonic l'ont annoncé conjointement en 2008, et n'importe quel fabricant peut construire selon la même spécification de monture et de capteur. OM System (anciennement Olympus) et Panasonic restent les deux fabricants d'appareils actifs à s'appuyer dessus."
+        },
+        "1in": {
+          "character": "Une réelle montée en gamme par rapport aux capteurs de smartphone tout en restant transportable en poche — la gamme RX100 a prouvé qu'un capteur de 13.2×8.8mm pouvait produire une vraie qualité d'image dans un compact qu'on emporte réellement. Le flou d'arrière-plan reste limité même à f/1.8, et la basse lumière demande de la précaution, mais le rapport taille/qualité est difficile à battre en voyage.",
+          "context": "L'appellation « 1 pouce » est un héritage des tubes de caméra vidéo des années 1950, pas une mesure réelle — un tube d'un diamètre extérieur de 1 pouce produisait une zone d'image utile d'environ deux tiers de ce diamètre, soit environ 16mm de diagonale. Quand les capteurs CCD puis CMOS ont remplacé les tubes, les fabricants ont conservé cette appellation héritée des tubes, même si les capteurs actuels ne contiennent plus aucun tube."
+        },
+        "phone": {
+          "character": "Les smartphones haut de gamme actuels réduisent l'écart avec les appareils photo dédiés grâce au calcul, pas à la taille — une puce de 9.8×7.3mm ne peut pas rivaliser avec la captation de lumière brute d'un capteur 1 pouce, donc l'empilement multi-images, le débruitage par IA et le bokeh synthétique font le gros du travail à sa place. Le résultat est excellent sur l'écran d'un téléphone et commence à montrer ses limites en pleine résolution et basse lumière.",
+          "context": "« Haut de gamme » couvre ici plusieurs capteurs réels de taille proche mais non identique selon les marques et les années, plutôt qu'une puce précise unique — le capteur principal de l'iPhone 17 Pro mesure environ 1/1.28 pouce, la gamme haut de gamme de Samsung se situe plutôt autour de 1/1.3 pouce, et les deux se rejoignent dans le chiffre représentatif de 9.8×7.3mm utilisé pour ce préréglage."
+        },
+        "1_1_7in": {
+          "character": "Le capteur de 7.6×5.7mm a défini le compact expert de la fin des années 2000 — des appareils comme le Canon S120 et le Panasonic LX7 l'associaient à un objectif lumineux que peu de compacts pouvaient égaler, en visant les photographes qui voulaient un contrôle manuel dans la poche d'une veste. Les smartphones ont absorbé l'essentiel de ce marché, mais l'équilibre du format entre taille et contrôle tient toujours la route.",
+          "context": "En surface de capteur, ce format se situe un cran en dessous des compacts 1 pouce et deux crans en dessous du Micro Four Thirds, occupant une niche pour des appareils compacts avec des ouvertures plus lumineuses que les compacts classiques de la même époque. Peu d'appareils actuels l'utilisent encore — c'est aujourd'hui surtout un format de marché de l'occasion et de collection."
+        },
+        "1_2_3in": {
+          "character": "Les drones et les caméras d'action sont conçus autour de cette taille parce qu'elle est assez petite et légère pour voler ou se fixer sans ajouter de poids significatif — le prix à payer est un bruit visible à ISO élevé et une plage dynamique limitée par rapport à n'importe quel capteur plus grand de cette liste. DJI et la plupart des fabricants de caméras d'action ancrent leurs gammes principales sur ce format.",
+          "context": "Indiqué à 6.17×4.55mm, c'est la convention dominante dans les fiches techniques des fabricants, même si cela ne donne pas exactement un rapport 4:3 — une version mathématiquement « exacte » en 4:3 à 6.17×4.63mm existe dans certaines références, mais presque aucun capteur de drone ou de caméra d'action réellement commercialisé ne l'annonce."
+        },
+        "phone_mid": {
+          "character": "Les smartphones milieu de gamme embarquent des capteurs nettement plus petits que leurs cousins haut de gamme, et cela se voit surtout en basse lumière et sur la plage dynamique dès qu'on dépasse la simple photo de jour bien éclairée. Les fabricants s'appuient encore plus lourdement sur le traitement computationnel pour compenser, ce qui réduit l'écart visible en bonnes conditions mais ne le referme jamais complètement une fois la nuit tombée.",
+          "context": "C'est une taille représentative, pas la puce exacte d'un fabricant en particulier — les vrais capteurs principaux milieu de gamme, y compris des puces comme l'ISOCELL GM5 de Samsung, se regroupent autour de ce chiffre de 5.6×4.2mm sans qu'aucune fiche technique unique ne le corresponde précisément, car « milieu de gamme » recouvre de nombreux capteurs réels selon les marques et les années."
+        },
+        "phone_uw": {
+          "character": "Les objectifs ultra grand-angle des smartphones embarquent le capteur le plus petit et le plus compromis du module photo typique d'un téléphone — utile pour l'architecture et le paysage, où le champ de vision plus large compte plus que la qualité par pixel, mais visiblement plus mou et plus bruité que le capteur principal sur la même prise de vue.",
+          "context": "Comme les autres catégories de smartphone présentées ici, ce chiffre de 4.0×3.0mm représente une classe de modules ultra grand-angle de taille similaire selon les marques, plutôt qu'une puce précise. Les caméras ultra grand-angle sont une addition du milieu des années 2010 aux modules photo des téléphones, et restent le maillon le plus faible de la plupart des systèmes multi-caméras."
+        },
+        "film_half": {
+          "character": "Shooter en demi-format, c'est doubler le nombre de vues par pellicule en faisant tenir deux images dans l'espace qu'une seule occupe normalement — séduisant pour des raisons de coût de la pellicule, mais le compromis est un résultat plus granuleux et plus mou à l'agrandissement comparé au 35mm plein format, puisqu'on travaille avec la moitié de la surface du négatif.",
+          "context": "La moitié d'une image 35mm standard — les vues de ce format sont nativement verticales (18×24) car elles divisent en deux l'image horizontale de la pellicule. Popularisé par l'Olympus Pen en 1959 pour doubler le nombre de vues par pellicule, et relancé par le Pentax 17 en 2024."
+        },
+        "film_645": {
+          "character": "Passer au format argentique 645, c'est un négatif de 56×41.5mm avec nettement plus de détail et de richesse tonale que le 35mm, tout en gardant 15 ou 16 vues sur un rouleau de film 120. Des boîtiers comme le Mamiya 645 se manient presque comme un reflex surdimensionné plutôt que comme un appareil réservé au studio.",
+          "context": "À ne pas confondre avec les capteurs numériques moyen format de la lignée « 645 » présents ailleurs dans cette liste — il s'agit ici de la véritable image de film-rouleau 6×4.5cm dont le nom est tiré, exposée sur film 120 ou 220 dans des boîtiers comme le Pentax 645NII et le Contax 645."
+        },
+        "film_6x6": {
+          "character": "Le cadrage carré supprime une décision — pas besoin de tourner l'appareil entre portrait et paysage — ce qui explique en partie pourquoi il convenait si bien aux bi-objectifs à visée poitrine. Le compromis apparaît au moment du tirage : la plupart des formats papier et écran ne sont pas carrés, donc on finit toujours par recadrer d'une façon ou d'une autre.",
+          "context": "L'appareil carré classique, popularisé par la série 500 de Hasselblad et les bi-objectifs Rolleiflex. Un Hasselblad 500EL modifié a emporté ce format jusqu'à la surface lunaire lors d'Apollo 11, après que des Hasselblad 500C aient déjà été utilisés lors des missions Mercury de la NASA en 1962 et 1963."
+        },
+        "film_6x7": {
+          "character": "Un système plus lourd et plus lent que le 35mm ou le demi-format — la mise au point par soufflet et le dos rotatif du Mamiya RB67 récompensent un rythme posé, adapté au trépied, plutôt que la spontanéité à main levée. En échange, on obtient un négatif de plus de quatre fois la surface du plein format, avec un grain d'autant plus fin et des transitions tonales plus douces.",
+          "context": "Surnommé « le format idéal » dans les années 1960 et 1970 parce que ses proportions 5:4 se recadrent proprement en 8×10 et autres formats de tirage standards avec un minimum de perte. Le Mamiya RB67 tire son nom directement de sa caractéristique signature — un dos rotatif, d'où « RB » — qui permet de changer d'orientation sans tourner tout l'appareil."
+        },
+        "film_4x5": {
+          "character": "Le film en feuille change autant votre façon de travailler que ce que vous capturez — une exposition par chargeur, une visée sur dépoli inversée à l'envers et de gauche à droite, et des mouvements (bascule, décentrement, inclinaison) qui permettent de corriger la perspective et de contrôler la mise au point d'une manière qu'aucun capteur numérique de cette liste ne peut égaler sans assemblage ou objectif à décentrement.",
+          "context": "Le format qui a porté le photojournalisme jusqu'au milieu du XXe siècle — Joe Rosenthal a photographié le lever du drapeau à Iwo Jima avec un Graflex Speed Graphic chargé en film 4×5 en feuille. Le grand format argentique existe encore aujourd'hui dans des boîtiers comme l'Intrepid 4×5 pliant, surtout pour le paysage et la photo d'art."
+        },
+        "cine_s16": {
+          "character": "Un compromis de format de travail — le Super 16 offre une qualité d'image nettement meilleure que le 16mm standard, pour une fraction du coût et de l'encombrement du 35mm, ce qui explique pourquoi le documentaire, le cinéma indépendant et les productions broadcast s'y sont appuyés pendant des décennies. Il n'a pas de nombre de pixels numérique fixe dans cet outil puisque c'est un format de pellicule, pas un capteur.",
+          "context": "Inventé en 1969 par le directeur de la photographie suédois Rune Ericson, le Super 16 élargit l'image utile du 16mm standard en récupérant la bande de pellicule normalement réservée à la piste sonore optique — une surface d'image de 12.52×7.41mm contre le cadre plus étroit du 16mm classique, soit environ 1.69:1 en dimensions brutes. Les productions cadraient historiquement pour un gonflage en 1.66:1 vers le 35mm plutôt que pour le ratio littéral du format."
+        },
+        "cine_s35": {
+          "character": "La production cinéma professionnelle repose sur cette taille de capteur plus que sur toute autre — des caméras comme l'ARRI ALEXA 35 et la RED Komodo s'articulent autour d'elle car elle équilibre mieux le contrôle de la faible profondeur de champ, le choix d'objectifs et une taille de fichiers gérable, que les formats broadcast plus petits ou les capteurs ciné grand format plus grands.",
+          "context": "Le Super 35 remonte à l'image plein cadre du film ciné 35mm 4 perforations — essentiellement la même surface qu'utilisaient les caméras de l'ère du muet avant que les pistes sonores n'empiètent sur l'image, ranimée comme format caméra uniquement dans les années 1980. Le chiffre de 24.9×14.0mm indiqué ici correspond au recadrage de zone d'image active en 16:9 que citent les propres caméras d'ARRI, pas au cadre « open-gate » plus large."
+        },
+        "cine_vv": {
+          "character": "Le capteur VV de RED est conçu pour le cinéma grand format, à une taille proche du plein format, offrant une profondeur de champ plus faible et une plage dynamique plus large que le Super 35 à focale égale — le compromis, ce sont des optiques plus lourdes et plus chères, conçues pour couvrir le cercle d'image plus grand.",
+          "context": "« VV » signifie VistaVision, un nom que RED a emprunté au procédé 35mm grand format de Paramount des années 1950, lui-même conçu pour rivaliser avec les formats cinéma grand écran de son époque. Le capteur de 40.96×21.6mm du V-RAPTOR ne partage avec ce format argentique vieux de plusieurs décennies que le nom et la classe de taille approximative, pas ses dimensions précises."
+        },
+        "cine_a65": {
+          "character": "ARRI a conçu l'ALEXA 65 pour les productions cinéma les plus ambitieuses — un capteur de 54.12×25.58mm qui écrase même les caméras ciné numériques de classe VistaVision comme le V-RAPTOR VV. Les boîtiers sont loués plutôt qu'achetés via le programme dédié d'ARRI, et le format exige des optiques grand format que peu de productions en dehors des budgets de blockbuster peuvent justifier.",
+          "context": "Avec un rapport d'aspect de 2.12:1, le capteur de 20.3-mégapixels de l'ALEXA 65 se rapproche davantage en taille des appareils photo moyen format que de n'importe quelle autre caméra ciné de cette liste. Elle reste la caméra au plus grand capteur d'ARRI, positionnée au-dessus de l'ALEXA LF et réservée à son programme de location exclusive plutôt qu'à la vente directe."
         }
       }
     }

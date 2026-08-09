@@ -6,6 +6,24 @@
       "modeSideBySide": "Egymás mellett",
       "modePixelDensity": "Pixelsűrűség",
       "pixelDensityDescription": "Gyakori megapixelszámok minden érzékelőhöz. A nagyobb pixelek (nagyobb cellák) több fényt gyűjtenek.",
+      "filmPixelDensityNote": "A film és a Super 16 esetében nincs meghatározott pixelszám, ezért ebben a módban el vannak rejtve — nézd meg őket inkább Átfedés vagy Egymás mellett módban.",
+      "quickCompare": "Gyors összehasonlítás",
+      "presetReplacesNote": "Lecseréli a jelenlegi kiválasztást",
+      "presets": {
+        "phone_vs_ff": "Telefon vs Full Frame",
+        "crop_vs_ff": "Crop vs Full Frame",
+        "film_vs_digital": "Film vs Digitális",
+        "mf_family": "Közepes Formátum Család",
+        "cine_vs_stills": "Film vs Állókép"
+      },
+      "groups": {
+        "medium-format": "Közepes Formátum",
+        "ff-aps": "Full Frame és APS",
+        "compact": "Kompakt és 1\"",
+        "phone": "Okostelefon",
+        "film": "Film",
+        "cine": "Cine"
+      },
       "sensors": "Érzékelők",
       "customSensors": "Egyéni érzékelők",
       "placeholderName": "Név",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Crop faktor",
       "tableAspectCrop": "Arány/crop",
       "canvasAriaLabel": "Érzékelőméret-összehasonlítás {mode} módban",
+      "detail": {
+        "diagonal": "Átló",
+        "area": "Terület",
+        "aspect": "Képarány",
+        "vsFullFrame": "vs Full Frame",
+        "referenceSensor": "Referencia érzékelő (Full Frame)",
+        "equivalence": "Egy {focal}mm f/{ap} objektív itt úgy keretez, mint egy ~{eqFocal}mm-es objektív f/{eqAp} mélységélességgel, Full Frame gépen.",
+        "resolutions": "Gyakori felbontások",
+        "cameras": "Népszerű fényképezőgépek",
+        "character": "Jellemzők",
+        "context": "Háttér",
+        "customNoProfile": "Egyéni érzékelő — csak számított adatok."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Mi a crop faktor, és miért számít?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Hogyan hat az érzékelőméret a mélységélességre?",
           "answer": "A nagyobb érzékelők ekvivalens kompozíción kisebb mélységélességet adnak. Ha ugyanazt a kompozíciót kisebb érzékelővel akarod elérni, vagy rövidebb gyújtótávolságot használsz (nagyobb mélységélesség), vagy hátrébb lépsz (nagyobb mélységélesség) — mindkettő csökkenti a háttérelmosódást."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Hogyan viszonyulnak a filmkocka-méretek a mai digitális érzékelőkhöz?",
+          "answer": "A szabványos 35mm-es film méretben megegyezik egy Full Frame digitális érzékelővel (36×24mm), így a film korából származó objektívek crop nélkül fedik le. A közepes formátumú film jóval nagyobb — egy 645-ös negatív 56×41.5mm, a 6×7-es pedig 70×56mm, mindkettő messze meghaladja bármelyik Full Frame digitális érzékelő területét —, míg a félkockás film egy szabványos 35mm-es kockát oszt ketté, ami nagyjából egy nagyobb APS-C érzékelő területének felel meg."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Minek felelnek meg a Super 35 és az ALEXA 65 állóképes fogalmakban?",
+          "answer": "A Super 35 (24.9×14.0mm, 1.51x crop) szinte pontosan az APS-C méretére esik, ezért az S35 cine objektívek és az APS-C állóképes objektívek hasonló képkört fednek le. Az ALEXA 65 54.12×25.58mm-es érzékelője sokkal nagyobb — közelebb áll egy 44×33mm-es közepes formátumú állóképes érzékelőhöz, mint a Full Frame-hez, ezért saját, dedikált nagyformátumú objektívcsaládra van szüksége."
+        },
+        "why-inch-fractions": {
+          "question": "Miért hüvelyktörtekkel nevezik el a kis érzékelőket, mint az 1/2.3\"?",
+          "answer": "Ezek a törtek az 1950-es évekbeli videokamera-csövek külső átmérőjét írják le, nem magát az érzékelőt — egy „1 hüvelykes” cső az átmérő nagyjából kétharmadának megfelelő hasznos képterületet adott. Amikor a szilárdtest érzékelők leváltották a csöveket, a gyártók megtartották a csövek korabeli elnevezési konvenciót, pedig egy mai „1 hüvelykes” érzékelő tényleges átlója mindössze kb. 15.86mm, messze egy valódi hüvelyktől."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "53.4×40mm-nél ez a legnagyobb érzékelő, amit a legtöbb dolgozó fotós valaha is a kezébe vesz. A stúdiós, termék- és tájfotósok tethered üzemmódban, számítógéphez kötve használják — a felbontás és a tónusskála miatt, nem a sebesség miatt: az autófókusz és a sorozatfelvétel sebessége jócskán elmarad a Full Frame mögött. Egy Phase One IQ4 hátlap 150 megapixeles fájlja próbára teszi mind a tárhelyet, mind a számítógépet.",
+          "context": "Az ebbe az érzékelőosztályba tartozó „645” elnevezés a 6×4.5cm-es tekercsfilmes hátlapokra vezethető vissza, de ne keverd össze a listán másutt szereplő 645 film preset-tel. 53.4×40mm-nél a Phase One és a Hasselblad digitális 645-ös sorozatú érzékelői valójában kisebbek, mint az az 56×41.5mm-es filmkocka, amelyből származnak, még ha meg is egyezik a nevük."
+        },
+        "mf": {
+          "character": "Ez a méretosztály tette gyakorlativá a közepes formátumot a stúdión kívül is. A Fujifilm GFX és a Hasselblad X sorozata is egy 43.8×32.9mm-es érzékelőre épül, amely elég kicsi ahhoz, hogy kézben tartsd és túrázz vele, 50-100 megapixel körüli felbontással, és olyan autófókusszal, amely mára jórészt behozta a lemaradást a mirrorless gépekhez képest. A natív objektívek nagyobbak és drágábbak maradnak a Full Frame megfelelőiknél, a rolling shutter kiolvasás pedig korlátozza a gyors mozgás fotózását.",
+          "context": "A Fujifilm és a Hasselblad itt közvetlenül versenyeznek egymással, de nem az érzékelő hardverén — a GFX 100 II és az X2D 100C is ugyanazt a Sony által gyártott 44×33mm-es chipet használja. Ami elválasztja a két rendszert, az a vázkialakítás, az objektívek rajzolata és a menürendszer filozófiája, nem a szilícium maga."
+        },
+        "mf_leica": {
+          "character": "A Leica S rendszere egy 45×30mm-es érzékelőt egy túlméretezett 35mm-es tükörreflexes vázba épít, nem egy stúdiós view camerába — és pontosan ez a lényeg: kézben tartható közepes formátum riportfotózáshoz és helyszíni portréhoz. A 64 megapixeles S3 lemond némi felbontási tartalékról a GFX és Hasselblad vetélytársakhoz képest, cserébe egy egyszerűbb, egyetlen objektívbajonettre épülő rendszert kínál, kevesebb választható vázzal.",
+          "context": "A 2009-ben bemutatott Leica S2-t kifejezetten úgy pozicionálták, mint az első kültéri, kézben tartható használatra tervezett közepes formátumú fényképezőgépet, nem pedig háromlábra szerelt stúdiógépet. Az S3 2020-ban érkezett közvetlen utódként; a Leica 2023-ban kivezette az S3-at, S4 pedig nem jelent meg, így a sorozat jövője bizonytalan."
+        },
+        "ff": {
+          "character": "A viszonyítási pont minden más itt felsoroltnál. A Full Frame egyensúlyt teremt a fényt gyűjtő terület, a mélységélesség szabályozhatósága és az objektívméret között — a legtöbb modern objektívcsalád erre lett tervezve. Az APS-C-hez képest nagyobb és nehezebb vázért és objektívekért fizetsz, cserébe nagyjából egy blendefokozatnyi tartalékot nyersz gyenge fényben, és sekélyebb mélységélességet ugyanannál a kereténél.",
+          "context": "A 36×24 mm-es kép közvetlen öröksége a 35mm-es filmnek, amelyet a Leica szabványosított az 1920-as években, oldalára fordított mozifilmből kiindulva. Egy digitális Full Frame érzékelő méretében megegyezik egy 35mm-es filmkockával — ezért fedik le a film korából származó objektívek crop nélkül."
+        },
+        "apsh": {
+          "character": "Egy átmeneti méret, amelyet a Canon a sebesség kedvéért épített a felbontás rovására — nagyobb pixelek és gyorsabb kiolvasás, olyan vázban, amely a sportot és a fotóriportot célozta meg, nem a képminőséget önmagáért. Az 1.29x crop a Full Frame hatótávolsági hátránya és az APS-C gyengefényű büntetése közötti középutat kereste, annak árán, hogy ezt az érzékelőt soha egyetlen más gyártó sem vette át.",
+          "context": "Az APS-H kizárólag a Canon formátuma volt, kizárólag az EOS-1D sorozatban használva — az 1D, 1D Mark II, Mark II N, Mark III, végül a 2009-es Mark IV, amely után a Canon teljesen elhagyta ezt a méretet, és visszaintegrálta az 1-es sorozatot a Full Frame-be. Ezt a méretet a Canonon kívül soha semmilyen objektív- vagy tartozékrendszer nem célozta meg."
+        },
+        "apsc_n": {
+          "character": "A Sony, a Nikon és a Fujifilm alapértelmezett lelkes amatőr és középkategóriás mirrorless mérete, 1.53x crop-pal, amely egy 50mm-es objektívet nagyjából 75mm-es ekvivalenssé alakít. A vázak és objektívek jellemzően kisebbek és olcsóbbak a Full Frame-nél, a plusz hatótávolság pedig valódi előny a vadvilág- és sportfotósoknak, akik hosszabb optikákkal dolgoznak.",
+          "context": "Az APS-C neve az 1996-os fogyasztói Advanced Photo System filmtől ered, pontosabban annak „Classic” 3:2 nyomtatási formátumától — de a digitális érzékelő fizikai mérete nem egyezik meg az APS filmével, csupán távoli névrokonok. A Fujifilm a teljes X rendszerét erre az érzékelőméretre építette, nem belépő szintű kategóriaként kezelve."
+        },
+        "apsc_c": {
+          "character": "A Canon saját APS-C szabványa, 22.3×14.8mm — kisebb, mint a legtöbb versenytárs által használt 23.5×15.6mm-es méret, ezért a Canon crop-ja 1.62x, nem 1.5x. A gyakorlatban ez valamivel több telefotó hatótávolságot jelent minden objektívnél, cserébe kis mértékben nagyobb zajért és szűkebb dinamikatartományért a nagyobb APS-C változathoz képest.",
+          "context": "A Canon a formátum legkorábbi digitális tükörreflexes gépei óta a saját APS-C érzékelőméretét használja, sosem közelítve az 1.5x crop-hoz, amelyben szinte mindenki más megállapodott. Az R7 és az R10 ma is ezt a méretet viszi tovább a Canon mirrorless RF bajonettjén."
+        },
+        "m43": {
+          "character": "Egy valóban kicsi, valóban teljes rendszer — a 2x crop azt jelenti, hogy minden objektív fizikailag kompakt, a 17.3×13mm-es érzékelő pedig még mindig kiszolgál fényerős, éles optikákat, valódi téma-háttér elválasztással, csak nem olyan sekély mélységélességgel, mint a Full Frame. A gyenge fényben nyújtott teljesítmény és a dinamikatartomány elmarad a nagyobb érzékelőkétől, ami őszinte kompromisszum a méret- és súlymegtakarításért cserébe.",
+          "context": "A Micro Four Thirds egy nyílt szabvány, nem egy gyártóhoz kötött formátum — az Olympus és a Panasonic 2008-ban közösen jelentette be, és bármelyik gyártó építhet ugyanarra a bajonett- és érzékelő-specifikációra. Az OM System (korábban Olympus) és a Panasonic maradt a két aktív fényképezőgép-gyártó, amely erre épít."
+        },
+        "1in": {
+          "character": "Jelentős lépés előre az okostelefon-érzékelőkhöz képest, miközben zsebre vágható marad — az RX100 sorozat bebizonyította, hogy egy 13.2×8.8mm-es érzékelő valódi képminőséget adhat egy olyan kompaktban, amit ténylegesen magaddal viszel. A háttérelmosás még f/1.8-nál is korlátozott marad, a gyenge fény pedig odafigyelést igényel, de a méret-minőség arány utazáshoz nehezen felülmúlható.",
+          "context": "Az „1 hüvelykes” megjelölés az 1950-es évek videokamera-csöveinek öröksége, nem valódi mérés — egy 1 hüvelyk külső átmérőjű cső az átmérő nagyjából kétharmadának megfelelő hasznos képterületet adott, nagyjából 16mm-es átlóval. Amikor a CCD és CMOS érzékelők leváltották a csöveket, a gyártók megtartották a csövek korából származó elnevezést, pedig a mai érzékelőkben egyáltalán nincs cső."
+        },
+        "phone": {
+          "character": "A mai csúcskategóriás telefonok számítási kapacitással zárják a rést a tisztán érzékelőn alapuló fényképezőgépekhez képest, nem mérettel — egy 9.8×7.3mm-es chip nem veheti fel a versenyt egy 1 hüvelykes érzékelő nyers fénygyűjtésével, ezért a többképkockás összeillesztés, az AI zajcsökkentés és a mesterséges bokeh végzi el helyette a nehéz munkát. Az eredmény kiválóan néz ki a telefon kijelzőjén, de teljes felbontásban, gyenge fényben már megmutatkoznak a korlátai.",
+          "context": "A „csúcskategória” itt több valódi, hasonló, de nem azonos méretű érzékelőt takar márkáktól és évjáratoktól függően, nem egyetlen pontos chipet — az iPhone 17 Pro fő kamerája nagyjából 1/1.28 hüvelyk, a Samsung csúcskategóriás sora inkább 1/1.3 hüvelykhez van közelebb, és mindkettő e preset reprezentatív 9.8×7.3mm-es értékéhez kerekedik."
+        },
+        "1_1_7in": {
+          "character": "A 7.6×5.7mm-es érzékelő határozta meg a 2000-es évek végének lelkes amatőr kompaktjait — az olyan gépek, mint a Canon S120 vagy a Panasonic LX7, olyan fényerős objektívvel párosították, amit kevés kompakt tudott felülmúlni, olyan fotósokat célozva meg, akik manuális vezérlést akartak egy zakózsebnyi méretben. A piac nagy részét az okostelefonok szívták fel, de a formátum méret és vezérlés közötti egyensúlya ma is megállja a helyét.",
+          "context": "Érzékelőterületben ez a formátum egy fokkal az 1 hüvelykes kompaktok alatt, két fokkal a Micro Four Thirds alatt helyezkedik el, saját rést vágva magának a zsebre vágható, az adott korszak tipikus point-and-shoot gépeinél fényerősebb blendéjű fényképezőgépek számára. Ma már kevés fényképezőgép használja — mára főleg használtpiaci és gyűjtői méret."
+        },
+        "1_2_3in": {
+          "character": "A drónok és akciókamerák erre a méretre épülnek, mert elég kicsi és könnyű ahhoz, hogy repülni vagy rögzíteni lehessen anélkül, hogy érdemi súlyt adna hozzá — ennek ára a zajos, magas ISO-s felvétel és a korlátozott dinamikatartomány a listán szereplő bármely nagyobb érzékelőhöz képest. A DJI és a legtöbb akciókamera-gyártó ide horgonyozza le a fő termékcsaládját.",
+          "context": "A gyártói adatlapokon domináló, gyakorlatban elterjedt konvenció szerint 6.17×4.55mm, még ha ez nem is ad ki pontos 4:3 arányt — egy matematikailag „valódi” 4:3-as, 6.17×4.63mm-es változat is létezik néhány forrásban, de gyakorlatilag egyetlen kereskedelmi forgalomban lévő drón- vagy akciókamera-érzékelő sem ezt adja meg."
+        },
+        "phone_mid": {
+          "character": "A középkategóriás telefonok érzékelői jóval elmaradnak a csúcskategóriás testvéreikétől méretben, és ez leginkább gyenge fényben és a dinamikatartományban látszik meg, amint túllépsz a jól megvilágított nappali felvételeken. A gyártók még jobban a számítási feldolgozásra támaszkodnak a kompenzáláshoz, ami jó körülmények között szűkíti a látható különbséget, de sötétedés után nem tudja teljesen eltüntetni.",
+          "context": "Ez egy reprezentatív méret, nem egyetlen gyártó pontos chipje — a valódi középkategóriás fő érzékelők, köztük olyan alkatrészek, mint a Samsung ISOCELL GM5-je, ez 5.6×4.2mm-es érték körül csoportosulnak anélkül, hogy bármelyik adatlap pontosan megegyezne vele, hiszen a „középkategória” sok valódi érzékelőt ölel fel márkáktól és évjáratoktól függően."
+        },
+        "phone_uw": {
+          "character": "Az ultraszéles telefonobjektívek viselik egy tipikus telefon kameratömbjének legkisebb, legtöbb kompromisszummal járó érzékelőjét — hasznos építészeti és tájfotózáshoz, ahol a szélesebb látószög többet számít, mint a pixelenkénti minőség, de ugyanabban a felvételben láthatóan lágyabb és zajosabb, mint a fő kamera.",
+          "context": "Csakúgy, mint a telefonok többi itt felsorolt kategóriájánál, ez a 4.0×3.0mm-es érték egy márkákon átívelő, hasonló méretű ultraszéles modulosztályt képvisel, nem egy konkrét chipet. Az ultraszéles kamerák a 2010-es évek közepén jelentek meg a telefonok kameratömbjeiben, és a legtöbb többkamerás rendszer leggyengébb láncszemei maradnak."
+        },
+        "film_half": {
+          "character": "A félkockás fotózás azt jelenti, hogy megduplázod a tekercsenkénti képek számát azzal, hogy két kockát illesztesz be abba a helybe, amit normál esetben egy foglal el — vonzó a filmköltségek miatt, de cserébe szemcsésebb, lágyabb eredményt kapsz nagyításnál a teljes 35mm-hez képest, hiszen a negatívterület felével dolgozol.",
+          "context": "Egy szabványos 35mm-es kocka fele — a formátum kockái natívan függőlegesek (18×24), mert a vízszintes filmkockát osztják ketté. Az Olympus Pen tette népszerűvé 1959-ben a tekercsenkénti képszám megduplázása érdekében, majd a Pentax 17 keltette újra életre 2024-ben."
+        },
+        "film_645": {
+          "character": "A 645-ös filmre váltás egy 56×41.5mm-es negatívot jelent, érezhetően több részlettel és tónusskálával, mint a 35mm, miközben egy 120-as tekercsen még mindig elfér 15-16 kocka. Az olyan vázak, mint a Mamiya 645, szinte úgy kezelhetők, mint egy túlméretezett tükörreflexes gép, nem pedig kizárólag stúdiós szerkezet.",
+          "context": "Ne keverd össze a lista másik helyén szereplő digitális, „645” eredetű közepes formátumú érzékelőkkel — ez a tényleges 6×4.5cm-es tekercsfilmes kocka, ahonnan a név származik, 120-as vagy 220-as filmre fotózva olyan vázakban, mint a Pentax 645NII és a Contax 645."
+        },
+        "film_6x6": {
+          "character": "A négyzetes keretezés kivesz egyetlen döntést az egyenletből — nem kell forgatnod a gépet álló vagy fekvő tájoláshoz —, ami részben megmagyarázza, miért illett ez a formátum ilyen jól a csípőmagasságból használt ikerobjektíves gépekhez. A kompromisszum nyomtatáskor mutatkozik meg: a legtöbb papír- és képernyőformátum nem négyzetes, így előbb-utóbb mindenképp vágnod kell valamerre.",
+          "context": "A klasszikus négyzetes formátumú fényképezőgép, amelyet a Hasselblad 500-as sorozata és a Rolleiflex ikerobjektíves gépei tettek népszerűvé. Egy módosított Hasselblad 500EL vitte ezt a formátumot a Hold felszínére az Apollo 11 küldetés során, a NASA korábbi, 1962-es és 1963-as Mercury-küldetésein használt Hasselblad 500C gépek után."
+        },
+        "film_6x7": {
+          "character": "Nehezebb és lassabb rendszer, mint a 35mm vagy a félkockás — a Mamiya RB67 fújtatós fókuszálása és forgó hátlapja a megfontolt, háromlábbal jól működő tempót jutalmazza a kézből fotózás spontaneitása helyett. Cserébe egy, a Full Frame-nél több mint négyszer nagyobb területű negatívot kapsz, ennek megfelelően finomabb szemcsével és lágyabb tónusátmenetekkel.",
+          "context": "Az 1960-as és '70-es években „az ideális formátumnak” becézték, mert 5:4 arányai tisztán vághatók 8×10-re és más szabványos nyomtatási méretekre, minimális veszteséggel. A Mamiya RB67 közvetlenül jellegzetes tulajdonságáról kapta a nevét — egy forgó hátlapról, innen az „RB” —, amely lehetővé teszi a tájolás váltását anélkül, hogy az egész gépet el kellene fordítani."
+        },
+        "film_4x5": {
+          "character": "A síkfilm ugyanannyira megváltoztatja a munkamódszeredet, mint amit rögzítesz vele — egy expozíció kazettánként, fejjel lefelé és tükrözve látott matt üveges kép, valamint mozgatások (rise, shift, tilt), amelyekkel a perspektívát korrigálhatod és a fókuszt olyan módokon irányíthatod, amit az itt felsorolt digitális érzékelők egyike sem tud utolérni összefűzés (stitching) vagy shift objektív nélkül.",
+          "context": "Ez a formátum vitte a fotóriportot a 20. század nagy részén át — Joe Rosenthal a Graflex Speed Graphic géppel, 4×5-ös síkfilmre fotózta az Iwo Jima-i zászlófelvonást. A nagyformátumú film ma is létezik, olyan vázakban, mint az összecsukható Intrepid 4×5, leginkább táj- és fine art fotózáshoz."
+        },
+        "cine_s16": {
+          "character": "Egy munkaformátumbeli kompromisszum — a Super 16 érezhetően jobb képminőséget zsúfol a szabványos 16mm-hez képest, a 35mm film költségének és a kamera méretének töredékéért, ezért támaszkodtak rá évtizedeken át a dokumentumfilmes, indie és televíziós produkciók. Ebben az eszközben nincs rögzített digitális pixelszáma, mivel ez egy filmméret, nem egy érzékelő.",
+          "context": "A svéd operatőr, Rune Ericson találta fel 1969-ben; a Super 16 úgy szélesíti ki a szabványos 16mm hasznos képkockáját, hogy visszaszerzi a normál esetben az optikai hangsávnak fenntartott filmcsíkot — egy 12.52×7.41mm-es képterületet a szabályos 16mm szűkebb kockájával szemben, nyers méretekben nagyjából 1.69:1 arányban. A produkciók korábban jellemzően 1.66:1 arányú 35mm-es felnagyításra kereteztek, nem a formátum szó szerinti arányára."
+        },
+        "cine_s35": {
+          "character": "A professzionális filmgyártás minden másnál jobban erre az érzékelőméretre épül — az olyan kamerák, mint az ARRI ALEXA 35 és a RED Komodo, azért épülnek erre, mert jobban egyensúlyoz a sekély mélységélesség szabályozása, az objektívválaszték és a kezelhető fájlméret között, mint akár a kisebb broadcast formátumok, akár a nagyobb nagyformátumú cine érzékelők.",
+          "context": "A Super 35 a 4-perforációs 35mm-es cine film teljes kockájára vezethető vissza — lényegében ugyanarra a területre, amit a némafilm korának kamerái használtak, mielőtt a hangsávok beleharaptak volna a kockába, majd az 1980-as években éledt újjá tisztán felvételi formátumként. Az itt szereplő 24.9×14.0mm-es érték az a 16:9-es aktív képterület-vágás, amelyet maguk az ARRI kamerák is megadnak, nem a nagyobb open-gate kép."
+        },
+        "cine_vv": {
+          "character": "A RED VV érzékelője nagyformátumú filmgyártásra épül, a Full Frame-hez közeli méretben, sekélyebb mélységélességet és szélesebb dinamikatartományt adva a Super 35-nél, azonos gyújtótávolság mellett — cserébe nehezebb, drágább optikákra van szükség, amelyeket a nagyobb képkör lefedésére terveztek.",
+          "context": "A „VV” a VistaVisiont jelöli, egy nevet, amit a RED a Paramount 1950-es évekbeli nagykockás 35mm-es eljárásától kölcsönzött, amelyet eredetileg a korabeli szélesvásznú mozi formátumaival való versenyre terveztek. A V-RAPTOR 40.96×21.6mm-es érzékelője csak a nevet és a nagyjábóli méretosztályt osztja meg azzal az évtizedekkel ezelőtti filmformátummal, a konkrét méreteket nem."
+        },
+        "cine_a65": {
+          "character": "Az ARRI a legnagyobb léptékű filmgyártási produkciókhoz építette az ALEXA 65-öt — egy 54.12×25.58mm-es érzékelővel, amely eltörpíti még a VistaVision-osztályú digitális cine kamerákat is, mint a V-RAPTOR VV. A vázakat az ARRI saját programján keresztül bérlik, nem tulajdonolják, a formátum pedig olyan nagyformátumú optikákat kíván, amelyeket a blockbuster költségvetéseken kívül kevés produkció tud indokolni.",
+          "context": "2.12:1-es képarányával az ALEXA 65 20.3 megapixeles érzékelője méretben közelebb áll a közepes formátumú állóképes fényképezőgépekhez, mint bármelyik másik, itt felsorolt filmes kamerához. Ez marad az ARRI legnagyobb érzékelős kamerája, az ALEXA LF fölé pozicionálva, kizárólag bérelhető programra fenntartva, nem közvetlen eladásra."
         }
       }
     }

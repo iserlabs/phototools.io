@@ -191,6 +191,46 @@
   background: var(--bg-surface);
 }
 
+.tableRowExpanded td {
+  background: var(--bg-surface);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+/* Mirrors `.table tr:hover td` so a row reads identically whether the
+   highlight comes from the mouse being over the row itself or from
+   `hoveredId` set externally (hovering the matching rect on the canvas —
+   see `useSensorCanvas`'s `hoveredSensor` state). Sharing the exact same
+   background with `.tableRowExpanded` means the two classes never fight
+   when both apply to the same row; the accent stripe stays the sole signal
+   that a row is expanded. */
+.rowHovered td {
+  background: var(--bg-surface);
+}
+
+/* Row expand/collapse toggle — reset to plain text so it drops into the
+   existing `.sensorCell` layout unchanged; only the button semantics + focus
+   ring are new. */
+.rowToggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.rowToggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
 .sensorCell {
   display: flex;
   align-items: center;
@@ -205,6 +245,100 @@
   height: 10px;
   border-radius: 50%;
   flex-shrink: 0;
+}
+
+/* ── Sensor deep-dive panel (accordion content under an expanded row) ── */
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 16px;
+  text-align: left;
+  animation: fadeIn var(--duration-fast) var(--ease-out) both;
+}
+
+.detailDims {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px 16px;
+  margin: 0;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.specItem dt {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.specItem dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+.detailEquivalence {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.pillSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  padding: 3px 9px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.detailProfile {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+  margin: 0;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.detailProfile p {
+  margin: 0;
+}
+
+.detailProfile strong {
+  color: var(--text-primary);
 }
 
 /* ── Copy image button ── */
@@ -231,6 +365,93 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--accent);
+}
+
+/* ── Collapsible sensor groups ── */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 6px 8px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.groupHeader:hover {
+  background: var(--bg-surface);
+}
+
+.groupChevron {
+  display: inline-flex;
+  color: var(--text-secondary);
+  font-size: 10px;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.groupChevron[data-open='true'] {
+  transform: rotate(90deg);
+}
+
+.groupName {
+  flex: 1;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.groupCount {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+/* ── Quick-compare presets ── */
+.presetRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.presetBtn {
+  padding: 5px 10px;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out);
+}
+
+.presetBtn:hover {
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.presetBtnActive,
+.presetBtnActive:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
 }
 
 /* ── Mobile ── */
@@ -279,6 +500,14 @@
     padding: 6px 8px;
   }
 
+  .groupHeader {
+    min-height: 44px;
+  }
+
+  .presetBtn {
+    min-height: 44px;
+  }
+
   .resolutionField input {
     min-height: 44px;
   }
@@ -289,6 +518,10 @@
   }
 
   .customAddBtn {
+    min-height: 44px;
+  }
+
+  .rowToggle {
     min-height: 44px;
   }
 }
@@ -404,7 +637,9 @@
   font-weight: 400;
   padding: 6px 10px;
   border-radius: 6px;
-  white-space: nowrap;
+  white-space: normal;
+  width: max-content;
+  max-width: 220px;
   pointer-events: none;
   opacity: 0;
   transform: translateY(4px);

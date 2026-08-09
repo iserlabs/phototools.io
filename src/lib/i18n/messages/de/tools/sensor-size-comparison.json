@@ -6,6 +6,24 @@
       "modeSideBySide": "Nebeneinander",
       "modePixelDensity": "Pixeldichte",
       "pixelDensityDescription": "Zeigt gängige Megapixel-Werte für jeden Sensor. Größere Pixel (größere Zellen) fangen mehr Licht ein.",
+      "filmPixelDensityNote": "Film und Super 16 haben keine festgelegte Pixelanzahl und werden daher in diesem Modus ausgeblendet — sieh sie dir stattdessen in Überlagerung oder Nebeneinander an.",
+      "quickCompare": "Schnellvergleich",
+      "presetReplacesNote": "Ersetzt die aktuelle Auswahl",
+      "presets": {
+        "phone_vs_ff": "Smartphone vs. Vollformat",
+        "crop_vs_ff": "Crop vs. Vollformat",
+        "film_vs_digital": "Film vs. Digital",
+        "mf_family": "Mittelformat-Familie",
+        "cine_vs_stills": "Kino vs. Fotografie"
+      },
+      "groups": {
+        "medium-format": "Mittelformat",
+        "ff-aps": "Vollformat & APS",
+        "compact": "Kompakt & 1\"",
+        "phone": "Smartphone",
+        "film": "Film",
+        "cine": "Kino"
+      },
       "sensors": "Sensoren",
       "customSensors": "Eigene Sensoren",
       "placeholderName": "Name",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Crop-Faktor",
       "tableAspectCrop": "Seitenverhältnis-Crop",
       "canvasAriaLabel": "Sensorgrößen-Vergleich im {mode}-Modus",
+      "detail": {
+        "diagonal": "Diagonale",
+        "area": "Fläche",
+        "aspect": "Seitenverhältnis",
+        "vsFullFrame": "vs. Vollformat",
+        "referenceSensor": "Referenzsensor (Vollformat)",
+        "equivalence": "Ein {focal}mm-Objektiv mit f/{ap} bildet hier wie ein ~{eqFocal}mm-Objektiv mit f/{eqAp} Schärfentiefe bei Vollformat ab.",
+        "resolutions": "Gängige Auflösungen",
+        "cameras": "Beliebte Kameras",
+        "character": "Charakter",
+        "context": "Kontext",
+        "customNoProfile": "Eigener Sensor — nur berechnete Daten."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Was ist der Crop-Faktor und warum ist er wichtig?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Wie wirkt sich die Sensorgröße auf die Schärfentiefe aus?",
           "answer": "Größere Sensoren erzeugen bei gleichem Bildausschnitt eine geringere Schärfentiefe. Um mit einem kleineren Sensor denselben Bildausschnitt zu erhalten, nimmst du entweder eine kürzere Brennweite oder gehst weiter weg — beides vergrößert die Schärfentiefe und reduziert die Hintergrundunschärfe."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Wie verhalten sich Filmformate im Vergleich zu modernen Digitalsensoren?",
+          "answer": "Standard-35mm-Film ist in seinen Abmessungen identisch mit einem Vollformat-Digitalsensor (36×24mm), weshalb Objektive aus der Filmära ihn ohne Crop abdecken. Mittelformatfilm ist deutlich größer — ein 645-Negativ misst 56×41.5mm und 6×7 misst 70×56mm, beide weit über der Fläche jedes Vollformat-Digitalsensors — während Halbformat-Film ein Standard-35mm-Bild in zwei Hälften teilt, was ungefähr der Fläche eines großen APS-C-Sensors entspricht."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Welchen Formaten aus der Fotografie entsprechen Super 35 und die ALEXA 65?",
+          "answer": "Super 35 (24.9×14.0mm, 1.51x Crop) liegt fast exakt auf APS-C-Größe, weshalb S35-Kinooptiken und APS-C-Fotoobjektive einen ähnlichen Bildkreis abdecken. Der 54.12×25.58mm große Sensor der ALEXA 65 ist deutlich größer — näher an einem 44×33mm-Mittelformatsensor aus der Fotografie als an Vollformat, weshalb sie eine eigene, dedizierte Großformat-Objektivreihe benötigt."
+        },
+        "why-inch-fractions": {
+          "question": "Warum werden kleine Sensoren in Zoll-Brüchen wie 1/2.3\" benannt?",
+          "answer": "Diese Brüche beschreiben den Außendurchmesser von Videokamera-Bildröhren aus den 1950er-Jahren, nicht den Sensor selbst — eine „1-Zoll\"-Röhre erzeugte eine nutzbare Bildfläche von etwa zwei Dritteln dieses Durchmessers. Als Halbleitersensoren die Röhren ersetzten, behielten die Hersteller die Namenskonvention aus der Röhrenära bei, obwohl die tatsächliche Diagonale eines modernen „1-Zoll\"-Sensors bei etwa 15.86mm liegt — weit entfernt von einem echten Zoll."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "Mit 53.4×40mm ist dies der größte Sensor, mit dem die meisten arbeitenden Fotografen je zu tun haben werden. Studio-, Produkt- und Landschaftsfotografen setzen ihn am Computer angeschlossen ein — wegen Auflösung und Tonwertumfang, nicht wegen Geschwindigkeit: Autofokus und Serienbildrate liegen deutlich hinter Vollformat zurück. Eine 150-Megapixel-Datei von einem Phase One IQ4-Rückteil fordert Speicherplatz und Rechner gleichermaßen.",
+          "context": "Die „645\" in der Herkunft dieser Sensorklasse geht auf 6×4.5cm-Rollfilmrückteile zurück — nicht zu verwechseln mit der 645-Film-Voreinstellung an anderer Stelle in dieser Liste. Mit 53.4×40mm sind die digitalen 645er-Sensoren von Phase One und Hasselblad tatsächlich kleiner als das 56×41.5mm-Filmformat, von dem sie abstammen, trotz des gemeinsamen Namens."
+        },
+        "mf": {
+          "character": "Diese Größenklasse machte Mittelformat auch außerhalb des Studios praktikabel. Fujifilms GFX- und Hasselblads X-Serie bauen beide auf einem 43.8×32.9mm-Sensor auf, der klein genug ist, um ihn freihändig zu nutzen und damit zu wandern, mit 50 bis 100 Megapixeln und einem Autofokus, der den Abstand zu spiegellosen Kameras größtenteils geschlossen hat. Native Objektive bleiben größer und teurer als Vollformat-Äquivalente, und der Rolling-Shutter-Auslesevorgang begrenzt schnelle Bewegungen.",
+          "context": "Fujifilm und Hasselblad stehen hier in direkter Konkurrenz, aber nicht bei der Sensor-Hardware — die GFX 100 II und die X2D 100C nutzen beide denselben von Sony gefertigten 44×33mm-Chip. Was die Systeme unterscheidet, sind Gehäusedesign, Objektiv-Rendering und Menüphilosophie, nicht die Elektronik darunter."
+        },
+        "mf_leica": {
+          "character": "Leicas S-System steckt einen 45×30mm-Sensor in ein Gehäuse, das eher wie eine überdimensionierte 35mm-Spiegelreflexkamera geformt ist als wie eine Studio-Fachkamera — genau das ist der Kerngedanke: handgehaltenes Mittelformat für Reportage und Porträts vor Ort. Die 64-Megapixel-S3 verzichtet auf etwas Auflösungsspielraum gegenüber GFX- und Hasselblad-Konkurrenten zugunsten eines einfacheren Systems mit einem einzigen Objektivbajonett und weniger Gehäuseauswahl.",
+          "context": "Die 2009 vorgestellte Leica S2 wurde ausdrücklich als erste Mittelformatkamera beworben, die für den Einsatz im Freien und aus der Hand gebaut wurde statt für stativgebundene Studioarbeit. Die S3 folgte 2020 als direkter Nachfolger; Leica stellte die S3 2023 ein, eine S4 ist bislang nicht erschienen, sodass die Zukunft der Reihe ungewiss bleibt."
+        },
+        "ff": {
+          "character": "Der Referenzpunkt für alles andere hier. Vollformat balanciert Lichtsammelfläche, Kontrolle über die Schärfentiefe und Objektivgröße — die meisten modernen Objektivreihen sind darauf ausgelegt. Im Vergleich zu APS-C zahlst du mit mehr Gehäuse- und Objektivvolumen, gewinnst dafür aber rund eine Blendenstufe Spielraum bei wenig Licht und einen geringeren Schärfentiefebereich bei gleichem Bildausschnitt.",
+          "context": "Das 36×24 mm-Format ist ein direktes Erbe des 35mm-Kleinbildfilms, das Leica in den 1920er-Jahren aus seitlich verwendetem Kinofilm standardisierte. Ein Vollformat-Digitalsensor ist in seinen Abmessungen identisch mit einem 35mm-Filmbild — weshalb Objektive aus der Filmära ohne Crop darauf abbilden."
+        },
+        "apsh": {
+          "character": "Eine Übergangsgröße, die Canon für Geschwindigkeit statt Auflösung entwickelte — größere Pixel und schnelleres Auslesen, in einem Gehäuse, das auf Sport und Fotojournalismus zielte statt auf Bildqualität um ihrer selbst willen. Der 1.29x-Crop lag genau zwischen dem Reichweitennachteil von Vollformat und dem Lichtschwäche-Nachteil von APS-C — auf Kosten eines Sensorformats, das kein anderer Hersteller je übernahm.",
+          "context": "APS-H war ein reines Canon-Format, ausschließlich eingesetzt in der EOS-1D-Reihe — der 1D, 1D Mark II, Mark II N, Mark III und schließlich der 2009er Mark IV, danach gab Canon die Größe vollständig auf und führte die 1er-Serie zurück zum Vollformat. Kein Objektiv- oder Zubehör-Ökosystem außerhalb von Canon selbst zielte je darauf ab."
+        },
+        "apsc_n": {
+          "character": "Die Standardgröße für ambitionierte Amateure und die Mittelklasse bei spiegellosen Kameras von Sony, Nikon und Fujifilm, mit einem 1.53x-Crop, der aus einem 50mm-Objektiv ein Äquivalent von rund 75mm macht. Gehäuse und Objektive fallen spürbar kleiner und günstiger aus als bei Vollformat, und die zusätzliche Reichweite ist ein echter Vorteil für Wildlife- und Sportfotografen mit langen Brennweiten.",
+          "context": "Der Name APS-C stammt vom 1996 eingeführten Consumer-Filmformat Advanced Photo System, genauer von dessen „Classic\"-Druckformat im Verhältnis 3:2 — der digitale Sensor hat jedoch nicht dieselbe physische Größe wie der APS-Film, sondern ist nur ein entfernter Namensvetter. Fujifilm hat sein gesamtes X-System um diese Sensorgröße herum aufgebaut, statt sie als Einstiegsklasse zu behandeln."
+        },
+        "apsc_c": {
+          "character": "Canons eigener APS-C-Standard mit 22.3×14.8mm — kleiner als die 23.5×15.6mm-Größe, die die meisten Wettbewerber verwenden, weshalb Canons Crop bei 1.62x statt 1.5x liegt. In der Praxis bedeutet das etwas mehr Telereichweite pro Objektiv, bei einem kleinen Nachteil bei Rauschen und Dynamikumfang gegenüber der größeren APS-C-Variante.",
+          "context": "Canon verwendet seine eigenen APS-C-Sensorabmessungen bereits seit den frühesten digitalen Spiegelreflexkameras des Formats und hat sich nie dem 1.5x-Crop angenähert, auf den sich fast alle anderen geeinigt haben. Die R7 und R10 führen diese Größe heute in Canons spiegelloses RF-Bajonett fort."
+        },
+        "m43": {
+          "character": "Ein wirklich kleines, wirklich vollständiges System — der 2x-Crop bedeutet, dass jedes Objektiv physisch kompakt ausfällt, und der 17.3×13mm-Sensor unterstützt weiterhin lichtstarke, scharfe Objektive mit echter Freistellung, nur nicht mit der geringen Schärfentiefe von Vollformat. Bei wenig Licht und beim Dynamikumfang liegt er hinter größeren Sensoren zurück — der ehrliche Kompromiss für die Ersparnis bei Größe und Gewicht.",
+          "context": "Micro Four Thirds ist ein offener Standard, kein proprietäres Format — Olympus und Panasonic kündigten ihn 2008 gemeinsam an, und jeder Hersteller kann nach derselben Objektivbajonett- und Sensorspezifikation bauen. OM System (ehemals Olympus) und Panasonic sind weiterhin die beiden aktiven Kamerahersteller, die darauf aufbauen."
+        },
+        "1in": {
+          "character": "Ein spürbarer Schritt nach oben gegenüber Smartphone-Sensoren, während er trotzdem in die Tasche passt — die RX100-Reihe bewies, dass ein 13.2×8.8mm-Sensor echte Bildqualität in einer Kompaktkamera liefern kann, die man tatsächlich mitnimmt. Die Hintergrundunschärfe bleibt selbst bei f/1.8 begrenzt, und bei wenig Licht ist Vorsicht geboten, aber das Verhältnis von Größe zu Qualität ist für Reisen kaum zu schlagen.",
+          "context": "Die Bezeichnung „1-Zoll\" ist ein Relikt aus Videokamera-Bildröhren der 1950er-Jahre, kein reales Maß — eine Röhre mit 1 Zoll Außendurchmesser erzeugte eine nutzbare Bildfläche von etwa zwei Dritteln davon, rund 16mm Diagonale. Als CCD- und CMOS-Sensoren die Röhren ersetzten, behielten die Kamerahersteller die Namensgebung aus der Röhrenära bei, obwohl heutige Sensoren überhaupt keine Röhre mehr enthalten."
+        },
+        "phone": {
+          "character": "Moderne Flaggschiff-Smartphones schließen die Lücke zu reinen Sensorkameras durch Rechenleistung, nicht durch Größe — ein 9.8×7.3mm-Chip kann mit der reinen Lichtsammelleistung eines 1-Zoll-Sensors nicht mithalten, also übernehmen Multi-Frame-Stacking, KI-Rauschunterdrückung und synthetisches Bokeh die eigentliche Arbeit. Das Ergebnis sieht auf einem Smartphone-Display hervorragend aus und zeigt seine Grenzen erst bei voller Auflösung und wenig Licht.",
+          "context": "„Flagship\" umfasst hier mehrere reale Sensoren mit ähnlicher, aber nicht identischer Größe über verschiedene Marken und Jahre hinweg, nicht einen einzigen exakten Chip — die Hauptkamera des iPhone 17 Pro misst etwa 1/1.28 Zoll, Samsungs Flaggschiff-Reihe liegt eher bei 1/1.3 Zoll, und beide runden sich auf den repräsentativen Wert dieser Voreinstellung von 9.8×7.3mm."
+        },
+        "1_1_7in": {
+          "character": "Der 7.6×5.7mm-Sensor prägte die ambitionierten Kompaktkameras der späten 2000er-Jahre — Kameras wie die Canon S120 und die Panasonic LX7 kombinierten ihn mit einem lichtstarken Objektiv, das kaum eine andere Kompaktkamera erreichte, gedacht für Fotografen, die manuelle Kontrolle in Jackentaschengröße wollten. Smartphones haben den Großteil dieses Marktes übernommen, aber die Balance aus Größe und Kontrolle dieses Formats hält sich weiterhin.",
+          "context": "Bei der Sensorfläche liegt dieses Format eine Stufe unter 1-Zoll-Kompaktkameras und zwei Stufen unter Micro Four Thirds und besetzt eine Nische für taschengroße Kameras mit lichtstärkeren Blenden als die typischen Point-and-Shoot-Kameras derselben Ära. Nur wenige aktuelle Kameras nutzen es noch — heute ist es vor allem eine Größe für den Gebrauchtmarkt und Sammler."
+        },
+        "1_2_3in": {
+          "character": "Drohnen und Action-Cams sind um diese Größe herum gebaut, weil sie klein und leicht genug ist, um sie zu fliegen oder zu montieren, ohne nennenswertes Gewicht hinzuzufügen — der Preis dafür sind verrauschte Aufnahmen bei hohem ISO und ein begrenzter Dynamikumfang im Vergleich zu jedem größeren Sensor auf dieser Liste. DJI und die meisten Action-Cam-Hersteller verankern ihre Kernproduktlinien hier.",
+          "context": "Mit 6.17×4.55mm angegeben, ist dies die in Hersteller-Datenblättern in der Praxis vorherrschende Konvention, auch wenn sich daraus kein exaktes 4:3-Verhältnis ergibt — eine mathematisch „echte\" 4:3-Version mit 6.17×4.63mm existiert in manchen Referenzen, wird aber von praktisch keinem ausgelieferten Drohnen- oder Action-Cam-Sensor tatsächlich angegeben."
+        },
+        "phone_mid": {
+          "character": "Mittelklasse-Smartphones tragen Sensoren, die deutlich kleiner sind als bei ihren Flaggschiff-Geschwistern, und das zeigt sich am stärksten bei wenig Licht und beim Dynamikumfang, sobald man über gut beleuchtete Tagaufnahmen hinausgeht. Hersteller setzen zum Ausgleich noch stärker auf Rechenleistung, was den sichtbaren Unterschied bei guten Bedingungen verkleinert, ihn nach Einbruch der Dunkelheit aber nicht vollständig schließen kann.",
+          "context": "Dies ist eine repräsentative Größe, nicht der exakte Chip eines bestimmten Herstellers — reale Mittelklasse-Hauptsensoren, darunter Bauteile wie Samsungs ISOCELL GM5, gruppieren sich um diesen Wert von 5.6×4.2mm, ohne dass ein einzelnes Datenblatt ihn exakt trifft, da „Mittelklasse\" viele tatsächliche Sensoren über Marken und Jahre hinweg umfasst."
+        },
+        "phone_uw": {
+          "character": "Ultraweitwinkel-Objektive an Smartphones tragen den kleinsten und am stärksten kompromittierten Sensor im typischen Kamera-Array eines Telefons — nützlich für Architektur und Landschaften, wo ein weiterer Bildwinkel wichtiger ist als Detailschärfe pro Pixel, aber sichtbar weicher und verrauschter als die Hauptkamera im selben Bild.",
+          "context": "Wie bei den anderen Smartphone-Stufen hier steht dieser Wert von 4.0×3.0mm für eine Klasse ähnlich großer Ultraweitwinkel-Module über verschiedene Marken hinweg, nicht für einen bestimmten Chip. Ultraweitwinkel-Kameras kamen Mitte der 2010er-Jahre zu den Kamera-Arrays von Smartphones hinzu und bleiben in den meisten Mehrkamerasystemen das schwächste Glied."
+        },
+        "film_half": {
+          "character": "Halbformat zu fotografieren bedeutet, die Aufnahmen pro Film zu verdoppeln, indem zwei Bilder in den Platz eines normalen Bildes passen — attraktiv wegen der Filmkosten, aber der Kompromiss ist ein körnigeres, weicheres Ergebnis bei Vergrößerungen im Vergleich zu Vollformat-35mm, da nur die halbe Negativfläche zur Verfügung steht.",
+          "context": "Die Hälfte eines Standard-35mm-Bildes — die Bilder dieses Formats sind von Natur aus hochformatig (18×24), weil sie das horizontale Filmbild in zwei Teile aufteilen. Populär gemacht durch die Olympus Pen 1959, um die Aufnahmen pro Film zu verdoppeln, und 2024 durch die Pentax 17 wiederbelebt."
+        },
+        "film_645": {
+          "character": "Der Umstieg auf 645-Film bedeutet ein 56×41.5mm-Negativ mit spürbar mehr Detail und Tonwertumfang als 35mm, während weiterhin 15 oder 16 Aufnahmen auf eine Rolle 120er-Film passen. Gehäuse wie die Mamiya 645 handhaben sich fast wie eine überdimensionierte Spiegelreflexkamera statt wie ein reines Studiogerät.",
+          "context": "Nicht zu verwechseln mit den digitalen Mittelformatsensoren der „645\"-Linie an anderer Stelle in dieser Liste — dies ist das tatsächliche 6×4.5cm-Rollfilmbild, von dem der Name stammt, aufgenommen auf 120er- oder 220er-Film in Gehäusen wie der Pentax 645NII und der Contax 645."
+        },
+        "film_6x6": {
+          "character": "Quadratische Bildkomposition nimmt eine Entscheidung ab — kein Drehen der Kamera für Hoch- oder Querformat —, was mit ein Grund ist, warum es so gut zu Zweiäugigen mit Lichtschachtsucher passte. Der Kompromiss zeigt sich beim Ausdrucken: Die meisten Papier- und Bildschirmformate sind nicht quadratisch, sodass am Ende so oder so beschnitten werden muss.",
+          "context": "Die klassische Quadratformat-Kamera, populär gemacht durch Hasselblads 500er-Serie und die Zweiäugigen von Rolleiflex. Eine modifizierte Hasselblad 500EL brachte dieses Format mit Apollo 11 zur Mondoberfläche, nach früheren Hasselblad 500C, die 1962 und 1963 bei den NASA-Mercury-Missionen eingesetzt wurden."
+        },
+        "film_6x7": {
+          "character": "Ein schwereres, langsameres System als 35mm oder Halbformat — die Balgenfokussierung und das drehbare Rückteil der Mamiya RB67 belohnen ein bedächtiges, stativfreundliches Tempo statt spontanes Arbeiten aus der Hand. Im Gegenzug erhält man ein Negativ mit mehr als der vierfachen Fläche von Vollformat, mit entsprechend feinerem Korn und weicheren Tonwertübergängen.",
+          "context": "In den 1960er- und 1970er-Jahren als „das ideale Format\" bezeichnet, weil sich seine 5:4-Proportionen mit minimaler Verschnitt sauber auf 8×10 und andere Standard-Druckgrößen zuschneiden lassen. Die Mamiya RB67 verdankt ihren Namen direkt ihrem Erkennungsmerkmal — einem drehbaren Rückteil, daher „RB\" —, mit dem sich das Format wechseln lässt, ohne die ganze Kamera zu drehen."
+        },
+        "film_4x5": {
+          "character": "Planfilm verändert die Arbeitsweise ebenso wie das Ergebnis — eine Belichtung pro Kassette, eine auf dem Kopf stehende und seitenverkehrte Mattscheibenansicht sowie Verstellungen (Rise, Shift, Tilt), mit denen sich die Perspektive korrigieren und der Fokus so kontrollieren lässt wie es kein digitaler Sensor in dieser Liste ohne Stitching oder Tilt-Shift-Objektive kann.",
+          "context": "Das Format, das den Fotojournalismus durch die Mitte des 20. Jahrhunderts trug — Joe Rosenthal fotografierte die Flaggenhissung auf Iwo Jima mit einer Graflex Speed Graphic, geladen mit 4×5-Planfilm. Großformatfilm existiert heute noch in Kameras wie der faltbaren Intrepid 4×5, meist für Landschafts- und Fine-Art-Arbeiten."
+        },
+        "cine_s16": {
+          "character": "Ein Arbeitsformat-Kompromiss — Super 16 bietet spürbar bessere Bildqualität als Standard-16mm bei einem Bruchteil der Kosten und der Kameragröße von 35mm-Film, weshalb Dokumentar-, Independent- und Broadcast-Produktionen sich jahrzehntelang darauf verließen. In diesem Werkzeug hat es keine feste digitale Pixelanzahl, da es sich um ein Filmformat handelt, nicht um einen Sensor.",
+          "context": "1969 vom schwedischen Kameramann Rune Ericson erfunden, erweitert Super 16 das nutzbare Bild von Standard-16mm, indem es den Filmstreifen zurückgewinnt, der normalerweise für eine optische Tonspur reserviert ist — eine Bildfläche von 12.52×7.41mm gegenüber dem schmaleren Standard-16mm-Bild, nach reinen Abmessungen etwa 1.69:1. Produktionen rahmten historisch für eine 1.66:1-Vergrößerung auf 35mm, statt für das buchstäbliche Seitenverhältnis des Formats."
+        },
+        "cine_s35": {
+          "character": "Professionelle Kinoproduktionen laufen auf dieser Sensorgröße mehr als auf jeder anderen — Kameras wie die ARRI ALEXA 35 und die RED Komodo bauen darauf auf, weil sie Kontrolle über die Schärfentiefe, Objektivauswahl und handhabbare Dateigrößen besser ausbalancieren als kleinere Broadcast-Formate oder größere Großformat-Kinosensoren.",
+          "context": "Super 35 geht auf das Vollbild des 4-Perf-35mm-Kinofilms zurück — im Wesentlichen dieselbe Fläche, die Kameras der Stummfilmära nutzten, bevor Tonspuren das Bild verkleinerten, in den 1980er-Jahren als reines Kameraformat wiederbelebt. Der hier angegebene Wert von 24.9×14.0mm ist der 16:9-Aktivbildbereich, den ARRIs eigene Kameras angeben, nicht das größere Open-Gate-Bild."
+        },
+        "cine_vv": {
+          "character": "REDs VV-Sensor ist für Großformat-Kino gebaut, in einer Größe nahe an Vollformat, und liefert bei gleicher Brennweite eine geringere Schärfentiefe und einen größeren Dynamikumfang als Super 35 — der Kompromiss sind schwerere, teurere Objektive, die den größeren Bildkreis abdecken müssen.",
+          "context": "„VV\" steht für VistaVision, ein Name, den RED von Paramounts Großbild-35mm-Verfahren der 1950er-Jahre entlehnte, das seinerseits entwickelt wurde, um mit den Breitbild-Kinoformaten seiner Zeit zu konkurrieren. Der 40.96×21.6mm-Sensor der V-RAPTOR teilt mit diesem jahrzehntealten Filmformat nur den Namen und die grobe Größenklasse, nicht seine genauen Abmessungen."
+        },
+        "cine_a65": {
+          "character": "ARRI baute die ALEXA 65 für Kinoproduktionen der größten Größenordnung — ein 54.12×25.58mm-Sensor, der selbst VistaVision-Klasse-Digitalkinokameras wie die V-RAPTOR VV in den Schatten stellt. Gehäuse werden über ARRIs eigenes Programm gemietet statt gekauft, und das Format verlangt Großformatoptiken, die sich nur wenige Produktionen außerhalb von Blockbuster-Budgets leisten können.",
+          "context": "Bei einem Seitenverhältnis von 2.12:1 liegt der 20.3-Megapixel-Sensor der ALEXA 65 in der Größe näher an Mittelformat-Fotokameras als an jeder anderen Kinokamera auf dieser Liste. Sie bleibt ARRIs Kamera mit dem größten Sensor, positioniert über der ALEXA LF und ausschließlich über das Vermietungsprogramm verfügbar statt zum Kauf."
         }
       }
     }

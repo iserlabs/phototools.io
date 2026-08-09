@@ -6,6 +6,24 @@
       "modeSideBySide": "Obok siebie",
       "modePixelDensity": "Gęstość pikseli",
       "pixelDensityDescription": "Pokazuje typowe liczby megapikseli dla każdej matrycy. Większe piksele (większe komórki) zbierają więcej światła.",
+      "filmPixelDensityNote": "Film i Super 16 nie mają zdefiniowanej liczby pikseli, dlatego są ukryte w tym trybie — zobacz je w trybie Nakładka lub Obok siebie.",
+      "quickCompare": "Szybkie porównanie",
+      "presetReplacesNote": "Zastępuje bieżący wybór",
+      "presets": {
+        "phone_vs_ff": "Telefon vs pełna klatka",
+        "crop_vs_ff": "Kadrowanie vs pełna klatka",
+        "film_vs_digital": "Film vs cyfrowa",
+        "mf_family": "Rodzina średniego formatu",
+        "cine_vs_stills": "Kino vs fotografia"
+      },
+      "groups": {
+        "medium-format": "Średni format",
+        "ff-aps": "Pełna klatka i APS",
+        "compact": "Kompaktowe i 1\"",
+        "phone": "Smartfon",
+        "film": "Film",
+        "cine": "Kino"
+      },
       "sensors": "Matryce",
       "customSensors": "Niestandardowe matryce",
       "placeholderName": "Nazwa",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Wsp. kadrowania",
       "tableAspectCrop": "Kadrowanie proporcji",
       "canvasAriaLabel": "Porównanie rozmiarów matryc w trybie {mode}",
+      "detail": {
+        "diagonal": "Przekątna",
+        "area": "Powierzchnia",
+        "aspect": "Proporcje",
+        "vsFullFrame": "vs pełna klatka",
+        "referenceSensor": "Matryca referencyjna (pełna klatka)",
+        "equivalence": "Obiektyw {focal}mm f/{ap} kadruje tu podobnie do ~{eqFocal}mm z głębią ostrości f/{eqAp} na pełnej klatce.",
+        "resolutions": "Typowe rozdzielczości",
+        "cameras": "Popularne aparaty",
+        "character": "Charakterystyka",
+        "context": "Kontekst",
+        "customNoProfile": "Matryca niestandardowa — tylko dane obliczone."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Czym jest współczynnik kadrowania i dlaczego ma znaczenie?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Jak rozmiar matrycy wpływa na głębię ostrości?",
           "answer": "Większe matrycze dają płytszą głębię ostrości przy równoważnym kadrowaniu. Aby uzyskać ten sam kadr z mniejszą matrycą, używasz krótszej ogniskowej (głębsza głębia ostrości) lub odsuwasz się dalej (głębsza głębia ostrości), co w obu przypadkach zmniejsza rozmycie tła."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Jak rozmiary klatek filmowych mają się do współczesnych matryc cyfrowych?",
+          "answer": "Standardowy film 35mm ma dokładnie takie same wymiary jak pełnoklatkowa matryca cyfrowa (36×24mm), więc obiektywy z epoki filmowej pokrywają ją bez kadrowania. Film średnioformatowy jest znacznie większy — negatyw 645 ma 56×41.5mm, a 6×7 to 70×56mm, oba znacznie większe od powierzchni jakiejkolwiek pełnoklatkowej matrycy cyfrowej — podczas gdy film połówkowy dzieli standardową klatkę 35mm na dwie części, dając powierzchnię zbliżoną do dużej matrycy APS-C."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Czemu odpowiadają Super 35 i ALEXA 65 w kategoriach fotografii?",
+          "answer": "Super 35 (24.9×14.0mm, kadrowanie 1.51x) plasuje się niemal dokładnie w rozmiarze APS-C, dlatego obiektywy kinowe S35 i obiektywy fotograficzne APS-C pokrywają podobne kręgi obrazu. Matryca ALEXA 65 o wymiarach 54.12×25.58mm jest znacznie większa — bliżej jej do średnioformatowej matrycy fotograficznej 44×33mm niż do pełnej klatki, dlatego wymaga własnej, dedykowanej linii obiektywów wielkoformatowych."
+        },
+        "why-inch-fractions": {
+          "question": "Dlaczego małe matryce mają w nazwie ułamki cala, np. 1/2.3\"?",
+          "answer": "Te ułamki opisują zewnętrzną średnicę lamp kamer wideo z lat 50., a nie samą matrycę — lampa o zewnętrznej średnicy \"1 cala\" dawała użyteczny obszar obrazu wynoszący około dwóch trzecich tej średnicy. Gdy matryce półprzewodnikowe zastąpiły lampy, producenci zachowali nazewnictwo z epoki lamp, mimo że rzeczywista przekątna dzisiejszej matrycy \"1-calowej\" wynosi około 15.86mm, czyli wcale nie jest to dosłownie jeden cal."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "Przy 53.4×40mm to największa matryca, jakiej dotknie w swojej karierze większość zawodowych fotografów. Fotografowie studyjni, produktowi i krajobrazowi używają jej podłączonej kablem do komputera ze względu na rozdzielczość i zakres tonalny, a nie na szybkość — autofokus i tempo serii wyraźnie ustępują pełnej klatce. Plik o rozdzielczości 150 megapikseli z grzbietu Phase One IQ4 mocno obciąży zarówno pamięć masową, jak i komputer.",
+          "context": "\"645\" w rodowodzie tej klasy matryc pochodzi od grzbietów na film zwojowy 6×4.5cm, ale nie należy mylić tego z presetem filmu 645 znajdującym się gdzie indziej na tej liście. Przy 53.4×40mm cyfrowe matryce serii 645 Phase One i Hasselblada są w rzeczywistości mniejsze niż klatka filmu 56×41.5mm, od której pochodzą, mimo wspólnej nazwy."
+        },
+        "mf": {
+          "character": "Ta klasa rozmiaru sprawiła, że średni format stał się praktyczny poza studiem. GFX Fujifilm i seria X Hasselblada są zbudowane wokół matrycy 43.8×32.9mm, wystarczająco małej, by trzymać ją w rękach i zabrać na wędrówkę, z rozdzielczością od 50 do 100 megapikseli oraz autofokusem, który zamknął większość różnicy dzielącej ją od bezlusterkowców. Obiektywy natywne pozostają większe i droższe niż odpowiedniki pełnoklatkowe, a odczyt rolling shutter ogranicza szybkie akcje.",
+          "context": "Fujifilm i Hasselblad konkurują tu bezpośrednio, ale nie na poziomie sprzętu matrycy — GFX 100 II i X2D 100C używają tego samego układu 44×33mm produkowanego przez Sony. To, co odróżnia te systemy, to konstrukcja korpusu, charakter obiektywów i filozofia menu, a nie krzem znajdujący się w środku."
+        },
+        "mf_leica": {
+          "character": "System S Leiki umieszcza matrycę 45×30mm w korpusie przypominającym powiększoną lustrzankę 35mm, a nie aparat studyjny wielkoformatowy — i o to właśnie chodzi: średni format do fotografii reporterskiej i plenerowego portretu z ręki. 64-megapikselowa S3 rezygnuje z części zapasu rozdzielczości względem rywali GFX i Hasselblada na rzecz prostszego systemu z jednym mocowaniem obiektywów i mniejszym wyborem korpusów.",
+          "context": "Leica S2, wprowadzona w 2009 roku, była jawnie reklamowana jako pierwszy aparat średnioformatowy zaprojektowany do pracy w plenerze z ręki, a nie do pracy studyjnej na statywie. S3 pojawiła się w 2020 roku jako jej bezpośredni następca; Leica wycofała S3 z produkcji w 2023 roku i do tej pory nie pojawiła się żadna S4, co pozostawia przyszłość tej linii niepewną."
+        },
+        "ff": {
+          "character": "Punkt odniesienia dla wszystkiego innego na tej liście. Pełna klatka równoważy powierzchnię zbierającą światło, kontrolę głębi ostrości i rozmiar obiektywów — większość współczesnych linii obiektywów projektowana jest właśnie z myślą o niej. W porównaniu z APS-C płacisz większym rozmiarem korpusu i obiektywów, ale zyskujesz mniej więcej jeden stop zapasu w słabym świetle i płytszą ostrość przy tym samym kadrze.",
+          "context": "Klatka 36×24 mm jest bezpośrednim spadkiem po filmie fotograficznym 35mm, zestandaryzowanym przez Leicę w latach 20. XX wieku na bazie taśmy filmowej z kina ustawionej bokiem. Pełnoklatkowa matryca cyfrowa ma dokładnie takie same wymiary jak klatka filmu 35mm — dlatego obiektywy z epoki filmu pasują do niej bez kadrowania."
+        },
+        "apsh": {
+          "character": "Rozwiązanie przejściowe stworzone przez Canona, który postawił na szybkość kosztem rozdzielczości — większe piksele i szybszy odczyt w korpusie kierowanym do sportu i fotoreportażu, a nie do jakości obrazu samej w sobie. Kadrowanie 1.29x dzieliło różnicę między niedostatkiem zasięgu pełnej klatki a karą za słabe światło w APS-C, kosztem matrycy, której nigdy nie przyjął żaden inny producent.",
+          "context": "APS-H było formatem wyłącznie Canona, używanym tylko w serii EOS-1D — 1D, 1D Mark II, Mark II N, Mark III i wreszcie Mark IV z 2009 roku, po czym Canon całkowicie porzucił ten rozmiar, włączając serię 1 z powrotem do pełnej klatki. Żaden ekosystem obiektywów ani akcesoriów spoza samego Canona nigdy go nie obsługiwał."
+        },
+        "apsc_n": {
+          "character": "Domyślny rozmiar bezlusterkowców dla entuzjastów i średniej klasy u Sony, Nikona i Fujifilm, z kadrowaniem 1.53x, które zamienia obiektyw 50mm w odpowiednik około 75mm. Korpusy i obiektywy są wyraźnie mniejsze i tańsze niż w pełnej klatce, a dodatkowy zasięg to realna zaleta dla fotografów dzikiej przyrody i sportu pracujących z długimi obiektywami.",
+          "context": "Nazwa APS-C pochodzi od konsumenckiego filmu Advanced Photo System z 1996 roku, a konkretnie jego formatu odbitek \"Classic\" 3:2 — ale matryca cyfrowa nie ma takiego samego rozmiaru fizycznego jak film APS, jest jedynie dalekim imiennikiem. Fujifilm zbudował cały swój system X wokół tego rozmiaru matrycy, zamiast traktować go jako poziom podstawowy."
+        },
+        "apsc_c": {
+          "character": "Własny standard APS-C Canona, 22.3×14.8mm — mniejszy niż rozmiar 23.5×15.6mm stosowany przez większość konkurentów, dlatego kadrowanie Canona wynosi 1.62x zamiast 1.5x. W praktyce oznacza to nieco więcej zasięgu teleobiektywu na każdym obiektywie, kosztem niewielkiej straty w szumach i zakresie dynamiki względem większego wariantu APS-C.",
+          "context": "Canon stosuje własne wymiary matrycy APS-C od najwcześniejszych cyfrowych lustrzanek tego formatu, nigdy nie zbliżając się do kadrowania 1.5x, na którym osiadła niemal cała reszta rynku. R7 i R10 kontynuują dziś ten rozmiar w bezlusterkowym mocowaniu RF Canona."
+        },
+        "m43": {
+          "character": "System naprawdę mały i naprawdę kompletny — kadrowanie 2x oznacza, że każdy obiektyw jest fizycznie kompaktowy, a matryca 17.3×13mm nadal obsługuje szybką, ostrą optykę z realnym oddzieleniem obiektu od tła, tylko nie tak płytką głębią ostrości jak w pełnej klatce. Słabe światło i zakres dynamiki ustępują większym matrycom, co jest uczciwym kompromisem za oszczędność rozmiaru i wagi.",
+          "context": "Micro Four Thirds to otwarty standard, a nie format zastrzeżony — Olympus i Panasonic ogłosiły go wspólnie w 2008 roku, a każdy producent może budować sprzęt zgodny z tą samą specyfikacją mocowania obiektywów i matrycy. OM System (dawniej Olympus) i Panasonic pozostają dwoma aktywnymi producentami aparatów budującymi na tym standardzie."
+        },
+        "1in": {
+          "character": "Znaczący krok naprzód względem matryc smartfonów przy zachowaniu kieszonkowych rozmiarów — seria RX100 udowodniła, że matryca 13.2×8.8mm może dać prawdziwą jakość obrazu w kompakcie, który faktycznie się nosi ze sobą. Rozmycie tła pozostaje ograniczone nawet przy f/1.8, a słabe światło wymaga ostrożności, ale stosunek rozmiaru do jakości trudno pobić w podróży.",
+          "context": "Etykieta \"1 cal\" to pozostałość po lampach kamer wideo z lat 50., a nie prawdziwa miara — lampa o zewnętrznej średnicy 1 cala dawała użyteczny obszar obrazu wynoszący około dwóch trzecich tej wartości, czyli przekątną około 16mm. Gdy matryce CCD i CMOS zastąpiły lampy, producenci aparatów zachowali nazewnictwo z epoki lamp, mimo że dzisiejsze matryce nie mają w środku żadnej lampy."
+        },
+        "phone": {
+          "character": "Współczesne flagowe telefony nadrabiają dystans do aparatów opartych wyłącznie na matrycy dzięki obliczeniom, a nie rozmiarowi — układ 9.8×7.3mm nie dorówna surowej zdolności zbierania światła matrycy 1-calowej, więc ciężką pracę wykonują zamiast tego łączenie wielu klatek, odszumianie AI i sztuczne bokeh. Efekt wygląda znakomicie na ekranie telefonu i zaczyna pokazywać swoje ograniczenia w pełnej rozdzielczości przy słabym świetle.",
+          "context": "\"Flagowy\" obejmuje tu kilka realnych matryc o zbliżonym, choć nieidentycznym rozmiarze, w różnych markach i latach, a nie jeden konkretny układ — główny aparat iPhone'a 17 Pro ma około 1/1.28 cala, flagowa seria Samsunga jest bliższa 1/1.3 cala, a obie wartości zaokrąglają się do reprezentatywnej dla tego presetu liczby 9.8×7.3mm."
+        },
+        "1_1_7in": {
+          "character": "Matryca 7.6×5.7mm zdefiniowała kompakt dla entuzjastów z końca lat 2000. — aparaty takie jak Canon S120 i Panasonic LX7 łączyły ją z szybkim obiektywem, któremu niewiele kompaktów mogło dorównać, celując w fotografów chcących ręcznej kontroli mieszczącej się w kieszeni kurtki. Smartfony wchłonęły większość tego rynku, ale równowaga tego formatu między rozmiarem a kontrolą wciąż się broni.",
+          "context": "Pod względem powierzchni matrycy ten format plasuje się o jeden stopień niżej niż kompakty 1-calowe i o dwa stopnie niżej niż Micro Four Thirds, wypełniając niszę kieszonkowych aparatów o jaśniejszych przysłonach niż typowe \"mydelniczki\" z tamtej epoki. Niewiele obecnych aparatów go używa — dziś jest to głównie rozmiar rynku wtórnego i kolekcjonerski."
+        },
+        "1_2_3in": {
+          "character": "Drony i kamery sportowe są budowane wokół tego rozmiaru, ponieważ jest wystarczająco mały i lekki, by latać lub być montowanym bez dodawania istotnej wagi — kosztem jest zaszumiony materiał przy wysokim ISO i ograniczony zakres dynamiki w porównaniu z każdą większą matrycą z tej listy. DJI i większość producentów kamer sportowych osadza tu swoje główne linie produktów.",
+          "context": "Podawana jako 6.17×4.55mm, jest to dominująca w praktyce konwencja w kartach katalogowych producentów, mimo że nie sprowadza się dokładnie do proporcji 4:3 — matematycznie \"prawdziwa\" wersja 4:3 przy 6.17×4.63mm istnieje w niektórych źródłach, ale niemal żadna sprzedawana matryca do drona czy kamery sportowej faktycznie jej nie podaje."
+        },
+        "phone_mid": {
+          "character": "Telefony średniej klasy mają matryce wyraźnie mniejsze niż ich flagowi krewni, co widać najbardziej w słabym świetle i zakresie dynamiki, gdy tylko wyjdzie się poza dobrze oświetlone ujęcia w ciągu dnia. Producenci jeszcze mocniej opierają się na przetwarzaniu obliczeniowym, by to zrekompensować, co zawęża widoczną różnicę w dobrych warunkach, ale nie potrafi jej całkowicie zamknąć po zmroku.",
+          "context": "To rozmiar reprezentatywny, a nie dokładny układ jednego producenta — realne główne matryce średniej klasy, w tym części takie jak Samsung ISOCELL GM5, skupiają się wokół tej wartości 5.6×4.2mm, choć żadna konkretna karta katalogowa nie odpowiada jej dokładnie, ponieważ \"średnia klasa\" obejmuje wiele realnych matryc w różnych markach i latach."
+        },
+        "phone_uw": {
+          "character": "Ultraszerokokątne obiektywy telefonów mają najmniejszą, najbardziej okrojoną matrycę w typowym zestawie aparatów telefonu — przydatną do architektury i krajobrazów, gdzie szersze pole widzenia liczy się bardziej niż jakość na piksel, ale wyraźnie miększą i bardziej zaszumioną niż aparat główny w tym samym ujęciu.",
+          "context": "Podobnie jak inne poziomy telefonów wymienione tutaj, ta wartość 4.0×3.0mm reprezentuje klasę modułów ultraszerokokątnych o zbliżonym rozmiarze w różnych markach, a nie jeden konkretny układ. Aparaty ultraszerokokątne pojawiły się w zestawach aparatów telefonów w połowie lat 2010. i wciąż pozostają najsłabszym ogniwem w większości systemów wieloaparatowych."
+        },
+        "film_half": {
+          "character": "Fotografowanie w formacie połówkowym oznacza podwojenie liczby zdjęć na rolce dzięki zmieszczeniu dwóch klatek w przestrzeni, którą normalnie zajmuje jedna — atrakcyjne ze względu na koszt filmu, ale kosztem jest bardziej ziarnisty, miększy efekt po powiększeniu w porównaniu z pełnoklatkowym filmem 35mm, ponieważ pracuje się z połową powierzchni negatywu.",
+          "context": "Połowa standardowej klatki 35mm — klatki tego formatu są naturalnie pionowe (18×24), ponieważ dzielą poziomą klatkę filmu na dwie części. Spopularyzowany przez Olympusa Pen w 1959 roku w celu podwojenia liczby zdjęć na rolce, a wskrzeszony przez Pentaksa 17 w 2024 roku."
+        },
+        "film_645": {
+          "character": "Przejście na film 645 oznacza negatyw 56×41.5mm z zauważalnie większą szczegółowością i zakresem tonalnym niż 35mm, przy zachowaniu 15 lub 16 klatek na rolce filmu 120. Korpusy takie jak Mamiya 645 obsługuje się niemal jak powiększoną lustrzankę, a nie sprzęt wyłącznie studyjny.",
+          "context": "Nie należy mylić z cyfrowymi matrycami średnioformatowymi z rodowodu \"645\" opisanymi gdzie indziej na tej liście — to rzeczywista klatka filmu zwojowego 6×4.5cm, od której pochodzi ta nazwa, fotografowana na filmie 120 lub 220 w korpusach takich jak Pentax 645NII i Contax 645."
+        },
+        "film_6x6": {
+          "character": "Kwadratowe kadrowanie eliminuje jedną decyzję — nie trzeba obracać aparatu między portretem a pejzażem — co po części tłumaczy, dlaczego tak dobrze pasowało do dwuobiektywowych aparatów trzymanych na wysokości pasa. Ten kompromis ujawnia się w momencie druku: większość formatów papieru i ekranów nie jest kwadratowa, więc prędzej czy później i tak trzeba coś przyciąć.",
+          "context": "Klasyczny aparat formatu kwadratowego, spopularyzowany przez serię 500 Hasselblada i dwuobiektywowe lustrzanki Rolleiflex. Zmodyfikowany Hasselblad 500EL zabrał ten format na powierzchnię Księżyca podczas misji Apollo 11, po tym jak Hasselblady 500C były wcześniej używane podczas misji Mercury NASA w 1962 i 1963 roku."
+        },
+        "film_6x7": {
+          "character": "Cięższy, wolniejszy system niż 35mm czy format połówkowy — miechowe ustawianie ostrości i obracany grzbiet Mamiyi RB67 nagradzają rozważne, przyjazne statywowi tempo pracy zamiast spontaniczności z ręki. W zamian otrzymuje się negatyw o powierzchni ponad czterokrotnie większej niż pełna klatka, z odpowiednio drobniejszym ziarnem i płynniejszymi przejściami tonalnymi.",
+          "context": "W latach 60. i 70. nazywany \"formatem idealnym\", ponieważ jego proporcje 5:4 przycinają się czysto do 8×10 i innych standardowych rozmiarów odbitek przy minimalnych stratach. Mamiya RB67 zawdzięcza swoją nazwę wprost cesze charakterystycznej — obracanemu grzbietowi, stąd \"RB\" — który pozwala zmieniać orientację bez obracania całego aparatu."
+        },
+        "film_4x5": {
+          "character": "Film arkuszowy zmienia sposób pracy w takim samym stopniu, co to, co się rejestruje — jedna ekspozycja na kasetę, obraz na matówce, który jest odwrócony do góry nogami i lustrzanie odbity, oraz ruchy (przesunięcie w pionie, przesunięcie w poziomie, pochylenie) pozwalające korygować perspektywę i kontrolować ostrość w sposób, którego żadna matryca cyfrowa z tej listy nie potrafi odtworzyć bez zszywania panoram czy obiektywów tilt-shift.",
+          "context": "Format, który niósł fotoreportaż przez połowę XX wieku — Joe Rosenthal sfotografował wciąganie flagi na Iwo Jimie aparatem Graflex Speed Graphic załadowanym filmem arkuszowym 4×5. Film wielkoformatowy istnieje do dziś w korpusach takich jak składany Intrepid 4×5, głównie do prac krajobrazowych i fine art."
+        },
+        "cine_s16": {
+          "character": "Kompromis formatu roboczego — Super 16 pakuje wyraźnie lepszą jakość obrazu niż standardowe 16mm w ułamek kosztu i rozmiaru kamery filmu 35mm, dlatego produkcje dokumentalne, niezależne i telewizyjne opierały się na nim przez dekady. W tym narzędziu nie ma stałej cyfrowej liczby pikseli, ponieważ jest to format taśmy filmowej, a nie matryca.",
+          "context": "Wynaleziony w 1969 roku przez szwedzkiego operatora Rune Ericsona, Super 16 poszerza użyteczną klatkę standardowego 16mm, odzyskując pasek taśmy zwykle zarezerwowany na optyczną ścieżkę dźwiękową — obszar obrazu 12.52×7.41mm w porównaniu z węższą klatką zwykłego 16mm, czyli około 1.69:1 w surowych wymiarach. Produkcje tradycyjnie kadrowały pod powiększenie 1.66:1 do 35mm, a nie pod dosłowne proporcje formatu."
+        },
+        "cine_s35": {
+          "character": "Profesjonalna produkcja filmowa opiera się na tym rozmiarze matrycy bardziej niż na jakimkolwiek innym — kamery takie jak ARRI ALEXA 35 i RED Komodo są budowane wokół niego, ponieważ lepiej równoważy kontrolę płytkiej ostrości, wybór obiektywów i rozsądne rozmiary plików niż zarówno mniejsze formaty telewizyjne, jak i większe wielkoformatowe matryce kinowe.",
+          "context": "Super 35 wywodzi się z pełnej klatki 4-perforacyjnego filmu kinowego 35mm — zasadniczo tego samego obszaru, którego używały kamery epoki kina niemego, zanim ścieżki dźwiękowe zaczęły zajmować część klatki, wskrzeszonego jako format wyłącznie kamerowy w latach 80. Podana tu wartość 24.9×14.0mm to kadrowanie aktywnego obszaru obrazu 16:9, na które powołują się własne kamery ARRI, a nie większa klatka open-gate."
+        },
+        "cine_vv": {
+          "character": "Matryca VV od RED jest zbudowana z myślą o wielkoformatowym kinie, w rozmiarze zbliżonym do pełnej klatki, dając płytszą głębię ostrości i szerszy zakres dynamiki niż Super 35 przy tej samej ogniskowej — kosztem jest cięższa, droższa optyka zaprojektowana do pokrycia większego kręgu obrazu.",
+          "context": "\"VV\" oznacza VistaVision, nazwę, którą RED zapożyczył z wielkoklatkowego procesu 35mm Paramountu z lat 50., który sam w sobie miał rywalizować z ówczesnymi panoramicznymi formatami kinowymi. Matryca V-RAPTOR 40.96×21.6mm dzieli z tamtym sprzed dekad formatem filmowym tylko nazwę i przybliżoną klasę rozmiaru, a nie jego konkretne wymiary."
+        },
+        "cine_a65": {
+          "character": "ARRI zbudowało ALEXA 65 z myślą o produkcjach kinowych na największą skalę — matryca 54.12×25.58mm, która przyćmiewa nawet kamery kina cyfrowego klasy VistaVision, takie jak V-RAPTOR VV. Korpusy są wynajmowane, a nie posiadane, w ramach dedykowanego programu ARRI, a format wymaga wielkoformatowej optyki, na którą stać nielicznych producentów spoza budżetów blockbusterów.",
+          "context": "Przy proporcjach 2.12:1 matryca ALEXA 65 o rozdzielczości 20.3 megapiksela jest rozmiarem bliższa średnioformatowym aparatom fotograficznym niż jakiejkolwiek innej kamerze kinowej z tej listy. Pozostaje kamerą ARRI z największą matrycą, plasowaną powyżej ALEXA LF i zarezerwowaną wyłącznie dla programu wynajmu, a nie bezpośredniej sprzedaży."
         }
       }
     }

@@ -6,6 +6,24 @@
       "modeSideBySide": "Side by Side",
       "modePixelDensity": "Pixel Density",
       "pixelDensityDescription": "Showing common megapixel counts for each sensor. Larger pixels (bigger cells) capture more light.",
+      "filmPixelDensityNote": "Film and Super 16 have no defined pixel count, so they're hidden in this mode — view them in Overlay or Side by Side instead.",
+      "quickCompare": "Quick Compare",
+      "presetReplacesNote": "Replaces the current selection",
+      "presets": {
+        "phone_vs_ff": "Phone vs Full Frame",
+        "crop_vs_ff": "Crop vs Full Frame",
+        "film_vs_digital": "Film vs Digital",
+        "mf_family": "Medium Format Family",
+        "cine_vs_stills": "Cine vs Stills"
+      },
+      "groups": {
+        "medium-format": "Medium Format",
+        "ff-aps": "Full Frame & APS",
+        "compact": "Compact & 1\"",
+        "phone": "Smartphone",
+        "film": "Film",
+        "cine": "Cinema"
+      },
       "sensors": "Sensors",
       "customSensors": "Custom Sensors",
       "placeholderName": "Name",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Crop Factor",
       "tableAspectCrop": "Aspect Crop",
       "canvasAriaLabel": "Sensor size comparison in {mode} mode",
+      "detail": {
+        "diagonal": "Diagonal",
+        "area": "Area",
+        "aspect": "Aspect",
+        "vsFullFrame": "vs Full Frame",
+        "referenceSensor": "Reference sensor (full frame)",
+        "equivalence": "A {focal}mm f/{ap} lens here frames like ~{eqFocal}mm with f/{eqAp} depth of field on full frame.",
+        "resolutions": "Common resolutions",
+        "cameras": "Popular cameras",
+        "character": "Character",
+        "context": "Context",
+        "customNoProfile": "Custom sensor — computed data only."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "What is crop factor and why does it matter?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "How does sensor size affect depth of field?",
           "answer": "Larger sensors produce shallower depth of field at equivalent framing. To get the same framing with a smaller sensor, you either use a shorter focal length (deeper depth of field) or move farther away (deeper depth of field), both reducing background blur."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "How do film frame sizes compare to modern digital sensors?",
+          "answer": "Standard 35mm film is dimensionally identical to a full-frame digital sensor (36×24mm), so film-era lenses cover it with no crop. Medium-format film goes much larger — a 645 negative is 56×41.5mm and 6×7 is 70×56mm, both well beyond any full-frame digital sensor's area — while half-frame film splits a standard 35mm frame in two for roughly the area of a large APS-C sensor."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "What do Super 35 and the ALEXA 65 correspond to in stills terms?",
+          "answer": "Super 35 (24.9×14.0mm, 1.51x crop) lands almost exactly on APS-C size, which is why S35 cinema lenses and APS-C stills lenses cover similar image circles. The ALEXA 65's 54.12×25.58mm sensor is much bigger — closer to a 44×33mm medium-format stills sensor than to full frame, which is why it needs its own dedicated large-format lens lineup."
+        },
+        "why-inch-fractions": {
+          "question": "Why are small sensors named in inch fractions like 1/2.3\"?",
+          "answer": "These fractions describe the outer diameter of 1950s-era video camera tubes, not the sensor itself — a \"1-inch\" tube produced a usable image area of roughly two-thirds of that diameter. When solid-state sensors replaced tubes, manufacturers kept the tube-era naming convention even though a modern \"1-inch\" sensor's actual diagonal is about 15.86mm, nowhere near a literal inch."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "At 53.4×40mm this is the largest sensor most working photographers will ever touch. Studio, product, and landscape shooters run it tethered for resolution and tonal range, not for speed — autofocus and burst rates trail full frame by a wide margin. A 150-megapixel file from a Phase One IQ4 back will strain your storage and your computer alike.",
+          "context": "The \"645\" in this sensor class's lineage traces to 6×4.5cm roll-film backs, but don't confuse it with the 645 film preset elsewhere in this list. At 53.4×40mm, Phase One and Hasselblad's digital 645-series sensors are actually smaller than the 56×41.5mm film frame they're descended from, despite sharing a name."
+        },
+        "mf": {
+          "character": "This size class made medium format practical outside a studio. Fujifilm's GFX and Hasselblad's X series both build around a 43.8×32.9mm sensor small enough to hand-hold and hike with, running 50 to 100 megapixels with autofocus that has closed most of the gap with mirrorless. Native lenses stay larger and pricier than full-frame equivalents, and rolling-shutter readout limits fast action.",
+          "context": "Fujifilm and Hasselblad compete head-to-head here, but they're not competing on sensor hardware — the GFX 100 II and X2D 100C both use the same Sony-fabricated 44×33mm chip. What separates the systems is body design, lens rendering, and menu philosophy, not the silicon underneath."
+        },
+        "mf_leica": {
+          "character": "Leica's S system puts a 45×30mm sensor in a body shaped like an oversized 35mm SLR rather than a studio view camera, which is the whole pitch — handheld medium format for reportage and location portraiture. The 64-megapixel S3 trades some resolution headroom against GFX and Hasselblad rivals for a simpler, single-lens-mount system with fewer bodies to choose between.",
+          "context": "The Leica S2, launched in 2009, was pitched explicitly as the first medium-format camera built for outdoor, handheld use rather than tripod-bound studio work. The S3 arrived in 2020 as its direct successor; Leica discontinued the S3 in 2023, and no S4 has shipped, leaving the line's future uncertain."
+        },
+        "ff": {
+          "character": "The reference point for everything else here. Full frame balances light-gathering area, depth-of-field control, and lens size — most modern lens lineups are designed around it. You pay in body and lens bulk compared with APS-C, but gain roughly a stop of low-light headroom and shallower focus at the same framing.",
+          "context": "The 36×24 mm frame is a direct inheritance from 35mm still film, standardized by Leica in the 1920s from cinema film stock turned sideways. A full-frame digital sensor is dimensionally identical to a 35mm film frame — which is why film-era lenses map onto it with no crop."
+        },
+        "apsh": {
+          "character": "A stopgap size Canon built for speed over resolution — bigger pixels and faster readout, in a body aimed at sports and photojournalism rather than image quality for its own sake. The 1.29x crop split the difference between full frame's reach disadvantage and APS-C's low-light penalty, at the cost of a sensor no other manufacturer ever adopted.",
+          "context": "APS-H was a Canon-only format, used exclusively in the EOS-1D line — the 1D, 1D Mark II, Mark II N, Mark III, and finally the 2009 Mark IV, after which Canon abandoned the size entirely and folded the 1-series back into full frame. No lens or accessory ecosystem outside Canon's own ever targeted it."
+        },
+        "apsc_n": {
+          "character": "The default enthusiast and mid-range mirrorless size for Sony, Nikon, and Fujifilm, at a 1.53x crop that turns a 50mm lens into a roughly 75mm equivalent. Bodies and lenses run noticeably smaller and cheaper than full frame, and the extra reach is a real advantage for wildlife and sports shooters working with longer glass.",
+          "context": "APS-C's name borrows from 1996's consumer Advanced Photo System film, specifically its \"Classic\" 3:2 print format — but the digital sensor isn't the same physical size as APS film, only a distant namesake. Fujifilm has built its entire X system around this sensor size rather than treating it as an entry tier."
+        },
+        "apsc_c": {
+          "character": "Canon's own APS-C standard, at 22.3×14.8mm — smaller than the 23.5×15.6mm size most competitors use, which is why Canon's crop reads 1.62x instead of 1.5x. In practice that means slightly more telephoto reach per lens, at a small cost in noise and dynamic range versus the larger APS-C variant.",
+          "context": "Canon has run its own APS-C sensor dimensions since the format's earliest digital SLRs, never converging with the 1.5x crop nearly everyone else settled on. The R7 and R10 carry this size forward into Canon's mirrorless RF mount today."
+        },
+        "m43": {
+          "character": "A genuinely small, genuinely complete system — 2x crop means every lens is physically compact, and the 17.3×13mm sensor still supports fast, sharp glass with real subject separation, just not full-frame-shallow depth of field. Low light and dynamic range trail larger sensors, which is the honest tradeoff for the size and weight savings.",
+          "context": "Micro Four Thirds is an open standard, not a proprietary format — Olympus and Panasonic jointly announced it in 2008, and any manufacturer can build to the same lens-mount and sensor specification. OM System (formerly Olympus) and Panasonic remain the two active camera makers building on it."
+        },
+        "1in": {
+          "character": "A meaningful step up from smartphone sensors while staying pocketable — the RX100 line proved a 13.2×8.8mm sensor could produce real image quality in a compact you'd actually carry. Background blur stays limited even at f/1.8, and low light needs care, but the size-to-quality ratio is hard to beat for travel.",
+          "context": "The \"1-inch\" label is a holdover from 1950s video-camera tubes, not a real measurement — a tube with a 1-inch outer diameter produced a usable image area of roughly two-thirds that, around 16mm diagonal. When CCD and CMOS sensors replaced tubes, camera makers kept the tube-era naming even though today's sensors have no tube inside them at all."
+        },
+        "phone": {
+          "character": "Modern flagship phones close the gap on sensor-only cameras through computation, not size — a 9.8×7.3mm chip can't match a 1-inch sensor's raw light-gathering, so multi-frame stacking, AI denoising, and synthetic bokeh do the heavy lifting instead. The result looks excellent on a phone screen and starts to show its limits at full resolution in low light.",
+          "context": "\"Flagship\" here spans several real sensors of similar-but-not-identical size across brands and years rather than one exact chip — the iPhone 17 Pro's main camera measures roughly 1/1.28-inch, Samsung's flagship line runs closer to 1/1.3-inch, and both round into this preset's representative 9.8×7.3mm figure."
+        },
+        "1_1_7in": {
+          "character": "The 7.6×5.7mm sensor defined the late-2000s enthusiast compact — cameras like the Canon S120 and Panasonic LX7 paired it with a fast lens few compacts could match, aiming at photographers who wanted manual control in a jacket pocket. Smartphones absorbed most of this market, but the format's balance of size and control still holds up.",
+          "context": "In sensor area, this format ranks a notch below 1-inch compacts and two notches below Micro Four Thirds, carving out a niche for pocketable cameras with faster apertures than typical point-and-shoots of the same era. Few current cameras use it — it's now mostly a used-market and collector size."
+        },
+        "1_2_3in": {
+          "character": "Drones and action cameras are built around this size because it's small and light enough to fly or mount without adding meaningful weight — the cost is noisy high-ISO footage and limited dynamic range compared to any larger sensor on this list. DJI and most action-cam makers anchor their core lineups here.",
+          "context": "Listed at 6.17×4.55mm, this is the dominant real-world convention across manufacturer spec sheets, even though it doesn't reduce to an exact 4:3 ratio — a mathematically \"true\" 4:3 version at 6.17×4.63mm exists in some references but almost no shipping drone or action-cam sensor actually quotes it."
+        },
+        "phone_mid": {
+          "character": "Mid-range phones carry sensors well below their flagship siblings' size, and it shows most in low light and dynamic range once you push past well-lit daytime shots. Manufacturers lean even harder on computational processing to compensate, which narrows the visible gap in good conditions but can't fully close it after dark.",
+          "context": "This is a representative size, not one manufacturer's exact chip — real mid-range main sensors, including parts like Samsung's ISOCELL GM5, cluster around this 5.6×4.2mm figure without any single datasheet matching it precisely, since \"mid-range\" spans many actual sensors across brands and years."
+        },
+        "phone_uw": {
+          "character": "Ultra-wide phone lenses carry the smallest, most compromised sensor in a typical phone's camera array — useful for architecture and landscapes where the wider field of view matters more than per-pixel quality, but visibly softer and noisier than the main camera in the same shot.",
+          "context": "Like the other phone tiers here, this 4.0×3.0mm figure represents a class of similarly sized ultra-wide modules across brands rather than one specific chip. Ultra-wide cameras were a mid-2010s addition to phone camera arrays and remain the weakest link in most multi-camera systems."
+        },
+        "film_half": {
+          "character": "Shooting half-frame means doubling your shots per roll by fitting two frames into the space one normally occupies — appealing for film-cost reasons, but the tradeoff is a grainier, softer result when enlarged compared to full-frame 35mm, since you're working with half the negative area.",
+          "context": "Half of a standard 35mm frame — the format's frames are natively vertical (18×24) because they split the horizontal film frame in two. Popularized by the Olympus Pen in 1959 for doubling shots per roll, and revived by the Pentax 17 in 2024."
+        },
+        "film_645": {
+          "character": "Stepping up to 645 film means a 56×41.5mm negative with noticeably more detail and tonal range than 35mm, while still fitting 15 or 16 frames on a roll of 120 film. Bodies like the Mamiya 645 handle almost like an oversized SLR rather than a studio-only rig.",
+          "context": "Not to be confused with the digital \"645\"-lineage medium-format sensors elsewhere in this list — this is the actual 6×4.5cm roll-film frame the name comes from, shot on 120 or 220 film in bodies like the Pentax 645NII and Contax 645."
+        },
+        "film_6x6": {
+          "character": "Square framing removes a decision — no rotating the camera for portrait versus landscape — which is part of why it suited waist-level twin-lens cameras so well. The tradeoff shows at print time: most paper and screen formats aren't square, so you're cropping one way or another eventually.",
+          "context": "The classic square-format camera, popularized by Hasselblad's 500 series and Rolleiflex's twin-lens reflexes. A modified Hasselblad 500EL carried this format to the lunar surface on Apollo 11, following earlier Hasselblad 500Cs used on NASA's Mercury missions in 1962 and 1963."
+        },
+        "film_6x7": {
+          "character": "A heavier, slower system than 35mm or half-frame — the Mamiya RB67's bellows focusing and rotating back reward a deliberate, tripod-friendly pace over handheld spontaneity. In exchange you get a negative more than four times the area of full frame, with correspondingly finer grain and smoother tonal transitions.",
+          "context": "Nicknamed \"the ideal format\" in the 1960s and '70s because its 5:4 proportions crop cleanly to 8×10 and other standard print sizes with minimal waste. The Mamiya RB67 takes its name directly from its signature feature — a rotating back, hence \"RB\" — that lets you switch orientation without turning the whole camera."
+        },
+        "film_4x5": {
+          "character": "Sheet film changes how you work as much as what you capture — one exposure per holder, a ground-glass view that's upside-down and reversed, and movements (rise, shift, tilt) that let you correct perspective and control focus in ways no digital sensor here can match without stitching or shifting lenses.",
+          "context": "The format that carried photojournalism through the mid-20th century — Joe Rosenthal shot the Iwo Jima flag-raising on a Graflex Speed Graphic loaded with 4×5 sheet film. Large-format film still exists today in bodies like the folding Intrepid 4×5, mostly for landscape and fine-art work."
+        },
+        "cine_s16": {
+          "character": "A working-format compromise — Super 16 packs meaningfully better image quality than standard 16mm into a fraction of 35mm film's cost and camera bulk, which is why documentary, indie, and broadcast productions leaned on it for decades. It has no fixed digital pixel count in this tool since it's a film gauge, not a sensor.",
+          "context": "Invented in 1969 by Swedish cinematographer Rune Ericson, Super 16 widens standard 16mm's usable frame by reclaiming the strip of film normally reserved for an optical soundtrack — a 12.52×7.41mm image area versus regular 16mm's narrower frame, roughly 1.69:1 by raw dimensions. Productions historically framed for a 1.66:1 blow-up to 35mm rather than the format's literal ratio."
+        },
+        "cine_s35": {
+          "character": "Professional cinema production runs on this sensor size more than any other — cameras like the ARRI ALEXA 35 and RED Komodo build around it because it balances shallow-focus control, lens choice, and manageable file sizes better than either smaller broadcast formats or larger large-format cine sensors.",
+          "context": "Super 35 traces back to 4-perf 35mm cine film's full frame — essentially the same area silent-era cameras used before sound tracks ate into the frame, revived as a camera-only format in the 1980s. The 24.9×14.0mm figure here is the 16:9 active-image-area crop that ARRI's own cameras cite, not the larger open-gate frame."
+        },
+        "cine_vv": {
+          "character": "RED's VV sensor is built for large-format cinema at a size close to full frame's, giving shallower depth of field and wider dynamic range than Super 35 at the same focal length — the tradeoff is heavier, pricier glass designed to cover the bigger image circle.",
+          "context": "\"VV\" stands for VistaVision, a name RED borrowed from Paramount's large-frame 35mm process of the 1950s, itself designed to rival widescreen cinema formats of its era. The V-RAPTOR's 40.96×21.6mm sensor shares only the name and rough size class with that decades-old film format, not its specific dimensions."
+        },
+        "cine_a65": {
+          "character": "ARRI built the ALEXA 65 for the largest-scale cinema productions — a 54.12×25.58mm sensor that dwarfs even VistaVision-class digital cinema cameras like the V-RAPTOR VV. Bodies are rented rather than owned through ARRI's dedicated program, and the format demands large-format glass that few productions outside blockbuster budgets can justify.",
+          "context": "At a 2.12:1 aspect ratio, the ALEXA 65's 20.3-megapixel sensor sits closer in size to medium-format stills cameras than to any other cinema camera on this list. It remains ARRI's largest-sensor camera, positioned above the ALEXA LF and reserved for its rental-only program rather than outright sale."
         }
       }
     }

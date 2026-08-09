@@ -1,3 +1,5 @@
+export type SensorGroupId = 'medium-format' | 'ff-aps' | 'compact' | 'phone' | 'film' | 'cine'
+
 export interface SensorPreset {
   id: string
   name: string
@@ -5,6 +7,7 @@ export interface SensorPreset {
   w?: number
   h?: number
   color?: string
+  group?: SensorGroupId
 }
 
 export interface FocalLengthPreset {

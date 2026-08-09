@@ -130,7 +130,7 @@
       "heading": "Sık sorulan sorular"
     },
     "sensors": {
-      "mf_645": "Orta Format (54x40)",
+      "mf_645": "Orta Format (53.4x40)",
       "mf": "Orta Format (44x33)",
       "mf_leica": "Orta Format (45x30)",
       "ff": "Tam Kare",
@@ -139,7 +139,20 @@
       "apsc_c": "APS-C (Canon)",
       "m43": "Mikro Dört Üçlü",
       "1in": "1\" Sensör",
-      "phone": "Akıllı Telefon Amiral Gemisi (1/1,3\")"
+      "phone": "Akıllı Telefon Amiral Gemisi (1/1,3\")",
+      "1_1_7in": "1/1.7\" Kompakt",
+      "1_2_3in": "1/2.3\" (Dronlar ve Aksiyon Kameraları)",
+      "phone_mid": "Akıllı Telefon Orta Seviye (1/2.55\")",
+      "phone_uw": "Akıllı Telefon Ultra Geniş Açı (1/3.5\")",
+      "film_half": "Yarım Kare Film",
+      "film_645": "645 Film",
+      "film_6x6": "6×6 Film",
+      "film_6x7": "6×7 Film",
+      "film_4x5": "4×5 Büyük Format",
+      "cine_s16": "Super 16",
+      "cine_s35": "Super 35 (16:9)",
+      "cine_vv": "RED V-RAPTOR VV",
+      "cine_a65": "ARRI ALEXA 65"
     },
     "legalTranslationDisclaimer": "Bu, kolaylık sağlamak için yapılmış bir çeviridir. Hukuki açıdan bağlayıcı olan İngilizce sürümdür. /en/privacy adresine bakın.",
     "error": {

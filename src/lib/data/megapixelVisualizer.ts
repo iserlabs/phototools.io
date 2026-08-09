@@ -18,9 +18,21 @@ function tagForMp(mp: number): MegapixelPreset['tag'] {
   return 'ff'
 }
 
+// phone_mid/phone_uw's COMMON_MP entries name representative categories
+// ("Typical mid-range main sensor", "High-res ultra-wide module") rather than
+// real camera models — accurate as sensor-size-comparison's own pixel-density
+// labels (see the "nominal/representative categories" comment above
+// POPULAR_MODELS in sensors.ts), but wrong here, where `models` is captioned
+// as a list of cameras alongside real product names like "iPhone 16 Pro".
+// Exclude them from this tool's model tooltip rather than rewording the
+// shared data — a single manufactured "representative chip" name would
+// misattribute these interpolated MP figures to one real, exact part.
+const NON_MODEL_SENSOR_IDS = new Set(['phone_mid', 'phone_uw'])
+
 function collectModels(): Map<number, string[]> {
   const map = new Map<number, string[]>()
-  for (const entries of Object.values(COMMON_MP)) {
+  for (const [sensorId, entries] of Object.entries(COMMON_MP)) {
+    if (NON_MODEL_SENSOR_IDS.has(sensorId)) continue
     for (const { mp, models } of entries as MpEntry[]) {
       const list = map.get(mp) ?? []
       if (models && !list.includes(models)) list.push(models)

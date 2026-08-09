@@ -6,6 +6,24 @@
       "modeSideBySide": "Bersebelahan",
       "modePixelDensity": "Ketumpatan Piksel",
       "pixelDensityDescription": "Menunjukkan kiraan megapiksel biasa untuk setiap sensor. Piksel yang lebih besar (sel lebih besar) menangkap lebih banyak cahaya.",
+      "filmPixelDensityNote": "Filem dan Super 16 tidak mempunyai bilangan piksel yang ditetapkan, jadi ia disembunyikan dalam mod ini — lihat sebaliknya dalam mod Tindihan atau Bersebelahan.",
+      "quickCompare": "Bandingan Pantas",
+      "presetReplacesNote": "Menggantikan pilihan semasa",
+      "presets": {
+        "phone_vs_ff": "Telefon lawan Full Frame",
+        "crop_vs_ff": "Crop lawan Full Frame",
+        "film_vs_digital": "Filem lawan Digital",
+        "mf_family": "Keluarga Format Sederhana",
+        "cine_vs_stills": "Sinema lawan Foto Pegun"
+      },
+      "groups": {
+        "medium-format": "Format Sederhana",
+        "ff-aps": "Full Frame & APS",
+        "compact": "Kompak & 1\"",
+        "phone": "Telefon Pintar",
+        "film": "Filem",
+        "cine": "Sinema"
+      },
       "sensors": "Sensor",
       "customSensors": "Sensor Tersuai",
       "placeholderName": "Nama",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Faktor Crop",
       "tableAspectCrop": "Crop Aspek",
       "canvasAriaLabel": "Perbandingan saiz sensor dalam mod {mode}",
+      "detail": {
+        "diagonal": "Pepenjuru",
+        "area": "Kawasan",
+        "aspect": "Aspek",
+        "vsFullFrame": "vs Full Frame",
+        "referenceSensor": "Sensor rujukan (full frame)",
+        "equivalence": "Lensa {focal}mm f/{ap} di sini membingkai seperti ~{eqFocal}mm dengan kedalaman medan f/{eqAp} pada full frame.",
+        "resolutions": "Resolusi biasa",
+        "cameras": "Kamera popular",
+        "character": "Ciri-ciri",
+        "context": "Konteks",
+        "customNoProfile": "Sensor tersuai — hanya data yang dikira."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Apa itu faktor crop dan mengapa ia penting?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Bagaimanakah saiz sensor mempengaruhi kedalaman medan?",
           "answer": "Sensor lebih besar menghasilkan kedalaman medan lebih cetek pada bingkai setara. Untuk mendapatkan bingkai yang sama dengan sensor lebih kecil, anda sama ada menggunakan panjang fokus lebih pendek (kedalaman medan lebih dalam) atau bergerak lebih jauh (kedalaman medan lebih dalam), kedua-duanya mengurangkan kekaburan latar belakang."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Bagaimanakah saiz bingkai filem dibandingkan dengan sensor digital moden?",
+          "answer": "Filem 35mm standard sama saiznya dengan sensor digital full frame (36×24mm), jadi lensa era filem meliputinya tanpa crop. Filem format sederhana jauh lebih besar — negatif 645 ialah 56×41.5mm dan 6×7 ialah 70×56mm, kedua-duanya jauh melebihi kawasan mana-mana sensor digital full frame — manakala filem separuh bingkai membahagikan bingkai 35mm standard kepada dua, kira-kira sama dengan kawasan sensor APS-C yang besar."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Apakah persamaan Super 35 dan ALEXA 65 dalam istilah foto pegun?",
+          "answer": "Super 35 (24.9×14.0mm, crop 1.51x) jatuh hampir tepat pada saiz APS-C, itulah sebabnya lensa sinema S35 dan lensa foto pegun APS-C meliputi bulatan imej yang serupa. Sensor 54.12×25.58mm ALEXA 65 jauh lebih besar — lebih hampir kepada sensor foto pegun format sederhana 44×33mm berbanding full frame, itulah sebabnya ia memerlukan siri lensa format besar khusus tersendiri."
+        },
+        "why-inch-fractions": {
+          "question": "Mengapakah sensor kecil dinamakan dalam pecahan inci seperti 1/2.3\"?",
+          "answer": "Pecahan ini menerangkan diameter luar tiub kamera video era 1950-an, bukan sensor itu sendiri — tiub «1 inci» menghasilkan kawasan imej boleh guna sekitar dua pertiga daripada diameter tersebut. Apabila sensor solid-state menggantikan tiub, pengeluar mengekalkan konvensyen penamaan era tiub walaupun pepenjuru sebenar sensor «1 inci» moden ialah kira-kira 15.86mm, jauh daripada satu inci literal."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "Pada 53.4×40mm, ini ialah sensor terbesar yang akan disentuh oleh kebanyakan jurugambar profesional. Jurugambar studio, produk dan landskap menggunakannya secara tethered (bersambung terus ke komputer) untuk resolusi dan julat tona, bukan untuk kelajuan — kadar autofokus dan rentetan jauh ketinggalan berbanding full frame. Fail 150 megapiksel daripada belakang Phase One IQ4 akan menguji ruang storan dan komputer anda.",
+          "context": "«645» dalam nama kategori sensor ini berasal daripada belakang filem gulung 6×4.5cm, tetapi jangan keliru dengan praset filem 645 di tempat lain dalam senarai ini. Pada 53.4×40mm, sensor digital siri 645 daripada Phase One dan Hasselblad sebenarnya lebih kecil daripada bingkai filem 56×41.5mm yang menjadi asal-usulnya, walaupun berkongsi nama yang sama."
+        },
+        "mf": {
+          "character": "Kategori saiz ini menjadikan format sederhana praktikal di luar studio. Siri GFX Fujifilm dan siri X Hasselblad kedua-duanya dibina di sekitar sensor 43.8×32.9mm yang cukup kecil untuk dipegang tangan dan dibawa mendaki, dengan resolusi 50 hingga 100 megapiksel serta autofokus yang telah merapatkan sebahagian besar jurang berbanding mirrorless. Lensa asli kekal lebih besar dan mahal berbanding setara full frame, dan bacaan rolling shutter mengehadkan aksi pantas.",
+          "context": "Fujifilm dan Hasselblad bersaing secara langsung di sini, tetapi bukan pada perkakasan sensor — GFX 100 II dan X2D 100C kedua-duanya menggunakan cip 44×33mm yang sama, dihasilkan oleh Sony. Yang membezakan kedua-dua sistem ini ialah reka bentuk badan, gaya lensa dan falsafah menu, bukan cip di sebaliknya."
+        },
+        "mf_leica": {
+          "character": "Sistem S Leica meletakkan sensor 45×30mm dalam badan berbentuk seperti SLR 35mm bersaiz lebih besar, bukannya kamera view studio — itulah keseluruhan tujuannya: format sederhana yang boleh dipegang tangan untuk reportaj dan potret di lokasi. S3 dengan 64 megapiksel mengorbankan sedikit ruang resolusi berbanding pesaing GFX dan Hasselblad demi sistem yang lebih ringkas, dengan satu mount lensa dan lebih sedikit pilihan badan.",
+          "context": "Leica S2, yang dilancarkan pada 2009, dipasarkan secara jelas sebagai kamera format sederhana pertama yang dibina untuk kegunaan luar dan pegang tangan, bukannya kerja studio terikat tripod. S3 tiba pada 2020 sebagai pengganti langsung; Leica menghentikan pengeluaran S3 pada 2023, dan tiada S4 pernah dilancarkan, menjadikan masa depan siri ini tidak menentu."
+        },
+        "ff": {
+          "character": "Titik rujukan untuk semua yang lain di sini. Full frame mengimbangi kawasan pengumpulan cahaya, kawalan kedalaman medan dan saiz lensa — kebanyakan siri lensa moden direka di sekitarnya. Anda membayar dari segi saiz badan dan lensa berbanding APS-C, tetapi memperoleh kira-kira satu stop ruang tambahan dalam cahaya rendah dan kedalaman medan lebih cetek pada bingkai yang sama.",
+          "context": "Bingkai 36×24 mm adalah warisan langsung daripada filem statik 35mm, yang distandardkan oleh Leica pada tahun 1920-an daripada filem sinema yang diputar ke sisi. Sensor digital full frame sama saiznya dengan bingkai filem 35mm — itulah sebabnya lensa era filem sesuai dengannya tanpa crop."
+        },
+        "apsh": {
+          "character": "Saiz sementara yang dibina Canon demi kelajuan berbanding resolusi — piksel lebih besar dan bacaan lebih pantas, dalam badan yang disasarkan untuk sukan dan fotojurnalisme berbanding kualiti imej semata-mata. Crop 1.29x membahagi perbezaan antara kelemahan jangkauan full frame dan penalti cahaya rendah APS-C, dengan kos sensor yang tidak pernah digunakan oleh mana-mana pengeluar lain.",
+          "context": "APS-H adalah format eksklusif Canon, digunakan hanya dalam siri EOS-1D — 1D, 1D Mark II, Mark II N, Mark III, dan akhirnya Mark IV pada 2009, selepas itu Canon meninggalkan saiz ini sepenuhnya dan menggabungkan semula siri 1 ke dalam full frame. Tiada ekosistem lensa atau aksesori di luar Canon sendiri pernah menyasarkannya."
+        },
+        "apsc_n": {
+          "character": "Saiz mirrorless lalai untuk peminat dan gred pertengahan bagi Sony, Nikon dan Fujifilm, dengan crop 1.53x yang menukar lensa 50mm menjadi setara kira-kira 75mm. Badan dan lensa jelas lebih kecil dan murah berbanding full frame, dan jangkauan tambahan ini kelebihan sebenar untuk jurugambar hidupan liar dan sukan yang menggunakan lensa panjang.",
+          "context": "Nama APS-C dipinjam daripada filem pengguna Advanced Photo System tahun 1996, khususnya format cetakan «Classic» 3:2-nya — tetapi sensor digital tidak mempunyai saiz fizikal yang sama dengan filem APS, cuma nama yang sama secara jauh. Fujifilm telah membina keseluruhan sistem X di sekitar saiz sensor ini, bukan menganggapnya sebagai tahap peringkat masuk."
+        },
+        "apsc_c": {
+          "character": "Standard APS-C milik Canon sendiri, pada 22.3×14.8mm — lebih kecil daripada saiz 23.5×15.6mm yang digunakan kebanyakan pesaing, itulah sebabnya crop Canon adalah 1.62x dan bukan 1.5x. Dalam praktik, ini bermakna sedikit lebih jangkauan telefoto bagi setiap lensa, dengan sedikit kos dari segi hingar dan julat dinamik berbanding varian APS-C yang lebih besar.",
+          "context": "Canon menggunakan dimensi sensor APS-C miliknya sendiri sejak DSLR digital pertama format ini, tanpa pernah menyamai crop 1.5x yang digunakan oleh hampir semua pengeluar lain. R7 dan R10 meneruskan saiz ini pada mount mirrorless RF Canon hari ini."
+        },
+        "m43": {
+          "character": "Sistem yang benar-benar kecil dan benar-benar lengkap — crop 2x bermakna setiap lensa padat secara fizikal, dan sensor 17.3×13mm masih menyokong lensa laju dan tajam dengan pemisahan subjek yang sebenar, cuma tidak secetek kedalaman medan full frame. Prestasi cahaya rendah dan julat dinamik ketinggalan berbanding sensor lebih besar, iaitu pertukaran yang jujur demi penjimatan saiz dan berat.",
+          "context": "Micro Four Thirds adalah standard terbuka, bukan format proprietari — Olympus dan Panasonic mengumumkannya bersama pada 2008, dan mana-mana pengeluar boleh membina mengikut spesifikasi mount lensa dan sensor yang sama. OM System (dahulunya Olympus) dan Panasonic kekal sebagai dua pengeluar kamera aktif yang membina berasaskannya."
+        },
+        "1in": {
+          "character": "Peningkatan yang bermakna berbanding sensor telefon pintar sambil kekal muat poket — siri RX100 membuktikan sensor 13.2×8.8mm boleh menghasilkan kualiti imej sebenar dalam kamera kompak yang benar-benar anda bawa. Kekaburan latar belakang kekal terhad walaupun pada f/1.8, dan cahaya rendah memerlukan perhatian, tetapi nisbah saiz-kepada-kualiti sukar ditandingi untuk perjalanan.",
+          "context": "Label «1 inci» adalah peninggalan daripada tiub kamera video era 1950-an, bukan ukuran sebenar — tiub dengan diameter luar 1 inci menghasilkan kawasan imej yang boleh digunakan sekitar dua pertiga daripada diameter tersebut, iaitu kira-kira 16mm secara pepenjuru. Apabila sensor CCD dan CMOS menggantikan tiub, pengeluar kamera mengekalkan penamaan era tiub walaupun sensor «1 inci» hari ini sebenarnya tidak mempunyai tiub langsung di dalamnya."
+        },
+        "phone": {
+          "character": "Telefon unggulan moden merapatkan jurang dengan kamera berasaskan sensor semata-mata melalui pengiraan, bukan saiz — cip 9.8×7.3mm tidak dapat menandingi pengumpulan cahaya mentah sensor 1 inci, jadi penindanan pelbagai bingkai, pengurangan hingar AI dan bokeh sintetik melakukan kerja berat sebaliknya. Hasilnya kelihatan sangat baik pada skrin telefon dan mula menunjukkan hadnya pada resolusi penuh dalam cahaya rendah.",
+          "context": "«Unggulan» di sini merangkumi beberapa sensor sebenar dengan saiz yang serupa tetapi tidak sama antara jenama dan tahun, bukan satu cip yang tepat — kamera utama iPhone 17 Pro berukuran kira-kira 1/1.28 inci, siri unggulan Samsung lebih hampir kepada 1/1.3 inci, dan kedua-duanya dibundarkan kepada angka wakil 9.8×7.3mm bagi praset ini."
+        },
+        "1_1_7in": {
+          "character": "Sensor 7.6×5.7mm mentakrifkan kamera kompak peminat era akhir 2000-an — kamera seperti Canon S120 dan Panasonic LX7 menggandingkannya dengan lensa laju yang jarang ditandingi kamera kompak lain, menyasarkan jurugambar yang mahukan kawalan manual dalam poket jaket. Telefon pintar menyerap sebahagian besar pasaran ini, tetapi keseimbangan saiz dan kawalan format ini masih relevan.",
+          "context": "Dari segi kawasan sensor, format ini berada satu tahap di bawah kamera kompak 1 inci dan dua tahap di bawah Micro Four Thirds, mewujudkan ceruk untuk kamera muat poket dengan aperture lebih laju berbanding kamera point-and-shoot tipikal era yang sama. Sedikit kamera semasa yang menggunakannya — kini ia kebanyakannya saiz pasaran terpakai dan pengumpul."
+        },
+        "1_2_3in": {
+          "character": "Dron dan kamera aksi dibina di sekitar saiz ini kerana ia cukup kecil dan ringan untuk diterbangkan atau dipasang tanpa menambah berat yang ketara — kosnya ialah rakaman berhingar pada ISO tinggi dan julat dinamik yang terhad berbanding mana-mana sensor lebih besar dalam senarai ini. DJI dan kebanyakan pengeluar kamera aksi menjadikan saiz ini teras siri utama mereka.",
+          "context": "Disenaraikan sebagai 6.17×4.55mm, ini adalah konvensyen dominan dalam helaian spesifikasi pengeluar pada dunia sebenar, walaupun ia tidak menghasilkan nisbah 4:3 yang tepat — versi 4:3 yang «benar» secara matematik pada 6.17×4.63mm wujud dalam sesetengah rujukan, tetapi hampir tiada sensor dron atau kamera aksi yang dipasarkan benar-benar menyatakannya."
+        },
+        "phone_mid": {
+          "character": "Telefon gred pertengahan membawa sensor yang jauh lebih kecil daripada saiz rakan sebaya unggulan mereka, dan ini paling ketara dalam cahaya rendah dan julat dinamik sebaik sahaja anda melangkaui gambar siang hari yang cukup cahaya. Pengeluar bergantung lebih kuat lagi pada pemprosesan pengiraan untuk mengimbangi, yang mengecilkan jurang yang kelihatan dalam keadaan baik tetapi tidak dapat menutupnya sepenuhnya selepas gelap.",
+          "context": "Ini adalah saiz wakil, bukan cip tepat mana-mana pengeluar — sensor utama gred pertengahan sebenar, termasuk komponen seperti ISOCELL GM5 Samsung, berkelompok di sekitar angka 5.6×4.2mm ini tanpa mana-mana lembaran data yang sepadan dengan tepat, kerana «gred pertengahan» merangkumi banyak sensor sebenar merentasi jenama dan tahun."
+        },
+        "phone_uw": {
+          "character": "Lensa ultra lebar telefon membawa sensor terkecil dan paling terjejas dalam susunan kamera telefon biasa — berguna untuk seni bina dan landskap yang mana medan pandangan lebih luas lebih penting berbanding kualiti per-piksel, tetapi jelas lebih kabur dan berhingar berbanding kamera utama dalam gambar yang sama.",
+          "context": "Seperti tahap telefon lain di sini, angka 4.0×3.0mm ini mewakili kelas modul ultra lebar bersaiz serupa merentasi jenama, bukan satu cip tertentu. Kamera ultra lebar adalah penambahan pertengahan 2010-an kepada susunan kamera telefon dan kekal sebagai penghubung paling lemah dalam kebanyakan sistem berbilang kamera."
+        },
+        "film_half": {
+          "character": "Menggambar separuh bingkai bermakna menggandakan bilangan gambar setiap gulungan dengan memuatkan dua bingkai dalam ruang yang biasanya diduduki oleh satu — menarik atas sebab kos filem, tetapi pertukarannya ialah hasil yang lebih berbutir dan kabur apabila dibesarkan berbanding 35mm penuh, kerana anda bekerja dengan separuh kawasan negatif.",
+          "context": "Separuh daripada bingkai 35mm standard — bingkai format ini secara semula jadi menegak (18×24) kerana ia membahagikan bingkai filem mendatar kepada dua. Dipopularkan oleh Olympus Pen pada 1959 untuk menggandakan bilangan gambar setiap gulungan, dan dihidupkan semula oleh Pentax 17 pada 2024."
+        },
+        "film_645": {
+          "character": "Beralih kepada filem 645 bermakna negatif 56×41.5mm dengan jelas lebih banyak perincian dan julat tona berbanding 35mm, sambil masih memuatkan 15 atau 16 bingkai pada satu gulungan filem 120. Badan seperti Mamiya 645 dikendalikan hampir seperti SLR bersaiz lebih besar, bukannya alat khusus studio sahaja.",
+          "context": "Jangan dikelirukan dengan sensor format sederhana digital keturunan «645» di tempat lain dalam senarai ini — ini ialah bingkai filem gulung 6×4.5cm sebenar yang menjadi asal nama tersebut, digambar pada filem 120 atau 220 dalam badan seperti Pentax 645NII dan Contax 645."
+        },
+        "film_6x6": {
+          "character": "Rangka persegi menghilangkan satu keputusan — tiada keperluan memutar kamera untuk potret berbanding landskap — dan ini sebahagian sebab ia sesuai sangat dengan kamera dwi-lensa aras pinggang. Pertukarannya kelihatan semasa mencetak: kebanyakan format kertas dan skrin bukan persegi, jadi anda akhirnya perlu memangkas dengan satu cara atau lain.",
+          "context": "Kamera format persegi klasik, dipopularkan oleh siri 500 Hasselblad dan reflex dwi-lensa Rolleiflex. Sebuah Hasselblad 500EL yang diubah suai membawa format ini ke permukaan bulan pada misi Apollo 11, menyusuli Hasselblad 500C yang lebih awal digunakan pada misi Mercury NASA pada 1962 dan 1963."
+        },
+        "film_6x7": {
+          "character": "Sistem yang lebih berat dan perlahan berbanding 35mm atau separuh bingkai — pemfokusan bellow dan belakang berputar Mamiya RB67 memberi ganjaran kepada rentak yang teliti dan mesra tripod berbanding spontan pegang tangan. Sebagai balasan, anda memperoleh negatif dengan kawasan lebih empat kali ganda berbanding full frame, dengan butiran yang setanding lebih halus dan peralihan tona yang lebih licin.",
+          "context": "Digelar «format ideal» pada tahun 1960-an dan '70-an kerana kadar 5:4-nya dipangkas dengan bersih kepada 8×10 dan saiz cetakan standard lain dengan pembaziran minimum. Mamiya RB67 mendapat namanya terus daripada ciri isyaratnya — belakang berputar, maka «RB» — yang membolehkan anda menukar orientasi tanpa memutar keseluruhan kamera."
+        },
+        "film_4x5": {
+          "character": "Filem helaian mengubah cara anda bekerja seiring dengan apa yang anda tangkap — satu pendedahan setiap pemegang, pandangan kaca tanah yang terbalik dan songsang, serta pergerakan (rise, shift, tilt) yang membolehkan anda membetulkan perspektif dan mengawal fokus dengan cara yang tidak dapat ditandingi mana-mana sensor digital di sini tanpa stitching atau lensa shift.",
+          "context": "Format yang menyokong fotojurnalisme sepanjang pertengahan abad ke-20 — Joe Rosenthal menggambar pengibaran bendera Iwo Jima pada Graflex Speed Graphic yang dimuatkan dengan filem helaian 4×5. Filem format besar masih wujud hari ini, dalam badan seperti Intrepid 4×5 yang boleh dilipat, kebanyakannya untuk kerja landskap dan fine art."
+        },
+        "cine_s16": {
+          "character": "Kompromi format kerja — Super 16 memuatkan kualiti imej yang jauh lebih baik berbanding 16mm standard pada sebahagian kecil kos dan saiz kamera filem 35mm, itulah sebabnya penerbitan dokumentari, indie dan siaran bergantung padanya selama beberapa dekad. Ia tiada bilangan piksel digital tetap dalam alat ini kerana ia adalah gauge filem, bukan sensor.",
+          "context": "Dicipta pada 1969 oleh jurukamera Sweden Rune Ericson, Super 16 melebarkan bingkai boleh guna 16mm standard dengan mendapatkan semula jalur filem yang biasanya disediakan untuk runut bunyi optik — kawasan imej 12.52×7.41mm berbanding bingkai 16mm biasa yang lebih sempit, kira-kira 1.69:1 mengikut dimensi mentah. Penerbitan secara sejarahnya membingkai untuk pembesaran 1.66:1 kepada 35mm dan bukannya nisbah literal format itu."
+        },
+        "cine_s35": {
+          "character": "Penerbitan sinema profesional bergantung pada saiz sensor ini lebih daripada mana-mana yang lain — kamera seperti ARRI ALEXA 35 dan RED Komodo dibina di sekitarnya kerana ia mengimbangi kawalan fokus cetek, pilihan lensa dan saiz fail yang boleh diurus dengan lebih baik berbanding format siaran yang lebih kecil mahupun sensor cine format besar yang lebih besar.",
+          "context": "Super 35 berasal daripada bingkai penuh filem cine 35mm 4-perforasi — pada asasnya kawasan yang sama digunakan oleh kamera era senyap sebelum runut bunyi memakan sebahagian bingkai, dihidupkan semula sebagai format khusus kamera pada tahun 1980-an. Angka 24.9×14.0mm di sini ialah crop kawasan imej aktif 16:9 yang dinyatakan oleh kamera ARRI sendiri, bukan bingkai open-gate yang lebih besar."
+        },
+        "cine_vv": {
+          "character": "Sensor VV RED dibina untuk sinema format besar pada saiz yang hampir dengan full frame, memberikan kedalaman medan lebih cetek dan julat dinamik lebih luas berbanding Super 35 pada panjang fokus yang sama — pertukarannya ialah lensa yang lebih berat dan mahal, direka untuk meliputi bulatan imej yang lebih besar.",
+          "context": "«VV» bermaksud VistaVision, nama yang dipinjam RED daripada proses 35mm bingkai besar Paramount tahun 1950-an, yang sendirinya direka untuk menyaingi format sinema skrin lebar era tersebut. Sensor 40.96×21.6mm V-RAPTOR hanya berkongsi nama dan kelas saiz kasar dengan format filem lama berdekad itu, bukan dimensi khususnya."
+        },
+        "cine_a65": {
+          "character": "ARRI membina ALEXA 65 untuk penerbitan sinema berskala terbesar — sensor 54.12×25.58mm yang menjadikan kecil kamera sinema digital kelas VistaVision seperti V-RAPTOR VV. Badan disewa dan bukan dimiliki melalui program khusus ARRI, dan format ini memerlukan lensa format besar yang hanya mampu dijustifikasikan oleh sedikit penerbitan di luar bajet blockbuster.",
+          "context": "Pada nisbah aspek 2.12:1, sensor 20.3 megapiksel ALEXA 65 dari segi saiz lebih hampir kepada kamera pegun format sederhana berbanding mana-mana kamera sinema lain dalam senarai ini. Ia kekal sebagai kamera bersensor terbesar ARRI, diletakkan di atas ALEXA LF dan dikhaskan untuk program sewaan sahaja, bukan jualan terus."
         }
       }
     }

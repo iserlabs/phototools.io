@@ -64,6 +64,32 @@ describe('cropFactorForModel', () => {
     expect(cropFactorForModel('')).toBeCloseTo(1.0, 2)
     expect(cropFactorForModel(null)).toBeCloseTo(1.0, 2)
   })
+
+  // Regression: EXACT_BY_MODEL is built by iterating ALL of POPULAR_MODELS
+  // (sensors.ts), not just one format's key. When a lineup gets refreshed to
+  // a newer model name, the OLD name must stay in the list (or a heuristic
+  // branch must cover it) or these real-world EXIF strings silently fall
+  // through to the full-frame (1.0) default. These model strings were all
+  // previously exact-matched and must keep resolving to their real format.
+  it('keeps resolving legacy model names after POPULAR_MODELS currency refreshes', () => {
+    expect(cropFactorForModel('Leica CL')).toBeGreaterThan(1.4) // apsc_n
+    expect(cropFactorForModel('Leica CL')).toBeLessThan(1.7)
+    expect(cropFactorForModel('iPhone 16 Pro')).toBeGreaterThan(3.0) // phone
+    expect(cropFactorForModel('Samsung S24 Ultra')).toBeGreaterThan(3.0) // phone
+    expect(cropFactorForModel('Hasselblad X2D')).toBeGreaterThan(0.7) // mf
+    expect(cropFactorForModel('Hasselblad X2D')).toBeLessThan(0.9)
+    expect(cropFactorForModel('Panasonic GH6')).toBeCloseTo(2.0, 1) // m43
+
+    // 'Canon R5' -> 'Canon R5 Mark II' and 'OM System OM-1' ->
+    // 'OM System OM-1 Mark II' were dropped from POPULAR_MODELS by this
+    // branch's currency refresh (sensors.ts). Both still resolve correctly
+    // via the name-based heuristic below (bare "canon" falls through to the
+    // full-frame default; "om system" matches the M43 branch), so nothing is
+    // broken today — but pin it with assertions rather than relying on
+    // exact-match coverage that no longer exists.
+    expect(cropFactorForModel('Canon R5')).toBeCloseTo(1.0, 2) // heuristic: bare "canon" -> full-frame
+    expect(cropFactorForModel('OM System OM-1')).toBeCloseTo(2.0, 1) // heuristic: "om system" -> m43
+  })
 })
 
 describe('populateCropFactorTable', () => {

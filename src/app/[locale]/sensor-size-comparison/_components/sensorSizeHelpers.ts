@@ -1,12 +1,11 @@
-import type { SensorPreset } from '@/lib/types'
-import { SENSORS, COMMON_MP, calcCropFactor } from '@/lib/data/sensors'
+import { ALL_SENSORS, SENSOR_GROUP_ORDER, calcCropFactor } from '@/lib/data/sensors'
 import { CUSTOM_COLORS, STORAGE_KEY } from './sensorSizeTypes'
-import type { StoredCustomSensor } from './sensorSizeTypes'
+import type { StoredCustomSensor, CustomSensor, ResolvedSensor } from './sensorSizeTypes'
 
 export let customColorIdx = 0
 export function setCustomColorIdx(n: number) { customColorIdx = n }
 
-export const ALL_SENSOR_ID_SET = new Set(SENSORS.map((s) => s.id))
+export const ALL_SENSOR_ID_SET = new Set(ALL_SENSORS.map((s) => s.id))
 
 export function rgba(hex: string, a: number): string {
   const n = parseInt(hex.replace('#', ''), 16)
@@ -35,14 +34,40 @@ export function easeOut(t: number): number {
   return 1 - (1 - t) ** 3
 }
 
-export function encodeCustomParam(sensors: Required<SensorPreset>[]): string {
+/**
+ * Overlay hover-highlight alpha multiplier: dims every sensor except the
+ * hovered one to 40%; when nothing is hovered, everything stays
+ * full-strength. Shared by drawOverlay/drawOverlayLabels so the 0.4 dim
+ * factor lives in one place.
+ */
+export function hoverDim(hoveredId: string | null | undefined, id: string): number {
+  return hoveredId && id !== hoveredId ? 0.4 : 1
+}
+
+/**
+ * Sort sensors for canvas rendering: `SENSOR_GROUP_ORDER` first (custom
+ * sensors, which have no `group`, sort after every curated group), then by
+ * area descending within a group. Keeps side-by-side/pixel-density columns
+ * and overlay ordering visually grouped instead of following whatever order
+ * `allSensors` happened to be built in.
+ */
+export function orderForRender(sensors: ResolvedSensor[]): ResolvedSensor[] {
+  return [...sensors].sort((a, b) => {
+    const aIdx = a.group ? SENSOR_GROUP_ORDER.indexOf(a.group) : SENSOR_GROUP_ORDER.length
+    const bIdx = b.group ? SENSOR_GROUP_ORDER.indexOf(b.group) : SENSOR_GROUP_ORDER.length
+    if (aIdx !== bIdx) return aIdx - bIdx
+    return b.w * b.h - a.w * a.h
+  })
+}
+
+export function encodeCustomParam(sensors: CustomSensor[]): string {
   return sensors.map(s => {
-    const mp = COMMON_MP[s.id]?.[0]?.mp ?? 0
+    const mp = s.mp ?? 0
     return `${s.name}~${s.w}~${s.h}~${mp}`
   }).join(',')
 }
 
-export function decodeCustomParam(raw: string): Required<SensorPreset>[] {
+export function decodeCustomParam(raw: string): CustomSensor[] {
   if (!raw) return []
   return raw.split(',').map((entry, i) => {
     const [name, ws, hs, mps] = entry.split('~')
@@ -53,12 +78,11 @@ export function decodeCustomParam(raw: string): Required<SensorPreset>[] {
     const id = `custom_url_${i}`
     const color = CUSTOM_COLORS[i % CUSTOM_COLORS.length]
     const cropFactor = calcCropFactor(w, h)
-    if (mp > 0) COMMON_MP[id] = [{ mp, models: name }]
-    return { id, name, w, h, cropFactor, color } as Required<SensorPreset>
-  }).filter(Boolean) as Required<SensorPreset>[]
+    return { id, name, w, h, cropFactor, color, mp } as CustomSensor
+  }).filter(Boolean) as CustomSensor[]
 }
 
-export function loadCustomSensors(): Required<SensorPreset>[] {
+export function loadCustomSensors(): CustomSensor[] {
   if (typeof window === 'undefined') return []
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
@@ -66,21 +90,19 @@ export function loadCustomSensors(): Required<SensorPreset>[] {
     const parsed = JSON.parse(raw)
     if (!Array.isArray(parsed)) return []
     const stored = parsed as StoredCustomSensor[]
-    for (const s of stored) {
-      if (s.mp && s.mp > 0) {
-        COMMON_MP[s.id] = [{ mp: s.mp, models: s.name }]
-      }
-    }
     customColorIdx = stored.length
-    return stored.map(s => ({ id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: s.cropFactor, color: s.color }))
+    return stored.map(s => ({
+      id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: s.cropFactor, color: s.color,
+      mp: s.mp,
+    }))
   } catch { return [] }
 }
 
-export function saveCustomSensors(sensors: Required<SensorPreset>[]) {
+export function saveCustomSensors(sensors: CustomSensor[]) {
   try {
     const stored: StoredCustomSensor[] = sensors.map(s => ({
       id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: s.cropFactor, color: s.color,
-      mp: COMMON_MP[s.id]?.[0]?.mp,
+      mp: s.mp,
     }))
     localStorage.setItem(STORAGE_KEY, JSON.stringify(stored))
   } catch { /* ignore */ }

@@ -130,7 +130,7 @@
       "heading": "Συχνές ερωτήσεις"
     },
     "sensors": {
-      "mf_645": "Medium Format (54x40)",
+      "mf_645": "Medium Format (53.4x40)",
       "mf": "Medium Format (44x33)",
       "mf_leica": "Medium Format (45x30)",
       "ff": "Full Frame",
@@ -139,7 +139,20 @@
       "apsc_c": "APS-C (Canon)",
       "m43": "Micro Four Thirds",
       "1in": "Αισθητήρας 1\"",
-      "phone": "Smartphone Flagship (1/1.3\")"
+      "phone": "Smartphone Flagship (1/1.3\")",
+      "1_1_7in": "Compact 1/1.7\"",
+      "1_2_3in": "1/2.3\" (Drone και Action Cam)",
+      "phone_mid": "Smartphone Μεσαίας Κατηγορίας (1/2.55\")",
+      "phone_uw": "Smartphone Υπερευρυγώνιο (1/3.5\")",
+      "film_half": "Φιλμ Μισού Κάδρου",
+      "film_645": "Φιλμ 645",
+      "film_6x6": "Φιλμ 6×6",
+      "film_6x7": "Φιλμ 6×7",
+      "film_4x5": "Μεγάλο Φορμά 4×5",
+      "cine_s16": "Super 16",
+      "cine_s35": "Super 35 (16:9)",
+      "cine_vv": "RED V-RAPTOR VV",
+      "cine_a65": "ARRI ALEXA 65"
     },
     "legalTranslationDisclaimer": "Αυτή η μετάφραση παρέχεται για διευκόλυνση. Η αγγλική έκδοση είναι η νομικά δεσμευτική. Δες το /en/privacy.",
     "error": {

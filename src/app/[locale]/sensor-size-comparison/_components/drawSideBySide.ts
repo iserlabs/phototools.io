@@ -1,11 +1,11 @@
-import type { SensorPreset } from '@/lib/types'
+import type { ResolvedSensor } from './sensorSizeTypes'
 import { POPULAR_MODELS } from '@/lib/data/sensors'
 import { rgba, roundRect } from './sensorSizeHelpers'
 
 function drawSideBySideRow(
   ctx: CanvasRenderingContext2D,
   W: number, pad: number,
-  sensors: Required<SensorPreset>[],
+  sensors: ResolvedSensor[],
   scale: number,
   baseY: number,
   alphaMap?: Map<string, number>,
@@ -90,7 +90,7 @@ function drawSideBySideRow(
 
 function computeMinTextWidths(
   ctx: CanvasRenderingContext2D,
-  sensors: Required<SensorPreset>[],
+  sensors: ResolvedSensor[],
 ): number[] {
   ctx.font = '10px system-ui, sans-serif'
   return sensors.map(s => {
@@ -107,7 +107,7 @@ function computeMinTextWidths(
 export function drawSideBySide(
   ctx: CanvasRenderingContext2D,
   W: number, _H: number, pad: number,
-  sensors: Required<SensorPreset>[],
+  sensors: ResolvedSensor[],
   alphaMap?: Map<string, number>,
 ): number {
   const isMobile = W < 600
@@ -138,7 +138,7 @@ export function drawSideBySide(
     return baseY + labelSpace + pad
   } else {
     const perRow = isMobile ? 2 : Math.ceil(sensors.length / 2)
-    const rows: Required<SensorPreset>[][] = []
+    const rows: ResolvedSensor[][] = []
     for (let i = 0; i < sensors.length; i += perRow) {
       rows.push(sensors.slice(i, i + perRow))
     }
@@ -146,6 +146,10 @@ export function drawSideBySide(
     const rowGap = 20
     const maxH = Math.max(...sensors.map(s => s.h))
     const minTextWidths = computeMinTextWidths(ctx, sensors)
+    // `sensors.indexOf(s)` inside the binary search below was an O(30 · n²)
+    // scan (30 bisection iterations × every row × an indexOf over all
+    // sensors). Precompute an id → index map once instead.
+    const idToIndex = new Map(sensors.map((s, i) => [s.id, i]))
     const maxRowLen = Math.max(...rows.map(r => r.length))
     const totalGap = (maxRowLen - 1) * gap
     const availW = W - pad * 2 - totalGap
@@ -157,7 +161,7 @@ export function drawSideBySide(
       let fits = true
       for (const row of rows) {
         const rowNeeded = row.reduce((sum, s) => {
-          const tw = minTextWidths[sensors.indexOf(s)]
+          const tw = minTextWidths[idToIndex.get(s.id)!]
           return sum + Math.max(s.w * midScale, tw)
         }, 0)
         if (rowNeeded > availW) { fits = false; break }
