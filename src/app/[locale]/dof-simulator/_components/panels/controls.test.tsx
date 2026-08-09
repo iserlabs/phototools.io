@@ -4,10 +4,12 @@ import { NextIntlClientProvider } from 'next-intl'
 import { SearchCombobox } from './SearchCombobox'
 import { FramingPanel } from './FramingPanel'
 import { FramingPanelConnected } from './FramingPanelConnected'
+import { CameraPanel } from './CameraPanel'
 import { CameraPanelConnected } from './CameraPanelConnected'
 import { LensPanel } from './LensPanel'
 import { LensPanelConnected } from './LensPanelConnected'
 import { DistancePanelConnected } from './DistancePanelConnected'
+import { AdvancedPanel } from './AdvancedPanel'
 import { AdvancedPanelConnected } from './AdvancedPanelConnected'
 import { computeDerived } from '../state/useDofDerived'
 import { DOF_CAMERAS } from '@/lib/data/dofSimulator/cameras'
@@ -193,5 +195,48 @@ describe('AdvancedPanelConnected', () => {
       <AdvancedPanelConnected optics={optics} background={DOF_BACKGROUNDS[0]} uiPrefs={uiPrefs} />,
     )
     expect(container).toBeEmptyDOMElement()
+  })
+  it('seeds custom CoC from the sensor crop factor, not a flat 0.03mm', () => {
+    // A flat 0.03mm seed on APS-C would nearly double the derived engine's
+    // own ~0.0196mm default CoC for that sensor — see AdvancedPanel.tsx's
+    // defaultCocMm(). ff (cropFactor 1.0) and apsc_n (cropFactor 1.53) must
+    // seed to different values when the "Custom CoC" checkbox is checked.
+    const ffOptics = makeOptics({ sensorId: 'ff' })
+    const ffRender = render(
+      <AdvancedPanel optics={ffOptics} background={DOF_BACKGROUNDS[0]} uiPrefs={makeUiPrefs({ advanced: true })} />,
+    )
+    fireEvent.click(ffRender.getByRole('checkbox', { name: 'Custom CoC' }))
+    const ffSeed = (ffOptics.setCustomCocMm as ReturnType<typeof vi.fn>).mock.calls[0][0]
+    ffRender.unmount()
+
+    const apscOptics = makeOptics({ sensorId: 'apsc_n' })
+    const apscRender = render(
+      <AdvancedPanel optics={apscOptics} background={DOF_BACKGROUNDS[0]} uiPrefs={makeUiPrefs({ advanced: true })} />,
+    )
+    fireEvent.click(apscRender.getByRole('checkbox', { name: 'Custom CoC' }))
+    const apscSeed = (apscOptics.setCustomCocMm as ReturnType<typeof vi.fn>).mock.calls[0][0]
+    apscRender.unmount()
+
+    expect(ffSeed).not.toBe(apscSeed)
+    expect(ffSeed).toBeCloseTo(0.03, 4)
+    expect(apscSeed).toBeCloseTo(0.03 / 1.53, 4)
+  })
+})
+
+describe('CameraPanel', () => {
+  it('reverts to the sensor select when cameraId is cleared externally (e.g. Reset)', () => {
+    // useDofState's reset() calls optics.setCameraId(null) directly, bypassing
+    // CameraPanel's own mode-toggle onChange handler — the sync effect must
+    // react to cameraId going null too, not just becoming non-null.
+    const withCamera = makeOptics({ cameraId: 'nikon-z8' })
+    const { container, rerender } = render(
+      <CameraPanel optics={withCamera} derived={makeDerived(withCamera)} />,
+    )
+    expect(container.querySelector('select')).toBeNull() // camera mode: no sensor <select>
+
+    const reset = { ...withCamera, cameraId: null }
+    rerender(<CameraPanel optics={reset} derived={makeDerived(reset)} />)
+
+    expect(container.querySelector('select')).not.toBeNull() // sensor mode restored
   })
 })

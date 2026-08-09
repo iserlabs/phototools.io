@@ -41,11 +41,15 @@ interface CameraPanelProps {
 export function CameraPanel({ optics, derived, labels = DEFAULT_LABELS }: CameraPanelProps) {
   const [mode, setMode] = useState<'sensor' | 'camera'>(optics.cameraId ? 'camera' : 'sensor')
 
-  // A camera picked via query-string init (or the combobox) should flip the
-  // toggle to reflect it; switching back to 'sensor' is a manual user action
-  // handled in the toggle's onChange below.
+  // Keep the toggle in sync with cameraId's actual state, in both directions:
+  // a camera picked via query-string init (or the combobox) flips this to
+  // 'camera', and cameraId being cleared externally — e.g. useDofState's
+  // reset() calling optics.setCameraId(null) directly, bypassing this
+  // component's own toggle handler — flips it back to 'sensor'. Manually
+  // switching to 'sensor' via the toggle below also clears cameraId, which
+  // loops back through this same effect (idempotent).
   useEffect(() => {
-    if (optics.cameraId) setMode('camera')
+    setMode(optics.cameraId ? 'camera' : 'sensor')
   }, [optics.cameraId])
 
   const modeOptions = [

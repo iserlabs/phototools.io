@@ -6,6 +6,7 @@ import { toSliderPos, fromSliderPos, SLIDER_STEPS } from './logSlider'
 import { DOF_LENSES, getLensById } from '@/lib/data/dofSimulator/lenses'
 import { TELECONVERTERS } from '@/lib/data/dofSimulator/teleconverters'
 import { APERTURES_THIRD_STOP } from '@/lib/data/camera'
+import { snapToThirdStop, formatAperture } from '@/lib/math/aperture'
 import { formatMm } from '../state/formatters'
 import type { DofLens, TeleconverterId } from '@/lib/data/dofSimulator/types'
 import type { OpticsApi } from '../state/useOptics'
@@ -16,23 +17,6 @@ const FL_MIN = 8
 const FL_MAX = 1200
 const AP_MIN = APERTURES_THIRD_STOP[0]
 const AP_MAX = APERTURES_THIRD_STOP[APERTURES_THIRD_STOP.length - 1]
-
-function snapAperture(raw: number): number {
-  let best = APERTURES_THIRD_STOP[0]
-  let bestDist = Infinity
-  for (const ap of APERTURES_THIRD_STOP) {
-    const dist = Math.abs(Math.log(ap) - Math.log(raw))
-    if (dist < bestDist) {
-      bestDist = dist
-      best = ap
-    }
-  }
-  return best
-}
-
-function formatAperture(f: number): string {
-  return f % 1 === 0 ? `f/${f}` : `f/${f.toFixed(1)}`
-}
 
 // Presentational — see FramingPanel.tsx for the labels-prop pattern.
 export interface LensLabels {
@@ -125,7 +109,7 @@ export function LensPanel({ optics, derived, uiPrefs, onFocalLengthChange, label
             value={apPos}
             onChange={(e) => {
               const raw = fromSliderPos(Number(e.target.value), apMin, AP_MAX)
-              optics.setAperture(snapAperture(Math.max(raw, apMin)))
+              optics.setAperture(snapToThirdStop(Math.max(raw, apMin)))
             }}
             aria-label={`${labels.aperture}: ${formatAperture(optics.aperture)}`}
           />
