@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import { Link } from '@/lib/i18n/navigation'
 import type { GuideListItem } from '@/lib/guides/types'
+import { formatGuideDate } from '@/lib/guides/format-date'
 import styles from './GuideCard.module.css'
 
 interface GuideCardProps {
@@ -11,7 +12,7 @@ interface GuideCardProps {
 
 export function GuideCard({ guide, locale }: GuideCardProps) {
   const t = useTranslations('guides')
-  const updated = new Intl.DateTimeFormat(locale, { dateStyle: 'medium' }).format(new Date(guide.updatedAt))
+  const updated = formatGuideDate(guide.updatedAt, locale)
   return (
     <Link href={`/guides/${guide.slug}`} prefetch={false} className={styles.card}>
       {guide.heroImage && (

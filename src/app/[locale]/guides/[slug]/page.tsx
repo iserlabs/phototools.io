@@ -13,6 +13,7 @@ import { GuideToc } from '@/components/guides/GuideToc'
 import { RelatedGuides } from '@/components/guides/RelatedGuides'
 import { ToolCard } from '@/components/guides/ToolCard'
 import { getGuide, getVisibleGuides } from '@/lib/guides/content'
+import { formatGuideDate } from '@/lib/guides/format-date'
 import { AUTHORS } from '@/lib/guides/types'
 import { getAlternates } from '@/lib/i18n/metadata'
 import type { Locale } from '@/lib/i18n/routing'
@@ -51,7 +52,7 @@ export default async function GuidePage({ params }: { params: Promise<{ locale: 
     () => import(`@/content/guides/${slug}/en.mdx`)
   )
   const author = guide.author ? AUTHORS[guide.author] : undefined
-  const updated = new Intl.DateTimeFormat(locale, { dateStyle: 'medium' }).format(new Date(guide.updatedAt))
+  const updated = formatGuideDate(guide.updatedAt, locale)
   return (
     <div className={styles.outer}>
       <GuideJsonLd
