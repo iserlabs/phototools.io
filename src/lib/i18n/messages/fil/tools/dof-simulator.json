@@ -52,6 +52,7 @@
       "depthRulerInFocus": "In Focus",
       "depthRulerSubject": "Subject",
       "infinity": "∞",
+      "distanceUnit": "m",
       "webglFallbackNotice": "Kailangan ng WebGL ang mga hugis ng bokeh — nagpapakita ng pinasimpleng blur.",
       "dividerLabel": "Panghati ng paghahambing A/B",
       "sweepPlay": "I-play ang sweep ng aperture",

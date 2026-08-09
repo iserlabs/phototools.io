@@ -51,6 +51,7 @@
       "depthRulerInFocus": "Enfocado",
       "depthRulerSubject": "Sujeto",
       "infinity": "∞",
+      "distanceUnit": "m",
       "simulateDiffraction": "Simular difracción",
       "webglFallbackNotice": "Las formas de bokeh necesitan WebGL — se muestra un desenfoque simplificado.",
       "dividerLabel": "Divisor de comparación A/B",

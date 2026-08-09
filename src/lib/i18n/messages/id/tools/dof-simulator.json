@@ -52,6 +52,7 @@
       "depthRulerInFocus": "Dalam Fokus",
       "depthRulerSubject": "Subjek",
       "infinity": "∞",
+      "distanceUnit": "m",
       "webglFallbackNotice": "Bentuk bokeh memerlukan WebGL — menampilkan blur yang disederhanakan.",
       "dividerLabel": "Pemisah perbandingan A/B",
       "sweepPlay": "Putar penyapuan aperture",

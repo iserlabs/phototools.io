@@ -1,0 +1,61 @@
+.ruler {
+  padding: 4px 8px 6px;
+  border-top: 1px solid var(--border);
+  user-select: none;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: 88px;
+}
+
+.tickLabel {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  fill: var(--text-secondary);
+  text-anchor: middle;
+  opacity: 0.7;
+}
+
+.boundaryLabel {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  fill: var(--text-secondary);
+  text-anchor: middle;
+  opacity: 0.85;
+}
+
+.hyperfocalLabel {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  fill: var(--accent-secondary);
+  text-anchor: middle;
+}
+
+.infinityLabel {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  fill: var(--accent);
+  font-weight: 600;
+}
+
+.subjectHandle {
+  color: var(--accent);
+  cursor: grab;
+  touch-action: none;
+  outline: none;
+}
+
+.subjectHandle:active {
+  cursor: grabbing;
+}
+
+.subjectHandle:focus-visible circle,
+.subjectHandle:focus-visible path {
+  filter: drop-shadow(0 0 3px var(--accent));
+}
+
+.subjectActive {
+  color: var(--accent-hover);
+}

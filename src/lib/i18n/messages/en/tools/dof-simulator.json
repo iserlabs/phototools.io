@@ -52,6 +52,7 @@
       "depthRulerInFocus": "In Focus",
       "depthRulerSubject": "Subject",
       "infinity": "∞",
+      "distanceUnit": "m",
       "webglFallbackNotice": "Bokeh shapes need WebGL — showing a simplified blur.",
       "dividerLabel": "A/B comparison divider",
       "sweepPlay": "Play aperture sweep",

@@ -51,6 +51,7 @@
       "depthRulerInFocus": "ピント範囲",
       "depthRulerSubject": "被写体",
       "infinity": "∞",
+      "distanceUnit": "m",
       "simulateDiffraction": "回折をシミュレート",
       "webglFallbackNotice": "ボケの形状にはWebGLが必要です — 簡易的なぼかしを表示しています。",
       "dividerLabel": "A/B比較の仕切り",

@@ -52,6 +52,7 @@
       "depthRulerInFocus": "V zaostřené zóně",
       "depthRulerSubject": "Subjekt",
       "infinity": "∞",
+      "distanceUnit": "m",
       "webglFallbackNotice": "Tvary bokeh vyžadují WebGL — zobrazuje se zjednodušené rozostření.",
       "dividerLabel": "Dělič porovnání A/B",
       "sweepPlay": "Přehrát průběh clony",

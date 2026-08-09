@@ -52,6 +52,7 @@
       "depthRulerInFocus": "В фокусе",
       "depthRulerSubject": "Объект",
       "infinity": "∞",
+      "distanceUnit": "м",
       "webglFallbackNotice": "Для форм боке требуется WebGL — показано упрощённое размытие.",
       "dividerLabel": "Разделитель сравнения A/B",
       "sweepPlay": "Запустить развёртку диафрагмы",

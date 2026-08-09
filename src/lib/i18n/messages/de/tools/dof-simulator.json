@@ -51,6 +51,7 @@
       "depthRulerInFocus": "Im Fokus",
       "depthRulerSubject": "Motiv",
       "infinity": "∞",
+      "distanceUnit": "m",
       "simulateDiffraction": "Beugung simulieren",
       "webglFallbackNotice": "Bokeh-Formen benötigen WebGL — es wird ein vereinfachter Weichzeichner angezeigt.",
       "dividerLabel": "A/B-Vergleichstrenner",

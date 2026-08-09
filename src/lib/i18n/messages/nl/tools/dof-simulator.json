@@ -51,6 +51,7 @@
       "depthRulerInFocus": "Scherp",
       "depthRulerSubject": "Onderwerp",
       "infinity": "∞",
+      "distanceUnit": "m",
       "simulateDiffraction": "Diffractie simuleren",
       "webglFallbackNotice": "Bokehvormen vereisen WebGL — er wordt een vereenvoudigde vervaging weergegeven.",
       "dividerLabel": "A/B-vergelijkingsscheiding",

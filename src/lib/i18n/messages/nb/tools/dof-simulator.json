@@ -52,6 +52,7 @@
       "depthRulerInFocus": "I fokus",
       "depthRulerSubject": "Motiv",
       "infinity": "∞",
+      "distanceUnit": "m",
       "webglFallbackNotice": "Bokehformer krever WebGL — en forenklet uskarphet vises.",
       "dividerLabel": "A/B-sammenligningsdeler",
       "sweepPlay": "Spill av blenderfeiing",

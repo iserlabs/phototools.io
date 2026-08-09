@@ -52,6 +52,7 @@
       "depthRulerInFocus": "Tarkennuksessa",
       "depthRulerSubject": "Kohde",
       "infinity": "∞",
+      "distanceUnit": "m",
       "webglFallbackNotice": "Bokeh-muodot vaativat WebGL:n — näytetään yksinkertaistettu sumennus.",
       "dividerLabel": "A/B-vertailun jakaja",
       "sweepPlay": "Toista aukon pyyhkäisy",

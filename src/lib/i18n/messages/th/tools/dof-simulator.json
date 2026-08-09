@@ -52,6 +52,7 @@
       "depthRulerInFocus": "ในโฟกัส",
       "depthRulerSubject": "ซับเจกต์",
       "infinity": "∞",
+      "distanceUnit": "m",
       "webglFallbackNotice": "รูปทรงโบเก้ต้องใช้ WebGL — กำลังแสดงภาพเบลอแบบง่าย",
       "dividerLabel": "เส้นแบ่งเปรียบเทียบ A/B",
       "sweepPlay": "เล่นการกวาดรูรับแสง",

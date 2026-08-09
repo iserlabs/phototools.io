@@ -52,6 +52,7 @@
       "depthRulerInFocus": "Σε εστίαση",
       "depthRulerSubject": "Θέμα",
       "infinity": "∞",
+      "distanceUnit": "m",
       "webglFallbackNotice": "Τα σχήματα bokeh απαιτούν WebGL — εμφανίζεται απλοποιημένη θόλωση.",
       "dividerLabel": "Διαχωριστικό σύγκρισης A/B",
       "sweepPlay": "Αναπαραγωγή σάρωσης διαφράγματος",

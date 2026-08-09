@@ -52,6 +52,7 @@
       "depthRulerInFocus": "W ostrości",
       "depthRulerSubject": "Obiekt",
       "infinity": "∞",
+      "distanceUnit": "m",
       "webglFallbackNotice": "Kształty bokeh wymagają WebGL — wyświetlane jest uproszczone rozmycie.",
       "dividerLabel": "Rozdzielacz porównania A/B",
       "sweepPlay": "Odtwórz przemiatanie przysłony",
