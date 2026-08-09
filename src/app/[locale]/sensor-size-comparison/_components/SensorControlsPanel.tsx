@@ -11,10 +11,19 @@ import { QuickComparePresets } from './QuickComparePresets'
 import { SensorGroupSection } from './SensorGroupSection'
 import ss from './SensorSize.module.css'
 
+// Pixel-density mode excludes any sensor with no defensible megapixel
+// reference: every `film` preset (no fixed pixel count by design) and
+// `cine_s16` (its only period-correct digital reference failed the Appendix A
+// currency check — see sensors.ts). Keep this predicate in sync with
+// `drawPixelDensity.isPixelDensityEligible`.
+function hasPixelDensityExcludedSensor(visible: Set<string>): boolean {
+  return sensorsInGroup('film').some((s) => visible.has(s.id)) || visible.has('cine_s16')
+}
+
 export function SensorControlsPanel({
   visible, mode, customSensors,
   onToggleSensor, onModeChange, onAddCustom, onRemoveCustom, onRemoveAllCustom, onEditCustom,
-  onHoverSensor = () => {}, onApplyPreset = () => {},
+  onHoverSensor, onApplyPreset,
 }: ControlsPanelProps) {
   const t = useTranslations('toolUI.sensor-size-comparison')
   const [editingId, setEditingId] = useState<string | null>(null)
@@ -34,6 +43,12 @@ export function SensorControlsPanel({
       {mode === 'pixel-density' && (
         <p style={{ fontSize: 11, color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
           {t('pixelDensityDescription')}
+        </p>
+      )}
+
+      {mode === 'pixel-density' && hasPixelDensityExcludedSensor(visible) && (
+        <p style={{ fontSize: 11, color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
+          {t('filmPixelDensityNote')}
         </p>
       )}
 

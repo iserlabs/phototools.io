@@ -6,6 +6,7 @@
       "modeSideBySide": "Side by Side",
       "modePixelDensity": "Pixel Density",
       "pixelDensityDescription": "Showing common megapixel counts for each sensor. Larger pixels (bigger cells) capture more light.",
+      "filmPixelDensityNote": "Film and Super 16 have no defined pixel count, so they're hidden in this mode — view them in Overlay or Side by Side instead.",
       "quickCompare": "Quick Compare",
       "presetReplacesNote": "Replaces the current selection",
       "presets": {

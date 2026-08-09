@@ -10,19 +10,21 @@ import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import ss from './SensorSize.module.css'
 import { ANIM_DURATION, DEFAULT_VISIBLE_IDS } from './sensorSizeTypes'
-import { easeOut } from './sensorSizeHelpers'
+import { easeOut, orderForRender } from './sensorSizeHelpers'
 import { SensorControlsPanel } from './SensorControlsPanel'
 import { SensorTable } from './SensorTable'
 import { drawOverlay, overlayRects } from './drawOverlay'
 import { drawSideBySide } from './drawSideBySide'
 import { drawPixelDensity } from './drawPixelDensity'
 import { useSensorState } from './useSensorState'
+import { getCanvasPalette, invalidateCanvasPalette } from './canvasPalette'
 
 export function SensorSize() {
   const t = useTranslations('toolUI.sensor-size-comparison')
   const { trackParam } = useToolSession()
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [hoveredSensor, setHoveredSensor] = useState<string | null>(null)
+  const [expandedId, setExpandedId] = useState<string | null>(null)
 
   const {
     visible, setVisible, mode, setMode, resolution, setResolution,
@@ -48,7 +50,7 @@ export function SensorSize() {
     for (const [id, anim] of animRef.current) {
       if (anim.direction === 'out' && anim.progress > 0) ids.add(id)
     }
-    const sensors = allSensors.filter((s) => ids.has(s.id))
+    const sensors = orderForRender(allSensors.filter((s) => ids.has(s.id)))
     for (const s of sensors) {
       const anim = animRef.current.get(s.id)
       alphaMap.set(s.id, anim ? anim.progress : 1)
@@ -88,9 +90,14 @@ export function SensorSize() {
     if (sensors.length === 0) return
     const padding = 30
     let contentH: number
-    if (mode === 'overlay') contentH = drawOverlay(ctx, cssWidth, maxHeight, padding, sensors, alphaMap, hoveredSensor)
-    else if (mode === 'side-by-side') contentH = drawSideBySide(ctx, cssWidth, maxHeight, padding, sensors, alphaMap)
-    else contentH = drawPixelDensity(ctx, cssWidth, maxHeight, padding, sensors, resolution, alphaMap)
+    if (mode === 'overlay') {
+      const palette = getCanvasPalette(canvas)
+      contentH = drawOverlay(ctx, cssWidth, maxHeight, padding, sensors, alphaMap, hoveredSensor, palette)
+    } else if (mode === 'side-by-side') {
+      contentH = drawSideBySide(ctx, cssWidth, maxHeight, padding, sensors, alphaMap)
+    } else {
+      contentH = drawPixelDensity(ctx, cssWidth, maxHeight, padding, sensors, resolution, alphaMap)
+    }
 
     const finalH = Math.max(contentH, 200)
     canvas.style.height = `${finalH}px`
@@ -124,18 +131,45 @@ export function SensorSize() {
     return () => observer.disconnect()
   }, [drawFrame])
 
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (mode !== 'overlay') { setHoveredSensor(null); return }
+  // ThemeProvider toggles `data-theme` on <html> after read-through from
+  // localStorage; invalidate the cached CSS-token palette and redraw so the
+  // canvas tooltip stays legible across a theme switch.
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      invalidateCanvasPalette()
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      rafRef.current = requestAnimationFrame(drawFrame)
+    })
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
+    return () => observer.disconnect()
+  }, [drawFrame])
+
+  const hitTestOverlay = useCallback((clientX: number, clientY: number): string | null => {
     const canvas = canvasRef.current
-    if (!canvas) return
+    if (!canvas) return null
     const rect = canvas.getBoundingClientRect()
-    const mx = e.clientX - rect.left, my = e.clientY - rect.top
+    const mx = clientX - rect.left, my = clientY - rect.top
     for (let i = overlayRects.length - 1; i >= 0; i--) {
       const r = overlayRects[i]
-      if (mx >= r.x && mx <= r.x + r.w && my >= r.y && my <= r.y + r.h) { setHoveredSensor(r.id); return }
+      if (mx >= r.x && mx <= r.x + r.w && my >= r.y && my <= r.y + r.h) return r.id
     }
-    setHoveredSensor(null)
-  }, [mode])
+    return null
+  }, [])
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (mode !== 'overlay') { setHoveredSensor(null); return }
+    setHoveredSensor(hitTestOverlay(e.clientX, e.clientY))
+  }, [mode, hitTestOverlay])
+
+  const handleCanvasClick = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (mode !== 'overlay') return
+    const id = hitTestOverlay(e.clientX, e.clientY)
+    if (!id) return
+    setExpandedId(id)
+    if (window.matchMedia('(min-width: 600px)').matches) {
+      document.getElementById(`sensor-row-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    }
+  }, [mode, hitTestOverlay])
 
   const controlsProps = {
     visible, mode, customSensors,
@@ -143,6 +177,11 @@ export function SensorSize() {
     onModeChange: (m: DisplayMode) => { trackParam({ param_name: 'mode', param_value: m, input_type: 'select' }); setMode(m) },
     onAddCustom: addCustomSensor, onRemoveCustom: removeCustomSensor,
     onRemoveAllCustom: removeAllCustomSensors, onEditCustom: editCustomSensor,
+    onHoverSensor: setHoveredSensor,
+    onApplyPreset: (ids: string[]) => {
+      trackParam({ param_name: 'preset', param_value: ids.join('+'), input_type: 'button' })
+      setVisible(new Set(ids))
+    },
   }
 
   return (
@@ -157,14 +196,15 @@ export function SensorSize() {
         </div>
         <div className={ss.main}>
           <canvas ref={canvasRef} className={ss.canvas} style={{ width: '100%', minHeight: 300, flexShrink: 0 }}
-            aria-label={t('canvasAriaLabel', { mode })} role="img" onMouseMove={handleMouseMove} onMouseLeave={() => setHoveredSensor(null)} />
-          <div className={`${ss.tableWrap} ${ss.desktopOnly}`}><SensorTable sensors={visibleSensors} /></div>
+            aria-label={t('canvasAriaLabel', { mode })} role="img" onMouseMove={handleMouseMove}
+            onMouseLeave={() => setHoveredSensor(null)} onClick={handleCanvasClick} />
+          <div className={`${ss.tableWrap} ${ss.desktopOnly}`}><SensorTable sensors={visibleSensors} expandedId={expandedId} /></div>
         </div>
         <div className={ss.desktopOnly}><LearnPanel slug="sensor-size-comparison" /></div>
       </div>
       <div className={ss.mobileControls}>
         <SensorControlsPanel {...controlsProps} />
-        <div className={ss.tableWrap}><SensorTable sensors={visibleSensors} /></div>
+        <div className={ss.tableWrap}><SensorTable sensors={visibleSensors} expandedId={expandedId} /></div>
       </div>
       <RelatedTools variant="inline" currentSlug="sensor-size-comparison" />
       <div className={ss.mobileOnly}><LearnPanel slug="sensor-size-comparison" /></div>

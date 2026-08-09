@@ -1,6 +1,6 @@
-import { ALL_SENSORS, calcCropFactor } from '@/lib/data/sensors'
+import { ALL_SENSORS, SENSOR_GROUP_ORDER, calcCropFactor } from '@/lib/data/sensors'
 import { CUSTOM_COLORS, STORAGE_KEY } from './sensorSizeTypes'
-import type { StoredCustomSensor, CustomSensor } from './sensorSizeTypes'
+import type { StoredCustomSensor, CustomSensor, ResolvedSensor } from './sensorSizeTypes'
 
 export let customColorIdx = 0
 export function setCustomColorIdx(n: number) { customColorIdx = n }
@@ -32,6 +32,22 @@ export function roundRect(
 
 export function easeOut(t: number): number {
   return 1 - (1 - t) ** 3
+}
+
+/**
+ * Sort sensors for canvas rendering: `SENSOR_GROUP_ORDER` first (custom
+ * sensors, which have no `group`, sort after every curated group), then by
+ * area descending within a group. Keeps side-by-side/pixel-density columns
+ * and overlay ordering visually grouped instead of following whatever order
+ * `allSensors` happened to be built in.
+ */
+export function orderForRender(sensors: ResolvedSensor[]): ResolvedSensor[] {
+  return [...sensors].sort((a, b) => {
+    const aIdx = a.group ? SENSOR_GROUP_ORDER.indexOf(a.group) : SENSOR_GROUP_ORDER.length
+    const bIdx = b.group ? SENSOR_GROUP_ORDER.indexOf(b.group) : SENSOR_GROUP_ORDER.length
+    if (aIdx !== bIdx) return aIdx - bIdx
+    return b.w * b.h - a.w * a.h
+  })
 }
 
 export function encodeCustomParam(sensors: CustomSensor[]): string {

@@ -6,7 +6,15 @@ import type { ResolvedSensor } from './sensorSizeTypes'
 import { formatAspectRatio } from '@/lib/math/resolution'
 import ss from './SensorSize.module.css'
 
-export function SensorTable({ sensors }: { sensors: ResolvedSensor[] }) {
+type SensorTableProps = {
+  sensors: ResolvedSensor[]
+  // Set by SensorSize.tsx when a canvas rect is clicked (overlay mode).
+  // Anchors `scrollIntoView` and highlights the matching row; the row's
+  // deep-dive content is added in a later task.
+  expandedId?: string | null
+}
+
+export function SensorTable({ sensors, expandedId }: SensorTableProps) {
   const t = useTranslations('toolUI.sensor-size-comparison')
   const sorted = [...sensors].sort((a, b) => (b.w * b.h) - (a.w * a.h))
   return (
@@ -29,7 +37,7 @@ export function SensorTable({ sensors }: { sensors: ResolvedSensor[] }) {
           const aspectCrop = calcAspectCropFactor(s.w, s.h)
           const ratio = formatAspectRatio(s.w, s.h)
           return (
-            <tr key={s.id}>
+            <tr key={s.id} id={`sensor-row-${s.id}`} className={s.id === expandedId ? ss.tableRowExpanded : undefined}>
               <td style={{ textAlign: 'left' }}>
                 <div className={ss.sensorCell}>
                   <span className={ss.tableDot} style={{ backgroundColor: s.color }} />

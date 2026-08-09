@@ -1,15 +1,24 @@
-import type { ResolvedSensor } from './sensorSizeTypes'
+import type { ResolvedSensor, CustomSensor } from './sensorSizeTypes'
 import { COMMON_MP, type MpEntry } from '@/lib/data/sensors'
 import { pixelPitch } from '@/lib/math/diffraction'
 import { drawPixelGrid, drawEntryLabel } from './drawPixelGrid'
 
 type ColumnGroup = { title: string, color: string, items: { sensor: ResolvedSensor, entries: MpEntry[] }[] }
 
+// Film has no fixed pixel count by design, and cine_s16's only period-correct
+// digital reference (Digital Bolex D16) failed Appendix A's currency check
+// (see sensors.ts) — neither gets a `COMMON_MP` entry, so both are excluded
+// from this mode entirely rather than falling back to a fabricated MP figure.
+// Keep in sync with `SensorControlsPanel.hasPixelDensityExcludedSensor`.
+function isPixelDensityEligible(s: ResolvedSensor): boolean {
+  return s.group !== 'film' && s.id !== 'cine_s16'
+}
+
 function buildColumns(sensors: ResolvedSensor[], resolution: number): ColumnGroup[] {
   const columns: ColumnGroup[] = []
-  for (const s of sensors) {
-    const entries = COMMON_MP[s.id] ?? [{ mp: resolution, models: '' }]
-    if (s.id.startsWith('mf')) {
+  for (const s of sensors.filter(isPixelDensityEligible)) {
+    const entries = COMMON_MP[s.id] ?? [{ mp: (s as CustomSensor).mp || resolution, models: '' }]
+    if (s.group === 'medium-format') {
       let mfCol = columns.find(c => c.title === 'Medium Format')
       if (!mfCol) { mfCol = { title: 'Medium Format', color: s.color, items: [] }; columns.push(mfCol) }
       mfCol.items.push({ sensor: s, entries })
@@ -141,8 +150,10 @@ export function drawPixelDensity(
   ctx: CanvasRenderingContext2D, W: number, _H: number, pad: number,
   sensors: ResolvedSensor[], resolution: number, alphaMap?: Map<string, number>,
 ): number {
+  const eligible = sensors.filter(isPixelDensityEligible)
+  if (eligible.length === 0) return 0
   const columns = buildColumns(sensors, resolution)
-  const maxSensorW = Math.max(...sensors.map((s) => s.w))
+  const maxSensorW = Math.max(...eligible.map((s) => s.w))
   return W < 600
     ? drawMobileGrid(ctx, W, pad, columns, maxSensorW, alphaMap)
     : drawDesktopGrid(ctx, W, pad, columns, maxSensorW, alphaMap)

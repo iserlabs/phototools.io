@@ -30,6 +30,7 @@ function Wrapped({
         onRemoveCustom={() => {}}
         onRemoveAllCustom={() => {}}
         onEditCustom={() => {}}
+        onHoverSensor={() => {}}
         onApplyPreset={onApplyPreset}
       />
     </NextIntlClientProvider>

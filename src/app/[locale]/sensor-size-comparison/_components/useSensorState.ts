@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
-import { SENSORS, calcCropFactor } from '@/lib/data/sensors'
+import { ALL_SENSORS, calcCropFactor } from '@/lib/data/sensors'
 import { CUSTOM_COLORS, DEFAULT_VISIBLE_IDS, DEFAULT_VISIBLE } from './sensorSizeTypes'
 import type { DisplayMode, ResolvedSensor, CustomSensor } from './sensorSizeTypes'
 import {
@@ -63,7 +63,7 @@ export function useSensorState() {
     return () => { if (urlTimerRef.current) clearTimeout(urlTimerRef.current) }
   }, [visible, mode, resolution, customSensors, hydrated])
 
-  const allSensors = useMemo(() => [...SENSORS as ResolvedSensor[], ...customSensors], [customSensors])
+  const allSensors = useMemo(() => [...ALL_SENSORS as ResolvedSensor[], ...customSensors], [customSensors])
   const visibleSensors = useMemo(() => allSensors.filter((s) => visible.has(s.id)), [allSensors, visible])
 
   const toggleSensor = useCallback((id: string) => {

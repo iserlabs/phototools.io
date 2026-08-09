@@ -191,6 +191,11 @@
   background: var(--bg-surface);
 }
 
+.tableRowExpanded td {
+  background: var(--bg-surface);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
 .sensorCell {
   display: flex;
   align-items: center;
