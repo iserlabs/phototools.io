@@ -196,6 +196,17 @@
   box-shadow: inset 3px 0 0 var(--accent);
 }
 
+/* Mirrors `.table tr:hover td` so a row reads identically whether the
+   highlight comes from the mouse being over the row itself or from
+   `hoveredId` set externally (hovering the matching rect on the canvas —
+   see `useSensorCanvas`'s `hoveredSensor` state). Sharing the exact same
+   background with `.tableRowExpanded` means the two classes never fight
+   when both apply to the same row; the accent stripe stays the sole signal
+   that a row is expanded. */
+.rowHovered td {
+  background: var(--bg-surface);
+}
+
 /* Row expand/collapse toggle — reset to plain text so it drops into the
    existing `.sensorCell` layout unchanged; only the button semantics + focus
    ring are new. */

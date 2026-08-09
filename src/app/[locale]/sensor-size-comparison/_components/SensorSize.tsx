@@ -26,7 +26,7 @@ export function SensorSize() {
     toggleSensor, addCustomSensor, editCustomSensor, removeAllCustomSensors, removeCustomSensor,
   } = useSensorState()
 
-  const { setHoveredSensor, expandedId, setExpandedId, handleMouseMove, handleCanvasClick } =
+  const { hoveredSensor, setHoveredSensor, expandedId, setExpandedId, handleMouseMove, handleCanvasClick } =
     useSensorCanvas({ canvasRef, mode, resolution, allSensors, visible })
 
   const handleToggleExpand = (id: string) => setExpandedId((prev) => (prev === id ? null : id))
@@ -59,7 +59,7 @@ export function SensorSize() {
             aria-label={t('canvasAriaLabel', { mode })} role="img" onMouseMove={handleMouseMove}
             onMouseLeave={() => setHoveredSensor(null)} onClick={handleCanvasClick} />
           <div className={`${ss.tableWrap} ${ss.desktopOnly}`}>
-            <SensorTable sensors={visibleSensors} expandedId={expandedId} onToggleExpand={handleToggleExpand} variant="desktop" />
+            <SensorTable sensors={visibleSensors} expandedId={expandedId} onToggleExpand={handleToggleExpand} hoveredId={hoveredSensor} onHover={setHoveredSensor} variant="desktop" />
           </div>
         </div>
         <div className={ss.desktopOnly}><LearnPanel slug="sensor-size-comparison" /></div>
@@ -67,7 +67,7 @@ export function SensorSize() {
       <div className={ss.mobileControls}>
         <SensorControlsPanel {...controlsProps} />
         <div className={ss.tableWrap}>
-          <SensorTable sensors={visibleSensors} expandedId={expandedId} onToggleExpand={handleToggleExpand} variant="mobile" />
+          <SensorTable sensors={visibleSensors} expandedId={expandedId} onToggleExpand={handleToggleExpand} hoveredId={hoveredSensor} onHover={setHoveredSensor} variant="mobile" />
         </div>
       </div>
       <RelatedTools variant="inline" currentSlug="sensor-size-comparison" />

@@ -15,6 +15,11 @@ type SensorTableProps = {
   // the matching row, and drives the accordion panel rendered below it.
   expandedId: string | null
   onToggleExpand: (id: string) => void
+  // Shared with the canvas via `useSensorCanvas`'s `hoveredSensor` state —
+  // hovering a row highlights the matching canvas rect, and hovering a
+  // canvas rect highlights the matching row (bidirectional sync).
+  hoveredId: string | null
+  onHover: (id: string | null) => void
   // SensorSize.tsx renders this component twice — a desktop copy and a
   // mobile copy — both present in the DOM at once (CSS hides whichever one
   // doesn't match the viewport). `variant` namespaces each row's `id` so the
@@ -27,7 +32,7 @@ type SensorTableProps = {
   variant: 'desktop' | 'mobile'
 }
 
-export function SensorTable({ sensors, expandedId, onToggleExpand, variant }: SensorTableProps) {
+export function SensorTable({ sensors, expandedId, onToggleExpand, hoveredId, onHover, variant }: SensorTableProps) {
   const t = useTranslations('toolUI.sensor-size-comparison')
   const sorted = [...sensors].sort((a, b) => (b.w * b.h) - (a.w * a.h))
   return (
@@ -50,10 +55,18 @@ export function SensorTable({ sensors, expandedId, onToggleExpand, variant }: Se
           const aspectCrop = calcAspectCropFactor(s.w, s.h)
           const ratio = formatAspectRatio(s.w, s.h)
           const isExpanded = s.id === expandedId
+          const isHovered = s.id === hoveredId
           const detailId = `sensor-detail-${variant}-${s.id}`
+          const rowClassName = [isExpanded && ss.tableRowExpanded, isHovered && ss.rowHovered]
+            .filter(Boolean).join(' ') || undefined
           return (
             <Fragment key={s.id}>
-              <tr id={`sensor-row-${variant}-${s.id}`} className={isExpanded ? ss.tableRowExpanded : undefined}>
+              <tr
+                id={`sensor-row-${variant}-${s.id}`}
+                className={rowClassName}
+                onMouseEnter={() => onHover(s.id)}
+                onMouseLeave={() => onHover(null)}
+              >
                 <td style={{ textAlign: 'left' }}>
                   <button
                     type="button"

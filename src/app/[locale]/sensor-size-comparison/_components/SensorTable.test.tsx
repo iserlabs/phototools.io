@@ -19,15 +19,21 @@ const film6x7 = ALL_SENSORS.find((s) => s.id === 'film_6x7') as ResolvedSensor
 const customSensor: CustomSensor = {
   id: 'custom_1', name: 'My Sensor', w: 30, h: 20, cropFactor: 1.44, color: '#ffffff', mp: 24,
 }
+const customSensorNoMp: CustomSensor = {
+  id: 'custom_2', name: 'No MP Sensor', w: 30, h: 20, cropFactor: 1.44, color: '#ffffff',
+}
 
-function Wrapped({ sensors }: { sensors: ResolvedSensor[] }) {
+function Wrapped({ sensors, onHover }: { sensors: ResolvedSensor[]; onHover?: (id: string | null) => void }) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [hoveredId, setHoveredId] = useState<string | null>(null)
   return (
     <NextIntlClientProvider locale="en" messages={messages}>
       <SensorTable
         sensors={sensors}
         expandedId={expandedId}
         onToggleExpand={(id) => setExpandedId((prev) => (prev === id ? null : id))}
+        hoveredId={hoveredId}
+        onHover={(id) => { setHoveredId(id); onHover?.(id) }}
         variant="desktop"
       />
     </NextIntlClientProvider>
@@ -55,6 +61,16 @@ describe('SensorTable — expandable deep-dive rows', () => {
     expect(screen.queryByText(/^character$/i)).not.toBeInTheDocument()
   })
 
+  it('custom row with no mp omits the resolutions block and renders no NaN/undefined', () => {
+    render(<Wrapped sensors={[customSensorNoMp]} />)
+    fireEvent.click(screen.getByRole('button', { name: /no mp sensor/i }))
+    expect(screen.queryByText(/µm/)).not.toBeInTheDocument()
+    expect(screen.queryByText(/common resolutions/i)).not.toBeInTheDocument()
+    expect(screen.getByText(/custom sensor.+computed data only/i)).toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/NaN/)
+    expect(document.body.textContent).not.toMatch(/undefined/)
+  })
+
   it('wires aria-expanded/aria-controls with variant-scoped ids, toggles on click', () => {
     render(<Wrapped sensors={[ff]} />)
     const btn = screen.getByRole('button', { name: /full frame/i })
@@ -77,5 +93,20 @@ describe('SensorTable — expandable deep-dive rows', () => {
     fireEvent.click(screen.getByRole('button', { name: /full frame/i }))
     expect(errorSpy).not.toHaveBeenCalled()
     errorSpy.mockRestore()
+  })
+
+  it('hovering a row calls onHover with its id and applies rowHovered, leaving calls onHover(null)', () => {
+    const onHover = vi.fn()
+    render(<Wrapped sensors={[ff]} onHover={onHover} />)
+    const row = document.getElementById('sensor-row-desktop-ff') as HTMLElement
+    expect(row.className).not.toContain('rowHovered')
+
+    fireEvent.mouseEnter(row)
+    expect(onHover).toHaveBeenCalledWith('ff')
+    expect(row.className).toContain('rowHovered')
+
+    fireEvent.mouseLeave(row)
+    expect(onHover).toHaveBeenCalledWith(null)
+    expect(row.className).not.toContain('rowHovered')
   })
 })
