@@ -1,48 +1,48 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Depth of field is the range of distance in your photo that appears acceptably sharp. A shallow depth of field blurs the background behind your subject, while a deep depth of field keeps everything from foreground to horizon in focus. Controlling depth of field is one of the most powerful creative tools in photography.",
+      "beginner": "Depth of field is the zone of your photo — from near to far — that looks acceptably sharp. Three controls shape that zone: aperture (wider apertures blur the background more), focal length (longer lenses narrow the zone), and subject distance (moving closer shrinks it further). Adjust any of them here and watch the depth ruler and viewport update together in real time.",
       "deeper": {
         "0": {
-          "heading": "How Depth-of-Field Works",
-          "text": "Depth of field is governed by the circle of confusion (CoC) — the largest blur spot on the sensor that still looks sharp to the human eye. Three physical factors determine depth of field: focal length, aperture, and subject distance. A wider aperture (lower f-number) produces a shallower depth of field because the lens converges light at steeper angles, causing out-of-focus points to spread into larger circles on the sensor."
+          "heading": "Aperture Geometry and the Circle of Confusion",
+          "text": "A lens focuses light from one exact distance onto the sensor as a perfect point; everything else lands as a small disc called the circle of confusion (CoC). A point still reads as sharp as long as its disc stays smaller than a threshold set by sensor size — roughly 0.03mm on full frame. Widening the aperture (lowering the f-number) opens a larger cone of light between the lens and the point of focus, so points away from that plane spread into much larger discs, much faster. That's why a wide aperture like f/1.4 blurs the background so much more than f/11 — it's the geometry of the light cone changing, not just the amount of light."
         },
         "1": {
-          "heading": "Focal Length & Distance",
-          "text": "Longer focal lengths magnify the image, which also magnifies the blur circles, narrowing the depth of field. Moving closer to your subject reduces depth of field for the same reason — the relative difference in distance between the subject and background becomes greater. The hyperfocal distance is the focus distance at which depth of field extends from half that distance to infinity, maximizing sharpness across the entire scene."
+          "heading": "Focal Length and Distance Dominate the Effect",
+          "text": "Aperture gets most of the credit for background blur, but focal length and subject distance often matter more. At a fixed framing, depth of field narrows roughly with the square of focal length — a 200mm lens has far less depth of field than a 35mm lens framing the same subject. Subject distance matters even more directly: moving closer at a fixed focal length and aperture shrinks depth of field sharply, because the near and far focus limits are both pulled tighter around a shorter subject distance. Getting closer, or reaching for a longer lens, is often the fastest way to isolate a subject — no aperture change required."
         },
         "2": {
-          "heading": "Bokeh & Diffraction",
-          "text": "Bokeh refers to the quality of the out-of-focus areas. The number and shape of aperture blades affect bokeh character — more rounded blades produce smoother, more circular highlights. At very small apertures (f/16+), diffraction causes light to spread as it passes the aperture edges, softening the entire image even within the depth of field zone. There is always a sweet spot — typically around f/5.6-f/8 on full-frame — where sharpness and depth of field are optimally balanced."
+          "heading": "Sensor Size and Equivalent Framing",
+          "text": "To fill the frame with the same subject, a larger sensor needs a proportionally longer focal length than a smaller one — a full-frame camera needs roughly 1.5x the focal length of an APS-C camera, and about 2x that of Micro Four Thirds, for the same field of view. Because depth of field narrows with focal length, that longer 'equivalent' focal length is what gives full-frame cameras their reputation for shallower depth of field — the f-number printed on the lens doesn't tell the whole story. Two lenses at the same f-stop on different sensor sizes, framed identically, will produce meaningfully different depth of field."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Aperture",
-          "description": "Wider apertures (f/1.4-f/2.8) create shallow depth of field with creamy bokeh. Narrower apertures (f/8-f/16) increase sharpness throughout the scene."
+          "description": "Wider apertures (low f-numbers like f/1.4-f/2.8) open a steeper light cone and shrink depth of field. Narrower apertures (f/8-f/16) widen it."
         },
         "1": {
           "label": "Focal Length",
-          "description": "Longer lenses compress perspective and narrow depth of field at the same aperture and framing. A 200mm lens at f/4 has far less depth of field than a 35mm lens at f/4."
+          "description": "Depth of field narrows roughly with the square of focal length at a constant framing — doubling your focal length cuts depth of field to about a quarter."
         },
         "2": {
           "label": "Subject Distance",
-          "description": "The closer you focus, the shallower the depth of field. Macro photographers often work with depth of field measured in millimeters."
+          "description": "Moving closer to your subject shrinks depth of field faster than almost any other adjustment, which is why macro photography has such razor-thin sharp zones."
         },
         "3": {
           "label": "Sensor Size",
-          "description": "Larger sensors require longer focal lengths for the same framing, which indirectly narrows depth of field. A full-frame camera produces shallower depth of field than a Micro Four Thirds camera at equivalent framing."
+          "description": "Larger sensors need longer focal lengths to match the same framing as smaller sensors, which indirectly produces shallower depth of field at equivalent shots."
         }
       },
       "tips": {
         "0": {
-          "text": "For group portraits, use f/5.6 or narrower and have everyone stand in the same focal plane. Even one person half a step forward can fall out of focus at wide apertures."
+          "text": "At wide apertures like f/1.4-f/2.0, depth of field can be thinner than a human face. Focus precisely on the near eye, not the nose or ear, or your subject's gaze will read as soft."
         },
         "1": {
-          "text": "When shooting landscapes, focus at the hyperfocal distance rather than at infinity. This maximizes the zone of sharpness from the near foreground to the far background."
+          "text": "Use the framing presets (Face, Portrait, Medium Shot, and so on) to lock your subject's size in the frame while you experiment — they hold focal length and distance in the same relationship a real shot would, so the blur you see here matches what you'd get in camera."
         },
         "2": {
-          "text": "If you want maximum background blur for a portrait, increase your focal length and get as close to your subject as framing allows — both changes stack to reduce depth of field dramatically."
+          "text": "Don't chase maximum depth of field by stopping all the way down. Past about f/11 on full frame (f/8 on APS-C, f/5.6 on Micro Four Thirds), diffraction softens the entire image faster than the extra depth of field helps."
         }
       },
       "tooltips": {
@@ -52,66 +52,42 @@
         },
         "aperture": {
           "term": "Aperture",
-          "definition": "The size of the lens opening, expressed as an f-number (e.g., f/2.8). Lower f-numbers mean a wider opening, letting in more light and producing shallower depth of field."
+          "definition": "The size of the lens opening, expressed as an f-number (e.g., f/2.8). Lower f-numbers mean a wider opening, letting in more light and producing a shallower depth of field."
         },
         "subjectDistance": {
           "term": "Subject Distance",
-          "definition": "The distance from the camera sensor to the point of focus. Closer focus distances result in shallower depth of field."
+          "definition": "The distance from the camera to the point of focus. Closer focus distances result in a shallower depth of field."
         },
         "sensor": {
           "term": "Sensor Size",
-          "definition": "The physical dimensions of the camera sensor. Larger sensors (full-frame, medium format) produce shallower depth of field at equivalent framing compared to smaller sensors (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Orientation",
-          "definition": "Toggle between landscape (horizontal) and portrait (vertical) shooting orientation. This affects the framing reference for subject distance calculations."
-        },
-        "nearFocus": {
-          "term": "Near Focus Limit",
-          "definition": "The closest distance from the camera that appears acceptably sharp. Everything closer than this will appear blurred."
-        },
-        "farFocus": {
-          "term": "Far Focus Limit",
-          "definition": "The farthest distance from the camera that appears acceptably sharp. When this reaches infinity, everything beyond the near limit is in focus."
-        },
-        "totalDoF": {
-          "term": "Total Depth of Field",
-          "definition": "The full distance between the near and far focus limits — the entire zone that appears sharp in the image."
+          "definition": "The physical dimensions of the camera sensor. Larger sensors (full-frame, medium format) require longer focal lengths for equivalent framing, which produces shallower depth of field than smaller sensors (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Hyperfocal Distance",
           "definition": "The focus distance that maximizes depth of field. When you focus at this distance, everything from half the hyperfocal distance to infinity appears sharp."
         },
-        "backgroundBlur": {
-          "term": "Background Blur",
-          "definition": "A measure of how blurred the background appears behind your subject. Higher values mean stronger blur and more subject isolation."
-        },
         "coc": {
           "term": "Circle of Confusion",
           "definition": "The maximum diameter of a blur spot on the sensor that still appears as a point to the human eye. Determines the boundary of acceptable sharpness for depth-of-field calculations."
         },
-        "isolationScore": {
-          "term": "Isolation Score",
-          "definition": "A composite rating (0-100) indicating how well the subject is separated from the background, based on the amount of background blur relative to the subject size."
-        },
-        "bokehShape": {
-          "term": "Bokeh Shape",
-          "definition": "The shape of out-of-focus highlights, determined by the number and curvature of aperture blades. More blades produce rounder, smoother bokeh."
+        "backgroundBlur": {
+          "term": "Background Blur",
+          "definition": "A measure of how blurred the background appears behind your subject. Higher values mean stronger blur and more subject isolation."
         },
         "diffractionWarning": {
           "term": "Diffraction",
-          "definition": "At very small apertures, light bends around the aperture edges, softening the image. On full-frame sensors, this typically becomes noticeable beyond f/16."
+          "definition": "At very small apertures, light bends around the aperture edges, softening the image. On full-frame sensors, this typically becomes noticeable beyond f/11-f/16."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "You are shooting a portrait and want a beautifully blurred background. Which aperture should you choose?",
-          "hint": "Lower f-numbers mean a wider lens opening and more background blur.",
-          "successMessage": "Correct! A wide aperture like f/1.8 or f/2.8 creates a shallow depth of field, separating your subject from the background with pleasing bokeh.",
-          "failureMessage": "Not quite. Narrow apertures like f/11 or f/16 keep more of the scene in focus. For background blur, choose a wide aperture (low f-number).",
+          "scenario": "You're photographing a portrait and want the background to melt into a soft blur behind your subject. Which aperture should you choose?",
+          "hint": "Lower f-numbers mean a wider opening — and a shallower depth of field.",
+          "successMessage": "Right — f/1.4 opens the aperture wide, producing a shallow depth of field and a smoothly blurred background.",
+          "failureMessage": "Not quite. Higher f-numbers like f/11 or f/16 keep more of the scene sharp. For maximum background blur, pick the widest aperture (the lowest f-number) instead.",
           "options": {
             "0": {
-              "label": "f/1.8"
+              "label": "f/1.4"
             },
             "1": {
               "label": "f/5.6"
@@ -125,10 +101,10 @@
           }
         },
         "1": {
-          "scenario": "You are photographing a group of 8 people arranged in two rows at a wedding. What aperture will help ensure everyone is in focus?",
-          "hint": "With people at slightly different distances, you need enough depth of field to cover both rows.",
-          "successMessage": "Great choice! f/5.6 provides enough depth of field to keep both rows sharp while still maintaining decent shutter speeds indoors.",
-          "failureMessage": "That aperture may leave the back row out of focus or be unnecessarily narrow. For two rows of people, f/5.6 is a reliable starting point.",
+          "scenario": "You're photographing four friends arranged in a loose cluster — a couple of them are a half-step forward or back from the others. Which aperture gives you a comfortable safety margin to keep everyone sharp?",
+          "hint": "You need extra depth of field to cover people who aren't in the exact same focal plane, but you don't need to stop all the way down.",
+          "successMessage": "Correct — f/5.6 provides a comfortable buffer of depth of field for small variations in distance, without narrowing the aperture more than necessary.",
+          "failureMessage": "f/1.4 is too shallow for people at slightly different distances, and f/16 stops down further than you need. f/5.6 is the reliable middle ground.",
           "options": {
             "0": {
               "label": "f/1.4"
@@ -140,61 +116,61 @@
               "label": "f/5.6"
             },
             "3": {
-              "label": "f/22"
+              "label": "f/16"
             }
           }
         },
         "2": {
-          "scenario": "You are shooting a landscape with wildflowers 2 meters away and mountains in the background. You are using a 24mm lens on a full-frame camera. What technique will maximize sharpness from front to back?",
-          "hint": "There is a specific distance you can focus at that maximizes the sharp zone from foreground to infinity.",
-          "successMessage": "Exactly! Focusing at the hyperfocal distance at f/11 ensures everything from about 1 meter to infinity is acceptably sharp — perfect for this scene.",
-          "failureMessage": "Focusing at infinity would leave the foreground flowers soft. Use the hyperfocal distance to extend sharpness from the near foreground through to infinity.",
+          "scenario": "You're at 85mm, f/1.8, with your subject 3 meters away, and you want to noticeably increase background blur without touching the aperture or switching lenses. What's the fastest way?",
+          "hint": "Depth of field — and how strongly the background blurs relative to your subject — is extremely sensitive to subject distance.",
+          "successMessage": "Exactly — halving the subject distance dramatically shrinks depth of field and magnifies background blur, without changing your aperture or lens.",
+          "failureMessage": "Moving farther away or raising ISO won't shrink depth of field. Getting closer to your subject is the fastest way to increase background blur at a fixed aperture and focal length.",
           "options": {
             "0": {
-              "label": "Focus on the flowers (2m)"
+              "label": "Move to 1.5m from your subject (half the distance)"
             },
             "1": {
-              "label": "Focus on the mountains (infinity)"
+              "label": "Move to 6m from your subject (double the distance)"
             },
             "2": {
-              "label": "Focus at the hyperfocal distance"
+              "label": "Step back to increase your working distance"
             },
             "3": {
-              "label": "Focus halfway between flowers and mountains"
+              "label": "Raise the ISO for a brighter background"
             }
           }
         },
         "3": {
-          "scenario": "You are doing macro photography of a flower and notice only the front petals are sharp. The rest of the flower fades to blur. You are at f/5.6. What should you do to get more of the flower in focus?",
-          "hint": "At close focus distances, depth of field becomes extremely thin. Consider your aperture.",
-          "successMessage": "Right! Stopping down to f/11 or f/16 increases your razor-thin depth of field in macro work. Just watch out for diffraction softening at very small apertures.",
-          "failureMessage": "Opening the aperture wider would make depth of field even thinner. In macro photography, stopping down (higher f-number) is the primary way to gain more depth.",
+          "scenario": "You're shooting a landscape on a full-frame camera and want maximum sharpness across the whole frame. Should you stop all the way down to f/22 for the most depth of field?",
+          "hint": "There's a trade-off between the depth of field gained by stopping down and the softening caused by diffraction at very small apertures.",
+          "successMessage": "Right — beyond roughly f/8-f/11 on full frame, diffraction starts to soften the entire image, even within the depth-of-field zone. That range is usually the sharpness sweet spot.",
+          "failureMessage": "Stopping all the way down to f/22 maximizes depth of field on paper, but diffraction softens the whole image at that aperture. f/8-f/11 usually gives the best balance of depth of field and sharpness.",
           "options": {
             "0": {
-              "label": "Open to f/2.8 for more light"
+              "label": "Yes — always use the smallest aperture available for maximum depth of field"
             },
             "1": {
-              "label": "Stop down to f/11"
+              "label": "No — use around f/8-f/11; beyond that, diffraction softens the whole image"
             },
             "2": {
-              "label": "Switch to a wider lens"
+              "label": "No — use the widest aperture available for the sharpest results"
             },
             "3": {
-              "label": "Move farther from the flower"
+              "label": "It doesn't matter — aperture has no effect on sharpness"
             }
           }
         },
         "4": {
-          "scenario": "You are comparing two cameras for portrait work: a full-frame camera with an 85mm f/1.8 lens and a Micro Four Thirds camera with a 42.5mm f/1.8 lens. Both produce equivalent framing. Which camera produces shallower depth of field?",
-          "hint": "Think about equivalent focal lengths and how sensor size affects the depth of field calculation at the same f-number.",
-          "successMessage": "Correct! The full-frame camera produces roughly 2 stops shallower depth of field. While the MFT lens has the same f-number, the shorter actual focal length (42.5mm vs 85mm) results in deeper depth of field at equivalent framing.",
-          "failureMessage": "Although both lenses are f/1.8, the full-frame camera uses a longer actual focal length for the same framing, producing significantly shallower depth of field.",
+          "scenario": "You're comparing two setups for the same portrait framing: a full-frame camera with an 85mm f/1.8 lens, and an APS-C camera (1.5x crop) with a 56mm f/1.8 lens producing the same field of view. Which produces shallower depth of field?",
+          "hint": "Compare the actual (not equivalent) focal length each lens uses to achieve the same framing.",
+          "successMessage": "Correct — even though both lenses are f/1.8, the full-frame camera uses a longer actual focal length (85mm vs. 56mm) to match the framing, which produces noticeably shallower depth of field.",
+          "failureMessage": "Both lenses share the same f-number, but the full-frame camera needs a longer actual focal length to match the framing. That longer focal length is what produces shallower depth of field — not the f-number alone.",
           "options": {
             "0": {
-              "label": "Full-frame with 85mm f/1.8"
+              "label": "The full-frame setup with 85mm f/1.8"
             },
             "1": {
-              "label": "Micro Four Thirds with 42.5mm f/1.8"
+              "label": "The APS-C setup with 56mm f/1.8"
             },
             "2": {
               "label": "Both produce identical depth of field"
