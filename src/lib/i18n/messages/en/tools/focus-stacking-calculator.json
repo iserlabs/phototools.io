@@ -36,7 +36,30 @@
       "tooFewShots": "Depth range is within a single shot — no stacking needed",
       "tooManyShots": "This plan requires many shots. Consider a narrower aperture to reduce the count.",
       "macroMode": "Macro",
-      "landscapeMode": "Landscape"
+      "landscapeMode": "Landscape",
+      "modeTitle": "Mode",
+      "distanceMode": "Distance",
+      "magnification": "Magnification",
+      "subjectDepth": "Subject Depth",
+      "sliceDoF": "Slice Depth of Field",
+      "railStep": "Rail Step",
+      "effectiveAperture": "Effective Aperture",
+      "railTravel": "Total Rail Travel",
+      "farLimitInfinity": "Stack to infinity",
+      "tableShot": "Shot",
+      "tableFocusDistance": "Focus Distance",
+      "tableNear": "Near Edge",
+      "tableFar": "Far Edge",
+      "tableRailPosition": "Rail Position",
+      "shotTable": "Shot List",
+      "animateStack": "Animate stack",
+      "pauseStack": "Pause",
+      "diffractionWarning": "At f/{aperture}, diffraction is softening the image on this sensor. Consider a wider aperture — the stack provides the depth.",
+      "diffractionWarningMacro": "At {magnification}×, f/{aperture} acts like f/{effective}. Stay at f/{max} or wider for maximum sharpness.",
+      "coverageWarning": "The shot cap was reached before covering the full range. Use a narrower range, more depth of field per shot, or split the stack.",
+      "hyperfocalHint": "A single shot focused at the hyperfocal distance ({distance}) covers this entire range — no stacking needed.",
+      "sceneCamera": "Camera",
+      "sceneRail": "Rail travel"
     }
   }
 }

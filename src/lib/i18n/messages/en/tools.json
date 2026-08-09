@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "Focus Stacking Calculator",
-      "description": "Calculate optimal focus distances for front-to-back sharpness"
+      "description": "Plan focus stacks with exact focus distances, shot counts, and macro rail steps"
     },
     "equivalent-settings-calculator": {
       "name": "Equivalent Settings Calculator",
