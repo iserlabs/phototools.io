@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { NextIntlClientProvider } from 'next-intl'
 import commonMessages from '@/lib/i18n/messages/en/common.json'
 import toolMessages from '@/lib/i18n/messages/en/tools/sensor-size-comparison.json'
@@ -13,6 +13,8 @@ const messages = {
   toolUI: toolMessages.toolUI,
 }
 
+const byId = (id: string) => ALL_SENSORS.find((s) => s.id === id) as ResolvedSensor
+
 const ff = ALL_SENSORS.find((s) => s.id === 'ff') as ResolvedSensor
 const apscN = ALL_SENSORS.find((s) => s.id === 'apsc_n') as ResolvedSensor
 const film6x7 = ALL_SENSORS.find((s) => s.id === 'film_6x7') as ResolvedSensor
@@ -23,19 +25,21 @@ const customSensorNoMp: CustomSensor = {
   id: 'custom_2', name: 'No MP Sensor', w: 30, h: 20, cropFactor: 1.44, color: '#ffffff',
 }
 
-function Wrapped({ sensors, onHover }: { sensors: ResolvedSensor[]; onHover?: (id: string | null) => void }) {
+function Wrapped({ sensors, onHover, children }: { sensors?: ResolvedSensor[]; onHover?: (id: string | null) => void; children?: ReactNode }) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   return (
     <NextIntlClientProvider locale="en" messages={messages}>
-      <SensorTable
-        sensors={sensors}
-        expandedId={expandedId}
-        onToggleExpand={(id) => setExpandedId((prev) => (prev === id ? null : id))}
-        hoveredId={hoveredId}
-        onHover={(id) => { setHoveredId(id); onHover?.(id) }}
-        variant="desktop"
-      />
+      {children ?? (
+        <SensorTable
+          sensors={sensors ?? []}
+          expandedId={expandedId}
+          onToggleExpand={(id) => setExpandedId((prev) => (prev === id ? null : id))}
+          hoveredId={hoveredId}
+          onHover={(id) => { setHoveredId(id); onHover?.(id) }}
+          variant="desktop"
+        />
+      )}
     </NextIntlClientProvider>
   )
 }
@@ -108,5 +112,22 @@ describe('SensorTable — expandable deep-dive rows', () => {
     fireEvent.mouseLeave(row)
     expect(onHover).toHaveBeenCalledWith(null)
     expect(row.className).not.toContain('rowHovered')
+  })
+
+  it('offers a compare target select in an expanded row and reports the chosen id', () => {
+    const onCompare = vi.fn()
+    render(<Wrapped>
+      <SensorTable
+        sensors={[byId('ff'), byId('apsc_n'), byId('m43')]}
+        expandedId="ff" onToggleExpand={() => {}}
+        hoveredId={null} onHover={() => {}}
+        variant="desktop"
+        onCompare={onCompare}
+        compareCandidates={[byId('apsc_n'), byId('m43')]}
+      />
+    </Wrapped>)
+    const select = screen.getByLabelText(/compare with/i)
+    fireEvent.change(select, { target: { value: 'm43' } })
+    expect(onCompare).toHaveBeenCalledWith('m43')
   })
 })

@@ -341,6 +341,51 @@
   color: var(--text-primary);
 }
 
+/* ── Compare entry point (a) — "Compare with…" select in a row's detail ── */
+.compareEntry {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.compareSelect {
+  padding: 6px 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: inherit;
+  max-width: 260px;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.compareSelect:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* ── Compare entry point (b) — "Compare these two" button ── */
+.compareTwoBtn {
+  align-self: flex-start;
+  padding: 8px 14px;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.compareTwoBtn:hover {
+  background: var(--accent-hover);
+}
+
 /* ── Copy image button ── */
 .copyBtn {
   padding: 6px 12px;
@@ -622,6 +667,17 @@
   .compareClose {
     min-width: 44px;
     min-height: 44px;
+  }
+
+  .compareSelect {
+    min-height: 44px;
+    font-size: 16px;
+    max-width: none;
+  }
+
+  .compareTwoBtn {
+    min-height: 44px;
+    align-self: stretch;
   }
 }
 

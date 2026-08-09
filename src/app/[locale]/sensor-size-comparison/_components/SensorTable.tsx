@@ -30,9 +30,14 @@ type SensorTableProps = {
   // `aria-controls` pairing (`sensor-detail-<variant>-<id>`) follows the
   // same per-instance scheme so it never collides either.
   variant: 'desktop' | 'mobile'
+  // Entry point (a) — "Compare with…" select inside an expanded row.
+  // Threaded straight through to `SensorRowDetail`, which renders nothing
+  // when either is missing or `compareCandidates` is empty.
+  onCompare?: (otherId: string) => void
+  compareCandidates?: ResolvedSensor[]
 }
 
-export function SensorTable({ sensors, expandedId, onToggleExpand, hoveredId, onHover, variant }: SensorTableProps) {
+export function SensorTable({ sensors, expandedId, onToggleExpand, hoveredId, onHover, variant, onCompare, compareCandidates }: SensorTableProps) {
   const t = useTranslations('toolUI.sensor-size-comparison')
   const sorted = [...sensors].sort((a, b) => (b.w * b.h) - (a.w * a.h))
   return (
@@ -92,7 +97,7 @@ export function SensorTable({ sensors, expandedId, onToggleExpand, hoveredId, on
               {isExpanded && (
                 <tr id={detailId}>
                   <td colSpan={7}>
-                    <SensorRowDetail sensor={s} />
+                    <SensorRowDetail sensor={s} variant={variant} onCompare={onCompare} compareCandidates={compareCandidates} />
                   </td>
                 </tr>
               )}
