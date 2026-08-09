@@ -57,7 +57,7 @@
         "verdictReach": "{smaller} offre {factor}× plus d'allonge avec le même objectif.",
         "verdictNearEqual": "Ces deux capteurs captent une quantité de lumière quasi identique par rapport à leur surface.",
         "crossFocal": "Un objectif de {focal}mm sur {from} cadre comme un {eqFocal}mm sur {to}.",
-        "areaRelation": "{a} a {ratio}× la surface de {b}."
+        "areaRelation": "{a} : surface {ratio}× ({b})."
       },
       "detail": {
         "diagonal": "Diagonale",

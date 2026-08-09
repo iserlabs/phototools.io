@@ -54,7 +54,7 @@
         "representativeResolution": "Роздільна здатність",
         "notApplicable": "—",
         "verdictLight": "{larger} збирає приблизно {ratio}× світла ({ev}).",
-        "verdictReach": "{smaller} дає {factor}× \"виліт\" із тим самим об'єктивом.",
+        "verdictReach": "{smaller} дає {factor}× більший \"виліт\" із тим самим об'єктивом.",
         "verdictNearEqual": "Ці дві матриці збирають практично однакову кількість світла для своєї площі.",
         "crossFocal": "{from}: об'єктив {focal}mm кадрує як {eqFocal}mm ({to}).",
         "areaRelation": "{a}: площа {ratio}× ({b})."

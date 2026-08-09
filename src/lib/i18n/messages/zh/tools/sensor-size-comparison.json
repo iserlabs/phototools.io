@@ -54,7 +54,7 @@
         "representativeResolution": "分辨率",
         "notApplicable": "—",
         "verdictLight": "{larger}的集光量约为{ratio}倍（{ev}）。",
-        "verdictReach": "{smaller}用同一支镜头能提供{factor}×的额外拍摄距离。",
+        "verdictReach": "{smaller}用同一支镜头能提供{factor}倍的额外拍摄距离。",
         "verdictNearEqual": "按面积计算，这两者的集光量几乎相同。",
         "crossFocal": "{from}上的{focal}mm镜头取景效果，相当于{to}上的{eqFocal}mm。",
         "areaRelation": "{a}的面积是{b}的{ratio}倍。"

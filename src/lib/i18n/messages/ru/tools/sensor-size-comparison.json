@@ -54,7 +54,7 @@
         "representativeResolution": "Разрешение",
         "notApplicable": "—",
         "verdictLight": "{larger} собирает примерно {ratio}× света ({ev}).",
-        "verdictReach": "{smaller} даёт {factor}× «вылет» с тем же объективом.",
+        "verdictReach": "{smaller} даёт {factor}× больший «вылет» с тем же объективом.",
         "verdictNearEqual": "Эти две матрицы собирают практически одинаковое количество света для своей площади.",
         "crossFocal": "{from}: объектив {focal}mm даёт кадр как {eqFocal}mm ({to}).",
         "areaRelation": "{a}: площадь {ratio}× ({b})."

@@ -57,7 +57,7 @@
         "verdictReach": "{smaller} dona {factor}× més abast amb el mateix objectiu.",
         "verdictNearEqual": "Aquests dos capten pràcticament la mateixa llum per a la seva àrea.",
         "crossFocal": "Un objectiu de {focal}mm a {from} enquadra com un {eqFocal}mm a {to}.",
-        "areaRelation": "{a} té {ratio}× l'àrea de {b}."
+        "areaRelation": "{a}: àrea {ratio}× ({b})."
       },
       "detail": {
         "diagonal": "Diagonal",
