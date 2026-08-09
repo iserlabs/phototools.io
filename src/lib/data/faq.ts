@@ -112,6 +112,17 @@ export const TOOL_FAQS: ToolFaqs[] = [
       { id: 'are-cheat-sheet-settings-exact' },
     ],
   },
+  {
+    slug: 'focus-stacking-calculator',
+    questions: [
+      { id: 'what-is-focus-stacking' },
+      { id: 'how-much-overlap' },
+      { id: 'best-aperture-for-stacking' },
+      { id: 'stacking-vs-hyperfocal' },
+      { id: 'what-is-a-rail-step' },
+      { id: 'what-software-merges-stacks' },
+    ],
+  },
 ]
 
 export function getFaqsBySlug(slug: string): ToolFaqs | undefined {
