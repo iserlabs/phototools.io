@@ -103,6 +103,14 @@ describe('ALL_SENSORS integrity', () => {
     expect(ALL_SENSORS).toHaveLength(23)
     expect(new Set(ALL_SENSORS.map(s => s.id)).size).toBe(23)
   })
+  it('preset ids are a URL contract — pin the exact set so a rename fails CI (spec §2.3)', () => {
+    expect(ALL_SENSORS.map(s => s.id)).toEqual([
+      'mf_645', 'mf', 'mf_leica', 'ff', 'apsh', 'apsc_n', 'apsc_c', 'm43', '1in', 'phone',
+      '1_1_7in', '1_2_3in', 'phone_mid', 'phone_uw',
+      'film_half', 'film_645', 'film_6x6', 'film_6x7', 'film_4x5',
+      'cine_s16', 'cine_s35', 'cine_vv', 'cine_a65',
+    ])
+  })
   it('stored crop factor equals derived (2dp) for every preset', () => {
     for (const s of ALL_SENSORS)
       expect(s.cropFactor).toBeCloseTo(Number(calcCropFactor(s.w!, s.h!).toFixed(2)), 10)
