@@ -1,6 +1,6 @@
 import type { ResolvedSensor, SensorRect } from './sensorSizeTypes'
 import type { CanvasPalette } from './canvasPalette'
-import { rgba, roundRect } from './sensorSizeHelpers'
+import { rgba, roundRect, hoverDim } from './sensorSizeHelpers'
 import { drawOverlayMobileLabels, drawOverlayDesktopLabels } from './drawOverlayLabels'
 import { drawHoverTooltip } from './drawOverlayTooltip'
 
@@ -17,7 +17,6 @@ export function drawOverlay(
   const maxW = Math.max(...sensors.map((s) => s.w))
   const maxH = Math.max(...sensors.map((s) => s.h))
   const isMobile = W < 600
-  const anyHover = !!hoveredId
 
   const labelColumnW = isMobile ? 0 : 160
   const pillH = 18
@@ -39,7 +38,7 @@ export function drawOverlay(
   for (const s of sorted) {
     const a = alphaMap?.get(s.id) ?? 1
     const isHovered = s.id === hoveredId
-    const dim = anyHover && !isHovered ? 0.4 : 1
+    const dim = hoverDim(hoveredId, s.id)
     const rw = s.w * scale
     const rh = s.h * scale
     const x = cx - rw / 2
@@ -68,7 +67,7 @@ export function drawOverlay(
 
   for (const s of sorted) {
     const a = alphaMap?.get(s.id) ?? 1
-    const dim = anyHover && s.id !== hoveredId ? 0.4 : 1
+    const dim = hoverDim(hoveredId, s.id)
     const rw = s.w * scale
     const rh = s.h * scale
 
@@ -93,7 +92,10 @@ export function drawOverlay(
   if (hoveredId && palette) {
     const hSensor = sorted.find((s) => s.id === hoveredId)
     const hRect = overlayRects.find((r) => r.id === hoveredId)
-    if (hSensor && hRect) drawHoverTooltip(ctx, hSensor, hRect, palette, W, pad)
+    if (hSensor && hRect) {
+      const hoveredAlpha = alphaMap?.get(hoveredId) ?? 1
+      drawHoverTooltip(ctx, hSensor, hRect, palette, W, pad, hoveredAlpha)
+    }
   }
 
   return contentH

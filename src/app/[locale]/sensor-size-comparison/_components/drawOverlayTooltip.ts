@@ -16,6 +16,7 @@ export function drawHoverTooltip(
   hRect: SensorRect,
   palette: CanvasPalette,
   W: number, pad: number,
+  alpha: number,
 ) {
   const crop = calcCropFactor(hSensor.w, hSensor.h)
   const label = `${hSensor.name} · ${hSensor.w}×${hSensor.h} mm · ${crop.toFixed(2)}x`
@@ -30,7 +31,7 @@ export function drawHoverTooltip(
   if (ty < pad) ty = hRect.y + hRect.h + 6
 
   ctx.save()
-  ctx.globalAlpha = 1
+  ctx.globalAlpha = alpha
   ctx.fillStyle = palette.tooltipBg
   roundRect(ctx, tx, ty, tw, th, 5)
   ctx.fill()

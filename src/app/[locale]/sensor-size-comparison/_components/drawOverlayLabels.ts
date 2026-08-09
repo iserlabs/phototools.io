@@ -1,5 +1,5 @@
 import type { ResolvedSensor } from './sensorSizeTypes'
-import { rgba, roundRect } from './sensorSizeHelpers'
+import { rgba, roundRect, hoverDim } from './sensorSizeHelpers'
 
 export function drawOverlayMobileLabels(
   ctx: CanvasRenderingContext2D,
@@ -9,7 +9,6 @@ export function drawOverlayMobileLabels(
   cx: number, cy: number, scale: number,
   pillWidths: number[], pillH: number, labelGap: number, pad: number,
 ): number {
-  const anyHover = !!hoveredId
   const largest = sorted[0]
   const lh = largest.h * scale
   let labelY = cy + lh / 2 + 16
@@ -17,7 +16,7 @@ export function drawOverlayMobileLabels(
   for (let i = 0; i < sorted.length; i++) {
     const s = sorted[i]
     const a = alphaMap?.get(s.id) ?? 1
-    const dim = anyHover && s.id !== hoveredId ? 0.4 : 1
+    const dim = hoverDim(hoveredId, s.id)
     const pillW = pillWidths[i]
     const pillX = cx - pillW / 2
 
@@ -49,7 +48,6 @@ export function drawOverlayDesktopLabels(
   rectsH: number, totalLabelH: number,
   pillWidths: number[], pillH: number, labelGap: number, pad: number,
 ): number {
-  const anyHover = !!hoveredId
   let labelY = cy - totalLabelH / 2
   const largestRectLeft = cx - sorted[0].w * scale / 2
   const columnRight = largestRectLeft - 20
@@ -57,7 +55,7 @@ export function drawOverlayDesktopLabels(
   for (let i = 0; i < sorted.length; i++) {
     const s = sorted[i]
     const a = alphaMap?.get(s.id) ?? 1
-    const dim = anyHover && s.id !== hoveredId ? 0.4 : 1
+    const dim = hoverDim(hoveredId, s.id)
     const rw = s.w * scale
     const rectLeft = cx - rw / 2
     const label = s.name

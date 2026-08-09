@@ -35,6 +35,16 @@ export function easeOut(t: number): number {
 }
 
 /**
+ * Overlay hover-highlight alpha multiplier: dims every sensor except the
+ * hovered one to 40%; when nothing is hovered, everything stays
+ * full-strength. Shared by drawOverlay/drawOverlayLabels so the 0.4 dim
+ * factor lives in one place.
+ */
+export function hoverDim(hoveredId: string | null | undefined, id: string): number {
+  return hoveredId && id !== hoveredId ? 0.4 : 1
+}
+
+/**
  * Sort sensors for canvas rendering: `SENSOR_GROUP_ORDER` first (custom
  * sensors, which have no `group`, sort after every curated group), then by
  * area descending within a group. Keeps side-by-side/pixel-density columns
