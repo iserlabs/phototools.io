@@ -6,6 +6,24 @@
       "modeSideBySide": "Berdampingan",
       "modePixelDensity": "Kepadatan Piksel",
       "pixelDensityDescription": "Menampilkan jumlah megapiksel umum untuk setiap sensor. Piksel lebih besar (sel lebih besar) menangkap lebih banyak cahaya.",
+      "filmPixelDensityNote": "Film dan Super 16 tidak memiliki jumlah piksel yang ditentukan, sehingga disembunyikan dalam mode ini — lihat di mode Overlay atau Berdampingan.",
+      "quickCompare": "Perbandingan Cepat",
+      "presetReplacesNote": "Menggantikan pilihan saat ini",
+      "presets": {
+        "phone_vs_ff": "Smartphone vs Full Frame",
+        "crop_vs_ff": "Crop vs Full Frame",
+        "film_vs_digital": "Film vs Digital",
+        "mf_family": "Keluarga Medium Format",
+        "cine_vs_stills": "Sinema vs Foto Still"
+      },
+      "groups": {
+        "medium-format": "Medium Format",
+        "ff-aps": "Full Frame & APS",
+        "compact": "Kompak & 1\"",
+        "phone": "Smartphone",
+        "film": "Film",
+        "cine": "Sinema"
+      },
       "sensors": "Sensor",
       "customSensors": "Sensor Kustom",
       "placeholderName": "Nama",
@@ -28,6 +46,19 @@
       "tableCropFactor": "Crop Factor",
       "tableAspectCrop": "Aspect Crop",
       "canvasAriaLabel": "Perbandingan ukuran sensor dalam mode {mode}",
+      "detail": {
+        "diagonal": "Diagonal",
+        "area": "Area",
+        "aspect": "Aspek",
+        "vsFullFrame": "vs Full Frame",
+        "referenceSensor": "Sensor referensi (full frame)",
+        "equivalence": "Lensa {focal}mm f/{ap} di sini membingkai seperti ~{eqFocal}mm dengan depth of field f/{eqAp} pada full frame.",
+        "resolutions": "Resolusi umum",
+        "cameras": "Kamera populer",
+        "character": "Karakter",
+        "context": "Konteks",
+        "customNoProfile": "Sensor kustom — hanya data hasil perhitungan."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "Apa itu crop factor dan mengapa penting?",
@@ -40,6 +71,112 @@
         "sensor-size-and-depth-of-field": {
           "question": "Bagaimana ukuran sensor mempengaruhi depth of field?",
           "answer": "Sensor yang lebih besar menghasilkan depth of field yang lebih dangkal pada framing yang setara. Untuk mendapatkan framing yang sama dengan sensor yang lebih kecil, Anda menggunakan panjang fokus lebih pendek (kedalaman bidang lebih dalam) atau mundur lebih jauh (kedalaman bidang lebih dalam), keduanya mengurangi blur latar belakang."
+        },
+        "film-vs-digital-sensor-sizes": {
+          "question": "Bagaimana ukuran frame film dibandingkan dengan sensor digital modern?",
+          "answer": "Film 35mm standar secara dimensi identik dengan sensor digital full frame (36×24mm), sehingga lensa era film mencakupnya tanpa crop. Film Medium Format jauh lebih besar — negatif 645 berukuran 56×41.5mm dan 6×7 berukuran 70×56mm, keduanya jauh melampaui area sensor digital full frame mana pun — sementara film half-frame membagi frame 35mm standar menjadi dua, kira-kira seluas sensor APS-C besar."
+        },
+        "cine-vs-stills-sensors": {
+          "question": "Apa padanan Super 35 dan ALEXA 65 dalam istilah foto diam?",
+          "answer": "Super 35 (24.9×14.0mm, crop 1.51x) hampir persis sama dengan ukuran APS-C, itulah sebabnya lensa sinema S35 dan lensa foto diam APS-C mencakup image circle yang serupa. Sensor ALEXA 65 yang berukuran 54.12×25.58mm jauh lebih besar — lebih dekat ke sensor foto diam Medium Format 44×33mm dibanding full frame, itulah sebabnya kamera ini butuh jajaran lensa large format khusus sendiri."
+        },
+        "why-inch-fractions": {
+          "question": "Mengapa sensor kecil dinamai dengan pecahan inci seperti 1/2.3\"?",
+          "answer": "Pecahan ini menggambarkan diameter luar tabung kamera video era 1950-an, bukan sensornya sendiri — tabung \"1 inci\" menghasilkan area gambar yang bisa dipakai sekitar dua pertiga dari diameter tersebut. Saat sensor solid-state menggantikan tabung, produsen tetap memakai konvensi penamaan era tabung itu meskipun diagonal sebenarnya sensor \"1 inci\" modern sekitar 15.86mm, jauh dari 1 inci yang sebenarnya."
+        }
+      },
+      "sensorProfiles": {
+        "mf_645": {
+          "character": "Dengan ukuran 53.4×40mm, ini adalah sensor terbesar yang akan pernah disentuh kebanyakan fotografer profesional. Fotografer studio, produk, dan lanskap menggunakannya secara tethered demi resolusi dan rentang tonal, bukan demi kecepatan — autofocus dan kecepatan burst-nya jauh tertinggal dari full frame. File 150 megapiksel dari back Phase One IQ4 akan membebani baik penyimpanan maupun komputer Anda.",
+          "context": "Angka \"645\" pada garis keturunan kelas sensor ini berasal dari back roll-film 6×4.5cm, tapi jangan bingung dengan preset Film 645 di tempat lain pada daftar ini. Dengan ukuran 53.4×40mm, sensor digital seri 645 dari Phase One dan Hasselblad sebenarnya lebih kecil dibanding frame film 56×41.5mm yang menjadi asal-usulnya, meski memakai nama yang sama."
+        },
+        "mf": {
+          "character": "Kelas ukuran ini membuat Medium Format praktis digunakan di luar studio. GFX dari Fujifilm dan seri X dari Hasselblad sama-sama dibangun di sekitar sensor 43.8×32.9mm yang cukup kecil untuk dipegang tangan dan dibawa mendaki, dengan resolusi 50 hingga 100 megapiksel serta autofocus yang telah menutup sebagian besar kesenjangan dengan mirrorless. Lensa native tetap lebih besar dan lebih mahal dibanding padanan full frame-nya, dan pembacaan rolling shutter membatasi kemampuannya untuk aksi cepat.",
+          "context": "Fujifilm dan Hasselblad bersaing langsung di sini, tapi mereka tidak bersaing pada hardware sensor — GFX 100 II dan X2D 100C sama-sama menggunakan chip 44×33mm buatan Sony yang sama. Yang membedakan kedua sistem ini adalah desain bodi, rendering lensa, dan filosofi menu, bukan silikon di dalamnya."
+        },
+        "mf_leica": {
+          "character": "Sistem S dari Leica menempatkan sensor 45×30mm dalam bodi berbentuk SLR 35mm yang diperbesar, bukan kamera view studio — itulah keunggulan utamanya: Medium Format genggam untuk reportase dan potret lokasi. S3 dengan 64 megapiksel mengorbankan sedikit ruang resolusi dibanding pesaing GFX dan Hasselblad demi sistem yang lebih sederhana dengan satu mount lensa dan lebih sedikit pilihan bodi.",
+          "context": "Leica S2, diluncurkan pada 2009, secara eksplisit dipasarkan sebagai kamera Medium Format pertama yang dibangun untuk penggunaan luar ruangan dan genggam, bukan kerja studio yang terikat tripod. S3 hadir pada 2020 sebagai penerus langsungnya; Leica menghentikan produksi S3 pada 2023, dan belum ada S4 yang dirilis, membuat masa depan lini ini tidak pasti."
+        },
+        "ff": {
+          "character": "Titik acuan untuk semua sensor lainnya di sini. Full frame menyeimbangkan area penangkap cahaya, kontrol depth of field, dan ukuran lensa — sebagian besar jajaran lensa modern dirancang berdasarkan sensor ini. Anda membayar dengan bodi dan lensa yang lebih besar dibanding APS-C, tapi mendapat sekitar satu stop ruang cahaya rendah tambahan dan fokus yang lebih dangkal pada framing yang sama.",
+          "context": "Frame 36×24mm adalah warisan langsung dari film still 35mm, distandarkan oleh Leica pada tahun 1920-an dari stok film sinema yang diputar menyamping. Sensor digital full frame secara dimensi identik dengan frame film 35mm — itulah sebabnya lensa era film dapat dipasang tanpa crop."
+        },
+        "apsh": {
+          "character": "Ukuran sementara yang dibangun Canon demi kecepatan di atas resolusi — piksel lebih besar dan pembacaan lebih cepat, dalam bodi yang ditujukan untuk olahraga dan jurnalistik foto, bukan demi kualitas gambar semata. Crop 1.29x ini berada di tengah antara kekurangan jangkauan full frame dan penalti cahaya rendah APS-C, dengan konsekuensi sensor ini tak pernah diadopsi produsen lain.",
+          "context": "APS-H adalah format eksklusif Canon, digunakan hanya pada lini EOS-1D — 1D, 1D Mark II, Mark II N, Mark III, dan terakhir Mark IV pada 2009, setelah itu Canon sepenuhnya meninggalkan ukuran ini dan mengembalikan seri 1 ke full frame. Tak ada ekosistem lensa atau aksesori di luar milik Canon sendiri yang pernah menyasar format ini."
+        },
+        "apsc_n": {
+          "character": "Ukuran mirrorless standar untuk fotografer enthusiast dan kelas menengah dari Sony, Nikon, dan Fujifilm, dengan crop 1.53x yang mengubah lensa 50mm menjadi setara kira-kira 75mm. Bodi dan lensa jauh lebih kecil dan lebih murah dibanding full frame, dan jangkauan ekstra ini menjadi keunggulan nyata bagi fotografer satwa liar dan olahraga yang menggunakan lensa panjang.",
+          "context": "Nama APS-C dipinjam dari film Advanced Photo System konsumen tahun 1996, khususnya format cetak \"Classic\" 3:2-nya — tapi sensor digital ini bukan berukuran fisik sama dengan film APS, hanya berbagi nama dari jauh. Fujifilm membangun seluruh sistem X-nya di sekitar ukuran sensor ini, bukan memperlakukannya sebagai kelas pemula."
+        },
+        "apsc_c": {
+          "character": "Standar APS-C milik Canon sendiri, berukuran 22.3×14.8mm — lebih kecil dari ukuran 23.5×15.6mm yang dipakai kebanyakan kompetitor, itulah sebabnya crop Canon terbaca 1.62x, bukan 1.5x. Dalam praktiknya ini berarti jangkauan telefoto sedikit lebih jauh per lensa, dengan sedikit konsekuensi pada noise dan dynamic range dibanding varian APS-C yang lebih besar.",
+          "context": "Canon memakai dimensi sensor APS-C miliknya sendiri sejak DSLR digital pertama format ini, tidak pernah menyatu dengan crop 1.5x yang dipakai hampir semua produsen lain. R7 dan R10 melanjutkan ukuran ini ke mount RF mirrorless Canon saat ini."
+        },
+        "m43": {
+          "character": "Sistem yang benar-benar kecil dan benar-benar lengkap — crop 2x berarti setiap lensa secara fisik kompak, dan sensor 17.3×13mm tetap mendukung lensa cepat dan tajam dengan separasi subjek yang nyata, hanya saja tidak sedangkal depth of field full frame. Performa cahaya rendah dan dynamic range tertinggal dibanding sensor lebih besar, itulah konsekuensi jujur dari penghematan ukuran dan bobot.",
+          "context": "Micro Four Thirds adalah standar terbuka, bukan format proprietary — Olympus dan Panasonic bersama-sama mengumumkannya pada 2008, dan produsen mana pun dapat membangun mount lensa dan spesifikasi sensor yang sama. OM System (dulu Olympus) dan Panasonic tetap menjadi dua produsen kamera aktif yang mengembangkannya."
+        },
+        "1in": {
+          "character": "Peningkatan berarti dari sensor smartphone sambil tetap muat di saku — lini RX100 membuktikan bahwa sensor 13.2×8.8mm bisa menghasilkan kualitas gambar sungguhan dalam kamera kompak yang benar-benar akan Anda bawa. Blur latar belakang tetap terbatas bahkan pada f/1.8, dan cahaya rendah butuh perhatian ekstra, tapi rasio ukuran-terhadap-kualitasnya sulit ditandingi untuk traveling.",
+          "context": "Label \"1 inci\" adalah warisan dari tabung kamera video era 1950-an, bukan pengukuran sungguhan — tabung dengan diameter luar 1 inci menghasilkan area gambar terpakai sekitar dua pertiga dari itu, sekitar 16mm diagonal. Saat sensor CCD dan CMOS menggantikan tabung, produsen kamera tetap mempertahankan penamaan era tabung meski sensor masa kini sama sekali tidak memiliki tabung di dalamnya."
+        },
+        "phone": {
+          "character": "Smartphone flagship modern menutup kesenjangan dengan kamera murni sensor melalui komputasi, bukan ukuran — chip 9.8×7.3mm tak dapat menandingi kemampuan penangkap cahaya mentah sensor 1 inci, sehingga multi-frame stacking, AI denoising, dan bokeh sintetis yang mengambil alih kerja berat. Hasilnya terlihat sangat baik di layar ponsel dan mulai menunjukkan batasannya pada resolusi penuh dalam cahaya rendah.",
+          "context": "\"Flagship\" di sini mencakup beberapa sensor sungguhan dengan ukuran mirip tapi tidak identik di berbagai merek dan tahun, bukan satu chip yang pasti — kamera utama iPhone 17 Pro berukuran sekitar 1/1.28 inci, lini flagship Samsung lebih dekat ke 1/1.3 inci, dan keduanya dibulatkan menjadi angka representatif 9.8×7.3mm pada preset ini."
+        },
+        "1_1_7in": {
+          "character": "Sensor 7.6×5.7mm mendefinisikan kamera kompak enthusiast akhir 2000-an — kamera seperti Canon S120 dan Panasonic LX7 memadukannya dengan lensa cepat yang jarang ditandingi kamera kompak lain, menyasar fotografer yang menginginkan kontrol manual dalam saku jaket. Smartphone menyerap sebagian besar pasar ini, tapi keseimbangan ukuran dan kontrol format ini masih tetap relevan.",
+          "context": "Dari segi area sensor, format ini berada satu tingkat di bawah kompak 1 inci dan dua tingkat di bawah Micro Four Thirds, mengisi ceruk kamera saku dengan aperture lebih cepat dibanding point-and-shoot khas pada era yang sama. Sedikit kamera saat ini yang memakainya — kini sebagian besar hanya menjadi ukuran pasar bekas dan kolektor."
+        },
+        "1_2_3in": {
+          "character": "Drone dan action camera dibangun di sekitar ukuran ini karena cukup kecil dan ringan untuk terbang atau dipasang tanpa menambah bobot berarti — konsekuensinya adalah rekaman ISO tinggi yang noise dan dynamic range terbatas dibanding sensor mana pun yang lebih besar pada daftar ini. DJI dan sebagian besar produsen action camera menjangkarkan lini inti mereka di ukuran ini.",
+          "context": "Tercantum sebagai 6.17×4.55mm, ini adalah konvensi dominan di dunia nyata pada lembar spesifikasi produsen, meski tidak menyusut tepat menjadi rasio 4:3 — versi 4:3 yang \"benar\" secara matematis pada 6.17×4.63mm ada di beberapa referensi, tapi hampir tak ada sensor drone atau action camera yang dijual benar-benar mencantumkannya."
+        },
+        "phone_mid": {
+          "character": "Smartphone kelas menengah membawa sensor yang jauh lebih kecil dibanding saudara flagship-nya, dan ini paling terlihat pada cahaya rendah dan dynamic range begitu Anda melewati batas foto siang hari yang terang. Produsen makin mengandalkan pemrosesan komputasional untuk mengompensasinya, yang mempersempit kesenjangan yang terlihat dalam kondisi baik tapi tak bisa sepenuhnya menutupnya setelah gelap.",
+          "context": "Ini adalah ukuran representatif, bukan chip pasti dari satu produsen tertentu — sensor utama kelas menengah sungguhan, termasuk komponen seperti Samsung ISOCELL GM5, berkumpul di sekitar angka 5.6×4.2mm ini tanpa ada satu pun datasheet yang cocok persis, karena \"kelas menengah\" mencakup banyak sensor sungguhan di berbagai merek dan tahun."
+        },
+        "phone_uw": {
+          "character": "Lensa ultra-wide pada smartphone membawa sensor terkecil dan paling terbatas dalam susunan kamera ponsel pada umumnya — berguna untuk arsitektur dan lanskap di mana field of view yang lebih lebar lebih penting dibanding kualitas per-piksel, tapi terlihat jelas lebih lembut dan lebih noise dibanding kamera utama pada bidikan yang sama.",
+          "context": "Seperti tingkatan smartphone lainnya di sini, angka 4.0×3.0mm ini mewakili kelas modul ultra-wide berukuran serupa di berbagai merek, bukan satu chip spesifik. Kamera ultra-wide adalah tambahan pertengahan 2010-an pada susunan kamera ponsel dan tetap menjadi mata rantai terlemah pada kebanyakan sistem multi-kamera."
+        },
+        "film_half": {
+          "character": "Memotret half-frame berarti menggandakan jumlah bidikan per roll dengan memuat dua frame dalam ruang yang biasanya ditempati satu frame — menarik karena alasan biaya film, tapi konsekuensinya adalah hasil yang lebih grainy dan lebih lembut saat diperbesar dibanding full frame 35mm, karena Anda bekerja dengan setengah area negatif.",
+          "context": "Setengah dari frame 35mm standar — frame format ini secara native vertikal (18×24) karena membagi frame film horizontal menjadi dua. Dipopulerkan oleh Olympus Pen pada 1959 untuk menggandakan jumlah bidikan per roll, dan dihidupkan kembali oleh Pentax 17 pada 2024."
+        },
+        "film_645": {
+          "character": "Naik ke Film 645 berarti negatif 56×41.5mm dengan detail dan rentang tonal yang terasa lebih baik dibanding 35mm, sambil tetap memuat 15 atau 16 frame dalam satu roll film 120. Bodi seperti Mamiya 645 terasa hampir seperti SLR yang diperbesar, bukan rig khusus studio.",
+          "context": "Jangan bingung dengan sensor Medium Format digital garis keturunan \"645\" di tempat lain pada daftar ini — ini adalah frame roll-film 6×4.5cm sungguhan asal nama tersebut, dipotret pada film 120 atau 220 dalam bodi seperti Pentax 645NII dan Contax 645."
+        },
+        "film_6x6": {
+          "character": "Framing persegi menghilangkan satu keputusan — tak perlu memutar kamera untuk potret versus lanskap — itulah salah satu alasan mengapa format ini begitu cocok untuk kamera twin-lens waist-level. Konsekuensinya muncul saat mencetak: kebanyakan format kertas dan layar tidak persegi, jadi Anda akhirnya tetap harus meng-crop dengan satu atau lain cara.",
+          "context": "Kamera format persegi klasik, dipopulerkan oleh seri 500 Hasselblad dan twin-lens reflex Rolleiflex. Hasselblad 500EL yang dimodifikasi membawa format ini ke permukaan bulan pada misi Apollo 11, menyusul Hasselblad 500C yang lebih dulu digunakan pada misi Mercury NASA tahun 1962 dan 1963."
+        },
+        "film_6x7": {
+          "character": "Sistem yang lebih berat dan lebih lambat dibanding 35mm atau half-frame — bellows focusing dan rotating back pada Mamiya RB67 lebih cocok untuk ritme yang cermat dan ramah tripod dibanding spontanitas genggam. Sebagai gantinya Anda mendapat negatif lebih dari empat kali area full frame, dengan grain yang lebih halus dan transisi tonal yang lebih mulus.",
+          "context": "Dijuluki \"format ideal\" pada 1960-an dan 70-an karena proporsi 5:4-nya bisa di-crop dengan rapi menjadi 8×10 dan ukuran cetak standar lain dengan sisa minimal. Mamiya RB67 mengambil namanya langsung dari fitur andalannya — rotating back, karenanya \"RB\" — yang memungkinkan Anda mengganti orientasi tanpa memutar seluruh kamera."
+        },
+        "film_4x5": {
+          "character": "Sheet film mengubah cara Anda bekerja sama besarnya dengan apa yang Anda tangkap — satu eksposur per holder, tampilan ground-glass yang terbalik atas-bawah dan cermin, serta movement (rise, shift, tilt) yang memungkinkan Anda mengoreksi perspektif dan mengontrol fokus dengan cara yang tak bisa ditandingi sensor digital mana pun di sini tanpa stitching atau lensa shift.",
+          "context": "Format yang mengangkut fotojurnalisme sepanjang pertengahan abad ke-20 — Joe Rosenthal memotret pengibaran bendera Iwo Jima dengan Graflex Speed Graphic yang dimuati sheet film 4×5. Film large format masih ada hingga kini dalam bodi seperti Intrepid 4×5 yang bisa dilipat, sebagian besar untuk karya lanskap dan fine-art."
+        },
+        "cine_s16": {
+          "character": "Kompromi format kerja — Super 16 menghadirkan kualitas gambar yang jauh lebih baik dibanding 16mm standar dengan hanya sebagian kecil biaya dan ukuran kamera film 35mm, itulah sebabnya produksi dokumenter, indie, dan siaran mengandalkannya selama puluhan tahun. Format ini tak memiliki jumlah piksel digital tetap dalam tool ini karena merupakan gauge film, bukan sensor.",
+          "context": "Ditemukan pada 1969 oleh sinematografer Swedia Rune Ericson, Super 16 memperlebar frame terpakai 16mm standar dengan mengambil kembali strip film yang biasanya disediakan untuk soundtrack optik — area gambar 12.52×7.41mm dibanding frame 16mm biasa yang lebih sempit, sekitar 1.69:1 berdasarkan dimensi mentah. Produksi secara historis mem-framing untuk blow-up 1.66:1 ke 35mm, bukan rasio literal format ini."
+        },
+        "cine_s35": {
+          "character": "Produksi sinema profesional berjalan di atas ukuran sensor ini lebih dari ukuran lainnya — kamera seperti ARRI ALEXA 35 dan RED Komodo dibangun di sekitarnya karena menyeimbangkan kontrol fokus dangkal, pilihan lensa, dan ukuran file yang mudah dikelola lebih baik dibanding format siaran yang lebih kecil maupun sensor sinema large format yang lebih besar.",
+          "context": "Super 35 berakar dari full frame film sinema 35mm 4-perf — pada dasarnya area yang sama dipakai kamera era film bisu sebelum soundtrack memakan sebagian frame, dihidupkan kembali sebagai format khusus kamera pada 1980-an. Angka 24.9×14.0mm di sini adalah crop area gambar aktif 16:9 yang dirujuk kamera ARRI sendiri, bukan frame open-gate yang lebih besar."
+        },
+        "cine_vv": {
+          "character": "Sensor VV dari RED dibangun untuk sinema large format dengan ukuran mendekati full frame, memberikan depth of field yang lebih dangkal dan dynamic range yang lebih lebar dibanding Super 35 pada focal length yang sama — konsekuensinya adalah lensa yang lebih berat dan lebih mahal, dirancang untuk mencakup image circle yang lebih besar.",
+          "context": "\"VV\" adalah singkatan dari VistaVision, nama yang dipinjam RED dari proses 35mm large-frame milik Paramount pada 1950-an, yang sendiri dirancang untuk menyaingi format sinema widescreen pada eranya. Sensor V-RAPTOR berukuran 40.96×21.6mm hanya berbagi nama dan kelas ukuran kasar dengan format film puluhan tahun itu, bukan dimensi spesifiknya."
+        },
+        "cine_a65": {
+          "character": "ARRI membangun ALEXA 65 untuk produksi sinema berskala terbesar — sensor 54.12×25.58mm yang jauh lebih besar bahkan dibanding kamera sinema digital kelas VistaVision seperti V-RAPTOR VV. Bodinya disewa, bukan dimiliki, melalui program khusus ARRI, dan formatnya menuntut lensa large format yang hanya sanggup dijustifikasi oleh sedikit produksi di luar anggaran blockbuster.",
+          "context": "Dengan aspect ratio 2.12:1, sensor 20.3 megapiksel ALEXA 65 dari segi ukuran lebih dekat ke kamera foto diam Medium Format dibanding kamera sinema lain mana pun pada daftar ini. Kamera ini tetap menjadi kamera bersensor terbesar ARRI, diposisikan di atas ALEXA LF dan dikhususkan untuk program sewa saja, bukan dijual langsung."
         }
       }
     }
