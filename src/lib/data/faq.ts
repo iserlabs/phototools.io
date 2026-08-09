@@ -46,6 +46,9 @@ export const TOOL_FAQS: ToolFaqs[] = [
       { id: 'what-is-crop-factor' },
       { id: 'full-frame-vs-aps-c' },
       { id: 'sensor-size-and-depth-of-field' },
+      { id: 'film-vs-digital-sensor-sizes' },
+      { id: 'cine-vs-stills-sensors' },
+      { id: 'why-inch-fractions' },
     ],
   },
   {
