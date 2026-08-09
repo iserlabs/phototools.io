@@ -10,6 +10,12 @@
 
 **Spec:** `docs/superpowers/specs/2026-08-07-guides-section-design.md` (read it before starting).
 
+> **Superseded (2026-08-09):** this plan was executed and shipped. One
+> dependency has since changed — `image-size` was removed after `npm audit`
+> flagged unfixable high-severity advisories in its ICNS/JXL/HEIF parsers.
+> `Figure` now reads intrinsic dimensions via `src/lib/utils/imageDimensions.ts`
+> (a local PNG/JPEG/WebP/GIF header reader). Do not reinstall `image-size`.
+
 ## Global Constraints
 
 - Run every command from the repo root: `/Users/iser/workspace/iserlabs/applications/photo-tools`. Package manager is **npm**.
