@@ -46,6 +46,19 @@
       "tableCropFactor": "Crop Factor",
       "tableAspectCrop": "Aspect Crop",
       "canvasAriaLabel": "Sensor size comparison in {mode} mode",
+      "detail": {
+        "diagonal": "Diagonal",
+        "area": "Area",
+        "aspect": "Aspect",
+        "vsFullFrame": "vs Full Frame",
+        "referenceSensor": "Reference sensor (full frame)",
+        "equivalence": "A {focal}mm f/{ap} lens here frames like ~{eqFocal}mm with f/{eqAp} depth of field on full frame.",
+        "resolutions": "Common resolutions",
+        "cameras": "Popular cameras",
+        "character": "Character",
+        "context": "Context",
+        "customNoProfile": "Custom sensor — computed data only."
+      },
       "faq": {
         "what-is-crop-factor": {
           "question": "What is crop factor and why does it matter?",
