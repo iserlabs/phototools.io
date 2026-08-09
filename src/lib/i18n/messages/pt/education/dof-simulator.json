@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Distância Focal e Distância",
-          "text": "Distâncias focais mais longas ampliam a imagem, o que também amplia os círculos de desfoque e estreita a profundidade de campo. Aproximar-se do assunto reduz a profundidade de campo pelo mesmo motivo — a diferença relativa de distância entre o assunto e o fundo fica maior. A distância hiperfocal é a distância de foco na qual a profundidade de campo se estende da metade dessa distância até o infinito, maximizando a nitidez em toda a cena."
+          "text": "O efeito da distância focal na profundidade de campo depende do que você mantém constante. Numa distância do assunto fixa, distâncias focais mais longas estreitam a profundidade de campo de forma acentuada — aproximadamente com o quadrado da distância focal. Mas se você aproximar o zoom e recuar para manter o mesmo enquadramento (o modo de campo de visão travado desta ferramenta), a profundidade de campo quase não muda — é o fundo que se transforma, ficando mais ampliado e mais desfocado. Aproximar-se do assunto estreita a profundidade de campo por um motivo diferente: os limites de foco próximo e distante se aproximam em torno de uma distância menor. A distância hiperfocal é a distância de foco na qual a profundidade de campo se estende da metade dessa distância até o infinito, maximizando a nitidez em toda a cena."
         },
         "2": {
           "heading": "Bokeh e Difração",
-          "text": "Bokeh se refere à qualidade das áreas fora de foco. O número e a forma das lâminas da abertura afetam o caráter do bokeh — lâminas mais arredondadas produzem realces mais suaves e circulares. Em aberturas muito pequenas (f/16 ou mais), a difração faz a luz se espalhar ao passar pelas bordas da abertura, suavizando a imagem inteira mesmo dentro da zona de profundidade de campo. Sempre existe um ponto ideal — normalmente em torno de f/5.6-f/8 em full frame — onde nitidez e profundidade de campo ficam em equilíbrio."
+          "text": "Bokeh se refere à qualidade das áreas fora de foco. O número e a forma das lâminas da abertura afetam o caráter do bokeh — lâminas mais arredondadas produzem realces mais suaves e circulares. Muitas lentes atingem seu pico prático de nitidez por volta de f/8-f/11, bem antes de a difração se tornar severa. O próprio aviso de difração desta ferramenta usa um limiar mais rigoroso e mais tardio: ele só aparece quando o desfoque por difração ultrapassa o círculo de confusão do sensor, o que acontece por volta de f/22 em full frame (f/15 em APS-C, f/11 em Micro Quatro Terços) — trate esse aviso como um limite extremo, não como uma meta de nitidez."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Distância Focal",
-          "description": "Lentes mais longas comprimem a perspectiva e estreitam a PdC na mesma abertura e enquadramento. Uma lente 200mm em f/4 tem muito menos PdC que uma lente 35mm em f/4."
+          "description": "Numa distância do assunto fixa, a profundidade de campo se estreita de forma acentuada conforme a distância focal aumenta. Num enquadramento fixo — aproximar o zoom e recuar para manter a mesma composição — a profundidade de campo quase não muda; é o fundo que se transforma, ficando cada vez mais ampliado e desfocado conforme a distância focal aumenta."
         },
         "2": {
           "label": "Distância do Assunto",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Difração",
-          "definition": "Em aberturas muito pequenas, a luz se curva ao redor das bordas da abertura, suavizando a imagem. Em sensores full frame, isso normalmente começa a ser perceptível acima de f/16."
+          "definition": "Em aberturas muito pequenas, a luz se curva ao redor das bordas da abertura, suavizando a imagem. O aviso de difração desta ferramenta aparece quando essa suavização ultrapassa o círculo de confusão do sensor — por volta de f/22 em full frame, f/15 em APS-C, f/11 em Micro Quatro Terços."
         }
       },
       "challenges": {

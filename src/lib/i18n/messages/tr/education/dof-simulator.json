@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Odak Uzaklığı ve Mesafe",
-          "text": "Daha uzun odak uzaklıkları görüntüyü büyütür, bu da bulanıklık dairelerini büyüterek alan derinliği'u daraltır. Konunuza yaklaşmak da aynı nedenle alan derinliği'u azaltır — konu ile arka plan arasındaki göreceli mesafe farkı büyür. Hiperfocal mesafe, alan derinliği'un o mesafenin yarısından sonsuza kadar uzandığı odak mesafesidir ve tüm sahnede netliği maksimize eder."
+          "text": "Odak uzaklığının alan derinliği üzerindeki etkisi neyi sabit tuttuğunuza bağlıdır. Sabit bir konu mesafesinde, daha uzun odak uzaklıkları alan derinliğini keskin biçimde daraltır — yaklaşık olarak odak uzaklığının karesiyle orantılı biçimde. Ancak yakınlaştırıp aynı kadrajı korumak için geri adım atarsanız (bu aracın kilitli görüş açısı modu), alan derinliği neredeyse hiç değişmez — bunun yerine dönüşen şey arka plandır: daha fazla büyür ve daha fazla bulanıklaşır. Konunuza yaklaşmak alan derinliğini farklı bir nedenle daraltır: yakın ve uzak odak sınırları daha kısa bir mesafenin etrafında birbirine yaklaşır. Hiperfocal mesafe, alan derinliğinin bu mesafenin yarısından sonsuza kadar uzandığı odak mesafesidir ve tüm sahnede netliği maksimize eder."
         },
         "2": {
           "heading": "Bokeh ve Kırınım",
-          "text": "Bokeh, odak dışı alanların kalitesini ifade eder. Diyafram kanatçıklarının sayısı ve şekli bokeh karakterini etkiler — daha yuvarlak kanatçıklar daha pürüzsüz, daha dairesel parlak noktalar üretir. Çok küçük diyaframlarda (f/16+), kırınım ışığın diyafram kenarlarından geçerken yayılmasına neden olarak alan derinliği bölgesi içinde bile tüm görüntüyü yumuşatır. Her zaman bir optimum nokta vardır — tam karede genellikle f/5,6-f/8 civarı — netlik ve alan derinliğinin optimal olarak dengelendiği yer."
+          "text": "Bokeh, odak dışı alanların kalitesini ifade eder. Diyafram kanatçıklarının sayısı ve şekli bokeh karakterini etkiler — daha yuvarlak kanatçıklar daha pürüzsüz, daha dairesel parlak noktalar üretir. Birçok objektif, kırınım ciddileşmeden çok önce, yaklaşık f/8-f/11 civarında pratik netlik zirvesine ulaşır. Bu aracın kendi kırınım uyarısı daha sıkı ve daha geç bir eşiktir: yalnızca kırınım bulanıklığı sensörün bulanıklık çemberini aştığında görünür, bu da tam karede yaklaşık f/22'de gerçekleşir (APS-C'de f/15, Mikro Dört Üçlü'de f/11) — bu uyarıyı bir netlik hedefi değil, dış sınır olarak değerlendirin."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Odak Uzaklığı",
-          "description": "Daha uzun objektifler perspektifi sıkıştırır ve aynı diyafram ve kadrajda alan derinliği'u daraltır. 200mm f/4'teki bir objektif, 35mm f/4'e göre çok daha az alan derinliği'a sahiptir."
+          "description": "Sabit bir konu mesafesinde, odak uzaklığı arttıkça alan derinliği keskin biçimde daralır. Sabit bir kadrajda — yakınlaşıp aynı kareyi korumak için geri adım atarsanız — alan derinliği neredeyse hiç değişmez; bunun yerine dönüşen şey arka plandır ve odak uzaklığı arttıkça daha fazla büyür, daha fazla bulanıklaşır."
         },
         "2": {
           "label": "Konu Mesafesi",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Kırınım",
-          "definition": "Çok küçük diyaframlarda ışık diyafram kenarlarından bükülerek görüntüyü yumuşatır. Tam kare sensörlerde bu genellikle f/16'nın ötesinde fark edilir hale gelir."
+          "definition": "Çok küçük diyaframlarda ışık diyafram kenarlarından bükülerek görüntüyü yumuşatır. Bu aracın kırınım uyarısı, bu yumuşama sensörün bulanıklık çemberini aştığında görünür — tam karede yaklaşık f/22, APS-C'de f/15, Mikro Dört Üçlü'de f/11."
         }
       },
       "challenges": {

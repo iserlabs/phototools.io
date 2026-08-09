@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Ohnisková vzdálenost a odstup",
-          "text": "Delší ohniska zvětšují obraz, a tím pádem i kroužky rozptylu, což hloubku ostrosti zužuje. Přiblížení k subjektu snižuje hloubku ostrosti ze stejného důvodu — relativní rozdíl ve vzdálenosti mezi subjektem a pozadím se zvětší. Hyperfokální vzdálenost je taková vzdálenost zaostření, při níž se hloubka ostrosti rozprostírá od poloviny této vzdálenosti až do nekonečna a maximalizuje ostrost napříč celou scénou."
+          "text": "Vliv ohniskové vzdálenosti na hloubku ostrosti závisí na tom, co držíš konstantní. Při stejné vzdálenosti k subjektu delší ohniska prudce zužují hloubku ostrosti — zhruba s druhou mocninou ohniskové vzdálenosti. Pokud ale přiblížíš zoomem a ustoupíš, abys zachoval stejný výřez (režim uzamčeného zorného pole v tomto nástroji), hloubka ostrosti se skoro vůbec nezmění — místo toho se promění pozadí, které se víc zvětší a víc rozostří. Přiblížení k subjektu zužuje hloubku ostrosti z jiného důvodu: přední a zadní hranice ostrosti se stáhnou blíž k sobě kolem kratší vzdálenosti. Hyperfokální vzdálenost je taková vzdálenost zaostření, při níž se hloubka ostrosti rozprostírá od poloviny této vzdálenosti až do nekonečna a maximalizuje ostrost napříč celou scénou."
         },
         "2": {
           "heading": "Bokeh a difrakce",
-          "text": "Bokeh označuje kvalitu neostrých ploch. Počet a tvar clonových lamel ovlivňuje charakter bokehu — zaoblenější lamely dávají hladší, kulatější světelné body. Při velmi malých clonách (od f/16) difrakce rozptyluje světlo na okrajích clony a změkčuje celý snímek i v zóně ostrosti. Vždycky existuje nějaký sweet spot — typicky kolem f/5.6–f/8 na full frame — kde je ostrost a hloubka ostrosti optimálně vyvážená."
+          "text": "Bokeh označuje kvalitu neostrých ploch. Počet a tvar clonových lamel ovlivňuje charakter bokehu — zaoblenější lamely dávají hladší, kulatější světelné body. Mnoho objektivů dosahuje svého praktického vrcholu ostrosti kolem f/8–f/11, dávno předtím, než se difrakce stane výraznou. Vlastní varování před difrakcí v tomto nástroji je přísnější a pozdější práh: objeví se až tehdy, když rozostření difrakcí překročí rozptylový kroužek snímače, což nastává zhruba na f/22 na full frame (f/15 na APS-C, f/11 na Micro Four Thirds) — ber toto varování jako krajní mez, ne jako cíl ostrosti."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Ohnisková vzdálenost",
-          "description": "Delší objektivy stlačují perspektivu a při stejné cloně a výřezu dávají menší hloubku ostrosti. 200mm objektiv má při f/4 mnohem menší hloubku ostrosti než 35mm při f/4."
+          "description": "Při stejné vzdálenosti k subjektu se hloubka ostrosti s rostoucí ohniskovou vzdáleností prudce zužuje. Při stejném výřezu — přiblížíš zoomem a ustoupíš, abys zachoval stejný záběr — se hloubka ostrosti skoro vůbec nezmění; místo toho se promění pozadí, které se s rostoucí ohniskovou vzdáleností víc zvětší a víc rozostří."
         },
         "2": {
           "label": "Vzdálenost k subjektu",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Difrakce",
-          "definition": "Při velmi malých clonách se světlo ohýbá na okrajích clony a snímek měkne. Na full frame je tento jev obvykle patrný od f/16."
+          "definition": "Při velmi malých clonách se světlo ohýbá na okrajích clony a snímek měkne. Varování před difrakcí v tomto nástroji se objeví, jakmile toto změkčení překročí rozptylový kroužek snímače — zhruba na f/22 na full frame, f/15 na APS-C, f/11 na Micro Four Thirds."
         }
       },
       "challenges": {

@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Gyújtótávolság és távolság",
-          "text": "A hosszabb gyújtótávolság felnagyítja a képet, és vele együtt az elmosódási köröket is — így szűkül a mélységélesség. Ha közelebb lépsz a témához, ugyanezért csökken a mélységélesség: a téma és a háttér közötti távolság relatív különbsége megnő. A hiperfokális távolság az a fókusztávolság, amelynél a mélységélesség a felétől a végtelenig ér, és így a teljes jelenet élességét maximalizálja."
+          "text": "A gyújtótávolság mélységélességre gyakorolt hatása attól függ, mit tartasz állandónak. Rögzített tématávolság mellett a hosszabb gyújtótávolság élesen szűkíti a mélységélességet — nagyjából a gyújtótávolság négyzetével arányosan. De ha ránagyítasz és hátrébb lépsz, hogy ugyanaz a kompozíció maradjon (ez az eszköz rögzített látószögű módja), a mélységélesség szinte alig változik — ehelyett a háttér alakul át, egyre jobban felnagyítva és elmosódva. A témához közelebb lépés más okból szűkíti a mélységélességet: a közeli és távoli éles határ egy rövidebb távolság köré húzódik szorosabban. A hiperfokális távolság az a fókusztávolság, amelynél a mélységélesség e távolság felétől a végtelenig terjed, így maximalizálva az élességet a teljes jeleneten."
         },
         "2": {
           "heading": "Bokeh és diffrakció",
-          "text": "A bokeh az életlen területek minőségét jelenti. A rekeszlamellák száma és alakja befolyásolja a bokeh jellegét — a kerekebb lamellák lágyabb, kerekebb fénypontokat adnak. Nagyon kicsi rekesznyílásnál (f/16 felett) diffrakció lép fel: a fény szétterül a lamellák szélén, és lágyítja a teljes képet, még a mélységélesség-en belül is. Mindig van egy optimális pont — Full Frame-en jellemzően f/5.6 és f/8 között —, ahol az élesség és a mélységélesség egyensúlyba kerül."
+          "text": "A bokeh az életlen területek minőségét jelenti. A rekeszlamellák száma és alakja befolyásolja a bokeh jellegét — a kerekebb lamellák lágyabb, kerekebb fénypontokat adnak. Sok objektív a gyakorlati élességi csúcsát f/8 és f/11 körül éri el, jóval azelőtt, hogy a diffrakció komollyá válna. Ennek az eszköznek a saját diffrakciós figyelmeztetése egy szigorúbb, később jelentkező küszöb: csak akkor jelenik meg, amikor a diffrakció okozta életlenség meghaladja az érzékelő szóráskörét, ami Full Frame-en nagyjából f/22-nél (APS-C-n f/15-nél, Micro Four Thirds rendszeren f/11-nél) történik — ezt a figyelmeztetést tekintsd külső határnak, nem élességi célnak."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Gyújtótávolság",
-          "description": "A hosszabb objektívek tömörítik a perspektívát, és azonos rekesz mellett szűkítik a mélységélesség-et. Egy 200 mm-es f/4-en sokkal kisebb mélységélességet ad, mint egy 35 mm-es ugyanezen a rekeszen."
+          "description": "Rögzített tématávolság mellett a mélységélesség élesen szűkül a gyújtótávolság növekedésével. Rögzített kompozíció mellett — ránagyítasz és hátrébb lépsz, hogy ugyanaz a kép maradjon — a mélységélesség szinte alig változik; ehelyett a háttér alakul át, egyre jobban felnagyítva és elmosódva, ahogy nő a gyújtótávolság."
         },
         "2": {
           "label": "Téma távolsága",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Diffrakció",
-          "definition": "Nagyon kicsi rekesznél a fény elhajlik a lamellák szélén, és lágyítja a képet. Full Frame érzékelőkön ez tipikusan f/16 felett válik észrevehetővé."
+          "definition": "Nagyon kicsi rekesznyílásnál a fény elhajlik a rekesz szélein, ami lágyítja a képet. Ennek az eszköznek a diffrakciós figyelmeztetése akkor jelenik meg, amikor ez a lágyulás meghaladja az érzékelő szóráskörét — nagyjából f/22-nél Full Frame-en, f/15-nél APS-C-n, f/11-nél Micro Four Thirds rendszeren."
         }
       },
       "challenges": {

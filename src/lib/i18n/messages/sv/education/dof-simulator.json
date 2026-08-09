@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Brännvidd och avstånd",
-          "text": "Längre brännvidder förstorar bilden, och därmed också oskärpecirklarna, vilket krymper skärpedjupet. Att gå närmare motivet minskar skärpedjupet av samma skäl — det relativa avståndet mellan motiv och bakgrund blir större. Hyperfokalavståndet är det fokusavstånd där skärpedjupet sträcker sig från halva det avståndet ända till oändligheten, vilket maximerar skärpan i hela scenen."
+          "text": "Brännviddens effekt på skärpedjupet beror på vad du håller konstant. Vid ett fast motivsavstånd krymper längre brännvidder skärpedjupet kraftigt — ungefär i proportion till brännviddens kvadrat. Men om du zoomar in och backar för att behålla samma bildutsnitt (verktygets läge med låst bildvinkel), förändras skärpedjupet knappt alls — det är i stället bakgrunden som omvandlas, och blir mer förstorad och suddigare. Att gå närmare motivet krymper skärpedjupet av en annan anledning: den nära och bortre skärpegränsen dras tätare samman kring ett kortare avstånd. Hyperfokalavståndet är det fokusavstånd där skärpedjupet sträcker sig från halva det avståndet ända till oändligheten, vilket maximerar skärpan i hela scenen."
         },
         "2": {
           "heading": "Bokeh och diffraktion",
-          "text": "Bokeh handlar om kvaliteten hos de oskärpa områdena. Antalet bländarblad och deras form påverkar bokehens karaktär — rundare blad ger mjukare, mer cirkulära högdagrar. Vid mycket små bländare (f/16 och mindre) sprider diffraktionen ljuset när det passerar bländarkanten, så att hela bilden blir mjukare även inom skärpedjupszonen. Det finns alltid en sweet spot — vanligtvis runt f/5.6–f/8 på fullformat — där skärpa och skärpedjup är som bäst i balans."
+          "text": "Bokeh handlar om kvaliteten hos de oskärpa områdena. Antalet bländarblad och deras form påverkar bokehens karaktär — rundare blad ger mjukare, mer cirkulära högdagrar. Många objektiv når sin praktiska skärpetopp runt f/8–f/11, långt innan diffraktionen blir ett allvarligt problem. Verktygets egen diffraktionsvarning har ett strängare, senare tröskelvärde: den visas först när diffraktionsoskärpan överstiger sensorns oskärpecirkel, vilket sker vid ungefär f/22 på fullformat (f/15 på APS-C, f/11 på Micro Four Thirds) — se den varningen som en yttersta gräns, inte som ett skärpemål."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Brännvidd",
-          "description": "Längre brännvidder komprimerar perspektivet och krymper skärpedjupet vid samma bländare och bildutsnitt. Ett 200 mm på f/4 ger mycket mindre skärpedjup än ett 35 mm på f/4."
+          "description": "Vid ett fast motivsavstånd krymper skärpedjupet kraftigt när brännvidden ökar. Vid ett fast bildutsnitt — du zoomar in och backar för att behålla samma bild — förändras skärpedjupet knappt alls; det är bakgrunden som omvandlas och blir alltmer förstorad och suddig när brännvidden ökar."
         },
         "2": {
           "label": "Motivsavstånd",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Diffraktion",
-          "definition": "Vid mycket små bländare böjs ljuset runt bländarkanten och bilden blir mjukare. På fullformatssensorer märks det vanligtvis från f/16 och mindre."
+          "definition": "Vid mycket små bländare böjs ljuset runt bländarkanten, vilket gör bilden mjukare. Verktygets diffraktionsvarning visas när denna mjukhet överstiger sensorns oskärpecirkel — vid ungefär f/22 på fullformat, f/15 på APS-C, f/11 på Micro Four Thirds."
         }
       },
       "challenges": {

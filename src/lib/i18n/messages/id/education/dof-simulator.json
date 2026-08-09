@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Panjang Fokus & Jarak",
-          "text": "Panjang fokus yang lebih panjang memperbesar gambar, yang juga memperbesar lingkaran blur, mempersempit kedalaman bidang. Bergerak lebih dekat ke subjek mengurangi kedalaman bidang karena alasan yang sama — perbedaan relatif jarak antara subjek dan latar belakang menjadi lebih besar. Jarak hiperfocal adalah jarak fokus di mana kedalaman bidang meluas dari setengah jarak tersebut hingga tak terhingga, memaksimalkan ketajaman di seluruh adegan."
+          "text": "Pengaruh panjang fokus terhadap kedalaman bidang tergantung pada apa yang Anda pertahankan tetap. Pada jarak subjek yang tetap, panjang fokus yang lebih panjang mempersempit kedalaman bidang secara tajam — kira-kira sebanding dengan kuadrat panjang fokus. Namun jika Anda memperbesar zoom sekaligus mundur untuk mempertahankan framing yang sama (mode kunci-FOV pada alat ini), kedalaman bidang nyaris tidak berubah — yang berubah drastis justru latar belakang, yang menjadi lebih membesar dan lebih blur. Mendekat ke subjek mempersempit kedalaman bidang karena alasan berbeda: batas fokus dekat dan jauh saling merapat di sekitar jarak yang lebih pendek. Jarak hiperfocal adalah jarak fokus di mana kedalaman bidang meluas dari setengah jarak tersebut hingga tak terhingga, memaksimalkan ketajaman di seluruh adegan."
         },
         "2": {
           "heading": "Bokeh & Difraksi",
-          "text": "Bokeh mengacu pada kualitas area yang tidak fokus. Jumlah dan bentuk bilah apertur memengaruhi karakter bokeh — bilah yang lebih bulat menghasilkan highlight yang lebih halus dan melingkar. Pada apertur sangat kecil (f/16+), difraksi menyebabkan cahaya menyebar saat melewati tepi apertur, melunakkan seluruh gambar bahkan di dalam zona kedalaman bidang. Selalu ada sweet spot — biasanya sekitar f/5.6-f/8 pada full frame — di mana ketajaman dan kedalaman bidang seimbang secara optimal."
+          "text": "Bokeh mengacu pada kualitas area yang tidak fokus. Jumlah dan bentuk bilah apertur memengaruhi karakter bokeh — bilah yang lebih bulat menghasilkan highlight yang lebih halus dan melingkar. Banyak lensa mencapai puncak ketajaman praktisnya di sekitar f/8-f/11, jauh sebelum difraksi menjadi parah. Peringatan difraksi pada alat ini sendiri menggunakan ambang batas yang lebih ketat dan muncul lebih lambat: peringatan ini hanya muncul setelah blur difraksi melebihi circle of confusion sensor, yang terjadi sekitar f/22 pada full frame (f/15 pada APS-C, f/11 pada Micro Four Thirds) — anggap peringatan itu sebagai batas terluar, bukan target ketajaman."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Panjang Fokus",
-          "description": "Lensa yang lebih panjang mengompres perspektif dan mempersempit kedalaman bidang pada apertur dan framing yang sama. Lensa 200mm pada f/4 memiliki kedalaman bidang yang jauh lebih sedikit daripada lensa 35mm pada f/4."
+          "description": "Pada jarak subjek yang tetap, kedalaman bidang menyempit tajam seiring bertambahnya panjang fokus. Pada framing yang tetap — zoom lalu mundur untuk mempertahankan bidikan yang sama — kedalaman bidang nyaris tidak berubah; yang berubah adalah latar belakang, yang menjadi lebih membesar dan lebih blur seiring bertambahnya panjang fokus."
         },
         "2": {
           "label": "Jarak Subjek",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Difraksi",
-          "definition": "Pada apertur sangat kecil, cahaya membengkok di sekitar tepi apertur, melunakkan gambar. Pada sensor full frame, ini biasanya mulai terlihat di atas f/16."
+          "definition": "Pada apertur yang sangat kecil, cahaya membengkok di sekitar tepi apertur, melunakkan gambar. Peringatan difraksi pada alat ini muncul setelah pelunakan tersebut melebihi circle of confusion sensor — sekitar f/22 pada full frame, f/15 pada APS-C, f/11 pada Micro Four Thirds."
         }
       },
       "challenges": {

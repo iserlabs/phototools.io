@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Focale et distance",
-          "text": "Les focales plus longues agrandissent l'image, ce qui agrandit aussi les cercles de flou et réduit la PdC. Se rapprocher du sujet réduit la PdC pour la même raison — l'écart relatif de distance entre le sujet et l'arrière-plan devient plus grand. La distance hyperfocale est la distance de mise au point à laquelle la PdC s'étend de la moitié de cette distance jusqu'à l'infini, maximisant la netteté sur toute la scène."
+          "text": "L'effet de la focale sur la profondeur de champ dépend de ce que tu gardes constant. À distance au sujet fixe, les focales plus longues réduisent nettement la PdC — à peu près selon le carré de la focale. Mais si tu zoomes et recules pour garder le même cadrage (le mode de champ de vision verrouillé de cet outil), la PdC change à peine — c'est l'arrière-plan qui se transforme à la place, en s'agrandissant et en se floutant davantage. Se rapprocher du sujet réduit la PdC pour une autre raison : les limites de mise au point proche et lointaine se resserrent autour d'une distance plus courte. La distance hyperfocale est la distance de mise au point à laquelle la PdC s'étend de la moitié de cette distance jusqu'à l'infini, maximisant la netteté sur toute la scène."
         },
         "2": {
           "heading": "Bokeh et diffraction",
-          "text": "Le bokeh désigne la qualité des zones hors mise au point. Le nombre et la forme des lamelles du diaphragme influencent le caractère du bokeh — des lamelles plus arrondies produisent des points lumineux plus doux et plus circulaires. Aux très petites ouvertures (f/16 et au-delà), la diffraction fait s'étaler la lumière en passant les bords du diaphragme, adoucissant toute l'image même dans la zone de PdC. Il existe toujours un point idéal — typiquement autour de f/5.6-f/8 en plein format — où la netteté et la profondeur de champ sont équilibrées de manière optimale."
+          "text": "Le bokeh désigne la qualité des zones hors mise au point. Le nombre et la forme des lamelles du diaphragme influencent le caractère du bokeh — des lamelles plus arrondies produisent des points lumineux plus doux et plus circulaires. De nombreux objectifs atteignent leur pic de netteté pratique autour de f/8-f/11, bien avant que la diffraction ne devienne sévère. L'avertissement de diffraction de cet outil est un seuil plus strict et plus tardif : il n'apparaît que lorsque le flou de diffraction dépasse le cercle de confusion du capteur, ce qui survient autour de f/22 en plein format (f/15 en APS-C, f/11 en Micro Four Thirds) — considère cet avertissement comme une limite extrême, pas comme un objectif de netteté."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Longueur focale",
-          "description": "Les objectifs longs compriment la perspective et réduisent la PdC à même ouverture et cadrage. Un 200 mm à f/4 a beaucoup moins de PdC qu'un 35 mm à f/4."
+          "description": "À distance au sujet fixe, la PdC se réduit nettement à mesure que la focale augmente. À cadrage fixe — tu zoomes et recules pour garder la même image — la PdC change à peine ; c'est l'arrière-plan qui se transforme, en s'agrandissant et en se floutant davantage à mesure que la focale augmente."
         },
         "2": {
           "label": "Distance au sujet",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Diffraction",
-          "definition": "Aux très petites ouvertures, la lumière se courbe autour des bords du diaphragme, adoucissant l'image. Sur les capteurs plein format, cela devient typiquement perceptible au-delà de f/16."
+          "definition": "Aux très petites ouvertures, la lumière se courbe autour des bords du diaphragme, adoucissant l'image. L'avertissement de diffraction de cet outil apparaît lorsque cet adoucissement dépasse le cercle de confusion du capteur — autour de f/22 en plein format, f/15 en APS-C, f/11 en Micro Four Thirds."
         }
       },
       "challenges": {

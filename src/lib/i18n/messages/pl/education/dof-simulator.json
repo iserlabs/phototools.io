@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Ogniskowa i odległość",
-          "text": "Dłuższe ogniskowe powiększają obraz, co również powiększa koła rozmycia, zawężając GoO. Zbliżanie się do obiektu zmniejsza GoO z tego samego powodu — względna różnica odległości między obiektem a tłem staje się większa. Odległość hiperfokalna to odległość ogniskowania, przy której GoO rozciąga się od połowy tej odległości do nieskończoności, maksymalizując ostrość w całej scenie."
+          "text": "Wpływ ogniskowej na głębię ostrości zależy od tego, co pozostaje stałe. Przy stałej odległości od obiektu dłuższa ogniskowa wyraźnie zawęża GoO — w przybliżeniu proporcjonalnie do kwadratu ogniskowej. Ale jeśli zbliżysz obraz (zoom) i cofniesz się, aby zachować ten sam kadr (tryb zablokowanego kąta widzenia w tym narzędziu), głębia ostrości niemal się nie zmienia — zamiast tego zmienia się tło, które staje się bardziej powiększone i bardziej rozmyte. Podejście bliżej obiektu zawęża GoO z innego powodu: bliska i daleka granica ostrości zbliżają się do siebie wokół krótszej odległości. Odległość hiperfokalna to odległość ogniskowania, przy której GoO rozciąga się od połowy tej odległości do nieskończoności, maksymalizując ostrość w całej scenie."
         },
         "2": {
           "heading": "Bokeh i dyfrakcja",
-          "text": "Bokeh odnosi się do jakości nieostrych obszarów. Liczba i kształt listków przysłony wpływają na charakter bokeh — bardziej zaokrąglone listki dają gładsze, bardziej okrągłe światła. Przy bardzo małych przysłonach (f/16+) dyfrakcja powoduje rozpraszanie światła na krawędziach przysłony, zmiękczając cały obraz nawet w strefie GoO. Zawsze istnieje punkt optymalny — zwykle około f/5.6-f/8 na pełnej klatce — gdzie ostrość i głębia ostrości są optymalnie zrównoważone."
+          "text": "Bokeh odnosi się do jakości nieostrych obszarów. Liczba i kształt listków przysłony wpływają na charakter bokeh — bardziej zaokrąglone listki dają gładsze, bardziej okrągłe światła. Wiele obiektywów osiąga praktyczny szczyt ostrości w okolicach f/8-f/11, na długo zanim dyfrakcja staje się poważnym problemem. Własne ostrzeżenie o dyfrakcji w tym narzędziu ma surowszy, późniejszy próg: pojawia się dopiero, gdy rozmycie dyfrakcyjne przekroczy krążek rozproszenia matrycy, co następuje w okolicach f/22 na pełnej klatce (f/15 na APS-C, f/11 na Micro Four Thirds) — traktuj to ostrzeżenie jako granicę ostateczną, a nie cel dla ostrości."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Ogniskowa",
-          "description": "Dłuższe obiektywy kompresują perspektywę i zawężają GoO przy tej samej przysłonie i kadrze. Obiektyw 200 mm przy f/4 ma znacznie mniejszą GoO niż 35 mm przy f/4."
+          "description": "Przy stałej odległości od obiektu głębia ostrości wyraźnie się zawęża wraz ze wzrostem ogniskowej. Przy stałym kadrze — gdy przybliżasz obraz i cofasz się, by zachować to samo ujęcie — GoO niemal się nie zmienia; zamiast tego zmienia się tło, które wraz ze wzrostem ogniskowej staje się coraz bardziej powiększone i rozmyte."
         },
         "2": {
           "label": "Odległość od obiektu",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Dyfrakcja",
-          "definition": "Przy bardzo małych przysłonach światło ugina się na krawędziach przysłony, zmiękczając obraz. Na pełnoklatkowych matrycach jest to zwykle zauważalne powyżej f/16."
+          "definition": "Przy bardzo małych przysłonach światło ugina się na krawędziach otworu przysłony, zmiękczając obraz. Ostrzeżenie o dyfrakcji w tym narzędziu pojawia się, gdy to zmiękczenie przekroczy krążek rozproszenia matrycy — w okolicach f/22 na pełnej klatce, f/15 na APS-C, f/11 na Micro Four Thirds."
         }
       },
       "challenges": {

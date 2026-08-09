@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Brennweite & Abstand",
-          "text": "Längere Brennweiten vergrößern das Bild und damit auch die Unschärfekreise, was die Schärfentiefe verringert. Näher an dein Motiv zu gehen reduziert die Schärfentiefe aus demselben Grund — der relative Abstandsunterschied zwischen Motiv und Hintergrund wird größer. Die hyperfokale Distanz ist der Fokusabstand, bei dem die Schärfentiefe von der halben Distanz bis unendlich reicht und so die Schärfe in der gesamten Szene maximiert."
+          "text": "Wie sich die Brennweite auf die Schärfentiefe auswirkt, hängt davon ab, was du konstant hältst. Bei gleichbleibendem Motivabstand verringern längere Brennweiten die Schärfentiefe stark — ungefähr mit dem Quadrat der Brennweite. Zoomst du aber hinein und gehst zurück, um denselben Bildausschnitt beizubehalten (der Lock-FOV-Modus dieses Tools), ändert sich die Schärfentiefe kaum — stattdessen verändert sich der Hintergrund, der stärker vergrößert und stärker unscharf wird. Näher an dein Motiv heranzugehen verringert die Schärfentiefe aus einem anderen Grund: Die Nah- und Fern-Fokusgrenzen rücken um eine kürzere Distanz enger zusammen. Die hyperfokale Distanz ist der Fokusabstand, bei dem die Schärfentiefe von der halben Distanz bis unendlich reicht und so die Schärfe in der gesamten Szene maximiert."
         },
         "2": {
           "heading": "Bokeh & Beugung",
-          "text": "Bokeh bezeichnet die Qualität der unscharfen Bildbereiche. Anzahl und Form der Blendenlamellen prägen den Bokeh-Charakter — rundere Lamellen erzeugen weichere, kreisförmigere Lichter. Bei sehr kleinen Blendenöffnungen (f/16+) sorgt Beugung dafür, dass sich Licht an den Blendenkanten ausbreitet und das gesamte Bild weicher wird — selbst innerhalb des Schärfebereichs. Es gibt immer einen Sweet Spot — bei Vollformat typischerweise um f/5,6–f/8 — an dem Schärfe und Schärfentiefe optimal zusammenspielen."
+          "text": "Bokeh bezeichnet die Qualität der unscharfen Bildbereiche. Anzahl und Form der Blendenlamellen prägen den Bokeh-Charakter — rundere Lamellen erzeugen weichere, kreisförmigere Lichter. Viele Objektive erreichen ihren praktischen Schärfepunkt bei etwa f/8–f/11, lange bevor Beugung merklich wird. Die eigene Beugungswarnung dieses Tools setzt eine strengere, spätere Schwelle an: Sie erscheint erst, wenn die Beugungsunschärfe den Zerstreuungskreis des Sensors überschreitet — das geschieht bei etwa f/22 bei Vollformat (f/15 bei APS-C, f/11 bei Micro Four Thirds). Betrachte diese Warnung als äußerste Grenze, nicht als Schärfeziel."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Brennweite",
-          "description": "Längere Objektive komprimieren die Perspektive und verringern die Schärfentiefe bei gleicher Blende und gleichem Bildausschnitt. Ein 200-mm-Objektiv bei f/4 hat weit weniger Schärfentiefe als ein 35-mm-Objektiv bei f/4."
+          "description": "Bei gleichbleibendem Motivabstand verringert sich die Schärfentiefe stark, wenn die Brennweite zunimmt. Bei gleichbleibendem Bildausschnitt — hineinzoomen und zurückgehen, um dieselbe Aufnahme beizubehalten — ändert sich die Schärfentiefe kaum; stattdessen verändert sich der Hintergrund, der mit zunehmender Brennweite stärker vergrößert und stärker unscharf wird."
         },
         "2": {
           "label": "Motivabstand",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Beugung",
-          "definition": "Bei sehr kleinen Blendenöffnungen wird Licht an den Blendenkanten gebeugt und macht das Bild weicher. Bei Vollformatsensoren wird das typischerweise ab f/16 sichtbar."
+          "definition": "Bei sehr kleinen Blendenöffnungen wird Licht an den Blendenkanten gebeugt und macht das Bild weicher. Die Beugungswarnung dieses Tools erscheint, sobald diese Unschärfe den Zerstreuungskreis des Sensors überschreitet — bei etwa f/22 bei Vollformat, f/15 bei APS-C, f/11 bei Micro Four Thirds."
         }
       },
       "challenges": {

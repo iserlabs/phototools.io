@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Lunghezza focale e distanza",
-          "text": "Lunghezze focali maggiori ingrandiscono l'immagine, il che ingrandisce anche i cerchi di sfocatura, restringendo la PdC. Avvicinarsi al soggetto riduce la PdC per lo stesso motivo — la differenza relativa di distanza tra soggetto e sfondo diventa maggiore. La distanza iperfocale è la distanza di messa a fuoco alla quale la PdC si estende da metà di quella distanza fino all'infinito, massimizzando la nitidezza in tutta la scena."
+          "text": "L'effetto della lunghezza focale sulla profondità di campo dipende da cosa si mantiene costante. A distanza del soggetto fissa, lunghezze focali maggiori riducono nettamente la profondità di campo — circa in proporzione al quadrato della lunghezza focale. Ma se zoomi e arretri per mantenere la stessa inquadratura (la modalità di blocco del campo visivo di questo strumento), la profondità di campo cambia pochissimo — è invece lo sfondo a trasformarsi, ingrandendosi e sfocandosi maggiormente. Avvicinarsi al soggetto riduce la profondità di campo per un motivo diverso: i limiti di messa a fuoco vicino e lontano si stringono attorno a una distanza più breve. La distanza iperfocale è la distanza di messa a fuoco alla quale la profondità di campo si estende da metà di quella distanza fino all'infinito, massimizzando la nitidezza in tutta la scena."
         },
         "2": {
           "heading": "Bokeh e diffrazione",
-          "text": "Il bokeh si riferisce alla qualità delle aree fuori fuoco. Il numero e la forma delle lamelle del diaframma influenzano il carattere del bokeh — lamelle più arrotondate producono luci più morbide e circolari. Ad aperture molto piccole (f/16 e oltre), la diffrazione fa sì che la luce si diffonda passando dai bordi del diaframma, ammorbidendo l'intera immagine anche all'interno della zona di PdC. C'è sempre un punto ottimale — tipicamente intorno a f/5.6-f/8 su full-frame — dove nitidezza e profondità di campo sono bilanciate al meglio."
+          "text": "Il bokeh si riferisce alla qualità delle aree fuori fuoco. Il numero e la forma delle lamelle del diaframma influenzano il carattere del bokeh — lamelle più arrotondate producono luci più morbide e circolari. Molti obiettivi raggiungono il loro picco pratico di nitidezza intorno a f/8-f/11, ben prima che la diffrazione diventi severa. L'avviso di diffrazione di questo strumento usa una soglia più rigorosa e più tardiva: compare solo quando la sfocatura da diffrazione supera il cerchio di confusione del sensore, il che avviene intorno a f/22 su full-frame (f/15 su APS-C, f/11 su Micro Quattro Terzi) — considera quell'avviso come un limite estremo, non come un obiettivo di nitidezza."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Lunghezza focale",
-          "description": "Obiettivi più lunghi comprimono la prospettiva e restringono la PdC alla stessa apertura e inquadratura. Un obiettivo da 200mm a f/4 ha molta meno PdC di un 35mm a f/4."
+          "description": "A distanza del soggetto fissa, la profondità di campo si riduce nettamente all'aumentare della lunghezza focale. A inquadratura fissa — zoomando e arretrando per mantenere la stessa ripresa — la profondità di campo cambia pochissimo; è lo sfondo a trasformarsi, ingrandendosi e sfocandosi sempre di più man mano che la lunghezza focale aumenta."
         },
         "2": {
           "label": "Distanza del soggetto",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Diffrazione",
-          "definition": "Ad aperture molto piccole, la luce si piega intorno ai bordi del diaframma, ammorbidendo l'immagine. Sui sensori full-frame, questo effetto diventa tipicamente evidente oltre f/16."
+          "definition": "Ad aperture molto piccole, la luce si piega intorno ai bordi del diaframma, ammorbidendo l'immagine. L'avviso di diffrazione di questo strumento compare quando quell'ammorbidimento supera il cerchio di confusione del sensore — intorno a f/22 su full-frame, f/15 su APS-C, f/11 su Micro Quattro Terzi."
         }
       },
       "challenges": {

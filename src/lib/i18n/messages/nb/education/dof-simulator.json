@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Brennvidde og avstand",
-          "text": "Lange brennvidder forstørrer bildet, og dermed også uskarphetssirklene, og det smaler inn dybdeskarpheten. Går du nærmere motivet, reduseres dybdeskarpheten av samme grunn — forskjellen i avstand mellom motiv og bakgrunn blir relativt større. Hyperfokal avstand er den fokusavstanden der dybdeskarpheten strekker seg fra halvparten av avstanden og ut til uendelig, og den maksimerer skarpheten i hele scenen."
+          "text": "Hvordan brennvidde påvirker dybdeskarpheten avhenger av hva du holder konstant. Ved fast motivavstand smaler lange brennvidder dybdeskarpheten kraftig inn — omtrent proporsjonalt med brennvidden i annen. Men zoomer du inn og går bakover for å beholde samme utsnitt (dette verktøyets modus for låst synsfelt), endres dybdeskarpheten nesten ikke i det hele tatt — det er bakgrunnen som forandrer seg i stedet, og blir mer forstørret og mer uskarp. Å gå nærmere motivet smaler inn dybdeskarpheten av en annen grunn: nær- og fjerngrensen trekker seg tettere sammen rundt en kortere avstand. Hyperfokal avstand er den fokusavstanden der dybdeskarpheten strekker seg fra halvparten av den avstanden og ut til uendelig, og den maksimerer skarpheten i hele scenen."
         },
         "2": {
           "heading": "Bokeh og diffraksjon",
-          "text": "Bokeh beskriver kvaliteten på de uskarpe områdene. Antall blenderblader og formen på dem påvirker bokehkarakteren — mer avrundede blader gir mykere og mer sirkulære høylys. Ved svært små blenderåpninger (f/16 og mindre) sprer lyset seg rundt blenderkantene, og hele bildet blir mykere — også innenfor dybdeskarphet-sonen. Det finnes alltid et midtpunkt — typisk f/5.6–f/8 på fullformat — der skarphet og dybdeskarphet er best balansert."
+          "text": "Bokeh beskriver kvaliteten på de uskarpe områdene. Antall blenderblader og formen på dem påvirker bokehkarakteren — mer avrundede blader gir mykere og mer sirkulære høylys. Mange objektiver når sitt praktiske skarphetstopp rundt f/8–f/11, godt før diffraksjon blir alvorlig. Dette verktøyets egen diffraksjonsadvarsel bruker en strengere og senere terskel: den vises først når diffraksjonsuskarpheten overstiger sensorens uskarphetssirkel, noe som skjer rundt f/22 på fullformat (f/15 på APS-C, f/11 på Micro Four Thirds) — betrakt advarselen som en ytre grense, ikke et skarphetsmål."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Brennvidde",
-          "description": "Lange objektiver komprimerer perspektivet og smaler inn dybdeskarpheten ved samme blender og utsnitt. Et 200 mm f/4 har langt mindre dybdeskarphet enn et 35 mm f/4."
+          "description": "Ved fast motivavstand smaler dybdeskarpheten kraftig inn etter hvert som brennvidden øker. Ved fast utsnitt — zoom inn og gå bakover for å beholde samme bilde — endres dybdeskarpheten nesten ikke; det er bakgrunnen som forandrer seg, og blir mer forstørret og mer uskarp etter hvert som brennvidden øker."
         },
         "2": {
           "label": "Motivavstand",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Diffraksjon",
-          "definition": "Ved svært små blenderåpninger bøyer lyset seg rundt kantene av blenderen, og bildet blir mykere. På fullformat blir dette vanligvis merkbart over f/16."
+          "definition": "Ved svært små blenderåpninger bøyer lyset seg rundt kantene av blenderen, og bildet blir mykere. Dette verktøyets diffraksjonsadvarsel vises når den mykheten overstiger sensorens uskarphetssirkel — rundt f/22 på fullformat, f/15 på APS-C, f/11 på Micro Four Thirds."
         }
       },
       "challenges": {

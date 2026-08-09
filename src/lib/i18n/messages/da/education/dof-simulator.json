@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Brændvidde og afstand",
-          "text": "Længere brændvidder forstørrer billedet, og dermed forstørres uskarphedscirklerne også, så dybdeskarphed bliver smallere. At gå tættere på motivet reducerer dybdeskarphed af samme årsag — den relative afstandsforskel mellem motiv og baggrund bliver større. Den hyperfokale afstand er den fokusafstand, hvor dybdeskarphed strækker sig fra halvdelen af afstanden og helt ud til uendelig, så skarpheden i hele billedet maksimeres."
+          "text": "Brændviddens effekt på dybdeskarphed afhænger af, hvad du holder konstant. Ved en fast motivafstand giver længere brændvidder en markant smallere dybdeskarphed — nogenlunde i takt med kvadratet på brændvidden. Men hvis du zoomer ind og går et skridt tilbage for at bevare samme udsnit (denne værktøjs lock-FOV-tilstand), ændrer dybdeskarpheden sig næsten ikke — det er i stedet baggrunden, der forvandles og bliver mere forstørret og mere sløret. At gå tættere på motivet indsnævrer dybdeskarphed af en anden grund: den nære og fjerne fokusgrænse trækker sig tættere sammen om en kortere afstand. Den hyperfokale afstand er den fokusafstand, hvor dybdeskarphed strækker sig fra halvdelen af denne afstand og helt ud til uendelig, så skarpheden i hele scenen maksimeres."
         },
         "2": {
           "heading": "Bokeh og diffraktion",
-          "text": "Bokeh handler om kvaliteten af de uskarpe områder. Antallet og formen på blændelamellerne påvirker bokeh-karakteren — mere afrundede lameller giver blødere, mere cirkulære højlys. Ved meget små blænder (f/16 og opefter) bøjes lyset omkring kanterne af blænden (diffraktion), og hele billedet bliver blødere — også inden for dybdeskarphed-zonen. Der er altid et sweet spot — typisk omkring f/5.6–f/8 på fuldformat — hvor skarphed og dybdeskarphed er bedst balanceret."
+          "text": "Bokeh handler om kvaliteten af de uskarpe områder. Antallet og formen på blændelamellerne påvirker bokeh-karakteren — mere afrundede lameller giver blødere, mere cirkulære højlys. Mange objektiver når deres praktiske skarphedstop omkring f/8-f/11, længe før diffraktion bliver et problem. Dette værktøjs egen diffraktionsadvarsel er en strengere, senere tærskel: den vises først, når diffraktionssløring overstiger sensorens uskarphedscirkel, hvilket sker omkring f/22 på fuldformat (f/15 på APS-C, f/11 på Micro Four Thirds) — betragt den advarsel som en yderste grænse, ikke et skarphedsmål."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Brændvidde",
-          "description": "Længere linser komprimerer perspektivet og reducerer dybdeskarphed ved samme blænde og udsnit. Et 200mm ved f/4 har langt mindre dybdeskarphed end et 35mm ved f/4."
+          "description": "Ved en fast motivafstand bliver dybdeskarphed markant smallere, når brændvidden øges. Ved et fast udsnit — zoom ind og gå tilbage for at fastholde samme billede — ændrer dybdeskarphed sig næsten ikke; det er baggrunden, der forvandles og bliver mere forstørret og mere sløret, når brændvidden øges."
         },
         "2": {
           "label": "Motivafstand",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Diffraktion",
-          "definition": "Ved meget små blænder bøjes lyset omkring blændekanterne, og billedet bliver blødere. På fuldformat bliver det typisk synligt fra f/16 og opefter."
+          "definition": "Ved meget små blænder bøjes lyset omkring blændekanterne, hvilket blødgør billedet. Dette værktøjs diffraktionsadvarsel vises, når den blødgøring overstiger sensorens uskarphedscirkel — omkring f/22 på fuldformat, f/15 på APS-C, f/11 på Micro Four Thirds."
         }
       },
       "challenges": {

@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Brandpuntsafstand en afstand",
-          "text": "Langere brandpuntsafstanden vergroten het beeld en daarmee ook de onscherptecirkels, wat de scherptediepte verkleint. Dichter bij je onderwerp gaan staan verkleint de scherptediepte om dezelfde reden — het relatieve verschil in afstand tussen onderwerp en achtergrond wordt groter. De hyperfocale afstand is de scherpstelafstand waarbij de scherptediepte loopt van de helft van die afstand tot oneindig, waardoor de scherpte over de hele scène maximaal is."
+          "text": "Het effect van de brandpuntsafstand op de scherptediepte hangt af van wat je constant houdt. Bij een vaste afstand tot het onderwerp verkleint een langere brandpuntsafstand de scherptediepte sterk — ruwweg met het kwadraat van de brandpuntsafstand. Maar als je inzoomt en een stap terug doet om dezelfde kadrering te behouden (de vergrendelde-beeldhoek-modus van deze tool), verandert de scherptediepte nauwelijks — het is juist de achtergrond die transformeert, en steeds sterker vergroot en waziger wordt. Dichter bij je onderwerp gaan staan verkleint de scherptediepte om een andere reden: de nabije en verre scherptegrens trekken dichter naar elkaar toe rond een kortere afstand. De hyperfocale afstand is de scherpstelafstand waarbij de scherptediepte loopt van de helft van die afstand tot oneindig, waardoor de scherpte over de hele scène maximaal is."
         },
         "2": {
           "heading": "Bokeh en diffractie",
-          "text": "Bokeh slaat op de kwaliteit van de onscherpe gebieden. Het aantal en de vorm van de diafragmalamellen bepalen het karakter van de bokeh — rondere lamellen geven zachtere, ronder ogende lichtvlekjes. Bij zeer kleine diafragma's (f/16 en kleiner) waaiert het licht langs de randen van de lensopening uit door diffractie, waardoor het hele beeld zachter wordt, zelfs binnen de scherptediepte. Er is altijd een sweet spot — meestal rond f/5.6 tot f/8 op fullframe — waar scherpte en scherptediepte het beste in balans zijn."
+          "text": "Bokeh slaat op de kwaliteit van de onscherpe gebieden. Het aantal en de vorm van de diafragmalamellen bepalen het karakter van de bokeh — rondere lamellen geven zachtere, ronder ogende lichtvlekjes. Veel lenzen bereiken hun praktische scherpte-piek rond f/8-f/11, ruim voordat diffractie een probleem wordt. De diffractiewaarschuwing van deze tool zelf hanteert een strengere, latere drempel: die verschijnt pas zodra de diffractie-onscherpte groter wordt dan de verwarringscirkel van de sensor, wat gebeurt rond f/22 op fullframe (f/15 op APS-C, f/11 op Micro Four Thirds) — beschouw die waarschuwing als een uiterste grens, niet als een scherpte-doel."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Brandpuntsafstand",
-          "description": "Langere lenzen comprimeren het perspectief en verkleinen de scherptediepte bij hetzelfde diafragma. Een 200mm bij f/4 heeft veel minder scherptediepte dan een 35mm bij f/4."
+          "description": "Bij een vaste afstand tot het onderwerp verkleint de scherptediepte sterk naarmate de brandpuntsafstand toeneemt. Bij een vaste kadrering — inzoomen en een stap terug doen om dezelfde foto te behouden — verandert de scherptediepte nauwelijks; het is de achtergrond die transformeert en steeds sterker vergroot en waziger wordt naarmate de brandpuntsafstand toeneemt."
         },
         "2": {
           "label": "Afstand tot onderwerp",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Diffractie",
-          "definition": "Bij zeer kleine diafragma's buigt licht om de randen van de lensopening, waardoor het beeld zachter wordt. Op fullframe-sensoren is dit meestal zichtbaar vanaf f/16."
+          "definition": "Bij zeer kleine diafragma's buigt licht om de randen van de lensopening, waardoor het beeld zachter wordt. De diffractiewaarschuwing van deze tool verschijnt zodra die verzachting groter wordt dan de verwarringscirkel van de sensor — rond f/22 op fullframe, f/15 op APS-C, f/11 op Micro Four Thirds."
         }
       },
       "challenges": {

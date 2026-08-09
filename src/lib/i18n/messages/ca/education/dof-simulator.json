@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Distància focal i distància",
-          "text": "Les distàncies focals més llargues amplien la imatge, cosa que també amplia els cercles de desenfocament, reduint la profunditat de camp. Acostar-te al subjecte redueix la profunditat de camp pel mateix motiu — la diferència relativa de distància entre el subjecte i el fons es fa més gran. La distància hiperfocal és aquella distància d'enfocament en què la profunditat de camp s'estén des de la meitat d'aquesta distància fins a l'infinit, maximitzant la nitidesa de tota l'escena."
+          "text": "L'efecte de la distància focal sobre la profunditat de camp depèn del que mantinguis constant. A una distància al subjecte fixa, les distàncies focals més llargues redueixen bruscament la profunditat de camp — aproximadament amb el quadrat de la distància focal. Però si fas zoom i et fas enrere per mantenir el mateix enquadrament (el mode de bloqueig de camp de visió d'aquesta eina), la profunditat de camp gairebé no canvia — el que es transforma és el fons, que es magnifica i es desenfoca més. Acostar-te al subjecte redueix la profunditat de camp per un motiu diferent: els límits d'enfocament proper i llunyà s'ajusten més a prop l'un de l'altre al voltant d'una distància més curta. La distància hiperfocal és la distància d'enfocament en què la profunditat de camp s'estén des de la meitat d'aquesta distància fins a l'infinit, maximitzant la nitidesa de tota l'escena."
         },
         "2": {
           "heading": "Bokeh i difracció",
-          "text": "El bokeh fa referència a la qualitat de les zones desenfocades. El nombre i la forma de les lamel·les del diafragma afecten el seu caràcter — més lamel·les arrodonides produeixen altes llums més suaus i circulars. Amb diafragmes molt tancats (f/16+), la difracció fa que la llum es dispersi al passar per les vores del diafragma, suavitzant tota la imatge fins i tot dins de la zona de nitidesa. Sempre hi ha un punt dolç — normalment al voltant de f/5.6-f/8 en full frame — on la nitidesa i la profunditat de camp estan ben equilibrades."
+          "text": "El bokeh fa referència a la qualitat de les zones desenfocades. El nombre i la forma de les lamel·les del diafragma afecten el seu caràcter — més lamel·les arrodonides produeixen altes llums més suaus i circulars. Molts objectius arriben al seu punt màxim de nitidesa pràctica al voltant de f/8-f/11, molt abans que la difracció es faci severa. L'avís de difracció d'aquesta eina és un llindar més estricte i més tardà: només apareix quan el desenfocament per difracció supera el cercle de confusió del sensor, cosa que passa al voltant de f/22 en full frame (f/15 en APS-C, f/11 en Micro Quatre Terços) — considera aquest avís com un límit extrem, no com un objectiu de nitidesa."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Distància focal",
-          "description": "Els objectius més llargs comprimeixen la perspectiva i redueixen la profunditat de camp amb el mateix diafragma i enquadrament. Un 200mm a f/4 té molta menys profunditat de camp que un 35mm a f/4."
+          "description": "A una distància al subjecte fixa, la profunditat de camp es redueix bruscament a mesura que augmenta la distància focal. Amb un enquadrament fix — fent zoom i fent-te enrere per mantenir la mateixa foto — la profunditat de camp gairebé no canvia; el que es transforma és el fons, que es magnifica i es desenfoca més a mesura que augmenta la distància focal."
         },
         "2": {
           "label": "Distància al subjecte",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Difracció",
-          "definition": "Amb diafragmes molt tancats, la llum es desvia al voltant de les vores del diafragma, suavitzant la imatge. En sensors full frame, això sol fer-se notable a partir de f/16."
+          "definition": "Amb diafragmes molt tancats, la llum es desvia al voltant de les vores del diafragma, suavitzant la imatge. L'avís de difracció d'aquesta eina apareix quan aquest suavitzat supera el cercle de confusió del sensor — al voltant de f/22 en full frame, f/15 en APS-C, f/11 en Micro Quatre Terços."
         }
       },
       "challenges": {

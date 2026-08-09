@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Panjang Fokus & Jarak",
-          "text": "Panjang fokus lebih panjang membesarkan imej, yang turut membesarkan bulatan kabur, menyempitkan kedalaman medan. Bergerak lebih dekat ke subjek anda mengurangkan kedalaman medan atas sebab yang sama — perbezaan relatif jarak antara subjek dan latar belakang menjadi lebih besar. Jarak hiperfokal ialah jarak fokus di mana kedalaman medan memanjang dari separuh jarak itu hingga ke infiniti, memaksimumkan ketajaman merentasi seluruh adegan."
+          "text": "Kesan panjang fokus terhadap kedalaman medan bergantung kepada apa yang anda kekalkan tetap. Pada jarak subjek yang tetap, panjang fokus yang lebih panjang menyempitkan kedalaman medan dengan ketara — lebih kurang mengikut kuasa dua panjang fokus. Tetapi jika anda zum masuk dan berundur untuk mengekalkan bingkai yang sama (mod kunci-FOV alat ini), kedalaman medan hampir tidak berubah — sebaliknya latar belakanglah yang berubah, menjadi lebih besar dan lebih kabur. Bergerak lebih dekat kepada subjek anda menyempitkan kedalaman medan atas sebab yang berbeza: had fokus dekat dan jauh merapat di sekitar jarak yang lebih pendek. Jarak hiperfokal ialah jarak fokus di mana kedalaman medan memanjang dari separuh jarak itu hingga ke infiniti, memaksimumkan ketajaman merentasi seluruh adegan."
         },
         "2": {
           "heading": "Bokeh & Pembelauan",
-          "text": "Bokeh merujuk kepada kualiti kawasan tidak fokus. Bilangan dan bentuk bilah aperture mempengaruhi watak bokeh — bilah yang lebih bulat menghasilkan highlight yang lebih licin dan lebih bulat. Pada aperture yang sangat kecil (f/16+), pembelauan menyebabkan cahaya tersebar semasa ia melalui tepi aperture, melembutkan keseluruhan imej walaupun dalam zon kedalaman medan. Sentiasa ada sweet spot — biasanya sekitar f/5.6-f/8 pada full-frame — di mana ketajaman dan kedalaman medan seimbang secara optimum."
+          "text": "Bokeh merujuk kepada kualiti kawasan tidak fokus. Bilangan dan bentuk bilah aperture mempengaruhi watak bokeh — bilah yang lebih bulat menghasilkan highlight yang lebih licin dan lebih bulat. Kebanyakan lensa mencapai kemuncak ketajaman praktikalnya sekitar f/8-f/11, jauh sebelum pembelauan menjadi teruk. Amaran pembelauan alat ini sendiri menggunakan ambang yang lebih ketat dan lebih lewat: ia hanya muncul apabila kekaburan pembelauan melebihi bulatan kekeliruan sensor, yang berlaku sekitar f/22 pada full-frame (f/15 pada APS-C, f/11 pada Micro Four Thirds) — anggap amaran itu sebagai had terluar, bukan sasaran ketajaman."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Panjang Fokus",
-          "description": "Lensa lebih panjang memampatkan perspektif dan menyempitkan kedalaman medan pada aperture dan bingkai yang sama. Lensa 200mm pada f/4 mempunyai kedalaman medan yang jauh lebih sedikit daripada lensa 35mm pada f/4."
+          "description": "Pada jarak subjek yang tetap, kedalaman medan menyempit dengan ketara apabila panjang fokus bertambah. Pada bingkai yang tetap — zum masuk dan berundur untuk mengekalkan bidikan yang sama — kedalaman medan hampir tidak berubah; sebaliknya latar belakanglah yang berubah, menjadi lebih besar dan lebih kabur apabila panjang fokus bertambah."
         },
         "2": {
           "label": "Jarak Subjek",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Pembelauan",
-          "definition": "Pada aperture yang sangat kecil, cahaya membengkok di sekitar tepi aperture, melembutkan imej. Pada sensor full-frame, ini biasanya menjadi ketara melebihi f/16."
+          "definition": "Pada aperture yang sangat kecil, cahaya membengkok di sekitar tepi aperture, melembutkan imej. Amaran pembelauan alat ini muncul apabila kelembutan itu melebihi bulatan kekeliruan sensor — sekitar f/22 pada full-frame, f/15 pada APS-C, f/11 pada Micro Four Thirds."
         }
       },
       "challenges": {

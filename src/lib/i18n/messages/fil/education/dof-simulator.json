@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Focal Length at Distansya",
-          "text": "Ang mas mahabang focal length ay nagpapalaki ng imahe, na nagpapalaki rin ng mga blur circle at nagpapababaw ng depth of field. Ang pagpalapit sa subject ay nagpapababaw din ng depth of field para sa parehong dahilan — lumalaki ang relatibong pagkakaiba ng distansya sa pagitan ng subject at background. Ang hyperfocal distance ay ang focus distance kung saan umaabot ang depth of field mula sa kalahati ng distansyang iyon hanggang infinity, pina-maximize ang katalasan sa buong eksena."
+          "text": "Ang epekto ng focal length sa depth of field ay depende sa kung ano ang pinapanatili mong pareho. Sa parehong subject distance, ang mas mahabang focal length ay malaki ang pagpapababaw sa depth of field — humigit-kumulang sa parisukat (square) ng focal length. Pero kapag nag-zoom ka at umatras para mapanatili ang parehong framing (ang naka-lock na Field of View mode ng tool na ito), halos hindi nagbabago ang depth of field — ang background ang nagbabago sa halip, lumalaki at lumalabo pa. Ang paglapit sa subject ay nagpapababaw din ng depth of field pero sa ibang dahilan: humihigpit ang near at far focus limits sa mas maikling distansya. Ang hyperfocal distance ay ang focus distance kung saan umaabot ang depth of field mula sa kalahati ng distansyang iyon hanggang infinity, na nag-ma-maximize ng katalasan sa buong eksena."
         },
         "2": {
           "heading": "Bokeh at Diffraction",
-          "text": "Ang bokeh ay tumutukoy sa kalidad ng out-of-focus areas. Ang bilang at hugis ng aperture blades ay nakakaapekto sa character ng bokeh — ang mas bilog na blades ay gumagawa ng mas smooth at mas bilog na highlights. Sa napakaliit na aperture (f/16+), ang diffraction ay nagpapakalat sa liwanag habang dumadaan ito sa mga gilid ng aperture, na nagpapa-soft sa buong imahe kahit sa loob ng depth of field zone. Palaging may sweet spot — karaniwan sa f/5.6-f/8 sa full-frame — kung saan optimal na nababalanse ang sharpness at depth of field."
+          "text": "Ang bokeh ay tumutukoy sa kalidad ng out-of-focus areas. Ang bilang at hugis ng aperture blades ay nakakaapekto sa character ng bokeh — ang mas bilog na blades ay gumagawa ng mas smooth at mas bilog na highlights. Maraming lens ang umaabot sa practical sharpness peak nila sa paligid ng f/8-f/11, bago pa man maging malala ang diffraction. Ang diffraction warning ng tool na ito ay mas mahigpit at mas huling threshold: lumalabas lang ito kapag ang diffraction blur ay lumampas na sa circle of confusion ng sensor, na nangyayari sa paligid ng f/22 sa full-frame (f/15 sa APS-C, f/11 sa Micro Four Thirds) — ituring ang warning na iyon bilang outer limit, hindi bilang sharpness target."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Focal Length",
-          "description": "Ang mas mahabang lens ay nag-co-compress ng perspective at nagpapababaw ng depth of field sa parehong aperture at framing. Ang 200mm lens sa f/4 ay may mas mababaw na depth of field kaysa sa 35mm lens sa f/4."
+          "description": "Sa parehong subject distance, malaki ang pagpapababaw ng depth of field habang tumataas ang focal length. Sa parehong framing — nag-zoom ka at umatras para mapanatili ang parehong shot — halos hindi nagbabago ang depth of field; ang background ang nagbabago, lumalaki at lumalabo pa habang tumataas ang focal length."
         },
         "2": {
           "label": "Subject Distance",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Diffraction",
-          "definition": "Sa napakaliit na aperture, nakakabaluktot ang liwanag sa mga gilid ng aperture, na nagpapa-soft ng imahe. Sa full-frame sensors, nakikita ito karaniwan sa higit pa sa f/16."
+          "definition": "Sa napakaliit na aperture, bumabaluktot ang liwanag sa mga gilid ng aperture, na nagpapa-soft sa imahe. Ang diffraction warning ng tool na ito ay lumalabas kapag ang softening na iyon ay lumampas na sa circle of confusion ng sensor — sa paligid ng f/22 sa full-frame, f/15 sa APS-C, f/11 sa Micro Four Thirds."
         }
       },
       "challenges": {

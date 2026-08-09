@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Tiêu cự & Khoảng cách",
-          "text": "Tiêu cự dài hơn phóng đại hình ảnh, đồng thời phóng đại các vòng tròn nhòe, thu hẹp chiều sâu trường ảnh. Di chuyển gần chủ thể hơn giảm chiều sâu trường ảnh vì cùng lý do — sự khác biệt tương đối về khoảng cách giữa chủ thể và hậu cảnh trở nên lớn hơn. Khoảng cách siêu tiêu cự là khoảng cách lấy nét mà tại đó chiều sâu trường ảnh mở rộng từ nửa khoảng cách đó đến vô cực, tối đa hóa độ nét trên toàn bộ cảnh."
+          "text": "Ảnh hưởng của tiêu cự đến chiều sâu trường ảnh phụ thuộc vào yếu tố nào bạn giữ cố định. Ở khoảng cách chủ thể cố định, tiêu cự dài hơn thu hẹp chiều sâu trường ảnh rõ rệt — gần như theo bình phương của tiêu cự. Nhưng nếu bạn zoom vào và lùi lại để giữ nguyên khung hình (chế độ khóa góc nhìn của công cụ này), chiều sâu trường ảnh gần như không thay đổi — thứ thay đổi chính là hậu cảnh, trở nên phóng đại hơn và mờ hơn. Di chuyển gần chủ thể hơn thu hẹp chiều sâu trường ảnh vì một lý do khác: giới hạn nét gần và xa siết chặt lại quanh một khoảng cách ngắn hơn. Khoảng cách siêu tiêu cự là khoảng cách lấy nét mà tại đó chiều sâu trường ảnh mở rộng từ nửa khoảng cách đó đến vô cực, tối đa hóa độ nét trên toàn bộ cảnh."
         },
         "2": {
           "heading": "Bokeh & Nhiễu xạ",
-          "text": "Bokeh là chất lượng của các vùng ngoài vùng nét. Số lượng và hình dạng cánh khẩu ảnh hưởng đến tính chất bokeh — càng nhiều cánh tròn tạo ra các điểm sáng mượt mà, tròn hơn. Ở các khẩu độ rất nhỏ (f/16+), nhiễu xạ khiến ánh sáng lan rộng khi đi qua rìa khẩu độ, làm mềm toàn bộ ảnh ngay cả trong vùng chiều sâu trường ảnh. Luôn có một điểm ngọt — thường khoảng f/5.6-f/8 trên full-frame — nơi độ nét và chiều sâu trường ảnh được cân bằng tối ưu."
+          "text": "Bokeh là chất lượng của các vùng ngoài vùng nét. Số lượng và hình dạng cánh khẩu ảnh hưởng đến tính chất bokeh — càng nhiều cánh tròn tạo ra các điểm sáng mượt mà, tròn hơn. Nhiều ống kính đạt đỉnh độ nét thực tế ở khoảng f/8-f/11, từ rất lâu trước khi nhiễu xạ trở nên nghiêm trọng. Cảnh báo nhiễu xạ riêng của công cụ này là một ngưỡng chặt chẽ hơn và xuất hiện muộn hơn nhiều: nó chỉ hiện ra khi độ mờ do nhiễu xạ vượt quá vòng tròn nhòe của cảm biến, điều này xảy ra ở khoảng f/22 trên full-frame (f/15 trên APS-C, f/11 trên Micro Four Thirds) — hãy coi cảnh báo đó là giới hạn ngoài cùng, không phải mục tiêu độ nét."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Tiêu cự",
-          "description": "Ống kính dài hơn nén phối cảnh và thu hẹp chiều sâu trường ảnh ở cùng khẩu độ và khung hình. Ống kính 200mm ở f/4 có chiều sâu trường ảnh ít hơn nhiều so với ống 35mm ở f/4."
+          "description": "Ở khoảng cách chủ thể cố định, chiều sâu trường ảnh thu hẹp rõ rệt khi tiêu cự tăng. Ở khung hình cố định — zoom vào và lùi lại để giữ nguyên bố cục — chiều sâu trường ảnh gần như không thay đổi; thứ thay đổi là hậu cảnh, trở nên phóng đại hơn và mờ hơn khi tiêu cự tăng."
         },
         "2": {
           "label": "Khoảng cách chủ thể",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Nhiễu xạ",
-          "definition": "Ở các khẩu độ rất nhỏ, ánh sáng bị uốn cong quanh rìa khẩu độ, làm mềm ảnh. Trên cảm biến full-frame, điều này thường trở nên đáng chú ý sau f/16."
+          "definition": "Ở các khẩu độ rất nhỏ, ánh sáng bị uốn cong quanh rìa khẩu độ, làm mềm ảnh. Cảnh báo nhiễu xạ của công cụ này xuất hiện khi độ mềm đó vượt quá vòng tròn nhòe của cảm biến — khoảng f/22 trên full-frame, f/15 trên APS-C, f/11 trên Micro Four Thirds."
         }
       },
       "challenges": {

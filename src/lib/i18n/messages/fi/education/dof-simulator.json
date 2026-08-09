@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Polttoväli ja etäisyys",
-          "text": "Pidempi polttoväli suurentaa kuvaa, mikä suurentaa myös epäteräviä ympyröitä ja kaventaa syväterävyyttä. Mitä lähempänä kohdetta kuvataan, sitä ohuemmaksi syväterävyys menee samasta syystä — kohteen ja taustan välinen suhteellinen etäisyysero kasvaa. Hyperfokaalietäisyys on se tarkennusetäisyys, jolla syväterävyys ulottuu puolesta hyperfokaalietäisyydestä äärettömään ja maksimoi siten terävyyden koko kuvassa."
+          "text": "Polttovälin vaikutus syväterävyyteen riippuu siitä, mikä pidetään vakiona. Kun kohteen etäisyys pysyy samana, pidempi polttoväli kaventaa syväterävyyttä jyrkästi — suunnilleen polttovälin neliön suhteessa. Mutta jos zoomaat ja astut taaksepäin pitääksesi saman rajauksen (tämän työkalun lukitun kuvakulman tila), syväterävyys tuskin muuttuu lainkaan — sen sijaan tausta muuttuu, suurentuen ja sumentuen enemmän. Kohteen lähestyminen kaventaa syväterävyyttä eri syystä: lähi- ja kaukaraja puristuvat tiiviimmin lyhyemmän etäisyyden ympärille. Hyperfokaalietäisyys on se tarkennusetäisyys, jolla syväterävyys ulottuu puolesta tästä etäisyydestä äärettömään ja maksimoi näin terävyyden koko kuvassa."
         },
         "2": {
           "heading": "Bokeh ja diffraktio",
-          "text": "Bokeh tarkoittaa epäterävien alueiden laatua ja tunnelmaa. Aukon lamellien määrä ja muoto vaikuttavat bokehin luonteeseen — mitä pyöreämmät lamellit, sitä pehmeämpiä ja ympyrämäisempiä valopisteistä tulee. Kun aukko on hyvin pieni (f/16 ja alle), diffraktio alkaa taivuttaa valoa aukon reunoilla ja pehmentää koko kuvaa myös syväterävän alueen sisällä. Jokaisella järjestelmällä on makea piste — täyskennolla yleensä noin f/5.6–f/8 — jossa terävyys ja syväterävyys ovat parhaassa tasapainossa."
+          "text": "Bokeh tarkoittaa epäterävien alueiden laatua. Aukon lamellien määrä ja muoto vaikuttavat bokehin luonteeseen — pyöreämmät lamellit tuottavat pehmeämpiä, pyöreämpiä valopisteitä. Monet objektiivit saavuttavat käytännön terävyyshuippunsa noin f/8–f/11-alueella, kauan ennen kuin diffraktiosta tulee voimakasta. Tämän työkalun oma diffraktiovaroitus on tiukempi ja myöhäisempi raja: se ilmestyy vasta, kun diffraktion aiheuttama epäterävyys ylittää kennon hajapiirron, mikä tapahtuu noin f/22:ssa täyskennolla (f/15 APS-C:llä, f/11 Micro Four Thirdsillä) — pidä tuota varoitusta äärirajana, ei terävyystavoitteena."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Polttoväli",
-          "description": "Pitkä objektiivi pakkaa perspektiiviä ja kaventaa syväterävyyttä samalla aukolla ja rajauksella. 200 mm f/4:llä antaa huomattavasti matalamman syväterävyyden kuin 35 mm f/4:llä."
+          "description": "Kun kohteen etäisyys pysyy samana, syväterävyys kapenee jyrkästi polttovälin kasvaessa. Kun rajaus pysyy samana — zoomaat ja astut taaksepäin pitääksesi saman kuvan — syväterävyys tuskin muuttuu; sen sijaan tausta muuttuu, suurentuen ja sumentuen enemmän polttovälin kasvaessa."
         },
         "2": {
           "label": "Kohteen etäisyys",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Diffraktio",
-          "definition": "Hyvin pienillä aukoilla valo taipuu aukon reunoilla ja pehmentää kuvaa. Täyskennolla ilmiö alkaa yleensä näkyä f/16:n jälkeen."
+          "definition": "Hyvin pienillä aukoilla valo taipuu aukon reunoilla ja pehmentää kuvaa. Tämän työkalun diffraktiovaroitus ilmestyy, kun tämä pehmeys ylittää kennon hajapiirron — noin f/22:ssa täyskennolla, f/15 APS-C:llä, f/11 Micro Four Thirdsillä."
         }
       },
       "challenges": {

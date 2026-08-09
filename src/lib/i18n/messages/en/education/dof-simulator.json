@@ -9,7 +9,7 @@
         },
         "1": {
           "heading": "Focal Length and Distance Dominate the Effect",
-          "text": "Aperture gets most of the credit for background blur, but focal length and subject distance often matter more. At a fixed framing, depth of field narrows roughly with the square of focal length — a 200mm lens has far less depth of field than a 35mm lens framing the same subject. Subject distance matters even more directly: moving closer at a fixed focal length and aperture shrinks depth of field sharply, because the near and far focus limits are both pulled tighter around a shorter subject distance. Getting closer, or reaching for a longer lens, is often the fastest way to isolate a subject — no aperture change required."
+          "text": "Focal length's effect on depth of field depends entirely on what you hold constant. At a fixed subject distance, depth of field narrows sharply with focal length — roughly with its square: standing 3m from a subject at f/2.8, a 35mm lens gives about 1.3m of depth of field, while a 200mm lens gives about 35mm. But that comparison also changes your framing, since you didn't reframe. At a fixed framing — this tool's lock-FOV mode, where you walk back as you zoom in to keep the subject the same size — depth of field barely moves: sweeping 35mm to 200mm at f/2.8 with framing locked changes total depth of field by well under 1%. What changes dramatically instead is the background: a longer lens magnifies and compresses everything behind your subject, so out-of-focus highlights grow larger and the background separates more, even though the in-focus slab around your subject stays about the same thickness. Turn on lock-FOV and sweep focal length to watch it happen — the depth-of-field readout holds steady while the background blur figure climbs. Subject distance remains the more reliable lever either way: moving closer at a fixed focal length and aperture shrinks depth of field sharply, pulling the near and far limits tighter around a shorter distance."
         },
         "2": {
           "heading": "Sensor Size and Equivalent Framing",
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Focal Length",
-          "description": "Depth of field narrows roughly with the square of focal length at a constant framing — doubling your focal length cuts depth of field to about a quarter."
+          "description": "At a fixed subject distance, depth of field narrows roughly with the square of focal length. At a fixed framing (zoom in and step back to keep the same shot), depth of field barely changes — it's the background that transforms, growing more magnified and blurred as focal length increases."
         },
         "2": {
           "label": "Subject Distance",
@@ -42,7 +42,7 @@
           "text": "Use the framing presets (Face, Portrait, Medium Shot, and so on) to lock your subject's size in the frame while you experiment — they hold focal length and distance in the same relationship a real shot would, so the blur you see here matches what you'd get in camera."
         },
         "2": {
-          "text": "Don't chase maximum depth of field by stopping all the way down. Past about f/11 on full frame (f/8 on APS-C, f/5.6 on Micro Four Thirds), diffraction softens the entire image faster than the extra depth of field helps."
+          "text": "Don't chase maximum depth of field by stopping all the way down — most lenses are sharpest around f/8-f/11, well before this tool's diffraction warning appears. That warning is a stricter, later threshold: it only lights up once diffraction blur exceeds the sensor's circle of confusion, which happens around f/22 on full frame (f/15 on APS-C, f/11 on Micro Four Thirds). Treat f/8-f/11 as your practical target, and the warning chip as the outer limit, not the goal."
         }
       },
       "tooltips": {
@@ -76,7 +76,7 @@
         },
         "diffractionWarning": {
           "term": "Diffraction",
-          "definition": "At very small apertures, light bends around the aperture edges, softening the image. On full-frame sensors, this typically becomes noticeable beyond f/11-f/16."
+          "definition": "At very small apertures, light bends around the aperture edges, softening the image. This tool's diffraction warning appears once that softening exceeds the sensor's circle of confusion — around f/22 on full frame, f/15 on APS-C, f/11 on Micro Four Thirds."
         }
       },
       "challenges": {
@@ -143,14 +143,14 @@
         "3": {
           "scenario": "You're shooting a landscape on a full-frame camera and want maximum sharpness across the whole frame. Should you stop all the way down to f/22 for the most depth of field?",
           "hint": "There's a trade-off between the depth of field gained by stopping down and the softening caused by diffraction at very small apertures.",
-          "successMessage": "Right — beyond roughly f/8-f/11 on full frame, diffraction starts to soften the entire image, even within the depth-of-field zone. That range is usually the sharpness sweet spot.",
-          "failureMessage": "Stopping all the way down to f/22 maximizes depth of field on paper, but diffraction softens the whole image at that aperture. f/8-f/11 usually gives the best balance of depth of field and sharpness.",
+          "successMessage": "Right — f/22 does add depth of field on paper, but most lenses are already past their sharpest apertures by then. A moderate aperture like f/8-f/11 usually balances depth of field and lens sharpness better. This tool's own diffraction warning is a separate, later threshold — it flags only once diffraction blur exceeds the sensor's circle of confusion, which on full frame doesn't happen until around f/22 (f/15 on APS-C, f/11 on Micro Four Thirds). Don't wait for that warning before backing off — it's a hard physical limit, not a sharpness recommendation.",
+          "failureMessage": "Stopping all the way down to f/22 does maximize depth of field on paper, but most lenses have already passed their sharpest aperture range by then. A moderate aperture like f/8-f/11 usually gives a better balance of depth of field and real-world sharpness. This tool's diffraction warning is a separate, later threshold — it only appears once blur exceeds the sensor's circle of confusion, around f/22 on full frame — so don't use its absence as a green light to keep stopping down.",
           "options": {
             "0": {
               "label": "Yes — always use the smallest aperture available for maximum depth of field"
             },
             "1": {
-              "label": "No — use around f/8-f/11; beyond that, diffraction softens the whole image"
+              "label": "No — use a moderate aperture like f/8-f/11 for the best overall sharpness, not the smallest one"
             },
             "2": {
               "label": "No — use the widest aperture available for the sharpest results"

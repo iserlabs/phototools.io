@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Distancia focal y distancia",
-          "text": "Las distancias focales más largas amplían la imagen, lo que también amplía los círculos de desenfoque, estrechando la PdC. Acercarte al sujeto reduce la PdC por la misma razón — la diferencia relativa de distancia entre el sujeto y el fondo se hace mayor. La distancia hiperfocal es la distancia de enfoque a la que la PdC se extiende desde la mitad de esa distancia hasta el infinito, maximizando la nitidez en toda la escena."
+          "text": "El efecto de la distancia focal sobre la profundidad de campo depende de qué mantengas constante. A una distancia al sujeto fija, las distancias focales más largas estrechan la PdC de forma marcada — aproximadamente con el cuadrado de la distancia focal. Pero si haces zoom y retrocedes para mantener el mismo encuadre (el modo de campo de visión bloqueado de esta herramienta), la PdC apenas cambia — lo que se transforma es el fondo, que se magnifica y se desenfoca más. Acercarte al sujeto estrecha la PdC por una razón distinta: los límites de enfoque cercano y lejano se aproximan en torno a una distancia más corta. La distancia hiperfocal es la distancia de enfoque a la que la PdC se extiende desde la mitad de esa distancia hasta el infinito, maximizando la nitidez en toda la escena."
         },
         "2": {
           "heading": "Bokeh y difracción",
-          "text": "El bokeh es la calidad de las zonas desenfocadas. El número y la forma de las láminas del diafragma marcan su carácter: láminas más redondeadas producen reflejos más suaves y circulares. En aperturas muy cerradas (f/16+), la difracción dispersa la luz al pasar por los bordes del diafragma y suaviza toda la imagen, incluso dentro de la zona enfocada. En la mayoría de los objetivos hay una apertura óptima —normalmente entre f/5.6 y f/8 en formato completo— donde la nitidez y la profundidad de campo se equilibran mejor."
+          "text": "El bokeh es la calidad de las zonas fuera de foco. El número y la forma de las láminas del diafragma afectan al carácter del bokeh — láminas más redondeadas producen reflejos más suaves y circulares. Muchos objetivos alcanzan su punto óptimo práctico de nitidez alrededor de f/8-f/11, mucho antes de que la difracción se vuelva severa. El aviso de difracción de esta herramienta es un umbral más estricto y posterior: solo aparece cuando el desenfoque por difracción supera el círculo de confusión del sensor, lo que ocurre alrededor de f/22 en formato completo (f/15 en APS-C, f/11 en Micro Cuatro Tercios) — trata ese aviso como un límite extremo, no como un objetivo de nitidez."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Distancia focal",
-          "description": "Los objetivos más largos comprimen la perspectiva y estrechan la PdC con la misma apertura y encuadre. Un objetivo de 200 mm a f/4 tiene mucho menos PdC que uno de 35 mm a f/4."
+          "description": "A una distancia al sujeto fija, la PdC se estrecha marcadamente al aumentar la distancia focal. Con un encuadre fijo — haces zoom y retrocedes para mantener la misma toma — la PdC apenas cambia; lo que se transforma es el fondo, que se magnifica y se desenfoca más a medida que aumenta la distancia focal."
         },
         "2": {
           "label": "Distancia al sujeto",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Difracción",
-          "definition": "En aperturas muy cerradas, la luz se desvía al pasar por los bordes del diafragma, suavizando la imagen. En sensores de formato completo, esto suele notarse a partir de f/16."
+          "definition": "En aperturas muy cerradas, la luz se desvía al pasar por los bordes del diafragma, suavizando la imagen. El aviso de difracción de esta herramienta aparece cuando ese suavizado supera el círculo de confusión del sensor — alrededor de f/22 en formato completo, f/15 en APS-C, f/11 en Micro Cuatro Tercios."
         }
       },
       "challenges": {

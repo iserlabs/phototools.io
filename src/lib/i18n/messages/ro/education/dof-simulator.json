@@ -9,11 +9,11 @@
         },
         "1": {
           "heading": "Distanță focală și distanță",
-          "text": "Distanțele focale mai lungi măresc imaginea, ceea ce amplifică și cercurile de neclaritate și îngustează profunzime de câmp-ul. Apropierea de subiect reduce și ea profunzime de câmp-ul, din același motiv — diferența relativă de distanță dintre subiect și fundal devine mai mare. Distanța hiperfocală este distanța de focalizare la care profunzime de câmp-ul se întinde de la jumătatea ei până la infinit, maximizând claritatea pe toată scena."
+          "text": "Efectul distanței focale asupra adâncimii câmpului depinde de ce păstrezi constant. La o distanță fixă până la subiect, distanțele focale mai lungi îngustează puternic profunzime de câmp-ul — aproximativ proporțional cu pătratul distanței focale. Dar dacă faci zoom și te retragi pentru a păstra aceeași încadrare (modul cu unghi de câmp blocat al acestui instrument), profunzime de câmp-ul aproape că nu se schimbă deloc — în schimb, fundalul este cel care se transformă, devenind tot mai mărit și mai neclar. Apropierea de subiect îngustează profunzime de câmp-ul dintr-un motiv diferit: limitele apropiată și îndepărtată de focalizare se strâng în jurul unei distanțe mai scurte. Distanța hiperfocală este distanța de focalizare la care profunzime de câmp-ul se întinde de la jumătatea ei până la infinit, maximizând claritatea pe toată scena."
         },
         "2": {
           "heading": "Bokeh și difracție",
-          "text": "Bokeh-ul se referă la calitatea zonelor neclare. Numărul și forma lamelelor diafragmei influențează caracterul bokeh-ului — lamelele mai rotunjite dau puncte de lumină mai fine și mai circulare. La diafragme foarte închise (f/16 și peste), difracția face ca lumina să se împrăștie la marginile diafragmei, înmuind întreaga imagine, chiar și în zona în care profunzime de câmp-ul e clar. Există mereu un punct optim — de obicei în jur de f/5.6-f/8 pe full frame — unde claritatea și adâncimea câmpului sunt cel mai bine echilibrate."
+          "text": "Bokeh-ul se referă la calitatea zonelor neclare. Numărul și forma lamelelor diafragmei influențează caracterul bokeh-ului — lamelele mai rotunjite dau puncte de lumină mai fine și mai circulare. Multe obiective ating vârful practic de claritate în jurul valorii f/8-f/11, cu mult înainte ca difracția să devină o problemă serioasă. Avertismentul de difracție propriu al acestui instrument folosește un prag mai strict și mai târziu: apare doar atunci când neclaritatea prin difracție depășește cercul de confuzie al senzorului, ceea ce se întâmplă în jur de f/22 pe full frame (f/15 pe APS-C, f/11 pe Micro Four Thirds) — tratează acest avertisment ca pe o limită extremă, nu ca pe un obiectiv de claritate."
         }
       },
       "keyFactors": {
@@ -23,7 +23,7 @@
         },
         "1": {
           "label": "Distanță focală",
-          "description": "Obiectivele mai lungi comprimă perspectiva și îngustează profunzime de câmp-ul la aceeași diafragmă și încadrare. Un 200mm la f/4 are mult mai puțin profunzime de câmp decât un 35mm la f/4."
+          "description": "La o distanță fixă până la subiect, profunzime de câmp-ul se îngustează puternic pe măsură ce distanța focală crește. La o încadrare fixă — faci zoom și te retragi pentru a păstra aceeași imagine — profunzime de câmp-ul aproape că nu se schimbă deloc; în schimb, fundalul este cel care se transformă, devenind tot mai mărit și mai neclar pe măsură ce distanța focală crește."
         },
         "2": {
           "label": "Distanța față de subiect",
@@ -100,7 +100,7 @@
         },
         "diffractionWarning": {
           "term": "Difracție",
-          "definition": "La diafragme foarte închise, lumina se curbează la marginile diafragmei și înmoaie imaginea. Pe senzorii full-frame devine, de obicei, vizibilă dincolo de f/16."
+          "definition": "La diafragme foarte închise, lumina se curbează la marginile diafragmei, înmuind imaginea. Avertismentul de difracție al acestui instrument apare atunci când această înmuiere depășește cercul de confuzie al senzorului — în jur de f/22 pe full frame, f/15 pe APS-C, f/11 pe Micro Four Thirds."
         }
       },
       "challenges": {
