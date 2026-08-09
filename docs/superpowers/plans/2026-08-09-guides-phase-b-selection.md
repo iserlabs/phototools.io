@@ -66,7 +66,16 @@ Each English draft was written against the spec's Adapt stage:
   time and **no assets exist yet** (stage 3). The macro anchor keeps its single
   existing `Figure` against the Phase A placeholder image.
 - All drafts are `status: draft` — dev-visible only, 404 in production, exempt
-  from translation parity. Production is unchanged.
+  from translation parity. Production is unchanged, verified by
+  `guides-phase-a.spec.ts` still passing all four invariants.
+
+Two infrastructure gaps surfaced while writing and were fixed in the same
+batch. `image-size`, which `Figure` used to read intrinsic dimensions, carried
+unfixable high-severity advisories and was replaced by
+`src/lib/utils/imageDimensions.ts`. And markdown tables compiled to literal
+text because `remark-gfm` was never wired into the MDX pipeline — the
+telephoto guide needs a wind × focal length table, so GFM is now enabled with
+table styling and a per-table scroll container.
 
 ## Blocked on the owner
 
@@ -90,6 +99,15 @@ Stages 3–5 cannot proceed without decisions and material only Kevin has:
    stays public, gets unpublished, or canonicalises to the phototools guide.
 6. **Byline** — still open from the spec. `author` is an optional frontmatter
    field, so either answer is a one-line edit per guide.
+7. **Six of the eight linked tools are `prod: 'draft'`.** Only
+   `color-scheme-generator` and `white-balance-visualizer` are `prod: 'live'`.
+   `focus-stacking-calculator`, `dof-simulator`, `diffraction-calculator`,
+   `exposure-simulator`, `equivalent-settings-calculator`, and
+   `shutter-speed-visualizer` are all draft in production. Nothing breaks —
+   draft tools stay reachable by direct URL behind a draft banner — but the
+   guide→tool flywheel the spec is built around would send readers into
+   "Coming Soon" pages, and `guide_tool_click` would measure clicks into
+   unfinished tools. These need to go live before or with the guides.
 
 Stage 5 (flip `status: live`) also needs the Phase B e2e suite the spec
 describes — index navigation, TOC scroll-spy, ToolCard click-through, LearnPanel
