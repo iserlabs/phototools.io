@@ -1,9 +1,16 @@
+/* Guides are the exception to the app's no-page-scroll rule: long-form prose
+   scrolls as a document. `#main-content` is pinned to the viewport with
+   `overflow: hidden`, so the page root has to be its own scroll container or
+   the article is silently clipped — same pattern as the legal pages.
+   `overflow-y` also zeroes this flex item's automatic minimum size, which is
+   what lets it shrink to the window instead of growing to fit the article. */
 .outer {
   display: flex;
   gap: 24px;
   max-width: var(--page-width-content);
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md);
+  overflow-y: auto;
 }
 .article {
   flex: 1;

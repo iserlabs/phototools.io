@@ -1,7 +1,11 @@
+/* Scroll container for the same reason as the article page — see the note in
+   [slug]/page.module.css. The index outgrows the viewport once a handful of
+   guides are listed. */
 .outer {
   max-width: var(--page-width-wide);
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md);
+  overflow-y: auto;
 }
 
 .header {
