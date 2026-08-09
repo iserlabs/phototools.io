@@ -2,12 +2,10 @@
 
 import { useMemo } from 'react'
 import { useTranslations } from 'next-intl'
-import type { StackingResult } from '@/lib/math/stacking'
+import type { StackingState } from './useStackingState'
 
 interface StackingDiagramProps {
-  result: StackingResult
-  nearLimit: number
-  farLimit: number
+  state: StackingState
 }
 
 const COLORS = [
@@ -36,8 +34,9 @@ function fmtDist(d: number): string {
   return d >= 1 ? `${d}m` : `${Math.round(d * 100)}cm`
 }
 
-export function StackingDiagram({ result, nearLimit, farLimit }: StackingDiagramProps) {
+export function StackingDiagram({ state }: StackingDiagramProps) {
   const t = useTranslations('toolUI.focus-stacking-calculator')
+  const { stackingResult: result, nearLimit, farLimit } = state
   const { shots } = result
   const showBands = shots.length <= MAX_BAND_SHOTS
 

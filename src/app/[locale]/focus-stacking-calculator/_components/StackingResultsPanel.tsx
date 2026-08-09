@@ -7,20 +7,16 @@ import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { getSkeletonBySlug } from '@/lib/data/education'
 import { formatDistance } from '@/components/shared/DistanceField'
 import { buildDistanceText } from '@/lib/utils/stackingExport'
-import type { StackingResult } from '@/lib/math/stacking'
+import type { StackingState } from './useStackingState'
 import s from './FocusStacking.module.css'
 
 interface StackingResultsPanelProps {
-  result: StackingResult
-  focalLength: number
-  aperture: number
-  sensorName: string
-  overlapPct: number
+  state: StackingState
 }
 
-export function StackingResultsPanel({
-  result, focalLength, aperture, sensorName, overlapPct,
-}: StackingResultsPanelProps) {
+export function StackingResultsPanel({ state }: StackingResultsPanelProps) {
+  const { stackingResult: result, focalLength, aperture, sensor, overlapPct } = state
+  const sensorName = sensor.name
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const commonT = useTranslations('common')
   const et = useTranslations('education.focus-stacking-calculator')

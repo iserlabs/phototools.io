@@ -7,29 +7,20 @@ import { ApertureField } from '@/components/shared/ApertureField'
 import { DistanceField } from '@/components/shared/DistanceField'
 import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { getSkeletonBySlug } from '@/lib/data/education'
+import type { StackingState } from './useStackingState'
 import s from './FocusStacking.module.css'
 
 interface StackingSettingsPanelProps {
-  focalLength: number
-  aperture: number
-  sensorId: string
-  nearLimit: number
-  farLimit: number
-  overlapPct: number
-  onFocalLengthChange: (v: number) => void
-  onApertureChange: (v: number) => void
-  onSensorChange: (v: string) => void
-  onNearLimitChange: (v: number) => void
-  onFarLimitChange: (v: number) => void
-  onOverlapChange: (v: number) => void
+  state: StackingState
 }
 
-export function StackingSettingsPanel({
-  focalLength, aperture, sensorId,
-  nearLimit, farLimit, overlapPct,
-  onFocalLengthChange, onApertureChange, onSensorChange,
-  onNearLimitChange, onFarLimitChange, onOverlapChange,
-}: StackingSettingsPanelProps) {
+export function StackingSettingsPanel({ state }: StackingSettingsPanelProps) {
+  const {
+    focalLength, aperture, sensorId,
+    nearLimit, farLimit, overlapPct,
+    onFocalLengthChange, onApertureChange, onSensorChange,
+    onNearLimitChange, onFarLimitChange, onOverlapChange,
+  } = state
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const sensorsT = useTranslations('common.sensors')
   const et = useTranslations('education.focus-stacking-calculator')
