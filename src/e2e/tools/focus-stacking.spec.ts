@@ -53,22 +53,12 @@ test.describe('Focus Stacking Calculator', () => {
   // SceneStrip, StackingDiagram, and ShotTable vertically — that layout has
   // never been visually verified. Desktop tool pages must fit within 100vh
   // (no page scroll; only inner panels scroll), so assert both the no-scroll
-  // invariant (same comparison the smoke spec uses) and that all three
-  // pieces of the stacked layout are genuinely within the viewport bounds
-  // (not merely CSS-`visible`, which does not detect ancestor clipping).
-  //
-  // KNOWN BUG (see task-14-report.md): at the default 1280x720 desktop
-  // viewport, in the tool's own default state, .canvasArea's stacked content
-  // (~688px) is taller than its flex slot (~647px). .canvasArea has no
-  // overflow-y and vertically centers its children, so the excess is
-  // silently clipped by the overflow:hidden ancestor chain (.app/.appBody/
-  // #main-content) instead of becoming scrollable — the bottom of ShotTable
-  // lands ~12px past the window edge. Suggested fix: give .canvasArea
-  // `overflow-y: auto` (matching the project's own "panels scroll
-  // internally" rule) so the excess is reachable instead of clipped.
+  // invariant (same comparison the smoke spec uses) and that the stacked
+  // layout is genuinely usable: SceneStrip/diagram visible without
+  // scrolling, and ShotTable either visible outright or reachable by
+  // scrolling .canvasArea (its own internal panel, per the project's "inner
+  // panels scroll, the page never does" rule — see FocusStacking.module.css).
   test('desktop canvas column fits without page scroll and shows scene strip, diagram, and shot table', async ({ page }) => {
-    test.fail(true, 'BUG: ShotTable overflows past the bottom of a 1280x720 viewport because .canvasArea has no internal scroll — see task-14-report.md')
-
     await page.goto(URL)
 
     const sceneStrip = page.locator('[class*="sceneStripWrap"]').first()
@@ -80,13 +70,27 @@ test.describe('Focus Stacking Calculator', () => {
     await expect(table).toBeVisible()
 
     const innerHeight = await page.evaluate(() => window.innerHeight)
-    for (const locator of [sceneStrip, diagram, table]) {
+
+    // SceneStrip and the diagram sit at the top of the stack and must be
+    // fully within the viewport with no scrolling at all.
+    for (const locator of [sceneStrip, diagram]) {
       const box = await locator.boundingBox()
       expect(box).not.toBeNull()
       expect(box!.y).toBeGreaterThanOrEqual(0)
       expect(box!.y + box!.height).toBeLessThanOrEqual(innerHeight)
     }
 
+    // ShotTable may extend past the fold in the tool's default (12-shot)
+    // state — that's fine as long as .canvasArea's own scroll can reach it.
+    // scrollIntoViewIfNeeded exercises exactly that: it scrolls the nearest
+    // scrollable ancestor (.canvasArea), not the document.
+    await table.scrollIntoViewIfNeeded()
+    const tableBox = await table.boundingBox()
+    expect(tableBox).not.toBeNull()
+    expect(tableBox!.y).toBeGreaterThanOrEqual(0)
+    expect(tableBox!.y + tableBox!.height).toBeLessThanOrEqual(innerHeight)
+
+    // The page itself must still never scroll — only .canvasArea does.
     const scrolls = await page.evaluate(() => ({
       scrollHeight: document.documentElement.scrollHeight,
       innerHeight: window.innerHeight,
@@ -98,18 +102,21 @@ test.describe('Focus Stacking Calculator', () => {
   // button. The sweep completes in at most ~4s and then clears the
   // highlight, so this asserts on state shortly after clicking rather than
   // racing the end of the animation.
-  //
-  // KNOWN BUG (see task-14-report.md): the same .canvasArea overflow above
-  // pushes this button (the first child of the centered, overflowing stack)
-  // up past the top of its flex slot, landing underneath the site Nav bar
-  // (z-index 1000) at the default 1280x720 viewport. A real click there
-  // lands on the Nav, not the button — this is not a selector problem.
   test('animate button starts the sweep and swaps to the pause label', async ({ page }) => {
-    test.fail(true, 'BUG: the play button renders behind the Nav bar at 1280x720 — see task-14-report.md')
-
     await page.goto(URL)
     const playButton = page.getByRole('button', { name: 'Animate stack', exact: true })
-    await playButton.click({ timeout: 5000 })
+
+    // The button must be genuinely clickable at a standard desktop
+    // viewport, not merely present in the DOM: confirm the browser's own
+    // hit-test agrees that the button — not something painted on top of it,
+    // like the Nav bar — is the topmost element at its center point.
+    const isTopmost = await playButton.evaluate((el) => {
+      const r = el.getBoundingClientRect()
+      return document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2) === el
+    })
+    expect(isTopmost).toBe(true)
+
+    await playButton.click()
 
     await expect(page.getByRole('button', { name: 'Pause', exact: true })).toBeVisible()
     await expect(page.locator('[class*="rowActive"]').first()).toBeVisible({ timeout: 2000 })

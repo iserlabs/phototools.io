@@ -206,6 +206,17 @@
 }
 
 /* -- Canvas area -- */
+/* This is the "inner panel" for this tool per the project's no-desktop-page-
+ * scroll rule: the page itself never scrolls, but a column this tall (play
+ * button + SceneStrip + StackingDiagram + ShotTable) can exceed the flex
+ * slot at common viewport heights, so it needs its own overflow-y: auto —
+ * matching .sidebar and LearnPanel. justify-content is flex-start (not
+ * center): with centered flex content that overflows, the overflow at the
+ * TOP is unreachable by scrolling, which previously clipped the play button
+ * behind the Nav with no way to scroll up to it. flex-start keeps the first
+ * child anchored at the top and lets the scrollable overflow land at the
+ * bottom, where overflow-y: auto can actually reach it.
+ */
 .canvasArea {
   flex: 1;
   display: flex;
@@ -213,7 +224,8 @@
   min-width: 0;
   min-height: 0;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-y: auto;
   padding: 24px;
 }
 
@@ -315,6 +327,11 @@
     padding: 4px;
     flex: none;
     min-height: 300px;
+    /* Mobile pages scroll normally at the document level (see globals.css'
+     * "allow page to scroll" rule + .app/.appBody switching to overflow:
+     * visible above). Override the desktop overflow-y: auto here so this
+     * panel doesn't grow a second, nested scroll region on top of that. */
+    overflow-y: visible;
   }
 
   .slider {
