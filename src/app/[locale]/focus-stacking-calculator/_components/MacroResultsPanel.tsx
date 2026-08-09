@@ -1,12 +1,15 @@
 'use client'
 
+import { useCallback } from 'react'
+import { toast } from 'sonner'
 import { useTranslations } from 'next-intl'
-import { buildMacroCsv, buildStackJson, formatMm, downloadTextFile } from '@/lib/utils/stackingExport'
+import { buildMacroText, buildMacroCsv, buildStackJson, formatMm, downloadTextFile } from '@/lib/utils/stackingExport'
 import type { StackingState } from './useStackingState'
 import s from './FocusStacking.module.css'
 
 export function MacroResultsPanel({ state }: { state: StackingState }) {
   const t = useTranslations('toolUI.focus-stacking-calculator')
+  const commonT = useTranslations('common')
   const r = state.macroResult
   const meta = {
     tool: 'focus-stacking-calculator', mode: 'macro',
@@ -14,6 +17,15 @@ export function MacroResultsPanel({ state }: { state: StackingState }) {
     effectiveAperture: Number(r.effectiveAperture.toFixed(1)),
     sensor: state.sensor.name, overlapPct: state.overlapPct,
   }
+  const handleCopy = useCallback(async () => {
+    const text = buildMacroText(state.magnification, state.aperture, r.effectiveAperture, state.sensor.name, state.macroRows)
+    try {
+      await navigator.clipboard.writeText(text)
+      toast(commonT('toast.linkCopied'))
+    } catch {
+      toast(commonT('toast.failedToCopy'))
+    }
+  }, [state.magnification, state.aperture, r.effectiveAperture, state.sensor.name, state.macroRows, commonT])
   return (
     <div className={s.panel}>
       <h3 className={s.panelTitle}>{t('results')}</h3>
@@ -50,6 +62,7 @@ export function MacroResultsPanel({ state }: { state: StackingState }) {
       {r.shotCount >= 100 && <div className={s.warningBanner}>{t('tooManyShots')}</div>}
       {!r.coverageComplete && <div className={s.warningBanner}>{t('coverageWarning')}</div>}
       <div className={s.exportRow}>
+        <button className={s.copyBtn} onClick={handleCopy}>{t('exportPlan')}</button>
         <button className={s.copyBtn} onClick={() => {
           state.trackParam({ param_name: 'export', param_value: 'csv', input_type: 'button' })
           downloadTextFile('macro-stack.csv', buildMacroCsv(state.macroRows), 'text/csv')

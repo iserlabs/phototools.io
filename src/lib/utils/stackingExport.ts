@@ -28,6 +28,14 @@ export function buildDistanceCsv(shots: StackingShot[]): string {
   return ['shot,focus_m,near_m,far_m,step_m', ...rows].join('\n')
 }
 
+export function buildMacroText(
+  magnification: number, aperture: number, effectiveAperture: number, sensorName: string, rows: MacroShotRow[],
+): string {
+  const header = `Macro Focus Stacking Sequence (${magnification.toFixed(2)}× f/${aperture} → f/${effectiveAperture.toFixed(1)} effective, ${sensorName})`
+  const lines = rows.map((r) => `${r.number}. ${formatMm(r.railPositionMm)}`)
+  return [header, ...lines].join('\n')
+}
+
 export function buildMacroCsv(rows: MacroShotRow[]): string {
   const lines = rows.map((r) =>
     [r.number, r.railPositionMm.toFixed(3), r.sliceStartMm.toFixed(3), r.sliceEndMm.toFixed(3)].join(','))

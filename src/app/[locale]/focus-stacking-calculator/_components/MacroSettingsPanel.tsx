@@ -79,8 +79,13 @@ export function MacroSettingsPanel({ state }: { state: StackingState }) {
             {tooltips?.subjectDepth && <InfoTooltip tooltip={tooltips.subjectDepth} />}
           </label>
           <div className={s.numRow}>
-            <input type="range" className={s.slider} min={0.5} max={100} step={0.5}
-              value={Math.min(state.depthMm, 100)}
+            {/* max normally caps at 100 for fine-grained control over the
+                common macro range, but expands to the current value when it
+                arrives out-of-range (e.g. a ?depth=300 deep link) so the
+                slider reflects it exactly instead of silently clamping the
+                real value down to 100 on the next interaction. */}
+            <input type="range" className={s.slider} min={0.5} max={Math.max(100, state.depthMm)} step={0.5}
+              value={state.depthMm}
               onChange={(e) => state.onDepthChange(Number(e.target.value))}
               aria-label={t('subjectDepth')} />
             <input type="number" className={s.numInput} min={0.5} max={500} step={0.5}

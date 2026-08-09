@@ -122,6 +122,26 @@ test.describe('Focus Stacking Calculator', () => {
     await expect(page.locator('[class*="rowActive"]').first()).toBeVisible({ timeout: 2000 })
   })
 
+  // Regression: ShotTable used to call scrollIntoView() on the active row
+  // during the play sweep, which scrolls EVERY scrollable ancestor —
+  // including .canvasArea (given internal scroll by an earlier task). At the
+  // default 1280x720 viewport the canvas stack overflows its slot, so the
+  // first sweep tick used to scroll .canvasArea down and push the SceneStrip
+  // and diagram off-screen — the very thing "Animate stack" is meant to
+  // show. The fix scrolls only the table's own .tableScroll container, so
+  // .canvasArea's scrollTop must stay put across the sweep.
+  test('starting the play sweep does not scroll the canvas area out of view', async ({ page }) => {
+    await page.goto(URL)
+    const canvasArea = page.locator('[class*="canvasArea"]').first()
+
+    const before = await canvasArea.evaluate((el) => el.scrollTop)
+    await page.getByRole('button', { name: 'Animate stack', exact: true }).click()
+    await expect(page.locator('[class*="rowActive"]').first()).toBeVisible({ timeout: 2000 })
+    const after = await canvasArea.evaluate((el) => el.scrollTop)
+
+    expect(after).toBe(before)
+  })
+
   // Additional coverage: macro-mode rail step and effective aperture must
   // render real computed numbers, not placeholder text, NaN, or a leaked
   // interpolation literal like "{max}".

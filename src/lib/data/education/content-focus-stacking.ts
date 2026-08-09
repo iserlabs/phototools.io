@@ -30,8 +30,8 @@ export const FOCUS_STACKING_SKELETON: ToolEducationSkeleton = {
       id: 'stacking-landscape-technique',
       difficulty: 'intermediate',
       targetField: 'focusDistance',
-      optionValues: ['Focus at infinity', 'Focus at hyperfocal', 'Stack from 1m to infinity', 'Use f/22'],
-      correctOption: 'Stack from 1m to infinity',
+      optionValues: ['f/2.8 — widest for fastest shutter', 'f/8 — lens sweet spot', 'f/22 — maximum per-shot depth of field'],
+      correctOption: 'f/8 — lens sweet spot',
     },
     {
       id: 'stacking-overlap-purpose',

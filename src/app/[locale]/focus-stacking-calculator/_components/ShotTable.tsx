@@ -15,12 +15,27 @@ interface ShotTableProps {
 export function ShotTable({ state, playing }: ShotTableProps) {
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const { mode, hoveredShot, setHoveredShot } = state
+  const scrollRef = useRef<HTMLDivElement>(null)
   const bodyRef = useRef<HTMLTableSectionElement>(null)
 
-  // Keep the active row visible during the play sweep
+  // Keep the active row visible during the play sweep, scoped to this table's
+  // own scroll container only. scrollIntoView() would scroll every scrollable
+  // ancestor (including .canvasArea), pushing the diagram it's animating out
+  // of view — see the focus-stacking e2e spec's scroll-containment assertion.
   useEffect(() => {
     if (!playing || hoveredShot === null) return
-    bodyRef.current?.children[hoveredShot]?.scrollIntoView({ block: 'nearest' })
+    const container = scrollRef.current
+    const row = bodyRef.current?.children[hoveredShot] as HTMLElement | undefined
+    if (!container || !row) return
+    const rowTop = row.offsetTop
+    const rowBottom = rowTop + row.offsetHeight
+    const viewTop = container.scrollTop
+    const viewBottom = viewTop + container.clientHeight
+    if (rowTop < viewTop) {
+      container.scrollTop = rowTop
+    } else if (rowBottom > viewBottom) {
+      container.scrollTop = rowBottom - container.clientHeight
+    }
   }, [playing, hoveredShot])
 
   const isDistance = mode === 'distance'
@@ -29,7 +44,7 @@ export function ShotTable({ state, playing }: ShotTableProps) {
   return (
     <details className={s.tableWrap} open>
       <summary className={s.tableSummary}>{t('shotTable')} ({rows.length})</summary>
-      <div className={s.tableScroll} onMouseLeave={() => { if (!playing) setHoveredShot(null) }}>
+      <div ref={scrollRef} className={s.tableScroll} onMouseLeave={() => { if (!playing) setHoveredShot(null) }}>
         <table className={s.table}>
           <thead>
             <tr>
