@@ -46,6 +46,19 @@
       "tableCropFactor": "क्रॉप फ़ैक्टर",
       "tableAspectCrop": "आस्पेक्ट क्रॉप",
       "canvasAriaLabel": "{mode} मोड में सेंसर साइज़ तुलना",
+      "compare": {
+        "title": "तुलना",
+        "compareWith": "तुलना करें…",
+        "compareTheseTwo": "इन दोनों की तुलना करें",
+        "close": "तुलना बंद करें",
+        "representativeResolution": "रिज़ॉल्यूशन",
+        "notApplicable": "—",
+        "verdictLight": "{larger} यहाँ लगभग {ratio}× ज़्यादा रोशनी लेता है ({ev})।",
+        "verdictReach": "{smaller} उसी लेंस से {factor}× ज़्यादा रीच देता है।",
+        "verdictNearEqual": "ये दोनों अपने क्षेत्रफल के हिसाब से लगभग बराबर रोशनी लेते हैं।",
+        "crossFocal": "{from} पर {focal}mm लेंस {to} पर {eqFocal}mm जैसा फ़्रेम देता है।",
+        "areaRelation": "{a} का क्षेत्रफल {b} से {ratio}× ज़्यादा है।"
+      },
       "detail": {
         "diagonal": "डायगनल",
         "area": "क्षेत्रफल",

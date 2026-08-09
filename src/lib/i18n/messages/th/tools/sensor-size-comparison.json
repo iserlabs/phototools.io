@@ -46,6 +46,19 @@
       "tableCropFactor": "ครอปแฟกเตอร์",
       "tableAspectCrop": "ครอปอัตราส่วน",
       "canvasAriaLabel": "เปรียบเทียบขนาดเซ็นเซอร์ในโหมด {mode}",
+      "compare": {
+        "title": "เปรียบเทียบ",
+        "compareWith": "เปรียบเทียบกับ…",
+        "compareTheseTwo": "เปรียบเทียบสองรายการนี้",
+        "close": "ปิดการเปรียบเทียบ",
+        "representativeResolution": "ความละเอียด",
+        "notApplicable": "—",
+        "verdictLight": "{larger} เก็บแสงได้มากกว่าประมาณ {ratio}× ({ev})",
+        "verdictReach": "{smaller} ให้ระยะเพิ่มขึ้น {factor}× ด้วยเลนส์ตัวเดียวกัน",
+        "verdictNearEqual": "ทั้งสองตัวนี้เก็บแสงได้ใกล้เคียงกันมากเมื่อเทียบตามพื้นที่",
+        "crossFocal": "เลนส์ {focal}mm บน {from} ให้มุมภาพเทียบเท่ากับ {eqFocal}mm บน {to}",
+        "areaRelation": "{a} มีพื้นที่มากกว่า {b} อยู่ {ratio}×"
+      },
       "detail": {
         "diagonal": "เส้นทแยงมุม",
         "area": "พื้นที่",

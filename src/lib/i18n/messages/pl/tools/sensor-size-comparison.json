@@ -46,6 +46,19 @@
       "tableCropFactor": "Wsp. kadrowania",
       "tableAspectCrop": "Kadrowanie proporcji",
       "canvasAriaLabel": "Porównanie rozmiarów matryc w trybie {mode}",
+      "compare": {
+        "title": "Porównanie",
+        "compareWith": "Porównaj z…",
+        "compareTheseTwo": "Porównaj te dwie",
+        "close": "Zamknij porównanie",
+        "representativeResolution": "Rozdzielczość",
+        "notApplicable": "—",
+        "verdictLight": "{larger} zbiera około {ratio}× więcej światła ({ev}).",
+        "verdictReach": "{smaller} zapewnia {factor}× większy zasięg przy tym samym obiektywie.",
+        "verdictNearEqual": "Te dwie matryce zbierają niemal identyczną ilość światła w przeliczeniu na powierzchnię.",
+        "crossFocal": "Obiektyw {focal}mm ({from}) kadruje tak samo jak {eqFocal}mm ({to}).",
+        "areaRelation": "{a} ma {ratio}× większą powierzchnię niż {b}."
+      },
       "detail": {
         "diagonal": "Przekątna",
         "area": "Powierzchnia",
