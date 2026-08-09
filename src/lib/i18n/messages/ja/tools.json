@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "フォーカススタッキング計算ツール",
-      "description": "手前から奥までシャープに仕上げるためのピント位置を計算"
+      "description": "正確なピント距離、必要ショット数、マクロレールステップでフォーカススタックを計画"
     },
     "equivalent-settings-calculator": {
       "name": "等価設定計算ツール",

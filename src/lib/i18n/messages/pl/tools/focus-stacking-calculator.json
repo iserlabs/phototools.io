@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Ustawienia",
       "camera": "Aparat i obiektyw",
       "focalLength": "Ogniskowa",
       "aperture": "Przysłona",
@@ -10,7 +9,6 @@
       "nearLimit": "Bliska granica",
       "farLimit": "Daleka granica",
       "overlap": "Nakładanie",
-      "overlapDescription": "Procent nakładania GoO między sąsiednimi ujęciami zapewniający płynne łączenie",
       "results": "Wyniki",
       "shotCount": "Wymagane ujęcia",
       "totalDepth": "Całkowita głębokość",
@@ -25,18 +23,60 @@
       "diagramFar": "Daleko",
       "diagramCoverage": "Pokrycie",
       "diagramFocusPoints": "Pkt ostrości",
-      "diagramShot": "Ujęcie {number}",
-      "diagramOverlap": "Strefa nakładania",
-      "diagramSharpZone": "Strefa ostrości",
       "diagramSubject": "Obiekt",
-      "diagramSensor": "Matryca",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Ostrzeżenie",
       "tooFewShots": "Zakres głębokości mieści się w jednym ujęciu — stacking nie jest potrzebny",
       "tooManyShots": "Ten plan wymaga wielu ujęć. Rozważ węższą przysłonę, aby zmniejszyć liczbę.",
       "macroMode": "Makro",
-      "landscapeMode": "Krajobraz"
+      "modeTitle": "Tryb",
+      "distanceMode": "Odległość",
+      "magnification": "Powiększenie",
+      "subjectDepth": "Głębokość obiektu",
+      "sliceDoF": "GoO wycinka",
+      "railStep": "Krok szyny",
+      "effectiveAperture": "Efektywna przysłona",
+      "railTravel": "Całkowity ruch szyny",
+      "farLimitInfinity": "Stackuj do nieskończoności",
+      "tableShot": "Ujęcie",
+      "tableFocusDistance": "Odległość ostrości",
+      "tableNear": "Bliska krawędź",
+      "tableFar": "Daleka krawędź",
+      "tableRailPosition": "Pozycja szyny",
+      "shotTable": "Lista ujęć",
+      "animateStack": "Animuj stack",
+      "pauseStack": "Wstrzymaj",
+      "diffractionWarning": "Przy f/{aperture} dyfrakcja zmiękcza obraz na tej matrycy. Rozważ szerszą przysłonę — stack zapewnia głębokość.",
+      "diffractionWarningMacro": "Przy powiększeniu {magnification}×, f/{aperture} działa jak f/{effective}. Pozostań przy f/{max} lub szerszej dla maksymalnej ostrości.",
+      "coverageWarning": "Osiągnięto limit ujęć przed pokryciem pełnego zakresu. Użyj węższego zakresu, większej GoO na ujęcie lub podziel stack.",
+      "hyperfocalHint": "Pojedyncze ujęcie ustawione na odległość hiperfokalną ({distance}) pokrywa cały ten zakres — stacking nie jest potrzebny.",
+      "sceneCamera": "Aparat",
+      "sceneRail": "Ruch szyny",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Czym jest focus stacking?",
+          "answer": "Focus stacking łączy wiele zdjęć wykonanych przy różnych odległościach ogniskowania w jeden obraz ostry od przodu do tyłu. Oprogramowanie zachowuje najostrzejsze piksele z każdej klatki. Jest niezbędny w makrofotografii, gdzie głębia ostrości pojedynczej klatki może wynosić poniżej milimetra, i przydatny w krajobrazach, gdy zarówno bliski pierwszy plan, jak i odległe tło muszą być ostre."
+        },
+        "how-much-overlap": {
+          "question": "Ile nakładania potrzebują ujęcia focus stackingu?",
+          "answer": "20–30% nakładania między sąsiednimi ujęciami to praktyczny standard. Nakładanie daje oprogramowaniu do łączenia tolerancję wyrównania; zbyt mało tworzy miękkie luki między wycinkami, a ponad 50% dodaje klatki bez poprawy rezultatu."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Jaka jest najlepsza przysłona do focus stackingu?",
+          "answer": "Umiarkowana przysłona w okolicach f/5.6–f/8 zwykle daje najostrzejszy stack. Dalsze przymykanie dodaje głębię na ujęcie, ale kosztuje ostrość przez dyfrakcję — a przy powiększeniu makro efektywna przysłona to N × (1 + m), więc f/8 przy 1:1 zachowuje się już jak f/16. Stack dostarcza głębię, więc fotografuj każdą klatkę przy najostrzejszej przysłonie obiektywu."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Powinienem stackować czy użyć odległości hiperfokalnej?",
+          "answer": "Jeśli pojedyncze ujęcie ustawione na odległość hiperfokalną pokrywa twój najbliższy obiekt w akceptowalny sposób, stacking jest zbędny. Stackuj, gdy pierwszy plan jest bliżej niż połowa odległości hiperfokalnej, lub gdy chcesz krytycznej ostrości, a nie tylko akceptowalnej ostrości w całej klatce."
+        },
+        "what-is-a-rail-step": {
+          "question": "Czym jest krok szyny w stackingu makro?",
+          "answer": "„Krok szyny” to odległość, o jaką szyna ogniskowania makro przesuwa aparat między ujęciami: GoO wycinka × (1 − nakładanie). Przy 1:1 na pełnej klatce, f/8 i 20% nakładaniu, to około 0.77 mm; przy wyższym powiększeniu kurczy się do kroków poniżej milimetra, dlatego używa się szyn lub automatycznego bracketingu ostrości w aparacie."
+        },
+        "what-software-merges-stacks": {
+          "question": "Jakie oprogramowanie łączy focus stacki?",
+          "answer": "Helicon Focus i Zerene Stacker to dedykowane narzędzia; Adobe Photoshop łączy stacki za pomocą Auto-Align i Auto-Blend Layers. Cała trójka wyrównuje klatki (powiększenie nieznacznie się zmienia wraz ze zmianą ostrości) i automatycznie miesza najostrzejsze obszary każdej klatki."
+        }
+      }
     }
   }
 }

@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Asetukset",
       "camera": "Kamera ja objektiivi",
       "focalLength": "Polttoväli",
       "aperture": "Aukko",
@@ -10,7 +9,6 @@
       "nearLimit": "Lähiraja",
       "farLimit": "Kaukaraja",
       "overlap": "Limitys",
-      "overlapDescription": "Vierekkäisten ruutujen syväterävyyksien limitysprosentti — varmistaa saumattoman yhdistämisen",
       "results": "Tulokset",
       "shotCount": "Tarvittavat kuvat",
       "totalDepth": "Syvyys yhteensä",
@@ -25,18 +23,60 @@
       "diagramFar": "Kauko",
       "diagramCoverage": "Peitto",
       "diagramFocusPoints": "Tark.pist.",
-      "diagramShot": "Kuva {number}",
-      "diagramOverlap": "Limitysalue",
-      "diagramSharpZone": "Terävä alue",
       "diagramSubject": "Kohde",
-      "diagramSensor": "Kenno",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Varoitus",
       "tooFewShots": "Koko syvyysalue mahtuu yhteen kuvaan — pinoamista ei tarvita",
       "tooManyShots": "Tämä suunnitelma vaatii paljon kuvia. Harkitse pienempää aukkoa (suurempaa f-lukua), niin saat määrää vähennettyä.",
       "macroMode": "Makro",
-      "landscapeMode": "Maisema"
+      "modeTitle": "Tila",
+      "distanceMode": "Etäisyys",
+      "magnification": "Suurennos",
+      "subjectDepth": "Kohteen syvyys",
+      "sliceDoF": "Syväterävyys / viipale",
+      "railStep": "Kiskoaskel",
+      "effectiveAperture": "Tehollinen aukko",
+      "railTravel": "Kiskon kokonaisliike",
+      "farLimitInfinity": "Pinoa äärettömään asti",
+      "tableShot": "Kuva",
+      "tableFocusDistance": "Tarkennusetäisyys",
+      "tableNear": "Lähireuna",
+      "tableFar": "Kaukoreuna",
+      "tableRailPosition": "Kiskon sijainti",
+      "shotTable": "Kuvalista",
+      "animateStack": "Animoi pino",
+      "pauseStack": "Tauko",
+      "diffractionWarning": "Aukolla f/{aperture} diffraktio pehmentää kuvaa tällä kennolla. Harkitse suurempaa aukkoa (pienempää f-lukua) — pino huolehtii syvyydestä.",
+      "diffractionWarningMacro": "Suurennuksella {magnification}× f/{aperture} vastaa aukkoa f/{effective}. Pysy aukossa f/{max} tai sitä suuremmassa maksimaalisen terävyyden saavuttamiseksi.",
+      "coverageWarning": "Kuvamäärän yläraja tuli vastaan ennen kuin koko alue oli katettu. Käytä kapeampaa aluetta, enemmän syväterävyyttä per kuva tai jaa pino osiin.",
+      "hyperfocalHint": "Yksi kuva, joka on tarkennettu hyperfokaalietäisyyteen ({distance}), kattaa koko tämän alueen — pinoamista ei tarvita.",
+      "sceneCamera": "Kamera",
+      "sceneRail": "Kiskon liike",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Mitä tarkennuspinoaminen on?",
+          "answer": "Tarkennuspinoaminen yhdistää useita eri tarkennusetäisyyksiltä otettuja kuvia yhdeksi kuvaksi, joka on terävä etualasta taustaan. Ohjelmisto säilyttää jokaisesta ruudusta terävimmät pikselit. Se on välttämätöntä makrokuvauksessa, jossa yhden ruudun syväterävyys voi olla alle millimetrin, ja hyödyllistä maisemissa, kun sekä lähellä oleva etuala että kaukainen tausta täytyy saada teräväksi."
+        },
+        "how-much-overlap": {
+          "question": "Kuinka paljon limitystä tarkennuspinon kuvat tarvitsevat?",
+          "answer": "20–30% limitys vierekkäisten kuvien välillä on käytännön standardi. Limitys antaa yhdistämisohjelmistolle kohdistusvaraa; liian pieni jättää pehmeitä aukkoja viipaleiden väliin, kun taas yli noin 50% vain lisää kuvia parantamatta lopputulosta."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Mikä on paras aukko tarkennuspinoamiseen?",
+          "answer": "Maltillinen aukko, noin f/5.6–f/8, antaa yleensä terävimmän pinon. Aukon pienentäminen edelleen lisää syvyyttä per kuva, mutta vie terävyyttä diffraktiolle — ja makrosuurennuksella tehollinen aukko on N × (1 + m), joten f/8 kohteessa 1:1 käyttäytyy jo kuin f/16. Pino tuottaa syvyyden, joten kuvaa jokainen ruutu objektiivin terävimmällä aukolla."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Kannattaako minun pinota tarkennus vai käyttää hyperfokaalietäisyyttä?",
+          "answer": "Jos yksi kuva, joka on tarkennettu hyperfokaalietäisyyteen, kattaa lähimmän kohteesi riittävän hyvin, pinoaminen on tarpeetonta. Pinoa, kun etuala on lähempänä kuin puolet hyperfokaalietäisyydestä, tai kun haluat kriittisen terävyyden pelkän hyväksyttävän terävyyden sijaan koko kuva-alalla."
+        },
+        "what-is-a-rail-step": {
+          "question": "Mikä on kiskoaskel makropinoamisessa?",
+          "answer": "Kiskoaskel kertoo, kuinka pitkälle makrotarkennuskisko siirtää kameraa kuvien välillä: viipaleen syväterävyys × (1 − limitys). Täydellä kennolla 1:1-suhteessa aukolla f/8 ja 20% limityksellä se on noin 0.77 mm; suuremmalla suurennoksella se kutistuu alle millimetrin askeliin, minkä vuoksi käytetään kiskoja tai automaattista kameran sisäistä tarkennushaarukointia."
+        },
+        "what-software-merges-stacks": {
+          "question": "Millä ohjelmalla tarkennuspinot yhdistetään?",
+          "answer": "Helicon Focus ja Zerene Stacker ovat tähän tarkoitettuja ohjelmia; Adobe Photoshop yhdistää pinot Auto-Align- ja Auto-Blend Layers -toiminnoilla. Kaikki kolme kohdistavat ruudut (suurennos muuttuu hieman tarkennuksen vaihtuessa) ja sekoittavat automaattisesti kunkin ruudun terävimmät alueet."
+        }
+      }
     }
   }
 }

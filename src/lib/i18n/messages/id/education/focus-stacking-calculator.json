@@ -14,6 +14,10 @@
         "2": {
           "heading": "Penggabungan & Penyelarasan",
           "text": "Software seperti Photoshop, Helicon Focus, atau Zerene Stacker menyelaraskan frame (pergeseran pembesaran kecil terjadi saat fokus berubah), kemudian memilih piksel tertajam dari setiap layer. Memotret di tripod yang kokoh dengan pencahayaan konsisten dan menggunakan focus rail untuk peningkatan yang presisi menghasilkan hasil terbersih."
+        },
+        "3": {
+          "heading": "Apertur Efektif pada Pembesaran",
+          "text": "Seiring meningkatnya pembesaran, ekstensi lensa membuat apertur kerja menjadi lebih gelap dan lebih rentan difraksi: apertur efektif = angka f × (1 + pembesaran). Pada 1:1, f/8 berperilaku seperti f/16; pada 2:1 berperilaku seperti f/24. Inilah sebabnya stack makro dipotret pada apertur nominal moderat — nilai efektiflah yang \"dilihat\" oleh difraksi. Mode makro kalkulator melaporkan apertur efektif dan angka f terlebar yang tetap tajam secara difraksi pada sensor Anda."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Jumlah Foto",
           "definition": "Total jumlah frame yang diperlukan untuk menutupi rentang kedalaman dengan tumpang tindih yang ditentukan. Lebih banyak foto = lebih banyak pemrosesan tetapi hasil lebih halus."
+        },
+        "magnification": {
+          "term": "Pembesaran",
+          "definition": "Rasio ukuran subjek terhadap sensor. 1:1 (1.0×) berarti subjek diproyeksikan dalam ukuran asli ke sensor. Langkah rail dan kedalaman irisan hanya bergantung pada pembesaran, apertur, dan sensor — bukan jarak."
+        },
+        "effectiveAperture": {
+          "term": "Apertur Efektif",
+          "definition": "Angka f kerja setelah pembesaran: N × (1 + m). Difraksi dan eksposur mengikuti nilai ini, bukan angka pada lensa."
+        },
+        "railStep": {
+          "term": "Langkah Rail",
+          "definition": "Seberapa jauh rail fokus bergerak antar foto: kedalaman bidang irisan × (1 − tumpang tindih). Di bawah satu milimeter pada pembesaran tinggi."
+        },
+        "subjectDepth": {
+          "term": "Kedalaman Subjek",
+          "definition": "Kedalaman subjek Anda dari depan ke belakang, diukur dalam milimeter — total jarak yang harus dicakup stack dari titik terdekat hingga titik terjauh yang ingin Anda tajamkan."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "ISO terlalu tinggi"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Anda memotret pada f/8 dan pembesaran 2×. Berapa apertur efektif Anda?",
+          "hint": "Apertur efektif = angka f × (1 + pembesaran).",
+          "successMessage": "Benar! f/8 × (1 + 2) = f/24. Difraksi pada 2× dinilai pada f/24, bukan f/8 — itulah sebabnya pekerjaan pembesaran tinggi menggunakan apertur nominal moderat.",
+          "failureMessage": "Apertur efektif = N × (1 + m) = 8 × 3 = f/24. Penanda pada lensa meremehkan apertur kerja pada pembesaran.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Kedalaman bidang irisan Anda adalah 0.5 mm dan Anda menginginkan tumpang tindih 20% antar irisan. Langkah rail apa yang harus Anda gunakan?",
+          "hint": "Langkah = kedalaman irisan × (1 − tumpang tindih).",
+          "successMessage": "Benar! 0.5 mm × 0.8 = 0.4 mm per langkah. 0.1 mm yang Anda kembalikan pada setiap langkah adalah asuransi penyelarasan yang membuat stack tergabung dengan bersih.",
+          "failureMessage": "Langkah = irisan × (1 − tumpang tindih) = 0.5 × 0.8 = 0.4 mm. Melangkah penuh 0.5 mm akan menyisakan nol tumpang tindih dan sambungan yang terlihat.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

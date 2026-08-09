@@ -14,6 +14,10 @@
         "2": {
           "heading": "Samenvoegen en uitlijnen",
           "text": "Software zoals Photoshop, Helicon Focus of Zerene Stacker lijnt de frames uit (bij elke scherpstelverandering ontstaan kleine vergrotingsverschuivingen) en kiest vervolgens de scherpste pixels uit elke laag. Werken vanaf een stevig statief met constante belichting en een macroslede voor precieze stappen levert de zuiverste resultaten op."
+        },
+        "3": {
+          "heading": "Effectief diafragma bij vergroting",
+          "text": "Naarmate de vergroting toeneemt, maakt de lensuittrek het werkdiafragma donkerder en gevoeliger voor diffractie: effectief diafragma = f-getal × (1 + vergroting). Bij 1:1 gedraagt f/8 zich als f/16; bij 2:1 als f/24. Daarom worden macrostacks gefotografeerd op gematigde nominale diafragma's — diffractie reageert op de effectieve waarde. De macromodus van de calculator toont het effectieve diafragma en het grootste diafragma (kleinste f-getal) dat op jouw sensor nog diffractiescherp blijft."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Aantal opnamen",
           "definition": "Het totale aantal frames dat nodig is om het dieptebereik met de opgegeven overlap te dekken. Meer opnamen betekent meer verwerking, maar een soepeler resultaat."
+        },
+        "magnification": {
+          "term": "Vergroting",
+          "definition": "Verhouding tussen onderwerpgrootte en sensorgrootte. 1:1 (1.0×) betekent dat het onderwerp op ware grootte op de sensor wordt geprojecteerd. Sledestap en scherptediepte per plakje hangen alleen af van vergroting, diafragma en sensor — niet van afstand."
+        },
+        "effectiveAperture": {
+          "term": "Effectief diafragma",
+          "definition": "Het werkelijke f-getal na vergroting: N × (1 + m). Diffractie en belichting volgen deze waarde, niet het getal op de lens."
+        },
+        "railStep": {
+          "term": "Sledestap",
+          "definition": "Hoe ver de scherpstelslede tussen opnamen opschuift: scherptediepte per plakje × (1 − overlap). Onder de millimeter bij hoge vergroting."
+        },
+        "subjectDepth": {
+          "term": "Onderwerpdiepte",
+          "definition": "De diepte van je onderwerp van voor naar achter, gemeten in millimeters — de totale afstand die de stack moet overbruggen van het dichtstbijzijnde tot het verste punt dat je scherp wilt hebben."
         }
       },
       "challenges": {
@@ -78,10 +98,18 @@
           "successMessage": "Klopt! Met 4 mm scherptediepte en 25% overlap schuift elke stap 3 mm op. 30 mm / 3 mm = 10 opnamen om de hele bloem te dekken.",
           "failureMessage": "Bij 25% overlap is de effectieve stap per frame 75% van de scherptediepte: 4 mm × 0,75 = 3 mm. Je hebt dus 30 mm / 3 mm = 10 opnamen nodig.",
           "options": {
-            "0": { "label": "5 opnamen" },
-            "1": { "label": "10 opnamen" },
-            "2": { "label": "20 opnamen" },
-            "3": { "label": "30 opnamen" }
+            "0": {
+              "label": "5 opnamen"
+            },
+            "1": {
+              "label": "10 opnamen"
+            },
+            "2": {
+              "label": "20 opnamen"
+            },
+            "3": {
+              "label": "30 opnamen"
+            }
           }
         },
         "1": {
@@ -90,9 +118,15 @@
           "successMessage": "Klopt! f/8 is bij de meeste lenzen het scherpste diafragma. f/2.8 geeft te weinig scherptediepte per opname (en dus extra frames) en f/22 heeft last van diffractieverzachting.",
           "failureMessage": "f/8 is de beste keuze. f/2.8 geeft per opname een flinterdunne scherptediepte (waardoor je veel meer frames nodig hebt) en f/22 brengt diffractieverzachting met zich mee, wat het hele doel van stacking voor scherpte onderuithaalt.",
           "options": {
-            "0": { "label": "f/2.8 — grootste opening voor de snelste sluitertijd" },
-            "1": { "label": "f/8 — sweet spot van de lens" },
-            "2": { "label": "f/22 — maximale scherptediepte per opname" }
+            "0": {
+              "label": "f/2.8 — grootste opening voor de snelste sluitertijd"
+            },
+            "1": {
+              "label": "f/8 — sweet spot van de lens"
+            },
+            "2": {
+              "label": "f/22 — maximale scherptediepte per opname"
+            }
           }
         },
         "2": {
@@ -101,10 +135,58 @@
           "successMessage": "Precies! Te weinig overlap tussen aangrenzende frames laat een gat ontstaan waar geen van beide opnamen scherp is. Zet de overlap op 25 tot 30% en fotografeer opnieuw.",
           "failureMessage": "Een zachte band betekent meestal dat de scherpstelstappen te groot waren — de scherptediepte van aangrenzende frames overlapte te weinig. Verhoog het overlappercentage.",
           "options": {
-            "0": { "label": "Het diafragma was te groot" },
-            "1": { "label": "Te weinig overlap tussen de scherpstelstappen" },
-            "2": { "label": "Het statief bewoog tijdens de reeks" },
-            "3": { "label": "De ISO stond te hoog" }
+            "0": {
+              "label": "Het diafragma was te groot"
+            },
+            "1": {
+              "label": "Te weinig overlap tussen de scherpstelstappen"
+            },
+            "2": {
+              "label": "Het statief bewoog tijdens de reeks"
+            },
+            "3": {
+              "label": "De ISO stond te hoog"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Je fotografeert op f/8 en 2× vergroting. Wat is je effectieve diafragma?",
+          "hint": "Effectief diafragma = f-getal × (1 + vergroting).",
+          "successMessage": "Klopt! f/8 × (1 + 2) = f/24. Bij 2× wordt diffractie beoordeeld op f/24, niet op f/8 — daarom wordt bij hoge vergroting met gematigde nominale diafragma's gewerkt.",
+          "failureMessage": "Effectief diafragma = N × (1 + m) = 8 × 3 = f/24. De diafragma-aanduiding op de lens onderschat het werkelijke werkdiafragma bij vergroting.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Je scherptediepte per plakje is 0.5 mm en je wilt 20% overlap tussen plakjes. Welke sledestap moet je gebruiken?",
+          "hint": "Stap = scherptediepte van het plakje × (1 − overlap).",
+          "successMessage": "Klopt! 0.5 mm × 0.8 = 0.4 mm per stap. De 0.1 mm die je bij elke stap teruggeeft, is de uitlijnmarge die ervoor zorgt dat de stack netjes samenvoegt.",
+          "failureMessage": "Stap = plakje × (1 − overlap) = 0.5 × 0.8 = 0.4 mm. De volledige 0.5 mm verplaatsen zou geen overlap overlaten en zichtbare naden geven.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
+            }
           }
         }
       }

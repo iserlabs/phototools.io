@@ -14,6 +14,10 @@
         "2": {
           "heading": "Sammenføyning og justering",
           "text": "Programvare som Photoshop, Helicon Focus eller Zerene Stacker justerer rammene (det oppstår små forstørrelsesendringer når fokus endres) og velger de skarpeste pikslene fra hvert lag. Stødig stativ, jevn belysning og en fokusrigg med presise steg gir det reneste resultatet."
+        },
+        "3": {
+          "heading": "Effektiv blender ved forstørrelse",
+          "text": "Etter hvert som forstørrelsen øker, gjør objektivforlengelsen arbeidsblenderen mørkere og mer utsatt for diffraksjon: effektiv blender = f-tall × (1 + forstørrelse). Ved 1:1 oppfører f/8 seg som f/16; ved 2:1 oppfører den seg som f/24. Det er derfor makrostacks fotograferes med moderate nominelle blenderåpninger — det er den effektive verdien diffraksjonen rammer. Kalkulatorens makromodus viser den effektive blenderen og den videste blenderåpningen som fortsatt er diffraksjonsskarp på sensoren din."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Antall bilder",
           "definition": "Totalt antall bilder som trengs for å dekke dybdeområdet med valgt overlapp. Flere bilder = mer etterarbeid, men jevnere resultat."
+        },
+        "magnification": {
+          "term": "Forstørrelse",
+          "definition": "Forholdet mellom motiv- og sensorstørrelse. 1:1 (1.0×) betyr at motivet projiseres i naturlig størrelse på sensoren. Riggsteg og skivedybde avhenger bare av forstørrelse, blender og sensor — ikke av avstand."
+        },
+        "effectiveAperture": {
+          "term": "Effektiv blender",
+          "definition": "Arbeidsblenderen etter forstørrelse: N × (1 + m). Diffraksjon og eksponering følger denne verdien, ikke tallet som står på objektivet."
+        },
+        "railStep": {
+          "term": "Riggsteg",
+          "definition": "Hvor langt fokusriggen flytter seg mellom bildene: dybdeskarphet per skive × (1 − overlapp). Under en millimeter ved høy forstørrelse."
+        },
+        "subjectDepth": {
+          "term": "Motivdybde",
+          "definition": "Motivets dybde fra front til bak, målt i millimeter — den totale avstanden stacken må dekke fra det nærmeste punktet du vil ha skarpt, til det fjerneste."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "ISO var for høy"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Du fotograferer på f/8 og 2× forstørrelse. Hva er din effektive blender?",
+          "hint": "Effektiv blender = f-tall × (1 + forstørrelse).",
+          "successMessage": "Riktig! f/8 × (1 + 2) = f/24. Diffraksjon ved 2× vurderes ved f/24, ikke f/8 — det er derfor arbeid ved høy forstørrelse bruker moderate nominelle blenderåpninger.",
+          "failureMessage": "Effektiv blender = N × (1 + m) = 8 × 3 = f/24. Merkingen på objektivet undervurderer arbeidsblenderen ved forstørrelse.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Skivens dybdeskarphet er 0.5 mm, og du vil ha 20% overlapp mellom skivene. Hvilket riggsteg bør du bruke?",
+          "hint": "Steg = skivedybde × (1 − overlapp).",
+          "successMessage": "Riktig! 0.5 mm × 0.8 = 0.4 mm per steg. De 0.1 mm du gir tilbake på hvert steg, er justeringsreserven som gjør at stacks føyes sammen rent.",
+          "failureMessage": "Steg = skive × (1 − overlapp) = 0.5 × 0.8 = 0.4 mm. Å ta fulle 0.5 mm per steg ville gitt null overlapp og synlige skjøter.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

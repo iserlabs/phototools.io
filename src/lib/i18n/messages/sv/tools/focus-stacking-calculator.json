@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Inställningar",
       "camera": "Kamera och objektiv",
       "focalLength": "Brännvidd",
       "aperture": "Bländare",
@@ -10,7 +9,6 @@
       "nearLimit": "Närgräns",
       "farLimit": "Bortre gräns",
       "overlap": "Överlapp",
-      "overlapDescription": "Hur stor del av skärpedjupet som ska överlappa mellan närliggande bilder för jämn hopfogning",
       "results": "Resultat",
       "shotCount": "Antal bilder",
       "totalDepth": "Totalt djup",
@@ -25,18 +23,60 @@
       "diagramFar": "Bortre",
       "diagramCoverage": "Täckning",
       "diagramFocusPoints": "Fokuspkt",
-      "diagramShot": "Bild {number}",
-      "diagramOverlap": "Överlappszon",
-      "diagramSharpZone": "Skarp zon",
       "diagramSubject": "Motiv",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Varning",
       "tooFewShots": "Djupområdet täcks av en enda bild — ingen stacking behövs",
       "tooManyShots": "Den här planen kräver många bilder. Överväg en mindre bländare för att minska antalet.",
       "macroMode": "Makro",
-      "landscapeMode": "Landskap"
+      "modeTitle": "Läge",
+      "distanceMode": "Avstånd",
+      "magnification": "Förstoring",
+      "subjectDepth": "Motivdjup",
+      "sliceDoF": "Skärpedjup per skiva",
+      "railStep": "Railsteg",
+      "effectiveAperture": "Effektiv bländare",
+      "railTravel": "Total railsträcka",
+      "farLimitInfinity": "Stacka till oändligheten",
+      "tableShot": "Bild",
+      "tableFocusDistance": "Fokusavstånd",
+      "tableNear": "Närkant",
+      "tableFar": "Bortre kant",
+      "tableRailPosition": "Railposition",
+      "shotTable": "Bildlista",
+      "animateStack": "Animera stack",
+      "pauseStack": "Pausa",
+      "diffractionWarning": "Vid f/{aperture} gör diffraktion att bilden mjukas upp på den här sensorn. Överväg en större bländare — stacken ger djupet.",
+      "diffractionWarningMacro": "Vid {magnification}× beter sig f/{aperture} som f/{effective}. Håll dig vid f/{max} eller större för maximal skärpa.",
+      "coverageWarning": "Bildtaket nåddes innan hela intervallet täcktes. Använd ett smalare intervall, mer skärpedjup per bild, eller dela upp stacken.",
+      "hyperfocalHint": "En enda bild fokuserad på hyperfokalavståndet ({distance}) täcker hela det här intervallet — ingen stacking behövs.",
+      "sceneCamera": "Kamera",
+      "sceneRail": "Railsträcka",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Vad är focus stacking?",
+          "answer": "Focus stacking kombinerar flera bilder tagna på olika fokusavstånd till en enda bild med skärpa från förgrund till bakgrund. Programvaran behåller de skarpaste pixlarna från varje bildruta. Tekniken är oumbärlig i makrofotografering, där skärpedjupet i en enda bild kan vara mindre än en millimeter, och användbar i landskapsfoto när både en nära förgrund och en avlägsen bakgrund ska vara skarpa."
+        },
+        "how-much-overlap": {
+          "question": "Hur mycket överlapp behöver bilderna i en focus stack?",
+          "answer": "20–30% överlapp mellan intilliggande bilder är den praktiska standarden. Överlappet ger programvaran marginal för alignment; för lite skapar mjuka glapp mellan skivorna, medan mer än cirka 50% bara lägger till bilder utan att förbättra resultatet."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Vilken bländare är bäst för focus stacking?",
+          "answer": "En måttlig bländare runt f/5.6–f/8 ger vanligtvis den skarpaste stacken. Att blända ned ytterligare ger mer djup per bild men kostar skärpa på grund av diffraktion — och vid makroförstoring är den effektiva bländaren N × (1 + m), så f/8 vid 1:1 beter sig redan som f/16. Stacken ger djupet, så fotografera varje bild vid objektivets skarpaste bländare."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Ska jag stacka eller använda hyperfokalavståndet?",
+          "answer": "Om en enda bild fokuserad på hyperfokalavståndet täcker ditt närmaste motiv acceptabelt är stacking onödigt. Stacka när förgrunden är närmare än halva hyperfokalavståndet, eller när du vill ha kritisk skärpa snarare än bara acceptabel skärpa över hela bilden."
+        },
+        "what-is-a-rail-step": {
+          "question": "Vad är ett railsteg vid makrostacking?",
+          "answer": "Railsteget är hur långt en makrofokusrail flyttar kameran mellan bilder: skärpedjup per skiva × (1 − överlapp). Vid 1:1 på fullformat vid f/8 med 20% överlapp är det ungefär 0.77 mm; vid högre förstoring krymper det till bråkdelar av en millimeter, vilket är varför man använder rails eller kamerans egen automatiska fokusbracketing."
+        },
+        "what-software-merges-stacks": {
+          "question": "Vilken programvara fogar ihop focus stacks?",
+          "answer": "Helicon Focus och Zerene Stacker är de dedikerade verktygen; Adobe Photoshop fogar ihop stackar via Auto-Align och Auto-Blend Layers. Alla tre passar in bildrutorna mot varandra (förstoringen ändras något när fokus ändras) och blandar automatiskt de skarpaste områdena i varje bildruta."
+        }
+      }
     }
   }
 }

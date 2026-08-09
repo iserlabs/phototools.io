@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Cài đặt",
       "camera": "Máy ảnh & Ống kính",
       "focalLength": "Tiêu cự",
       "aperture": "Khẩu độ",
@@ -10,7 +9,6 @@
       "nearLimit": "Giới hạn gần",
       "farLimit": "Giới hạn xa",
       "overlap": "Chồng lấp",
-      "overlapDescription": "Phần trăm chồng lấp chiều sâu trường ảnh giữa các ảnh liền kề để đảm bảo ghép liền mạch",
       "results": "Kết quả",
       "shotCount": "Số ảnh cần",
       "totalDepth": "Tổng chiều sâu",
@@ -25,18 +23,60 @@
       "diagramFar": "Xa",
       "diagramCoverage": "Bao phủ",
       "diagramFocusPoints": "Điểm nét",
-      "diagramShot": "Ảnh {number}",
-      "diagramOverlap": "Vùng chồng lấp",
-      "diagramSharpZone": "Vùng nét",
       "diagramSubject": "Chủ thể",
-      "diagramSensor": "Cảm biến",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Cảnh báo",
       "tooFewShots": "Phạm vi chiều sâu nằm trong một ảnh đơn — không cần chồng",
       "tooManyShots": "Kế hoạch này cần nhiều ảnh. Hãy xem xét khẩu độ hẹp hơn để giảm số lượng.",
       "macroMode": "Macro",
-      "landscapeMode": "Phong cảnh"
+      "modeTitle": "Chế độ",
+      "distanceMode": "Khoảng cách",
+      "magnification": "Độ phóng đại",
+      "subjectDepth": "Chiều sâu chủ thể",
+      "sliceDoF": "Chiều sâu trường ảnh mỗi lát cắt",
+      "railStep": "Bước ray",
+      "effectiveAperture": "Khẩu độ hiệu dụng",
+      "railTravel": "Tổng hành trình ray",
+      "farLimitInfinity": "Chồng đến vô cực",
+      "tableShot": "Ảnh",
+      "tableFocusDistance": "Khoảng cách lấy nét",
+      "tableNear": "Mép gần",
+      "tableFar": "Mép xa",
+      "tableRailPosition": "Vị trí ray",
+      "shotTable": "Danh sách ảnh",
+      "animateStack": "Hoạt ảnh chồng",
+      "pauseStack": "Tạm dừng",
+      "diffractionWarning": "Ở f/{aperture}, nhiễu xạ đang làm mềm ảnh trên cảm biến này. Hãy xem xét khẩu độ rộng hơn — chồng ảnh cung cấp chiều sâu.",
+      "diffractionWarningMacro": "Ở độ phóng đại {magnification}×, f/{aperture} hoạt động như f/{effective}. Giữ ở f/{max} hoặc rộng hơn để đạt độ nét tối đa.",
+      "coverageWarning": "Đã đạt giới hạn số ảnh trước khi bao phủ toàn bộ phạm vi. Hãy dùng phạm vi hẹp hơn, chiều sâu trường ảnh lớn hơn mỗi ảnh, hoặc chia nhỏ chồng.",
+      "hyperfocalHint": "Một ảnh duy nhất lấy nét ở khoảng cách siêu tiêu cự ({distance}) bao phủ toàn bộ phạm vi này — không cần chồng.",
+      "sceneCamera": "Máy ảnh",
+      "sceneRail": "Hành trình ray",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Chồng lấy nét là gì?",
+          "answer": "Chồng lấy nét kết hợp nhiều ảnh chụp ở các khoảng cách lấy nét khác nhau thành một ảnh có độ nét từ trước ra sau. Phần mềm giữ lại các pixel sắc nét nhất từ mỗi khung hình. Kỹ thuật này thiết yếu trong nhiếp ảnh macro, nơi chiều sâu trường ảnh của một khung hình có thể dưới một milimet, và hữu ích trong ảnh phong cảnh khi cả tiền cảnh gần và hậu cảnh xa đều cần nét."
+        },
+        "how-much-overlap": {
+          "question": "Ảnh chồng lấy nét cần chồng lấp bao nhiêu?",
+          "answer": "Chồng lấp 20–30% giữa các ảnh liền kề là tiêu chuẩn thực tế. Chồng lấp cho phần mềm ghép dung sai căn chỉnh; quá ít tạo ra khoảng trống mềm giữa các lát cắt, trong khi hơn khoảng 50% thêm khung hình mà không cải thiện kết quả."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Khẩu độ tốt nhất để chồng lấy nét là gì?",
+          "answer": "Khẩu độ vừa phải khoảng f/5.6–f/8 thường cho chồng ảnh sắc nét nhất. Thu hẹp thêm khẩu độ tăng chiều sâu mỗi ảnh nhưng phải trả giá bằng độ nét do nhiễu xạ — và ở độ phóng đại macro, khẩu độ hiệu dụng là N × (1 + m), vì vậy f/8 ở 1:1 đã hoạt động như f/16. Chồng ảnh cung cấp chiều sâu, vì vậy hãy chụp mỗi khung hình ở khẩu độ sắc nét nhất của ống kính."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Tôi nên chồng lấy nét hay dùng khoảng cách siêu tiêu cự?",
+          "answer": "Nếu một ảnh duy nhất lấy nét ở khoảng cách siêu tiêu cự bao phủ chủ thể gần nhất của bạn ở mức chấp nhận được, việc chồng ảnh là không cần thiết. Hãy chồng ảnh khi tiền cảnh gần hơn một nửa khoảng cách siêu tiêu cự, hoặc khi bạn muốn độ nét tới hạn thay vì chỉ độ nét chấp nhận được trên toàn khung hình."
+        },
+        "what-is-a-rail-step": {
+          "question": "Bước ray trong chồng macro là gì?",
+          "answer": "Bước ray là khoảng cách mà ray lấy nét macro di chuyển máy ảnh giữa các ảnh: chiều sâu trường ảnh mỗi lát cắt × (1 − chồng lấp). Ở 1:1 trên full frame tại f/8 với chồng lấp 20%, con số này khoảng 0.77 mm; ở độ phóng đại cao hơn nó thu nhỏ xuống các bước dưới một milimet, đó là lý do tại sao ray hoặc chụp bracket lấy nét tự động trong máy được sử dụng."
+        },
+        "what-software-merges-stacks": {
+          "question": "Phần mềm nào ghép các chồng lấy nét?",
+          "answer": "Helicon Focus và Zerene Stacker là các công cụ chuyên dụng; Adobe Photoshop ghép các chồng ảnh qua Auto-Align và Auto-Blend Layers. Cả ba đều căn chỉnh khung hình (độ phóng đại dịch chuyển nhẹ khi nét thay đổi) và tự động pha trộn các vùng sắc nét nhất của mỗi khung hình."
+        }
+      }
     }
   }
 }

@@ -14,6 +14,10 @@
         "2": {
           "heading": "Combinació i alineació",
           "text": "Programari com Photoshop, Helicon Focus o Zerene Stacker alinea els fotogrames (es produeixen petits desplaçaments d'ampliació quan canvia l'enfocament), i després selecciona els píxels més nítids de cada capa. Disparar amb trípode robust i il·luminació consistent, fent servir un carril d'enfocament per increments precisos, dona els resultats més nets."
+        },
+        "3": {
+          "heading": "Diafragma efectiu a l'ampliació",
+          "text": "A mesura que augmenta l'ampliació, l'extensió de l'objectiu fa que el diafragma de treball sigui més fosc i més propens a la difracció: diafragma efectiu = número f × (1 + ampliació). A 1:1, f/8 es comporta com f/16; a 2:1 es comporta com f/24. Per això els apilaments macro es disparen amb diafragmes nominals moderats — el valor efectiu és el que «veu» la difracció. El mode macro de la calculadora indica el diafragma efectiu i el número f més obert que es manté nítid davant la difracció al teu sensor."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Nombre de preses",
           "definition": "El total de fotogrames necessaris per cobrir el rang de profunditat amb el solapament especificat. Més preses = més processament però resultats més suaus."
+        },
+        "magnification": {
+          "term": "Ampliació",
+          "definition": "La relació entre la mida del subjecte i la del sensor. 1:1 (1.0×) significa que el subjecte es projecta a mida real sobre el sensor. El pas de carril i la profunditat de la porció depenen només de l'ampliació, el diafragma i el sensor — no de la distància."
+        },
+        "effectiveAperture": {
+          "term": "Diafragma efectiu",
+          "definition": "El número f de treball després de l'ampliació: N × (1 + m). La difracció i l'exposició segueixen aquest valor, no el número marcat a l'objectiu."
+        },
+        "railStep": {
+          "term": "Pas de carril",
+          "definition": "La distància que avança el carril d'enfocament entre preses: profunditat de camp de la porció × (1 − solapament). Submil·limètric a ampliació alta."
+        },
+        "subjectDepth": {
+          "term": "Profunditat del subjecte",
+          "definition": "La profunditat de davant a darrere del teu subjecte, mesurada en mil·límetres — la distància total que ha de cobrir l'apilament des del punt més proper que vols nítid fins al més llunyà."
         }
       },
       "challenges": {
@@ -105,6 +125,30 @@
             "1": { "label": "Solapament insuficient entre passos d'enfocament" },
             "2": { "label": "El trípode es va moure durant la seqüència" },
             "3": { "label": "L'ISO era massa alt" }
+          }
+        },
+        "3": {
+          "scenario": "Estàs disparant a f/8 i 2× d'ampliació. Quin és el teu diafragma efectiu?",
+          "hint": "Diafragma efectiu = número f × (1 + ampliació).",
+          "successMessage": "Correcte! f/8 × (1 + 2) = f/24. La difracció a 2× es jutja a f/24, no a f/8 — per això la feina d'alta ampliació utilitza diafragmes nominals moderats.",
+          "failureMessage": "Diafragma efectiu = N × (1 + m) = 8 × 3 = f/24. Les marques de l'objectiu subestimen el diafragma de treball a l'ampliació.",
+          "options": {
+            "0": { "label": "f/8" },
+            "1": { "label": "f/16" },
+            "2": { "label": "f/24" },
+            "3": { "label": "f/32" }
+          }
+        },
+        "4": {
+          "scenario": "La teva profunditat de camp de la porció és de 0.5 mm i vols un 20% de solapament entre porcions. Quin pas de carril hauries de fer servir?",
+          "hint": "Pas = profunditat de la porció × (1 − solapament).",
+          "successMessage": "Exacte! 0.5 mm × 0.8 = 0.4 mm per pas. Els 0.1 mm que cedeixes a cada pas són l'assegurança d'alineació que fa que els apilaments es combinin nets.",
+          "failureMessage": "Pas = porció × (1 − solapament) = 0.5 × 0.8 = 0.4 mm. Avançar tot el 0.5 mm deixaria solapament zero i costures visibles.",
+          "options": {
+            "0": { "label": "0.1 mm" },
+            "1": { "label": "0.4 mm" },
+            "2": { "label": "0.5 mm" },
+            "3": { "label": "0.6 mm" }
           }
         }
       }

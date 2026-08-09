@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Pengaturan",
       "camera": "Kamera & Lensa",
       "focalLength": "Panjang Fokus",
       "aperture": "Apertur",
@@ -10,7 +9,6 @@
       "nearLimit": "Batas Dekat",
       "farLimit": "Batas Jauh",
       "overlap": "Tumpang Tindih",
-      "overlapDescription": "Persentase tumpang tindih kedalaman bidang antara foto yang berdekatan untuk memastikan penggabungan yang mulus",
       "results": "Hasil",
       "shotCount": "Foto Diperlukan",
       "totalDepth": "Total Kedalaman",
@@ -25,18 +23,60 @@
       "diagramFar": "Jauh",
       "diagramCoverage": "Cakupan",
       "diagramFocusPoints": "Titik fokus",
-      "diagramShot": "Foto {number}",
-      "diagramOverlap": "Zona tumpang tindih",
-      "diagramSharpZone": "Zona tajam",
       "diagramSubject": "Subjek",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Peringatan",
       "tooFewShots": "Rentang kedalaman berada dalam satu foto — tidak perlu stacking",
       "tooManyShots": "Rencana ini memerlukan banyak foto. Pertimbangkan apertur yang lebih sempit untuk mengurangi jumlah.",
       "macroMode": "Makro",
-      "landscapeMode": "Lanskap"
+      "modeTitle": "Mode",
+      "distanceMode": "Jarak",
+      "magnification": "Pembesaran",
+      "subjectDepth": "Kedalaman Subjek",
+      "sliceDoF": "Kedalaman Bidang Irisan",
+      "railStep": "Langkah Rail",
+      "effectiveAperture": "Apertur Efektif",
+      "railTravel": "Total Pergerakan Rail",
+      "farLimitInfinity": "Stack hingga tak terhingga",
+      "tableShot": "Foto",
+      "tableFocusDistance": "Jarak Fokus",
+      "tableNear": "Tepi Dekat",
+      "tableFar": "Tepi Jauh",
+      "tableRailPosition": "Posisi Rail",
+      "shotTable": "Daftar Foto",
+      "animateStack": "Animasikan stack",
+      "pauseStack": "Jeda",
+      "diffractionWarning": "Pada f/{aperture}, difraksi melembutkan gambar pada sensor ini. Pertimbangkan apertur yang lebih lebar — stack menyediakan kedalaman.",
+      "diffractionWarningMacro": "Pada pembesaran {magnification}×, f/{aperture} berperilaku seperti f/{effective}. Tetap di f/{max} atau lebih lebar untuk ketajaman maksimum.",
+      "coverageWarning": "Batas foto tercapai sebelum mencakup seluruh rentang. Gunakan rentang yang lebih sempit, kedalaman bidang lebih besar per foto, atau bagi stack.",
+      "hyperfocalHint": "Satu foto yang difokuskan pada jarak hiperfocal ({distance}) mencakup seluruh rentang ini — stacking tidak diperlukan.",
+      "sceneCamera": "Kamera",
+      "sceneRail": "Pergerakan rail",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Apa itu focus stacking?",
+          "answer": "Focus stacking menggabungkan beberapa foto yang diambil pada jarak fokus berbeda menjadi satu gambar dengan ketajaman depan-belakang. Software menyimpan piksel paling tajam dari setiap frame. Ini penting dalam fotografi makro, di mana kedalaman bidang satu frame bisa kurang dari satu milimeter, dan berguna dalam lanskap ketika latar depan dekat dan latar belakang jauh perlu sama-sama tajam."
+        },
+        "how-much-overlap": {
+          "question": "Berapa banyak tumpang tindih yang dibutuhkan foto focus stacking?",
+          "answer": "Tumpang tindih 20–30% antara foto yang berdekatan adalah standar praktis. Tumpang tindih memberikan toleransi penyelarasan pada software penggabung; terlalu sedikit menciptakan celah lunak antar irisan, sementara lebih dari sekitar 50% menambah frame tanpa memperbaiki hasil."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Apa apertur terbaik untuk focus stacking?",
+          "answer": "Apertur moderat sekitar f/5.6–f/8 biasanya memberikan stack paling tajam. Mengecilkan apertur lebih jauh menambah kedalaman per foto tetapi mengorbankan ketajaman karena difraksi — dan pada pembesaran makro apertur efektif adalah N × (1 + m), jadi f/8 pada 1:1 sudah berperilaku seperti f/16. Stack menyediakan kedalaman, jadi potretlah setiap frame pada apertur tertajam lensa."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Haruskah saya focus stacking atau menggunakan jarak hiperfocal?",
+          "answer": "Jika satu foto yang difokuskan pada jarak hiperfocal mencakup subjek terdekat Anda secara memadai, stacking tidak diperlukan. Lakukan stacking ketika latar depan lebih dekat dari setengah jarak hiperfocal, atau ketika Anda menginginkan ketajaman kritis, bukan sekadar ketajaman yang memadai di seluruh frame."
+        },
+        "what-is-a-rail-step": {
+          "question": "Apa itu langkah rail dalam stacking makro?",
+          "answer": "Langkah rail adalah seberapa jauh rail fokus makro menggerakkan kamera antar foto: kedalaman bidang irisan × (1 − tumpang tindih). Pada 1:1 di full frame pada f/8 dengan tumpang tindih 20%, itu sekitar 0.77 mm; pada pembesaran lebih tinggi menyusut menjadi langkah di bawah satu milimeter, itulah sebabnya rail atau focus bracketing otomatis dalam kamera digunakan."
+        },
+        "what-software-merges-stacks": {
+          "question": "Software apa yang menggabungkan focus stack?",
+          "answer": "Helicon Focus dan Zerene Stacker adalah alat khusus; Adobe Photoshop menggabungkan stack melalui Auto-Align dan Auto-Blend Layers. Ketiganya menyelaraskan frame (pembesaran bergeser sedikit saat fokus berubah) dan memadukan area paling tajam dari setiap frame secara otomatis."
+        }
+      }
     }
   }
 }

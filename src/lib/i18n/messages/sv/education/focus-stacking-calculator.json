@@ -14,6 +14,10 @@
         "2": {
           "heading": "Hopfogning och alignment",
           "text": "Program som Photoshop, Helicon Focus eller Zerene Stacker passar in bildrutorna mot varandra (små förstoringsförändringar uppstår när fokus ändras) och plockar sedan de skarpaste pixlarna från varje lager. Ett stabilt stativ, jämnt ljus och en fokusrail för exakta steg ger renaste resultatet."
+        },
+        "3": {
+          "heading": "Effektiv bländare vid förstoring",
+          "text": "När förstoringen ökar gör objektivets utdragning att arbetsbländaren blir mörkare och mer diffraktionskänslig: effektiv bländare = f-tal × (1 + förstoring). Vid 1:1 beter sig f/8 som f/16; vid 2:1 beter det sig som f/24. Det är därför makrostackar fotograferas vid måttliga nominella bländare — det effektiva värdet är det diffraktionen ser. Kalkylatorns makroläge visar den effektiva bländaren och det öppnaste f-talet som förblir diffraktionsskarpt på din sensor."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Antal bilder",
           "definition": "Totala antalet bildrutor som krävs för att täcka djupområdet med angiven överlapp. Fler bilder = mer bearbetning men jämnare resultat."
+        },
+        "magnification": {
+          "term": "Förstoring",
+          "definition": "Förhållandet mellan motivets storlek och dess avbildning på sensorn. 1:1 (1.0×) betyder att motivet avbildas i naturlig storlek på sensorn. Railsteg och skärpedjup per skiva beror enbart på förstoring, bländare och sensor — inte på avstånd."
+        },
+        "effectiveAperture": {
+          "term": "Effektiv bländare",
+          "definition": "Det faktiska f-talet efter förstoring: N × (1 + m). Diffraktion och exponering följer det här värdet, inte siffran på objektivet."
+        },
+        "railStep": {
+          "term": "Railsteg",
+          "definition": "Hur långt fokusrailen flyttas mellan bilder: skärpedjup per skiva × (1 − överlapp). Bråkdelar av en millimeter vid hög förstoring."
+        },
+        "subjectDepth": {
+          "term": "Motivdjup",
+          "definition": "Motivets djup från fram- till baksida, mätt i millimeter — det totala avstånd stacken måste täcka, från den närmaste punkten du vill ha skarp till den längsta."
         }
       },
       "challenges": {
@@ -78,10 +98,18 @@
           "successMessage": "Rätt! Med 4 mm skärpedjup och 25 % överlapp flyttas fokus 3 mm per steg. 30 mm / 3 mm = 10 bilder för att täcka hela blomman.",
           "failureMessage": "Med 25 % överlapp blir det effektiva steget 75 % av skärpedjupet: 4 mm × 0,75 = 3 mm. Du behöver 30 mm / 3 mm = 10 bilder.",
           "options": {
-            "0": { "label": "5 bilder" },
-            "1": { "label": "10 bilder" },
-            "2": { "label": "20 bilder" },
-            "3": { "label": "30 bilder" }
+            "0": {
+              "label": "5 bilder"
+            },
+            "1": {
+              "label": "10 bilder"
+            },
+            "2": {
+              "label": "20 bilder"
+            },
+            "3": {
+              "label": "30 bilder"
+            }
           }
         },
         "1": {
@@ -90,9 +118,15 @@
           "successMessage": "Rätt! f/8 är oftast den skarpaste bländaren på de flesta objektiv. f/2.8 ger för litet skärpedjup per bild (slösar bilder) och f/22 lider av diffraktionsmjukhet.",
           "failureMessage": "f/8 är det bästa valet. f/2.8 ger mycket tunt skärpedjup per bild (kräver många fler rutor), och f/22 introducerar diffraktion som motverkar hela poängen med att stacka för skärpa.",
           "options": {
-            "0": { "label": "f/2.8 — öppnast för snabbast slutartid" },
-            "1": { "label": "f/8 — objektivets sweet spot" },
-            "2": { "label": "f/22 — största skärpedjup per bild" }
+            "0": {
+              "label": "f/2.8 — öppnast för snabbast slutartid"
+            },
+            "1": {
+              "label": "f/8 — objektivets sweet spot"
+            },
+            "2": {
+              "label": "f/22 — största skärpedjup per bild"
+            }
           }
         },
         "2": {
@@ -101,10 +135,58 @@
           "successMessage": "Precis! För litet överlapp mellan närliggande bilder skapar ett glapp där ingen bild är skarp. Öka överlappet till 25–30 % och fota om.",
           "failureMessage": "Ett mjukt band betyder oftast att fokussteget var för stort — närliggande bilders skärpedjup mötte inte varandra. Öka överlappet i procent.",
           "options": {
-            "0": { "label": "Bländaren var för stor" },
-            "1": { "label": "Otillräckligt överlapp mellan fokussteg" },
-            "2": { "label": "Stativet flyttade sig under sekvensen" },
-            "3": { "label": "ISO var för hög" }
+            "0": {
+              "label": "Bländaren var för stor"
+            },
+            "1": {
+              "label": "Otillräckligt överlapp mellan fokussteg"
+            },
+            "2": {
+              "label": "Stativet flyttade sig under sekvensen"
+            },
+            "3": {
+              "label": "ISO var för hög"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Du fotograferar vid f/8 och 2× förstoring. Vad är din effektiva bländare?",
+          "hint": "Effektiv bländare = f-tal × (1 + förstoring).",
+          "successMessage": "Rätt! f/8 × (1 + 2) = f/24. Diffraktion vid 2× bedöms utifrån f/24, inte f/8 — det är därför arbete med hög förstoring använder måttliga nominella bländare.",
+          "failureMessage": "Effektiv bländare = N × (1 + m) = 8 × 3 = f/24. Objektivets markeringar underskattar arbetsbländaren vid förstoring.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Ditt skärpedjup per skiva är 0.5 mm och du vill ha 20% överlapp mellan skivorna. Vilket railsteg ska du använda?",
+          "hint": "Steg = skärpedjup per skiva × (1 − överlapp).",
+          "successMessage": "Rätt! 0.5 mm × 0.8 = 0.4 mm per steg. De 0.1 mm du ger tillbaka i varje steg är den alignment-marginal som gör att stacken fogas ihop rent.",
+          "failureMessage": "Steg = skiva × (1 − överlapp) = 0.5 × 0.8 = 0.4 mm. Att stega hela 0.5 mm skulle lämna noll överlapp och synliga sömmar.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
+            }
           }
         }
       }

@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "Calculateur de focus stacking",
-      "description": "Calcule les distances de mise au point optimales pour une netteté totale"
+      "description": "Planifie tes focus stacks avec des distances de mise au point exactes, le nombre de prises et les pas de rail macro"
     },
     "equivalent-settings-calculator": {
       "name": "Calculateur de réglages équivalents",

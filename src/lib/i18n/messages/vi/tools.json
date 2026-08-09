@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "Máy tính chồng lấy nét",
-      "description": "Tính khoảng cách lấy nét tối ưu để đạt độ nét từ trước ra sau"
+      "description": "Lên kế hoạch chồng lấy nét với khoảng cách lấy nét chính xác, số ảnh cần và bước ray macro"
     },
     "equivalent-settings-calculator": {
       "name": "Máy tính cài đặt tương đương",

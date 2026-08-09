@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Configurações",
       "camera": "Câmera e Lente",
       "focalLength": "Distância Focal",
       "aperture": "Abertura",
@@ -10,7 +9,6 @@
       "nearLimit": "Limite Próximo",
       "farLimit": "Limite Distante",
       "overlap": "Sobreposição",
-      "overlapDescription": "Porcentagem de sobreposição da profundidade de campo entre tomadas adjacentes para que a fusão fique sem falhas",
       "results": "Resultados",
       "shotCount": "Tomadas Necessárias",
       "totalDepth": "Profundidade Total",
@@ -25,18 +23,60 @@
       "diagramFar": "Distante",
       "diagramCoverage": "Cobertura",
       "diagramFocusPoints": "Pontos de foco",
-      "diagramShot": "Tomada {number}",
-      "diagramOverlap": "Zona de sobreposição",
-      "diagramSharpZone": "Zona nítida",
       "diagramSubject": "Assunto",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Aviso",
       "tooFewShots": "A faixa de profundidade cabe em uma única tomada — não é necessário empilhamento",
       "tooManyShots": "Este plano exige muitas tomadas. Considere uma abertura mais fechada para reduzir a quantidade.",
       "macroMode": "Macro",
-      "landscapeMode": "Paisagem"
+      "modeTitle": "Modo",
+      "distanceMode": "Distância",
+      "magnification": "Ampliação",
+      "subjectDepth": "Profundidade do Assunto",
+      "sliceDoF": "Profundidade de Campo da Fatia",
+      "railStep": "Passo do Trilho",
+      "effectiveAperture": "Abertura Efetiva",
+      "railTravel": "Percurso Total do Trilho",
+      "farLimitInfinity": "Empilhar até o infinito",
+      "tableShot": "Tomada",
+      "tableFocusDistance": "Distância de Foco",
+      "tableNear": "Borda Próxima",
+      "tableFar": "Borda Distante",
+      "tableRailPosition": "Posição do Trilho",
+      "shotTable": "Lista de Tomadas",
+      "animateStack": "Animar pilha",
+      "pauseStack": "Pausar",
+      "diffractionWarning": "Em f/{aperture}, a difração está suavizando a imagem neste sensor. Considere uma abertura mais aberta — a pilha fornece a profundidade.",
+      "diffractionWarningMacro": "Em {magnification}×, f/{aperture} se comporta como f/{effective}. Mantenha-se em f/{max} ou mais aberto para máxima nitidez.",
+      "coverageWarning": "O limite de tomadas foi atingido antes de cobrir toda a faixa. Use uma faixa mais estreita, mais profundidade de campo por tomada ou divida a pilha.",
+      "hyperfocalHint": "Uma única tomada focada na distância hiperfocal ({distance}) cobre toda essa faixa — não é necessário empilhamento.",
+      "sceneCamera": "Câmera",
+      "sceneRail": "Percurso do trilho",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "O que é empilhamento de foco?",
+          "answer": "O empilhamento de foco combina várias fotos tiradas em diferentes distâncias de foco em uma única imagem com nitidez da frente ao fundo. O software mantém os pixels mais nítidos de cada quadro. É essencial na fotografia macro, onde a profundidade de campo de um único quadro pode ter menos de um milímetro, e útil em paisagens quando um primeiro plano próximo e um fundo distante precisam estar nítidos."
+        },
+        "how-much-overlap": {
+          "question": "Quanta sobreposição as tomadas de um empilhamento de foco precisam?",
+          "answer": "Uma sobreposição de 20–30% entre tomadas adjacentes é o padrão prático. A sobreposição dá ao software de fusão margem de alinhamento; pouca sobreposição cria lacunas suaves entre as fatias, enquanto mais de 50% acrescenta quadros sem melhorar o resultado."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Qual é a melhor abertura para empilhamento de foco?",
+          "answer": "Uma abertura moderada em torno de f/5.6–f/8 geralmente dá a pilha mais nítida. Fechar ainda mais adiciona profundidade por tomada, mas custa nitidez à difração — e na ampliação macro a abertura efetiva é N × (1 + m), então f/8 em 1:1 já se comporta como f/16. A pilha fornece a profundidade, então fotografe cada quadro na abertura mais nítida da lente."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Devo empilhar foco ou usar a distância hiperfocal?",
+          "answer": "Se uma única tomada focada na distância hiperfocal cobre seu assunto mais próximo de forma aceitável, o empilhamento é desnecessário. Empilhe quando o primeiro plano estiver mais próximo do que a metade da distância hiperfocal, ou quando quiser nitidez crítica em vez de apenas aceitável em todo o quadro."
+        },
+        "what-is-a-rail-step": {
+          "question": "O que é um passo de trilho no empilhamento macro?",
+          "answer": "O passo do trilho é a distância que um trilho de foco macro avança a câmera entre as tomadas: profundidade de campo da fatia × (1 − sobreposição). Em 1:1 em full frame a f/8 com 20% de sobreposição, isso é aproximadamente 0.77 mm; em ampliações maiores, encolhe para passos submilimétricos, por isso trilhos ou bracketing de foco automático embutido na câmera são usados."
+        },
+        "what-software-merges-stacks": {
+          "question": "Que software funde empilhamentos de foco?",
+          "answer": "Helicon Focus e Zerene Stacker são as ferramentas dedicadas; o Adobe Photoshop funde pilhas via Auto-Align e Auto-Blend Layers. Todos os três alinham os quadros (a ampliação muda ligeiramente conforme o foco muda) e misturam automaticamente as regiões mais nítidas de cada quadro."
+        }
+      }
     }
   }
 }

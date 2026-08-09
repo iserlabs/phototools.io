@@ -14,6 +14,10 @@
         "2": {
           "heading": "Fletning og justering",
           "text": "Software som Photoshop, Helicon Focus eller Zerene Stacker justerer billederne (der sker små forstørrelsesskift, når fokus ændres) og vælger så de skarpeste pixels fra hvert lag. Skyd fra stativ i ensartet lys, og brug en fokusskinne til præcise trin, hvis resultatet skal være helt rent."
+        },
+        "3": {
+          "heading": "Effektiv blænde ved forstørrelse",
+          "text": "Efterhånden som forstørrelsen stiger, gør linseforlængelsen arbejdsblænden mørkere og mere diffraktionsfølsom: effektiv blænde = f-tal × (1 + forstørrelse). Ved 1:1 opfører f/8 sig som f/16; ved 2:1 opfører den sig som f/24. Det er derfor makro-stacks skydes ved moderate nominelle blænder — det er den effektive værdi, diffraktionen rammer. Beregnerens makrotilstand viser den effektive blænde og den bredeste blænde, der stadig er diffraktionsskarp på din sensor."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Antal billeder",
           "definition": "Det samlede antal billeder, der skal til for at dække dybdeområdet med det angivne overlap. Flere billeder = mere efterbehandling, men glattere resultat."
+        },
+        "magnification": {
+          "term": "Forstørrelse",
+          "definition": "Forholdet mellem motiv og sensorstørrelse. 1:1 (1.0×) betyder, at motivet projiceres i naturlig størrelse på sensoren. Skinnetrin og skivedybde afhænger kun af forstørrelse, blænde og sensor — ikke af afstand."
+        },
+        "effectiveAperture": {
+          "term": "Effektiv blænde",
+          "definition": "Arbejdsblænden efter forstørrelse: N × (1 + m). Diffraktion og eksponering følger denne værdi, ikke tallet på linsen."
+        },
+        "railStep": {
+          "term": "Skinnetrin",
+          "definition": "Hvor langt fokusskinnen flytter sig mellem billederne: dybdeskarphed pr. skive × (1 − overlap). Under en millimeter ved høj forstørrelse."
+        },
+        "subjectDepth": {
+          "term": "Motivdybde",
+          "definition": "Motivets dybde fra for til bag, målt i millimeter — den samlede afstand, stacken skal dække fra det nærmeste punkt, du vil have skarpt, til det fjerneste."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "ISO var for høj"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Du fotograferer ved f/8 og 2× forstørrelse. Hvad er din effektive blænde?",
+          "hint": "Effektiv blænde = f-tal × (1 + forstørrelse).",
+          "successMessage": "Rigtigt! f/8 × (1 + 2) = f/24. Diffraktion ved 2× vurderes ved f/24, ikke f/8 — det er derfor arbejde ved høj forstørrelse bruger moderate nominelle blænder.",
+          "failureMessage": "Effektiv blænde = N × (1 + m) = 8 × 3 = f/24. Linsens markeringer undervurderer arbejdsblænden ved forstørrelse.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Din skivedybdeskarphed er 0.5 mm, og du vil have 20% overlap mellem skiverne. Hvilket skinnetrin skal du bruge?",
+          "hint": "Trin = skivedybde × (1 − overlap).",
+          "successMessage": "Rigtigt! 0.5 mm × 0.8 = 0.4 mm pr. trin. De 0.1 mm, du giver tilbage ved hvert trin, er den justeringsreserve, der får stacks til at flette rent.",
+          "failureMessage": "Trin = skive × (1 − overlap) = 0.5 × 0.8 = 0.4 mm. Et trin på hele 0.5 mm ville give nul overlap og synlige samlinger.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

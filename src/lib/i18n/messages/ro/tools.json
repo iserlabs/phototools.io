@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "Calculator focus stacking",
-      "description": "Calculează distanțele optime de focalizare pentru claritate din prim-plan până în fundal"
+      "description": "Planifică focus stacks cu distanțe de focalizare exacte, număr de cadre și pași de șină pentru macro"
     },
     "equivalent-settings-calculator": {
       "name": "Calculator setări echivalente",

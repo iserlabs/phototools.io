@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "Calcolatore di focus stacking",
-      "description": "Calcola le distanze di messa a fuoco ottimali per la nitidezza totale"
+      "description": "Pianifica focus stack con distanze di messa a fuoco esatte, numero di scatti e passi della slitta macro"
     },
     "equivalent-settings-calculator": {
       "name": "Calcolatore impostazioni equivalenti",

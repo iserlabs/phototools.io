@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Ayarlar",
       "camera": "Kamera ve Objektif",
       "focalLength": "Odak Uzaklığı",
       "aperture": "Diyafram",
@@ -10,7 +9,6 @@
       "nearLimit": "Yakın Sınır",
       "farLimit": "Uzak Sınır",
       "overlap": "Örtüşme",
-      "overlapDescription": "Sorunsuz birleştirme için komşu çekimler arasındaki alan derinliği örtüşme yüzdesi",
       "results": "Sonuçlar",
       "shotCount": "Gerekli Çekim",
       "totalDepth": "Toplam Derinlik",
@@ -25,18 +23,60 @@
       "diagramFar": "Uzak",
       "diagramCoverage": "Kapsam",
       "diagramFocusPoints": "Odak nk.",
-      "diagramShot": "Çekim {number}",
-      "diagramOverlap": "Örtüşme bölgesi",
-      "diagramSharpZone": "Net bölge",
       "diagramSubject": "Konu",
-      "diagramSensor": "Sensör",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Uyarı",
       "tooFewShots": "Derinlik aralığı tek çekim içinde — istifleme gerekmez",
       "tooManyShots": "Bu plan çok sayıda çekim gerektiriyor. Sayıyı azaltmak için daha dar bir diyafram düşünün.",
       "macroMode": "Makro",
-      "landscapeMode": "Manzara"
+      "modeTitle": "Mod",
+      "distanceMode": "Mesafe",
+      "magnification": "Büyütme",
+      "subjectDepth": "Konu Derinliği",
+      "sliceDoF": "Dilim Alan Derinliği",
+      "railStep": "Ray Adımı",
+      "effectiveAperture": "Etkin Diyafram",
+      "railTravel": "Toplam Ray Hareketi",
+      "farLimitInfinity": "Sonsuza kadar istifle",
+      "tableShot": "Çekim",
+      "tableFocusDistance": "Odak Mesafesi",
+      "tableNear": "Yakın Kenar",
+      "tableFar": "Uzak Kenar",
+      "tableRailPosition": "Ray Konumu",
+      "shotTable": "Çekim Listesi",
+      "animateStack": "İstifi canlandır",
+      "pauseStack": "Duraklat",
+      "diffractionWarning": "f/{aperture} değerinde kırınım bu sensörde görüntüyü yumuşatıyor. Daha geniş bir diyafram düşünün — derinliği istifleme sağlar.",
+      "diffractionWarningMacro": "{magnification}× büyütmede, f/{aperture} f/{effective} gibi davranır. Maksimum netlik için f/{max} veya daha genişte kalın.",
+      "coverageWarning": "Tam aralık kapsanmadan önce çekim sınırına ulaşıldı. Daha dar bir aralık, çekim başına daha fazla alan derinliği kullanın veya istifi bölün.",
+      "hyperfocalHint": "Hiperfocal mesafede ({distance}) odaklanan tek bir çekim bu aralığın tamamını kapsar — istifleme gerekmez.",
+      "sceneCamera": "Kamera",
+      "sceneRail": "Ray hareketi",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Odak istifleme nedir?",
+          "answer": "Odak istifleme, farklı odak mesafelerinde çekilen birden fazla fotoğrafı önden arkaya netliğe sahip tek bir görüntüde birleştirir. Yazılım her kareden en keskin pikselleri korur. Tek bir karenin alan derinliğinin bir milimetrenin altına inebildiği makro fotoğrafçılıkta vazgeçilmezdir; yakın bir ön plan ile uzak bir arka planın ikisinin de net olması gerektiğinde manzaralarda da kullanışlıdır."
+        },
+        "how-much-overlap": {
+          "question": "Odak istifleme çekimleri ne kadar örtüşme gerektirir?",
+          "answer": "Komşu çekimler arasında %20–30 örtüşme pratik standarttır. Örtüşme, birleştirme yazılımına hizalama toleransı verir; çok azı dilimler arasında yumuşak boşluklar yaratırken, yaklaşık %50'den fazlası sonucu iyileştirmeden kare ekler."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Odak istifleme için en iyi diyafram nedir?",
+          "answer": "f/5.6–f/8 civarında orta bir diyafram genellikle en keskin istifi verir. Daha fazla kısmak çekim başına derinlik katar ama kırınım nedeniyle netlikten ödün verir — üstelik makro büyütmede etkin diyafram N × (1 + m)'dir, yani 1:1'de f/8 zaten f/16 gibi davranır. Derinliği istifleme sağlar, bu yüzden her kareyi objektifin en keskin diyaframında çekin."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Odak istiflemeli miyim yoksa hiperfocal mesafeyi mi kullanmalıyım?",
+          "answer": "Hiperfocal mesafede odaklanan tek bir çekim en yakın konunuzu kabul edilebilir şekilde kapsıyorsa, istifleme gereksizdir. Ön plan hiperfocal mesafenin yarısından daha yakınsa veya kare genelinde yalnızca kabul edilebilir değil kritik netlik istiyorsanız istifleyin."
+        },
+        "what-is-a-rail-step": {
+          "question": "Makro istiflemede ray adımı nedir?",
+          "answer": "Ray adımı, bir makro odaklama rayının çekimler arasında kamerayı ne kadar ilerlettiğidir: dilim alan derinliği × (1 − örtüşme). Tam kare sensörde f/8'de %20 örtüşmeyle 1:1'de bu yaklaşık 0.77 mm'dir; daha yüksek büyütmede milimetrenin altına düşer, bu yüzden raylar veya otomatik kamera içi odak braketlemesi kullanılır."
+        },
+        "what-software-merges-stacks": {
+          "question": "Odak istiflerini hangi yazılım birleştirir?",
+          "answer": "Helicon Focus ve Zerene Stacker özel araçlardır; Adobe Photoshop, istifleri Auto-Align ve Auto-Blend Layers ile birleştirir. Üçü de kareleri hizalar (odak değiştikçe büyütme hafifçe kayar) ve her karenin en keskin bölgelerini otomatik olarak harmanlar."
+        }
+      }
     }
   }
 }

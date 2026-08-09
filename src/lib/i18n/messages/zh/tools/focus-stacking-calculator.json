@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "设置",
       "camera": "相机与镜头",
       "focalLength": "焦距",
       "aperture": "光圈",
@@ -10,7 +9,6 @@
       "nearLimit": "近限",
       "farLimit": "远限",
       "overlap": "重叠",
-      "overlapDescription": "相邻拍摄之间的景深重叠百分比，确保无缝混合",
       "results": "结果",
       "shotCount": "所需拍摄数",
       "totalDepth": "总深度",
@@ -25,18 +23,60 @@
       "diagramFar": "远",
       "diagramCoverage": "覆盖范围",
       "diagramFocusPoints": "对焦点",
-      "diagramShot": "第 {number} 张",
-      "diagramOverlap": "重叠区域",
-      "diagramSharpZone": "清晰区域",
       "diagramSubject": "被摄体",
-      "diagramSensor": "传感器",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "警告",
       "tooFewShots": "深度范围在单次拍摄范围内 — 无需堆叠",
       "tooManyShots": "此方案需要很多张拍摄。考虑使用更小的光圈来减少数量。",
       "macroMode": "微距",
-      "landscapeMode": "风光"
+      "modeTitle": "模式",
+      "distanceMode": "距离",
+      "magnification": "放大倍率",
+      "subjectDepth": "被摄体深度",
+      "sliceDoF": "切片景深",
+      "railStep": "导轨步进",
+      "effectiveAperture": "有效光圈",
+      "railTravel": "导轨总行程",
+      "farLimitInfinity": "堆叠至无穷远",
+      "tableShot": "拍摄",
+      "tableFocusDistance": "对焦距离",
+      "tableNear": "近端",
+      "tableFar": "远端",
+      "tableRailPosition": "导轨位置",
+      "shotTable": "拍摄列表",
+      "animateStack": "播放堆叠动画",
+      "pauseStack": "暂停",
+      "diffractionWarning": "在 f/{aperture} 时，该传感器上的衍射正在使图像变柔。考虑使用更大的光圈 — 深度由堆叠来提供。",
+      "diffractionWarningMacro": "在 {magnification}× 时，f/{aperture} 的效果相当于 f/{effective}。为获得最大锐度，请保持在 f/{max} 或更大的光圈。",
+      "coverageWarning": "在覆盖完整范围之前已达到拍摄上限。请使用更窄的范围、增加每张的景深，或拆分堆叠。",
+      "hyperfocalHint": "在超焦距（{distance}）对焦的单张照片即可覆盖整个范围 — 无需堆叠。",
+      "sceneCamera": "相机",
+      "sceneRail": "导轨行程",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "什么是焦点堆叠？",
+          "answer": "焦点堆叠将在不同对焦距离拍摄的多张照片合成为一张前后都清晰的图像。软件会保留每一帧中最锐利的像素。这在微距摄影中至关重要，因为单张照片的景深可能不到一毫米；在风光摄影中，当近处前景和远处背景都需要清晰时，它同样很有用。"
+        },
+        "how-much-overlap": {
+          "question": "焦点堆叠的拍摄需要多少重叠？",
+          "answer": "相邻拍摄之间 20–30% 的重叠是实用标准。重叠为合成软件提供了对齐容差；重叠太少会在切片之间产生模糊的间隙，而超过约 50% 则只会增加帧数而不会改善结果。"
+        },
+        "best-aperture-for-stacking": {
+          "question": "焦点堆叠的最佳光圈是多少？",
+          "answer": "f/5.6–f/8 左右的适中光圈通常能获得最锐利的堆叠效果。进一步缩小光圈会增加每张的景深，但会因衍射而损失锐度 — 而且在微距放大倍率下，有效光圈为 N × (1 + m)，因此 1:1 时的 f/8 已经相当于 f/16。景深由堆叠提供，所以每一帧都应使用镜头最锐利的光圈拍摄。"
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "我应该使用焦点堆叠还是超焦距？",
+          "answer": "如果在超焦距对焦的单张照片已能让最近的被摄体达到可接受的清晰度，就不需要堆叠。当前景比超焦距的一半还要近，或者您想要整个画面都达到极致清晰而非仅仅可接受时，请使用堆叠。"
+        },
+        "what-is-a-rail-step": {
+          "question": "微距堆叠中的导轨步进是什么？",
+          "answer": "导轨步进是指微距对焦导轨在两次拍摄之间推进相机的距离：切片景深 × (1 − 重叠)。在全画幅、f/8、1:1 放大倍率、20% 重叠的条件下，这大约是 0.77 mm；在更高放大倍率下会缩小到亚毫米级步进，这也是使用导轨或相机内自动对焦包围的原因。"
+        },
+        "what-software-merges-stacks": {
+          "question": "什么软件可以合并焦点堆叠？",
+          "answer": "Helicon Focus 和 Zerene Stacker 是专用工具；Adobe Photoshop 则通过 Auto-Align 和 Auto-Blend Layers 合并堆叠。三者都会对齐帧（对焦变化时放大倍率会略有偏移），并自动混合每一帧中最锐利的区域。"
+        }
+      }
     }
   }
 }

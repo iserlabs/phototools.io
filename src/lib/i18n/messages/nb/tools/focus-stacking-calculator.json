@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Innstillinger",
       "camera": "Kamera og objektiv",
       "focalLength": "Brennvidde",
       "aperture": "Blender",
@@ -10,7 +9,6 @@
       "nearLimit": "Nærgrense",
       "farLimit": "Fjerngrense",
       "overlap": "Overlapp",
-      "overlapDescription": "Prosent overlapp i dybdeskarphet mellom naboeksponeringer for sømløs sammenføyning",
       "results": "Resultat",
       "shotCount": "Antall bilder",
       "totalDepth": "Total dybde",
@@ -25,18 +23,60 @@
       "diagramFar": "Fjern",
       "diagramCoverage": "Dekning",
       "diagramFocusPoints": "Fokus-pkt",
-      "diagramShot": "Bilde {number}",
-      "diagramOverlap": "Overlappsone",
-      "diagramSharpZone": "Skarp sone",
       "diagramSubject": "Motiv",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Advarsel",
       "tooFewShots": "Dybdeområdet dekkes av ett bilde — stacking er ikke nødvendig",
       "tooManyShots": "Denne planen krever mange bilder. Prøv en mindre blender for å redusere antallet.",
       "macroMode": "Makro",
-      "landscapeMode": "Landskap"
+      "modeTitle": "Modus",
+      "distanceMode": "Avstand",
+      "magnification": "Forstørrelse",
+      "subjectDepth": "Motivdybde",
+      "sliceDoF": "Dybdeskarphet per skive",
+      "railStep": "Riggsteg",
+      "effectiveAperture": "Effektiv blender",
+      "railTravel": "Total riggbevegelse",
+      "farLimitInfinity": "Stack til uendelig",
+      "tableShot": "Bilde",
+      "tableFocusDistance": "Fokusavstand",
+      "tableNear": "Nær kant",
+      "tableFar": "Fjern kant",
+      "tableRailPosition": "Riggposisjon",
+      "shotTable": "Bildeliste",
+      "animateStack": "Animer stack",
+      "pauseStack": "Pause",
+      "diffractionWarning": "På f/{aperture} gjør diffraksjon bildet mykere på denne sensoren. Vurder en større blender — stacken gir dybden.",
+      "diffractionWarningMacro": "Ved {magnification}× oppfører f/{aperture} seg som f/{effective}. Hold deg på f/{max} eller mer åpen for maksimal skarphet.",
+      "coverageWarning": "Bildetaket ble nådd før hele området var dekket. Bruk et smalere område, mer dybdeskarphet per bilde, eller del opp stacken.",
+      "hyperfocalHint": "Ett enkelt bilde fokusert på den hyperfokale avstanden ({distance}) dekker hele dette området — stacking er ikke nødvendig.",
+      "sceneCamera": "Kamera",
+      "sceneRail": "Riggbevegelse",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Hva er focus stacking?",
+          "answer": "Focus stacking kombinerer flere bilder tatt på ulike fokusavstander til ett bilde med skarphet fra front til bak. Programvaren beholder de skarpeste pikslene fra hvert bilde. Det er avgjørende i makrofotografi, der dybdeskarpheten i ett enkelt bilde kan være under en millimeter, og nyttig i landskap når både en nær forgrunn og en fjern bakgrunn skal være skarpe."
+        },
+        "how-much-overlap": {
+          "question": "Hvor mye overlapp trenger focus stack-bilder?",
+          "answer": "20–30% overlapp mellom naboeksponeringer er den praktiske standarden. Overlapp gir sammenføyningsprogramvaren justeringstoleranse; for lite skaper myke hull mellom skivene, mens mer enn cirka 50% bare legger til bilder uten å forbedre resultatet."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Hva er den beste blenderåpningen for focus stacking?",
+          "answer": "En moderat blender rundt f/5.6–f/8 gir vanligvis den skarpeste stacken. Å blende enda mer ned gir mer dybde per bilde, men koster skarphet til diffraksjon — og ved makroforstørrelse er den effektive blenderen N × (1 + m), så f/8 ved 1:1 oppfører seg allerede som f/16. Stacken gir deg dybden, så fotografer hvert bilde på objektivets skarpeste blender."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Bør jeg focus stacke, eller bruke den hyperfokale avstanden?",
+          "answer": "Hvis ett enkelt bilde fokusert på den hyperfokale avstanden dekker det nærmeste motivet ditt godt nok, er stacking unødvendig. Stack når forgrunnen er nærmere enn halve den hyperfokale avstanden, eller når du vil ha kritisk skarphet i stedet for bare akseptabel skarphet over hele bildet."
+        },
+        "what-is-a-rail-step": {
+          "question": "Hva er et riggsteg i makro-stacking?",
+          "answer": "Riggsteget er hvor langt en makrofokusrigg flytter kameraet mellom bildene: dybdeskarphet per skive × (1 − overlapp). Ved 1:1 på fullformat på f/8 med 20% overlapp er det omtrent 0.77 mm; ved høyere forstørrelse krymper det til steg under en millimeter, som er grunnen til at rigger eller automatisk fokusbracketing i kameraet brukes."
+        },
+        "what-software-merges-stacks": {
+          "question": "Hvilken programvare føyer sammen focus stacks?",
+          "answer": "Helicon Focus og Zerene Stacker er de dedikerte verktøyene; Adobe Photoshop føyer sammen stacks via Auto-Align og Auto-Blend Layers. Alle tre justerer bildene (forstørrelsen endres litt når fokus skifter) og blander automatisk de skarpeste områdene fra hvert bilde."
+        }
+      }
     }
   }
 }

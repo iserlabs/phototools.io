@@ -14,6 +14,10 @@
         "2": {
           "heading": "Fusion et alignement",
           "text": "Des logiciels comme Photoshop, Helicon Focus ou Zerene Stacker alignent les images (un léger changement de grossissement se produit quand la mise au point change), puis sélectionnent les pixels les plus nets de chaque calque. Photographier sur un trépied stable avec un éclairage constant et utiliser un rail de mise au point pour des incréments précis donne les résultats les plus propres."
+        },
+        "3": {
+          "heading": "Ouverture effective au grossissement",
+          "text": "Quand le grossissement augmente, l'allongement de l'objectif rend l'ouverture de travail plus sombre et plus sensible à la diffraction : ouverture effective = nombre f × (1 + grossissement). À 1:1, f/8 se comporte comme f/16 ; à 2:1, comme f/24. C'est pourquoi les stacks macro sont photographiés à des ouvertures nominales modérées — c'est la valeur effective qui compte pour la diffraction. Le mode macro du calculateur indique l'ouverture effective et le nombre f le plus ouvert qui reste net face à la diffraction sur ton capteur."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Nombre de prises",
           "definition": "Le nombre total d'images nécessaires pour couvrir la plage de profondeur avec le chevauchement indiqué. Plus de prises = plus de traitement mais des résultats plus doux."
+        },
+        "magnification": {
+          "term": "Grossissement",
+          "definition": "Rapport entre la taille du sujet et celle du capteur. 1:1 (1.0×) signifie que le sujet est projeté à taille réelle sur le capteur. Le pas du rail et la profondeur de champ par tranche ne dépendent que du grossissement, de l'ouverture et du capteur — pas de la distance."
+        },
+        "effectiveAperture": {
+          "term": "Ouverture effective",
+          "definition": "Le nombre f de travail après le grossissement : N × (1 + m). La diffraction et l'exposition suivent cette valeur, pas le nombre indiqué sur l'objectif."
+        },
+        "railStep": {
+          "term": "Pas du rail",
+          "definition": "La distance dont le rail de mise au point avance entre les prises : profondeur de champ de la tranche × (1 − chevauchement). Inférieur au millimètre à fort grossissement."
+        },
+        "subjectDepth": {
+          "term": "Profondeur du sujet",
+          "definition": "La profondeur de l'avant vers l'arrière de ton sujet, mesurée en millimètres — la distance totale que le stack doit couvrir, du point le plus proche au point le plus éloigné que tu veux net."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "Les ISO étaient trop élevés"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Tu photographies à f/8 avec un grossissement de 2×. Quelle est ton ouverture effective ?",
+          "hint": "Ouverture effective = nombre f × (1 + grossissement).",
+          "successMessage": "Correct ! f/8 × (1 + 2) = f/24. À 2×, la diffraction est jugée à f/24, pas à f/8 — c'est pourquoi le travail à fort grossissement utilise des ouvertures nominales modérées.",
+          "failureMessage": "Ouverture effective = N × (1 + m) = 8 × 3 = f/24. Les indications de l'objectif sous-estiment l'ouverture de travail réelle au grossissement donné.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Ta profondeur de champ par tranche est de 0.5 mm et tu veux 20% de chevauchement entre les tranches. Quel pas de rail dois-tu utiliser ?",
+          "hint": "Pas = profondeur de champ de la tranche × (1 − chevauchement).",
+          "successMessage": "Bien vu ! 0.5 mm × 0.8 = 0.4 mm par pas. Les 0.1 mm que tu redonnes à chaque pas sont la marge d'alignement qui permet au stack de se fusionner proprement.",
+          "failureMessage": "Pas = tranche × (1 − chevauchement) = 0.5 × 0.8 = 0.4 mm. Avancer les 0.5 mm complets ne laisserait aucun chevauchement et des coutures visibles.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

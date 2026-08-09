@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Paramètres",
       "camera": "Boîtier et objectif",
       "focalLength": "Focale",
       "aperture": "Ouverture",
@@ -10,7 +9,6 @@
       "nearLimit": "Limite proche",
       "farLimit": "Limite lointaine",
       "overlap": "Chevauchement",
-      "overlapDescription": "Pourcentage de chevauchement de la profondeur de champ entre prises adjacentes pour assurer une fusion sans raccord",
       "results": "Résultats",
       "shotCount": "Prises nécessaires",
       "totalDepth": "Profondeur totale",
@@ -25,18 +23,60 @@
       "diagramFar": "Lointain",
       "diagramCoverage": "Couverture",
       "diagramFocusPoints": "Pts de MAP",
-      "diagramShot": "Prise {number}",
-      "diagramOverlap": "Zone de chevauchement",
-      "diagramSharpZone": "Zone nette",
       "diagramSubject": "Sujet",
-      "diagramSensor": "Capteur",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Avertissement",
       "tooFewShots": "La plage de profondeur tient dans une seule prise — aucun stacking nécessaire",
       "tooManyShots": "Ce plan exige beaucoup de prises. Envisage une ouverture plus étroite pour en réduire le nombre.",
       "macroMode": "Macro",
-      "landscapeMode": "Paysage"
+      "modeTitle": "Mode",
+      "distanceMode": "Distance",
+      "magnification": "Grossissement",
+      "subjectDepth": "Profondeur du sujet",
+      "sliceDoF": "Profondeur de champ par tranche",
+      "railStep": "Pas du rail",
+      "effectiveAperture": "Ouverture effective",
+      "railTravel": "Course totale du rail",
+      "farLimitInfinity": "Empiler jusqu'à l'infini",
+      "tableShot": "Prise",
+      "tableFocusDistance": "Distance de mise au point",
+      "tableNear": "Bord proche",
+      "tableFar": "Bord éloigné",
+      "tableRailPosition": "Position du rail",
+      "shotTable": "Liste des prises",
+      "animateStack": "Animer le stack",
+      "pauseStack": "Pause",
+      "diffractionWarning": "À f/{aperture}, la diffraction adoucit l'image sur ce capteur. Envisage une ouverture plus large — c'est le stack qui apporte la profondeur.",
+      "diffractionWarningMacro": "À {magnification}×, f/{aperture} se comporte comme f/{effective}. Reste à f/{max} ou plus ouvert pour une netteté maximale.",
+      "coverageWarning": "La limite de prises a été atteinte avant de couvrir toute la plage. Utilise une plage plus étroite, plus de profondeur de champ par prise, ou divise le stack.",
+      "hyperfocalHint": "Une seule prise mise au point à la distance hyperfocale ({distance}) couvre toute cette plage — aucun stacking nécessaire.",
+      "sceneCamera": "Appareil",
+      "sceneRail": "Course du rail",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Qu'est-ce que le focus stacking ?",
+          "answer": "Le focus stacking combine plusieurs photos prises à différentes distances de mise au point en une seule image nette de l'avant à l'arrière. Le logiciel conserve les pixels les plus nets de chaque image. C'est indispensable en photo macro, où la profondeur de champ d'une seule image peut être inférieure au millimètre, et utile en paysage quand un premier plan proche et un arrière-plan lointain doivent tous deux être nets."
+        },
+        "how-much-overlap": {
+          "question": "De combien de chevauchement les prises d'un focus stack ont-elles besoin ?",
+          "answer": "Un chevauchement de 20–30% entre prises adjacentes est la norme pratique. Le chevauchement donne au logiciel de fusion une marge d'alignement ; trop peu crée des zones floues entre les tranches, tandis que plus de 50% environ ajoute des images sans améliorer le résultat."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Quelle est la meilleure ouverture pour le focus stacking ?",
+          "answer": "Une ouverture modérée autour de f/5.6–f/8 donne généralement le stack le plus net. Fermer davantage ajoute de la profondeur par prise mais coûte de la netteté à cause de la diffraction — et au grossissement macro, l'ouverture effective est N × (1 + m), donc f/8 à 1:1 se comporte déjà comme f/16. C'est le stack qui apporte la profondeur, donc photographie chaque image à l'ouverture la plus nette de l'objectif."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Faut-il faire du focus stacking ou utiliser la distance hyperfocale ?",
+          "answer": "Si une seule prise, mise au point à la distance hyperfocale, couvre ton sujet le plus proche de façon acceptable, le stacking est inutile. Stacke quand le premier plan est plus proche que la moitié de la distance hyperfocale, ou quand tu veux une netteté critique plutôt qu'une netteté simplement acceptable sur toute l'image."
+        },
+        "what-is-a-rail-step": {
+          "question": "Qu'est-ce qu'un pas de rail en macro stacking ?",
+          "answer": "Le pas de rail est la distance dont un rail de mise au point macro avance l'appareil entre les prises : profondeur de champ de la tranche × (1 − chevauchement). À 1:1 en plein format à f/8 avec 20% de chevauchement, cela représente environ 0.77 mm ; à un grossissement plus élevé, cela se réduit à des pas inférieurs au millimètre, ce qui explique l'usage de rails ou du bracketing de mise au point automatique intégré à l'appareil."
+        },
+        "what-software-merges-stacks": {
+          "question": "Quel logiciel fusionne les focus stacks ?",
+          "answer": "Helicon Focus et Zerene Stacker sont les outils dédiés ; Adobe Photoshop fusionne les stacks via Auto-Align et Auto-Blend Layers. Les trois alignent les images (le grossissement change légèrement quand la mise au point varie) et mélangent automatiquement les zones les plus nettes de chaque image."
+        }
+      }
     }
   }
 }

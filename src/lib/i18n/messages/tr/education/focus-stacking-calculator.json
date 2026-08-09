@@ -14,6 +14,10 @@
         "2": {
           "heading": "Birleştirme ve Hizalama",
           "text": "Photoshop, Helicon Focus veya Zerene Stacker gibi yazılımlar kareleri hizalar (odak değiştikçe hafif büyütme kaymaları oluşur), ardından her katmandan en keskin pikselleri seçer. Sağlam bir tripod üzerinde tutarlı aydınlatma ile çekim yapmak ve hassas artışlar için bir odak rayı kullanmak en temiz sonuçları verir."
+        },
+        "3": {
+          "heading": "Büyütmede Etkin Diyafram",
+          "text": "Büyütme arttıkça, objektif uzaması çalışma diyaframını daha karanlık ve kırınıma daha yatkın hale getirir: etkin diyafram = f-sayısı × (1 + büyütme). 1:1'de f/8, f/16 gibi davranır; 2:1'de f/24 gibi davranır. Makro istifler bu yüzden orta nominal diyaframlarda çekilir — kırınımın gördüğü şey etkin değerdir. Hesaplayıcının makro modu, etkin diyaframı ve sensörünüzde kırınımdan etkilenmeden kalan en geniş f-sayısını bildirir."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Çekim Sayısı",
           "definition": "Belirtilen örtüşme ile derinlik aralığını kapsamak için gereken toplam kare sayısı. Daha fazla çekim = daha fazla işleme ama daha pürüzsüz sonuçlar."
+        },
+        "magnification": {
+          "term": "Büyütme",
+          "definition": "Konu-sensör boyut oranı. 1:1 (1.0×) konunun sensöre gerçek boyutunda yansıtıldığı anlamına gelir. Ray adımı ve dilim derinliği yalnızca büyütmeye, diyaframa ve sensöre bağlıdır — mesafeye değil."
+        },
+        "effectiveAperture": {
+          "term": "Etkin Diyafram",
+          "definition": "Büyütmeden sonraki çalışma f-sayısı: N × (1 + m). Kırınım ve pozlama, objektif üzerindeki sayıyı değil bu değeri izler."
+        },
+        "railStep": {
+          "term": "Ray Adımı",
+          "definition": "Odaklama rayının çekimler arasında ne kadar ilerlediği: dilim alan derinliği × (1 − örtüşme). Yüksek büyütmede milimetrenin altındadır."
+        },
+        "subjectDepth": {
+          "term": "Konu Derinliği",
+          "definition": "Konunuzun önden arkaya derinliği, milimetre cinsinden ölçülür — istifin net istediğiniz en yakın noktadan en uzak noktaya kadar kapsaması gereken toplam mesafe."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "ISO çok yüksekti"
+            }
+          }
+        },
+        "3": {
+          "scenario": "f/8'de ve 2× büyütmede çekim yapıyorsunuz. Etkin diyaframınız nedir?",
+          "hint": "Etkin diyafram = f-sayısı × (1 + büyütme).",
+          "successMessage": "Doğru! f/8 × (1 + 2) = f/24. 2×'te kırınım f/8'e göre değil f/24'e göre değerlendirilir — bu yüzden yüksek büyütme çalışmaları orta nominal diyaframlar kullanır.",
+          "failureMessage": "Etkin diyafram = N × (1 + m) = 8 × 3 = f/24. Objektif işaretleri, büyütmedeki çalışma diyaframını olduğundan düşük gösterir.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Dilim alan derinliğiniz 0.5 mm ve dilimler arasında %20 örtüşme istiyorsunuz. Hangi ray adımını kullanmalısınız?",
+          "hint": "Adım = dilim derinliği × (1 − örtüşme).",
+          "successMessage": "Doğru! 0.5 mm × 0.8 = adım başına 0.4 mm. Her adımda geri verdiğiniz 0.1 mm, istiflerin temiz birleşmesini sağlayan hizalama sigortasıdır.",
+          "failureMessage": "Adım = dilim × (1 − örtüşme) = 0.5 × 0.8 = 0.4 mm. Tam 0.5 mm adımlamak sıfır örtüşme ve görünür dikişler bırakır.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }
