@@ -125,11 +125,15 @@ test.describe('Hyperfocal Simulator', () => {
     // Set focal length to 85mm, aperture to f/2
     await panel.locator('select').first().selectOption('85')
     await panel.locator('select').nth(1).selectOption('2')
-    await page.waitForTimeout(300)
+
+    // useToolQuerySync writes a single throttled snapshot of the FULL state,
+    // not one write per field. Two separate actions can land as separate
+    // snapshots under load, so poll on the LAST-set param (f=2) — once it
+    // appears, the write is guaranteed to include everything set before it.
+    await expect.poll(() => page.url()).toContain('f=2')
 
     const url = page.url()
     expect(url).toContain('fl=85')
-    expect(url).toContain('f=2')
 
     // Reload and verify state is restored
     await page.goto(url)

@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "設定",
       "camera": "カメラとレンズ",
       "focalLength": "焦点距離",
       "aperture": "絞り",
@@ -10,7 +9,6 @@
       "nearLimit": "近点",
       "farLimit": "遠点",
       "overlap": "オーバーラップ",
-      "overlapDescription": "隣接するショット間の被写界深度の重なりの割合。スムーズな合成のために必要です。",
       "results": "結果",
       "shotCount": "必要なショット数",
       "totalDepth": "総深度",
@@ -25,18 +23,60 @@
       "diagramFar": "遠",
       "diagramCoverage": "カバー範囲",
       "diagramFocusPoints": "ピント位置",
-      "diagramShot": "ショット{number}",
-      "diagramOverlap": "オーバーラップ領域",
-      "diagramSharpZone": "シャープ領域",
       "diagramSubject": "被写体",
-      "diagramSensor": "センサー",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "警告",
       "tooFewShots": "深度範囲が1ショット内に収まっています。スタッキングは不要です。",
       "tooManyShots": "このプランには多数のショットが必要です。絞りを絞って枚数を減らすことを検討してください。",
       "macroMode": "マクロ",
-      "landscapeMode": "風景"
+      "modeTitle": "モード",
+      "distanceMode": "距離",
+      "magnification": "倍率",
+      "subjectDepth": "被写体の奥行き",
+      "sliceDoF": "1断面あたりの被写界深度",
+      "railStep": "レールステップ",
+      "effectiveAperture": "実効絞り",
+      "railTravel": "総レール移動量",
+      "farLimitInfinity": "無限遠までスタック",
+      "tableShot": "ショット",
+      "tableFocusDistance": "ピント距離",
+      "tableNear": "近端",
+      "tableFar": "遠端",
+      "tableRailPosition": "レール位置",
+      "shotTable": "ショット一覧",
+      "animateStack": "アニメーション再生",
+      "pauseStack": "一時停止",
+      "diffractionWarning": "f/{aperture}では、このセンサーでは回折によって画像が甘くなっています。より開放側の絞りを検討してください — 深度はスタックが補います。",
+      "diffractionWarningMacro": "{magnification}×では、f/{aperture}はf/{effective}相当になります。最大限のシャープさを得るには、f/{max}かそれより開放側の絞りを使用してください。",
+      "coverageWarning": "全範囲をカバーする前にショット数の上限に達しました。範囲を狭める、1ショットあたりの被写界深度を増やす、またはスタックを分割してください。",
+      "hyperfocalHint": "過焦点距離（{distance}）に合わせた1枚のショットだけで、この範囲全体をカバーできます — スタッキングは不要です。",
+      "sceneCamera": "カメラ",
+      "sceneRail": "レール移動",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "フォーカススタッキングとは何ですか？",
+          "answer": "フォーカススタッキングは、異なるピント位置で撮影した複数の写真を、手前から奥までシャープな1枚の画像へと合成する技法です。ソフトウェアが各フレームから最もシャープなピクセルだけを残します。1フレームの被写界深度が1ミリメートル未満になることもあるマクロ撮影では欠かせない手法で、手前の近景と遠くの背景の両方をシャープにしたい風景撮影でも役立ちます。"
+        },
+        "how-much-overlap": {
+          "question": "フォーカススタックの各ショットにはどれくらいのオーバーラップが必要ですか？",
+          "answer": "隣り合うショット間で20〜30%のオーバーラップを取るのが実用上の標準です。オーバーラップがあることで合成ソフトウェアに位置合わせの余裕が生まれます。少なすぎると断面同士の間に柔らかい隙間ができ、逆に50%を超えるとフレームが増えるだけで結果は改善しません。"
+        },
+        "best-aperture-for-stacking": {
+          "question": "フォーカススタッキングに最適な絞りは何ですか？",
+          "answer": "多くの場合、f/5.6〜f/8程度の中程度の絞りが最もシャープなスタックを得られます。それ以上絞ると1ショットあたりの深度は増えますが、回折によってシャープさが犠牲になります。さらにマクロ域では実効絞りはN × (1 + m)になるため、1:1でのf/8はすでにf/16相当の挙動になります。深度はスタックが補ってくれるので、各フレームはレンズが最もシャープな絞りで撮影しましょう。"
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "フォーカススタッキングと過焦点距離、どちらを使うべきですか？",
+          "answer": "過焦点距離にピントを合わせた1枚のショットで、最も近い被写体まで許容範囲内のシャープさが得られるなら、スタッキングは不要です。前景が過焦点距離の半分より近い場合や、フレーム全体で単なる許容範囲のシャープさではなく限界までのシャープさを求める場合にスタッキングを行いましょう。"
+        },
+        "what-is-a-rail-step": {
+          "question": "マクロスタッキングにおけるレールステップとは何ですか？",
+          "answer": "レールステップとは、マクロ用フォーカシングレールがショットの間にカメラを前進させる距離のことで、断面の被写界深度 × (1 − オーバーラップ) で求められます。フルサイズで1:1、f/8、オーバーラップ20%の場合、これはおよそ0.77 mmになります。倍率が上がるほどこの値はサブミリ単位まで小さくなるため、レールやカメラ内蔵の自動フォーカスブラケティングが使われます。"
+        },
+        "what-software-merges-stacks": {
+          "question": "フォーカススタックを合成できるソフトウェアは何ですか？",
+          "answer": "Helicon FocusとZerene Stackerが専用ツールです。Adobe PhotoshopもAuto-AlignとAuto-Blend Layersでスタックを合成できます。3つとも各フレームを位置合わせし（ピントが変わると倍率がわずかに変化するため）、各フレームの最もシャープな領域を自動的にブレンドします。"
+        }
+      }
     }
   }
 }

@@ -14,6 +14,10 @@
         "2": {
           "heading": "Fusão e Alinhamento",
           "text": "Softwares como Photoshop, Helicon Focus ou Zerene Stacker alinham os quadros (pequenas mudanças de ampliação ocorrem quando o foco muda) e depois selecionam os pixels mais nítidos de cada camada. Fotografar em um tripé firme, com iluminação consistente e usando um trilho de foco para incrementos precisos produz os resultados mais limpos."
+        },
+        "3": {
+          "heading": "Abertura Efetiva na Ampliação",
+          "text": "À medida que a ampliação aumenta, a extensão da lente torna a abertura de trabalho mais escura e mais propensa à difração: abertura efetiva = número f × (1 + ampliação). Em 1:1, f/8 se comporta como f/16; em 2:1, se comporta como f/24. É por isso que as pilhas macro são fotografadas em aberturas nominais moderadas — o valor efetivo é o que a difração enxerga. O modo macro da calculadora informa a abertura efetiva e o número f mais aberto que permanece nítido em relação à difração no seu sensor."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Contagem de Tomadas",
           "definition": "O número total de quadros necessários para cobrir a faixa de profundidade com a sobreposição especificada. Mais tomadas = mais processamento, mas resultados mais suaves."
+        },
+        "magnification": {
+          "term": "Ampliação",
+          "definition": "Relação entre o tamanho do assunto e do sensor. 1:1 (1.0×) significa que o assunto é projetado em tamanho real no sensor. O passo do trilho e a profundidade da fatia dependem apenas da ampliação, da abertura e do sensor — não da distância."
+        },
+        "effectiveAperture": {
+          "term": "Abertura Efetiva",
+          "definition": "O número f de trabalho após a ampliação: N × (1 + m). A difração e a exposição seguem esse valor, não o número marcado na lente."
+        },
+        "railStep": {
+          "term": "Passo do Trilho",
+          "definition": "A distância que o trilho de foco avança entre as tomadas: profundidade de campo da fatia × (1 − sobreposição). Submilimétrico em alta ampliação."
+        },
+        "subjectDepth": {
+          "term": "Profundidade do Assunto",
+          "definition": "A profundidade da frente para o fundo do seu assunto, medida em milímetros — a distância total que a pilha precisa cobrir do ponto mais próximo que você quer nítido até o mais distante."
         }
       },
       "challenges": {
@@ -105,6 +125,30 @@
             "1": { "label": "Sobreposição insuficiente entre os passos de foco" },
             "2": { "label": "O tripé se mexeu durante a sequência" },
             "3": { "label": "O ISO estava alto demais" }
+          }
+        },
+        "3": {
+          "scenario": "Você está fotografando a f/8 e com ampliação de 2×. Qual é a sua abertura efetiva?",
+          "hint": "Abertura efetiva = número f × (1 + ampliação).",
+          "successMessage": "Correto! f/8 × (1 + 2) = f/24. A difração em 2× é avaliada em f/24, não em f/8 — por isso o trabalho em alta ampliação usa aberturas nominais moderadas.",
+          "failureMessage": "Abertura efetiva = N × (1 + m) = 8 × 3 = f/24. As marcações da lente subestimam a abertura de trabalho na ampliação.",
+          "options": {
+            "0": { "label": "f/8" },
+            "1": { "label": "f/16" },
+            "2": { "label": "f/24" },
+            "3": { "label": "f/32" }
+          }
+        },
+        "4": {
+          "scenario": "Sua profundidade de campo da fatia é 0.5 mm e você quer 20% de sobreposição entre as fatias. Qual passo de trilho você deve usar?",
+          "hint": "Passo = profundidade da fatia × (1 − sobreposição).",
+          "successMessage": "Isso! 0.5 mm × 0.8 = 0.4 mm por passo. Os 0.1 mm que você cede em cada passo são a garantia de alinhamento que faz as pilhas se fundirem de forma limpa.",
+          "failureMessage": "Passo = fatia × (1 − sobreposição) = 0.5 × 0.8 = 0.4 mm. Avançar os 0.5 mm completos deixaria zero sobreposição e costuras visíveis.",
+          "options": {
+            "0": { "label": "0.1 mm" },
+            "1": { "label": "0.4 mm" },
+            "2": { "label": "0.5 mm" },
+            "3": { "label": "0.6 mm" }
           }
         }
       }

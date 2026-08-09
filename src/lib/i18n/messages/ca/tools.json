@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "Calculadora de focus stacking",
-      "description": "Calcula distàncies d'enfocament òptimes per a una nitidesa de davant a darrere"
+      "description": "Planifica focus stacks amb distàncies d'enfocament exactes, nombre de preses i passos de carril macro"
     },
     "equivalent-settings-calculator": {
       "name": "Calculadora d'ajustos equivalents",

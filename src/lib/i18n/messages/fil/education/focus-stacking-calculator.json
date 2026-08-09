@@ -14,6 +14,10 @@
         "2": {
           "heading": "Pagsasama at Alignment",
           "text": "Ang software tulad ng Photoshop, Helicon Focus, o Zerene Stacker ay nag-a-align ng mga frame (bahagyang magnification shift ang nangyayari habang nagbabago ang focus), tapos pinipili ang pinakamatalas na pixels mula sa bawat layer. Ang pagkuha sa matibay na tripod na may pare-parehong lighting at paggamit ng focus rail para sa tumpak na increments ay gumagawa ng pinakamalinis na resulta."
+        },
+        "3": {
+          "heading": "Effective Aperture sa Magnification",
+          "text": "Habang tumataas ang magnification, ang extension ng lens ay nagpapadilim at nagpapataas ng pagkakalantad sa diffraction ng working aperture: effective aperture = f-number × (1 + magnification). Sa 1:1, ang f/8 ay parang f/16; sa 2:1 ay parang f/24. Kaya naman ang macro stacks ay kinukunan sa katamtamang nominal na aperture — ang effective value ang nakikita ng diffraction. Ang macro mode ng calculator ay nag-uulat ng effective aperture at ng pinakamalawak na f-number na nananatiling diffraction-sharp sa sensor mo."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Shot Count",
           "definition": "Ang kabuuang bilang ng frame na kailangan para masakop ang depth range na may tinukoy na overlap. Mas maraming shot = mas maraming processing pero mas smooth na resulta."
+        },
+        "magnification": {
+          "term": "Magnification",
+          "definition": "Ratio ng laki ng subject sa sensor. Ang 1:1 (1.0×) ay nangangahulugang naka-project ang subject sa life size sa sensor. Ang rail step at slice depth ay nakadepende lamang sa magnification, aperture, at sensor — hindi sa distansya."
+        },
+        "effectiveAperture": {
+          "term": "Effective Aperture",
+          "definition": "Ang working f-number pagkatapos ng magnification: N × (1 + m). Sinusunod ng diffraction at exposure ang value na ito, hindi ang nakasulat sa lens."
+        },
+        "railStep": {
+          "term": "Rail Step",
+          "definition": "Kung gaano kalayo umaabante ang focusing rail sa pagitan ng mga shot: depth of field ng slice × (1 − overlap). Sub-millimeter sa mataas na magnification."
+        },
+        "subjectDepth": {
+          "term": "Lalim ng Subject",
+          "definition": "Ang front-to-back na lalim ng subject mo, sinusukat sa millimeters — ang kabuuang distansyang kailangang sakupin ng stack mula sa pinakamalapit na puntong gusto mong maging matalas hanggang sa pinakamalayo."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "Masyadong mataas ang ISO"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Kumukuha ka sa f/8 at 2× magnification. Ano ang effective aperture mo?",
+          "hint": "Ang effective aperture ay f-number × (1 + magnification).",
+          "successMessage": "Tama! f/8 × (1 + 2) = f/24. Ang diffraction sa 2× ay hinuhusgahan sa f/24, hindi sa f/8 — kaya naman ang trabaho sa mataas na magnification ay gumagamit ng katamtamang nominal na aperture.",
+          "failureMessage": "Effective aperture = N × (1 + m) = 8 × 3 = f/24. Ang mga marka sa lens ay hindi nagpapakita ng totoong working aperture sa magnification.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Ang slice depth of field mo ay 0.5 mm at gusto mo ng 20% overlap sa pagitan ng mga slice. Anong rail step ang dapat mong gamitin?",
+          "hint": "Ang step ay katumbas ng slice depth × (1 − overlap).",
+          "successMessage": "Tama! 0.5 mm × 0.8 = 0.4 mm bawat step. Ang 0.1 mm na ibinabalik mo sa bawat step ang alignment insurance na nagpapagawa ng malinis na pagsasama ng stacks.",
+          "failureMessage": "Step = slice × (1 − overlap) = 0.5 × 0.8 = 0.4 mm. Ang pag-step ng buong 0.5 mm ay walang matitirang overlap at magiging visible ang mga seams.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

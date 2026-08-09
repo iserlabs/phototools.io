@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Settings",
       "camera": "Camera at Lens",
       "focalLength": "Focal Length",
       "aperture": "Aperture",
@@ -10,7 +9,6 @@
       "nearLimit": "Near Limit",
       "farLimit": "Far Limit",
       "overlap": "Overlap",
-      "overlapDescription": "Percentage ng depth of field overlap sa pagitan ng magkatabing shots para sa seamless blending",
       "results": "Results",
       "shotCount": "Shots na Kailangan",
       "totalDepth": "Total Depth",
@@ -25,18 +23,60 @@
       "diagramFar": "Far",
       "diagramCoverage": "Coverage",
       "diagramFocusPoints": "Focus pts",
-      "diagramShot": "Shot {number}",
-      "diagramOverlap": "Overlap zone",
-      "diagramSharpZone": "Sharp zone",
       "diagramSubject": "Subject",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Warning",
       "tooFewShots": "Kasya na ang depth range sa isang shot — hindi na kailangan ng stacking",
       "tooManyShots": "Maraming shot ang kailangan ng plano na ito. Subukan ang mas makitid na aperture para mabawasan ang bilang.",
       "macroMode": "Macro",
-      "landscapeMode": "Landscape"
+      "modeTitle": "Mode",
+      "distanceMode": "Distance",
+      "magnification": "Magnification",
+      "subjectDepth": "Lalim ng Subject",
+      "sliceDoF": "Depth of Field ng Slice",
+      "railStep": "Rail Step",
+      "effectiveAperture": "Effective Aperture",
+      "railTravel": "Kabuuang Galaw ng Rail",
+      "farLimitInfinity": "I-stack hanggang infinity",
+      "tableShot": "Shot",
+      "tableFocusDistance": "Focus Distance",
+      "tableNear": "Malapit na Gilid",
+      "tableFar": "Malayong Gilid",
+      "tableRailPosition": "Posisyon ng Rail",
+      "shotTable": "Listahan ng Shots",
+      "animateStack": "I-animate ang stack",
+      "pauseStack": "I-pause",
+      "diffractionWarning": "Sa f/{aperture}, pinapalambot ng diffraction ang imahe sa sensor na ito. Subukan ang mas malawak na aperture — ang stack ang nagbibigay ng lalim.",
+      "diffractionWarningMacro": "Sa {magnification}×, ang f/{aperture} ay parang f/{effective}. Manatili sa f/{max} o mas malawak pa para sa maximum na sharpness.",
+      "coverageWarning": "Naabot ang shot cap bago pa nasakop ang buong range. Gumamit ng mas makitid na range, mas maraming depth of field bawat shot, o hatiin ang stack.",
+      "hyperfocalHint": "Sasakop ang buong range na ito ng iisang shot na naka-focus sa hyperfocal distance ({distance}) — hindi na kailangan ng stacking.",
+      "sceneCamera": "Camera",
+      "sceneRail": "Galaw ng rail",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Ano ang focus stacking?",
+          "answer": "Pinagsasama ng focus stacking ang maraming litrato na kinuha sa iba't ibang focus distance sa isang imahe na may front-to-back sharpness. Pinananatili ng software ang pinakamatalas na pixels mula sa bawat frame. Mahalaga ito sa macro photography, kung saan ang depth of field ng iisang frame ay maaaring wala pang isang millimeter, at kapaki-pakinabang sa landscape kapag kailangang matalas ang malapit na foreground at ang malayong background."
+        },
+        "how-much-overlap": {
+          "question": "Gaano kalaking overlap ang kailangan ng focus stack shots?",
+          "answer": "20–30% overlap sa pagitan ng magkatabing shots ang praktikal na standard. Ang overlap ay nagbibigay ng alignment tolerance sa merging software; ang kulang na overlap ay lumilikha ng soft gaps sa pagitan ng mga slice, samantalang ang higit sa 50% ay nagdadagdag ng frames nang hindi napapabuti ang resulta."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Ano ang pinakamainam na aperture para sa focus stacking?",
+          "answer": "Ang katamtamang aperture na nasa f/5.6–f/8 ay karaniwang nagbibigay ng pinakamatalas na stack. Ang pag-stop down pa nang higit ay nagdaragdag ng lalim bawat shot pero nagpapabawas ng sharpness dahil sa diffraction — at sa macro magnification, ang effective aperture ay N × (1 + m), kaya ang f/8 sa 1:1 ay parang f/16 na. Ang stack ang nagbibigay ng lalim, kaya kunan ang bawat frame sa pinakamatalas na aperture ng lens."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Dapat ba akong mag-focus stack o gamitin ang hyperfocal distance?",
+          "answer": "Kung sakop na nang katanggap-tanggap ng iisang shot na naka-focus sa hyperfocal distance ang pinakamalapit mong subject, hindi na kailangan ang stacking. Mag-stack kapag mas malapit ang foreground kaysa sa kalahati ng hyperfocal distance, o kapag gusto mo ng critical sharpness sa halip na katanggap-tanggap lang na sharpness sa buong frame."
+        },
+        "what-is-a-rail-step": {
+          "question": "Ano ang rail step sa macro stacking?",
+          "answer": "Ang rail step ay ang layo na inaabante ng macro focusing rail sa camera sa pagitan ng mga shot: depth of field ng slice × (1 − overlap). Sa 1:1 sa full frame sa f/8 na may 20% overlap, halos 0.77 mm iyon; sa mas mataas na magnification, umiikli ito sa sub-millimeter na hakbang, kaya ginagamit ang mga rail o automated in-camera focus bracketing."
+        },
+        "what-software-merges-stacks": {
+          "question": "Anong software ang nagsasama ng focus stacks?",
+          "answer": "Ang Helicon Focus at Zerene Stacker ang mga dedikadong tool; ang Adobe Photoshop ay nagsasama ng stacks gamit ang Auto-Align at Auto-Blend Layers. Ang tatlo ay nag-a-align ng mga frame (bahagyang nagbabago ang magnification habang nagbabago ang focus) at awtomatikong pinagsasama ang pinakamatalas na bahagi ng bawat frame."
+        }
+      }
     }
   }
 }

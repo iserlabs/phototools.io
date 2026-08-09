@@ -14,6 +14,10 @@
         "2": {
           "heading": "Fusión y alineación",
           "text": "Software como Photoshop, Helicon Focus o Zerene Stacker alinea las tomas (ocurren ligeros cambios de magnificación cuando varía el enfoque) y luego selecciona los píxeles más nítidos de cada capa. Disparar sobre un trípode estable con iluminación constante y usar un raíl de enfoque para incrementos precisos produce los resultados más limpios."
+        },
+        "3": {
+          "heading": "Apertura efectiva y aumento",
+          "text": "A mayor aumento, la extensión del objetivo hace que la apertura de trabajo sea más oscura y más propensa a la difracción: apertura efectiva = número f × (1 + aumento). A 1:1, f/8 se comporta como f/16; a 2:1, como f/24. Por eso los apilamientos macro se disparan con aperturas nominales moderadas — la difracción responde al valor efectivo. El modo macro de la calculadora indica la apertura efectiva y el número f más abierto que se mantiene nítido frente a la difracción en tu sensor."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Número de tomas",
           "definition": "El número total de fotogramas necesarios para cubrir el rango de profundidad con el solapamiento especificado. Más tomas = más procesado pero resultados más suaves."
+        },
+        "magnification": {
+          "term": "Aumento",
+          "definition": "Relación entre el tamaño del sujeto y el del sensor. 1:1 (1.0×) significa que el sujeto se proyecta a tamaño real sobre el sensor. El paso del raíl y la PdC por rebanada dependen solo del aumento, la apertura y el sensor — no de la distancia."
+        },
+        "effectiveAperture": {
+          "term": "Apertura efectiva",
+          "definition": "El número f de trabajo tras aplicar el aumento: N × (1 + m). La difracción y la exposición responden a este valor, no al número marcado en el objetivo."
+        },
+        "railStep": {
+          "term": "Paso del raíl",
+          "definition": "La distancia que avanza el raíl de enfoque entre tomas: PdC por rebanada × (1 − solapamiento). Submilimétrico a aumentos altos."
+        },
+        "subjectDepth": {
+          "term": "Profundidad del sujeto",
+          "definition": "La profundidad de frente a fondo de tu sujeto, medida en milímetros — la distancia total que debe cubrir el apilamiento desde el punto más cercano que quieres nítido hasta el más lejano."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "El ISO estaba demasiado alto"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Estás disparando a f/8 y 2× de aumento. ¿Cuál es tu apertura efectiva?",
+          "hint": "Apertura efectiva = número f × (1 + aumento).",
+          "successMessage": "¡Correcto! f/8 × (1 + 2) = f/24. A 2× la difracción se juzga a f/24, no a f/8 — por eso el trabajo a alto aumento usa aperturas nominales moderadas.",
+          "failureMessage": "Apertura efectiva = N × (1 + m) = 8 × 3 = f/24. Las marcas del objetivo subestiman la apertura de trabajo a un aumento dado.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "La PdC de tu rebanada es de 0.5 mm y quieres un 20% de solapamiento entre rebanadas. ¿Qué paso de raíl deberías usar?",
+          "hint": "Paso = PdC de la rebanada × (1 − solapamiento).",
+          "successMessage": "¡Correcto! 0.5 mm × 0.8 = 0.4 mm por paso. Los 0.1 mm que cedes en cada paso son el seguro de alineación que permite que el apilamiento se fusione limpiamente.",
+          "failureMessage": "Paso = rebanada × (1 − solapamiento) = 0.5 × 0.8 = 0.4 mm. Avanzar los 0.5 mm completos dejaría solapamiento cero y costuras visibles.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

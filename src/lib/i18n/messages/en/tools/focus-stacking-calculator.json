@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Settings",
       "camera": "Camera & Lens",
       "focalLength": "Focal Length",
       "aperture": "Aperture",
@@ -10,7 +9,6 @@
       "nearLimit": "Near Limit",
       "farLimit": "Far Limit",
       "overlap": "Overlap",
-      "overlapDescription": "Percentage of depth of field overlap between adjacent shots to ensure seamless blending",
       "results": "Results",
       "shotCount": "Shots Required",
       "totalDepth": "Total Depth",
@@ -25,18 +23,60 @@
       "diagramFar": "Far",
       "diagramCoverage": "Coverage",
       "diagramFocusPoints": "Focus pts",
-      "diagramShot": "Shot {number}",
-      "diagramOverlap": "Overlap zone",
-      "diagramSharpZone": "Sharp zone",
       "diagramSubject": "Subject",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Warning",
       "tooFewShots": "Depth range is within a single shot — no stacking needed",
       "tooManyShots": "This plan requires many shots. Consider a narrower aperture to reduce the count.",
       "macroMode": "Macro",
-      "landscapeMode": "Landscape"
+      "modeTitle": "Mode",
+      "distanceMode": "Distance",
+      "magnification": "Magnification",
+      "subjectDepth": "Subject Depth",
+      "sliceDoF": "Slice Depth of Field",
+      "railStep": "Rail Step",
+      "effectiveAperture": "Effective Aperture",
+      "railTravel": "Total Rail Travel",
+      "farLimitInfinity": "Stack to infinity",
+      "tableShot": "Shot",
+      "tableFocusDistance": "Focus Distance",
+      "tableNear": "Near Edge",
+      "tableFar": "Far Edge",
+      "tableRailPosition": "Rail Position",
+      "shotTable": "Shot List",
+      "animateStack": "Animate stack",
+      "pauseStack": "Pause",
+      "diffractionWarning": "At f/{aperture}, diffraction is softening the image on this sensor. Consider a wider aperture — the stack provides the depth.",
+      "diffractionWarningMacro": "At {magnification}×, f/{aperture} acts like f/{effective}. Stay at f/{max} or wider for maximum sharpness.",
+      "coverageWarning": "The shot cap was reached before covering the full range. Use a narrower range, more depth of field per shot, or split the stack.",
+      "hyperfocalHint": "A single shot focused at the hyperfocal distance ({distance}) covers this entire range — no stacking needed.",
+      "sceneCamera": "Camera",
+      "sceneRail": "Rail travel",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "What is focus stacking?",
+          "answer": "Focus stacking combines multiple photos taken at different focus distances into one image with front-to-back sharpness. Software keeps the sharpest pixels from each frame. It is essential in macro photography, where a single frame's depth of field can be under a millimeter, and useful in landscapes when a close foreground and distant background both need to be sharp."
+        },
+        "how-much-overlap": {
+          "question": "How much overlap do focus stack shots need?",
+          "answer": "20–30% overlap between adjacent shots is the practical standard. Overlap gives merging software alignment tolerance; too little creates soft gaps between slices, while more than about 50% adds frames without improving the result."
+        },
+        "best-aperture-for-stacking": {
+          "question": "What is the best aperture for focus stacking?",
+          "answer": "A moderate aperture around f/5.6–f/8 usually gives the sharpest stack. Stopping down further adds depth per shot but costs sharpness to diffraction — and at macro magnification the effective aperture is N × (1 + m), so f/8 at 1:1 already behaves like f/16. The stack supplies the depth, so shoot each frame at the lens's sharpest aperture."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Should I focus stack or use the hyperfocal distance?",
+          "answer": "If a single shot focused at the hyperfocal distance covers your nearest subject acceptably, stacking is unnecessary. Stack when the foreground is closer than half the hyperfocal distance, or when you want critical sharpness rather than merely acceptable sharpness across the frame."
+        },
+        "what-is-a-rail-step": {
+          "question": "What is a rail step in macro stacking?",
+          "answer": "The rail step is how far a macro focusing rail advances the camera between shots: slice depth of field × (1 − overlap). At 1:1 on full frame at f/8 with 20% overlap, that is roughly 0.77 mm; at higher magnification it shrinks to sub-millimeter steps, which is why rails or automated in-camera focus bracketing are used."
+        },
+        "what-software-merges-stacks": {
+          "question": "What software merges focus stacks?",
+          "answer": "Helicon Focus and Zerene Stacker are the dedicated tools; Adobe Photoshop merges stacks via Auto-Align and Auto-Blend Layers. All three align frames (magnification shifts slightly as focus changes) and blend the sharpest regions of each frame automatically."
+        }
+      }
     }
   }
 }

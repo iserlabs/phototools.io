@@ -93,6 +93,31 @@
   color: var(--text-primary);
 }
 
+.farRow { display: flex; gap: 6px; align-items: flex-start; }
+.farRow > div:first-child { flex: 1; min-width: 0; }
+.fieldDisabled { opacity: 0.45; pointer-events: none; }
+.infBtn {
+  padding: 6px 10px; font-size: 14px; font-family: inherit;
+  background: var(--bg-primary); color: var(--text-secondary);
+  border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
+}
+.infBtn:hover { border-color: var(--accent); color: var(--accent); }
+.infBtnActive { background: color-mix(in srgb, var(--accent) 18%, transparent); border-color: var(--accent); color: var(--accent); }
+.presetRow { display: flex; gap: 4px; }
+.presetBtn {
+  flex: 1; padding: 4px 0; font-size: 11px; font-family: var(--font-mono);
+  background: var(--bg-primary); color: var(--text-secondary);
+  border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
+}
+.presetBtn:hover { border-color: var(--accent); color: var(--accent); }
+.presetBtnActive { background: color-mix(in srgb, var(--accent) 18%, transparent); border-color: var(--accent); color: var(--accent); }
+.numRow { display: flex; align-items: center; gap: 8px; }
+.numInput {
+  width: 64px; padding: 4px 6px; font-size: 12px; font-family: var(--font-mono);
+  background: var(--bg-primary); color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: 6px;
+}
+
 /* -- Result cards -- */
 .resultsGrid {
   display: grid;
@@ -157,6 +182,9 @@
   line-height: 1.4;
 }
 
+.exportRow { display: flex; gap: 6px; }
+.exportRow > button { flex: 1; }
+
 /* -- Copy button -- */
 .copyBtn {
   width: 100%;
@@ -178,6 +206,17 @@
 }
 
 /* -- Canvas area -- */
+/* This is the "inner panel" for this tool per the project's no-desktop-page-
+ * scroll rule: the page itself never scrolls, but a column this tall (play
+ * button + SceneStrip + StackingDiagram + ShotTable) can exceed the flex
+ * slot at common viewport heights, so it needs its own overflow-y: auto —
+ * matching .sidebar and LearnPanel. justify-content is flex-start (not
+ * center): with centered flex content that overflows, the overflow at the
+ * TOP is unreachable by scrolling, which previously clipped the play button
+ * behind the Nav with no way to scroll up to it. flex-start keeps the first
+ * child anchored at the top and lets the scrollable overflow land at the
+ * bottom, where overflow-y: auto can actually reach it.
+ */
 .canvasArea {
   flex: 1;
   display: flex;
@@ -185,9 +224,66 @@
   min-width: 0;
   min-height: 0;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-y: auto;
   padding: 24px;
 }
+
+/* -- Play sweep button -- */
+.playBtn {
+  align-self: flex-start;
+  width: auto;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 500;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  margin-bottom: 10px;
+}
+
+.playBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* -- Diagram -- */
+.diagramWrap { position: relative; width: 100%; max-width: 900px; }
+.sceneStripWrap { margin-bottom: 10px; }
+.diagramTooltip {
+  position: absolute; top: 0; transform: translateX(-50%);
+  background: var(--bg-primary); border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 8px; font-size: 11px; font-family: var(--font-mono);
+  color: var(--text-primary); pointer-events: none; white-space: nowrap; z-index: 5;
+}
+.bandRect { transition: x 0.25s var(--ease-out), width 0.25s var(--ease-out), opacity 0.2s; }
+.dotCircle { transition: cx 0.25s var(--ease-out), opacity 0.2s; }
+.sceneEllipse { transition: cx 0.25s var(--ease-out), rx 0.25s var(--ease-out), opacity 0.2s; }
+@media (prefers-reduced-motion: reduce) {
+  .bandRect, .dotCircle, .sceneEllipse { transition: none; }
+}
+
+/* -- Shot table -- */
+.tableWrap { width: 100%; max-width: 900px; }
+.tableSummary {
+  cursor: pointer; font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--accent); padding: 8px 0;
+}
+.tableScroll { max-height: 220px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; }
+.table { width: 100%; border-collapse: collapse; font-size: 12px; font-family: var(--font-mono); }
+.table th {
+  position: sticky; top: 0; background: var(--bg-surface); text-align: left;
+  padding: 6px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--text-secondary); border-bottom: 1px solid var(--border);
+}
+.table td { padding: 4px 10px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+.table tr:last-child td { border-bottom: none; }
+.rowActive td { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+@media (max-width: 1023px) { .tableScroll { max-height: 180px; } }
 
 /* -- Mobile controls (hidden on desktop) -- */
 .mobileControls {
@@ -231,6 +327,11 @@
     padding: 4px;
     flex: none;
     min-height: 300px;
+    /* Mobile pages scroll normally at the document level (see globals.css'
+     * "allow page to scroll" rule + .app/.appBody switching to overflow:
+     * visible above). Override the desktop overflow-y: auto here so this
+     * panel doesn't grow a second, nested scroll region on top of that. */
+    overflow-y: visible;
   }
 
   .slider {

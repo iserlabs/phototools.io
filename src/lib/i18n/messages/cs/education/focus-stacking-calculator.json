@@ -14,6 +14,10 @@
         "2": {
           "heading": "Slučování a zarovnání",
           "text": "Software jako Photoshop, Helicon Focus nebo Zerene Stacker snímky zarovná (při změně zaostření dochází k drobným posunům zvětšení) a pak vybere z každé vrstvy nejostřejší pixely. Focení na pevném stativu se stálým světlem a s makroposuvem pro přesné kroky dá nejčistší výsledky."
+        },
+        "3": {
+          "heading": "Efektivní clona při zvětšení",
+          "text": "S rostoucím zvětšením prodloužení objektivu ztmavuje pracovní clonu a zvyšuje náchylnost k difrakci: efektivní clona = clonové číslo × (1 + zvětšení). Při 1:1 se f/8 chová jako f/16; při 2:1 se chová jako f/24. Proto se makro stacky fotí na střední jmenovité clony — difrakce totiž reaguje právě na efektivní hodnotu. Makro režim kalkulačky zobrazuje efektivní clonu a nejširší clonové číslo, které zůstane na tvém snímači difrakčně ostré."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Počet snímků",
           "definition": "Celkový počet snímků potřebných k pokrytí daného rozsahu hloubky při zadaném překryvu. Víc snímků = víc zpracování, ale hladší výsledek."
+        },
+        "magnification": {
+          "term": "Zvětšení",
+          "definition": "Poměr velikosti subjektu k velikosti snímače. 1:1 (1.0×) znamená, že subjekt se na snímač promítá v životní velikosti. Krok posuvu a hloubka ostrosti na plátek závisí jen na zvětšení, cloně a snímači — ne na vzdálenosti."
+        },
+        "effectiveAperture": {
+          "term": "Efektivní clona",
+          "definition": "Pracovní clonové číslo po zvětšení: N × (1 + m). Difrakce i expozice se řídí touto hodnotou, ne číslem na objektivu."
+        },
+        "railStep": {
+          "term": "Krok posuvu",
+          "definition": "O kolik se makroposuv posune mezi snímky: hloubka ostrosti na plátek × (1 − překryv). Při vysokém zvětšení pod milimetr."
+        },
+        "subjectDepth": {
+          "term": "Hloubka subjektu",
+          "definition": "Hloubka tvého subjektu odpředu dozadu, měřená v milimetrech — celková vzdálenost, kterou musí stack pokrýt od nejbližšího bodu, co chceš mít ostrý, po nejvzdálenější."
         }
       },
       "challenges": {
@@ -105,6 +125,30 @@
             "1": { "label": "Nedostatečný překryv mezi zaostřeními" },
             "2": { "label": "Stativ se během série pohnul" },
             "3": { "label": "ISO bylo moc vysoké" }
+          }
+        },
+        "3": {
+          "scenario": "Fotíš při f/8 a 2× zvětšení. Jaká je tvoje efektivní clona?",
+          "hint": "Efektivní clona = clonové číslo × (1 + zvětšení).",
+          "successMessage": "Správně! f/8 × (1 + 2) = f/24. Difrakce při 2× se posuzuje podle f/24, ne f/8 — proto se při vysokém zvětšení používají střední jmenovité clony.",
+          "failureMessage": "Efektivní clona = N × (1 + m) = 8 × 3 = f/24. Značení na objektivu podhodnocuje pracovní clonu při zvětšení.",
+          "options": {
+            "0": { "label": "f/8" },
+            "1": { "label": "f/16" },
+            "2": { "label": "f/24" },
+            "3": { "label": "f/32" }
+          }
+        },
+        "4": {
+          "scenario": "Hloubka ostrosti tvého plátku je 0.5 mm a chceš mezi plátky 20% překryv. Jaký krok posuvu bys měl použít?",
+          "hint": "Krok = hloubka plátku × (1 − překryv).",
+          "successMessage": "Správně! 0.5 mm × 0.8 = 0.4 mm na krok. Těch 0.1 mm, co při každém kroku vracíš zpátky, je pojistka pro zarovnání, díky které se stacky čistě spojí.",
+          "failureMessage": "Krok = plátek × (1 − překryv) = 0.5 × 0.8 = 0.4 mm. Krok o celých 0.5 mm by nedal žádný překryv a byly by vidět švy.",
+          "options": {
+            "0": { "label": "0.1 mm" },
+            "1": { "label": "0.4 mm" },
+            "2": { "label": "0.5 mm" },
+            "3": { "label": "0.6 mm" }
           }
         }
       }

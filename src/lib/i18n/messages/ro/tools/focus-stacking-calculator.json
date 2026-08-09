@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Setări",
       "camera": "Aparat și obiectiv",
       "focalLength": "Distanță focală",
       "aperture": "Diafragmă",
@@ -10,7 +9,6 @@
       "nearLimit": "Limita apropiată",
       "farLimit": "Limita îndepărtată",
       "overlap": "Suprapunere",
-      "overlapDescription": "Cât la sută din profunzime de câmp se suprapune între cadrele vecine, pentru o îmbinare fără goluri",
       "results": "Rezultate",
       "shotCount": "Cadre necesare",
       "totalDepth": "Adâncime totală",
@@ -25,18 +23,60 @@
       "diagramFar": "Departe",
       "diagramCoverage": "Acoperire",
       "diagramFocusPoints": "Puncte focalizare",
-      "diagramShot": "Cadrul {number}",
-      "diagramOverlap": "Zonă de suprapunere",
-      "diagramSharpZone": "Zonă clară",
       "diagramSubject": "Subiect",
-      "diagramSensor": "Senzor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Avertisment",
       "tooFewShots": "Intervalul de adâncime încape într-un singur cadru — nu e nevoie de stacking",
       "tooManyShots": "Acest plan cere multe cadre. Gândește-te să închizi diafragma ca să reduci numărul.",
       "macroMode": "Macro",
-      "landscapeMode": "Peisaj"
+      "modeTitle": "Mod",
+      "distanceMode": "Distanță",
+      "magnification": "Mărire",
+      "subjectDepth": "Adâncimea subiectului",
+      "sliceDoF": "profunzime de câmp per felie",
+      "railStep": "Pas de șină",
+      "effectiveAperture": "Diafragmă efectivă",
+      "railTravel": "Deplasare totală a șinei",
+      "farLimitInfinity": "Stack până la infinit",
+      "tableShot": "Cadru",
+      "tableFocusDistance": "Distanță de focalizare",
+      "tableNear": "Margine apropiată",
+      "tableFar": "Margine îndepărtată",
+      "tableRailPosition": "Poziția șinei",
+      "shotTable": "Lista cadrelor",
+      "animateStack": "Animă stack-ul",
+      "pauseStack": "Pauză",
+      "diffractionWarning": "La f/{aperture}, difracția înmoaie imaginea pe acest senzor. Ia în calcul o diafragmă mai deschisă — de adâncime se ocupă stack-ul.",
+      "diffractionWarningMacro": "La {magnification}×, f/{aperture} se comportă ca f/{effective}. Rămâi la f/{max} sau mai deschis pentru claritate maximă.",
+      "coverageWarning": "S-a atins limita de cadre înainte de a acoperi tot intervalul. Folosește un interval mai îngust, mai multă profunzime de câmp per cadru, sau împarte stack-ul în două.",
+      "hyperfocalHint": "Un singur cadru focalizat la distanța hiperfocală ({distance}) acoperă tot acest interval — nu e nevoie de stacking.",
+      "sceneCamera": "Aparat",
+      "sceneRail": "Deplasare șină",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Ce este focus stacking-ul?",
+          "answer": "Focus stacking-ul combină mai multe fotografii făcute la distanțe de focalizare diferite într-o singură imagine clară din prim-plan până în fundal. Software-ul păstrează cei mai clari pixeli din fiecare cadru. E esențial în fotografia macro, unde profunzimea câmpului unui singur cadru poate fi sub un milimetru, și util în peisaj, când atât un prim-plan apropiat, cât și un fundal îndepărtat trebuie să fie clare."
+        },
+        "how-much-overlap": {
+          "question": "Câtă suprapunere au nevoie cadrele unui focus stack?",
+          "answer": "O suprapunere de 20–30% între cadrele vecine este standardul practic. Suprapunerea oferă software-ului de îmbinare toleranță de aliniere; prea puțină creează goluri neclare între felii, iar peste 50% doar adaugă cadre fără să îmbunătățească rezultatul."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Care e cea mai bună diafragmă pentru focus stacking?",
+          "answer": "O diafragmă moderată, în jur de f/5.6–f/8, dă de obicei cel mai clar stack. Dacă închizi și mai mult, câștigi adâncime per cadru, dar pierzi claritate din cauza difracției — iar la mărire macro, diafragma efectivă este N × (1 + m), deci f/8 la 1:1 se comportă deja ca f/16. Stack-ul îți dă adâncimea, așa că fotografiază fiecare cadru la cea mai clară diafragmă a obiectivului."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Ar trebui să fac focus stacking sau să folosesc distanța hiperfocală?",
+          "answer": "Dacă un singur cadru focalizat la distanța hiperfocală acoperă acceptabil subiectul cel mai apropiat, stacking-ul nu e necesar. Fă stacking când prim-planul e mai aproape decât jumătate din distanța hiperfocală, sau când vrei claritate critică, nu doar acceptabilă, pe tot cadrul."
+        },
+        "what-is-a-rail-step": {
+          "question": "Ce este pasul de șină în stacking-ul macro?",
+          "answer": "Pasul de șină arată cât de mult avansează o șină de focalizare macro aparatul între cadre: profunzime de câmp per felie × (1 − suprapunere). La 1:1 pe format full-frame, la f/8, cu 20% suprapunere, asta înseamnă aproximativ 0.77 mm; la mărire mai mare, se reduce la pași sub un milimetru, motiv pentru care se folosesc șine sau bracketing automat de focalizare din aparat."
+        },
+        "what-software-merges-stacks": {
+          "question": "Ce software îmbină stack-urile focus?",
+          "answer": "Helicon Focus și Zerene Stacker sunt uneltele dedicate; Adobe Photoshop îmbină stack-uri prin Auto-Align și Auto-Blend Layers. Toate trei aliniază cadrele (mărirea se schimbă puțin când se modifică focalizarea) și amestecă automat cele mai clare zone din fiecare cadru."
+        }
+      }
     }
   }
 }

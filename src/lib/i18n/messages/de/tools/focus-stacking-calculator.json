@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Einstellungen",
       "camera": "Kamera & Objektiv",
       "focalLength": "Brennweite",
       "aperture": "Blende",
@@ -10,7 +9,6 @@
       "nearLimit": "Nahgrenze",
       "farLimit": "Ferngrenze",
       "overlap": "Überlappung",
-      "overlapDescription": "Prozentuale Schärfentiefen-Überlappung zwischen benachbarten Aufnahmen für ein sauberes Zusammenfügen",
       "results": "Ergebnisse",
       "shotCount": "Benötigte Aufnahmen",
       "totalDepth": "Gesamttiefe",
@@ -25,18 +23,60 @@
       "diagramFar": "Fern",
       "diagramCoverage": "Abdeckung",
       "diagramFocusPoints": "Fokuspunkte",
-      "diagramShot": "Aufnahme {number}",
-      "diagramOverlap": "Überlappungsbereich",
-      "diagramSharpZone": "Schärfebereich",
       "diagramSubject": "Motiv",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Warnung",
       "tooFewShots": "Der Tiefenbereich liegt innerhalb einer einzigen Aufnahme — kein Stacking nötig",
       "tooManyShots": "Dieser Plan erfordert viele Aufnahmen. Wähle eine kleinere Blendenöffnung, um die Anzahl zu reduzieren.",
       "macroMode": "Makro",
-      "landscapeMode": "Landschaft"
+      "modeTitle": "Modus",
+      "distanceMode": "Entfernung",
+      "magnification": "Abbildungsmaßstab",
+      "subjectDepth": "Motivtiefe",
+      "sliceDoF": "Schärfentiefe pro Schicht",
+      "railStep": "Schlittenschritt",
+      "effectiveAperture": "Effektive Blende",
+      "railTravel": "Gesamter Schlittenweg",
+      "farLimitInfinity": "Bis unendlich stacken",
+      "tableShot": "Aufnahme",
+      "tableFocusDistance": "Fokusabstand",
+      "tableNear": "Nahpunkt",
+      "tableFar": "Fernpunkt",
+      "tableRailPosition": "Schlittenposition",
+      "shotTable": "Aufnahmenliste",
+      "animateStack": "Stack animieren",
+      "pauseStack": "Pause",
+      "diffractionWarning": "Bei f/{aperture} macht Beugung das Bild auf diesem Sensor weicher. Erwäge eine offenere Blende — die Tiefe liefert der Stack.",
+      "diffractionWarningMacro": "Bei {magnification}× wirkt f/{aperture} wie f/{effective}. Bleibe bei f/{max} oder offener für maximale Schärfe.",
+      "coverageWarning": "Das Aufnahmelimit wurde erreicht, bevor der gesamte Bereich abgedeckt war. Verwende einen engeren Bereich, mehr Schärfentiefe pro Aufnahme, oder teile den Stack auf.",
+      "hyperfocalHint": "Eine einzige Aufnahme mit Fokus auf die Hyperfokaldistanz ({distance}) deckt diesen gesamten Bereich ab — kein Stacking nötig.",
+      "sceneCamera": "Kamera",
+      "sceneRail": "Schlittenweg",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Was ist Focus Stacking?",
+          "answer": "Focus Stacking kombiniert mehrere Fotos, die bei unterschiedlichen Fokusabständen aufgenommen wurden, zu einem Bild mit durchgehender Schärfe vom Vordergrund bis zum Hintergrund. Die Software behält die schärfsten Pixel aus jedem Einzelbild. Es ist in der Makrofotografie unverzichtbar, wo die Schärfentiefe eines einzelnen Bildes unter einem Millimeter liegen kann, und nützlich in der Landschaftsfotografie, wenn sowohl ein naher Vordergrund als auch ein ferner Hintergrund scharf sein müssen."
+        },
+        "how-much-overlap": {
+          "question": "Wie viel Überlappung brauchen Focus-Stack-Aufnahmen?",
+          "answer": "20–30% Überlappung zwischen benachbarten Aufnahmen ist der praktische Standard. Die Überlappung gibt der Zusammenfügungs-Software Spielraum beim Ausrichten; zu wenig erzeugt weiche Lücken zwischen den Schichten, während mehr als etwa 50% zusätzliche Aufnahmen ohne besseres Ergebnis bedeutet."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Was ist die beste Blende für Focus Stacking?",
+          "answer": "Eine mittlere Blende um f/5.6–f/8 ergibt meist den schärfsten Stack. Weiteres Abblenden bringt mehr Tiefe pro Aufnahme, kostet aber Schärfe durch Beugung — und bei Makro-Abbildungsmaßstäben gilt für die effektive Blende N × (1 + m), sodass f/8 bei 1:1 bereits wie f/16 wirkt. Die Tiefe liefert der Stack, also fotografiere jedes Einzelbild mit der schärfsten Blende des Objektivs."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Sollte ich focus-stacken oder die hyperfokale Distanz nutzen?",
+          "answer": "Wenn eine einzelne Aufnahme mit Fokus auf die Hyperfokaldistanz dein nächstes Motiv akzeptabel scharf abbildet, ist Stacking unnötig. Stacke, wenn der Vordergrund näher als die halbe Hyperfokaldistanz liegt, oder wenn du kritische statt lediglich akzeptable Schärfe im gesamten Bild willst."
+        },
+        "what-is-a-rail-step": {
+          "question": "Was ist ein Schlittenschritt beim Makro-Stacking?",
+          "answer": "Der Schlittenschritt ist die Strecke, um die ein Makro-Fokusschlitten die Kamera zwischen den Aufnahmen vorschiebt: Schärfentiefe pro Schicht × (1 − Überlappung). Bei 1:1 auf Vollformat mit f/8 und 20% Überlappung sind das etwa 0.77 mm; bei höherer Vergrößerung schrumpft das auf Schritte unter einem Millimeter — deshalb kommen Schlitten oder automatisiertes In-Kamera-Fokus-Bracketing zum Einsatz."
+        },
+        "what-software-merges-stacks": {
+          "question": "Welche Software fügt Focus Stacks zusammen?",
+          "answer": "Helicon Focus und Zerene Stacker sind die dedizierten Programme; Adobe Photoshop fügt Stacks über Auto-Align und Auto-Blend Layers zusammen. Alle drei richten die Einzelbilder aus (die Vergrößerung verschiebt sich beim Fokussieren leicht) und blenden automatisch die schärfsten Bereiche jedes Bildes ein."
+        }
+      }
     }
   }
 }

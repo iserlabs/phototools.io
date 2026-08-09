@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "焦点堆叠计算器",
-      "description": "计算实现前后清晰的最佳对焦距离"
+      "description": "以精确的对焦距离、拍摄数量和微距导轨步进来规划焦点堆叠"
     },
     "equivalent-settings-calculator": {
       "name": "等效参数计算器",

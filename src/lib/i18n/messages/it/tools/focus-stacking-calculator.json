@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Impostazioni",
       "camera": "Fotocamera e obiettivo",
       "focalLength": "Lunghezza focale",
       "aperture": "Apertura",
@@ -10,7 +9,6 @@
       "nearLimit": "Limite vicino",
       "farLimit": "Limite lontano",
       "overlap": "Sovrapposizione",
-      "overlapDescription": "Percentuale di sovrapposizione della profondità di campo tra scatti adiacenti per garantire una fusione pulita",
       "results": "Risultati",
       "shotCount": "Scatti necessari",
       "totalDepth": "Profondità totale",
@@ -25,18 +23,60 @@
       "diagramFar": "Lontano",
       "diagramCoverage": "Copertura",
       "diagramFocusPoints": "Punti fuoco",
-      "diagramShot": "Scatto {number}",
-      "diagramOverlap": "Zona di sovrapposizione",
-      "diagramSharpZone": "Zona nitida",
       "diagramSubject": "Soggetto",
-      "diagramSensor": "Sensore",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Attenzione",
       "tooFewShots": "L'intervallo di profondità rientra in un singolo scatto — nessuno stacking necessario",
       "tooManyShots": "Questo piano richiede molti scatti. Considera un'apertura più chiusa per ridurne il numero.",
       "macroMode": "Macro",
-      "landscapeMode": "Paesaggio"
+      "modeTitle": "Modalità",
+      "distanceMode": "Distanza",
+      "magnification": "Ingrandimento",
+      "subjectDepth": "Profondità del soggetto",
+      "sliceDoF": "PdC della fetta",
+      "railStep": "Passo della slitta",
+      "effectiveAperture": "Apertura effettiva",
+      "railTravel": "Corsa totale della slitta",
+      "farLimitInfinity": "Stacking fino all'infinito",
+      "tableShot": "Scatto",
+      "tableFocusDistance": "Distanza di messa a fuoco",
+      "tableNear": "Bordo vicino",
+      "tableFar": "Bordo lontano",
+      "tableRailPosition": "Posizione della slitta",
+      "shotTable": "Elenco scatti",
+      "animateStack": "Anima lo stack",
+      "pauseStack": "Pausa",
+      "diffractionWarning": "A f/{aperture}, la diffrazione sta ammorbidendo l'immagine su questo sensore. Considera un'apertura più ampia — lo stack fornisce la profondità.",
+      "diffractionWarningMacro": "A {magnification}×, f/{aperture} si comporta come f/{effective}. Resta a f/{max} o più ampio per la massima nitidezza.",
+      "coverageWarning": "Il limite di scatti è stato raggiunto prima di coprire l'intero intervallo. Usa un intervallo più stretto, più profondità di campo per scatto, oppure dividi lo stack.",
+      "hyperfocalHint": "Un singolo scatto messo a fuoco alla distanza iperfocale ({distance}) copre l'intero intervallo — nessuno stacking necessario.",
+      "sceneCamera": "Fotocamera",
+      "sceneRail": "Corsa della slitta",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Cos'è il focus stacking?",
+          "answer": "Il focus stacking combina più foto scattate a diverse distanze di messa a fuoco in un'unica immagine nitida dal primo piano allo sfondo. Il software mantiene i pixel più nitidi di ciascun fotogramma. È essenziale nella macrofotografia, dove la profondità di campo di un singolo fotogramma può essere inferiore a un millimetro, ed è utile nei paesaggi quando sia un primo piano vicino sia uno sfondo lontano devono risultare nitidi."
+        },
+        "how-much-overlap": {
+          "question": "Quanta sovrapposizione serve tra gli scatti di un focus stack?",
+          "answer": "Una sovrapposizione del 20–30% tra scatti adiacenti è lo standard pratico. La sovrapposizione dà al software di fusione un margine di allineamento; troppo poca crea lacune sfocate tra le fette, mentre oltre il 50% circa aggiunge fotogrammi senza migliorare il risultato."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Qual è l'apertura migliore per il focus stacking?",
+          "answer": "Un'apertura moderata intorno a f/5.6–f/8 di solito dà lo stack più nitido. Chiudere ulteriormente aggiunge profondità per scatto ma costa nitidezza a causa della diffrazione — e all'ingrandimento macro l'apertura effettiva è N × (1 + m), quindi f/8 a 1:1 si comporta già come f/16. Lo stack fornisce la profondità, quindi scatta ogni fotogramma all'apertura più nitida dell'obiettivo."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Devo fare focus stacking o usare la distanza iperfocale?",
+          "answer": "Se un singolo scatto messo a fuoco alla distanza iperfocale copre in modo accettabile il soggetto più vicino, lo stacking non è necessario. Fai stacking quando il primo piano è più vicino della metà della distanza iperfocale, oppure quando vuoi una nitidezza critica anziché semplicemente accettabile in tutto il fotogramma."
+        },
+        "what-is-a-rail-step": {
+          "question": "Cos'è un passo della slitta nello stacking macro?",
+          "answer": "Il passo della slitta è la distanza di cui una slitta macro per il focus fa avanzare la fotocamera tra uno scatto e l'altro: PdC della fetta × (1 − sovrapposizione). A 1:1 su full frame a f/8 con il 20% di sovrapposizione, sono circa 0.77 mm; a ingrandimenti maggiori si riduce a passi sub-millimetrici, motivo per cui si usano slitte o il bracketing di messa a fuoco automatico in camera."
+        },
+        "what-software-merges-stacks": {
+          "question": "Quale software unisce i focus stack?",
+          "answer": "Helicon Focus e Zerene Stacker sono gli strumenti dedicati; Adobe Photoshop unisce gli stack tramite Auto-Align e Auto-Blend Layers. Tutti e tre allineano i fotogrammi (l'ingrandimento cambia leggermente al variare del fuoco) e fondono automaticamente le aree più nitide di ciascun fotogramma."
+        }
+      }
     }
   }
 }

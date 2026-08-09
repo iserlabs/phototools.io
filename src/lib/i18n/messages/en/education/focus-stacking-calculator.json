@@ -14,6 +14,10 @@
         "2": {
           "heading": "Merging & Alignment",
           "text": "Software like Photoshop, Helicon Focus, or Zerene Stacker aligns the frames (slight magnification shifts occur as focus changes), then selects the sharpest pixels from each layer. Shooting on a sturdy tripod with consistent lighting and using a focus rail for precise increments produces the cleanest results."
+        },
+        "3": {
+          "heading": "Effective Aperture at Magnification",
+          "text": "As magnification rises, the lens extension makes the working aperture darker and more diffraction-prone: effective aperture = f-number × (1 + magnification). At 1:1, f/8 behaves like f/16; at 2:1 it behaves like f/24. This is why macro stacks are shot at moderate nominal apertures — the effective value is what diffraction sees. The calculator's macro mode reports the effective aperture and the widest f-number that stays diffraction-sharp on your sensor."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Shot Count",
           "definition": "The total number of frames needed to cover the depth range with the specified overlap. More shots = more processing but smoother results."
+        },
+        "magnification": {
+          "term": "Magnification",
+          "definition": "Subject-to-sensor size ratio. 1:1 (1.0×) means the subject is projected at life size onto the sensor. Rail step and slice depth depend only on magnification, aperture, and sensor — not distance."
+        },
+        "effectiveAperture": {
+          "term": "Effective Aperture",
+          "definition": "The working f-number after magnification: N × (1 + m). Diffraction and exposure follow this value, not the number on the lens."
+        },
+        "railStep": {
+          "term": "Rail Step",
+          "definition": "How far the focusing rail advances between shots: slice depth of field × (1 − overlap). Sub-millimeter at high magnification."
+        },
+        "subjectDepth": {
+          "term": "Subject Depth",
+          "definition": "The front-to-back depth of your subject, measured in millimeters — the total distance the stack must cover from the nearest point you want sharp to the farthest."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "The ISO was too high"
+            }
+          }
+        },
+        "3": {
+          "scenario": "You are shooting at f/8 and 2× magnification. What is your effective aperture?",
+          "hint": "Effective aperture = f-number × (1 + magnification).",
+          "successMessage": "Correct! f/8 × (1 + 2) = f/24. Diffraction at 2× is judged at f/24, not f/8 — which is why high-magnification work uses moderate nominal apertures.",
+          "failureMessage": "Effective aperture = N × (1 + m) = 8 × 3 = f/24. The lens markings understate the working aperture at magnification.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Your slice depth of field is 0.5 mm and you want 20% overlap between slices. What rail step should you use?",
+          "hint": "Step = slice depth × (1 − overlap).",
+          "successMessage": "Right! 0.5 mm × 0.8 = 0.4 mm per step. The 0.1 mm you give back on each step is the alignment insurance that makes stacks merge cleanly.",
+          "failureMessage": "Step = slice × (1 − overlap) = 0.5 × 0.8 = 0.4 mm. Stepping the full 0.5 mm would leave zero overlap and visible seams.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

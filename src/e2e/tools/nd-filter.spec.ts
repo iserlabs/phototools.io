@@ -101,11 +101,15 @@ test.describe('ND Filter Calculator', () => {
     // Set base to 1s (index 13), ND to ND512 (index 8)
     await panel.locator('select').first().selectOption('13')
     await panel.locator('select').nth(1).selectOption('8')
-    await page.waitForTimeout(300)
+
+    // useToolQuerySync writes a single throttled snapshot of the FULL state,
+    // not one write per field. Two separate actions can land as separate
+    // snapshots under load, so poll on the LAST-set param (nd=8) — once it
+    // appears, the write is guaranteed to include everything set before it.
+    await expect.poll(() => page.url()).toContain('nd=8')
 
     const url = page.url()
     expect(url).toContain('base=13')
-    expect(url).toContain('nd=8')
 
     // Navigate to the URL directly and verify state is restored
     await page.goto(url)

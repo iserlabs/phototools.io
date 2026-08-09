@@ -14,6 +14,10 @@
         "2": {
           "heading": "Îmbinare și aliniere",
           "text": "Programe precum Photoshop, Helicon Focus sau Zerene Stacker aliniază cadrele (când focalizarea se schimbă, apar mici variații de mărire), apoi aleg cei mai clari pixeli din fiecare strat. Fotografierea pe un trepied solid, cu lumină constantă, și folosirea unei șine de focalizare pentru pași preciși dau cele mai curate rezultate."
+        },
+        "3": {
+          "heading": "Diafragma efectivă la mărire",
+          "text": "Pe măsură ce mărirea crește, extensia obiectivului face diafragma de lucru mai închisă și mai predispusă la difracție: diafragmă efectivă = cifra f × (1 + mărire). La 1:1, f/8 se comportă ca f/16; la 2:1, se comportă ca f/24. De aceea stack-urile macro se fotografiază la diafragme nominale moderate — difracția reacționează tocmai la valoarea efectivă. Modul macro al calculatorului arată diafragma efectivă și cea mai deschisă cifră f care rămâne clară din punct de vedere al difracției pe senzorul tău."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Număr de cadre",
           "definition": "Numărul total de cadre necesare pentru a acoperi intervalul de adâncime cu suprapunerea specificată. Mai multe cadre = mai multă procesare, dar rezultate mai fine."
+        },
+        "magnification": {
+          "term": "Mărire",
+          "definition": "Raportul dintre dimensiunea subiectului și cea a senzorului. 1:1 (1.0×) înseamnă că subiectul e proiectat pe senzor la dimensiune naturală. Pasul de șină și profunzimea câmpului per felie depind doar de mărire, diafragmă și senzor — nu de distanță."
+        },
+        "effectiveAperture": {
+          "term": "Diafragmă efectivă",
+          "definition": "Cifra f de lucru după mărire: N × (1 + m). Difracția și expunerea urmează această valoare, nu cifra înscrisă pe obiectiv."
+        },
+        "railStep": {
+          "term": "Pas de șină",
+          "definition": "Cât de mult avansează șina de focalizare între cadre: profunzime de câmp per felie × (1 − suprapunere). Sub un milimetru la mărire mare."
+        },
+        "subjectDepth": {
+          "term": "Adâncimea subiectului",
+          "definition": "Adâncimea subiectului tău din față în spate, măsurată în milimetri — distanța totală pe care trebuie s-o acopere stack-ul de la cel mai apropiat punct pe care îl vrei clar până la cel mai îndepărtat."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "ISO-ul a fost prea mare"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Fotografiezi la f/8 și mărire 2×. Care e diafragma ta efectivă?",
+          "hint": "Diafragmă efectivă = cifra f × (1 + mărire).",
+          "successMessage": "Corect! f/8 × (1 + 2) = f/24. Difracția la 2× se judecă la f/24, nu la f/8 — de aceea lucrul la mărire mare folosește diafragme nominale moderate.",
+          "failureMessage": "Diafragmă efectivă = N × (1 + m) = 8 × 3 = f/24. Marcajele obiectivului subestimează diafragma de lucru la mărire.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Profunzimea câmpului feliei tale este de 0.5 mm și vrei 20% suprapunere între felii. Ce pas de șină ar trebui să folosești?",
+          "hint": "Pas = profunzimea feliei × (1 − suprapunere).",
+          "successMessage": "Exact! 0.5 mm × 0.8 = 0.4 mm per pas. Cei 0.1 mm pe care îi cedezi la fiecare pas sunt marja de aliniere care face ca stack-urile să se îmbine curat.",
+          "failureMessage": "Pas = felie × (1 − suprapunere) = 0.5 × 0.8 = 0.4 mm. Un pas de 0.5 mm întregi ar lăsa suprapunere zero și cusături vizibile.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

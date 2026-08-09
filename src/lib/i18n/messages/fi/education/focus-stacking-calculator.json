@@ -14,6 +14,10 @@
         "2": {
           "heading": "Yhdistäminen ja kohdistus",
           "text": "Ohjelmat kuten Photoshop, Helicon Focus tai Zerene Stacker kohdistavat ruudut (pieniä suurennusmuutoksia syntyy tarkennuksen muuttuessa) ja valitsevat sitten terävimmät pikselit kustakin kerroksesta. Parhaat tulokset saa tukevalla jalustalla, tasaisella valaistuksella ja tarkennuskiskolla, jonka avulla askel saadaan tarkaksi."
+        },
+        "3": {
+          "heading": "Tehollinen aukko suurennoksella",
+          "text": "Suurennoksen kasvaessa objektiivin pidennys tekee työaukosta pimeämmän ja alttiimman diffraktiolle: tehollinen aukko = f-luku × (1 + suurennos). Suhteessa 1:1 f/8 käyttäytyy kuin f/16; suhteessa 2:1 se käyttäytyy kuin f/24. Siksi makropinot kuvataan maltillisilla nimellisillä aukoilla — diffraktio kohtaa juuri tehollisen arvon. Laskurin makrotila näyttää tehollisen aukon ja suurimman f-luvun, joka pysyy diffraktioteräväksi kennollasi."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Kuvien määrä",
           "definition": "Ruutujen kokonaismäärä, joka tarvitaan syvyysalueen kattamiseen valitulla limityksellä. Enemmän ruutuja = enemmän työtä, mutta tasaisempi lopputulos."
+        },
+        "magnification": {
+          "term": "Suurennos",
+          "definition": "Kohteen ja kennon koon suhde. 1:1 (1.0×) tarkoittaa, että kohde heijastuu kennolle luonnollisessa koossaan. Kiskoaskel ja viipaleen syväterävyys riippuvat vain suurennoksesta, aukosta ja kennosta — eivät etäisyydestä."
+        },
+        "effectiveAperture": {
+          "term": "Tehollinen aukko",
+          "definition": "Työaukko suurennoksen jälkeen: N × (1 + m). Diffraktio ja valotus seuraavat tätä arvoa, ei objektiiviin merkittyä lukua."
+        },
+        "railStep": {
+          "term": "Kiskoaskel",
+          "definition": "Kuinka pitkälle tarkennuskisko siirtyy kuvien välillä: viipaleen syväterävyys × (1 − limitys). Alle millimetrin suurella suurennoksella."
+        },
+        "subjectDepth": {
+          "term": "Kohteen syvyys",
+          "definition": "Kohteesi syvyys edestä taakse, millimetreinä mitattuna — kokonaismatka, jonka pinon on katettava lähimmästä terävöitettävästä pisteestä kauimmaiseen."
         }
       },
       "challenges": {
@@ -105,6 +125,30 @@
             "1": { "label": "Tarkennusaskelten välinen limitys oli liian pieni" },
             "2": { "label": "Jalusta liikkui sarjan aikana" },
             "3": { "label": "ISO oli liian korkea" }
+          }
+        },
+        "3": {
+          "scenario": "Kuvaat aukolla f/8 ja 2× suurennoksella. Mikä on tehollinen aukkosi?",
+          "hint": "Tehollinen aukko = f-luku × (1 + suurennos).",
+          "successMessage": "Oikein! f/8 × (1 + 2) = f/24. Diffraktiota 2×-suurennoksella arvioidaan aukossa f/24, ei f/8 — siksi suurilla suurennoksilla käytetään maltillisia nimellisiä aukkoja.",
+          "failureMessage": "Tehollinen aukko = N × (1 + m) = 8 × 3 = f/24. Objektiivin merkinnät aliarvioivat työaukon suurennoksella.",
+          "options": {
+            "0": { "label": "f/8" },
+            "1": { "label": "f/16" },
+            "2": { "label": "f/24" },
+            "3": { "label": "f/32" }
+          }
+        },
+        "4": {
+          "scenario": "Viipaleesi syväterävyys on 0.5 mm, ja haluat 20% limityksen viipaleiden välille. Mitä kiskoaskelta kannattaa käyttää?",
+          "hint": "Askel = viipaleen syvyys × (1 − limitys).",
+          "successMessage": "Oikein! 0.5 mm × 0.8 = 0.4 mm askelta kohden. Jokaisella askeleella takaisin annettu 0.1 mm on se kohdistusvara, jonka ansiosta pino yhdistyy siististi.",
+          "failureMessage": "Askel = viipale × (1 − limitys) = 0.5 × 0.8 = 0.4 mm. Koko 0.5 mm:n askel jättäisi limityksen nollaan ja näkyviä saumoja.",
+          "options": {
+            "0": { "label": "0.1 mm" },
+            "1": { "label": "0.4 mm" },
+            "2": { "label": "0.5 mm" },
+            "3": { "label": "0.6 mm" }
           }
         }
       }

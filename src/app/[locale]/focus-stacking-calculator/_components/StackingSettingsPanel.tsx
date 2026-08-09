@@ -7,29 +7,21 @@ import { ApertureField } from '@/components/shared/ApertureField'
 import { DistanceField } from '@/components/shared/DistanceField'
 import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { getSkeletonBySlug } from '@/lib/data/education'
+import { minFocusableDistance } from '@/lib/math/stacking'
+import type { StackingState } from './useStackingState'
 import s from './FocusStacking.module.css'
 
 interface StackingSettingsPanelProps {
-  focalLength: number
-  aperture: number
-  sensorId: string
-  nearLimit: number
-  farLimit: number
-  overlapPct: number
-  onFocalLengthChange: (v: number) => void
-  onApertureChange: (v: number) => void
-  onSensorChange: (v: string) => void
-  onNearLimitChange: (v: number) => void
-  onFarLimitChange: (v: number) => void
-  onOverlapChange: (v: number) => void
+  state: StackingState
 }
 
-export function StackingSettingsPanel({
-  focalLength, aperture, sensorId,
-  nearLimit, farLimit, overlapPct,
-  onFocalLengthChange, onApertureChange, onSensorChange,
-  onNearLimitChange, onFarLimitChange, onOverlapChange,
-}: StackingSettingsPanelProps) {
+export function StackingSettingsPanel({ state }: StackingSettingsPanelProps) {
+  const {
+    focalLength, aperture, sensorId,
+    nearLimit, farLimit, overlapPct,
+    onFocalLengthChange, onApertureChange, onSensorChange,
+    onNearLimitChange, onFarLimitChange, onOverlapChange,
+  } = state
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const sensorsT = useTranslations('common.sensors')
   const et = useTranslations('education.focus-stacking-calculator')
@@ -44,6 +36,20 @@ export function StackingSettingsPanel({
     : undefined
 
   const overlapInt = Math.round(overlapPct * 100)
+  const isInf = !isFinite(farLimit)
+  // Physically focusable floor: just beyond the lens itself.
+  const nearMin = Math.max(0.1, minFocusableDistance(focalLength))
+  // Near's ceiling tracks the far limit so the range can't invert; if the
+  // floor above ever rises past the current far limit, hold the ceiling at
+  // the floor instead of letting max < min reach the slider. (The actual
+  // nearLimit <= farLimit invariant is enforced at the source, in
+  // useStackingState's onFocalLengthChange/onNearLimitChange/
+  // onFarLimitChange — these bounds are only the first line of defense
+  // against a direct drag on either slider.)
+  const nearMax = isInf ? 100 : Math.max(nearMin, farLimit)
+  // Far's floor tracks the current near limit for the same reason, clamped
+  // so it can never exceed the far field's own max of 100.
+  const farMin = Math.min(100, nearLimit)
 
   return (
     <>
@@ -98,8 +104,8 @@ export function StackingSettingsPanel({
           <DistanceField
             value={nearLimit}
             onChange={onNearLimitChange}
-            min={0.1}
-            max={100}
+            min={nearMin}
+            max={nearMax}
             label={t('nearLimit')}
           />
         </div>
@@ -109,13 +115,29 @@ export function StackingSettingsPanel({
             {t('farLimit')}
             {tooltips?.farLimit && <InfoTooltip tooltip={tooltips.farLimit} />}
           </label>
-          <DistanceField
-            value={farLimit}
-            onChange={onFarLimitChange}
-            min={0.1}
-            max={100}
-            label={t('farLimit')}
-          />
+          <div className={s.farRow}>
+            <div className={isInf ? s.fieldDisabled : undefined}>
+              <DistanceField
+                value={isInf ? 100 : farLimit}
+                onChange={onFarLimitChange}
+                min={farMin}
+                max={100}
+                label={t('farLimit')}
+              />
+            </div>
+            <button
+              type="button"
+              className={`${s.infBtn} ${isInf ? s.infBtnActive : ''}`}
+              aria-pressed={isInf}
+              aria-label={t('farLimitInfinity')}
+              // Turning ∞ off must land on a valid distance: the plain
+              // default of 5 could sit below a nearLimit that a large
+              // focal length has since raised, so pick whichever is larger.
+              onClick={() => onFarLimitChange(isInf ? Math.max(5, nearLimit) : Infinity)}
+            >
+              {t('infinity')}
+            </button>
+          </div>
         </div>
 
         <div className={s.field}>

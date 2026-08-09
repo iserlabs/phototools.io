@@ -14,6 +14,10 @@
         "2": {
           "heading": "Fusione e allineamento",
           "text": "Software come Photoshop, Helicon Focus o Zerene Stacker allineano i fotogrammi (piccoli spostamenti di ingrandimento avvengono al variare del fuoco), quindi selezionano i pixel più nitidi da ogni livello. Scattare su un treppiede solido con illuminazione costante e usare una slitta per il focus per incrementi precisi produce i risultati più puliti."
+        },
+        "3": {
+          "heading": "Apertura effettiva all'ingrandimento",
+          "text": "Con l'aumentare dell'ingrandimento, l'estensione dell'obiettivo rende l'apertura di lavoro più scura e più soggetta a diffrazione: apertura effettiva = numero f × (1 + ingrandimento). A 1:1, f/8 si comporta come f/16; a 2:1 si comporta come f/24. Ecco perché gli stack macro si scattano ad aperture nominali moderate — è il valore effettivo che la diffrazione percepisce. La modalità macro del calcolatore riporta l'apertura effettiva e il numero f più ampio che resta nitido rispetto alla diffrazione sul tuo sensore."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Numero di scatti",
           "definition": "Il numero totale di fotogrammi necessari per coprire l'intervallo di profondità con la sovrapposizione specificata. Più scatti = più elaborazione ma risultati più fluidi."
+        },
+        "magnification": {
+          "term": "Ingrandimento",
+          "definition": "Rapporto tra la dimensione del soggetto e quella del sensore. 1:1 (1.0×) significa che il soggetto è proiettato a grandezza naturale sul sensore. Il passo della slitta e la PdC della fetta dipendono solo da ingrandimento, apertura e sensore — non dalla distanza."
+        },
+        "effectiveAperture": {
+          "term": "Apertura effettiva",
+          "definition": "Il numero f di lavoro dopo l'ingrandimento: N × (1 + m). La diffrazione e l'esposizione seguono questo valore, non il numero indicato sull'obiettivo."
+        },
+        "railStep": {
+          "term": "Passo della slitta",
+          "definition": "Di quanto avanza la slitta per il focus tra uno scatto e l'altro: PdC della fetta × (1 − sovrapposizione). Sub-millimetrico ad alto ingrandimento."
+        },
+        "subjectDepth": {
+          "term": "Profondità del soggetto",
+          "definition": "La profondità dal primo piano allo sfondo del tuo soggetto, misurata in millimetri — la distanza totale che lo stack deve coprire dal punto più vicino che vuoi nitido a quello più lontano."
         }
       },
       "challenges": {
@@ -105,6 +125,30 @@
             "1": { "label": "Sovrapposizione insufficiente tra i passi di messa a fuoco" },
             "2": { "label": "Il treppiede si è mosso durante la sequenza" },
             "3": { "label": "L'ISO era troppo alto" }
+          }
+        },
+        "3": {
+          "scenario": "Stai scattando a f/8 e 2× di ingrandimento. Qual è la tua apertura effettiva?",
+          "hint": "Apertura effettiva = numero f × (1 + ingrandimento).",
+          "successMessage": "Corretto! f/8 × (1 + 2) = f/24. La diffrazione a 2× viene valutata a f/24, non a f/8 — ecco perché il lavoro ad alto ingrandimento usa aperture nominali moderate.",
+          "failureMessage": "Apertura effettiva = N × (1 + m) = 8 × 3 = f/24. Le indicazioni dell'obiettivo sottostimano l'apertura di lavoro all'ingrandimento.",
+          "options": {
+            "0": { "label": "f/8" },
+            "1": { "label": "f/16" },
+            "2": { "label": "f/24" },
+            "3": { "label": "f/32" }
+          }
+        },
+        "4": {
+          "scenario": "La tua PdC della fetta è 0.5 mm e vuoi il 20% di sovrapposizione tra le fette. Che passo della slitta dovresti usare?",
+          "hint": "Passo = PdC della fetta × (1 − sovrapposizione).",
+          "successMessage": "Esatto! 0.5 mm × 0.8 = 0.4 mm per passo. Gli 0.1 mm che rinunci a ogni passo sono l'assicurazione di allineamento che fa fondere gli stack in modo pulito.",
+          "failureMessage": "Passo = fetta × (1 − sovrapposizione) = 0.5 × 0.8 = 0.4 mm. Avanzare dell'intero 0.5 mm lascerebbe zero sovrapposizione e giunture visibili.",
+          "options": {
+            "0": { "label": "0.1 mm" },
+            "1": { "label": "0.4 mm" },
+            "2": { "label": "0.5 mm" },
+            "3": { "label": "0.6 mm" }
           }
         }
       }

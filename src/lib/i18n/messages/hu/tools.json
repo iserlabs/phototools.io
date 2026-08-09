@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "Fókuszhalmozás-kalkulátor",
-      "description": "Számítsd ki az optimális fókusztávolságokat az elejétől a végéig éles képhez"
+      "description": "Tervezz focus stacket pontos fókusztávolságokkal, kockaszámmal és makró sínlépésekkel"
     },
     "equivalent-settings-calculator": {
       "name": "Ekvivalens beállítások kalkulátor",

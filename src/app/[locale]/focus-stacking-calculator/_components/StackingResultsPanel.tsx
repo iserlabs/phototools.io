@@ -6,21 +6,22 @@ import { useTranslations } from 'next-intl'
 import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { getSkeletonBySlug } from '@/lib/data/education'
 import { formatDistance } from '@/components/shared/DistanceField'
-import { formatStackingExport } from '@/lib/data/focusStacking'
-import type { StackingResult } from '@/lib/math/dof'
+import { calcAiryDisk, calcHyperfocal } from '@/lib/math/dof'
+import {
+  buildDistanceText, buildDistanceCsv, buildStackJson, downloadTextFile,
+} from '@/lib/utils/stackingExport'
+import type { StackingState } from './useStackingState'
 import s from './FocusStacking.module.css'
 
 interface StackingResultsPanelProps {
-  result: StackingResult
-  focalLength: number
-  aperture: number
-  sensorName: string
-  overlapPct: number
+  state: StackingState
 }
 
-export function StackingResultsPanel({
-  result, focalLength, aperture, sensorName, overlapPct,
-}: StackingResultsPanelProps) {
+export function StackingResultsPanel({ state }: StackingResultsPanelProps) {
+  const {
+    stackingResult: result, focalLength, aperture, sensor, overlapPct, coc, farLimit, trackParam,
+  } = state
+  const sensorName = sensor.name
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const commonT = useTranslations('common')
   const et = useTranslations('education.focus-stacking-calculator')
@@ -34,7 +35,7 @@ export function StackingResultsPanel({
       )
     : undefined
 
-  const { shots, totalDepth } = result
+  const { shots, totalDepth, coverageComplete } = result
 
   // Compute minimum overlap margin between adjacent shots
   const minOverlapMargin = shots.length >= 2
@@ -52,7 +53,7 @@ export function StackingResultsPanel({
     : 0
 
   const handleCopy = useCallback(async () => {
-    const text = formatStackingExport(focalLength, aperture, sensorName, shots)
+    const text = buildDistanceText(focalLength, aperture, sensorName, shots)
     try {
       await navigator.clipboard.writeText(text)
       toast(commonT('toast.linkCopied'))
@@ -60,6 +61,17 @@ export function StackingResultsPanel({
       toast(commonT('toast.failedToCopy'))
     }
   }, [focalLength, aperture, sensorName, shots, commonT])
+
+  const meta = {
+    tool: 'focus-stacking-calculator', mode: 'distance', focalLength, aperture, sensor: sensorName, overlapPct,
+  }
+  const diffractionWarning = calcAiryDisk(aperture) > coc
+  // A finite far limit that fits in one shot keeps the plain "too few shots"
+  // success message; an infinite far limit collapsing to one shot means that
+  // one shot IS the hyperfocal shot, so it gets the hyperfocal-specific hint
+  // instead — never both.
+  const isSingleShotHyperfocal = shots.length === 1 && !isFinite(farLimit)
+  const isSingleShotFinite = shots.length === 1 && isFinite(farLimit)
 
   return (
     <div className={s.panel}>
@@ -97,17 +109,46 @@ export function StackingResultsPanel({
       </div>
 
       {/* Warnings */}
-      {shots.length === 1 && (
+      {diffractionWarning && (
+        <div className={s.warningBanner}>{t('diffractionWarning', { aperture })}</div>
+      )}
+      {!coverageComplete && (
+        <div className={s.warningBanner}>{t('coverageWarning')}</div>
+      )}
+      {isSingleShotHyperfocal && (
+        <div className={s.successBanner}>
+          {t('hyperfocalHint', { distance: formatDistance(calcHyperfocal(focalLength, aperture, coc)) })}
+        </div>
+      )}
+      {isSingleShotFinite && (
         <div className={s.successBanner}>{t('tooFewShots')}</div>
       )}
       {shots.length >= 50 && (
         <div className={s.warningBanner}>{t('tooManyShots')}</div>
       )}
 
-      {/* Copy plan button */}
-      <button className={s.copyBtn} onClick={handleCopy}>
-        {t('exportPlan')}
-      </button>
+      {/* Export row */}
+      <div className={s.exportRow}>
+        <button className={s.copyBtn} onClick={handleCopy}>{t('exportPlan')}</button>
+        <button
+          className={s.copyBtn}
+          onClick={() => {
+            trackParam({ param_name: 'export', param_value: 'csv', input_type: 'button' })
+            downloadTextFile('focus-stack.csv', buildDistanceCsv(shots), 'text/csv')
+          }}
+        >
+          {t('exportCSV')}
+        </button>
+        <button
+          className={s.copyBtn}
+          onClick={() => {
+            trackParam({ param_name: 'export', param_value: 'json', input_type: 'button' })
+            downloadTextFile('focus-stack.json', buildStackJson(meta, shots), 'application/json')
+          }}
+        >
+          {t('exportJSON')}
+        </button>
+      </div>
     </div>
   )
 }

@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Ajustes",
       "camera": "Cámara y objetivo",
       "focalLength": "Distancia focal",
       "aperture": "Apertura",
@@ -10,7 +9,6 @@
       "nearLimit": "Límite cercano",
       "farLimit": "Límite lejano",
       "overlap": "Solapamiento",
-      "overlapDescription": "Porcentaje de solapamiento de PdC entre tomas adyacentes para asegurar una fusión perfecta",
       "results": "Resultados",
       "shotCount": "Tomas necesarias",
       "totalDepth": "Profundidad total",
@@ -25,18 +23,60 @@
       "diagramFar": "Lejos",
       "diagramCoverage": "Cobertura",
       "diagramFocusPoints": "Pts enfoque",
-      "diagramShot": "Toma {number}",
-      "diagramOverlap": "Zona de solapamiento",
-      "diagramSharpZone": "Zona nítida",
       "diagramSubject": "Sujeto",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Advertencia",
       "tooFewShots": "El rango de profundidad cabe en una sola toma — no se necesita apilamiento",
       "tooManyShots": "Este plan requiere muchas tomas. Considera una apertura más cerrada para reducir el número.",
       "macroMode": "Macro",
-      "landscapeMode": "Paisaje"
+      "modeTitle": "Modo",
+      "distanceMode": "Distancia",
+      "magnification": "Aumento",
+      "subjectDepth": "Profundidad del sujeto",
+      "sliceDoF": "PdC por rebanada",
+      "railStep": "Paso del raíl",
+      "effectiveAperture": "Apertura efectiva",
+      "railTravel": "Recorrido total del raíl",
+      "farLimitInfinity": "Apilar hasta el infinito",
+      "tableShot": "Toma",
+      "tableFocusDistance": "Distancia de enfoque",
+      "tableNear": "Borde cercano",
+      "tableFar": "Borde lejano",
+      "tableRailPosition": "Posición del raíl",
+      "shotTable": "Lista de tomas",
+      "animateStack": "Animar apilamiento",
+      "pauseStack": "Pausar",
+      "diffractionWarning": "A f/{aperture}, la difracción está suavizando la imagen en este sensor. Considera una apertura más abierta — el apilamiento aporta la profundidad.",
+      "diffractionWarningMacro": "A {magnification}×, f/{aperture} se comporta como f/{effective}. Mantente en f/{max} o más abierto para la máxima nitidez.",
+      "coverageWarning": "Se alcanzó el límite de tomas antes de cubrir todo el rango. Usa un rango más estrecho, más profundidad de campo por toma, o divide el apilamiento.",
+      "hyperfocalHint": "Una sola toma enfocada a la distancia hiperfocal ({distance}) cubre todo este rango — no se necesita apilamiento.",
+      "sceneCamera": "Cámara",
+      "sceneRail": "Recorrido del raíl",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "¿Qué es el apilamiento de enfoque?",
+          "answer": "El apilamiento de enfoque combina varias fotos tomadas a distintas distancias de enfoque en una sola imagen con nitidez de principio a fin. El software conserva los píxeles más nítidos de cada fotograma. Es imprescindible en fotografía macro, donde la profundidad de campo de un solo fotograma puede ser inferior a un milímetro, y útil en paisajes cuando tanto un primer plano cercano como un fondo lejano necesitan estar nítidos."
+        },
+        "how-much-overlap": {
+          "question": "¿Cuánto solapamiento necesitan las tomas de un apilamiento de enfoque?",
+          "answer": "Un solapamiento del 20–30% entre tomas adyacentes es el estándar práctico. El solapamiento da al software de fusión tolerancia de alineación; muy poco crea huecos suaves entre rebanadas, mientras que más de un 50% añade fotogramas sin mejorar el resultado."
+        },
+        "best-aperture-for-stacking": {
+          "question": "¿Cuál es la mejor apertura para el apilamiento de enfoque?",
+          "answer": "Una apertura moderada, alrededor de f/5.6–f/8, suele dar el apilamiento más nítido. Cerrar más añade profundidad por toma, pero cuesta nitidez por difracción — y a magnificación macro la apertura efectiva es N × (1 + m), así que f/8 a 1:1 ya se comporta como f/16. El apilamiento aporta la profundidad, así que dispara cada fotograma en la apertura más nítida del objetivo."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "¿Debería apilar el enfoque o usar la distancia hiperfocal?",
+          "answer": "Si una sola toma enfocada a la distancia hiperfocal cubre tu sujeto más cercano de forma aceptable, el apilamiento no es necesario. Apila cuando el primer plano esté más cerca de la mitad de la distancia hiperfocal, o cuando quieras una nitidez crítica en lugar de una nitidez meramente aceptable en todo el fotograma."
+        },
+        "what-is-a-rail-step": {
+          "question": "¿Qué es un paso de raíl en el apilamiento macro?",
+          "answer": "El paso de raíl es la distancia que avanza la cámara sobre un raíl de enfoque macro entre tomas: profundidad de campo de la rebanada × (1 − solapamiento). A 1:1 en full frame a f/8 con un 20% de solapamiento, eso es aproximadamente 0.77 mm; a mayor magnificación se reduce a pasos submilimétricos, por lo que se usan raíles o el bracketing de enfoque automático de la cámara."
+        },
+        "what-software-merges-stacks": {
+          "question": "¿Qué software fusiona los apilamientos de enfoque?",
+          "answer": "Helicon Focus y Zerene Stacker son las herramientas dedicadas; Adobe Photoshop fusiona apilamientos mediante Auto-Align y Auto-Blend Layers. Los tres alinean los fotogramas (la magnificación cambia ligeramente al variar el enfoque) y combinan automáticamente las zonas más nítidas de cada fotograma."
+        }
+      }
     }
   }
 }

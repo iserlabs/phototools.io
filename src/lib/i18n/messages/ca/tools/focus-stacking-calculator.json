@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Ajustos",
       "camera": "Càmera i objectiu",
       "focalLength": "Distància focal",
       "aperture": "Diafragma",
@@ -10,7 +9,6 @@
       "nearLimit": "Límit proper",
       "farLimit": "Límit llunyà",
       "overlap": "Solapament",
-      "overlapDescription": "Percentatge de solapament de la profunditat de camp entre preses adjacents per garantir una combinació sense errors",
       "results": "Resultats",
       "shotCount": "Preses necessàries",
       "totalDepth": "Profunditat total",
@@ -25,18 +23,60 @@
       "diagramFar": "Llunyà",
       "diagramCoverage": "Cobertura",
       "diagramFocusPoints": "Punts enf.",
-      "diagramShot": "Presa {number}",
-      "diagramOverlap": "Zona de solapament",
-      "diagramSharpZone": "Zona nítida",
       "diagramSubject": "Subjecte",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Avís",
       "tooFewShots": "El rang de profunditat cap en una sola presa — no cal apilar",
       "tooManyShots": "Aquest pla requereix moltes preses. Considera un diafragma més tancat per reduir-ne el nombre.",
       "macroMode": "Macro",
-      "landscapeMode": "Paisatge"
+      "modeTitle": "Mode",
+      "distanceMode": "Distància",
+      "magnification": "Ampliació",
+      "subjectDepth": "Profunditat del subjecte",
+      "sliceDoF": "Profunditat de camp de la porció",
+      "railStep": "Pas de carril",
+      "effectiveAperture": "Diafragma efectiu",
+      "railTravel": "Recorregut total del carril",
+      "farLimitInfinity": "Apila fins a l'infinit",
+      "tableShot": "Presa",
+      "tableFocusDistance": "Distància d'enfocament",
+      "tableNear": "Vora propera",
+      "tableFar": "Vora llunyana",
+      "tableRailPosition": "Posició del carril",
+      "shotTable": "Llista de preses",
+      "animateStack": "Anima l'apilament",
+      "pauseStack": "Pausa",
+      "diffractionWarning": "A f/{aperture}, la difracció suavitza la imatge en aquest sensor. Considera un diafragma més obert — l'apilament aporta la profunditat.",
+      "diffractionWarningMacro": "A {magnification}×, f/{aperture} es comporta com f/{effective}. Queda't a f/{max} o més obert per obtenir la màxima nitidesa.",
+      "coverageWarning": "S'ha arribat al límit de preses abans de cobrir tot el rang. Fes servir un rang més estret, més profunditat de camp per presa, o divideix l'apilament.",
+      "hyperfocalHint": "Una sola presa enfocada a la distància hiperfocal ({distance}) cobreix tot aquest rang — no cal apilar.",
+      "sceneCamera": "Càmera",
+      "sceneRail": "Recorregut del carril",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Què és el focus stacking?",
+          "answer": "El focus stacking combina diverses fotos preses a distàncies d'enfocament diferents en una sola imatge amb nitidesa de davant a darrere. El programari conserva els píxels més nítids de cada fotograma. És essencial en fotografia macro, on la profunditat de camp d'un sol fotograma pot ser inferior a un mil·límetre, i útil en paisatges quan cal que tant el primer pla proper com el fons llunyà siguin nítids."
+        },
+        "how-much-overlap": {
+          "question": "Quant de solapament necessiten les preses d'un focus stack?",
+          "answer": "Un solapament del 20–30% entre preses adjacents és l'estàndard pràctic. El solapament dona al programari de combinació marge d'alineació; massa poc crea espais tous entre porcions, mentre que més d'un 50% aproximadament afegeix fotogrames sense millorar el resultat."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Quin és el millor diafragma per al focus stacking?",
+          "answer": "Un diafragma moderat al voltant de f/5.6–f/8 sol donar l'apilament més nítid. Tancar més afegeix profunditat per presa però costa nitidesa per la difracció — i a l'ampliació macro el diafragma efectiu és N × (1 + m), de manera que f/8 a 1:1 ja es comporta com f/16. L'apilament aporta la profunditat, així que dispara cada fotograma amb el diafragma més nítid de l'objectiu."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "He de fer focus stacking o utilitzar la distància hiperfocal?",
+          "answer": "Si una sola presa enfocada a la distància hiperfocal cobreix de manera acceptable el teu subjecte més proper, l'apilament és innecessari. Apila quan el primer pla estigui més a prop que la meitat de la distància hiperfocal, o quan vulguis una nitidesa crítica en lloc de simplement acceptable a tot el fotograma."
+        },
+        "what-is-a-rail-step": {
+          "question": "Què és un pas de carril en l'apilament macro?",
+          "answer": "El pas de carril és la distància que un carril d'enfocament macro avança la càmera entre preses: profunditat de camp de la porció × (1 − solapament). A 1:1 en format complet a f/8 amb un 20% de solapament, això és aproximadament 0.77 mm; a més ampliació es redueix a passos submil·limètrics, per això s'utilitzen carrils o focus bracketing automàtic a la càmera."
+        },
+        "what-software-merges-stacks": {
+          "question": "Quin programari combina els focus stacks?",
+          "answer": "Helicon Focus i Zerene Stacker són les eines dedicades; Adobe Photoshop combina apilaments mitjançant Auto-Align i Auto-Blend Layers. Els tres alineen els fotogrames (l'ampliació es desplaça lleugerament quan canvia l'enfocament) i combinen automàticament les regions més nítides de cada fotograma."
+        }
+      }
     }
   }
 }

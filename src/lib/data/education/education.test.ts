@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest'
+import { readFileSync, existsSync } from 'fs'
+import { join } from 'path'
 import { getSkeletonBySlug } from './index'
 import { TOOL_EDUCATION_SKELETONS } from './content'
 import { TOOL_EDUCATION_SKELETONS_2 } from './content2'
@@ -6,6 +8,19 @@ import { TOOL_EDUCATION_SKELETONS_3 } from './content3'
 import { TOOLS } from '../tools'
 
 const ALL_SKELETONS = [...TOOL_EDUCATION_SKELETONS, ...TOOL_EDUCATION_SKELETONS_2, ...TOOL_EDUCATION_SKELETONS_3]
+
+const EN_EDUCATION_DIR = join(__dirname, '..', '..', 'i18n', 'messages', 'en', 'education')
+
+interface EducationChallengeJson {
+  options?: Record<string, { label: string }>
+}
+
+function loadEnChallenges(slug: string): Record<string, EducationChallengeJson> | undefined {
+  const file = join(EN_EDUCATION_DIR, `${slug}.json`)
+  if (!existsSync(file)) return undefined
+  const json = JSON.parse(readFileSync(file, 'utf8'))
+  return json.education?.[slug]?.challenges
+}
 
 describe('Education skeletons', () => {
   it('every skeleton has a valid structure', () => {
@@ -35,6 +50,22 @@ describe('Education skeletons', () => {
           expect(c.optionValues).toContain(c.correctOption)
         }
       }
+    }
+  })
+
+  it('challenge option counts match the EN education JSON (ChallengeCard renders skeleton values positionally)', () => {
+    for (const skel of ALL_SKELETONS) {
+      const jsonChallenges = loadEnChallenges(skel.slug)
+      skel.challenges.forEach((c, index) => {
+        if (!c.optionValues) return
+        const jsonChallenge = jsonChallenges?.[String(index)]
+        const jsonOptionCount = jsonChallenge ? Object.keys(jsonChallenge.options ?? {}).length : 0
+        expect(
+          jsonOptionCount,
+          `${skel.slug} challenge index ${index} (${c.id}): skeleton has ${c.optionValues.length} optionValues but EN JSON has ${jsonOptionCount} options`
+        ).toBe(c.optionValues.length)
+        expect(c.optionValues).toContain(c.correctOption)
+      })
     }
   })
 

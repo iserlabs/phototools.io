@@ -14,6 +14,10 @@
         "2": {
           "heading": "Ghép & Căn chỉnh",
           "text": "Phần mềm như Photoshop, Helicon Focus hoặc Zerene Stacker căn chỉnh các khung hình (xảy ra dịch chuyển phóng đại nhẹ khi thay đổi nét), sau đó chọn các pixel sắc nét nhất từ mỗi lớp. Chụp trên chân máy chắc chắn với ánh sáng nhất quán và sử dụng ray lấy nét cho bước tăng chính xác cho kết quả sạch nhất."
+        },
+        "3": {
+          "heading": "Khẩu độ hiệu dụng theo độ phóng đại",
+          "text": "Khi độ phóng đại tăng, độ giãn dài của ống kính làm khẩu độ làm việc tối hơn và dễ bị nhiễu xạ hơn: khẩu độ hiệu dụng = số f × (1 + độ phóng đại). Ở 1:1, f/8 hoạt động như f/16; ở 2:1 nó hoạt động như f/24. Đây là lý do các chồng macro được chụp ở khẩu độ danh định vừa phải — giá trị hiệu dụng mới là thứ nhiễu xạ \"nhìn thấy\". Chế độ macro của máy tính báo cáo khẩu độ hiệu dụng và số f rộng nhất vẫn giữ được độ nét chống nhiễu xạ trên cảm biến của bạn."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Số ảnh",
           "definition": "Tổng số khung hình cần để bao phủ phạm vi chiều sâu với chồng lấp đã chỉ định. Nhiều ảnh hơn = nhiều xử lý hơn nhưng kết quả mượt hơn."
+        },
+        "magnification": {
+          "term": "Độ phóng đại",
+          "definition": "Tỷ lệ kích thước chủ thể so với cảm biến. 1:1 (1.0×) nghĩa là chủ thể được chiếu lên cảm biến ở kích thước thật. Bước ray và chiều sâu lát cắt chỉ phụ thuộc vào độ phóng đại, khẩu độ và cảm biến — không phụ thuộc khoảng cách."
+        },
+        "effectiveAperture": {
+          "term": "Khẩu độ hiệu dụng",
+          "definition": "Số f làm việc sau khi tính độ phóng đại: N × (1 + m). Nhiễu xạ và phơi sáng tuân theo giá trị này, không phải con số trên ống kính."
+        },
+        "railStep": {
+          "term": "Bước ray",
+          "definition": "Khoảng cách ray lấy nét di chuyển giữa các ảnh: chiều sâu trường ảnh mỗi lát cắt × (1 − chồng lấp). Dưới một milimet ở độ phóng đại cao."
+        },
+        "subjectDepth": {
+          "term": "Chiều sâu chủ thể",
+          "definition": "Chiều sâu từ trước ra sau của chủ thể, đo bằng milimet — tổng khoảng cách mà chồng ảnh phải bao phủ từ điểm gần nhất đến điểm xa nhất bạn muốn nét."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "ISO quá cao"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Bạn đang chụp ở f/8 và độ phóng đại 2×. Khẩu độ hiệu dụng của bạn là bao nhiêu?",
+          "hint": "Khẩu độ hiệu dụng = số f × (1 + độ phóng đại).",
+          "successMessage": "Chính xác! f/8 × (1 + 2) = f/24. Nhiễu xạ ở 2× được đánh giá tại f/24, không phải f/8 — đó là lý do công việc ở độ phóng đại cao dùng khẩu độ danh định vừa phải.",
+          "failureMessage": "Khẩu độ hiệu dụng = N × (1 + m) = 8 × 3 = f/24. Các vạch trên ống kính đánh giá thấp khẩu độ làm việc thực tế ở độ phóng đại.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Chiều sâu trường ảnh mỗi lát cắt của bạn là 0.5 mm và bạn muốn chồng lấp 20% giữa các lát cắt. Bạn nên dùng bước ray nào?",
+          "hint": "Bước = chiều sâu lát cắt × (1 − chồng lấp).",
+          "successMessage": "Đúng! 0.5 mm × 0.8 = 0.4 mm mỗi bước. 0.1 mm bạn nhường lại ở mỗi bước là khoản bảo hiểm căn chỉnh giúp các chồng ảnh ghép liền mạch.",
+          "failureMessage": "Bước = lát cắt × (1 − chồng lấp) = 0.5 × 0.8 = 0.4 mm. Bước trọn 0.5 mm sẽ không còn chồng lấp và để lại đường nối rõ.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

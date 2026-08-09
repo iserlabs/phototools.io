@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "Kalkulador ng Focus Stacking",
-      "description": "Kalkulahin ang tamang focus distances para sa front-to-back sharpness"
+      "description": "Planuhin ang focus stacks gamit ang eksaktong focus distances, bilang ng shots, at macro rail steps"
     },
     "equivalent-settings-calculator": {
       "name": "Kalkulador ng Katumbas na Settings",

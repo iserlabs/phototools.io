@@ -14,6 +14,10 @@
         "2": {
           "heading": "Łączenie i wyrównywanie",
           "text": "Oprogramowanie takie jak Photoshop, Helicon Focus czy Zerene Stacker wyrównuje klatki (przy zmianie ostrości występują niewielkie przesunięcia powiększenia), a następnie wybiera najostrzejsze piksele z każdej warstwy. Fotografowanie ze stabilnego statywu przy stałym oświetleniu i używanie szyny ogniskowania do precyzyjnych przyrostów daje najczystsze rezultaty."
+        },
+        "3": {
+          "heading": "Efektywna przysłona przy powiększeniu",
+          "text": "Wraz ze wzrostem powiększenia wysunięcie obiektywu sprawia, że robocza przysłona staje się ciemniejsza i bardziej podatna na dyfrakcję: efektywna przysłona = liczba f × (1 + powiększenie). Przy 1:1 f/8 zachowuje się jak f/16; przy 2:1 jak f/24. Dlatego makro stacki fotografuje się przy umiarkowanych nominalnych przysłonach — dyfrakcja \"widzi\" wartość efektywną. Tryb makro kalkulatora podaje efektywną przysłonę oraz najszerszą liczbę f, która pozostaje ostra dyfrakcyjnie na twojej matrycy."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Liczba ujęć",
           "definition": "Całkowita liczba klatek potrzebnych do pokrycia zakresu głębokości z określonym nakładaniem. Więcej ujęć = więcej przetwarzania, ale gładsze wyniki."
+        },
+        "magnification": {
+          "term": "Powiększenie",
+          "definition": "Stosunek rozmiaru obiektu do matrycy. 1:1 (1.0×) oznacza, że obiekt jest rzutowany na matrycę w naturalnej wielkości. Krok szyny i głębia wycinka zależą tylko od powiększenia, przysłony i matrycy — nie od odległości."
+        },
+        "effectiveAperture": {
+          "term": "Efektywna przysłona",
+          "definition": "Robocza liczba f po uwzględnieniu powiększenia: N × (1 + m). Dyfrakcja i ekspozycja podążają za tą wartością, a nie liczbą na obiektywie."
+        },
+        "railStep": {
+          "term": "Krok szyny",
+          "definition": "Jak daleko szyna ogniskowania przesuwa się między ujęciami: GoO wycinka × (1 − nakładanie). Poniżej milimetra przy wysokim powiększeniu."
+        },
+        "subjectDepth": {
+          "term": "Głębokość obiektu",
+          "definition": "Głębokość obiektu od przodu do tyłu, mierzona w milimetrach — całkowita odległość, jaką stack musi pokryć od najbliższego do najdalszego punktu, który ma być ostry."
         }
       },
       "challenges": {
@@ -78,10 +98,18 @@
           "successMessage": "Prawidłowo! Przy 4 mm GoO i 25% nakładaniu każdy krok przesuwa o 3 mm. 30 mm / 3 mm = 10 ujęć na pokrycie całego kwiatu.",
           "failureMessage": "Przy 25% nakładaniu efektywny krok każdej klatki to 75% GoO: 4 mm × 0,75 = 3 mm. Potrzebujesz 30 mm / 3 mm = 10 ujęć.",
           "options": {
-            "0": { "label": "5 ujęć" },
-            "1": { "label": "10 ujęć" },
-            "2": { "label": "20 ujęć" },
-            "3": { "label": "30 ujęć" }
+            "0": {
+              "label": "5 ujęć"
+            },
+            "1": {
+              "label": "10 ujęć"
+            },
+            "2": {
+              "label": "20 ujęć"
+            },
+            "3": {
+              "label": "30 ujęć"
+            }
           }
         },
         "1": {
@@ -90,9 +118,15 @@
           "successMessage": "Zgadza się! f/8 jest zazwyczaj najostrzejszą przysłoną dla większości obiektywów. f/2.8 ma zbyt małą GoO na ujęcie (marnując klatki), a f/22 cierpi na miękczenie dyfrakcyjne.",
           "failureMessage": "f/8 to najlepszy wybór. f/2.8 daje bardzo cienką GoO na ujęcie (wymagając wielu dodatkowych klatek), a f/22 wprowadza miękczenie dyfrakcyjne, które niweczy cel stackowania dla ostrości.",
           "options": {
-            "0": { "label": "f/2.8 — najszersza dla szybszego czasu" },
-            "1": { "label": "f/8 — optymalny punkt obiektywu" },
-            "2": { "label": "f/22 — maksymalna GoO na ujęcie" }
+            "0": {
+              "label": "f/2.8 — najszersza dla szybszego czasu"
+            },
+            "1": {
+              "label": "f/8 — optymalny punkt obiektywu"
+            },
+            "2": {
+              "label": "f/22 — maksymalna GoO na ujęcie"
+            }
           }
         },
         "2": {
@@ -101,10 +135,58 @@
           "successMessage": "Dokładnie! Niewystarczające nakładanie między sąsiednimi klatkami tworzy lukę, gdzie żadne ujęcie nie jest ostre. Zwiększ nakładanie do 25-30% i sfotografuj ponownie.",
           "failureMessage": "Miękki pas zazwyczaj oznacza, że luka między krokami ostrości była zbyt duża — GoO sąsiednich klatek nie nakładała się wystarczająco. Zwiększ procent nakładania.",
           "options": {
-            "0": { "label": "Przysłona była zbyt szeroka" },
-            "1": { "label": "Niewystarczające nakładanie między krokami ostrości" },
-            "2": { "label": "Statyw poruszył się podczas sekwencji" },
-            "3": { "label": "ISO było zbyt wysokie" }
+            "0": {
+              "label": "Przysłona była zbyt szeroka"
+            },
+            "1": {
+              "label": "Niewystarczające nakładanie między krokami ostrości"
+            },
+            "2": {
+              "label": "Statyw poruszył się podczas sekwencji"
+            },
+            "3": {
+              "label": "ISO było zbyt wysokie"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Fotografujesz przy f/8 i powiększeniu 2×. Jaka jest twoja efektywna przysłona?",
+          "hint": "Efektywna przysłona = liczba f × (1 + powiększenie).",
+          "successMessage": "Prawidłowo! f/8 × (1 + 2) = f/24. Dyfrakcja przy 2× jest oceniana na poziomie f/24, nie f/8 — dlatego praca przy wysokim powiększeniu wykorzystuje umiarkowane nominalne przysłony.",
+          "failureMessage": "Efektywna przysłona = N × (1 + m) = 8 × 3 = f/24. Oznaczenia na obiektywie zaniżają roboczą przysłonę przy powiększeniu.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Twoja GoO wycinka to 0.5 mm i chcesz 20% nakładania między wycinkami. Jakiego kroku szyny powinieneś użyć?",
+          "hint": "Krok = głębokość wycinka × (1 − nakładanie).",
+          "successMessage": "Zgadza się! 0.5 mm × 0.8 = 0.4 mm na krok. 0.1 mm, które oddajesz przy każdym kroku, to ubezpieczenie wyrównania, dzięki któremu stacki łączą się czysto.",
+          "failureMessage": "Krok = wycinek × (1 − nakładanie) = 0.5 × 0.8 = 0.4 mm. Krok pełnych 0.5 mm nie zostawiłby nakładania i widoczne szwy.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
+            }
           }
         }
       }

@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "Tarkennuspinoamisen laskuri",
-      "description": "Laske optimaaliset tarkennusetäisyydet läpiterävään lopputulokseen"
+      "description": "Suunnittele tarkennuspinot tarkoilla tarkennusetäisyyksillä, kuvamäärillä ja makrokiskoaskelilla"
     },
     "equivalent-settings-calculator": {
       "name": "Ekvivalenttien asetusten laskuri",

@@ -14,6 +14,10 @@
         "2": {
           "heading": "Menggabung & Penjajaran",
           "text": "Perisian seperti Photoshop, Helicon Focus atau Zerene Stacker menjajarkan bingkai (perubahan pembesaran sedikit berlaku apabila fokus berubah), kemudian memilih piksel paling tajam dari setiap lapisan. Menangkap pada tripod yang kukuh dengan pencahayaan yang konsisten dan menggunakan rel fokus untuk kenaikan yang tepat menghasilkan hasil yang paling bersih."
+        },
+        "3": {
+          "heading": "Aperture Berkesan pada Pembesaran",
+          "text": "Apabila pembesaran meningkat, pemanjangan lensa menjadikan aperture kerja lebih gelap dan lebih terdedah kepada pembelauan: aperture berkesan = nombor-f × (1 + pembesaran). Pada 1:1, f/8 bertindak seperti f/16; pada 2:1 ia bertindak seperti f/24. Inilah sebabnya stack makro ditangkap pada aperture nominal yang sederhana — nilai berkesan itulah yang dilihat oleh pembelauan. Mod makro kalkulator melaporkan aperture berkesan dan nombor-f paling luas yang kekal tajam dari pembelauan pada sensor anda."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Kiraan Tangkapan",
           "definition": "Jumlah bingkai yang diperlukan untuk meliputi julat kedalaman dengan tindihan yang ditentukan. Lebih banyak tangkapan = lebih banyak pemprosesan tetapi hasil lebih lancar."
+        },
+        "magnification": {
+          "term": "Pembesaran",
+          "definition": "Nisbah saiz subjek kepada sensor. 1:1 (1.0×) bermakna subjek diunjurkan pada saiz sebenar ke atas sensor. Langkah rel dan kedalaman hirisan hanya bergantung pada pembesaran, aperture, dan sensor — bukan jarak."
+        },
+        "effectiveAperture": {
+          "term": "Aperture Berkesan",
+          "definition": "Nombor-f kerja selepas pembesaran: N × (1 + m). Pembelauan dan pendedahan mengikut nilai ini, bukan nombor pada lensa."
+        },
+        "railStep": {
+          "term": "Langkah Rel",
+          "definition": "Sejauh mana rel fokus bergerak antara tangkapan: kedalaman medan hirisan × (1 − tindihan). Sub-milimeter pada pembesaran tinggi."
+        },
+        "subjectDepth": {
+          "term": "Kedalaman Subjek",
+          "definition": "Kedalaman subjek anda dari depan ke belakang, diukur dalam milimeter — jumlah jarak yang perlu diliputi oleh stack daripada titik paling dekat yang anda mahu tajam hingga yang paling jauh."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "ISO terlalu tinggi"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Anda menangkap pada f/8 dan pembesaran 2×. Berapakah aperture berkesan anda?",
+          "hint": "Aperture berkesan = nombor-f × (1 + pembesaran).",
+          "successMessage": "Betul! f/8 × (1 + 2) = f/24. Pembelauan pada 2× dinilai pada f/24, bukan f/8 — itulah sebabnya kerja pembesaran tinggi menggunakan aperture nominal yang sederhana.",
+          "failureMessage": "Aperture berkesan = N × (1 + m) = 8 × 3 = f/24. Tanda pada lensa memperkecilkan aperture kerja sebenar pada pembesaran.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Kedalaman medan hirisan anda ialah 0.5 mm dan anda mahukan tindihan 20% antara hirisan. Langkah rel apakah yang perlu anda gunakan?",
+          "hint": "Langkah = kedalaman hirisan × (1 − tindihan).",
+          "successMessage": "Betul! 0.5 mm × 0.8 = 0.4 mm setiap langkah. 0.1 mm yang dikembalikan pada setiap langkah ialah insurans penjajaran yang membolehkan stack bergabung dengan bersih.",
+          "failureMessage": "Langkah = hirisan × (1 − tindihan) = 0.5 × 0.8 = 0.4 mm. Melangkah penuh 0.5 mm akan menghasilkan sifar tindihan dan kelim yang jelas kelihatan.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

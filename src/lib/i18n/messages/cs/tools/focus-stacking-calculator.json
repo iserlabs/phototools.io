@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Nastavení",
       "camera": "Fotoaparát a objektiv",
       "focalLength": "Ohnisková vzdálenost",
       "aperture": "Clona",
@@ -10,7 +9,6 @@
       "nearLimit": "Přední hranice",
       "farLimit": "Zadní hranice",
       "overlap": "Překryv",
-      "overlapDescription": "Procentní překryv hloubky ostrosti mezi sousedními snímky pro plynulé spojení",
       "results": "Výsledky",
       "shotCount": "Počet snímků",
       "totalDepth": "Celková hloubka",
@@ -25,18 +23,60 @@
       "diagramFar": "Daleko",
       "diagramCoverage": "Pokrytí",
       "diagramFocusPoints": "Body zaostření",
-      "diagramShot": "Snímek {number}",
-      "diagramOverlap": "Zóna překryvu",
-      "diagramSharpZone": "Ostrá zóna",
       "diagramSubject": "Subjekt",
-      "diagramSensor": "Snímač",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Upozornění",
       "tooFewShots": "Rozsah hloubky pokryje jediný snímek — stackování není potřeba",
       "tooManyShots": "Tento plán vyžaduje hodně snímků. Zkus víc přivřít clonu, abys jejich počet snížil.",
       "macroMode": "Makro",
-      "landscapeMode": "Krajina"
+      "modeTitle": "Režim",
+      "distanceMode": "Vzdálenost",
+      "magnification": "Zvětšení",
+      "subjectDepth": "Hloubka subjektu",
+      "sliceDoF": "Hloubka ostrosti na plátek",
+      "railStep": "Krok posuvu",
+      "effectiveAperture": "Efektivní clona",
+      "railTravel": "Celkový posuv",
+      "farLimitInfinity": "Stackovat do nekonečna",
+      "tableShot": "Snímek",
+      "tableFocusDistance": "Vzdálenost zaostření",
+      "tableNear": "Blízký okraj",
+      "tableFar": "Vzdálený okraj",
+      "tableRailPosition": "Pozice posuvu",
+      "shotTable": "Seznam snímků",
+      "animateStack": "Animovat stack",
+      "pauseStack": "Pauza",
+      "diffractionWarning": "Při f/{aperture} difrakce na tomto snímači změkčuje obraz. Zvaž větší otvor clony — o hloubku se postará stack.",
+      "diffractionWarningMacro": "Při {magnification}× se f/{aperture} chová jako f/{effective}. Pro maximální ostrost zůstaň na f/{max} nebo otevřenější cloně.",
+      "coverageWarning": "Limit počtu snímků byl dosažen dřív, než se pokryl celý rozsah. Použij užší rozsah, víc hloubky ostrosti na snímek, nebo stack rozděl.",
+      "hyperfocalHint": "Jediný snímek zaostřený na hyperfokální vzdálenost ({distance}) pokryje celý tento rozsah — stackování není potřeba.",
+      "sceneCamera": "Fotoaparát",
+      "sceneRail": "Posuv",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Co je focus stacking?",
+          "answer": "Focus stacking spojuje víc fotek pořízených při různých zaostřovacích vzdálenostech do jednoho snímku ostrého od popředí po pozadí. Software si z každého snímku ponechá nejostřejší pixely. V makrofotografii je nezbytný, protože hloubka ostrosti jednoho snímku může být pod milimetr, a hodí se i v krajinářské fotografii, když potřebuješ ostré jak blízké popředí, tak vzdálené pozadí."
+        },
+        "how-much-overlap": {
+          "question": "Kolik překryvu potřebují snímky pro focus stacking?",
+          "answer": "20–30% překryv mezi sousedními snímky je praktický standard. Překryv dává slučovacímu softwaru toleranci pro zarovnání; příliš málo vytváří měkké mezery mezi plátky, zatímco víc než asi 50% jen přidává snímky, aniž by zlepšovalo výsledek."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Jaká clona je nejlepší pro focus stacking?",
+          "answer": "Střední clona kolem f/5.6–f/8 obvykle dá nejostřejší stack. Další přiclonění přidá hloubku na snímek, ale stojí ostrost kvůli difrakci — a při makro zvětšení je efektivní clona N × (1 + m), takže f/8 při 1:1 se chová už jako f/16. Hloubku dodává stack, takže každý snímek foť na nejostřejší cloně objektivu."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Mám stackovat, nebo použít hyperfokální vzdálenost?",
+          "answer": "Pokud jeden snímek zaostřený na hyperfokální vzdálenost pokrývá tvůj nejbližší subjekt uspokojivě, stackování je zbytečné. Stackuj, když je popředí blíž než polovina hyperfokální vzdálenosti, nebo když chceš kritickou ostrost místo jen přijatelné ostrosti napříč snímkem."
+        },
+        "what-is-a-rail-step": {
+          "question": "Co je krok posuvu při makro stackingu?",
+          "answer": "Krok posuvu je, o kolik makroposuv posune fotoaparát mezi snímky: hloubka ostrosti na plátek × (1 − překryv). Při 1:1 na kinofilmu při f/8 s 20% překryvem je to zhruba 0.77 mm; při vyšším zvětšení se zmenšuje na kroky pod milimetr, a proto se používají posuvy nebo automatické bracketování zaostření přímo ve fotoaparátu."
+        },
+        "what-software-merges-stacks": {
+          "question": "Jaký software slučuje focus stacky?",
+          "answer": "Helicon Focus a Zerene Stacker jsou specializované nástroje; Adobe Photoshop slučuje stacky pomocí Auto-Align a Auto-Blend Layers. Všechny tři zarovnají snímky (zvětšení se při změně zaostření mírně mění) a automaticky namíchají nejostřejší oblasti z každého snímku."
+        }
+      }
     }
   }
 }

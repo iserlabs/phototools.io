@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "設定",
       "camera": "相機與鏡頭",
       "focalLength": "焦距",
       "aperture": "光圈",
@@ -10,7 +9,6 @@
       "nearLimit": "近端",
       "farLimit": "遠端",
       "overlap": "重疊",
-      "overlapDescription": "相鄰兩張之間景深的重疊百分比，可確保合成時無縫銜接",
       "results": "結果",
       "shotCount": "所需張數",
       "totalDepth": "總深度",
@@ -25,18 +23,60 @@
       "diagramFar": "遠",
       "diagramCoverage": "涵蓋範圍",
       "diagramFocusPoints": "對焦點",
-      "diagramShot": "第 {number} 張",
-      "diagramOverlap": "重疊區",
-      "diagramSharpZone": "清晰區",
       "diagramSubject": "主體",
-      "diagramSensor": "感光元件",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "警告",
       "tooFewShots": "深度範圍可在一張內涵蓋 — 不需堆疊",
       "tooManyShots": "此計畫需要很多張。請考慮縮光圈以減少總張數。",
       "macroMode": "微距",
-      "landscapeMode": "風景"
+      "modeTitle": "模式",
+      "distanceMode": "距離",
+      "magnification": "放大倍率",
+      "subjectDepth": "主體深度",
+      "sliceDoF": "切片景深",
+      "railStep": "滑軌步距",
+      "effectiveAperture": "有效光圈",
+      "railTravel": "總滑軌行程",
+      "farLimitInfinity": "堆疊至無限遠",
+      "tableShot": "拍攝序號",
+      "tableFocusDistance": "對焦距離",
+      "tableNear": "近端",
+      "tableFar": "遠端",
+      "tableRailPosition": "滑軌位置",
+      "shotTable": "拍攝清單",
+      "animateStack": "播放堆疊動畫",
+      "pauseStack": "暫停",
+      "diffractionWarning": "在 f/{aperture} 時，繞射會使這個感光元件上的影像變得柔和。請考慮使用較大光圈 — 景深由堆疊來補足。",
+      "diffractionWarningMacro": "在 {magnification}× 時，f/{aperture} 的效果如同 f/{effective}。請維持在 f/{max} 或更大光圈以取得最佳銳利度。",
+      "coverageWarning": "尚未涵蓋完整範圍就已達到張數上限。請縮小範圍、增加每張的景深，或將堆疊拆分。",
+      "hyperfocalHint": "只需一張對焦在超焦距 ({distance}) 的照片即可涵蓋整個範圍 — 不需要堆疊。",
+      "sceneCamera": "相機",
+      "sceneRail": "滑軌行程",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "什麼是焦點堆疊？",
+          "answer": "焦點堆疊會把在不同對焦距離拍攝的多張照片合成一張從前到後都清晰的影像。軟體會保留每一張中最銳利的畫素。這在微距攝影中不可或缺，因為單張的景深可能不到一毫米；在風景攝影中也很實用，當近處前景與遠方背景都需要清晰時。"
+        },
+        "how-much-overlap": {
+          "question": "焦點堆疊拍攝需要多少重疊？",
+          "answer": "相鄰照片之間 20–30% 的重疊是實務上的標準。重疊能讓合成軟體有對齊的容許空間；重疊太少會在切片之間留下模糊的縫隙，而超過約 50% 只會增加張數卻無助於結果。"
+        },
+        "best-aperture-for-stacking": {
+          "question": "焦點堆疊最適合用什麼光圈？",
+          "answer": "f/5.6–f/8 左右的中等光圈通常能得到最銳利的堆疊。再縮小光圈雖然能增加每張的景深，卻會因繞射而犧牲銳利度 — 而且在微距放大率下，有效光圈是 N × (1 + m)，所以 1:1 時的 f/8 其實已經等同於 f/16。景深由堆疊來提供，因此每張都該用鏡頭最銳利的光圈拍攝。"
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "應該焦點堆疊，還是使用超焦距？",
+          "answer": "如果一張對焦在超焦距上的照片已能讓最近的主體達到可接受的清晰度，就不需要堆疊。當前景比超焦距的一半還近，或您想要的是關鍵銳利度而非整張畫面「勉強可接受」的清晰度時，才需要堆疊。"
+        },
+        "what-is-a-rail-step": {
+          "question": "微距堆疊中的滑軌步距是什麼？",
+          "answer": "滑軌步距是微距對焦滑軌在每張照片之間推進相機的距離：切片景深 × (1 − 重疊)。在全片幅 1:1、f/8、20% 重疊的條件下，這大約是 0.77 mm；放大倍率更高時會縮小到不到一毫米，這正是需要使用滑軌或相機內建自動對焦包圍的原因。"
+        },
+        "what-software-merges-stacks": {
+          "question": "什麼軟體可以合成焦點堆疊？",
+          "answer": "Helicon Focus 和 Zerene Stacker 是專門的工具；Adobe Photoshop 則可透過「自動對齊圖層」與「自動混合圖層」來合成堆疊。三者都會先對齊各張照片（對焦改變時放大率會略微變化），再自動混合每張中最銳利的區域。"
+        }
+      }
     }
   }
 }

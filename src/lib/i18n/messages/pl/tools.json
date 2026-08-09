@@ -18,7 +18,7 @@
     },
     "focus-stacking-calculator": {
       "name": "Kalkulator focus stackingu",
-      "description": "Oblicz optymalne odległości ogniskowania dla ostrości od przodu do tyłu"
+      "description": "Planuj focus stacki z dokładnymi odległościami ogniskowania, liczbą ujęć i krokami szyny makro"
     },
     "equivalent-settings-calculator": {
       "name": "Kalkulator ekwiwalentnych ustawień",

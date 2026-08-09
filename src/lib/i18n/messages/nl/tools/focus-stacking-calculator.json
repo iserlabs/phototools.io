@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Instellingen",
       "camera": "Camera & lens",
       "focalLength": "Brandpuntsafstand",
       "aperture": "Diafragma",
@@ -10,7 +9,6 @@
       "nearLimit": "Voorste grens",
       "farLimit": "Achterste grens",
       "overlap": "Overlap",
-      "overlapDescription": "Percentage overlap in scherptediepte tussen opeenvolgende opnamen, voor een soepele samenvoeging",
       "results": "Resultaten",
       "shotCount": "Benodigde opnamen",
       "totalDepth": "Totale diepte",
@@ -25,18 +23,60 @@
       "diagramFar": "Veraf",
       "diagramCoverage": "Dekking",
       "diagramFocusPoints": "Focuspunten",
-      "diagramShot": "Opname {number}",
-      "diagramOverlap": "Overlapzone",
-      "diagramSharpZone": "Scherpe zone",
       "diagramSubject": "Onderwerp",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Waarschuwing",
       "tooFewShots": "Het dieptebereik past binnen één opname — stacking is niet nodig",
       "tooManyShots": "Dit plan vraagt veel opnamen. Kies eventueel een kleiner diafragma om het aantal terug te brengen.",
       "macroMode": "Macro",
-      "landscapeMode": "Landschap"
+      "modeTitle": "Modus",
+      "distanceMode": "Afstand",
+      "magnification": "Vergroting",
+      "subjectDepth": "Onderwerpdiepte",
+      "sliceDoF": "Scherptediepte per plakje",
+      "railStep": "Sledestap",
+      "effectiveAperture": "Effectief diafragma",
+      "railTravel": "Totale sledeverplaatsing",
+      "farLimitInfinity": "Stacken tot oneindig",
+      "tableShot": "Opname",
+      "tableFocusDistance": "Scherpstelafstand",
+      "tableNear": "Voorrand",
+      "tableFar": "Achterrand",
+      "tableRailPosition": "Sledepositie",
+      "shotTable": "Opnamelijst",
+      "animateStack": "Stack animeren",
+      "pauseStack": "Pauzeren",
+      "diffractionWarning": "Bij f/{aperture} verzacht diffractie het beeld op deze sensor. Overweeg een groter diafragma — de stack levert de diepte.",
+      "diffractionWarningMacro": "Bij {magnification}× gedraagt f/{aperture} zich als f/{effective}. Blijf op f/{max} of groter open voor maximale scherpte.",
+      "coverageWarning": "De maximale opnamelimiet werd bereikt voordat het volledige bereik was gedekt. Gebruik een kleiner bereik, meer scherptediepte per opname, of splits de stack.",
+      "hyperfocalHint": "Eén opname scherpgesteld op de hyperfocale afstand ({distance}) dekt dit hele bereik — stacking is niet nodig.",
+      "sceneCamera": "Camera",
+      "sceneRail": "Sledeverplaatsing",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Wat is focus stacking?",
+          "answer": "Focus stacking combineert meerdere foto's die op verschillende scherpstelafstanden zijn genomen tot één beeld dat van voor tot achter scherp is. De software behoudt de scherpste pixels uit elk frame. Het is onmisbaar bij macrofotografie, waar de scherptediepte van één frame minder dan een millimeter kan zijn, en nuttig bij landschappen wanneer zowel een dichte voorgrond als een verre achtergrond scherp moeten zijn."
+        },
+        "how-much-overlap": {
+          "question": "Hoeveel overlap hebben focus stack-opnamen nodig?",
+          "answer": "20–30% overlap tussen aangrenzende opnamen is de praktische standaard. Overlap geeft samenvoegsoftware speling bij het uitlijnen; te weinig creëert zachte gaten tussen plakjes, terwijl meer dan ongeveer 50% extra frames toevoegt zonder het resultaat te verbeteren."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Wat is het beste diafragma voor focus stacking?",
+          "answer": "Een gematigd diafragma rond f/5.6–f/8 geeft meestal de scherpste stack. Verder afdiafragmeren geeft meer diepte per opname, maar kost scherpte door diffractie — en bij macrovergroting is het effectieve diafragma N × (1 + m), waardoor f/8 bij 1:1 zich al gedraagt als f/16. De stack levert de diepte, dus fotografeer elk frame op het scherpste diafragma van de lens."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Moet ik focus stacken of de hyperfocale afstand gebruiken?",
+          "answer": "Als één opname, scherpgesteld op de hyperfocale afstand, je dichtstbijzijnde onderwerp acceptabel scherp weergeeft, is stacking niet nodig. Stack wanneer de voorgrond dichterbij is dan de helft van de hyperfocale afstand, of wanneer je kritische scherpte wilt in plaats van slechts acceptabele scherpte over het hele beeld."
+        },
+        "what-is-a-rail-step": {
+          "question": "Wat is een sledestap bij macrostacking?",
+          "answer": "De sledestap is de afstand die een macro-scherpstelslede de camera tussen opnamen laat opschuiven: scherptediepte per plakje × (1 − overlap). Bij 1:1 op full frame met f/8 en 20% overlap is dat ongeveer 0.77 mm; bij hogere vergroting wordt dit nog kleiner tot stappen onder de millimeter, wat verklaart waarom sledes of automatische in-camera focus bracketing worden gebruikt."
+        },
+        "what-software-merges-stacks": {
+          "question": "Welke software voegt focus stacks samen?",
+          "answer": "Helicon Focus en Zerene Stacker zijn de gespecialiseerde tools; Adobe Photoshop voegt stacks samen via Auto-Align en Auto-Blend Layers. Alle drie lijnen ze de frames uit (de vergroting verschuift licht als de scherpstelling verandert) en mengen automatisch de scherpste gebieden van elk frame."
+        }
+      }
     }
   }
 }

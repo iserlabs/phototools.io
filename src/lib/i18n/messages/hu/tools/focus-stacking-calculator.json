@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Beállítások",
       "camera": "Kamera és objektív",
       "focalLength": "Gyújtótávolság",
       "aperture": "Rekesz",
@@ -10,7 +9,6 @@
       "nearLimit": "Közeli határ",
       "farLimit": "Távoli határ",
       "overlap": "Átfedés",
-      "overlapDescription": "A szomszédos kockák mélységélesség átfedésének százaléka, hogy zökkenőmentesen összeolvadjanak",
       "results": "Eredmények",
       "shotCount": "Szükséges kockák",
       "totalDepth": "Teljes mélység",
@@ -25,18 +23,60 @@
       "diagramFar": "Távoli",
       "diagramCoverage": "Lefedettség",
       "diagramFocusPoints": "Fókuszpontok",
-      "diagramShot": "{number}. kocka",
-      "diagramOverlap": "Átfedési zóna",
-      "diagramSharpZone": "Éles zóna",
       "diagramSubject": "Téma",
-      "diagramSensor": "Érzékelő",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Figyelmeztetés",
       "tooFewShots": "A mélységtartomány egyetlen kockán belül van — nincs szükség stackelésre",
       "tooManyShots": "Ez a terv sok kockát igényel. Fontold meg a rekesz szűkítését a szám csökkentéséhez.",
       "macroMode": "Makró",
-      "landscapeMode": "Tájkép"
+      "modeTitle": "Mód",
+      "distanceMode": "Távolság",
+      "magnification": "Nagyítás",
+      "subjectDepth": "Téma mélysége",
+      "sliceDoF": "Szelet mélységélessége",
+      "railStep": "Sínlépés",
+      "effectiveAperture": "Effektív rekesz",
+      "railTravel": "Teljes sínmozgás",
+      "farLimitInfinity": "Stackelés a végtelenig",
+      "tableShot": "Kocka",
+      "tableFocusDistance": "Fókusztávolság",
+      "tableNear": "Közeli szél",
+      "tableFar": "Távoli szél",
+      "tableRailPosition": "Sínpozíció",
+      "shotTable": "Kockalista",
+      "animateStack": "Stack animálása",
+      "pauseStack": "Szünet",
+      "diffractionWarning": "f/{aperture} rekesznél a fényelhajlás lágyítja a képet ezen az érzékelőn. Fontolj meg egy tágabb rekeszt — a mélységet a stack adja.",
+      "diffractionWarningMacro": "{magnification}×-nál az f/{aperture} úgy viselkedik, mint az f/{effective}. Maradj f/{max}-nál vagy tágabbnál a maximális élességért.",
+      "coverageWarning": "A kockakorlát elérése előtt nem sikerült lefedni a teljes tartományt. Használj szűkebb tartományt, nagyobb kockánkénti mélységélességet, vagy oszd fel a stacket.",
+      "hyperfocalHint": "Egyetlen, a hiperfokális távolságra ({distance}) fókuszált kocka lefedi ezt az egész tartományt — nincs szükség stackelésre.",
+      "sceneCamera": "Kamera",
+      "sceneRail": "Sínmozgás",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Mi az a focus stacking?",
+          "answer": "A focus stacking több, különböző fókusztávolságon készült fotót egyesít egyetlen, elölről hátulig éles képpé. A szoftver minden kockából a legélesebb pixeleket tartja meg. Elengedhetetlen a makrófotózásban, ahol egyetlen kocka mélységélessége akár egy milliméternél is kisebb lehet, és hasznos tájképeknél is, ha a közeli előtérnek és a távoli háttérnek egyaránt élesnek kell lennie."
+        },
+        "how-much-overlap": {
+          "question": "Mekkora átfedés kell a focus stack kockái között?",
+          "answer": "A gyakorlatban 20–30%-os átfedés a szomszédos kockák között a bevált érték. Az átfedés igazítási tűrést ad az egyesítő szoftvernek; túl kevés lágy réseket hagy a szeletek között, míg az 50% fölötti átfedés csak felesleges kockákat ad hozzá anélkül, hogy javítaná az eredményt."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Mi a legjobb rekesz a focus stackinghez?",
+          "answer": "Egy közepes, f/5.6–f/8 körüli rekesz általában a legélesebb stacket adja. A további szűkítés több mélységet ad kockánként, de a fényelhajlás miatt élességet veszít — és makró nagyításnál az effektív rekesz N × (1 + m), így az f/8 1:1-nél már úgy viselkedik, mint az f/16. A mélységet a stack adja, ezért minden kockát az objektív legélesebb rekeszén fotózz."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Focus stackinget használjak, vagy a hiperfokális távolságot?",
+          "answer": "Ha egyetlen, a hiperfokális távolságra fókuszált kocka elfogadhatóan lefedi a legközelebbi témát, a stackelés felesleges. Akkor stackelj, ha az előtér közelebb van, mint a hiperfokális távolság fele, vagy ha kritikus élességet szeretnél az egész kockán, nem csupán elfogadhatót."
+        },
+        "what-is-a-rail-step": {
+          "question": "Mi az a sínlépés a makró stackingben?",
+          "answer": "A sínlépés az a távolság, amennyivel a makró fókusszín kockánként előretolja a kamerát: szelet mélységélesség × (1 − átfedés). 1:1-nél teljes képkockán, f/8-on, 20%-os átfedéssel ez nagyjából 0.77 mm; nagyobb nagyításnál milliméter alatti lépésekre zsugorodik, ezért használnak sínt vagy automatikus, kamerán belüli fókuszbracketinget."
+        },
+        "what-software-merges-stacks": {
+          "question": "Milyen szoftver egyesíti a focus stackeket?",
+          "answer": "A Helicon Focus és a Zerene Stacker a dedikált eszközök; az Adobe Photoshop az Auto-Align és Auto-Blend Layers funkciókkal egyesíti a stackeket. Mindhárom igazítja a kockákat (a nagyítás kissé eltolódik, ahogy a fókusz változik), és automatikusan összeolvasztja az egyes kockák legélesebb régióit."
+        }
+      }
     }
   }
 }

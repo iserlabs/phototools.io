@@ -1,7 +1,6 @@
 {
   "toolUI": {
     "focus-stacking-calculator": {
-      "settings": "Indstillinger",
       "camera": "Kamera og linse",
       "focalLength": "Brændvidde",
       "aperture": "Blænde",
@@ -10,7 +9,6 @@
       "nearLimit": "Nær grænse",
       "farLimit": "Fjern grænse",
       "overlap": "Overlap",
-      "overlapDescription": "Procentdel af dybdeskarphed-overlap mellem nabobilleder for problemfri sammenføjning",
       "results": "Resultater",
       "shotCount": "Antal billeder",
       "totalDepth": "Samlet dybde",
@@ -25,18 +23,60 @@
       "diagramFar": "Fjern",
       "diagramCoverage": "Dækning",
       "diagramFocusPoints": "Fokuspunkter",
-      "diagramShot": "Billede {number}",
-      "diagramOverlap": "Overlap-zone",
-      "diagramSharpZone": "Skarp zone",
       "diagramSubject": "Motiv",
-      "diagramSensor": "Sensor",
       "infinity": "∞",
-      "distanceUnit": "m",
-      "warning": "Advarsel",
       "tooFewShots": "Dybdeområdet er inden for ét billede — stacking er ikke nødvendigt",
       "tooManyShots": "Denne plan kræver mange billeder. Overvej en mindre blænde for at reducere antallet.",
       "macroMode": "Makro",
-      "landscapeMode": "Landskab"
+      "modeTitle": "Tilstand",
+      "distanceMode": "Afstand",
+      "magnification": "Forstørrelse",
+      "subjectDepth": "Motivdybde",
+      "sliceDoF": "Dybdeskarphed pr. skive",
+      "railStep": "Skinnetrin",
+      "effectiveAperture": "Effektiv blænde",
+      "railTravel": "Samlet skinnebevægelse",
+      "farLimitInfinity": "Stack til uendelig",
+      "tableShot": "Billede",
+      "tableFocusDistance": "Fokusafstand",
+      "tableNear": "Nær kant",
+      "tableFar": "Fjern kant",
+      "tableRailPosition": "Skinneposition",
+      "shotTable": "Billedliste",
+      "animateStack": "Animer stack",
+      "pauseStack": "Pause",
+      "diffractionWarning": "Ved f/{aperture} blødgør diffraktion billedet på denne sensor. Overvej en større blænde — stacken giver dybden.",
+      "diffractionWarningMacro": "Ved {magnification}× opfører f/{aperture} sig som f/{effective}. Hold dig ved f/{max} eller derover for maksimal skarphed.",
+      "coverageWarning": "Billedgrænsen blev nået, før hele området var dækket. Brug et mindre område, mere dybdeskarphed pr. billede, eller del stacken op.",
+      "hyperfocalHint": "Et enkelt billede fokuseret på den hyperfokale afstand ({distance}) dækker hele dette område — stacking er ikke nødvendigt.",
+      "sceneCamera": "Kamera",
+      "sceneRail": "Skinnebevægelse",
+      "faq": {
+        "what-is-focus-stacking": {
+          "question": "Hvad er focus stacking?",
+          "answer": "Focus stacking kombinerer flere billeder taget ved forskellige fokusafstande til ét billede med skarphed fra forgrund til baggrund. Software bevarer de skarpeste pixels fra hvert billede. Det er uundværligt i makrofotografi, hvor et enkelt billedes dybdeskarphed kan være under en millimeter, og nyttigt i landskaber, hvor både en nær forgrund og en fjern baggrund skal være skarpe."
+        },
+        "how-much-overlap": {
+          "question": "Hvor meget overlap skal der være mellem focus stack-billeder?",
+          "answer": "20–30% overlap mellem nabobilleder er den praktiske standard. Overlap giver fletningssoftwaren en justeringstolerance; for lidt skaber bløde huller mellem skiverne, mens mere end ca. 50% blot tilføjer billeder uden at forbedre resultatet."
+        },
+        "best-aperture-for-stacking": {
+          "question": "Hvad er den bedste blænde til focus stacking?",
+          "answer": "En moderat blænde omkring f/5.6–f/8 giver som regel den skarpeste stack. Lukker du yderligere ned, får du mere dybde pr. billede, men det koster skarphed til diffraktion — og ved makroforstørrelse er den effektive blænde N × (1 + m), så f/8 ved 1:1 opfører sig allerede som f/16. Stacken leverer dybden, så skyd hvert billede ved linsens skarpeste blænde."
+        },
+        "stacking-vs-hyperfocal": {
+          "question": "Skal jeg focus stacke, eller bruge den hyperfokale afstand?",
+          "answer": "Hvis et enkelt billede fokuseret på den hyperfokale afstand dækker dit nærmeste motiv acceptabelt, er stacking unødvendigt. Stack, når forgrunden er tættere på end halvdelen af den hyperfokale afstand, eller når du vil have kritisk skarphed frem for blot acceptabel skarphed i hele billedet."
+        },
+        "what-is-a-rail-step": {
+          "question": "Hvad er et skinnetrin i makro-stacking?",
+          "answer": "Skinnetrinnet er, hvor langt en makrofokusskinne flytter kameraet mellem billederne: dybdeskarphed pr. skive × (1 − overlap). Ved 1:1 på fuldformat ved f/8 med 20% overlap er det cirka 0.77 mm; ved højere forstørrelse skrumper det til trin under en millimeter, hvilket er derfor skinner eller automatisk fokusbracketing i kameraet bruges."
+        },
+        "what-software-merges-stacks": {
+          "question": "Hvilken software fletter focus stacks?",
+          "answer": "Helicon Focus og Zerene Stacker er de dedikerede værktøjer; Adobe Photoshop fletter stacks via Auto-Align og Auto-Blend Layers. Alle tre justerer billederne (forstørrelsen ændrer sig en smule, når fokus skifter) og blander automatisk de skarpeste områder fra hvert billede."
+        }
+      }
     }
   }
 }

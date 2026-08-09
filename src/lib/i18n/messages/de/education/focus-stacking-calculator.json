@@ -14,6 +14,10 @@
         "2": {
           "heading": "Zusammenfügen & Ausrichten",
           "text": "Programme wie Photoshop, Helicon Focus oder Zerene Stacker richten die Einzelaufnahmen aus (beim Fokussieren entstehen leichte Vergrößerungsverschiebungen) und wählen dann die schärfsten Pixel aus jeder Ebene. Die saubersten Ergebnisse erzielst du mit einem stabilen Stativ, gleichmäßigem Licht und einem Fokusschlitten für präzise Schritte."
+        },
+        "3": {
+          "heading": "Effektive Blende bei Vergrößerung",
+          "text": "Mit steigender Vergrößerung macht die Objektivauszugsverlängerung die Arbeitsblende dunkler und beugungsanfälliger: effektive Blende = Blendenzahl × (1 + Vergrößerung). Bei 1:1 wirkt f/8 wie f/16; bei 2:1 wie f/24. Deshalb werden Makro-Stacks mit moderaten Nennblenden fotografiert — die Beugung reagiert auf den effektiven Wert. Der Makromodus des Rechners zeigt die effektive Blende und die offenste Blendenzahl, die auf deinem Sensor noch beugungsscharf bleibt."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Aufnahmezahl",
           "definition": "Die Gesamtzahl der Einzelbilder, die nötig sind, um den Tiefenbereich mit der angegebenen Überlappung abzudecken. Mehr Aufnahmen = mehr Verarbeitung, aber weichere Ergebnisse."
+        },
+        "magnification": {
+          "term": "Abbildungsmaßstab",
+          "definition": "Verhältnis von Motivgröße zu Sensorgröße. 1:1 (1.0×) bedeutet, dass das Motiv in Lebensgröße auf den Sensor projiziert wird. Schlittenschritt und Schärfentiefe pro Schicht hängen nur von Abbildungsmaßstab, Blende und Sensor ab — nicht von der Entfernung."
+        },
+        "effectiveAperture": {
+          "term": "Effektive Blende",
+          "definition": "Die tatsächliche Arbeitsblende nach Berücksichtigung des Abbildungsmaßstabs: N × (1 + m). Beugung und Belichtung richten sich nach diesem Wert, nicht nach der Zahl auf dem Objektiv."
+        },
+        "railStep": {
+          "term": "Schlittenschritt",
+          "definition": "Wie weit der Fokusschlitten zwischen den Aufnahmen vorrückt: Schärfentiefe pro Schicht × (1 − Überlappung). Bei hoher Vergrößerung unter einem Millimeter."
+        },
+        "subjectDepth": {
+          "term": "Motivtiefe",
+          "definition": "Die Tiefe deines Motivs von vorn nach hinten, gemessen in Millimetern — die Gesamtstrecke, die der Stack vom nächsten bis zum entferntesten scharf gewünschten Punkt abdecken muss."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "Der ISO-Wert war zu hoch"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Du fotografierst bei f/8 und 2× Vergrößerung. Wie hoch ist deine effektive Blende?",
+          "hint": "Effektive Blende = Blendenzahl × (1 + Vergrößerung).",
+          "successMessage": "Richtig! f/8 × (1 + 2) = f/24. Bei 2× wird die Beugung bei f/24 beurteilt, nicht bei f/8 — deshalb arbeitet man bei hoher Vergrößerung mit moderaten Nennblenden.",
+          "failureMessage": "Effektive Blende = N × (1 + m) = 8 × 3 = f/24. Die Blendenangaben am Objektiv unterschätzen die tatsächliche Arbeitsblende bei Vergrößerung.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Deine Schärfentiefe pro Schicht beträgt 0.5 mm, und du möchtest 20% Überlappung zwischen den Schichten. Welchen Schlittenschritt solltest du verwenden?",
+          "hint": "Schritt = Schärfentiefe pro Schicht × (1 − Überlappung).",
+          "successMessage": "Richtig! 0.5 mm × 0.8 = 0.4 mm pro Schritt. Die 0.1 mm, die du bei jedem Schritt zurückgibst, sind die Ausrichtungsreserve, die einen sauberen Stack ermöglicht.",
+          "failureMessage": "Schritt = Schicht × (1 − Überlappung) = 0.5 × 0.8 = 0.4 mm. Der volle Schritt von 0.5 mm würde keine Überlappung lassen und sichtbare Nähte erzeugen.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }

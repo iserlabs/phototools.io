@@ -1,108 +1,91 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
-import { calcStackingSequence } from '@/lib/math/dof'
-import { getSensor } from '@/lib/data/sensors'
-import { useQueryInit, useToolQuerySync } from '@/lib/utils/querySync'
-import { PARAM_SCHEMA } from './querySync'
+import { useMemo } from 'react'
+import { useTranslations } from 'next-intl'
+import { useStackingState } from './useStackingState'
 import { StackingSettingsPanel } from './StackingSettingsPanel'
 import { StackingResultsPanel } from './StackingResultsPanel'
+import { MacroSettingsPanel } from './MacroSettingsPanel'
+import { MacroResultsPanel } from './MacroResultsPanel'
 import { StackingDiagram } from './StackingDiagram'
+import { SceneStrip } from './SceneStrip'
+import { ShotTable } from './ShotTable'
+import { useStackSweep } from './useStackSweep'
+import { buildDistanceScale, buildMacroScale, VB_W, DIAGRAM_PAD } from './diagramScale'
+import { ModeToggle } from '@/components/shared/ModeToggle'
 import { LearnPanel } from '@/components/shared/LearnPanel'
 import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import s from './FocusStacking.module.css'
 
+const DRAW_W = VB_W - DIAGRAM_PAD.left - DIAGRAM_PAD.right
+
 export function FocusStacking() {
-  const { trackParam } = useToolSession()
-  const [focalLength, setFocalLength] = useState(50)
-  const [aperture, setAperture] = useState(8)
-  const [sensorId, setSensorId] = useState('ff')
-  const [nearLimit, setNearLimit] = useState(0.5)
-  const [farLimit, setFarLimit] = useState(5)
-  const [overlapPct, setOverlapPct] = useState(0.2)
+  const t = useTranslations('toolUI.focus-stacking-calculator')
+  const st = useStackingState()
+  const { playing, toggle } = useStackSweep(st.activeRowCount, st.setHoveredShot)
 
-  // -- Query sync --
-  useQueryInit(PARAM_SCHEMA, {
-    fl: setFocalLength,
-    f: setAperture,
-    s: setSensorId,
-    near: setNearLimit,
-    far: setFarLimit,
-    overlap: (v: number) => setOverlapPct(v / 100),
-  })
-  useToolQuerySync({
-    fl: focalLength,
-    f: aperture,
-    s: sensorId,
-    near: nearLimit,
-    far: farLimit,
-    overlap: Math.round(overlapPct * 100),
-  }, PARAM_SCHEMA)
+  // Built once here and passed down to both SceneStrip and StackingDiagram —
+  // sharing this exact instance is what keeps the scene strip's markers and
+  // the diagram's bands/axis from ever drifting out of sync on x-mapping.
+  const scale = useMemo(() => st.mode === 'distance'
+    ? buildDistanceScale(st.stackingResult.shots, st.nearLimit, st.farLimit, DIAGRAM_PAD.left, DRAW_W)
+    : buildMacroScale(st.depthMm, st.macroRows.at(-1)?.sliceEndMm ?? st.depthMm, DIAGRAM_PAD.left, DRAW_W),
+    [st.mode, st.stackingResult, st.nearLimit, st.farLimit, st.depthMm, st.macroRows])
 
-  // -- Computed --
-  const sensor = getSensor(sensorId)
-  const coc = 0.03 / sensor.cropFactor
-
-  const stackingResult = useMemo(
-    () => calcStackingSequence({
-      focalLength, aperture, coc, nearLimit, farLimit, overlapPct,
-    }),
-    [focalLength, aperture, coc, nearLimit, farLimit, overlapPct],
+  const modeToggle = (
+    <ModeToggle
+      title={t('modeTitle')}
+      options={[
+        { value: 'distance' as const, label: t('distanceMode') },
+        { value: 'macro' as const, label: t('macroMode') },
+      ]}
+      value={st.mode}
+      onChange={st.setMode}
+    />
   )
-
-  const settingsProps = {
-    focalLength, aperture, sensorId, nearLimit, farLimit, overlapPct,
-    onFocalLengthChange: (v: number) => { trackParam({ param_name: 'focal_length', param_value: String(v), input_type: 'slider' }); setFocalLength(v) },
-    onApertureChange: (v: number) => { trackParam({ param_name: 'aperture', param_value: String(v), input_type: 'select' }); setAperture(v) },
-    onSensorChange: setSensorId,
-    onNearLimitChange: setNearLimit,
-    onFarLimitChange: setFarLimit,
-    onOverlapChange: setOverlapPct,
-  }
-
-  const resultsProps = {
-    result: stackingResult,
-    focalLength,
-    aperture,
-    sensorName: sensor.name,
-    overlapPct,
-  }
+  const settings = st.mode === 'distance'
+    ? <StackingSettingsPanel state={st} />
+    : <MacroSettingsPanel state={st} />
+  const results = st.mode === 'distance'
+    ? <StackingResultsPanel state={st} />
+    : <MacroResultsPanel state={st} />
 
   return (
     <div className={s.app}>
       <ToolHeading slug="focus-stacking-calculator" />
       <div className={s.appBody}>
-        {/* -- Sidebar -- */}
         <div className={s.sidebar}>
           <ToolActions toolSlug="focus-stacking-calculator" />
-          <StackingSettingsPanel {...settingsProps} />
-          <StackingResultsPanel {...resultsProps} />
+          {modeToggle}
+          {settings}
+          {results}
         </div>
-
-        {/* -- Center -- */}
         <div className={s.canvasArea}>
-          <StackingDiagram
-            result={stackingResult}
-            nearLimit={nearLimit}
-            farLimit={farLimit}
-          />
+          <button
+            type="button"
+            className={s.playBtn}
+            onClick={() => {
+              st.trackParam({ param_name: 'animate_stack', param_value: playing ? 'pause' : 'play', input_type: 'button' })
+              toggle()
+            }}
+          >
+            {playing ? t('pauseStack') : t('animateStack')}
+          </button>
+          <SceneStrip state={st} scale={scale} />
+          <StackingDiagram state={st} scale={scale} playing={playing} />
+          <ShotTable state={st} playing={playing} />
         </div>
-
-        {/* -- LearnPanel (desktop) -- */}
         <div className={s.desktopOnly}>
           <LearnPanel slug="focus-stacking-calculator" />
         </div>
       </div>
-
-      {/* -- Mobile controls -- */}
       <div className={s.mobileControls}>
-        <StackingSettingsPanel {...settingsProps} />
-        <StackingResultsPanel {...resultsProps} />
+        {modeToggle}
+        {settings}
+        {results}
       </div>
-
       <RelatedTools variant="inline" currentSlug="focus-stacking-calculator" />
       <div className={s.mobileOnly}>
         <LearnPanel slug="focus-stacking-calculator" />

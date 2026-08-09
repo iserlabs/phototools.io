@@ -14,6 +14,10 @@
         "2": {
           "heading": "Egyesítés és igazítás",
           "text": "A Photoshop, a Helicon Focus vagy a Zerene Stacker egymáshoz igazítja a kockákat (a fókusz változásakor enyhe nagyításbeli eltolódás is fellép), majd kiválasztja az éles pixeleket az egyes rétegekből. Stabil állvánnyal, állandó fénnyel és a pontos lépésekhez használt fókussínnel kapod a legtisztább eredményt."
+        },
+        "3": {
+          "heading": "Effektív rekesz nagyításnál",
+          "text": "Ahogy nő a nagyítás, az objektív kitolása sötétebbé és fényelhajlásra hajlamosabbá teszi a munkarekeszt: effektív rekesz = f-szám × (1 + nagyítás). 1:1-nél az f/8 úgy viselkedik, mint az f/16; 2:1-nél úgy, mint az f/24. Ezért fotóznak a makró stackek mérsékelt névleges rekesszel — a fényelhajlás az effektív értéket „látja”. A kalkulátor makró módja megadja az effektív rekeszt és a legtágabb f-számot, amely még fényelhajlás-élesen tartja az érzékelődet."
         }
       },
       "keyFactors": {
@@ -69,6 +73,22 @@
         "shotCount": {
           "term": "Kockaszám",
           "definition": "A mélységtartomány lefedéséhez szükséges kockák száma a megadott átfedéssel. Több kocka = több feldolgozás, de simább eredmény."
+        },
+        "magnification": {
+          "term": "Nagyítás",
+          "definition": "A téma és az érzékelő méretének aránya. Az 1:1 (1,0×) azt jelenti, hogy a téma életnagyságban vetül az érzékelőre. A sínlépés és a szeletmélység csak a nagyítástól, a rekesztől és az érzékelőtől függ — a távolságtól nem."
+        },
+        "effectiveAperture": {
+          "term": "Effektív rekesz",
+          "definition": "A nagyítás utáni munkarekesz f-száma: N × (1 + m). A fényelhajlás és az expozíció ezt az értéket követi, nem az objektíven feltüntetett számot."
+        },
+        "railStep": {
+          "term": "Sínlépés",
+          "definition": "Mekkora távolságot tol előre a fókuszsín kockánként: szelet mélységélesség × (1 − átfedés). Nagy nagyításnál milliméter alatti."
+        },
+        "subjectDepth": {
+          "term": "Téma mélysége",
+          "definition": "A témád elölről hátulig mért mélysége milliméterben — az a teljes távolság, amelyet a stacknek le kell fednie a legközelebbi élesnek szánt ponttól a legtávolabbiig."
         }
       },
       "challenges": {
@@ -126,6 +146,46 @@
             },
             "3": {
               "label": "Az ISO túl magas volt"
+            }
+          }
+        },
+        "3": {
+          "scenario": "f/8-on és 2×-es nagyításon fotózol. Mennyi az effektív rekeszed?",
+          "hint": "Effektív rekesz = f-szám × (1 + nagyítás).",
+          "successMessage": "Helyes! f/8 × (1 + 2) = f/24. A fényelhajlást 2×-nél f/24-en ítélik meg, nem f/8-on — ezért használnak a nagy nagyítású munkánál mérsékelt névleges rekeszeket.",
+          "failureMessage": "Effektív rekesz = N × (1 + m) = 8 × 3 = f/24. Az objektíven feltüntetett érték nagyításnál alábecsüli a munkarekeszt.",
+          "options": {
+            "0": {
+              "label": "f/8"
+            },
+            "1": {
+              "label": "f/16"
+            },
+            "2": {
+              "label": "f/24"
+            },
+            "3": {
+              "label": "f/32"
+            }
+          }
+        },
+        "4": {
+          "scenario": "A szeletmélységed 0.5 mm, és 20%-os átfedést szeretnél a szeletek között. Mekkora sínlépést használj?",
+          "hint": "Lépés = szeletmélység × (1 − átfedés).",
+          "successMessage": "Helyes! 0.5 mm × 0.8 = 0.4 mm lépésenként. A minden lépésnél visszaadott 0.1 mm az az igazítási biztosíték, amitől a stackek tisztán összeolvadnak.",
+          "failureMessage": "Lépés = szelet × (1 − átfedés) = 0.5 × 0.8 = 0.4 mm. A teljes 0.5 mm lépés nulla átfedést és látható varratokat hagyna.",
+          "options": {
+            "0": {
+              "label": "0.1 mm"
+            },
+            "1": {
+              "label": "0.4 mm"
+            },
+            "2": {
+              "label": "0.5 mm"
+            },
+            "3": {
+              "label": "0.6 mm"
             }
           }
         }
