@@ -146,6 +146,10 @@ export function drawSideBySide(
     const rowGap = 20
     const maxH = Math.max(...sensors.map(s => s.h))
     const minTextWidths = computeMinTextWidths(ctx, sensors)
+    // `sensors.indexOf(s)` inside the binary search below was an O(30 · n²)
+    // scan (30 bisection iterations × every row × an indexOf over all
+    // sensors). Precompute an id → index map once instead.
+    const idToIndex = new Map(sensors.map((s, i) => [s.id, i]))
     const maxRowLen = Math.max(...rows.map(r => r.length))
     const totalGap = (maxRowLen - 1) * gap
     const availW = W - pad * 2 - totalGap
@@ -157,7 +161,7 @@ export function drawSideBySide(
       let fits = true
       for (const row of rows) {
         const rowNeeded = row.reduce((sum, s) => {
-          const tw = minTextWidths[sensors.indexOf(s)]
+          const tw = minTextWidths[idToIndex.get(s.id)!]
           return sum + Math.max(s.w * midScale, tw)
         }, 0)
         if (rowNeeded > availW) { fits = false; break }
