@@ -219,6 +219,7 @@
 
 /* -- Diagram -- */
 .diagramWrap { position: relative; width: 100%; max-width: 900px; }
+.sceneStripWrap { margin-bottom: 10px; }
 .diagramTooltip {
   position: absolute; top: 0; transform: translateX(-50%);
   background: var(--bg-primary); border: 1px solid var(--border); border-radius: 6px;

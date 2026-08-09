@@ -8,6 +8,7 @@ import { StackingResultsPanel } from './StackingResultsPanel'
 import { MacroSettingsPanel } from './MacroSettingsPanel'
 import { MacroResultsPanel } from './MacroResultsPanel'
 import { StackingDiagram } from './StackingDiagram'
+import { SceneStrip } from './SceneStrip'
 import { ShotTable } from './ShotTable'
 import { buildDistanceScale, buildMacroScale, VB_W, DIAGRAM_PAD } from './diagramScale'
 import { ModeToggle } from '@/components/shared/ModeToggle'
@@ -23,9 +24,9 @@ export function FocusStacking() {
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const st = useStackingState()
 
-  // Built once here and passed down — Task 11's SceneStrip will consume the
-  // SAME scale instance so the diagram and the scene strip never drift out
-  // of sync on axis mapping.
+  // Built once here and passed down to both SceneStrip and StackingDiagram —
+  // sharing this exact instance is what keeps the scene strip's markers and
+  // the diagram's bands/axis from ever drifting out of sync on x-mapping.
   const scale = useMemo(() => st.mode === 'distance'
     ? buildDistanceScale(st.stackingResult.shots, st.nearLimit, st.farLimit, DIAGRAM_PAD.left, DRAW_W)
     : buildMacroScale(st.depthMm, st.macroRows.at(-1)?.sliceEndMm ?? st.depthMm, DIAGRAM_PAD.left, DRAW_W),
@@ -60,6 +61,7 @@ export function FocusStacking() {
           {results}
         </div>
         <div className={s.canvasArea}>
+          <SceneStrip state={st} scale={scale} />
           <StackingDiagram state={st} scale={scale} />
           <ShotTable state={st} playing={false} />
         </div>
