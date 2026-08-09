@@ -1,5 +1,6 @@
 'use client'
 
+import { useMemo } from 'react'
 import { useTranslations } from 'next-intl'
 import { useStackingState } from './useStackingState'
 import { StackingSettingsPanel } from './StackingSettingsPanel'
@@ -8,6 +9,7 @@ import { MacroSettingsPanel } from './MacroSettingsPanel'
 import { MacroResultsPanel } from './MacroResultsPanel'
 import { StackingDiagram } from './StackingDiagram'
 import { ShotTable } from './ShotTable'
+import { buildDistanceScale, buildMacroScale, VB_W, DIAGRAM_PAD } from './diagramScale'
 import { ModeToggle } from '@/components/shared/ModeToggle'
 import { LearnPanel } from '@/components/shared/LearnPanel'
 import { RelatedTools } from '@/components/shared/RelatedTools'
@@ -15,9 +17,19 @@ import { ToolHeading } from '@/components/shared/ToolHeading'
 import { ToolActions } from '@/components/shared/ToolActions'
 import s from './FocusStacking.module.css'
 
+const DRAW_W = VB_W - DIAGRAM_PAD.left - DIAGRAM_PAD.right
+
 export function FocusStacking() {
   const t = useTranslations('toolUI.focus-stacking-calculator')
   const st = useStackingState()
+
+  // Built once here and passed down — Task 11's SceneStrip will consume the
+  // SAME scale instance so the diagram and the scene strip never drift out
+  // of sync on axis mapping.
+  const scale = useMemo(() => st.mode === 'distance'
+    ? buildDistanceScale(st.stackingResult.shots, st.nearLimit, st.farLimit, DIAGRAM_PAD.left, DRAW_W)
+    : buildMacroScale(st.depthMm, st.macroRows.at(-1)?.sliceEndMm ?? st.depthMm, DIAGRAM_PAD.left, DRAW_W),
+    [st.mode, st.stackingResult, st.nearLimit, st.farLimit, st.depthMm, st.macroRows])
 
   const modeToggle = (
     <ModeToggle
@@ -48,7 +60,7 @@ export function FocusStacking() {
           {results}
         </div>
         <div className={s.canvasArea}>
-          <StackingDiagram state={st} />
+          <StackingDiagram state={st} scale={scale} />
           <ShotTable state={st} playing={false} />
         </div>
         <div className={s.desktopOnly}>
