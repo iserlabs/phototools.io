@@ -637,7 +637,9 @@
   font-weight: 400;
   padding: 6px 10px;
   border-radius: 6px;
-  white-space: nowrap;
+  white-space: normal;
+  width: max-content;
+  max-width: 220px;
   pointer-events: none;
   opacity: 0;
   transform: translateY(4px);
