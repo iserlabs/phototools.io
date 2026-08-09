@@ -2,17 +2,16 @@
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { COMMON_MP } from '@/lib/data/sensors'
-import type { ResolvedSensor } from './sensorSizeTypes'
+import type { CustomSensor } from './sensorSizeTypes'
 import ss from './SensorSize.module.css'
 
 export function EditSensorRow({ sensor, onSave, onCancel }: {
-  sensor: ResolvedSensor
+  sensor: CustomSensor
   onSave: (id: string, name: string, w: number, h: number, mp: number) => void
   onCancel: () => void
 }) {
   const t = useTranslations('toolUI.sensor-size-comparison')
-  const mp = COMMON_MP[sensor.id]?.[0]?.mp ?? 0
+  const mp = sensor.mp ?? 0
   const [name, setName] = useState(sensor.name)
   const [w, setW] = useState(String(sensor.w))
   const [h, setH] = useState(String(sensor.h))

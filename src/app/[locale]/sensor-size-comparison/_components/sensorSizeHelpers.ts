@@ -1,11 +1,11 @@
-import { SENSORS, COMMON_MP, calcCropFactor } from '@/lib/data/sensors'
+import { ALL_SENSORS, calcCropFactor } from '@/lib/data/sensors'
 import { CUSTOM_COLORS, STORAGE_KEY } from './sensorSizeTypes'
-import type { StoredCustomSensor, ResolvedSensor } from './sensorSizeTypes'
+import type { StoredCustomSensor, CustomSensor } from './sensorSizeTypes'
 
 export let customColorIdx = 0
 export function setCustomColorIdx(n: number) { customColorIdx = n }
 
-export const ALL_SENSOR_ID_SET = new Set(SENSORS.map((s) => s.id))
+export const ALL_SENSOR_ID_SET = new Set(ALL_SENSORS.map((s) => s.id))
 
 export function rgba(hex: string, a: number): string {
   const n = parseInt(hex.replace('#', ''), 16)
@@ -34,14 +34,14 @@ export function easeOut(t: number): number {
   return 1 - (1 - t) ** 3
 }
 
-export function encodeCustomParam(sensors: ResolvedSensor[]): string {
+export function encodeCustomParam(sensors: CustomSensor[]): string {
   return sensors.map(s => {
-    const mp = COMMON_MP[s.id]?.[0]?.mp ?? 0
+    const mp = s.mp ?? 0
     return `${s.name}~${s.w}~${s.h}~${mp}`
   }).join(',')
 }
 
-export function decodeCustomParam(raw: string): ResolvedSensor[] {
+export function decodeCustomParam(raw: string): CustomSensor[] {
   if (!raw) return []
   return raw.split(',').map((entry, i) => {
     const [name, ws, hs, mps] = entry.split('~')
@@ -52,12 +52,11 @@ export function decodeCustomParam(raw: string): ResolvedSensor[] {
     const id = `custom_url_${i}`
     const color = CUSTOM_COLORS[i % CUSTOM_COLORS.length]
     const cropFactor = calcCropFactor(w, h)
-    if (mp > 0) COMMON_MP[id] = [{ mp, models: name }]
-    return { id, name, w, h, cropFactor, color } as ResolvedSensor
-  }).filter(Boolean) as ResolvedSensor[]
+    return { id, name, w, h, cropFactor, color, mp } as CustomSensor
+  }).filter(Boolean) as CustomSensor[]
 }
 
-export function loadCustomSensors(): ResolvedSensor[] {
+export function loadCustomSensors(): CustomSensor[] {
   if (typeof window === 'undefined') return []
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
@@ -65,21 +64,19 @@ export function loadCustomSensors(): ResolvedSensor[] {
     const parsed = JSON.parse(raw)
     if (!Array.isArray(parsed)) return []
     const stored = parsed as StoredCustomSensor[]
-    for (const s of stored) {
-      if (s.mp && s.mp > 0) {
-        COMMON_MP[s.id] = [{ mp: s.mp, models: s.name }]
-      }
-    }
     customColorIdx = stored.length
-    return stored.map(s => ({ id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: s.cropFactor, color: s.color }))
+    return stored.map(s => ({
+      id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: s.cropFactor, color: s.color,
+      mp: s.mp,
+    }))
   } catch { return [] }
 }
 
-export function saveCustomSensors(sensors: ResolvedSensor[]) {
+export function saveCustomSensors(sensors: CustomSensor[]) {
   try {
     const stored: StoredCustomSensor[] = sensors.map(s => ({
       id: s.id, name: s.name, w: s.w, h: s.h, cropFactor: s.cropFactor, color: s.color,
-      mp: COMMON_MP[s.id]?.[0]?.mp,
+      mp: s.mp,
     }))
     localStorage.setItem(STORAGE_KEY, JSON.stringify(stored))
   } catch { /* ignore */ }

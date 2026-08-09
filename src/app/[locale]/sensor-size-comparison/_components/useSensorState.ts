@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
-import { SENSORS, COMMON_MP, calcCropFactor } from '@/lib/data/sensors'
+import { SENSORS, calcCropFactor } from '@/lib/data/sensors'
 import { CUSTOM_COLORS, DEFAULT_VISIBLE_IDS, DEFAULT_VISIBLE } from './sensorSizeTypes'
-import type { DisplayMode, ResolvedSensor } from './sensorSizeTypes'
+import type { DisplayMode, ResolvedSensor, CustomSensor } from './sensorSizeTypes'
 import {
   ALL_SENSOR_ID_SET, customColorIdx, setCustomColorIdx,
   encodeCustomParam, decodeCustomParam, loadCustomSensors, saveCustomSensors,
@@ -13,13 +13,13 @@ export function useSensorState() {
   const [visible, setVisible] = useState<Set<string>>(() => new Set(DEFAULT_VISIBLE_IDS))
   const [mode, setMode] = useState<DisplayMode>('overlay')
   const [resolution, setResolution] = useState(24)
-  const [customSensors, setCustomSensors] = useState<ResolvedSensor[]>([])
+  const [customSensors, setCustomSensors] = useState<CustomSensor[]>([])
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const customParam = params.get('custom')
-    let loadedCustom: ResolvedSensor[] = []
+    let loadedCustom: CustomSensor[] = []
     if (customParam) { loadedCustom = decodeCustomParam(customParam); setCustomColorIdx(loadedCustom.length) }
     else { loadedCustom = loadCustomSensors() }
 
@@ -75,19 +75,16 @@ export function useSensorState() {
     const color = CUSTOM_COLORS[customColorIdx % CUSTOM_COLORS.length]
     setCustomColorIdx(customColorIdx + 1)
     const cropFactor = calcCropFactor(w, h)
-    setCustomSensors(prev => [...prev, { id, name, w, h, cropFactor, color }])
+    setCustomSensors(prev => [...prev, { id, name, w, h, cropFactor, color, mp: mp > 0 ? mp : undefined }])
     setVisible(prev => new Set([...prev, id]))
-    if (mp > 0) COMMON_MP[id] = [{ mp, models: name }]
   }, [])
 
   const editCustomSensor = useCallback((id: string, name: string, w: number, h: number, mp: number) => {
     const cropFactor = calcCropFactor(w, h)
-    setCustomSensors(prev => prev.map(s => s.id === id ? { ...s, name, w, h, cropFactor } : s))
-    if (mp > 0) COMMON_MP[id] = [{ mp, models: name }]; else delete COMMON_MP[id]
+    setCustomSensors(prev => prev.map(s => s.id === id ? { ...s, name, w, h, cropFactor, mp: mp > 0 ? mp : undefined } : s))
   }, [])
 
   const removeAllCustomSensors = useCallback(() => {
-    for (const s of customSensors) delete COMMON_MP[s.id]
     setCustomSensors([])
     setVisible(prev => { const next = new Set(prev); for (const s of customSensors) next.delete(s.id); return next })
   }, [customSensors])
@@ -95,7 +92,6 @@ export function useSensorState() {
   const removeCustomSensor = useCallback((id: string) => {
     setCustomSensors(prev => prev.filter(s => s.id !== id))
     setVisible(prev => { const next = new Set(prev); next.delete(id); return next })
-    delete COMMON_MP[id]
   }, [])
 
   return {
