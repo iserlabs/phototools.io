@@ -49,15 +49,16 @@ export function evDiff(w: number, h: number, refW = 36, refH = 24): number {
  * @returns Formatted string
  */
 export function formatEv(ev: number): string {
-  // Treat values with |ev| < 0.05 as zero
-  if (Math.abs(ev) < 0.05) {
-    return '0.0 EV'
-  }
-
   // Round to one decimal place
   const rounded = Math.round(ev * 10) / 10
 
-  // Format with appropriate sign
+  // Treat rounded values of zero (including negative zero) as unsigned zero
+  // === 0 is true for both 0 and -0, so this catches the whole class
+  if (rounded === 0) {
+    return '0.0 EV'
+  }
+
+  // Format with appropriate sign for non-zero values
   if (rounded > 0) {
     return `+${rounded.toFixed(1)} EV`
   } else {
