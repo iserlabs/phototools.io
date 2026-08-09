@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, type ReactNode } from 'react'
+import { useRef, type ReactNode, type RefObject } from 'react'
 import { useTranslations } from 'next-intl'
 import type { DofBackground } from '@/lib/data/dofSimulator/types'
 import { useRenderer, type RenderSide } from './useRenderer'
@@ -15,6 +15,10 @@ export interface ViewportProps {
   dividerPos: number
   fallbackBlurPx: number // CSS blur for the no-WebGL path
   children?: ReactNode // ModelLayer + overlays render above the canvas
+  /** Optional external ref onto the live WebGL canvas — the composition
+   *  root threads this through to useImageExport, which needs to read the
+   *  canvas's drawn pixels. Falls back to an internal ref when omitted. */
+  canvasRef?: RefObject<HTMLCanvasElement | null>
 }
 
 /**
@@ -25,8 +29,10 @@ export interface ViewportProps {
  */
 export function Viewport({
   background, orientation, viewAspect, sideA, sideB, dividerPos, fallbackBlurPx, children,
+  canvasRef: externalCanvasRef,
 }: ViewportProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const internalCanvasRef = useRef<HTMLCanvasElement>(null)
+  const canvasRef = externalCanvasRef ?? internalCanvasRef
   const t = useTranslations('toolUI.dof-simulator')
   const bgSrc = orientation === 'portrait' ? background.srcPortrait : background.srcLandscape
   const { status } = useRenderer(canvasRef, bgSrc, sideA, sideB, dividerPos)

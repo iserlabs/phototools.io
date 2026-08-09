@@ -88,7 +88,12 @@
       "savedSettings": "Pengaturan Tersimpan",
       "saveSettings": "Simpan pengaturan",
       "removeSaved": "Hapus pengaturan tersimpan",
-      "noSavedSettings": "Belum ada pengaturan tersimpan"
+      "noSavedSettings": "Belum ada pengaturan tersimpan",
+      "compare": "Perbandingan",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Ekspor gambar",
+      "exportImageBusy": "Mengekspor..."
     }
   }
 }

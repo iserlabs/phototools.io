@@ -88,7 +88,12 @@
       "savedSettings": "Gemte indstillinger",
       "saveSettings": "Gem indstillinger",
       "removeSaved": "Fjern gemt indstilling",
-      "noSavedSettings": "Ingen gemte indstillinger endnu"
+      "noSavedSettings": "Ingen gemte indstillinger endnu",
+      "compare": "Sammenligning",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Eksportér billede",
+      "exportImageBusy": "Eksporterer..."
     }
   }
 }

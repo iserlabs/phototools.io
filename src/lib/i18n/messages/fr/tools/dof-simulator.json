@@ -88,7 +88,12 @@
       "savedSettings": "Réglages enregistrés",
       "saveSettings": "Enregistrer les réglages",
       "removeSaved": "Supprimer le réglage enregistré",
-      "noSavedSettings": "Aucun réglage enregistré pour l'instant"
+      "noSavedSettings": "Aucun réglage enregistré pour l'instant",
+      "compare": "Comparaison",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Exporter l'image",
+      "exportImageBusy": "Export en cours..."
     }
   }
 }

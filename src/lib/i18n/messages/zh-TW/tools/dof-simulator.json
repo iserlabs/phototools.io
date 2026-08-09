@@ -88,7 +88,12 @@
       "savedSettings": "已儲存的設定",
       "saveSettings": "儲存設定",
       "removeSaved": "移除已儲存的設定",
-      "noSavedSettings": "尚無已儲存的設定"
+      "noSavedSettings": "尚無已儲存的設定",
+      "compare": "比較",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "匯出圖片",
+      "exportImageBusy": "匯出中..."
     }
   }
 }

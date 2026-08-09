@@ -88,7 +88,12 @@
       "savedSettings": "সংরক্ষিত সেটিংস",
       "saveSettings": "সেটিংস সংরক্ষণ করো",
       "removeSaved": "সংরক্ষিত সেটিং মুছুন",
-      "noSavedSettings": "এখনও কোনো সংরক্ষিত সেটিংস নেই"
+      "noSavedSettings": "এখনও কোনো সংরক্ষিত সেটিংস নেই",
+      "compare": "তুলনা",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "ছবি এক্সপোর্ট করো",
+      "exportImageBusy": "এক্সপোর্ট হচ্ছে..."
     }
   }
 }

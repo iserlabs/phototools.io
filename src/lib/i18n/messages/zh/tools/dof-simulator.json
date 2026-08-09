@@ -88,7 +88,12 @@
       "savedSettings": "已保存的设置",
       "saveSettings": "保存设置",
       "removeSaved": "删除已保存的设置",
-      "noSavedSettings": "暂无已保存的设置"
+      "noSavedSettings": "暂无已保存的设置",
+      "compare": "对比",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "导出图片",
+      "exportImageBusy": "导出中..."
     }
   }
 }

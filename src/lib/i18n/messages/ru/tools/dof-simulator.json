@@ -88,7 +88,12 @@
       "savedSettings": "Сохранённые настройки",
       "saveSettings": "Сохранить настройки",
       "removeSaved": "Удалить сохранённую настройку",
-      "noSavedSettings": "Пока нет сохранённых настроек"
+      "noSavedSettings": "Пока нет сохранённых настроек",
+      "compare": "Сравнение",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Экспортировать изображение",
+      "exportImageBusy": "Экспорт..."
     }
   }
 }

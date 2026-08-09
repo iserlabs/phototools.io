@@ -88,7 +88,12 @@
       "savedSettings": "Setări salvate",
       "saveSettings": "Salvează setările",
       "removeSaved": "Șterge setarea salvată",
-      "noSavedSettings": "Nicio setare salvată încă"
+      "noSavedSettings": "Nicio setare salvată încă",
+      "compare": "Comparație",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Exportă imaginea",
+      "exportImageBusy": "Se exportă..."
     }
   }
 }

@@ -88,7 +88,12 @@
       "savedSettings": "Cài đặt đã lưu",
       "saveSettings": "Lưu cài đặt",
       "removeSaved": "Xóa cài đặt đã lưu",
-      "noSavedSettings": "Chưa có cài đặt nào được lưu"
+      "noSavedSettings": "Chưa có cài đặt nào được lưu",
+      "compare": "So sánh",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Xuất ảnh",
+      "exportImageBusy": "Đang xuất..."
     }
   }
 }

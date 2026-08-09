@@ -88,7 +88,12 @@
       "savedSettings": "Saved Settings",
       "saveSettings": "Save settings",
       "removeSaved": "Remove saved setting",
-      "noSavedSettings": "No saved settings yet"
+      "noSavedSettings": "No saved settings yet",
+      "compare": "Comparison",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Export image",
+      "exportImageBusy": "Exporting…"
     }
   }
 }

@@ -88,7 +88,12 @@
       "savedSettings": "Mentett beállítások",
       "saveSettings": "Beállítások mentése",
       "removeSaved": "Mentett beállítás eltávolítása",
-      "noSavedSettings": "Még nincs mentett beállítás"
+      "noSavedSettings": "Még nincs mentett beállítás",
+      "compare": "Összehasonlítás",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Kép exportálása",
+      "exportImageBusy": "Exportálás..."
     }
   }
 }

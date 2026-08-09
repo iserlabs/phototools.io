@@ -88,7 +88,12 @@
       "savedSettings": "Uložená nastavení",
       "saveSettings": "Uložit nastavení",
       "removeSaved": "Odebrat uložené nastavení",
-      "noSavedSettings": "Zatím žádná uložená nastavení"
+      "noSavedSettings": "Zatím žádná uložená nastavení",
+      "compare": "Porovnání",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Exportovat obrázek",
+      "exportImageBusy": "Exportuji..."
     }
   }
 }

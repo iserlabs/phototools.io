@@ -88,7 +88,12 @@
       "savedSettings": "Opgeslagen instellingen",
       "saveSettings": "Instellingen opslaan",
       "removeSaved": "Opgeslagen instelling verwijderen",
-      "noSavedSettings": "Nog geen opgeslagen instellingen"
+      "noSavedSettings": "Nog geen opgeslagen instellingen",
+      "compare": "Vergelijking",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Afbeelding exporteren",
+      "exportImageBusy": "Exporteren..."
     }
   }
 }

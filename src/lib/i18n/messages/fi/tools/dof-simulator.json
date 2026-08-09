@@ -88,7 +88,12 @@
       "savedSettings": "Tallennetut asetukset",
       "saveSettings": "Tallenna asetukset",
       "removeSaved": "Poista tallennettu asetus",
-      "noSavedSettings": "Ei vielä tallennettuja asetuksia"
+      "noSavedSettings": "Ei vielä tallennettuja asetuksia",
+      "compare": "Vertailu",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Vie kuva",
+      "exportImageBusy": "Viedään..."
     }
   }
 }

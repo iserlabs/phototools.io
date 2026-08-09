@@ -88,7 +88,12 @@
       "savedSettings": "Ajustos desats",
       "saveSettings": "Desa els ajustos",
       "removeSaved": "Elimina l'ajust desat",
-      "noSavedSettings": "Encara no hi ha ajustos desats"
+      "noSavedSettings": "Encara no hi ha ajustos desats",
+      "compare": "Comparació",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Exporta la imatge",
+      "exportImageBusy": "Exportant..."
     }
   }
 }

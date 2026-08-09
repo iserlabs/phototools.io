@@ -88,7 +88,12 @@
       "savedSettings": "सेव की गई सेटिंग्स",
       "saveSettings": "सेटिंग्स सेव करें",
       "removeSaved": "सेव की गई सेटिंग हटाएं",
-      "noSavedSettings": "अभी तक कोई सेव की गई सेटिंग नहीं है"
+      "noSavedSettings": "अभी तक कोई सेव की गई सेटिंग नहीं है",
+      "compare": "तुलना",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "इमेज एक्सपोर्ट करें",
+      "exportImageBusy": "एक्सपोर्ट हो रहा है..."
     }
   }
 }

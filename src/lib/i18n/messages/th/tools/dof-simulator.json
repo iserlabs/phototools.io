@@ -88,7 +88,12 @@
       "savedSettings": "การตั้งค่าที่บันทึกไว้",
       "saveSettings": "บันทึกการตั้งค่า",
       "removeSaved": "ลบการตั้งค่าที่บันทึกไว้",
-      "noSavedSettings": "ยังไม่มีการตั้งค่าที่บันทึกไว้"
+      "noSavedSettings": "ยังไม่มีการตั้งค่าที่บันทึกไว้",
+      "compare": "เปรียบเทียบ",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "ส่งออกรูปภาพ",
+      "exportImageBusy": "กำลังส่งออก..."
     }
   }
 }

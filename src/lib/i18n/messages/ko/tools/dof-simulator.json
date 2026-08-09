@@ -88,7 +88,12 @@
       "savedSettings": "저장된 설정",
       "saveSettings": "설정 저장",
       "removeSaved": "저장된 설정 삭제",
-      "noSavedSettings": "저장된 설정이 없습니다"
+      "noSavedSettings": "저장된 설정이 없습니다",
+      "compare": "비교",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "이미지 내보내기",
+      "exportImageBusy": "내보내는 중..."
     }
   }
 }

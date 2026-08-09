@@ -88,7 +88,12 @@
       "savedSettings": "Mga Naka-save na Setting",
       "saveSettings": "I-save ang mga setting",
       "removeSaved": "Alisin ang naka-save na setting",
-      "noSavedSettings": "Wala pang naka-save na setting"
+      "noSavedSettings": "Wala pang naka-save na setting",
+      "compare": "Paghahambing",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "I-export ang larawan",
+      "exportImageBusy": "Nag-e-export..."
     }
   }
 }

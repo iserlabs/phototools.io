@@ -88,7 +88,12 @@
       "savedSettings": "Sparade inställningar",
       "saveSettings": "Spara inställningar",
       "removeSaved": "Ta bort sparad inställning",
-      "noSavedSettings": "Inga sparade inställningar än"
+      "noSavedSettings": "Inga sparade inställningar än",
+      "compare": "Jämförelse",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "Exportera bild",
+      "exportImageBusy": "Exporterar..."
     }
   }
 }

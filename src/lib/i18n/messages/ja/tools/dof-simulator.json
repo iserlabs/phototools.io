@@ -88,7 +88,12 @@
       "savedSettings": "保存した設定",
       "saveSettings": "設定を保存",
       "removeSaved": "保存した設定を削除",
-      "noSavedSettings": "保存した設定はまだありません"
+      "noSavedSettings": "保存した設定はまだありません",
+      "compare": "比較",
+      "setA": "A",
+      "setB": "B",
+      "exportImage": "画像をエクスポート",
+      "exportImageBusy": "エクスポート中..."
     }
   }
 }
