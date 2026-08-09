@@ -46,6 +46,19 @@
       "tableCropFactor": "Cropfaktor",
       "tableAspectCrop": "Aspect crop",
       "canvasAriaLabel": "Sensor-sammenligning i {mode}-tilstand",
+      "compare": {
+        "title": "Sammenligning",
+        "compareWith": "Sammenlign med…",
+        "compareTheseTwo": "Sammenlign disse to sensorer",
+        "close": "Luk sammenligning",
+        "representativeResolution": "Opløsning",
+        "notApplicable": "—",
+        "verdictLight": "{larger} indsamler omkring {ratio}× lyset ({ev}).",
+        "verdictReach": "{smaller} giver {factor}× mere rækkevidde med samme objektiv.",
+        "verdictNearEqual": "De to indsamler stort set identisk mængde lys i forhold til deres areal.",
+        "crossFocal": "Et {focal}mm-objektiv på {from} giver samme udsnit som {eqFocal}mm på {to}.",
+        "areaRelation": "{a} har {ratio}× arealet af {b}."
+      },
       "detail": {
         "diagonal": "Diagonal",
         "area": "Areal",

@@ -46,6 +46,19 @@
       "tableCropFactor": "ক্রপ ফ্যাক্টর",
       "tableAspectCrop": "অ্যাসপেক্ট ক্রপ",
       "canvasAriaLabel": "{mode} মোডে সেন্সর সাইজ তুলনা",
+      "compare": {
+        "title": "তুলনা",
+        "compareWith": "তুলনা করো…",
+        "compareTheseTwo": "এই দুটো সেন্সর তুলনা করো",
+        "close": "তুলনা বন্ধ করো",
+        "representativeResolution": "রেজোলিউশন",
+        "notApplicable": "—",
+        "verdictLight": "{larger} প্রায় {ratio}× আলো ধারণ করে ({ev})।",
+        "verdictReach": "{smaller} একই লেন্সে {factor}× বেশি রিচ দেয়।",
+        "verdictNearEqual": "এই দুটো তাদের এলাকার তুলনায় প্রায় একই পরিমাণ আলো ধারণ করে।",
+        "crossFocal": "{from} সেন্সরে একটা {focal}mm লেন্স {to} সেন্সরে {eqFocal}mm-এর মতো ফ্রেম করে।",
+        "areaRelation": "{a} সেন্সরের এলাকা {b} সেন্সরের চেয়ে {ratio}× বেশি।"
+      },
       "detail": {
         "diagonal": "ডায়াগোনাল",
         "area": "এলাকা",
