@@ -100,7 +100,7 @@
         },
         "ff": {
           "character": "The reference point for everything else here. Full frame balances light-gathering area, depth-of-field control, and lens size — most modern lens lineups are designed around it. You pay in body and lens bulk compared with APS-C, but gain roughly a stop of low-light headroom and shallower focus at the same framing.",
-          "context": "The 36×24mm frame is a direct inheritance from 35mm still film, standardized by Leica in the 1920s from cinema film stock turned sideways. A full-frame digital sensor is dimensionally identical to a 35mm film frame — which is why film-era lenses map onto it with no crop."
+          "context": "The 36×24 mm frame is a direct inheritance from 35mm still film, standardized by Leica in the 1920s from cinema film stock turned sideways. A full-frame digital sensor is dimensionally identical to a 35mm film frame — which is why film-era lenses map onto it with no crop."
         },
         "apsh": {
           "character": "A stopgap size Canon built for speed over resolution — bigger pixels and faster readout, in a body aimed at sports and photojournalism rather than image quality for its own sake. The 1.29x crop split the difference between full frame's reach disadvantage and APS-C's low-light penalty, at the cost of a sensor no other manufacturer ever adopted.",
@@ -111,7 +111,7 @@
           "context": "APS-C's name borrows from 1996's consumer Advanced Photo System film, specifically its \"Classic\" 3:2 print format — but the digital sensor isn't the same physical size as APS film, only a distant namesake. Fujifilm has built its entire X system around this sensor size rather than treating it as an entry tier."
         },
         "apsc_c": {
-          "character": "Canon's own APS-C standard, at 22.3×14.8mm — smaller than the 23.5×15.6mm size Sony, Nikon, and Fujifilm share, which is why Canon's crop reads 1.62x instead of 1.5x. In practice that means slightly more telephoto reach per lens, at a small cost in noise and dynamic range versus the larger APS-C variant.",
+          "character": "Canon's own APS-C standard, at 22.3×14.8mm — smaller than the 23.5×15.6mm size most competitors use, which is why Canon's crop reads 1.62x instead of 1.5x. In practice that means slightly more telephoto reach per lens, at a small cost in noise and dynamic range versus the larger APS-C variant.",
           "context": "Canon has run its own APS-C sensor dimensions since the format's earliest digital SLRs, never converging with the 1.5x crop nearly everyone else settled on. The R7 and R10 carry this size forward into Canon's mirrorless RF mount today."
         },
         "m43": {
@@ -119,7 +119,7 @@
           "context": "Micro Four Thirds is an open standard, not a proprietary format — Olympus and Panasonic jointly announced it in 2008, and any manufacturer can build to the same lens-mount and sensor specification. OM System (formerly Olympus) and Panasonic remain the two active camera makers building on it."
         },
         "1in": {
-          "character": "A meaningful step up from smartphone sensors while staying pocketable — the RX100 line proved a 13.2×8.8mm sensor could deliver real image quality in a compact you'd actually carry. Depth-of-field control stays limited even at f/1.8, and low light needs care, but the size-to-quality ratio is hard to beat for travel.",
+          "character": "A meaningful step up from smartphone sensors while staying pocketable — the RX100 line proved a 13.2×8.8mm sensor could produce real image quality in a compact you'd actually carry. Background blur stays limited even at f/1.8, and low light needs care, but the size-to-quality ratio is hard to beat for travel.",
           "context": "The \"1-inch\" label is a holdover from 1950s video-camera tubes, not a real measurement — a tube with a 1-inch outer diameter produced a usable image area of roughly two-thirds that, around 16mm diagonal. When CCD and CMOS sensors replaced tubes, camera makers kept the tube-era naming even though today's sensors have no tube inside them at all."
         },
         "phone": {
@@ -127,8 +127,8 @@
           "context": "\"Flagship\" here spans several real sensors of similar-but-not-identical size across brands and years rather than one exact chip — the iPhone 17 Pro's main camera measures roughly 1/1.28-inch, Samsung's flagship line runs closer to 1/1.3-inch, and both round into this preset's representative 9.8×7.3mm figure."
         },
         "1_1_7in": {
-          "character": "This size class defined the late-2000s enthusiast compact — cameras like the Canon S120 and Panasonic LX7 paired a 7.6×5.7mm sensor with a fast lens few compacts could match, aiming at photographers who wanted manual control in a jacket pocket. Smartphones absorbed most of this market, but the format's balance of size and control still holds up.",
-          "context": "This size sat one notch above 1-inch compacts and roughly two notches below Micro Four Thirds, carving out a niche for pocketable cameras with faster apertures than typical point-and-shoots of the same era. Few current cameras use it — it's now mostly a used-market and collector size."
+          "character": "The 7.6×5.7mm sensor defined the late-2000s enthusiast compact — cameras like the Canon S120 and Panasonic LX7 paired it with a fast lens few compacts could match, aiming at photographers who wanted manual control in a jacket pocket. Smartphones absorbed most of this market, but the format's balance of size and control still holds up.",
+          "context": "In sensor area, this format ranks a notch below 1-inch compacts and two notches below Micro Four Thirds, carving out a niche for pocketable cameras with faster apertures than typical point-and-shoots of the same era. Few current cameras use it — it's now mostly a used-market and collector size."
         },
         "1_2_3in": {
           "character": "Drones and action cameras are built around this size because it's small and light enough to fly or mount without adding meaningful weight — the cost is noisy high-ISO footage and limited dynamic range compared to any larger sensor on this list. DJI and most action-cam makers anchor their core lineups here.",
@@ -156,7 +156,7 @@
         },
         "film_6x7": {
           "character": "A heavier, slower system than 35mm or half-frame — the Mamiya RB67's bellows focusing and rotating back reward a deliberate, tripod-friendly pace over handheld spontaneity. In exchange you get a negative more than four times the area of full frame, with correspondingly finer grain and smoother tonal transitions.",
-          "context": "Nicknamed \"the ideal format\" in the 1960s and '70s because its 7:6 proportions crop cleanly to 8×10 and other standard print sizes with minimal waste. The Mamiya RB67 takes its name directly from its signature feature — a rotating back, hence \"RB\" — that lets you switch orientation without turning the whole camera."
+          "context": "Nicknamed \"the ideal format\" in the 1960s and '70s because its 5:4 proportions crop cleanly to 8×10 and other standard print sizes with minimal waste. The Mamiya RB67 takes its name directly from its signature feature — a rotating back, hence \"RB\" — that lets you switch orientation without turning the whole camera."
         },
         "film_4x5": {
           "character": "Sheet film changes how you work as much as what you capture — one exposure per holder, a ground-glass view that's upside-down and reversed, and movements (rise, shift, tilt) that let you correct perspective and control focus in ways no digital sensor here can match without stitching or shifting lenses.",
@@ -164,10 +164,10 @@
         },
         "cine_s16": {
           "character": "A working-format compromise — Super 16 packs meaningfully better image quality than standard 16mm into a fraction of 35mm film's cost and camera bulk, which is why documentary, indie, and broadcast productions leaned on it for decades. It has no fixed digital pixel count in this tool since it's a film gauge, not a sensor.",
-          "context": "Invented in 1969 by Swedish cinematographer Rune Ericson, Super 16 widens standard 16mm's usable frame by reclaiming the strip of film normally reserved for an optical soundtrack — a 12.52×7.41mm image area versus regular 16mm's narrower frame, at roughly a 1.66:1 aspect ratio."
+          "context": "Invented in 1969 by Swedish cinematographer Rune Ericson, Super 16 widens standard 16mm's usable frame by reclaiming the strip of film normally reserved for an optical soundtrack — a 12.52×7.41mm image area versus regular 16mm's narrower frame, roughly 1.69:1 by raw dimensions. Productions historically framed for a 1.66:1 blow-up to 35mm rather than the format's literal ratio."
         },
         "cine_s35": {
-          "character": "Professional cinema production runs on this sensor size more than any other — cameras like the ARRI ALEXA 35 and RED Komodo build around it because it balances depth-of-field control, lens choice, and manageable file sizes better than either smaller broadcast formats or larger large-format cine sensors.",
+          "character": "Professional cinema production runs on this sensor size more than any other — cameras like the ARRI ALEXA 35 and RED Komodo build around it because it balances shallow-focus control, lens choice, and manageable file sizes better than either smaller broadcast formats or larger large-format cine sensors.",
           "context": "Super 35 traces back to 4-perf 35mm cine film's full frame — essentially the same area silent-era cameras used before sound tracks ate into the frame, revived as a camera-only format in the 1980s. The 24.9×14.0mm figure here is the 16:9 active-image-area crop that ARRI's own cameras cite, not the larger open-gate frame."
         },
         "cine_vv": {
