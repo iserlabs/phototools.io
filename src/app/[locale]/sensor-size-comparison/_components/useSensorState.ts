@@ -9,11 +9,30 @@ import {
   encodeCustomParam, decodeCustomParam, loadCustomSensors, saveCustomSensors,
 } from './sensorSizeHelpers'
 
+/**
+ * Parses a `?vs=` param into an ordered pair of distinct, known sensor ids.
+ * Returns null unless it yields exactly two non-empty, distinct ids that
+ * both pass `isKnownId` — whitespace around ids is tolerated.
+ */
+export function parseVsParam(
+  raw: string | null,
+  isKnownId: (id: string) => boolean,
+): [string, string] | null {
+  if (!raw) return null
+  const ids = raw.split(',').map(id => id.trim()).filter(Boolean)
+  if (ids.length !== 2) return null
+  const [a, b] = ids
+  if (a === b) return null
+  if (!isKnownId(a) || !isKnownId(b)) return null
+  return [a, b]
+}
+
 export function useSensorState() {
   const [visible, setVisible] = useState<Set<string>>(() => new Set(DEFAULT_VISIBLE_IDS))
   const [mode, setMode] = useState<DisplayMode>('overlay')
   const [resolution, setResolution] = useState(24)
   const [customSensors, setCustomSensors] = useState<CustomSensor[]>([])
+  const [comparePair, setComparePair] = useState<[string, string] | null>(null)
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
@@ -40,7 +59,10 @@ export function useSensorState() {
     const mpParam = params.get('mp')
     const newMp = mpParam ? Math.min(Math.max(parseInt(mpParam) || 24, 1), 200) : 24
 
-    setCustomSensors(loadedCustom); setVisible(newVisible); setMode(newMode); setResolution(newMp); setHydrated(true)
+    const newComparePair = parseVsParam(params.get('vs'), (id) => ALL_SENSOR_ID_SET.has(id) || customIds.has(id))
+
+    setCustomSensors(loadedCustom); setVisible(newVisible); setMode(newMode); setResolution(newMp)
+    setComparePair(newComparePair); setHydrated(true)
   }, [])
 
   useEffect(() => { if (hydrated) saveCustomSensors(customSensors) }, [customSensors, hydrated])
@@ -58,10 +80,13 @@ export function useSensorState() {
       if (resolution !== 24) url.searchParams.set('mp', String(resolution)); else url.searchParams.delete('mp')
       const cp = customSensors.length > 0 ? encodeCustomParam(customSensors) : ''
       if (cp) url.searchParams.set('custom', cp); else url.searchParams.delete('custom')
+      if (comparePair && comparePair.every(id => ALL_SENSOR_ID_SET.has(id) || customSensors.some(s => s.id === id))) {
+        url.searchParams.set('vs', comparePair.join(','))
+      } else url.searchParams.delete('vs')
       window.history.replaceState(null, '', url.toString())
     }, 200)
     return () => { if (urlTimerRef.current) clearTimeout(urlTimerRef.current) }
-  }, [visible, mode, resolution, customSensors, hydrated])
+  }, [visible, mode, resolution, customSensors, comparePair, hydrated])
 
   const allSensors = useMemo(() => [...ALL_SENSORS as ResolvedSensor[], ...customSensors], [customSensors])
   const visibleSensors = useMemo(() => allSensors.filter((s) => visible.has(s.id)), [allSensors, visible])
@@ -97,6 +122,7 @@ export function useSensorState() {
   return {
     visible, setVisible, mode, setMode, resolution, setResolution,
     customSensors, allSensors, visibleSensors,
+    comparePair, setComparePair,
     toggleSensor, addCustomSensor, editCustomSensor, removeAllCustomSensors, removeCustomSensor,
   }
 }
