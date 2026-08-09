@@ -46,6 +46,19 @@
       "tableCropFactor": "Crop-Faktor",
       "tableAspectCrop": "Seitenverhältnis-Crop",
       "canvasAriaLabel": "Sensorgrößen-Vergleich im {mode}-Modus",
+      "compare": {
+        "title": "Vergleich",
+        "compareWith": "Vergleichen mit…",
+        "compareTheseTwo": "Diese beiden vergleichen",
+        "close": "Vergleich schließen",
+        "representativeResolution": "Auflösung",
+        "notApplicable": "—",
+        "verdictLight": "{larger} sammelt etwa {ratio}× so viel Licht ({ev}).",
+        "verdictReach": "{smaller} bietet {factor}× mehr Reichweite mit demselben Objektiv.",
+        "verdictNearEqual": "Diese beiden sammeln bezogen auf ihre Fläche praktisch gleich viel Licht.",
+        "crossFocal": "Ein {focal}mm-Objektiv bei {from} bildet ab wie {eqFocal}mm bei {to}.",
+        "areaRelation": "{a} hat die {ratio}-fache Fläche von {b}."
+      },
       "detail": {
         "diagonal": "Diagonale",
         "area": "Fläche",

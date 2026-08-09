@@ -46,6 +46,19 @@
       "tableCropFactor": "크롭 팩터",
       "tableAspectCrop": "종횡비 크롭",
       "canvasAriaLabel": "{mode} 모드의 센서 크기 비교",
+      "compare": {
+        "title": "비교",
+        "compareWith": "비교 대상 선택…",
+        "compareTheseTwo": "이 두 센서 비교",
+        "close": "비교 닫기",
+        "representativeResolution": "해상도",
+        "notApplicable": "—",
+        "verdictLight": "{larger} 쪽이 빛을 약 {ratio}배 더 모읍니다 ({ev}).",
+        "verdictReach": "{smaller} 쪽이 동일한 렌즈로 {factor}배 더 긴 도달 거리를 제공합니다.",
+        "verdictNearEqual": "이 두 센서는 면적당 빛을 모으는 양이 거의 동일합니다.",
+        "crossFocal": "{from}에서 {focal}mm 렌즈는 {to}에서 {eqFocal}mm 렌즈와 같은 화각을 만듭니다.",
+        "areaRelation": "{a}의 면적은 {b}의 {ratio}배입니다."
+      },
       "detail": {
         "diagonal": "대각선",
         "area": "면적",

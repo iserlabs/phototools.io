@@ -46,6 +46,19 @@
       "tableCropFactor": "クロップファクター",
       "tableAspectCrop": "アスペクトクロップ",
       "canvasAriaLabel": "{mode}モードのセンサーサイズ比較",
+      "compare": {
+        "title": "比較",
+        "compareWith": "比較対象を選択…",
+        "compareTheseTwo": "この2つを比較",
+        "close": "比較を閉じる",
+        "representativeResolution": "解像度",
+        "notApplicable": "—",
+        "verdictLight": "{larger}は{ratio}倍程度の光を集めます（{ev}）。",
+        "verdictReach": "{smaller}は同じレンズで{factor}倍の望遠効果が得られます。",
+        "verdictNearEqual": "この2つは、面積あたりで集める光の量がほぼ同じです。",
+        "crossFocal": "{from}での{focal}mmレンズは、{to}での{eqFocal}mmレンズと同じ画角になります。",
+        "areaRelation": "{a}の面積は{b}の{ratio}倍です。"
+      },
       "detail": {
         "diagonal": "対角線",
         "area": "面積",

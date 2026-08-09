@@ -46,6 +46,19 @@
       "tableCropFactor": "Facteur de recadrage",
       "tableAspectCrop": "Recadrage d'aspect",
       "canvasAriaLabel": "Comparaison de tailles de capteur en mode {mode}",
+      "compare": {
+        "title": "Comparer",
+        "compareWith": "Comparer avec…",
+        "compareTheseTwo": "Comparer ces deux capteurs",
+        "close": "Fermer la comparaison",
+        "representativeResolution": "Résolution",
+        "notApplicable": "—",
+        "verdictLight": "{larger} capte environ {ratio}× plus de lumière ({ev}).",
+        "verdictReach": "{smaller} offre {factor}× plus d'allonge avec le même objectif.",
+        "verdictNearEqual": "Ces deux capteurs captent une quantité de lumière quasi identique par rapport à leur surface.",
+        "crossFocal": "Un objectif de {focal}mm sur {from} cadre comme un {eqFocal}mm sur {to}.",
+        "areaRelation": "{a} a {ratio}× la surface de {b}."
+      },
       "detail": {
         "diagonal": "Diagonale",
         "area": "Surface",

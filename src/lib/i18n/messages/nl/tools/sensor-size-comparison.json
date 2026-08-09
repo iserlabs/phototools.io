@@ -46,6 +46,19 @@
       "tableCropFactor": "Cropfactor",
       "tableAspectCrop": "Beeldverhouding-crop",
       "canvasAriaLabel": "Sensorformaatvergelijking in {mode}-modus",
+      "compare": {
+        "title": "Vergelijken",
+        "compareWith": "Vergelijken met…",
+        "compareTheseTwo": "Deze twee vergelijken",
+        "close": "Vergelijking sluiten",
+        "representativeResolution": "Resolutie",
+        "notApplicable": "—",
+        "verdictLight": "{larger} vangt ongeveer {ratio}× meer licht op ({ev}).",
+        "verdictReach": "{smaller} biedt {factor}× meer bereik met hetzelfde objectief.",
+        "verdictNearEqual": "Deze twee vangen qua oppervlakte vrijwel evenveel licht op.",
+        "crossFocal": "Een {focal}mm-objectief op {from} kadreert zoals {eqFocal}mm op {to}.",
+        "areaRelation": "{a} heeft {ratio}× het oppervlak van {b}."
+      },
       "detail": {
         "diagonal": "Diagonaal",
         "area": "Oppervlak",

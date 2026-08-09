@@ -46,6 +46,19 @@
       "tableCropFactor": "Fator de Corte",
       "tableAspectCrop": "Corte de Aspecto",
       "canvasAriaLabel": "Comparação de tamanho de sensor no modo {mode}",
+      "compare": {
+        "title": "Comparar",
+        "compareWith": "Comparar com…",
+        "compareTheseTwo": "Comparar estes dois",
+        "close": "Fechar comparação",
+        "representativeResolution": "Resolução",
+        "notApplicable": "—",
+        "verdictLight": "{larger} capta cerca de {ratio}× mais luz ({ev}).",
+        "verdictReach": "{smaller} oferece {factor}× mais alcance com a mesma lente.",
+        "verdictNearEqual": "Estes dois sensores captam uma quantidade de luz praticamente idêntica em relação à área.",
+        "crossFocal": "Uma lente de {focal}mm em {from} enquadra como uma de {eqFocal}mm em {to}.",
+        "areaRelation": "{a} tem {ratio}× a área de {b}."
+      },
       "detail": {
         "diagonal": "Diagonal",
         "area": "Área",
