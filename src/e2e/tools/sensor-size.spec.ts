@@ -400,4 +400,17 @@ test.describe('Sensor Size Comparison', () => {
     await expect(page.getByTestId('compare-verdict')).toHaveCount(1)
     await expect(page).toHaveURL(/vs=ff%2Capsc_n/)
   })
+
+  test('opening a shared ?vs= link at a mobile viewport mounts exactly one drawer', async ({ page }) => {
+    // The headline entry path for a shared comparison link is a phone, not
+    // a laptop — every other compare-drawer e2e test above runs at the
+    // default desktop viewport, so `useCompareEntry`'s `!isDesktop` mount
+    // branch (SensorSize.tsx's `ss.mobileControls`) was only exercised by a
+    // `matchMedia` stub in a unit test. This proves the mobile branch
+    // actually mounts on a real navigation, and that the isDesktop gate
+    // still keeps the desktop branch from double-mounting a second drawer.
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/en/sensor-size-comparison?vs=ff,apsc_n')
+    await expect(page.getByTestId('compare-verdict')).toHaveCount(1)
+  })
 })
