@@ -35,7 +35,6 @@ export interface SubjectSlice {
 
 export interface SubjectCrop {
   src: string
-  assetPxHeight: number
   eyeLineRatio: number
   slices: SubjectSlice[]
 }
@@ -61,4 +60,4 @@ export interface FramingPresetDef {
   frameHeightMm: number
 }
 
-export type { BokehShapeId, CropLevel }
+export type { BokehShapeId }

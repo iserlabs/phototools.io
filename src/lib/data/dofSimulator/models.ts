@@ -6,23 +6,22 @@ interface SubjectRow {
   name: string
   heightM: number
   eyeLine: Record<CropLevel, number>
-  px: Record<CropLevel, number>
 }
 
 // eyeLineRatio values are visually measured (eye Y / crop height) from the
-// generated portraits; assetPxHeight is the actual encoded WebP height.
+// generated portraits.
 const ROWS: SubjectRow[] = [
-  { id: 'woman-a', name: 'Woman A', heightM: 1.70, eyeLine: { full: 0.19, torso: 0.24, face: 0.345 }, px: { full: 2200, torso: 2200, face: 2200 } },
-  { id: 'man-a', name: 'Man A', heightM: 1.85, eyeLine: { full: 0.18, torso: 0.22, face: 0.325 }, px: { full: 2000, torso: 2000, face: 2200 } },
-  { id: 'woman-b', name: 'Woman B', heightM: 1.60, eyeLine: { full: 0.19, torso: 0.25, face: 0.32 }, px: { full: 2200, torso: 1800, face: 1800 } },
-  { id: 'man-b', name: 'Man B', heightM: 1.75, eyeLine: { full: 0.18, torso: 0.23, face: 0.31 }, px: { full: 2200, torso: 2200, face: 2200 } },
-  { id: 'girl-a', name: 'Girl A', heightM: 1.15, eyeLine: { full: 0.21, torso: 0.28, face: 0.355 }, px: { full: 2200, torso: 2200, face: 2200 } },
-  { id: 'boy-a', name: 'Boy A', heightM: 1.30, eyeLine: { full: 0.20, torso: 0.26, face: 0.34 }, px: { full: 2200, torso: 2200, face: 2200 } },
-  { id: 'teen-a', name: 'Teen A', heightM: 1.45, eyeLine: { full: 0.19, torso: 0.24, face: 0.33 }, px: { full: 2200, torso: 2048, face: 2000 } },
-  { id: 'man-c', name: 'Man C', heightM: 1.90, eyeLine: { full: 0.19, torso: 0.23, face: 0.33 }, px: { full: 2200, torso: 1800, face: 2200 } },
+  { id: 'woman-a', name: 'Woman A', heightM: 1.70, eyeLine: { full: 0.19, torso: 0.24, face: 0.345 } },
+  { id: 'man-a', name: 'Man A', heightM: 1.85, eyeLine: { full: 0.18, torso: 0.22, face: 0.325 } },
+  { id: 'woman-b', name: 'Woman B', heightM: 1.60, eyeLine: { full: 0.19, torso: 0.25, face: 0.32 } },
+  { id: 'man-b', name: 'Man B', heightM: 1.75, eyeLine: { full: 0.18, torso: 0.23, face: 0.31 } },
+  { id: 'girl-a', name: 'Girl A', heightM: 1.15, eyeLine: { full: 0.21, torso: 0.28, face: 0.355 } },
+  { id: 'boy-a', name: 'Boy A', heightM: 1.30, eyeLine: { full: 0.20, torso: 0.26, face: 0.34 } },
+  { id: 'teen-a', name: 'Teen A', heightM: 1.45, eyeLine: { full: 0.19, torso: 0.24, face: 0.33 } },
+  { id: 'man-c', name: 'Man C', heightM: 1.90, eyeLine: { full: 0.19, torso: 0.23, face: 0.33 } },
 ]
 
-function buildCrop(id: string, level: CropLevel, eyeLineRatio: number, assetPxHeight: number): SubjectCrop {
+function buildCrop(id: string, level: CropLevel, eyeLineRatio: number): SubjectCrop {
   const base = `/dof/subjects/${id}`
   const src = `${base}/${level}.webp`
   const slices =
@@ -38,7 +37,7 @@ function buildCrop(id: string, level: CropLevel, eyeLineRatio: number, assetPxHe
             { src: `${base}/face-mid.webp`, depthOffsetMm: 0 },
             { src: `${base}/face-far.webp`, depthOffsetMm: 90 },
           ]
-  return { src, assetPxHeight, eyeLineRatio, slices }
+  return { src, eyeLineRatio, slices }
 }
 
 export const DOF_SUBJECTS: DofSubject[] = ROWS.map((r) => ({
@@ -46,9 +45,9 @@ export const DOF_SUBJECTS: DofSubject[] = ROWS.map((r) => ({
   name: r.name,
   heightM: r.heightM,
   crops: {
-    full: buildCrop(r.id, 'full', r.eyeLine.full, r.px.full),
-    torso: buildCrop(r.id, 'torso', r.eyeLine.torso, r.px.torso),
-    face: buildCrop(r.id, 'face', r.eyeLine.face, r.px.face),
+    full: buildCrop(r.id, 'full', r.eyeLine.full),
+    torso: buildCrop(r.id, 'torso', r.eyeLine.torso),
+    face: buildCrop(r.id, 'face', r.eyeLine.face),
   },
 }))
 

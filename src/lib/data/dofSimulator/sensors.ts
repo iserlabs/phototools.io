@@ -9,8 +9,18 @@ export const PHONE_SENSORS: SensorPreset[] = [
 
 export const DOF_SENSORS: SensorPreset[] = [...SENSORS, ...PHONE_SENSORS]
 
+// Full-frame is the sane fallback when an id doesn't resolve (bad/legacy query
+// param, deleted preset). Looked up by id, not a positional index into the
+// shared SENSORS array -- other tools also read that array, so an insert
+// above index 3 must not silently change this tool's fallback.
+const FALLBACK_SENSOR_ID = 'ff'
+
 export function getDofSensor(id: string): SensorPreset {
-  return DOF_SENSORS.find((s) => s.id === id) ?? SENSORS[3] // 'ff'
+  return (
+    DOF_SENSORS.find((s) => s.id === id) ??
+    DOF_SENSORS.find((s) => s.id === FALLBACK_SENSOR_ID) ??
+    DOF_SENSORS[0]
+  )
 }
 
 export function sensorAspect(s: SensorPreset): number {

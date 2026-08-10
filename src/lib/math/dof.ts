@@ -8,13 +8,6 @@ export interface DoFInput {
   coc: number // circle of confusion in mm
 }
 
-export interface BlurInput {
-  focalLength: number // mm
-  aperture: number // f-number
-  subjectDistance: number // meters
-  targetDistance: number // meters
-}
-
 export interface StackingInput {
   focalLength: number
   aperture: number
@@ -57,6 +50,21 @@ export interface DoFResult {
   farFocus: number // meters (Infinity if past hyperfocal)
   totalDoF: number // meters (Infinity if past hyperfocal)
   hyperfocal: number // meters
+}
+
+/**
+ * Default circle-of-confusion baseline: the traditional 0.03mm 35mm-equivalent
+ * figure scaled down by the sensor's crop factor. The single source of truth
+ * for this formula -- both the derived-values engine (unrounded, used in the
+ * actual DoF math) and the Advanced panel's custom-CoC checkbox seed (rounded
+ * to 4 decimals for display) call this rather than each re-encoding `0.03 /
+ * cropFactor` (dof-simulator-rebuild final fix wave, B7).
+ *
+ * @param cropFactor - Sensor crop factor relative to full-frame (1.0 = FF)
+ * @returns Default CoC in mm
+ */
+export function calcDefaultCoc(cropFactor: number): number {
+  return 0.03 / cropFactor
 }
 
 /**
@@ -120,36 +128,6 @@ export function calcDoF(input: DoFInput): DoFResult {
 }
 
 /**
- * Calculate blur disc diameter at a given target distance when focused
- * at subjectDistance. Returns blur in mm.
- *
- * For targets behind the subject (targetDistance > subjectDistance):
- *   blur = f/N × (s/(s-f) × ((d-f)/d) - 1)
- * For targets in front of the subject (targetDistance < subjectDistance):
- *   blur = f/N × (1 - s/(s-f) × ((d-f)/d))
- *
- * Where f = focal length (mm), N = f-number, s = subject distance (mm),
- * d = target distance (mm).
- */
-export function calcBackgroundBlur(input: BlurInput): number {
-  const { focalLength: f, aperture: N, subjectDistance, targetDistance } = input
-  const s = subjectDistance * 1000 // meters to mm
-  const d = targetDistance * 1000 // meters to mm
-
-  if (Math.abs(s - d) < 1e-9) return 0
-
-  const magnificationFactor = s / (s - f) * ((d - f) / d)
-
-  if (d > s) {
-    // Target behind subject
-    return Math.abs((f / N) * (magnificationFactor - 1))
-  } else {
-    // Target in front of subject
-    return Math.abs((f / N) * (1 - magnificationFactor))
-  }
-}
-
-/**
  * Calculate the Airy disk diameter — the diffraction limit for a given
  * aperture. Uses λ = 550nm (green light).
  *
@@ -160,50 +138,6 @@ export function calcBackgroundBlur(input: BlurInput): number {
  */
 export function calcAiryDisk(aperture: number): number {
   return 2.44 * LAMBDA_MM * aperture
-}
-
-/**
- * Calculate the optimal aperture where diffraction equals geometric blur
- * (the "sweet spot" aperture for maximum resolution).
- *
- * Solves: N = sqrt(f × blurFactor / (2.44 × λ))
- * where blurFactor = |s/(s-f) × ((d-f)/d) - 1|
- *
- * @param focalLength - Focal length in mm
- * @param subjectDistance - Subject distance in meters
- * @param targetDistance - Target distance in meters
- * @returns Optimal f-number
- */
-export function calcOptimalAperture(
-  focalLength: number,
-  subjectDistance: number,
-  targetDistance: number
-): number {
-  const f = focalLength
-  const s = subjectDistance * 1000 // meters to mm
-  const d = targetDistance * 1000 // meters to mm
-
-  const magnificationFactor = s / (s - f) * ((d - f) / d)
-  const blurFactor = Math.abs(magnificationFactor - 1)
-
-  return Math.sqrt((f * blurFactor) / (2.44 * LAMBDA_MM))
-}
-
-/**
- * Calculate a 0-100 subject isolation score based on background blur.
- * Uses sqrt scaling with a 0.5mm threshold for full isolation.
- *
- * score = clamp(sqrt(blur / 0.5) × 100, 0, 100)
- *
- * @param backgroundBlurMm - Background blur disc diameter in mm
- * @param _coc - Circle of confusion (accepted for API symmetry with callers
- *   that pass it but intentionally unused; scaling is absolute in mm)
- * @returns Isolation score 0-100
- */
-export function calcIsolationScore(backgroundBlurMm: number, _coc: number): number {
-  if (backgroundBlurMm <= 0) return 0
-  const raw = Math.sqrt(backgroundBlurMm / 0.5) * 100
-  return Math.min(Math.max(raw, 0), 100)
 }
 
 /**
