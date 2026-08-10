@@ -7,4 +7,8 @@ export const PENTAX_CAMERAS: DofCamera[] = [
   { id: 'pentax-kp', brand: 'Pentax', model: 'KP', sensorId: 'apsc_n' },
   { id: 'pentax-kf', brand: 'Pentax', model: 'KF', sensorId: 'apsc_n' },
   { id: 'pentax-645z', brand: 'Pentax', model: '645Z', sensorId: 'mf' },
+  { id: 'pentax-k-3-mark-iii-monochrome', brand: 'Pentax', model: 'K-3 Mark III Monochrome', sensorId: 'apsc_n' },
+  { id: 'pentax-k-70', brand: 'Pentax', model: 'K-70', sensorId: 'apsc_n' },
+  { id: 'pentax-k-3-mark-ii', brand: 'Pentax', model: 'K-3 Mark II', sensorId: 'apsc_n' },
+  { id: 'pentax-k-s2', brand: 'Pentax', model: 'K-S2', sensorId: 'apsc_n' },
 ]
