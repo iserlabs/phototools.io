@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeAll } from 'vitest'
 import { render, fireEvent, within } from '@testing-library/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { RULER_MIN, RULER_MAX } from './rulerScale'
+import { VB_H } from './rulerLayout'
 import { DofRuler } from './DofRuler'
 import { DofRulerConnected } from './DofRulerConnected'
 import esMessages from '@/lib/i18n/messages/es/tools/dof-simulator.json'
@@ -103,6 +104,29 @@ describe('DofRuler', () => {
   it('does not label in-range distances as off-scale', () => {
     const { getByRole } = render(<DofRuler {...baseProps({ distanceM: 3 })} />)
     expect(within(getByRole('slider')).queryByText('3m')).toBeNull()
+  })
+
+  // Defect 2 (regression-repair): the label was DOM-present (previous test)
+  // but positioned outside the SVG's own viewBox, so the SVG's default clip
+  // (no `overflow: visible` in ruler.module.css) hid it entirely -- a passing
+  // "is it in the DOM" assertion masked a genuinely invisible label. Compute
+  // the label's ABSOLUTE y (the slider `<g>`'s translate-y + the text's own
+  // y) and assert it actually falls inside [0, VB_H], not just that a <text>
+  // node exists somewhere in the tree.
+  it('positions the off-scale label inside the SVG viewBox, not clipped above it', () => {
+    const { getByRole } = render(<DofRuler {...baseProps({ distanceM: 85 })} />)
+    const slider = getByRole('slider')
+    const text = within(slider).getByText('85m')
+
+    const transform = slider.getAttribute('transform') ?? ''
+    const match = /translate\(([-\d.]+),\s*([-\d.]+)\)/.exec(transform)
+    expect(match).not.toBeNull()
+    const groundY = Number(match?.[2])
+    const localY = Number(text.getAttribute('y'))
+    const absoluteY = groundY + localY
+
+    expect(absoluteY).toBeGreaterThanOrEqual(0)
+    expect(absoluteY).toBeLessThanOrEqual(VB_H)
   })
 
   it('renders sensible geometry with no NaN attributes when farFocus is Infinity (past hyperfocal)', () => {

@@ -117,7 +117,15 @@ export function DofRuler({
           <rect x={-20} y={-70} width={40} height={80} fill="transparent" />
           <SubjectFigure size={46} />
           {offScale && (
-            <text x={0} y={-78} textAnchor="middle" aria-hidden className={styles.offScaleLabel}>
+            // SubjectFigure(size=46) draws up to local y=-46 (its head). This
+            // group sits at GROUND_Y=62, so the viewBox (0..VB_H=96) only has
+            // room above the figure for local y down to -62. y=-52 lands the
+            // baseline at absolute y=10 -- clear of the figure's head and
+            // safely inside the viewBox, not off-canvas at y=-16 like the
+            // previous y=-78 (regression: dof-simulator-rebuild final fix
+            // wave, B4 -- the SVG clips to its viewport with no
+            // `overflow: visible`, so that label never actually rendered).
+            <text x={0} y={-52} textAnchor="middle" aria-hidden className={styles.offScaleLabel}>
               {formatMeters(distanceM, labels.distanceUnit)}
             </text>
           )}
