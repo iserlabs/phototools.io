@@ -21,6 +21,7 @@ export interface SavedSettingsLabels {
   remove: string
   saveSettings: string
   empty: string
+  distanceUnit: string
 }
 
 const DEFAULT_LABELS: SavedSettingsLabels = {
@@ -32,6 +33,7 @@ const DEFAULT_LABELS: SavedSettingsLabels = {
   remove: 'Remove saved setting',
   saveSettings: 'Save settings',
   empty: 'No saved settings yet',
+  distanceUnit: 'm',
 }
 
 type SortableKey = 'cameraLabel' | 'focalLength' | 'aperture' | 'distanceM'
@@ -47,10 +49,13 @@ interface SavedSettingsPanelProps {
   saved: SavedSettingsApi
   current: Omit<SavedRow, 'id'>
   onApply(row: SavedRow): void
+  imperial?: boolean
   labels?: SavedSettingsLabels
 }
 
-export function SavedSettingsPanel({ saved, current, onApply, labels = DEFAULT_LABELS }: SavedSettingsPanelProps) {
+export function SavedSettingsPanel({
+  saved, current, onApply, imperial = false, labels = DEFAULT_LABELS,
+}: SavedSettingsPanelProps) {
   const [sortKey, setSortKey] = useState<SortableKey | null>(null)
 
   function handleSort(key: SortableKey) {
@@ -90,7 +95,7 @@ export function SavedSettingsPanel({ saved, current, onApply, labels = DEFAULT_L
                 <td>{row.cameraLabel}</td>
                 <td>{formatMm(row.focalLength)}</td>
                 <td>{formatAperture(row.aperture)}</td>
-                <td>{formatDistance(row.distanceM, false)}</td>
+                <td>{formatDistance(row.distanceM, imperial, labels.distanceUnit)}</td>
                 <td>
                   <button
                     type="button"

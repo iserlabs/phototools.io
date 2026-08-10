@@ -19,6 +19,7 @@ import { computeDerived } from '../state/useDofDerived'
 import { getSubjectById } from '@/lib/data/dofSimulator/models'
 import { getBackgroundById } from '@/lib/data/dofSimulator/backgrounds'
 import esMessages from '@/lib/i18n/messages/es/tools/dof-simulator.json'
+import commonMessages from '@/lib/i18n/messages/en/common.json'
 import type { OpticsState } from '../state/useOptics'
 import type { SavedSettingsApi } from '../state/useSavedSettings'
 
@@ -67,16 +68,23 @@ describe('ResultsPanel', () => {
     const { container } = render(<ResultsPanel derived={derived} imperial={false} bokeh="disc" />)
     expect(container.textContent).toMatch(/diffraction/i)
   })
-  it('shows an MFD warning chip when focused closer than the lens minimum', () => {
-    const derived = derivedFor('ff', { lensId: 'nikkor-z-85mm-f1-8-s', distanceM: 0.3 })
-    expect(derived.belowMinFocus).toBe(true)
-    const { container } = render(<ResultsPanel derived={derived} imperial={false} bokeh="disc" />)
-    expect(container.textContent).toMatch(/minimum focus/i)
-  })
+  // The below-minimum-focus-distance warning is DistancePanel's alone now
+  // (see controls.test.tsx's DistancePanelConnected coverage) — ResultsPanel
+  // used to duplicate it via a separate, less-specific `belowMinFocusWarning`
+  // string; that redundant key was deleted (dof-simulator-rebuild final fix
+  // wave, B9), so `derived.belowMinFocus` no longer affects this panel.
   it('does not render warning chips when nothing is out of range', () => {
     const { container } = render(<ResultsPanel derived={derivedFor('ff')} imperial={false} bokeh="disc" />)
     expect(container.textContent).not.toMatch(/diffraction/i)
-    expect(container.textContent).not.toMatch(/minimum focus/i)
+  })
+  it('wires an InfoTooltip trigger next to Hyperfocal when a tooltip is supplied (B10)', () => {
+    const tooltips = { hyperfocal: { term: 'Hyperfocal', definition: 'A test definition.' } }
+    const { getByLabelText } = render(
+      <NextIntlClientProvider locale="en" messages={commonMessages}>
+        <ResultsPanel derived={derivedFor('ff')} imperial={false} bokeh="disc" tooltips={tooltips} />
+      </NextIntlClientProvider>,
+    )
+    expect(getByLabelText('Info: Hyperfocal')).toBeInTheDocument()
   })
   it('renders a non-zero, meaningful CoC value instead of rounding it away to "0mm"', () => {
     // FF's default CoC is 0.03/1 = 0.03mm — a whole-mm formatter rounds this
@@ -111,6 +119,32 @@ describe('SavedSettingsPanel', () => {
     expect(onApply).toHaveBeenCalledWith(row)
     fireEvent.click(getByText(/save settings/i))
     expect(saved.addRow).toHaveBeenCalled()
+  })
+
+  // B12: the distance column used to hardcode formatDistance(row.distanceM,
+  // false) — saved rows always rendered metric even when the rest of the UI
+  // (uiPrefs.imperial) was showing imperial units.
+  it('renders saved-row distance in imperial units when imperial is on', () => {
+    const { getByText } = render(
+      <SavedSettingsPanel
+        saved={saved}
+        onApply={vi.fn()}
+        imperial
+        current={{ cameraLabel: 'Full Frame', focalLength: 50, aperture: 2, distanceM: 2, bokeh: 'disc' }}
+      />,
+    )
+    expect(getByText('9 ft 10 in')).toBeInTheDocument() // 3m in feet/inches
+  })
+
+  it('defaults to metric distance when imperial is not supplied', () => {
+    const { getByText } = render(
+      <SavedSettingsPanel
+        saved={saved}
+        onApply={vi.fn()}
+        current={{ cameraLabel: 'Full Frame', focalLength: 50, aperture: 2, distanceM: 2, bokeh: 'disc' }}
+      />,
+    )
+    expect(getByText('3 m')).toBeInTheDocument()
   })
 
   it('sorts by a clicked column header and marks it aria-sort=ascending', () => {

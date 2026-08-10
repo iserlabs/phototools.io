@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { CameraPanel, type CameraLabels } from './CameraPanel'
+import { useDofTooltips } from '../state/useDofTooltips'
 import type { OpticsApi } from '../state/useOptics'
 import type { DofDerived } from '../state/useDofDerived'
 
@@ -12,6 +13,7 @@ interface CameraPanelConnectedProps {
 
 export function CameraPanelConnected({ optics, derived }: CameraPanelConnectedProps) {
   const t = useTranslations('toolUI.dof-simulator')
+  const tooltips = useDofTooltips()
 
   const labels: CameraLabels = {
     camera: t('camera'),
@@ -21,5 +23,5 @@ export function CameraPanelConnected({ optics, derived }: CameraPanelConnectedPr
     clear: t('clear'),
   }
 
-  return <CameraPanel optics={optics} derived={derived} labels={labels} />
+  return <CameraPanel optics={optics} derived={derived} labels={labels} tooltips={tooltips} />
 }

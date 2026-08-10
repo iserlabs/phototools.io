@@ -12,7 +12,7 @@ import styles from './panels.module.css'
 
 // This component takes pre-translated strings via the optional `labels`
 // prop rather than calling useTranslations() itself — the same
-// presentational pattern DofSettingsPanel.tsx uses for ModeToggle's
+// presentational pattern FramingPanel.tsx uses for ModeToggle's
 // options[].label. That keeps this component (and appearance.test.tsx,
 // which renders it with no NextIntlClientProvider) provider-free, while
 // AppearancePanelConnected.tsx supplies real translations for production

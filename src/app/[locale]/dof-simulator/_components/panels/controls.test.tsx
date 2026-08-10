@@ -19,6 +19,7 @@ import type { DofCamera } from '@/lib/data/dofSimulator/types'
 import type { OpticsApi, OpticsState } from '../state/useOptics'
 import { formatDistance } from '../state/formatters'
 import esMessages from '@/lib/i18n/messages/es/tools/dof-simulator.json'
+import commonMessages from '@/lib/i18n/messages/en/common.json'
 
 const comboProps = {
   items: DOF_CAMERAS,
@@ -43,6 +44,18 @@ describe('SearchCombobox', () => {
     const cleared = render(<SearchCombobox {...comboProps} value="nikon-z8" onChange={onChange} />)
     fireEvent.click(cleared.getByText('Clear'))
     expect(onChange).toHaveBeenCalledWith(null)
+  })
+  it('exposes the arrow-key-highlighted option via aria-activedescendant', () => {
+    const { getByRole, getAllByRole } = render(<SearchCombobox {...comboProps} />)
+    const combobox = getByRole('combobox')
+    fireEvent.focus(combobox)
+    expect(combobox).not.toHaveAttribute('aria-activedescendant')
+
+    fireEvent.keyDown(combobox, { key: 'ArrowDown' })
+    const options = getAllByRole('option')
+    const highlighted = options[0]
+    expect(combobox).toHaveAttribute('aria-activedescendant', highlighted.id)
+    expect(highlighted.id).toBeTruthy()
   })
 })
 
@@ -150,6 +163,20 @@ describe('LensPanel', () => {
     expect(slider.value).not.toBe('NaN')
     expect(Number.isNaN(Number(slider.value))).toBe(false)
   })
+
+  it('wires an InfoTooltip trigger next to Focal Length when a tooltip is supplied (B10)', () => {
+    const optics = makeOptics()
+    const tooltips = { focalLength: { term: 'Focal Length', definition: 'A test definition.' } }
+    const { getByLabelText } = render(
+      <NextIntlClientProvider locale="en" messages={commonMessages}>
+        <LensPanel
+          optics={optics} derived={makeDerived(optics)} uiPrefs={makeUiPrefs()}
+          onFocalLengthChange={vi.fn()} tooltips={tooltips}
+        />
+      </NextIntlClientProvider>,
+    )
+    expect(getByLabelText('Info: Focal Length')).toBeInTheDocument()
+  })
 })
 
 describe('DistancePanelConnected', () => {
@@ -220,6 +247,34 @@ describe('AdvancedPanelConnected', () => {
     expect(ffSeed).not.toBe(apscSeed)
     expect(ffSeed).toBeCloseTo(0.03, 4)
     expect(apscSeed).toBeCloseTo(0.03 / 1.53, 4)
+  })
+
+  // B5: the background-distance override slider used to be bounded [0.3, 50],
+  // but DOF_BACKGROUNDS' real distances go up to 2000m (mountains) and the
+  // DEFAULT background (city-skyline, DOF_BACKGROUNDS[0]) is 300m — a value
+  // `toSliderPos` would silently clamp into its internal [min, max] BEFORE
+  // computing a slider position, so the very first render after checking the
+  // box already showed the slider pinned at its top, misrepresenting 300m as
+  // whatever the (too-narrow) max was.
+  it('does not pin the background-distance slider at its ceiling for the default 300m scene', () => {
+    const optics = makeOptics({ backgroundDistanceM: DOF_BACKGROUNDS[0].distanceM })
+    const { getByRole } = render(
+      <AdvancedPanel optics={optics} background={DOF_BACKGROUNDS[0]} uiPrefs={makeUiPrefs({ advanced: true })} />,
+    )
+    const slider = getByRole('slider', { name: 'Background Distance' }) as HTMLInputElement
+    expect(Number(slider.max)).toBeGreaterThan(0)
+    expect(Number(slider.value)).toBeLessThan(Number(slider.max)) // not pinned at the ceiling
+  })
+
+  it('the background-distance slider can reach values covering the mountains scene (2000m)', () => {
+    const optics = makeOptics({ backgroundDistanceM: 300 })
+    const { getByRole } = render(
+      <AdvancedPanel optics={optics} background={DOF_BACKGROUNDS[0]} uiPrefs={makeUiPrefs({ advanced: true })} />,
+    )
+    const slider = getByRole('slider', { name: 'Background Distance' }) as HTMLInputElement
+    fireEvent.change(slider, { target: { value: slider.max } })
+    const reached = (optics.setBackgroundDistanceM as ReturnType<typeof vi.fn>).mock.calls[0][0]
+    expect(reached).toBeGreaterThanOrEqual(2000)
   })
 })
 

@@ -3,8 +3,17 @@ const METERS_PER_INCH = 0.0254
 /**
  * Formats a distance for display. Metric shows centimeters under a meter and
  * meters (1 decimal) at/above; imperial always shows feet + inches.
+ *
+ * `meterUnit` lets callers pass the translated `toolUI.dof-simulator.distanceUnit`
+ * string (e.g. Russian/Ukrainian "м" vs. everyone else's "m") so the meters
+ * branch isn't stuck showing a Latin "m" in locales that don't use it —
+ * defaults to the English literal for callers that don't have a translation
+ * handy. `cm`/`ft`/`in` stay hardcoded: there's no existing translation key
+ * for them, and photography unit abbreviations are conventionally left in
+ * their SI/imperial form across the app's other tools (dof-simulator-rebuild
+ * final fix wave, D).
  */
-export function formatDistance(m: number, imperial: boolean): string {
+export function formatDistance(m: number, imperial: boolean, meterUnit = 'm'): string {
   if (!isFinite(m)) return '∞'
 
   if (imperial) {
@@ -19,7 +28,7 @@ export function formatDistance(m: number, imperial: boolean): string {
   }
 
   if (m < 1) return `${Math.round(m * 100)} cm`
-  return `${Math.round(m * 10) / 10} m`
+  return `${Math.round(m * 10) / 10} ${meterUnit}`
 }
 
 /** Formats a millimeter value (focal length, effective/equivalent FL) for display. */

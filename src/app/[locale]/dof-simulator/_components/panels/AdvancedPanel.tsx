@@ -3,13 +3,17 @@
 import { ControlPanel, controlPanelStyles as cp } from '@/components/shared/ControlPanel'
 import { toSliderPos, fromSliderPos, SLIDER_STEPS } from './logSlider'
 import { getDofSensor } from '@/lib/data/dofSimulator/sensors'
+import { calcDefaultCoc } from '@/lib/math/dof'
 import type { OpticsApi } from '../state/useOptics'
 import type { DofBackground } from '@/lib/data/dofSimulator/types'
 import type { UiPrefsApi } from '../state/useUiPrefs'
 import styles from './controls.module.css'
 
-const BG_DIST_MIN = 0.3
-const BG_DIST_MAX = 50
+// Wide enough to cover every DOF_BACKGROUNDS distanceM (15-2000m) plus margin —
+// a flat [0.3, 50] used to silently collapse the default city-skyline scene's
+// 300m down to 50m on the first drag (dof-simulator-rebuild final fix wave, B5).
+const BG_DIST_MIN = 1
+const BG_DIST_MAX = 3000
 
 /**
  * Seed value for the custom-CoC override. Mirrors useDofDerived's own default
@@ -17,11 +21,11 @@ const BG_DIST_MAX = 50
  * checking the box doesn't jump the effective CoC on non-FF sensors (e.g. a
  * flat 0.03mm on APS-C would nearly double the derived-engine's ~0.0196mm
  * default, producing a visible DOF discontinuity). Rounded to 4 decimals to
- * match how DofResultsPanel displays CoC (`coc.toFixed(4)`).
+ * match how ResultsPanel displays CoC (`coc.toFixed(4)`).
  */
 function defaultCocMm(sensorId: string): number {
   const cropFactor = getDofSensor(sensorId).cropFactor
-  return Math.round((0.03 / cropFactor) * 10000) / 10000
+  return Math.round(calcDefaultCoc(cropFactor) * 10000) / 10000
 }
 
 // Presentational — see FramingPanel.tsx for the labels-prop pattern.

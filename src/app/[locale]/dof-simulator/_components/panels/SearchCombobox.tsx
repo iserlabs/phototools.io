@@ -42,17 +42,23 @@ export function SearchCombobox<T extends { id: string }>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items, query])
 
+  // Carries each item's flat index into `filtered` alongside it, so rendering
+  // below can key highlight/aria-activedescendant off that index directly
+  // instead of an O(n) `filtered.indexOf(item)` per option (was O(n²) overall
+  // across the full listbox render).
   const groups = useMemo(() => {
-    const map = new Map<string, T[]>()
-    for (const item of filtered) {
+    const map = new Map<string, { item: T; idx: number }[]>()
+    filtered.forEach((item, idx) => {
       const g = groupBy(item)
       const bucket = map.get(g)
-      if (bucket) bucket.push(item)
-      else map.set(g, [item])
-    }
+      if (bucket) bucket.push({ item, idx })
+      else map.set(g, [{ item, idx }])
+    })
     return [...map.entries()]
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filtered])
+
+  const optionId = (idx: number) => `${listboxId}-opt-${idx}`
 
   function selectItem(item: T) {
     onChange(item.id)
@@ -93,6 +99,7 @@ export function SearchCombobox<T extends { id: string }>({
           aria-expanded={open}
           aria-controls={listboxId}
           aria-autocomplete="list"
+          aria-activedescendant={open && highlight >= 0 ? optionId(highlight) : undefined}
           className={styles.input}
           value={query}
           placeholder={placeholder}
@@ -116,22 +123,20 @@ export function SearchCombobox<T extends { id: string }>({
           {groups.map(([group, groupItems]) => (
             <div key={group} className={styles.group}>
               <div className={styles.groupLabel}>{group}</div>
-              {groupItems.map((item) => {
-                const idx = filtered.indexOf(item)
-                return (
-                  <div
-                    key={item.id}
-                    role="option"
-                    aria-selected={item.id === value}
-                    className={`${styles.option} ${idx === highlight ? styles.optionHighlighted : ''}`}
-                    onMouseDown={(e) => e.preventDefault()}
-                    onMouseEnter={() => setHighlight(idx)}
-                    onClick={() => selectItem(item)}
-                  >
-                    {label(item)}
-                  </div>
-                )
-              })}
+              {groupItems.map(({ item, idx }) => (
+                <div
+                  key={item.id}
+                  id={optionId(idx)}
+                  role="option"
+                  aria-selected={item.id === value}
+                  className={`${styles.option} ${idx === highlight ? styles.optionHighlighted : ''}`}
+                  onMouseDown={(e) => e.preventDefault()}
+                  onMouseEnter={() => setHighlight(idx)}
+                  onClick={() => selectItem(item)}
+                >
+                  {label(item)}
+                </div>
+              ))}
             </div>
           ))}
         </div>

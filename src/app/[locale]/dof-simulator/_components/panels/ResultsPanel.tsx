@@ -2,10 +2,12 @@
 
 import type { ReactNode } from 'react'
 import { ControlPanel, controlPanelStyles as cp } from '@/components/shared/ControlPanel'
+import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { ngonVertices, type BokehShapeId } from '@/lib/math/bokehKernel'
 import { formatAperture } from '@/lib/math/aperture'
 import { formatDistance, formatMm, formatPreciseMm } from '../state/formatters'
 import type { DofDerived } from '../state/useDofDerived'
+import type { DofTooltips } from '../state/useDofTooltips'
 import panelStyles from './panels.module.css'
 import controlStyles from './controls.module.css'
 
@@ -31,7 +33,7 @@ export interface ResultsLabels {
   effectiveFocalLength: string
   fullFrameEquivalentFocalLength: string
   diffractionWarning: string
-  belowMinFocusWarning: string
+  distanceUnit: string
 }
 
 const DEFAULT_LABELS: ResultsLabels = {
@@ -49,7 +51,7 @@ const DEFAULT_LABELS: ResultsLabels = {
   effectiveFocalLength: 'Effective Focal Length',
   fullFrameEquivalentFocalLength: '35mm Equivalent Focal Length',
   diffractionWarning: 'Diffraction softening may reduce sharpness at this aperture',
-  belowMinFocusWarning: "Focus distance is below this lens's minimum focus distance",
+  distanceUnit: 'm',
 }
 
 // Phone main-camera presets (see lib/data/dofSimulator/sensors.ts) plus any
@@ -87,10 +89,13 @@ function BokehGlyph({ shape }: { shape: BokehShapeId }) {
   )
 }
 
-function Row({ label, value }: { label: string; value: ReactNode }) {
+function Row({ label, value, tooltip }: { label: string; value: ReactNode; tooltip?: DofTooltips[keyof DofTooltips] }) {
   return (
     <div className={cp.fieldRow}>
-      <dt className={cp.fieldLabel}>{label}</dt>
+      <dt className={cp.fieldLabel}>
+        {label}
+        {tooltip && <InfoTooltip tooltip={tooltip} />}
+      </dt>
       <dd className={cp.fieldValue}>{value}</dd>
     </div>
   )
@@ -101,28 +106,29 @@ interface ResultsPanelProps {
   imperial: boolean
   bokeh: BokehShapeId
   labels?: ResultsLabels
+  tooltips?: DofTooltips
 }
 
-export function ResultsPanel({ derived, imperial, bokeh, labels = DEFAULT_LABELS }: ResultsPanelProps) {
+export function ResultsPanel({ derived, imperial, bokeh, labels = DEFAULT_LABELS, tooltips }: ResultsPanelProps) {
   const behindPct = 100 - derived.inFrontPct
   const eq = derived.equivalent
   const equivalentText = eq
-    ? `${formatMm(eq.equivalentFL)} ${formatAperture(eq.equivalentAperture)} @ ${formatDistance(eq.equivalentDistance, imperial)}`
+    ? `${formatMm(eq.equivalentFL)} ${formatAperture(eq.equivalentAperture)} @ ${formatDistance(eq.equivalentDistance, imperial, labels.distanceUnit)}`
     : ''
 
   return (
     <ControlPanel title={labels.results}>
       <dl className={panelStyles.resultsList}>
-        <Row label={labels.totalDoF} value={formatDistance(derived.dof.totalDoF, imperial)} />
-        <Row label={labels.nearFocus} value={formatDistance(derived.dof.nearFocus, imperial)} />
-        <Row label={labels.farFocus} value={formatDistance(derived.dof.farFocus, imperial)} />
+        <Row label={labels.totalDoF} value={formatDistance(derived.dof.totalDoF, imperial, labels.distanceUnit)} />
+        <Row label={labels.nearFocus} value={formatDistance(derived.dof.nearFocus, imperial, labels.distanceUnit)} />
+        <Row label={labels.farFocus} value={formatDistance(derived.dof.farFocus, imperial, labels.distanceUnit)} />
         <Row
           label={labels.inFront}
-          value={`${formatDistance(derived.inFrontM, imperial)} (${Math.round(derived.inFrontPct)}%)`}
+          value={`${formatDistance(derived.inFrontM, imperial, labels.distanceUnit)} (${Math.round(derived.inFrontPct)}%)`}
         />
-        <Row label={labels.behind} value={`${formatDistance(derived.behindM, imperial)} (${Math.round(behindPct)}%)`} />
-        <Row label={labels.hyperfocal} value={formatDistance(derived.dof.hyperfocal, imperial)} />
-        <Row label={labels.coc} value={formatPreciseMm(derived.cocMm)} />
+        <Row label={labels.behind} value={`${formatDistance(derived.behindM, imperial, labels.distanceUnit)} (${Math.round(behindPct)}%)`} />
+        <Row label={labels.hyperfocal} value={formatDistance(derived.dof.hyperfocal, imperial, labels.distanceUnit)} tooltip={tooltips?.hyperfocal} />
+        <Row label={labels.coc} value={formatPreciseMm(derived.cocMm)} tooltip={tooltips?.coc} />
         <Row
           label={labels.backgroundBlur}
           value={
@@ -131,6 +137,7 @@ export function ResultsPanel({ derived, imperial, bokeh, labels = DEFAULT_LABELS
               {formatPreciseMm(derived.backgroundBlurMm)} ({derived.backgroundBlurPct.toFixed(1)}%)
             </>
           }
+          tooltip={tooltips?.backgroundBlur}
         />
 
         {eq && <Row label={labels.equivalentSettings} value={labels.equivalentLink(equivalentText)} />}
@@ -143,10 +150,10 @@ export function ResultsPanel({ derived, imperial, bokeh, labels = DEFAULT_LABELS
       </dl>
 
       {derived.isDiffractionLimited && (
-        <div className={controlStyles.warningChip}>{labels.diffractionWarning}</div>
-      )}
-      {derived.belowMinFocus && (
-        <div className={controlStyles.warningChip}>{labels.belowMinFocusWarning}</div>
+        <div className={controlStyles.warningChip}>
+          {labels.diffractionWarning}
+          {tooltips?.diffractionWarning && <InfoTooltip tooltip={tooltips.diffractionWarning} />}
+        </div>
       )}
     </ControlPanel>
   )

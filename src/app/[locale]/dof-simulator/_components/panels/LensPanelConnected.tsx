@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { LensPanel, type LensLabels } from './LensPanel'
+import { useDofTooltips } from '../state/useDofTooltips'
 import type { OpticsApi } from '../state/useOptics'
 import type { DofDerived } from '../state/useDofDerived'
 import type { UiPrefsApi } from '../state/useUiPrefs'
@@ -15,6 +16,7 @@ interface LensPanelConnectedProps {
 
 export function LensPanelConnected({ optics, derived, uiPrefs, onFocalLengthChange }: LensPanelConnectedProps) {
   const t = useTranslations('toolUI.dof-simulator')
+  const tooltips = useDofTooltips()
 
   const labels: LensLabels = {
     lens: t('lens'),
@@ -33,6 +35,7 @@ export function LensPanelConnected({ optics, derived, uiPrefs, onFocalLengthChan
       uiPrefs={uiPrefs}
       onFocalLengthChange={onFocalLengthChange}
       labels={labels}
+      tooltips={tooltips}
     />
   )
 }

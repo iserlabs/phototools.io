@@ -1,6 +1,7 @@
 'use client'
 
 import { ControlPanel, controlPanelStyles as cp } from '@/components/shared/ControlPanel'
+import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { SearchCombobox } from './SearchCombobox'
 import { toSliderPos, fromSliderPos, SLIDER_STEPS } from './logSlider'
 import { DOF_LENSES, getLensById } from '@/lib/data/dofSimulator/lenses'
@@ -12,6 +13,7 @@ import type { DofLens, TeleconverterId } from '@/lib/data/dofSimulator/types'
 import type { OpticsApi } from '../state/useOptics'
 import type { DofDerived } from '../state/useDofDerived'
 import type { UiPrefsApi } from '../state/useUiPrefs'
+import type { DofTooltips } from '../state/useDofTooltips'
 
 const FL_MIN = 8
 const FL_MAX = 1200
@@ -48,9 +50,10 @@ interface LensPanelProps {
   uiPrefs: UiPrefsApi
   onFocalLengthChange(v: number): void
   labels?: LensLabels
+  tooltips?: DofTooltips
 }
 
-export function LensPanel({ optics, derived, uiPrefs, onFocalLengthChange, labels = DEFAULT_LABELS }: LensPanelProps) {
+export function LensPanel({ optics, derived, uiPrefs, onFocalLengthChange, labels = DEFAULT_LABELS, tooltips }: LensPanelProps) {
   const lens = optics.lensId ? getLensById(optics.lensId) : undefined
 
   const flMin = lens ? lens.flMin : FL_MIN
@@ -77,7 +80,10 @@ export function LensPanel({ optics, derived, uiPrefs, onFocalLengthChange, label
 
       <div>
         <div className={cp.fieldRow}>
-          <span className={cp.fieldLabel}>{labels.focalLength}</span>
+          <span className={cp.fieldLabel}>
+            {labels.focalLength}
+            {tooltips?.focalLength && <InfoTooltip tooltip={tooltips.focalLength} />}
+          </span>
           <span className={cp.fieldValue}>{formatMm(optics.focalLength)}</span>
         </div>
         <div className={cp.sliderWrap}>
@@ -96,7 +102,10 @@ export function LensPanel({ optics, derived, uiPrefs, onFocalLengthChange, label
 
       <div>
         <div className={cp.fieldRow}>
-          <span className={cp.fieldLabel}>{labels.aperture}</span>
+          <span className={cp.fieldLabel}>
+            {labels.aperture}
+            {tooltips?.aperture && <InfoTooltip tooltip={tooltips.aperture} />}
+          </span>
           <span className={cp.fieldValue}>{formatAperture(optics.aperture)}</span>
         </div>
         <div className={cp.sliderWrap}>

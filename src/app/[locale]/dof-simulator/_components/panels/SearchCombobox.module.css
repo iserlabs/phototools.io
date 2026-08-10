@@ -56,6 +56,10 @@
   box-shadow: var(--shadow-md);
 }
 
+.group:not(:last-child) {
+  margin-bottom: 4px;
+}
+
 .groupLabel {
   position: sticky;
   top: 0;

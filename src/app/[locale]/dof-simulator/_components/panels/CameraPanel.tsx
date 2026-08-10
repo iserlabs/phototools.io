@@ -3,12 +3,14 @@
 import { useEffect, useState } from 'react'
 import { ControlPanel, controlPanelStyles as cp } from '@/components/shared/ControlPanel'
 import { ModeToggle } from '@/components/shared/ModeToggle'
+import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { SearchCombobox } from './SearchCombobox'
 import { DOF_SENSORS } from '@/lib/data/dofSimulator/sensors'
 import { DOF_CAMERAS } from '@/lib/data/dofSimulator/cameras'
 import type { DofCamera } from '@/lib/data/dofSimulator/types'
 import type { OpticsApi } from '../state/useOptics'
 import type { DofDerived } from '../state/useDofDerived'
+import type { DofTooltips } from '../state/useDofTooltips'
 
 // Presentational — see FramingPanel.tsx / AppearancePanel.tsx for the
 // labels-prop pattern this follows (default English literals, translated by
@@ -36,9 +38,10 @@ interface CameraPanelProps {
   optics: OpticsApi
   derived: DofDerived
   labels?: CameraLabels
+  tooltips?: DofTooltips
 }
 
-export function CameraPanel({ optics, derived, labels = DEFAULT_LABELS }: CameraPanelProps) {
+export function CameraPanel({ optics, derived, labels = DEFAULT_LABELS, tooltips }: CameraPanelProps) {
   const [mode, setMode] = useState<'sensor' | 'camera'>(optics.cameraId ? 'camera' : 'sensor')
 
   // Keep the toggle in sync with cameraId's actual state, in both directions:
@@ -91,7 +94,10 @@ export function CameraPanel({ optics, derived, labels = DEFAULT_LABELS }: Camera
       )}
 
       <div className={cp.fieldRow}>
-        <span className={cp.fieldLabel}>{labels.cropFactor}</span>
+        <span className={cp.fieldLabel}>
+          {labels.cropFactor}
+          {tooltips?.sensor && <InfoTooltip tooltip={tooltips.sensor} />}
+        </span>
         <span className={cp.fieldValue}>{derived.sensor.cropFactor.toFixed(2)}x</span>
       </div>
     </ControlPanel>

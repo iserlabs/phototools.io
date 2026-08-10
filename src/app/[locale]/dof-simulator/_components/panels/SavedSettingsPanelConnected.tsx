@@ -15,9 +15,10 @@ interface SavedSettingsPanelConnectedProps {
   saved: SavedSettingsApi
   current: Omit<SavedRow, 'id'>
   onApply(row: SavedRow): void
+  imperial?: boolean
 }
 
-export function SavedSettingsPanelConnected({ saved, current, onApply }: SavedSettingsPanelConnectedProps) {
+export function SavedSettingsPanelConnected({ saved, current, onApply, imperial }: SavedSettingsPanelConnectedProps) {
   const t = useTranslations('toolUI.dof-simulator')
 
   const labels: SavedSettingsLabels = {
@@ -29,7 +30,8 @@ export function SavedSettingsPanelConnected({ saved, current, onApply }: SavedSe
     remove: t('removeSaved'),
     saveSettings: t('saveSettings'),
     empty: t('noSavedSettings'),
+    distanceUnit: t('distanceUnit'),
   }
 
-  return <SavedSettingsPanel saved={saved} current={current} onApply={onApply} labels={labels} />
+  return <SavedSettingsPanel saved={saved} current={current} onApply={onApply} imperial={imperial} labels={labels} />
 }

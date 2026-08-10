@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/lib/i18n/navigation'
 import { ResultsPanel, type ResultsLabels } from './ResultsPanel'
+import { useDofTooltips } from '../state/useDofTooltips'
 import type { DofDerived } from '../state/useDofDerived'
 import type { BokehShapeId } from '@/lib/math/bokehKernel'
 
@@ -25,6 +26,7 @@ interface ResultsPanelConnectedProps {
 
 export function ResultsPanelConnected({ derived, imperial, bokeh }: ResultsPanelConnectedProps) {
   const t = useTranslations('toolUI.dof-simulator')
+  const tooltips = useDofTooltips()
 
   const labels: ResultsLabels = {
     results: t('results'),
@@ -41,8 +43,8 @@ export function ResultsPanelConnected({ derived, imperial, bokeh }: ResultsPanel
     effectiveFocalLength: t('effectiveFocalLength'),
     fullFrameEquivalentFocalLength: t('fullFrameEquivalentFocalLength'),
     diffractionWarning: t('diffractionWarning'),
-    belowMinFocusWarning: t('belowMinFocusWarning'),
+    distanceUnit: t('distanceUnit'),
   }
 
-  return <ResultsPanel derived={derived} imperial={imperial} bokeh={bokeh} labels={labels} />
+  return <ResultsPanel derived={derived} imperial={imperial} bokeh={bokeh} labels={labels} tooltips={tooltips} />
 }
