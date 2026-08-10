@@ -174,7 +174,7 @@ function makeOptics(overrides: Partial<OpticsState> = {}): OpticsApi {
     ...state,
     setFocalLength: vi.fn(), setAperture: vi.fn(), setDistanceM: vi.fn(),
     setSensorId: vi.fn(), setCameraId: vi.fn(), setLensId: vi.fn(),
-    setTeleconverterId: vi.fn(), setCustomCocMm: vi.fn(), setBackgroundDistanceM: vi.fn(),
+    setTeleconverterId: vi.fn(), setCustomCocMm: vi.fn(), setBackgroundDistanceM: vi.fn(), reset: vi.fn(),
   }
 }
 
@@ -275,5 +275,31 @@ describe('CenterStage (full render)', () => {
 
     expect(renderedPx).toBeCloseTo(expectedPx, 1)
     expect(renderedPx).not.toBeCloseTo(buggyPx, 1)
+  })
+
+  // Item 5 (regression-repair): the disabled-Export reason used to live only
+  // in `title`, which a disabled button never exposes to keyboard/AT users
+  // (most browsers make disabled controls unfocusable, so a hover-only
+  // tooltip is unreachable without a mouse). It must also be a VISIBLE note,
+  // linked via aria-describedby for AT that does support it. This test's
+  // stubbed getContext('webgl2') => null forces Viewport into 'fallback'
+  // status, which is exactly the canvasUnavailable case.
+  it('exposes the disabled-Export reason as visible text, not just a title tooltip', () => {
+    const opticsApi = makeOptics()
+    const dofState = makeDofState(opticsApi)
+
+    const { getByRole, getByText } = render(
+      <NextIntlClientProvider locale="en" messages={enMessages}>
+        <CenterStage dofState={dofState} subject={subject} background={background} onDistanceChange={vi.fn()} />
+      </NextIntlClientProvider>,
+    )
+
+    const exportBtn = getByRole('button', { name: /export image/i })
+    expect(exportBtn).toBeDisabled()
+
+    const reasonText = enMessages.toolUI['dof-simulator'].exportUnavailable
+    const note = getByText(reasonText)
+    expect(note).toBeInTheDocument()
+    expect(exportBtn).toHaveAttribute('aria-describedby', note.id)
   })
 })

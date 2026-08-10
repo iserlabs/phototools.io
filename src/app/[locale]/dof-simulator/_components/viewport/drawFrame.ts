@@ -1,5 +1,5 @@
 import { generateKernel, type BokehShapeId } from '@/lib/math/bokehKernel'
-import { packTaps } from './webgl/glTexture'
+import { packTaps, uvRectForAspect } from './webgl/glTexture'
 
 export interface FrameUniforms {
   uTex: WebGLUniformLocation | null
@@ -13,7 +13,14 @@ export interface FrameUniforms {
 export interface SideParams {
   blur: number
   bokeh: BokehShapeId
-  uv: [number, number, number, number]
+  // This side's own logical/sensor field-of-view aspect (w/h) -- what the
+  // background-photo crop SHOULD represent when NOT in split mode (single or
+  // wipe, where every side draws into the same full-canvas quad, so this
+  // aspect is also that quad's actual shape). In split mode drawFrame
+  // ignores this and derives the crop from the PANE's own actual on-screen
+  // aspect instead (see the sideBySide branch below) -- see `aspect`'s use
+  // site for why.
+  aspect: number
 }
 
 /** Looks up every uniform location the shader declares, once per program build. */
@@ -61,10 +68,13 @@ const BLOOM_INTENSITY = 1.5
  *  - `split` (sideBySide=true): TWO independent frames. Each side gets its
  *    OWN viewport (not a scissor crop of one shared frame), so each pane
  *    shows the COMPLETE scene at its own pane width rather than a slice of
- *    a single continuous image — genuine side-by-side. `uViewAspect` is
- *    recomputed per pane so the bokeh kernel's aspect correction
- *    (bokehBlur.frag's tapScale) matches the pane it's actually drawing
- *    into, not the full canvas.
+ *    a single continuous image — genuine side-by-side. `uViewAspect` (bokeh
+ *    kernel roundness) AND the `uUvRect` background crop are both
+ *    recomputed per pane, against that pane's own actual on-screen aspect
+ *    (splitX/h, (w-splitX)/h) rather than each side's logical sensor aspect
+ *    — otherwise the crop (shaped for the full canvas) gets stretched to
+ *    fill a half-width pane, squeezing the photo ~2x horizontally
+ *    (regression-repair, defect 3).
  */
 export function drawFrame(
   gl: WebGL2RenderingContext,
@@ -73,6 +83,7 @@ export function drawFrame(
   texture: WebGLTexture,
   w: number,
   h: number,
+  texAspect: number,
   sideA: SideParams,
   sideB: SideParams | null,
   dividerPos: number,
@@ -86,17 +97,25 @@ export function drawFrame(
   gl.uniform1i(uniforms.uTex, 0)
   gl.uniform1f(uniforms.uBloom, BLOOM_INTENSITY)
 
-  const drawSide = (side: SideParams, viewAspect: number) => {
-    gl.uniform1f(uniforms.uViewAspect, viewAspect)
+  // `bokehAspect` drives uViewAspect (bokeh-kernel roundness correction).
+  // `cropAspect` drives the uUvRect background crop -- computed HERE, from
+  // the aspect actually being drawn into, rather than trusted pre-computed
+  // from the caller, so it can never drift from the real pane geometry.
+  // Off/wipe: both equal the shared full-canvas aspect (or, for wipe, each
+  // side's own logical sensor aspect via `side.aspect` -- see SideParams).
+  // Split: both are the SAME pane aspect, since the crop must exactly match
+  // the shape it's about to be stretched into.
+  const drawSide = (side: SideParams, bokehAspect: number, cropAspect: number) => {
+    gl.uniform1f(uniforms.uViewAspect, bokehAspect)
     gl.uniform2fv(uniforms.uTaps, getTaps(side.bokeh))
     gl.uniform1f(uniforms.uRadiusFrac, side.blur)
-    gl.uniform4fv(uniforms.uUvRect, side.uv)
+    gl.uniform4fv(uniforms.uUvRect, uvRectForAspect(texAspect, cropAspect))
     gl.drawArrays(gl.TRIANGLES, 0, 6)
   }
 
   if (!sideB) {
     gl.disable(gl.SCISSOR_TEST)
-    drawSide(sideA, w / h)
+    drawSide(sideA, w / h, sideA.aspect)
     return
   }
 
@@ -105,17 +124,17 @@ export function drawFrame(
   if (sideBySide) {
     gl.disable(gl.SCISSOR_TEST)
     gl.viewport(0, 0, splitX, h)
-    drawSide(sideA, splitX / h)
+    drawSide(sideA, splitX / h, splitX / h)
     gl.viewport(splitX, 0, w - splitX, h)
-    drawSide(sideB, (w - splitX) / h)
+    drawSide(sideB, (w - splitX) / h, (w - splitX) / h)
     gl.viewport(0, 0, w, h) // restore, so subsequent state (e.g. a re-draw) isn't left half-sized
     return
   }
 
   gl.enable(gl.SCISSOR_TEST)
   gl.scissor(0, 0, splitX, h)
-  drawSide(sideA, w / h)
+  drawSide(sideA, w / h, sideA.aspect)
   gl.scissor(splitX, 0, w - splitX, h)
-  drawSide(sideB, w / h)
+  drawSide(sideB, w / h, sideB.aspect)
   gl.disable(gl.SCISSOR_TEST)
 }

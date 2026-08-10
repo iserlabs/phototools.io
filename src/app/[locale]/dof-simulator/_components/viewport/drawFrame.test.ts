@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import { drawFrame, getFrameUniforms, type FrameUniforms } from './drawFrame'
+import { uvRectForAspect } from './webgl/glTexture'
 
 /**
  * A/B honesty fix (dof-simulator-rebuild final fix wave, item C): `wipe` and
@@ -51,8 +52,13 @@ const uniforms: FrameUniforms = {
 const program = {} as WebGLProgram
 const texture = {} as WebGLTexture
 const getTaps = () => new Float32Array(128)
-const sideA = { blur: 0.02, bokeh: 'disc' as const, uv: [0, 0, 1, 1] as [number, number, number, number] }
-const sideB = { blur: 0.05, bokeh: 'disc' as const, uv: [0, 0, 1, 1] as [number, number, number, number] }
+// texAspect equals both sides' own `aspect` so uvRectForAspect(texAspect,
+// aspect) is the trivial no-crop [0, 0, 1, 1] whenever drawFrame uses
+// `side.aspect` directly (single/wipe) -- making split's DIFFERENT pane-
+// derived crop stand out clearly against that baseline.
+const texAspect = 1.5
+const sideA = { blur: 0.02, bokeh: 'disc' as const, aspect: 1.5 }
+const sideB = { blur: 0.05, bokeh: 'disc' as const, aspect: 1.5 }
 
 describe('getFrameUniforms', () => {
   it('looks up every uniform location once', () => {
@@ -62,21 +68,27 @@ describe('getFrameUniforms', () => {
   })
 })
 
+function uvRectCallsFrom(calls: { fn: string; args: unknown[] }[]) {
+  return calls.filter((c) => c.fn === 'uniform4fv' && c.args[0] === uniforms.uUvRect).map((c) => c.args[1])
+}
+
 describe('drawFrame single-side (ab off)', () => {
   it('uses one full-canvas viewport with no scissor', () => {
     const { gl, calls } = makeFakeGl()
-    drawFrame(gl, program, uniforms, texture, 1000, 500, sideA, null, 0.5, getTaps)
+    drawFrame(gl, program, uniforms, texture, 1000, 500, texAspect, sideA, null, 0.5, getTaps)
     const viewportCalls = calls.filter((c) => c.fn === 'viewport')
     expect(viewportCalls).toEqual([{ fn: 'viewport', args: [0, 0, 1000, 500] }])
     expect(calls.some((c) => c.fn === 'enable' && c.args[0] === gl.SCISSOR_TEST)).toBe(false)
     expect(calls.filter((c) => c.fn === 'drawArrays')).toHaveLength(1)
+    // texAspect === sideA.aspect (1.5), so the crop is the trivial no-op rect.
+    expect(uvRectCallsFrom(calls)).toEqual([uvRectForAspect(texAspect, sideA.aspect)])
   })
 })
 
 describe('drawFrame wipe (sideBySide=false)', () => {
   it('keeps a single shared full-canvas viewport and scissors each side at the divider', () => {
     const { gl, calls } = makeFakeGl()
-    drawFrame(gl, program, uniforms, texture, 1000, 500, sideA, sideB, 0.3, getTaps, false)
+    drawFrame(gl, program, uniforms, texture, 1000, 500, texAspect, sideA, sideB, 0.3, getTaps, false)
 
     // Only the initial full-canvas viewport is ever set — never re-sized per side.
     const viewportCalls = calls.filter((c) => c.fn === 'viewport')
@@ -94,13 +106,22 @@ describe('drawFrame wipe (sideBySide=false)', () => {
       .filter((c) => c.fn === 'uniform1f' && c.args[0] === uniforms.uViewAspect)
       .map((c) => c.args[1])
     expect(viewAspectValues).toEqual([2, 2]) // 1000/500 for both sides
+
+    // Defect 3 (regression-repair): unaffected by the split-mode fix — each
+    // side's crop still comes from its OWN logical aspect (side.aspect),
+    // not the actual pane geometry, since both sides here share the SAME
+    // full-canvas quad (item C's "wipe" contract must not change).
+    expect(uvRectCallsFrom(calls)).toEqual([
+      uvRectForAspect(texAspect, sideA.aspect),
+      uvRectForAspect(texAspect, sideB.aspect),
+    ])
   })
 })
 
 describe('drawFrame split (sideBySide=true)', () => {
   it('gives each side its OWN viewport instead of scissoring one shared frame', () => {
     const { gl, calls } = makeFakeGl()
-    drawFrame(gl, program, uniforms, texture, 1000, 500, sideA, sideB, 0.3, getTaps, true)
+    drawFrame(gl, program, uniforms, texture, 1000, 500, texAspect, sideA, sideB, 0.3, getTaps, true)
 
     const viewportCalls = calls.filter((c) => c.fn === 'viewport')
     // Initial full-canvas viewport, then A's own pane, then B's own pane,
@@ -124,5 +145,33 @@ describe('drawFrame split (sideBySide=true)', () => {
     expect(viewAspectValues).toEqual([0.6, 1.4]) // 300/500, 700/500
 
     expect(calls.filter((c) => c.fn === 'drawArrays')).toHaveLength(2)
+
+    // Defect 3 (regression-repair): the background CROP must also come from
+    // each pane's own aspect (300/500=0.6, 700/500=1.4), not sideA/sideB's
+    // logical aspect (1.5, same as texAspect) — otherwise a rect shaped for
+    // the full canvas gets stretched into a half-width pane, squeezing the
+    // photo horizontally. This must differ from both the wipe test's values
+    // above AND from the trivial [0,0,1,1] that texAspect===side.aspect
+    // would produce if drawFrame ignored the real pane geometry.
+    const uvRectValues = uvRectCallsFrom(calls)
+    expect(uvRectValues).toEqual([
+      uvRectForAspect(texAspect, 0.6),
+      uvRectForAspect(texAspect, 1.4),
+    ])
+    expect(uvRectValues).not.toEqual([[0, 0, 1, 1], [0, 0, 1, 1]])
+    expect(uvRectValues[0]).not.toEqual(uvRectForAspect(texAspect, sideA.aspect))
+    expect(uvRectValues[1]).not.toEqual(uvRectForAspect(texAspect, sideB.aspect))
+  })
+
+  it('produces a different uvRect than wipe for the exact same SideParams inputs', () => {
+    const wipe = makeFakeGl()
+    drawFrame(wipe.gl, program, uniforms, texture, 1000, 500, texAspect, sideA, sideB, 0.3, getTaps, false)
+    const split = makeFakeGl()
+    drawFrame(split.gl, program, uniforms, texture, 1000, 500, texAspect, sideA, sideB, 0.3, getTaps, true)
+
+    const wipeUvRects = uvRectCallsFrom(wipe.calls)
+    const splitUvRects = uvRectCallsFrom(split.calls)
+
+    expect(splitUvRects).not.toEqual(wipeUvRects)
   })
 })

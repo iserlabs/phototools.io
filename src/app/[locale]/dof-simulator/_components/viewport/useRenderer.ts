@@ -13,12 +13,10 @@ import { drawFrame, getFrameUniforms, createTapsCache, type FrameUniforms } from
 export interface RenderSide {
   blurRadiusFrac: number
   bokeh: BokehShapeId
-  uvRect: [number, number, number, number]
+  aspect: number // this side's own logical/sensor aspect (w/h); see drawFrame.ts's SideParams.aspect
 }
 
-export interface RendererApi {
-  status: 'loading' | 'ready' | 'fallback' | 'error'
-}
+export interface RendererApi { status: 'loading' | 'ready' | 'fallback' | 'error' }
 
 function reportError(err: unknown, op: string) {
   Sentry.captureException(err, { tags: { module: 'dof-simulator', op } })
@@ -33,6 +31,7 @@ function reportError(err: unknown, op: string) {
 export function useRenderer(
   canvasRef: RefObject<HTMLCanvasElement | null>,
   textureUrl: string,
+  texAspect: number,
   sideA: RenderSide,
   sideB: RenderSide | null,
   dividerPos: number,
@@ -54,11 +53,11 @@ export function useRenderer(
   // must never close over `sideA`/`sideB` themselves, only these scalars.
   const aBlur = sideA.blurRadiusFrac
   const aBokeh = sideA.bokeh
-  const [aUv0, aUv1, aUv2, aUv3] = sideA.uvRect
+  const aAspect = sideA.aspect
   const hasSideB = sideB !== null
   const bBlur = sideB?.blurRadiusFrac ?? 0
   const bBokeh = sideB?.bokeh ?? aBokeh
-  const [bUv0, bUv1, bUv2, bUv3] = sideB?.uvRect ?? [0, 0, 1, 1]
+  const bAspect = sideB?.aspect ?? aAspect
 
   const draw = useCallback(() => {
     const handle = handleRef.current
@@ -71,12 +70,12 @@ export function useRenderer(
     const h = canvas.height
     if (w === 0 || h === 0) return
     drawFrame(
-      handle.gl, program, uniforms, texture, w, h,
-      { blur: aBlur, bokeh: aBokeh, uv: [aUv0, aUv1, aUv2, aUv3] },
-      hasSideB ? { blur: bBlur, bokeh: bBokeh, uv: [bUv0, bUv1, bUv2, bUv3] } : null,
+      handle.gl, program, uniforms, texture, w, h, texAspect,
+      { blur: aBlur, bokeh: aBokeh, aspect: aAspect },
+      hasSideB ? { blur: bBlur, bokeh: bBokeh, aspect: bAspect } : null,
       dividerPos, getTapsRef.current, sideBySide,
     )
-  }, [canvasRef, dividerPos, aBlur, aBokeh, aUv0, aUv1, aUv2, aUv3, hasSideB, bBlur, bBokeh, bUv0, bUv1, bUv2, bUv3, sideBySide])
+  }, [canvasRef, dividerPos, texAspect, aBlur, aBokeh, aAspect, hasSideB, bBlur, bBokeh, bAspect, sideBySide])
   drawRef.current = draw
 
   const loadTex = useCallback(() => {

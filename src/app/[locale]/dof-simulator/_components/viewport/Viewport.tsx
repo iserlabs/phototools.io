@@ -10,6 +10,7 @@ export interface ViewportProps {
   background: DofBackground
   orientation: 'landscape' | 'portrait'
   viewAspect: number // sensorWMm / sensorHMm from derived
+  texAspect: number // native background-photo aspect (orientation-dependent)
   sideA: RenderSide
   sideB: RenderSide | null
   dividerPos: number
@@ -38,14 +39,14 @@ export interface ViewportProps {
  * image plus a notice instead — same UI for both statuses, per the brief.
  */
 export function Viewport({
-  background, orientation, viewAspect, sideA, sideB, dividerPos, sideBySide = false, fallbackBlurPx, children,
+  background, orientation, viewAspect, texAspect, sideA, sideB, dividerPos, sideBySide = false, fallbackBlurPx, children,
   canvasRef: externalCanvasRef, onStatusChange,
 }: ViewportProps) {
   const internalCanvasRef = useRef<HTMLCanvasElement>(null)
   const canvasRef = externalCanvasRef ?? internalCanvasRef
   const t = useTranslations('toolUI.dof-simulator')
   const bgSrc = orientation === 'portrait' ? background.srcPortrait : background.srcLandscape
-  const { status } = useRenderer(canvasRef, bgSrc, sideA, sideB, dividerPos, sideBySide)
+  const { status } = useRenderer(canvasRef, bgSrc, texAspect, sideA, sideB, dividerPos, sideBySide)
   const showFallback = status === 'fallback' || status === 'error'
 
   useEffect(() => {

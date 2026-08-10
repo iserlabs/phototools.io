@@ -100,7 +100,7 @@ function makeOptics(overrides: Partial<OpticsState> = {}): OpticsApi {
     ...state,
     setFocalLength: vi.fn(), setAperture: vi.fn(), setDistanceM: vi.fn(),
     setSensorId: vi.fn(), setCameraId: vi.fn(), setLensId: vi.fn(),
-    setTeleconverterId: vi.fn(), setCustomCocMm: vi.fn(), setBackgroundDistanceM: vi.fn(),
+    setTeleconverterId: vi.fn(), setCustomCocMm: vi.fn(), setBackgroundDistanceM: vi.fn(), reset: vi.fn(),
   }
 }
 
