@@ -1,442 +1,244 @@
 import type { Page } from '@playwright/test'
 import { test, expect } from '@playwright/test'
+import { readFileSync } from 'node:fs'
+
+const URL = '/en/dof-simulator'
+
+// Every control is mounted twice (desktop `<aside>` sidebar + a mobile
+// controls section rendered by the same DofSimulator.tsx) — see CLAUDE.md's
+// "duplicate DOM elements" pitfall. Scope all sidebar interactions to the
+// desktop instance to avoid strict-mode violations.
+const sidebar = (page: Page) => page.locator('aside').first()
+
+// Known-benign console noise, copied from src/e2e/smoke/all-pages.spec.ts so
+// this spec's console-clean assertions agree with the house filter.
+const BENIGN_CONSOLE =
+  /favicon|the server responded with a status of 404|cookieyes|adsense|adsbygoogle|_vercel\/speed-insights|posthog|\/phog\/|connect\.facebook\.net|fbevents\.js|facebook\.com|sentry|monitoring/
+
+/**
+ * WebGL canvases render into a browser compositor layer that Playwright's own
+ * `locator.screenshot()` has been flaky/hang-prone against on this page (see
+ * task brief). The canvas is created with `preserveDrawingBuffer: true`
+ * (Task 16), so reading its pixels back via `toDataURL()` inside the page is
+ * both faster and doesn't touch Playwright's screenshot pipeline at all.
+ */
+async function canvasDataUrl(page: Page): Promise<string> {
+  return page.locator('canvas').first().evaluate((el) => (el as HTMLCanvasElement).toDataURL())
+}
 
 test.describe('DOF Simulator', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/en/dof-simulator')
-  })
-
-  // Scope to desktop sidebar to avoid mobile duplicates
-  function sidebar(page: Page) {
-    return page.locator('[class*="sidebar"]').first()
-  }
-
-  test('page loads with default settings and results panel', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Settings panel should show "Camera & Lens" heading
-    await expect(panel.getByText('Camera & Lens')).toBeVisible()
-
-    // Results panel should show key result labels
-    await expect(panel.getByText('Near Focus')).toBeVisible()
-    await expect(panel.getByText('Far Focus')).toBeVisible()
-    await expect(panel.getByText('Total Depth of Field')).toBeVisible()
-    await expect(panel.getByText('Hyperfocal')).toBeVisible()
-
-    // Results should display numeric values (not empty)
-    const resultValues = panel.locator('[class*="resultValue"]')
-    const count = await resultValues.count()
-    expect(count).toBeGreaterThanOrEqual(4)
-    for (let i = 0; i < Math.min(count, 4); i++) {
-      const text = await resultValues.nth(i).textContent()
-      expect(text!.trim().length).toBeGreaterThan(0)
-    }
-  })
-
-  test('focal length slider updates display and results', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Default focal length is 85mm — verify via aria-label
-    const flSlider = panel.locator('input[type="range"][aria-label="Focal length: 85mm"]')
-    await expect(flSlider).toBeVisible()
-
-    // Read initial near focus value
-    const nearFocusCards = panel.locator('[class*="resultCard"]').first()
-    const initialNear = await nearFocusCards.locator('[class*="resultValue"]').textContent()
-
-    // Click a focal length preset to change it (24mm = wider = deeper DoF)
-    await panel.locator('button:text-is("24mm")').first().click()
-
-    // Slider aria-label should update
-    await expect(
-      panel.locator('input[type="range"][aria-label="Focal length: 24mm"]')
-    ).toBeVisible()
-
-    // Near focus value should change (wider lens = deeper DoF = different near focus)
-    const updatedNear = await nearFocusCards.locator('[class*="resultValue"]').textContent()
-    expect(updatedNear).not.toBe(initialNear)
-  })
-
-  test('focal length preset buttons update slider', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Click 50mm preset
-    await panel.locator('button:text-is("50mm")').first().click()
-    await expect(
-      panel.locator('input[type="range"][aria-label="Focal length: 50mm"]')
-    ).toBeVisible()
-
-    // Click 200mm preset
-    await panel.locator('button:text-is("200mm")').first().click()
-    await expect(
-      panel.locator('input[type="range"][aria-label="Focal length: 200mm"]')
-    ).toBeVisible()
-  })
-
-  test('aperture control changes DoF results', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Default aperture is f/2.8 — capture initial total DoF
-    await expect(
-      panel.locator('input[type="range"][aria-label="Aperture: f/2.8"]')
-    ).toBeVisible()
-
-    // Read initial total DoF (third result card in the 2x2 grid)
-    const totalDofCard = panel.locator('[class*="resultsGrid"]').first()
-      .locator('[class*="resultCard"]').nth(2)
-    const initialDoF = await totalDofCard.locator('[class*="resultValue"]').textContent()
-
-    // Click aperture tick label for f/8 (stops down = deeper DoF)
-    await panel.locator('button:text-is("8")').first().click()
-    await expect(
-      panel.locator('input[type="range"][aria-label="Aperture: f/8"]')
-    ).toBeVisible()
-
-    // Total DoF should increase (stopped down aperture = more in focus)
-    const updatedDoF = await totalDofCard.locator('[class*="resultValue"]').textContent()
-    expect(updatedDoF).not.toBe(initialDoF)
-  })
-
-  test('sensor dropdown changes DoF values', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Read initial hyperfocal (fourth result card). Hyperfocal is
-    // sensitive to CoC, which changes with sensor size — switching from
-    // full-frame (default) to APS-C should produce a clearly different
-    // value (~86m → ~132m for the default focal/aperture).
-    const hyperfocalCard = panel.locator('[class*="resultsGrid"]').first()
-      .locator('[class*="resultCard"]').nth(3)
-    const initialHyper = await hyperfocalCard.locator('[class*="resultValue"]').textContent()
-
-    // Verify we're starting from full-frame
-    const sensorSelect = panel.locator('select').first()
-    await expect(sensorSelect).toHaveValue('ff')
-
-    // Change via URL param — useQueryInit wires `s` to setSensorId, so
-    // reloading with ?s=apsc_n applies the new sensor via React state
-    // without relying on DOM selectOption, which has been flaky in CI.
-    await page.goto('/en/dof-simulator?s=apsc_n')
-    await expect(panel.locator('select').first()).toHaveValue('apsc_n')
-
-    // Hyperfocal should now reflect the APS-C sensor
-    const updatedHyper = await panel
-      .locator('[class*="resultsGrid"]')
-      .first()
-      .locator('[class*="resultCard"]')
-      .nth(3)
-      .locator('[class*="resultValue"]')
-      .textContent()
-    expect(updatedHyper).not.toBe(initialHyper)
-  })
-
-  test('orientation toggle switches between landscape and portrait', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Default is landscape — the Landscape button should be active (aria-pressed)
-    const landscapeBtn = panel.locator('button[aria-pressed="true"]:text-is("Landscape")')
-    await expect(landscapeBtn).toBeVisible()
-
-    // Click Portrait
-    await panel.locator('button:text-is("Portrait")').first().click()
-    await page.waitForTimeout(200)
-
-    // Portrait button should now be active
-    const portraitBtn = panel.locator('button[aria-pressed="true"]:text-is("Portrait")')
-    await expect(portraitBtn).toBeVisible()
-  })
-
-  test('scene buttons change active scene', async ({ page }) => {
-    // Default scene is "Park Portrait" (first scene, active by default)
-    const parkBtn = page.locator('button[aria-pressed="true"]:text-is("Park Portrait")')
-    await expect(parkBtn).toBeVisible()
-
-    // Click "Urban Street" scene
-    await page.locator('button:text-is("Urban Street")').click()
-    await page.waitForTimeout(300)
-
-    // Urban Street should now be the active scene
-    const streetBtn = page.locator('button[aria-pressed="true"]:text-is("Urban Street")')
-    await expect(streetBtn).toBeVisible()
-
-    // Park Portrait should no longer be active
-    await expect(
-      page.locator('button[aria-pressed="true"]:text-is("Park Portrait")')
-    ).not.toBeVisible()
-  })
-
-  test('subject mode toggle switches between Figure and Target', async ({ page }) => {
-    // Default is Figure mode
-    const figureBtn = page.locator('button[aria-pressed="true"]:text-is("Figure")')
-    await expect(figureBtn).toBeVisible()
-
-    // Click Target
-    await page.locator('button:text-is("Target")').click()
-    await page.waitForTimeout(200)
-
-    // Target should now be active
-    const targetBtn = page.locator('button[aria-pressed="true"]:text-is("Target")')
-    await expect(targetBtn).toBeVisible()
-  })
-
-  test('A/B comparison mode toggle', async ({ page }) => {
-    // Default is Single View mode
-    await expect(
-      page.locator('button[aria-pressed="true"]:text-is("Single View")')
-    ).toBeVisible()
-
-    // Click A/B to enable comparison
-    await page.locator('button:text-is("A/B")').click()
-    await page.waitForTimeout(300)
-
-    // Wipe/Split sub-options should appear
-    await expect(page.locator('button:text-is("Wipe Compare")')).toBeVisible()
-    await expect(page.locator('button:text-is("Split Compare")')).toBeVisible()
-
-    // Wipe should be default sub-mode
-    await expect(
-      page.locator('button[aria-pressed="true"]:text-is("Wipe Compare")')
-    ).toBeVisible()
-
-    // A/B set toggle (A/B buttons) should appear in sidebar
-    const panel = sidebar(page)
-    await expect(panel.locator('button[aria-pressed="true"]:text-is("A")')).toBeVisible()
-    await expect(panel.locator('button:text-is("B")')).toBeVisible()
-
-    // Switch to Split mode
-    await page.locator('button:text-is("Split Compare")').click()
-    await page.waitForTimeout(200)
-    await expect(
-      page.locator('button[aria-pressed="true"]:text-is("Split Compare")')
-    ).toBeVisible()
-
-    // Switch back to Single View
-    await page.locator('button:text-is("Single View")').click()
-    await page.waitForTimeout(200)
-
-    // Sub-options should disappear
-    await expect(page.locator('button:text-is("Wipe Compare")')).not.toBeVisible()
-  })
-
-  test('A/B set toggle switches settings panels', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Enable A/B mode
-    await page.locator('button:text-is("A/B")').click()
-    await page.waitForTimeout(300)
-
-    // Set A is active — change focal length to 135mm
-    await panel.locator('button:text-is("135mm")').first().click()
-    await expect(
-      panel.locator('input[type="range"][aria-label="Focal length: 135mm"]')
-    ).toBeVisible()
-
-    // Switch to set B
-    await panel.locator('button:text-is("B")').first().click()
-    await page.waitForTimeout(200)
-
-    // Set B should show its own default focal length (50mm), not 135mm
-    await expect(
-      panel.locator('input[type="range"][aria-label="Focal length: 50mm"]')
-    ).toBeVisible()
-
-    // Switch back to set A — should still be 135mm
-    await panel.locator('button:text-is("A")').first().click()
-    await page.waitForTimeout(200)
-    await expect(
-      panel.locator('input[type="range"][aria-label="Focal length: 135mm"]')
-    ).toBeVisible()
-  })
-
-  test('canvas viewport renders', async ({ page }) => {
-    // The viewport should contain a canvas element
-    const canvas = page.locator('[class*="viewport"] canvas')
-    await expect(canvas).toBeVisible()
-    const box = await canvas.boundingBox()
-    expect(box!.width).toBeGreaterThan(0)
-    expect(box!.height).toBeGreaterThan(0)
-  })
-
-  test('depth of field diagram bar is visible', async ({ page }) => {
-    const diagram = page.locator('svg[aria-label="Depth of field distance diagram"]')
-    await expect(diagram).toBeVisible()
-  })
-
-  test('blur profile graph is visible', async ({ page }) => {
-    const graph = page.locator('svg[aria-label="Blur profile graph"]')
-    await expect(graph).toBeVisible()
-  })
-
-  test('blur readout displays in toolbar', async ({ page }) => {
-    // Toolbar should show "Blur: X.XX%"
-    const blurText = page.locator('[class*="toolbar"]').getByText(/Blur:/)
-    await expect(blurText).toBeVisible()
-    const text = await blurText.textContent()
-    expect(text).toMatch(/Blur:\s*\d+\.\d+%/)
-  })
-
-  test('framing presets are displayed', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Framing panel should show preset buttons
-    await expect(panel.getByText('Framing')).toBeVisible()
-    await expect(panel.locator('button:text-is("Face")')).toBeVisible()
-    await expect(panel.locator('button:text-is("Full Body")')).toBeVisible()
-
-    // Click a framing preset
-    await panel.locator('button:text-is("Face")').click()
-    await page.waitForTimeout(200)
-
-    // The button should become active (aria-pressed)
-    await expect(
-      panel.locator('button[aria-pressed="true"]:text-is("Face")')
-    ).toBeVisible()
-  })
-
-  test('bokeh panel is accessible via details toggle', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Bokeh panel is a <details> element — expand it by clicking the summary
-    const bokehSummary = panel.locator('summary:has-text("Bokeh")')
-    await expect(bokehSummary).toBeVisible()
-    await bokehSummary.click()
-
-    // After expanding, the bokeh shape select should be visible
-    const bokehSelect = panel.locator('details select')
-    await expect(bokehSelect).toBeVisible()
-
-    // Change bokeh shape
-    await bokehSelect.selectOption('blade7')
-
-    // Diffraction checkbox should be present
-    const diffractionLabel = panel.locator('label:has-text("Simulate diffraction")')
-    await expect(diffractionLabel).toBeVisible()
-  })
-
-  test('diffraction warning appears at small apertures with low background blur', async ({ page }) => {
-    // Navigate with URL params: short FL, small aperture, far subject → low background blur
-    // isDiffractionLimited = calcAiryDisk(aperture) > backgroundBlurMm
-    await page.goto('/dof-simulator?fl=24&f=22&d=50')
-    const panel = sidebar(page)
-
-    await expect(
-      panel.getByText('Diffraction softening may reduce sharpness at this aperture')
-    ).toBeVisible()
-  })
-
-  test('results show extended metrics', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Extended result cards beyond the 2x2 grid
-    await expect(panel.getByText('Background Blur')).toBeVisible()
-    await expect(panel.getByText('Circle of Confusion')).toBeVisible()
-    await expect(panel.getByText('Isolation Score')).toBeVisible()
-
-    // Isolation score badge should be visible
-    const badge = panel.locator('[class*="isolationBadge"]')
-    await expect(badge).toBeVisible()
-    const score = await badge.textContent()
-    const num = parseInt(score!, 10)
-    expect(num).toBeGreaterThanOrEqual(0)
-    expect(num).toBeLessThanOrEqual(100)
-  })
-
-  test('URL state persistence', async ({ page }) => {
-    const panel = sidebar(page)
-
-    // Set focal length to 135mm
-    await panel.locator('button:text-is("135mm")').first().click()
-
-    // Select APS-C sensor
-    const sensorSelect = panel.locator('select').first()
-    await sensorSelect.selectOption('apsc_n')
-
-    // Click a scene
-    await page.locator('button:text-is("Macro")').click()
-
-    // useToolQuerySync writes a single throttled snapshot of the FULL state,
-    // not one write per field. Three separate actions can land as separate
-    // snapshots under load, so poll on the LAST-set param (scene=macro) —
-    // once it appears, the write is guaranteed to include everything set
-    // before it too.
-    await expect.poll(() => page.url()).toContain('scene=macro')
-
-    // Verify URL contains query params
-    const url = page.url()
-    expect(url).toContain('fl=135')
-    expect(url).toContain('s=apsc_n')
-
-    // Navigate to the same URL directly
-    await page.goto(url)
+  test('loads with viewport canvas and clean console', async ({ page }) => {
+    const errors: string[] = []
+    page.on('console', (m) => {
+      if (m.type() === 'error') errors.push(m.text())
+    })
+    await page.goto(URL)
+    await expect(page.locator('canvas').first()).toBeVisible()
     await page.waitForTimeout(500)
-
-    // Verify state is restored
-    await expect(
-      sidebar(page).locator('input[type="range"][aria-label="Focal length: 135mm"]')
-    ).toBeVisible()
-
-    // Macro scene should be active
-    await expect(
-      page.locator('button[aria-pressed="true"]:text-is("Macro")')
-    ).toBeVisible()
+    expect(errors.filter((e) => !BENIGN_CONSOLE.test(e))).toEqual([])
   })
 
-  test('URL persists aperture and distance', async ({ page }) => {
-    const panel = sidebar(page)
+  test('aperture change re-renders the background', async ({ page }) => {
+    await page.goto(`${URL}?bg=night-lights&f=1.4`)
+    await page.locator('canvas').first().waitFor()
+    await page.waitForTimeout(800)
+    const wide = await canvasDataUrl(page)
 
-    // Set aperture to f/8
-    await panel.locator('button:text-is("8")').first().click()
+    await page.goto(`${URL}?bg=night-lights&f=16`)
+    await page.locator('canvas').first().waitFor()
+    await page.waitForTimeout(800)
+    const narrow = await canvasDataUrl(page)
 
-    // useToolQuerySync throttles the replaceState write, so poll rather than
-    // sleeping a fixed interval — a fixed wait races the throttle under load.
-    await expect.poll(() => page.url()).toContain('f=8')
-
-    const url = page.url()
-
-    // Navigate directly and verify
-    await page.goto(url)
-    await page.waitForTimeout(500)
-
-    await expect(
-      sidebar(page).locator('input[type="range"][aria-label="Aperture: f/8"]')
-    ).toBeVisible()
+    expect(narrow).not.toBe(wide)
   })
 
-  test('wider aperture produces shallower DoF than stopped down', async ({ page }) => {
-    const panel = sidebar(page)
+  test('model picker swaps the subject', async ({ page }) => {
+    await page.goto(URL)
+    const sb = sidebar(page)
 
-    // Set to f/1.4 (wide open)
-    // The tick labels are full-stop values; click the first one which is f/1.4
-    await panel.locator('button:text-is("1.4")').first().click()
-    await page.waitForTimeout(200)
+    // The "Model" picker opener lives in a row whose sibling label reads
+    // "Model" (AppearancePanel.tsx) — the button itself only shows the
+    // current subject's name and thumbnail, not the word "model".
+    const modelRow = sb.locator('[class*="pickerRow"]', { hasText: 'Model' })
+    const pickerName = modelRow.locator('[class*="pickerName"]')
+    await expect(pickerName).toHaveText('Woman A') // default subject (models.ts DOF_SUBJECTS[0])
 
-    // Read total DoF at f/1.4
-    const totalDofCard = panel.locator('[class*="resultsGrid"]').first()
-      .locator('[class*="resultCard"]').nth(2)
-    const wideDoF = await totalDofCard.locator('[class*="resultValue"]').textContent()
+    // The rendered subject in the viewport is a stack of plain <img> tags
+    // (ModelLayer.tsx, one per depth slice), sourced directly from
+    // `/dof/subjects/<id>/...` — unlike the picker's own thumbnail, which
+    // goes through next/image's optimizer and never exposes that raw path.
+    // This is a durable, independent signal that the subject actually
+    // changed on screen, not just that the picker UI says so.
+    const subjectImg = page.locator('img[src*="/dof/subjects/"]').first()
+    await expect(subjectImg).toHaveAttribute('src', /\/dof\/subjects\/woman-a\//)
 
-    // Set to f/16 (stopped down)
-    await panel.locator('button:text-is("16")').first().click()
-    await page.waitForTimeout(200)
+    await modelRow.locator('button').click()
 
-    const stoppedDoF = await totalDofCard.locator('[class*="resultValue"]').textContent()
+    const dialog = sb.locator('dialog[aria-labelledby="dof-model-picker-title"]')
+    await expect(dialog).toBeVisible()
 
-    // The wider aperture (f/1.4) should give a shallower (smaller) DoF than f/16
-    // Both are formatted as "X.XX m" or "XX cm" — just verify they differ
-    expect(wideDoF).not.toBe(stoppedDoF)
+    // Grid item index 2 is "Woman B" (models.ts DOF_SUBJECTS order).
+    await dialog.locator('[class*="gridItem"]').nth(2).click()
+    await expect(dialog).not.toBeVisible()
+
+    // ModelPickerModal.tsx's grid button calls onSelect(subject.id) and
+    // onClose() unconditionally in the same click handler — the dialog
+    // closing proves nothing about onSelect actually reaching
+    // appearance.setSubjectId. Assert the subject genuinely changed, on both
+    // the control label and the rendered image, so a broken onSelect wiring
+    // fails this test even though the dialog still closes.
+    await expect(pickerName).toHaveText('Woman B')
+    await expect(subjectImg).toHaveAttribute('src', /\/dof\/subjects\/woman-b\//)
   })
 
-  test('changing focal length updates blur readout percentage', async ({ page }) => {
-    const panel = sidebar(page)
+  test('framing preset drives distance', async ({ page }) => {
+    await page.goto(`${URL}?fl=85&d=5`)
+    const sb = sidebar(page)
+    await sb.getByRole('button', { name: 'Face', exact: true }).click()
+    // distanceForFraming(320mm frame height, 85mm FL, 24mm sensor height) = 1.1333m
+    await expect(sb.locator('input[type="number"]').first()).toHaveValue(/1\.1/)
+  })
 
-    // Read initial blur readout
-    const blurReadout = page.locator('[class*="toolbar"]').getByText(/Blur:/)
-    const initialBlur = await blurReadout.textContent()
+  test('lock-FOV holds framing across focal length change', async ({ page }) => {
+    await page.goto(`${URL}?fl=85`)
+    const sb = sidebar(page)
 
-    // Switch to a very different focal length (24mm vs default 85mm)
-    await panel.locator('button:text-is("24mm")').first().click()
-    await page.waitForTimeout(300)
+    await sb.getByRole('button', { name: 'Face', exact: true }).click()
+    await sb.locator('input[type="checkbox"]').first().check() // lock FOV
 
-    const updatedBlur = await blurReadout.textContent()
-    expect(updatedBlur).not.toBe(initialBlur)
+    // The FL slider is log-scaled (logSlider.ts) — its raw `value` is a
+    // 0..1000 slider position, not a millimeter value, so `.fill()` with a
+    // literal mm number would be wrong. Use the native Home/End keyboard
+    // behavior of <input type="range"> to jump to the slider's max (1200mm)
+    // instead of trying to replicate the log-scale math here.
+    const flSlider = sb.locator('input[type="range"]').first()
+    await flSlider.focus()
+    await flSlider.press('End')
+
+    // Read back the FL the slider actually settled on — its aria-label
+    // always echoes the real mm value (see "share URL restores state" below)
+    // — rather than hardcoding 1200mm, in case log-scale slider quantisation
+    // ever lands it a hair off the max. Independently derive the expected
+    // held-framing distance from that value via the same formula
+    // framingSolver.ts's distanceForFraming implements (frameHeightMm *
+    // flMm) / (sensorHMm * 1000): Face preset frame height is 320mm, sensor
+    // height is 24mm (full frame, the default, landscape orientation).
+    const flLabel = await flSlider.getAttribute('aria-label')
+    const flMm = Number(flLabel?.match(/(\d+)mm/)?.[1])
+    expect(flMm).toBeGreaterThan(1000) // sanity: End actually jumped near the 1200mm max
+    const expectedDistanceM = (320 * flMm) / (24 * 1000)
+
+    // Lock-FOV must have re-solved distance to HOLD the Face preset's 320mm
+    // frame height at the new focal length — assert the actual computed
+    // value (distanceForFraming(320, 1200, 24) = 16.0m), not merely a loose
+    // "> 2" floor that a partially-broken solver could still clear.
+    const d = await sb.locator('input[type="number"]').first().inputValue()
+    expect(parseFloat(d)).toBeCloseTo(expectedDistanceM, 1)
+  })
+
+  test('A/B wipe divider drags', async ({ page }) => {
+    await page.goto(`${URL}?ab=wipe`)
+    const divider = page.locator('[role="separator"]').first()
+    const layer = page.locator('[class*="dividerLayer"]').first()
+    await expect(divider).toBeVisible()
+
+    const before = await divider.getAttribute('aria-valuenow')
+    expect(before).toBe('50') // default dividerPos = 0.5
+
+    const layerBox = (await layer.boundingBox())!
+    const dividerBox = (await divider.boundingBox())!
+
+    await page.mouse.move(dividerBox.x + dividerBox.width / 2, dividerBox.y + dividerBox.height / 2)
+    await page.mouse.down()
+    // Drag to 80% of the overlay layer's width — posFromClientX (AbDivider.tsx)
+    // computes position as a fraction of the layer, not the 2px divider bar.
+    await page.mouse.move(layerBox.x + layerBox.width * 0.8, dividerBox.y + dividerBox.height / 2, { steps: 5 })
+    await page.mouse.up()
+
+    const after = await divider.getAttribute('aria-valuenow')
+    expect(after).not.toBe(before)
+    expect(Number(after)).toBeGreaterThan(65) // clearly moved toward 80%, well past the 50% start
+  })
+
+  test('saved settings roundtrip, including reload', async ({ page }) => {
+    await page.goto(`${URL}?fl=135&f=1.8`)
+    const sb = sidebar(page)
+
+    await sb.locator('button', { hasText: /save settings/i }).click()
+    const row = sb.locator('table tbody tr')
+    await expect(row).toHaveCount(1)
+    // Assert the persisted VALUES round-tripped, not just that a row exists
+    // — SavedSettingsPanel.tsx renders the fl/aperture columns via
+    // formatMm/formatAperture as "135mm" / "f/1.8".
+    await expect(row).toContainText('135mm')
+    await expect(row).toContainText('f/1.8')
+
+    await page.reload()
+    const reloadedRow = sidebar(page).locator('table tbody tr')
+    await expect(reloadedRow).toHaveCount(1)
+    await expect(reloadedRow).toContainText('135mm')
+    await expect(reloadedRow).toContainText('f/1.8')
+
+    await sidebar(page).locator('table tbody tr button').last().click() // remove
+    await expect(sidebar(page).locator('table tbody tr')).toHaveCount(0)
+  })
+
+  test('share URL restores state', async ({ page }) => {
+    await page.goto(`${URL}?fl=200&f=4&d=7&orient=portrait&bokeh=blade6`)
+    const sb = sidebar(page)
+    // The FL slider's raw value is a log-scale position, not 200 — assert the
+    // restored value via its aria-label (which always echoes the real mm),
+    // rather than the widget's internal 0..1000 coordinate space.
+    await expect(sb.locator('input[type="range"]').first()).toHaveAttribute('aria-label', /200mm/)
+    await expect(sb.locator('input[type="number"]').first()).toHaveValue('7')
+  })
+
+  test('imperial toggle changes distance formatting', async ({ page }) => {
+    await page.goto(`${URL}?d=5`)
+    const sb = sidebar(page)
+    const readout = sb.locator('[class*="readoutRow"]').first()
+    const metricText = await readout.textContent()
+
+    await sb.getByRole('button', { name: 'Imperial', exact: true }).click()
+
+    await expect(readout).not.toHaveText(metricText ?? '')
+  })
+
+  test('export downloads a PNG', async ({ page }) => {
+    await page.goto(URL)
+    const exportBtn = page.locator('button', { hasText: /export image/i }).first()
+    await expect(exportBtn).toBeEnabled()
+
+    const downloadPromise = page.waitForEvent('download')
+    await exportBtn.click()
+    const download = await downloadPromise
+
+    expect(download.suggestedFilename()).toMatch(/\.png$/)
+
+    // Confirm the downloaded bytes are an actual PNG, not just a
+    // correctly-named empty or garbage file — useImageExport.ts encodes via
+    // `canvas.toBlob(resolve, 'image/png')`, so a real export must carry the
+    // PNG signature and have real content.
+    const filePath = await download.path()
+    expect(filePath).not.toBeNull()
+    const bytes = readFileSync(filePath!)
+    expect(bytes.length).toBeGreaterThan(0)
+    expect(bytes.subarray(0, 4)).toEqual(Buffer.from([0x89, 0x50, 0x4e, 0x47]))
+  })
+
+  test('falls back gracefully without WebGL2', async ({ page }) => {
+    await page.addInitScript(() => {
+      const original = HTMLCanvasElement.prototype.getContext
+      HTMLCanvasElement.prototype.getContext = new Proxy(original, {
+        apply(target, thisArg, args) {
+          if (args[0] === 'webgl2') return null
+          return Reflect.apply(target, thisArg, args)
+        },
+      }) as typeof original
+    })
+
+    await page.goto(URL)
+    await expect(page.locator('img[class*="fallback"]').first()).toBeVisible()
+    await expect(sidebar(page).locator('input[type="range"]').first()).toBeEnabled()
   })
 })

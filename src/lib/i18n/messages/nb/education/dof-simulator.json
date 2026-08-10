@@ -1,204 +1,142 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Dybdeskarphet er det området i bildet som fremstår akseptabelt skarpt. Grunn dybdeskarphet gjør bakgrunnen bak motivet uskarp, mens dyp dybdeskarphet holder alt fra forgrunn til horisont i fokus. Å styre dybdeskarpheten er ett av de mest kraftfulle kreative virkemidlene vi har.",
+      "beginner": "Dybdeskarphet er sonen i bildet ditt — fra nært til fjernt — som fremstår akseptabelt skarp. Tre kontroller former denne sonen: blender (større blenderåpninger gjør bakgrunnen mer uskarp), brennvidde (lengre objektiver smalner sonen inn) og motivavstand (å gå nærmere krymper den ytterligere). Juster en av dem her, og se dybdelinjalen og visningsvinduet oppdatere seg sammen i sanntid.",
       "deeper": {
         "0": {
-          "heading": "Slik fungerer dybdeskarphet",
-          "text": "Dybdeskarphet styres av uskarphetssirkelen (CoC) — den største uskarpe flekken på sensoren som fortsatt ser skarp ut for øyet. Tre fysiske faktorer bestemmer dybdeskarpheten: brennvidde, blender og motivavstand. En større blenderåpning (lavere f-tall) gir grunnere dybdeskarphet fordi objektivet bøyer lyset i brattere vinkler, slik at uskarpe punkter sprer seg til større sirkler på sensoren."
+          "heading": "Blenderens geometri og uskarphetssirkelen",
+          "text": "Et objektiv fokuserer lys fra nøyaktig én avstand på sensoren som et perfekt punkt; alt annet havner som en liten skive kalt uskarphetssirkelen (CoC). Et punkt fremstår fortsatt skarpt så lenge skiven forblir mindre enn en terskel bestemt av sensorstørrelsen — omtrent 0.03mm på fullformat. Å åpne blenderen (senke f-tallet) åpner en større lyskjegle mellom objektivet og fokuspunktet, slik at punkter utenfor det planet sprer seg til mye større skiver, mye raskere. Det er derfor en stor blenderåpning som f/1.4 gjør bakgrunnen så mye mer uskarp enn f/11 — det er geometrien til lyskjeglen som endrer seg, ikke bare mengden lys."
         },
         "1": {
-          "heading": "Brennvidde og avstand",
-          "text": "Lange brennvidder forstørrer bildet, og dermed også uskarphetssirklene, og det smaler inn dybdeskarpheten. Går du nærmere motivet, reduseres dybdeskarpheten av samme grunn — forskjellen i avstand mellom motiv og bakgrunn blir relativt større. Hyperfokal avstand er den fokusavstanden der dybdeskarpheten strekker seg fra halvparten av avstanden og ut til uendelig, og den maksimerer skarpheten i hele scenen."
+          "heading": "Brennvidde og avstand dominerer effekten",
+          "text": "Hvordan brennvidden påvirker dybdeskarpheten, avhenger helt av hva du holder konstant. Ved fast motivavstand smalner dybdeskarpheten kraftig inn med brennvidden — omtrent proporsjonalt med brennvidden i annen: står du 3m fra et motiv på f/2.8, gir et 35mm-objektiv omtrent 1.3m dybdeskarphet, mens et 200mm-objektiv gir omtrent 35mm. Men den sammenligningen endrer også utsnittet ditt, siden du ikke har rammet inn på nytt. Ved fast utsnitt — dette verktøyets modus for låst synsfelt, der du går bakover mens du zoomer inn for å holde motivet like stort — beveger dybdeskarpheten seg nesten ikke: å gå fra 35mm til 200mm på f/2.8 med låst utsnitt endrer total dybdeskarphet med godt under 1 %. Det som i stedet endrer seg dramatisk, er bakgrunnen: et lengre objektiv forstørrer og komprimerer alt bak motivet, slik at uskarpe høylys vokser og bakgrunnen skiller seg mer ut, selv om det skarpe laget rundt motivet forblir omtrent like tykt. Slå på låst synsfelt og gå gjennom brennvidder for å se det skje — dybdeskarphetsverdien holder seg stabil mens bakgrunnsuskarphetstallet stiger. Motivavstand er uansett den mer pålitelige spaken: å gå nærmere ved fast brennvidde og blender smalner dybdeskarpheten kraftig inn, og trekker nær- og fjerngrensen tettere sammen rundt en kortere avstand."
         },
         "2": {
-          "heading": "Bokeh og diffraksjon",
-          "text": "Bokeh beskriver kvaliteten på de uskarpe områdene. Antall blenderblader og formen på dem påvirker bokehkarakteren — mer avrundede blader gir mykere og mer sirkulære høylys. Ved svært små blenderåpninger (f/16 og mindre) sprer lyset seg rundt blenderkantene, og hele bildet blir mykere — også innenfor dybdeskarphet-sonen. Det finnes alltid et midtpunkt — typisk f/5.6–f/8 på fullformat — der skarphet og dybdeskarphet er best balansert."
+          "heading": "Sensorstørrelse og ekvivalent utsnitt",
+          "text": "For å fylle bildet med det samme motivet trenger en større sensor en proporsjonalt lengre brennvidde enn en mindre — et fullformatkamera trenger omtrent 1,5 ganger brennvidden til et APS-C-kamera, og omtrent det dobbelte av et Micro Four Thirds-kamera, for samme synsfelt. Fordi dybdeskarpheten smalner inn med brennvidden, er det den lengre 'ekvivalente' brennvidden som gir fullformatkameraer sitt rykte for grunnere dybdeskarphet — f-tallet trykt på objektivet forteller ikke hele historien. To objektiver med samme blenderverdi på ulike sensorstørrelser, med identisk utsnitt, gir merkbart ulik dybdeskarphet."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Blender",
-          "description": "Store blenderåpninger (f/1.4–f/2.8) gir grunn dybdeskarphet med kremete bokeh. Små blenderåpninger (f/8–f/16) øker skarpheten i hele scenen."
+          "description": "Store blenderåpninger (lave f-tall som f/1.4-f/2.8) åpner en brattere lyskjegle og krymper dybdeskarpheten. Mindre blenderåpninger (f/8-f/16) utvider den."
         },
         "1": {
           "label": "Brennvidde",
-          "description": "Lange objektiver komprimerer perspektivet og smaler inn dybdeskarpheten ved samme blender og utsnitt. Et 200 mm f/4 har langt mindre dybdeskarphet enn et 35 mm f/4."
+          "description": "Ved fast motivavstand smalner dybdeskarpheten inn omtrent proporsjonalt med brennvidden i annen. Ved fast utsnitt (zoom inn og gå bakover for å beholde samme bilde) endrer dybdeskarpheten seg nesten ikke — det er bakgrunnen som forandrer seg, og blir mer forstørret og uskarp etter hvert som brennvidden øker."
         },
         "2": {
           "label": "Motivavstand",
-          "description": "Jo nærmere du fokuserer, desto grunnere blir dybdeskarpheten. Makrofotografer jobber ofte med dybdeskarphet målt i millimeter."
+          "description": "Å gå nærmere motivet krymper dybdeskarpheten raskere enn nesten enhver annen justering, og det er derfor makrofotografi har så barberbladtynne skarpe soner."
         },
         "3": {
           "label": "Sensorstørrelse",
-          "description": "Større sensorer krever lengre brennvidder for samme utsnitt, og det smaler indirekte inn dybdeskarpheten. Et fullformatkamera gir grunnere dybdeskarphet enn et Micro Four Thirds ved samme utsnitt."
+          "description": "Større sensorer krever lengre brennvidder for å matche samme utsnitt som mindre sensorer, noe som indirekte gir grunnere dybdeskarphet ved ekvivalente bilder."
         }
       },
       "tips": {
         "0": {
-          "text": "Ved gruppeportretter bør du bruke f/5.6 eller mindre og få alle til å stå i samme fokusplan. Selv én person et halvt skritt fremfor de andre kan havne utenfor fokus ved store blenderåpninger."
+          "text": "Ved store blenderåpninger som f/1.4-f/2.0 kan dybdeskarpheten være tynnere enn et menneskeansikt. Fokuser presist på det nærmeste øyet, ikke nesen eller øret, ellers vil motivets blikk fremstå uskarpt."
         },
         "1": {
-          "text": "Når du fotograferer landskap, fokuser på den hyperfokale avstanden i stedet for på uendelig. Da får du maksimal skarphet fra nær forgrunn til fjern bakgrunn."
+          "text": "Bruk utsnittspresetene (Ansikt, Portrett, Halvfigur og så videre) for å låse motivets størrelse i bildet mens du eksperimenterer — de holder brennvidde og avstand i samme forhold som et ekte bilde ville hatt, slik at uskarpheten du ser her, matcher det du ville fått i kameraet."
         },
         "2": {
-          "text": "Vil du ha maksimal bakgrunnsuskarphet i et portrett? Øk brennvidden og gå så nær motivet som utsnittet tillater — begge deler trekker dybdeskarpheten dramatisk ned."
+          "text": "Ikke jag maksimal dybdeskarphet ved å blende helt ned — de fleste objektiver er skarpest rundt f/8-f/11, lenge før dette verktøyets diffraksjonsadvarsel dukker opp. Den advarselen har en strengere, senere terskel: den tennes først når diffraksjonsuskarpheten overstiger sensorens uskarphetssirkel, noe som skjer rundt f/22 på fullformat (f/15 på APS-C, f/11 på Micro Four Thirds). Betrakt f/8-f/11 som ditt praktiske mål, og varselmerket som den ytre grensen, ikke målet."
         }
       },
       "tooltips": {
         "focalLength": {
           "term": "Brennvidde",
-          "definition": "Avstanden i millimeter fra objektivets optiske senter til sensoren når fokus er satt til uendelig. Lange brennvidder forstørrer bildet og smaler inn dybdeskarpheten."
+          "definition": "Avstanden i millimeter fra objektivets optiske senter til sensoren ved fokus på uendelig. Lengre brennvidder forstørrer bildet og smalner inn dybdeskarpheten."
         },
         "aperture": {
           "term": "Blender",
-          "definition": "Størrelsen på objektivåpningen, uttrykt som et f-tall (for eksempel f/2.8). Lavere f-tall betyr større åpning, mer lys og grunnere dybdeskarphet."
+          "definition": "Størrelsen på objektivåpningen, uttrykt som et f-tall (for eksempel f/2.8). Lavere f-tall betyr en større åpning, som slipper inn mer lys og gir grunnere dybdeskarphet."
         },
         "subjectDistance": {
           "term": "Motivavstand",
-          "definition": "Avstanden fra sensoren til fokuspunktet. Kortere fokusavstand gir grunnere dybdeskarphet."
+          "definition": "Avstanden fra kameraet til fokuspunktet. Kortere fokusavstand gir grunnere dybdeskarphet."
         },
         "sensor": {
           "term": "Sensorstørrelse",
-          "definition": "De fysiske målene til kamerasensoren. Større sensorer (fullformat, mellomformat) gir grunnere dybdeskarphet ved samme utsnitt enn mindre sensorer (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Retning",
-          "definition": "Veksle mellom liggende (landskap) og stående (portrett) retning. Dette påvirker innramming og beregningen av motivavstand."
-        },
-        "nearFocus": {
-          "term": "Nærgrense",
-          "definition": "Den nærmeste avstanden fra kameraet som fremstår akseptabelt skarp. Alt nærmere enn dette vil se uskarpt ut."
-        },
-        "farFocus": {
-          "term": "Fjerngrense",
-          "definition": "Den fjerneste avstanden fra kameraet som fremstår akseptabelt skarp. Når den når uendelig, er alt bortenfor nærgrensen i fokus."
-        },
-        "totalDoF": {
-          "term": "Total dybdeskarphet",
-          "definition": "Hele avstanden mellom nær- og fjerngrensen — den totale sonen som fremstår skarp i bildet."
+          "definition": "De fysiske målene til kamerasensoren. Større sensorer (fullformat, mellomformat) krever lengre brennvidder for ekvivalent utsnitt, noe som gir grunnere dybdeskarphet enn mindre sensorer (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Hyperfokal avstand",
-          "definition": "Den fokusavstanden som maksimerer dybdeskarpheten. Fokuserer du her, vil alt fra halvparten av den hyperfokale avstanden og ut til uendelig se skarpt ut."
-        },
-        "backgroundBlur": {
-          "term": "Bakgrunnsuskarphet",
-          "definition": "Et mål på hvor uskarp bakgrunnen bak motivet fremstår. Høyere verdier betyr kraftigere uskarphet og sterkere motivisolasjon."
+          "definition": "Fokusavstanden som maksimerer dybdeskarpheten. Fokuserer du på denne avstanden, fremstår alt fra halvparten av den hyperfokale avstanden og ut til uendelig skarpt."
         },
         "coc": {
           "term": "Uskarphetssirkel",
-          "definition": "Den største diameteren på en uskarp flekk på sensoren som fortsatt oppfattes som et punkt av øyet. Bestemmer grensen for akseptabel skarphet ved beregning av dybdeskarphet."
+          "definition": "Den største diameteren på en uskarp flekk på sensoren som fortsatt oppfattes som et punkt av det menneskelige øyet. Bestemmer grensen for akseptabel skarphet i beregninger av dybdeskarphet."
         },
-        "isolationScore": {
-          "term": "Isolasjonsscore",
-          "definition": "En samlet vurdering (0–100) av hvor godt motivet skiller seg fra bakgrunnen, basert på bakgrunnsuskarphet i forhold til motivstørrelsen."
-        },
-        "bokehShape": {
-          "term": "Bokeh-form",
-          "definition": "Formen på uskarpe høylys, bestemt av antall og krumning på blenderbladene. Flere blader gir rundere og mykere bokeh."
+        "backgroundBlur": {
+          "term": "Bakgrunnsuskarphet",
+          "definition": "Et mål på hvor uskarp bakgrunnen fremstår bak motivet. Høyere verdier betyr kraftigere uskarphet og sterkere motivisolasjon."
         },
         "diffractionWarning": {
           "term": "Diffraksjon",
-          "definition": "Ved svært små blenderåpninger bøyer lyset seg rundt kantene av blenderen, og bildet blir mykere. På fullformat blir dette vanligvis merkbart over f/16."
+          "definition": "Ved svært små blenderåpninger bøyer lyset seg rundt kantene av blenderen, og bildet blir mykere. Dette verktøyets diffraksjonsadvarsel vises når den mykheten overstiger sensorens uskarphetssirkel — rundt f/22 på fullformat, f/15 på APS-C, f/11 på Micro Four Thirds."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Du skal ta et portrett og vil ha en nydelig uskarp bakgrunn. Hvilken blender bør du velge?",
-          "hint": "Lavere f-tall betyr større blenderåpning og mer bakgrunnsuskarphet.",
-          "successMessage": "Riktig! En stor blenderåpning som f/1.8 eller f/2.8 gir grunn dybdeskarphet og skiller motivet fra bakgrunnen med fin bokeh.",
-          "failureMessage": "Ikke helt. Små blenderåpninger som f/11 eller f/16 holder mer av scenen i fokus. Vil du ha bakgrunnsuskarphet, velger du en stor blenderåpning (lavt f-tall).",
+          "scenario": "Du fotograferer et portrett og vil at bakgrunnen skal smelte inn i en myk uskarphet bak motivet. Hvilken blender bør du velge?",
+          "hint": "Lavere f-tall betyr en større åpning — og grunnere dybdeskarphet.",
+          "successMessage": "Riktig — f/1.4 åpner blenderen helt opp, noe som gir grunn dybdeskarphet og en jevnt uskarp bakgrunn.",
+          "failureMessage": "Ikke helt. Høyere f-tall som f/11 eller f/16 holder mer av scenen skarp. For maksimal bakgrunnsuskarphet velger du i stedet den bredeste blenderåpningen (det laveste f-tallet).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Du fotograferer en gruppe på 8 personer i to rekker i et bryllup. Hvilken blender hjelper deg å få alle i fokus?",
-          "hint": "Når personer står i litt ulike avstander, trenger du nok dybdeskarphet til å dekke begge rekkene.",
-          "successMessage": "Godt valg! f/5.6 gir nok dybdeskarphet til å holde begge rekkene skarpe, og du beholder brukbare lukkertider innendørs.",
-          "failureMessage": "Den blenderen kan gjøre bakre rekke uskarp, eller være unødvendig liten. For to rekker med folk er f/5.6 et trygt utgangspunkt.",
+          "scenario": "Du fotograferer fire venner som står samlet løst — et par av dem står et halvt skritt foran eller bak de andre. Hvilken blender gir deg en behagelig sikkerhetsmargin til å holde alle skarpe?",
+          "hint": "Du trenger ekstra dybdeskarphet for å dekke personer som ikke er i nøyaktig samme fokusplan, men du trenger ikke blende helt ned.",
+          "successMessage": "Riktig — f/5.6 gir en behagelig buffer av dybdeskarphet for små avstandsvariasjoner, uten å blende ned mer enn nødvendig.",
+          "failureMessage": "f/1.4 er for grunn for personer på litt ulike avstander, og f/16 blender ned mer enn du trenger. f/5.6 er den pålitelige mellomløsningen.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Du fotograferer et landskap med villblomster 2 meter unna og fjell i bakgrunnen. Du bruker et 24 mm-objektiv på fullformat. Hva gir maks skarphet fra forgrunn til bakgrunn?",
-          "hint": "Det finnes en bestemt avstand du kan fokusere på som maksimerer den skarpe sonen.",
-          "successMessage": "Akkurat! Ved å fokusere på hyperfokal avstand på f/11 får du alt fra cirka 1 meter og ut til uendelig akseptabelt skarpt — perfekt for denne scenen.",
-          "failureMessage": "Å fokusere på uendelig ville gjort blomstene i forgrunnen myke. Bruk hyperfokal avstand for å strekke skarpheten fra nær forgrunn til uendelig.",
+          "scenario": "Du står på 85mm, f/1.8, med motivet 3 meter unna, og vil merkbart øke bakgrunnsuskarpheten uten å røre blenderen eller bytte objektiv. Hva er den raskeste måten?",
+          "hint": "Dybdeskarphet — og hvor kraftig bakgrunnen blir uskarp i forhold til motivet — er ekstremt følsom for motivavstand.",
+          "successMessage": "Nettopp — å halvere motivavstanden krymper dybdeskarpheten dramatisk og forsterker bakgrunnsuskarpheten, uten å endre blender eller objektiv.",
+          "failureMessage": "Å flytte deg lenger unna eller øke ISO vil ikke krympe dybdeskarpheten. Å gå nærmere motivet er den raskeste måten å øke bakgrunnsuskarphet på ved fast blender og brennvidde.",
           "options": {
-            "0": {
-              "label": "Fokuser på blomstene (2 m)"
-            },
-            "1": {
-              "label": "Fokuser på fjellene (uendelig)"
-            },
-            "2": {
-              "label": "Fokuser på hyperfokal avstand"
-            },
-            "3": {
-              "label": "Fokuser halvveis mellom blomster og fjell"
-            }
+            "0": { "label": "Gå til 1.5m fra motivet (halve avstanden)" },
+            "1": { "label": "Gå til 6m fra motivet (dobbel avstand)" },
+            "2": { "label": "Gå bakover for å øke arbeidsavstanden din" },
+            "3": { "label": "Øk ISO for en lysere bakgrunn" }
           }
         },
         "3": {
-          "scenario": "Du tar makrobilder av en blomst og ser at bare de fremste kronbladene er skarpe. Resten blir uskarp. Du er på f/5.6. Hva bør du gjøre for å få mer av blomsten i fokus?",
-          "hint": "På korte fokusavstander blir dybdeskarpheten ekstremt tynn. Tenk på blenderen.",
-          "successMessage": "Riktig! Å blende ned til f/11 eller f/16 øker den hårtynne dybdeskarpheten i makro. Pass bare på diffraksjon ved veldig små blenderåpninger.",
-          "failureMessage": "Å åpne blenderen mer ville gjort dybdeskarpheten enda tynnere. I makrofotografi er det å blende ned (høyere f-tall) den vanligste måten å øke dybden på.",
+          "scenario": "Du fotograferer et landskap med et fullformatkamera og vil ha maksimal skarphet over hele bildet. Bør du blende helt ned til f/22 for mest mulig dybdeskarphet?",
+          "hint": "Det er en avveining mellom dybdeskarpheten du får ved å blende ned, og mykheten som forårsakes av diffraksjon ved svært små blenderåpninger.",
+          "successMessage": "Riktig — f/22 gir riktignok mer dybdeskarphet på papiret, men de fleste objektiver har allerede passert sine skarpeste blenderverdier på det tidspunktet. En moderat blender som f/8-f/11 balanserer vanligvis dybdeskarphet og objektivskarphet bedre. Dette verktøyets egen diffraksjonsadvarsel er en separat, senere terskel — den utløses først når diffraksjonsuskarpheten overstiger sensorens uskarphetssirkel, noe som på fullformat ikke skjer før rundt f/22 (f/15 på APS-C, f/11 på Micro Four Thirds). Ikke vent på den advarselen før du åpner opp igjen — det er en hard fysisk grense, ikke en skarphetsanbefaling.",
+          "failureMessage": "Å blende helt ned til f/22 maksimerer riktignok dybdeskarpheten på papiret, men de fleste objektiver har allerede passert sitt skarpeste blenderområde på det tidspunktet. En moderat blender som f/8-f/11 gir vanligvis en bedre balanse mellom dybdeskarphet og reell skarphet. Dette verktøyets diffraksjonsadvarsel er en separat, senere terskel — den vises først når uskarpheten overstiger sensorens uskarphetssirkel, rundt f/22 på fullformat — så ikke bruk fraværet av den som et grønt lys til å fortsette å blende ned.",
           "options": {
-            "0": {
-              "label": "Åpne til f/2.8 for mer lys"
-            },
-            "1": {
-              "label": "Blend ned til f/11"
-            },
-            "2": {
-              "label": "Bytt til et bredere objektiv"
-            },
-            "3": {
-              "label": "Gå lenger fra blomsten"
-            }
+            "0": { "label": "Ja — bruk alltid den minste tilgjengelige blenderen for maksimal dybdeskarphet" },
+            "1": { "label": "Nei — bruk en moderat blender som f/8-f/11 for best mulig samlet skarphet, ikke den minste" },
+            "2": { "label": "Nei — bruk den bredeste tilgjengelige blenderen for skarpest mulig resultat" },
+            "3": { "label": "Det spiller ingen rolle — blenderen påvirker ikke skarpheten" }
           }
         },
         "4": {
-          "scenario": "Du sammenligner to kameraer til portrettarbeid: et fullformat med 85 mm f/1.8, og et Micro Four Thirds med 42,5 mm f/1.8. Begge gir samme utsnitt. Hvilket kamera gir grunnere dybdeskarphet?",
-          "hint": "Tenk på ekvivalent brennvidde og hvordan sensorstørrelsen påvirker dybdeskarphet ved samme f-tall.",
-          "successMessage": "Riktig! Fullformatkameraet gir rundt 2 trinn grunnere dybdeskarphet. MFT-objektivet har samme f-tall, men den kortere faktiske brennvidden (42,5 mm mot 85 mm) gir dypere dybdeskarphet ved samme utsnitt.",
-          "failureMessage": "Begge objektivene er f/1.8, men fullformat bruker en lengre faktisk brennvidde for samme utsnitt, og det gir betydelig grunnere dybdeskarphet.",
+          "scenario": "Du sammenligner to oppsett for samme portrettutsnitt: et fullformatkamera med et 85mm f/1.8-objektiv, og et APS-C-kamera (1,5x crop) med et 56mm f/1.8-objektiv som gir samme synsfelt. Hvilket gir grunnere dybdeskarphet?",
+          "hint": "Sammenlign den faktiske (ikke ekvivalente) brennvidden hvert objektiv bruker for å oppnå samme utsnitt.",
+          "successMessage": "Riktig — selv om begge objektivene er f/1.8, bruker fullformatkameraet en lengre faktisk brennvidde (85mm mot 56mm) for å matche utsnittet, noe som gir merkbart grunnere dybdeskarphet.",
+          "failureMessage": "Begge objektivene har samme f-tall, men fullformatkameraet trenger en lengre faktisk brennvidde for å matche utsnittet. Det er den lengre brennvidden som gir grunnere dybdeskarphet — ikke f-tallet alene.",
           "options": {
-            "0": {
-              "label": "Fullformat med 85 mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Four Thirds med 42,5 mm f/1.8"
-            },
-            "2": {
-              "label": "Begge gir identisk dybdeskarphet"
-            }
+            "0": { "label": "Fullformatoppsettet med 85mm f/1.8" },
+            "1": { "label": "APS-C-oppsettet med 56mm f/1.8" },
+            "2": { "label": "Begge gir identisk dybdeskarphet" }
           }
         }
       }

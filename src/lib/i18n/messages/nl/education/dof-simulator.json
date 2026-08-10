@@ -1,48 +1,48 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Scherptediepte is het afstandsbereik in je foto dat acceptabel scherp oogt. Een kleine scherptediepte maakt de achtergrond achter je onderwerp wazig, terwijl een grote scherptediepte alles van voorgrond tot horizon scherp houdt. Grip krijgen op scherptediepte is een van de belangrijkste creatieve middelen in de fotografie.",
+      "beginner": "Scherptediepte is de zone in je foto — van dichtbij tot ver weg — die er acceptabel scherp uitziet. Drie instellingen bepalen die zone: diafragma (grotere diafragma's vervagen de achtergrond meer), brandpuntsafstand (langere lenzen versmallen de zone) en afstand tot het onderwerp (dichterbij gaan staan verkleint hem verder). Pas hier een van deze aan en bekijk hoe de scherptedieptemeter en de weergave in realtime samen bijwerken.",
       "deeper": {
         "0": {
-          "heading": "Hoe scherptediepte werkt",
-          "text": "Scherptediepte wordt bepaald door de verwarringscirkel (CoC) — de grootste onscherptevlek op de sensor die het menselijk oog nog als scherp ziet. Drie fysieke factoren bepalen de scherptediepte: brandpuntsafstand, diafragma en afstand tot het onderwerp. Een groter diafragma (lager f-getal) geeft minder scherptediepte, omdat de lens licht onder steilere hoeken bundelt waardoor onscherpe punten uitsmeren tot grotere cirkels op de sensor."
+          "heading": "Diafragmageometrie en de verwarringscirkel",
+          "text": "Een lens bundelt licht uit precies één afstand als een perfect punt op de sensor; al het andere komt binnen als een klein schijfje, de verwarringscirkel (CoC) genoemd. Een punt oogt nog scherp zolang dat schijfje kleiner blijft dan een drempel die door het sensorformaat wordt bepaald — ongeveer 0.03mm op fullframe. Het diafragma openen (het f-getal verlagen) opent een bredere lichtkegel tussen de lens en het scherpstelpunt, waardoor punten buiten dat vlak veel sneller uitwaaieren tot veel grotere schijfjes. Daarom vervaagt een groot diafragma zoals f/1.4 de achtergrond zoveel sterker dan f/11 — het is de geometrie van de lichtkegel die verandert, niet alleen de hoeveelheid licht."
         },
         "1": {
-          "heading": "Brandpuntsafstand en afstand",
-          "text": "Langere brandpuntsafstanden vergroten het beeld en daarmee ook de onscherptecirkels, wat de scherptediepte verkleint. Dichter bij je onderwerp gaan staan verkleint de scherptediepte om dezelfde reden — het relatieve verschil in afstand tussen onderwerp en achtergrond wordt groter. De hyperfocale afstand is de scherpstelafstand waarbij de scherptediepte loopt van de helft van die afstand tot oneindig, waardoor de scherpte over de hele scène maximaal is."
+          "heading": "Brandpuntsafstand en afstand bepalen het effect",
+          "text": "Het effect van de brandpuntsafstand op de scherptediepte hangt volledig af van wat je constant houdt. Bij een vaste afstand tot het onderwerp verkleint de scherptediepte sterk met de brandpuntsafstand — ruwweg met het kwadraat daarvan: op 3m van een onderwerp bij f/2.8 geeft een 35mm-lens ongeveer 1.3m scherptediepte, terwijl een 200mm-lens ongeveer 35mm geeft. Maar die vergelijking verandert ook je kadrering, omdat je niet opnieuw hebt gekaderd. Bij een vaste kadrering — de vergrendelde-beeldhoek-modus van deze tool, waarbij je achteruitloopt terwijl je inzoomt om het onderwerp even groot te houden — verandert de scherptediepte nauwelijks: van 35mm naar 200mm gaan bij f/2.8 met vergrendelde kadrering verandert de totale scherptediepte met ruim minder dan 1%. Wat in plaats daarvan drastisch verandert, is de achtergrond: een langere lens vergroot en comprimeert alles achter je onderwerp, waardoor onscherpe lichtvlekjes groter worden en de achtergrond sterker loskomt — ook al blijft de scherpe laag rond je onderwerp ongeveer even dik. Zet de vergrendelde beeldhoek aan en verander de brandpuntsafstand om dit te zien gebeuren — de scherptedieptewaarde blijft stabiel terwijl het cijfer voor achtergrondonscherpte oploopt. De afstand tot het onderwerp blijft in beide gevallen de betrouwbaarste hendel: dichterbij gaan staan bij een vaste brandpuntsafstand en diafragma verkleint de scherptediepte sterk, waardoor de nabije en verre grens dichter bij elkaar komen rond een kortere afstand."
         },
         "2": {
-          "heading": "Bokeh en diffractie",
-          "text": "Bokeh slaat op de kwaliteit van de onscherpe gebieden. Het aantal en de vorm van de diafragmalamellen bepalen het karakter van de bokeh — rondere lamellen geven zachtere, ronder ogende lichtvlekjes. Bij zeer kleine diafragma's (f/16 en kleiner) waaiert het licht langs de randen van de lensopening uit door diffractie, waardoor het hele beeld zachter wordt, zelfs binnen de scherptediepte. Er is altijd een sweet spot — meestal rond f/5.6 tot f/8 op fullframe — waar scherpte en scherptediepte het beste in balans zijn."
+          "heading": "Sensorformaat en equivalente kadrering",
+          "text": "Om hetzelfde onderwerp beeldvullend vast te leggen, heeft een grotere sensor een evenredig langere brandpuntsafstand nodig dan een kleinere — een fullframe-camera heeft ongeveer 1.5x de brandpuntsafstand van een APS-C-camera nodig, en ongeveer 2x die van Micro Four Thirds, voor dezelfde beeldhoek. Omdat de scherptediepte afneemt met de brandpuntsafstand, is die langere 'equivalente' brandpuntsafstand precies wat fullframe-camera's hun reputatie van kleinere scherptediepte geeft — het f-getal op de lens vertelt niet het hele verhaal. Twee lenzen met hetzelfde f-getal op sensoren van verschillend formaat, identiek gekaderd, geven een merkbaar verschillende scherptediepte."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Diafragma",
-          "description": "Grotere diafragma's (f/1.4 tot f/2.8) geven een kleine scherptediepte met romige bokeh. Kleinere diafragma's (f/8 tot f/16) maken de hele scène scherper."
+          "description": "Grotere diafragma's (lage f-getallen zoals f/1.4-f/2.8) openen een steilere lichtkegel en verkleinen de scherptediepte. Kleinere diafragma's (f/8-f/16) vergroten hem."
         },
         "1": {
           "label": "Brandpuntsafstand",
-          "description": "Langere lenzen comprimeren het perspectief en verkleinen de scherptediepte bij hetzelfde diafragma. Een 200mm bij f/4 heeft veel minder scherptediepte dan een 35mm bij f/4."
+          "description": "Bij een vaste afstand tot het onderwerp verkleint de scherptediepte ruwweg met het kwadraat van de brandpuntsafstand. Bij een vaste kadrering (inzoomen en achteruitlopen om dezelfde foto te behouden) verandert de scherptediepte nauwelijks — het is de achtergrond die verandert, en steeds sterker vergroot en waziger wordt naarmate de brandpuntsafstand toeneemt."
         },
         "2": {
           "label": "Afstand tot onderwerp",
-          "description": "Hoe dichterbij je scherpstelt, hoe kleiner de scherptediepte. Macrofotografen werken vaak met een scherptediepte van maar een paar millimeter."
+          "description": "Dichter bij je onderwerp gaan staan verkleint de scherptediepte sneller dan bijna elke andere aanpassing, en dat verklaart waarom macrofotografie zulke flinterdunne scherpe zones heeft."
         },
         "3": {
           "label": "Sensorformaat",
-          "description": "Grotere sensoren vragen om langere brandpuntsafstanden voor dezelfde kadrering, wat de scherptediepte indirect verkleint. Een fullframe-camera levert bij dezelfde kadrering een kleinere scherptediepte op dan een Micro Four Thirds-camera."
+          "description": "Grotere sensoren hebben langere brandpuntsafstanden nodig om dezelfde kadrering te bereiken als kleinere sensoren, wat indirect een kleinere scherptediepte oplevert bij equivalente opnames."
         }
       },
       "tips": {
         "0": {
-          "text": "Gebruik bij groepsportretten f/5.6 of kleiner en zet iedereen in hetzelfde scherpstelvlak. Zelfs iemand die een halve stap naar voren staat, kan bij grote diafragma's al onscherp worden."
+          "text": "Bij grote diafragma's zoals f/1.4-f/2.0 kan de scherptediepte dunner zijn dan een menselijk gezicht. Stel precies scherp op het dichtstbijzijnde oog, niet op de neus of het oor, anders oogt de blik van je onderwerp zacht."
         },
         "1": {
-          "text": "Stel bij landschapsfotografie scherp op de hyperfocale afstand in plaats van op oneindig. Zo houd je alles scherp van de dichte voorgrond tot de verre achtergrond."
+          "text": "Gebruik de kadreringsvoorinstellingen (Gezicht, Portret, Medium shot, enzovoort) om de grootte van je onderwerp in beeld vast te zetten terwijl je experimenteert — ze houden brandpuntsafstand en afstand in dezelfde verhouding als bij een echte opname, zodat de onscherpte die je hier ziet overeenkomt met wat je met de camera zou krijgen."
         },
         "2": {
-          "text": "Wil je een portret met maximale achtergrondonscherpte, kies dan een langere brandpuntsafstand en ga zo dicht bij je onderwerp staan als de kadrering toelaat. Die twee aanpassingen stapelen op en verkleinen de scherptediepte flink."
+          "text": "Jaag niet op maximale scherptediepte door helemaal af te diafragmeren — de meeste lenzen zijn het scherpst rond f/8-f/11, ruim voordat de diffractiewaarschuwing van deze tool verschijnt. Die waarschuwing is een strengere, latere drempel: hij licht pas op zodra de diffractie-onscherpte de verwarringscirkel van de sensor overschrijdt, wat rond f/22 gebeurt op fullframe (f/15 op APS-C, f/11 op Micro Four Thirds). Beschouw f/8-f/11 als je praktische doel, en de waarschuwing als de uiterste grens, niet als het doel."
         }
       },
       "tooltips": {
@@ -52,153 +52,91 @@
         },
         "aperture": {
           "term": "Diafragma",
-          "definition": "De grootte van de lensopening, uitgedrukt als f-getal (bijv. f/2.8). Een lager f-getal betekent een grotere opening, waardoor er meer licht binnenkomt en de scherptediepte kleiner wordt."
+          "definition": "De grootte van de lensopening, uitgedrukt als f-getal (bijv. f/2.8). Lagere f-getallen betekenen een grotere opening, waardoor er meer licht binnenkomt en de scherptediepte kleiner wordt."
         },
         "subjectDistance": {
           "term": "Afstand tot onderwerp",
-          "definition": "De afstand van de camerasensor tot het scherpstelpunt. Kortere scherpstelafstanden geven een kleinere scherptediepte."
+          "definition": "De afstand van de camera tot het scherpstelpunt. Kortere scherpstelafstanden geven een kleinere scherptediepte."
         },
         "sensor": {
           "term": "Sensorformaat",
-          "definition": "De fysieke afmetingen van de camerasensor. Grotere sensoren (fullframe, middenformaat) leveren bij dezelfde kadrering een kleinere scherptediepte op dan kleinere sensoren (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Oriëntatie",
-          "definition": "Wissel tussen liggend (horizontaal) en staand (verticaal) fotograferen. Dit bepaalt de kadreringsreferentie voor de berekening van de onderwerpsafstand."
-        },
-        "nearFocus": {
-          "term": "Nabije scherptegrens",
-          "definition": "De dichtstbijzijnde afstand tot de camera die nog acceptabel scherp oogt. Alles dichterbij wordt zichtbaar onscherp."
-        },
-        "farFocus": {
-          "term": "Verre scherptegrens",
-          "definition": "De verste afstand tot de camera die nog acceptabel scherp oogt. Bereikt deze oneindig, dan is alles voorbij de nabije grens scherp."
-        },
-        "totalDoF": {
-          "term": "Totale scherptediepte",
-          "definition": "De volledige afstand tussen de nabije en verre scherptegrens — de hele zone in beeld die scherp oogt."
+          "definition": "De fysieke afmetingen van de camerasensor. Grotere sensoren (fullframe, middenformaat) vragen om langere brandpuntsafstanden voor een equivalente kadrering, wat een kleinere scherptediepte oplevert dan kleinere sensoren (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Hyperfocale afstand",
           "definition": "De scherpstelafstand waarbij de scherptediepte maximaal is. Stel je hierop scherp, dan oogt alles vanaf de helft van de hyperfocale afstand tot oneindig scherp."
         },
-        "backgroundBlur": {
-          "term": "Achtergrondonscherpte",
-          "definition": "Een maat voor hoe onscherp de achtergrond achter je onderwerp oogt. Hogere waarden betekenen meer onscherpte en sterkere isolatie van het onderwerp."
-        },
         "coc": {
           "term": "Verwarringscirkel",
-          "definition": "De maximale diameter van een onscherptevlek op de sensor die het menselijk oog nog als een punt waarneemt. Deze waarde bepaalt de grens van acceptabele scherpte bij scherptediepteberekeningen."
+          "definition": "De maximale diameter van een onscherptevlek op de sensor die het menselijk oog nog als een punt waarneemt. Bepaalt de grens van acceptabele scherpte bij scherptediepteberekeningen."
         },
-        "isolationScore": {
-          "term": "Isolatiescore",
-          "definition": "Een samengestelde score (0–100) die aangeeft hoe goed het onderwerp van de achtergrond wordt gescheiden, op basis van de hoeveelheid achtergrondonscherpte ten opzichte van de grootte van het onderwerp."
-        },
-        "bokehShape": {
-          "term": "Bokehvorm",
-          "definition": "De vorm van onscherpe lichtvlekjes, bepaald door het aantal en de kromming van de diafragmalamellen. Meer lamellen geven rondere, zachtere bokeh."
+        "backgroundBlur": {
+          "term": "Achtergrondonscherpte",
+          "definition": "Een maat voor hoe onscherp de achtergrond achter je onderwerp oogt. Hogere waarden betekenen sterkere onscherpte en een sterkere isolatie van het onderwerp."
         },
         "diffractionWarning": {
           "term": "Diffractie",
-          "definition": "Bij zeer kleine diafragma's buigt licht om de randen van de lensopening, waardoor het beeld zachter wordt. Op fullframe-sensoren is dit meestal zichtbaar vanaf f/16."
+          "definition": "Bij zeer kleine diafragma's buigt licht om de randen van de diafragmaopening, waardoor het beeld zachter wordt. De diffractiewaarschuwing van deze tool verschijnt zodra die verzachting groter wordt dan de verwarringscirkel van de sensor — rond f/22 op fullframe, f/15 op APS-C, f/11 op Micro Four Thirds."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Je maakt een portret en wilt een mooi onscherpe achtergrond. Welk diafragma kies je?",
-          "hint": "Een lager f-getal betekent een grotere lensopening en meer achtergrondonscherpte.",
-          "successMessage": "Klopt! Een groot diafragma zoals f/1.8 of f/2.8 geeft een kleine scherptediepte, waardoor je onderwerp loskomt van de achtergrond met mooie bokeh.",
-          "failureMessage": "Niet helemaal. Kleine diafragma's zoals f/11 of f/16 houden juist meer van de scène scherp. Voor een onscherpe achtergrond kies je een groot diafragma (laag f-getal).",
+          "scenario": "Je maakt een portret en wilt dat de achtergrond wegsmelt in een zachte vervaging achter je onderwerp. Welk diafragma kies je?",
+          "hint": "Lagere f-getallen betekenen een grotere opening — en een kleinere scherptediepte.",
+          "successMessage": "Klopt — f/1.4 opent het diafragma ver, wat een kleine scherptediepte en een zacht vervaagde achtergrond oplevert.",
+          "failureMessage": "Niet helemaal. Hogere f-getallen zoals f/11 of f/16 houden meer van de scène scherp. Kies voor maximale achtergrondonscherpte juist het grootste diafragma (het laagste f-getal).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Je fotografeert tijdens een bruiloft een groep van 8 mensen in twee rijen. Welk diafragma helpt om iedereen scherp te krijgen?",
-          "hint": "Met mensen op iets andere afstanden heb je genoeg scherptediepte nodig om beide rijen te dekken.",
-          "successMessage": "Goede keuze! Met f/5.6 heb je genoeg scherptediepte om beide rijen scherp te houden, en kun je binnen toch nog fatsoenlijke sluitertijden gebruiken.",
-          "failureMessage": "Dat diafragma kan de achterste rij onscherp laten, of is onnodig klein. Voor twee rijen mensen is f/5.6 een betrouwbaar startpunt.",
+          "scenario": "Je fotografeert vier vrienden in een losse groep — een paar van hen staan een halve stap voor of achter de anderen. Welk diafragma geeft je een comfortabele veiligheidsmarge om iedereen scherp te houden?",
+          "hint": "Je hebt extra scherptediepte nodig om mensen te dekken die niet exact in hetzelfde scherpstelvlak staan, maar je hoeft niet helemaal af te diafragmeren.",
+          "successMessage": "Klopt — f/5.6 geeft een comfortabele marge aan scherptediepte voor kleine afstandsverschillen, zonder het diafragma verder te sluiten dan nodig.",
+          "failureMessage": "f/1.4 is te klein voor mensen op iets verschillende afstanden, en f/16 sluit verder dan nodig. f/5.6 is het betrouwbare middenweg.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Je fotografeert een landschap met wilde bloemen op 2 meter afstand en bergen op de achtergrond. Je gebruikt een 24mm-lens op een fullframe-camera. Welke techniek geeft de meeste scherpte van voor tot achter?",
-          "hint": "Er bestaat een specifieke scherpstelafstand die de scherpe zone uitbreidt van de voorgrond tot oneindig.",
-          "successMessage": "Precies! Door bij f/11 op de hyperfocale afstand scherp te stellen, is alles vanaf ongeveer 1 meter tot oneindig acceptabel scherp — perfect voor deze scène.",
-          "failureMessage": "Scherpstellen op oneindig zou de bloemen op de voorgrond zacht laten. Gebruik de hyperfocale afstand om de scherpte te laten lopen van de dichte voorgrond tot oneindig.",
+          "scenario": "Je staat op 85mm, f/1.8, met je onderwerp op 3 meter afstand, en je wilt de achtergrondonscherpte merkbaar vergroten zonder het diafragma aan te passen of van lens te wisselen. Wat is de snelste manier?",
+          "hint": "Scherptediepte — en hoe sterk de achtergrond vervaagt ten opzichte van je onderwerp — is extreem gevoelig voor de afstand tot het onderwerp.",
+          "successMessage": "Precies — de afstand tot het onderwerp halveren verkleint de scherptediepte drastisch en vergroot de achtergrondonscherpte, zonder je diafragma of lens te veranderen.",
+          "failureMessage": "Verder weg gaan staan of de ISO verhogen verkleint de scherptediepte niet. Dichter bij je onderwerp gaan staan is de snelste manier om de achtergrondonscherpte te vergroten bij een vast diafragma en brandpuntsafstand.",
           "options": {
-            "0": {
-              "label": "Scherpstellen op de bloemen (2m)"
-            },
-            "1": {
-              "label": "Scherpstellen op de bergen (oneindig)"
-            },
-            "2": {
-              "label": "Scherpstellen op de hyperfocale afstand"
-            },
-            "3": {
-              "label": "Scherpstellen halverwege bloemen en bergen"
-            }
+            "0": { "label": "Ga naar 1.5m van je onderwerp staan (halve afstand)" },
+            "1": { "label": "Ga naar 6m van je onderwerp staan (dubbele afstand)" },
+            "2": { "label": "Loop achteruit om je werkafstand te vergroten" },
+            "3": { "label": "Verhoog de ISO voor een helderdere achtergrond" }
           }
         },
         "3": {
-          "scenario": "Je maakt een macro-opname van een bloem en merkt dat alleen de voorste bloemblaadjes scherp zijn. De rest valt weg in onscherpte. Je staat op f/5.6. Wat doe je om meer van de bloem scherp te krijgen?",
-          "hint": "Bij korte scherpstelafstanden wordt de scherptediepte flinterdun. Denk na over je diafragma.",
-          "successMessage": "Klopt! Door af te diafragmeren naar f/11 of f/16 vergroot je de flinterdunne scherptediepte bij macrowerk. Let wel op verzachting door diffractie bij zeer kleine diafragma's.",
-          "failureMessage": "Het diafragma verder openen zou de scherptediepte juist nog dunner maken. Bij macrofotografie is afdiafragmeren (hoger f-getal) de belangrijkste manier om meer diepte te krijgen.",
+          "scenario": "Je fotografeert een landschap met een fullframe-camera en wilt maximale scherpte over het hele beeld. Moet je helemaal afdiafragmeren naar f/22 voor de meeste scherptediepte?",
+          "hint": "Er is een afweging tussen de scherptediepte die je wint door af te diafragmeren en de verzachting die diffractie veroorzaakt bij zeer kleine diafragma's.",
+          "successMessage": "Klopt — f/22 voegt op papier inderdaad scherptediepte toe, maar de meeste lenzen zijn dan al voorbij hun scherpste diafragma's. Een gematigd diafragma zoals f/8-f/11 balanceert scherptediepte en lensscherpte meestal beter. De eigen diffractiewaarschuwing van deze tool is een aparte, latere drempel — die verschijnt pas zodra de diffractie-onscherpte de verwarringscirkel van de sensor overschrijdt, wat op fullframe pas rond f/22 gebeurt (f/15 op APS-C, f/11 op Micro Four Thirds). Wacht niet op die waarschuwing voordat je terugschakelt — het is een harde fysieke grens, geen scherpte-aanbeveling.",
+          "failureMessage": "Helemaal afdiafragmeren naar f/22 maximaliseert op papier inderdaad de scherptediepte, maar de meeste lenzen zijn dan al voorbij hun scherpste diafragmabereik. Een gematigd diafragma zoals f/8-f/11 geeft meestal een betere balans tussen scherptediepte en scherpte in de praktijk. De diffractiewaarschuwing van deze tool is een aparte, latere drempel — die verschijnt pas zodra de onscherpte de verwarringscirkel van de sensor overschrijdt, rond f/22 op fullframe — dus zie het ontbreken ervan niet als groen licht om door te blijven afdiafragmeren.",
           "options": {
-            "0": {
-              "label": "Opentrekken naar f/2.8 voor meer licht"
-            },
-            "1": {
-              "label": "Afdiafragmeren naar f/11"
-            },
-            "2": {
-              "label": "Overstappen op een groothoeklens"
-            },
-            "3": {
-              "label": "Verder bij de bloem vandaan gaan"
-            }
+            "0": { "label": "Ja — gebruik altijd het kleinste beschikbare diafragma voor maximale scherptediepte" },
+            "1": { "label": "Nee — gebruik een gematigd diafragma zoals f/8-f/11 voor de beste algehele scherpte, niet het kleinste" },
+            "2": { "label": "Nee — gebruik het grootste beschikbare diafragma voor de scherpste resultaten" },
+            "3": { "label": "Het maakt niet uit — diafragma heeft geen effect op scherpte" }
           }
         },
         "4": {
-          "scenario": "Je vergelijkt twee camera's voor portretwerk: een fullframe-camera met een 85mm f/1.8 en een Micro Four Thirds-camera met een 42,5mm f/1.8. Beide leveren dezelfde kadrering op. Welke camera geeft een kleinere scherptediepte?",
-          "hint": "Denk aan equivalente brandpuntsafstanden en hoe sensorformaat bij hetzelfde f-getal de scherptediepte beïnvloedt.",
-          "successMessage": "Klopt! De fullframe-camera levert ongeveer 2 stops minder scherptediepte op. De MFT-lens heeft hetzelfde f-getal, maar door de kortere werkelijke brandpuntsafstand (42,5mm vs 85mm) blijft de scherptediepte bij dezelfde kadrering groter.",
-          "failureMessage": "Beide lenzen zijn f/1.8, maar de fullframe-camera gebruikt voor dezelfde kadrering een langere werkelijke brandpuntsafstand, wat een merkbaar kleinere scherptediepte oplevert.",
+          "scenario": "Je vergelijkt twee opstellingen voor dezelfde portretkadrering: een fullframe-camera met een 85mm f/1.8-lens, en een APS-C-camera (1.5x crop) met een 56mm f/1.8-lens die dezelfde beeldhoek oplevert. Welke geeft een kleinere scherptediepte?",
+          "hint": "Vergelijk de werkelijke (niet equivalente) brandpuntsafstand die elke lens gebruikt om dezelfde kadrering te bereiken.",
+          "successMessage": "Klopt — hoewel beide lenzen f/1.8 zijn, gebruikt de fullframe-camera een langere werkelijke brandpuntsafstand (85mm tegenover 56mm) om de kadrering te evenaren, wat een merkbaar kleinere scherptediepte oplevert.",
+          "failureMessage": "Beide lenzen hebben hetzelfde f-getal, maar de fullframe-camera heeft een langere werkelijke brandpuntsafstand nodig om de kadrering te evenaren. Die langere brandpuntsafstand levert de kleinere scherptediepte op — niet het f-getal alleen.",
           "options": {
-            "0": {
-              "label": "Fullframe met 85mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Four Thirds met 42,5mm f/1.8"
-            },
-            "2": {
-              "label": "Beide leveren dezelfde scherptediepte"
-            }
+            "0": { "label": "De fullframe-opstelling met 85mm f/1.8" },
+            "1": { "label": "De APS-C-opstelling met 56mm f/1.8" },
+            "2": { "label": "Beide leveren identieke scherptediepte op" }
           }
         }
       }

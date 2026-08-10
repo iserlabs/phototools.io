@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useState, useCallback, useEffect, useRef, type RefObject } from 'react'
 import { toast } from 'sonner'
 import { useTranslations } from 'next-intl'
 import * as Dialog from '@radix-ui/react-dialog'
@@ -11,9 +11,19 @@ interface ShareModalProps {
   toolName: string
   toolSlug: string
   onClose: () => void
+  /**
+   * Element to refocus once the dialog closes. This modal is conditionally
+   * rendered by its parent (unmounted on close) rather than driven by
+   * Radix's own `open` state, so Radix's default close-focus restoration has
+   * no trigger element to fall back to and drops focus to <body>. Passing
+   * the trigger through explicitly and restoring it via `onCloseAutoFocus`
+   * (rather than a plain effect) ensures it wins the race against Radix's
+   * own focus handling instead of being overwritten by it.
+   */
+  triggerRef?: RefObject<HTMLElement | null>
 }
 
-export function ShareModal({ toolName, toolSlug, onClose }: ShareModalProps) {
+export function ShareModal({ toolName, toolSlug, onClose, triggerRef }: ShareModalProps) {
   const t = useTranslations('common.share')
   const tToast = useTranslations('common.toast')
   const [copied, setCopied] = useState<string | null>(null)
@@ -56,7 +66,16 @@ export function ShareModal({ toolName, toolSlug, onClose }: ShareModalProps) {
     <Dialog.Root open onOpenChange={(open) => { if (!open) onClose() }}>
       <Dialog.Portal>
         <Dialog.Overlay className={styles.overlay} />
-        <Dialog.Content className={styles.modal} aria-describedby={undefined}>
+        <Dialog.Content
+          className={styles.modal}
+          aria-describedby={undefined}
+          onCloseAutoFocus={(e) => {
+            if (triggerRef?.current) {
+              e.preventDefault()
+              triggerRef.current.focus()
+            }
+          }}
+        >
           <div className={styles.header}>
             <Dialog.Title className={styles.title}>{t('title')}</Dialog.Title>
             <Dialog.Close className={styles.closeBtn} aria-label={t('closeModal')}>&times;</Dialog.Close>

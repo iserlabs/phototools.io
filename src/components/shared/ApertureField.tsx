@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
 import { useTranslations } from 'next-intl'
 import { APERTURES_THIRD_STOP, APERTURES_FULL_STOP } from '@/lib/data/camera'
+import { snapToThirdStop, formatAperture } from '@/lib/math/aperture'
 import controlStyles from './ControlPanel.module.css'
 import styles from './ApertureField.module.css'
 
@@ -21,19 +22,6 @@ function apertureToSlider(f: number): number {
 
 function sliderToAperture(pos: number): number {
   return Math.exp(LOG_MIN + (pos / SLIDER_STEPS) * (LOG_MAX - LOG_MIN))
-}
-
-function snapToThirdStop(raw: number): number {
-  let best = APERTURES_THIRD_STOP[0]
-  let bestDist = Infinity
-  for (const ap of APERTURES_THIRD_STOP) {
-    const dist = Math.abs(Math.log(ap) - Math.log(raw))
-    if (dist < bestDist) {
-      bestDist = dist
-      best = ap
-    }
-  }
-  return best
 }
 
 interface ApertureFieldProps {
@@ -110,10 +98,6 @@ export function ApertureField({
     }
 
     onChange(snapToThirdStop(raw))
-  }
-
-  function formatAperture(f: number): string {
-    return f % 1 === 0 ? `f/${f}` : `f/${f.toFixed(1)}`
   }
 
   return (

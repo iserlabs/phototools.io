@@ -1,166 +1,116 @@
 'use client'
 
-import { useDofState } from './useDofState'
-import { DofSettingsPanel } from './DofSettingsPanel'
-import { DofResultsPanel } from './DofResultsPanel'
-import { FramingPanel } from './FramingPanel'
-import { BokehPanel } from './BokehPanel'
-import { DofToolbar } from './DofToolbar'
-import { DofViewport } from './DofViewport'
-import { DofDiagramBar } from './DofDiagramBar'
-import { BlurProfileGraph } from './BlurProfileGraph'
-import { ABComparison } from './ABComparison'
-import { SubjectFigure } from './SubjectFigure'
-import { FocusTarget } from './FocusTarget'
+import { useCallback, useEffect, useRef } from 'react'
+import { useDofState } from './state/useDofState'
+import { getSubjectById } from '@/lib/data/dofSimulator/models'
+import { getBackgroundById } from '@/lib/data/dofSimulator/backgrounds'
+import type { FramingPresetDef } from '@/lib/data/dofSimulator/types'
 import { LearnPanel } from '@/components/shared/LearnPanel'
 import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
-import { ToolActions } from '@/components/shared/ToolActions'
-import { ModeToggle } from '@/components/shared/ModeToggle'
-import s from './DofSimulator.module.css'
+import { Sidebar } from './Sidebar'
+import { CenterStage } from './CenterStage'
+import styles from './DofSimulator.module.css'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 
+/**
+ * Composition root: wires the `useDofState()` facade into the three-column
+ * layout (sidebar of Connected panels, center viewport + ruler, right
+ * LearnPanel) — see CenterStage.tsx and Sidebar.tsx for the two halves this
+ * splits into to stay under the 200-line file limit. FL/aperture/distance/
+ * preset edits route through `useToolSession().trackParam`, matching the
+ * old build's analytics coverage.
+ */
 export function DofSimulator() {
+  const dofState = useDofState()
   const { trackParam } = useToolSession()
-  const {
-    focalLength, aperture, subjectDistance, sensorWidth, sensorHeight, coc,
-    scene, sceneKey, setSceneKey, subjectMode, setSubjectMode,
-    abMode, setAbMode, bokehShape, setBokehShape,
-    useDiffraction, setUseDiffraction,
-    bFocalLength, setBAperture, bAperture, setBFocalLength,
-    bSubjectDistance, setBSubjectDistance, bSensorId, setBSensorId, bSensorWidth,
-    activeSet, setActiveSet, dividerPos, setDividerPos,
-    activeFramingPreset, setActiveFramingPreset,
-    framingLockMode, setFramingLockMode,
-    orientation, setOrientation,
-    dofResult, backgroundBlurPct, setSubjectDistance,
-    settingsProps, resultsProps,
-    abSetOptions, isInFocus,
-  } = useDofState()
+  const { optics, appearance } = dofState
+
+  const subject = getSubjectById(appearance.subjectId)
+  const background = getBackgroundById(appearance.backgroundId)
+
+  const handleFocalLengthChange = useCallback(
+    (v: number) => {
+      trackParam({ param_name: 'focal_length', param_value: String(v), input_type: 'slider' })
+      dofState.changeFocalLength(v)
+    },
+    [dofState, trackParam],
+  )
+
+  const handleDistanceChange = useCallback(
+    (v: number) => {
+      trackParam({ param_name: 'distance', param_value: String(v), input_type: 'slider' })
+      dofState.changeDistance(v)
+    },
+    [dofState, trackParam],
+  )
+
+  const handleFocalLengthChangeB = useCallback(
+    (v: number) => {
+      trackParam({ param_name: 'focal_length_b', param_value: String(v), input_type: 'slider' })
+      dofState.changeFocalLengthB(v)
+    },
+    [dofState, trackParam],
+  )
+
+  const handleDistanceChangeB = useCallback(
+    (v: number) => {
+      trackParam({ param_name: 'distance_b', param_value: String(v), input_type: 'slider' })
+      dofState.changeDistanceB(v)
+    },
+    [dofState, trackParam],
+  )
+
+  const handlePreset = useCallback(
+    (key: FramingPresetDef['key']) => {
+      trackParam({ param_name: 'framing_preset', param_value: key, input_type: 'button' })
+      dofState.applyFramingPreset(key)
+    },
+    [dofState, trackParam],
+  )
+
+  // Aperture has no facade-level change handler to route through (LensPanel
+  // calls optics.setAperture directly — no lock-FOV concern applies to it),
+  // so it's tracked here by watching the resulting state instead, mirroring
+  // the "FL/aperture/distance/preset" tracking coverage the old build had.
+  const prevApertureRef = useRef(optics.aperture)
+  useEffect(() => {
+    if (prevApertureRef.current === optics.aperture) return
+    prevApertureRef.current = optics.aperture
+    trackParam({ param_name: 'aperture', param_value: String(optics.aperture), input_type: 'slider' })
+  }, [optics.aperture, trackParam])
+
+  const sidebarProps = {
+    dofState, background,
+    onFocalLengthChange: handleFocalLengthChange,
+    onDistanceChange: handleDistanceChange,
+    onFocalLengthChangeB: handleFocalLengthChangeB,
+    onDistanceChangeB: handleDistanceChangeB,
+    onPreset: handlePreset,
+    onReset: dofState.reset,
+  }
 
   return (
-    <div className={s.app}>
+    <div className={styles.app}>
       <ToolHeading slug="dof-simulator" />
-      <div className={s.appBody}>
-        {/* ── Sidebar ── */}
-        <div className={s.sidebar}>
-          <ToolActions toolSlug="dof-simulator" />
+      <div className={styles.appBody}>
+        <aside className={styles.sidebar}>
+          <Sidebar {...sidebarProps} />
+        </aside>
 
-          {abMode !== 'off' && (
-            <ModeToggle options={abSetOptions} value={activeSet} onChange={setActiveSet} />
-          )}
+        <CenterStage dofState={dofState} subject={subject} background={background} onDistanceChange={handleDistanceChange} />
 
-          {activeSet === 'a' || abMode === 'off' ? (
-            <DofSettingsPanel {...settingsProps}
-              onFocalLengthChange={(v) => { trackParam({ param_name: 'focal_length', param_value: String(v), input_type: 'slider' }); settingsProps.onFocalLengthChange(v) }}
-              onApertureChange={(v) => { trackParam({ param_name: 'aperture', param_value: String(v), input_type: 'select' }); settingsProps.onApertureChange(v) }}
-            />
-          ) : (
-            <DofSettingsPanel
-              focalLength={bFocalLength} aperture={bAperture}
-              subjectDistance={bSubjectDistance} sensorId={bSensorId}
-              orientation={orientation} sweetSpot={null}
-              onFocalLengthChange={setBFocalLength} onApertureChange={setBAperture}
-              onDistanceChange={setBSubjectDistance} onSensorChange={setBSensorId}
-              onOrientationChange={setOrientation}
-            />
-          )}
-
-          <FramingPanel
-            activePreset={activeFramingPreset}
-            lockMode={framingLockMode}
-            onPresetClick={setActiveFramingPreset}
-            onLockModeChange={setFramingLockMode}
-          />
-
-          <BokehPanel
-            bokehShape={bokehShape}
-            useDiffraction={useDiffraction}
-            onBokehShapeChange={setBokehShape}
-            onDiffractionChange={setUseDiffraction}
-          />
-
-          <DofResultsPanel {...resultsProps} />
-        </div>
-
-        {/* ── Center ── */}
-        <div className={s.canvasArea}>
-          <DofToolbar
-            sceneKey={sceneKey}
-            onSceneChange={setSceneKey}
-            subjectMode={subjectMode}
-            onSubjectModeChange={setSubjectMode}
-            abMode={abMode}
-            onABModeChange={setAbMode}
-            blurPct={backgroundBlurPct}
-          />
-
-          <div className={s.canvasMain}>
-            <ABComparison
-              mode={abMode}
-              dividerPosition={dividerPos}
-              onDividerChange={setDividerPos}
-              settingsLabelA={`A: f/${aperture} \u00b7 ${focalLength}mm`}
-              settingsLabelB={`B: f/${bAperture} \u00b7 ${bFocalLength}mm`}
-              viewportA={
-                <DofViewport
-                  scene={scene} focalLength={focalLength} aperture={aperture}
-                  subjectDistance={subjectDistance} sensorWidth={sensorWidth}
-                  useDiffraction={useDiffraction}
-                />
-              }
-              viewportB={
-                <DofViewport
-                  scene={scene} focalLength={bFocalLength} aperture={bAperture}
-                  subjectDistance={bSubjectDistance} sensorWidth={bSensorWidth}
-                  useDiffraction={useDiffraction}
-                />
-              }
-            />
-
-            {subjectMode === 'figure' && (
-              <SubjectFigure
-                subjectDistance={subjectDistance}
-                focalLength={focalLength}
-                sensorHeight={sensorHeight}
-                viewportHeight={400}
-                focalResult={{ nearFocus: dofResult.nearFocus, farFocus: dofResult.farFocus }}
-              />
-            )}
-            {subjectMode === 'target' && (
-              <FocusTarget isInFocus={isInFocus} distance={subjectDistance} />
-            )}
-          </div>
-
-          <DofDiagramBar
-            distance={subjectDistance}
-            nearFocus={dofResult.nearFocus}
-            farFocus={dofResult.farFocus}
-            onDistanceChange={setSubjectDistance}
-          />
-
-          <BlurProfileGraph
-            focalLength={focalLength}
-            aperture={aperture}
-            subjectDistance={subjectDistance}
-            coc={coc}
-          />
-        </div>
-
-        {/* ── LearnPanel (desktop) ── */}
-        <div className={s.desktopOnly}>
+        <div className={styles.desktopOnly}>
           <LearnPanel slug="dof-simulator" />
         </div>
       </div>
 
-      {/* ── Mobile controls ── */}
-      <div className={s.mobileControls}>
-        <DofSettingsPanel {...settingsProps} />
-        <DofResultsPanel {...resultsProps} />
+      <div className={styles.mobileControls}>
+        <Sidebar {...sidebarProps} hideTitle />
       </div>
 
       <RelatedTools variant="inline" currentSlug="dof-simulator" />
-      <div className={s.mobileOnly}>
+      <div className={styles.mobileOnly}>
         <LearnPanel slug="dof-simulator" />
       </div>
     </div>

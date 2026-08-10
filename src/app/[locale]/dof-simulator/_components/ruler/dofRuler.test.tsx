@@ -1,0 +1,164 @@
+import { describe, it, expect, vi, beforeAll } from 'vitest'
+import { render, fireEvent, within } from '@testing-library/react'
+import { NextIntlClientProvider } from 'next-intl'
+import { RULER_MIN, RULER_MAX } from './rulerScale'
+import { VB_H } from './rulerLayout'
+import { DofRuler } from './DofRuler'
+import { DofRulerConnected } from './DofRulerConnected'
+import esMessages from '@/lib/i18n/messages/es/tools/dof-simulator.json'
+
+const esT = esMessages.toolUI['dof-simulator']
+
+beforeAll(() => {
+  // jsdom does not implement pointer capture — stub it so drag handlers
+  // (which call setPointerCapture/hasPointerCapture/releasePointerCapture
+  // on the event's currentTarget) don't throw.
+  if (!Element.prototype.setPointerCapture) {
+    Element.prototype.setPointerCapture = function () {}
+  }
+  if (!Element.prototype.hasPointerCapture) {
+    Element.prototype.hasPointerCapture = function () {
+      return false
+    }
+  }
+  if (!Element.prototype.releasePointerCapture) {
+    Element.prototype.releasePointerCapture = function () {}
+  }
+})
+
+function baseProps(overrides: Partial<Parameters<typeof DofRuler>[0]> = {}) {
+  return {
+    distanceM: 3,
+    nearFocus: 2,
+    farFocus: 5,
+    hyperfocal: 8,
+    onDistanceChange: vi.fn(),
+    ...overrides,
+  }
+}
+
+describe('DofRuler', () => {
+  it('renders the draggable subject as a labeled, focusable slider', () => {
+    const { getByRole } = render(<DofRuler {...baseProps()} />)
+    const slider = getByRole('slider', { name: 'Subject' })
+    expect(slider).toHaveAttribute('tabindex', '0')
+    expect(slider).toHaveAttribute('aria-valuenow', '3')
+  })
+
+  it('reports a plausible distance when the subject figure is dragged', () => {
+    const onDistanceChange = vi.fn()
+    const { container, getByRole } = render(<DofRuler {...baseProps({ onDistanceChange })} />)
+    const svg = container.querySelector('svg')!
+    vi.spyOn(svg, 'getBoundingClientRect').mockReturnValue({
+      width: 1000, height: 96, left: 0, top: 0, right: 1000, bottom: 96, x: 0, y: 0, toJSON: () => {},
+    } as DOMRect)
+
+    const slider = getByRole('slider')
+    fireEvent.pointerDown(slider, { clientX: 500, pointerId: 1 })
+
+    expect(onDistanceChange).toHaveBeenCalledTimes(1)
+    const reported = onDistanceChange.mock.calls[0][0]
+    expect(reported).toBeGreaterThanOrEqual(RULER_MIN)
+    expect(reported).toBeLessThanOrEqual(RULER_MAX)
+    // Dragging to the middle of the SVG should move off the initial 3m.
+    expect(reported).not.toBeCloseTo(3, 1)
+  })
+
+  it('nudges the distance by ±0.1m on ArrowLeft/ArrowRight', () => {
+    const onDistanceChange = vi.fn()
+    const { getByRole } = render(<DofRuler {...baseProps({ distanceM: 3, onDistanceChange })} />)
+    const slider = getByRole('slider')
+
+    fireEvent.keyDown(slider, { key: 'ArrowRight' })
+    expect(onDistanceChange.mock.calls[0][0]).toBeCloseTo(3.1, 5)
+
+    fireEvent.keyDown(slider, { key: 'ArrowLeft' })
+    expect(onDistanceChange.mock.calls[1][0]).toBeCloseTo(2.9, 5)
+  })
+
+  it('clamps keyboard nudges at the ruler bounds', () => {
+    const onDistanceChange = vi.fn()
+    const { getByRole, rerender } = render(<DofRuler {...baseProps({ distanceM: RULER_MAX, onDistanceChange })} />)
+    fireEvent.keyDown(getByRole('slider'), { key: 'ArrowRight' })
+    expect(onDistanceChange).toHaveBeenCalledWith(RULER_MAX)
+
+    onDistanceChange.mockClear()
+    rerender(<DofRuler {...baseProps({ distanceM: RULER_MIN, onDistanceChange })} />)
+    fireEvent.keyDown(getByRole('slider'), { key: 'ArrowLeft' })
+    expect(onDistanceChange).toHaveBeenCalledWith(RULER_MIN)
+  })
+
+  // B4: a value beyond the ruler's own [RULER_MIN, RULER_MAX] display scale
+  // (e.g. the Full-body preset solving to ~85m at a long focal length) pins
+  // the subject figure at the track's right edge — same pixel position a
+  // genuine 50m subject would sit at. Without a label, that pin silently
+  // reads as "the subject is at 50m," which is wrong. The label must say the
+  // real value. Scoped to the subject's own `role="slider"` group so it
+  // isn't confused with RulerBackdrop's always-present axis tick labels
+  // (which include a "3m" tick regardless of the subject's position).
+  it('labels the subject with its real distance when pinned beyond the ruler scale', () => {
+    const { getByRole } = render(<DofRuler {...baseProps({ distanceM: 85 })} />)
+    expect(within(getByRole('slider')).getByText('85m')).toBeInTheDocument()
+  })
+
+  it('does not label in-range distances as off-scale', () => {
+    const { getByRole } = render(<DofRuler {...baseProps({ distanceM: 3 })} />)
+    expect(within(getByRole('slider')).queryByText('3m')).toBeNull()
+  })
+
+  // Defect 2 (regression-repair): the label was DOM-present (previous test)
+  // but positioned outside the SVG's own viewBox, so the SVG's default clip
+  // (no `overflow: visible` in ruler.module.css) hid it entirely -- a passing
+  // "is it in the DOM" assertion masked a genuinely invisible label. Compute
+  // the label's ABSOLUTE y (the slider `<g>`'s translate-y + the text's own
+  // y) and assert it actually falls inside [0, VB_H], not just that a <text>
+  // node exists somewhere in the tree.
+  it('positions the off-scale label inside the SVG viewBox, not clipped above it', () => {
+    const { getByRole } = render(<DofRuler {...baseProps({ distanceM: 85 })} />)
+    const slider = getByRole('slider')
+    const text = within(slider).getByText('85m')
+
+    const transform = slider.getAttribute('transform') ?? ''
+    const match = /translate\(([-\d.]+),\s*([-\d.]+)\)/.exec(transform)
+    expect(match).not.toBeNull()
+    const groundY = Number(match?.[2])
+    const localY = Number(text.getAttribute('y'))
+    const absoluteY = groundY + localY
+
+    expect(absoluteY).toBeGreaterThanOrEqual(0)
+    expect(absoluteY).toBeLessThanOrEqual(VB_H)
+  })
+
+  it('renders sensible geometry with no NaN attributes when farFocus is Infinity (past hyperfocal)', () => {
+    const { container, getByText } = render(
+      <DofRuler {...baseProps({ distanceM: 10, nearFocus: 5, farFocus: Infinity, hyperfocal: 10 })} />,
+    )
+    const svg = container.querySelector('svg')!
+    svg.querySelectorAll('*').forEach((el) => {
+      Array.from(el.attributes).forEach((attr) => {
+        expect(attr.value).not.toMatch(/NaN/)
+      })
+    })
+    expect(getByText('∞')).toBeInTheDocument()
+  })
+})
+
+function renderWithEs(ui: React.ReactNode) {
+  return render(
+    <NextIntlClientProvider locale="es" messages={esMessages}>
+      {ui}
+    </NextIntlClientProvider>,
+  )
+}
+
+describe('DofRulerConnected', () => {
+  it('renders real ES translations, not the English-literal defaults', () => {
+    const { getByRole, getByText } = renderWithEs(
+      <DofRulerConnected {...baseProps()} />,
+    )
+    expect(getByRole('slider', { name: esT.depthRulerSubject })).toBeInTheDocument() // "Sujeto"
+    expect(getByText(esT.hyperfocal)).toBeInTheDocument() // "Hiperfocal"
+    expect(getByText(esT.depthRulerNear)).toBeInTheDocument() // "Cerca"
+    expect(getByText(esT.depthRulerFar)).toBeInTheDocument() // "Lejos"
+  })
+})

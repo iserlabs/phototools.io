@@ -1,48 +1,48 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Alan derinliği, fotoğrafınızda kabul edilebilir derecede net görünen mesafe aralığıdır. Sığ bir alan derinliği, konunuzun arkasındaki arka planı bulanıklaştırırken, derin bir alan derinliği ön plandan ufka kadar her şeyi net tutar. alan derinliği'u kontrol etmek, fotoğrafçılıktaki en güçlü yaratıcı araçlardan biridir.",
+      "beginner": "Alan derinliği, fotoğrafınızda yakından uzağa kabul edilebilir derecede net görünen bölgedir. Bu bölgeyi üç kontrol şekillendirir: diyafram (daha geniş diyaframlar arka planı daha çok bulanıklaştırır), odak uzaklığı (daha uzun objektifler bölgeyi daraltır) ve konu mesafesi (yaklaşmak bölgeyi daha da küçültür). Bunlardan herhangi birini burada ayarlayın ve derinlik cetveli ile görüntü alanının gerçek zamanlı olarak birlikte güncellendiğini izleyin.",
       "deeper": {
         "0": {
-          "heading": "alan derinliği Nasıl Çalışır",
-          "text": "Alan derinliği, bulanıklık çemberi (CoC) tarafından yönetilir — sensörde insan gözüne hâlâ net görünen en büyük bulanıklık noktası. Üç fiziksel faktör alan derinliği'u belirler: odak uzaklığı, diyafram ve konu mesafesi. Daha geniş bir diyafram (düşük f-sayısı), objektif ışığı daha dik açılarda yakınsadığı için daha sığ bir alan derinliği üretir ve odak dışı noktaların sensörde daha büyük dairelere yayılmasına neden olur."
+          "heading": "Diyafram Geometrisi ve Bulanıklık Çemberi",
+          "text": "Bir objektif, tam olarak tek bir mesafeden gelen ışığı sensör üzerinde kusursuz bir nokta olarak odaklar; geri kalan her şey bulanıklık çemberi (CoC) adı verilen küçük bir disk olarak düşer. Bir nokta, diski sensör boyutuna göre belirlenen bir eşikten küçük kaldığı sürece net görünmeye devam eder — tam karede yaklaşık 0,03mm. Diyaframı genişletmek (f-sayısını düşürmek) objektif ile odak noktası arasında daha geniş bir ışık konisi açar, böylece o düzlemden uzaktaki noktalar çok daha büyük disklere, çok daha hızlı yayılır. f/1.4 gibi geniş bir diyaframın arka planı f/11'den çok daha fazla bulanıklaştırmasının nedeni budur — bu, ışık konisinin geometrisinin değişmesidir, yalnızca ışık miktarının değil."
         },
         "1": {
-          "heading": "Odak Uzaklığı ve Mesafe",
-          "text": "Daha uzun odak uzaklıkları görüntüyü büyütür, bu da bulanıklık dairelerini büyüterek alan derinliği'u daraltır. Konunuza yaklaşmak da aynı nedenle alan derinliği'u azaltır — konu ile arka plan arasındaki göreceli mesafe farkı büyür. Hiperfocal mesafe, alan derinliği'un o mesafenin yarısından sonsuza kadar uzandığı odak mesafesidir ve tüm sahnede netliği maksimize eder."
+          "heading": "Odak Uzaklığı ve Mesafe Etkiye Hâkimdir",
+          "text": "Odak uzaklığının alan derinliği üzerindeki etkisi, tamamen neyi sabit tuttuğunuza bağlıdır. Sabit bir konu mesafesinde, alan derinliği odak uzaklığıyla birlikte keskin biçimde daralır — yaklaşık olarak odak uzaklığının karesiyle orantılı olarak: f/2.8'de bir konudan 3m uzakta durduğunuzda, 35mm bir objektif yaklaşık 1,3m'lik alan derinliği verirken, 200mm bir objektif yaklaşık 35mm verir. Ancak bu karşılaştırma kadrajınızı da değiştirir, çünkü yeniden kadrajlamadınız. Sabit bir kadrajda ise — bu aracın kilitli görüş açısı modunda, yakınlaştırırken aynı zamanda geri adım atarak konunun aynı boyutta kalmasını sağladığınızda — alan derinliği neredeyse hiç değişmez: kilitli kadrajda f/2.8'de 35mm'den 200mm'ye geçmek toplam alan derinliğini %1'in çok altında değiştirir. Bunun yerine dramatik biçimde değişen şey arka plandır: daha uzun bir objektif, konunuzun arkasındaki her şeyi büyütür ve sıkıştırır, böylece odak dışı parlak noktalar büyür ve arka plan daha fazla ayrışır — konunuzun etrafındaki net dilim yaklaşık aynı kalınlıkta kalsa bile. Kilitli görüş açısını açın ve odak uzaklığını değiştirerek bunu gözlemleyin — alan derinliği okuması sabit kalırken arka plan bulanıklığı değeri yükselir. Konu mesafesi yine de her durumda daha güvenilir bir kontrol olmaya devam eder: sabit bir odak uzaklığı ve diyaframda konuya yaklaşmak alan derinliğini keskin biçimde küçültür, yakın ve uzak sınırları daha kısa bir mesafenin etrafında sıkılaştırır."
         },
         "2": {
-          "heading": "Bokeh ve Kırınım",
-          "text": "Bokeh, odak dışı alanların kalitesini ifade eder. Diyafram kanatçıklarının sayısı ve şekli bokeh karakterini etkiler — daha yuvarlak kanatçıklar daha pürüzsüz, daha dairesel parlak noktalar üretir. Çok küçük diyaframlarda (f/16+), kırınım ışığın diyafram kenarlarından geçerken yayılmasına neden olarak alan derinliği bölgesi içinde bile tüm görüntüyü yumuşatır. Her zaman bir optimum nokta vardır — tam karede genellikle f/5,6-f/8 civarı — netlik ve alan derinliğinin optimal olarak dengelendiği yer."
+          "heading": "Sensör Boyutu ve Eşdeğer Kadrajlama",
+          "text": "Aynı konuyla kareyi doldurmak için, daha büyük bir sensör, daha küçük bir sensöre göre orantılı olarak daha uzun bir odak uzaklığına ihtiyaç duyar — tam kare bir kamera, aynı görüş açısı için APS-C bir kameranın yaklaşık 1,5 katı, Mikro Dört Üçlü'nün ise yaklaşık 2 katı odak uzaklığına ihtiyaç duyar. Alan derinliği odak uzaklığıyla daraldığından, tam kare kameralara sığ alan derinliği ününü kazandıran şey işte bu daha uzun 'eşdeğer' odak uzaklığıdır — objektif üzerinde yazılı f-sayısı hikâyenin tamamını anlatmaz. Farklı sensör boyutlarında aynı diyaframda, aynı şekilde kadrajlanmış iki objektif, belirgin biçimde farklı alan derinliği üretir."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Diyafram",
-          "description": "Geniş diyaframlar (f/1,4-f/2,8) kremsi bokeh ile sığ alan derinliği oluşturur. Dar diyaframlar (f/8-f/16) sahne genelinde netliği artırır."
+          "description": "Geniş diyaframlar (f/1.4-f/2.8 gibi düşük f-sayıları) daha dik bir ışık konisi açar ve alan derinliğini küçültür. Dar diyaframlar (f/8-f/16) onu genişletir."
         },
         "1": {
           "label": "Odak Uzaklığı",
-          "description": "Daha uzun objektifler perspektifi sıkıştırır ve aynı diyafram ve kadrajda alan derinliği'u daraltır. 200mm f/4'teki bir objektif, 35mm f/4'e göre çok daha az alan derinliği'a sahiptir."
+          "description": "Sabit bir konu mesafesinde, alan derinliği yaklaşık olarak odak uzaklığının karesiyle daralır. Sabit bir kadrajda (aynı çekimi korumak için yakınlaşıp geri adım atmak), alan derinliği neredeyse hiç değişmez — bunun yerine arka plan dönüşür, odak uzaklığı arttıkça daha çok büyür ve bulanıklaşır."
         },
         "2": {
           "label": "Konu Mesafesi",
-          "description": "Ne kadar yakından odaklarsanız alan derinliği o kadar sığ olur. Makro fotoğrafçıları genellikle milimetre cinsinden ölçülen alan derinliği ile çalışır."
+          "description": "Konunuza yaklaşmak, neredeyse başka herhangi bir ayardan daha hızlı biçimde alan derinliğini küçültür; makro fotoğrafçılığın bu kadar ince net bölgelere sahip olmasının nedeni budur."
         },
         "3": {
           "label": "Sensör Boyutu",
-          "description": "Daha büyük sensörler aynı kadrajlama için daha uzun odak uzaklıkları gerektirir, bu da dolaylı olarak alan derinliği'u daraltır. Tam kare bir kamera, eşdeğer kadrajda Mikro Dört Üçlü kameradan daha sığ alan derinliği üretir."
+          "description": "Daha büyük sensörler, daha küçük sensörlerle aynı kadrajı yakalamak için daha uzun odak uzaklıkları gerektirir; bu da dolaylı olarak eşdeğer çekimlerde daha sığ alan derinliği üretir."
         }
       },
       "tips": {
         "0": {
-          "text": "Grup portreleri için f/5,6 veya daha dar kullanın ve herkesin aynı odak düzleminde durmasını sağlayın. Geniş diyaframlarda yarım adım bile öne çıkan bir kişi odak dışı kalabilir."
+          "text": "f/1.4-f/2.0 gibi geniş diyaframlarda alan derinliği bir insan yüzünden bile ince olabilir. Buruna veya kulağa değil, yakındaki göze hassas biçimde odaklanın, yoksa konunuzun bakışı bulanık görünür."
         },
         "1": {
-          "text": "Manzara çekerken sonsuzluğa değil hiperfocal mesafeye odaklayın. Bu, yakın ön plandan uzak arka plana kadar netlik bölgesini maksimize eder."
+          "text": "Deney yaparken konunuzun kare içindeki boyutunu sabitlemek için kadraj ön ayarlarını (Yüz, Portre, Orta Çekim vb.) kullanın — bunlar odak uzaklığını ve mesafeyi gerçek bir çekimdeki gibi aynı ilişkide tutar, böylece burada gördüğünüz bulanıklık kamerada elde edeceğinizle eşleşir."
         },
         "2": {
-          "text": "Bir portre için maksimum arka plan bulanıklığı istiyorsanız, odak uzaklığınızı artırın ve kadrajın izin verdiği kadar konunuza yaklaşın — her iki değişiklik de alan derinliği'u dramatik şekilde azaltmak için birleşir."
+          "text": "Diyaframı sonuna kadar kısarak maksimum alan derinliği peşinde koşmayın — çoğu objektif, bu aracın kırınım uyarısı belirmeden çok önce, en keskin haline yaklaşık f/8-f/11'de ulaşır. O uyarı daha sıkı ve daha geç gelen bir eşiktir: yalnızca kırınım bulanıklığı sensörün bulanıklık çemberini aştığında yanar, bu da tam karede yaklaşık f/22'de gerçekleşir (APS-C'de f/15, Mikro Dört Üçlü'de f/11). f/8-f/11'i pratik hedefiniz, uyarı simgesini ise hedef değil, dış sınır olarak görün."
         }
       },
       "tooltips": {
@@ -52,153 +52,91 @@
         },
         "aperture": {
           "term": "Diyafram",
-          "definition": "Objektif açıklığının boyutu, f-sayısı olarak ifade edilir (ör. f/2,8). Daha düşük f-sayıları daha geniş açıklık anlamına gelir, daha fazla ışık geçirir ve daha sığ alan derinliği üretir."
+          "definition": "Objektif açıklığının boyutu, f-sayısı olarak ifade edilir (ör. f/2.8). Daha düşük f-sayıları daha geniş açıklık anlamına gelir, daha fazla ışık geçirir ve daha sığ alan derinliği üretir."
         },
         "subjectDistance": {
           "term": "Konu Mesafesi",
-          "definition": "Kamera sensöründen odak noktasına olan mesafe. Daha yakın odak mesafeleri daha sığ alan derinliği ile sonuçlanır."
+          "definition": "Kameradan odak noktasına olan mesafe. Daha yakın odak mesafeleri daha sığ bir alan derinliği ile sonuçlanır."
         },
         "sensor": {
           "term": "Sensör Boyutu",
-          "definition": "Kamera sensörünün fiziksel boyutları. Daha büyük sensörler (tam kare, orta format), daha küçük sensörlere (APS-C, Mikro Dört Üçlü) kıyasla eşdeğer kadrajda daha sığ alan derinliği üretir."
-        },
-        "orientation": {
-          "term": "Yön",
-          "definition": "Yatay ve dikey çekim yönü arasında geçiş yapın. Bu, konu mesafesi hesaplamaları için kadrajlama referansını etkiler."
-        },
-        "nearFocus": {
-          "term": "Yakın Odak Sınırı",
-          "definition": "Kameradan kabul edilebilir derecede net görünen en yakın mesafe. Bundan daha yakın her şey bulanık görünecektir."
-        },
-        "farFocus": {
-          "term": "Uzak Odak Sınırı",
-          "definition": "Kameradan kabul edilebilir derecede net görünen en uzak mesafe. Bu sonsuzluğa ulaştığında, yakın sınırın ötesindeki her şey odaktadır."
-        },
-        "totalDoF": {
-          "term": "Toplam Alan Derinliği",
-          "definition": "Yakın ve uzak odak sınırları arasındaki tam mesafe — görüntüde net görünen tüm bölge."
+          "definition": "Kamera sensörünün fiziksel boyutları. Daha büyük sensörler (tam kare, orta format), eşdeğer kadrajlama için daha uzun odak uzaklıkları gerektirir; bu da daha küçük sensörlere (APS-C, Mikro Dört Üçlü) kıyasla daha sığ bir alan derinliği üretir."
         },
         "hyperfocal": {
           "term": "Hiperfocal Mesafe",
           "definition": "Alan derinliğini maksimize eden odak mesafesi. Bu mesafeye odakladığınızda, hiperfocal mesafenin yarısından sonsuza kadar her şey net görünür."
         },
-        "backgroundBlur": {
-          "term": "Arka Plan Bulanıklığı",
-          "definition": "Konunuzun arkasında arka planın ne kadar bulanık göründüğünün ölçüsü. Daha yüksek değerler daha güçlü bulanıklık ve daha fazla konu izolasyonu anlamına gelir."
-        },
         "coc": {
           "term": "Bulanıklık Çemberi",
           "definition": "İnsan gözüne hâlâ bir nokta olarak görünen sensördeki maksimum bulanıklık noktası çapı. Alan derinliği hesaplamalarında kabul edilebilir netlik sınırını belirler."
         },
-        "isolationScore": {
-          "term": "İzolasyon Skoru",
-          "definition": "Konunun arka plandan ne kadar iyi ayrıldığını gösteren bileşik bir derecelendirme (0-100), konu boyutuna göre arka plan bulanıklığı miktarına dayalıdır."
-        },
-        "bokehShape": {
-          "term": "Bokeh Şekli",
-          "definition": "Odak dışı parlak noktaların şekli, diyafram kanatçıklarının sayısı ve eğriliği tarafından belirlenir. Daha fazla kanatçık daha yuvarlak, daha pürüzsüz bokeh üretir."
+        "backgroundBlur": {
+          "term": "Arka Plan Bulanıklığı",
+          "definition": "Konunuzun arkasında arka planın ne kadar bulanık göründüğünün ölçüsü. Daha yüksek değerler daha güçlü bulanıklık ve daha fazla konu izolasyonu anlamına gelir."
         },
         "diffractionWarning": {
           "term": "Kırınım",
-          "definition": "Çok küçük diyaframlarda ışık diyafram kenarlarından bükülerek görüntüyü yumuşatır. Tam kare sensörlerde bu genellikle f/16'nın ötesinde fark edilir hale gelir."
+          "definition": "Çok küçük diyaframlarda ışık, diyafram kenarlarından bükülerek görüntüyü yumuşatır. Bu aracın kırınım uyarısı, bu yumuşama sensörün bulanıklık çemberini aştığında görünür — tam karede yaklaşık f/22, APS-C'de f/15, Mikro Dört Üçlü'de f/11."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Portre çekiyorsunuz ve güzel bulanık bir arka plan istiyorsunuz. Hangi diyaframı seçmelisiniz?",
-          "hint": "Düşük f-sayıları daha geniş objektif açıklığı ve daha fazla arka plan bulanıklığı anlamına gelir.",
-          "successMessage": "Doğru! f/1,8 veya f/2,8 gibi geniş bir diyafram, sığ bir alan derinliği oluşturarak konunuzu hoş bokeh ile arka plandan ayırır.",
-          "failureMessage": "Tam değil. f/11 veya f/16 gibi dar diyaframlar sahnenin daha fazlasını net tutar. Arka plan bulanıklığı için geniş bir diyafram (düşük f-sayısı) seçin.",
+          "scenario": "Bir portre çekiyorsunuz ve arka planın konunuzun arkasında yumuşak bir bulanıklığa dönüşmesini istiyorsunuz. Hangi diyaframı seçmelisiniz?",
+          "hint": "Düşük f-sayıları daha geniş bir açıklık — ve daha sığ bir alan derinliği anlamına gelir.",
+          "successMessage": "Doğru — f/1.4 diyaframı geniş açar, sığ bir alan derinliği ve yumuşakça bulanıklaşmış bir arka plan üretir.",
+          "failureMessage": "Tam değil. f/11 veya f/16 gibi yüksek f-sayıları sahnenin daha fazlasını net tutar. Maksimum arka plan bulanıklığı için bunun yerine en geniş diyaframı (en düşük f-sayısını) seçin.",
           "options": {
-            "0": {
-              "label": "f/1,8"
-            },
-            "1": {
-              "label": "f/5,6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Bir düğünde iki sıra halinde dizilmiş 8 kişilik bir grubu fotoğraflıyorsunuz. Herkesin net olmasını sağlayacak diyafram hangisidir?",
-          "hint": "Farklı mesafelerdeki insanlarla her iki sırayı kapsayacak yeterli alan derinliğine ihtiyacınız var.",
-          "successMessage": "Harika seçim! f/5,6, iç mekanda makul enstantane hızlarını korurken her iki sırayı net tutmak için yeterli alan derinliği sağlar.",
-          "failureMessage": "Bu diyafram arka sırayı odak dışı bırakabilir veya gereksiz yere dar olabilir. İki sıra insan için f/5,6 güvenilir bir başlangıç noktasıdır.",
+          "scenario": "Gevşek bir küme halinde duran dört arkadaşınızı fotoğraflıyorsunuz — birkaçı diğerlerinden yarım adım öne veya arkada. Herkesi net tutmak için size rahat bir güvenlik payı hangi diyafram verir?",
+          "hint": "Tam olarak aynı odak düzleminde olmayan kişileri kapsamak için ekstra alan derinliğine ihtiyacınız var, ama sonuna kadar kısmanıza gerek yok.",
+          "successMessage": "Doğru — f/5.6, diyaframı gerekenden fazla daraltmadan mesafedeki küçük farklılıklar için rahat bir alan derinliği payı sağlar.",
+          "failureMessage": "f/1.4, hafifçe farklı mesafelerdeki kişiler için çok sığ; f/16 ise ihtiyacınızdan daha fazla kısar. f/5.6 güvenilir orta yoldur.",
           "options": {
-            "0": {
-              "label": "f/1,4"
-            },
-            "1": {
-              "label": "f/2,8"
-            },
-            "2": {
-              "label": "f/5,6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "2 metre uzaktaki kır çiçekleri ve arka planda dağlarla bir manzara çekiyorsunuz. Tam kare kamerada 24mm objektif kullanıyorsunuz. Önden arkaya netliği maksimize edecek teknik nedir?",
-          "hint": "Ön plandan sonsuza kadar net bölgeyi maksimize eden belirli bir mesafeye odaklayabilirsiniz.",
-          "successMessage": "Kesinlikle! f/11'de hiperfocal mesafeye odaklamak, yaklaşık 1 metreden sonsuza kadar her şeyin kabul edilebilir derecede net olmasını sağlar — bu sahne için mükemmel.",
-          "failureMessage": "Sonsuzluğa odaklamak ön plandaki çiçekleri yumuşak bırakır. Yakın ön plandan sonsuza kadar netliği genişletmek için hiperfocal mesafeyi kullanın.",
+          "scenario": "85mm, f/1.8'desiniz, konunuz 3 metre uzakta ve diyaframa dokunmadan veya objektif değiştirmeden arka plan bulanıklığını gözle görülür biçimde artırmak istiyorsunuz. En hızlı yol nedir?",
+          "hint": "Alan derinliği — ve arka planın konunuza göre ne kadar güçlü bulanıklaştığı — konu mesafesine son derece duyarlıdır.",
+          "successMessage": "Kesinlikle — konu mesafesini yarıya indirmek, diyaframınızı veya objektifinizi değiştirmeden alan derinliğini büyük ölçüde küçültür ve arka plan bulanıklığını büyütür.",
+          "failureMessage": "Daha uzağa gitmek veya ISO'yu yükseltmek alan derinliğini küçültmez. Sabit bir diyafram ve odak uzaklığında arka plan bulanıklığını artırmanın en hızlı yolu konunuza yaklaşmaktır.",
           "options": {
-            "0": {
-              "label": "Çiçeklere odakla (2m)"
-            },
-            "1": {
-              "label": "Dağlara odakla (sonsuz)"
-            },
-            "2": {
-              "label": "Hiperfocal mesafeye odakla"
-            },
-            "3": {
-              "label": "Çiçekler ve dağlar arasının ortasına odakla"
-            }
+            "0": { "label": "Konunuzdan 1,5m'ye gidin (mesafenin yarısı)" },
+            "1": { "label": "Konunuzdan 6m'ye gidin (mesafenin iki katı)" },
+            "2": { "label": "Çalışma mesafenizi artırmak için geri adım atın" },
+            "3": { "label": "Daha parlak bir arka plan için ISO'yu yükseltin" }
           }
         },
         "3": {
-          "scenario": "Bir çiçeğin makro fotoğrafını çekiyorsunuz ve sadece ön yaprakların net olduğunu fark ediyorsunuz. Çiçeğin geri kalanı bulanıklaşıyor. f/5,6'dasınız. Çiçeğin daha fazlasını net yapmak için ne yapmalısınız?",
-          "hint": "Yakın odak mesafelerinde alan derinliği son derece ince olur. Diyaframınızı düşünün.",
-          "successMessage": "Doğru! f/11 veya f/16'ya kısmak makro çalışmada çok ince olan alan derinliği'unuzu artırır. Çok küçük diyaframlarda kırınım yumuşamasına dikkat edin.",
-          "failureMessage": "Diyaframı daha da açmak alan derinliği'u daha da inceltir. Makro fotoğrafçılığında kısmak (daha yüksek f-sayısı) daha fazla derinlik kazanmanın birincil yoludur.",
+          "scenario": "Tam kare bir kamerada bir manzara çekiyorsunuz ve tüm karede maksimum netlik istiyorsunuz. En fazla alan derinliği için diyaframı sonuna kadar f/22'ye kısmalı mısınız?",
+          "hint": "Diyaframı kısarak kazanılan alan derinliği ile çok küçük diyaframlarda kırınımın neden olduğu yumuşama arasında bir denge vardır.",
+          "successMessage": "Doğru — f/22 kâğıt üzerinde gerçekten alan derinliği katar, ama çoğu objektif o noktaya gelindiğinde en keskin diyaframlarını çoktan geride bırakmıştır. f/8-f/11 gibi orta bir diyafram genellikle alan derinliği ile objektif netliğini daha iyi dengeler. Bu aracın kendi kırınım uyarısı ayrı ve daha geç gelen bir eşiktir — yalnızca kırınım bulanıklığı sensörün bulanıklık çemberini aştığında işaretlenir, bu da tam karede ancak yaklaşık f/22'de gerçekleşir (APS-C'de f/15, Mikro Dört Üçlü'de f/11). Kısmayı azaltmadan önce o uyarıyı beklemeyin — bu, bir netlik önerisi değil, katı bir fiziksel sınırdır.",
+          "failureMessage": "Diyaframı sonuna kadar f/22'ye kısmak kâğıt üzerinde alan derinliğini gerçekten maksimize eder, ama çoğu objektif o noktaya gelindiğinde en keskin diyafram aralığını çoktan geride bırakmıştır. f/8-f/11 gibi orta bir diyafram genellikle alan derinliği ile gerçek dünya netliği arasında daha iyi bir denge sunar. Bu aracın kırınım uyarısı ayrı ve daha geç gelen bir eşiktir — yalnızca bulanıklık sensörün bulanıklık çemberini aştığında, tam karede yaklaşık f/22'de görünür — bu yüzden görünmemesini kısmaya devam etmek için bir yeşil ışık olarak kullanmayın.",
           "options": {
-            "0": {
-              "label": "Daha fazla ışık için f/2,8'e aç"
-            },
-            "1": {
-              "label": "f/11'e kıs"
-            },
-            "2": {
-              "label": "Daha geniş bir objektife geç"
-            },
-            "3": {
-              "label": "Çiçekten uzaklaş"
-            }
+            "0": { "label": "Evet — maksimum alan derinliği için her zaman mevcut en küçük diyaframı kullanın" },
+            "1": { "label": "Hayır — en küçük diyafram yerine, en iyi genel netlik için f/8-f/11 gibi orta bir diyafram kullanın" },
+            "2": { "label": "Hayır — en keskin sonuçlar için mevcut en geniş diyaframı kullanın" },
+            "3": { "label": "Fark etmez — diyaframın netlik üzerinde hiçbir etkisi yoktur" }
           }
         },
         "4": {
-          "scenario": "Portre çalışması için iki kamerayı karşılaştırıyorsunuz: 85mm f/1,8 objektifli tam kare kamera ve 42,5mm f/1,8 objektifli Mikro Dört Üçlü kamera. Her ikisi de eşdeğer kadrajlama üretir. Hangisi daha sığ alan derinliği üretir?",
-          "hint": "Eşdeğer odak uzaklıklarını ve sensör boyutunun aynı f-sayısında alan derinliği hesaplamasını nasıl etkilediğini düşünün.",
-          "successMessage": "Doğru! Tam kare kamera yaklaşık 2 adım daha sığ alan derinliği üretir. MFT objektifi aynı f-sayısına sahip olsa da, daha kısa gerçek odak uzaklığı (42,5mm vs 85mm) eşdeğer kadrajda daha derin alan derinliği ile sonuçlanır.",
-          "failureMessage": "Her iki objektif de f/1,8 olsa da, tam kare kamera aynı kadrajlama için daha uzun gerçek odak uzaklığı kullanır ve önemli ölçüde daha sığ alan derinliği üretir.",
+          "scenario": "Aynı portre kadrajı için iki kurulumu karşılaştırıyorsunuz: 85mm f/1.8 objektifli tam kare bir kamera ve aynı görüş açısını üreten 56mm f/1.8 objektifli bir APS-C kamera (1,5x kırpma). Hangisi daha sığ alan derinliği üretir?",
+          "hint": "Her objektifin aynı kadrajı elde etmek için kullandığı gerçek (eşdeğer değil) odak uzaklığını karşılaştırın.",
+          "successMessage": "Doğru — her iki objektif de f/1.8 olsa bile, tam kare kamera kadrajı eşlemek için daha uzun bir gerçek odak uzaklığı (85mm'ye karşı 56mm) kullanır, bu da belirgin biçimde daha sığ bir alan derinliği üretir.",
+          "failureMessage": "Her iki objektif de aynı f-sayısını paylaşır, ama tam kare kamera kadrajı eşlemek için daha uzun bir gerçek odak uzaklığına ihtiyaç duyar. Daha sığ alan derinliğini üreten şey yalnızca f-sayısı değil, o daha uzun odak uzaklığıdır.",
           "options": {
-            "0": {
-              "label": "85mm f/1,8 ile Tam Kare"
-            },
-            "1": {
-              "label": "42,5mm f/1,8 ile Mikro Dört Üçlü"
-            },
-            "2": {
-              "label": "Her ikisi de aynı alan derinliği üretir"
-            }
+            "0": { "label": "85mm f/1.8 ile tam kare kurulum" },
+            "1": { "label": "56mm f/1.8 ile APS-C kurulum" },
+            "2": { "label": "İkisi de aynı alan derinliğini üretir" }
           }
         }
       }

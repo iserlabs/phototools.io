@@ -1,204 +1,142 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Hloubka ostrosti je rozsah vzdáleností na fotce, který vypadá přijatelně ostře. Malá hloubka ostrosti rozmaže pozadí za subjektem, zatímco velká udrží ostré všechno od popředí po horizont. Ovládnutí hloubky ostrosti je jeden z nejsilnějších kreativních nástrojů ve fotografii.",
+      "beginner": "Hloubka ostrosti je zóna vaší fotky — od blízka po dálku — která vypadá přijatelně ostře. Tuto zónu utvářejí tři ovládací prvky: clona (širší clony rozmazávají pozadí víc), ohnisková vzdálenost (delší objektivy zónu zužují) a vzdálenost k subjektu (přiblížení ji zužuje ještě víc). Upravte kterýkoli z nich zde a sledujte, jak se pravítko hloubky ostrosti a náhled aktualizují společně v reálném čase.",
       "deeper": {
         "0": {
-          "heading": "Jak hloubka ostrosti funguje",
-          "text": "Hloubka ostrosti je řízena rozptylovým kroužkem (CoC) — největším rozmazaným bodem na snímači, který lidskému oku ještě připadá ostrý. Určují ji tři fyzikální faktory: ohnisková vzdálenost, clona a vzdálenost k subjektu. Širší clona (nižší clonové číslo) dává menší hloubku ostrosti, protože objektiv stahuje světlo pod strmějším úhlem, a neostré body se tak roztáhnou do větších kroužků na snímači."
+          "heading": "Geometrie clony a rozptylový kroužek",
+          "text": "Objektiv zaostřuje světlo z jedné přesné vzdálenosti na snímač jako dokonalý bod; všechno ostatní dopadá jako malý kroužek zvaný rozptylový kroužek (CoC). Bod stále vypadá ostře, dokud jeho kroužek zůstává menší než práh daný velikostí snímače — zhruba 0.03mm na full frame. Rozšíření clony (snížení clonového čísla) otevírá větší světelný kužel mezi objektivem a bodem zaostření, takže body mimo tuto rovinu se rozprostírají do mnohem větších kroužků, mnohem rychleji. Proto široká clona jako f/1.4 rozmazává pozadí mnohem víc než f/11 — mění se geometrie světelného kužele, ne jen množství světla."
         },
         "1": {
-          "heading": "Ohnisková vzdálenost a odstup",
-          "text": "Delší ohniska zvětšují obraz, a tím pádem i kroužky rozptylu, což hloubku ostrosti zužuje. Přiblížení k subjektu snižuje hloubku ostrosti ze stejného důvodu — relativní rozdíl ve vzdálenosti mezi subjektem a pozadím se zvětší. Hyperfokální vzdálenost je taková vzdálenost zaostření, při níž se hloubka ostrosti rozprostírá od poloviny této vzdálenosti až do nekonečna a maximalizuje ostrost napříč celou scénou."
+          "heading": "Ohnisková vzdálenost a odstup ovládají efekt",
+          "text": "Vliv ohniskové vzdálenosti na hloubku ostrosti závisí zcela na tom, co držíte konstantní. Při stejné vzdálenosti k subjektu se hloubka ostrosti s ohniskovou vzdáleností prudce zužuje — zhruba s její druhou mocninou: stojíte-li 3m od subjektu při f/2.8, objektiv 35mm dává asi 1.3m hloubky ostrosti, zatímco 200mm dává asi 35mm. Toto srovnání ale zároveň mění váš výřez, protože jste znovu nekomponovali záběr. Při stejném výřezu — režim uzamčeného zorného pole tohoto nástroje, kdy ustupujete, zatímco přibližujete zoomem, abyste zachovali stejnou velikost subjektu — se hloubka ostrosti sotva pohne: posun z 35mm na 200mm při f/2.8 se zamknutým výřezem mění celkovou hloubku ostrosti o výrazně méně než 1 %. Co se místo toho dramaticky mění, je pozadí: delší objektiv zvětšuje a stlačuje vše za subjektem, takže neostré světelné body rostou a pozadí se víc odděluje, přestože ostrá vrstva kolem subjektu zůstává zhruba stejně tlustá. Zapněte uzamčené zorné pole a projeďte ohniskové vzdálenosti, abyste to viděli v akci — hodnota hloubky ostrosti zůstává stabilní, zatímco hodnota rozostření pozadí stoupá. Vzdálenost k subjektu zůstává v obou případech spolehlivější pákou: přiblížení při stejné ohniskové vzdálenosti a cloně hloubku ostrosti prudce zužuje a stahuje přední a zadní hranici blíž k sobě kolem kratší vzdálenosti."
         },
         "2": {
-          "heading": "Bokeh a difrakce",
-          "text": "Bokeh označuje kvalitu neostrých ploch. Počet a tvar clonových lamel ovlivňuje charakter bokehu — zaoblenější lamely dávají hladší, kulatější světelné body. Při velmi malých clonách (od f/16) difrakce rozptyluje světlo na okrajích clony a změkčuje celý snímek i v zóně ostrosti. Vždycky existuje nějaký sweet spot — typicky kolem f/5.6–f/8 na full frame — kde je ostrost a hloubka ostrosti optimálně vyvážená."
+          "heading": "Velikost snímače a ekvivalentní výřez",
+          "text": "Aby stejný subjekt vyplnil záběr, potřebuje větší snímač proporčně delší ohniskovou vzdálenost než menší — full frame potřebuje zhruba 1,5násobek ohniskové vzdálenosti oproti APS-C a zhruba dvojnásobek oproti Micro Four Thirds, aby dosáhl stejného zorného pole. Protože se hloubka ostrosti s ohniskovou vzdáleností zužuje, právě tato delší 'ekvivalentní' ohnisková vzdálenost dává full frame fotoaparátům jejich pověst menší hloubky ostrosti — clonové číslo vytištěné na objektivu nevypovídá o všem. Dva objektivy se stejnou clonou na snímačích různé velikosti, se stejným výřezem, dají znatelně odlišnou hloubku ostrosti."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Clona",
-          "description": "Širší clony (f/1.4–f/2.8) dávají malou hloubku ostrosti a krémový bokeh. Užší clony (f/8–f/16) zvyšují ostrost v celé scéně."
+          "description": "Širší clony (nízká clonová čísla jako f/1.4-f/2.8) otevírají strmější světelný kužel a zužují hloubku ostrosti. Užší clony (f/8-f/16) ji rozšiřují."
         },
         "1": {
           "label": "Ohnisková vzdálenost",
-          "description": "Delší objektivy stlačují perspektivu a při stejné cloně a výřezu dávají menší hloubku ostrosti. 200mm objektiv má při f/4 mnohem menší hloubku ostrosti než 35mm při f/4."
+          "description": "Při stejné vzdálenosti k subjektu se hloubka ostrosti zužuje zhruba s druhou mocninou ohniskové vzdálenosti. Při stejném výřezu (přiblížíte zoomem a ustoupíte, abyste zachovali stejný záběr) se hloubka ostrosti sotva mění — proměňuje se pozadí, které se s rostoucí ohniskovou vzdáleností víc zvětšuje a rozostřuje."
         },
         "2": {
           "label": "Vzdálenost k subjektu",
-          "description": "Čím blíž zaostřuješ, tím menší hloubku ostrosti dostaneš. Makrofotografové často pracují s hloubkou ostrosti měřenou v milimetrech."
+          "description": "Přiblížení k subjektu zužuje hloubku ostrosti rychleji než téměř jakákoli jiná úprava, a proto má makrofotografie tak žiletkově tenké ostré zóny."
         },
         "3": {
           "label": "Velikost snímače",
-          "description": "Větší snímače vyžadují pro stejný výřez delší ohniska, což nepřímo zužuje hloubku ostrosti. Full frame dává při srovnatelné kompozici menší hloubku ostrosti než Micro Four Thirds."
+          "description": "Větší snímače vyžadují delší ohniskové vzdálenosti, aby odpovídaly stejnému výřezu jako menší snímače, což nepřímo dává menší hloubku ostrosti při ekvivalentních záběrech."
         }
       },
       "tips": {
         "0": {
-          "text": "Na skupinové portréty použij f/5.6 nebo užší a nech všechny stát ve stejné rovině zaostření. I jediný člověk o půl kroku napřed může při široké cloně vypadnout z ostrosti."
+          "text": "Při širokých clonách jako f/1.4-f/2.0 může být hloubka ostrosti tenčí než lidský obličej. Zaostřete přesně na bližší oko, ne na nos nebo ucho, jinak bude pohled subjektu vypadat neostře."
         },
         "1": {
-          "text": "Při focení krajiny zaostřuj raději na hyperfokální vzdálenost než na nekonečno. Maximalizuje se tím zóna ostrosti od blízkého popředí až po pozadí."
+          "text": "Použijte přednastavené výřezy (Obličej, Portrét, Polocelek a tak dále) k zafixování velikosti subjektu v záběru během experimentování — udržují ohniskovou vzdálenost a odstup ve stejném vztahu jako skutečný záběr, takže rozostření, které tu vidíte, odpovídá tomu, co byste dostali ve fotoaparátu."
         },
         "2": {
-          "text": "Pokud chceš u portrétu maximální rozmazání pozadí, prodluž ohniskovou vzdálenost a přistup co nejblíž, jak ti výřez dovolí — obě změny se sčítají a výrazně zmenší hloubku ostrosti."
+          "text": "Nehoňte se za maximální hloubkou ostrosti přiclonováním až na doraz — většina objektivů je nejostřejší kolem f/8-f/11, dávno předtím, než se objeví varování před difrakcí tohoto nástroje. Toto varování má přísnější, pozdější práh: rozsvítí se až tehdy, když rozostření difrakcí překročí rozptylový kroužek snímače, což nastává kolem f/22 na full frame (f/15 na APS-C, f/11 na Micro Four Thirds). Berte f/8-f/11 jako svůj praktický cíl a varovný štítek jako krajní mez, ne jako cíl."
         }
       },
       "tooltips": {
         "focalLength": {
           "term": "Ohnisková vzdálenost",
-          "definition": "Vzdálenost v milimetrech od optického středu objektivu ke snímači při zaostření na nekonečno. Delší ohniska zvětšují obraz a zužují hloubku ostrosti."
+          "definition": "Vzdálenost v milimetrech od optického středu objektivu ke snímači při zaostření na nekonečno. Delší ohniskové vzdálenosti zvětšují obraz a zužují hloubku ostrosti."
         },
         "aperture": {
           "term": "Clona",
-          "definition": "Velikost otvoru v objektivu vyjádřená jako clonové číslo (například f/2.8). Nižší čísla znamenají širší otvor, víc světla a menší hloubku ostrosti."
+          "definition": "Velikost otvoru objektivu, vyjádřená jako clonové číslo (například f/2.8). Nižší clonová čísla znamenají širší otvor, který propouští víc světla a dává menší hloubku ostrosti."
         },
         "subjectDistance": {
           "term": "Vzdálenost k subjektu",
-          "definition": "Vzdálenost od snímače ke bodu zaostření. Bližší vzdálenosti dávají menší hloubku ostrosti."
+          "definition": "Vzdálenost od fotoaparátu k bodu zaostření. Bližší zaostřovací vzdálenosti dávají menší hloubku ostrosti."
         },
         "sensor": {
           "term": "Velikost snímače",
-          "definition": "Fyzické rozměry snímače. Větší snímače (full frame, střední formát) dávají při srovnatelném výřezu menší hloubku ostrosti než menší (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Orientace",
-          "definition": "Přepínání mezi horizontální (na šířku) a vertikální (na výšku) orientací snímání. Ovlivňuje referenční výřez pro výpočty vzdálenosti k subjektu."
-        },
-        "nearFocus": {
-          "term": "Přední hranice ostrosti",
-          "definition": "Nejbližší vzdálenost od fotoaparátu, která vypadá přijatelně ostře. Všechno bližší bude rozmazané."
-        },
-        "farFocus": {
-          "term": "Zadní hranice ostrosti",
-          "definition": "Nejvzdálenější bod od fotoaparátu, který je přijatelně ostrý. Když dosáhne nekonečna, je ostré všechno za přední hranicí."
-        },
-        "totalDoF": {
-          "term": "Celková hloubka ostrosti",
-          "definition": "Plná vzdálenost mezi přední a zadní hranicí ostrosti — celá zóna, která na snímku vypadá ostře."
+          "definition": "Fyzické rozměry snímače fotoaparátu. Větší snímače (full frame, střední formát) vyžadují delší ohniskové vzdálenosti pro ekvivalentní výřez, což dává menší hloubku ostrosti než menší snímače (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Hyperfokální vzdálenost",
-          "definition": "Vzdálenost zaostření, která maximalizuje hloubku ostrosti. Když zaostříš na tuto vzdálenost, bude vše od její poloviny po nekonečno vypadat ostře."
-        },
-        "backgroundBlur": {
-          "term": "Rozostření pozadí",
-          "definition": "Míra toho, jak rozmazané je pozadí za subjektem. Vyšší hodnoty znamenají silnější rozmazání a větší izolaci subjektu."
+          "definition": "Vzdálenost zaostření, která maximalizuje hloubku ostrosti. Když zaostříte na tuto vzdálenost, vše od poloviny hyperfokální vzdálenosti až po nekonečno vypadá ostře."
         },
         "coc": {
           "term": "Rozptylový kroužek",
-          "definition": "Maximální průměr rozmazaného bodu na snímači, který lidské oko ještě vnímá jako bod. Určuje hranici přijatelné ostrosti pro výpočty hloubky ostrosti."
+          "definition": "Maximální průměr rozmazaného bodu na snímači, který lidské oko stále vnímá jako bod. Určuje hranici přijatelné ostrosti pro výpočty hloubky ostrosti."
         },
-        "isolationScore": {
-          "term": "Míra izolace",
-          "definition": "Souhrnné skóre (0–100) ukazující, jak dobře je subjekt oddělený od pozadí, na základě míry rozostření pozadí vzhledem k velikosti subjektu."
-        },
-        "bokehShape": {
-          "term": "Tvar bokehu",
-          "definition": "Tvar neostrých světelných bodů, daný počtem a zakřivením clonových lamel. Víc lamel dává kulatější a hladší bokeh."
+        "backgroundBlur": {
+          "term": "Rozostření pozadí",
+          "definition": "Míra toho, jak rozmazané je pozadí za subjektem. Vyšší hodnoty znamenají silnější rozostření a lepší izolaci subjektu."
         },
         "diffractionWarning": {
           "term": "Difrakce",
-          "definition": "Při velmi malých clonách se světlo ohýbá na okrajích clony a snímek měkne. Na full frame je tento jev obvykle patrný od f/16."
+          "definition": "Při velmi malých clonách se světlo ohýbá kolem okrajů clony, čímž měkne obraz. Varování před difrakcí tohoto nástroje se zobrazí, jakmile toto změkčení překročí rozptylový kroužek snímače — zhruba na f/22 na full frame, f/15 na APS-C, f/11 na Micro Four Thirds."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Fotíš portrét a chceš krásně rozmazané pozadí. Jakou clonu zvolíš?",
-          "hint": "Nižší clonové číslo znamená širší otvor objektivu a větší rozmazání pozadí.",
-          "successMessage": "Správně! Široká clona jako f/1.8 nebo f/2.8 vytvoří malou hloubku ostrosti a oddělí subjekt od pozadí s příjemným bokehem.",
-          "failureMessage": "Ne úplně. Úzké clony jako f/11 nebo f/16 udrží ostrou větší část scény. Pro rozmazané pozadí zvol širokou clonu (nízké clonové číslo).",
+          "scenario": "Fotíte portrét a chcete, aby se pozadí rozplynulo v jemném rozostření za subjektem. Jakou clonu zvolíte?",
+          "hint": "Nižší clonové číslo znamená širší otvor — a menší hloubku ostrosti.",
+          "successMessage": "Správně — f/1.4 otevírá clonu naplno, což dává malou hloubku ostrosti a hladce rozostřené pozadí.",
+          "failureMessage": "Ne tak docela. Vyšší clonová čísla jako f/11 nebo f/16 udrží ostrou větší část scény. Pro maximální rozostření pozadí zvolte místo toho nejširší clonu (nejnižší clonové číslo).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Fotíš na svatbě skupinu 8 lidí rozestavěných ve dvou řadách. Jaká clona ti pomůže udržet všechny ostré?",
-          "hint": "Lidé jsou v mírně odlišných vzdálenostech — potřebuješ dost hloubky ostrosti pro obě řady.",
-          "successMessage": "Dobrá volba! f/5.6 poskytuje dost hloubky ostrosti, aby obě řady byly ostré, a zároveň v interiéru udrží slušný expoziční čas.",
-          "failureMessage": "Ta clona může nechat zadní řadu mimo zaostření nebo být zbytečně úzká. Pro dvě řady lidí je f/5.6 spolehlivý výchozí bod.",
+          "scenario": "Fotíte čtyři přátele stojící ve volném shluku — pár z nich stojí o půl kroku napřed nebo pozadu oproti ostatním. Jaká clona vám dá pohodlnou rezervu, aby všichni zůstali ostří?",
+          "hint": "Potřebujete navíc hloubku ostrosti, abyste pokryli lidi, kteří nejsou přesně ve stejné rovině ostrosti, ale nemusíte přiclonit na doraz.",
+          "successMessage": "Správně — f/5.6 poskytuje pohodlnou rezervu hloubky ostrosti pro malé rozdíly ve vzdálenosti, aniž byste přiclonili víc, než je nutné.",
+          "failureMessage": "f/1.4 je příliš malá hloubka ostrosti pro lidi v mírně odlišných vzdálenostech a f/16 přiclonuje víc, než potřebujete. f/5.6 je spolehlivý střední bod.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Fotíš krajinu s lučními květy 2 metry od sebe a horami v pozadí. Máš 24mm objektiv na full frame. Jaká technika maximálně prodlouží ostrost od popředí po pozadí?",
-          "hint": "Existuje konkrétní vzdálenost zaostření, která maximalizuje ostrou zónu od popředí do nekonečna.",
-          "successMessage": "Přesně tak! Zaostření na hyperfokální vzdálenost při f/11 ti zajistí přijatelnou ostrost od zhruba 1 metru do nekonečna — ideální pro tuto scénu.",
-          "failureMessage": "Zaostření na nekonečno by nechalo květy v popředí měkké. Pro prodloužení ostrosti od blízkého popředí po nekonečno použij hyperfokální vzdálenost.",
+          "scenario": "Fotíte na 85mm, f/1.8, subjekt máte 3 metry daleko, a chcete znatelně zvětšit rozostření pozadí bez úpravy clony nebo výměny objektivu. Jaký je nejrychlejší způsob?",
+          "hint": "Hloubka ostrosti — a to, jak silně se pozadí rozostří vzhledem k subjektu — je extrémně citlivá na vzdálenost k subjektu.",
+          "successMessage": "Přesně tak — zkrácení vzdálenosti k subjektu na polovinu dramaticky zmenší hloubku ostrosti a zesílí rozostření pozadí, aniž byste měnili clonu nebo objektiv.",
+          "failureMessage": "Odstoupení dál nebo zvýšení ISO hloubku ostrosti nezmenší. Přiblížení se k subjektu je nejrychlejší způsob, jak zvětšit rozostření pozadí při stejné cloně a ohniskové vzdálenosti.",
           "options": {
-            "0": {
-              "label": "Zaostřit na květy (2 m)"
-            },
-            "1": {
-              "label": "Zaostřit na hory (nekonečno)"
-            },
-            "2": {
-              "label": "Zaostřit na hyperfokální vzdálenost"
-            },
-            "3": {
-              "label": "Zaostřit na půlku mezi květy a horami"
-            }
+            "0": { "label": "Přesunout se na 1.5m od subjektu (poloviční vzdálenost)" },
+            "1": { "label": "Přesunout se na 6m od subjektu (dvojnásobná vzdálenost)" },
+            "2": { "label": "Odstoupit, aby se zvětšila pracovní vzdálenost" },
+            "3": { "label": "Zvýšit ISO pro jasnější pozadí" }
           }
         },
         "3": {
-          "scenario": "Při makrofotografii květiny si všimneš, že ostré jsou jen přední okvětní lístky a zbytek mizí v rozmazání. Máš f/5.6. Co uděláš, abys měl ostrou větší část květu?",
-          "hint": "Na krátkou vzdálenost je hloubka ostrosti extrémně malá. Zvaž clonu.",
-          "successMessage": "Správně! Přiclonění na f/11 nebo f/16 ti v makru rozšíří ultratenkou hloubku ostrosti. Dávej si ale pozor na difrakci při velmi malých clonách.",
-          "failureMessage": "Širší clona by hloubku ostrosti ještě zmenšila. V makrofotografii je cesta k větší hloubce přiclonění (vyšší clonové číslo).",
+          "scenario": "Fotíte krajinu na full frame fotoaparát a chcete maximální ostrost napříč celým záběrem. Máte přiclonit až na doraz na f/22 pro maximální hloubku ostrosti?",
+          "hint": "Existuje kompromis mezi hloubkou ostrosti získanou přiclonením a změkčením způsobeným difrakcí při velmi malých clonách.",
+          "successMessage": "Správně — f/22 sice na papíře přidává hloubku ostrosti, ale většina objektivů už v tu chvíli má za sebou svá nejostřejší clonová čísla. Střední clona jako f/8-f/11 obvykle lépe vyváží hloubku ostrosti a ostrost objektivu. Vlastní varování před difrakcí tohoto nástroje je samostatný, pozdější práh — spustí se, teprve když rozostření difrakcí překročí rozptylový kroužek snímače, což na full frame nenastává dřív než kolem f/22 (f/15 na APS-C, f/11 na Micro Four Thirds). Nečekejte na toto varování, než uberete clonu — je to tvrdá fyzikální mez, ne doporučení pro ostrost.",
+          "failureMessage": "Přiclonění až na doraz na f/22 sice na papíře maximalizuje hloubku ostrosti, ale většina objektivů už v tu chvíli má za sebou svůj nejostřejší rozsah clon. Střední clona jako f/8-f/11 obvykle dává lepší rovnováhu mezi hloubkou ostrosti a reálnou ostrostí. Varování před difrakcí tohoto nástroje je samostatný, pozdější práh — objeví se, teprve když rozostření překročí rozptylový kroužek snímače, kolem f/22 na full frame — takže jeho absenci neberte jako zelenou pro další přiclonění.",
           "options": {
-            "0": {
-              "label": "Otevřít na f/2.8 pro víc světla"
-            },
-            "1": {
-              "label": "Přiclonit na f/11"
-            },
-            "2": {
-              "label": "Přejít na širší objektiv"
-            },
-            "3": {
-              "label": "Odstoupit od květu"
-            }
+            "0": { "label": "Ano — vždy použijte nejmenší dostupnou clonu pro maximální hloubku ostrosti" },
+            "1": { "label": "Ne — použijte střední clonu jako f/8-f/11 pro nejlepší celkovou ostrost, ne nejmenší" },
+            "2": { "label": "Ne — použijte nejširší dostupnou clonu pro nejostřejší výsledky" },
+            "3": { "label": "Nezáleží na tom — clona nemá vliv na ostrost" }
           }
         },
         "4": {
-          "scenario": "Porovnáváš dva fotoaparáty na portréty: full frame s 85mm f/1.8 a Micro Four Thirds s 42,5mm f/1.8. Oba dávají stejný výřez. Který z nich má menší hloubku ostrosti?",
-          "hint": "Přemýšlej o ekvivalentních ohniscích a o tom, jak velikost snímače ovlivňuje výpočet hloubky ostrosti při stejném clonovém čísle.",
-          "successMessage": "Správně! Full frame má hloubku ostrosti menší zhruba o 2 clony. Objektiv na MFT má sice stejné clonové číslo, ale kratší skutečná ohnisková vzdálenost (42,5 mm vs. 85 mm) dává při stejném výřezu větší hloubku ostrosti.",
-          "failureMessage": "I když jsou oba objektivy f/1.8, full frame používá pro stejný výřez delší skutečné ohnisko, a tak dává výrazně menší hloubku ostrosti.",
+          "scenario": "Porovnáváte dvě sestavy pro stejný portrétní výřez: full frame fotoaparát s objektivem 85mm f/1.8 a APS-C fotoaparát (crop 1,5x) s objektivem 56mm f/1.8, které dávají stejné zorné pole. Který má menší hloubku ostrosti?",
+          "hint": "Porovnejte skutečnou (ne ekvivalentní) ohniskovou vzdálenost, kterou každý objektiv používá k dosažení stejného výřezu.",
+          "successMessage": "Správně — i když jsou oba objektivy f/1.8, full frame fotoaparát používá delší skutečnou ohniskovou vzdálenost (85mm oproti 56mm), aby odpovídal výřezu, což dává znatelně menší hloubku ostrosti.",
+          "failureMessage": "Oba objektivy mají stejné clonové číslo, ale full frame fotoaparát potřebuje delší skutečnou ohniskovou vzdálenost, aby odpovídal výřezu. Právě tato delší ohnisková vzdálenost dává menší hloubku ostrosti — ne samotné clonové číslo.",
           "options": {
-            "0": {
-              "label": "Full frame s 85mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Four Thirds s 42,5mm f/1.8"
-            },
-            "2": {
-              "label": "Oba mají stejnou hloubku ostrosti"
-            }
+            "0": { "label": "Sestava full frame s 85mm f/1.8" },
+            "1": { "label": "Sestava APS-C s 56mm f/1.8" },
+            "2": { "label": "Obě dávají identickou hloubku ostrosti" }
           }
         }
       }

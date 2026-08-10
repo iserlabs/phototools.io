@@ -1,48 +1,48 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "La profunditat de camp és el rang de distàncies de la teva foto que apareix acceptablement nítid. Una profunditat de camp reduïda desenfoca el fons darrere del subjecte, mentre que una profunditat de camp gran manté tot nítid, del primer pla a l'horitzó. Controlar la profunditat de camp és una de les eines creatives més potents de la fotografia.",
+      "beginner": "La profunditat de camp és la zona de la teva foto — de prop a lluny — que sembla acceptablement nítida. Tres controls donen forma a aquesta zona: el diafragma (els diafragmes més oberts desenfoquen més el fons), la distància focal (els objectius més llargs redueixen la zona) i la distància al subjecte (acostar-te la redueix encara més). Ajusta qualsevol d'ells aquí i observa com el regle de profunditat i la visualització s'actualitzen junts en temps real.",
       "deeper": {
         "0": {
-          "heading": "Com funciona la profunditat de camp",
-          "text": "La profunditat de camp es regeix pel cercle de confusió (CoC) — la taca de desenfocament més gran al sensor que encara sembla nítida a l'ull humà. Tres factors físics la determinen: la distància focal, el diafragma i la distància al subjecte. Un diafragma més obert (f-stop més baix) produeix una profunditat de camp més reduïda perquè l'objectiu fa convergir la llum amb angles més pronunciats, fent que els punts fora d'enfocament es converteixin en cercles més grans al sensor."
+          "heading": "La geometria del diafragma i el cercle de confusió",
+          "text": "Un objectiu enfoca la llum d'una distància exacta al sensor com un punt perfecte; tota la resta arriba com un petit disc anomenat cercle de confusió (CoC). Un punt encara es llegeix com a nítid mentre el seu disc es mantingui més petit que un llindar determinat per la mida del sensor — aproximadament 0,03mm en full frame. Obrir el diafragma (baixar l'f-stop) obre un con de llum més gran entre l'objectiu i el punt d'enfocament, de manera que els punts allunyats d'aquest pla s'escampen en discos molt més grans, molt més ràpid. Per això un diafragma obert com f/1.4 desenfoca el fons molt més que f/11 — és la geometria del con de llum el que canvia, no només la quantitat de llum."
         },
         "1": {
-          "heading": "Distància focal i distància",
-          "text": "Les distàncies focals més llargues amplien la imatge, cosa que també amplia els cercles de desenfocament, reduint la profunditat de camp. Acostar-te al subjecte redueix la profunditat de camp pel mateix motiu — la diferència relativa de distància entre el subjecte i el fons es fa més gran. La distància hiperfocal és aquella distància d'enfocament en què la profunditat de camp s'estén des de la meitat d'aquesta distància fins a l'infinit, maximitzant la nitidesa de tota l'escena."
+          "heading": "La distància focal i la distància dominen l'efecte",
+          "text": "L'efecte de la distància focal sobre la profunditat de camp depèn completament del que mantinguis constant. A una distància al subjecte fixa, la profunditat de camp es redueix bruscament amb la distància focal — aproximadament amb el seu quadrat: dret a 3m d'un subjecte a f/2.8, un objectiu de 35mm dona uns 1,3m de profunditat de camp, mentre que un de 200mm dona uns 35mm. Però aquesta comparació també canvia el teu enquadrament, ja que no has reenquadrat. A un enquadrament fix — el mode de bloqueig d'angle de visió d'aquesta eina, on et fas enrere mentre fas zoom per mantenir el subjecte de la mateixa mida — la profunditat de camp gairebé no es mou: escombrar de 35mm a 200mm a f/2.8 amb l'enquadrament bloquejat canvia la profunditat de camp total en molt menys d'un 1%. El que canvia dramàticament, en canvi, és el fons: un objectiu més llarg amplia i comprimeix tot el que hi ha darrere del teu subjecte, de manera que les altes llums desenfocades es fan més grans i el fons se separa més, tot i que la capa enfocada al voltant del teu subjecte manté aproximadament el mateix gruix. Activa el bloqueig d'angle de visió i escombra la distància focal per veure-ho passar — la lectura de profunditat de camp es manté estable mentre la xifra de desenfocament de fons puja. La distància al subjecte segueix sent la palanca més fiable en qualsevol cas: acostar-te a una distància focal i diafragma fixos redueix bruscament la profunditat de camp, estrenyent els límits proper i llunyà al voltant d'una distància més curta."
         },
         "2": {
-          "heading": "Bokeh i difracció",
-          "text": "El bokeh fa referència a la qualitat de les zones desenfocades. El nombre i la forma de les lamel·les del diafragma afecten el seu caràcter — més lamel·les arrodonides produeixen altes llums més suaus i circulars. Amb diafragmes molt tancats (f/16+), la difracció fa que la llum es dispersi al passar per les vores del diafragma, suavitzant tota la imatge fins i tot dins de la zona de nitidesa. Sempre hi ha un punt dolç — normalment al voltant de f/5.6-f/8 en full frame — on la nitidesa i la profunditat de camp estan ben equilibrades."
+          "heading": "Mida del sensor i enquadrament equivalent",
+          "text": "Per omplir el quadre amb el mateix subjecte, un sensor més gran necessita una distància focal proporcionalment més llarga que un de més petit — una càmera full frame necessita aproximadament 1,5x la distància focal d'una càmera APS-C, i uns 2x la d'una Micro Quatre Terços, per al mateix camp de visió. Com que la profunditat de camp es redueix amb la distància focal, aquesta distància focal 'equivalent' més llarga és el que dona a les càmeres full frame la seva reputació de profunditat de camp més reduïda — l'f-stop imprès a l'objectiu no explica tota la història. Dos objectius amb el mateix f-stop en sensors de mides diferents, enquadrats de manera idèntica, produiran una profunditat de camp significativament diferent."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Diafragma",
-          "description": "Els diafragmes més oberts (f/1.4-f/2.8) creen una profunditat de camp reduïda amb un bokeh cremós. Els més tancats (f/8-f/16) augmenten la nitidesa a tota l'escena."
+          "description": "Els diafragmes més oberts (f-stops baixos com f/1.4-f/2.8) obren un con de llum més pronunciat i redueixen la profunditat de camp. Els diafragmes més tancats (f/8-f/16) l'augmenten."
         },
         "1": {
           "label": "Distància focal",
-          "description": "Els objectius més llargs comprimeixen la perspectiva i redueixen la profunditat de camp amb el mateix diafragma i enquadrament. Un 200mm a f/4 té molta menys profunditat de camp que un 35mm a f/4."
+          "description": "A una distància al subjecte fixa, la profunditat de camp es redueix aproximadament amb el quadrat de la distància focal. Amb un enquadrament fix (fas zoom i et fas enrere per mantenir la mateixa foto), la profunditat de camp gairebé no canvia — el que es transforma és el fons, que es magnifica i es desenfoca més a mesura que augmenta la distància focal."
         },
         "2": {
           "label": "Distància al subjecte",
-          "description": "Com més a prop enfoques, més reduïda és la profunditat de camp. Els fotògrafs de macro sovint treballen amb profunditats de camp mesurades en mil·límetres."
+          "description": "Acostar-te al teu subjecte redueix la profunditat de camp més ràpidament que gairebé qualsevol altre ajust, per això la fotografia macro té zones nítides tan primes."
         },
         "3": {
           "label": "Mida del sensor",
-          "description": "Els sensors més grans requereixen distàncies focals més llargues per al mateix enquadrament, cosa que indirectament redueix la profunditat de camp. Una càmera full frame produeix menys profunditat de camp que una Micro Quatre Terços amb enquadrament equivalent."
+          "description": "Els sensors més grans necessiten distàncies focals més llargues per igualar el mateix enquadrament que els sensors més petits, cosa que produeix indirectament una profunditat de camp més reduïda a trets equivalents."
         }
       },
       "tips": {
         "0": {
-          "text": "Per a retrats de grup, fes servir f/5.6 o més tancat i col·loca tothom al mateix pla focal. Una persona mig pas endavant pot quedar fora d'enfocament amb diafragmes oberts."
+          "text": "A diafragmes oberts com f/1.4-f/2.0, la profunditat de camp pot ser més prima que una cara humana. Enfoca amb precisió l'ull més proper, no el nas o l'orella, o la mirada del teu subjecte semblarà suau."
         },
         "1": {
-          "text": "Quan fotografiïs paisatge, enfoca a la distància hiperfocal en comptes de l'infinit. Això maximitza la zona de nitidesa des del primer pla pròxim fins al fons llunyà."
+          "text": "Fes servir els predefinits d'enquadrament (Cara, Retrat, Pla mitjà, etc.) per bloquejar la mida del teu subjecte al quadre mentre experimentes — mantenen la distància focal i la distància en la mateixa relació que tindria una foto real, així que el desenfocament que veus aquí coincideix amb el que obtindries amb la càmera."
         },
         "2": {
-          "text": "Si vols el màxim desenfocament de fons en un retrat, augmenta la distància focal i acosta't al subjecte tant com l'enquadrament permeti — els dos canvis es combinen per reduir la profunditat de camp dràsticament."
+          "text": "No persegueixis la profunditat de camp màxima tancant el diafragma al màxim — la majoria d'objectius són més nítids al voltant de f/8-f/11, molt abans que aparegui l'avís de difracció d'aquesta eina. Aquest avís és un llindar més estricte i més tardà: només s'encén quan el desenfocament per difracció supera el cercle de confusió del sensor, cosa que passa al voltant de f/22 en full frame (f/15 en APS-C, f/11 en Micro Quatre Terços). Considera f/8-f/11 com el teu objectiu pràctic, i l'avís com el límit extrem, no com la meta."
         }
       },
       "tooltips": {
@@ -52,153 +52,91 @@
         },
         "aperture": {
           "term": "Diafragma",
-          "definition": "La mida de l'obertura de l'objectiu, expressada com a f-stop (p. ex., f/2.8). Els f-stops més baixos signifiquen obertura més ampla, deixant entrar més llum i produint profunditat de camp més reduïda."
+          "definition": "La mida de l'obertura de l'objectiu, expressada com a f-stop (p. ex., f/2.8). Els f-stops més baixos signifiquen una obertura més àmplia, deixant entrar més llum i produint una profunditat de camp més reduïda."
         },
         "subjectDistance": {
           "term": "Distància al subjecte",
-          "definition": "La distància des del sensor de la càmera fins al punt d'enfocament. Les distàncies d'enfocament més curtes donen una profunditat de camp més reduïda."
+          "definition": "La distància des de la càmera fins al punt d'enfocament. Les distàncies d'enfocament més curtes donen una profunditat de camp més reduïda."
         },
         "sensor": {
           "term": "Mida del sensor",
-          "definition": "Les dimensions físiques del sensor. Els sensors més grans (full frame, mitjà format) produeixen menys profunditat de camp amb enquadrament equivalent comparats amb sensors més petits (APS-C, Micro Quatre Terços)."
-        },
-        "orientation": {
-          "term": "Orientació",
-          "definition": "Alterna entre orientació horitzontal (landscape) i vertical (portrait). Això afecta la referència d'enquadrament per als càlculs de distància al subjecte."
-        },
-        "nearFocus": {
-          "term": "Límit d'enfocament proper",
-          "definition": "La distància més propera a la càmera que apareix acceptablement nítida. Tot el que hi hagi més a prop es veurà desenfocat."
-        },
-        "farFocus": {
-          "term": "Límit d'enfocament llunyà",
-          "definition": "La distància més llunyana a la càmera que apareix acceptablement nítida. Quan arriba a l'infinit, tot el que hi hagi més enllà del límit proper està enfocat."
-        },
-        "totalDoF": {
-          "term": "Profunditat de camp total",
-          "definition": "La distància total entre els límits d'enfocament proper i llunyà — tota la zona que apareix nítida a la imatge."
+          "definition": "Les dimensions físiques del sensor de la càmera. Els sensors més grans (full frame, mitjà format) necessiten distàncies focals més llargues per a un enquadrament equivalent, cosa que produeix una profunditat de camp més reduïda que els sensors més petits (APS-C, Micro Quatre Terços)."
         },
         "hyperfocal": {
           "term": "Distància hiperfocal",
           "definition": "La distància d'enfocament que maximitza la profunditat de camp. Quan enfoques a aquesta distància, tot des de la meitat de la hiperfocal fins a l'infinit es veu nítid."
         },
-        "backgroundBlur": {
-          "term": "Desenfocament del fons",
-          "definition": "Una mesura de com de desenfocat apareix el fons darrere del subjecte. Els valors més alts signifiquen més desenfocament i més aïllament del subjecte."
-        },
         "coc": {
           "term": "Cercle de confusió",
           "definition": "El diàmetre màxim d'una taca de desenfocament al sensor que encara sembla un punt a l'ull humà. Determina el límit de la nitidesa acceptable per als càlculs de profunditat de camp."
         },
-        "isolationScore": {
-          "term": "Puntuació d'aïllament",
-          "definition": "Una valoració composta (0-100) que indica com de ben separat està el subjecte del fons, segons la quantitat de desenfocament de fons en relació amb la mida del subjecte."
-        },
-        "bokehShape": {
-          "term": "Forma del bokeh",
-          "definition": "La forma de les altes llums desenfocades, determinada pel nombre i la curvatura de les lamel·les del diafragma. Més lamel·les produeixen un bokeh més rodó i suau."
+        "backgroundBlur": {
+          "term": "Desenfocament del fons",
+          "definition": "Una mesura de com de desenfocat apareix el fons darrere del teu subjecte. Els valors més alts signifiquen més desenfocament i més aïllament del subjecte."
         },
         "diffractionWarning": {
           "term": "Difracció",
-          "definition": "Amb diafragmes molt tancats, la llum es desvia al voltant de les vores del diafragma, suavitzant la imatge. En sensors full frame, això sol fer-se notable a partir de f/16."
+          "definition": "Amb diafragmes molt tancats, la llum es desvia al voltant de les vores del diafragma, suavitzant la imatge. L'avís de difracció d'aquesta eina apareix quan aquest suavitzat supera el cercle de confusió del sensor — al voltant de f/22 en full frame, f/15 en APS-C, f/11 en Micro Quatre Terços."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Estàs fent un retrat i vols un fons ben desenfocat. Quin diafragma hauries de triar?",
-          "hint": "Els f-stops més baixos signifiquen una obertura més ampla i més desenfocament del fons.",
-          "successMessage": "Correcte! Un diafragma obert com f/1.8 o f/2.8 crea una profunditat de camp reduïda, separant el subjecte del fons amb un bokeh agradable.",
-          "failureMessage": "No del tot. Els diafragmes tancats com f/11 o f/16 mantenen més parts de l'escena enfocades. Per al desenfocament del fons, tria un diafragma obert (f-stop baix).",
+          "scenario": "Estàs fent un retrat i vols que el fons es fongui en un desenfocament suau darrere del teu subjecte. Quin diafragma hauries de triar?",
+          "hint": "Els f-stops més baixos signifiquen una obertura més àmplia — i una profunditat de camp més reduïda.",
+          "successMessage": "Correcte — f/1.4 obre el diafragma al màxim, produint una profunditat de camp reduïda i un fons desenfocat suaument.",
+          "failureMessage": "No del tot. Els f-stops més alts com f/11 o f/16 mantenen més parts de l'escena nítides. Per al màxim desenfocament de fons, tria en canvi el diafragma més obert (l'f-stop més baix).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Estàs fotografiant un grup de 8 persones col·locades en dues files en un casament. Quin diafragma t'ajudarà a tenir tothom enfocat?",
-          "hint": "Amb persones a distàncies lleugerament diferents, necessites prou profunditat de camp per cobrir les dues files.",
-          "successMessage": "Bona tria! f/5.6 ofereix prou profunditat de camp per mantenir les dues files nítides mentre manté velocitats d'obturació raonables a interior.",
-          "failureMessage": "Aquest diafragma pot deixar la fila de darrere fora d'enfocament o ser innecessàriament tancat. Per a dues files, f/5.6 és un punt de partida fiable.",
+          "scenario": "Estàs fotografiant quatre amics agrupats de manera relaxada — un parell d'ells estan mig pas endavant o endarrere respecte als altres. Quin diafragma et dona un marge de seguretat còmode per mantenir tothom nítid?",
+          "hint": "Necessites profunditat de camp addicional per cobrir persones que no estan exactament al mateix pla focal, però no cal que tanquis el diafragma del tot.",
+          "successMessage": "Correcte — f/5.6 proporciona un marge còmode de profunditat de camp per a petites variacions de distància, sense tancar el diafragma més del necessari.",
+          "failureMessage": "f/1.4 és massa reduït per a persones a distàncies lleugerament diferents, i f/16 tanca més del que necessites. f/5.6 és el terme mitjà fiable.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Estàs fent un paisatge amb flors silvestres a 2 metres i muntanyes al fons. Fas servir un 24mm en full frame. Quina tècnica maximitzarà la nitidesa de davant a darrere?",
-          "hint": "Hi ha una distància concreta en què pots enfocar per maximitzar la zona nítida, del primer pla fins a l'infinit.",
-          "successMessage": "Exacte! Enfocar a la distància hiperfocal amb f/11 assegura que tot, des d'aproximadament 1 metre fins a l'infinit, sigui acceptablement nítid — perfecte per a aquesta escena.",
-          "failureMessage": "Enfocar a l'infinit deixaria les flors del primer pla suaus. Fes servir la distància hiperfocal per estendre la nitidesa des del primer pla fins a l'infinit.",
+          "scenario": "Estàs a 85mm, f/1.8, amb el subjecte a 3 metres, i vols augmentar notablement el desenfocament de fons sense tocar el diafragma ni canviar d'objectiu. Quina és la manera més ràpida?",
+          "hint": "La profunditat de camp — i com de fort es desenfoca el fons en relació amb el teu subjecte — és extremadament sensible a la distància al subjecte.",
+          "successMessage": "Exacte — reduir a la meitat la distància al subjecte redueix dràsticament la profunditat de camp i amplia el desenfocament de fons, sense canviar el diafragma ni l'objectiu.",
+          "failureMessage": "Allunyar-te o pujar l'ISO no reduirà la profunditat de camp. Acostar-te al teu subjecte és la manera més ràpida d'augmentar el desenfocament de fons a un diafragma i distància focal fixos.",
           "options": {
-            "0": {
-              "label": "Enfocar a les flors (2m)"
-            },
-            "1": {
-              "label": "Enfocar a les muntanyes (infinit)"
-            },
-            "2": {
-              "label": "Enfocar a la distància hiperfocal"
-            },
-            "3": {
-              "label": "Enfocar a mig camí entre flors i muntanyes"
-            }
+            "0": { "label": "Mou-te a 1,5m del teu subjecte (la meitat de la distància)" },
+            "1": { "label": "Mou-te a 6m del teu subjecte (el doble de la distància)" },
+            "2": { "label": "Fes-te enrere per augmentar la teva distància de treball" },
+            "3": { "label": "Puja l'ISO per a un fons més lluminós" }
           }
         },
         "3": {
-          "scenario": "Estàs fent macro d'una flor i veus que només els pètals del davant són nítids. La resta de la flor es dilueix en desenfocament. Estàs a f/5.6. Què hauries de fer per enfocar més parts de la flor?",
-          "hint": "A distàncies d'enfocament curtes, la profunditat de camp es torna extremament prima. Pensa en el diafragma.",
-          "successMessage": "Correcte! Tancar el diafragma a f/11 o f/16 augmenta aquesta profunditat de camp primíssima del treball macro. Vigila la difracció als diafragmes molt tancats.",
-          "failureMessage": "Obrir més el diafragma reduiria encara més la profunditat de camp. En macro, tancar el diafragma (f-stop més alt) és la manera principal de guanyar profunditat.",
+          "scenario": "Estàs fent un paisatge amb una càmera full frame i vols la màxima nitidesa a tot el quadre. Hauries de tancar el diafragma fins a f/22 per obtenir la màxima profunditat de camp?",
+          "hint": "Hi ha un compromís entre la profunditat de camp guanyada en tancar el diafragma i el suavitzat causat per la difracció amb diafragmes molt tancats.",
+          "successMessage": "Correcte — f/22 sí que afegeix profunditat de camp sobre el paper, però la majoria d'objectius ja han passat els seus diafragmes més nítids en aquest punt. Un diafragma moderat com f/8-f/11 sol equilibrar millor la profunditat de camp i la nitidesa de l'objectiu. L'avís de difracció d'aquesta mateixa eina és un llindar separat i més tardà — només s'activa quan el desenfocament per difracció supera el cercle de confusió del sensor, cosa que en full frame no passa fins a aproximadament f/22 (f/15 en APS-C, f/11 en Micro Quatre Terços). No esperis aquest avís abans de reduir — és un límit físic estricte, no una recomanació de nitidesa.",
+          "failureMessage": "Tancar el diafragma fins a f/22 sí que maximitza la profunditat de camp sobre el paper, però la majoria d'objectius ja han passat el seu rang de diafragma més nítid en aquest punt. Un diafragma moderat com f/8-f/11 sol donar un millor equilibri entre profunditat de camp i nitidesa real. L'avís de difracció d'aquesta eina és un llindar separat i més tardà — només apareix quan el desenfocament supera el cercle de confusió del sensor, al voltant de f/22 en full frame — així que no facis servir la seva absència com a llum verda per seguir tancant el diafragma.",
           "options": {
-            "0": {
-              "label": "Obrir a f/2.8 per tenir més llum"
-            },
-            "1": {
-              "label": "Tancar a f/11"
-            },
-            "2": {
-              "label": "Canviar a un objectiu més ample"
-            },
-            "3": {
-              "label": "Allunyar-te més de la flor"
-            }
+            "0": { "label": "Sí — fes servir sempre el diafragma més tancat disponible per a la màxima profunditat de camp" },
+            "1": { "label": "No — fes servir un diafragma moderat com f/8-f/11 per obtenir la millor nitidesa general, no el més tancat" },
+            "2": { "label": "No — fes servir el diafragma més obert disponible per als resultats més nítids" },
+            "3": { "label": "No importa — el diafragma no té cap efecte sobre la nitidesa" }
           }
         },
         "4": {
-          "scenario": "Compares dues càmeres per a retrat: una full frame amb un 85mm f/1.8 i una Micro Quatre Terços amb un 42.5mm f/1.8. Les dues donen el mateix enquadrament. Quina produeix menys profunditat de camp?",
-          "hint": "Pensa en les distàncies focals equivalents i com la mida del sensor afecta el càlcul de profunditat de camp al mateix f-stop.",
-          "successMessage": "Correcte! La full frame produeix aproximadament 2 passos menys de profunditat de camp. Tot i que l'objectiu MFT té el mateix f-stop, la distància focal real més curta (42.5mm vs 85mm) dona més profunditat de camp amb enquadrament equivalent.",
-          "failureMessage": "Tot i que els dos objectius són f/1.8, la full frame fa servir una distància focal real més llarga per al mateix enquadrament, produint una profunditat de camp significativament més reduïda.",
+          "scenario": "Estàs comparant dues configuracions per al mateix enquadrament de retrat: una càmera full frame amb un objectiu de 85mm f/1.8, i una càmera APS-C (retall 1,5x) amb un objectiu de 56mm f/1.8 que produeix el mateix camp de visió. Quina produeix menys profunditat de camp?",
+          "hint": "Compara la distància focal real (no l'equivalent) que fa servir cada objectiu per aconseguir el mateix enquadrament.",
+          "successMessage": "Correcte — tot i que els dos objectius són f/1.8, la càmera full frame fa servir una distància focal real més llarga (85mm enfront de 56mm) per igualar l'enquadrament, cosa que produeix una profunditat de camp notablement més reduïda.",
+          "failureMessage": "Els dos objectius comparteixen el mateix f-stop, però la càmera full frame necessita una distància focal real més llarga per igualar l'enquadrament. Aquesta distància focal més llarga és el que produeix una profunditat de camp més reduïda — no l'f-stop tot sol.",
           "options": {
-            "0": {
-              "label": "Full frame amb 85mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Quatre Terços amb 42.5mm f/1.8"
-            },
-            "2": {
-              "label": "Les dues produeixen la mateixa profunditat de camp"
-            }
+            "0": { "label": "La configuració full frame amb 85mm f/1.8" },
+            "1": { "label": "La configuració APS-C amb 56mm f/1.8" },
+            "2": { "label": "Les dues produeixen la mateixa profunditat de camp" }
           }
         }
       }

@@ -1,204 +1,142 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "La profondeur de champ (PdC) est la plage de distance dans ta photo qui paraît suffisamment nette. Une faible PdC floute l'arrière-plan derrière ton sujet, tandis qu'une grande PdC garde tout net du premier plan à l'horizon. Maîtriser la PdC est l'un des outils créatifs les plus puissants en photographie.",
+      "beginner": "La profondeur de champ est la zone de ta photo — du proche au lointain — qui paraît suffisamment nette. Trois réglages façonnent cette zone : l'ouverture (des ouvertures plus grandes floutent davantage l'arrière-plan), la focale (des objectifs plus longs réduisent la zone) et la distance au sujet (se rapprocher la réduit encore plus). Ajuste l'un d'eux ici et observe la règle de profondeur et la vue se mettre à jour ensemble en temps réel.",
       "deeper": {
         "0": {
-          "heading": "Comment fonctionne la PdC",
-          "text": "La profondeur de champ est régie par le cercle de confusion (CoC) — la plus grande tache de flou sur le capteur qui paraît encore nette à l'œil humain. Trois facteurs physiques la déterminent : la focale, l'ouverture et la distance au sujet. Une ouverture plus grande (nombre f plus bas) produit une PdC plus faible car l'objectif fait converger la lumière sous des angles plus prononcés, ce qui fait que les points hors mise au point s'étalent en cercles plus grands sur le capteur."
+          "heading": "Géométrie de l'ouverture et cercle de confusion",
+          "text": "Un objectif fait converger la lumière provenant d'une distance précise en un point parfait sur le capteur ; tout le reste atterrit sous forme d'un petit disque appelé cercle de confusion (CoC). Un point paraît toujours net tant que son disque reste plus petit qu'un seuil déterminé par la taille du capteur — environ 0.03mm en plein format. Ouvrir l'ouverture (baisser le nombre f) élargit le cône de lumière entre l'objectif et le point de mise au point, si bien que les points éloignés de ce plan s'étalent en disques bien plus grands, bien plus vite. C'est pourquoi une grande ouverture comme f/1.4 floute tellement plus l'arrière-plan que f/11 — c'est la géométrie du cône de lumière qui change, pas seulement la quantité de lumière."
         },
         "1": {
-          "heading": "Focale et distance",
-          "text": "Les focales plus longues agrandissent l'image, ce qui agrandit aussi les cercles de flou et réduit la PdC. Se rapprocher du sujet réduit la PdC pour la même raison — l'écart relatif de distance entre le sujet et l'arrière-plan devient plus grand. La distance hyperfocale est la distance de mise au point à laquelle la PdC s'étend de la moitié de cette distance jusqu'à l'infini, maximisant la netteté sur toute la scène."
+          "heading": "La focale et la distance dominent l'effet",
+          "text": "L'effet de la focale sur la profondeur de champ dépend entièrement de ce que tu gardes constant. À distance au sujet fixe, la profondeur de champ se réduit fortement avec la focale — à peu près selon son carré : à 3m d'un sujet à f/2.8, un objectif de 35mm donne environ 1.3m de profondeur de champ, tandis qu'un 200mm en donne environ 35mm. Mais cette comparaison change aussi ton cadrage, puisque tu n'as pas recadré. À cadrage fixe — le mode de champ de vision verrouillé de cet outil, où tu recules en zoomant pour garder le sujet à la même taille — la profondeur de champ bouge à peine : balayer de 35mm à 200mm à f/2.8 avec le cadrage verrouillé change la profondeur de champ totale de bien moins de 1%. Ce qui change radicalement à la place, c'est l'arrière-plan : un objectif plus long grossit et compresse tout ce qui se trouve derrière ton sujet, si bien que les hautes lumières hors mise au point grossissent et que l'arrière-plan se détache davantage, même si l'épaisseur de la tranche nette autour de ton sujet reste à peu près la même. Active le verrouillage du champ de vision et balaie la focale pour observer ce phénomène — l'indication de profondeur de champ reste stable pendant que le chiffre de flou d'arrière-plan grimpe. La distance au sujet reste dans tous les cas le levier le plus fiable : se rapprocher à focale et ouverture fixes réduit fortement la profondeur de champ, resserrant les limites proche et lointaine autour d'une distance plus courte."
         },
         "2": {
-          "heading": "Bokeh et diffraction",
-          "text": "Le bokeh désigne la qualité des zones hors mise au point. Le nombre et la forme des lamelles du diaphragme influencent le caractère du bokeh — des lamelles plus arrondies produisent des points lumineux plus doux et plus circulaires. Aux très petites ouvertures (f/16 et au-delà), la diffraction fait s'étaler la lumière en passant les bords du diaphragme, adoucissant toute l'image même dans la zone de PdC. Il existe toujours un point idéal — typiquement autour de f/5.6-f/8 en plein format — où la netteté et la profondeur de champ sont équilibrées de manière optimale."
+          "heading": "Taille du capteur et cadrage équivalent",
+          "text": "Pour remplir le cadre avec le même sujet, un capteur plus grand a besoin d'une focale proportionnellement plus longue qu'un plus petit — un appareil plein format a besoin d'environ 1.5x la focale d'un appareil APS-C, et environ 2x celle d'un Micro Four Thirds, pour le même champ de vision. Comme la profondeur de champ se réduit avec la focale, cette focale « équivalente » plus longue est ce qui vaut aux appareils plein format leur réputation de profondeur de champ plus faible — le nombre f imprimé sur l'objectif ne raconte pas toute l'histoire. Deux objectifs à la même ouverture sur des capteurs de tailles différentes, cadrés à l'identique, produiront une profondeur de champ sensiblement différente."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Ouverture",
-          "description": "Les grandes ouvertures (f/1.4-f/2.8) créent une faible PdC avec un bokeh crémeux. Les ouvertures étroites (f/8-f/16) augmentent la netteté dans toute la scène."
+          "description": "Les ouvertures plus grandes (nombres f bas comme f/1.4-f/2.8) ouvrent un cône de lumière plus prononcé et réduisent la profondeur de champ. Les ouvertures plus étroites (f/8-f/16) l'élargissent."
         },
         "1": {
           "label": "Longueur focale",
-          "description": "Les objectifs longs compriment la perspective et réduisent la PdC à même ouverture et cadrage. Un 200 mm à f/4 a beaucoup moins de PdC qu'un 35 mm à f/4."
+          "description": "À distance au sujet fixe, la profondeur de champ se réduit à peu près selon le carré de la focale. À cadrage fixe (on zoome et on recule pour garder la même image), la profondeur de champ change à peine — c'est l'arrière-plan qui se transforme, en grossissant et en se floutant davantage à mesure que la focale augmente."
         },
         "2": {
           "label": "Distance au sujet",
-          "description": "Plus tu te rapproches, plus la PdC est faible. Les photographes macro travaillent souvent avec une PdC mesurée en millimètres."
+          "description": "Se rapprocher de ton sujet réduit la profondeur de champ plus vite que presque tout autre réglage, ce qui explique les zones nettes ultra-fines de la photo macro."
         },
         "3": {
           "label": "Taille du capteur",
-          "description": "Les capteurs plus grands nécessitent des focales plus longues pour le même cadrage, ce qui réduit indirectement la PdC. Un plein format produit une PdC plus faible qu'un Micro Four Thirds à cadrage équivalent."
+          "description": "Les capteurs plus grands ont besoin de focales plus longues pour égaler le cadrage des capteurs plus petits, ce qui produit indirectement une profondeur de champ plus faible à cadrage équivalent."
         }
       },
       "tips": {
         "0": {
-          "text": "Pour les portraits de groupe, utilise f/5.6 ou plus étroit et place tout le monde dans le même plan focal. Même une personne décalée d'un demi-pas peut sortir du net à grande ouverture."
+          "text": "À grande ouverture comme f/1.4-f/2.0, la profondeur de champ peut être plus fine qu'un visage humain. Fais la mise au point avec précision sur l'œil le plus proche, pas sur le nez ou l'oreille, sinon le regard de ton sujet paraîtra flou."
         },
         "1": {
-          "text": "Pour les paysages, fais la mise au point à la distance hyperfocale plutôt qu'à l'infini. Cela maximise la zone de netteté du premier plan rapproché à l'arrière-plan lointain."
+          "text": "Utilise les préréglages de cadrage (Visage, Portrait, Plan moyen, etc.) pour fixer la taille de ton sujet dans le cadre pendant que tu expérimentes — ils maintiennent la focale et la distance dans le même rapport qu'une vraie prise de vue, si bien que le flou que tu vois ici correspond à ce que tu obtiendrais avec l'appareil."
         },
         "2": {
-          "text": "Si tu veux un maximum de flou d'arrière-plan pour un portrait, augmente ta longueur focale et rapproche-toi autant que le cadrage le permet — les deux changements se cumulent pour réduire la PdC considérablement."
+          "text": "Ne cherche pas la profondeur de champ maximale en fermant complètement le diaphragme — la plupart des objectifs sont les plus nets autour de f/8-f/11, bien avant que l'avertissement de diffraction de cet outil n'apparaisse. Cet avertissement est un seuil plus strict et plus tardif : il ne s'allume qu'une fois que le flou de diffraction dépasse le cercle de confusion du capteur, ce qui survient autour de f/22 en plein format (f/15 en APS-C, f/11 en Micro Four Thirds). Considère f/8-f/11 comme ton objectif pratique, et le voyant d'avertissement comme la limite extrême, pas comme le but."
         }
       },
       "tooltips": {
         "focalLength": {
           "term": "Longueur focale",
-          "definition": "La distance en millimètres entre le centre optique de l'objectif et le capteur lorsque la mise au point est à l'infini. Les longues focales grossissent l'image et réduisent la profondeur de champ."
+          "definition": "La distance en millimètres entre le centre optique de l'objectif et le capteur lorsque la mise au point est à l'infini. Les focales plus longues grossissent l'image et réduisent la profondeur de champ."
         },
         "aperture": {
           "term": "Ouverture",
-          "definition": "La taille de l'ouverture de l'objectif, exprimée en nombre f (par ex. f/2.8). Les nombres f plus bas signifient une ouverture plus large, laissant entrer plus de lumière et produisant une profondeur de champ plus faible."
+          "definition": "La taille de l'ouverture de l'objectif, exprimée en nombre f (par ex. f/2.8). Des nombres f plus bas signifient une ouverture plus large, laissant entrer plus de lumière et produisant une profondeur de champ plus faible."
         },
         "subjectDistance": {
           "term": "Distance au sujet",
-          "definition": "La distance entre le capteur de l'appareil et le point de mise au point. Des distances de mise au point plus courtes donnent une profondeur de champ plus faible."
+          "definition": "La distance entre l'appareil et le point de mise au point. Des distances de mise au point plus courtes donnent une profondeur de champ plus faible."
         },
         "sensor": {
           "term": "Taille du capteur",
-          "definition": "Les dimensions physiques du capteur. Les capteurs plus grands (plein format, moyen format) produisent une profondeur de champ plus faible à cadrage équivalent par rapport aux capteurs plus petits (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Orientation",
-          "definition": "Bascule entre orientation paysage (horizontale) et portrait (verticale). Cela modifie la référence de cadrage pour le calcul de la distance au sujet."
-        },
-        "nearFocus": {
-          "term": "Limite de mise au point proche",
-          "definition": "La distance la plus proche de l'appareil qui paraît suffisamment nette. Tout ce qui est plus proche apparaîtra flou."
-        },
-        "farFocus": {
-          "term": "Limite de mise au point lointaine",
-          "definition": "La distance la plus éloignée de l'appareil qui paraît suffisamment nette. Quand elle atteint l'infini, tout au-delà de la limite proche est net."
-        },
-        "totalDoF": {
-          "term": "Profondeur de champ totale",
-          "definition": "La distance complète entre les limites de mise au point proche et lointaine — toute la zone qui paraît nette dans l'image."
+          "definition": "Les dimensions physiques du capteur de l'appareil. Les capteurs plus grands (plein format, moyen format) nécessitent des focales plus longues pour un cadrage équivalent, ce qui produit une profondeur de champ plus faible que les capteurs plus petits (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Distance hyperfocale",
           "definition": "La distance de mise au point qui maximise la profondeur de champ. Quand tu fais la mise au point à cette distance, tout de la moitié de la distance hyperfocale à l'infini paraît net."
         },
-        "backgroundBlur": {
-          "term": "Flou d'arrière-plan",
-          "definition": "Une mesure de l'intensité du flou derrière ton sujet. Des valeurs plus élevées signifient un flou plus marqué et une meilleure isolation du sujet."
-        },
         "coc": {
           "term": "Cercle de confusion",
-          "definition": "Le diamètre maximum d'une tache de flou sur le capteur qui apparaît encore comme un point à l'œil humain. Il détermine la limite de netteté acceptable pour le calcul de la profondeur de champ."
+          "definition": "Le diamètre maximum d'une tache de flou sur le capteur qui apparaît encore comme un point à l'œil humain. Il détermine la limite de netteté acceptable pour les calculs de profondeur de champ."
         },
-        "isolationScore": {
-          "term": "Score d'isolation",
-          "definition": "Une note composite (0-100) qui indique à quel point le sujet est séparé de l'arrière-plan, en fonction du flou d'arrière-plan par rapport à la taille du sujet."
-        },
-        "bokehShape": {
-          "term": "Forme du bokeh",
-          "definition": "La forme des points lumineux hors mise au point, déterminée par le nombre et la courbure des lamelles du diaphragme. Plus de lamelles donnent un bokeh plus rond et plus doux."
+        "backgroundBlur": {
+          "term": "Flou d'arrière-plan",
+          "definition": "Une mesure de l'intensité du flou de l'arrière-plan derrière ton sujet. Des valeurs plus élevées signifient un flou plus marqué et une meilleure isolation du sujet."
         },
         "diffractionWarning": {
           "term": "Diffraction",
-          "definition": "Aux très petites ouvertures, la lumière se courbe autour des bords du diaphragme, adoucissant l'image. Sur les capteurs plein format, cela devient typiquement perceptible au-delà de f/16."
+          "definition": "Aux très petites ouvertures, la lumière se courbe autour des bords du diaphragme, adoucissant l'image. L'avertissement de diffraction de cet outil apparaît une fois que cet adoucissement dépasse le cercle de confusion du capteur — autour de f/22 en plein format, f/15 en APS-C, f/11 en Micro Four Thirds."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Tu fais un portrait et tu veux un bel arrière-plan flou. Quelle ouverture choisir ?",
-          "hint": "Les nombres f plus bas signifient une ouverture plus large et plus de flou d'arrière-plan.",
-          "successMessage": "Correct ! Une grande ouverture comme f/1.8 ou f/2.8 crée une faible profondeur de champ, séparant ton sujet de l'arrière-plan avec un joli bokeh.",
-          "failureMessage": "Pas tout à fait. Les ouvertures étroites comme f/11 ou f/16 gardent plus de la scène nette. Pour le flou d'arrière-plan, choisis une grande ouverture (nombre f bas).",
+          "scenario": "Tu photographies un portrait et tu veux que l'arrière-plan se fonde en un doux flou derrière ton sujet. Quelle ouverture choisir ?",
+          "hint": "Des nombres f plus bas signifient une ouverture plus large — et une profondeur de champ plus faible.",
+          "successMessage": "Correct — f/1.4 ouvre grand le diaphragme, produisant une faible profondeur de champ et un arrière-plan doucement flouté.",
+          "failureMessage": "Pas tout à fait. Des nombres f plus élevés comme f/11 ou f/16 gardent davantage la scène nette. Pour un flou d'arrière-plan maximal, choisis plutôt la plus grande ouverture (le nombre f le plus bas).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Tu photographies un groupe de 8 personnes disposées en deux rangs lors d'un mariage. Quelle ouverture permettra de garder tout le monde net ?",
-          "hint": "Avec des personnes à des distances légèrement différentes, tu as besoin d'assez de profondeur de champ pour couvrir les deux rangs.",
-          "successMessage": "Bon choix ! f/5.6 offre assez de profondeur de champ pour garder les deux rangs nets tout en maintenant des vitesses d'obturation correctes en intérieur.",
-          "failureMessage": "Cette ouverture risque de laisser le rang arrière flou ou d'être inutilement étroite. Pour deux rangs de personnes, f/5.6 est un point de départ fiable.",
+          "scenario": "Tu photographies quatre amis regroupés de façon décontractée — deux d'entre eux sont un demi-pas devant ou derrière les autres. Quelle ouverture te donne une marge de sécurité confortable pour garder tout le monde net ?",
+          "hint": "Tu as besoin d'un peu plus de profondeur de champ pour couvrir des personnes qui ne sont pas exactement dans le même plan focal, mais tu n'as pas besoin de fermer complètement le diaphragme.",
+          "successMessage": "Correct — f/5.6 offre une marge confortable de profondeur de champ pour de petites variations de distance, sans fermer l'ouverture plus que nécessaire.",
+          "failureMessage": "f/1.4 est trop faible pour des personnes à des distances légèrement différentes, et f/16 ferme plus que nécessaire. f/5.6 est le compromis fiable.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Tu photographies un paysage avec des fleurs sauvages à 2 mètres et des montagnes en arrière-plan. Tu utilises un 24 mm sur un appareil plein format. Quelle technique maximisera la netteté de l'avant à l'arrière ?",
-          "hint": "Il existe une distance de mise au point spécifique qui maximise la zone nette du premier plan à l'infini.",
-          "successMessage": "Exactement ! Faire la mise au point à la distance hyperfocale à f/11 assure que tout d'environ 1 mètre à l'infini est suffisamment net — parfait pour cette scène.",
-          "failureMessage": "Faire la mise au point à l'infini laisserait les fleurs du premier plan floues. Utilise la distance hyperfocale pour étendre la netteté du premier plan à l'infini.",
+          "scenario": "Tu es à 85mm, f/1.8, avec ton sujet à 3 mètres, et tu veux augmenter nettement le flou d'arrière-plan sans toucher à l'ouverture ni changer d'objectif. Quel est le moyen le plus rapide ?",
+          "hint": "La profondeur de champ — et l'intensité du flou de l'arrière-plan par rapport à ton sujet — est extrêmement sensible à la distance au sujet.",
+          "successMessage": "Exactement — diviser par deux la distance au sujet réduit radicalement la profondeur de champ et amplifie le flou d'arrière-plan, sans changer ton ouverture ni ton objectif.",
+          "failureMessage": "S'éloigner davantage ou augmenter l'ISO ne réduira pas la profondeur de champ. Se rapprocher de ton sujet est le moyen le plus rapide d'augmenter le flou d'arrière-plan à ouverture et focale fixes.",
           "options": {
-            "0": {
-              "label": "Mise au point sur les fleurs (2 m)"
-            },
-            "1": {
-              "label": "Mise au point sur les montagnes (infini)"
-            },
-            "2": {
-              "label": "Mise au point à la distance hyperfocale"
-            },
-            "3": {
-              "label": "Mise au point à mi-chemin entre les fleurs et les montagnes"
-            }
+            "0": { "label": "Se rapprocher à 1.5m de ton sujet (la moitié de la distance)" },
+            "1": { "label": "S'éloigner à 6m de ton sujet (le double de la distance)" },
+            "2": { "label": "Reculer pour augmenter ta distance de travail" },
+            "3": { "label": "Augmenter l'ISO pour un arrière-plan plus lumineux" }
           }
         },
         "3": {
-          "scenario": "Tu fais de la photo macro d'une fleur et tu remarques que seuls les pétales avant sont nets. Le reste de la fleur se dissout dans le flou. Tu es à f/5.6. Que faire pour avoir plus de netteté sur la fleur ?",
-          "hint": "À des distances de mise au point rapprochées, la PdC devient extrêmement mince. Pense à ton ouverture.",
-          "successMessage": "Exact ! Fermer à f/11 ou f/16 augmente ta PdC ultra-mince en macro. Attention cependant à l'adoucissement par diffraction aux très petites ouvertures.",
-          "failureMessage": "Ouvrir davantage le diaphragme rendrait la PdC encore plus mince. En photo macro, fermer le diaphragme (nombre f plus élevé) est le moyen principal d'obtenir plus de profondeur.",
+          "scenario": "Tu photographies un paysage avec un appareil plein format et tu veux une netteté maximale sur toute l'image. Faut-il fermer complètement à f/22 pour obtenir le maximum de profondeur de champ ?",
+          "hint": "Il y a un compromis entre la profondeur de champ gagnée en fermant le diaphragme et l'adoucissement causé par la diffraction aux très petites ouvertures.",
+          "successMessage": "Correct — f/22 ajoute bien de la profondeur de champ sur le papier, mais la plupart des objectifs ont déjà dépassé leurs ouvertures les plus nettes à ce stade. Une ouverture modérée comme f/8-f/11 équilibre généralement mieux profondeur de champ et netteté de l'objectif. L'avertissement de diffraction propre à cet outil est un seuil distinct et plus tardif — il ne s'active qu'une fois que le flou de diffraction dépasse le cercle de confusion du capteur, ce qui n'arrive en plein format qu'autour de f/22 (f/15 en APS-C, f/11 en Micro Four Thirds). N'attends pas cet avertissement avant de rouvrir — c'est une limite physique stricte, pas une recommandation de netteté.",
+          "failureMessage": "Fermer complètement à f/22 maximise bien la profondeur de champ sur le papier, mais la plupart des objectifs ont déjà dépassé leur plage d'ouverture la plus nette à ce stade. Une ouverture modérée comme f/8-f/11 offre généralement un meilleur équilibre entre profondeur de champ et netteté réelle. L'avertissement de diffraction de cet outil est un seuil distinct et plus tardif — il n'apparaît qu'une fois que le flou dépasse le cercle de confusion du capteur, autour de f/22 en plein format — donc ne prends pas son absence comme un feu vert pour continuer à fermer.",
           "options": {
-            "0": {
-              "label": "Ouvrir à f/2.8 pour plus de lumière"
-            },
-            "1": {
-              "label": "Fermer à f/11"
-            },
-            "2": {
-              "label": "Passer à un objectif plus large"
-            },
-            "3": {
-              "label": "S'éloigner de la fleur"
-            }
+            "0": { "label": "Oui — utilise toujours l'ouverture la plus petite disponible pour une profondeur de champ maximale" },
+            "1": { "label": "Non — utilise une ouverture modérée comme f/8-f/11 pour la meilleure netteté globale, pas la plus petite" },
+            "2": { "label": "Non — utilise la plus grande ouverture disponible pour les résultats les plus nets" },
+            "3": { "label": "Peu importe — l'ouverture n'a aucun effet sur la netteté" }
           }
         },
         "4": {
-          "scenario": "Tu compares deux appareils pour le portrait : un plein format avec un 85 mm f/1.8 et un Micro Four Thirds avec un 42,5 mm f/1.8. Les deux produisent un cadrage équivalent. Lequel donne la profondeur de champ la plus faible ?",
-          "hint": "Pense aux longueurs focales équivalentes et à l'impact de la taille du capteur sur le calcul de la PdC au même nombre f.",
-          "successMessage": "Correct ! Le plein format produit environ 2 stops de PdC plus faible. Bien que l'objectif MFT ait le même nombre f, la focale réelle plus courte (42,5 mm vs 85 mm) donne une profondeur de champ plus grande à cadrage équivalent.",
-          "failureMessage": "Bien que les deux objectifs soient à f/1.8, le plein format utilise une focale réelle plus longue pour le même cadrage, produisant une PdC significativement plus faible.",
+          "scenario": "Tu compares deux configurations pour le même cadrage de portrait : un appareil plein format avec un objectif 85mm f/1.8, et un appareil APS-C (recadrage 1.5x) avec un objectif 56mm f/1.8 produisant le même champ de vision. Lequel donne la profondeur de champ la plus faible ?",
+          "hint": "Compare la focale réelle (pas équivalente) que chaque objectif utilise pour obtenir le même cadrage.",
+          "successMessage": "Correct — bien que les deux objectifs soient à f/1.8, l'appareil plein format utilise une focale réelle plus longue (85mm contre 56mm) pour égaler le cadrage, ce qui produit une profondeur de champ nettement plus faible.",
+          "failureMessage": "Les deux objectifs partagent le même nombre f, mais l'appareil plein format a besoin d'une focale réelle plus longue pour égaler le cadrage. C'est cette focale plus longue qui produit une profondeur de champ plus faible — pas le nombre f à lui seul.",
           "options": {
-            "0": {
-              "label": "Plein format avec 85 mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Four Thirds avec 42,5 mm f/1.8"
-            },
-            "2": {
-              "label": "Les deux produisent une PdC identique"
-            }
+            "0": { "label": "La configuration plein format avec 85mm f/1.8" },
+            "1": { "label": "La configuration APS-C avec 56mm f/1.8" },
+            "2": { "label": "Les deux produisent une profondeur de champ identique" }
           }
         }
       }

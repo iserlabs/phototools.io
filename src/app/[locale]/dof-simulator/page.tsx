@@ -7,7 +7,9 @@ import { DofSimulator } from './_components/DofSimulator'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations('metadata.dof-simulator')
-  return { title: t('title'), description: t('description'), alternates: getAlternates('/dof-simulator', locale as Locale) }
+  const title = t('title')
+  const description = t('description')
+  return { title, description, openGraph: { title, description }, alternates: getAlternates('/dof-simulator', locale as Locale) }
 }
 
 export default function DofSimulatorPage() {

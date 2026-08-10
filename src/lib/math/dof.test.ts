@@ -2,11 +2,9 @@ import { describe, it, expect } from 'vitest'
 import {
   calcHyperfocal,
   calcDoF,
-  calcBackgroundBlur,
   calcAiryDisk,
-  calcOptimalAperture,
-  calcIsolationScore,
   calcEquivalentSettings,
+  calcDefocusBlur,
 } from './dof'
 
 describe('calcHyperfocal', () => {
@@ -126,60 +124,6 @@ describe('calcDoF', () => {
   })
 })
 
-describe('calcBackgroundBlur', () => {
-  it('85mm f/1.4, subject 3m, background 10m → ~1.24mm', () => {
-    const blur = calcBackgroundBlur({
-      focalLength: 85,
-      aperture: 1.4,
-      subjectDistance: 3,
-      targetDistance: 10,
-    })
-    expect(blur).toBeCloseTo(1.24, 1)
-  })
-
-  it('farther background produces more blur', () => {
-    const blur10m = calcBackgroundBlur({
-      focalLength: 85,
-      aperture: 1.4,
-      subjectDistance: 3,
-      targetDistance: 10,
-    })
-    const blur50m = calcBackgroundBlur({
-      focalLength: 85,
-      aperture: 1.4,
-      subjectDistance: 3,
-      targetDistance: 50,
-    })
-    expect(blur50m).toBeGreaterThan(blur10m)
-  })
-
-  it('returns zero blur when target equals subject distance', () => {
-    const blur = calcBackgroundBlur({
-      focalLength: 85,
-      aperture: 1.4,
-      subjectDistance: 3,
-      targetDistance: 3,
-    })
-    expect(blur).toBe(0)
-  })
-
-  it('wider aperture produces more blur', () => {
-    const blurWide = calcBackgroundBlur({
-      focalLength: 85,
-      aperture: 1.4,
-      subjectDistance: 3,
-      targetDistance: 10,
-    })
-    const blurNarrow = calcBackgroundBlur({
-      focalLength: 85,
-      aperture: 5.6,
-      subjectDistance: 3,
-      targetDistance: 10,
-    })
-    expect(blurWide).toBeGreaterThan(blurNarrow)
-  })
-})
-
 describe('calcAiryDisk', () => {
   it('f/8 → ~0.01074mm', () => {
     const airy = calcAiryDisk(8)
@@ -196,73 +140,6 @@ describe('calcAiryDisk', () => {
     const airy = calcAiryDisk(1.4)
     expect(airy).toBeLessThan(0.002)
     expect(airy).toBeGreaterThan(0)
-  })
-})
-
-describe('calcOptimalAperture', () => {
-  it('at optimal aperture, Airy disk ≈ geometric blur', () => {
-    const focalLength = 85
-    const subjectDistance = 3
-    const targetDistance = 10
-
-    const optimalN = calcOptimalAperture(focalLength, subjectDistance, targetDistance)
-
-    // At the optimal aperture, the Airy disk should approximately equal
-    // the geometric blur disc
-    const airyDisk = calcAiryDisk(optimalN)
-    const geometricBlur = calcBackgroundBlur({
-      focalLength,
-      aperture: optimalN,
-      subjectDistance,
-      targetDistance,
-    })
-
-    expect(airyDisk).toBeCloseTo(geometricBlur, 3)
-  })
-
-  it('returns a reasonable f-number', () => {
-    const optimalN = calcOptimalAperture(50, 2, 10)
-    expect(optimalN).toBeGreaterThan(1)
-    expect(optimalN).toBeLessThan(64)
-  })
-})
-
-describe('calcIsolationScore', () => {
-  it('returns 100 for 1.5mm blur', () => {
-    // sqrt(1.5/0.5) * 100 = sqrt(3) * 100 ≈ 173 → clamped to 100
-    const score = calcIsolationScore(1.5, 0.03)
-    expect(score).toBe(100)
-  })
-
-  it('returns 0 for zero blur', () => {
-    const score = calcIsolationScore(0, 0.03)
-    expect(score).toBe(0)
-  })
-
-  it('returns intermediate score for 0.15mm blur', () => {
-    // sqrt(0.15/0.5) * 100 = sqrt(0.3) * 100 ≈ 54.77
-    const score = calcIsolationScore(0.15, 0.03)
-    expect(score).toBeGreaterThan(0)
-    expect(score).toBeLessThan(100)
-    expect(score).toBeCloseTo(54.77, 0)
-  })
-
-  it('wider aperture yields higher isolation score', () => {
-    const blurWide = calcBackgroundBlur({
-      focalLength: 85,
-      aperture: 1.4,
-      subjectDistance: 3,
-      targetDistance: 10,
-    })
-    const blurNarrow = calcBackgroundBlur({
-      focalLength: 85,
-      aperture: 8,
-      subjectDistance: 3,
-      targetDistance: 10,
-    })
-    const scoreWide = calcIsolationScore(blurWide, 0.03)
-    const scoreNarrow = calcIsolationScore(blurNarrow, 0.03)
-    expect(scoreWide).toBeGreaterThan(scoreNarrow)
   })
 })
 
@@ -331,5 +208,28 @@ describe('calcEquivalentSettings', () => {
     })
     // equivFL = 10 × (1.0 / 5.6) ≈ 1.79mm
     expect(result.isFLRealistic).toBe(false)
+  })
+})
+
+describe('calcDefocusBlur', () => {
+  it('is zero at the focus plane', () => {
+    expect(calcDefocusBlur({ focalLength: 85, aperture: 2.8, focusDistance: 3, targetDistance: 3 })).toBe(0)
+  })
+  it('approaches f²/(N·(s1−f)) for far targets', () => {
+    const blur = calcDefocusBlur({ focalLength: 85, aperture: 2.8, focusDistance: 3, targetDistance: 10000 })
+    expect(blur).toBeCloseTo((85 * 85) / (2.8 * (3000 - 85)), 2)
+  })
+  it('is positive for targets in FRONT of focus (nose nearer than eyes)', () => {
+    const blur = calcDefocusBlur({ focalLength: 85, aperture: 1.4, focusDistance: 1.2, targetDistance: 1.15 })
+    expect(blur).toBeGreaterThan(0)
+  })
+  it('front and behind blur are asymmetric (front is larger at equal offset)', () => {
+    const front = calcDefocusBlur({ focalLength: 85, aperture: 1.4, focusDistance: 2, targetDistance: 1.9 })
+    const behind = calcDefocusBlur({ focalLength: 85, aperture: 1.4, focusDistance: 2, targetDistance: 2.1 })
+    expect(front).toBeGreaterThan(behind)
+  })
+  it('guards degenerate inputs', () => {
+    expect(calcDefocusBlur({ focalLength: 85, aperture: 2.8, focusDistance: 0.05, targetDistance: 1 })).toBe(0)
+    expect(calcDefocusBlur({ focalLength: 85, aperture: 2.8, focusDistance: 3, targetDistance: 0 })).toBe(0)
   })
 })

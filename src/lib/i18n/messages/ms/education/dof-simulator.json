@@ -1,48 +1,48 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Kedalaman medan ialah julat jarak dalam foto anda yang kelihatan tajam dengan boleh diterima. kedalaman medan cetek mengaburkan latar belakang di belakang subjek anda, manakala kedalaman medan dalam mengekalkan semuanya dari latar depan ke ufuk dalam fokus. Mengawal kedalaman medan ialah salah satu alat kreatif paling berkuasa dalam fotografi.",
+      "beginner": "Kedalaman medan ialah zon dalam foto anda — dari dekat ke jauh — yang kelihatan tajam dengan boleh diterima. Tiga kawalan membentuk zon itu: aperture (aperture lebih luas mengaburkan latar belakang lebih banyak), panjang fokus (lensa lebih panjang menyempitkan zon) dan jarak subjek (bergerak lebih dekat mengecilkannya lagi). Laraskan mana-mana daripadanya di sini dan lihat pembaris kedalaman dan pandangan dikemas kini bersama secara masa nyata.",
       "deeper": {
         "0": {
-          "heading": "Cara kedalaman medan Berfungsi",
-          "text": "Kedalaman medan ditadbir oleh bulatan kekeliruan (CoC) — titik kabur terbesar pada sensor yang masih kelihatan tajam kepada mata manusia. Tiga faktor fizikal menentukan kedalaman medan: panjang fokus, aperture dan jarak subjek. Aperture lebih luas (nombor-f rendah) menghasilkan kedalaman medan lebih cetek kerana lensa menumpukan cahaya pada sudut yang lebih curam, menyebabkan titik tidak fokus tersebar menjadi bulatan lebih besar pada sensor."
+          "heading": "Geometri Aperture dan Bulatan Kekeliruan",
+          "text": "Lensa memfokuskan cahaya dari satu jarak yang tepat ke sensor sebagai satu titik sempurna; segala-galanya yang lain mendarat sebagai cakera kecil yang dipanggil bulatan kekeliruan (CoC). Satu titik masih dibaca sebagai tajam selagi cakeranya kekal lebih kecil daripada ambang yang ditetapkan oleh saiz sensor — lebih kurang 0.03mm pada full-frame. Melebarkan aperture (menurunkan nombor-f) membuka kon cahaya yang lebih besar antara lensa dan titik fokus, jadi titik yang jauh dari satah itu tersebar menjadi cakera yang jauh lebih besar, dengan jauh lebih pantas. Itulah sebabnya aperture luas seperti f/1.4 mengaburkan latar belakang jauh lebih banyak daripada f/11 — geometri kon cahaya yang berubah, bukan sekadar jumlah cahaya."
         },
         "1": {
-          "heading": "Panjang Fokus & Jarak",
-          "text": "Panjang fokus lebih panjang membesarkan imej, yang turut membesarkan bulatan kabur, menyempitkan kedalaman medan. Bergerak lebih dekat ke subjek anda mengurangkan kedalaman medan atas sebab yang sama — perbezaan relatif jarak antara subjek dan latar belakang menjadi lebih besar. Jarak hiperfokal ialah jarak fokus di mana kedalaman medan memanjang dari separuh jarak itu hingga ke infiniti, memaksimumkan ketajaman merentasi seluruh adegan."
+          "heading": "Panjang Fokus dan Jarak Mendominasi Kesan",
+          "text": "Kesan panjang fokus terhadap kedalaman medan bergantung sepenuhnya kepada apa yang anda kekalkan tetap. Pada jarak subjek yang tetap, kedalaman medan menyempit dengan ketara mengikut panjang fokus — lebih kurang mengikut kuasa duanya: berdiri 3m dari subjek pada f/2.8, lensa 35mm memberikan lebih kurang 1.3m kedalaman medan, manakala lensa 200mm memberikan lebih kurang 35mm. Tetapi perbandingan itu juga mengubah bingkai anda, kerana anda tidak membingkai semula. Pada bingkai yang tetap — mod kunci-FOV alat ini, di mana anda berundur semasa anda zum masuk untuk mengekalkan subjek pada saiz yang sama — kedalaman medan hampir tidak bergerak: mengimbas dari 35mm ke 200mm pada f/2.8 dengan bingkai dikunci mengubah jumlah kedalaman medan kurang daripada 1%. Apa yang berubah secara mendadak sebaliknya ialah latar belakang: lensa yang lebih panjang membesarkan dan memampatkan segala-galanya di belakang subjek anda, jadi highlight tidak fokus menjadi lebih besar dan latar belakang lebih terasing, walaupun lapisan yang berada dalam fokus di sekeliling subjek anda kekal lebih kurang sama tebalnya. Hidupkan kunci-FOV dan imbas panjang fokus untuk melihatnya berlaku — bacaan kedalaman medan kekal stabil manakala angka kekaburan latar belakang meningkat. Jarak subjek kekal sebagai tuil yang lebih boleh dipercayai walau apa pun: bergerak lebih dekat pada panjang fokus dan aperture yang tetap menyempitkan kedalaman medan dengan ketara, merapatkan had dekat dan jauh di sekeliling jarak yang lebih pendek."
         },
         "2": {
-          "heading": "Bokeh & Pembelauan",
-          "text": "Bokeh merujuk kepada kualiti kawasan tidak fokus. Bilangan dan bentuk bilah aperture mempengaruhi watak bokeh — bilah yang lebih bulat menghasilkan highlight yang lebih licin dan lebih bulat. Pada aperture yang sangat kecil (f/16+), pembelauan menyebabkan cahaya tersebar semasa ia melalui tepi aperture, melembutkan keseluruhan imej walaupun dalam zon kedalaman medan. Sentiasa ada sweet spot — biasanya sekitar f/5.6-f/8 pada full-frame — di mana ketajaman dan kedalaman medan seimbang secara optimum."
+          "heading": "Saiz Sensor dan Bingkai Setara",
+          "text": "Untuk mengisi bingkai dengan subjek yang sama, sensor yang lebih besar memerlukan panjang fokus yang secara berkadar lebih panjang daripada sensor yang lebih kecil — kamera full-frame memerlukan lebih kurang 1.5x panjang fokus kamera APS-C, dan lebih kurang 2x panjang fokus Micro Four Thirds, untuk medan pandangan yang sama. Oleh kerana kedalaman medan menyempit mengikut panjang fokus, panjang fokus 'setara' yang lebih panjang itulah yang memberikan kamera full-frame reputasi kedalaman medan yang lebih cetek — nombor-f yang tercetak pada lensa tidak menceritakan keseluruhan kisah. Dua lensa pada f-stop yang sama pada saiz sensor berbeza, dibingkai secara sama, akan menghasilkan kedalaman medan yang jauh berbeza secara bererti."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Aperture",
-          "description": "Aperture lebih luas (f/1.4-f/2.8) mencipta kedalaman medan cetek dengan bokeh halus. Aperture lebih sempit (f/8-f/16) meningkatkan ketajaman merentasi adegan."
+          "description": "Aperture lebih luas (nombor-f rendah seperti f/1.4-f/2.8) membuka kon cahaya yang lebih curam dan mengecilkan kedalaman medan. Aperture lebih sempit (f/8-f/16) melebarkannya."
         },
         "1": {
           "label": "Panjang Fokus",
-          "description": "Lensa lebih panjang memampatkan perspektif dan menyempitkan kedalaman medan pada aperture dan bingkai yang sama. Lensa 200mm pada f/4 mempunyai kedalaman medan yang jauh lebih sedikit daripada lensa 35mm pada f/4."
+          "description": "Pada jarak subjek yang tetap, kedalaman medan menyempit lebih kurang mengikut kuasa dua panjang fokus. Pada bingkai yang tetap (zum masuk dan berundur untuk mengekalkan bidikan yang sama), kedalaman medan hampir tidak berubah — sebaliknya latar belakanglah yang berubah, menjadi lebih besar dan lebih kabur apabila panjang fokus meningkat."
         },
         "2": {
           "label": "Jarak Subjek",
-          "description": "Semakin dekat anda memfokus, semakin cetek kedalaman medan. Jurugambar makro sering bekerja dengan kedalaman medan yang diukur dalam milimeter."
+          "description": "Bergerak lebih dekat kepada subjek anda mengecilkan kedalaman medan lebih pantas daripada hampir mana-mana pelarasan lain, itulah sebabnya fotografi makro mempunyai zon tajam yang begitu nipis."
         },
         "3": {
           "label": "Saiz Sensor",
-          "description": "Sensor lebih besar memerlukan panjang fokus lebih panjang untuk bingkai yang sama, yang secara tidak langsung menyempitkan kedalaman medan. Kamera full-frame menghasilkan kedalaman medan lebih cetek daripada kamera Micro Four Thirds pada bingkai yang setara."
+          "description": "Sensor lebih besar memerlukan panjang fokus lebih panjang untuk sepadan dengan bingkai yang sama seperti sensor lebih kecil, yang secara tidak langsung menghasilkan kedalaman medan lebih cetek pada bidikan setara."
         }
       },
       "tips": {
         "0": {
-          "text": "Untuk potret kumpulan, gunakan f/5.6 atau lebih sempit dan minta semua orang berdiri dalam satah fokus yang sama. Walaupun seorang separuh langkah ke hadapan boleh terkeluar fokus pada aperture luas."
+          "text": "Pada aperture luas seperti f/1.4-f/2.0, kedalaman medan boleh menjadi lebih nipis daripada wajah manusia. Fokus dengan tepat pada mata yang lebih dekat, bukan hidung atau telinga, atau pandangan subjek anda akan kelihatan lembut."
         },
         "1": {
-          "text": "Apabila menangkap landskap, fokus pada jarak hiperfokal dan bukan pada infiniti. Ini memaksimumkan zon ketajaman dari latar depan terdekat ke latar belakang jauh."
+          "text": "Gunakan pratetap bingkai (Wajah, Potret, Medium Shot, dan sebagainya) untuk mengunci saiz subjek anda dalam bingkai semasa anda bereksperimen — ia mengekalkan panjang fokus dan jarak dalam hubungan yang sama seperti bidikan sebenar, jadi kekaburan yang anda lihat di sini sepadan dengan apa yang anda akan dapat dalam kamera."
         },
         "2": {
-          "text": "Jika anda mahukan kekaburan latar belakang maksimum untuk potret, tingkatkan panjang fokus anda dan dapatkan sedekat mungkin kepada subjek anda mengikut bingkai — kedua-dua perubahan berganda untuk mengurangkan kedalaman medan secara drastik."
+          "text": "Jangan kejar kedalaman medan maksimum dengan mengecilkan aperture sepenuhnya — kebanyakan lensa paling tajam sekitar f/8-f/11, jauh sebelum amaran pembelauan alat ini muncul. Amaran itu ialah ambang yang lebih ketat dan lebih lewat: ia hanya menyala apabila kekaburan pembelauan melebihi bulatan kekeliruan sensor, yang berlaku sekitar f/22 pada full-frame (f/15 pada APS-C, f/11 pada Micro Four Thirds). Anggap f/8-f/11 sebagai sasaran praktikal anda, dan cip amaran sebagai had terluar, bukan matlamat."
         }
       },
       "tooltips": {
@@ -56,149 +56,87 @@
         },
         "subjectDistance": {
           "term": "Jarak Subjek",
-          "definition": "Jarak dari sensor kamera ke titik fokus. Jarak fokus lebih dekat menghasilkan kedalaman medan lebih cetek."
+          "definition": "Jarak dari kamera ke titik fokus. Jarak fokus lebih dekat menghasilkan kedalaman medan lebih cetek."
         },
         "sensor": {
           "term": "Saiz Sensor",
-          "definition": "Dimensi fizikal sensor kamera. Sensor lebih besar (full-frame, format sederhana) menghasilkan kedalaman medan lebih cetek pada bingkai setara berbanding sensor lebih kecil (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Orientasi",
-          "definition": "Togol antara orientasi landskap (mendatar) dan potret (menegak). Ini mempengaruhi rujukan bingkai untuk pengiraan jarak subjek."
-        },
-        "nearFocus": {
-          "term": "Had Fokus Dekat",
-          "definition": "Jarak terdekat dari kamera yang kelihatan tajam dengan boleh diterima. Apa sahaja yang lebih dekat daripada ini akan kelihatan kabur."
-        },
-        "farFocus": {
-          "term": "Had Fokus Jauh",
-          "definition": "Jarak terjauh dari kamera yang kelihatan tajam dengan boleh diterima. Apabila ini mencapai infiniti, segalanya melebihi had dekat berada dalam fokus."
-        },
-        "totalDoF": {
-          "term": "Jumlah Kedalaman Medan",
-          "definition": "Jarak penuh antara had fokus dekat dan jauh — keseluruhan zon yang kelihatan tajam dalam imej."
+          "definition": "Dimensi fizikal sensor kamera. Sensor lebih besar (full-frame, format sederhana) memerlukan panjang fokus lebih panjang untuk bingkai setara, yang menghasilkan kedalaman medan lebih cetek berbanding sensor lebih kecil (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Jarak Hiperfokal",
           "definition": "Jarak fokus yang memaksimumkan kedalaman medan. Apabila anda memfokus pada jarak ini, segalanya dari separuh jarak hiperfokal hingga ke infiniti kelihatan tajam."
         },
-        "backgroundBlur": {
-          "term": "Kekaburan Latar Belakang",
-          "definition": "Ukuran sejauh mana kabur latar belakang kelihatan di belakang subjek anda. Nilai lebih tinggi bermakna kekaburan lebih kuat dan pengasingan subjek yang lebih besar."
-        },
         "coc": {
           "term": "Bulatan Kekeliruan",
           "definition": "Diameter maksimum titik kabur pada sensor yang masih kelihatan sebagai titik kepada mata manusia. Menentukan sempadan ketajaman yang boleh diterima untuk pengiraan kedalaman medan."
         },
-        "isolationScore": {
-          "term": "Skor Pengasingan",
-          "definition": "Penilaian komposit (0-100) yang menunjukkan sejauh mana baik subjek diasingkan daripada latar belakang, berdasarkan jumlah kekaburan latar belakang berbanding saiz subjek."
-        },
-        "bokehShape": {
-          "term": "Bentuk Bokeh",
-          "definition": "Bentuk highlight tidak fokus, ditentukan oleh bilangan dan kelengkungan bilah aperture. Lebih banyak bilah menghasilkan bokeh yang lebih bulat dan lebih halus."
+        "backgroundBlur": {
+          "term": "Kekaburan Latar Belakang",
+          "definition": "Ukuran sejauh mana kabur latar belakang kelihatan di belakang subjek anda. Nilai lebih tinggi bermakna kekaburan lebih kuat dan pengasingan subjek yang lebih besar."
         },
         "diffractionWarning": {
           "term": "Pembelauan",
-          "definition": "Pada aperture yang sangat kecil, cahaya membengkok di sekitar tepi aperture, melembutkan imej. Pada sensor full-frame, ini biasanya menjadi ketara melebihi f/16."
+          "definition": "Pada aperture yang sangat kecil, cahaya membengkok di sekitar tepi aperture, melembutkan imej. Amaran pembelauan alat ini muncul sebaik sahaja kelembutan itu melebihi bulatan kekeliruan sensor — sekitar f/22 pada full-frame, f/15 pada APS-C, f/11 pada Micro Four Thirds."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Anda sedang menangkap potret dan mahukan latar belakang yang kabur dengan cantik. Aperture yang manakah patut anda pilih?",
-          "hint": "Nombor-f rendah bermakna bukaan lensa lebih luas dan lebih banyak kekaburan latar belakang.",
-          "successMessage": "Betul! Aperture luas seperti f/1.8 atau f/2.8 mencipta kedalaman medan cetek, mengasingkan subjek anda dari latar belakang dengan bokeh yang menyenangkan.",
-          "failureMessage": "Tidak begitu. Aperture sempit seperti f/11 atau f/16 mengekalkan lebih banyak adegan dalam fokus. Untuk kekaburan latar belakang, pilih aperture luas (nombor-f rendah).",
+          "scenario": "Anda sedang memotret potret dan mahukan latar belakang yang melebur menjadi kekaburan lembut di belakang subjek anda. Aperture manakah patut anda pilih?",
+          "hint": "Nombor-f rendah bermakna bukaan lebih luas — dan kedalaman medan lebih cetek.",
+          "successMessage": "Betul — f/1.4 membuka aperture secara luas, menghasilkan kedalaman medan cetek dan latar belakang yang kabur dengan lancar.",
+          "failureMessage": "Tidak begitu. Nombor-f lebih tinggi seperti f/11 atau f/16 mengekalkan lebih banyak adegan tajam. Untuk kekaburan latar belakang maksimum, pilih sebaliknya aperture paling luas (nombor-f paling rendah).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Anda sedang mengambil gambar sekumpulan 8 orang yang disusun dalam dua baris di majlis perkahwinan. Aperture apa yang akan membantu memastikan semua orang berada dalam fokus?",
-          "hint": "Dengan orang ramai pada jarak yang sedikit berbeza, anda memerlukan kedalaman medan yang cukup untuk meliputi kedua-dua baris.",
-          "successMessage": "Pilihan bagus! f/5.6 menyediakan kedalaman medan yang mencukupi untuk mengekalkan kedua-dua baris tajam sambil masih mengekalkan kelajuan pengatup yang baik di dalam bangunan.",
-          "failureMessage": "Aperture itu mungkin meninggalkan baris belakang di luar fokus atau terlalu sempit. Untuk dua baris orang, f/5.6 ialah titik permulaan yang boleh dipercayai.",
+          "scenario": "Anda sedang memotret empat orang kawan yang tersusun dalam kumpulan longgar — dua daripada mereka setengah langkah ke hadapan atau ke belakang berbanding yang lain. Aperture manakah memberi anda margin keselamatan yang selesa untuk memastikan semua orang tajam?",
+          "hint": "Anda memerlukan kedalaman medan tambahan untuk meliputi orang yang tidak berada pada satah fokus yang sama tepat, tetapi anda tidak perlu mengecilkan aperture sepenuhnya.",
+          "successMessage": "Betul — f/5.6 menyediakan penampan kedalaman medan yang selesa untuk variasi kecil dalam jarak, tanpa menyempitkan aperture lebih daripada yang diperlukan.",
+          "failureMessage": "f/1.4 terlalu cetek untuk orang pada jarak yang sedikit berbeza, dan f/16 mengecilkan lebih daripada yang anda perlukan. f/5.6 ialah jalan tengah yang boleh dipercayai.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Anda sedang menangkap landskap dengan bunga liar 2 meter jauh dan pergunungan di latar belakang. Anda menggunakan lensa 24mm pada kamera full-frame. Teknik apa yang akan memaksimumkan ketajaman dari depan ke belakang?",
-          "hint": "Ada jarak khusus yang anda boleh fokus untuk memaksimumkan zon tajam dari latar depan ke infiniti.",
-          "successMessage": "Tepat sekali! Memfokus pada jarak hiperfokal di f/11 memastikan segalanya dari kira-kira 1 meter hingga infiniti adalah tajam dengan boleh diterima — sempurna untuk adegan ini.",
-          "failureMessage": "Memfokus pada infiniti akan meninggalkan bunga latar depan lembut. Gunakan jarak hiperfokal untuk memanjangkan ketajaman dari latar depan terdekat hingga ke infiniti.",
+          "scenario": "Anda berada pada 85mm, f/1.8, dengan subjek anda 3 meter jauhnya, dan anda mahu meningkatkan kekaburan latar belakang dengan ketara tanpa menyentuh aperture atau menukar lensa. Apakah cara paling pantas?",
+          "hint": "Kedalaman medan — dan sejauh mana latar belakang kabur berbanding subjek anda — sangat sensitif kepada jarak subjek.",
+          "successMessage": "Tepat sekali — mengurangkan separuh jarak subjek mengecilkan kedalaman medan dengan mendadak dan membesarkan kekaburan latar belakang, tanpa mengubah aperture atau lensa anda.",
+          "failureMessage": "Bergerak lebih jauh atau menaikkan ISO tidak akan mengecilkan kedalaman medan. Mendekati subjek anda ialah cara paling pantas untuk meningkatkan kekaburan latar belakang pada aperture dan panjang fokus yang tetap.",
           "options": {
-            "0": {
-              "label": "Fokus pada bunga (2m)"
-            },
-            "1": {
-              "label": "Fokus pada gunung (infiniti)"
-            },
-            "2": {
-              "label": "Fokus pada jarak hiperfokal"
-            },
-            "3": {
-              "label": "Fokus di separuh jalan antara bunga dan gunung"
-            }
+            "0": { "label": "Bergerak ke 1.5m dari subjek anda (separuh jarak)" },
+            "1": { "label": "Bergerak ke 6m dari subjek anda (dua kali ganda jarak)" },
+            "2": { "label": "Berundur untuk meningkatkan jarak kerja anda" },
+            "3": { "label": "Naikkan ISO untuk latar belakang lebih cerah" }
           }
         },
         "3": {
-          "scenario": "Anda sedang melakukan fotografi makro sebuah bunga dan perasan hanya kelopak depan yang tajam. Selebihnya bunga memudar menjadi kabur. Anda berada di f/5.6. Apa yang patut anda lakukan untuk mendapatkan lebih banyak bunga dalam fokus?",
-          "hint": "Pada jarak fokus dekat, kedalaman medan menjadi sangat nipis. Pertimbangkan aperture anda.",
-          "successMessage": "Betul! Mengecilkan ke f/11 atau f/16 meningkatkan kedalaman medan yang nipis dalam kerja makro. Tetapi berhati-hati dengan pelembutan pembelauan pada aperture yang sangat kecil.",
-          "failureMessage": "Membuka aperture lebih luas akan menjadikan kedalaman medan lebih nipis. Dalam fotografi makro, mengecilkan (nombor-f tinggi) ialah cara utama untuk mendapatkan lebih banyak kedalaman.",
+          "scenario": "Anda sedang memotret landskap pada kamera full-frame dan mahukan ketajaman maksimum merentasi keseluruhan bingkai. Patutkah anda mengecilkan aperture sepenuhnya ke f/22 untuk kedalaman medan paling banyak?",
+          "hint": "Terdapat pertukaran antara kedalaman medan yang diperoleh dengan mengecilkan aperture dan kelembutan yang disebabkan oleh pembelauan pada aperture yang sangat kecil.",
+          "successMessage": "Betul — f/22 memang menambah kedalaman medan di atas kertas, tetapi kebanyakan lensa sudah melepasi aperture paling tajam mereka menjelang itu. Aperture sederhana seperti f/8-f/11 biasanya mengimbangi kedalaman medan dan ketajaman lensa dengan lebih baik. Amaran pembelauan alat ini sendiri ialah ambang berasingan yang lebih lewat — ia hanya menandakan sebaik sahaja kekaburan pembelauan melebihi bulatan kekeliruan sensor, yang pada full-frame tidak berlaku sehingga sekitar f/22 (f/15 pada APS-C, f/11 pada Micro Four Thirds). Jangan tunggu amaran itu sebelum berundur — ia adalah had fizikal yang tegas, bukan cadangan ketajaman.",
+          "failureMessage": "Mengecilkan aperture sepenuhnya ke f/22 memang memaksimumkan kedalaman medan di atas kertas, tetapi kebanyakan lensa sudah melepasi julat aperture paling tajam mereka menjelang itu. Aperture sederhana seperti f/8-f/11 biasanya memberikan keseimbangan yang lebih baik antara kedalaman medan dan ketajaman dunia sebenar. Amaran pembelauan alat ini ialah ambang berasingan yang lebih lewat — ia hanya muncul sebaik sahaja kekaburan melebihi bulatan kekeliruan sensor, sekitar f/22 pada full-frame — jadi jangan jadikan ketiadaannya sebagai lampu hijau untuk terus mengecilkan aperture.",
           "options": {
-            "0": {
-              "label": "Buka ke f/2.8 untuk lebih banyak cahaya"
-            },
-            "1": {
-              "label": "Kecilkan ke f/11"
-            },
-            "2": {
-              "label": "Tukar ke lensa lebih lebar"
-            },
-            "3": {
-              "label": "Bergerak lebih jauh dari bunga"
-            }
+            "0": { "label": "Ya — sentiasa gunakan aperture paling kecil yang ada untuk kedalaman medan maksimum" },
+            "1": { "label": "Tidak — gunakan aperture sederhana seperti f/8-f/11 untuk ketajaman keseluruhan terbaik, bukan yang paling kecil" },
+            "2": { "label": "Tidak — gunakan aperture paling luas yang ada untuk hasil paling tajam" },
+            "3": { "label": "Tidak penting — aperture tidak memberi kesan kepada ketajaman" }
           }
         },
         "4": {
-          "scenario": "Anda membandingkan dua kamera untuk kerja potret: kamera full-frame dengan lensa 85mm f/1.8 dan kamera Micro Four Thirds dengan lensa 42.5mm f/1.8. Kedua-duanya menghasilkan bingkai yang setara. Kamera mana menghasilkan kedalaman medan yang lebih cetek?",
-          "hint": "Fikirkan tentang panjang fokus setara dan cara saiz sensor mempengaruhi pengiraan kedalaman medan pada nombor-f yang sama.",
-          "successMessage": "Betul! Kamera full-frame menghasilkan kedalaman medan kira-kira 2 stop lebih cetek. Walaupun lensa MFT mempunyai nombor-f yang sama, panjang fokus sebenar yang lebih pendek (42.5mm lawan 85mm) menghasilkan kedalaman medan lebih dalam pada bingkai setara.",
-          "failureMessage": "Walaupun kedua-dua lensa adalah f/1.8, kamera full-frame menggunakan panjang fokus sebenar lebih panjang untuk bingkai yang sama, menghasilkan kedalaman medan yang jauh lebih cetek.",
+          "scenario": "Anda membandingkan dua persediaan untuk bingkai potret yang sama: kamera full-frame dengan lensa 85mm f/1.8, dan kamera APS-C (crop 1.5x) dengan lensa 56mm f/1.8 yang menghasilkan medan pandangan yang sama. Yang manakah menghasilkan kedalaman medan lebih cetek?",
+          "hint": "Bandingkan panjang fokus sebenar (bukan setara) yang digunakan oleh setiap lensa untuk mencapai bingkai yang sama.",
+          "successMessage": "Betul — walaupun kedua-dua lensa adalah f/1.8, kamera full-frame menggunakan panjang fokus sebenar yang lebih panjang (85mm berbanding 56mm) untuk menyamai bingkai, yang menghasilkan kedalaman medan yang jelas lebih cetek.",
+          "failureMessage": "Kedua-dua lensa berkongsi nombor-f yang sama, tetapi kamera full-frame memerlukan panjang fokus sebenar yang lebih panjang untuk menyamai bingkai. Panjang fokus yang lebih panjang itulah yang menghasilkan kedalaman medan lebih cetek — bukan nombor-f sahaja.",
           "options": {
-            "0": {
-              "label": "Full-frame dengan 85mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Four Thirds dengan 42.5mm f/1.8"
-            },
-            "2": {
-              "label": "Kedua-duanya menghasilkan kedalaman medan yang sama"
-            }
+            "0": { "label": "Persediaan full-frame dengan 85mm f/1.8" },
+            "1": { "label": "Persediaan APS-C dengan 56mm f/1.8" },
+            "2": { "label": "Kedua-duanya menghasilkan kedalaman medan yang sama" }
           }
         }
       }

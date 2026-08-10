@@ -1,204 +1,142 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Adâncimea câmpului este intervalul de distanță din fotografia ta care apare acceptabil de clar. O adâncime mică blurează fundalul din spatele subiectului, iar una mare menține totul clar, de la prim-plan până la orizont. Controlul adâncimii câmpului este unul dintre cele mai puternice instrumente creative din fotografie.",
+      "beginner": "Profunzimea de câmp este zona din fotografia ta — de la aproape la departe — care pare acceptabil de clară. Trei comenzi modelează această zonă: diafragma (diafragmele mai largi blurează mai mult fundalul), distanța focală (obiectivele mai lungi îngustează zona) și distanța până la subiect (apropierea o micșorează și mai mult). Ajustează oricare dintre ele aici și urmărește cum rigla de profunzime și vizualizarea se actualizează împreună, în timp real.",
       "deeper": {
         "0": {
-          "heading": "Cum funcționează profunzime de câmp-ul",
-          "text": "Adâncimea câmpului este dictată de cercul de confuzie (CoC) — cel mai mare punct de neclaritate de pe senzor care, pentru ochiul uman, mai apare încă drept clar. Trei factori fizici determină profunzime de câmp-ul: distanța focală, diafragma și distanța până la subiect. O diafragmă mai largă (cifră f mai mică) produce o adâncime mai mică pentru că obiectivul converge lumina în unghiuri mai ascuțite, iar punctele neclare se împrăștie în cercuri mai mari pe senzor."
+          "heading": "Geometria diafragmei și cercul de confuzie",
+          "text": "Un obiectiv focalizează lumina de la o singură distanță exactă pe senzor ca un punct perfect; tot restul ajunge ca un mic disc numit cerc de confuzie (CoC). Un punct rămâne perceput ca fiind clar atât timp cât discul său este mai mic decât un prag stabilit de dimensiunea senzorului — aproximativ 0,03mm pe full-frame. Lărgirea diafragmei (scăderea cifrei f) deschide un con de lumină mai mare între obiectiv și punctul de focalizare, astfel încât punctele din afara acelui plan se extind în discuri mult mai mari, mult mai rapid. De aceea o diafragmă largă precum f/1.4 blurează fundalul mult mai mult decât f/11 — geometria conului de lumină este cea care se schimbă, nu doar cantitatea de lumină."
         },
         "1": {
-          "heading": "Distanță focală și distanță",
-          "text": "Distanțele focale mai lungi măresc imaginea, ceea ce amplifică și cercurile de neclaritate și îngustează profunzime de câmp-ul. Apropierea de subiect reduce și ea profunzime de câmp-ul, din același motiv — diferența relativă de distanță dintre subiect și fundal devine mai mare. Distanța hiperfocală este distanța de focalizare la care profunzime de câmp-ul se întinde de la jumătatea ei până la infinit, maximizând claritatea pe toată scena."
+          "heading": "Distanța focală și distanța domină efectul",
+          "text": "Efectul distanței focale asupra profunzimii de câmp depinde în totalitate de ce păstrezi constant. La o distanță fixă până la subiect, profunzimea de câmp se îngustează puternic odată cu distanța focală — aproximativ proporțional cu pătratul ei: stând la 3m de un subiect la f/2.8, un obiectiv de 35mm oferă circa 1,3m de profunzime de câmp, în timp ce un obiectiv de 200mm oferă circa 35mm. Dar această comparație îți schimbă și încadrarea, pentru că nu ai reîncadrat. La o încadrare fixă — modul cu unghiul de vizualizare blocat al acestui instrument, în care te retragi pe măsură ce faci zoom pentru a păstra subiectul la aceeași dimensiune — profunzimea de câmp abia dacă se mișcă: baleind de la 35mm la 200mm la f/2.8 cu încadrarea blocată, profunzimea totală de câmp se schimbă cu mult sub 1%. Ce se schimbă dramatic în schimb este fundalul: un obiectiv mai lung mărește și comprimă tot ce se află în spatele subiectului, astfel încât punctele de lumină neclare cresc, iar fundalul se separă mai mult, deși stratul aflat în focalizare din jurul subiectului rămâne cam la aceeași grosime. Activează blocarea unghiului de vizualizare și baleiază distanța focală ca să vezi asta — valoarea profunzimii de câmp rămâne stabilă în timp ce cifra blurului de fundal urcă. Distanța până la subiect rămâne pârghia mai fiabilă în orice caz: apropierea la o distanță focală și diafragmă fixe îngustează puternic profunzimea de câmp, strângând limitele apropiată și îndepărtată în jurul unei distanțe mai scurte."
         },
         "2": {
-          "heading": "Bokeh și difracție",
-          "text": "Bokeh-ul se referă la calitatea zonelor neclare. Numărul și forma lamelelor diafragmei influențează caracterul bokeh-ului — lamelele mai rotunjite dau puncte de lumină mai fine și mai circulare. La diafragme foarte închise (f/16 și peste), difracția face ca lumina să se împrăștie la marginile diafragmei, înmuind întreaga imagine, chiar și în zona în care profunzime de câmp-ul e clar. Există mereu un punct optim — de obicei în jur de f/5.6-f/8 pe full frame — unde claritatea și adâncimea câmpului sunt cel mai bine echilibrate."
+          "heading": "Dimensiunea senzorului și încadrarea echivalentă",
+          "text": "Pentru a umple cadrul cu același subiect, un senzor mai mare are nevoie de o distanță focală proporțional mai lungă decât unul mai mic — un aparat full-frame are nevoie de aproximativ 1,5x distanța focală a unui aparat APS-C și de circa 2x cea a unui Micro Four Thirds, pentru același câmp vizual. Deoarece profunzimea de câmp se îngustează odată cu distanța focală, această distanță focală „echivalentă” mai lungă este cea care le dă aparatelor full-frame reputația de profunzime de câmp mai mică — cifra f înscrisă pe obiectiv nu spune toată povestea. Două obiective cu aceeași diafragmă, pe senzori de dimensiuni diferite, încadrate identic, vor produce o profunzime de câmp semnificativ diferită."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Diafragmă",
-          "description": "Diafragmele largi (f/1.4-f/2.8) creează un profunzime de câmp mic, cu bokeh cremos. Diafragmele închise (f/8-f/16) cresc claritatea pe toată scena."
+          "description": "Diafragmele mai largi (cifre f mici, precum f/1.4-f/2.8) deschid un con de lumină mai abrupt și micșorează profunzimea de câmp. Diafragmele mai înguste (f/8-f/16) o măresc."
         },
         "1": {
           "label": "Distanță focală",
-          "description": "Obiectivele mai lungi comprimă perspectiva și îngustează profunzime de câmp-ul la aceeași diafragmă și încadrare. Un 200mm la f/4 are mult mai puțin profunzime de câmp decât un 35mm la f/4."
+          "description": "La o distanță fixă până la subiect, profunzimea de câmp se îngustează aproximativ cu pătratul distanței focale. La o încadrare fixă (faci zoom și te retragi pentru a păstra aceeași imagine), profunzimea de câmp abia se schimbă — fundalul este cel care se transformă, devenind tot mai mărit și mai blurat pe măsură ce distanța focală crește."
         },
         "2": {
           "label": "Distanța față de subiect",
-          "description": "Cu cât focalizezi mai aproape, cu atât profunzime de câmp-ul e mai mic. Fotografii macro lucrează adesea cu profunzime de câmp-uri măsurate în milimetri."
+          "description": "Apropierea de subiect micșorează profunzimea de câmp mai rapid decât aproape orice alt ajustaj, motiv pentru care fotografia macro are zone clare atât de subțiri."
         },
         "3": {
           "label": "Dimensiunea senzorului",
-          "description": "Senzorii mai mari cer distanțe focale mai lungi pentru aceeași încadrare, ceea ce îngustează indirect profunzime de câmp-ul. Un aparat full frame produce un profunzime de câmp mai mic decât unul Micro Four Thirds la încadrare echivalentă."
+          "description": "Senzorii mai mari au nevoie de distanțe focale mai lungi pentru a se potrivi cu aceeași încadrare ca senzorii mai mici, ceea ce produce indirect o profunzime de câmp mai mică la cadre echivalente."
         }
       },
       "tips": {
         "0": {
-          "text": "Pentru portretele de grup, folosește f/5.6 sau mai închisă și așază toată lumea în același plan focal. Chiar și o persoană cu o jumătate de pas în față poate ieși din focalizare la diafragme largi."
+          "text": "La diafragme largi, precum f/1.4-f/2.0, profunzimea de câmp poate fi mai subțire decât o față umană. Focalizează precis pe ochiul apropiat, nu pe nas sau ureche, altfel privirea subiectului va părea neclară."
         },
         "1": {
-          "text": "Când fotografiezi peisaje, focalizează la distanța hiperfocală, nu la infinit. Asta maximizează zona de claritate de la prim-planul apropiat până la fundalul îndepărtat."
+          "text": "Folosește presetările de încadrare (Față, Portret, Plan mediu etc.) pentru a bloca dimensiunea subiectului în cadru cât timp experimentezi — acestea păstrează distanța focală și distanța în aceeași relație ca într-o fotografie reală, astfel încât blurul pe care îl vezi aici corespunde cu ce ai obține la aparat."
         },
         "2": {
-          "text": "Dacă vrei blur maxim pe fundal la un portret, crește distanța focală și apropie-te cât îți permite încadrarea — cele două schimbări se cumulează și reduc dramatic profunzime de câmp-ul."
+          "text": "Nu urmări profunzimea de câmp maximă închizând diafragma la capăt — majoritatea obiectivelor sunt cele mai clare în jurul valorii f/8-f/11, cu mult înainte ca avertismentul de difracție al acestui instrument să apară. Acel avertisment este un prag mai strict și mai târziu: se aprinde doar când neclaritatea prin difracție depășește cercul de confuzie al senzorului, ceea ce se întâmplă în jur de f/22 pe full-frame (f/15 pe APS-C, f/11 pe Micro Four Thirds). Tratează f/8-f/11 ca țintă practică, iar eticheta de avertisment ca limită extremă, nu ca obiectiv."
         }
       },
       "tooltips": {
         "focalLength": {
           "term": "Distanță focală",
-          "definition": "Distanța în milimetri de la centrul optic al obiectivului până la senzor, când este focalizat la infinit. Distanțele focale mai lungi măresc imaginea și îngustează adâncimea câmpului."
+          "definition": "Distanța în milimetri de la centrul optic al obiectivului până la senzor, când este focalizat la infinit. Distanțele focale mai lungi măresc imaginea și îngustează profunzimea de câmp."
         },
         "aperture": {
           "term": "Diafragmă",
-          "definition": "Mărimea deschiderii obiectivului, exprimată ca un număr f (de exemplu, f/2.8). Cifrele f mai mici înseamnă o deschidere mai largă, lăsând să intre mai multă lumină și producând o adâncime a câmpului mai mică."
+          "definition": "Mărimea deschiderii obiectivului, exprimată ca o cifră f (de exemplu, f/2.8). Cifrele f mai mici înseamnă o deschidere mai largă, lăsând să intre mai multă lumină și producând o profunzime de câmp mai mică."
         },
         "subjectDistance": {
-          "term": "Distanța până la subiect",
-          "definition": "Distanța de la senzorul aparatului la punctul de focalizare. Distanțele mici de focalizare dau o adâncime a câmpului mai mică."
+          "term": "Distanța față de subiect",
+          "definition": "Distanța de la aparat până la punctul de focalizare. Distanțele de focalizare mai mici produc o profunzime de câmp mai mică."
         },
         "sensor": {
           "term": "Dimensiunea senzorului",
-          "definition": "Dimensiunile fizice ale senzorului aparatului. Senzorii mai mari (full-frame, format mediu) produc o adâncime a câmpului mai mică la încadrare echivalentă, comparativ cu senzorii mai mici (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Orientare",
-          "definition": "Comută între orientarea orizontală (landscape) și cea verticală (portrait). Influențează referința de încadrare pentru calculul distanței până la subiect."
-        },
-        "nearFocus": {
-          "term": "Limita apropiată de focalizare",
-          "definition": "Cea mai apropiată distanță de aparat la care imaginea mai apare încă acceptabil de clară. Tot ce e mai aproape de atât va apărea neclar."
-        },
-        "farFocus": {
-          "term": "Limita îndepărtată de focalizare",
-          "definition": "Cea mai îndepărtată distanță de aparat la care imaginea mai apare încă acceptabil de clară. Când ajunge la infinit, tot ce e dincolo de limita apropiată e în focalizare."
-        },
-        "totalDoF": {
-          "term": "Adâncime totală a câmpului",
-          "definition": "Distanța completă între limita apropiată și cea îndepărtată — întreaga zonă care apare clară în imagine."
+          "definition": "Dimensiunile fizice ale senzorului aparatului. Senzorii mai mari (full-frame, format mediu) au nevoie de distanțe focale mai lungi pentru o încadrare echivalentă, ceea ce produce o profunzime de câmp mai mică decât senzorii mai mici (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Distanță hiperfocală",
-          "definition": "Distanța de focalizare care maximizează adâncimea câmpului. Când focalizezi la această distanță, totul de la jumătatea distanței hiperfocale până la infinit apare clar."
+          "definition": "Distanța de focalizare care maximizează profunzimea de câmp. Când focalizezi la această distanță, tot ce se află de la jumătatea distanței hiperfocale până la infinit apare clar."
+        },
+        "coc": {
+          "term": "Cerc de confuzie",
+          "definition": "Diametrul maxim al unui punct de neclaritate de pe senzor care încă apare ca un punct pentru ochiul uman. Determină limita clarității acceptabile în calculele de profunzime a câmpului."
         },
         "backgroundBlur": {
           "term": "Blurul fundalului",
           "definition": "O măsură a cât de blurat apare fundalul din spatele subiectului. Valorile mai mari înseamnă blur mai puternic și mai multă izolare a subiectului."
         },
-        "coc": {
-          "term": "Cerc de confuzie",
-          "definition": "Diametrul maxim al unui punct de neclaritate de pe senzor care încă apare ca un punct pentru ochiul uman. Determină limita clarității acceptabile în calculele de adâncime a câmpului."
-        },
-        "isolationScore": {
-          "term": "Scor de izolare",
-          "definition": "Un rating compus (0-100) care indică cât de bine este separat subiectul de fundal, pe baza cantității de blur din fundal raportată la mărimea subiectului."
-        },
-        "bokehShape": {
-          "term": "Forma bokeh-ului",
-          "definition": "Forma luminilor neclare, determinată de numărul și curbura lamelelor diafragmei. Mai multe lamele produc un bokeh mai rotund și mai neted."
-        },
         "diffractionWarning": {
           "term": "Difracție",
-          "definition": "La diafragme foarte închise, lumina se curbează la marginile diafragmei și înmoaie imaginea. Pe senzorii full-frame devine, de obicei, vizibilă dincolo de f/16."
+          "definition": "La diafragme foarte închise, lumina se curbează la marginile diafragmei, înmuind imaginea. Avertismentul de difracție al acestui instrument apare atunci când această înmuiere depășește cercul de confuzie al senzorului — în jur de f/22 pe full-frame, f/15 pe APS-C, f/11 pe Micro Four Thirds."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Faci un portret și vrei un fundal frumos blurat. Ce diafragmă ar trebui să alegi?",
-          "hint": "Cifrele f mai mici înseamnă o deschidere mai largă a obiectivului și mai mult blur pe fundal.",
-          "successMessage": "Corect! O diafragmă largă, ca f/1.8 sau f/2.8, creează o adâncime a câmpului mică, separând subiectul de fundal cu un bokeh plăcut.",
-          "failureMessage": "Nu chiar. Diafragmele înguste, precum f/11 sau f/16, țin mai multă parte din scenă în focalizare. Pentru blur pe fundal, alege o diafragmă largă (cifră f mică).",
+          "scenario": "Fotografiezi un portret și vrei ca fundalul să se topească într-un blur moale în spatele subiectului. Ce diafragmă ar trebui să alegi?",
+          "hint": "Cifrele f mai mici înseamnă o deschidere mai largă — și o profunzime de câmp mai mică.",
+          "successMessage": "Corect — f/1.4 deschide larg diafragma, producând o profunzime de câmp mică și un fundal blurat uniform.",
+          "failureMessage": "Nu chiar. Cifrele f mai mari, precum f/11 sau f/16, țin mai multă parte din scenă în claritate. Pentru blur maxim pe fundal, alege în schimb cea mai largă diafragmă (cea mai mică cifră f).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Fotografiezi un grup de 8 persoane dispuse pe două rânduri la o nuntă. Ce diafragmă te ajută să-i ții pe toți în focalizare?",
-          "hint": "Cu oameni aflați la distanțe ușor diferite, ai nevoie de suficientă adâncime a câmpului cât să acoperi ambele rânduri.",
-          "successMessage": "Alegere bună! f/5.6 îți dă suficientă adâncime a câmpului ca să ții ambele rânduri clare, păstrând totodată timpi de expunere rezonabili în interior.",
-          "failureMessage": "Acea diafragmă fie lasă rândul din spate în afara focalizării, fie este inutil de închisă. Pentru două rânduri de oameni, f/5.6 este un punct de plecare de încredere.",
+          "scenario": "Fotografiezi patru prieteni așezați într-un grup relaxat — doi dintre ei sunt cu o jumătate de pas în față sau în spate față de ceilalți. Ce diafragmă îți oferă o marjă de siguranță confortabilă pentru a-i menține pe toți clari?",
+          "hint": "Ai nevoie de profunzime de câmp în plus pentru a acoperi oamenii care nu se află exact în același plan focal, dar nu trebuie să închizi diafragma la capăt.",
+          "successMessage": "Corect — f/5.6 oferă o marjă confortabilă de profunzime de câmp pentru variații mici de distanță, fără să închizi diafragma mai mult decât e necesar.",
+          "failureMessage": "f/1.4 este prea mică pentru persoane aflate la distanțe ușor diferite, iar f/16 închide diafragma mai mult decât e nevoie. f/5.6 este soluția de mijloc, de încredere.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Fotografiezi un peisaj cu flori sălbatice la 2 metri și munți în fundal. Folosești un 24mm pe un aparat full-frame. Ce tehnică îți maximizează claritatea din prim-plan până în fundal?",
-          "hint": "Există o anumită distanță la care poți focaliza ca să maximizezi zona clară de la prim-plan până la infinit.",
-          "successMessage": "Exact! Focalizarea la distanța hiperfocală, la f/11, îți dă claritate acceptabilă de la aproximativ 1 metru până la infinit — perfect pentru această scenă.",
-          "failureMessage": "Dacă focalizezi la infinit, florile din prim-plan rămân neclare. Folosește distanța hiperfocală ca să extinzi claritatea din prim-plan până la infinit.",
+          "scenario": "Ești la 85mm, f/1.8, cu subiectul la 3 metri distanță, și vrei să crești vizibil blurul de fundal fără să atingi diafragma sau să schimbi obiectivul. Care e cea mai rapidă metodă?",
+          "hint": "Profunzimea de câmp — și cât de puternic se blurează fundalul în raport cu subiectul — este extrem de sensibilă la distanța până la subiect.",
+          "successMessage": "Exact — înjumătățirea distanței până la subiect micșorează dramatic profunzimea de câmp și amplifică blurul de fundal, fără să schimbi diafragma sau obiectivul.",
+          "failureMessage": "Depărtarea sau creșterea ISO nu micșorează profunzimea de câmp. Apropierea de subiect este cea mai rapidă metodă de a crește blurul de fundal la o diafragmă și distanță focală fixe.",
           "options": {
-            "0": {
-              "label": "Focalizează pe flori (2m)"
-            },
-            "1": {
-              "label": "Focalizează pe munți (infinit)"
-            },
-            "2": {
-              "label": "Focalizează la distanța hiperfocală"
-            },
-            "3": {
-              "label": "Focalizează la jumătatea drumului dintre flori și munți"
-            }
+            "0": { "label": "Mută-te la 1,5m de subiect (jumătate din distanță)" },
+            "1": { "label": "Mută-te la 6m de subiect (dublul distanței)" },
+            "2": { "label": "Retrage-te pentru a crește distanța de lucru" },
+            "3": { "label": "Crește ISO pentru un fundal mai luminos" }
           }
         },
         "3": {
-          "scenario": "Faci macro la o floare și observi că doar petalele din față sunt clare — restul florii se pierde în blur. Ești la f/5.6. Ce ar trebui să faci ca să ai mai mult din floare în focalizare?",
-          "hint": "La distanțe mici de focalizare, profunzime de câmp-ul devine extrem de subțire. Gândește-te la diafragmă.",
-          "successMessage": "Corect! Închizând la f/11 sau f/16 mărești profunzime de câmp-ul extrem de subțire specific macro-ului. Atenție doar la înmuierea prin difracție la diafragme foarte închise.",
-          "failureMessage": "Dacă deschizi diafragma și mai mult, profunzime de câmp-ul devine și mai subțire. În fotografia macro, închiderea diafragmei (cifră f mai mare) este principala metodă de a câștiga mai multă adâncime.",
+          "scenario": "Fotografiezi un peisaj pe un aparat full-frame și vrei claritate maximă pe tot cadrul. Ar trebui să închizi diafragma la capăt, la f/22, pentru cea mai mare profunzime de câmp?",
+          "hint": "Există un compromis între profunzimea de câmp câștigată prin închiderea diafragmei și înmuierea cauzată de difracție la diafragme foarte închise.",
+          "successMessage": "Corect — f/22 adaugă, teoretic, profunzime de câmp, dar majoritatea obiectivelor au trecut deja de diafragmele lor cele mai clare până atunci. O diafragmă moderată, precum f/8-f/11, echilibrează de obicei mai bine profunzimea de câmp și claritatea obiectivului. Avertismentul propriu de difracție al acestui instrument este un prag separat, mai târziu — se activează doar când neclaritatea prin difracție depășește cercul de confuzie al senzorului, ceea ce pe full-frame nu se întâmplă decât în jur de f/22 (f/15 pe APS-C, f/11 pe Micro Four Thirds). Nu aștepta acel avertisment înainte să renunți — este o limită fizică strictă, nu o recomandare de claritate.",
+          "failureMessage": "Închiderea diafragmei la capăt, la f/22, maximizează într-adevăr profunzimea de câmp pe hârtie, dar majoritatea obiectivelor au trecut deja de intervalul lor de diafragmă cel mai clar până atunci. O diafragmă moderată, precum f/8-f/11, oferă de obicei un echilibru mai bun între profunzimea de câmp și claritatea reală. Avertismentul de difracție al acestui instrument este un prag separat, mai târziu — apare doar când neclaritatea depășește cercul de confuzie al senzorului, în jur de f/22 pe full-frame — așa că nu folosi absența lui ca undă verde pentru a continua să închizi diafragma.",
           "options": {
-            "0": {
-              "label": "Deschide la f/2.8 pentru mai multă lumină"
-            },
-            "1": {
-              "label": "Închide la f/11"
-            },
-            "2": {
-              "label": "Treci pe un obiectiv mai larg"
-            },
-            "3": {
-              "label": "Depărtează-te de floare"
-            }
+            "0": { "label": "Da — folosește mereu cea mai mică diafragmă disponibilă pentru profunzime de câmp maximă" },
+            "1": { "label": "Nu — folosește o diafragmă moderată, precum f/8-f/11, pentru cea mai bună claritate generală, nu cea mai mică" },
+            "2": { "label": "Nu — folosește cea mai largă diafragmă disponibilă pentru cele mai clare rezultate" },
+            "3": { "label": "Nu contează — diafragma nu are niciun efect asupra clarității" }
           }
         },
         "4": {
-          "scenario": "Compari două aparate pentru portret: unul full-frame cu un 85mm f/1.8 și unul Micro Four Thirds cu un 42.5mm f/1.8. Ambele dau aceeași încadrare. Care produce o adâncime a câmpului mai mică?",
-          "hint": "Gândește-te la distanțele focale echivalente și la felul în care dimensiunea senzorului influențează calculul profunzime de câmp la aceeași cifră f.",
-          "successMessage": "Corect! Aparatul full-frame produce un profunzime de câmp cu aproximativ 2 stopuri mai mic. Chiar dacă obiectivul MFT are aceeași cifră f, distanța focală reală mai scurtă (42.5mm față de 85mm) duce la o adâncime a câmpului mai mare la încadrare echivalentă.",
-          "failureMessage": "Deși ambele obiective sunt f/1.8, aparatul full-frame folosește o distanță focală reală mai lungă pentru aceeași încadrare, iar rezultatul este un profunzime de câmp semnificativ mai mic.",
+          "scenario": "Compari două configurații pentru aceeași încadrare de portret: un aparat full-frame cu un obiectiv 85mm f/1.8 și un aparat APS-C (crop 1,5x) cu un obiectiv 56mm f/1.8, care produc același câmp vizual. Care produce o profunzime de câmp mai mică?",
+          "hint": "Compară distanța focală reală (nu cea echivalentă) pe care o folosește fiecare obiectiv pentru a obține aceeași încadrare.",
+          "successMessage": "Corect — deși ambele obiective sunt f/1.8, aparatul full-frame folosește o distanță focală reală mai lungă (85mm față de 56mm) pentru a obține aceeași încadrare, ceea ce produce o profunzime de câmp vizibil mai mică.",
+          "failureMessage": "Ambele obiective au aceeași cifră f, dar aparatul full-frame are nevoie de o distanță focală reală mai lungă pentru a obține aceeași încadrare. Acea distanță focală mai lungă este cea care produce o profunzime de câmp mai mică — nu doar cifra f.",
           "options": {
-            "0": {
-              "label": "Full-frame cu 85mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Four Thirds cu 42.5mm f/1.8"
-            },
-            "2": {
-              "label": "Ambele produc același profunzime de câmp"
-            }
+            "0": { "label": "Configurația full-frame cu 85mm f/1.8" },
+            "1": { "label": "Configurația APS-C cu 56mm f/1.8" },
+            "2": { "label": "Ambele produc o profunzime de câmp identică" }
           }
         }
       }
