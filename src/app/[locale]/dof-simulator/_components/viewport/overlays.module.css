@@ -29,6 +29,13 @@
 .dividerLayer {
   position: absolute;
   inset: 0;
+  /* ModelLayer's subject <img> slices carry explicit zIndex (up to
+     sliceCount, currently 3 for the 'face' crop level) so nearer slices
+     paint over farther ones — that positive z-index otherwise beats this
+     layer's implicit z-index:auto and swallows pointer events over the
+     divider bar wherever a slice overlaps it. Comfortably out-ranks any
+     current/future slice count. */
+  z-index: 10;
   pointer-events: none;
 }
 
