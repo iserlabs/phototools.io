@@ -85,6 +85,14 @@ export function DofRuler({
   )
 
   const subjectX = useMemo(() => PAD_L + distToX(distanceM, TRACK_W), [distanceM])
+  // The ruler's [RULER_MIN, RULER_MAX] track is a narrower DISPLAY scale than
+  // the canonical state domain (rulerScale.ts) -- a distance outside it (e.g.
+  // a framing preset solving to ~85m) still pins the subject figure at the
+  // nearest edge, same as any other value beyond the visual range. Without a
+  // cue, that pin is indistinguishable from the figure genuinely standing at
+  // 0.3m/50m. Label it with the real value so the pin reads as "off-scale",
+  // not as a silently wrong position (dof-simulator-rebuild final fix wave, B4).
+  const offScale = distanceM > RULER_MAX || distanceM < RULER_MIN
 
   return (
     <div className={styles.ruler}>
@@ -108,6 +116,11 @@ export function DofRuler({
         >
           <rect x={-20} y={-70} width={40} height={80} fill="transparent" />
           <SubjectFigure size={46} />
+          {offScale && (
+            <text x={0} y={-78} textAnchor="middle" aria-hidden className={styles.offScaleLabel}>
+              {formatMeters(distanceM, labels.distanceUnit)}
+            </text>
+          )}
         </g>
       </svg>
     </div>

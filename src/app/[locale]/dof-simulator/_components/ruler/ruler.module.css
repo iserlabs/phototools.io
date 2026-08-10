@@ -40,6 +40,13 @@
   font-weight: 600;
 }
 
+.offScaleLabel {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  fill: var(--accent);
+  font-weight: 600;
+}
+
 .subjectHandle {
   color: var(--accent);
   cursor: grab;

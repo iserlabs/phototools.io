@@ -3,6 +3,17 @@
 // calling these; the component owns padding and pixel measurement, this
 // file only maps the logarithmic distance domain onto a normalized
 // [0, widthPx] pixel range.
+//
+// RULER_MIN/MAX are a DISPLAY scale, deliberately narrower than the
+// canonical subject-distance state domain (state/distanceDomain.ts's
+// [0.1, 100]) that DistancePanel's slider/input and the URL params actually
+// use — the ruler graphic doesn't have room to usefully depict distances out
+// to 100m. Values outside this range still round-trip correctly: they pin
+// visually at whichever edge is nearest (see DofRuler's `offScale` handling,
+// which surfaces the real value alongside the pin rather than silently
+// dropping it) and stay fully editable via DistancePanel's numeric input,
+// which is NOT bounded by this narrower range (dof-simulator-rebuild final
+// fix wave, B4).
 
 export const RULER_MIN = 0.3
 export const RULER_MAX = 50

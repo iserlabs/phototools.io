@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeAll } from 'vitest'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, within } from '@testing-library/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { RULER_MIN, RULER_MAX } from './rulerScale'
 import { DofRuler } from './DofRuler'
@@ -85,6 +85,24 @@ describe('DofRuler', () => {
     rerender(<DofRuler {...baseProps({ distanceM: RULER_MIN, onDistanceChange })} />)
     fireEvent.keyDown(getByRole('slider'), { key: 'ArrowLeft' })
     expect(onDistanceChange).toHaveBeenCalledWith(RULER_MIN)
+  })
+
+  // B4: a value beyond the ruler's own [RULER_MIN, RULER_MAX] display scale
+  // (e.g. the Full-body preset solving to ~85m at a long focal length) pins
+  // the subject figure at the track's right edge — same pixel position a
+  // genuine 50m subject would sit at. Without a label, that pin silently
+  // reads as "the subject is at 50m," which is wrong. The label must say the
+  // real value. Scoped to the subject's own `role="slider"` group so it
+  // isn't confused with RulerBackdrop's always-present axis tick labels
+  // (which include a "3m" tick regardless of the subject's position).
+  it('labels the subject with its real distance when pinned beyond the ruler scale', () => {
+    const { getByRole } = render(<DofRuler {...baseProps({ distanceM: 85 })} />)
+    expect(within(getByRole('slider')).getByText('85m')).toBeInTheDocument()
+  })
+
+  it('does not label in-range distances as off-scale', () => {
+    const { getByRole } = render(<DofRuler {...baseProps({ distanceM: 3 })} />)
+    expect(within(getByRole('slider')).queryByText('3m')).toBeNull()
   })
 
   it('renders sensible geometry with no NaN attributes when farFocus is Infinity (past hyperfocal)', () => {
