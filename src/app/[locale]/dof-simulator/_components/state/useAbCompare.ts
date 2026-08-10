@@ -18,8 +18,10 @@ export interface AbApi {
 // B's initial focal length / aperture — deliberately different from A's spec
 // defaults (85mm f/2.8) so enabling A/B compare shows two distinguishable
 // setups immediately. Mirrors PARAM_SCHEMA's b_fl/b_f defaults (paramSchema.ts).
-const B_DEFAULT_FOCAL_LENGTH = 50
-const B_DEFAULT_APERTURE = 5.6
+// Exported so useDofState's reset() can pass them to ab.b.reset()'s overrides
+// in the same atomic write that clears everything else back to B's defaults.
+export const B_DEFAULT_FOCAL_LENGTH = 50
+export const B_DEFAULT_APERTURE = 5.6
 
 export function useAbCompare(): AbApi {
   const [mode, setModeState] = useState<AbMode>('off')

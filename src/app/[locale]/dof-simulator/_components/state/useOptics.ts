@@ -27,6 +27,20 @@ export interface OpticsApi extends OpticsState {
   setTeleconverterId(v: TeleconverterId): void
   setCustomCocMm(v: number | null): void
   setBackgroundDistanceM(v: number | null): void
+  /**
+   * Atomically restores the default optics state in a SINGLE write to the
+   * underlying useState (optionally overriding `focalLength`/`aperture` --
+   * the B-set's reset defaults differ from A's spec defaults). This must
+   * stay atomic, not a sequence of the setters above: reset() used to call
+   * setFocalLength/setAperture/...(lensId=null) in sequence against one
+   * useState, so setFocalLength/setAperture's clamp (clampApertureToLens,
+   * added by the dof-simulator-rebuild final fix wave, B3) ran against the
+   * STILL-ATTACHED previous lens/teleconverter -- e.g. resetting away from
+   * an f/4 zoom floor-clamped the "reset" aperture up to f/4 before lensId
+   * was cleared two calls later. A single functional-free write sets every
+   * field to its final value at once, so no setter ever sees a stale lens.
+   */
+  reset(overrides?: Partial<Pick<OpticsState, 'focalLength' | 'aperture'>>): void
 }
 
 const DEFAULT_STATE: OpticsState = {
@@ -129,6 +143,10 @@ export function useOptics(): OpticsApi {
     setState((prev) => ({ ...prev, backgroundDistanceM: v }))
   }, [])
 
+  const reset = useCallback((overrides?: Partial<Pick<OpticsState, 'focalLength' | 'aperture'>>) => {
+    setState({ ...DEFAULT_STATE, ...overrides })
+  }, [])
+
   return {
     ...state,
     setFocalLength,
@@ -140,5 +158,6 @@ export function useOptics(): OpticsApi {
     setTeleconverterId,
     setCustomCocMm,
     setBackgroundDistanceM,
+    reset,
   }
 }

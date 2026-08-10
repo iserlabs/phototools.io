@@ -6,7 +6,7 @@ import { useOptics, type OpticsApi } from './useOptics'
 import { useAppearance, type AppearanceApi } from './useAppearance'
 import { useFraming, type FramingApi } from './useFraming'
 import { useUiPrefs, type UiPrefsApi } from './useUiPrefs'
-import { useAbCompare, type AbApi } from './useAbCompare'
+import { useAbCompare, type AbApi, B_DEFAULT_FOCAL_LENGTH, B_DEFAULT_APERTURE } from './useAbCompare'
 import { useSavedSettings, type SavedSettingsApi } from './useSavedSettings'
 import { useDofDerived, type DofDerived } from './useDofDerived'
 import { applyFramingPreset as applyFramingPresetAction, changeFocalLength as changeFocalLengthAction, changeDistance as changeDistanceAction } from './framingActions'
@@ -125,15 +125,18 @@ export function useDofState(): DofStateApi {
   )
 
   const reset = useCallback(() => {
-    optics.setFocalLength(85)
-    optics.setAperture(2.8)
-    optics.setDistanceM(3)
-    optics.setSensorId('ff')
-    optics.setCameraId(null)
-    optics.setLensId(null)
-    optics.setTeleconverterId('none')
-    optics.setCustomCocMm(null)
-    optics.setBackgroundDistanceM(null)
+    // Atomic per-set writes (useOptics().reset()) -- NOT a sequence of the
+    // individual setFocalLength/setAperture/setLensId(null)/... setters --
+    // so no setter's lens-envelope clamp (useOptics.ts's clampApertureToLens)
+    // can ever fire against a lens/teleconverter that reset is *about* to
+    // clear but hasn't yet (regression: dof-simulator-rebuild final fix
+    // wave, B3's clamp landed after this reset() was already written as a
+    // setter sequence -- reset() previously left the lens attached across
+    // the setFocalLength(85)/setAperture(2.8) calls and only cleared lensId
+    // afterward, so the "reset" aperture came out floor-clamped to whatever
+    // lens was still attached instead of the spec default 2.8).
+    optics.reset()
+    ab.b.reset({ focalLength: B_DEFAULT_FOCAL_LENGTH, aperture: B_DEFAULT_APERTURE })
 
     appearance.setSubjectId(DOF_SUBJECTS[0].id)
     appearance.setBackgroundId(DOF_BACKGROUNDS[0].id)
@@ -149,15 +152,6 @@ export function useDofState(): DofStateApi {
     ab.setMode('off')
     ab.setActiveSet('a')
     ab.setDividerPos(0.5)
-    ab.b.setFocalLength(50)
-    ab.b.setAperture(5.6)
-    ab.b.setDistanceM(3)
-    ab.b.setSensorId('ff')
-    ab.b.setCameraId(null)
-    ab.b.setLensId(null)
-    ab.b.setTeleconverterId('none')
-    ab.b.setCustomCocMm(null)
-    ab.b.setBackgroundDistanceM(null)
 
     setBokeh('disc')
 
