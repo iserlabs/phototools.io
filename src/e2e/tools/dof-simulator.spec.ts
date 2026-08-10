@@ -1,5 +1,6 @@
 import type { Page } from '@playwright/test'
 import { test, expect } from '@playwright/test'
+import { readFileSync } from 'node:fs'
 
 const URL = '/en/dof-simulator'
 
@@ -58,13 +59,36 @@ test.describe('DOF Simulator', () => {
     // The "Model" picker opener lives in a row whose sibling label reads
     // "Model" (AppearancePanel.tsx) — the button itself only shows the
     // current subject's name and thumbnail, not the word "model".
-    await sb.locator('[class*="pickerRow"]', { hasText: 'Model' }).locator('button').click()
+    const modelRow = sb.locator('[class*="pickerRow"]', { hasText: 'Model' })
+    const pickerName = modelRow.locator('[class*="pickerName"]')
+    await expect(pickerName).toHaveText('Woman A') // default subject (models.ts DOF_SUBJECTS[0])
+
+    // The rendered subject in the viewport is a stack of plain <img> tags
+    // (ModelLayer.tsx, one per depth slice), sourced directly from
+    // `/dof/subjects/<id>/...` — unlike the picker's own thumbnail, which
+    // goes through next/image's optimizer and never exposes that raw path.
+    // This is a durable, independent signal that the subject actually
+    // changed on screen, not just that the picker UI says so.
+    const subjectImg = page.locator('img[src*="/dof/subjects/"]').first()
+    await expect(subjectImg).toHaveAttribute('src', /\/dof\/subjects\/woman-a\//)
+
+    await modelRow.locator('button').click()
 
     const dialog = sb.locator('dialog[aria-labelledby="dof-model-picker-title"]')
     await expect(dialog).toBeVisible()
 
+    // Grid item index 2 is "Woman B" (models.ts DOF_SUBJECTS order).
     await dialog.locator('[class*="gridItem"]').nth(2).click()
     await expect(dialog).not.toBeVisible()
+
+    // ModelPickerModal.tsx's grid button calls onSelect(subject.id) and
+    // onClose() unconditionally in the same click handler — the dialog
+    // closing proves nothing about onSelect actually reaching
+    // appearance.setSubjectId. Assert the subject genuinely changed, on both
+    // the control label and the rendered image, so a broken onSelect wiring
+    // fails this test even though the dialog still closes.
+    await expect(pickerName).toHaveText('Woman B')
+    await expect(subjectImg).toHaveAttribute('src', /\/dof\/subjects\/woman-b\//)
   })
 
   test('framing preset drives distance', async ({ page }) => {
@@ -91,11 +115,25 @@ test.describe('DOF Simulator', () => {
     await flSlider.focus()
     await flSlider.press('End')
 
-    // Lock-FOV re-solves distance to hold the Face preset's 320mm frame
-    // height at the new (much longer) focal length — the distance grows well
-    // past its pre-lock 1.13m value (distanceForFraming(320, 1200, 24) = 16m).
+    // Read back the FL the slider actually settled on — its aria-label
+    // always echoes the real mm value (see "share URL restores state" below)
+    // — rather than hardcoding 1200mm, in case log-scale slider quantisation
+    // ever lands it a hair off the max. Independently derive the expected
+    // held-framing distance from that value via the same formula
+    // framingSolver.ts's distanceForFraming implements (frameHeightMm *
+    // flMm) / (sensorHMm * 1000): Face preset frame height is 320mm, sensor
+    // height is 24mm (full frame, the default, landscape orientation).
+    const flLabel = await flSlider.getAttribute('aria-label')
+    const flMm = Number(flLabel?.match(/(\d+)mm/)?.[1])
+    expect(flMm).toBeGreaterThan(1000) // sanity: End actually jumped near the 1200mm max
+    const expectedDistanceM = (320 * flMm) / (24 * 1000)
+
+    // Lock-FOV must have re-solved distance to HOLD the Face preset's 320mm
+    // frame height at the new focal length — assert the actual computed
+    // value (distanceForFraming(320, 1200, 24) = 16.0m), not merely a loose
+    // "> 2" floor that a partially-broken solver could still clear.
     const d = await sb.locator('input[type="number"]').first().inputValue()
-    expect(parseFloat(d)).toBeGreaterThan(2)
+    expect(parseFloat(d)).toBeCloseTo(expectedDistanceM, 1)
   })
 
   test('A/B wipe divider drags', async ({ page }) => {
@@ -127,10 +165,19 @@ test.describe('DOF Simulator', () => {
     const sb = sidebar(page)
 
     await sb.locator('button', { hasText: /save settings/i }).click()
-    await expect(sb.locator('table tbody tr')).toHaveCount(1)
+    const row = sb.locator('table tbody tr')
+    await expect(row).toHaveCount(1)
+    // Assert the persisted VALUES round-tripped, not just that a row exists
+    // — SavedSettingsPanel.tsx renders the fl/aperture columns via
+    // formatMm/formatAperture as "135mm" / "f/1.8".
+    await expect(row).toContainText('135mm')
+    await expect(row).toContainText('f/1.8')
 
     await page.reload()
-    await expect(sidebar(page).locator('table tbody tr')).toHaveCount(1)
+    const reloadedRow = sidebar(page).locator('table tbody tr')
+    await expect(reloadedRow).toHaveCount(1)
+    await expect(reloadedRow).toContainText('135mm')
+    await expect(reloadedRow).toContainText('f/1.8')
 
     await sidebar(page).locator('table tbody tr button').last().click() // remove
     await expect(sidebar(page).locator('table tbody tr')).toHaveCount(0)
@@ -167,6 +214,16 @@ test.describe('DOF Simulator', () => {
     const download = await downloadPromise
 
     expect(download.suggestedFilename()).toMatch(/\.png$/)
+
+    // Confirm the downloaded bytes are an actual PNG, not just a
+    // correctly-named empty or garbage file — useImageExport.ts encodes via
+    // `canvas.toBlob(resolve, 'image/png')`, so a real export must carry the
+    // PNG signature and have real content.
+    const filePath = await download.path()
+    expect(filePath).not.toBeNull()
+    const bytes = readFileSync(filePath!)
+    expect(bytes.length).toBeGreaterThan(0)
+    expect(bytes.subarray(0, 4)).toEqual(Buffer.from([0x89, 0x50, 0x4e, 0x47]))
   })
 
   test('falls back gracefully without WebGL2', async ({ page }) => {
