@@ -1,48 +1,48 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Die Schärfentiefe ist der Entfernungsbereich in deinem Foto, der akzeptabel scharf erscheint. Eine geringe Schärfentiefe verwischt den Hintergrund hinter deinem Motiv, während eine große Schärfentiefe alles vom Vordergrund bis zum Horizont scharf hält. Die Kontrolle der Schärfentiefe ist eines der mächtigsten kreativen Werkzeuge in der Fotografie.",
+      "beginner": "Die Schärfentiefe ist der Bereich deines Fotos — von nah bis fern —, der akzeptabel scharf erscheint. Drei Regler formen diesen Bereich: die Blende (größere Öffnungen verwischen den Hintergrund stärker), die Brennweite (längere Objektive verengen den Bereich) und der Motivabstand (näher herangehen verkleinert ihn weiter). Verändere hier einen davon und beobachte, wie das Schärfentiefe-Lineal und die Vorschau in Echtzeit gemeinsam aktualisiert werden.",
       "deeper": {
         "0": {
-          "heading": "So funktioniert die Schärfentiefe",
-          "text": "Die Schärfentiefe wird vom Zerstreuungskreis (CoC) bestimmt — dem größten Unschärfefleck auf dem Sensor, der dem menschlichen Auge noch scharf erscheint. Drei physikalische Faktoren bestimmen die Schärfentiefe: Brennweite, Blende und Motivabstand. Eine größere Blendenöffnung (niedrigere Blendenzahl) erzeugt eine geringere Schärfentiefe, weil das Objektiv Licht in steileren Winkeln bündelt, wodurch sich außerhalb des Fokus liegende Punkte zu größeren Kreisen auf dem Sensor ausbreiten."
+          "heading": "Blendengeometrie und der Zerstreuungskreis",
+          "text": "Ein Objektiv bildet Licht aus genau einer Entfernung als perfekten Punkt auf dem Sensor ab; alles andere landet als kleine Scheibe, die als Zerstreuungskreis (CoC) bezeichnet wird. Ein Punkt erscheint weiterhin scharf, solange seine Scheibe kleiner bleibt als ein Schwellenwert, der von der Sensorgröße bestimmt wird — bei Vollformat etwa 0.03mm. Öffnet man die Blende (verringert die Blendenzahl), öffnet sich ein größerer Lichtkegel zwischen Objektiv und Fokuspunkt, sodass Punkte außerhalb dieser Ebene sich viel schneller zu viel größeren Scheiben ausbreiten. Deshalb verwischt eine große Blendenöffnung wie f/1.4 den Hintergrund so viel stärker als f/11 — es ist die Geometrie des Lichtkegels, die sich ändert, nicht nur die Lichtmenge."
         },
         "1": {
-          "heading": "Brennweite & Abstand",
-          "text": "Wie sich die Brennweite auf die Schärfentiefe auswirkt, hängt davon ab, was du konstant hältst. Bei gleichbleibendem Motivabstand verringern längere Brennweiten die Schärfentiefe stark — ungefähr mit dem Quadrat der Brennweite. Zoomst du aber hinein und gehst zurück, um denselben Bildausschnitt beizubehalten (der Lock-FOV-Modus dieses Tools), ändert sich die Schärfentiefe kaum — stattdessen verändert sich der Hintergrund, der stärker vergrößert und stärker unscharf wird. Näher an dein Motiv heranzugehen verringert die Schärfentiefe aus einem anderen Grund: Die Nah- und Fern-Fokusgrenzen rücken um eine kürzere Distanz enger zusammen. Die hyperfokale Distanz ist der Fokusabstand, bei dem die Schärfentiefe von der halben Distanz bis unendlich reicht und so die Schärfe in der gesamten Szene maximiert."
+          "heading": "Brennweite und Abstand dominieren den Effekt",
+          "text": "Wie sich die Brennweite auf die Schärfentiefe auswirkt, hängt vollständig davon ab, was du konstant hältst. Bei gleichbleibendem Motivabstand verengt sich die Schärfentiefe mit der Brennweite stark — ungefähr mit deren Quadrat: Steht man 3m von einem Motiv entfernt bei f/2.8, liefert ein 35-mm-Objektiv etwa 1.3m Schärfentiefe, während ein 200-mm-Objektiv etwa 35mm liefert. Doch dieser Vergleich verändert auch deinen Bildausschnitt, da du nicht neu gerahmt hast. Bei gleichbleibendem Bildausschnitt — dem Lock-FOV-Modus dieses Tools, bei dem du beim Hineinzoomen zurückgehst, um das Motiv gleich groß zu halten — bewegt sich die Schärfentiefe kaum: Ein Durchlauf von 35mm auf 200mm bei f/2.8 mit festgehaltenem Bildausschnitt ändert die gesamte Schärfentiefe um deutlich weniger als 1%. Was sich stattdessen dramatisch verändert, ist der Hintergrund: Ein längeres Objektiv vergrößert und komprimiert alles hinter deinem Motiv, sodass unscharfe Lichter größer werden und sich der Hintergrund stärker abhebt — obwohl die scharfe Schicht um dein Motiv herum etwa gleich dick bleibt. Aktiviere Lock-FOV und fahre die Brennweite durch, um das zu beobachten — die Schärfentiefe-Anzeige bleibt stabil, während der Wert für die Hintergrundunschärfe steigt. Der Motivabstand bleibt in jedem Fall der verlässlichere Hebel: Näher heranzugehen bei fester Brennweite und Blende verringert die Schärfentiefe stark und zieht die Nah- und Fern-Grenzen enger um eine kürzere Distanz zusammen."
         },
         "2": {
-          "heading": "Bokeh & Beugung",
-          "text": "Bokeh bezeichnet die Qualität der unscharfen Bildbereiche. Anzahl und Form der Blendenlamellen prägen den Bokeh-Charakter — rundere Lamellen erzeugen weichere, kreisförmigere Lichter. Viele Objektive erreichen ihren praktischen Schärfepunkt bei etwa f/8–f/11, lange bevor Beugung merklich wird. Die eigene Beugungswarnung dieses Tools setzt eine strengere, spätere Schwelle an: Sie erscheint erst, wenn die Beugungsunschärfe den Zerstreuungskreis des Sensors überschreitet — das geschieht bei etwa f/22 bei Vollformat (f/15 bei APS-C, f/11 bei Micro Four Thirds). Betrachte diese Warnung als äußerste Grenze, nicht als Schärfeziel."
+          "heading": "Sensorgröße und äquivalenter Bildausschnitt",
+          "text": "Um denselben Bildausschnitt mit demselben Motiv zu füllen, benötigt ein größerer Sensor eine proportional längere Brennweite als ein kleinerer — eine Vollformatkamera benötigt für dasselbe Sichtfeld etwa das 1,5-Fache der Brennweite einer APS-C-Kamera und etwa das 2-Fache der einer Micro-Four-Thirds-Kamera. Da die Schärfentiefe mit der Brennweite abnimmt, verschafft diese längere „äquivalente\" Brennweite Vollformatkameras ihren Ruf für geringere Schärfentiefe — die auf dem Objektiv aufgedruckte Blendenzahl erzählt nicht die ganze Geschichte. Zwei Objektive mit derselben Blendenzahl an unterschiedlich großen Sensoren erzeugen bei identischem Bildausschnitt eine spürbar unterschiedliche Schärfentiefe."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Blende",
-          "description": "Größere Blendenöffnungen (f/1,4–f/2,8) erzeugen geringe Schärfentiefe mit cremigem Bokeh. Kleinere Blendenöffnungen (f/8–f/16) erhöhen die Schärfe in der gesamten Szene."
+          "description": "Größere Blendenöffnungen (niedrige Blendenzahlen wie f/1.4–f/2.8) öffnen einen steileren Lichtkegel und verringern die Schärfentiefe. Kleinere Blendenöffnungen (f/8–f/16) vergrößern sie."
         },
         "1": {
           "label": "Brennweite",
-          "description": "Bei gleichbleibendem Motivabstand verringert sich die Schärfentiefe stark, wenn die Brennweite zunimmt. Bei gleichbleibendem Bildausschnitt — hineinzoomen und zurückgehen, um dieselbe Aufnahme beizubehalten — ändert sich die Schärfentiefe kaum; stattdessen verändert sich der Hintergrund, der mit zunehmender Brennweite stärker vergrößert und stärker unscharf wird."
+          "description": "Bei gleichbleibendem Motivabstand verengt sich die Schärfentiefe ungefähr mit dem Quadrat der Brennweite. Bei gleichbleibendem Bildausschnitt (hineinzoomen und zurückgehen, um dieselbe Aufnahme beizubehalten) ändert sich die Schärfentiefe kaum — es ist der Hintergrund, der sich verwandelt und mit zunehmender Brennweite stärker vergrößert und unschärfer wird."
         },
         "2": {
           "label": "Motivabstand",
-          "description": "Je näher du fokussierst, desto geringer die Schärfentiefe. Makrofotografen arbeiten oft mit Schärfentiefen im Millimeterbereich."
+          "description": "Näher an dein Motiv heranzugehen verringert die Schärfentiefe schneller als fast jede andere Anpassung — deshalb hat die Makrofotografie so hauchdünne scharfe Zonen."
         },
         "3": {
           "label": "Sensorgröße",
-          "description": "Größere Sensoren erfordern längere Brennweiten für den gleichen Bildausschnitt, was indirekt die Schärfentiefe verringert. Eine Vollformatkamera erzeugt eine geringere Schärfentiefe als eine Micro-Four-Thirds-Kamera bei äquivalentem Bildausschnitt."
+          "description": "Größere Sensoren benötigen längere Brennweiten, um denselben Bildausschnitt wie kleinere Sensoren zu erzielen, was bei äquivalenten Aufnahmen indirekt eine geringere Schärfentiefe erzeugt."
         }
       },
       "tips": {
         "0": {
-          "text": "Für Gruppenporträts verwende f/5,6 oder kleiner und sorge dafür, dass alle in derselben Fokusebene stehen. Selbst eine Person, die einen halben Schritt nach vorn steht, kann bei großer Blendenöffnung unscharf werden."
+          "text": "Bei großen Blendenöffnungen wie f/1.4–f/2.0 kann die Schärfentiefe dünner sein als ein menschliches Gesicht. Fokussiere präzise auf das nähere Auge, nicht auf Nase oder Ohr, sonst wirkt der Blick deines Motivs weich."
         },
         "1": {
-          "text": "Bei Landschaftsaufnahmen fokussiere auf die Hyperfokaldistanz statt auf Unendlich. Dies maximiert den Schärfebereich vom nahen Vordergrund bis zum fernen Hintergrund."
+          "text": "Nutze die Bildausschnitt-Voreinstellungen (Gesicht, Porträt, Halbnah usw.), um die Größe deines Motivs im Bild festzuhalten, während du experimentierst — sie halten Brennweite und Abstand im selben Verhältnis wie bei einer echten Aufnahme, sodass die hier sichtbare Unschärfe dem entspricht, was du mit der Kamera erhalten würdest."
         },
         "2": {
-          "text": "Wenn du maximale Hintergrundunschärfe für ein Porträt möchtest, erhöhe die Brennweite und gehe so nah wie möglich an dein Motiv heran — beide Änderungen addieren sich und reduzieren die Schärfentiefe drastisch."
+          "text": "Jage nicht der maximalen Schärfentiefe hinterher, indem du bis zum Anschlag abblendest — die meisten Objektive sind um f/8–f/11 am schärfsten, lange bevor die Beugungswarnung dieses Tools erscheint. Diese Warnung ist ein strengerer, späterer Schwellenwert: Sie leuchtet erst auf, sobald die Beugungsunschärfe den Zerstreuungskreis des Sensors überschreitet, was bei Vollformat um f/22 geschieht (f/15 bei APS-C, f/11 bei Micro Four Thirds). Betrachte f/8–f/11 als praktisches Ziel und den Warnhinweis als äußerste Grenze, nicht als Ziel."
         }
       },
       "tooltips": {
@@ -52,153 +52,91 @@
         },
         "aperture": {
           "term": "Blende",
-          "definition": "Die Größe der Objektivöffnung, ausgedrückt als Blendenzahl (z. B. f/2,8). Kleinere Blendenzahlen bedeuten eine größere Öffnung, mehr Lichteinfall und geringere Schärfentiefe."
+          "definition": "Die Größe der Objektivöffnung, ausgedrückt als Blendenzahl (z.B. f/2.8). Niedrigere Blendenzahlen bedeuten eine größere Öffnung, mehr Lichteinfall und eine geringere Schärfentiefe."
         },
         "subjectDistance": {
           "term": "Motivabstand",
-          "definition": "Der Abstand vom Kamerasensor zum Fokuspunkt. Kürzere Fokusabstände führen zu geringerer Schärfentiefe."
+          "definition": "Der Abstand von der Kamera zum Fokuspunkt. Kürzere Fokusabstände führen zu einer geringeren Schärfentiefe."
         },
         "sensor": {
           "term": "Sensorgröße",
-          "definition": "Die physischen Abmessungen des Kamerasensors. Größere Sensoren (Vollformat, Mittelformat) erzeugen bei äquivalentem Bildausschnitt eine geringere Schärfentiefe als kleinere Sensoren (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Ausrichtung",
-          "definition": "Wechsle zwischen Quer- (horizontal) und Hochformat (vertikal). Das beeinflusst die Bildausschnitt-Referenz für die Motivabstand-Berechnung."
-        },
-        "nearFocus": {
-          "term": "Nahgrenze",
-          "definition": "Die nächste Entfernung von der Kamera, die akzeptabel scharf erscheint. Alles näher als diese Grenze erscheint unscharf."
-        },
-        "farFocus": {
-          "term": "Ferngrenze",
-          "definition": "Die weiteste Entfernung von der Kamera, die akzeptabel scharf erscheint. Wenn sie Unendlich erreicht, ist alles jenseits der Nahgrenze scharf."
-        },
-        "totalDoF": {
-          "term": "Gesamte Schärfentiefe",
-          "definition": "Der vollständige Abstand zwischen Nah- und Ferngrenze — der gesamte Bereich, der im Bild scharf erscheint."
+          "definition": "Die physischen Abmessungen des Kamerasensors. Größere Sensoren (Vollformat, Mittelformat) benötigen für einen äquivalenten Bildausschnitt längere Brennweiten, was eine geringere Schärfentiefe erzeugt als kleinere Sensoren (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Hyperfokaldistanz",
           "definition": "Der Fokusabstand, der die Schärfentiefe maximiert. Wenn du auf diese Entfernung fokussierst, erscheint alles von der halben Hyperfokaldistanz bis Unendlich scharf."
         },
-        "backgroundBlur": {
-          "term": "Hintergrundunschärfe",
-          "definition": "Ein Maß dafür, wie unscharf der Hintergrund hinter deinem Motiv erscheint. Höhere Werte bedeuten stärkere Unschärfe und eine klarere Freistellung des Motivs."
-        },
         "coc": {
           "term": "Zerstreuungskreis",
           "definition": "Der maximale Durchmesser eines Unschärfeflecks auf dem Sensor, der dem menschlichen Auge noch als Punkt erscheint. Bestimmt die Grenze akzeptabler Schärfe für Schärfentiefe-Berechnungen."
         },
-        "isolationScore": {
-          "term": "Freistellungswert",
-          "definition": "Eine zusammengesetzte Bewertung (0–100), die angibt, wie gut das Motiv vom Hintergrund getrennt ist — basierend auf der Hintergrundunschärfe im Verhältnis zur Motivgröße."
-        },
-        "bokehShape": {
-          "term": "Bokeh-Form",
-          "definition": "Die Form unscharfer Glanzlichter, bestimmt durch Anzahl und Rundung der Blendenlamellen. Mehr Lamellen erzeugen rundere, weichere Bokeh-Formen."
+        "backgroundBlur": {
+          "term": "Hintergrundunschärfe",
+          "definition": "Ein Maß dafür, wie unscharf der Hintergrund hinter deinem Motiv erscheint. Höhere Werte bedeuten stärkere Unschärfe und eine klarere Freistellung des Motivs."
         },
         "diffractionWarning": {
           "term": "Beugung",
-          "definition": "Bei sehr kleinen Blendenöffnungen wird Licht an den Blendenkanten gebeugt und macht das Bild weicher. Die Beugungswarnung dieses Tools erscheint, sobald diese Unschärfe den Zerstreuungskreis des Sensors überschreitet — bei etwa f/22 bei Vollformat, f/15 bei APS-C, f/11 bei Micro Four Thirds."
+          "definition": "Bei sehr kleinen Blendenöffnungen wird Licht an den Blendenkanten gebeugt und macht das Bild weicher. Die Beugungswarnung dieses Tools erscheint, sobald diese Weichzeichnung den Zerstreuungskreis des Sensors überschreitet — bei Vollformat etwa bei f/22, bei APS-C bei f/15, bei Micro Four Thirds bei f/11."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Du fotografierst ein Porträt und möchtest einen schön unscharfen Hintergrund. Welche Blende solltest du wählen?",
-          "hint": "Kleinere Blendenzahlen bedeuten eine größere Objektivöffnung und mehr Hintergrundunschärfe.",
-          "successMessage": "Richtig! Eine große Blendenöffnung wie f/1,8 oder f/2,8 erzeugt eine geringe Schärfentiefe und trennt dein Motiv mit angenehmem Bokeh vom Hintergrund.",
-          "failureMessage": "Nicht ganz. Kleine Blendenöffnungen wie f/11 oder f/16 halten mehr von der Szene scharf. Für Hintergrundunschärfe wähle eine große Blendenöffnung (niedrige Blendenzahl).",
+          "scenario": "Du fotografierst ein Porträt und möchtest, dass der Hintergrund hinter deinem Motiv in weiche Unschärfe zerfließt. Welche Blende solltest du wählen?",
+          "hint": "Niedrigere Blendenzahlen bedeuten eine größere Öffnung — und eine geringere Schärfentiefe.",
+          "successMessage": "Richtig — f/1.4 öffnet die Blende weit und erzeugt eine geringe Schärfentiefe mit einem sanft verschwommenen Hintergrund.",
+          "failureMessage": "Nicht ganz. Höhere Blendenzahlen wie f/11 oder f/16 halten mehr von der Szene scharf. Für maximale Hintergrundunschärfe wähle stattdessen die größte Blendenöffnung (die niedrigste Blendenzahl).",
           "options": {
-            "0": {
-              "label": "f/1,8"
-            },
-            "1": {
-              "label": "f/5,6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Du fotografierst eine Gruppe von 8 Personen in zwei Reihen bei einer Hochzeit. Welche Blende hilft sicherzustellen, dass alle scharf sind?",
-          "hint": "Bei Personen in leicht unterschiedlichen Entfernungen brauchst du genug Schärfentiefe, um beide Reihen abzudecken.",
-          "successMessage": "Gute Wahl! f/5,6 bietet genug Schärfentiefe, um beide Reihen scharf zu halten, während noch ausreichende Verschlusszeiten in Innenräumen möglich sind.",
-          "failureMessage": "Diese Blende könnte die hintere Reihe unscharf lassen oder unnötig eng sein. Für zwei Reihen von Personen ist f/5,6 ein zuverlässiger Ausgangspunkt.",
+          "scenario": "Du fotografierst vier Freunde, die locker beieinanderstehen — zwei von ihnen stehen einen halben Schritt vor oder hinter den anderen. Welche Blende gibt dir einen bequemen Sicherheitsspielraum, um alle scharf zu halten?",
+          "hint": "Du brauchst zusätzliche Schärfentiefe, um Personen abzudecken, die nicht exakt in derselben Fokusebene stehen — musst aber nicht bis zum Anschlag abblenden.",
+          "successMessage": "Richtig — f/5.6 bietet einen bequemen Puffer an Schärfentiefe für kleine Abstandsunterschiede, ohne die Blende stärker als nötig zu schließen.",
+          "failureMessage": "f/1.4 ist zu gering für Personen in leicht unterschiedlichen Entfernungen, und f/16 blendet weiter ab als nötig. f/5.6 ist der zuverlässige Mittelweg.",
           "options": {
-            "0": {
-              "label": "f/1,4"
-            },
-            "1": {
-              "label": "f/2,8"
-            },
-            "2": {
-              "label": "f/5,6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Du fotografierst eine Landschaft mit Wildblumen 2 Meter entfernt und Bergen im Hintergrund. Du verwendest ein 24-mm-Objektiv an einer Vollformatkamera. Welche Technik maximiert die Schärfe von vorn bis hinten?",
-          "hint": "Es gibt einen bestimmten Abstand, auf den du fokussieren kannst, um den scharfen Bereich vom Vordergrund bis Unendlich zu maximieren.",
-          "successMessage": "Genau! Die Fokussierung auf die Hyperfokaldistanz bei f/11 stellt sicher, dass alles von etwa 1 Meter bis Unendlich akzeptabel scharf ist — perfekt für diese Szene.",
-          "failureMessage": "Die Fokussierung auf Unendlich würde die Blumen im Vordergrund unscharf lassen. Nutze die Hyperfokaldistanz, um die Schärfe vom nahen Vordergrund bis Unendlich zu erweitern.",
+          "scenario": "Du fotografierst bei 85mm, f/1.8, mit deinem Motiv 3 Meter entfernt, und möchtest die Hintergrundunschärfe deutlich verstärken, ohne die Blende zu verändern oder das Objektiv zu wechseln. Was ist der schnellste Weg?",
+          "hint": "Die Schärfentiefe — und wie stark der Hintergrund im Verhältnis zu deinem Motiv verschwimmt — reagiert extrem empfindlich auf den Motivabstand.",
+          "successMessage": "Genau — den Motivabstand zu halbieren verringert die Schärfentiefe drastisch und verstärkt die Hintergrundunschärfe, ohne Blende oder Objektiv zu ändern.",
+          "failureMessage": "Weiter wegzugehen oder den ISO-Wert zu erhöhen verringert die Schärfentiefe nicht. Näher an dein Motiv heranzugehen ist bei fester Blende und Brennweite der schnellste Weg, die Hintergrundunschärfe zu verstärken.",
           "options": {
-            "0": {
-              "label": "Auf die Blumen fokussieren (2 m)"
-            },
-            "1": {
-              "label": "Auf die Berge fokussieren (Unendlich)"
-            },
-            "2": {
-              "label": "Auf die Hyperfokaldistanz fokussieren"
-            },
-            "3": {
-              "label": "Auf die Mitte zwischen Blumen und Bergen fokussieren"
-            }
+            "0": { "label": "Auf 1.5m an dein Motiv herangehen (halbe Distanz)" },
+            "1": { "label": "Auf 6m von deinem Motiv weggehen (doppelte Distanz)" },
+            "2": { "label": "Zurückgehen, um den Arbeitsabstand zu vergrößern" },
+            "3": { "label": "Den ISO-Wert für einen helleren Hintergrund erhöhen" }
           }
         },
         "3": {
-          "scenario": "Du machst Makrofotografie einer Blume und bemerkst, dass nur die vorderen Blütenblätter scharf sind. Der Rest der Blume wird unscharf. Du bist bei f/5,6. Was solltest du tun, um mehr von der Blume scharf zu bekommen?",
-          "hint": "Bei kurzen Fokusabständen wird die Schärfentiefe extrem dünn. Überlege dir deine Blende.",
-          "successMessage": "Richtig! Das Abblenden auf f/11 oder f/16 vergrößert die hauchdünne Schärfentiefe in der Makrofotografie. Achte nur auf Beugungsunschärfe bei sehr kleinen Blendenöffnungen.",
-          "failureMessage": "Eine größere Blendenöffnung würde die Schärfentiefe noch dünner machen. In der Makrofotografie ist das Abblenden (höhere Blendenzahl) der primäre Weg, um mehr Tiefe zu gewinnen.",
+          "scenario": "Du fotografierst eine Landschaft mit einer Vollformatkamera und möchtest maximale Schärfe über das gesamte Bild. Solltest du bis zum Anschlag auf f/22 abblenden, um die größte Schärfentiefe zu erhalten?",
+          "hint": "Es gibt einen Kompromiss zwischen der durch Abblenden gewonnenen Schärfentiefe und der durch Beugung bei sehr kleinen Blendenöffnungen verursachten Weichzeichnung.",
+          "successMessage": "Richtig — f/22 erhöht die Schärfentiefe zwar rechnerisch, aber die meisten Objektive haben ihre schärfsten Blendenstufen zu diesem Zeitpunkt bereits überschritten. Eine moderate Blende wie f/8–f/11 gleicht Schärfentiefe und Objektivschärfe meist besser aus. Die eigene Beugungswarnung dieses Tools ist ein separater, späterer Schwellenwert — sie zeigt erst an, wenn die Beugungsunschärfe den Zerstreuungskreis des Sensors überschreitet, was bei Vollformat erst um f/22 geschieht (f/15 bei APS-C, f/11 bei Micro Four Thirds). Warte nicht auf diese Warnung, bevor du wieder öffnest — sie ist eine harte physikalische Grenze, keine Schärfeempfehlung.",
+          "failureMessage": "Bis zum Anschlag auf f/22 abzublenden maximiert die Schärfentiefe zwar rechnerisch, aber die meisten Objektive haben ihren schärfsten Blendenbereich zu diesem Zeitpunkt bereits überschritten. Eine moderate Blende wie f/8–f/11 bietet meist eine bessere Balance zwischen Schärfentiefe und tatsächlicher Schärfe. Die Beugungswarnung dieses Tools ist ein separater, späterer Schwellenwert — sie erscheint erst, wenn die Unschärfe den Zerstreuungskreis des Sensors überschreitet, bei Vollformat etwa bei f/22 — nimm ihr Fehlen also nicht als grünes Licht zum Weiterabblenden.",
           "options": {
-            "0": {
-              "label": "Auf f/2,8 öffnen für mehr Licht"
-            },
-            "1": {
-              "label": "Auf f/11 abblenden"
-            },
-            "2": {
-              "label": "Zu einem Weitwinkel wechseln"
-            },
-            "3": {
-              "label": "Weiter von der Blume entfernen"
-            }
+            "0": { "label": "Ja — immer die kleinstmögliche Blende für maximale Schärfentiefe verwenden" },
+            "1": { "label": "Nein — eine moderate Blende wie f/8–f/11 für die beste Gesamtschärfe verwenden, nicht die kleinste" },
+            "2": { "label": "Nein — die größtmögliche Blende für die schärfsten Ergebnisse verwenden" },
+            "3": { "label": "Spielt keine Rolle — die Blende hat keinen Einfluss auf die Schärfe" }
           }
         },
         "4": {
-          "scenario": "Du vergleichst zwei Kameras für Porträtarbeit: eine Vollformatkamera mit einem 85 mm f/1,8-Objektiv und eine Micro-Four-Thirds-Kamera mit einem 42,5 mm f/1,8-Objektiv. Beide ergeben einen äquivalenten Bildausschnitt. Welche Kamera erzeugt eine geringere Schärfentiefe?",
-          "hint": "Denke an äquivalente Brennweiten und wie die Sensorgröße die Schärfentiefe-Berechnung bei gleicher Blendenzahl beeinflusst.",
-          "successMessage": "Richtig! Die Vollformatkamera erzeugt eine etwa 2 Blendenstufen geringere Schärfentiefe. Obwohl das MFT-Objektiv die gleiche Blendenzahl hat, führt die kürzere tatsächliche Brennweite (42,5 mm vs. 85 mm) bei äquivalentem Bildausschnitt zu einer größeren Schärfentiefe.",
-          "failureMessage": "Obwohl beide Objektive f/1,8 haben, verwendet die Vollformatkamera eine längere tatsächliche Brennweite für den gleichen Bildausschnitt, was eine deutlich geringere Schärfentiefe erzeugt.",
+          "scenario": "Du vergleichst zwei Aufbauten für denselben Porträt-Bildausschnitt: eine Vollformatkamera mit einem 85-mm-f/1.8-Objektiv und eine APS-C-Kamera (1,5-facher Crop) mit einem 56-mm-f/1.8-Objektiv, das dasselbe Sichtfeld erzeugt. Welcher Aufbau erzeugt eine geringere Schärfentiefe?",
+          "hint": "Vergleiche die tatsächliche (nicht die äquivalente) Brennweite, die jedes Objektiv verwendet, um denselben Bildausschnitt zu erreichen.",
+          "successMessage": "Richtig — obwohl beide Objektive f/1.8 haben, verwendet die Vollformatkamera eine längere tatsächliche Brennweite (85mm statt 56mm), um den Bildausschnitt anzugleichen, was eine spürbar geringere Schärfentiefe erzeugt.",
+          "failureMessage": "Beide Objektive haben dieselbe Blendenzahl, aber die Vollformatkamera benötigt eine längere tatsächliche Brennweite, um den Bildausschnitt anzugleichen. Diese längere Brennweite ist es, die eine geringere Schärfentiefe erzeugt — nicht die Blendenzahl allein.",
           "options": {
-            "0": {
-              "label": "Vollformat mit 85 mm f/1,8"
-            },
-            "1": {
-              "label": "Micro Four Thirds mit 42,5 mm f/1,8"
-            },
-            "2": {
-              "label": "Beide erzeugen eine identische Schärfentiefe"
-            }
+            "0": { "label": "Der Vollformat-Aufbau mit 85mm f/1.8" },
+            "1": { "label": "Der APS-C-Aufbau mit 56mm f/1.8" },
+            "2": { "label": "Beide erzeugen identische Schärfentiefe" }
           }
         }
       }

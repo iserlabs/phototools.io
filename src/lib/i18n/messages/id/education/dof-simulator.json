@@ -1,48 +1,48 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Kedalaman bidang adalah rentang jarak dalam foto Anda yang tampak tajam secara dapat diterima. kedalaman bidang dangkal mengaburkan latar belakang di belakang subjek Anda, sementara kedalaman bidang dalam menjaga segala sesuatu dari latar depan hingga cakrawala tetap fokus. Mengendalikan kedalaman bidang adalah salah satu alat kreatif paling kuat dalam fotografi.",
+      "beginner": "Kedalaman bidang adalah zona pada foto Anda — dari dekat ke jauh — yang tampak tajam secara memadai. Tiga kontrol membentuk zona itu: apertur (apertur lebih lebar mengaburkan latar belakang lebih banyak), panjang fokus (lensa yang lebih panjang mempersempit zona), dan jarak subjek (mendekat mempersempitnya lebih jauh lagi). Sesuaikan salah satu di sini dan lihat penggaris kedalaman serta viewport diperbarui bersama secara real time.",
       "deeper": {
         "0": {
-          "heading": "Cara Kerja kedalaman bidang",
-          "text": "Kedalaman bidang diatur oleh circle of confusion (CoC) — titik blur terbesar pada sensor yang masih terlihat tajam bagi mata manusia. Tiga faktor fisik menentukan kedalaman bidang: panjang fokus, apertur, dan jarak subjek. Apertur lebih lebar (angka f lebih rendah) menghasilkan kedalaman bidang yang lebih dangkal karena lensa mengonvergensi cahaya pada sudut yang lebih curam, menyebabkan titik-titik di luar fokus menyebar menjadi lingkaran yang lebih besar pada sensor."
+          "heading": "Geometri Apertur dan Circle of Confusion",
+          "text": "Lensa memfokuskan cahaya dari satu jarak tertentu ke sensor sebagai titik sempurna; segala sesuatu yang lain jatuh sebagai cakram kecil yang disebut circle of confusion (CoC). Sebuah titik masih terbaca tajam selama cakramnya tetap lebih kecil dari ambang batas yang ditentukan oleh ukuran sensor — sekitar 0,03mm pada full frame. Melebarkan apertur (menurunkan angka f) membuka kerucut cahaya yang lebih besar antara lensa dan titik fokus, sehingga titik-titik yang menjauh dari bidang itu menyebar menjadi cakram yang jauh lebih besar, jauh lebih cepat. Itulah mengapa apertur lebar seperti f/1.4 mengaburkan latar belakang jauh lebih banyak daripada f/11 — ini adalah perubahan geometri kerucut cahaya, bukan sekadar jumlah cahaya."
         },
         "1": {
-          "heading": "Panjang Fokus & Jarak",
-          "text": "Pengaruh panjang fokus terhadap kedalaman bidang tergantung pada apa yang Anda pertahankan tetap. Pada jarak subjek yang tetap, panjang fokus yang lebih panjang mempersempit kedalaman bidang secara tajam — kira-kira sebanding dengan kuadrat panjang fokus. Namun jika Anda memperbesar zoom sekaligus mundur untuk mempertahankan framing yang sama (mode kunci-FOV pada alat ini), kedalaman bidang nyaris tidak berubah — yang berubah drastis justru latar belakang, yang menjadi lebih membesar dan lebih blur. Mendekat ke subjek mempersempit kedalaman bidang karena alasan berbeda: batas fokus dekat dan jauh saling merapat di sekitar jarak yang lebih pendek. Jarak hiperfocal adalah jarak fokus di mana kedalaman bidang meluas dari setengah jarak tersebut hingga tak terhingga, memaksimalkan ketajaman di seluruh adegan."
+          "heading": "Panjang Fokus dan Jarak Mendominasi Efeknya",
+          "text": "Pengaruh panjang fokus terhadap kedalaman bidang sepenuhnya bergantung pada apa yang Anda pertahankan tetap. Pada jarak subjek yang tetap, kedalaman bidang menyempit tajam seiring panjang fokus — kira-kira sebanding dengan kuadratnya: berdiri 3m dari subjek pada f/2.8, lensa 35mm memberikan sekitar 1,3m kedalaman bidang, sementara lensa 200mm memberikan sekitar 35mm. Namun perbandingan itu juga mengubah framing Anda, karena Anda tidak membingkai ulang. Pada framing yang tetap — mode kunci-FOV pada alat ini, di mana Anda mundur saat memperbesar zoom untuk menjaga subjek tetap seukuran — kedalaman bidang nyaris tidak bergerak: menyapu dari 35mm ke 200mm pada f/2.8 dengan framing terkunci mengubah total kedalaman bidang jauh di bawah 1%. Yang berubah drastis justru latar belakang: lensa yang lebih panjang memperbesar dan memampatkan segala sesuatu di belakang subjek Anda, sehingga highlight yang tidak fokus membesar dan latar belakang lebih terpisah, meskipun lapisan fokus di sekitar subjek Anda tetap memiliki ketebalan yang kurang lebih sama. Aktifkan kunci-FOV dan sapukan panjang fokus untuk melihatnya terjadi — angka kedalaman bidang tetap stabil sementara angka blur latar belakang terus naik. Jarak subjek tetap menjadi pengungkit yang lebih andal dalam kedua kasus: mendekat pada panjang fokus dan apertur yang tetap mempersempit kedalaman bidang secara tajam, menarik batas dekat dan jauh lebih rapat di sekitar jarak yang lebih pendek."
         },
         "2": {
-          "heading": "Bokeh & Difraksi",
-          "text": "Bokeh mengacu pada kualitas area yang tidak fokus. Jumlah dan bentuk bilah apertur memengaruhi karakter bokeh — bilah yang lebih bulat menghasilkan highlight yang lebih halus dan melingkar. Banyak lensa mencapai puncak ketajaman praktisnya di sekitar f/8-f/11, jauh sebelum difraksi menjadi parah. Peringatan difraksi pada alat ini sendiri menggunakan ambang batas yang lebih ketat dan muncul lebih lambat: peringatan ini hanya muncul setelah blur difraksi melebihi circle of confusion sensor, yang terjadi sekitar f/22 pada full frame (f/15 pada APS-C, f/11 pada Micro Four Thirds) — anggap peringatan itu sebagai batas terluar, bukan target ketajaman."
+          "heading": "Ukuran Sensor dan Framing Ekuivalen",
+          "text": "Untuk mengisi bingkai dengan subjek yang sama, sensor yang lebih besar memerlukan panjang fokus yang proporsional lebih panjang daripada yang lebih kecil — kamera full frame memerlukan sekitar 1,5x panjang fokus kamera APS-C, dan sekitar 2x dari Micro Four Thirds, untuk bidang pandang yang sama. Karena kedalaman bidang menyempit seiring panjang fokus, panjang fokus 'ekuivalen' yang lebih panjang itulah yang memberi kamera full frame reputasinya untuk kedalaman bidang yang lebih dangkal — angka f yang tercetak pada lensa tidak menceritakan keseluruhan kisahnya. Dua lensa pada f-stop yang sama pada ukuran sensor berbeda, dengan framing identik, akan menghasilkan kedalaman bidang yang berbeda secara signifikan."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Apertur",
-          "description": "Apertur lebih lebar (f/1.4-f/2.8) menciptakan kedalaman bidang dangkal dengan bokeh yang lembut. Apertur lebih sempit (f/8-f/16) meningkatkan ketajaman di seluruh adegan."
+          "description": "Apertur lebih lebar (angka f rendah seperti f/1.4-f/2.8) membuka kerucut cahaya yang lebih curam dan mempersempit kedalaman bidang. Apertur lebih sempit (f/8-f/16) melebarkannya."
         },
         "1": {
           "label": "Panjang Fokus",
-          "description": "Pada jarak subjek yang tetap, kedalaman bidang menyempit tajam seiring bertambahnya panjang fokus. Pada framing yang tetap — zoom lalu mundur untuk mempertahankan bidikan yang sama — kedalaman bidang nyaris tidak berubah; yang berubah adalah latar belakang, yang menjadi lebih membesar dan lebih blur seiring bertambahnya panjang fokus."
+          "description": "Pada jarak subjek yang tetap, kedalaman bidang menyempit kira-kira sebanding dengan kuadrat panjang fokus. Pada framing yang tetap (zoom lalu mundur untuk mempertahankan bidikan yang sama), kedalaman bidang nyaris tidak berubah — yang bertransformasi justru latar belakang, menjadi lebih membesar dan lebih blur seiring bertambahnya panjang fokus."
         },
         "2": {
           "label": "Jarak Subjek",
-          "description": "Semakin dekat Anda fokus, semakin dangkal kedalaman bidang-nya. Fotografer makro sering bekerja dengan kedalaman bidang yang diukur dalam milimeter."
+          "description": "Mendekat ke subjek Anda mempersempit kedalaman bidang lebih cepat daripada hampir semua penyesuaian lain, itulah sebabnya fotografi makro memiliki zona tajam yang setipis silet."
         },
         "3": {
           "label": "Ukuran Sensor",
-          "description": "Sensor yang lebih besar memerlukan panjang fokus yang lebih panjang untuk framing yang sama, yang secara tidak langsung mempersempit kedalaman bidang. Kamera full frame menghasilkan kedalaman bidang yang lebih dangkal daripada kamera Micro Four Thirds pada framing ekuivalen."
+          "description": "Sensor yang lebih besar memerlukan panjang fokus yang lebih panjang untuk menyamai framing sensor yang lebih kecil, yang secara tidak langsung menghasilkan kedalaman bidang lebih dangkal pada bidikan ekuivalen."
         }
       },
       "tips": {
         "0": {
-          "text": "Untuk foto grup, gunakan f/5.6 atau lebih sempit dan minta semua orang berdiri di bidang fokus yang sama. Bahkan satu orang setengah langkah ke depan bisa keluar dari fokus pada apertur lebar."
+          "text": "Pada apertur lebar seperti f/1.4-f/2.0, kedalaman bidang bisa lebih tipis daripada wajah manusia. Fokuskan secara presisi pada mata yang lebih dekat, bukan hidung atau telinga, atau tatapan subjek Anda akan terbaca lembut."
         },
         "1": {
-          "text": "Saat memotret lanskap, fokus pada jarak hiperfocal daripada di tak terhingga. Ini memaksimalkan zona ketajaman dari latar depan dekat hingga latar belakang jauh."
+          "text": "Gunakan preset framing (Wajah, Potret, Medium Shot, dan seterusnya) untuk mengunci ukuran subjek Anda dalam bingkai saat bereksperimen — preset ini mempertahankan panjang fokus dan jarak dalam hubungan yang sama seperti bidikan sungguhan, sehingga blur yang Anda lihat di sini sesuai dengan yang akan Anda dapatkan di kamera."
         },
         "2": {
-          "text": "Jika Anda ingin blur latar belakang maksimal untuk potret, tingkatkan panjang fokus Anda dan dekati subjek sedekat yang memungkinkan framing — kedua perubahan ini saling memperkuat untuk mengurangi kedalaman bidang secara drastis."
+          "text": "Jangan mengejar kedalaman bidang maksimum dengan menyempitkan apertur habis-habisan — sebagian besar lensa paling tajam di sekitar f/8-f/11, jauh sebelum peringatan difraksi alat ini muncul. Peringatan itu adalah ambang batas yang lebih ketat dan muncul lebih lambat: baru menyala setelah blur difraksi melebihi circle of confusion sensor, yang terjadi sekitar f/22 pada full frame (f/15 pada APS-C, f/11 pada Micro Four Thirds). Anggap f/8-f/11 sebagai target praktis Anda, dan chip peringatan sebagai batas terluar, bukan tujuan."
         }
       },
       "tooltips": {
@@ -52,153 +52,91 @@
         },
         "aperture": {
           "term": "Apertur",
-          "definition": "Ukuran bukaan lensa, dinyatakan sebagai angka f (misalnya f/2.8). Angka f lebih rendah berarti bukaan lebih lebar, memasukkan lebih banyak cahaya dan menghasilkan kedalaman bidang yang lebih dangkal."
+          "definition": "Ukuran bukaan lensa, dinyatakan sebagai angka f (misalnya, f/2.8). Angka f lebih rendah berarti bukaan lebih lebar, memasukkan lebih banyak cahaya dan menghasilkan kedalaman bidang yang lebih dangkal."
         },
         "subjectDistance": {
           "term": "Jarak Subjek",
-          "definition": "Jarak dari sensor kamera ke titik fokus. Jarak fokus yang lebih dekat menghasilkan kedalaman bidang yang lebih dangkal."
+          "definition": "Jarak dari kamera ke titik fokus. Jarak fokus yang lebih dekat menghasilkan kedalaman bidang yang lebih dangkal."
         },
         "sensor": {
           "term": "Ukuran Sensor",
-          "definition": "Dimensi fisik sensor kamera. Sensor yang lebih besar (full frame, medium format) menghasilkan kedalaman bidang yang lebih dangkal pada framing ekuivalen dibandingkan sensor yang lebih kecil (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Orientasi",
-          "definition": "Beralih antara orientasi pemotretan lanskap (horizontal) dan potret (vertikal). Ini memengaruhi referensi framing untuk perhitungan jarak subjek."
-        },
-        "nearFocus": {
-          "term": "Batas Fokus Dekat",
-          "definition": "Jarak terdekat dari kamera yang tampak tajam secara dapat diterima. Segala sesuatu yang lebih dekat dari ini akan tampak blur."
-        },
-        "farFocus": {
-          "term": "Batas Fokus Jauh",
-          "definition": "Jarak terjauh dari kamera yang tampak tajam secara dapat diterima. Ketika ini mencapai tak terhingga, segala sesuatu di luar batas dekat berada dalam fokus."
-        },
-        "totalDoF": {
-          "term": "Total Kedalaman Bidang",
-          "definition": "Jarak penuh antara batas fokus dekat dan jauh — seluruh zona yang tampak tajam dalam gambar."
+          "definition": "Dimensi fisik sensor kamera. Sensor yang lebih besar (full frame, medium format) memerlukan panjang fokus yang lebih panjang untuk framing ekuivalen, yang menghasilkan kedalaman bidang lebih dangkal daripada sensor yang lebih kecil (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Jarak Hiperfocal",
           "definition": "Jarak fokus yang memaksimalkan kedalaman bidang. Ketika Anda fokus pada jarak ini, segala sesuatu dari setengah jarak hiperfocal hingga tak terhingga tampak tajam."
         },
-        "backgroundBlur": {
-          "term": "Blur Latar Belakang",
-          "definition": "Ukuran seberapa blur latar belakang di belakang subjek Anda. Nilai lebih tinggi berarti blur lebih kuat dan isolasi subjek lebih baik."
-        },
         "coc": {
           "term": "Circle of Confusion",
           "definition": "Diameter maksimum titik blur pada sensor yang masih tampak sebagai titik bagi mata manusia. Menentukan batas ketajaman yang dapat diterima untuk perhitungan kedalaman bidang."
         },
-        "isolationScore": {
-          "term": "Skor Isolasi",
-          "definition": "Penilaian komposit (0-100) yang menunjukkan seberapa baik subjek terpisah dari latar belakang, berdasarkan jumlah blur latar belakang relatif terhadap ukuran subjek."
-        },
-        "bokehShape": {
-          "term": "Bentuk Bokeh",
-          "definition": "Bentuk highlight yang tidak fokus, ditentukan oleh jumlah dan kelengkungan bilah apertur. Bilah lebih banyak menghasilkan bokeh yang lebih bulat dan halus."
+        "backgroundBlur": {
+          "term": "Blur Latar Belakang",
+          "definition": "Ukuran seberapa blur latar belakang tampak di belakang subjek Anda. Nilai lebih tinggi berarti blur lebih kuat dan isolasi subjek lebih baik."
         },
         "diffractionWarning": {
           "term": "Difraksi",
-          "definition": "Pada apertur yang sangat kecil, cahaya membengkok di sekitar tepi apertur, melunakkan gambar. Peringatan difraksi pada alat ini muncul setelah pelunakan tersebut melebihi circle of confusion sensor — sekitar f/22 pada full frame, f/15 pada APS-C, f/11 pada Micro Four Thirds."
+          "definition": "Pada apertur yang sangat kecil, cahaya membelok di sekitar tepi apertur, melunakkan gambar. Peringatan difraksi alat ini muncul setelah pelunakan itu melebihi circle of confusion sensor — sekitar f/22 pada full frame, f/15 pada APS-C, f/11 pada Micro Four Thirds."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Anda memotret potret dan menginginkan latar belakang yang blur indah. Apertur mana yang harus Anda pilih?",
-          "hint": "Angka f lebih rendah berarti bukaan lensa lebih lebar dan blur latar belakang lebih banyak.",
-          "successMessage": "Benar! Apertur lebar seperti f/1.8 atau f/2.8 menciptakan kedalaman bidang yang dangkal, memisahkan subjek Anda dari latar belakang dengan bokeh yang menyenangkan.",
-          "failureMessage": "Kurang tepat. Apertur sempit seperti f/11 atau f/16 menjaga lebih banyak adegan dalam fokus. Untuk blur latar belakang, pilih apertur lebar (angka f rendah).",
+          "scenario": "Anda memotret potret dan menginginkan latar belakang yang meleleh menjadi blur lembut di belakang subjek Anda. Apertur mana yang harus Anda pilih?",
+          "hint": "Angka f lebih rendah berarti bukaan lebih lebar — dan kedalaman bidang yang lebih dangkal.",
+          "successMessage": "Benar — f/1.4 membuka apertur lebar-lebar, menghasilkan kedalaman bidang yang dangkal dan latar belakang yang blur secara halus.",
+          "failureMessage": "Kurang tepat. Angka f lebih tinggi seperti f/11 atau f/16 menjaga lebih banyak adegan tetap tajam. Untuk blur latar belakang maksimum, pilih apertur terlebar (angka f terendah).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Anda memotret kelompok 8 orang yang diatur dalam dua baris di pernikahan. Apertur berapa yang akan membantu memastikan semua orang dalam fokus?",
-          "hint": "Dengan orang-orang pada jarak yang sedikit berbeda, Anda memerlukan kedalaman bidang yang cukup untuk mencakup kedua baris.",
-          "successMessage": "Pilihan bagus! f/5.6 menyediakan kedalaman bidang yang cukup untuk menjaga kedua baris tetap tajam sambil tetap mempertahankan kecepatan rana yang baik di dalam ruangan.",
-          "failureMessage": "Apertur tersebut mungkin membuat baris belakang keluar dari fokus atau terlalu sempit tanpa perlu. Untuk dua baris orang, f/5.6 adalah titik awal yang andal.",
+          "scenario": "Anda memotret empat teman yang berdiri dalam kelompok longgar — beberapa di antaranya setengah langkah lebih maju atau mundur dari yang lain. Apertur mana yang memberi Anda margin aman yang nyaman untuk menjaga semua orang tetap tajam?",
+          "hint": "Anda memerlukan kedalaman bidang ekstra untuk mencakup orang-orang yang tidak berada di bidang fokus yang sama persis, tetapi Anda tidak perlu menyempitkan apertur habis-habisan.",
+          "successMessage": "Benar — f/5.6 memberikan margin kedalaman bidang yang nyaman untuk variasi jarak kecil, tanpa mempersempit apertur lebih dari yang diperlukan.",
+          "failureMessage": "f/1.4 terlalu dangkal untuk orang-orang pada jarak yang sedikit berbeda, dan f/16 menyempitkan apertur lebih dari yang Anda butuhkan. f/5.6 adalah jalan tengah yang andal.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Anda memotret lanskap dengan bunga liar 2 meter di depan dan pegunungan di latar belakang. Anda menggunakan lensa 24mm pada kamera full frame. Teknik apa yang akan memaksimalkan ketajaman dari depan ke belakang?",
-          "hint": "Ada jarak spesifik yang bisa Anda fokuskan yang memaksimalkan zona tajam dari latar depan hingga tak terhingga.",
-          "successMessage": "Tepat! Fokus pada jarak hiperfocal pada f/11 memastikan segala sesuatu dari sekitar 1 meter hingga tak terhingga tampak tajam — sempurna untuk adegan ini.",
-          "failureMessage": "Fokus pada tak terhingga akan membuat bunga latar depan lembut. Gunakan jarak hiperfocal untuk memperluas ketajaman dari latar depan dekat hingga tak terhingga.",
+          "scenario": "Anda berada di 85mm, f/1.8, dengan subjek Anda berjarak 3 meter, dan Anda ingin meningkatkan blur latar belakang secara nyata tanpa menyentuh apertur atau mengganti lensa. Apa cara tercepat?",
+          "hint": "Kedalaman bidang — dan seberapa kuat latar belakang menjadi blur relatif terhadap subjek Anda — sangat sensitif terhadap jarak subjek.",
+          "successMessage": "Tepat sekali — membagi dua jarak subjek secara dramatis mempersempit kedalaman bidang dan memperbesar blur latar belakang, tanpa mengubah apertur atau lensa Anda.",
+          "failureMessage": "Menjauh lebih jauh atau menaikkan ISO tidak akan mempersempit kedalaman bidang. Mendekat ke subjek Anda adalah cara tercepat untuk meningkatkan blur latar belakang pada apertur dan panjang fokus yang tetap.",
           "options": {
-            "0": {
-              "label": "Fokus pada bunga (2m)"
-            },
-            "1": {
-              "label": "Fokus pada pegunungan (tak terhingga)"
-            },
-            "2": {
-              "label": "Fokus pada jarak hiperfocal"
-            },
-            "3": {
-              "label": "Fokus di tengah antara bunga dan pegunungan"
-            }
+            "0": { "label": "Pindah ke 1,5m dari subjek Anda (setengah jarak)" },
+            "1": { "label": "Pindah ke 6m dari subjek Anda (dua kali jarak)" },
+            "2": { "label": "Mundur untuk menambah jarak kerja Anda" },
+            "3": { "label": "Naikkan ISO untuk latar belakang yang lebih terang" }
           }
         },
         "3": {
-          "scenario": "Anda melakukan fotografi makro bunga dan melihat hanya kelopak depan yang tajam. Sisa bunga memudar menjadi blur. Anda pada f/5.6. Apa yang harus Anda lakukan untuk mendapatkan lebih banyak bunga dalam fokus?",
-          "hint": "Pada jarak fokus dekat, kedalaman bidang menjadi sangat tipis. Pertimbangkan apertur Anda.",
-          "successMessage": "Benar! Mengecilkan ke f/11 atau f/16 meningkatkan kedalaman bidang yang sangat tipis dalam pekerjaan makro. Hanya waspadai pelunakan difraksi pada apertur sangat kecil.",
-          "failureMessage": "Memperlebar apertur akan membuat kedalaman bidang bahkan lebih tipis. Dalam fotografi makro, mengecilkan apertur (angka f lebih tinggi) adalah cara utama untuk mendapatkan lebih banyak kedalaman.",
+          "scenario": "Anda memotret lanskap dengan kamera full frame dan menginginkan ketajaman maksimum di seluruh bingkai. Haruskah Anda menyempitkan apertur habis-habisan ke f/22 untuk kedalaman bidang maksimum?",
+          "hint": "Ada trade-off antara kedalaman bidang yang diperoleh dengan menyempitkan apertur dan pelunakan yang disebabkan oleh difraksi pada apertur yang sangat kecil.",
+          "successMessage": "Benar — f/22 memang menambah kedalaman bidang secara teori, tetapi sebagian besar lensa sudah melewati apertur paling tajamnya saat itu. Apertur sedang seperti f/8-f/11 biasanya menyeimbangkan kedalaman bidang dan ketajaman lensa dengan lebih baik. Peringatan difraksi alat ini sendiri adalah ambang batas terpisah yang muncul lebih lambat — hanya muncul setelah blur difraksi melebihi circle of confusion sensor, yang pada full frame baru terjadi sekitar f/22 (f/15 pada APS-C, f/11 pada Micro Four Thirds). Jangan menunggu peringatan itu sebelum berhenti menyempitkan apertur — itu adalah batas fisik keras, bukan rekomendasi ketajaman.",
+          "failureMessage": "Menyempitkan apertur habis-habisan ke f/22 memang memaksimalkan kedalaman bidang secara teori, tetapi sebagian besar lensa sudah melewati rentang apertur paling tajamnya saat itu. Apertur sedang seperti f/8-f/11 biasanya memberikan keseimbangan yang lebih baik antara kedalaman bidang dan ketajaman dunia nyata. Peringatan difraksi alat ini adalah ambang batas terpisah yang muncul lebih lambat — hanya muncul setelah blur melebihi circle of confusion sensor, sekitar f/22 pada full frame — jadi jangan jadikan ketidakhadirannya sebagai lampu hijau untuk terus menyempitkan apertur.",
           "options": {
-            "0": {
-              "label": "Buka ke f/2.8 untuk lebih banyak cahaya"
-            },
-            "1": {
-              "label": "Kecilkan ke f/11"
-            },
-            "2": {
-              "label": "Ganti ke lensa yang lebih lebar"
-            },
-            "3": {
-              "label": "Mundur lebih jauh dari bunga"
-            }
+            "0": { "label": "Ya — selalu gunakan apertur terkecil yang tersedia untuk kedalaman bidang maksimum" },
+            "1": { "label": "Tidak — gunakan apertur sedang seperti f/8-f/11 untuk ketajaman keseluruhan terbaik, bukan yang terkecil" },
+            "2": { "label": "Tidak — gunakan apertur terlebar yang tersedia untuk hasil paling tajam" },
+            "3": { "label": "Tidak masalah — apertur tidak memengaruhi ketajaman" }
           }
         },
         "4": {
-          "scenario": "Anda membandingkan dua kamera untuk pekerjaan potret: kamera full frame dengan lensa 85mm f/1.8 dan kamera Micro Four Thirds dengan lensa 42.5mm f/1.8. Keduanya menghasilkan framing yang ekuivalen. Kamera mana yang menghasilkan kedalaman bidang yang lebih dangkal?",
-          "hint": "Pikirkan tentang panjang fokus ekuivalen dan bagaimana ukuran sensor memengaruhi perhitungan kedalaman bidang pada angka f yang sama.",
-          "successMessage": "Benar! Kamera full frame menghasilkan kedalaman bidang sekitar 2 stop lebih dangkal. Meskipun lensa MFT memiliki angka f yang sama, panjang fokus aktual yang lebih pendek (42.5mm vs 85mm) menghasilkan kedalaman bidang yang lebih dalam pada framing ekuivalen.",
-          "failureMessage": "Meskipun kedua lensa f/1.8, kamera full frame menggunakan panjang fokus aktual yang lebih panjang untuk framing yang sama, menghasilkan kedalaman bidang yang jauh lebih dangkal.",
+          "scenario": "Anda membandingkan dua setup untuk framing potret yang sama: kamera full frame dengan lensa 85mm f/1.8, dan kamera APS-C (crop 1,5x) dengan lensa 56mm f/1.8 yang menghasilkan bidang pandang yang sama. Mana yang menghasilkan kedalaman bidang lebih dangkal?",
+          "hint": "Bandingkan panjang fokus aktual (bukan ekuivalen) yang digunakan setiap lensa untuk mencapai framing yang sama.",
+          "successMessage": "Benar — meskipun kedua lensa sama-sama f/1.8, kamera full frame menggunakan panjang fokus aktual yang lebih panjang (85mm vs. 56mm) untuk menyamai framing, yang menghasilkan kedalaman bidang yang jelas lebih dangkal.",
+          "failureMessage": "Kedua lensa memiliki angka f yang sama, tetapi kamera full frame memerlukan panjang fokus aktual yang lebih panjang untuk menyamai framing. Panjang fokus yang lebih panjang itulah yang menghasilkan kedalaman bidang lebih dangkal — bukan angka f semata.",
           "options": {
-            "0": {
-              "label": "Full frame dengan 85mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Four Thirds dengan 42.5mm f/1.8"
-            },
-            "2": {
-              "label": "Keduanya menghasilkan kedalaman bidang yang identik"
-            }
+            "0": { "label": "Setup full frame dengan 85mm f/1.8" },
+            "1": { "label": "Setup APS-C dengan 56mm f/1.8" },
+            "2": { "label": "Keduanya menghasilkan kedalaman bidang yang identik" }
           }
         }
       }

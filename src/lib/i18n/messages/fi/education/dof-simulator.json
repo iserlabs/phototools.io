@@ -1,204 +1,142 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Syväterävyys tarkoittaa kuvassa sitä etäisyysaluetta, joka näkyy hyväksyttävän terävänä. Matala syväterävyys sumentaa kohteen takana olevan taustan, ja syvä syväterävyys pitää kaiken etualasta horisonttiin terävänä. Syväterävyyden hallinta on yksi valokuvauksen tehokkaimmista luovista keinoista.",
+      "beginner": "Syväterävyys on kuvasi alue — lähietäisyydestä kauimmaiseen — joka näyttää hyväksyttävän terävältä. Kolme säädintä muovaa tätä aluetta: aukko (suurempi aukko sumentaa taustaa enemmän), polttoväli (pidempi objektiivi kaventaa aluetta) ja kohteen etäisyys (lähemmäksi meneminen kaventaa sitä entisestään). Säädä mitä tahansa niistä täällä ja katso, kuinka syvyysviivain ja näkymä päivittyvät yhdessä reaaliajassa.",
       "deeper": {
         "0": {
-          "heading": "Miten syväterävyys toimii",
-          "text": "Syväterävyyden taustalla on hajapiirto (CoC) — suurin epäterävä piste, joka vielä näyttää silmälle terävältä kennolla. Syväterävyys riippuu kolmesta fyysisestä tekijästä: polttovälistä, aukosta ja kohteen etäisyydestä. Suuri aukko (pieni f-luku) tuottaa matalamman syväterävyyden, koska objektiivi kokoaa valoa jyrkemmillä kulmilla, jolloin tarkennuksen ulkopuolelle jäävät pisteet piirtyvät kennolle suurempina ympyröinä."
+          "heading": "Aukon geometria ja hajapiirto",
+          "text": "Objektiivi tarkentaa valon yhdestä täsmällisestä etäisyydestä kennolle täydelliseksi pisteeksi; kaikki muu piirtyy pienenä kiekkona, jota kutsutaan hajapiirroksi (CoC). Piste näyttää edelleen terävältä niin kauan kuin sen kiekko pysyy pienempänä kuin kennokoon määrittämä kynnysarvo — noin 0.03mm täyskennolla. Aukon suurentaminen (f-luvun pienentäminen) avaa suuremman valokartion objektiivin ja tarkennuspisteen välille, jolloin tuon tason ulkopuoliset pisteet leviävät paljon suuremmiksi kiekoiksi, paljon nopeammin. Siksi suuri aukko, kuten f/1.4, sumentaa taustan niin paljon enemmän kuin f/11 — kyse on valokartion geometrian muutoksesta, ei pelkästä valon määrästä."
         },
         "1": {
-          "heading": "Polttoväli ja etäisyys",
-          "text": "Polttovälin vaikutus syväterävyyteen riippuu siitä, mikä pidetään vakiona. Kun kohteen etäisyys pysyy samana, pidempi polttoväli kaventaa syväterävyyttä jyrkästi — suunnilleen polttovälin neliön suhteessa. Mutta jos zoomaat ja astut taaksepäin pitääksesi saman rajauksen (tämän työkalun lukitun kuvakulman tila), syväterävyys tuskin muuttuu lainkaan — sen sijaan tausta muuttuu, suurentuen ja sumentuen enemmän. Kohteen lähestyminen kaventaa syväterävyyttä eri syystä: lähi- ja kaukaraja puristuvat tiiviimmin lyhyemmän etäisyyden ympärille. Hyperfokaalietäisyys on se tarkennusetäisyys, jolla syväterävyys ulottuu puolesta tästä etäisyydestä äärettömään ja maksimoi näin terävyyden koko kuvassa."
+          "heading": "Polttoväli ja etäisyys hallitsevat vaikutusta",
+          "text": "Polttovälin vaikutus syväterävyyteen riippuu täysin siitä, mikä pidetään vakiona. Kun kohteen etäisyys pysyy samana, pidempi polttoväli kaventaa syväterävyyttä jyrkästi — suunnilleen sen neliön suhteessa: kun seisot 3m päässä kohteesta f/2.8:lla, 35mm objektiivi antaa noin 1.3m syväterävyyttä, kun taas 200mm objektiivi antaa noin 35mm. Mutta tämä vertailu muuttaa myös rajaustasi, koska et rajannut uudelleen. Kun rajaus pysyy samana — tämän työkalun lukitun kuvakulman tila, jossa astut taaksepäin zoomatessasi pitääksesi kohteen samankokoisena — syväterävyys tuskin liikkuu: siirtyminen 35mm:stä 200mm:iin f/2.8:lla rajauksen ollessa lukittuna muuttaa kokonaissyväterävyyttä selvästi alle 1 %. Se, mikä sen sijaan muuttuu dramaattisesti, on tausta: pidempi objektiivi suurentaa ja pakkaa kaiken kohteen takana olevan, joten epäterävät valopisteet kasvavat ja tausta erottuu enemmän, vaikka kohteen ympärillä oleva terävä kerros pysyy suunnilleen yhtä paksuna. Kytke lukittu kuvakulma päälle ja käy läpi polttovälejä nähdäksesi tämän tapahtuvan — syväterävyyslukema pysyy vakaana, kun taustan sumennuslukema nousee. Kohteen etäisyys on joka tapauksessa luotettavampi keino: lähemmäksi meneminen polttovälin ja aukon pysyessä vakiona kaventaa syväterävyyttä jyrkästi, vetäen lähi- ja kaukarajan tiiviimmin lyhyemmän etäisyyden ympärille."
         },
         "2": {
-          "heading": "Bokeh ja diffraktio",
-          "text": "Bokeh tarkoittaa epäterävien alueiden laatua. Aukon lamellien määrä ja muoto vaikuttavat bokehin luonteeseen — pyöreämmät lamellit tuottavat pehmeämpiä, pyöreämpiä valopisteitä. Monet objektiivit saavuttavat käytännön terävyyshuippunsa noin f/8–f/11-alueella, kauan ennen kuin diffraktiosta tulee voimakasta. Tämän työkalun oma diffraktiovaroitus on tiukempi ja myöhäisempi raja: se ilmestyy vasta, kun diffraktion aiheuttama epäterävyys ylittää kennon hajapiirron, mikä tapahtuu noin f/22:ssa täyskennolla (f/15 APS-C:llä, f/11 Micro Four Thirdsillä) — pidä tuota varoitusta äärirajana, ei terävyystavoitteena."
+          "heading": "Kennokoko ja ekvivalentti rajaus",
+          "text": "Jotta sama kohde täyttäisi kuvan, suurempi kenno tarvitsee suhteessa pidemmän polttovälin kuin pienempi — täyskennoinen kamera tarvitsee noin 1,5-kertaisen polttovälin APS-C-kameraan verrattuna ja noin kaksinkertaisen Micro Four Thirdsiin verrattuna, samalla kuvakulmalla. Koska syväterävyys kapenee polttovälin kasvaessa, juuri tämä pidempi 'ekvivalentti' polttoväli antaa täyskennokameroille maineen matalammasta syväterävyydestä — objektiiviin painettu f-luku ei kerro koko totuutta. Kaksi objektiivia samalla aukon arvolla eri kennokoissa, identtisellä rajauksella, tuottavat merkittävästi erilaisen syväterävyyden."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Aukko",
-          "description": "Suuret aukot (f/1.4–f/2.8) tuottavat matalan syväterävyyden ja kermaisen bokehin. Pienet aukot (f/8–f/16) pitävät koko näkymän terävämpänä."
+          "description": "Suuret aukot (pienet f-luvut kuten f/1.4-f/2.8) avaavat jyrkemmän valokartion ja kaventavat syväterävyyttä. Pienet aukot (f/8-f/16) laajentavat sitä."
         },
         "1": {
           "label": "Polttoväli",
-          "description": "Kun kohteen etäisyys pysyy samana, syväterävyys kapenee jyrkästi polttovälin kasvaessa. Kun rajaus pysyy samana — zoomaat ja astut taaksepäin pitääksesi saman kuvan — syväterävyys tuskin muuttuu; sen sijaan tausta muuttuu, suurentuen ja sumentuen enemmän polttovälin kasvaessa."
+          "description": "Kun kohteen etäisyys pysyy samana, syväterävyys kapenee suunnilleen polttovälin neliön suhteessa. Kun rajaus pysyy samana (zoomaat ja astut taaksepäin pitääksesi saman kuvan), syväterävyys tuskin muuttuu — sen sijaan tausta muuttuu, suurentuen ja sumentuen enemmän polttovälin kasvaessa."
         },
         "2": {
           "label": "Kohteen etäisyys",
-          "description": "Mitä lähempänä tarkennat, sitä ohuemmaksi syväterävyys käy. Makrokuvauksessa syväterävyys mitataan usein millimetreissä."
+          "description": "Kohdetta lähestyminen kaventaa syväterävyyttä nopeammin kuin lähes mikään muu säätö, minkä vuoksi makrokuvauksessa terävät alueet ovat niin partaveitsen ohuita."
         },
         "3": {
           "label": "Kennokoko",
-          "description": "Suuret kennot vaativat samaan rajaukseen pidempää polttoväliä, mikä kaventaa syväterävyyttä välillisesti. Täyskennoinen kamera tuottaa samassa rajauksessa matalamman syväterävyyden kuin Micro Four Thirds."
+          "description": "Suuret kennot vaativat pidempiä polttovälejä vastatakseen pienempien kennojen rajausta, mikä välillisesti tuottaa matalamman syväterävyyden ekvivalenteissa kuvissa."
         }
       },
       "tips": {
         "0": {
-          "text": "Ryhmäkuvissa käytä aukkoa f/5.6 tai sitä pienempää (suurempaa f-lukua) ja pyydä kaikkia asettumaan samaan linjaan. Yksikin henkilö puoli askelta edempänä voi livahtaa tarkennusalueen ulkopuolelle suurilla aukoilla."
+          "text": "Suurilla aukoilla, kuten f/1.4-f/2.0, syväterävyys voi olla ohuempi kuin ihmiskasvot. Tarkenna tarkasti lähempään silmään, älä nenään tai korvaan, tai kohteesi katse näyttää epäterävältä."
         },
         "1": {
-          "text": "Maisemakuvauksessa tarkenna hyperfokaalietäisyyteen äärettömän sijasta. Näin saat mahdollisimman laajan terävän alueen lähietualasta kaukaiseen taustaan."
+          "text": "Käytä rajauksen esiasetuksia (Kasvot, Muotokuva, Puolikuva ja niin edelleen) lukitaksesi kohteen koon kuvassa kokeillessasi eri asetuksia — ne pitävät polttovälin ja etäisyyden samassa suhteessa kuin oikea kuva, joten näkemäsi sumennus vastaa sitä, mitä saisit kamerassa."
         },
         "2": {
-          "text": "Jos haluat muotokuvaan mahdollisimman sumean taustan, kasvata polttoväliä ja mene niin lähelle kohdetta kuin rajaus sallii — molemmat vaikutukset kertautuvat ja ohentavat syväterävyyttä voimakkaasti."
+          "text": "Älä tavoittele maksimaalista syväterävyyttä pienentämällä aukkoa loppuun asti — useimmat objektiivit ovat terävimmillään noin f/8-f/11-alueella, kauan ennen kuin tämän työkalun diffraktiovaroitus ilmestyy. Tuolla varoituksella on tiukempi, myöhäisempi kynnys: se syttyy vasta, kun diffraktion aiheuttama epäterävyys ylittää kennon hajapiirron, mikä tapahtuu noin f/22:ssa täyskennolla (f/15 APS-C:llä, f/11 Micro Four Thirdsillä). Pidä f/8-f/11 käytännön tavoitteenasi ja varoitusmerkkiä äärirajana, ei tavoitteena."
         }
       },
       "tooltips": {
         "focalLength": {
           "term": "Polttoväli",
-          "definition": "Objektiivin optisen keskipisteen ja kennon välinen etäisyys millimetreinä, kun tarkennus on äärettömässä. Pitkä polttoväli suurentaa kuvaa ja kaventaa syväterävyyttä."
+          "definition": "Etäisyys millimetreinä objektiivin optisesta keskipisteestä kennolle, kun tarkennus on äärettömässä. Pidemmät polttovälit suurentavat kuvaa ja kaventavat syväterävyyttä."
         },
         "aperture": {
           "term": "Aukko",
-          "definition": "Objektiivin aukon koko f-lukuna ilmaistuna (esim. f/2.8). Pieni f-luku tarkoittaa suurta aukkoa, joka päästää enemmän valoa ja tuottaa matalamman syväterävyyden."
+          "definition": "Objektiivin aukon koko f-lukuna ilmaistuna (esim. f/2.8). Pienempi f-luku tarkoittaa suurempaa aukkoa, joka päästää enemmän valoa läpi ja tuottaa matalamman syväterävyyden."
         },
         "subjectDistance": {
           "term": "Kohteen etäisyys",
-          "definition": "Etäisyys kameran kennosta tarkennuspisteeseen. Lyhyempi tarkennusetäisyys tarkoittaa matalampaa syväterävyyttä."
+          "definition": "Etäisyys kamerasta tarkennuspisteeseen. Lyhyempi tarkennusetäisyys tuottaa matalamman syväterävyyden."
         },
         "sensor": {
           "term": "Kennokoko",
-          "definition": "Kameran kennon fyysinen koko. Suuret kennot (täyskenno, keskiformaatti) tuottavat samassa rajauksessa matalamman syväterävyyden kuin pienet kennot (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Suunta",
-          "definition": "Vaihda vaaka- ja pystysuunnan välillä. Vaikuttaa kohteen etäisyyden rajausviittaukseen."
-        },
-        "nearFocus": {
-          "term": "Lähiraja",
-          "definition": "Lyhin etäisyys kamerasta, joka näkyy vielä hyväksyttävän terävänä. Tätä lähempänä kaikki näkyy sumeana."
-        },
-        "farFocus": {
-          "term": "Kaukaraja",
-          "definition": "Pisin etäisyys kamerasta, joka näkyy vielä hyväksyttävän terävänä. Kun kaukaraja ulottuu äärettömään, kaikki lähirajan takana on terävää."
-        },
-        "totalDoF": {
-          "term": "Syväterävyys yhteensä",
-          "definition": "Lähi- ja kaukarajan välinen kokonaisetäisyys — koko se alue, joka näkyy kuvassa terävänä."
+          "definition": "Kameran kennon fyysiset mitat. Suuret kennot (täyskenno, keskiformaatti) vaativat pidempiä polttovälejä ekvivalenttiin rajaukseen, mikä tuottaa matalamman syväterävyyden kuin pienemmät kennot (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Hyperfokaalietäisyys",
-          "definition": "Tarkennusetäisyys, jolla syväterävyys on mahdollisimman suuri. Kun tarkennat tähän pisteeseen, kaikki puolesta hyperfokaalietäisyydestä äärettömään on terävää."
-        },
-        "backgroundBlur": {
-          "term": "Taustan sumennus",
-          "definition": "Mittari sille, kuinka sumeaksi tausta menee kohteen takana. Suurempi arvo tarkoittaa voimakkaampaa sumennusta ja parempaa kohteen erottumista."
+          "definition": "Tarkennusetäisyys, joka maksimoi syväterävyyden. Kun tarkennat tähän etäisyyteen, kaikki puolesta hyperfokaalietäisyydestä äärettömään näyttää terävältä."
         },
         "coc": {
           "term": "Hajapiirto (CoC)",
-          "definition": "Suurin kennolle piirtyvän epäterävän pisteen halkaisija, joka vielä näyttää silmälle pisteeltä. Määrittää, missä menee hyväksyttävän terävyyden raja syväterävyyslaskelmissa."
+          "definition": "Suurin kennolla olevan epäterävän pisteen halkaisija, joka vielä näyttää silmälle pisteeltä. Määrittää hyväksyttävän terävyyden rajan syväterävyyslaskelmissa."
         },
-        "isolationScore": {
-          "term": "Kohteen erottuminen",
-          "definition": "Yhdistetty arvo (0–100), joka kuvaa, kuinka hyvin kohde erottuu taustasta taustan sumeuden ja kohteen koon perusteella."
-        },
-        "bokehShape": {
-          "term": "Bokehin muoto",
-          "definition": "Epäterävien valopisteiden muoto, johon vaikuttavat aukon lamellien määrä ja kaarevuus. Mitä enemmän lamelleja, sitä pyöreämpää ja pehmeämpää bokehia syntyy."
+        "backgroundBlur": {
+          "term": "Taustan sumennus",
+          "definition": "Mittari sille, kuinka sumeaksi tausta näyttää kohteen takana. Suurempi arvo tarkoittaa voimakkaampaa sumennusta ja parempaa kohteen erottumista."
         },
         "diffractionWarning": {
           "term": "Diffraktio",
-          "definition": "Hyvin pienillä aukoilla valo taipuu aukon reunoilla ja pehmentää kuvaa. Tämän työkalun diffraktiovaroitus ilmestyy, kun tämä pehmeys ylittää kennon hajapiirron — noin f/22:ssa täyskennolla, f/15 APS-C:llä, f/11 Micro Four Thirdsillä."
+          "definition": "Hyvin pienillä aukoilla valo taipuu aukon reunojen ympäri, mikä pehmentää kuvaa. Tämän työkalun diffraktiovaroitus ilmestyy, kun tämä pehmeys ylittää kennon hajapiirron — noin f/22:ssa täyskennolla, f/15 APS-C:llä, f/11 Micro Four Thirdsillä."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Kuvaat muotokuvaa ja haluat taustaan kauniin sumennuksen. Minkä aukon valitset?",
-          "hint": "Pieni f-luku tarkoittaa suurta objektiivin aukkoa ja enemmän taustan sumennusta.",
-          "successMessage": "Oikein! Suuri aukko, kuten f/1.8 tai f/2.8, luo matalan syväterävyyden ja erottaa kohteen taustasta miellyttävällä bokehilla.",
-          "failureMessage": "Ei aivan. Pienet aukot, kuten f/11 tai f/16, pitävät suuremman osan näkymästä tarkkana. Taustan sumennukseen tarvitaan suuri aukko (pieni f-luku).",
+          "scenario": "Kuvaat muotokuvaa ja haluat taustan sulautuvan pehmeään sumennukseen kohteesi takana. Minkä aukon valitset?",
+          "hint": "Pienempi f-luku tarkoittaa suurempaa aukkoa — ja matalampaa syväterävyyttä.",
+          "successMessage": "Oikein — f/1.4 avaa aukon leveäksi, mikä tuottaa matalan syväterävyyden ja tasaisesti sumentuneen taustan.",
+          "failureMessage": "Ei aivan. Suuremmat f-luvut, kuten f/11 tai f/16, pitävät suuremman osan kuvasta terävänä. Maksimaaliseen taustan sumennukseen valitse sen sijaan suurin aukko (pienin f-luku).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Kuvaat häissä 8 hengen ryhmää, joka on asettunut kahteen riviin. Mikä aukko auttaa pitämään kaikki tarkennuksessa?",
-          "hint": "Kun henkilöt ovat hieman eri etäisyyksillä, tarvitaan riittävästi syväterävyyttä molempien rivien kattamiseen.",
-          "successMessage": "Hyvä valinta! f/5.6 antaa riittävästi syväterävyyttä molempien rivien pitämiseen terävinä ja pitää silti suljinajan järkevänä sisätiloissa.",
-          "failureMessage": "Tuo aukko saattaa jättää takarivin tarkennuksen ulkopuolelle tai olla tarpeettoman pieni. Kahden ihmisrivin kuvaamiseen f/5.6 on luotettava lähtökohta.",
+          "scenario": "Kuvaat neljää ystävää, jotka seisovat löyhässä ryhmässä — pari heistä on puoli askelta muita edempänä tai takana. Mikä aukko antaa mukavan varmuusmarginaalin pitää kaikki tarkkoina?",
+          "hint": "Tarvitset ylimääräistä syväterävyyttä kattamaan ihmiset, jotka eivät ole täsmälleen samassa tarkennustasossa, mutta aukkoa ei tarvitse pienentää loppuun asti.",
+          "successMessage": "Oikein — f/5.6 antaa mukavan puskurin syväterävyyttä pienille etäisyyseroille pienentämättä aukkoa enempää kuin on tarpeen.",
+          "failureMessage": "f/1.4 on liian matala ihmisille hieman eri etäisyyksillä, ja f/16 pienentää aukkoa enemmän kuin tarvitset. f/5.6 on luotettava keskitie.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Kuvaat maisemaa, jossa kukkia on 2 metrin päässä ja vuoret taustalla. Käytössäsi on 24 mm:n objektiivi täyskennolla. Millä tekniikalla saat mahdollisimman terävän kuvan etualasta taustaan?",
-          "hint": "On olemassa tietty tarkennusetäisyys, jolla terävä alue yltää etualalta äärettömään.",
-          "successMessage": "Juuri niin! Hyperfokaalietäisyyteen tarkentaminen f/11:llä pitää kaiken noin metristä äärettömään hyväksyttävän terävänä — juuri tähän näkymään sopivasti.",
-          "failureMessage": "Äärettömään tarkentaminen jättäisi etualan kukat pehmeiksi. Käytä hyperfokaalietäisyyttä, niin saat terävän alueen venymään lähietualasta äärettömään.",
+          "scenario": "Kuvaat 85mm:llä, f/1.8:lla, kohteesi ollessa 3 metrin päässä, ja haluat lisätä taustan sumennusta huomattavasti koskematta aukkoon tai vaihtamatta objektiivia. Mikä on nopein tapa?",
+          "hint": "Syväterävyys — ja se, kuinka voimakkaasti tausta sumenee suhteessa kohteeseen — on erittäin herkkä kohteen etäisyydelle.",
+          "successMessage": "Juuri niin — kohteen etäisyyden puolittaminen kaventaa syväterävyyttä dramaattisesti ja voimistaa taustan sumennusta, muuttamatta aukkoa tai objektiivia.",
+          "failureMessage": "Kauemmas siirtyminen tai ISO:n nostaminen ei kavenna syväterävyyttä. Kohteen lähestyminen on nopein tapa lisätä taustan sumennusta aukon ja polttovälin pysyessä samana.",
           "options": {
-            "0": {
-              "label": "Tarkenna kukkiin (2 m)"
-            },
-            "1": {
-              "label": "Tarkenna vuoriin (ääretön)"
-            },
-            "2": {
-              "label": "Tarkenna hyperfokaalietäisyyteen"
-            },
-            "3": {
-              "label": "Tarkenna kukkien ja vuorten puoliväliin"
-            }
+            "0": { "label": "Siirry 1.5m päähän kohteesta (puolet etäisyydestä)" },
+            "1": { "label": "Siirry 6m päähän kohteesta (kaksinkertainen etäisyys)" },
+            "2": { "label": "Astu taaksepäin kasvattaaksesi työskentelyetäisyyttä" },
+            "3": { "label": "Nosta ISO:a kirkkaampaa taustaa varten" }
           }
         },
         "3": {
-          "scenario": "Kuvaat makroa kukasta ja huomaat, että vain etummaiset terälehdet ovat terävät — loput katoavat sumennukseen. Aukkona on f/5.6. Miten saat enemmän kukasta tarkennukseen?",
-          "hint": "Lähitarkennusetäisyyksillä syväterävyys on erittäin ohut. Mieti aukkoa.",
-          "successMessage": "Oikein! Pienemmällä aukolla (f/11 tai f/16) saat makrokuvissa enemmän syväterävyyttä. Varo kuitenkin, ettet mene liian pieneksi, sillä diffraktio alkaa pehmentää kuvaa.",
-          "failureMessage": "Aukon suurentaminen tekisi syväterävyydestä vielä ohuemman. Makrokuvauksessa pienentäminen (suurempi f-luku) on tärkein keino saada lisää syvyyttä.",
+          "scenario": "Kuvaat maisemaa täyskennokameralla ja haluat maksimaalisen terävyyden koko kuva-alalle. Pitäisikö sinun pienentää aukkoa loppuun asti, arvoon f/22, saadaksesi eniten syväterävyyttä?",
+          "hint": "Aukon pienentämisellä saadun syväterävyyden ja hyvin pienillä aukoilla diffraktion aiheuttaman pehmeyden välillä on kompromissi.",
+          "successMessage": "Oikein — f/22 kyllä lisää syväterävyyttä paperilla, mutta useimmat objektiivit ovat siihen mennessä jo ohittaneet terävimmät aukkonsa. Kohtuullinen aukko, kuten f/8-f/11, tasapainottaa yleensä paremmin syväterävyyden ja objektiivin terävyyden. Tämän työkalun oma diffraktiovaroitus on erillinen, myöhäisempi kynnys — se laukeaa vasta, kun diffraktion aiheuttama epäterävyys ylittää kennon hajapiirron, mikä täyskennolla tapahtuu vasta noin f/22:ssa (f/15 APS-C:llä, f/11 Micro Four Thirdsillä). Älä odota tuota varoitusta ennen aukon avaamista uudelleen — se on kova fyysinen raja, ei terävyyssuositus.",
+          "failureMessage": "Aukon pienentäminen loppuun asti, arvoon f/22, todella maksimoi syväterävyyden paperilla, mutta useimmat objektiivit ovat siihen mennessä jo ohittaneet terävimmän aukkoalueensa. Kohtuullinen aukko, kuten f/8-f/11, antaa yleensä paremman tasapainon syväterävyyden ja todellisen terävyyden välillä. Tämän työkalun diffraktiovaroitus on erillinen, myöhäisempi kynnys — se ilmestyy vasta, kun epäterävyys ylittää kennon hajapiirron, noin f/22:ssa täyskennolla — joten älä käytä sen puuttumista vihreänä valona jatkaa aukon pienentämistä.",
           "options": {
-            "0": {
-              "label": "Avaa aukko arvoon f/2.8 lisävaloa varten"
-            },
-            "1": {
-              "label": "Pienennä aukko arvoon f/11"
-            },
-            "2": {
-              "label": "Vaihda laajempaan objektiiviin"
-            },
-            "3": {
-              "label": "Siirry kauemmas kukasta"
-            }
+            "0": { "label": "Kyllä — käytä aina pienintä saatavilla olevaa aukkoa maksimaalisen syväterävyyden saamiseksi" },
+            "1": { "label": "Ei — käytä kohtuullista aukkoa, kuten f/8-f/11, parhaan kokonaisterävyyden saamiseksi, älä pienintä" },
+            "2": { "label": "Ei — käytä suurinta saatavilla olevaa aukkoa terävimpien tulosten saamiseksi" },
+            "3": { "label": "Ei ole väliä — aukolla ei ole vaikutusta terävyyteen" }
           }
         },
         "4": {
-          "scenario": "Vertailet kahta kameraa muotokuvaukseen: täyskenno 85 mm f/1.8:lla ja Micro Four Thirds 42,5 mm f/1.8:lla. Molemmat antavat saman rajauksen. Kumpi tuottaa matalamman syväterävyyden?",
-          "hint": "Mieti ekvivalentteja polttovälejä ja sitä, miten kennokoko vaikuttaa syväterävyyteen samalla f-luvulla.",
-          "successMessage": "Oikein! Täyskenno tuottaa noin 2 aukkoa matalamman syväterävyyden. Vaikka MFT-objektiivilla on sama f-luku, lyhyempi todellinen polttoväli (42,5 mm vs. 85 mm) johtaa syvempään syväterävyyteen samassa rajauksessa.",
-          "failureMessage": "Vaikka molemmat objektiivit ovat f/1.8, täyskenno tarvitsee samaan rajaukseen pidemmän todellisen polttovälin ja tuottaa siksi selvästi matalamman syväterävyyden.",
+          "scenario": "Vertailet kahta kokoonpanoa samaan muotokuvarajaukseen: täyskennokameraa 85mm f/1.8-objektiivilla ja APS-C-kameraa (1,5x kerroin) 56mm f/1.8-objektiivilla, joka tuottaa saman kuvakulman. Kumpi tuottaa matalamman syväterävyyden?",
+          "hint": "Vertaa kunkin objektiivin todellista (ei ekvivalenttia) polttoväliä, jota tarvitaan saman rajauksen saavuttamiseen.",
+          "successMessage": "Oikein — vaikka molemmat objektiivit ovat f/1.8, täyskennokamera käyttää pidempää todellista polttoväliä (85mm vs. 56mm) rajauksen sovittamiseen, mikä tuottaa huomattavasti matalamman syväterävyyden.",
+          "failureMessage": "Molemmilla objektiiveilla on sama f-luku, mutta täyskennokamera tarvitsee pidemmän todellisen polttovälin rajauksen sovittamiseen. Juuri tuo pidempi polttoväli tuottaa matalamman syväterävyyden — ei pelkkä f-luku.",
           "options": {
-            "0": {
-              "label": "Täyskenno 85 mm f/1.8:lla"
-            },
-            "1": {
-              "label": "Micro Four Thirds 42,5 mm f/1.8:lla"
-            },
-            "2": {
-              "label": "Molemmat tuottavat saman syväterävyyden"
-            }
+            "0": { "label": "Täyskennokokoonpano 85mm f/1.8:lla" },
+            "1": { "label": "APS-C-kokoonpano 56mm f/1.8:lla" },
+            "2": { "label": "Molemmat tuottavat identtisen syväterävyyden" }
           }
         }
       }

@@ -1,204 +1,142 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "Skärpedjupet är det avståndsområde i bilden som ser acceptabelt skarpt ut. Ett grunt skärpedjup suddar bakgrunden bakom motivet, medan ett stort skärpedjup håller allt från förgrund till horisont skarpt. Att kontrollera skärpedjupet är ett av fotografins starkaste kreativa verktyg.",
+      "beginner": "Skärpedjupet är den zon i bilden — från nära till långt håll — som ser acceptabelt skarp ut. Tre reglage formar den zonen: bländaren (större bländare suddar ut bakgrunden mer), brännvidden (längre objektiv smalar av zonen) och motivsavståndet (att gå närmare krymper den ytterligare). Justera vilket som helst av dem här och se skärpedjupslinjalen och vyn uppdateras tillsammans i realtid.",
       "deeper": {
         "0": {
-          "heading": "Så fungerar skärpedjup",
-          "text": "Skärpedjupet styrs av oskärpecirkeln (CoC) — den största oskärpefläcken på sensorn som ögat fortfarande uppfattar som skarp. Tre fysiska faktorer bestämmer skärpedjupet: brännvidd, bländare och motivsavstånd. En större bländare (lägre f-tal) ger grundare skärpedjup, eftersom objektivet samlar ljuset i brantare vinklar och oskärpa punkter breder ut sig till större cirklar på sensorn."
+          "heading": "Bländarens geometri och oskärpecirkeln",
+          "text": "Ett objektiv fokuserar ljus från exakt ett avstånd på sensorn som en perfekt punkt; allt annat hamnar som en liten skiva som kallas oskärpecirkeln (CoC). En punkt uppfattas fortfarande som skarp så länge dess skiva förblir mindre än ett tröskelvärde som bestäms av sensorstorleken — ungefär 0.03mm på fullformat. Att öppna bländaren (sänka f-talet) öppnar en större ljuskon mellan objektivet och fokuspunkten, så punkter utanför det planet sprids till mycket större skivor, mycket snabbare. Det är därför en stor bländare som f/1.4 suddar ut bakgrunden så mycket mer än f/11 — det är ljuskonens geometri som förändras, inte bara mängden ljus."
         },
         "1": {
-          "heading": "Brännvidd och avstånd",
-          "text": "Brännviddens effekt på skärpedjupet beror på vad du håller konstant. Vid ett fast motivsavstånd krymper längre brännvidder skärpedjupet kraftigt — ungefär i proportion till brännviddens kvadrat. Men om du zoomar in och backar för att behålla samma bildutsnitt (verktygets läge med låst bildvinkel), förändras skärpedjupet knappt alls — det är i stället bakgrunden som omvandlas, och blir mer förstorad och suddigare. Att gå närmare motivet krymper skärpedjupet av en annan anledning: den nära och bortre skärpegränsen dras tätare samman kring ett kortare avstånd. Hyperfokalavståndet är det fokusavstånd där skärpedjupet sträcker sig från halva det avståndet ända till oändligheten, vilket maximerar skärpan i hela scenen."
+          "heading": "Brännvidd och avstånd dominerar effekten",
+          "text": "Brännviddens effekt på skärpedjupet beror helt på vad du håller konstant. Vid ett fast motivsavstånd smalnar skärpedjupet kraftigt av med brännvidden — ungefär i proportion till dess kvadrat: om du står 3m från ett motiv vid f/2.8 ger ett 35mm-objektiv omkring 1.3m skärpedjup, medan ett 200mm-objektiv ger omkring 35mm. Men den jämförelsen ändrar också ditt bildutsnitt, eftersom du inte ramat om. Vid ett fast bildutsnitt — verktygets läge med låst bildvinkel, där du backar samtidigt som du zoomar in för att hålla motivet samma storlek — rör sig skärpedjupet knappt: att svepa från 35mm till 200mm vid f/2.8 med låst bildutsnitt ändrar det totala skärpedjupet med långt under 1 %. Det som i stället förändras dramatiskt är bakgrunden: ett längre objektiv förstorar och komprimerar allt bakom motivet, så oskarpa högdagrar växer och bakgrunden separerar mer, även om det skarpa lagret kring motivet förblir ungefär lika tjockt. Slå på låst bildvinkel och svep brännvidden för att se det hända — skärpedjupsvärdet ligger stilla medan bakgrundsoskärpans värde stiger. Motivsavståndet förblir ändå den mer pålitliga spaken: att gå närmare vid fast brännvidd och bländare krymper skärpedjupet kraftigt, och drar de nära och bortre gränserna tätare kring ett kortare avstånd."
         },
         "2": {
-          "heading": "Bokeh och diffraktion",
-          "text": "Bokeh handlar om kvaliteten hos de oskärpa områdena. Antalet bländarblad och deras form påverkar bokehens karaktär — rundare blad ger mjukare, mer cirkulära högdagrar. Många objektiv når sin praktiska skärpetopp runt f/8–f/11, långt innan diffraktionen blir ett allvarligt problem. Verktygets egen diffraktionsvarning har ett strängare, senare tröskelvärde: den visas först när diffraktionsoskärpan överstiger sensorns oskärpecirkel, vilket sker vid ungefär f/22 på fullformat (f/15 på APS-C, f/11 på Micro Four Thirds) — se den varningen som en yttersta gräns, inte som ett skärpemål."
+          "heading": "Sensorstorlek och ekvivalent bildutsnitt",
+          "text": "För att fylla bilden med samma motiv behöver en större sensor en proportionerligt längre brännvidd än en mindre — en fullformatskamera behöver ungefär 1,5 gånger brännvidden hos en APS-C-kamera, och omkring dubbelt så mycket som en Micro Four Thirds-kamera, för samma bildvinkel. Eftersom skärpedjupet smalnar av med brännvidden är det den längre 'ekvivalenta' brännvidden som ger fullformatskameror sitt rykte om grundare skärpedjup — f-talet som står tryckt på objektivet berättar inte hela historien. Två objektiv med samma bländarvärde på olika sensorstorlekar, med identiskt bildutsnitt, ger ett märkbart olika skärpedjup."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Bländare",
-          "description": "Större bländare (f/1.4–f/2.8) ger grunt skärpedjup med krämig bokeh. Mindre bländare (f/8–f/16) ökar skärpan i hela bilden."
+          "description": "Större bländare (låga f-tal som f/1.4-f/2.8) öppnar en brantare ljuskon och krymper skärpedjupet. Mindre bländare (f/8-f/16) ökar det."
         },
         "1": {
           "label": "Brännvidd",
-          "description": "Vid ett fast motivsavstånd krymper skärpedjupet kraftigt när brännvidden ökar. Vid ett fast bildutsnitt — du zoomar in och backar för att behålla samma bild — förändras skärpedjupet knappt alls; det är bakgrunden som omvandlas och blir alltmer förstorad och suddig när brännvidden ökar."
+          "description": "Vid ett fast motivsavstånd smalnar skärpedjupet av ungefär i proportion till brännviddens kvadrat. Vid ett fast bildutsnitt (zooma in och backa för att behålla samma bild) förändras skärpedjupet knappt — det är bakgrunden som omvandlas, och blir alltmer förstorad och suddig när brännvidden ökar."
         },
         "2": {
           "label": "Motivsavstånd",
-          "description": "Ju närmare du fokuserar, desto grundare blir skärpedjupet. Makrofotografer arbetar ofta med skärpedjup i millimeter."
+          "description": "Att gå närmare motivet krymper skärpedjupet snabbare än nästan någon annan justering, vilket är varför makrofotografi har så rakbladstunna skärpezoner."
         },
         "3": {
           "label": "Sensorstorlek",
-          "description": "Större sensorer kräver längre brännvidder för samma bildutsnitt, vilket indirekt krymper skärpedjupet. En fullformatskamera ger grundare skärpedjup än en Micro Four Thirds-kamera vid ekvivalent bildutsnitt."
+          "description": "Större sensorer kräver längre brännvidder för att matcha samma bildutsnitt som mindre sensorer, vilket indirekt ger grundare skärpedjup vid ekvivalenta bilder."
         }
       },
       "tips": {
         "0": {
-          "text": "För gruppporträtt: använd f/5.6 eller mindre och se till att alla står i samma fokusplan. Även en person som står ett halvt steg framför kan hamna utanför skärpan vid stora bländare."
+          "text": "Vid stora bländare som f/1.4-f/2.0 kan skärpedjupet vara tunnare än ett människoansikte. Fokusera precist på det närmaste ögat, inte näsan eller örat, annars uppfattas motivets blick som suddig."
         },
         "1": {
-          "text": "Vid landskapsfotografering: fokusera på hyperfokalavståndet snarare än på oändligheten. Det ger maximal skärpa från nära förgrund till avlägsen bakgrund."
+          "text": "Använd bildutsnittspresetsen (Ansikte, Porträtt, Halvbild och så vidare) för att låsa motivets storlek i bilden medan du experimenterar — de håller brännvidd och avstånd i samma förhållande som en verklig bild skulle ha, så oskärpan du ser här matchar det du skulle få i kameran."
         },
         "2": {
-          "text": "Vill du ha maximal bakgrundsoskärpa i ett porträtt: öka brännvidden och gå så nära motivet som bildutsnittet tillåter — båda greppen samverkar och krymper skärpedjupet ordentligt."
+          "text": "Jaga inte maximalt skärpedjup genom att blända ned hela vägen — de flesta objektiv är skarpast runt f/8-f/11, långt innan verktygets diffraktionsvarning dyker upp. Den varningen har ett strängare, senare tröskelvärde: den tänds först när diffraktionsoskärpan överstiger sensorns oskärpecirkel, vilket sker vid ungefär f/22 på fullformat (f/15 på APS-C, f/11 på Micro Four Thirds). Betrakta f/8-f/11 som ditt praktiska mål, och varningsmärket som den yttersta gränsen, inte målet."
         }
       },
       "tooltips": {
         "focalLength": {
           "term": "Brännvidd",
-          "definition": "Avståndet i millimeter från linsens optiska centrum till sensorn när den är fokuserad på oändligheten. Längre brännvidder förstorar bilden och krymper skärpedjupet."
+          "definition": "Avståndet i millimeter från objektivets optiska centrum till sensorn vid fokusering på oändligheten. Längre brännvidder förstorar bilden och smalnar av skärpedjupet."
         },
         "aperture": {
           "term": "Bländare",
-          "definition": "Storleken på linsens öppning, uttryckt som ett f-tal (t.ex. f/2.8). Lägre f-tal betyder större öppning, mer ljus och grundare skärpedjup."
+          "definition": "Storleken på objektivets öppning, uttryckt som ett f-tal (t.ex. f/2.8). Lägre f-tal betyder en större öppning, som släpper in mer ljus och ger grundare skärpedjup."
         },
         "subjectDistance": {
           "term": "Motivsavstånd",
-          "definition": "Avståndet från kamerans sensor till fokuspunkten. Närmare fokus ger grundare skärpedjup."
+          "definition": "Avståndet från kameran till fokuspunkten. Närmare fokusavstånd ger grundare skärpedjup."
         },
         "sensor": {
           "term": "Sensorstorlek",
-          "definition": "Kamerasensorns fysiska mått. Större sensorer (fullformat, mellanformat) ger grundare skärpedjup vid ekvivalent bildutsnitt jämfört med mindre sensorer (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Orientering",
-          "definition": "Växla mellan liggande (horisontell) och stående (vertikal) orientering. Påverkar referensramen för motivsavståndet i beräkningarna."
-        },
-        "nearFocus": {
-          "term": "Nära skärpegräns",
-          "definition": "Det närmaste avståndet från kameran som upplevs som acceptabelt skarpt. Allt närmare än detta uppfattas som oskarpt."
-        },
-        "farFocus": {
-          "term": "Bortre skärpegräns",
-          "definition": "Det längsta avståndet från kameran som upplevs som acceptabelt skarpt. När denna når oändligheten är allt bortom den nära gränsen i fokus."
-        },
-        "totalDoF": {
-          "term": "Totalt skärpedjup",
-          "definition": "Det fulla avståndet mellan nära och bortre skärpegränsen — hela den zon som upplevs som skarp i bilden."
+          "definition": "Kamerasensorns fysiska mått. Större sensorer (fullformat, mellanformat) kräver längre brännvidder för ekvivalent bildutsnitt, vilket ger grundare skärpedjup än mindre sensorer (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Hyperfokalavstånd",
-          "definition": "Det fokusavstånd som maximerar skärpedjupet. När du fokuserar här är allt från halva hyperfokalavståndet till oändligheten skarpt."
-        },
-        "backgroundBlur": {
-          "term": "Bakgrundsoskärpa",
-          "definition": "Ett mått på hur oskarp bakgrunden är bakom motivet. Högre värden betyder starkare oskärpa och tydligare motivisolering."
+          "definition": "Det fokusavstånd som maximerar skärpedjupet. När du fokuserar på det här avståndet ser allt från halva hyperfokalavståndet till oändligheten skarpt ut."
         },
         "coc": {
           "term": "Oskärpecirkel",
-          "definition": "Den största diametern på en oskärpefläck på sensorn som fortfarande uppfattas som en punkt av ögat. Bestämmer gränsen för acceptabel skärpa vid skärpedjupsberäkningar."
+          "definition": "Den maximala diametern på en oskärpefläck på sensorn som fortfarande uppfattas som en punkt av det mänskliga ögat. Bestämmer gränsen för acceptabel skärpa i skärpedjupsberäkningar."
         },
-        "isolationScore": {
-          "term": "Isoleringspoäng",
-          "definition": "Ett sammanvägt mått (0–100) som visar hur väl motivet är skiljt från bakgrunden, utifrån mängden bakgrundsoskärpa i förhållande till motivets storlek."
-        },
-        "bokehShape": {
-          "term": "Bokehform",
-          "definition": "Formen på oskärpa högdagrar, bestämd av antalet bländarblad och deras kurvatur. Fler blad ger rundare, mjukare bokeh."
+        "backgroundBlur": {
+          "term": "Bakgrundsoskärpa",
+          "definition": "Ett mått på hur oskarp bakgrunden ser ut bakom motivet. Högre värden betyder starkare oskärpa och tydligare motivisolering."
         },
         "diffractionWarning": {
           "term": "Diffraktion",
-          "definition": "Vid mycket små bländare böjs ljuset runt bländarkanten, vilket gör bilden mjukare. Verktygets diffraktionsvarning visas när denna mjukhet överstiger sensorns oskärpecirkel — vid ungefär f/22 på fullformat, f/15 på APS-C, f/11 på Micro Four Thirds."
+          "definition": "Vid mycket små bländare böjs ljuset runt bländarkanterna, vilket gör bilden mjukare. Verktygets diffraktionsvarning visas när den mjukheten överstiger sensorns oskärpecirkel — vid ungefär f/22 på fullformat, f/15 på APS-C, f/11 på Micro Four Thirds."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Du fotograferar ett porträtt och vill ha en vackert oskarp bakgrund. Vilken bländare bör du välja?",
-          "hint": "Lägre f-tal betyder större linsöppning och mer bakgrundsoskärpa.",
-          "successMessage": "Rätt! En stor bländare som f/1.8 eller f/2.8 ger grunt skärpedjup och separerar motivet från bakgrunden med fin bokeh.",
-          "failureMessage": "Inte riktigt. Små bländare som f/11 eller f/16 håller mer av scenen i fokus. För bakgrundsoskärpa väljer du en stor bländare (lågt f-tal).",
+          "scenario": "Du fotograferar ett porträtt och vill att bakgrunden ska smälta samman till en mjuk oskärpa bakom motivet. Vilken bländare bör du välja?",
+          "hint": "Lägre f-tal betyder en större öppning — och ett grundare skärpedjup.",
+          "successMessage": "Rätt — f/1.4 öppnar bländaren helt, vilket ger ett grunt skärpedjup och en mjukt suddig bakgrund.",
+          "failureMessage": "Inte riktigt. Högre f-tal som f/11 eller f/16 håller mer av scenen skarp. För maximal bakgrundsoskärpa väljer du i stället den bredaste bländaren (det lägsta f-talet).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Du fotograferar en grupp på 8 personer i två rader på ett bröllop. Vilken bländare hjälper dig att få alla i fokus?",
-          "hint": "Med personer på något olika avstånd behöver du tillräckligt skärpedjup för att täcka båda raderna.",
-          "successMessage": "Bra val! f/5.6 ger tillräckligt skärpedjup för att hålla båda raderna skarpa och samtidigt rimlig slutartid inomhus.",
-          "failureMessage": "Den bländaren kan antingen lämna den bakre raden utanför fokus eller vara onödigt liten. För två rader av personer är f/5.6 en pålitlig utgångspunkt.",
+          "scenario": "Du fotograferar fyra vänner som står i en lös klunga — ett par av dem står ett halvt steg framför eller bakom de andra. Vilken bländare ger dig en bekväm säkerhetsmarginal så att alla blir skarpa?",
+          "hint": "Du behöver extra skärpedjup för att täcka personer som inte står i exakt samma fokusplan, men du behöver inte blända ned hela vägen.",
+          "successMessage": "Rätt — f/5.6 ger en bekväm marginal av skärpedjup för små avståndsskillnader, utan att blända ned mer än nödvändigt.",
+          "failureMessage": "f/1.4 ger för grunt skärpedjup för personer på lite olika avstånd, och f/16 bländar ned mer än du behöver. f/5.6 är den pålitliga mellanvägen.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Du fotograferar ett landskap med vildblommor 2 meter bort och berg i bakgrunden. Du använder ett 24 mm-objektiv på fullformat. Vilken teknik ger maximal skärpa från förgrund till bakgrund?",
-          "hint": "Det finns ett specifikt avstånd du kan fokusera på som maximerar skärpezonen från förgrund till oändlighet.",
-          "successMessage": "Precis! Att fokusera på hyperfokalavståndet vid f/11 gör att allt från cirka 1 meter till oändligheten blir acceptabelt skarpt — perfekt för den här scenen.",
-          "failureMessage": "Fokuserar du på oändligheten blir blommorna mjuka. Använd hyperfokalavståndet för att sträcka skärpan från nära förgrund till oändlighet.",
+          "scenario": "Du står på 85mm, f/1.8, med motivet 3 meter bort, och vill märkbart öka bakgrundsoskärpan utan att ändra bländaren eller byta objektiv. Vad är snabbaste sättet?",
+          "hint": "Skärpedjupet — och hur kraftigt bakgrunden suddas ut i förhållande till motivet — är extremt känsligt för motivsavstånd.",
+          "successMessage": "Precis — att halvera motivsavståndet krymper skärpedjupet dramatiskt och förstärker bakgrundsoskärpan, utan att ändra bländare eller objektiv.",
+          "failureMessage": "Att flytta dig längre bort eller höja ISO krymper inte skärpedjupet. Att gå närmare motivet är det snabbaste sättet att öka bakgrundsoskärpan vid en fast bländare och brännvidd.",
           "options": {
-            "0": {
-              "label": "Fokusera på blommorna (2 m)"
-            },
-            "1": {
-              "label": "Fokusera på bergen (oändligheten)"
-            },
-            "2": {
-              "label": "Fokusera på hyperfokalavståndet"
-            },
-            "3": {
-              "label": "Fokusera halvvägs mellan blommor och berg"
-            }
+            "0": { "label": "Gå till 1.5m från motivet (halva avståndet)" },
+            "1": { "label": "Gå till 6m från motivet (dubbla avståndet)" },
+            "2": { "label": "Backa för att öka ditt arbetsavstånd" },
+            "3": { "label": "Höj ISO för en ljusare bakgrund" }
           }
         },
         "3": {
-          "scenario": "Du makrofotograferar en blomma och märker att bara de främre kronbladen är skarpa. Resten av blomman är suddig. Du är på f/5.6. Vad bör du göra för att få mer av blomman i fokus?",
-          "hint": "På nära håll blir skärpedjupet extremt tunt. Tänk på bländaren.",
-          "successMessage": "Rätt! Att blända ned till f/11 eller f/16 drar ut det hårfina skärpedjupet i makrofoto. Håll bara ett öga på diffraktionen — bilden kan bli mjukare vid mycket små bländare.",
-          "failureMessage": "Att öppna bländaren mer skulle bara göra skärpedjupet ännu tunnare. I makrofoto är det just att blända ned (högre f-tal) som ger mer djup.",
+          "scenario": "Du fotograferar ett landskap med en fullformatskamera och vill ha maximal skärpa över hela bilden. Bör du blända ned hela vägen till f/22 för mest skärpedjup?",
+          "hint": "Det finns en avvägning mellan skärpedjupet du vinner genom att blända ned och mjukheten som orsakas av diffraktion vid mycket små bländare.",
+          "successMessage": "Rätt — f/22 ger visserligen mer skärpedjup på pappret, men de flesta objektiv har redan passerat sina skarpaste bländarvärden vid det laget. En måttlig bländare som f/8-f/11 ger vanligtvis bättre balans mellan skärpedjup och objektivskärpa. Verktygets egen diffraktionsvarning är ett separat, senare tröskelvärde — den utlöses först när diffraktionsoskärpan överstiger sensorns oskärpecirkel, vilket på fullformat inte sker förrän runt f/22 (f/15 på APS-C, f/11 på Micro Four Thirds). Vänta inte på den varningen innan du öppnar upp igen — det är en hård fysisk gräns, inte en skärperekommendation.",
+          "failureMessage": "Att blända ned hela vägen till f/22 maximerar visserligen skärpedjupet på pappret, men de flesta objektiv har redan passerat sitt skarpaste bländarintervall vid det laget. En måttlig bländare som f/8-f/11 ger vanligtvis en bättre balans mellan skärpedjup och verklig skärpa. Verktygets diffraktionsvarning är ett separat, senare tröskelvärde — den visas först när oskärpan överstiger sensorns oskärpecirkel, vid ungefär f/22 på fullformat — så använd inte dess frånvaro som ett grönt ljus att fortsätta blända ned.",
           "options": {
-            "0": {
-              "label": "Öppna till f/2.8 för mer ljus"
-            },
-            "1": {
-              "label": "Blända ned till f/11"
-            },
-            "2": {
-              "label": "Byt till ett vidvinkelobjektiv"
-            },
-            "3": {
-              "label": "Flytta dig längre från blomman"
-            }
+            "0": { "label": "Ja — använd alltid den minsta tillgängliga bländaren för maximalt skärpedjup" },
+            "1": { "label": "Nej — använd en måttlig bländare som f/8-f/11 för bäst övergripande skärpa, inte den minsta" },
+            "2": { "label": "Nej — använd den bredaste tillgängliga bländaren för skarpast resultat" },
+            "3": { "label": "Det spelar ingen roll — bländaren påverkar inte skärpan" }
           }
         },
         "4": {
-          "scenario": "Du jämför två kameror för porträttfoto: en fullformatskamera med ett 85 mm f/1.8 och en Micro Four Thirds-kamera med ett 42,5 mm f/1.8. Båda ger samma bildutsnitt. Vilken kamera ger grundare skärpedjup?",
-          "hint": "Tänk på ekvivalenta brännvidder och hur sensorstorleken påverkar skärpedjupsberäkningen vid samma f-tal.",
-          "successMessage": "Rätt! Fullformatskameran ger ungefär 2 steg grundare skärpedjup. MFT-objektivet har visserligen samma f-tal, men den kortare faktiska brännvidden (42,5 mm mot 85 mm) ger större skärpedjup vid ekvivalent bildutsnitt.",
-          "failureMessage": "Även om båda objektiven är f/1.8 använder fullformatskameran en längre faktisk brännvidd för samma bildutsnitt, vilket ger betydligt grundare skärpedjup.",
+          "scenario": "Du jämför två uppsättningar för samma porträttutsnitt: en fullformatskamera med ett 85mm f/1.8-objektiv, och en APS-C-kamera (1,5x crop) med ett 56mm f/1.8-objektiv som ger samma bildvinkel. Vilken ger grundare skärpedjup?",
+          "hint": "Jämför den faktiska (inte ekvivalenta) brännvidden som varje objektiv använder för att uppnå samma bildutsnitt.",
+          "successMessage": "Rätt — även om båda objektiven är f/1.8 använder fullformatskameran en längre faktisk brännvidd (85mm mot 56mm) för att matcha bildutsnittet, vilket ger märkbart grundare skärpedjup.",
+          "failureMessage": "Båda objektiven delar samma f-tal, men fullformatskameran behöver en längre faktisk brännvidd för att matcha bildutsnittet. Det är den längre brännvidden som ger grundare skärpedjup — inte f-talet i sig.",
           "options": {
-            "0": {
-              "label": "Fullformat med 85 mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Four Thirds med 42,5 mm f/1.8"
-            },
-            "2": {
-              "label": "Båda ger identiskt skärpedjup"
-            }
+            "0": { "label": "Fullformatsuppsättningen med 85mm f/1.8" },
+            "1": { "label": "APS-C-uppsättningen med 56mm f/1.8" },
+            "2": { "label": "Båda ger identiskt skärpedjup" }
           }
         }
       }

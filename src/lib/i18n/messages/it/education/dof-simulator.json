@@ -1,48 +1,48 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "La profondità di campo (PdC) è l'intervallo di distanza nella tua foto che appare accettabilmente nitido. Una PdC ridotta sfoca lo sfondo dietro il soggetto, mentre una PdC ampia mantiene tutto a fuoco dal primo piano all'orizzonte. Controllare la PdC è uno degli strumenti creativi più potenti in fotografia.",
+      "beginner": "La profondità di campo è la zona della tua foto — dal primo piano allo sfondo — che appare accettabilmente nitida. Tre controlli modellano questa zona: l'apertura (aperture più ampie sfocano di più lo sfondo), la lunghezza focale (obiettivi più lunghi restringono la zona) e la distanza del soggetto (avvicinarsi la riduce ulteriormente). Regola uno qualsiasi di questi parametri qui e osserva il righello di profondità e il visore aggiornarsi insieme in tempo reale.",
       "deeper": {
         "0": {
-          "heading": "Come funziona la profondità di campo",
-          "text": "La profondità di campo è governata dal cerchio di confusione (CoC) — il più grande punto sfocato sul sensore che appare ancora nitido all'occhio umano. Tre fattori fisici determinano la PdC: lunghezza focale, apertura e distanza del soggetto. Un'apertura più ampia (numero f più basso) produce una PdC più ridotta perché l'obiettivo converge la luce con angoli più ripidi, facendo sì che i punti fuori fuoco si distribuiscano in cerchi più ampi sul sensore."
+          "heading": "Geometria dell'apertura e il cerchio di confusione",
+          "text": "Un obiettivo mette a fuoco la luce proveniente da una distanza esatta sul sensore come un punto perfetto; tutto il resto arriva come un piccolo disco chiamato cerchio di confusione (CoC). Un punto appare ancora nitido finché il suo disco rimane più piccolo di una soglia definita dalla dimensione del sensore — circa 0,03mm su full-frame. Allargare l'apertura (abbassare il numero f) apre un cono di luce più ampio tra l'obiettivo e il punto di messa a fuoco, così i punti lontani da quel piano si distribuiscono in dischi molto più grandi, molto più rapidamente. Ecco perché un'apertura ampia come f/1.4 sfoca lo sfondo molto più di f/11 — è la geometria del cono di luce che cambia, non solo la quantità di luce."
         },
         "1": {
-          "heading": "Lunghezza focale e distanza",
-          "text": "L'effetto della lunghezza focale sulla profondità di campo dipende da cosa si mantiene costante. A distanza del soggetto fissa, lunghezze focali maggiori riducono nettamente la profondità di campo — circa in proporzione al quadrato della lunghezza focale. Ma se zoomi e arretri per mantenere la stessa inquadratura (la modalità di blocco del campo visivo di questo strumento), la profondità di campo cambia pochissimo — è invece lo sfondo a trasformarsi, ingrandendosi e sfocandosi maggiormente. Avvicinarsi al soggetto riduce la profondità di campo per un motivo diverso: i limiti di messa a fuoco vicino e lontano si stringono attorno a una distanza più breve. La distanza iperfocale è la distanza di messa a fuoco alla quale la profondità di campo si estende da metà di quella distanza fino all'infinito, massimizzando la nitidezza in tutta la scena."
+          "heading": "La lunghezza focale e la distanza dominano l'effetto",
+          "text": "L'effetto della lunghezza focale sulla profondità di campo dipende interamente da cosa mantieni costante. A distanza del soggetto fissa, la profondità di campo si restringe nettamente con la lunghezza focale — approssimativamente con il suo quadrato: fermo a 3m da un soggetto a f/2.8, un obiettivo 35mm dà circa 1.3m di profondità di campo, mentre un obiettivo 200mm ne dà circa 35mm. Ma quel confronto cambia anche la tua inquadratura, dato che non hai reinquadrato. A inquadratura fissa — la modalità di blocco del campo visivo di questo strumento, in cui arretri man mano che zoomi per mantenere il soggetto della stessa dimensione — la profondità di campo si muove a malapena: passare da 35mm a 200mm a f/2.8 con l'inquadratura bloccata cambia la profondità di campo totale di ben meno dell'1%. Ciò che cambia drasticamente, invece, è lo sfondo: un obiettivo più lungo ingrandisce e comprime tutto ciò che si trova dietro il soggetto, quindi le luci fuori fuoco crescono e lo sfondo si separa maggiormente, anche se la fetta a fuoco intorno al soggetto rimane pressoché dello stesso spessore. Attiva il blocco del campo visivo e varia la lunghezza focale per vederlo accadere — la lettura della profondità di campo resta stabile mentre il valore di sfocatura dello sfondo sale. La distanza del soggetto rimane comunque la leva più affidabile: avvicinarsi a lunghezza focale e apertura fisse riduce nettamente la profondità di campo, stringendo i limiti di messa a fuoco vicino e lontano attorno a una distanza più breve."
         },
         "2": {
-          "heading": "Bokeh e diffrazione",
-          "text": "Il bokeh si riferisce alla qualità delle aree fuori fuoco. Il numero e la forma delle lamelle del diaframma influenzano il carattere del bokeh — lamelle più arrotondate producono luci più morbide e circolari. Molti obiettivi raggiungono il loro picco pratico di nitidezza intorno a f/8-f/11, ben prima che la diffrazione diventi severa. L'avviso di diffrazione di questo strumento usa una soglia più rigorosa e più tardiva: compare solo quando la sfocatura da diffrazione supera il cerchio di confusione del sensore, il che avviene intorno a f/22 su full-frame (f/15 su APS-C, f/11 su Micro Quattro Terzi) — considera quell'avviso come un limite estremo, non come un obiettivo di nitidezza."
+          "heading": "Dimensione del sensore e inquadratura equivalente",
+          "text": "Per riempire il fotogramma con lo stesso soggetto, un sensore più grande richiede una lunghezza focale proporzionalmente maggiore rispetto a uno più piccolo — una fotocamera full-frame richiede circa 1,5 volte la lunghezza focale di una fotocamera APS-C, e circa 2 volte quella di una Micro Quattro Terzi, per lo stesso campo visivo. Poiché la profondità di campo si restringe con la lunghezza focale, quella lunghezza focale 'equivalente' più lunga è ciò che dà alle fotocamere full-frame la loro reputazione di profondità di campo più ridotta — il numero f stampato sull'obiettivo non racconta tutta la storia. Due obiettivi allo stesso numero f su sensori di dimensioni diverse, inquadrati in modo identico, produrranno una profondità di campo significativamente diversa."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Apertura",
-          "description": "Aperture ampie (f/1.4-f/2.8) creano una PdC ridotta con bokeh cremoso. Aperture strette (f/8-f/16) aumentano la nitidezza in tutta la scena."
+          "description": "Aperture ampie (numeri f bassi come f/1.4-f/2.8) aprono un cono di luce più ripido e riducono la profondità di campo. Aperture strette (f/8-f/16) la ampliano."
         },
         "1": {
           "label": "Lunghezza focale",
-          "description": "A distanza del soggetto fissa, la profondità di campo si riduce nettamente all'aumentare della lunghezza focale. A inquadratura fissa — zoomando e arretrando per mantenere la stessa ripresa — la profondità di campo cambia pochissimo; è lo sfondo a trasformarsi, ingrandendosi e sfocandosi sempre di più man mano che la lunghezza focale aumenta."
+          "description": "A distanza del soggetto fissa, la profondità di campo si restringe circa con il quadrato della lunghezza focale. A inquadratura fissa (zoomando e arretrando per mantenere la stessa scena), la profondità di campo cambia pochissimo — è lo sfondo a trasformarsi, ingrandendosi e sfocandosi maggiormente man mano che la lunghezza focale aumenta."
         },
         "2": {
           "label": "Distanza del soggetto",
-          "description": "Più ti avvicini alla messa a fuoco, più la PdC si riduce. I fotografi macro lavorano spesso con una PdC misurata in millimetri."
+          "description": "Avvicinarsi al soggetto riduce la profondità di campo più rapidamente di quasi ogni altra regolazione, motivo per cui la fotografia macro ha zone nitide sottilissime."
         },
         "3": {
           "label": "Dimensione del sensore",
-          "description": "Sensori più grandi richiedono lunghezze focali maggiori per la stessa inquadratura, il che indirettamente restringe la PdC. Una fotocamera full-frame produce una PdC più ridotta rispetto a una Micro Quattro Terzi con inquadratura equivalente."
+          "description": "Sensori più grandi richiedono lunghezze focali maggiori per eguagliare la stessa inquadratura di sensori più piccoli, il che produce indirettamente una profondità di campo più ridotta a scatti equivalenti."
         }
       },
       "tips": {
         "0": {
-          "text": "Per i ritratti di gruppo, usa f/5.6 o più stretto e fai stare tutti sullo stesso piano focale. Anche una sola persona mezzo passo avanti può risultare sfocata con aperture ampie."
+          "text": "Ad aperture ampie come f/1.4-f/2.0, la profondità di campo può essere più sottile di un volto umano. Metti a fuoco con precisione sull'occhio più vicino, non sul naso o sull'orecchio, altrimenti lo sguardo del soggetto risulterà sfocato."
         },
         "1": {
-          "text": "Quando scatti paesaggi, metti a fuoco alla distanza iperfocale piuttosto che all'infinito. Questo massimizza la zona di nitidezza dal primo piano vicino allo sfondo lontano."
+          "text": "Usa i preset di inquadratura (Volto, Mezzo busto, Piano medio, e così via) per bloccare la dimensione del soggetto nell'inquadratura mentre sperimenti — mantengono lunghezza focale e distanza nella stessa relazione di uno scatto reale, quindi la sfocatura che vedi qui corrisponde a quella che otterresti con la fotocamera."
         },
         "2": {
-          "text": "Se vuoi il massimo sfocato dello sfondo per un ritratto, aumenta la lunghezza focale e avvicinati il più possibile al soggetto — entrambe le variazioni si sommano per ridurre la PdC drasticamente."
+          "text": "Non inseguire la massima profondità di campo chiudendo l'apertura al minimo — la maggior parte degli obiettivi è più nitida intorno a f/8-f/11, ben prima che compaia l'avviso di diffrazione di questo strumento. Quell'avviso è una soglia più rigorosa e più tardiva: si accende solo quando la sfocatura da diffrazione supera il cerchio di confusione del sensore, il che avviene intorno a f/22 su full-frame (f/15 su APS-C, f/11 su Micro Quattro Terzi). Considera f/8-f/11 come il tuo obiettivo pratico, e l'avviso come il limite estremo, non la meta."
         }
       },
       "tooltips": {
@@ -56,47 +56,23 @@
         },
         "subjectDistance": {
           "term": "Distanza del soggetto",
-          "definition": "La distanza dal sensore della fotocamera al punto di messa a fuoco. Più ti avvicini al soggetto, più la profondità di campo si riduce."
+          "definition": "La distanza dalla fotocamera al punto di messa a fuoco. Distanze di messa a fuoco più vicine producono una profondità di campo più ridotta."
         },
         "sensor": {
           "term": "Dimensione del sensore",
-          "definition": "Le dimensioni fisiche del sensore della fotocamera. Sensori più grandi (full-frame, medio formato) producono una profondità di campo più ridotta a inquadratura equivalente rispetto a sensori più piccoli (APS-C, Micro Quattro Terzi)."
-        },
-        "orientation": {
-          "term": "Orientamento",
-          "definition": "Alterna tra orientamento di scatto orizzontale (landscape) e verticale (portrait). Influisce sul riferimento dell'inquadratura per i calcoli della distanza del soggetto."
-        },
-        "nearFocus": {
-          "term": "Limite di messa a fuoco vicino",
-          "definition": "La distanza più vicina dalla fotocamera che appare accettabilmente nitida. Tutto ciò che è più vicino apparirà sfocato."
-        },
-        "farFocus": {
-          "term": "Limite di messa a fuoco lontano",
-          "definition": "La distanza più lontana dalla fotocamera che appare accettabilmente nitida. Quando raggiunge l'infinito, tutto oltre il limite vicino è a fuoco."
-        },
-        "totalDoF": {
-          "term": "Profondità di campo totale",
-          "definition": "La distanza completa tra i limiti di messa a fuoco vicino e lontano — l'intera zona che appare nitida nell'immagine."
+          "definition": "Le dimensioni fisiche del sensore della fotocamera. Sensori più grandi (full-frame, medio formato) richiedono lunghezze focali maggiori per un'inquadratura equivalente, il che produce una profondità di campo più ridotta rispetto a sensori più piccoli (APS-C, Micro Quattro Terzi)."
         },
         "hyperfocal": {
           "term": "Distanza iperfocale",
           "definition": "La distanza di messa a fuoco che massimizza la profondità di campo. Quando metti a fuoco a questa distanza, tutto da metà della distanza iperfocale all'infinito appare nitido."
         },
-        "backgroundBlur": {
-          "term": "Sfocatura dello sfondo",
-          "definition": "Una misura di quanto lo sfondo appaia sfocato dietro il soggetto. Valori più alti indicano una sfocatura più marcata e un maggiore isolamento del soggetto."
-        },
         "coc": {
           "term": "Cerchio di confusione",
           "definition": "Il diametro massimo di un punto sfocato sul sensore che appare ancora come un punto all'occhio umano. Determina il limite della nitidezza accettabile nei calcoli della profondità di campo."
         },
-        "isolationScore": {
-          "term": "Punteggio di isolamento",
-          "definition": "Una valutazione composita (0-100) che indica quanto bene il soggetto è separato dallo sfondo, basata sulla quantità di sfocatura dello sfondo rispetto alla dimensione del soggetto."
-        },
-        "bokehShape": {
-          "term": "Forma del bokeh",
-          "definition": "La forma delle luci fuori fuoco, determinata dal numero e dalla curvatura delle lamelle del diaframma. Più lamelle producono un bokeh più rotondo e morbido."
+        "backgroundBlur": {
+          "term": "Sfocatura dello sfondo",
+          "definition": "Una misura di quanto lo sfondo appaia sfocato dietro il soggetto. Valori più alti indicano una sfocatura più marcata e un maggiore isolamento del soggetto."
         },
         "diffractionWarning": {
           "term": "Diffrazione",
@@ -105,100 +81,62 @@
       },
       "challenges": {
         "0": {
-          "scenario": "Stai scattando un ritratto e vuoi uno sfondo meravigliosamente sfocato. Quale apertura dovresti scegliere?",
-          "hint": "Numeri f più bassi significano un'apertura dell'obiettivo più ampia e più sfocatura dello sfondo.",
-          "successMessage": "Corretto! Un'apertura ampia come f/1.8 o f/2.8 crea una profondità di campo ridotta, separando il soggetto dallo sfondo con un piacevole bokeh.",
-          "failureMessage": "Non proprio. Aperture strette come f/11 o f/16 mantengono più della scena a fuoco. Per la sfocatura dello sfondo, scegli un'apertura ampia (numero f basso).",
+          "scenario": "Stai fotografando un ritratto e vuoi che lo sfondo si dissolva in una morbida sfocatura dietro il soggetto. Quale apertura dovresti scegliere?",
+          "hint": "Numeri f più bassi significano un'apertura più ampia — e una profondità di campo più ridotta.",
+          "successMessage": "Esatto — f/1.4 apre molto il diaframma, producendo una profondità di campo ridotta e uno sfondo dolcemente sfocato.",
+          "failureMessage": "Non proprio. Numeri f più alti come f/11 o f/16 mantengono più scena a fuoco. Per la massima sfocatura dello sfondo, scegli invece l'apertura più ampia (il numero f più basso).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Stai fotografando un gruppo di 8 persone disposte su due file a un matrimonio. Quale apertura aiuterà a garantire che tutti siano a fuoco?",
-          "hint": "Con persone a distanze leggermente diverse, hai bisogno di una profondità di campo sufficiente a coprire entrambe le file.",
-          "successMessage": "Ottima scelta! f/5.6 fornisce una profondità di campo sufficiente per mantenere nitide entrambe le file pur mantenendo tempi di posa decenti in interni.",
-          "failureMessage": "Quell'apertura potrebbe lasciare la fila posteriore sfocata o essere inutilmente stretta. Per due file di persone, f/5.6 è un buon punto di partenza.",
+          "scenario": "Stai fotografando quattro amici disposti in un gruppo poco ordinato — un paio di loro sono mezzo passo avanti o indietro rispetto agli altri. Quale apertura ti dà un comodo margine di sicurezza per mantenere tutti a fuoco?",
+          "hint": "Hai bisogno di profondità di campo extra per coprire persone che non sono esattamente sullo stesso piano focale, ma non devi chiudere del tutto il diaframma.",
+          "successMessage": "Corretto — f/5.6 offre un comodo margine di profondità di campo per piccole variazioni di distanza, senza restringere l'apertura più del necessario.",
+          "failureMessage": "f/1.4 è troppo ridotta per persone a distanze leggermente diverse, e f/16 chiude più di quanto serva. f/5.6 è la via di mezzo affidabile.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Stai scattando un paesaggio con fiori selvatici a 2 metri di distanza e montagne sullo sfondo. Stai usando un obiettivo 24mm su una fotocamera full-frame. Quale tecnica massimizzerà la nitidezza dal primo piano allo sfondo?",
-          "hint": "C'è una distanza specifica su cui puoi mettere a fuoco che massimizza la zona nitida dal primo piano all'infinito.",
-          "successMessage": "Esatto! Mettere a fuoco alla distanza iperfocale a f/11 assicura che tutto da circa 1 metro all'infinito sia accettabilmente nitido — perfetto per questa scena.",
-          "failureMessage": "Mettere a fuoco all'infinito lascerebbe i fiori in primo piano sfocati. Usa la distanza iperfocale per estendere la nitidezza dal primo piano vicino fino all'infinito.",
+          "scenario": "Sei a 85mm, f/1.8, con il soggetto a 3 metri di distanza, e vuoi aumentare sensibilmente la sfocatura dello sfondo senza toccare l'apertura o cambiare obiettivo. Qual è il modo più rapido?",
+          "hint": "La profondità di campo — e quanto intensamente lo sfondo si sfoca rispetto al soggetto — è estremamente sensibile alla distanza del soggetto.",
+          "successMessage": "Esatto — dimezzare la distanza del soggetto riduce drasticamente la profondità di campo e amplifica la sfocatura dello sfondo, senza cambiare apertura o obiettivo.",
+          "failureMessage": "Allontanarsi o alzare l'ISO non riduce la profondità di campo. Avvicinarsi al soggetto è il modo più rapido per aumentare la sfocatura dello sfondo con apertura e lunghezza focale fisse.",
           "options": {
-            "0": {
-              "label": "Metti a fuoco sui fiori (2m)"
-            },
-            "1": {
-              "label": "Metti a fuoco sulle montagne (infinito)"
-            },
-            "2": {
-              "label": "Metti a fuoco alla distanza iperfocale"
-            },
-            "3": {
-              "label": "Metti a fuoco a metà strada tra fiori e montagne"
-            }
+            "0": { "label": "Spostati a 1.5m dal soggetto (metà della distanza)" },
+            "1": { "label": "Spostati a 6m dal soggetto (doppio della distanza)" },
+            "2": { "label": "Arretra per aumentare la tua distanza di lavoro" },
+            "3": { "label": "Alza l'ISO per uno sfondo più luminoso" }
           }
         },
         "3": {
-          "scenario": "Stai facendo macrofotografia di un fiore e noti che solo i petali anteriori sono nitidi. Il resto del fiore sfuma nella sfocatura. Sei a f/5.6. Cosa dovresti fare per avere più fiore a fuoco?",
-          "hint": "A distanze di messa a fuoco ravvicinate, la PdC diventa estremamente sottile. Considera la tua apertura.",
-          "successMessage": "Giusto! Chiudere a f/11 o f/16 aumenta la PdC, che nella macrofotografia è sottilissima. Fai solo attenzione all'ammorbidimento da diffrazione ad aperture molto piccole.",
-          "failureMessage": "Aprire di più l'apertura renderebbe la PdC ancora più sottile. Nella macrofotografia, chiudere il diaframma (numero f più alto) è il modo principale per guadagnare più profondità.",
+          "scenario": "Stai scattando un paesaggio con una fotocamera full-frame e vuoi la massima nitidezza su tutto il fotogramma. Dovresti chiudere del tutto fino a f/22 per ottenere la massima profondità di campo?",
+          "hint": "C'è un compromesso tra la profondità di campo guadagnata chiudendo il diaframma e l'ammorbidimento causato dalla diffrazione ad aperture molto piccole.",
+          "successMessage": "Esatto — f/22 aggiunge effettivamente profondità di campo sulla carta, ma la maggior parte degli obiettivi ha già superato le proprie aperture più nitide a quel punto. Un'apertura moderata come f/8-f/11 di solito bilancia meglio profondità di campo e nitidezza dell'obiettivo. L'avviso di diffrazione di questo strumento è una soglia separata e più tardiva — si attiva solo quando la sfocatura da diffrazione supera il cerchio di confusione del sensore, il che su full-frame non avviene fino a circa f/22 (f/15 su APS-C, f/11 su Micro Quattro Terzi). Non aspettare quell'avviso prima di richiudere meno — è un limite fisico rigido, non un consiglio di nitidezza.",
+          "failureMessage": "Chiudere del tutto fino a f/22 massimizza effettivamente la profondità di campo sulla carta, ma la maggior parte degli obiettivi ha già superato il proprio intervallo di apertura più nitido a quel punto. Un'apertura moderata come f/8-f/11 di solito offre un equilibrio migliore tra profondità di campo e nitidezza nel mondo reale. L'avviso di diffrazione di questo strumento è una soglia separata e più tardiva — compare solo quando la sfocatura supera il cerchio di confusione del sensore, intorno a f/22 su full-frame — quindi non considerare la sua assenza come un via libera per continuare a chiudere il diaframma.",
           "options": {
-            "0": {
-              "label": "Apri a f/2.8 per più luce"
-            },
-            "1": {
-              "label": "Chiudi a f/11"
-            },
-            "2": {
-              "label": "Passa a un obiettivo più grandangolare"
-            },
-            "3": {
-              "label": "Allontanati dal fiore"
-            }
+            "0": { "label": "Sì — usa sempre l'apertura più piccola disponibile per la massima profondità di campo" },
+            "1": { "label": "No — usa un'apertura moderata come f/8-f/11 per la migliore nitidezza complessiva, non la più piccola" },
+            "2": { "label": "No — usa l'apertura più ampia disponibile per i risultati più nitidi" },
+            "3": { "label": "Non importa — l'apertura non ha alcun effetto sulla nitidezza" }
           }
         },
         "4": {
-          "scenario": "Stai confrontando due fotocamere per i ritratti: una full-frame con obiettivo 85mm f/1.8 e una Micro Quattro Terzi con obiettivo 42,5mm f/1.8. Entrambe producono un'inquadratura equivalente. Quale fotocamera produce una profondità di campo più ridotta?",
-          "hint": "Pensa alle lunghezze focali equivalenti e a come la dimensione del sensore influisce sul calcolo della PdC allo stesso numero f.",
-          "successMessage": "Corretto! La fotocamera full-frame produce circa 2 stop di PdC più ridotta. Sebbene l'obiettivo MFT abbia lo stesso numero f, la lunghezza focale effettiva più corta (42,5mm vs 85mm) comporta una profondità di campo più ampia a inquadratura equivalente.",
-          "failureMessage": "Sebbene entrambi gli obiettivi siano f/1.8, la fotocamera full-frame usa una lunghezza focale effettiva maggiore per la stessa inquadratura, producendo una PdC significativamente più ridotta.",
+          "scenario": "Stai confrontando due configurazioni per la stessa inquadratura ritratto: una fotocamera full-frame con obiettivo 85mm f/1.8, e una fotocamera APS-C (crop 1.5x) con obiettivo 56mm f/1.8 che produce lo stesso campo visivo. Quale produce una profondità di campo più ridotta?",
+          "hint": "Confronta la lunghezza focale reale (non equivalente) che ciascun obiettivo usa per ottenere la stessa inquadratura.",
+          "successMessage": "Corretto — anche se entrambi gli obiettivi sono f/1.8, la fotocamera full-frame usa una lunghezza focale reale maggiore (85mm contro 56mm) per eguagliare l'inquadratura, il che produce una profondità di campo sensibilmente più ridotta.",
+          "failureMessage": "Entrambi gli obiettivi condividono lo stesso numero f, ma la fotocamera full-frame ha bisogno di una lunghezza focale reale maggiore per eguagliare l'inquadratura. È quella lunghezza focale maggiore a produrre una profondità di campo più ridotta — non il numero f da solo.",
           "options": {
-            "0": {
-              "label": "Full-frame con 85mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Quattro Terzi con 42,5mm f/1.8"
-            },
-            "2": {
-              "label": "Entrambe producono una PdC identica"
-            }
+            "0": { "label": "La configurazione full-frame con 85mm f/1.8" },
+            "1": { "label": "La configurazione APS-C con 56mm f/1.8" },
+            "2": { "label": "Entrambe producono una profondità di campo identica" }
           }
         }
       }

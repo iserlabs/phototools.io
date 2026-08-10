@@ -1,48 +1,48 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "La profundidad de campo (PdC) es el tramo de distancia en tu foto que sale aceptablemente nítido. Una PdC reducida desenfoca el fondo detrás del sujeto, mientras que una PdC amplia mantiene todo enfocado desde el primer plano hasta el horizonte. Saber controlar la PdC es uno de los recursos creativos más útiles que tienes como fotógrafo.",
+      "beginner": "La profundidad de campo es la zona de tu foto —de cerca a lejos— que se ve aceptablemente nítida. Tres controles dan forma a esa zona: la apertura (aperturas más amplias desenfocan más el fondo), la distancia focal (los objetivos más largos estrechan la zona) y la distancia al sujeto (acercarte la reduce aún más). Ajusta cualquiera de ellos aquí y observa cómo la regla de profundidad y la vista se actualizan juntas en tiempo real.",
       "deeper": {
         "0": {
-          "heading": "Cómo funciona la PdC",
-          "text": "La profundidad de campo se rige por el círculo de confusión (CoC) — el punto de desenfoque más grande en el sensor que aún se ve nítido al ojo humano. Tres factores físicos determinan la PdC: distancia focal, apertura y distancia al sujeto. Una apertura más amplia (número f más bajo) produce una PdC más reducida porque el objetivo converge la luz en ángulos más pronunciados, haciendo que los puntos fuera de foco se extiendan en círculos más grandes sobre el sensor."
+          "heading": "Geometría de la apertura y el círculo de confusión",
+          "text": "Un objetivo enfoca la luz de una distancia exacta sobre el sensor como un punto perfecto; todo lo demás llega como un pequeño disco llamado círculo de confusión (CoC). Un punto sigue leyéndose como nítido mientras su disco se mantenga por debajo de un umbral fijado por el tamaño del sensor —aproximadamente 0.03mm en formato completo. Abrir la apertura (bajar el número f) abre un cono de luz más amplio entre el objetivo y el punto de enfoque, así que los puntos alejados de ese plano se extienden en discos mucho más grandes, mucho más rápido. Por eso una apertura amplia como f/1.4 desenfoca el fondo mucho más que f/11: es la geometría del cono de luz la que cambia, no solo la cantidad de luz."
         },
         "1": {
-          "heading": "Distancia focal y distancia",
-          "text": "El efecto de la distancia focal sobre la profundidad de campo depende de qué mantengas constante. A una distancia al sujeto fija, las distancias focales más largas estrechan la PdC de forma marcada — aproximadamente con el cuadrado de la distancia focal. Pero si haces zoom y retrocedes para mantener el mismo encuadre (el modo de campo de visión bloqueado de esta herramienta), la PdC apenas cambia — lo que se transforma es el fondo, que se magnifica y se desenfoca más. Acercarte al sujeto estrecha la PdC por una razón distinta: los límites de enfoque cercano y lejano se aproximan en torno a una distancia más corta. La distancia hiperfocal es la distancia de enfoque a la que la PdC se extiende desde la mitad de esa distancia hasta el infinito, maximizando la nitidez en toda la escena."
+          "heading": "La distancia focal y la distancia dominan el efecto",
+          "text": "El efecto de la distancia focal sobre la profundidad de campo depende por completo de qué mantengas constante. A una distancia al sujeto fija, la profundidad de campo se estrecha bruscamente con la distancia focal —aproximadamente con su cuadrado: de pie a 3m de un sujeto a f/2.8, un objetivo de 35mm da aproximadamente 1.3m de profundidad de campo, mientras que uno de 200mm da unos 35mm. Pero esa comparación también cambia tu encuadre, ya que no volviste a encuadrar. Con un encuadre fijo —el modo de campo de visión bloqueado de esta herramienta, en el que retrocedes mientras haces zoom para mantener el sujeto del mismo tamaño— la profundidad de campo apenas se mueve: recorrer de 35mm a 200mm a f/2.8 con el encuadre bloqueado cambia la profundidad de campo total en bastante menos del 1%. Lo que cambia drásticamente en su lugar es el fondo: un objetivo más largo magnifica y comprime todo lo que hay detrás de tu sujeto, así que las luces desenfocadas crecen y el fondo se separa más, aunque la franja enfocada alrededor de tu sujeto mantenga aproximadamente el mismo grosor. Activa el bloqueo de campo de visión y recorre la distancia focal para verlo suceder: la lectura de profundidad de campo se mantiene estable mientras la cifra de desenfoque del fondo aumenta. La distancia al sujeto sigue siendo la palanca más fiable en cualquier caso: acercarte con una distancia focal y apertura fijas reduce bruscamente la profundidad de campo, acercando los límites cercano y lejano en torno a una distancia más corta."
         },
         "2": {
-          "heading": "Bokeh y difracción",
-          "text": "El bokeh es la calidad de las zonas fuera de foco. El número y la forma de las láminas del diafragma afectan al carácter del bokeh — láminas más redondeadas producen reflejos más suaves y circulares. Muchos objetivos alcanzan su punto óptimo práctico de nitidez alrededor de f/8-f/11, mucho antes de que la difracción se vuelva severa. El aviso de difracción de esta herramienta es un umbral más estricto y posterior: solo aparece cuando el desenfoque por difracción supera el círculo de confusión del sensor, lo que ocurre alrededor de f/22 en formato completo (f/15 en APS-C, f/11 en Micro Cuatro Tercios) — trata ese aviso como un límite extremo, no como un objetivo de nitidez."
+          "heading": "Tamaño del sensor y encuadre equivalente",
+          "text": "Para llenar el encuadre con el mismo sujeto, un sensor más grande necesita una distancia focal proporcionalmente más larga que uno más pequeño —una cámara de formato completo necesita aproximadamente 1.5x la distancia focal de una cámara APS-C, y unas 2x la de una Micro Cuatro Tercios, para el mismo campo de visión. Como la profundidad de campo se estrecha con la distancia focal, esa distancia focal 'equivalente' más larga es lo que da a las cámaras de formato completo su fama de producir una profundidad de campo más reducida: el número f impreso en el objetivo no cuenta toda la historia. Dos objetivos con el mismo número f en sensores de distinto tamaño, encuadrados de forma idéntica, producirán una profundidad de campo notablemente distinta."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Apertura",
-          "description": "Aperturas amplias (f/1.4-f/2.8) crean una PdC reducida con un bokeh cremoso. Aperturas más cerradas (f/8-f/16) aumentan la nitidez en toda la escena."
+          "description": "Las aperturas más amplias (números f bajos como f/1.4-f/2.8) abren un cono de luz más pronunciado y reducen la profundidad de campo. Las aperturas más cerradas (f/8-f/16) la amplían."
         },
         "1": {
           "label": "Distancia focal",
-          "description": "A una distancia al sujeto fija, la PdC se estrecha marcadamente al aumentar la distancia focal. Con un encuadre fijo — haces zoom y retrocedes para mantener la misma toma — la PdC apenas cambia; lo que se transforma es el fondo, que se magnifica y se desenfoca más a medida que aumenta la distancia focal."
+          "description": "A una distancia al sujeto fija, la profundidad de campo se estrecha aproximadamente con el cuadrado de la distancia focal. Con un encuadre fijo (haces zoom y retrocedes para mantener la misma toma), la profundidad de campo apenas cambia: lo que se transforma es el fondo, que se magnifica y desenfoca más a medida que aumenta la distancia focal."
         },
         "2": {
           "label": "Distancia al sujeto",
-          "description": "Cuanto más cerca enfoques, menor será la PdC. Los fotógrafos macro a menudo trabajan con una PdC medida en milímetros."
+          "description": "Acercarte a tu sujeto reduce la profundidad de campo más rápido que casi cualquier otro ajuste, por lo que la fotografía macro tiene zonas nítidas tan finas como una cuchilla."
         },
         "3": {
           "label": "Tamaño del sensor",
-          "description": "Los sensores más grandes requieren distancias focales más largas para el mismo encuadre, lo que indirectamente estrecha la PdC. Una cámara de formato completo produce una PdC más reducida que una Micro Cuatro Tercios con encuadre equivalente."
+          "description": "Los sensores más grandes necesitan distancias focales más largas para igualar el mismo encuadre que los sensores más pequeños, lo que indirectamente produce una profundidad de campo más reducida en tomas equivalentes."
         }
       },
       "tips": {
         "0": {
-          "text": "Para retratos de grupo, usa f/5.6 o más cerrado y haz que todos se coloquen en el mismo plano focal. Incluso una persona medio paso adelante puede quedar fuera de foco con aperturas amplias."
+          "text": "Con aperturas amplias como f/1.4-f/2.0, la profundidad de campo puede ser más fina que un rostro humano. Enfoca con precisión en el ojo más cercano, no en la nariz ni en la oreja, o la mirada de tu sujeto se verá suave."
         },
         "1": {
-          "text": "Al fotografiar paisajes, enfoca a la distancia hiperfocal en lugar de al infinito. Esto maximiza la zona de nitidez desde el primer plano cercano hasta el fondo lejano."
+          "text": "Usa los preajustes de encuadre (Rostro, Retrato, Plano medio, etc.) para fijar el tamaño de tu sujeto en el cuadro mientras experimentas: mantienen la distancia focal y la distancia en la misma relación que tendría una toma real, así que el desenfoque que ves aquí coincide con el que obtendrías con la cámara."
         },
         "2": {
-          "text": "Si quieres el máximo desenfoque del fondo para un retrato, aumenta tu distancia focal y acércate al sujeto tanto como el encuadre lo permita — ambos cambios se suman para reducir la PdC drásticamente."
+          "text": "No persigas la máxima profundidad de campo cerrando el diafragma al máximo: la mayoría de los objetivos son más nítidos alrededor de f/8-f/11, mucho antes de que aparezca el aviso de difracción de esta herramienta. Ese aviso es un umbral más estricto y posterior: solo se enciende cuando el desenfoque por difracción supera el círculo de confusión del sensor, lo que ocurre alrededor de f/22 en formato completo (f/15 en APS-C, f/11 en Micro Cuatro Tercios). Trata f/8-f/11 como tu objetivo práctico, y el aviso como el límite extremo, no como la meta."
         }
       },
       "tooltips": {
@@ -52,153 +52,91 @@
         },
         "aperture": {
           "term": "Apertura",
-          "definition": "El tamaño de la abertura del objetivo, expresado como número f (por ejemplo, f/2.8). Números f más bajos significan una abertura más amplia, dejando pasar más luz y produciendo menor profundidad de campo."
+          "definition": "El tamaño de la abertura del objetivo, expresado como número f (por ejemplo, f/2.8). Números f más bajos significan una abertura más amplia, dejando pasar más luz y produciendo una profundidad de campo más reducida."
         },
         "subjectDistance": {
           "term": "Distancia al sujeto",
-          "definition": "La distancia desde el sensor de la cámara hasta el punto de enfoque. Distancias de enfoque más cercanas resultan en menor profundidad de campo."
+          "definition": "La distancia desde la cámara hasta el punto de enfoque. Distancias de enfoque más cercanas producen una profundidad de campo más reducida."
         },
         "sensor": {
           "term": "Tamaño del sensor",
-          "definition": "Las dimensiones físicas del sensor de la cámara. Los sensores más grandes (formato completo, formato medio) producen menor profundidad de campo con encuadre equivalente en comparación con sensores más pequeños (APS-C, Micro Cuatro Tercios)."
-        },
-        "orientation": {
-          "term": "Orientación",
-          "definition": "Alterna entre orientación de disparo paisaje (horizontal) y retrato (vertical). Esto afecta a la referencia de encuadre para los cálculos de distancia al sujeto."
-        },
-        "nearFocus": {
-          "term": "Límite de enfoque cercano",
-          "definition": "La distancia más cercana desde la cámara que aparece aceptablemente nítida. Todo lo que esté más cerca aparecerá borroso."
-        },
-        "farFocus": {
-          "term": "Límite de enfoque lejano",
-          "definition": "La distancia más lejana desde la cámara que aparece aceptablemente nítida. Cuando alcanza el infinito, todo más allá del límite cercano está enfocado."
-        },
-        "totalDoF": {
-          "term": "Profundidad de campo total",
-          "definition": "La distancia completa entre los límites de enfoque cercano y lejano — toda la zona que aparece nítida en la imagen."
+          "definition": "Las dimensiones físicas del sensor de la cámara. Los sensores más grandes (formato completo, formato medio) requieren distancias focales más largas para un encuadre equivalente, lo que produce una profundidad de campo más reducida que los sensores más pequeños (APS-C, Micro Cuatro Tercios)."
         },
         "hyperfocal": {
           "term": "Distancia hiperfocal",
           "definition": "La distancia de enfoque que maximiza la profundidad de campo. Cuando enfocas a esta distancia, todo desde la mitad de la distancia hiperfocal hasta el infinito aparece nítido."
         },
-        "backgroundBlur": {
-          "term": "Desenfoque del fondo",
-          "definition": "Una medida de cuánto se desenfoca el fondo detrás del sujeto. Valores más altos indican un desenfoque más intenso y mayor aislamiento del sujeto."
-        },
         "coc": {
           "term": "Círculo de confusión",
-          "definition": "El diámetro máximo de un punto de desenfoque sobre el sensor que aún aparece como un punto al ojo humano. Determina el límite de nitidez aceptable para los cálculos de profundidad de campo."
+          "definition": "El diámetro máximo de un punto de desenfoque en el sensor que aún aparece como un punto para el ojo humano. Determina el límite de nitidez aceptable para los cálculos de profundidad de campo."
         },
-        "isolationScore": {
-          "term": "Puntuación de aislamiento",
-          "definition": "Una valoración combinada (0-100) que indica qué tan bien se separa el sujeto del fondo, basada en el nivel de desenfoque del fondo en relación con el tamaño del sujeto."
-        },
-        "bokehShape": {
-          "term": "Forma del bokeh",
-          "definition": "La forma de los reflejos fuera de foco, determinada por el número y la curvatura de las láminas del diafragma. Más láminas producen un bokeh más redondo y suave."
+        "backgroundBlur": {
+          "term": "Desenfoque del fondo",
+          "definition": "Una medida de cuánto se desenfoca el fondo detrás de tu sujeto. Valores más altos indican un desenfoque más intenso y un mayor aislamiento del sujeto."
         },
         "diffractionWarning": {
           "term": "Difracción",
-          "definition": "En aperturas muy cerradas, la luz se desvía al pasar por los bordes del diafragma, suavizando la imagen. El aviso de difracción de esta herramienta aparece cuando ese suavizado supera el círculo de confusión del sensor — alrededor de f/22 en formato completo, f/15 en APS-C, f/11 en Micro Cuatro Tercios."
+          "definition": "En aperturas muy cerradas, la luz se desvía alrededor de los bordes del diafragma, suavizando la imagen. El aviso de difracción de esta herramienta aparece cuando ese suavizado supera el círculo de confusión del sensor: alrededor de f/22 en formato completo, f/15 en APS-C, f/11 en Micro Cuatro Tercios."
         }
       },
       "challenges": {
         "0": {
-          "scenario": "Estás fotografiando un retrato y quieres un fondo bellamente desenfocado. ¿Qué apertura deberías elegir?",
-          "hint": "Números f más bajos significan una abertura más amplia del objetivo y más desenfoque del fondo.",
-          "successMessage": "¡Correcto! Una apertura amplia como f/1.8 o f/2.8 crea una profundidad de campo reducida, separando al sujeto del fondo con un bokeh agradable.",
-          "failureMessage": "No exactamente. Aperturas cerradas como f/11 o f/16 mantienen más de la escena enfocada. Para desenfoque del fondo, elige una apertura amplia (número f bajo).",
+          "scenario": "Estás fotografiando un retrato y quieres que el fondo se funda en un suave desenfoque detrás de tu sujeto. ¿Qué apertura deberías elegir?",
+          "hint": "Números f más bajos significan una abertura más amplia, y una profundidad de campo más reducida.",
+          "successMessage": "Correcto: f/1.4 abre la apertura al máximo, produciendo una profundidad de campo reducida y un fondo suavemente desenfocado.",
+          "failureMessage": "No exactamente. Números f más altos como f/11 o f/16 mantienen más de la escena nítida. Para el máximo desenfoque del fondo, elige la apertura más amplia (el número f más bajo).",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Estás fotografiando un grupo de 8 personas dispuestas en dos filas en una boda. ¿Qué apertura ayudará a asegurar que todos estén enfocados?",
-          "hint": "Con personas a distancias ligeramente diferentes, necesitas suficiente profundidad de campo para cubrir ambas filas.",
-          "successMessage": "¡Buena elección! f/5.6 proporciona suficiente profundidad de campo para mantener ambas filas nítidas mientras se mantienen velocidades de obturación decentes en interiores.",
-          "failureMessage": "Esa apertura puede dejar la fila trasera fuera de foco o ser innecesariamente cerrada. Para dos filas de personas, f/5.6 es un punto de partida confiable.",
+          "scenario": "Estás fotografiando a cuatro amigos agrupados de forma relajada; un par de ellos están medio paso adelante o atrás de los demás. ¿Qué apertura te da un margen de seguridad cómodo para mantener a todos nítidos?",
+          "hint": "Necesitas profundidad de campo adicional para cubrir a personas que no están exactamente en el mismo plano focal, pero no hace falta cerrar el diafragma al máximo.",
+          "successMessage": "Correcto: f/5.6 proporciona un margen cómodo de profundidad de campo para pequeñas variaciones de distancia, sin cerrar la apertura más de lo necesario.",
+          "failureMessage": "f/1.4 es demasiado reducida para personas a distancias ligeramente distintas, y f/16 cierra más de lo necesario. f/5.6 es el término medio fiable.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Estás fotografiando un paisaje con flores silvestres a 2 metros y montañas en el fondo. Usas un objetivo de 24 mm en una cámara de formato completo. ¿Qué técnica maximizará la nitidez de adelante hacia atrás?",
-          "hint": "Hay una distancia específica a la que puedes enfocar para maximizar la zona nítida del primer plano al infinito.",
-          "successMessage": "¡Exacto! Enfocar a la distancia hiperfocal a f/11 asegura que todo desde aproximadamente 1 metro hasta el infinito esté aceptablemente nítido — perfecto para esta escena.",
-          "failureMessage": "Enfocar al infinito dejaría las flores del primer plano suaves. Usa la distancia hiperfocal para extender la nitidez desde el primer plano cercano hasta el infinito.",
+          "scenario": "Estás a 85mm, f/1.8, con tu sujeto a 3 metros de distancia, y quieres aumentar notablemente el desenfoque del fondo sin tocar la apertura ni cambiar de objetivo. ¿Cuál es la forma más rápida?",
+          "hint": "La profundidad de campo —y con cuánta intensidad se desenfoca el fondo en relación con tu sujeto— es extremadamente sensible a la distancia al sujeto.",
+          "successMessage": "Exacto: reducir a la mitad la distancia al sujeto reduce drásticamente la profundidad de campo y amplifica el desenfoque del fondo, sin cambiar tu apertura ni tu objetivo.",
+          "failureMessage": "Alejarte más o subir el ISO no reducirá la profundidad de campo. Acercarte a tu sujeto es la forma más rápida de aumentar el desenfoque del fondo con una apertura y distancia focal fijas.",
           "options": {
-            "0": {
-              "label": "Enfocar en las flores (2 m)"
-            },
-            "1": {
-              "label": "Enfocar en las montañas (infinito)"
-            },
-            "2": {
-              "label": "Enfocar a la distancia hiperfocal"
-            },
-            "3": {
-              "label": "Enfocar a mitad de camino entre las flores y las montañas"
-            }
+            "0": { "label": "Acércate a 1.5m de tu sujeto (la mitad de la distancia)" },
+            "1": { "label": "Aléjate a 6m de tu sujeto (el doble de la distancia)" },
+            "2": { "label": "Retrocede para aumentar tu distancia de trabajo" },
+            "3": { "label": "Sube el ISO para un fondo más luminoso" }
           }
         },
         "3": {
-          "scenario": "Estás haciendo macrofotografía de una flor y notas que solo los pétalos delanteros están nítidos. El resto de la flor se desenfoca. Estás a f/5.6. ¿Qué deberías hacer para enfocar más zona de la flor?",
-          "hint": "A distancias de enfoque muy cercanas, la PdC se vuelve extremadamente reducida. Piensa en tu apertura.",
-          "successMessage": "¡Correcto! Cerrar a f/11 o f/16 amplía la PdC, que en macro suele ser mínima. Eso sí, vigila el suavizado por difracción en aperturas muy cerradas.",
-          "failureMessage": "Abrir más la apertura reduciría todavía más la PdC. En macrofotografía, cerrar el diafragma (número f más alto) es la principal forma de ganar profundidad.",
+          "scenario": "Estás fotografiando un paisaje con una cámara de formato completo y quieres la máxima nitidez en todo el encuadre. ¿Deberías cerrar el diafragma al máximo, a f/22, para obtener la mayor profundidad de campo?",
+          "hint": "Hay un equilibrio entre la profundidad de campo que ganas al cerrar el diafragma y el suavizado que causa la difracción en aperturas muy cerradas.",
+          "successMessage": "Correcto: f/22 sí añade profundidad de campo sobre el papel, pero la mayoría de los objetivos ya han superado sus aperturas más nítidas para entonces. Una apertura moderada como f/8-f/11 suele equilibrar mejor la profundidad de campo y la nitidez del objetivo. El propio aviso de difracción de esta herramienta es un umbral distinto y posterior: solo se activa cuando el desenfoque por difracción supera el círculo de confusión del sensor, lo que en formato completo no ocurre hasta alrededor de f/22 (f/15 en APS-C, f/11 en Micro Cuatro Tercios). No esperes a ese aviso antes de abrir de nuevo: es un límite físico estricto, no una recomendación de nitidez.",
+          "failureMessage": "Cerrar el diafragma al máximo, a f/22, sí maximiza la profundidad de campo sobre el papel, pero la mayoría de los objetivos ya han superado su rango de apertura más nítido para entonces. Una apertura moderada como f/8-f/11 suele dar un mejor equilibrio entre profundidad de campo y nitidez real. El aviso de difracción de esta herramienta es un umbral distinto y posterior: solo aparece cuando el desenfoque supera el círculo de confusión del sensor, alrededor de f/22 en formato completo, así que no tomes su ausencia como luz verde para seguir cerrando.",
           "options": {
-            "0": {
-              "label": "Abrir a f/2.8 para más luz"
-            },
-            "1": {
-              "label": "Cerrar a f/11"
-            },
-            "2": {
-              "label": "Cambiar a un objetivo más angular"
-            },
-            "3": {
-              "label": "Alejarse más de la flor"
-            }
+            "0": { "label": "Sí: usa siempre la apertura más cerrada disponible para la máxima profundidad de campo" },
+            "1": { "label": "No: usa una apertura moderada como f/8-f/11 para la mejor nitidez general, no la más cerrada" },
+            "2": { "label": "No: usa la apertura más amplia disponible para los resultados más nítidos" },
+            "3": { "label": "No importa: la apertura no afecta a la nitidez" }
           }
         },
         "4": {
-          "scenario": "Estás comparando dos cámaras para retratos: una de formato completo con un objetivo 85 mm f/1.8 y una Micro Cuatro Tercios con un objetivo 42.5 mm f/1.8. Ambas producen un encuadre equivalente. ¿Cuál produce menor profundidad de campo?",
-          "hint": "Piensa en las distancias focales equivalentes y cómo el tamaño del sensor afecta el cálculo de PdC con el mismo número f.",
-          "successMessage": "¡Correcto! La cámara de formato completo produce aproximadamente 2 pasos menos de PdC. Aunque el objetivo MFT tiene el mismo número f, la distancia focal real más corta (42.5 mm vs 85 mm) resulta en mayor profundidad de campo con encuadre equivalente.",
-          "failureMessage": "Aunque ambos objetivos son f/1.8, la cámara de formato completo usa una distancia focal real más larga para el mismo encuadre, produciendo una PdC significativamente más reducida.",
+          "scenario": "Estás comparando dos configuraciones para el mismo encuadre de retrato: una cámara de formato completo con un objetivo de 85mm f/1.8, y una cámara APS-C (recorte de 1.5x) con un objetivo de 56mm f/1.8 que produce el mismo campo de visión. ¿Cuál produce una profundidad de campo más reducida?",
+          "hint": "Compara la distancia focal real (no la equivalente) que usa cada objetivo para lograr el mismo encuadre.",
+          "successMessage": "Correcto: aunque ambos objetivos son f/1.8, la cámara de formato completo usa una distancia focal real más larga (85mm frente a 56mm) para igualar el encuadre, lo que produce una profundidad de campo notablemente más reducida.",
+          "failureMessage": "Ambos objetivos comparten el mismo número f, pero la cámara de formato completo necesita una distancia focal real más larga para igualar el encuadre. Esa distancia focal más larga es lo que produce una profundidad de campo más reducida, no el número f por sí solo.",
           "options": {
-            "0": {
-              "label": "Formato completo con 85 mm f/1.8"
-            },
-            "1": {
-              "label": "Micro Cuatro Tercios con 42.5 mm f/1.8"
-            },
-            "2": {
-              "label": "Ambas producen PdC idéntica"
-            }
+            "0": { "label": "La configuración de formato completo con 85mm f/1.8" },
+            "1": { "label": "La configuración APS-C con 56mm f/1.8" },
+            "2": { "label": "Ambas producen la misma profundidad de campo" }
           }
         }
       }

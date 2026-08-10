@@ -1,48 +1,48 @@
 {
   "education": {
     "dof-simulator": {
-      "beginner": "A mélységélesség az a távolságtartomány, ami a képeden elfogadhatóan élesnek látszik. A kis mélységélesség elmossa a hátteret a téma mögött, a nagy mélységélesség pedig az előtértől a horizontig mindent élesen tart. A mélységélesség szabályozása a fotózás egyik legerősebb kreatív eszköze.",
+      "beginner": "A mélységélesség az a távolságtartomány — közel és távol között — a fotódon, amely elfogadhatóan élesnek látszik. Három vezérlő alakítja ezt a zónát: a rekesz (a tágabb rekesz jobban elmossa a hátteret), a gyújtótávolság (a hosszabb objektív szűkíti a zónát) és a téma távolsága (a közelebb lépés tovább szűkíti). Módosítsd bármelyiket itt, és figyeld, ahogy a mélységvonalzó és a nézet valós időben együtt frissül.",
       "deeper": {
         "0": {
-          "heading": "Hogyan működik a mélységélesség",
-          "text": "A mélységélességet a szóráskör (CoC) határozza meg — ez a legnagyobb elmosódott folt az érzékelőn, amit a szem még pontnak érzékel. Három fizikai dolog alakítja: a gyújtótávolság, a rekesz és a téma távolsága. A tágabb rekesz (alacsonyabb f-szám) kisebb mélységélességet ad, mert az objektív meredekebb szögben gyűjti a fényt, így az életlen pontok nagyobb körökké terülnek szét az érzékelőn."
+          "heading": "A rekesz geometriája és a szóráskör",
+          "text": "Az objektív a fényt egyetlen pontos távolságról fókuszálja az érzékelőre tökéletes pontként; minden más egy kis korongként érkezik, amit szóráskörnek (CoC) neveznek. Egy pont akkor is élesnek látszik, amíg korongja kisebb marad, mint az érzékelőméret által meghatározott küszöb — nagyjából 0,03mm Full Frame-en. A rekesz tágítása (az f-szám csökkentése) nagyobb fénykúpot nyit meg az objektív és a fókuszpont között, így a fókuszsíktól távol eső pontok sokkal nagyobb korongokká terülnek szét, sokkal gyorsabban. Ezért mos el egy tág rekesz, mint az f/1.4, sokkal jobban a hátteret, mint az f/11 — a fénykúp geometriája változik, nem csak a fény mennyisége."
         },
         "1": {
-          "heading": "Gyújtótávolság és távolság",
-          "text": "A gyújtótávolság mélységélességre gyakorolt hatása attól függ, mit tartasz állandónak. Rögzített tématávolság mellett a hosszabb gyújtótávolság élesen szűkíti a mélységélességet — nagyjából a gyújtótávolság négyzetével arányosan. De ha ránagyítasz és hátrébb lépsz, hogy ugyanaz a kompozíció maradjon (ez az eszköz rögzített látószögű módja), a mélységélesség szinte alig változik — ehelyett a háttér alakul át, egyre jobban felnagyítva és elmosódva. A témához közelebb lépés más okból szűkíti a mélységélességet: a közeli és távoli éles határ egy rövidebb távolság köré húzódik szorosabban. A hiperfokális távolság az a fókusztávolság, amelynél a mélységélesség e távolság felétől a végtelenig terjed, így maximalizálva az élességet a teljes jeleneten."
+          "heading": "A gyújtótávolság és a távolság uralja a hatást",
+          "text": "A gyújtótávolság mélységélességre gyakorolt hatása teljes mértékben attól függ, mit tartasz állandónak. Rögzített tématávolság mellett a mélységélesség élesen szűkül a gyújtótávolsággal — nagyjából annak négyzetével arányosan: 3m-re állva egy témától f/2.8-nál, egy 35mm-es objektív kb. 1,3m mélységélességet ad, míg egy 200mm-es objektív kb. 35mm-et. De ez az összehasonlítás a kompozíciódat is megváltoztatja, hiszen nem kereteztél újra. Rögzített kompozíció mellett — ez az eszköz rögzített látószögű módja, ahol ránagyítás közben hátrálsz, hogy a téma mérete ugyanaz maradjon — a mélységélesség alig mozdul: a 35mm-től 200mm-ig terjedő váltás f/2.8-nál, rögzített kompozíció mellett, jóval 1% alatt változtatja meg a teljes mélységélességet. Ehelyett drámaian a háttér változik: a hosszabb objektív felnagyítja és összenyomja mindazt, ami a témád mögött van, így az életlen fénypontok nagyobbak lesznek, és a háttér jobban elválik, még akkor is, ha a téma körüli éles réteg vastagsága nagyjából ugyanaz marad. Kapcsold be a látószög rögzítését, és váltogasd a gyújtótávolságot, hogy lásd ezt megtörténni — a mélységélesség-kijelzés stabil marad, miközben a háttérelmosódás értéke emelkedik. A téma távolsága mindkét esetben a megbízhatóbb eszköz marad: a rögzített gyújtótávolság és rekesz mellett a közelebb lépés élesen szűkíti a mélységélességet, szorosabbra húzva a közeli és távoli határokat egy rövidebb távolság köré."
         },
         "2": {
-          "heading": "Bokeh és diffrakció",
-          "text": "A bokeh az életlen területek minőségét jelenti. A rekeszlamellák száma és alakja befolyásolja a bokeh jellegét — a kerekebb lamellák lágyabb, kerekebb fénypontokat adnak. Sok objektív a gyakorlati élességi csúcsát f/8 és f/11 körül éri el, jóval azelőtt, hogy a diffrakció komollyá válna. Ennek az eszköznek a saját diffrakciós figyelmeztetése egy szigorúbb, később jelentkező küszöb: csak akkor jelenik meg, amikor a diffrakció okozta életlenség meghaladja az érzékelő szóráskörét, ami Full Frame-en nagyjából f/22-nél (APS-C-n f/15-nél, Micro Four Thirds rendszeren f/11-nél) történik — ezt a figyelmeztetést tekintsd külső határnak, nem élességi célnak."
+          "heading": "Érzékelőméret és ekvivalens kompozíció",
+          "text": "Ahhoz, hogy ugyanaz a téma kitöltse a kockát, a nagyobb érzékelőnek arányosan hosszabb gyújtótávolságra van szüksége, mint a kisebbnek — egy Full Frame kamerának nagyjából 1,5-szörös gyújtótávolság kell egy APS-C kamerához képest, és kb. 2-szeres egy Micro Four Thirds rendszerhez képest, ugyanahhoz a látószöghöz. Mivel a mélységélesség szűkül a gyújtótávolsággal, ez a hosszabb „ekvivalens” gyújtótávolság az, ami a Full Frame kameráknak a kisebb mélységélesség hírnevét adja — az objektívre nyomtatott f-szám nem mond el mindent. Két objektív, azonos rekeszértéken, különböző érzékelőméreteken, azonosan keretezve, jelentősen eltérő mélységélességet ad."
         }
       },
       "keyFactors": {
         "0": {
           "label": "Rekesz",
-          "description": "A tágabb rekesz (f/1.4–f/2.8) kis mélységélességet ad krémes bokehval. A szűkebb rekesz (f/8–f/16) a teljes jelenet élességét növeli."
+          "description": "A tágabb rekesz (alacsony f-szám, például f/1.4-f/2.8) meredekebb fénykúpot nyit, és csökkenti a mélységélességet. A szűkebb rekesz (f/8-f/16) növeli azt."
         },
         "1": {
           "label": "Gyújtótávolság",
-          "description": "Rögzített tématávolság mellett a mélységélesség élesen szűkül a gyújtótávolság növekedésével. Rögzített kompozíció mellett — ránagyítasz és hátrébb lépsz, hogy ugyanaz a kép maradjon — a mélységélesség szinte alig változik; ehelyett a háttér alakul át, egyre jobban felnagyítva és elmosódva, ahogy nő a gyújtótávolság."
+          "description": "Rögzített tématávolság mellett a mélységélesség nagyjából a gyújtótávolság négyzetével arányosan szűkül. Rögzített kompozíció mellett (ránagyítasz és hátrébb lépsz, hogy ugyanaz a kép maradjon) a mélységélesség alig változik — ehelyett a háttér alakul át, egyre jobban felnagyítva és elmosódva, ahogy nő a gyújtótávolság."
         },
         "2": {
           "label": "Téma távolsága",
-          "description": "Minél közelebbre fókuszálsz, annál kisebb a mélységélesség. A makrófotósok gyakran milliméterekben mérik a mélységélesség-et."
+          "description": "A témához közelebb lépés szinte bármelyik más beállításnál gyorsabban csökkenti a mélységélességet, ezért olyan borotvaéles a makrófotózás éles zónája."
         },
         "3": {
           "label": "Érzékelőméret",
-          "description": "A nagyobb érzékelőhöz ugyanahhoz a kompozícióhoz hosszabb gyújtótávolság kell, ami közvetetten szűkíti a mélységélesség-et. Egy Full Frame kamera kisebb mélységélességet ad, mint egy Micro Four Thirds ugyanazon a kompozíción."
+          "description": "A nagyobb érzékelőknek hosszabb gyújtótávolság kell ugyanahhoz a kompozícióhoz, mint a kisebbeknek, ami közvetve kisebb mélységélességet eredményez ekvivalens felvételeknél."
         }
       },
       "tips": {
         "0": {
-          "text": "Csoportképhez f/5.6-ot vagy szűkebb rekeszt használj, és mindenki álljon egy síkba. Tágra nyitott rekesznél már egy féllépéssel előrébb álló ember is kieshet a fókuszból."
+          "text": "Tág rekesznél, mint f/1.4-f/2.0, a mélységélesség vékonyabb lehet, mint egy emberi arc. Pontosan a közelebbi szemre fókuszálj, ne az orra vagy a fülre, különben a téma tekintete életlennek fog látszani."
         },
         "1": {
-          "text": "Tájképnél a hiperfokális távolságra fókuszálj, ne a végtelenre. Így az éles zóna a közeli előtértől a távoli háttérig terjed."
+          "text": "Használd a kompozíciós presetet (Arc, Portré, Közép snitt stb.), hogy rögzítsd a téma méretét a képen kísérletezés közben — ezek a gyújtótávolságot és a távolságot ugyanabban a viszonyban tartják, mint egy valódi felvétel, így az itt látott elmosódás megegyezik azzal, amit a kamerában kapnál."
         },
         "2": {
-          "text": "Ha portrénál a maximális háttérelmosódást akarod, növeld a gyújtótávolságot, és menj olyan közel a témához, amennyire a kompozíció engedi — a kettő összeadódik, és drasztikusan csökkenti a mélységélesség-et."
+          "text": "Ne a maximális mélységélességet hajszold a rekesz teljes leszűkítésével — a legtöbb objektív f/8-f/11 körül a legélesebb, jóval azelőtt, hogy ennek az eszköznek a diffrakciós figyelmeztetése megjelenne. Az a figyelmeztetés szigorúbb, később jelentkező küszöb: csak akkor gyullad ki, amikor a diffrakció okozta életlenség meghaladja az érzékelő szóráskörét, ami Full Frame-en nagyjából f/22-nél (APS-C-n f/15-nél, Micro Four Thirds rendszeren f/11-nél) történik. Az f/8-f/11-et tekintsd gyakorlati célnak, a figyelmeztető jelzést pedig külső határnak, nem célnak."
         }
       },
       "tooltips": {
@@ -56,47 +56,23 @@
         },
         "subjectDistance": {
           "term": "Téma távolsága",
-          "definition": "A kamera érzékelője és a fókuszpont közötti távolság. A közelebbi fókuszpont kisebb mélységélességet eredményez."
+          "definition": "A kamera és a fókuszpont közötti távolság. A közelebbi fókusztávolság kisebb mélységélességet eredményez."
         },
         "sensor": {
           "term": "Érzékelőméret",
-          "definition": "A kamera érzékelőjének fizikai mérete. A nagyobb érzékelők (Full Frame, közepes formátum) azonos kompozíción kisebb mélységélességet adnak, mint a kisebb érzékelők (APS-C, Micro Four Thirds)."
-        },
-        "orientation": {
-          "term": "Tájolás",
-          "definition": "Váltás fekvő (vízszintes) és álló (függőleges) tájolás között. Ez a kompozíció referenciáját módosítja a téma távolságának számításához."
-        },
-        "nearFocus": {
-          "term": "Közeli éles határ",
-          "definition": "A kamerához legközelebbi távolság, ami még elfogadhatóan élesnek látszik. Minden, ami ennél közelebb van, elmosódott lesz."
-        },
-        "farFocus": {
-          "term": "Távoli éles határ",
-          "definition": "A kamerától legtávolabbi távolság, ami még elfogadhatóan élesnek látszik. Ha ez a végtelenbe nyúlik, a közeli határon túli minden fókuszban van."
-        },
-        "totalDoF": {
-          "term": "Teljes mélységélesség",
-          "definition": "A közeli és távoli éles határ közötti teljes távolság — az a zóna, ami élesnek látszik a képen."
+          "definition": "A kamera érzékelőjének fizikai mérete. A nagyobb érzékelőknek (Full Frame, közepes formátum) hosszabb gyújtótávolság kell az ekvivalens kompozícióhoz, ami kisebb mélységélességet ad, mint a kisebb érzékelőknél (APS-C, Micro Four Thirds)."
         },
         "hyperfocal": {
           "term": "Hiperfokális távolság",
           "definition": "Az a fókusztávolság, amelyen a mélységélesség maximális. Ha erre fókuszálsz, a hiperfokális távolság felétől a végtelenig minden élesnek látszik."
         },
+        "coc": {
+          "term": "Szóráskör",
+          "definition": "Az a legnagyobb elmosódott folt az érzékelőn, ami a szem számára még pontnak látszik. Ez határozza meg az elfogadható élesség határát a mélységélesség-számításokban."
+        },
         "backgroundBlur": {
           "term": "Háttérelmosódás",
           "definition": "Annak mértéke, mennyire elmosódott a háttér a téma mögött. A magasabb érték erősebb elmosódást és jobb témaelválasztást jelent."
-        },
-        "coc": {
-          "term": "Szóráskör",
-          "definition": "Az a legnagyobb elmosódott folt az érzékelőn, ami a szem számára még pontnak látszik. Ez határozza meg az elfogadható élesség határát a mélységélesség-számításhoz."
-        },
-        "isolationScore": {
-          "term": "Elválasztási pontszám",
-          "definition": "Egy összetett értékelés (0–100), ami megmutatja, mennyire jól van a téma elkülönítve a háttértől, a háttérelmosódás mértéke alapján."
-        },
-        "bokehShape": {
-          "term": "Bokeh alakja",
-          "definition": "Az életlen fénypontok formája, amit a rekeszlamellák száma és ívük határoz meg. A több lamella kerekebb, lágyabb bokeh-t ad."
         },
         "diffractionWarning": {
           "term": "Diffrakció",
@@ -105,100 +81,62 @@
       },
       "challenges": {
         "0": {
-          "scenario": "Portrét fotózol, és szépen elmosódott hátteret szeretnél. Melyik rekeszt válaszd?",
-          "hint": "Az alacsonyabb f-szám tágabb objektívnyílást és erősebb háttérelmosódást jelent.",
-          "successMessage": "Így van! A tágabb rekesz (pl. f/1.8 vagy f/2.8) kis mélységélességet ad, és kellemes bokehval választja el a témát a háttértől.",
-          "failureMessage": "Nem egészen. A szűkebb rekesz (pl. f/11 vagy f/16) a jelenet nagy részét élesen tartja. A háttérelmosódáshoz tág rekesz (alacsony f-szám) kell.",
+          "scenario": "Portrét fotózol, és azt szeretnéd, hogy a háttér puha elmosódásba olvadjon a témád mögött. Melyik rekeszt válaszd?",
+          "hint": "Az alacsonyabb f-szám tágabb nyílást jelent — és kisebb mélységélességet.",
+          "successMessage": "Így van — az f/1.4 tágra nyitja a rekeszt, kis mélységélességet és egyenletesen elmosódott hátteret eredményezve.",
+          "failureMessage": "Nem egészen. A magasabb f-szám, mint f/11 vagy f/16, több mindent élesen tart a jelenetből. A maximális háttérelmosódáshoz inkább a legtágabb rekeszt (a legalacsonyabb f-számot) válaszd.",
           "options": {
-            "0": {
-              "label": "f/1.8"
-            },
-            "1": {
-              "label": "f/5.6"
-            },
-            "2": {
-              "label": "f/11"
-            },
-            "3": {
-              "label": "f/16"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/5.6" },
+            "2": { "label": "f/11" },
+            "3": { "label": "f/16" }
           }
         },
         "1": {
-          "scenario": "Nyolcfős esküvői csoportképet fotózol, két sorba rendezve. Melyik rekesszel éri el mindenki az élességet?",
-          "hint": "Mivel az emberek kissé eltérő távolságban állnak, elég mélységélesség kell mindkét sor lefedéséhez.",
-          "successMessage": "Jó választás! Az f/5.6 elég mélységélességet ad ahhoz, hogy mindkét sor éles maradjon, és a záridő is kezelhető marad beltérben.",
-          "failureMessage": "Ez a rekesz vagy a hátsó sort hagyja életlenül, vagy feleslegesen szűk. Két sor embernél az f/5.6 megbízható kiindulópont.",
+          "scenario": "Négy barátodat fotózod, akik lazán csoportosulnak — közülük ketten fél lépéssel előrébb vagy hátrébb állnak a többiekhez képest. Melyik rekesz ad kényelmes biztonsági tartalékot ahhoz, hogy mindenki éles maradjon?",
+          "hint": "Extra mélységélesség kell azoknak lefedésére, akik nincsenek pontosan ugyanabban a fókuszsíkban, de nem kell teljesen leszűkítened a rekeszt.",
+          "successMessage": "Helyes — az f/5.6 kényelmes tartalék mélységélességet ad a kis távolságbeli eltérésekhez, anélkül hogy a szükségesnél jobban leszűkítenéd a rekeszt.",
+          "failureMessage": "Az f/1.4 túl sekély a kissé eltérő távolságban álló embereknek, az f/16 pedig jobban leszűkít, mint amennyire szükség van. Az f/5.6 a megbízható középút.",
           "options": {
-            "0": {
-              "label": "f/1.4"
-            },
-            "1": {
-              "label": "f/2.8"
-            },
-            "2": {
-              "label": "f/5.6"
-            },
-            "3": {
-              "label": "f/22"
-            }
+            "0": { "label": "f/1.4" },
+            "1": { "label": "f/2.8" },
+            "2": { "label": "f/5.6" },
+            "3": { "label": "f/16" }
           }
         },
         "2": {
-          "scenario": "Tájképet fotózol 2 méterre lévő vadvirágokkal és hegyekkel a háttérben. 24 mm-es objektívet használsz Full Frame vázon. Melyik módszerrel maximalizálod az élességet elölről hátulig?",
-          "hint": "Van egy olyan fókusztávolság, ami az előtértől a végtelenig maximalizálja az éles zónát.",
-          "successMessage": "Pontosan! Ha f/11-en a hiperfokális távolságra fókuszálsz, körülbelül 1 métertől a végtelenig minden elfogadhatóan éles lesz — ideális ehhez a jelenethez.",
-          "failureMessage": "Ha a végtelenre fókuszálsz, az előtéri virágok lágyak lesznek. Használd a hiperfokális távolságot, hogy az éles zóna a közeli előtértől a végtelenig terjedjen.",
+          "scenario": "85mm-en, f/1.8-on vagy, a témád 3 méterre van, és észrevehetően szeretnéd növelni a háttérelmosódást anélkül, hogy hozzányúlnál a rekeszhez vagy objektívet váltanál. Mi a leggyorsabb módja?",
+          "hint": "A mélységélesség — és az, hogy a háttér mennyire erősen mosódik el a témádhoz képest — rendkívül érzékeny a téma távolságára.",
+          "successMessage": "Pontosan — a téma távolságának megfelezése drámaian csökkenti a mélységélességet és felnagyítja a háttérelmosódást, anélkül hogy megváltoztatnád a rekeszt vagy az objektívet.",
+          "failureMessage": "A távolabb lépés vagy az ISO növelése nem csökkenti a mélységélességet. A témához közelebb lépés a leggyorsabb módja a háttérelmosódás növelésének rögzített rekesz és gyújtótávolság mellett.",
           "options": {
-            "0": {
-              "label": "Fókuszálj a virágokra (2m)"
-            },
-            "1": {
-              "label": "Fókuszálj a hegyekre (végtelen)"
-            },
-            "2": {
-              "label": "Fókuszálj a hiperfokális távolságra"
-            },
-            "3": {
-              "label": "Fókuszálj a virágok és a hegyek közé félúton"
-            }
+            "0": { "label": "Menj 1,5m-re a témától (fele távolság)" },
+            "1": { "label": "Menj 6m-re a témától (kétszeres távolság)" },
+            "2": { "label": "Lépj hátrébb, hogy növeld a munkatávolságot" },
+            "3": { "label": "Növeld az ISO-t egy fényesebb háttérért" }
           }
         },
         "3": {
-          "scenario": "Makrót fotózol egy virágról, és csak az első szirmok élesek — a többi elmosódik. Most f/5.6-on vagy. Mit csinálj, hogy több legyen élesen?",
-          "hint": "Közeli fókuszon a mélységélesség nagyon keskeny. Gondold át a rekeszt.",
-          "successMessage": "Így van! Ha leszűkítesz f/11-re vagy f/16-ra, megnő a borotvavékony makró mélységélesség. Csak arra figyelj, hogy nagyon kicsi rekesznél már a diffrakció is lágyít.",
-          "failureMessage": "Ha tágabbra nyitod a rekeszt, a mélységélesség még vékonyabb lesz. Makrófotózáskor a leszűkítés (magasabb f-szám) a fő eszköz arra, hogy több legyen élesen.",
+          "scenario": "Tájképet fotózol egy Full Frame kamerával, és a teljes képen maximális élességet szeretnél. Egészen f/22-ig kellene leszűkítened a rekeszt a legnagyobb mélységélességért?",
+          "hint": "Van egy kompromisszum a leszűkítéssel nyert mélységélesség és a nagyon kicsi rekesznél fellépő diffrakció okozta lágyulás között.",
+          "successMessage": "Így van — az f/22 papíron valóban növeli a mélységélességet, de a legtöbb objektív addigra már túl van a legélesebb rekeszértékein. Egy mérsékelt rekesz, mint f/8-f/11, általában jobban egyensúlyoz a mélységélesség és az objektív élessége között. Ennek az eszköznek a saját diffrakciós figyelmeztetése egy külön, később jelentkező küszöb — csak akkor jelez, amikor a diffrakció okozta életlenség meghaladja az érzékelő szóráskörét, ami Full Frame-en csak nagyjából f/22-nél történik (APS-C-n f/15-nél, Micro Four Thirds rendszeren f/11-nél). Ne várd meg ezt a figyelmeztetést, mielőtt visszavennél — ez egy szigorú fizikai határ, nem élességi javaslat.",
+          "failureMessage": "Az egészen f/22-ig való leszűkítés papíron valóban maximalizálja a mélységélességet, de a legtöbb objektív addigra már túl van a legélesebb rekesztartományán. Egy mérsékelt rekesz, mint f/8-f/11, általában jobb egyensúlyt ad a mélységélesség és a valós élesség között. Ennek az eszköznek a diffrakciós figyelmeztetése egy külön, később jelentkező küszöb — csak akkor jelenik meg, amikor az életlenség meghaladja az érzékelő szóráskörét, nagyjából f/22-nél Full Frame-en —, szóval ne a hiányát tekintsd zöld jelzésnek a további leszűkítéshez.",
           "options": {
-            "0": {
-              "label": "Nyisd f/2.8-ra több fényért"
-            },
-            "1": {
-              "label": "Szűkítsd le f/11-re"
-            },
-            "2": {
-              "label": "Válts szélesebb objektívre"
-            },
-            "3": {
-              "label": "Menj távolabb a virágtól"
-            }
+            "0": { "label": "Igen — mindig a legkisebb elérhető rekeszt használd a maximális mélységélességért" },
+            "1": { "label": "Nem — mérsékelt rekeszt, mint f/8-f/11, használj a legjobb összélességért, ne a legkisebbet" },
+            "2": { "label": "Nem — a legtágabb elérhető rekeszt használd a legélesebb eredményért" },
+            "3": { "label": "Nem számít — a rekesznek nincs hatása az élességre" }
           }
         },
         "4": {
-          "scenario": "Két kamerát hasonlítasz össze portréhoz: egy Full Frame 85mm f/1.8-cal és egy Micro Four Thirds 42.5mm f/1.8-cal. A kompozíció ekvivalens. Melyik ad kisebb mélységélességet?",
-          "hint": "Gondolj az ekvivalens gyújtótávolságra, és arra, hogyan hat az érzékelőméret a mélységélesség-re azonos f-számon.",
-          "successMessage": "Így van! A Full Frame durván 2 stoppal kisebb mélységélesség-et ad. Bár az MFT objektív f-száma azonos, a rövidebb valós gyújtótávolság (42,5mm vs. 85mm) ekvivalens kompozíción nagyobb mélységélességet eredményez.",
-          "failureMessage": "Bár mindkét objektív f/1.8, a Full Frame kamera ugyanahhoz a kompozícióhoz hosszabb valós gyújtótávolságot használ, ami jelentősen kisebb mélységélesség-et ad.",
+          "scenario": "Két felállást hasonlítasz össze ugyanahhoz a portré-kompozícióhoz: egy Full Frame kamerát 85mm f/1.8 objektívvel, és egy APS-C kamerát (1,5x crop) 56mm f/1.8 objektívvel, amelyek ugyanazt a látószöget adják. Melyik ad kisebb mélységélességet?",
+          "hint": "Hasonlítsd össze a tényleges (nem ekvivalens) gyújtótávolságot, amit mindkét objektív használ ugyanahhoz a kompozícióhoz.",
+          "successMessage": "Így van — bár mindkét objektív f/1.8, a Full Frame kamera hosszabb tényleges gyújtótávolságot használ (85mm a 56mm-hez képest) a kompozíció eléréséhez, ami érezhetően kisebb mélységélességet ad.",
+          "failureMessage": "Mindkét objektív f-száma azonos, de a Full Frame kamerának hosszabb tényleges gyújtótávolság kell a kompozícióhoz. Ez a hosszabb gyújtótávolság az, ami kisebb mélységélességet ad — nem önmagában az f-szám.",
           "options": {
-            "0": {
-              "label": "Full Frame 85mm f/1.8-cal"
-            },
-            "1": {
-              "label": "Micro Four Thirds 42.5mm f/1.8-cal"
-            },
-            "2": {
-              "label": "Mindkettő azonos mélységélesség-et ad"
-            }
+            "0": { "label": "A Full Frame felállás 85mm f/1.8-cal" },
+            "1": { "label": "Az APS-C felállás 56mm f/1.8-cal" },
+            "2": { "label": "Mindkettő azonos mélységélességet ad" }
           }
         }
       }
