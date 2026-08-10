@@ -1,10 +1,15 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-[lang="ja"] {
+/* The --font-ja/--font-bn custom properties are set (via next/font's
+   `.variable` class) on #main-content in src/app/[locale]/layout.tsx, not on
+   <html>. Custom properties only cascade to descendants, so a bare
+   `[lang="ja"]`/`[lang="bn"]` selector on <html> can never see them -- these
+   rules must target #main-content itself (or a descendant of it) to resolve. */
+html[lang="ja"] #main-content {
   font-family: var(--font-ja, inherit), sans-serif;
 }
 
-[lang="bn"] {
+html[lang="bn"] #main-content {
   font-family: var(--font-bn, inherit), sans-serif;
 }
 
