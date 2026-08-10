@@ -206,6 +206,15 @@ The single e2e failure (`lightroom-catalog-analyzer.spec.ts:75 › renders the c
 
 `src/lib/data/tools.ts` — **left untouched** (`prod: 'draft'`). Flipping to `'live'` is the user's call after reviewing this report, per the task brief.
 
+### Fix round — regression coverage added for both site-wide fixes
+
+The original QA pass above landed fixes 1 and 2 with no test coverage, across a wide blast radius (16 `ToolActions` render sites; every `ja`/`bn` page). A follow-up review flagged this as the one Important gap. Closed it:
+
+- **Share/Embed focus restoration** — `src/components/shared/ToolActions.test.tsx` (new). Renders `ToolActions` under `NextIntlClientProvider`, focuses the "Embed" button, opens the modal, closes it via the × button and separately via Escape, and asserts `document.activeElement` is back on the trigger (not `document.body`) after each. Real RTL assertion, not vacuous — jsdom supports the DOM focus APIs and event dispatch Radix's `FocusScope` unmount cleanup relies on (`document.activeElement`, `focusin`/`focusout`, `MutationObserver`, a `setTimeout(0)`-deferred `onCloseAutoFocus`), so no Playwright fallback was needed. Verified the test fails if the fix is reverted: temporarily removed the `onCloseAutoFocus`/`triggerRef` wiring from `ShareModal.tsx` — both tests failed with `document.activeElement` resolving to `<body>`; restored, both pass again.
+- **ja/bn conditional fonts** — `src/e2e/smoke/conditional-fonts.spec.ts` (new). Loads `/ja/fov-simulator` and `/bn/fov-simulator` (a genuinely `prod: 'live'` tool) against the production build and asserts `getComputedStyle` on an `h1` **descendant** of `#main-content` (not `#main-content` itself, to actually exercise the cascade) includes `Noto Sans JP` / `Noto Sans Bengali` respectively; a third case loads `/en/fov-simulator` and asserts neither family is present. The real resolved next/font strings were read live in the browser rather than guessed: `"Noto Sans JP", "Noto Sans JP Fallback", sans-serif` and `"Noto Sans Bengali", "Noto Sans Bengali Fallback", sans-serif`. Verified the test fails if the fix is reverted: temporarily changed `globals.css` back to the bare `[lang="ja"]`/`[lang="bn"]` selectors (rebuilt + restarted) — both the ja and bn tests failed, computed `font-family` fell back to the default `-apple-system, ...` stack; restored the fix, rebuilt, all three tests pass again.
+
+Full suite re-run after adding both tests: `npx vitest run` → 190 files / 1585 tests passed; `npm run test:e2e` → 228 passed, 1 failed (the same known pre-existing `lightroom-catalog-analyzer` golden-stats failure), 2 skipped; `type-check` and `lint` clean.
+
 ---
 
 ## Gate verdict
