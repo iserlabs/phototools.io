@@ -50,8 +50,21 @@ export function createTapsCache(): (shape: BokehShapeId) => Float32Array {
 const BLOOM_INTENSITY = 1.5
 
 /**
- * One scissored draw pass per side. Single-side: full width, no scissor.
- * Two-sided: sideA gets [0, dividerPos·w), sideB gets [dividerPos·w, w).
+ * Single-side: full viewport, no scissor. Two-sided splits at `dividerPos`,
+ * in one of two genuinely different ways (A/B honesty fix, dof-simulator
+ * final fix wave item C — `wipe` and `split` used to be visually identical):
+ *
+ *  - `wipe` (sideBySide=false): ONE shared frame, scissored at the divider.
+ *    Both sides render the identical full-canvas quad/uv mapping, so the
+ *    underlying scene stays perfectly continuous across the line and only
+ *    the blur amount/shape changes — a literal wipe across one photo.
+ *  - `split` (sideBySide=true): TWO independent frames. Each side gets its
+ *    OWN viewport (not a scissor crop of one shared frame), so each pane
+ *    shows the COMPLETE scene at its own pane width rather than a slice of
+ *    a single continuous image — genuine side-by-side. `uViewAspect` is
+ *    recomputed per pane so the bokeh kernel's aspect correction
+ *    (bokehBlur.frag's tapScale) matches the pane it's actually drawing
+ *    into, not the full canvas.
  */
 export function drawFrame(
   gl: WebGL2RenderingContext,
@@ -64,16 +77,17 @@ export function drawFrame(
   sideB: SideParams | null,
   dividerPos: number,
   getTaps: (shape: BokehShapeId) => Float32Array,
+  sideBySide = false,
 ): void {
   gl.viewport(0, 0, w, h)
   gl.useProgram(program)
   gl.activeTexture(gl.TEXTURE0)
   gl.bindTexture(gl.TEXTURE_2D, texture)
   gl.uniform1i(uniforms.uTex, 0)
-  gl.uniform1f(uniforms.uViewAspect, w / h)
   gl.uniform1f(uniforms.uBloom, BLOOM_INTENSITY)
 
-  const drawSide = (side: SideParams) => {
+  const drawSide = (side: SideParams, viewAspect: number) => {
+    gl.uniform1f(uniforms.uViewAspect, viewAspect)
     gl.uniform2fv(uniforms.uTaps, getTaps(side.bokeh))
     gl.uniform1f(uniforms.uRadiusFrac, side.blur)
     gl.uniform4fv(uniforms.uUvRect, side.uv)
@@ -82,14 +96,26 @@ export function drawFrame(
 
   if (!sideB) {
     gl.disable(gl.SCISSOR_TEST)
-    drawSide(sideA)
+    drawSide(sideA, w / h)
     return
   }
-  gl.enable(gl.SCISSOR_TEST)
+
   const splitX = Math.round(dividerPos * w)
+
+  if (sideBySide) {
+    gl.disable(gl.SCISSOR_TEST)
+    gl.viewport(0, 0, splitX, h)
+    drawSide(sideA, splitX / h)
+    gl.viewport(splitX, 0, w - splitX, h)
+    drawSide(sideB, (w - splitX) / h)
+    gl.viewport(0, 0, w, h) // restore, so subsequent state (e.g. a re-draw) isn't left half-sized
+    return
+  }
+
+  gl.enable(gl.SCISSOR_TEST)
   gl.scissor(0, 0, splitX, h)
-  drawSide(sideA)
+  drawSide(sideA, w / h)
   gl.scissor(splitX, 0, w - splitX, h)
-  drawSide(sideB)
+  drawSide(sideB, w / h)
   gl.disable(gl.SCISSOR_TEST)
 }

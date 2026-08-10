@@ -26,6 +26,12 @@ export interface UseImageExportDeps {
 export interface UseImageExportApi {
   exportPng(): Promise<void>
   busy: boolean
+  /** True after exportPng() fails (missing canvas, slice-image load failure,
+   *  PNG encoding failure, etc.) — cleared on the next attempt. The caller
+   *  (CenterStage) surfaces this as a visible message; previously a failure
+   *  only reached Sentry, so the button just silently reverted with no
+   *  feedback at all (dof-simulator-rebuild final fix wave, B6). */
+  error: boolean
 }
 
 function loadImage(src: string): Promise<HTMLImageElement> {
@@ -55,12 +61,14 @@ function themeColor(el: Element, propertyName: string, fallback: string): string
 export function useImageExport(deps: UseImageExportDeps): UseImageExportApi {
   const { canvasRef, subject, derived, optics, viewportPx, captionText } = deps
   const [busy, setBusy] = useState(false)
+  const [error, setError] = useState(false)
   const busyRef = useRef(false)
 
   const exportPng = useCallback(async () => {
     if (busyRef.current) return
     busyRef.current = true
     setBusy(true)
+    setError(false)
     try {
       const sourceCanvas = canvasRef.current
       if (!sourceCanvas) throw new Error('dof-simulator export: viewport canvas not ready')
@@ -108,11 +116,12 @@ export function useImageExport(deps: UseImageExportDeps): UseImageExportApi {
       downloadBlob(blob, 'dof-simulation.png')
     } catch (err) {
       Sentry.captureException(err, { tags: { module: 'dof-simulator', op: 'exportPng' } })
+      setError(true)
     } finally {
       busyRef.current = false
       setBusy(false)
     }
   }, [canvasRef, subject, derived, optics, viewportPx, captionText])
 
-  return { exportPng, busy }
+  return { exportPng, busy, error }
 }

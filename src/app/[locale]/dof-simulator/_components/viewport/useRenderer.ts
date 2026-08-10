@@ -36,11 +36,11 @@ export function useRenderer(
   sideA: RenderSide,
   sideB: RenderSide | null,
   dividerPos: number,
+  sideBySide = false,
 ): RendererApi {
   const [status, setStatus] = useState<RendererApi['status']>('loading')
   // Bumped after a post-restore rebuild so the texture-load effect below
-  // re-runs even though `textureUrl` is unchanged (the GPU texture was
-  // invalidated along with everything else on the lost context).
+  // re-runs even though `textureUrl` is unchanged (the GPU texture was invalidated too).
   const [restoreGeneration, setRestoreGeneration] = useState(0)
   const handleRef = useRef<GlHandle | null>(null)
   const programRef = useRef<WebGLProgram | null>(null)
@@ -74,9 +74,9 @@ export function useRenderer(
       handle.gl, program, uniforms, texture, w, h,
       { blur: aBlur, bokeh: aBokeh, uv: [aUv0, aUv1, aUv2, aUv3] },
       hasSideB ? { blur: bBlur, bokeh: bBokeh, uv: [bUv0, bUv1, bUv2, bUv3] } : null,
-      dividerPos, getTapsRef.current,
+      dividerPos, getTapsRef.current, sideBySide,
     )
-  }, [canvasRef, dividerPos, aBlur, aBokeh, aUv0, aUv1, aUv2, aUv3, hasSideB, bBlur, bBokeh, bUv0, bUv1, bUv2, bUv3])
+  }, [canvasRef, dividerPos, aBlur, aBokeh, aUv0, aUv1, aUv2, aUv3, hasSideB, bBlur, bBokeh, bUv0, bUv1, bUv2, bUv3, sideBySide])
   drawRef.current = draw
 
   const loadTex = useCallback(() => {
@@ -146,7 +146,11 @@ export function useRenderer(
       // Context loss invalidates every GPU object, including the quad VBO that
       // createGl built on the (identical, per spec) restored context — rebuild
       // it via the same call, discarding the returned handle wrapper.
-      if (!createGl(canvas)) return
+      if (!createGl(canvas)) {
+        // Rebuild failed — unusable context; fall back instead of stranding at 'loading'.
+        setStatus('fallback')
+        return
+      }
       // Only reload when the rebuild succeeded (a failed rebuild never loaded
       // a texture either). Bumping state — not calling loadTex directly —
       // routes the reload through the single owning effect below.

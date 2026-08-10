@@ -77,6 +77,12 @@
   color: var(--accent);
 }
 
+.toolbarError {
+  font-size: 11px;
+  color: #f59e0b;
+  white-space: nowrap;
+}
+
 .viewportWrap {
   flex: 1;
   display: flex;

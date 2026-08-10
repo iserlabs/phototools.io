@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useRef } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Viewport } from './viewport/Viewport'
 import { useViewportSize } from './viewport/useViewportSize'
@@ -8,7 +8,7 @@ import { ModelLayer } from './viewport/ModelLayer'
 import { BokehInset } from './viewport/BokehInset'
 import { AbDivider } from './viewport/AbDivider'
 import { useApertureSweep } from './viewport/useApertureSweep'
-import type { RenderSide } from './viewport/useRenderer'
+import type { RenderSide, RendererApi } from './viewport/useRenderer'
 import { uvRectForAspect } from './viewport/webgl/glTexture'
 import { useImageExport } from './export/useImageExport'
 import { DofRulerConnected } from './ruler/DofRulerConnected'
@@ -58,10 +58,21 @@ export function CenterStage({ dofState, subject, background, onDistanceChange }:
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
   const viewportPx = useViewportSize(overlayRef)
+  // Tracks the WebGL renderer's status so Export can be disabled once the
+  // fallback/error path unmounts <canvas> — exporting from that state used to
+  // throw with no visible feedback (dof-simulator-rebuild final fix wave, B6).
+  const [viewportStatus, setViewportStatus] = useState<RendererApi['status']>('loading')
+  const canvasUnavailable = viewportStatus === 'fallback' || viewportStatus === 'error'
 
   const viewAspect = derived.sensorWMm / derived.sensorHMm
   const texAspect = appearance.orientation === 'landscape' ? BG_ASSET_ASPECT : 1 / BG_ASSET_ASPECT
   const uvRect = useMemo(() => uvRectForAspect(texAspect, viewAspect), [texAspect, viewAspect])
+  // B's own sensor can differ from A's (b_s is a live query param) — its uv
+  // crop must come from ITS OWN aspect, not A's. Reusing `uvRect` here used
+  // to letterbox/crop set B's background as if it shared set A's sensor,
+  // which is wrong whenever they differ (A/B honesty fix, item C).
+  const viewAspectB = derivedB ? derivedB.sensorWMm / derivedB.sensorHMm : viewAspect
+  const uvRectB = useMemo(() => uvRectForAspect(texAspect, viewAspectB), [texAspect, viewAspectB])
 
   const sideA: RenderSide = useMemo(
     () => ({ blurRadiusFrac: derived.backgroundBlurMm / derived.sensorWMm, bokeh, uvRect }),
@@ -69,8 +80,8 @@ export function CenterStage({ dofState, subject, background, onDistanceChange }:
   )
   const sideB: RenderSide | null = useMemo(() => {
     if (ab.mode === 'off' || !derivedB) return null
-    return { blurRadiusFrac: derivedB.backgroundBlurMm / derivedB.sensorWMm, bokeh, uvRect }
-  }, [ab.mode, derivedB, bokeh, uvRect])
+    return { blurRadiusFrac: derivedB.backgroundBlurMm / derivedB.sensorWMm, bokeh, uvRect: uvRectB }
+  }, [ab.mode, derivedB, bokeh, uvRectB])
 
   const fallbackBlurPx = Math.min(MAX_BLUR_PX, blurMmToPx(derived.backgroundBlurMm, derived.sensorWMm, viewportPx.w))
   const modelOptics = useMemo(
@@ -78,7 +89,7 @@ export function CenterStage({ dofState, subject, background, onDistanceChange }:
     [optics, derived.effectiveFl],
   )
 
-  const captionText = `${formatMm(derived.effectiveFl)} · ${formatAperture(optics.aperture)} · ${formatDistance(optics.distanceM, uiPrefs.imperial)} · ${derived.sensor.name} — phototools.io`
+  const captionText = `${formatMm(derived.effectiveFl)} · ${formatAperture(optics.aperture)} · ${formatDistance(optics.distanceM, uiPrefs.imperial, t('distanceUnit'))} · ${derived.sensor.name} — phototools.io`
   const exporter = useImageExport({ canvasRef, subject, derived, optics: modelOptics, viewportPx, captionText })
   const sweep = useApertureSweep(optics.setAperture)
 
@@ -97,10 +108,12 @@ export function CenterStage({ dofState, subject, background, onDistanceChange }:
           type="button"
           className={styles.toolbarBtn}
           onClick={exporter.exportPng}
-          disabled={exporter.busy || viewportPx.w === 0}
+          disabled={exporter.busy || viewportPx.w === 0 || canvasUnavailable}
+          title={canvasUnavailable ? t('exportUnavailable') : undefined}
         >
           {exporter.busy ? t('exportImageBusy') : t('exportImage')}
         </button>
+        {exporter.error && <span className={styles.toolbarError}>{t('exportFailed')}</span>}
       </div>
 
       <div className={styles.viewportWrap}>
@@ -112,7 +125,9 @@ export function CenterStage({ dofState, subject, background, onDistanceChange }:
           sideA={sideA}
           sideB={sideB}
           dividerPos={ab.dividerPos}
+          sideBySide={ab.mode === 'split'}
           fallbackBlurPx={fallbackBlurPx}
+          onStatusChange={setViewportStatus}
         >
           <div ref={overlayRef} className={styles.overlayLayer}>
             {viewportPx.w > 0 && viewportPx.h > 0 && (
