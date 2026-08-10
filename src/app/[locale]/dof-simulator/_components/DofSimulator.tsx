@@ -45,6 +45,22 @@ export function DofSimulator() {
     [dofState, trackParam],
   )
 
+  const handleFocalLengthChangeB = useCallback(
+    (v: number) => {
+      trackParam({ param_name: 'focal_length_b', param_value: String(v), input_type: 'slider' })
+      dofState.changeFocalLengthB(v)
+    },
+    [dofState, trackParam],
+  )
+
+  const handleDistanceChangeB = useCallback(
+    (v: number) => {
+      trackParam({ param_name: 'distance_b', param_value: String(v), input_type: 'slider' })
+      dofState.changeDistanceB(v)
+    },
+    [dofState, trackParam],
+  )
+
   const handlePreset = useCallback(
     (key: FramingPresetDef['key']) => {
       trackParam({ param_name: 'framing_preset', param_value: key, input_type: 'button' })
@@ -68,6 +84,8 @@ export function DofSimulator() {
     dofState, background,
     onFocalLengthChange: handleFocalLengthChange,
     onDistanceChange: handleDistanceChange,
+    onFocalLengthChangeB: handleFocalLengthChangeB,
+    onDistanceChangeB: handleDistanceChangeB,
     onPreset: handlePreset,
     onReset: dofState.reset,
   }

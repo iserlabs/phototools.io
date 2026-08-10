@@ -1,5 +1,6 @@
 import { numParam, strParam, sensorParam } from '@/lib/utils/querySync'
 import { BOKEH_SHAPE_IDS } from '@/lib/data/dofSimulator/bokeh'
+import { DIST_MIN, DIST_MAX } from './distanceDomain'
 import type { BokehShapeId, TeleconverterId } from '@/lib/data/dofSimulator/types'
 
 /**
@@ -21,7 +22,7 @@ function strOrNullParam() {
 export const PARAM_SCHEMA = {
   fl: numParam(85, 8, 1200),
   f: numParam(2.8, 0.7, 64),
-  d: numParam(3, 0.1, 100),
+  d: numParam(3, DIST_MIN, DIST_MAX),
   s: sensorParam('ff'),
   cam: strOrNullParam(),
   lens: strOrNullParam(),
@@ -35,6 +36,6 @@ export const PARAM_SCHEMA = {
   // A/B compare mode shows two distinguishable setups out of the box.
   b_fl: numParam(50, 8, 1200),
   b_f: numParam(5.6, 0.7, 64),
-  b_d: numParam(3, 0.1, 100),
+  b_d: numParam(3, DIST_MIN, DIST_MAX),
   b_s: sensorParam('ff'),
 }

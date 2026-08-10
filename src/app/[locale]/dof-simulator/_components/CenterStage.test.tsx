@@ -204,6 +204,8 @@ function makeDofState(opticsApi: OpticsApi): DofStateApi {
     setBokeh: vi.fn(),
     changeFocalLength: vi.fn(() => ({ clamped: false })),
     changeDistance: vi.fn(() => ({ clamped: false })),
+    changeFocalLengthB: vi.fn(() => ({ clamped: false })),
+    changeDistanceB: vi.fn(() => ({ clamped: false })),
     applyFramingPreset: vi.fn(),
     reset: vi.fn(),
   }

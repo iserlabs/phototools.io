@@ -27,6 +27,8 @@ interface SidebarProps {
   background: DofBackground
   onFocalLengthChange(v: number): void // tracked + lock-FOV aware, set A only
   onDistanceChange(v: number): void // tracked + lock-FOV aware, set A only
+  onFocalLengthChangeB(v: number): void // tracked + lock-FOV aware, set B only
+  onDistanceChangeB(v: number): void // tracked + lock-FOV aware, set B only
   onPreset(key: FramingPresetDef['key']): void // tracked, set A only
   onReset(): void
   hideTitle?: boolean
@@ -41,15 +43,23 @@ interface SidebarProps {
  * (lock-FOV) and the saved-rows store aren't duplicated per A/B set in the
  * state facade.
  */
-export function Sidebar({ dofState, background, onFocalLengthChange, onDistanceChange, onPreset, onReset, hideTitle }: SidebarProps) {
+export function Sidebar({
+  dofState, background, onFocalLengthChange, onDistanceChange, onFocalLengthChangeB, onDistanceChangeB,
+  onPreset, onReset, hideTitle,
+}: SidebarProps) {
   const t = useTranslations('toolUI.dof-simulator')
   const { optics, appearance, framing, uiPrefs, ab, saved, derived, derivedB, bokeh, setBokeh } = dofState
 
   const activeIsB = ab.mode !== 'off' && ab.activeSet === 'b'
   const activeOptics = activeIsB ? ab.b : optics
   const activeDerived = activeIsB ? (derivedB ?? derived) : derived
-  const handleFocalLengthChange = activeIsB ? ab.b.setFocalLength : onFocalLengthChange
-  const handleDistanceChange = activeIsB ? ab.b.setDistanceM : onDistanceChange
+  // Both sets route through the same clamped/lock-FOV-aware action path
+  // (useDofState's changeFocalLength(B)/changeDistance(B), backed by
+  // framingActions.ts) rather than B calling ab.b.setFocalLength/setDistanceM
+  // directly, which used to skip the lens envelope + DIST_BOUNDS clamps and
+  // lock-FOV re-solving entirely (dof-simulator-rebuild final fix wave, B2).
+  const handleFocalLengthChange = activeIsB ? onFocalLengthChangeB : onFocalLengthChange
+  const handleDistanceChange = activeIsB ? onDistanceChangeB : onDistanceChange
 
   const camera = optics.cameraId ? getCameraById(optics.cameraId) : undefined
   const currentRow: Omit<SavedRow, 'id'> = {
@@ -89,6 +99,7 @@ export function Sidebar({ dofState, background, onFocalLengthChange, onDistanceC
       <SavedSettingsPanelConnected
         saved={saved}
         current={currentRow}
+        imperial={uiPrefs.imperial}
         onApply={(row) => {
           optics.setFocalLength(row.focalLength)
           optics.setAperture(row.aperture)

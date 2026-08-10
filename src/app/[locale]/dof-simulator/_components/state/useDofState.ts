@@ -28,6 +28,10 @@ export interface DofStateApi {
   setBokeh(v: BokehShapeId): void
   changeFocalLength(v: number): { clamped: boolean }
   changeDistance(v: number): { clamped: boolean }
+  // B-side mirrors of the above -- same FL-envelope/DIST_BOUNDS clamping and
+  // lock-FOV re-solving as set A's, applied to ab.b instead of optics (B2).
+  changeFocalLengthB(v: number): { clamped: boolean }
+  changeDistanceB(v: number): { clamped: boolean }
   applyFramingPreset(key: FramingPresetDef['key']): void
   reset(): void
 }
@@ -59,6 +63,20 @@ export function useDofState(): DofStateApi {
   const changeDistance = useCallback(
     (v: number) => changeDistanceAction(v, optics, framing, derived.sensorHMm),
     [optics, framing, derived.sensorHMm]
+  )
+  // Same actions, B's own optics/sensor -- reusing framingActions.ts's generic
+  // (optics, framing, sensorHMm) signature rather than duplicating the clamp/
+  // lock-FOV logic for a second set (B2). `framing`'s lock-FOV state is shared
+  // with A (Sidebar.tsx documents why: it isn't duplicated per A/B set in this
+  // facade) -- holding it while editing B re-solves B's OWN distance/FL against
+  // B's OWN sensorHMm, so the frame-height target is honored per set.
+  const changeFocalLengthB = useCallback(
+    (v: number) => changeFocalLengthAction(v, ab.b, framing, derivedBRaw.sensorHMm),
+    [ab.b, framing, derivedBRaw.sensorHMm]
+  )
+  const changeDistanceB = useCallback(
+    (v: number) => changeDistanceAction(v, ab.b, framing, derivedBRaw.sensorHMm),
+    [ab.b, framing, derivedBRaw.sensorHMm]
   )
   const applyFramingPreset = useCallback(
     (key: FramingPresetDef['key']) => applyFramingPresetAction(key, optics, framing, derived.effectiveFl, derived.sensorHMm),
@@ -151,6 +169,7 @@ export function useDofState(): DofStateApi {
   return {
     optics, appearance, framing, uiPrefs, ab, saved,
     derived, derivedB, bokeh, setBokeh,
-    changeFocalLength, changeDistance, applyFramingPreset, reset,
+    changeFocalLength, changeDistance, changeFocalLengthB, changeDistanceB,
+    applyFramingPreset, reset,
   }
 }

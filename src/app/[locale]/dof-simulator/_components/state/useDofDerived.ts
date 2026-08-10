@@ -1,10 +1,10 @@
 'use client'
 
 import { useMemo } from 'react'
-import { calcDoF, calcDefocusBlur, calcEquivalentSettings, calcAiryDisk } from '@/lib/math/dof'
+import { calcDoF, calcDefocusBlur, calcEquivalentSettings, calcAiryDisk, calcDefaultCoc } from '@/lib/math/dof'
 import { figureFraction, selectCropLevel, type CropLevel } from '@/lib/math/projection'
 import { getDofSensor } from '@/lib/data/dofSimulator/sensors'
-import { getLensById, maxApertureAt } from '@/lib/data/dofSimulator/lenses'
+import { getLensById, effectiveMaxApertureAt } from '@/lib/data/dofSimulator/lenses'
 import { TELECONVERTERS } from '@/lib/data/dofSimulator/teleconverters'
 import type { DofSubject, DofBackground, BokehShapeId } from '@/lib/data/dofSimulator/types'
 import type { SensorPreset } from '@/lib/types'
@@ -58,9 +58,9 @@ export function computeDerived(input: DerivedInput): DofDerived {
   const lens = optics.lensId ? getLensById(optics.lensId) : undefined
   // TC stops applied via the same flFactor used for effectiveFl: at a fixed entrance
   // pupil diameter, the f-number scales with the effective focal length increase.
-  const effectiveMaxAperture = lens ? maxApertureAt(lens, optics.focalLength) * tc.flFactor : null
+  const effectiveMaxAperture = lens ? effectiveMaxApertureAt(lens, optics.focalLength, optics.teleconverterId) : null
 
-  const cocMm = optics.customCocMm ?? 0.03 / sensor.cropFactor
+  const cocMm = optics.customCocMm ?? calcDefaultCoc(sensor.cropFactor)
 
   const dof = calcDoF({ focalLength: effectiveFl, aperture: optics.aperture, distance: optics.distanceM, coc: cocMm })
 
@@ -95,10 +95,14 @@ export function computeDerived(input: DerivedInput): DofDerived {
   // distance so it never claims sharpness past the scene object actually drawn
   // there — except when focus sits at/beyond the hyperfocal distance, where far
   // focus (and thus total DoF) is genuinely infinite and reporting that truth
-  // (rather than an artificial background-distance cap) is correct.
+  // (rather than an artificial background-distance cap) is correct. Floored at 0:
+  // the advanced background-distance override can be dragged closer than the
+  // subject itself, which would otherwise go negative and push inFrontPct past 100%.
   const inFrontM = optics.distanceM - dof.nearFocus
-  const behindM =
+  const behindM = Math.max(
+    0,
     dof.totalDoF === Infinity ? dof.totalDoF - inFrontM : Math.min(dof.farFocus, bgDistanceM) - optics.distanceM
+  )
   const inFrontPct = inFrontM + behindM > 0 ? (inFrontM / (inFrontM + behindM)) * 100 : 0
 
   return {

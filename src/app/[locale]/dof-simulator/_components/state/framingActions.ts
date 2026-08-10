@@ -2,6 +2,7 @@ import { distanceForFraming, flForFraming, clampTo } from '@/lib/math/framingSol
 import { getLensById } from '@/lib/data/dofSimulator/lenses'
 import { TELECONVERTERS } from '@/lib/data/dofSimulator/teleconverters'
 import { FRAMING_PRESETS } from '@/lib/data/dofSimulator/framing'
+import { DIST_MIN, DIST_MAX } from './distanceDomain'
 import type { FramingPresetDef } from '@/lib/data/dofSimulator/types'
 import type { OpticsApi } from './useOptics'
 import type { FramingApi } from './useFraming'
@@ -9,7 +10,9 @@ import type { FramingApi } from './useFraming'
 // FL bounds without a lens attached — matches PARAM_SCHEMA's fl/b_fl range and
 // the LensPanel slider range (Task 20).
 const FL_BOUNDS: readonly [number, number] = [8, 1200]
-const DIST_BOUNDS: readonly [number, number] = [0.1, 100]
+// Canonical distance domain (distanceDomain.ts) — matches PARAM_SCHEMA's d/b_d
+// range and DistancePanel's slider/input bounds.
+const DIST_BOUNDS: readonly [number, number] = [DIST_MIN, DIST_MAX]
 
 function flBoundsFor(optics: OpticsApi): readonly [number, number] {
   const lens = optics.lensId ? getLensById(optics.lensId) : undefined
