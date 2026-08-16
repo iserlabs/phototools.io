@@ -69,6 +69,11 @@ describe('IGNORE_SENTRY_ERRORS', () => {
         'TypeError',
         "undefined is not an object (evaluating 'window.ethereum.selectedAddress = undefined')",
       ],
+      [
+        'Firefox skipping a view transition in a hidden tab (PHOTOTOOLS-V)',
+        'InvalidStateError',
+        'Skipped ViewTransition due to document being hidden',
+      ],
     ]
 
     it.each(noise)('drops: %s', (_name, type, value) => {
@@ -109,6 +114,20 @@ describe('IGNORE_SENTRY_ERRORS', () => {
         'WebKit missing global in our own bundle',
         'ReferenceError',
         "Can't find variable: gtag",
+      ],
+      // The view-transition filter keys on the SKIP message, never on the
+      // `InvalidStateError` type — our own canvas/IndexedDB/WebGL code raises
+      // that type for real faults the Lightroom analyzer and export paths must
+      // keep reporting.
+      [
+        'genuine InvalidStateError from our own IndexedDB code',
+        'InvalidStateError',
+        "Failed to execute 'transaction' on 'IDBDatabase': A version change transaction is running.",
+      ],
+      [
+        'genuine InvalidStateError from a detached canvas export',
+        'InvalidStateError',
+        "Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been detached.",
       ],
     ]
 

@@ -63,6 +63,32 @@ export const IGNORE_SENTRY_ERRORS: (string | RegExp)[] = [
   // naming `window.ethereum` originates in a wallet extension or a wallet-
   // bundling browser, never in ours.
   /window\.ethereum/,
+  // Firefox skipping a React view transition in a backgrounded tab
+  // (PHOTOTOOLS-V). The spec REQUIRES the browser to skip a transition started
+  // while `document.visibilityState === 'hidden'` and reject `ready` with an
+  // InvalidStateError, so this fires whenever a visitor opens a tool in a
+  // background tab (every event so far: Firefox, referrer google.com) and
+  // something commits an update inside the `<ViewTransition>` in
+  // `[locale]/layout.tsx`. Nothing is wrong — the browser declined to animate
+  // an invisible page and React committed the update without animation.
+  //
+  // It reaches Sentry only because of a gap in React itself:
+  // `customizeViewTransitionError` (react-dom-client, vendored by Next) swallows
+  // this exact condition by matching the DOMException's message against a
+  // hardcoded list — but that list only carries Chromium's and WebKit's
+  // wordings ("View transition was skipped because document visibility state is
+  // hidden.", "Transition was aborted because of invalid state", …), not Gecko's.
+  // Unmatched, the error falls through to `onRecoverableError` → Next's
+  // `reportGlobalError` → `reportError()`, which synthesizes an uncaught error
+  // and trips Sentry's global onerror handler. We cannot patch vendored React,
+  // and the throw never passes through our own frames, so a message filter is
+  // the only lever. Remove this once React's allowlist learns Gecko's string.
+  //
+  // Anchored on the skip message, NOT the `InvalidStateError` type — our canvas,
+  // WebGL, and IndexedDB paths raise that type for genuine faults that must keep
+  // reporting. Left unanchored at the end so a trailing period, if Gecko ever
+  // adds one, still matches.
+  /Skipped ViewTransition due to document being hidden/,
 ]
 
 // Client-side Sentry `denyUrls` patterns — drop any event whose throwing frame
