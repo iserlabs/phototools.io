@@ -1,4 +1,4 @@
-import { describe, expect, it, beforeEach, vi } from 'vitest'
+import { describe, expect, it, beforeEach, afterEach, vi } from 'vitest'
 
 // Wire fake-indexeddb into the global scope before importing the SUT or idb-keyval.
 import 'fake-indexeddb/auto'
@@ -31,8 +31,43 @@ function makeBlob(hash: string): InsightBlob {
   }
 }
 
+// ── Deterministic clock ──
+//
+// `getCachedInsights` re-evaluates the 90-day TTL against `Date.now()` on every
+// read, so any assertion that runs under the REAL clock ages each seeded entry
+// by however long ago its hardcoded date was. These cases used to seed at fixed
+// May-2026 dates and then call `vi.useRealTimers()` *before* asserting, which
+// meant they silently began failing once wall-clock time passed those dates +
+// 90 days — a test-authoring bug, not a cache bug. Two rules keep that from
+// coming back:
+//
+//   1. Every instant is derived from BASE, never written as a literal date, so
+//      the suite behaves identically whenever it runs.
+//   2. Fake time stays pinned through the assertions; only `afterEach` restores
+//      the real clock.
+//
+// `toFake: ['Date']` is deliberate and load-bearing — faking timers wholesale
+// would stall the promise scheduling that fake-indexeddb and idb-keyval rely
+// on, hanging every await in this file.
+const BASE_MS = Date.parse('2026-05-10T10:00:00Z')
+const MINUTE_MS = 60 * 1000
+const HOUR_MS = 60 * MINUTE_MS
+const DAY_MS = 24 * HOUR_MS
+/** An instant `offsetMs` after BASE. */
+const at = (offsetMs: number): Date => new Date(BASE_MS + offsetMs)
+
+/** Pin Date to BASE + offset. Only `Date` is faked — see the note above. */
+function pinClock(offsetMs = 0): void {
+  vi.useFakeTimers({ toFake: ['Date'] })
+  vi.setSystemTime(at(offsetMs))
+}
+
 beforeEach(async () => {
   await clearAllCachedInsights()
+})
+
+afterEach(() => {
+  vi.useRealTimers()
 })
 
 describe('cache.ts', () => {
@@ -48,33 +83,31 @@ describe('cache.ts', () => {
   })
 
   it('updates lastAccess on read (so LRU is by access not insertion)', async () => {
-    const a = makeBlob('a')
-    const b = makeBlob('b')
-    await setCachedInsights('a', a)
+    pinClock()
+    await setCachedInsights('a', makeBlob('a'))
     // Move clock forward
-    vi.useFakeTimers({ toFake: ['Date'] })
-    vi.setSystemTime(new Date('2026-05-23T10:00:00Z'))
-    await setCachedInsights('b', b)
-    vi.setSystemTime(new Date('2026-05-23T11:00:00Z'))
+    vi.setSystemTime(at(HOUR_MS))
+    await setCachedInsights('b', makeBlob('b'))
+    vi.setSystemTime(at(2 * HOUR_MS))
     await getCachedInsights('a')
     // After the read, 'a' should be more recent than 'b'.
     // We assert behavior indirectly via the eviction test below.
-    vi.useRealTimers()
     expect(await getCachedInsights('a')).not.toBeNull()
     expect(await getCachedInsights('b')).not.toBeNull()
   })
 
   it('evicts the least-recently-accessed entry when over 10', async () => {
-    // Insert 10 entries spaced in time
-    vi.useFakeTimers({ toFake: ['Date'] })
+    // Insert 10 entries one day apart. Every offset stays well inside the
+    // 90-day TTL, so eviction is the only thing that can remove an entry —
+    // otherwise this would be asserting expiry while claiming to test LRU.
+    pinClock()
     for (let i = 0; i < 10; i++) {
-      vi.setSystemTime(new Date(`2026-05-${10 + i}T10:00:00Z`))
+      vi.setSystemTime(at(i * DAY_MS))
       await setCachedInsights(`hash-${i}`, makeBlob(`hash-${i}`))
     }
     // Insert an 11th. hash-0 (oldest lastAccess) must be evicted.
-    vi.setSystemTime(new Date('2026-05-22T10:00:00Z'))
+    vi.setSystemTime(at(10 * DAY_MS))
     await setCachedInsights('hash-10', makeBlob('hash-10'))
-    vi.useRealTimers()
 
     expect(await getCachedInsights('hash-0')).toBeNull()
     expect(await getCachedInsights('hash-10')).not.toBeNull()
@@ -82,13 +115,21 @@ describe('cache.ts', () => {
   })
 
   it('treats entries older than 90 days as expired', async () => {
-    vi.useFakeTimers({ toFake: ['Date'] })
-    vi.setSystemTime(new Date('2026-01-01T00:00:00Z'))
+    pinClock()
     await setCachedInsights('old', makeBlob('old'))
-    vi.setSystemTime(new Date('2026-05-01T00:00:00Z')) // 120 days later
-    const got = await getCachedInsights('old')
-    vi.useRealTimers()
-    expect(got).toBeNull()
+    vi.setSystemTime(at(120 * DAY_MS))
+    expect(await getCachedInsights('old')).toBeNull()
+  })
+
+  // Boundary guard for the TTL that this suite's own bug hid: an entry read
+  // just before the 90-day cutoff must survive. Without this, an off-by-one or
+  // a unit slip in TTL_MS that expires everything early would still pass the
+  // "expired" case above.
+  it('keeps an entry read just under the 90-day TTL', async () => {
+    pinClock()
+    await setCachedInsights('fresh', makeBlob('fresh'))
+    vi.setSystemTime(at(90 * DAY_MS - MINUTE_MS))
+    expect(await getCachedInsights('fresh')).not.toBeNull()
   })
 
   it('clearAllCachedInsights removes everything', async () => {
