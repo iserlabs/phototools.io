@@ -15,34 +15,51 @@ export interface GLResources {
   height: number
 }
 
-function compileShader(gl: WebGL2RenderingContext, type: number, source: string): WebGLShader {
+// `null` return = recoverable, environmental failure (the WebGL context was
+// lost — e.g. Safari recycling the GPU process; gl.createShader/createProgram
+// return null and COMPILE/LINK_STATUS read false with a null info log). The
+// caller should fall back to the static scene image. A thrown error = a genuine
+// GLSL compile/link bug on a live context, which is actionable and worth
+// reporting (Sentry PHOTOTOOLS-W; mirrors compressionGeometry.ts).
+function compileShader(gl: WebGL2RenderingContext, type: number, source: string): WebGLShader | null {
   const shader = gl.createShader(type)
-  if (!shader) throw new Error('Failed to create shader')
+  if (!shader) return null // context lost (or OOM) — not a bug we can fix in code
   gl.shaderSource(shader, source)
   gl.compileShader(shader)
   if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
     const info = gl.getShaderInfoLog(shader)
     gl.deleteShader(shader)
+    if (gl.isContextLost()) return null
     throw new Error(`Shader compile error: ${info}`)
   }
   return shader
 }
 
-export function createProgram(gl: WebGL2RenderingContext, vertSrc: string, fragSrc: string): WebGLProgram {
+export function createProgram(gl: WebGL2RenderingContext, vertSrc: string, fragSrc: string): WebGLProgram | null {
   const vert = compileShader(gl, gl.VERTEX_SHADER, vertSrc)
   const frag = compileShader(gl, gl.FRAGMENT_SHADER, fragSrc)
+  if (!vert || !frag) {
+    if (vert) gl.deleteShader(vert)
+    if (frag) gl.deleteShader(frag)
+    return null
+  }
   const program = gl.createProgram()
-  if (!program) throw new Error('Failed to create program')
+  if (!program) {
+    gl.deleteShader(vert)
+    gl.deleteShader(frag)
+    return null
+  }
   gl.attachShader(program, vert)
   gl.attachShader(program, frag)
   gl.linkProgram(program)
+  gl.deleteShader(vert)
+  gl.deleteShader(frag)
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
     const info = gl.getProgramInfoLog(program)
     gl.deleteProgram(program)
+    if (gl.isContextLost()) return null
     throw new Error(`Program link error: ${info}`)
   }
-  gl.deleteShader(vert)
-  gl.deleteShader(frag)
   return program
 }
 
@@ -85,9 +102,9 @@ export function loadImageAsTexture(gl: WebGL2RenderingContext, src: string): Pro
   })
 }
 
-export function setupFullScreenQuad(gl: WebGL2RenderingContext, program: WebGLProgram): WebGLVertexArrayObject {
+export function setupFullScreenQuad(gl: WebGL2RenderingContext, program: WebGLProgram): WebGLVertexArrayObject | null {
   const vao = gl.createVertexArray()
-  if (!vao) throw new Error('Failed to create vertex array')
+  if (!vao) return null // context lost — caller falls back to the static image
   gl.bindVertexArray(vao)
 
   const positions = new Float32Array([

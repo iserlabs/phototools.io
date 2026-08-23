@@ -37,6 +37,7 @@
       "scenePortrait": "Πορτραίτο",
       "sceneLowLight": "Χαμηλός φωτισμός",
       "imageEffectsUnavailable": "Η προεπισκόπηση εφέ εικόνας δεν είναι διαθέσιμη.",
+      "webglInitFailed": "Δεν ήταν δυνατή η αρχικοποίηση των γραφικών",
       "loadingScene": "Φόρτωση σκηνής..."
     }
   }

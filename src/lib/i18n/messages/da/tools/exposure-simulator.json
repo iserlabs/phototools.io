@@ -37,6 +37,7 @@
       "scenePortrait": "Portræt",
       "sceneLowLight": "Svagt lys",
       "imageEffectsUnavailable": "Effekter på billedet er ikke tilgængelige.",
+      "webglInitFailed": "Grafikken kunne ikke initialiseres",
       "loadingScene": "Indlæser motiv..."
     }
   }

@@ -37,6 +37,7 @@
       "scenePortrait": "ポートレート",
       "sceneLowLight": "低照度",
       "imageEffectsUnavailable": "画像エフェクトプレビューは使用できません。",
+      "webglInitFailed": "グラフィックを初期化できませんでした",
       "loadingScene": "シーンを読み込み中..."
     }
   }

@@ -37,6 +37,7 @@
       "scenePortrait": "Портрет",
       "sceneLowLight": "Слабый свет",
       "imageEffectsUnavailable": "Предпросмотр эффектов недоступен.",
+      "webglInitFailed": "Не удалось инициализировать графику",
       "loadingScene": "Загрузка сцены..."
     }
   }

@@ -37,6 +37,7 @@
       "scenePortrait": "Portrait",
       "sceneLowLight": "Low Light",
       "imageEffectsUnavailable": "Image effects preview is unavailable.",
+      "webglInitFailed": "Graphics could not be initialized",
       "loadingScene": "Loading scene..."
     }
   }

@@ -37,6 +37,7 @@
       "scenePortrait": "ภาพบุคคล",
       "sceneLowLight": "แสงน้อย",
       "imageEffectsUnavailable": "ตัวอย่างเอฟเฟกต์ภาพไม่พร้อมใช้งาน",
+      "webglInitFailed": "ไม่สามารถเริ่มต้นกราฟิกได้",
       "loadingScene": "กำลังโหลดฉาก..."
     }
   }

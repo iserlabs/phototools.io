@@ -37,6 +37,7 @@
       "scenePortrait": "Potret",
       "sceneLowLight": "Cahaya Rendah",
       "imageEffectsUnavailable": "Pratonton kesan imej tidak tersedia.",
+      "webglInitFailed": "Grafik tidak dapat dimulakan",
       "loadingScene": "Memuatkan adegan..."
     }
   }

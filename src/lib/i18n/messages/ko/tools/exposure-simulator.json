@@ -37,6 +37,7 @@
       "scenePortrait": "인물",
       "sceneLowLight": "저조도",
       "imageEffectsUnavailable": "이미지 효과 미리 보기를 사용할 수 없습니다.",
+      "webglInitFailed": "그래픽을 초기화할 수 없습니다",
       "loadingScene": "장면 로딩 중..."
     }
   }

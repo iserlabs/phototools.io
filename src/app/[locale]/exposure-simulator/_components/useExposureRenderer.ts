@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState, useCallback } from 'react'
+import { useTranslations } from 'next-intl'
+import * as Sentry from '@sentry/nextjs'
 import { passthroughVertexShader } from './shaders/passthrough.vert'
 import { dofFragmentShader } from './shaders/dof.frag'
 import { motionFragmentShader } from './shaders/motion.frag'
@@ -24,6 +26,7 @@ export function useExposureRenderer(
   shutterSpeed: number,
   iso: number
 ): { isLoading: boolean; error: string | null } {
+  const t = useTranslations('toolUI.exposure-simulator')
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const resourcesRef = useRef<GLResources | null>(null)
@@ -36,10 +39,28 @@ export function useExposureRenderer(
       return null
     }
 
-    const dofProgram = createProgram(gl, passthroughVertexShader, dofFragmentShader)
-    const motionProgram = createProgram(gl, passthroughVertexShader, motionFragmentShader)
-    const noiseProgram = createProgram(gl, passthroughVertexShader, noiseFragmentShader)
-    const vao = setupFullScreenQuad(gl, dofProgram)
+    let dofProgram: WebGLProgram | null
+    let motionProgram: WebGLProgram | null
+    let noiseProgram: WebGLProgram | null
+    try {
+      dofProgram = createProgram(gl, passthroughVertexShader, dofFragmentShader)
+      motionProgram = createProgram(gl, passthroughVertexShader, motionFragmentShader)
+      noiseProgram = createProgram(gl, passthroughVertexShader, noiseFragmentShader)
+    } catch (err) {
+      // createProgram returns null on context loss, so a throw here is a
+      // genuine GLSL compile/link bug — actionable, worth reporting.
+      Sentry.captureException(err, { tags: { module: 'exposure-simulator', op: 'createProgram' } })
+      setError(t('webglInitFailed'))
+      return null
+    }
+    const vao = dofProgram && motionProgram && noiseProgram ? setupFullScreenQuad(gl, dofProgram) : null
+    if (!dofProgram || !motionProgram || !noiseProgram || !vao) {
+      // Context lost mid-init (Safari GPU-process recycle, PHOTOTOOLS-W) —
+      // environmental, so no Sentry report; the preview falls back to the
+      // static scene image.
+      setError(t('webglInitFailed'))
+      return null
+    }
 
     return {
       gl, dofProgram, motionProgram, noiseProgram, vao,
@@ -48,7 +69,7 @@ export function useExposureRenderer(
       photoTexture: null, depthTexture: null, motionTexture: null,
       width: 0, height: 0,
     }
-  }, [])
+  }, [t])
 
   useEffect(() => {
     if (!canvasRef.current || !scene) return

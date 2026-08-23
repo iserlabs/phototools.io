@@ -37,6 +37,7 @@
       "scenePortrait": "পোর্ট্রেট",
       "sceneLowLight": "কম আলো",
       "imageEffectsUnavailable": "ইমেজ ইফেক্ট প্রিভিউ এখন পাওয়া যাচ্ছে না।",
+      "webglInitFailed": "গ্রাফিক্স চালু করা যায়নি",
       "loadingScene": "দৃশ্য লোড হচ্ছে..."
     }
   }

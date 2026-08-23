@@ -37,6 +37,7 @@
       "scenePortrait": "Portre",
       "sceneLowLight": "Düşük Işık",
       "imageEffectsUnavailable": "Görüntü efektleri önizlemesi kullanılamıyor.",
+      "webglInitFailed": "Grafikler başlatılamadı",
       "loadingScene": "Sahne yükleniyor..."
     }
   }

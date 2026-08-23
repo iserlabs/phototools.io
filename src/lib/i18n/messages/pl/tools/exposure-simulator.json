@@ -37,6 +37,7 @@
       "scenePortrait": "Portret",
       "sceneLowLight": "Słabe światło",
       "imageEffectsUnavailable": "Podgląd efektów obrazu jest niedostępny.",
+      "webglInitFailed": "Nie udało się zainicjować grafiki",
       "loadingScene": "Ładowanie sceny..."
     }
   }

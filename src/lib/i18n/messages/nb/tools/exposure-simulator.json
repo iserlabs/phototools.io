@@ -37,6 +37,7 @@
       "scenePortrait": "Portrett",
       "sceneLowLight": "Svakt lys",
       "imageEffectsUnavailable": "Forhåndsvisning av bildeeffekter er ikke tilgjengelig her.",
+      "webglInitFailed": "Grafikken kunne ikke initialiseres",
       "loadingScene": "Laster scene ..."
     }
   }

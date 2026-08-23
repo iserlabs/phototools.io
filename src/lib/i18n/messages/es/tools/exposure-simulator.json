@@ -37,6 +37,7 @@
       "scenePortrait": "Retrato",
       "sceneLowLight": "Poca luz",
       "imageEffectsUnavailable": "La vista previa de efectos de imagen no está disponible.",
+      "webglInitFailed": "No se pudieron inicializar los gráficos",
       "loadingScene": "Cargando escena..."
     }
   }

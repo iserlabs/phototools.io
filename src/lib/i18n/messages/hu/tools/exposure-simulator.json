@@ -37,6 +37,7 @@
       "scenePortrait": "Portré",
       "sceneLowLight": "Gyenge fény",
       "imageEffectsUnavailable": "A képhatások előnézete nem elérhető.",
+      "webglInitFailed": "A grafika inicializálása nem sikerült",
       "loadingScene": "Jelenet betöltése..."
     }
   }

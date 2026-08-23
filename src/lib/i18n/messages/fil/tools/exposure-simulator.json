@@ -37,6 +37,7 @@
       "scenePortrait": "Portrait",
       "sceneLowLight": "Low Light",
       "imageEffectsUnavailable": "Hindi available ang image effects preview.",
+      "webglInitFailed": "Hindi masimulan ang graphics",
       "loadingScene": "Nilo-load ang scene..."
     }
   }

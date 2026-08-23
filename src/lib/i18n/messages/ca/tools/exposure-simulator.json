@@ -37,6 +37,7 @@
       "scenePortrait": "Retrat",
       "sceneLowLight": "Poca llum",
       "imageEffectsUnavailable": "La previsualització d'efectes d'imatge no està disponible.",
+      "webglInitFailed": "No s'han pogut inicialitzar els gràfics",
       "loadingScene": "Carregant l'escena..."
     }
   }

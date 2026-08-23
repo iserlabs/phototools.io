@@ -37,6 +37,7 @@
       "scenePortrait": "पोर्ट्रेट",
       "sceneLowLight": "कम रोशनी",
       "imageEffectsUnavailable": "इमेज इफ़ेक्ट प्रीव्यू उपलब्ध नहीं है।",
+      "webglInitFailed": "ग्राफ़िक्स प्रारंभ नहीं हो सके",
       "loadingScene": "दृश्य लोड हो रहा है..."
     }
   }

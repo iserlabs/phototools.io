@@ -37,6 +37,7 @@
       "scenePortrait": "Muotokuva",
       "sceneLowLight": "Hämärä",
       "imageEffectsUnavailable": "Kuvaefektien esikatselu ei ole saatavilla.",
+      "webglInitFailed": "Grafiikan alustus epäonnistui",
       "loadingScene": "Ladataan näkymää..."
     }
   }

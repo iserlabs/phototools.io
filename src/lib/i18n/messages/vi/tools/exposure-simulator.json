@@ -37,6 +37,7 @@
       "scenePortrait": "Chân dung",
       "sceneLowLight": "Thiếu sáng",
       "imageEffectsUnavailable": "Xem trước hiệu ứng ảnh không khả dụng.",
+      "webglInitFailed": "Không thể khởi tạo đồ họa",
       "loadingScene": "Đang tải cảnh..."
     }
   }

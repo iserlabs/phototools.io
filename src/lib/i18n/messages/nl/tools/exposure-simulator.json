@@ -37,6 +37,7 @@
       "scenePortrait": "Portret",
       "sceneLowLight": "Weinig licht",
       "imageEffectsUnavailable": "Voorbeeld van beeldeffecten is niet beschikbaar.",
+      "webglInitFailed": "Grafische weergave kon niet worden geïnitialiseerd",
       "loadingScene": "Scène laden..."
     }
   }

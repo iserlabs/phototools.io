@@ -37,6 +37,7 @@
       "scenePortrait": "Portret",
       "sceneLowLight": "Lumină slabă",
       "imageEffectsUnavailable": "Previzualizarea efectelor de imagine nu este disponibilă.",
+      "webglInitFailed": "Grafica nu a putut fi inițializată",
       "loadingScene": "Se încarcă scena..."
     }
   }

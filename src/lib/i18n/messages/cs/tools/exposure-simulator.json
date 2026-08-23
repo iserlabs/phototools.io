@@ -37,6 +37,7 @@
       "scenePortrait": "Portrét",
       "sceneLowLight": "Slabé světlo",
       "imageEffectsUnavailable": "Náhled efektů není k dispozici.",
+      "webglInitFailed": "Grafiku se nepodařilo inicializovat",
       "loadingScene": "Načítám scénu..."
     }
   }

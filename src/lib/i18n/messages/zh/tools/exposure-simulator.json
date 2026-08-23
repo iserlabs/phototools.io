@@ -37,6 +37,7 @@
       "scenePortrait": "人像",
       "sceneLowLight": "低光",
       "imageEffectsUnavailable": "图像效果预览不可用。",
+      "webglInitFailed": "无法初始化图形",
       "loadingScene": "加载场景..."
     }
   }
