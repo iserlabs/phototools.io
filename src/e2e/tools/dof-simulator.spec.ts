@@ -26,30 +26,58 @@ async function canvasDataUrl(page: Page): Promise<string> {
   return page.locator('canvas').first().evaluate((el) => (el as HTMLCanvasElement).toDataURL())
 }
 
+/**
+ * The viewport mounts the WebGL canvas only when the browser grants a webgl2
+ * context; otherwise useRenderer resolves to 'fallback' and Viewport.tsx swaps
+ * in the designed CSS-blur fallback image instead (no <canvas> in the DOM).
+ * CI's GPU-less Linux runners are a real instance of the latter — headless
+ * Firefox refuses the context there — so canvas-dependent tests must detect
+ * which surface rendered and assert against it rather than assume the canvas
+ * (same house pattern as exposure-simulator.spec.ts).
+ */
+async function viewportSurface(page: Page): Promise<'canvas' | 'fallback'> {
+  const canvas = page.locator('canvas').first()
+  const fallback = page.locator('img[class*="fallbackImg"]').first()
+  await expect(canvas.or(fallback).first()).toBeVisible()
+  return (await canvas.isVisible()) ? 'canvas' : 'fallback'
+}
+
+const fallbackBlur = (page: Page) =>
+  page.locator('img[class*="fallbackImg"]').first().evaluate((el) => (el as HTMLElement).style.filter)
+
 test.describe('DOF Simulator', () => {
-  test('loads with viewport canvas and clean console', async ({ page }) => {
+  test('loads with viewport surface (canvas or no-WebGL fallback) and clean console', async ({ page }) => {
     const errors: string[] = []
     page.on('console', (m) => {
       if (m.type() === 'error') errors.push(m.text())
     })
     await page.goto(URL)
-    await expect(page.locator('canvas').first()).toBeVisible()
+    await viewportSurface(page)
     await page.waitForTimeout(500)
     expect(errors.filter((e) => !BENIGN_CONSOLE.test(e))).toEqual([])
   })
 
   test('aperture change re-renders the background', async ({ page }) => {
     await page.goto(`${URL}?bg=night-lights&f=1.4`)
-    await page.locator('canvas').first().waitFor()
-    await page.waitForTimeout(800)
-    const wide = await canvasDataUrl(page)
+    if ((await viewportSurface(page)) === 'canvas') {
+      await page.waitForTimeout(800)
+      const wide = await canvasDataUrl(page)
 
-    await page.goto(`${URL}?bg=night-lights&f=16`)
-    await page.locator('canvas').first().waitFor()
-    await page.waitForTimeout(800)
-    const narrow = await canvasDataUrl(page)
+      await page.goto(`${URL}?bg=night-lights&f=16`)
+      await page.locator('canvas').first().waitFor()
+      await page.waitForTimeout(800)
+      const narrow = await canvasDataUrl(page)
 
-    expect(narrow).not.toBe(wide)
+      expect(narrow).not.toBe(wide)
+    } else {
+      // No WebGL: aperture still drives the fallback image's CSS blur
+      // (fallbackBlurPx in CenterStage.tsx → inline `filter: blur(Npx)`).
+      await expect.poll(() => fallbackBlur(page)).toMatch(/blur\(/)
+      const wide = await fallbackBlur(page)
+
+      await page.goto(`${URL}?bg=night-lights&f=16`)
+      await expect.poll(() => fallbackBlur(page)).not.toBe(wide)
+    }
   })
 
   test('model picker swaps the subject', async ({ page }) => {
@@ -207,6 +235,14 @@ test.describe('DOF Simulator', () => {
   test('export downloads a PNG', async ({ page }) => {
     await page.goto(URL)
     const exportBtn = page.locator('button', { hasText: /export image/i }).first()
+
+    if ((await viewportSurface(page)) === 'fallback') {
+      // No canvas to read pixels from — CenterStage disables Export by design
+      // (with a visible a11y note), so that IS the correct behavior to assert.
+      await expect(exportBtn).toBeDisabled()
+      return
+    }
+
     await expect(exportBtn).toBeEnabled()
 
     const downloadPromise = page.waitForEvent('download')
