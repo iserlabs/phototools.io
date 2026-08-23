@@ -34,12 +34,33 @@ async function canvasDataUrl(page: Page): Promise<string> {
  * Firefox refuses the context there — so canvas-dependent tests must detect
  * which surface rendered and assert against it rather than assume the canvas
  * (same house pattern as exposure-simulator.spec.ts).
+ *
+ * Canvas VISIBILITY alone cannot make that call: the canvas is server-rendered
+ * while status is still 'loading', so on a slow runner it sits visible for
+ * seconds before hydration lets the renderer refuse the context and unmount it
+ * (stranding canvas locators — the retry-masked flake in CI run 32667558824).
+ * Wait for a post-hydration signal instead: the fallback img appearing, or the
+ * canvas backing store leaving its SSR default of 300×150 — the sizing
+ * ResizeObserver in useRenderer only exists once createGl has SUCCEEDED.
  */
 async function viewportSurface(page: Page): Promise<'canvas' | 'fallback'> {
-  const canvas = page.locator('canvas').first()
   const fallback = page.locator('img[class*="fallbackImg"]').first()
-  await expect(canvas.or(fallback).first()).toBeVisible()
-  return (await canvas.isVisible()) ? 'canvas' : 'fallback'
+  await expect
+    .poll(
+      async () => {
+        if (await fallback.isVisible()) return 'fallback'
+        // page.evaluate (not locator.evaluate): must never auto-wait, since
+        // the canvas can unmount between polls.
+        const sized = await page.evaluate(() => {
+          const c = document.querySelector('canvas')
+          return c !== null && (c.width !== 300 || c.height !== 150)
+        })
+        return sized ? 'canvas' : 'pending'
+      },
+      { timeout: 15_000 },
+    )
+    .not.toBe('pending')
+  return (await fallback.isVisible()) ? 'fallback' : 'canvas'
 }
 
 const fallbackBlur = (page: Page) =>
