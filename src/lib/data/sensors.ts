@@ -98,7 +98,7 @@ export const POPULAR_MODELS: Record<string, string[]> = {
   mf_645: ['Phase One IQ4 150MP'],
   mf: ['Hasselblad X2D', 'Hasselblad X2D II 100C', 'Fujifilm GFX 100S II'],
   mf_leica: ['Leica S3'],
-  ff: ['Sony A7 IV', 'Sony A7 V', 'Nikon Z8', 'Canon R5 Mark II', 'Leica Q3'],
+  ff: ['Sony A7 IV', 'Sony A7 V', 'Sony A7R VI', 'Nikon Z8', 'Canon R5 Mark II', 'Leica Q3'],
   apsh: ['Canon EOS-1D Mark IV', 'Canon EOS-1D Mark III'],
   apsc_n: ['Sony A6700', 'Fujifilm X-T5', 'Nikon Z50II', 'Leica CL'],
   apsc_c: ['Canon R7', 'Canon R10'],
@@ -144,6 +144,7 @@ export const COMMON_MP: Record<string, MpEntry[]> = {
     { mp: 33, models: 'Sony A7 IV / Sony A7 V' },
     { mp: 45, models: 'Canon R5 Mark II / Nikon Z9' },
     { mp: 61, models: 'Sony A7R V / Sigma fp L' },
+    { mp: 67, models: 'Sony A7R VI' },
   ],
   apsh: [
     { mp: 10, models: 'Canon EOS-1D Mark III' },
