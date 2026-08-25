@@ -762,9 +762,8 @@
   transition: color var(--duration-fast);
 }
 
-/* Sensor model tooltip */
+/* Sensor model hint badge (HintTooltip trigger — popover is portaled) */
 .modelTooltip {
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -779,35 +778,6 @@
   cursor: help;
   flex-shrink: 0;
   margin-left: auto;
-}
-
-.modelTooltip::after {
-  content: attr(data-models);
-  position: absolute;
-  bottom: calc(100% + 6px);
-  right: 0;
-  background: rgba(0, 0, 0, 0.9);
-  /* The scrim is a fixed dark overlay in both themes, so the text is fixed
-     light. Using var(--text-primary) here renders near-black on near-black
-     in light theme. */
-  color: #f5f5f5;
-  font-size: 11px;
-  font-weight: 400;
-  padding: 6px 10px;
-  border-radius: 6px;
-  white-space: normal;
-  width: max-content;
-  max-width: 220px;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
-  z-index: 10;
-}
-
-.modelTooltip:hover::after {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .customEditBtn {

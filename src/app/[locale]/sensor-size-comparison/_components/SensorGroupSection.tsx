@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { POPULAR_MODELS } from '@/lib/data/sensors'
 import type { SensorGroupId } from '@/lib/types'
 import type { ResolvedSensor } from './sensorSizeTypes'
+import { HintTooltip } from '@/components/shared/HintTooltip'
 import ss from './SensorSize.module.css'
 
 // Rarely-used formats stay tucked away on first load; every other group
@@ -26,6 +27,7 @@ export function SensorGroupSection({
 }: SensorGroupSectionProps) {
   const t = useTranslations('toolUI.sensor-size-comparison')
   const sensorsT = useTranslations('common.sensors')
+  const tooltipT = useTranslations('common.tooltip')
   const [open, setOpen] = useState(() => !COLLAPSED_BY_DEFAULT.includes(group))
 
   // Auto-expand a collapsed group the moment the current selection touches
@@ -53,6 +55,7 @@ export function SensorGroupSection({
         <div className={ss.checkboxes}>
           {sensors.map((s) => {
             const models = POPULAR_MODELS[s.id]
+            const name = sensorsT.has(s.id) ? sensorsT(s.id) : s.name
             return (
               <label
                 key={s.id}
@@ -66,9 +69,15 @@ export function SensorGroupSection({
                   onChange={() => onToggleSensor(s.id)}
                 />
                 <span className={ss.checkDot} style={{ backgroundColor: s.color }} />
-                <span className={ss.checkName}>{sensorsT.has(s.id) ? sensorsT(s.id) : s.name}</span>
+                <span className={ss.checkName}>{name}</span>
                 {models && models.length > 0 && (
-                  <span className={ss.modelTooltip} data-models={models.join(' · ')}>?</span>
+                  <HintTooltip
+                    text={models.join(' · ')}
+                    label={tooltipT('infoLabel', { term: name })}
+                    className={ss.modelTooltip}
+                  >
+                    ?
+                  </HintTooltip>
                 )}
                 <span className={ss.checkOutline} />
               </label>
