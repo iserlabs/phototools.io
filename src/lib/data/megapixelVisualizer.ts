@@ -2,13 +2,13 @@ import type { MegapixelPreset } from '@/lib/types'
 import { COMMON_MP, type MpEntry } from './sensors'
 
 const CURATED_MP_ORDER: number[] = [
-  8, 12, 16, 20, 24, 26, 33, 36, 42, 45, 50, 61, 100, 150, 200,
+  8, 12, 16, 20, 24, 26, 33, 36, 42, 45, 50, 61, 67, 100, 150, 200,
 ]
 
 const MP_COLOR_BY_INDEX = [
   '#64748b', '#475569', '#ef4444', '#f97316', '#f59e0b', '#84cc16',
   '#10b981', '#14b8a6', '#06b6d4', '#0ea5e9', '#3b82f6', '#8b5cf6',
-  '#a855f7', '#d946ef', '#ec4899',
+  '#a855f7', '#d946ef', '#ec4899', '#f43f5e',
 ]
 
 function tagForMp(mp: number): MegapixelPreset['tag'] {
