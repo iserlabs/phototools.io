@@ -1,21 +1,46 @@
-import type { MegapixelPreset } from '@/lib/types'
+import type { AspectRatio, MegapixelPreset } from '@/lib/types'
 import { COMMON_MP, type MpEntry } from './sensors'
+import { DEFAULT_ASPECT_ID, getAspect } from './aspectRatios'
 
+// No 200: Samsung's 200 MP is a binned specialized phone sensor, not a real
+// 200 MP capture class. 50 reads as the medium-format figure (GFX 50S II /
+// Pentax 645Z), not a binned phone main sensor.
 const CURATED_MP_ORDER: number[] = [
-  8, 12, 16, 20, 24, 26, 33, 36, 42, 45, 50, 61, 67, 100, 150, 200,
+  8, 12, 16, 20, 24, 26, 33, 36, 42, 45, 50, 61, 67, 100, 150,
 ]
 
 const MP_COLOR_BY_INDEX = [
   '#64748b', '#475569', '#ef4444', '#f97316', '#f59e0b', '#84cc16',
   '#10b981', '#14b8a6', '#06b6d4', '#0ea5e9', '#3b82f6', '#8b5cf6',
-  '#a855f7', '#d946ef', '#ec4899', '#f43f5e',
+  '#a855f7', '#d946ef', '#ec4899',
 ]
 
 function tagForMp(mp: number): MegapixelPreset['tag'] {
-  if (mp === 48 || mp === 50 || mp === 108 || mp === 200) return 'phone'
   if (mp >= 150) return 'extreme'
   if (mp >= 50) return 'mf'
   return 'ff'
+}
+
+// Native capture aspect per curated MP figure. The 4:3 figures are the
+// medium-format bodies (GFX 50S II / 645Z, X2D / GFX 100, Phase One IQ4);
+// every other curated figure is a 3:2 body — including 61/67 MP, which are
+// full-frame (A7R V / A7R VI), so this keys off the MP figure, not the tag.
+const NATIVE_ASPECT_ID_BY_MP: Record<number, string> = {
+  50: '4x3', 100: '4x3', 150: '4x3',
+}
+
+/** Aspect selector value meaning "each preset's own native capture aspect". */
+export const NATIVE_ASPECT_OPTION_ID = 'native'
+
+/** Aspect a preset renders at: its native capture aspect under 'native', else the forced ratio. */
+export function resolveAspect(
+  aspectId: string,
+  preset: Pick<MegapixelPreset, 'nativeAspectId'>,
+): AspectRatio {
+  if (aspectId === NATIVE_ASPECT_OPTION_ID) {
+    return getAspect(preset.nativeAspectId ?? DEFAULT_ASPECT_ID)
+  }
+  return getAspect(aspectId)
 }
 
 // phone_mid/phone_uw's COMMON_MP entries name representative categories
@@ -56,16 +81,12 @@ export const MP_PRESETS: MegapixelPreset[] = (() => {
     models: (modelMap.get(mp) ?? []).join(' · ') || undefined,
     tag: tagForMp(mp),
     color: MP_COLOR_BY_INDEX[idx % MP_COLOR_BY_INDEX.length],
+    nativeAspectId: NATIVE_ASPECT_ID_BY_MP[mp] ?? DEFAULT_ASPECT_ID,
   }))
 })()
 
 export const ALL_MP_ID_SET = new Set(MP_PRESETS.map(m => m.id))
 export const DEFAULT_VISIBLE_MP_IDS = ['mp_12', 'mp_24', 'mp_45', 'mp_100']
-
-/** Advertised MP → typical output after pixel binning. */
-export const PHONE_BINNING: Record<number, number> = {
-  48: 12, 50: 12, 108: 12, 200: 12,
-}
 
 export const DPI_PRESETS = [
   { value: 72,  id: 'web' },

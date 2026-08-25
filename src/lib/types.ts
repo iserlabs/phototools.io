@@ -48,6 +48,8 @@ export interface MegapixelPreset {
   models?: string
   tag: 'phone' | 'mf' | 'ff' | 'apsc' | 'm43' | 'extreme'
   color: string
+  /** Aspect ratio id of the cameras this figure represents (e.g. '4x3' for 100 MP medium format). */
+  nativeAspectId?: string
 }
 
 export interface CustomMegapixel {

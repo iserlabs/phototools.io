@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { ASPECT_RATIOS } from '@/lib/data/aspectRatios'
+import { NATIVE_ASPECT_OPTION_ID } from '@/lib/data/megapixelVisualizer'
 import type { UnitSystem } from '@/lib/types'
 import ss from './MegapixelVisualizer.module.css'
 
@@ -30,6 +31,14 @@ export function ImageSettingsPanel({
       <fieldset className={ss.controlGroup}>
         <legend className={ss.legend}>{t('aspectRatio')}</legend>
         <div className={ss.aspectGrid}>
+          <button
+            type="button"
+            onClick={() => onAspectChange(NATIVE_ASPECT_OPTION_ID)}
+            className={`${ss.aspectBtn} ${aspectId === NATIVE_ASPECT_OPTION_ID ? ss.aspectBtnActive : ''}`}
+            aria-pressed={aspectId === NATIVE_ASPECT_OPTION_ID}
+          >
+            {t('aspectNative')}
+          </button>
           {ASPECT_RATIOS.map(a => (
             <button
               key={a.id}

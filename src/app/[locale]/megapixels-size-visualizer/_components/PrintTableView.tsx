@@ -1,8 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { DPI_PRESETS } from '@/lib/data/megapixelVisualizer'
-import { getAspect } from '@/lib/data/aspectRatios'
+import { DPI_PRESETS, resolveAspect } from '@/lib/data/megapixelVisualizer'
 import type { MegapixelPreset, UnitSystem } from '@/lib/types'
 import type { ViewingDistance, BitDepth } from '@/lib/math/megapixel'
 import { PrintTableRow } from './PrintTableRow'
@@ -20,7 +19,6 @@ export function PrintTableView({
   visibleMps, aspectId, units, viewingDistance, bitDepth,
 }: Props) {
   const t = useTranslations('toolUI.megapixels-size-visualizer')
-  const aspect = getAspect(aspectId)
   const sorted = [...visibleMps].sort((a, b) => a.mp - b.mp)
   const dpiCols = DPI_PRESETS.slice(0, 4)
 
@@ -69,7 +67,7 @@ export function PrintTableView({
             <PrintTableRow
               key={mp.id}
               mp={mp}
-              aspect={aspect}
+              aspect={resolveAspect(aspectId, mp)}
               dpis={dpiCols.map(d => ({ value: d.value }))}
               units={units}
               viewingDistance={viewingDistance}

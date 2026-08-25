@@ -14,7 +14,8 @@ import { PrintTableView } from './PrintTableView'
 import { drawOverlay } from './drawOverlay'
 import { drawSideBySide } from './drawSideBySide'
 import { drawScaleBar } from './drawScaleBar'
-import { getAspect } from '@/lib/data/aspectRatios'
+import { resolveAspect, NATIVE_ASPECT_OPTION_ID } from '@/lib/data/megapixelVisualizer'
+import type { MegapixelPreset } from '@/lib/types'
 import { FIXED_DPI } from './megapixelTypes'
 import ss from './MegapixelVisualizer.module.css'
 
@@ -47,18 +48,18 @@ export function MegapixelVisualizer() {
     ctx.clearRect(0, 0, cssWidth, cssHeight)
 
     const padding = 30
-    const aspect = getAspect(state.aspectId)
+    const aspectFor = (m: MegapixelPreset) => resolveAspect(state.aspectId, m)
     let result: { contentHeight: number; pxPerMm: number } = { contentHeight: cssHeight, pxPerMm: 0 }
 
     if (state.mode === 'overlay') {
       result = drawOverlay(
         ctx, cssWidth, cssHeight, padding,
-        state.visibleMps, aspect, FIXED_DPI, state.units, state.hoveredMpId,
+        state.visibleMps, aspectFor, FIXED_DPI, state.units, state.hoveredMpId,
       )
     } else if (state.mode === 'side-by-side') {
       result = drawSideBySide(
         ctx, cssWidth, cssHeight, padding,
-        state.visibleMps, aspect, FIXED_DPI, state.units,
+        state.visibleMps, aspectFor, FIXED_DPI, state.units,
       )
     }
 
@@ -82,7 +83,7 @@ export function MegapixelVisualizer() {
   const onReset = useCallback(() => {
     state.setVisible(new Set(['mp_12', 'mp_24', 'mp_45', 'mp_100']))
     state.setMode('overlay')
-    state.setAspectId('3x2')
+    state.setAspectId(NATIVE_ASPECT_OPTION_ID)
     state.setViewingDistance('arms')
     state.setBitDepth('raw14')
   }, [state])

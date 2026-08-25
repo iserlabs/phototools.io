@@ -1,8 +1,9 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { MP_PRESETS, PHONE_BINNING } from '@/lib/data/megapixelVisualizer'
+import { MP_PRESETS } from '@/lib/data/megapixelVisualizer'
 import type { CustomMegapixel } from '@/lib/types'
+import { HintTooltip } from '@/components/shared/HintTooltip'
 import ss from './MegapixelVisualizer.module.css'
 
 interface Props {
@@ -13,42 +14,35 @@ interface Props {
 
 export function MpListPanel({ visible, customMps, onToggleMp }: Props) {
   const t = useTranslations('toolUI.megapixels-size-visualizer')
+  const tooltipT = useTranslations('common.tooltip')
 
   return (
     <>
       <fieldset className={ss.controlGroup}>
         <legend className={ss.legend}>{t('megapixels')}</legend>
         <div className={ss.checkboxes}>
-          {MP_PRESETS.map(p => {
-            const binned = PHONE_BINNING[p.mp]
-            const tooltipParts: string[] = []
-            if (binned) {
-              tooltipParts.push(t('phoneBinningNote', { advertised: p.mp, effective: binned }))
-            }
-            if (p.models) tooltipParts.push(p.models)
-            const tooltip = tooltipParts.join(' · ')
-            return (
-              <label key={p.id} className={ss.checkLabel}>
-                <input
-                  type="checkbox"
-                  checked={visible.has(p.id)}
-                  onChange={() => onToggleMp(p.id)}
-                  data-testid={`mp-toggle-${p.id}`}
-                />
-                <span className={ss.checkDot} style={{ backgroundColor: p.color }} />
-                <span className={ss.checkName}>
-                  {p.name}
-                  {binned && <span className={ss.binnedSuffix}>*</span>}
-                </span>
-                {tooltip && (
-                  <span className={ss.modelTooltip} data-models={tooltip}>
-                    ?
-                  </span>
-                )}
-                <span className={ss.checkOutline} />
-              </label>
-            )
-          })}
+          {MP_PRESETS.map(p => (
+            <label key={p.id} className={ss.checkLabel}>
+              <input
+                type="checkbox"
+                checked={visible.has(p.id)}
+                onChange={() => onToggleMp(p.id)}
+                data-testid={`mp-toggle-${p.id}`}
+              />
+              <span className={ss.checkDot} style={{ backgroundColor: p.color }} />
+              <span className={ss.checkName}>{p.name}</span>
+              {p.models && (
+                <HintTooltip
+                  text={p.models}
+                  label={tooltipT('infoLabel', { term: p.name })}
+                  className={ss.modelTooltip}
+                >
+                  ?
+                </HintTooltip>
+              )}
+              <span className={ss.checkOutline} />
+            </label>
+          ))}
         </div>
       </fieldset>
 

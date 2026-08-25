@@ -4,8 +4,8 @@ import { useMemo } from 'react'
 import {
   strParam, idSetParam, useToolQuerySync, useQueryInit,
 } from '@/lib/utils/querySync'
-import { DEFAULT_VISIBLE_MP_IDS } from '@/lib/data/megapixelVisualizer'
-import { ASPECT_RATIOS, DEFAULT_ASPECT_ID } from '@/lib/data/aspectRatios'
+import { DEFAULT_VISIBLE_MP_IDS, NATIVE_ASPECT_OPTION_ID } from '@/lib/data/megapixelVisualizer'
+import { ASPECT_RATIOS } from '@/lib/data/aspectRatios'
 import type { DisplayMode } from './megapixelTypes'
 import type { ViewingDistance, BitDepth } from '@/lib/math/megapixel'
 
@@ -28,12 +28,15 @@ type Setters = {
 }
 
 export function useMegapixelUrlSync(state: SyncableState, setters: Setters) {
-  const allAspectIds = useMemo(() => [...ASPECT_RATIOS.map(a => a.id), 'custom'], [])
+  const allAspectIds = useMemo(
+    () => [NATIVE_ASPECT_OPTION_ID, ...ASPECT_RATIOS.map(a => a.id), 'custom'],
+    [],
+  )
 
   const schema = useMemo(() => ({
     show: idSetParam(DEFAULT_VISIBLE_MP_IDS),
     mode: strParam<DisplayMode>('overlay', ['overlay', 'side-by-side']),
-    aspect: strParam(DEFAULT_ASPECT_ID, allAspectIds as string[]),
+    aspect: strParam(NATIVE_ASPECT_OPTION_ID, allAspectIds as string[]),
     units: strParam<'metric' | 'imperial'>(state.units, ['metric', 'imperial']),
     dist: strParam<ViewingDistance>('arms', ['arms', 'near', 'far']),
     depth: strParam<BitDepth>('raw14', ['jpeg8', 'raw14', 'tiff16']),

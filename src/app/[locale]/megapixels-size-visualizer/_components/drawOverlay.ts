@@ -9,7 +9,7 @@ export function drawOverlay(
   canvasHeight: number,
   padding: number,
   visibleMps: MegapixelPreset[],
-  aspect: AspectRatio,
+  aspectFor: (m: MegapixelPreset) => AspectRatio,
   dpi: number,
   _units: UnitSystem,
   hoveredId: string | null,
@@ -21,7 +21,7 @@ export function drawOverlay(
   // Compute print size in mm for each MP
   const sized = visibleMps
     .map(m => {
-      const { pxW, pxH } = mpToPixelDimensions(m.mp, aspect)
+      const { pxW, pxH } = mpToPixelDimensions(m.mp, aspectFor(m))
       const { wMm, hMm } = printSizeMm(pxW, pxH, dpi)
       return { mp: m, wMm, hMm }
     })
