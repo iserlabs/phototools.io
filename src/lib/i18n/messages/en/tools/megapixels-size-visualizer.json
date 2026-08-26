@@ -23,6 +23,7 @@
       "mpMaxExceeded": "Maximum is 1000 MP",
       "mpNameRequired": "Name is required",
       "mpDuplicateWarning": "This megapixel value already exists",
+      "rumoredNote": "rumored, not yet announced",
       "aspectRatio": "Aspect Ratio",
       "aspectNative": "Native",
       "aspectCustom": "Custom",

@@ -23,6 +23,7 @@
       "mpMaxExceeded": "Maxvärde är 1000 MP",
       "mpNameRequired": "Namn krävs",
       "mpDuplicateWarning": "Det här megapixelvärdet finns redan",
+      "rumoredNote": "rykte, ännu inte tillkännagiven",
       "aspectRatio": "Bildformat",
       "aspectNative": "Ursprungligt",
       "aspectCustom": "Eget",

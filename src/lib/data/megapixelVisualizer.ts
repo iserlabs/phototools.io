@@ -6,14 +6,22 @@ import { DEFAULT_ASPECT_ID, getAspect } from './aspectRatios'
 // 200 MP capture class. 50 reads as the medium-format figure (GFX 50S II /
 // Pentax 645Z), not a binned phone main sensor.
 const CURATED_MP_ORDER: number[] = [
-  8, 12, 16, 20, 24, 26, 33, 36, 42, 45, 50, 61, 67, 100, 150,
+  8, 12, 16, 20, 24, 26, 33, 36, 42, 45, 50, 61, 67, 100, 150, 180,
 ]
 
 const MP_COLOR_BY_INDEX = [
   '#64748b', '#475569', '#ef4444', '#f97316', '#f59e0b', '#84cc16',
   '#10b981', '#14b8a6', '#06b6d4', '#0ea5e9', '#3b82f6', '#8b5cf6',
-  '#a855f7', '#d946ef', '#ec4899',
+  '#a855f7', '#d946ef', '#ec4899', '#f43f5e',
 ]
+
+// Rumored models: shown in the visualizer's tooltip with a translated
+// "(rumored)" note. Kept out of COMMON_MP/POPULAR_MODELS so the shared,
+// audited sensor data (and the lrcat crop-factor lookup built from it)
+// stays factual.
+const RUMORED_MODELS: Record<number, string> = {
+  180: 'Fujifilm GFX 180',
+}
 
 function tagForMp(mp: number): MegapixelPreset['tag'] {
   if (mp >= 150) return 'extreme'
@@ -26,7 +34,7 @@ function tagForMp(mp: number): MegapixelPreset['tag'] {
 // every other curated figure is a 3:2 body — including 61/67 MP, which are
 // full-frame (A7R V / A7R VI), so this keys off the MP figure, not the tag.
 const NATIVE_ASPECT_ID_BY_MP: Record<number, string> = {
-  50: '4x3', 100: '4x3', 150: '4x3',
+  50: '4x3', 100: '4x3', 150: '4x3', 180: '4x3',
 }
 
 /** Aspect selector value meaning "each preset's own native capture aspect". */
@@ -78,10 +86,11 @@ export const MP_PRESETS: MegapixelPreset[] = (() => {
     id: `mp_${mp}`,
     mp,
     name: `${mp} MP`,
-    models: (modelMap.get(mp) ?? []).join(' · ') || undefined,
+    models: (modelMap.get(mp) ?? []).join(' · ') || RUMORED_MODELS[mp] || undefined,
     tag: tagForMp(mp),
     color: MP_COLOR_BY_INDEX[idx % MP_COLOR_BY_INDEX.length],
     nativeAspectId: NATIVE_ASPECT_ID_BY_MP[mp] ?? DEFAULT_ASPECT_ID,
+    rumored: mp in RUMORED_MODELS || undefined,
   }))
 })()
 

@@ -23,6 +23,7 @@
       "mpMaxExceeded": "최대 1000 MP입니다",
       "mpNameRequired": "이름을 입력하세요",
       "mpDuplicateWarning": "이 메가픽셀 값이 이미 존재합니다",
+      "rumoredNote": "루머, 아직 미발표",
       "aspectRatio": "종횡비",
       "aspectNative": "네이티브",
       "aspectCustom": "사용자 정의",

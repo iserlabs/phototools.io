@@ -50,6 +50,8 @@ export interface MegapixelPreset {
   color: string
   /** Aspect ratio id of the cameras this figure represents (e.g. '4x3' for 100 MP medium format). */
   nativeAspectId?: string
+  /** The named model is a rumor, not an announced product — tooltips add a translated note. */
+  rumored?: boolean
 }
 
 export interface CustomMegapixel {

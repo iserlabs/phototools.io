@@ -23,6 +23,7 @@
       "mpMaxExceeded": "上限為 1000 MP",
       "mpNameRequired": "請輸入名稱",
       "mpDuplicateWarning": "這個百萬畫素數值已存在",
+      "rumoredNote": "傳聞,尚未發表",
       "aspectRatio": "長寬比",
       "aspectNative": "原生",
       "aspectCustom": "自訂",

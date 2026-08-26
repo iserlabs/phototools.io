@@ -23,6 +23,7 @@
       "mpMaxExceeded": "最大値は1000 MPです",
       "mpNameRequired": "名前は必須です",
       "mpDuplicateWarning": "このメガピクセル値は既に存在します",
+      "rumoredNote": "噂・未発表",
       "aspectRatio": "アスペクト比",
       "aspectNative": "ネイティブ",
       "aspectCustom": "カスタム",

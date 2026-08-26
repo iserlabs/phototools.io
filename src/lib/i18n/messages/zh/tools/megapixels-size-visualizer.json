@@ -23,6 +23,7 @@
       "mpMaxExceeded": "最大为 1000 MP",
       "mpNameRequired": "名称为必填项",
       "mpDuplicateWarning": "该百万像素值已存在",
+      "rumoredNote": "传闻,尚未发布",
       "aspectRatio": "宽高比",
       "aspectNative": "原生",
       "aspectCustom": "自定义",

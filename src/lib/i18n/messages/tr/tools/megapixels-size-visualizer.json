@@ -23,6 +23,7 @@
       "mpMaxExceeded": "Maksimum 1000 MP",
       "mpNameRequired": "Ad gereklidir",
       "mpDuplicateWarning": "Bu megapiksel değeri zaten mevcut",
+      "rumoredNote": "söylenti, henüz duyurulmadı",
       "aspectRatio": "En-Boy Oranı",
       "aspectNative": "Doğal",
       "aspectCustom": "Özel",

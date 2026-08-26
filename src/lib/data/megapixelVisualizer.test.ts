@@ -38,8 +38,19 @@ describe('MP_PRESETS', () => {
   })
   it('medium-format figures are natively 4:3; 35mm-and-under figures (incl. 61/67 FF) are 3:2', () => {
     for (const p of MP_PRESETS) {
-      const expected = [50, 100, 150].includes(p.mp) ? '4x3' : '3x2'
+      const expected = [50, 100, 150, 180].includes(p.mp) ? '4x3' : '3x2'
       expect(p.nativeAspectId, `${p.mp} MP`).toBe(expected)
+    }
+  })
+  it('180 MP is the rumored GFX 180 and the only rumored preset', () => {
+    const p = MP_PRESETS.find(x => x.mp === 180)!
+    expect(p.rumored).toBe(true)
+    expect(p.models).toBe('Fujifilm GFX 180')
+    expect(MP_PRESETS.filter(x => x.rumored).map(x => x.mp)).toEqual([180])
+  })
+  it('rumored models never leak into announced-model tooltips', () => {
+    for (const p of MP_PRESETS.filter(x => !x.rumored)) {
+      expect(p.models ?? '').not.toContain('GFX 180')
     }
   })
   it('models never include phone_mid/phone_uw category labels (not real cameras)', () => {

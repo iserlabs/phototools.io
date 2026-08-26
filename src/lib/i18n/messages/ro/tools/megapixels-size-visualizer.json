@@ -23,6 +23,7 @@
       "mpMaxExceeded": "Maximul este 1000 MP",
       "mpNameRequired": "Numele este obligatoriu",
       "mpDuplicateWarning": "Această valoare de megapixeli există deja",
+      "rumoredNote": "zvon, încă neanunțat",
       "aspectRatio": "Raport de aspect",
       "aspectNative": "Nativ",
       "aspectCustom": "Personalizat",

@@ -23,6 +23,7 @@
       "mpMaxExceeded": "El màxim és 1000 MP",
       "mpNameRequired": "El nom és obligatori",
       "mpDuplicateWarning": "Aquest valor de megapíxels ja existeix",
+      "rumoredNote": "rumor, encara sense anunciar",
       "aspectRatio": "Relació d'aspecte",
       "aspectNative": "Nativa",
       "aspectCustom": "Personalitzada",

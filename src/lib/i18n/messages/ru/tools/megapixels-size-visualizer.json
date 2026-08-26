@@ -23,6 +23,7 @@
       "mpMaxExceeded": "Максимум — 1000 MP",
       "mpNameRequired": "Укажите название",
       "mpDuplicateWarning": "Такое значение мегапикселей уже существует",
+      "rumoredNote": "слухи, ещё не анонсирована",
       "aspectRatio": "Соотношение сторон",
       "aspectNative": "Исходное",
       "aspectCustom": "Своё",

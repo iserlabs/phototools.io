@@ -23,6 +23,7 @@
       "mpMaxExceeded": "Maximum je 1000 MP",
       "mpNameRequired": "Název je povinný",
       "mpDuplicateWarning": "Tato hodnota megapixelů již existuje",
+      "rumoredNote": "spekulace, dosud neoznámeno",
       "aspectRatio": "Poměr stran",
       "aspectNative": "Nativní",
       "aspectCustom": "Vlastní",

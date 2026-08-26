@@ -23,6 +23,7 @@
       "mpMaxExceeded": "Maximum 1000 MP",
       "mpNameRequired": "Név megadása kötelező",
       "mpDuplicateWarning": "Ez a megapixel-érték már létezik",
+      "rumoredNote": "pletyka, még nem jelentették be",
       "aspectRatio": "Képarány",
       "aspectNative": "Natív",
       "aspectCustom": "Egyéni",

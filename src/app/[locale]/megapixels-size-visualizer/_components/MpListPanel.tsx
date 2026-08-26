@@ -33,7 +33,7 @@ export function MpListPanel({ visible, customMps, onToggleMp }: Props) {
               <span className={ss.checkName}>{p.name}</span>
               {p.models && (
                 <HintTooltip
-                  text={p.models}
+                  text={p.rumored ? `${p.models} (${t('rumoredNote')})` : p.models}
                   label={tooltipT('infoLabel', { term: p.name })}
                   className={ss.modelTooltip}
                 >
