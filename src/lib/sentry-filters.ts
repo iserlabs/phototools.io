@@ -89,6 +89,18 @@ export const IGNORE_SENTRY_ERRORS: (string | RegExp)[] = [
   // reporting. Left unanchored at the end so a trailing period, if Gecko ever
   // adds one, still matches.
   /Skipped ViewTransition due to document being hidden/,
+  // A script injected into one visitor's session (extension or ad-campaign
+  // payload) repeatedly rejecting on `<undefined>.M_ID` (PHOTOTOOLS-Y/Z: both
+  // issues share one trace ID — a single Chrome 151/Windows session — with 30
+  // bursty onunhandledrejection events and zero identified users). The `M_ID`
+  // property token provably exists nowhere we ship: not in src/, not in
+  // node_modules (word-boundary grep), not in the page's deployed chunk
+  // closure, and not in any fetchable runtime third party (AdSense loader,
+  // sodar, CookieYes, PostHog, Cloudflare beacon, Vercel insights) — verified
+  // 2026-08-26 against release c06110e7. denyUrls can't catch it (no stable
+  // frame URL available), so key on the injected identifier itself, as the
+  // `__firefox__` entry does. \b bounds keep TEAM_ID/M_IDX/id reporting.
+  /\bM_ID\b/,
 ]
 
 // Client-side Sentry `denyUrls` patterns — drop any event whose throwing frame

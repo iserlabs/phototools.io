@@ -74,6 +74,16 @@ describe('IGNORE_SENTRY_ERRORS', () => {
         'InvalidStateError',
         'Skipped ViewTransition due to document being hidden',
       ],
+      [
+        'injected-script M_ID read, Chromium phrasing (PHOTOTOOLS-Y/Z)',
+        'TypeError',
+        "Cannot read properties of undefined (reading 'M_ID')",
+      ],
+      [
+        'injected-script M_ID read, WebKit phrasing',
+        'TypeError',
+        "undefined is not an object (evaluating 'e.M_ID')",
+      ],
     ]
 
     it.each(noise)('drops: %s', (_name, type, value) => {
@@ -128,6 +138,18 @@ describe('IGNORE_SENTRY_ERRORS', () => {
         'genuine InvalidStateError from a detached canvas export',
         'InvalidStateError',
         "Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been detached.",
+      ],
+      // The M_ID filter keys on the exact identifier — near-miss property names
+      // our own code could plausibly read must keep reporting.
+      [
+        'app null-deref on a different _ID-suffixed property',
+        'TypeError',
+        "Cannot read properties of undefined (reading 'TEAM_ID')",
+      ],
+      [
+        'app null-deref on lowercase id',
+        'TypeError',
+        "Cannot read properties of undefined (reading 'id')",
       ],
     ]
 
