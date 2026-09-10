@@ -7,6 +7,7 @@ import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { getSkeletonBySlug } from '@/lib/data/education'
 import { formatReproductionRatio } from '@/lib/math/macroStack'
 import type { StackingState } from './useStackingState'
+import { DraftNumberInput } from './DraftNumberInput'
 import s from './FocusStacking.module.css'
 
 const MAG_MIN = 0.1
@@ -43,9 +44,8 @@ export function MacroSettingsPanel({ state }: { state: StackingState }) {
               value={state.magnification}
               onChange={(e) => state.onMagnificationChange(Number(e.target.value))}
               aria-label={`${t('magnification')}: ${state.magnification}×`} />
-            <input type="number" className={s.numInput} min={MAG_MIN} max={MAG_MAX} step={0.01}
-              value={state.magnification}
-              onChange={(e) => { const v = Number(e.target.value); if (v >= MAG_MIN && v <= MAG_MAX) state.onMagnificationChange(v) }}
+            <DraftNumberInput className={s.numInput} min={MAG_MIN} max={MAG_MAX} step={0.01}
+              value={state.magnification} onChange={state.onMagnificationChange}
               aria-label={`${t('magnification')} (×)`} />
             <span className={s.sliderValue}>{state.magnification.toFixed(2)}× · {formatReproductionRatio(state.magnification)}</span>
           </div>
@@ -99,9 +99,8 @@ export function MacroSettingsPanel({ state }: { state: StackingState }) {
               value={state.depthMm}
               onChange={(e) => state.onDepthChange(Number(e.target.value))}
               aria-label={t('subjectDepth')} />
-            <input type="number" className={s.numInput} min={0.5} max={500} step={0.5}
-              value={state.depthMm}
-              onChange={(e) => { const v = Number(e.target.value); if (v >= 0.5 && v <= 500) state.onDepthChange(v) }}
+            <DraftNumberInput className={s.numInput} min={0.5} max={500} step={0.5}
+              value={state.depthMm} onChange={state.onDepthChange}
               aria-label={`${t('subjectDepth')} (mm)`} />
             <span className={s.sliderValue}>mm</span>
           </div>
