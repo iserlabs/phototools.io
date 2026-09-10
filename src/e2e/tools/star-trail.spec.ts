@@ -74,7 +74,7 @@ test.describe('Star Trail Calculator', () => {
     // Click Arctic preset to set latitude
     await bar.locator('button', { hasText: 'Arctic' }).first().click()
 
-    // useToolQuerySync throttles the replaceState write, so poll rather than
+    // useToolQuerySync debounces the replaceState write, so poll rather than
     // sleeping a fixed interval — a fixed wait races the throttle under load.
     await expect.poll(() => page.url()).toContain('lat=')
 

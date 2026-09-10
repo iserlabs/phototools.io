@@ -2,6 +2,7 @@
 
 import { useCallback, useState } from 'react'
 import { useQueryInit, useToolQuerySync } from '@/lib/utils/querySync'
+import { replaceUrl } from '@/lib/utils/replaceUrl'
 import { useOptics, type OpticsApi } from './useOptics'
 import { useAppearance, type AppearanceApi } from './useAppearance'
 import { useFraming, type FramingApi } from './useFraming'
@@ -156,7 +157,7 @@ export function useDofState(): DofStateApi {
     setBokeh('disc')
 
     if (typeof window !== 'undefined') {
-      window.history.replaceState(null, '', window.location.pathname)
+      replaceUrl(window.location.pathname)
     }
   }, [optics, appearance, framing, uiPrefs, ab, setBokeh])
 

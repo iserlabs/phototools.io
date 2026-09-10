@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
+import { replaceUrl } from '@/lib/utils/replaceUrl'
 import type { TocEntry } from '@/lib/guides/types'
 import styles from './GuideToc.module.css'
 
@@ -49,7 +50,7 @@ export function GuideToc({ entries }: GuideTocProps) {
               onClick={(e) => {
                 e.preventDefault()
                 document.getElementById(entry.id)?.scrollIntoView({ behavior: 'smooth' })
-                history.replaceState(null, '', `#${entry.id}`)
+                replaceUrl(`#${entry.id}`)
               }}
             >
               {entry.text}

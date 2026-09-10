@@ -143,7 +143,7 @@ test.describe('FOV Simulator', () => {
     const sensorSelect = sidebar.locator('select[aria-label="Lens A sensor"]')
     await sensorSelect.selectOption('apsc_n')
 
-    // useToolQuerySync throttles the replaceState write, so poll rather than
+    // useToolQuerySync debounces the replaceState write, so poll rather than
     // sleeping a fixed interval — a fixed wait races the throttle under load.
     await expect.poll(() => page.url()).toContain('a=85')
 

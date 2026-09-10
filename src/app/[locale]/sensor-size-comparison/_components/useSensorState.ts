@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { ALL_SENSORS, calcCropFactor } from '@/lib/data/sensors'
+import { replaceUrl } from '@/lib/utils/replaceUrl'
 import { CUSTOM_COLORS, DEFAULT_VISIBLE_IDS, DEFAULT_VISIBLE } from './sensorSizeTypes'
 import type { DisplayMode, ResolvedSensor, CustomSensor } from './sensorSizeTypes'
 import {
@@ -87,7 +88,7 @@ export function useSensorState() {
       if (comparePair && comparePair.every(idResolves)) {
         url.searchParams.set('vs', comparePair.join(','))
       } else url.searchParams.delete('vs')
-      window.history.replaceState(null, '', url.toString())
+      replaceUrl(url.toString())
     }, 200)
     return () => { if (urlTimerRef.current) clearTimeout(urlTimerRef.current) }
   }, [visible, mode, resolution, customSensors, comparePair, hydrated])

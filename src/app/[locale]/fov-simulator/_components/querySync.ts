@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useUrlQuerySync } from '@/lib/utils/replaceUrl'
 import type { LensConfig } from '@/lib/types'
 import { SENSORS } from '@/lib/data/sensors'
 import type { FovSimulatorState } from './types'
@@ -58,24 +58,5 @@ function stateToQueryString(state: FovSimulatorState): string {
 }
 
 export function useQuerySync(state: FovSimulatorState): void {
-  const isFirstRender = useRef(true)
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const qs = stateToQueryString(state)
-  const qsRef = useRef(qs)
-  qsRef.current = qs
-
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false
-      return
-    }
-    if (timerRef.current) return
-    timerRef.current = setTimeout(() => {
-      const newUrl = `${window.location.pathname}?${qsRef.current}`
-      window.history.replaceState(null, '', newUrl)
-      timerRef.current = null
-    }, 200)
-  }, [qs])
-
-  useEffect(() => () => { if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null } }, [])
+  useUrlQuerySync(stateToQueryString(state))
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useUrlQuerySync } from '@/lib/utils/replaceUrl'
 import { SENSORS } from '@/lib/data/sensors'
 import { FOCAL_MAX } from '@/lib/data/focalLengths'
 import { calcCameraDistance } from '@/lib/math/compression'
@@ -85,26 +85,7 @@ function stateToQueryString(state: State): string {
 }
 
 export function useQuerySync(state: State): void {
-  const isFirstRender = useRef(true)
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const qs = stateToQueryString(state)
-  const qsRef = useRef(qs)
-  qsRef.current = qs
-
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false
-      return
-    }
-    if (timerRef.current) return
-    timerRef.current = setTimeout(() => {
-      const newUrl = `${window.location.pathname}?${qsRef.current}`
-      window.history.replaceState(null, '', newUrl)
-      timerRef.current = null
-    }, 200)
-  }, [qs])
-
-  useEffect(() => () => { if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null } }, [])
+  useUrlQuerySync(stateToQueryString(state))
 }
 
 export const LOG_MIN = Math.log(14)

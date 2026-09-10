@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { replaceUrl } from '@/lib/utils/replaceUrl'
 import type { AnalysisFilter } from '@/lib/lrcat/types'
 
 const PICKS = new Set(['pick', 'reject', 'none'])
@@ -151,7 +152,7 @@ export function useFilterUrlSync(
     timerRef.current = setTimeout(() => {
       const qs = serializeFilter(filter)
       const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname
-      window.history.replaceState(null, '', url)
+      replaceUrl(url)
       timerRef.current = null
     }, 200)
   }, [filter])

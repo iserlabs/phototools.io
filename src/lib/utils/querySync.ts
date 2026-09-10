@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useUrlQuerySync } from './replaceUrl'
 
 /**
  * Generic query parameter sync for tool state.
@@ -50,23 +51,9 @@ export function stateToQuery<S extends Record<string, unknown>>(state: S, schema
   return parts.join('&')
 }
 
-/** Sync state to URL query params (replaceState). Skips first render. Throttled to stay under browser limits (Safari: 100 calls / 10s). */
+/** Sync state to URL query params. Skips first render; debounced + rate-capped via `useUrlQuerySync`. */
 export function useToolQuerySync<S extends Record<string, unknown>>(state: S, schema: { [K in keyof S]: ParamDef<S[K]> }): void {
-  const isFirst = useRef(true)
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const qs = stateToQuery(state, schema)
-  const qsRef = useRef(qs)
-  qsRef.current = qs
-  useEffect(() => {
-    if (isFirst.current) { isFirst.current = false; return }
-    if (timerRef.current) return
-    timerRef.current = setTimeout(() => {
-      const url = qsRef.current ? `${window.location.pathname}?${qsRef.current}` : window.location.pathname
-      window.history.replaceState(null, '', url)
-      timerRef.current = null
-    }, 200)
-  }, [qs])
-  useEffect(() => () => { if (timerRef.current) { clearTimeout(timerRef.current); timerRef.current = null } }, [])
+  useUrlQuerySync(stateToQuery(state, schema))
 }
 
 type SchemaShape<S> = { [K in keyof S]: S[K] extends ParamDef<infer T> ? T : never }
