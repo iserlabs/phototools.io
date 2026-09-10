@@ -31,6 +31,7 @@
       "modeTitle": "모드",
       "distanceMode": "거리",
       "magnification": "배율",
+      "magnificationHint": "사양표에는 배율비로 표기됩니다. 1:3.8은 0.26×에 해당합니다.",
       "subjectDepth": "피사체 깊이",
       "sliceDoF": "슬라이스 피사계 심도",
       "railStep": "레일 간격",

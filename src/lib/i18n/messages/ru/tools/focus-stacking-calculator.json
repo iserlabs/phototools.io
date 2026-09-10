@@ -31,6 +31,7 @@
       "modeTitle": "Режим",
       "distanceMode": "Дистанция",
       "magnification": "Увеличение",
+      "magnificationHint": "В характеристиках это указывают как масштаб съёмки: 1:3.8 соответствует 0.26×.",
       "subjectDepth": "Глубина объекта",
       "sliceDoF": "ГРИП среза",
       "railStep": "Шаг рельса",

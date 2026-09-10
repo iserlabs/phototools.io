@@ -59,6 +59,18 @@ export function calcMacroStack(input: MacroStackInput): MacroStackResult {
   }
 }
 
+/** One-decimal number with any trailing ".0" dropped: 3.84 → "3.8", 4 → "4". */
+const trimRatio = (n: number): string => String(Math.round(n * 10) / 10)
+
+/**
+ * Magnification as the reproduction ratio lens spec sheets quote —
+ * "1:3.8" below life size, "1:1" at it, "2:1" above — so a user holding a
+ * spec sheet can see their lens's number match without doing the division.
+ */
+export function formatReproductionRatio(magnification: number): string {
+  return magnification >= 1 ? `${trimRatio(magnification)}:1` : `1:${trimRatio(1 / magnification)}`
+}
+
 /** Uniform per-shot rows for table, diagram, and exports — one tested source. */
 export function macroShots(result: MacroStackResult): MacroShotRow[] {
   return Array.from({ length: result.shotCount }, (_, i) => ({

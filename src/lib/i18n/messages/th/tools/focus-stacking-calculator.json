@@ -31,6 +31,7 @@
       "modeTitle": "โหมด",
       "distanceMode": "ระยะทาง",
       "magnification": "กำลังขยาย",
+      "magnificationHint": "สเปกเลนส์มักระบุเป็นอัตราส่วน: 1:3.8 หมายถึง 0.26×",
       "subjectDepth": "ความลึกซับเจกต์",
       "sliceDoF": "ระยะชัดลึกของชิ้นส่วน",
       "railStep": "ขั้นตอนราง",

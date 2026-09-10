@@ -31,6 +31,7 @@
       "modeTitle": "Mode",
       "distanceMode": "Distance",
       "magnification": "Magnification",
+      "magnificationHint": "Sa spec sheet, ibinibigay ito bilang ratio: ang 1:3.8 ay katumbas ng 0.26×.",
       "subjectDepth": "Lalim ng Subject",
       "sliceDoF": "Depth of Field ng Slice",
       "railStep": "Rail Step",

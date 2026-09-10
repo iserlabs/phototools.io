@@ -8,6 +8,7 @@ export const PARAM_SCHEMA = {
   near: numParam(0.5, 0.1, 100),
   far: distanceOrInfParam(5, 0.1, 100),
   overlap: intParam(20, 10, 50),
-  m: numParam(1, 0.25, 5),
+  // Floor of 0.1 (1:10) admits close-focus primes and compacts (Leica Q2 is 1:3.8 = 0.26×).
+  m: numParam(1, 0.1, 5),
   depth: numParam(10, 0.5, 500),
 }

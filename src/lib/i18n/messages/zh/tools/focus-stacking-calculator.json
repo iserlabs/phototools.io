@@ -31,6 +31,7 @@
       "modeTitle": "模式",
       "distanceMode": "距离",
       "magnification": "放大倍率",
+      "magnificationHint": "规格表通常以放大比标注：1:3.8 即 0.26×。",
       "subjectDepth": "被摄体深度",
       "sliceDoF": "切片景深",
       "railStep": "导轨步进",

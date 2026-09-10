@@ -31,6 +31,7 @@
       "modeTitle": "Tila",
       "distanceMode": "Etäisyys",
       "magnification": "Suurennos",
+      "magnificationHint": "Tekniset tiedot ilmoittavat tämän suhdelukuna: 1:3.8 vastaa 0.26×.",
       "subjectDepth": "Kohteen syvyys",
       "sliceDoF": "Syväterävyys / viipale",
       "railStep": "Kiskoaskel",

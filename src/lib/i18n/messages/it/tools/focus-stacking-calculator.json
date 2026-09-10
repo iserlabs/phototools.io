@@ -31,6 +31,7 @@
       "modeTitle": "Modalità",
       "distanceMode": "Distanza",
       "magnification": "Ingrandimento",
+      "magnificationHint": "Le schede tecniche lo indicano come rapporto: 1:3.8 corrisponde a 0.26×.",
       "subjectDepth": "Profondità del soggetto",
       "sliceDoF": "PdC della fetta",
       "railStep": "Passo della slitta",

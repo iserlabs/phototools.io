@@ -31,6 +31,7 @@
       "modeTitle": "Modus",
       "distanceMode": "Afstand",
       "magnification": "Vergroting",
+      "magnificationHint": "Specificaties geven dit op als verhouding: 1:3.8 komt overeen met 0.26×.",
       "subjectDepth": "Onderwerpdiepte",
       "sliceDoF": "Scherptediepte per plakje",
       "railStep": "Sledestap",

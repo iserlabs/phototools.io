@@ -342,3 +342,10 @@
     min-height: 44px;
   }
 }
+
+.fieldHint {
+  margin: 4px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}

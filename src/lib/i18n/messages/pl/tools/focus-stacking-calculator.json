@@ -31,6 +31,7 @@
       "modeTitle": "Tryb",
       "distanceMode": "Odległość",
       "magnification": "Powiększenie",
+      "magnificationHint": "W specyfikacjach podaje się to jako skalę odwzorowania: 1:3.8 oznacza 0.26×.",
       "subjectDepth": "Głębokość obiektu",
       "sliceDoF": "GoO wycinka",
       "railStep": "Krok szyny",

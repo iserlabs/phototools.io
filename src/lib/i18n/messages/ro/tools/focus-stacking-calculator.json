@@ -31,6 +31,7 @@
       "modeTitle": "Mod",
       "distanceMode": "Distanță",
       "magnification": "Mărire",
+      "magnificationHint": "Fișele tehnice îl indică drept raport: 1:3.8 înseamnă 0.26×.",
       "subjectDepth": "Adâncimea subiectului",
       "sliceDoF": "profunzime de câmp per felie",
       "railStep": "Pas de șină",

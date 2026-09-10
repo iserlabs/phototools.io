@@ -31,6 +31,7 @@
       "modeTitle": "Modo",
       "distanceMode": "Distancia",
       "magnification": "Aumento",
+      "magnificationHint": "Las fichas técnicas lo indican como relación: 1:3.8 equivale a 0.26×.",
       "subjectDepth": "Profundidad del sujeto",
       "sliceDoF": "PdC por rebanada",
       "railStep": "Paso del raíl",

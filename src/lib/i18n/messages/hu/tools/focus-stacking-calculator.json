@@ -31,6 +31,7 @@
       "modeTitle": "Mód",
       "distanceMode": "Távolság",
       "magnification": "Nagyítás",
+      "magnificationHint": "Az adatlapok arányként adják meg: az 1:3.8 0.26×-nak felel meg.",
       "subjectDepth": "Téma mélysége",
       "sliceDoF": "Szelet mélységélessége",
       "railStep": "Sínlépés",

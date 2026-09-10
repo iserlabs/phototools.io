@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { calcMacroStack, macroShots } from './macroStack'
+import { calcMacroStack, macroShots, formatReproductionRatio } from './macroStack'
 
 const BASE = { magnification: 1, aperture: 8, coc: 0.03, subjectDepthMm: 10, overlapPct: 0.2 }
 
@@ -44,5 +44,24 @@ describe('macroShots', () => {
     expect(rows[0]).toEqual({ number: 1, railPositionMm: 0, sliceStartMm: 0, sliceEndMm: r.sliceDofMm })
     expect(rows[2].railPositionMm).toBeCloseTo(2 * r.stepMm, 6)
     expect(rows[rows.length - 1].sliceEndMm).toBeGreaterThanOrEqual(10)
+  })
+})
+
+describe('formatReproductionRatio', () => {
+  it('renders sub-life-size magnification as 1:n to one decimal', () => {
+    expect(formatReproductionRatio(0.263)).toBe('1:3.8') // Leica Q2 spec sheet
+    expect(formatReproductionRatio(0.25)).toBe('1:4')
+    expect(formatReproductionRatio(0.1)).toBe('1:10')
+  })
+
+  it('renders half and full life size without trailing zeros', () => {
+    expect(formatReproductionRatio(0.5)).toBe('1:2')
+    expect(formatReproductionRatio(1)).toBe('1:1')
+  })
+
+  it('renders greater-than-life-size magnification as n:1', () => {
+    expect(formatReproductionRatio(2)).toBe('2:1')
+    expect(formatReproductionRatio(1.5)).toBe('1.5:1')
+    expect(formatReproductionRatio(5)).toBe('5:1')
   })
 })

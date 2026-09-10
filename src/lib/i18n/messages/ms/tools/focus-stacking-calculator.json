@@ -31,6 +31,7 @@
       "modeTitle": "Mod",
       "distanceMode": "Jarak",
       "magnification": "Pembesaran",
+      "magnificationHint": "Spesifikasi kanta menyenaraikannya sebagai nisbah: 1:3.8 bermaksud 0.26×.",
       "subjectDepth": "Kedalaman Subjek",
       "sliceDoF": "Kedalaman Medan Hirisan",
       "railStep": "Langkah Rel",

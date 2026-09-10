@@ -31,6 +31,7 @@
       "modeTitle": "मोड",
       "distanceMode": "दूरी",
       "magnification": "मैग्निफ़िकेशन",
+      "magnificationHint": "स्पेक शीट में इसे अनुपात के रूप में दिया जाता है: 1:3.8 का अर्थ है 0.26×।",
       "subjectDepth": "सब्जेक्ट डेप्थ",
       "sliceDoF": "स्लाइस डेप्थ ऑफ़ फील्ड",
       "railStep": "रेल स्टेप",

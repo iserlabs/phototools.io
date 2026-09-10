@@ -31,6 +31,7 @@
       "modeTitle": "Modus",
       "distanceMode": "Entfernung",
       "magnification": "Abbildungsmaßstab",
+      "magnificationHint": "Datenblätter geben dies als Abbildungsmaßstab an: 1:3.8 entspricht 0.26×.",
       "subjectDepth": "Motivtiefe",
       "sliceDoF": "Schärfentiefe pro Schicht",
       "railStep": "Schlittenschritt",

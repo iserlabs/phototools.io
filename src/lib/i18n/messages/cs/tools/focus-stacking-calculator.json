@@ -31,6 +31,7 @@
       "modeTitle": "Režim",
       "distanceMode": "Vzdálenost",
       "magnification": "Zvětšení",
+      "magnificationHint": "V technických údajích se uvádí jako poměr: 1:3.8 odpovídá 0.26×.",
       "subjectDepth": "Hloubka subjektu",
       "sliceDoF": "Hloubka ostrosti na plátek",
       "railStep": "Krok posuvu",

@@ -26,6 +26,21 @@ test.describe('Focus Stacking Calculator', () => {
     await expect(sidebar.getByText('2.00×')).toBeVisible()
   })
 
+  test('sub-life-size magnification can be typed exactly and shows its spec-sheet ratio', async ({ page }) => {
+    // Leica Q2 macro mode is quoted as 1:3.8 — a value the old 0.25-floor
+    // slider could not express and no preset offered.
+    await page.goto(`${URL}?mode=macro&m=0.26&depth=10&f=5.6`)
+    const sidebar = page.locator('[class*="sidebar"]').first()
+    const magField = sidebar.locator('[class*="field"]').filter({ has: page.locator('label:text-is("Magnification")') })
+    // The hint sentence also mentions "1:3.8", so scope to the readout span.
+    const readout = magField.locator('[class*="sliderValue"]')
+    await expect(magField.locator('input[type="number"]')).toHaveValue('0.26')
+    await expect(readout).toHaveText('0.26× · 1:3.8')
+    await magField.locator('input[type="number"]').fill('0.5')
+    await expect(readout).toHaveText('0.50× · 1:2')
+    await expect.poll(() => page.url()).toContain('m=0.5')
+  })
+
   test('infinity toggle switches far limit and updates URL', async ({ page }) => {
     await page.goto(URL)
     const sidebar = page.locator('[class*="sidebar"]').first()

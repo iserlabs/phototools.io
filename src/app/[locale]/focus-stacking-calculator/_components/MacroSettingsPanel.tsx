@@ -5,12 +5,15 @@ import { SENSORS } from '@/lib/data/sensors'
 import { ApertureField } from '@/components/shared/ApertureField'
 import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { getSkeletonBySlug } from '@/lib/data/education'
+import { formatReproductionRatio } from '@/lib/math/macroStack'
 import type { StackingState } from './useStackingState'
 import s from './FocusStacking.module.css'
 
+const MAG_MIN = 0.1
+const MAG_MAX = 5
 const MAG_PRESETS = [
-  { value: 0.5, label: '1:2' }, { value: 1, label: '1:1' }, { value: 2, label: '2:1' },
-  { value: 3, label: '3:1' }, { value: 5, label: '5:1' },
+  { value: 0.25, label: '1:4' }, { value: 0.5, label: '1:2' }, { value: 1, label: '1:1' },
+  { value: 2, label: '2:1' }, { value: 3, label: '3:1' }, { value: 5, label: '5:1' },
 ]
 
 export function MacroSettingsPanel({ state }: { state: StackingState }) {
@@ -32,13 +35,21 @@ export function MacroSettingsPanel({ state }: { state: StackingState }) {
             {t('magnification')}
             {tooltips?.magnification && <InfoTooltip tooltip={tooltips.magnification} />}
           </label>
-          <div className={s.sliderRow}>
-            <input type="range" className={s.slider} min={0.25} max={5} step={0.05}
+          {/* Bounds mirror PARAM_SCHEMA.m in ./querySync.ts. The typed input
+              exists because spec sheets quote a ratio (Leica Q2: 1:3.8 =
+              0.26×) that a coarse slider can't land on exactly. */}
+          <div className={s.numRow}>
+            <input type="range" className={s.slider} min={MAG_MIN} max={MAG_MAX} step={0.01}
               value={state.magnification}
               onChange={(e) => state.onMagnificationChange(Number(e.target.value))}
               aria-label={`${t('magnification')}: ${state.magnification}×`} />
-            <span className={s.sliderValue}>{state.magnification.toFixed(2)}×</span>
+            <input type="number" className={s.numInput} min={MAG_MIN} max={MAG_MAX} step={0.01}
+              value={state.magnification}
+              onChange={(e) => { const v = Number(e.target.value); if (v >= MAG_MIN && v <= MAG_MAX) state.onMagnificationChange(v) }}
+              aria-label={`${t('magnification')} (×)`} />
+            <span className={s.sliderValue}>{state.magnification.toFixed(2)}× · {formatReproductionRatio(state.magnification)}</span>
           </div>
+          <p className={s.fieldHint}>{t('magnificationHint')}</p>
           <div className={s.presetRow}>
             {MAG_PRESETS.map((p) => (
               <button key={p.label} type="button"

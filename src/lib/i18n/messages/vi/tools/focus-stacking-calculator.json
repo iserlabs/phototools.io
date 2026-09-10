@@ -31,6 +31,7 @@
       "modeTitle": "Chế độ",
       "distanceMode": "Khoảng cách",
       "magnification": "Độ phóng đại",
+      "magnificationHint": "Thông số kỹ thuật ghi giá trị này dưới dạng tỷ lệ: 1:3.8 tương đương 0.26×.",
       "subjectDepth": "Chiều sâu chủ thể",
       "sliceDoF": "Chiều sâu trường ảnh mỗi lát cắt",
       "railStep": "Bước ray",

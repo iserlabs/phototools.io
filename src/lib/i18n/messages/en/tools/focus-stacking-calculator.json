@@ -31,6 +31,7 @@
       "modeTitle": "Mode",
       "distanceMode": "Distance",
       "magnification": "Magnification",
+      "magnificationHint": "Spec sheets give this as a ratio: 1:3.8 means 0.26×.",
       "subjectDepth": "Subject Depth",
       "sliceDoF": "Slice Depth of Field",
       "railStep": "Rail Step",

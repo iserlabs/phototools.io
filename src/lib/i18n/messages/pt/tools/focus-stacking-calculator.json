@@ -31,6 +31,7 @@
       "modeTitle": "Modo",
       "distanceMode": "Distância",
       "magnification": "Ampliação",
+      "magnificationHint": "As fichas técnicas indicam isto como razão: 1:3.8 equivale a 0.26×.",
       "subjectDepth": "Profundidade do Assunto",
       "sliceDoF": "Profundidade de Campo da Fatia",
       "railStep": "Passo do Trilho",

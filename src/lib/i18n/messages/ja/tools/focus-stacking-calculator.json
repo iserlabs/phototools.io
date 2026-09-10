@@ -31,6 +31,7 @@
       "modeTitle": "モード",
       "distanceMode": "距離",
       "magnification": "倍率",
+      "magnificationHint": "仕様表では倍率比で表記されます。1:3.8 は 0.26× に相当します。",
       "subjectDepth": "被写体の奥行き",
       "sliceDoF": "1断面あたりの被写界深度",
       "railStep": "レールステップ",
