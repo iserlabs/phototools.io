@@ -192,6 +192,25 @@ describe('SENTRY_DENY_URLS', () => {
     })
   })
 
+  // Google's AdSense RUM script throws `Error: int64` from its own
+  // visibilitychange listener when Safari 26.6 hands it a timing value it can't
+  // encode (PHOTOTOOLS-11: every frame below Sentry's listener wrapper is
+  // pagead/js/…/rum_fy2021.js, and the script literally reads
+  // `throw Ia("int64")`). Vendor code, not ours — drop by frame URL. Match the
+  // googlesyndication host AND the /pagead/js/ path, since Sentry normalizes
+  // the frame to `app:///pagead/js/…` and strips the host.
+  describe('drops third-party Google ad-script frames', () => {
+    const denied: [name: string, url: string][] = [
+      ['raw AdSense RUM url', 'https://pagead2.googlesyndication.com/pagead/js/r20260909/r20190131/rum_fy2021.js'],
+      ['app:///-normalized form', 'app:///pagead/js/r20260909/r20190131/rum_fy2021.js'],
+      ['AdSense loader', 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'],
+      ['ad frame host', 'https://tpc.googlesyndication.com/sodar/sodar2.js'],
+    ]
+    it.each(denied)('denies: %s', (_name, url) => {
+      expect(isUrlDenied(url)).toBe(true)
+    })
+  })
+
   // Must stay narrow: errors thrown by our own bundle (including our own
   // guarded/unguarded localStorage access) have to reach Sentry.
   describe('keeps our own frames', () => {

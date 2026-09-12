@@ -121,6 +121,17 @@ export const SENTRY_DENY_URLS: (string | RegExp)[] = [
   // normalizes it to `app:///client_data/<id>/banner.js`.
   /cdn-cookieyes\.com/i,
   /\/client_data\/[^/]+\/banner\.js/i,
+  // Google AdSense scripts (loader, RUM beacon, sodar ad-quality frames). The
+  // AdSense real-user-monitoring script's own `visibilitychange` listener
+  // throws `Error: int64` on Safari 26.6 (PHOTOTOOLS-11): the script reads
+  // `function yb(a){if(!wb(a))throw Ia("int64")}` and rejects a timing value it
+  // can't encode as int64. Every frame below Sentry's addEventListener wrapper
+  // is pagead/js/r…/rum_fy2021.js — none of ours — so this is vendor noise we
+  // can't patch. Match the host AND the stable /pagead/js/ path: Sentry
+  // normalizes the frame to `app:///pagead/js/…` with the host stripped, and
+  // the CookieYes entry above needs the same two-pattern treatment.
+  /googlesyndication\.com/i,
+  /\/pagead\/js\//i,
 ]
 
 // Scraper bots drive the site with Playwright and `evaluate()` their own
