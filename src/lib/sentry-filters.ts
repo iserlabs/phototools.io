@@ -101,6 +101,21 @@ export const IGNORE_SENTRY_ERRORS: (string | RegExp)[] = [
   // frame URL available), so key on the injected identifier itself, as the
   // `__firefox__` entry does. \b bounds keep TEAM_ID/M_IDX/id reporting.
   /\bM_ID\b/,
+  // MetaMask's injected inpage bridge failing to restore its own session
+  // (PHOTOTOOLS-P: `i: Failed to connect to MetaMask`, linked cause `MetaMask
+  // extension not found`, every frame at chrome-extension://…/scripts/inpage.js,
+  // surfaced via onunhandledrejection). We ship no web3 code, so any message
+  // naming MetaMask is extension noise. The extension-scheme denyUrls below
+  // catch the framed exception; this catches the frameless linked cause.
+  /\bMetaMask\b/,
+  // Microsoft Outlook SafeLinks / Defender link scanning drives pages in a
+  // CefSharp-embedded Chromium whose .NET bridge rejects with this exact
+  // `Object Not Found Matching Id:N, MethodName:…, ParamCount:N` shape when
+  // its host object is gone (PHOTOTOOLS-X, frameless non-Error rejection —
+  // a widely documented Sentry noise signature). Anchored on the FULL
+  // three-field signature: a bare "Object Not Found" from our own code must
+  // still report (see the narrowness case in the tests).
+  /Object Not Found Matching Id:\d+, MethodName:\w+, ParamCount:\d+/,
 ]
 
 // Client-side Sentry `denyUrls` patterns — drop any event whose throwing frame
@@ -132,6 +147,16 @@ export const SENTRY_DENY_URLS: (string | RegExp)[] = [
   // the CookieYes entry above needs the same two-pattern treatment.
   /googlesyndication\.com/i,
   /\/pagead\/js\//i,
+  // Browser-extension scripts injected into the page's global scope
+  // (PHOTOTOOLS-P: MetaMask's chrome-extension://…/scripts/inpage.js). Their
+  // crashes trip our global handlers and get attributed to our release.
+  // Nothing we ship ever loads from an extension scheme, so deny the schemes
+  // outright — Sentry's own docs recommend exactly this set. denyUrls sees the
+  // raw client-side frame URL, so the scheme prefix is reliable here even
+  // though Sentry's UI later normalizes it to `app:///scripts/inpage.js`.
+  /^chrome-extension:\/\//i,
+  /^moz-extension:\/\//i,
+  /^safari(-web)?-extension:\/\//i,
 ]
 
 // Scraper bots drive the site with Playwright and `evaluate()` their own

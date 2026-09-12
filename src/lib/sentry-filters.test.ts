@@ -84,6 +84,21 @@ describe('IGNORE_SENTRY_ERRORS', () => {
         'TypeError',
         "undefined is not an object (evaluating 'e.M_ID')",
       ],
+      [
+        'MetaMask inpage bridge failing to restore its session (PHOTOTOOLS-P)',
+        'i',
+        'Failed to connect to MetaMask',
+      ],
+      [
+        'MetaMask inpage bridge, linked cause (PHOTOTOOLS-P)',
+        'Error',
+        'MetaMask extension not found',
+      ],
+      [
+        'Microsoft Outlook SafeLinks / CefSharp bridge rejection (PHOTOTOOLS-X)',
+        'UnhandledRejection',
+        'Non-Error promise rejection captured with value: Object Not Found Matching Id:2, MethodName:update, ParamCount:4',
+      ],
     ]
 
     it.each(noise)('drops: %s', (_name, type, value) => {
@@ -205,6 +220,22 @@ describe('SENTRY_DENY_URLS', () => {
       ['app:///-normalized form', 'app:///pagead/js/r20260909/r20190131/rum_fy2021.js'],
       ['AdSense loader', 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'],
       ['ad frame host', 'https://tpc.googlesyndication.com/sodar/sodar2.js'],
+    ]
+    it.each(denied)('denies: %s', (_name, url) => {
+      expect(isUrlDenied(url)).toBe(true)
+    })
+  })
+
+  // Browser-extension content/inpage scripts run in the page's global scope,
+  // so their crashes trip our global handlers and get attributed to our
+  // release (PHOTOTOOLS-P: MetaMask's inpage.js). Sentry's own docs recommend
+  // denying the extension URL schemes outright — nothing we ship ever loads
+  // from one.
+  describe('drops browser-extension frames', () => {
+    const denied: [name: string, url: string][] = [
+      ['MetaMask inpage script (Chrome)', 'chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/scripts/inpage.js'],
+      ['Firefox extension', 'moz-extension://5a9f2b1c-1234-4c8d-9e1f-abcdef123456/content.js'],
+      ['Safari web extension', 'safari-web-extension://ABCDEF12-3456-7890-ABCD-EF1234567890/inject.js'],
     ]
     it.each(denied)('denies: %s', (_name, url) => {
       expect(isUrlDenied(url)).toBe(true)
