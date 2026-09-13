@@ -1,6 +1,7 @@
 'use client'
 
 import { ControlPanel, controlPanelStyles as cp } from '@/components/shared/ControlPanel'
+import { DraftNumberInput } from '@/components/shared/DraftNumberInput'
 import { toSliderPos, fromSliderPos, SLIDER_STEPS } from './logSlider'
 import { getDofSensor } from '@/lib/data/dofSimulator/sensors'
 import { calcDefaultCoc } from '@/lib/math/dof'
@@ -69,17 +70,14 @@ export function AdvancedPanel({ optics, background, uiPrefs, labels = DEFAULT_LA
           {labels.customCoc}
         </label>
         {cocOn && (
-          <input
-            type="number"
+          <DraftNumberInput
             className={cp.input}
             value={optics.customCocMm ?? cocSeed}
             min={0.005}
             max={0.2}
             step={0.001}
-            onChange={(e) => {
-              const v = Number(e.target.value)
-              if (!isNaN(v)) optics.setCustomCocMm(v)
-            }}
+            onChange={optics.setCustomCocMm}
+            aria-label={labels.customCoc}
           />
         )}
       </div>

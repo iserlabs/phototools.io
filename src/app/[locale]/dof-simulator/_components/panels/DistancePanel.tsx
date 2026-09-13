@@ -1,6 +1,7 @@
 'use client'
 
 import { ControlPanel, controlPanelStyles as cp } from '@/components/shared/ControlPanel'
+import { DraftNumberInput } from '@/components/shared/DraftNumberInput'
 import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { toSliderPos, fromSliderPos, SLIDER_STEPS } from './logSlider'
 import { getLensById } from '@/lib/data/dofSimulator/lenses'
@@ -47,17 +48,17 @@ export function DistancePanel({ optics, derived, uiPrefs, onDistanceChange, labe
           {labels.distance}
           {tooltips?.subjectDistance && <InfoTooltip tooltip={tooltips.subjectDistance} />}
         </span>
-        <input
-          type="number"
+        {/* Draft-tolerant so a sub-metre distance can be typed: a plain
+            controlled input clamps the leading "0" to DIST_MIN and React
+            snaps the field back before the decimals arrive. */}
+        <DraftNumberInput
           className={cp.input}
           value={Number(optics.distanceM.toFixed(2))}
           min={DIST_MIN}
           max={DIST_MAX}
           step={0.01}
-          onChange={(e) => {
-            const v = Number(e.target.value)
-            if (!isNaN(v)) onDistanceChange(v)
-          }}
+          onChange={onDistanceChange}
+          aria-label={labels.distance}
         />
       </div>
       <div className={cp.sliderWrap}>

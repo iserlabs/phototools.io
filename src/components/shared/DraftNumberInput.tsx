@@ -9,7 +9,7 @@ interface DraftNumberInputProps {
   step: number
   onChange: (value: number) => void
   className?: string
-  'aria-label': string
+  'aria-label'?: string
 }
 
 /**

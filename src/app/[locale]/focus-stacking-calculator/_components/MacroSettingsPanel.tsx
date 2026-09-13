@@ -7,7 +7,7 @@ import { InfoTooltip } from '@/components/shared/InfoTooltip'
 import { getSkeletonBySlug } from '@/lib/data/education'
 import { formatReproductionRatio } from '@/lib/math/macroStack'
 import type { StackingState } from './useStackingState'
-import { DraftNumberInput } from './DraftNumberInput'
+import { DraftNumberInput } from '@/components/shared/DraftNumberInput'
 import s from './FocusStacking.module.css'
 
 const MAG_MIN = 0.1

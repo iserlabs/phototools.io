@@ -1,4 +1,5 @@
 import { type ReactNode } from 'react'
+import { DraftNumberInput } from './DraftNumberInput'
 import { useTranslations } from 'next-intl'
 import styles from './ControlPanel.module.css'
 
@@ -106,14 +107,13 @@ export function NumberStepper({ value, min = 0, max = 9999, step = 1, onChange }
       >
         −
       </button>
-      <input
-        type="number"
+      <DraftNumberInput
         className={styles.stepperInput}
         value={value}
         min={min}
         max={max}
         step={step}
-        onChange={(e) => onChange(clamp(Number(e.target.value) || min))}
+        onChange={onChange}
       />
       <button
         className={styles.stepperBtn}
