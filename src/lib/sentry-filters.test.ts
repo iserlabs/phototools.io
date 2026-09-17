@@ -99,6 +99,16 @@ describe('IGNORE_SENTRY_ERRORS', () => {
         'UnhandledRejection',
         'Non-Error promise rejection captured with value: Object Not Found Matching Id:2, MethodName:update, ParamCount:4',
       ],
+      [
+        'ResizeObserver frame bounce, old Chromium wording (PHOTOTOOLS-12)',
+        'Error',
+        'ResizeObserver loop limit exceeded',
+      ],
+      [
+        'ResizeObserver frame bounce, current wording',
+        'Error',
+        'ResizeObserver loop completed with undelivered notifications.',
+      ],
     ]
 
     it.each(noise)('drops: %s', (_name, type, value) => {

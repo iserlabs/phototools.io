@@ -99,8 +99,15 @@ export function Canvas({ lenses, imageIndex, orientation, canvasRef, cleanCanvas
       // Skip while the parent is collapsed (e.g. behind a mobile/desktop
       // display:none switch); sizing to 0 would clear the canvas and crash draw().
       if (w <= 0 || h <= 0) return
+      // On mobile the parent's height follows the canvas, so setting the
+      // canvas height resizes the parent and re-fires this observer in the
+      // same frame. The second pass computes the same width-driven size; bail
+      // before touching the DOM so the loop ends here instead of tripping the
+      // browser's "ResizeObserver loop limit exceeded" report (PHOTOTOOLS-12).
+      const pw = Math.round(w * dpr); const ph = Math.round(h * dpr)
+      if (canvas.width === pw && canvas.height === ph) return
       canvas.style.width = `${w}px`; canvas.style.height = `${h}px`
-      canvas.width = w * dpr; canvas.height = h * dpr; draw()
+      canvas.width = pw; canvas.height = ph; draw()
     })
     observer.observe(canvas.parentElement!); return () => observer.disconnect()
   }, [canvasRef, draw, orientation])
