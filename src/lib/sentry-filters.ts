@@ -116,6 +116,20 @@ export const IGNORE_SENTRY_ERRORS: (string | RegExp)[] = [
   // three-field signature: a bare "Object Not Found" from our own code must
   // still report (see the narrowness case in the tests).
   /Object Not Found Matching Id:\d+, MethodName:\w+, ParamCount:\d+/,
+  // The browser's own "a ResizeObserver callback changed layout, so I gave up
+  // delivering the rest of this frame's notifications" report (PHOTOTOOLS-12,
+  // Chrome 114 on Android, the FOV Simulator's canvas observer). Per spec the
+  // observer simply re-runs next frame; nothing is lost and no code path is
+  // broken, which is why every browser reports it through window.onerror as
+  // a bare Error rather than throwing at the observer. The two phrasings are
+  // old Chromium ("loop limit exceeded") and everything current ("loop
+  // completed with undelivered notifications"). The observer that triggered
+  // it now bails when the size it computes is the size the canvas already
+  // has, so it can't re-trigger itself — but a ResizeObserver anywhere else
+  // on the site can still hit a legitimate one-frame layout bounce, and
+  // that is not a bug to page for.
+  'ResizeObserver loop limit exceeded',
+  'ResizeObserver loop completed with undelivered notifications',
 ]
 
 // Client-side Sentry `denyUrls` patterns — drop any event whose throwing frame
