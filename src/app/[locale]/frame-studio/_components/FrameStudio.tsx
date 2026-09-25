@@ -25,6 +25,7 @@ import { RelatedTools } from '@/components/shared/RelatedTools'
 import { ToolHeading } from '@/components/shared/ToolHeading'
 import type { EditorMode, GridType, GridOptions, FrameConfig, CropState, AspectRatioType } from './types'
 import { DEFAULT_GRID_OPTIONS, DEFAULT_FRAME_CONFIG } from '@/lib/data/frameStudio'
+import { readExifSegments } from '@/lib/utils/exif'
 import styles from './FrameStudio.module.css'
 
 const SLUG = 'frame-studio'
@@ -40,6 +41,8 @@ export function FrameStudio() {
   const [originalFile, setOriginalFile] = useState<File | null>(null)
   const [originalImage, setOriginalImage] = useState<HTMLImageElement | null>(null)
   const [originalMimeType, setOriginalMimeType] = useState('image/png')
+  const [exifSegments, setExifSegments] = useState<ArrayBuffer[]>([])
+  const latestFileRef = useRef<File | null>(null)
   const [cropState, setCropState] = useState<CropState | null>(null)
   const [activeGrids, setActiveGrids] = useState<GridType[]>(['rule-of-thirds'])
   const [gridOffset, setGridOffset] = useState({ x: 0, y: 0 })
@@ -50,8 +53,19 @@ export function FrameStudio() {
   const [aspectRatio, setAspectRatio] = useState<AspectRatioType>('original')
 
   const handleFile = useCallback((file: File) => {
+    const mimeType = file.type || 'image/jpeg'
     setOriginalFile(file)
-    setOriginalMimeType(file.type || 'image/jpeg')
+    setOriginalMimeType(mimeType)
+    setExifSegments([])
+    latestFileRef.current = file
+    // Read the EXIF now, while the picked file is certainly readable, so the
+    // export never has to open the File again (PHOTOTOOLS-13). A read that
+    // fails here just exports without metadata.
+    readExifSegments(file, mimeType)
+      .then((segments) => { if (latestFileRef.current === file) setExifSegments(segments) })
+      .catch((err) => {
+        Sentry.captureException(err, { tags: { module: 'frame-studio', op: 'read-exif' } })
+      })
     const img = new Image()
     const url = URL.createObjectURL(file)
     img.onload = () => {
@@ -126,7 +140,9 @@ export function FrameStudio() {
   }, [handleResetEdits, handleFile])
 
   const handleDeletePhoto = useCallback(() => {
+    latestFileRef.current = null
     setOriginalFile(null)
+    setExifSegments([])
     setOriginalImage(null)
     setShowExport(false)
     handleResetEdits()
@@ -205,7 +221,7 @@ export function FrameStudio() {
         <ExportDialog image={originalImage} crop={cropState} frameConfig={frameConfig}
           activeGrids={activeGrids} gridOptions={gridOptions} gridOffset={gridOffset}
           gridDisplaySize={{ width: canvasDims.width, height: canvasDims.height }}
-          originalFile={originalFile} originalMimeType={originalMimeType}
+          originalFile={originalFile} originalMimeType={originalMimeType} exifSegments={exifSegments}
           onClose={() => setShowExport(false)} />
       )}
     </>

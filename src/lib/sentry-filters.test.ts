@@ -4,6 +4,7 @@ import {
   IGNORE_SENTRY_ERRORS,
   SENTRY_DENY_URLS,
   isBotAutomationEvent,
+  isForeignScriptEvent,
 } from './sentry-filters'
 
 // Mirror of Sentry's own matching (eventFilters.ts / string.ts): an event is
@@ -318,5 +319,127 @@ describe('isBotAutomationEvent', () => {
   it('keeps events with no stacktrace at all', () => {
     expect(isBotAutomationEvent({ exception: { values: [{ type: 'Error', value: 'x' }] } } as ErrorEvent)).toBe(false)
     expect(isBotAutomationEvent({} as ErrorEvent)).toBe(false)
+  })
+})
+
+// Events raised by scripts injected into the page WITHOUT a source URL —
+// WKWebView user scripts evaluated by the browser itself, eval'd payloads
+// from extensions or proxies — so the throwing frames carry no script file
+// at all (PHOTOTOOLS-14/15/16/17: one Chrome-for-iOS session, es-MX visitor
+// on /en/exposure-simulator, four errors inside 44 s). The messages are
+// minified identifiers (`pa`, `La`, `` Ka`prod ``) that change with every
+// build of the injected script, so a message filter would go stale at once;
+// the stable signal is the frame shape. Verified against the deployed
+// release: no chunk contains those strings, the longest chunk is 128 lines,
+// and the HTML document is a single line — so "document line 415" and
+// "undefined line 199" cannot be ours.
+interface FrameShape { filename?: string; function?: string; lineno?: number; colno?: number }
+
+function makeGlobalHandlerEvent(
+  mechanism: string,
+  type: string,
+  value: string,
+  frames?: FrameShape[],
+  handled = false,
+): ErrorEvent {
+  return {
+    exception: {
+      values: [
+        {
+          type,
+          value,
+          mechanism: { type: mechanism, handled },
+          ...(frames ? { stacktrace: { frames } } : {}),
+        },
+      ],
+    },
+  } as ErrorEvent
+}
+
+const ONERROR = 'auto.browser.global_handlers.onerror'
+const ONREJECTION = 'auto.browser.global_handlers.onunhandledrejection'
+
+describe('isForeignScriptEvent', () => {
+  describe('drops the observed URL-less injected-script shapes', () => {
+    it('PHOTOTOOLS-17: RangeError whose only frame is filename "undefined"', () => {
+      const event = makeGlobalHandlerEvent(ONERROR, 'RangeError', 'Maximum call stack size exceeded.', [
+        { filename: 'undefined', lineno: 199, colno: 363 },
+      ])
+      expect(isForeignScriptEvent(event)).toBe(true)
+    })
+
+    it('PHOTOTOOLS-15: rejection whose frames are all [native code] Promise', () => {
+      const native = { filename: '[native code]', function: 'Promise' }
+      const event = makeGlobalHandlerEvent(ONREJECTION, 'Error', 'Ka`prod', [native, native, native])
+      expect(isForeignScriptEvent(event)).toBe(true)
+    })
+
+    it('PHOTOTOOLS-14: onerror attributed to the HTML document at a line it does not have', () => {
+      const event = makeGlobalHandlerEvent(ONERROR, 'Error', 'pa', [
+        { filename: 'app:///en/exposure-simulator', lineno: 415, colno: 45 },
+      ])
+      expect(isForeignScriptEvent(event)).toBe(true)
+    })
+
+    it('PHOTOTOOLS-16: frameless rejection of a bare minified identifier', () => {
+      expect(isForeignScriptEvent(makeGlobalHandlerEvent(ONREJECTION, 'Error', 'La'))).toBe(true)
+    })
+
+    it('raw (pre-normalization) document URL is treated the same as app:///', () => {
+      const event = makeGlobalHandlerEvent(ONERROR, 'Error', 'pa', [
+        { filename: 'https://www.phototools.io/en/exposure-simulator', lineno: 415, colno: 45 },
+      ])
+      expect(isForeignScriptEvent(event)).toBe(true)
+    })
+  })
+
+  describe('keeps everything that can implicate our own code', () => {
+    it('the same RangeError raised from one of our chunks', () => {
+      const event = makeGlobalHandlerEvent(ONERROR, 'RangeError', 'Maximum call stack size exceeded.', [
+        { filename: 'app:///_next/static/immutable/chunks/0k5f-ok8pxuvq.js', function: 'r', lineno: 1, colno: 8812 },
+        { filename: 'app:///_next/static/immutable/chunks/0k5f-ok8pxuvq.js', function: 'r', lineno: 1, colno: 8812 },
+      ])
+      expect(isForeignScriptEvent(event)).toBe(false)
+    })
+
+    it('a mixed stack with even one frame from our bundle', () => {
+      const event = makeGlobalHandlerEvent(ONREJECTION, 'Error', 'boom', [
+        { filename: '[native code]', function: 'Promise' },
+        { filename: 'app:///_next/static/immutable/chunks/15996ofnfz0ei.js', function: 'handleExport', lineno: 1, colno: 22 },
+      ])
+      expect(isForeignScriptEvent(event)).toBe(false)
+    })
+
+    it('an inline script on the document at line 1 (our own inline scripts live there)', () => {
+      const event = makeGlobalHandlerEvent(ONERROR, 'TypeError', "undefined is not an object (evaluating 'window.__firefox__.reader')", [
+        { filename: 'app:///en/fov-simulator', lineno: 1, colno: 19 },
+      ])
+      expect(isForeignScriptEvent(event)).toBe(false)
+    })
+
+    it('anything we captured explicitly, whatever its frames look like', () => {
+      const event = makeGlobalHandlerEvent('generic', 'Error', 'pa', [{ filename: 'undefined', lineno: 199 }], true)
+      expect(isForeignScriptEvent(event)).toBe(false)
+    })
+
+    it('a frameless DOMException from a native API (PHOTOTOOLS-13 shape)', () => {
+      const event = makeGlobalHandlerEvent(ONREJECTION, 'NotFoundError', 'The object can not be found here.')
+      expect(isForeignScriptEvent(event)).toBe(false)
+    })
+
+    it('a frameless Error carrying a real sentence', () => {
+      expect(isForeignScriptEvent(makeGlobalHandlerEvent(ONREJECTION, 'Error', 'Failed to fetch'))).toBe(false)
+      expect(isForeignScriptEvent(makeGlobalHandlerEvent(ONREJECTION, 'Error', 'Minified React error #418'))).toBe(false)
+    })
+
+    it('a frameless non-Error rejection (Sentry synthesises these for primitives)', () => {
+      const event = makeGlobalHandlerEvent(ONREJECTION, 'UnhandledRejection', 'Non-Error promise rejection captured with value: oops')
+      expect(isForeignScriptEvent(event)).toBe(false)
+    })
+
+    it('events with no exception at all', () => {
+      expect(isForeignScriptEvent({} as ErrorEvent)).toBe(false)
+      expect(isForeignScriptEvent({ exception: { values: [] } } as unknown as ErrorEvent)).toBe(false)
+    })
   })
 })

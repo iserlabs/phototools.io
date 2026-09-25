@@ -3,6 +3,7 @@ import {
   IGNORE_SENTRY_ERRORS,
   SENTRY_DENY_URLS,
   isBotAutomationEvent,
+  isForeignScriptEvent,
 } from '@/lib/sentry-filters'
 import { installDomMutationGuard } from '@/lib/utils/dom-mutation-guard'
 
@@ -38,10 +39,12 @@ Sentry.init({
   // by the culprit frame's URL rather than its message — see sentry-filters.ts.
   denyUrls: SENTRY_DENY_URLS,
 
-  // Drop crashes from scraper bots' own Playwright-injected scripts, detected
-  // by the UtilityScript frame marker in the stack — see sentry-filters.ts.
+  // Drop crashes from scraper bots' own Playwright-injected scripts (the
+  // UtilityScript frame marker) and from URL-less scripts the browser or an
+  // extension evaluated into the page (every frame sourceless, or the HTML
+  // document at a line it doesn't have) — see sentry-filters.ts.
   beforeSend(event) {
-    return isBotAutomationEvent(event) ? null : event
+    return isBotAutomationEvent(event) || isForeignScriptEvent(event) ? null : event
   },
 })
 

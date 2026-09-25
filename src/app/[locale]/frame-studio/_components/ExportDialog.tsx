@@ -4,7 +4,7 @@ import { useState, useCallback } from 'react'
 import * as Sentry from '@sentry/nextjs'
 import { useTranslations } from 'next-intl'
 import { computeExportDimensions, drawSolidBorder, drawGradientBorder, drawTextureBorder, drawInnerMat, drawShadow } from '@/lib/math/frame'
-import { transferExif } from '@/lib/utils/exif'
+import { transferExifSegments } from '@/lib/utils/exif'
 import { renderTiledExport, TILED_EXPORT_THRESHOLD } from '@/lib/utils/image-export'
 import {
   drawRuleOfThirds, drawGoldenRatio, drawGoldenSpiral, drawGoldenDiagonal,
@@ -25,6 +25,8 @@ interface ExportDialogProps {
   gridDisplaySize?: { width: number; height: number }
   originalFile: File
   originalMimeType: string
+  /** APP1 segments read at upload time — export must never re-read the File (PHOTOTOOLS-13). */
+  exifSegments: ArrayBuffer[]
   onClose: () => void
 }
 
@@ -77,7 +79,7 @@ function drawGridOnExport(
 
 export function ExportDialog({
   image, crop, frameConfig, activeGrids, gridOptions,
-  gridOffset, gridDisplaySize, originalFile, originalMimeType, onClose,
+  gridOffset, gridDisplaySize, originalFile, originalMimeType, exifSegments, onClose,
 }: ExportDialogProps) {
   const t = useTranslations('toolUI.frame-studio')
   const [includeGrid, setIncludeGrid] = useState(false)
@@ -138,8 +140,7 @@ export function ExportDialog({
         return
       }
 
-      const originalBuffer = await originalFile.arrayBuffer()
-      blob = await transferExif(originalBuffer, blob, originalMimeType)
+      blob = await transferExifSegments(exifSegments, blob, originalMimeType)
 
       const baseName = originalFile.name.replace(/\.[^.]+$/, '')
       const ext = originalFile.name.match(/\.[^.]+$/)?.[0] ?? '.png'
@@ -158,8 +159,13 @@ export function ExportDialog({
         setTimeout(() => URL.revokeObjectURL(url), 30000)
       }
       onClose()
+    } catch (err) {
+      // A rejection out of a click handler never reaches React; it surfaced in
+      // Sentry only as a frameless unhandled rejection with no owner. Report it
+      // as ours, with the button restored so the guest can try again.
+      Sentry.captureException(err, { tags: { module: 'frame-studio', op: 'export' } })
     } finally { setExporting(false) }
-  }, [image, crop, frameConfig, includeGrid, activeGrids, gridOptions, gridOffset, gridDisplaySize, originalFile, originalMimeType, onClose])
+  }, [image, crop, frameConfig, includeGrid, activeGrids, gridOptions, gridOffset, gridDisplaySize, originalFile, originalMimeType, exifSegments, onClose])
 
   return (
     <div className={`${styles.overlay} ${closing ? styles.closing : ''}`} onClick={handleClose}>

@@ -10,8 +10,12 @@ const SOI = 0xffd8
 const SOS = 0xffda
 const APP1 = 0xffe1
 
+function isJpeg(mimeType: string): boolean {
+  return mimeType === 'image/jpeg' || mimeType === 'image/jpg'
+}
+
 /** Extract all APP1 (EXIF/XMP) segments from a JPEG buffer as sliced ArrayBuffers. */
-function extractApp1Segments(jpeg: ArrayBuffer): ArrayBuffer[] {
+export function extractApp1Segments(jpeg: ArrayBuffer): ArrayBuffer[] {
   const view = new DataView(jpeg)
   const segments: ArrayBuffer[] = []
 
@@ -37,17 +41,30 @@ function extractApp1Segments(jpeg: ArrayBuffer): ArrayBuffer[] {
 }
 
 /**
- * Copy EXIF metadata from an original JPEG into an exported JPEG blob.
- * Returns the original blob unchanged for non-JPEG types.
+ * Read a picked JPEG's APP1 segments up front, while the file is certainly
+ * readable. Frame Studio calls this at upload time and carries only these few
+ * KB to export, so export never touches the File again: Safari rejects
+ * `File.arrayBuffer()` with `NotFoundError: The object can not be found here.`
+ * once a picked file has stopped being readable (PHOTOTOOLS-13 — the second
+ * export of the same photo, 35 minutes into the session). Non-JPEGs carry
+ * nothing, so they are never read.
  */
-export async function transferExif(
-  originalBuffer: ArrayBuffer,
+export async function readExifSegments(file: Blob, mimeType: string): Promise<ArrayBuffer[]> {
+  if (!isJpeg(mimeType)) return []
+  return extractApp1Segments(await file.arrayBuffer())
+}
+
+/**
+ * Insert previously extracted APP1 segments (see `readExifSegments`) into an
+ * exported JPEG blob. Returns the blob unchanged for non-JPEG types or when
+ * there is nothing to carry.
+ */
+export async function transferExifSegments(
+  exifSegments: ArrayBuffer[],
   exportedBlob: Blob,
   mimeType: string,
 ): Promise<Blob> {
-  if (mimeType !== 'image/jpeg' && mimeType !== 'image/jpg') return exportedBlob
-
-  const exifSegments = extractApp1Segments(originalBuffer)
+  if (!isJpeg(mimeType)) return exportedBlob
   if (exifSegments.length === 0) return exportedBlob
 
   const exportedBuffer = await exportedBlob.arrayBuffer()

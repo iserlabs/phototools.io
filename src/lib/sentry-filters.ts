@@ -198,3 +198,68 @@ export function isBotAutomationEvent(event: FrameCarryingEvent): boolean {
     ),
   )
 }
+
+// Scripts that run in the page WITHOUT a source URL — WKWebView user scripts
+// the browser evaluates itself (Chrome for iOS injects its own features that
+// way), eval'd extension payloads, proxy-spliced code — throw through our
+// global handlers like anything else, but their frames carry no script file:
+// WebKit reports them as `[native code]`, as the literal string `undefined`,
+// or attributes them to the HTML DOCUMENT at whatever line the injected source
+// had. PHOTOTOOLS-14/15/16/17 were one Chrome-for-iOS session (an es-MX
+// visitor on /en/exposure-simulator) raising four errors in 44 s: `pa` at
+// document line 415, `` Ka`prod `` from three `[native code] Promise` frames,
+// `La` with no frames at all, and a RangeError at `undefined:199`. The
+// messages are minified identifiers that change with every build of the
+// injected script, so `ignoreErrors` cannot pin them; the frame shape can.
+//
+// Verified against release c2f2cc0c before writing this: none of the thrown
+// strings exist in any deployed chunk, the longest chunk is 128 lines, and the
+// HTML document is emitted as ONE line — so a frame attributed to the document
+// past line 1 is provably not one of our inline scripts. Frames from our own
+// bundle always name a `.js` file, so a stack with even one of those is kept,
+// and only events raised through the browser's global handlers are eligible:
+// anything our code captured explicitly reports whatever its frames look like.
+const GLOBAL_HANDLER_MECHANISM = /^auto\.browser\.global_handlers\./
+const NO_SOURCE_FILENAMES = new Set(['', 'undefined', 'null', '[native code]', '<anonymous>', 'native code'])
+const SCRIPT_FILE = /\.[cm]?js(?:[?#]|$)/i
+// A frameless throw whose whole message is one minified identifier (`La`,
+// `` Ka`prod ``). A DOMException carries its own type name and a genuine
+// message reads as a sentence, so both fall outside this and keep reporting.
+const BARE_IDENTIFIER = /^[A-Za-z_$][\w$`]*$/
+
+interface SentryFrame {
+  filename?: string
+  function?: string
+  lineno?: number
+}
+
+interface SentryException {
+  type?: string
+  value?: string
+  mechanism?: { type?: string; handled?: boolean }
+  stacktrace?: { frames?: SentryFrame[] }
+}
+
+interface ExceptionCarryingEvent {
+  exception?: { values?: SentryException[] }
+}
+
+function isSourcelessFrame(frame: SentryFrame): boolean {
+  const filename = frame.filename ?? ''
+  if (NO_SOURCE_FILENAMES.has(filename)) return true
+  // Attributed to the HTML document (no script file) beyond its only line.
+  return !SCRIPT_FILE.test(filename) && (frame.lineno ?? 0) > 1
+}
+
+export function isForeignScriptEvent(event: ExceptionCarryingEvent): boolean {
+  const values = event.exception?.values ?? []
+  if (values.length === 0) return false
+  const viaGlobalHandler = values.every(
+    (value) => value.mechanism?.handled === false && GLOBAL_HANDLER_MECHANISM.test(value.mechanism.type ?? ''),
+  )
+  if (!viaGlobalHandler) return false
+
+  const frames = values.flatMap((value) => value.stacktrace?.frames ?? [])
+  if (frames.length > 0) return frames.every(isSourcelessFrame)
+  return values.every((value) => value.type === 'Error' && BARE_IDENTIFIER.test(value.value ?? ''))
+}
