@@ -4,10 +4,6 @@
       "name": "Simulador d'angle de visió",
       "description": "Compara l'angle de visió entre distàncies focals i mides de sensor"
     },
-    "color-scheme-generator": {
-      "name": "Generador de paletes de colors",
-      "description": "Crea paletes de colors per a les teves sessions fotogràfiques"
-    },
     "exposure-simulator": {
       "name": "Simulador del triangle d'exposició",
       "description": "Mira com interactuen el diafragma, la velocitat d'obturació i l'ISO"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Full de referència fotogràfic",
       "description": "Fulls de referència amb ajustos de càmera per a escenaris habituals — descarregables i imprimibles"
+    },
+    "color-analyzer": {
+      "name": "Analitzador de colors",
+      "description": "Mostreja els colors d'una foto, llegeix la seva harmonia i descobreix cap a quina banda empènyer cadascun"
     }
   }
 }

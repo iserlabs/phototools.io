@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "Majoritatea fotografiilor conțin deja o relație de culori — doar că încă nu o vezi. Adaugă o fotografie, atinge culorile importante, iar cercul îți arată cum se relaționează. Alege armonia dorită, iar instrumentul îți spune în ce direcție să împingi fiecare culoare.",
+      "deeper": [
+        {
+          "heading": "Metoda în patru pași",
+          "text": "Intenție (ce ar trebui să simtă privitorul), Analiză (ce culori sunt de fapt în cadru), Alegerea culorii (ce armonie se potrivește acelei stări), Transformare (mișcă glisoarele în direcția indicată de cerc). Editarea vine ultima. Cea mai mare parte a frustrării legate de gradarea culorilor vine din pornirea direct de la pasul patru."
+        },
+        {
+          "heading": "Citirea cercului",
+          "text": "Fiecare mostră este plasată după nuanță (unghi) și saturație (distanța față de centru). Vizualizarea Natural arată saturația reală, Nuanțe pure împinge fiecare punct spre margine pentru ca unghiurile să fie evidente, iar Ghid de armonie adaugă pozițiile țintă și săgețile pentru armonia aleasă."
+        },
+        {
+          "heading": "Cea mai apropiată potrivire",
+          "text": "Instrumentul rotește fiecare șablon de armonie la poziția care se potrivește cel mai bine mostrelor tale și măsoară eroarea medie de nuanță, normalizată în funcție de spațierea pozițiilor șablonului, astfel încât armoniile cu patru poziții să nu câștige implicit. Câștigătoarea primește insigna; tu decizi dacă o folosești."
+        },
+        {
+          "heading": "Blocări și repere",
+          "text": "Blochează o mostră pentru a o transforma în reper: armonia se rotește în jurul acelei nuanțe, iar fiecare altă culoare este evaluată în raport cu ea. Folosește asta pentru culoarea pe care nu o vei schimba — de obicei pielea sau o culoare de brand. Fără blocare, instrumentul alege rotația cu cea mai mică eroare totală."
+        },
+        {
+          "heading": "Culori neutre",
+          "text": "Griurile, aproape-negrele și aproape-albele nu au o nuanță de încredere, așa că sunt plasate în centru și excluse din potrivire. Contează în continuare pentru atmosferă, dar mișcarea nuanței lor pe un glisor adaugă în principal o dominantă de culoare."
+        },
+        {
+          "heading": "De ce HSL, și nu un cerc perceptual",
+          "text": "Acest cerc folosește HSL, același model ca Adobe Color și panoul HSL din Lightroom, așa că direcția pe care o citești aici este aceeași pe care o vei împinge acolo. Nu este uniform din punct de vedere perceptual: galbenul ocupă o bandă îngustă, iar albastrul una largă, astfel încât o ajustare de 20° pare mai mare în unele zone decât în altele. Un cerc perceptual ar fi mai onest, dar nu s-ar potrivi cu instrumentele de editare."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Tip de armonie",
+          "description": "Relația geometrică pe care o urmărești: complementară, complementară divizată, analoagă, triadică, tetradică, monocromatică sau propriile tale ținte personalizate."
+        },
+        {
+          "label": "Mostre",
+          "description": "Ce culori ai ales să eșantionezi. Eșantionează ce contează pentru imagine, nu ce este cel mai mare. Cinci-șase puncte spun de obicei toată povestea."
+        },
+        {
+          "label": "Reper",
+          "description": "Mostra blocată în jurul căreia se rotește armonia. Fără blocare, se folosește rotația cea mai potrivită."
+        },
+        {
+          "label": "Ajustare",
+          "description": "Rotația cu semn a nuanței de la o mostră la ținta ei. Aliniat înseamnă în limita a 8°, o ajustare ușoară în limita a 25°, orice mai mult este o schimbare mare."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Eșantionează culorile pe care chiar le vei grada: cerul, pielea, obiectul dominant, o umbră. Sari peste reflexiile speculare și umbrele adânci — acestea apar ca neutre."
+        },
+        {
+          "text": "Complementar divizat este alegerea calmă și visătoare pentru fotografia de călătorie și stradală. Complementar este mai curat și mai puternic. Triadic este intenționat un pic tulburător."
+        },
+        {
+          "text": "Folosește Alegere automată pentru a începe, apoi mută sau șterge punctele. Găsește clusterele cromatice dominante, care adesea nu sunt culorile care contează cel mai mult pentru tine."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Tip de armonie",
+          "definition": "Relația țintă dintre nuanțe. Complementară (opusă), Complementară divizată (opusă ± unghi), Analoagă (vecine), Triadică (la 120° distanță), Tetradică (două perechi complementare), Monocromatică (o nuanță), Personalizată (propriile ținte)."
+        },
+        "Key Color": {
+          "term": "Culoare principală",
+          "definition": "Fără o fotografie încărcată, culoarea în jurul căreia este construită armonia. Trage pe cerc sau folosește glisoarele."
+        },
+        "Hue": {
+          "term": "Nuanță",
+          "definition": "Unghiul culorii pe cerc, în grade: 0° este roșu, 120° este verde, 240° este albastru."
+        },
+        "Saturation": {
+          "term": "Saturație",
+          "definition": "Intensitatea culorii, de la 0% (gri) la 100% (complet vie). Distanța față de centrul cercului."
+        },
+        "Lightness": {
+          "term": "Luminozitate",
+          "definition": "Strălucirea, de la 0% (negru) la 100% (alb). La 50% vezi culoarea pură."
+        },
+        "Split Angle": {
+          "term": "Unghi de divizare",
+          "definition": "Cât de departe se află cele două culori complementare divizate față de complementara directă."
+        },
+        "Spread": {
+          "term": "Distanță",
+          "definition": "Cât de departe se află culorile analoage față de nuanța de referință."
+        },
+        "Lock": {
+          "term": "Blocare",
+          "definition": "Transformă o mostră în reper. Armonia se rotește la acea nuanță, iar celelalte mostre sunt evaluate în raport cu ea. Poate fi blocată o singură mostră."
+        },
+        "Closest fit": {
+          "term": "Cea mai apropiată potrivire",
+          "definition": "Armonia a cărei rotație optimă are cea mai mică eroare normalizată de nuanță pentru mostrele tale. Necesită cel puțin două mostre cromatice."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Ai eșantionat un cer albastru la 210° și un perete portocaliu la 25°. De ce armonie sunt deja cele mai apropiate?",
+          "hint": "Verifică unghiul dintre ele.",
+          "successMessage": "Corect. O diferență de 185° este o pereche complementară aproape perfectă; o mică ajustare a peretelui o finalizează.",
+          "failureMessage": "Două culori aflate la aproximativ 180° distanță sunt complementare. Culorile analoage se află la aproximativ 60° una de alta.",
+          "options": [
+            {
+              "label": "Complementar"
+            },
+            {
+              "label": "Analog"
+            },
+            {
+              "label": "Triadic"
+            }
+          ]
+        },
+        {
+          "scenario": "O fotografie are trei mostre la 40°, 60° și 85°. Ce armonie este aceasta?",
+          "hint": "Toate sunt vecine pe cerc.",
+          "successMessage": "Corect. Nuanțele vecine, în limita a 60°, formează o armonie analoagă.",
+          "failureMessage": "Nuanțele aflate toate aproape una de alta sunt analoage — opțiunea calmă și unitară.",
+          "options": [
+            {
+              "label": "Complementar"
+            },
+            {
+              "label": "Analog"
+            },
+            {
+              "label": "Tetradic"
+            }
+          ]
+        },
+        {
+          "scenario": "Vrei o fotografie stradală visătoare și calmă, dar cu ceva contrast păstrat. Ce armonie ar trebui să alegi?",
+          "hint": "Gândește-te la cei doi vecini ai complementarei, în loc de complementara însăși.",
+          "successMessage": "Da. Complementar divizat păstrează tensiunea fără asprimea unei opoziții directe.",
+          "failureMessage": "Complementar divizat este opțiunea calmă, dar contrastantă. Triadic tinde să pară energic sau tulburător.",
+          "options": [
+            {
+              "label": "Complementar divizat"
+            },
+            {
+              "label": "Triadic"
+            },
+            {
+              "label": "Analog"
+            }
+          ]
+        },
+        {
+          "scenario": "O mostră arată Ajustare ușoară spre roz cu o deltă de −15°. Ce faci în panoul HSL din Lightroom?",
+          "hint": "Cuvântul de direcție îți spune unde să împingi, mărimea îți spune cât de departe.",
+          "successMessage": "Corect. Mișcă glisorul de Nuanță al acelei culori spre roz, până când cardul arată Aliniat.",
+          "failureMessage": "Împinge nuanța în direcția numită (roz) cu o valoare mică; o schimbare de 15° este o ajustare ușoară, nu o schimbare mare.",
+          "options": [
+            {
+              "label": "Ajustează ușor nuanța spre roz"
+            },
+            {
+              "label": "Redu saturația"
+            },
+            {
+              "label": "Împinge nuanța spre verde"
+            }
+          ]
+        },
+        {
+          "scenario": "Două mostre au aceeași nuanță, dar una este blocată. În jurul căreia se rotește armonia?",
+          "hint": "O singură mostră poate fi reperul.",
+          "successMessage": "Corect. Mostra blocată este reperul; cealaltă este evaluată în raport cu șablonul construit pe ea.",
+          "failureMessage": "Mostra blocată este întotdeauna reperul. Fără blocare, se folosește rotația cea mai potrivită.",
+          "options": [
+            {
+              "label": "Mostra blocată"
+            },
+            {
+              "label": "Prima mostră plasată"
+            },
+            {
+              "label": "Cea mai saturată mostră"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

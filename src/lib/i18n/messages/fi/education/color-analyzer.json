@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "Useimmissa kuvissa on jo väriyhteys; et vain vielä näe sitä. Pudota kuva, napauta väreillä, jotka merkitsevät, ja kehä näyttää, miten ne suhtautuvat toisiinsa. Valitse haluamasi harmonia, ja työkalu kertoo, mihin suuntaan kutakin väriä tulisi työntää.",
+      "deeper": [
+        {
+          "heading": "Neliportainen menetelmä",
+          "text": "Aikomus (mitä katsojan tulisi tuntea), Analyysi (mitä värejä kuvassa todella on), Värivalinta (mikä harmonia sopii siihen tunteeseen), Muunnos (liuku-säätimien siirtäminen kehän näyttämään suuntaan). Muokkaus tulee viimeisenä. Suurin osa värigradoinnin turhautumisesta johtuu siitä, että aloitetaan neljännestä vaiheesta."
+        },
+        {
+          "heading": "Kehän lukeminen",
+          "text": "Jokainen näyte sijoitetaan sävyn (kulma) ja kylläisyyden (etäisyys keskipisteestä) mukaan. Luonnollinen-näkymä näyttää todellisen kylläisyyden, Puhtaat sävyt työntää jokaisen pisteen reunaan, jotta kulmat ovat selkeitä, ja Harmoniaopas lisää tavoiteasennot ja nuolet valitulle harmonialle."
+        },
+        {
+          "heading": "Lähin osuma",
+          "text": "Työkalu kiertää jokaisen harmoniamallin asentoon, joka vastaa parhaiten näytteitäsi, ja mittaa keskimääräisen sävyvirheen, normalisoituna mallin paikkojen väliseen etäisyyteen, jotta neljän paikan harmoniat eivät voita oletuksena. Voittaja saa merkin; sinä päätät, käytätkö sitä."
+        },
+        {
+          "heading": "Lukitukset ja ankkurit",
+          "text": "Lukitse näyte tehdäksesi siitä ankkurin: harmonia kiertyy tuon sävyn ympärille, ja jokaista muuta väriä arvioidaan sitä vasten. Käytä tätä värille, jota et aio muuttaa, yleensä ihonväri tai brändin väri. Ilman lukitusta työkalu valitsee kierron, jolla on pienin kokonaisvirhe."
+        },
+        {
+          "heading": "Neutraalit",
+          "text": "Harmailla, lähes mustilla ja lähes valkoisilla sävyillä ei ole luotettavaa sävyä, joten ne sijoittuvat keskelle ja jäävät osuvuuden ulkopuolelle. Ne vaikuttavat silti tunnelmaan, mutta niiden sävyn siirtäminen liu'ulla lisää lähinnä värivirheen."
+        },
+        {
+          "heading": "Miksi HSL eikä havaintopohjainen kehä",
+          "text": "Tämä kehä käyttää HSL-mallia, samaa kuin Adobe Color ja Lightroomin HSL-paneeli, joten tästä lukemasi suunta on suunta, jota työnnät siellä. Se ei ole havaintopohjaisesti tasainen: keltainen vie kapean kaistaleen ja sininen leveän, joten 20°:n siirtymä näyttää joillain alueilla suuremmalta kuin toisilla. Havaintopohjainen kehä olisi rehellisempi, mutta ei vastaisi muokkaustyökaluja."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Harmonian tyyppi",
+          "description": "Geometrinen suhde, johon pyrit: komplementaarinen, jaettu komplementaarinen, analoginen, triadinen, tetradinen, monokromaattinen tai omat mukautetut tavoitteesi."
+        },
+        {
+          "label": "Näytteet",
+          "description": "Mitkä värit valitsit näytteeksi. Ota näyte siitä, mikä merkitsee kuvan kannalta, ei siitä, mikä on suurin. Viisi tai kuusi pistettä kertoo yleensä koko tarinan."
+        },
+        {
+          "label": "Ankkuri",
+          "description": "Lukittu näyte, jonka ympärillä harmonia kiertyy. Ilman lukitusta käytetään parhaiten sopivaa kiertoa."
+        },
+        {
+          "label": "Siirtymä",
+          "description": "Etumerkillinen sävyn kierto näytteestä sen tavoitteeseen. Kohdallaan tarkoittaa alle 8°, pieni siirtymä alle 25°, kaikki tätä enemmän on suuri siirtymä."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Ota näyte väreistä, joita todella aiot gradoida: taivas, iho, hallitseva kohde, varjo. Ohita kiiltävät korkeat valot ja syvät varjot; ne näyttäytyvät neutraaleina."
+        },
+        {
+          "text": "Jaettu komplementaarinen on rauhallinen, uneksuva valinta matka- ja katukuvaukseen. Komplementaarinen on puhtaampi ja iskevämpi. Triadinen on tarkoituksella hieman levoton."
+        },
+        {
+          "text": "Käytä automaattivalintaa aloittaaksesi, siirrä tai poista sitten pisteitä. Se löytää hallitsevat kromaattiset ryhmät, jotka eivät usein ole ne värit, joista eniten välität."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Harmonian tyyppi",
+          "definition": "Sävyjen välinen tavoitesuhde. Komplementaarinen (vastakkainen), Jaettu komplementaarinen (vastakkainen ± kulma), Analoginen (naapurit), Triadinen (120° erossa), Tetradinen (kaksi komplementaarista paria), Monokromaattinen (yksi sävy), Mukautettu (omat tavoitteesi)."
+        },
+        "Key Color": {
+          "term": "Avainväri",
+          "definition": "Ilman ladattua kuvaa väri, jonka ympärille harmonia rakennetaan. Vedä kehällä tai käytä liukusäätimiä."
+        },
+        "Hue": {
+          "term": "Sävy",
+          "definition": "Värikulma kehällä asteina: 0° on punainen, 120° on vihreä, 240° on sininen."
+        },
+        "Saturation": {
+          "term": "Kylläisyys",
+          "definition": "Värin intensiteetti 0 %:sta (harmaa) 100 %:iin (täysin kirkas). Etäisyys kehän keskipisteestä."
+        },
+        "Lightness": {
+          "term": "Vaaleus",
+          "definition": "Kirkkaus 0 %:sta (musta) 100 %:iin (valkoinen). 50 %:ssa näet puhtaan värin."
+        },
+        "Split Angle": {
+          "term": "Jakokulma",
+          "definition": "Kuinka kaukana kaksi jaettua komplementaariväriä ovat suorasta komplementaarisävystä."
+        },
+        "Spread": {
+          "term": "Leviäminen",
+          "definition": "Kuinka kaukana analogiset värit ovat ankkurisävystä."
+        },
+        "Lock": {
+          "term": "Lukitse",
+          "definition": "Tekee näytteestä ankkurin. Harmonia kiertyy tuohon sävyyn, ja muita näytteitä arvioidaan sitä vasten. Vain yksi näyte voi olla lukittu."
+        },
+        "Closest fit": {
+          "term": "Lähin osuma",
+          "definition": "Harmonia, jonka paras kierto tuottaa pienimmän normalisoidun sävyvirheen näytteissäsi. Vaatii vähintään kaksi kromaattista näytettä."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Otit näytteen sinisestä taivaasta kulmasta 210° ja oranssista seinästä kulmasta 25°. Mitä harmoniaa ne ovat jo lähimpänä?",
+          "hint": "Tarkista niiden välinen kulma.",
+          "successMessage": "Oikein. 185° ero on lähes täydellinen komplementaarinen pari; pieni siirtymä seinässä viimeistelee sen.",
+          "failureMessage": "Kaksi väriä, jotka ovat noin 180° erossa, ovat komplementaarisia. Analogiset värit ovat noin 60° päässä toisistaan.",
+          "options": [
+            {
+              "label": "Komplementaarinen"
+            },
+            {
+              "label": "Analoginen"
+            },
+            {
+              "label": "Triadinen"
+            }
+          ]
+        },
+        {
+          "scenario": "Kuvassa on kolme näytettä kulmissa 40°, 60° ja 85°. Mikä harmonia tämä on?",
+          "hint": "Ne ovat kaikki naapureita kehällä.",
+          "successMessage": "Oikein. Naapurisävyt noin 60°:n sisällä muodostavat analogisen harmonian.",
+          "failureMessage": "Sävyt, jotka ovat kaikki lähellä toisiaan, ovat analogisia — rauhallinen ja yhtenäinen vaihtoehto.",
+          "options": [
+            {
+              "label": "Komplementaarinen"
+            },
+            {
+              "label": "Analoginen"
+            },
+            {
+              "label": "Tetradinen"
+            }
+          ]
+        },
+        {
+          "scenario": "Haluat uneksuvan, rauhallisen katukuvan mutta säilyttää hieman kontrastia. Minkä harmonian sinun tulisi valita?",
+          "hint": "Ajattele komplementin kahta naapuria itse komplementin sijaan.",
+          "successMessage": "Kyllä. Jaettu komplementaarinen säilyttää jännitteen ilman suoran vastakohdan kovuutta.",
+          "failureMessage": "Jaettu komplementaarinen on rauhallinen mutta kontrastinen vaihtoehto. Triadinen on taipuvainen tuntumaan energiseltä tai levottomalta.",
+          "options": [
+            {
+              "label": "Jaettu komplementaarinen"
+            },
+            {
+              "label": "Triadinen"
+            },
+            {
+              "label": "Analoginen"
+            }
+          ]
+        },
+        {
+          "scenario": "Näyte näyttää Pieni siirtymä väriin pinkki delta-arvolla −15°. Mitä teet Lightroomin HSL-paneelissa?",
+          "hint": "Suuntasana kertoo, mihin työntää, koko kertoo kuinka paljon.",
+          "successMessage": "Oikein. Siirrä kyseisen värin Sävy-liukusäädintä kohti pinkkiä, kunnes kortti näyttää Kohdallaan.",
+          "failureMessage": "Työnnä sävyä ilmoitettuun suuntaan (pinkki) pienen verran; 15°:n muutos on pieni siirtymä, ei suuri siirtymä.",
+          "options": [
+            {
+              "label": "Siirrä sävyä hieman kohti pinkkiä"
+            },
+            {
+              "label": "Poista kylläisyys"
+            },
+            {
+              "label": "Siirrä sävyä kohti vihreää"
+            }
+          ]
+        },
+        {
+          "scenario": "Kahdella näytteellä on sama sävy, mutta toinen on lukittu. Kumman ympärille harmonia kiertyy?",
+          "hint": "Vain yksi näyte voi olla ankkuri.",
+          "successMessage": "Oikein. Lukittu näyte on ankkuri; toista arvioidaan sen päälle rakennettua mallia vasten.",
+          "failureMessage": "Lukittu näyte on aina ankkuri. Ilman lukitusta käytetään parhaiten sopivaa kiertoa.",
+          "options": [
+            {
+              "label": "Lukittu näyte"
+            },
+            {
+              "label": "Ensin sijoitettu näyte"
+            },
+            {
+              "label": "Kylläisin näyte"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -38,10 +38,6 @@
       "title": "Comparación de tamaños de sensor",
       "description": "Compara tamaños de sensores de cámara desde formato medio hasta smartphone. Visualiza en modo superposición, lado a lado y densidad de píxeles con modelos de cámaras reales."
     },
-    "color-scheme-generator": {
-      "title": "Generador de esquemas de color",
-      "description": "Genera paletas de colores para fotografía usando armonías de color complementarias, análogas, triádicas y tetrádicas. Rueda de color interactiva con selector de fotos."
-    },
     "frame-studio": {
       "title": "Estudio de enmarcado",
       "description": "Recorta, enmarca y compone fotos con guías de cuadrícula. 100% en el navegador — tus fotos nunca salen de tu dispositivo."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Analizador de color: lee la armonía de color de cualquier foto",
+      "description": "Analizador de color y generador de esquemas de color gratuito. Muestrea los colores de tu foto, colócalos en una rueda de color, encuentra la armonía de color más cercana y obtén orientación de gradación para cada color. 100 % en tu navegador."
     }
   }
 }

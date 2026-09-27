@@ -4,10 +4,6 @@
       "name": "Simulatore di campo visivo",
       "description": "Confronta il campo visivo tra diverse lunghezze focali e dimensioni del sensore"
     },
-    "color-scheme-generator": {
-      "name": "Generatore di schemi colore",
-      "description": "Crea palette di colori per sessioni fotografiche"
-    },
     "exposure-simulator": {
       "name": "Simulatore del triangolo dell'esposizione",
       "description": "Scopri come interagiscono apertura, tempo di posa e ISO"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Cheat sheet di fotografia",
       "description": "Schede di impostazioni per gli scenari di scatto più comuni — scaricabili e stampabili"
+    },
+    "color-analyzer": {
+      "name": "Analizzatore del colore",
+      "description": "Campiona i colori di una foto, leggi la sua armonia e scopri in che direzione spingere ciascuno"
     }
   }
 }

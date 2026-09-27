@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Color Scheme",
+      "complementary": "Complementary",
+      "splitComplementary": "Split Complementary",
+      "analogous": "Analogous",
+      "triadic": "Triadic",
+      "tetradic": "Tetradic",
+      "monochromatic": "Monochromatic",
+      "custom": "Custom",
+      "closestFit": "Closest Fit",
+      "closestSentence": "Pinakamalapit ang litrato mo sa {harmony} (average na {degrees}° ang layo). I-tap para gamitin.",
+      "keyColor": "Key Color",
+      "hue": "Hue:",
+      "saturation": "Saturation:",
+      "lightness": "Lightness:",
+      "splitAngle": "Split angle:",
+      "spread": "Spread:",
+      "rectangleWidth": "Rectangle width:",
+      "square": "(square)",
+      "samples": "Mga Sample",
+      "lock": "I-lock ang kulay na ito bilang anchor",
+      "unlock": "I-unlock",
+      "removeSample": "Alisin ang sample",
+      "labelPlaceholder": "Label",
+      "neutralNotScored": "Neutral, hindi kinukwenta sa score",
+      "suggested": "Suggested",
+      "autoPick": "Mag-auto-pick ng 5",
+      "changePhoto": "Palitan ang litrato",
+      "capReached": "{cap} sample ang max. Mag-alis ng isa para makadagdag pa.",
+      "markerLabel": "Sample {n}: {label}",
+      "dropPhotoPrompt": "I-drop ang litrato o i-click para mag-browse. Nananatili ito sa browser mo.",
+      "decodeError": "Hindi mabasa ang file na iyon. Subukan ang JPEG o PNG.",
+      "canvasLabel": "Litrato. I-click para magdagdag ng sample point.",
+      "viewNatural": "Natural",
+      "viewPure": "Pure Hues",
+      "viewGuide": "Harmony Guide",
+      "viewHint": {
+        "key": "I-drag ang dot para itakda ang key color. I-drop ang litrato para i-analyze ang totoong mga kulay sa halip.",
+        "natural": "Ipinapakita ang mga kulay sa totoo nilang saturation. Lumipat ng tab para basahin ang harmony.",
+        "pure": "Naka-push ang mga hue papunta sa gilid para madaling makita ang anggulo sa pagitan ng mga kulay.",
+        "guide": "Ang mga dashed na hugis ay ang target na posisyon. Ipinapakita ng mga arrow kung saang direksyon dapat igalaw ang bawat kulay."
+      },
+      "nudge": {
+        "aligned": "Aligned",
+        "slight": "Bahagyang paayon sa {color}",
+        "big": "Malaking paglipat papunta sa {color}"
+      },
+      "names": {
+        "red": "Pula",
+        "vermilion": "Pulang-kahel",
+        "orange": "Kahel",
+        "amber": "Amber",
+        "yellow": "Dilaw",
+        "lime": "Berdeng-lime",
+        "chartreuse": "Dilaw-berde",
+        "leaf-green": "Berdeng dahon",
+        "green": "Berde",
+        "jade": "Berdeng jade",
+        "spring-green": "Sariwang berde",
+        "mint": "Berdeng mint",
+        "cyan": "Cyan",
+        "sky-blue": "Bughaw",
+        "azure": "Matingkad na bughaw",
+        "cobalt": "Asul na cobalt",
+        "blue": "Asul",
+        "indigo": "Indigo",
+        "violet": "Lila",
+        "purple": "Ube",
+        "magenta": "Magenta",
+        "fuchsia": "Fuchsia pink",
+        "pink": "Pink",
+        "rose": "Rosas",
+        "gray": "Gray",
+        "black": "Itim",
+        "white": "Puti"
+      },
+      "keyColorLabel": "Key color — i-click para i-copy ang hex",
+      "clickToCopyHex": "I-click para i-copy ang hex",
+      "copiedExcl": "Na-copy!",
+      "copyColors": "Kopyahin ang mga colors",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Kopyahin ang hex codes",
+      "copyCssVariables": "Kopyahin ang CSS variables",
+      "copyRgbValues": "Kopyahin ang RGB values",
+      "suggestions": {
+        "complementary": {
+          "warm": "Bagay sa: warm sunset portraits na may cool shadow contrast",
+          "cool": "Bagay sa: moody blue-hour shots na may warm accent lighting",
+          "default": "Bagay sa: high-contrast composition na may malakas na visual tension"
+        },
+        "splitComplementary": {
+          "warm": "Bagay sa: dreamy at tahimik na look na may contrast pero hindi harsh",
+          "cool": "Bagay sa: cool na street at travel scenes na may dalawang warm accent",
+          "default": "Bagay sa: balanced frame na may variety pero walang direktang oposisyon"
+        },
+        "analogous": {
+          "warm": "Bagay sa: golden hour landscapes na may unified warm tones",
+          "cool": "Bagay sa: tahimik na water scenes at twilight photography",
+          "default": "Bagay sa: harmonious nature shots na may smooth na color transitions"
+        },
+        "triadic": {
+          "warm": "Bagay sa: bold editorial work gamit ang energy ng red, yellow, at blue",
+          "cool": "Bagay sa: vibrant, medyo unsettling na frame na may tatlong malakas na kulay",
+          "default": "Bagay sa: vibrant editorial work at bold creative portraits"
+        },
+        "tetradic": {
+          "warm": "Bagay sa: mayaman at layered na scene gamit ang dalawang complementary pair",
+          "cool": "Bagay sa: masalimuot na cityscape na may cool at warm light sources",
+          "default": "Bagay sa: masaganang editorial layouts at masalimuot na multi-subject composition"
+        },
+        "monochromatic": {
+          "warm": "Bagay sa: tahimik at unified na warm tones mula sa isang hue",
+          "cool": "Bagay sa: calm at minimal na cool scenes na nakabase sa isang hue",
+          "default": "Bagay sa: minimal at unified na mga larawan na umaasa sa light at shadow"
+        },
+        "custom": {
+          "warm": "I-drag ang dashed na targets para i-design ang sarili mong relationship ng mga kulay",
+          "cool": "I-drag ang dashed na targets para i-design ang sarili mong relationship ng mga kulay",
+          "default": "I-drag ang dashed na targets para i-design ang sarili mong relationship ng mga kulay"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Ano ang color harmony sa photography?",
+          "answer": "Ang color harmony ay ang relationship sa pagitan ng mga hue sa frame na parang sinadya: dalawang kulay na magkasalungat (complementary), magkatabing kulay sa wheel (analogous), o tatlong pantay ang layo (triadic). Bihirang magsimula ang litrato sa isang malinis na harmony, pero kadalasan isang maliit na tweak lang ang layo nito."
+        },
+        "complementary-vs-analogous": {
+          "question": "Paano ko babasahin ang harmony na nasa litrato ko na?",
+          "answer": "Mag-sample ng ilang importanteng points (langit, balat, ang isang pulang pinto) at tingnan kung saan sila napupunta sa wheel. Ang dalawang dot na halos magkasalungat ay isang complementary pair; ang cluster na nasa loob ng 60° ay analogous. Ginagawa na ng Closest Fit badge ang comparison na ito para sa iyo sa lahat ng anim na harmony."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Paano ko gagamitin ang suggested colors sa Lightroom o Photoshop?",
+          "answer": "Ipinapakita ng bawat sample ang direction (papunta sa pink, papunta sa teal) at isang suggested hex sa parehong saturation at lightness. Sa HSL panel ng Lightroom o Point Color, o sa Hue/Saturation ng Photoshop, itulak ang hue ng kulay na iyon papunta sa direction na ipinapakita hanggang malapit na ito sa suggested value. I-adjust muna ang pinakamalaking shifts, at tumigil kapag Aligned na ang arrow."
+        }
+      }
+    }
+  }
+}

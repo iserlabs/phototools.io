@@ -38,10 +38,6 @@
       "title": "Srovnání velikostí snímačů",
       "description": "Porovnej velikosti snímačů od středního formátu po smartphone. Překrytí, vedle sebe, hustota pixelů a reálné modely fotoaparátů."
     },
-    "color-scheme-generator": {
-      "title": "Generátor barevných palet",
-      "description": "Generuj barevné palety pro fotografy pomocí komplementárních, analogických, triadických a tetradických harmonií. Interaktivní barevné kolo s výběrem z fotky."
-    },
     "frame-studio": {
       "title": "Studio kompozice",
       "description": "Ořízni, orámuj a komponuj fotky s pomocnými mřížkami. Vše běží v prohlížeči — tvoje fotky nikdy neopustí zařízení."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Analyzátor barev: přečtěte barevnou harmonii na jakékoli fotce",
+      "description": "Bezplatný analyzátor barev fotografií a generátor barevných schémat. Nasnímejte barvy z fotky, vyneste je na barevný kruh, najděte nejbližší barevnou harmonii a získejte návod na úpravu jednotlivých barev. 100% ve vašem prohlížeči."
     }
   }
 }

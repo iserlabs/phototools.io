@@ -1,0 +1,15 @@
+.pane { position: relative; flex: 1; min-width: 0; min-height: 0; background: var(--surface-2, #111); border-right: 1px solid var(--border); overflow: hidden; }
+.dropWrap { position: absolute; inset: 16px; display: flex; flex-direction: column; gap: 8px; align-items: center; justify-content: center; }
+.decodeError { margin: 0; color: var(--danger, #ef4444); font-size: 13px; text-align: center; }
+.imageBox { position: absolute; }
+.image { display: block; cursor: crosshair; }
+.markers { position: absolute; inset: 0; pointer-events: none; }
+.marker { position: absolute; transform: translate(-50%, -50%); width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; color: #fff; font: 700 11px/1 system-ui, sans-serif; text-shadow: 0 0 3px rgba(0,0,0,.9); box-shadow: 0 1px 4px rgba(0,0,0,.6); cursor: grab; padding: 0; touch-action: none; pointer-events: auto; }
+.markerSelected { border-color: #ffd166; box-shadow: 0 0 0 3px rgba(255,209,102,.35), 0 1px 4px rgba(0,0,0,.6); }
+.markerRemove { position: absolute; transform: translate(calc(-50% + 15px), calc(-50% - 15px)); width: 18px; height: 18px; border-radius: 50%; border: 0; background: #222; color: #fff; font-size: 12px; line-height: 18px; padding: 0; cursor: pointer; pointer-events: auto; }
+.toolbar { position: absolute; left: 12px; bottom: 12px; display: flex; gap: 8px; align-items: center; }
+.toolBtn { background: var(--accent); color: #fff; border: 0; border-radius: 6px; padding: 6px 10px; font: inherit; font-size: 12px; cursor: pointer; }
+.toolBtnGhost { background: rgba(0,0,0,.55); color: #fff; border: 1px solid rgba(255,255,255,.3); border-radius: 6px; padding: 6px 10px; font: inherit; font-size: 12px; cursor: pointer; }
+.capNote { color: var(--text-muted); font-size: 11px; }
+.loupe { position: fixed; width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.5); pointer-events: none; z-index: 20; }
+@media (max-width: 1023px) { .pane { min-height: 260px; border-right: 0; border-bottom: 1px solid var(--border); } }

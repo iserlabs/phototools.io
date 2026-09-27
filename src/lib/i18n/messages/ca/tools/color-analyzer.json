@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Harmonia de colors",
+      "complementary": "Complementari",
+      "splitComplementary": "Complementari dividit",
+      "analogous": "Anàleg",
+      "triadic": "Triàdic",
+      "tetradic": "Tetràdic",
+      "monochromatic": "Monocromàtic",
+      "custom": "Personalitzat",
+      "closestFit": "Millor coincidència",
+      "closestSentence": "La teva foto és més propera a {harmony} (desviació mitjana de {degrees}°). Toca per utilitzar-la.",
+      "keyColor": "Color clau",
+      "hue": "To:",
+      "saturation": "Saturació:",
+      "lightness": "Lluminositat:",
+      "splitAngle": "Angle de divisió:",
+      "spread": "Amplada:",
+      "rectangleWidth": "Amplada del rectangle:",
+      "square": "(quadrat)",
+      "samples": "Mostres",
+      "lock": "Bloqueja aquest color com a referència",
+      "unlock": "Desbloqueja",
+      "removeSample": "Elimina la mostra",
+      "labelPlaceholder": "Etiqueta",
+      "neutralNotScored": "Neutre, no puntuat",
+      "suggested": "Suggerit",
+      "autoPick": "Tria automàtica de 5",
+      "changePhoto": "Canvia la foto",
+      "capReached": "Màxim {cap} mostres. Elimina'n una per afegir-ne una altra.",
+      "markerLabel": "Mostra {n}: {label}",
+      "dropPhotoPrompt": "Arrossega una foto o fes clic per examinar. Es queda al teu navegador.",
+      "decodeError": "No s'ha pogut llegir el fitxer. Prova amb un JPEG o un PNG.",
+      "canvasLabel": "Foto. Fes clic per afegir un punt de mostra.",
+      "viewNatural": "Natural",
+      "viewPure": "Tons purs",
+      "viewGuide": "Guia d'harmonia",
+      "viewHint": {
+        "key": "Arrossega el punt per definir un color clau. O deixa anar una foto per analitzar els colors reals.",
+        "natural": "Mostra els colors amb la seva saturació real. Canvia de pestanya per llegir l'harmonia.",
+        "pure": "Els tons s'empenyen cap a la vora perquè els angles entre colors es puguin llegir fàcilment.",
+        "guide": "Les formes discontínues són les posicions objectiu. Les fletxes mostren cap a quina banda ha de moure's cada color."
+      },
+      "nudge": {
+        "aligned": "Alineat",
+        "slight": "Petit ajust cap a {color}",
+        "big": "Gran canvi cap a {color}"
+      },
+      "names": {
+        "red": "vermell",
+        "vermilion": "vermelló",
+        "orange": "taronja",
+        "amber": "ambre",
+        "yellow": "groc",
+        "lime": "verd llima",
+        "chartreuse": "groc-verdós",
+        "leaf-green": "verd fulla",
+        "green": "verd",
+        "jade": "verd jade",
+        "spring-green": "verd primavera",
+        "mint": "verd menta",
+        "cyan": "cian",
+        "sky-blue": "blau cel",
+        "azure": "atzur",
+        "cobalt": "blau cobalt",
+        "blue": "blau",
+        "indigo": "indi",
+        "violet": "violeta",
+        "purple": "porpra",
+        "magenta": "magenta",
+        "fuchsia": "fúcsia",
+        "pink": "rosa",
+        "rose": "rosat",
+        "gray": "gris",
+        "black": "negre",
+        "white": "blanc"
+      },
+      "keyColorLabel": "Color clau — fes clic per copiar l'hex",
+      "clickToCopyHex": "Fes clic per copiar l'hex",
+      "copiedExcl": "Copiat!",
+      "copyColors": "Copia els colors",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Copia els codis hex",
+      "copyCssVariables": "Copia les variables CSS",
+      "copyRgbValues": "Copia els valors RGB",
+      "suggestions": {
+        "complementary": {
+          "warm": "Genial per a: retrats càlids de posta de sol amb contrast fred a les ombres",
+          "cool": "Genial per a: fotos amb atmosfera de l'hora blava amb un accent de llum càlid",
+          "default": "Genial per a: composicions d'alt contrast amb una forta tensió visual"
+        },
+        "splitComplementary": {
+          "warm": "Genial per a: imatges oníriques i tranquil·les que mantenen el contrast sense duresa",
+          "cool": "Genial per a: escenes fredes de carrer i de viatge amb dos accents càlids",
+          "default": "Genial per a: composicions equilibrades amb varietat, sense oposició directa"
+        },
+        "analogous": {
+          "warm": "Genial per a: paisatges de l'hora daurada amb tons càlids unificats",
+          "cool": "Genial per a: escenes d'aigua serenes i fotografia de capvespre",
+          "default": "Genial per a: fotos de natura harmòniques amb transicions de color suaus"
+        },
+        "triadic": {
+          "warm": "Genial per a: treballs editorials atrevits amb l'energia del vermell, el groc i el blau",
+          "cool": "Genial per a: imatges vibrants i lleugerament inquietants amb tres colors forts",
+          "default": "Genial per a: treballs editorials vibrants i retrats creatius atrevits"
+        },
+        "tetradic": {
+          "warm": "Genial per a: escenes riques i estratificades amb dues parelles complementàries",
+          "cool": "Genial per a: paisatges urbans complexos amb fonts de llum fredes i càlides",
+          "default": "Genial per a: composicions editorials riques i escenes amb múltiples subjectes"
+        },
+        "monochromatic": {
+          "warm": "Genial per a: tons càlids tranquils i cohesionats a partir d'un sol to",
+          "cool": "Genial per a: escenes fredes, tranquil·les i minimalistes a partir d'un sol to",
+          "default": "Genial per a: imatges minimalistes i unificades basades en la llum i l'ombra"
+        },
+        "custom": {
+          "warm": "Arrossega els objectius discontinus per dissenyar la teva pròpia relació entre colors",
+          "cool": "Arrossega els objectius discontinus per dissenyar la teva pròpia relació entre colors",
+          "default": "Arrossega els objectius discontinus per dissenyar la teva pròpia relació entre colors"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Què és l'harmonia de colors en fotografia?",
+          "answer": "L'harmonia de colors és una relació entre els tons d'una imatge que sembla deliberada: dos colors oposats l'un a l'altre (complementaris), veïns a la roda (anàlegs), o tres distribuïts uniformement (triàdics). Les fotos rarament comencen amb una harmonia neta, però normalment només els falta un petit ajust per arribar-hi."
+        },
+        "complementary-vs-analogous": {
+          "question": "Com llegeixo l'harmonia que ja té la meva foto?",
+          "answer": "Pren mostres d'uns quants punts importants (el cel, la pell, aquella porta vermella) i mira on cauen a la roda. Dos punts aproximadament oposats formen una parella complementària; un grup dins d'uns 60° és anàleg. La insígnia Millor coincidència fa aquesta comparació per tu entre les sis harmonies."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Com utilitzo els colors suggerits al Lightroom o al Photoshop?",
+          "answer": "Cada mostra mostra una direcció (cap al rosa, cap al blau petroli) i un codi hex suggerit amb la mateixa saturació i lluminositat. Al panell HSL o Point Color del Lightroom, o a l'eina To/Saturació del Photoshop, empeny el to d'aquell color en la direcció indicada fins que s'apropi al valor suggerit. Fes primer els canvis més grans i atura't quan la fletxa mostri Alineat."
+        }
+      }
+    }
+  }
+}

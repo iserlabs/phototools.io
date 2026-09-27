@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "Sebagian besar foto sudah memiliki hubungan warna; Anda hanya belum bisa melihatnya. Letakkan foto, ketuk warna yang penting, dan roda akan menunjukkan bagaimana warna-warna itu berhubungan. Pilih harmoni yang Anda inginkan dan alat ini akan memberi tahu ke arah mana setiap warna harus digeser.",
+      "deeper": [
+        {
+          "heading": "Metode empat langkah",
+          "text": "Niat (apa yang harus dirasakan penonton), Analisis (warna apa yang sebenarnya ada di bingkai), Pilihan Warna (harmoni mana yang cocok dengan perasaan itu), Transformasi (geser slider ke arah yang ditunjukkan roda). Pengeditan selalu ada di langkah terakhir. Sebagian besar kefrustrasian dengan color grading berasal dari langsung memulai di langkah keempat."
+        },
+        {
+          "heading": "Membaca roda warna",
+          "text": "Setiap sampel diplot berdasarkan hue (sudut) dan saturasi (jarak dari pusat). Tampilan Alami menunjukkan saturasi sebenarnya, Hue Murni mendorong setiap titik ke tepi agar sudutnya jelas, dan Panduan Harmoni menambahkan posisi target dan panah untuk harmoni yang Anda pilih."
+        },
+        {
+          "heading": "Harmoni Terdekat",
+          "text": "Alat ini memutar setiap template harmoni ke posisi yang paling cocok dengan sampel Anda, lalu mengukur rata-rata kesalahan hue, dinormalisasi berdasarkan jarak slot template agar harmoni dengan empat slot tidak otomatis menang. Pemenangnya mendapat lencana; terserah Anda apakah akan menggunakannya."
+        },
+        {
+          "heading": "Kunci dan jangkar",
+          "text": "Kunci sebuah sampel untuk menjadikannya jangkar: harmoni berputar mengelilingi hue tersebut dan semua warna lain dinilai berdasarkan itu. Gunakan untuk warna yang tidak akan Anda ubah, biasanya warna kulit atau warna merek. Tanpa kunci, alat ini otomatis memilih rotasi dengan total kesalahan terkecil."
+        },
+        {
+          "heading": "Warna netral",
+          "text": "Abu-abu, hampir hitam, dan hampir putih tidak memiliki hue yang dapat diandalkan, jadi diplot di pusat dan tidak disertakan dalam pencocokan. Warna-warna ini tetap penting untuk suasana, tetapi menggeser hue-nya dengan slider biasanya hanya menambahkan color cast."
+        },
+        {
+          "heading": "Mengapa HSL, bukan roda perseptual",
+          "text": "Roda ini menggunakan model HSL, model yang sama dengan Adobe Color dan panel HSL Lightroom, jadi arah yang Anda baca di sini adalah arah yang Anda geser di sana. Model ini tidak seragam secara perseptual: kuning menempati pita yang sempit dan biru menempati pita yang lebar, jadi penyesuaian 20° yang sama terlihat lebih besar di sebagian area dibanding area lain. Roda perseptual mungkin lebih jujur, tetapi tidak akan cocok dengan alat pengeditan."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Jenis Harmoni",
+          "description": "Hubungan geometris yang Anda tuju: komplementer, split-komplementer, analogus, triadik, tetradik, monokromatik, atau target kustom Anda sendiri."
+        },
+        {
+          "label": "Sampel",
+          "description": "Warna yang Anda pilih untuk disampel. Ambil sampel warna yang penting bagi gambar, bukan yang terluas. Biasanya lima hingga enam titik sudah cukup menceritakan keseluruhan."
+        },
+        {
+          "label": "Jangkar",
+          "description": "Sampel terkunci yang menjadi pusat perputaran harmoni. Tanpa kunci, rotasi paling cocok yang digunakan."
+        },
+        {
+          "label": "Pergeseran",
+          "description": "Rotasi hue bertanda dari sampel ke targetnya. Dalam 8° berarti selaras, dalam 25° berarti sedikit bergeser, lebih dari itu berarti bergeser besar."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Ambil sampel warna yang benar-benar akan Anda grading: langit, kulit, objek dominan, bayangan. Lewati highlight specular dan bayangan gelap; keduanya terbaca sebagai netral."
+        },
+        {
+          "text": "Split-komplementer adalah pilihan tenang dan mimpi untuk foto perjalanan dan jalanan. Komplementer lebih bersih dan kuat. Triadik sengaja terasa sedikit menggelisahkan."
+        },
+        {
+          "text": "Gunakan Pilih Otomatis untuk memulai, lalu pindahkan atau hapus titik. Fitur ini menemukan klaster kromatik dominan, yang seringkali bukan warna yang paling Anda pedulikan."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Jenis Harmoni",
+          "definition": "Hubungan target antar hue. Komplementer (berlawanan), Split Komplementer (berlawanan ± sudut), Analogus (bertetangga), Triadik (berjarak 120°), Tetradik (dua pasang komplementer), Monokromatik (satu hue), Kustom (target Anda sendiri)."
+        },
+        "Key Color": {
+          "term": "Warna Kunci",
+          "definition": "Saat tidak ada foto yang dimuat, ini adalah warna tempat harmoni dibangun. Seret roda atau gunakan slider."
+        },
+        "Hue": {
+          "term": "Hue",
+          "definition": "Sudut warna pada roda dalam derajat: 0° adalah merah, 120° adalah hijau, 240° adalah biru."
+        },
+        "Saturation": {
+          "term": "Saturasi",
+          "definition": "Intensitas warna dari 0% (abu-abu) hingga 100% (sepenuhnya cerah). Jarak dari pusat roda."
+        },
+        "Lightness": {
+          "term": "Lightness",
+          "definition": "Kecerahan dari 0% (hitam) hingga 100% (putih). Pada 50% Anda melihat warna murni."
+        },
+        "Split Angle": {
+          "term": "Sudut Split",
+          "definition": "Seberapa jauh kedua warna split-komplementer dari komplemen langsungnya."
+        },
+        "Spread": {
+          "term": "Rentang",
+          "definition": "Seberapa jauh warna analogus dari hue jangkar."
+        },
+        "Lock": {
+          "term": "Kunci",
+          "definition": "Menjadikan sebuah sampel sebagai jangkar. Harmoni berputar ke hue tersebut dan sampel lain dinilai berdasarkan itu. Hanya satu sampel yang bisa dikunci."
+        },
+        "Closest fit": {
+          "term": "Harmoni Terdekat",
+          "definition": "Harmoni yang rotasi terbaiknya memiliki kesalahan hue ternormalisasi terendah di antara sampel Anda. Membutuhkan setidaknya dua sampel kromatik."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Anda mengambil sampel langit biru di 210° dan dinding oranye di 25°. Keduanya paling dekat dengan harmoni apa?",
+          "hint": "Periksa sudut di antara keduanya.",
+          "successMessage": "Benar. Selisih 185° hampir merupakan pasangan komplementer sempurna; sedikit pergeseran pada dinding akan menyempurnakannya.",
+          "failureMessage": "Dua warna yang berjarak sekitar 180° adalah komplementer. Warna analogus berjarak sekitar 60° satu sama lain.",
+          "options": [
+            {
+              "label": "Komplementer"
+            },
+            {
+              "label": "Analogus"
+            },
+            {
+              "label": "Triadik"
+            }
+          ]
+        },
+        {
+          "scenario": "Sebuah foto memiliki tiga sampel di 40°, 60°, dan 85°. Harmoni apa ini?",
+          "hint": "Semuanya bertetangga pada roda.",
+          "successMessage": "Benar. Hue yang bertetangga dalam jarak sekitar 60° membentuk harmoni analogus.",
+          "failureMessage": "Hue yang berdekatan semuanya adalah analogus, pilihan yang tenang dan menyatu.",
+          "options": [
+            {
+              "label": "Komplementer"
+            },
+            {
+              "label": "Analogus"
+            },
+            {
+              "label": "Tetradik"
+            }
+          ]
+        },
+        {
+          "scenario": "Anda ingin foto jalanan yang tenang dan bermimpi tetapi tetap ada kontras. Harmoni apa yang harus dipilih?",
+          "hint": "Pikirkan dua tetangga dari komplemen, bukan komplemen itu sendiri.",
+          "successMessage": "Benar. Split-komplementer mempertahankan ketegangan tanpa kerasnya lawan langsung.",
+          "failureMessage": "Split komplementer adalah pilihan tenang tapi tetap kontras. Triadik cenderung terasa energik atau sedikit menggelisahkan.",
+          "options": [
+            {
+              "label": "Split Komplementer"
+            },
+            {
+              "label": "Triadik"
+            },
+            {
+              "label": "Analogus"
+            }
+          ]
+        },
+        {
+          "scenario": "Sebuah sampel menunjukkan 'Sedikit bergeser ke pink' dengan selisih −15°. Di panel HSL Lightroom, apa yang harus Anda lakukan?",
+          "hint": "Kata arah memberi tahu ke mana harus mendorong, ukurannya memberi tahu seberapa jauh.",
+          "successMessage": "Benar. Geser slider Hue warna tersebut ke arah pink hingga kartu menunjukkan 'Selaras'.",
+          "failureMessage": "Dorong hue ke arah yang ditunjukkan (pink) sedikit saja; perubahan 15° adalah pergeseran kecil, bukan pergeseran besar.",
+          "options": [
+            {
+              "label": "Geser hue sedikit ke arah pink"
+            },
+            {
+              "label": "Kurangi saturasi"
+            },
+            {
+              "label": "Geser hue ke arah hijau"
+            }
+          ]
+        },
+        {
+          "scenario": "Dua sampel memiliki hue yang sama tetapi hanya satu yang terkunci. Harmoni akan berputar mengelilingi yang mana?",
+          "hint": "Hanya satu sampel yang bisa menjadi jangkar.",
+          "successMessage": "Benar. Sampel yang terkunci adalah jangkar; yang lain dinilai berdasarkan template yang dibangun di atasnya.",
+          "failureMessage": "Sampel yang terkunci selalu menjadi jangkar. Tanpa kunci, rotasi paling cocok yang digunakan.",
+          "options": [
+            {
+              "label": "Sampel yang terkunci"
+            },
+            {
+              "label": "Sampel yang ditempatkan pertama"
+            },
+            {
+              "label": "Sampel dengan saturasi tertinggi"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

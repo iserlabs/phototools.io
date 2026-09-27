@@ -4,7 +4,8 @@ import { calcDoF } from '@/lib/math/dof'
 import { calcEV, shutterWithNd, reciprocalRule } from '@/lib/math/exposure'
 import { rule500, ruleNPF } from '@/lib/math/startrail'
 import { pixelPitch, diffractionLimitedAperture } from '@/lib/math/diffraction'
-import { kelvinToRgb, complementary, analogous, triadic, splitComplementary, tetradic } from '@/lib/math/color'
+import { kelvinToRgb, complementary } from '@/lib/math/color'
+import { harmonyTemplate } from '@/lib/math/color-fit'
 import { calcCameraDistance } from '@/lib/math/compression'
 import { SENSORS } from '@/lib/data/sensors'
 import { FOCAL_LENGTHS } from '@/lib/data/focalLengths'
@@ -15,7 +16,7 @@ import { EXPOSURE_SCENES } from '@/lib/data/exposureScenes'
 import { ASPECT_RATIOS, TEXTURES } from '@/lib/data/frameStudio'
 import { TEXTURE_PRESETS } from '@/lib/math/frame-texture'
 import { WB_PRESETS } from '@/lib/data/whiteBalance'
-import { HARMONY_KEYS } from '@/lib/data/colorSchemeGenerator'
+import { HARMONY_KEYS, TEMPLATE_HARMONIES, type TemplateHarmony } from '@/lib/data/colorAnalyzer'
 import { locales, defaultLocale, localeNames, localeOpenGraph, localeFlags } from '@/lib/i18n/routing'
 
 describe('FOV calculations with real sensor data', () => {
@@ -263,18 +264,18 @@ describe('White balance presets produce valid colors', () => {
   })
 })
 
-describe('Color harmony functions match HARMONY_KEYS', () => {
-  const harmonyFns: Record<string, (hue: number) => number[]> = {
-    complementary, analogous, triadic, 'split-complementary': splitComplementary, tetradic,
-  }
+describe('Color harmony templates match HARMONY_KEYS', () => {
+  const params = { splitAngle: 30, analogousSpread: 30, tetradicOffset: 60 }
 
-  it('every harmony key has a matching function that returns valid hues', () => {
+  it('every harmony key has a matching template that returns valid offsets', () => {
     for (const hk of HARMONY_KEYS) {
-      const fn = harmonyFns[hk.value]
-      expect(fn).toBeDefined()
-      const hues = fn(180)
-      expect(hues.length).toBeGreaterThanOrEqual(2)
-      for (const h of hues) {
+      if (hk.value === 'custom') continue
+      expect(TEMPLATE_HARMONIES).toContain(hk.value)
+      const offsets = harmonyTemplate(hk.value as TemplateHarmony, params)
+      expect(offsets.length).toBeGreaterThanOrEqual(1)
+      expect(offsets).toContain(0)
+      for (const o of offsets) {
+        const h = ((o % 360) + 360) % 360
         expect(h).toBeGreaterThanOrEqual(0)
         expect(h).toBeLessThan(360)
       }

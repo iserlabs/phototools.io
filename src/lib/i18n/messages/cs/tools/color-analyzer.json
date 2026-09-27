@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Barevná harmonie",
+      "complementary": "Komplementární",
+      "splitComplementary": "Dělené komplementární",
+      "analogous": "Analogické",
+      "triadic": "Triadické",
+      "tetradic": "Tetradické",
+      "monochromatic": "Monochromatické",
+      "custom": "Vlastní",
+      "closestFit": "Nejbližší shoda",
+      "closestSentence": "Vaše fotka je nejblíže schématu {harmony} (průměrná odchylka {degrees}°). Klepnutím jej použijete.",
+      "keyColor": "Základní barva",
+      "hue": "Odstín:",
+      "saturation": "Sytost:",
+      "lightness": "Světlost:",
+      "splitAngle": "Úhel dělení:",
+      "spread": "Rozsah:",
+      "rectangleWidth": "Šířka obdélníku:",
+      "square": "(čtverec)",
+      "samples": "Vzorky",
+      "lock": "Uzamknout tuto barvu jako kotvu",
+      "unlock": "Odemknout",
+      "removeSample": "Odebrat vzorek",
+      "labelPlaceholder": "Popisek",
+      "neutralNotScored": "Neutrální, nehodnoceno",
+      "suggested": "Navrhováno",
+      "autoPick": "Automaticky vybrat 5",
+      "changePhoto": "Změnit fotku",
+      "capReached": "Maximálně {cap} vzorků. Jeden odeberte, chcete-li přidat další.",
+      "markerLabel": "Vzorek {n}: {label}",
+      "dropPhotoPrompt": "Přetáhněte sem fotku nebo klikněte pro výběr. Zůstane ve vašem prohlížeči.",
+      "decodeError": "Soubor se nepodařilo načíst. Zkuste JPEG nebo PNG.",
+      "canvasLabel": "Fotka. Kliknutím přidáte vzorkovací bod.",
+      "viewNatural": "Přirozený",
+      "viewPure": "Čisté odstíny",
+      "viewGuide": "Průvodce harmonií",
+      "viewHint": {
+        "key": "Přetažením bodu nastavíte základní barvu. Místo toho můžete přetáhnout fotku a analyzovat skutečné barvy.",
+        "natural": "Zobrazuje barvy v jejich skutečné sytosti. Přepněte záložky, chcete-li přečíst harmonii.",
+        "pure": "Odstíny posunuté k okraji, díky čemuž se úhly mezi barvami snadno čtou.",
+        "guide": "Přerušované tvary jsou cílové pozice. Šipky ukazují, kterým směrem by se měla každá barva posunout."
+      },
+      "nudge": {
+        "aligned": "Sladěno",
+        "slight": "Mírný posun směrem k {color}",
+        "big": "Velký posun směrem k {color}"
+      },
+      "names": {
+        "red": "červená",
+        "vermilion": "rumělková",
+        "orange": "oranžová",
+        "amber": "jantarová",
+        "yellow": "žlutá",
+        "lime": "limetková",
+        "chartreuse": "žlutozelená",
+        "leaf-green": "listová zeleň",
+        "green": "zelená",
+        "jade": "nefritová",
+        "spring-green": "jarní zeleň",
+        "mint": "mátová",
+        "cyan": "tyrkysová",
+        "sky-blue": "nebesky modrá",
+        "azure": "blankytná",
+        "cobalt": "kobaltová",
+        "blue": "modrá",
+        "indigo": "indigová",
+        "violet": "fialová",
+        "purple": "nachová",
+        "magenta": "purpurová",
+        "fuchsia": "fuchsiová",
+        "pink": "růžová",
+        "rose": "malinová",
+        "gray": "šedá",
+        "black": "černá",
+        "white": "bílá"
+      },
+      "keyColorLabel": "Základní barva — klikněte pro zkopírování hex kódu",
+      "clickToCopyHex": "Klikněte pro zkopírování hex kódu",
+      "copiedExcl": "Zkopírováno!",
+      "copyColors": "Kopírovat barvy",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Kopírovat hex kódy",
+      "copyCssVariables": "Kopírovat proměnné CSS",
+      "copyRgbValues": "Kopírovat hodnoty RGB",
+      "suggestions": {
+        "complementary": {
+          "warm": "Skvělé pro: teplé portréty při západu slunce s chladným kontrastem stínů",
+          "cool": "Skvělé pro: náladové záběry v modré hodině s teplým akcentovým světlem",
+          "default": "Skvělé pro: kompozice s vysokým kontrastem a silným vizuálním napětím"
+        },
+        "splitComplementary": {
+          "warm": "Skvělé pro: snové, klidné záběry, které si udrží kontrast bez tvrdosti",
+          "cool": "Skvělé pro: chladné pouliční a cestovatelské scény se dvěma teplými akcenty",
+          "default": "Skvělé pro: vyvážené záběry s pestrostí bez přímého protikladu"
+        },
+        "analogous": {
+          "warm": "Skvělé pro: krajinky ve zlaté hodině s jednotnými teplými tóny",
+          "cool": "Skvělé pro: klidné vodní scény a soumrakovou fotografii",
+          "default": "Skvělé pro: harmonické záběry přírody s plynulými barevnými přechody"
+        },
+        "triadic": {
+          "warm": "Skvělé pro: odvážnou editorialovou tvorbu s energií červené, žluté a modré",
+          "cool": "Skvělé pro: živé, mírně neklidné záběry se třemi silnými barvami",
+          "default": "Skvělé pro: živou editorialovou tvorbu a odvážné kreativní portréty"
+        },
+        "tetradic": {
+          "warm": "Skvělé pro: bohaté, vrstvené scény se dvěma komplementárními páry",
+          "cool": "Skvělé pro: složité městské scenérie s chladnými a teplými zdroji světla",
+          "default": "Skvělé pro: bohatá editorialová uspořádání a kompozice s více objekty"
+        },
+        "monochromatic": {
+          "warm": "Skvělé pro: tiché, sourodé teplé tóny postavené na jednom odstínu",
+          "cool": "Skvělé pro: klidné, minimalistické chladné scény postavené na jednom odstínu",
+          "default": "Skvělé pro: minimalistické, sjednocené snímky založené na světle a stínu"
+        },
+        "custom": {
+          "warm": "Přetažením přerušovaných cílů si navrhněte vlastní vztah mezi barvami",
+          "cool": "Přetažením přerušovaných cílů si navrhněte vlastní vztah mezi barvami",
+          "default": "Přetažením přerušovaných cílů si navrhněte vlastní vztah mezi barvami"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Co je barevná harmonie ve fotografii?",
+          "answer": "Barevná harmonie je vztah mezi odstíny ve snímku, který působí záměrně: dvě barvy naproti sobě (komplementární), sousedící na kruhu (analogické) nebo tři rovnoměrně rozmístěné (triadické). Fotky málokdy začínají na čisté harmonii, ale obvykle je od ní dělí jen malý posun."
+        },
+        "complementary-vs-analogous": {
+          "question": "Jak přečtu harmonii, která už je na mé fotce?",
+          "answer": "Nasnímejte pár bodů, na kterých záleží (obloha, pleť, ty jedny červené dveře), a podívejte se, kam padnou na kruhu. Dva body zhruba naproti sobě jsou komplementární pár; shluk v rozsahu asi 60° je analogický. Odznak Nejbližší shoda za vás toto srovnání provede napříč všemi šesti harmoniemi."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Jak použiji navržené barvy v Lightroomu nebo Photoshopu?",
+          "answer": "Každý vzorek ukazuje směr (k růžové, k petrolejové) a navržený hex kód při stejné sytosti a světlosti. V panelu HSL nebo Point Color v Lightroomu, případně v nástroji Odstín/Sytost v Photoshopu, posuňte odstín dané barvy ukázaným směrem, dokud se nepřiblíží navržené hodnotě. Nejdřív proveďte největší posuny a zastavte se, jakmile šipka ukáže Sladěno."
+        }
+      }
+    }
+  }
+}

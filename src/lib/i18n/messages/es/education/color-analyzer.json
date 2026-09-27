@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "La mayoría de las fotos ya contienen una relación de color; simplemente aún no puedes verla. Suelta una foto, toca los colores que importan, y la rueda muestra cómo se relacionan. Elige la armonía que quieras y la herramienta te dice hacia dónde empujar cada color.",
+      "deeper": [
+        {
+          "heading": "El método de cuatro pasos",
+          "text": "Intención (qué debe sentir el espectador), Análisis (qué colores hay realmente en la toma), Elección de color (qué armonía encaja con esa sensación), Transformación (mover los deslizadores en la dirección que muestra la rueda). La edición va al final. La mayor parte de la frustración con la gradación de color viene de empezar por el paso cuatro."
+        },
+        {
+          "heading": "Leer la rueda",
+          "text": "Cada muestra se sitúa por matiz (ángulo) y saturación (distancia al centro). La vista Natural muestra la saturación real, Matices puros empuja cada punto hacia el borde para que los ángulos sean obvios, y Guía de armonía añade las posiciones objetivo y flechas para la armonía elegida."
+        },
+        {
+          "heading": "Mejor coincidencia",
+          "text": "La herramienta rota cada plantilla de armonía a la posición que mejor coincide con tus muestras y mide el error medio de matiz, normalizado según el espaciado de los puntos de la plantilla para que las armonías de cuatro puntos no ganen por defecto. La ganadora recibe la insignia; tú decides si usarla."
+        },
+        {
+          "heading": "Bloqueos y anclas",
+          "text": "Bloquea una muestra para convertirla en el ancla: la armonía rota alrededor de ese matiz y cada otro color se juzga en relación con él. Úsalo para el color que no vas a cambiar, normalmente la piel o un color de marca. Sin bloqueo, la herramienta elige la rotación con el menor error total."
+        },
+        {
+          "heading": "Neutros",
+          "text": "Los grises, casi negros y casi blancos no tienen un matiz fiable, así que se sitúan en el centro y quedan fuera del ajuste. Aún importan para el ambiente, pero mover su matiz en un deslizador suele añadir sobre todo un tinte de color."
+        },
+        {
+          "heading": "Por qué HSL y no una rueda perceptual",
+          "text": "Esta rueda usa HSL, el mismo modelo que Adobe Color y el panel HSL de Lightroom, así que la dirección que lees aquí es la que empujas allí. No es perceptualmente uniforme: el amarillo ocupa una banda estrecha y el azul una ancha, así que un ajuste de 20° se ve más grande en algunas zonas que en otras. Una rueda perceptual sería más honesta pero no coincidiría con las herramientas de edición."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Tipo de armonía",
+          "description": "La relación geométrica que buscas: complementaria, complementaria dividida, análoga, triádica, tetrádica, monocromática, o tus propios objetivos personalizados."
+        },
+        {
+          "label": "Muestras",
+          "description": "Qué colores elegiste muestrear. Muestrea lo que importa para la imagen, no lo que es más grande. Cinco o seis puntos suelen contar toda la historia."
+        },
+        {
+          "label": "Ancla",
+          "description": "La muestra bloqueada alrededor de la cual rota la armonía. Sin bloqueo se usa la rotación de mejor ajuste."
+        },
+        {
+          "label": "Ajuste",
+          "description": "La rotación de matiz con signo de una muestra a su objetivo. Alineado está dentro de 8°, un ajuste ligero dentro de 25°, cualquier cosa más es un gran cambio."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Muestrea los colores que realmente vas a graduar: cielo, piel, el objeto dominante, una sombra. Evita las altas luces especulares y las sombras profundas; se leen como neutras."
+        },
+        {
+          "text": "Complementario dividido es la opción calmada y onírica para viajes y calle. Complementario es más limpio y contundente. Triádico es deliberadamente algo inquietante."
+        },
+        {
+          "text": "Usa la selección automática para empezar, luego mueve o borra puntos. Encuentra los grupos cromáticos dominantes, que a menudo no son los colores que más te importan."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Tipo de armonía",
+          "definition": "La relación objetivo entre matices. Complementaria (opuesta), Complementaria dividida (opuesta ± ángulo), Análoga (vecinas), Triádica (120° de separación), Tetrádica (dos pares complementarios), Monocromática (un matiz), Personalizada (tus propios objetivos)."
+        },
+        "Key Color": {
+          "term": "Color clave",
+          "definition": "Sin foto cargada, el color alrededor del cual se construye la armonía. Arrastra en la rueda o usa los deslizadores."
+        },
+        "Hue": {
+          "term": "Matiz",
+          "definition": "El ángulo de color en la rueda en grados: 0° es rojo, 120° es verde, 240° es azul."
+        },
+        "Saturation": {
+          "term": "Saturación",
+          "definition": "Intensidad del color de 0 % (gris) a 100 % (totalmente vivo). Distancia al centro de la rueda."
+        },
+        "Lightness": {
+          "term": "Luminosidad",
+          "definition": "Brillo de 0 % (negro) a 100 % (blanco). Al 50 % ves el color puro."
+        },
+        "Split Angle": {
+          "term": "Ángulo de división",
+          "definition": "A qué distancia se sitúan los dos colores complementarios divididos del complemento directo."
+        },
+        "Spread": {
+          "term": "Dispersión",
+          "definition": "A qué distancia se sitúan los colores análogos del matiz de anclaje."
+        },
+        "Lock": {
+          "term": "Bloquear",
+          "definition": "Convierte una muestra en el ancla. La armonía rota hacia ese matiz y las demás muestras se juzgan en relación con él. Solo se puede bloquear una muestra."
+        },
+        "Closest fit": {
+          "term": "Mejor coincidencia",
+          "definition": "La armonía cuya mejor rotación tiene el menor error de matiz normalizado en tus muestras. Necesita al menos dos muestras cromáticas."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Muestreaste un cielo azul a 210° y una pared naranja a 25°. ¿A qué armonía están ya más cerca?",
+          "hint": "Comprueba el ángulo entre ellos.",
+          "successMessage": "Correcto. 185° de separación es un par complementario casi perfecto; un pequeño ajuste en la pared lo completa.",
+          "failureMessage": "Dos colores separados unos 180° son complementarios. Los colores análogos están a unos 60° entre sí.",
+          "options": [
+            {
+              "label": "Complementario"
+            },
+            {
+              "label": "Análogo"
+            },
+            {
+              "label": "Triádico"
+            }
+          ]
+        },
+        {
+          "scenario": "Una foto tiene tres muestras a 40°, 60° y 85°. ¿Qué armonía es esta?",
+          "hint": "Todas son vecinas en la rueda.",
+          "successMessage": "Correcto. Matices vecinos dentro de unos 60° forman una armonía análoga.",
+          "failureMessage": "Los matices que están todos cerca entre sí son análogos, la opción calmada y unificada.",
+          "options": [
+            {
+              "label": "Complementario"
+            },
+            {
+              "label": "Análogo"
+            },
+            {
+              "label": "Tetrádico"
+            }
+          ]
+        },
+        {
+          "scenario": "Quieres una foto de calle onírica y tranquila pero conservando algo de contraste. ¿Qué armonía deberías elegir?",
+          "hint": "Piensa en los dos vecinos del complemento en lugar del complemento en sí.",
+          "successMessage": "Sí. Complementario dividido mantiene tensión sin la dureza de un opuesto directo.",
+          "failureMessage": "Complementario dividido es la opción calmada pero con contraste. Triádico tiende a sentirse enérgico o inquietante.",
+          "options": [
+            {
+              "label": "Complementario dividido"
+            },
+            {
+              "label": "Triádico"
+            },
+            {
+              "label": "Análogo"
+            }
+          ]
+        },
+        {
+          "scenario": "Una muestra indica Ligero ajuste hacia rosa con un delta de −15°. En el panel HSL de Lightroom, ¿qué haces?",
+          "hint": "La palabra de dirección indica hacia dónde empujar, el tamaño indica cuánto.",
+          "successMessage": "Correcto. Mueve el deslizador de Matiz de ese color hacia el rosa hasta que la tarjeta indique Alineado.",
+          "failureMessage": "Empuja el matiz en la dirección indicada (rosa) una pequeña cantidad; un cambio de 15° es un ajuste ligero, no un gran cambio.",
+          "options": [
+            {
+              "label": "Desplazar el matiz ligeramente hacia el rosa"
+            },
+            {
+              "label": "Desaturarlo"
+            },
+            {
+              "label": "Desplazar el matiz hacia el verde"
+            }
+          ]
+        },
+        {
+          "scenario": "Dos muestras comparten el mismo matiz pero una está bloqueada. ¿Alrededor de cuál rota la armonía?",
+          "hint": "Solo una muestra puede ser el ancla.",
+          "successMessage": "Correcto. La muestra bloqueada es el ancla; la otra se juzga frente a la plantilla construida sobre ella.",
+          "failureMessage": "La muestra bloqueada siempre es el ancla. Sin bloqueo, se usa la rotación de mejor ajuste.",
+          "options": [
+            {
+              "label": "La muestra bloqueada"
+            },
+            {
+              "label": "La primera muestra colocada"
+            },
+            {
+              "label": "La muestra más saturada"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

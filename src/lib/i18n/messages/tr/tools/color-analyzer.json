@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Renk Uyumu",
+      "complementary": "Tamamlayıcı",
+      "splitComplementary": "Bölünmüş Tamamlayıcı",
+      "analogous": "Analog",
+      "triadic": "Triadik",
+      "tetradic": "Tetradik",
+      "monochromatic": "Monokromatik",
+      "custom": "Özel",
+      "closestFit": "En Yakın Eşleşme",
+      "closestSentence": "Fotoğrafınız {harmony} uyumuna en yakın (ortalama {degrees}° fark). Kullanmak için dokunun.",
+      "keyColor": "Anahtar Renk",
+      "hue": "Ton:",
+      "saturation": "Doygunluk:",
+      "lightness": "Açıklık:",
+      "splitAngle": "Bölünme açısı:",
+      "spread": "Yayılım:",
+      "rectangleWidth": "Dikdörtgen genişliği:",
+      "square": "(kare)",
+      "samples": "Örnekler",
+      "lock": "Bu rengi referans olarak kilitle",
+      "unlock": "Kilidi Aç",
+      "removeSample": "Örneği kaldır",
+      "labelPlaceholder": "Etiket",
+      "neutralNotScored": "Nötr, puanlanmadı",
+      "suggested": "Önerilen",
+      "autoPick": "5 Tanesini Otomatik Seç",
+      "changePhoto": "Fotoğrafı değiştir",
+      "capReached": "En fazla {cap} örnek. Bir tane daha eklemek için birini kaldırın.",
+      "markerLabel": "Örnek {n}: {label}",
+      "dropPhotoPrompt": "Bir fotoğraf sürükleyin veya göz atmak için tıklayın. Tarayıcınızda kalır.",
+      "decodeError": "Bu dosya okunamadı. Bir JPEG veya PNG deneyin.",
+      "canvasLabel": "Fotoğraf. Örnek noktası eklemek için tıklayın.",
+      "viewNatural": "Doğal",
+      "viewPure": "Saf Tonlar",
+      "viewGuide": "Uyum Kılavuzu",
+      "viewHint": {
+        "key": "Bir anahtar renk belirlemek için noktayı sürükleyin. Bunun yerine gerçek renkleri analiz etmek için bir fotoğraf bırakın.",
+        "natural": "Renkleri gerçek doygunluklarında gösterir. Uyumu okumak için sekmeleri değiştirin.",
+        "pure": "Tonlar, renkler arasındaki açıların kolayca okunması için kenara itilir.",
+        "guide": "Kesikli şekiller hedef konumlardır. Oklar her rengin hangi yöne hareket etmesi gerektiğini gösterir."
+      },
+      "nudge": {
+        "aligned": "Hizalı",
+        "slight": "{color} yönünde hafif kayma",
+        "big": "{color} yönünde büyük kayma"
+      },
+      "names": {
+        "red": "kırmızı",
+        "vermilion": "zencefre",
+        "orange": "turuncu",
+        "amber": "kehribar",
+        "yellow": "sarı",
+        "lime": "limon yeşili",
+        "chartreuse": "sarı-yeşil",
+        "leaf-green": "yaprak yeşili",
+        "green": "yeşil",
+        "jade": "yeşim",
+        "spring-green": "bahar yeşili",
+        "mint": "nane yeşili",
+        "cyan": "camgöbeği",
+        "sky-blue": "gök mavisi",
+        "azure": "masmavi",
+        "cobalt": "kobalt mavisi",
+        "blue": "mavi",
+        "indigo": "çivit mavisi",
+        "violet": "menekşe moru",
+        "purple": "mor",
+        "magenta": "macenta",
+        "fuchsia": "fuşya",
+        "pink": "pembe",
+        "rose": "gül pembesi",
+        "gray": "gri",
+        "black": "siyah",
+        "white": "beyaz"
+      },
+      "keyColorLabel": "Anahtar renk — hex kopyalamak için tıklayın",
+      "clickToCopyHex": "Hex kopyalamak için tıklayın",
+      "copiedExcl": "Kopyalandı!",
+      "copyColors": "Renkleri kopyala",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Hex kodlarını kopyala",
+      "copyCssVariables": "CSS değişkenlerini kopyala",
+      "copyRgbValues": "RGB değerlerini kopyala",
+      "suggestions": {
+        "complementary": {
+          "warm": "Şunun için harika: gölgelerde serin kontrast içeren sıcak gün batımı portreleri",
+          "cool": "Şunun için harika: sıcak vurgu ışığıyla atmosferik mavi saat çekimleri",
+          "default": "Şunun için harika: güçlü görsel gerilimli, yüksek kontrastlı kompozisyonlar"
+        },
+        "splitComplementary": {
+          "warm": "Şunun için harika: sertlik olmadan kontrastı koruyan hayalperest, sakin görünümler",
+          "cool": "Şunun için harika: iki sıcak vurguyla serin sokak ve seyahat sahneleri",
+          "default": "Şunun için harika: doğrudan karşıtlık olmadan çeşitlilik içeren dengeli kareler"
+        },
+        "analogous": {
+          "warm": "Şunun için harika: birleşik sıcak tonlu altın saat manzaraları",
+          "cool": "Şunun için harika: dingin su sahneleri ve alacakaranlık fotoğrafçılığı",
+          "default": "Şunun için harika: yumuşak renk geçişli uyumlu doğa çekimleri"
+        },
+        "triadic": {
+          "warm": "Şunun için harika: kırmızı, sarı ve mavinin enerjisiyle cesur editoryal çalışmalar",
+          "cool": "Şunun için harika: üç güçlü renkle canlı, biraz rahatsız edici kareler",
+          "default": "Şunun için harika: canlı editoryal çalışmalar ve cesur yaratıcı portreler"
+        },
+        "tetradic": {
+          "warm": "Şunun için harika: iki tamamlayıcı çiftli zengin, katmanlı sahneler",
+          "cool": "Şunun için harika: serin ve sıcak ışık kaynaklı karmaşık şehir manzaraları",
+          "default": "Şunun için harika: zengin editoryal düzenler ve çoklu özneli kompozisyonlar"
+        },
+        "monochromatic": {
+          "warm": "Şunun için harika: tek bir tondan oluşan sessiz, tutarlı sıcak tonlar",
+          "cool": "Şunun için harika: tek bir tondan oluşan sakin, minimal serin sahneler",
+          "default": "Şunun için harika: ışık ve gölgeye dayanan minimal, birleşik görüntüler"
+        },
+        "custom": {
+          "warm": "Renkler arasında kendi ilişkinizi tasarlamak için kesikli hedefleri sürükleyin",
+          "cool": "Renkler arasında kendi ilişkinizi tasarlamak için kesikli hedefleri sürükleyin",
+          "default": "Renkler arasında kendi ilişkinizi tasarlamak için kesikli hedefleri sürükleyin"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Fotoğrafta renk uyumu nedir?",
+          "answer": "Renk uyumu, bir karedeki tonlar arasında kasıtlı görünen bir ilişkidir: birbirine zıt iki renk (tamamlayıcı), çemberde komşu renkler (analog) veya eşit aralıklı üç renk (triadik). Fotoğraflar nadiren tam bir uyumla başlar, ama genellikle ona küçük bir adım uzaklıktadır."
+        },
+        "complementary-vs-analogous": {
+          "question": "Fotoğrafımda zaten var olan uyumu nasıl okurum?",
+          "answer": "Önemli birkaç noktadan örnek alın (gökyüzü, ten, o kırmızı kapı) ve çemberde nereye düştüklerine bakın. Birbirine kabaca zıt iki nokta tamamlayıcı bir çifttir; yaklaşık 60° içindeki bir küme analogdur. En Yakın Eşleşme rozeti bu karşılaştırmayı sizin için altı uyumun tamamında yapar."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Lightroom veya Photoshop'ta önerilen renkleri nasıl kullanırım?",
+          "answer": "Her örnek bir yön (pembeye doğru, deniz mavisine doğru) ve aynı doygunluk ile açıklıkta önerilen bir hex kodu gösterir. Lightroom'un HSL panelinde veya Point Color'da, ya da Photoshop'un Ton/Doygunluk aracında, o rengin tonunu gösterilen yönde önerilen değere yaklaşana kadar itin. Önce en büyük kaymaları yapın ve ok Hizalı gösterdiğinde durun."
+        }
+      }
+    }
+  }
+}

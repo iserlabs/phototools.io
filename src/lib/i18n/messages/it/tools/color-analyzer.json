@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Armonia dei colori",
+      "complementary": "Complementare",
+      "splitComplementary": "Complementare diviso",
+      "analogous": "Analogo",
+      "triadic": "Triadico",
+      "tetradic": "Tetradico",
+      "monochromatic": "Monocromatico",
+      "custom": "Personalizzato",
+      "closestFit": "Corrispondenza migliore",
+      "closestSentence": "La tua foto è più vicina a {harmony} (scarto medio {degrees}°). Tocca per usarla.",
+      "keyColor": "Colore chiave",
+      "hue": "Tonalità:",
+      "saturation": "Saturazione:",
+      "lightness": "Luminosità:",
+      "splitAngle": "Angolo di divisione:",
+      "spread": "Ampiezza:",
+      "rectangleWidth": "Larghezza del rettangolo:",
+      "square": "(quadrato)",
+      "samples": "Campioni",
+      "lock": "Blocca questo colore come ancoraggio",
+      "unlock": "Sblocca",
+      "removeSample": "Rimuovi campione",
+      "labelPlaceholder": "Etichetta",
+      "neutralNotScored": "Neutro, non valutato",
+      "suggested": "Suggerito",
+      "autoPick": "Scegli 5 automaticamente",
+      "changePhoto": "Cambia foto",
+      "capReached": "Massimo {cap} campioni. Rimuovine uno per aggiungerne un altro.",
+      "markerLabel": "Campione {n}: {label}",
+      "dropPhotoPrompt": "Trascina una foto o fai clic per sfogliare. Rimane nel tuo browser.",
+      "decodeError": "Impossibile leggere il file. Prova con un JPEG o un PNG.",
+      "canvasLabel": "Foto. Fai clic per aggiungere un punto di campionamento.",
+      "viewNatural": "Naturale",
+      "viewPure": "Tonalità pure",
+      "viewGuide": "Guida all'armonia",
+      "viewHint": {
+        "key": "Trascina il punto per impostare un colore chiave. Trascina invece una foto per analizzare colori reali.",
+        "natural": "Mostra i colori nella loro saturazione reale. Cambia scheda per leggere l'armonia.",
+        "pure": "Le tonalità vengono spinte verso il bordo così gli angoli tra i colori sono facili da leggere.",
+        "guide": "Le forme tratteggiate sono le posizioni target. Le frecce mostrano in quale direzione dovrebbe muoversi ogni colore."
+      },
+      "nudge": {
+        "aligned": "Allineato",
+        "slight": "Leggero spostamento verso {color}",
+        "big": "Grande spostamento verso {color}"
+      },
+      "names": {
+        "red": "Rosso",
+        "vermilion": "Vermiglio",
+        "orange": "Arancione",
+        "amber": "Ambra",
+        "yellow": "Giallo",
+        "lime": "Verde lime",
+        "chartreuse": "Verde chartreuse",
+        "leaf-green": "Verde foglia",
+        "green": "Verde",
+        "jade": "Giada",
+        "spring-green": "Verde primavera",
+        "mint": "Menta",
+        "cyan": "Ciano",
+        "sky-blue": "Azzurro cielo",
+        "azure": "Azzurro",
+        "cobalt": "Cobalto",
+        "blue": "Blu",
+        "indigo": "Indaco",
+        "violet": "Viola",
+        "purple": "Porpora",
+        "magenta": "Magenta",
+        "fuchsia": "Fucsia",
+        "pink": "Rosa",
+        "rose": "Rosa antico",
+        "gray": "Grigio",
+        "black": "Nero",
+        "white": "Bianco"
+      },
+      "keyColorLabel": "Colore chiave — clicca per copiare l'esadecimale",
+      "clickToCopyHex": "Clicca per copiare l'esadecimale",
+      "copiedExcl": "Copiato!",
+      "copyColors": "Copia colori",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Copia codici hex",
+      "copyCssVariables": "Copia variabili CSS",
+      "copyRgbValues": "Copia valori RGB",
+      "suggestions": {
+        "complementary": {
+          "warm": "Ideale per: ritratti al tramonto caldi con contrasto di ombre fredde",
+          "cool": "Ideale per: scatti all'ora blu suggestivi con luce d'accento calda",
+          "default": "Ideale per: composizioni ad alto contrasto con forte tensione visiva"
+        },
+        "splitComplementary": {
+          "warm": "Ideale per: atmosfere sognanti e calme che mantengono il contrasto senza durezza",
+          "cool": "Ideale per: scene di strada e viaggio fredde con due accenti caldi",
+          "default": "Ideale per: inquadrature equilibrate con varietà e nessuna opposizione diretta"
+        },
+        "analogous": {
+          "warm": "Ideale per: paesaggi all'ora dorata con toni caldi unificati",
+          "cool": "Ideale per: scene d'acqua serene e fotografia al crepuscolo",
+          "default": "Ideale per: scatti di natura armoniosi con transizioni di colore fluide"
+        },
+        "triadic": {
+          "warm": "Ideale per: lavori editoriali audaci con l'energia di rosso, giallo e blu",
+          "cool": "Ideale per: immagini vivaci e leggermente inquietanti con tre colori forti",
+          "default": "Ideale per: lavori editoriali vivaci e ritratti creativi audaci"
+        },
+        "tetradic": {
+          "warm": "Ideale per: scene ricche e stratificate con due coppie complementari",
+          "cool": "Ideale per: paesaggi urbani complessi con fonti di luce fredde e calde",
+          "default": "Ideale per: layout editoriali ricchi e composizioni con più soggetti"
+        },
+        "monochromatic": {
+          "warm": "Ideale per: toni caldi quieti e coerenti a partire da una sola tonalità",
+          "cool": "Ideale per: scene fredde calme e minimali costruite su una sola tonalità",
+          "default": "Ideale per: immagini minimali e unificate che puntano su luce e ombra"
+        },
+        "custom": {
+          "warm": "Trascina gli obiettivi tratteggiati per creare la tua relazione tra i colori",
+          "cool": "Trascina gli obiettivi tratteggiati per creare la tua relazione tra i colori",
+          "default": "Trascina gli obiettivi tratteggiati per creare la tua relazione tra i colori"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Cos'è l'armonia dei colori in fotografia?",
+          "answer": "L'armonia dei colori è una relazione tra le tonalità di un'inquadratura che appare intenzionale: due colori opposti (complementari), vicini sulla ruota (analoghi) o tre distribuiti uniformemente (triadici). Le foto raramente partono da un'armonia perfetta, ma di solito sono a un piccolo spostamento da una di esse."
+        },
+        "complementary-vs-analogous": {
+          "question": "Come leggo l'armonia già presente nella mia foto?",
+          "answer": "Campiona alcuni punti che contano (il cielo, la pelle, quella porta rossa) e osserva dove cadono sulla ruota. Due punti più o meno opposti formano una coppia complementare; un gruppo entro circa 60° è analogo. Il badge «Corrispondenza migliore» fa questo confronto per te su tutte e sei le armonie."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Come uso i colori suggeriti in Lightroom o Photoshop?",
+          "answer": "Ogni campione mostra una direzione (verso il rosa, verso il verde acqua) e un esadecimale suggerito alla stessa saturazione e luminosità. Nel pannello HSL o Point Color di Lightroom, oppure in Tonalità/Saturazione di Photoshop, sposta la tonalità di quel colore nella direzione indicata finché non si avvicina al valore suggerito. Muovi prima gli spostamenti più grandi e fermati quando la freccia indica Allineato."
+        }
+      }
+    }
+  }
+}

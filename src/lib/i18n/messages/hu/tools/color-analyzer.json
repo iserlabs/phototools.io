@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Színharmónia",
+      "complementary": "Komplementer",
+      "splitComplementary": "Osztott komplementer",
+      "analogous": "Analóg",
+      "triadic": "Triadikus",
+      "tetradic": "Tetradikus",
+      "monochromatic": "Monokróm",
+      "custom": "Egyéni",
+      "closestFit": "Legjobb egyezés",
+      "closestSentence": "A fotód a legközelebb a(z) {harmony} harmóniához áll (átlagosan {degrees}° eltéréssel). Koppints, hogy használd.",
+      "keyColor": "Kulcsszín",
+      "hue": "Színárnyalat:",
+      "saturation": "Telítettség:",
+      "lightness": "Világosság:",
+      "splitAngle": "Osztási szög:",
+      "spread": "Szórás:",
+      "rectangleWidth": "Téglalap szélessége:",
+      "square": "(négyzet)",
+      "samples": "Minták",
+      "lock": "Zárold ezt a színt viszonyítási pontként",
+      "unlock": "Feloldás",
+      "removeSample": "Minta eltávolítása",
+      "labelPlaceholder": "Címke",
+      "neutralNotScored": "Semleges, nincs pontozva",
+      "suggested": "Javasolt",
+      "autoPick": "5 automatikus kiválasztása",
+      "changePhoto": "Fotó cseréje",
+      "capReached": "Legfeljebb {cap} minta. Távolíts el egyet, hogy másikat adhass hozzá.",
+      "markerLabel": "{n}. minta: {label}",
+      "dropPhotoPrompt": "Húzz ide egy fotót, vagy kattints a tallózáshoz. A böngésződben marad.",
+      "decodeError": "A fájlt nem sikerült beolvasni. Próbálkozz JPEG vagy PNG fájllal.",
+      "canvasLabel": "Fotó. Kattints egy mintavételi pont hozzáadásához.",
+      "viewNatural": "Természetes",
+      "viewPure": "Tiszta árnyalatok",
+      "viewGuide": "Harmónia-útmutató",
+      "viewHint": {
+        "key": "Húzd a pontot a kulcsszín beállításához. Vagy ejts ide egy fotót, hogy inkább a valódi színeket elemezd.",
+        "natural": "A színeket a valódi telítettségükön mutatja. Válts fület a harmónia leolvasásához.",
+        "pure": "Az árnyalatok a szélre tolva, így a színek közti szögek könnyen leolvashatók.",
+        "guide": "A szaggatott alakzatok a célpozíciók. A nyilak mutatják, melyik irányba kell tolni az egyes színeket."
+      },
+      "nudge": {
+        "aligned": "Összhangban",
+        "slight": "Enyhe elmozdulás {color} felé",
+        "big": "Nagy elmozdulás {color} felé"
+      },
+      "names": {
+        "red": "piros",
+        "vermilion": "cinóbervörös",
+        "orange": "narancssárga",
+        "amber": "borostyán",
+        "yellow": "sárga",
+        "lime": "lime",
+        "chartreuse": "sárgászöld",
+        "leaf-green": "levélzöld",
+        "green": "zöld",
+        "jade": "jádezöld",
+        "spring-green": "tavaszzöld",
+        "mint": "mentazöld",
+        "cyan": "ciánkék",
+        "sky-blue": "égszínkék",
+        "azure": "azúrkék",
+        "cobalt": "kobaltkék",
+        "blue": "kék",
+        "indigo": "indigó",
+        "violet": "ibolya",
+        "purple": "bíbor",
+        "magenta": "magenta",
+        "fuchsia": "fukszia",
+        "pink": "rózsaszín",
+        "rose": "rózsa",
+        "gray": "szürke",
+        "black": "fekete",
+        "white": "fehér"
+      },
+      "keyColorLabel": "Kulcsszín — kattints a hex kód másolásához",
+      "clickToCopyHex": "Kattints a hex kód másolásához",
+      "copiedExcl": "Kimásolva!",
+      "copyColors": "Színek másolása",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Hex kódok másolása",
+      "copyCssVariables": "CSS változók másolása",
+      "copyRgbValues": "RGB értékek másolása",
+      "suggestions": {
+        "complementary": {
+          "warm": "Kiváló: meleg naplementés portrékhoz hűvös árnyékkontraszttal",
+          "cool": "Kiváló: hangulatos kék órás felvételekhez meleg fényakcentussal",
+          "default": "Kiváló: erős kontrasztú kompozíciókhoz komoly vizuális feszültséggel"
+        },
+        "splitComplementary": {
+          "warm": "Kiváló: álomszerű, nyugodt hangulathoz, amely megőrzi a kontrasztot élesség nélkül",
+          "cool": "Kiváló: hűvös utcai és utazós jelenetekhez két meleg akcenttel",
+          "default": "Kiváló: kiegyensúlyozott képekhez változatossággal, közvetlen ellentét nélkül"
+        },
+        "analogous": {
+          "warm": "Kiváló: aranyórás tájképekhez egységes meleg tónusokkal",
+          "cool": "Kiváló: nyugodt vízi jelenetekhez és szürkületi fotózáshoz",
+          "default": "Kiváló: harmonikus természetfotókhoz, lágy színátmenetekkel"
+        },
+        "triadic": {
+          "warm": "Kiváló: merész szerkesztőségi munkákhoz, piros, sárga és kék energiájával",
+          "cool": "Kiváló: élénk, kissé nyugtalanító képekhez három erős színnel",
+          "default": "Kiváló: élénk szerkesztőségi munkákhoz és merész, kreatív portrékhoz"
+        },
+        "tetradic": {
+          "warm": "Kiváló: gazdag, rétegzett jelenetekhez két komplementer párral",
+          "cool": "Kiváló: összetett városképekhez hűvös és meleg fényforrásokkal",
+          "default": "Kiváló: gazdag szerkesztőségi elrendezésekhez és több témás kompozíciókhoz"
+        },
+        "monochromatic": {
+          "warm": "Kiváló: csendes, egységes meleg tónusokhoz egyetlen árnyalatból",
+          "cool": "Kiváló: nyugodt, minimalista hűvös jelenetekhez egyetlen árnyalatból",
+          "default": "Kiváló: minimalista, egységes képekhez, amelyek a fényre és árnyékra épülnek"
+        },
+        "custom": {
+          "warm": "Húzd a szaggatott célpontokat, hogy megtervezd a színek közti saját kapcsolatot",
+          "cool": "Húzd a szaggatott célpontokat, hogy megtervezd a színek közti saját kapcsolatot",
+          "default": "Húzd a szaggatott célpontokat, hogy megtervezd a színek közti saját kapcsolatot"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Mi a színharmónia a fotózásban?",
+          "answer": "A színharmónia a kép árnyalatai közti kapcsolat, amely szándékoltnak hat: két egymással szemközti szín (komplementer), a köríven szomszédos színek (analóg), vagy három egyenletesen elosztott szín (triadikus). A fotók ritkán indulnak tiszta harmóniával, de általában csak egy apró lépésre vannak tőle."
+        },
+        "complementary-vs-analogous": {
+          "question": "Hogyan olvassam le a fotómon már meglévő harmóniát?",
+          "answer": "Mintázz le néhány fontos pontot (ég, bőr, az az egy piros ajtó), és nézd meg, hova esnek a köríven. Két, egymással nagyjából szemközti pont komplementer pár; egy körülbelül 60°-os klaszter analóg. A Legjobb egyezés jelvény elvégzi neked ezt az összehasonlítást mind a hat harmónia között."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Hogyan használjam a javasolt színeket a Lightroomban vagy a Photoshopban?",
+          "answer": "Minden minta megmutat egy irányt (rózsaszín felé, pávakék felé) és egy javasolt hex kódot ugyanazon a telítettségen és világosságon. A Lightroom HSL paneljében vagy a Point Color eszközzel, illetve a Photoshop Színezet/Telítettség eszközével told az adott szín árnyalatát a jelzett irányba, amíg a javasolt érték közelébe nem ér. Először a legnagyobb elmozdulásokat végezd el, és állj meg, amikor a nyíl Összhangban jelzést mutat."
+        }
+      }
+    }
+  }
+}

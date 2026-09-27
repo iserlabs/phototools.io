@@ -4,10 +4,6 @@
       "name": "Field-of-View Simulator",
       "description": "Compare field of view across focal lengths and sensor sizes"
     },
-    "color-scheme-generator": {
-      "name": "Color Scheme Generator",
-      "description": "Build color palettes for photography shoots"
-    },
     "exposure-simulator": {
       "name": "Exposure Triangle Simulator",
       "description": "See how aperture, shutter speed, and ISO interact"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Photography Cheat Sheet",
       "description": "Camera settings cheat sheets for common shooting scenarios — downloadable and printable"
+    },
+    "color-analyzer": {
+      "name": "Color Analyzer",
+      "description": "Sample the colors in a photo, read its harmony, and see which way to push each one"
     }
   }
 }

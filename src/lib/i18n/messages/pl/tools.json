@@ -4,10 +4,6 @@
       "name": "Symulator pola widzenia",
       "description": "Porównaj pole widzenia dla różnych ogniskowych i rozmiarów matrycy"
     },
-    "color-scheme-generator": {
-      "name": "Generator schematów kolorów",
-      "description": "Twórz palety kolorów do sesji fotograficznych"
-    },
     "exposure-simulator": {
       "name": "Symulator trójkąta ekspozycji",
       "description": "Zobacz, jak przysłona, czas naświetlania i ISO na siebie oddziałują"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Ściąga fotograficzna",
       "description": "Ściągi z ustawieniami aparatu na typowe sytuacje zdjęciowe — do pobrania i wydruku"
+    },
+    "color-analyzer": {
+      "name": "Analizator kolorów",
+      "description": "Pobieraj próbki kolorów ze zdjęcia, odczytaj ich harmonię i zobacz, w którą stronę przesunąć każdy z nich"
     }
   }
 }

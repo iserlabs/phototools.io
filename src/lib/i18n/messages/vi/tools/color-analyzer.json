@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Phối màu",
+      "complementary": "Bổ sung",
+      "splitComplementary": "Bổ sung tách",
+      "analogous": "Tương tự",
+      "triadic": "Tam giác",
+      "tetradic": "Tứ giác",
+      "monochromatic": "Đơn sắc",
+      "custom": "Tùy chỉnh",
+      "closestFit": "Hài hòa gần nhất",
+      "closestSentence": "Ảnh của bạn gần nhất với {harmony} (lệch trung bình {degrees}°). Nhấn để sử dụng.",
+      "keyColor": "Màu chính",
+      "hue": "Sắc độ:",
+      "saturation": "Độ bão hòa:",
+      "lightness": "Độ sáng:",
+      "splitAngle": "Góc tách:",
+      "spread": "Độ rộng:",
+      "rectangleWidth": "Chiều rộng hình chữ nhật:",
+      "square": "(vuông)",
+      "samples": "Mẫu màu",
+      "lock": "Khóa màu này làm điểm neo",
+      "unlock": "Mở khóa",
+      "removeSample": "Xóa mẫu màu",
+      "labelPlaceholder": "Nhãn",
+      "neutralNotScored": "Màu trung tính, không tính điểm",
+      "suggested": "Gợi ý",
+      "autoPick": "Tự động chọn 5 điểm",
+      "changePhoto": "Đổi ảnh",
+      "capReached": "Tối đa {cap} mẫu màu. Hãy xóa một mẫu để thêm mẫu khác.",
+      "markerLabel": "Mẫu {n}: {label}",
+      "dropPhotoPrompt": "Thả ảnh vào đây hoặc nhấn để duyệt. Ảnh chỉ ở lại trong trình duyệt của bạn.",
+      "decodeError": "Không thể đọc tệp đó. Hãy thử ảnh JPEG hoặc PNG.",
+      "canvasLabel": "Ảnh. Nhấn để thêm điểm lấy mẫu.",
+      "viewNatural": "Tự nhiên",
+      "viewPure": "Sắc độ thuần",
+      "viewGuide": "Hướng dẫn hài hòa",
+      "viewHint": {
+        "key": "Kéo chấm để đặt màu chính. Thả ảnh vào để phân tích màu thực tế thay vào đó.",
+        "natural": "Hiển thị màu theo độ bão hòa thực tế. Chuyển tab để xem sự hài hòa.",
+        "pure": "Các sắc độ được đẩy ra rìa để dễ đọc góc giữa các màu.",
+        "guide": "Hình nét đứt là vị trí mục tiêu. Mũi tên cho biết mỗi màu nên di chuyển theo hướng nào."
+      },
+      "nudge": {
+        "aligned": "Đã khớp",
+        "slight": "Điều chỉnh nhẹ về phía {color}",
+        "big": "Dịch chuyển lớn về phía {color}"
+      },
+      "names": {
+        "red": "Đỏ",
+        "vermilion": "Đỏ son",
+        "orange": "Cam",
+        "amber": "Hổ phách",
+        "yellow": "Vàng",
+        "lime": "Xanh chanh",
+        "chartreuse": "Vàng lục",
+        "leaf-green": "Xanh lá",
+        "green": "Xanh lục",
+        "jade": "Xanh ngọc bích",
+        "spring-green": "Xanh non",
+        "mint": "Xanh bạc hà",
+        "cyan": "Xanh lơ",
+        "sky-blue": "Xanh da trời",
+        "azure": "Xanh thiên thanh",
+        "cobalt": "Xanh coban",
+        "blue": "Xanh dương",
+        "indigo": "Chàm",
+        "violet": "Tím nhạt",
+        "purple": "Tím",
+        "magenta": "Hồng cánh sen",
+        "fuchsia": "Hồng tím",
+        "pink": "Hồng",
+        "rose": "Hồng đậm",
+        "gray": "Xám",
+        "black": "Đen",
+        "white": "Trắng"
+      },
+      "keyColorLabel": "Màu chính — nhấn để sao chép mã hex",
+      "clickToCopyHex": "Nhấn để sao chép mã hex",
+      "copiedExcl": "Đã sao chép!",
+      "copyColors": "Sao chép màu",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Sao chép mã hex",
+      "copyCssVariables": "Sao chép biến CSS",
+      "copyRgbValues": "Sao chép giá trị RGB",
+      "suggestions": {
+        "complementary": {
+          "warm": "Tuyệt vời cho: chân dung hoàng hôn ấm với tương phản bóng mát",
+          "cool": "Tuyệt vời cho: ảnh giờ xanh u ám với ánh sáng điểm nhấn ấm",
+          "default": "Tuyệt vời cho: bố cục tương phản cao với căng thẳng thị giác mạnh"
+        },
+        "splitComplementary": {
+          "warm": "Tuyệt vời cho: vẻ mộng mơ, tĩnh lặng vẫn giữ được tương phản mà không gắt",
+          "cool": "Tuyệt vời cho: cảnh phố và du lịch lạnh với hai điểm nhấn ấm",
+          "default": "Tuyệt vời cho: khung hình cân bằng, đa dạng mà không đối lập trực tiếp"
+        },
+        "analogous": {
+          "warm": "Tuyệt vời cho: phong cảnh giờ vàng với tông ấm thống nhất",
+          "cool": "Tuyệt vời cho: cảnh nước yên bình và nhiếp ảnh chạng vạng",
+          "default": "Tuyệt vời cho: ảnh thiên nhiên hài hòa với chuyển tiếp màu mượt"
+        },
+        "triadic": {
+          "warm": "Tuyệt vời cho: tác phẩm biên tập táo bạo với năng lượng đỏ, vàng, xanh dương",
+          "cool": "Tuyệt vời cho: khung hình sống động, hơi bất an với ba màu mạnh",
+          "default": "Tuyệt vời cho: công việc biên tập sống động và chân dung sáng tạo đậm"
+        },
+        "tetradic": {
+          "warm": "Tuyệt vời cho: cảnh phong phú, nhiều lớp với hai cặp màu bổ sung",
+          "cool": "Tuyệt vời cho: cảnh đô thị phức tạp với nguồn sáng lạnh và ấm",
+          "default": "Tuyệt vời cho: bố cục biên tập phong phú và bố cục đa chủ thể phức tạp"
+        },
+        "monochromatic": {
+          "warm": "Tuyệt vời cho: tông ấm tĩnh lặng, thống nhất từ một sắc độ",
+          "cool": "Tuyệt vời cho: cảnh lạnh tối giản, điềm tĩnh dựa trên một sắc độ",
+          "default": "Tuyệt vời cho: ảnh tối giản, thống nhất dựa vào sáng và tối"
+        },
+        "custom": {
+          "warm": "Kéo các mục tiêu nét đứt để tự thiết kế mối quan hệ màu sắc của riêng bạn",
+          "cool": "Kéo các mục tiêu nét đứt để tự thiết kế mối quan hệ màu sắc của riêng bạn",
+          "default": "Kéo các mục tiêu nét đứt để tự thiết kế mối quan hệ màu sắc của riêng bạn"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Sự hài hòa màu sắc trong nhiếp ảnh là gì?",
+          "answer": "Sự hài hòa màu sắc là mối quan hệ giữa các sắc độ trong khung hình trông có vẻ được sắp đặt có chủ đích: hai màu đối diện nhau (bổ sung), các màu lân cận trên vòng tròn (tương tự), hoặc ba màu cách đều nhau (tam giác). Ảnh hiếm khi bắt đầu với một sự hài hòa hoàn hảo, nhưng thường chỉ cách đó một điều chỉnh nhỏ."
+        },
+        "complementary-vs-analogous": {
+          "question": "Làm sao để đọc được sự hài hòa đã có sẵn trong ảnh của tôi?",
+          "answer": "Lấy mẫu vài điểm quan trọng (bầu trời, da, cánh cửa đỏ đó) và xem chúng nằm ở đâu trên vòng tròn. Hai chấm gần như đối diện nhau là một cặp bổ sung; một cụm trong khoảng 60° là tương tự. Huy hiệu 'Hài hòa gần nhất' tự làm phép so sánh này cho bạn trên cả sáu kiểu hài hòa."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Làm sao để sử dụng màu gợi ý trong Lightroom hoặc Photoshop?",
+          "answer": "Mỗi mẫu màu hiển thị một hướng (về phía hồng, về phía xanh lục lam) và một mã hex gợi ý ở cùng độ bão hòa và độ sáng. Trong bảng HSL của Lightroom hoặc Point Color, hoặc Hue/Saturation của Photoshop, đẩy sắc độ của màu đó theo hướng được chỉ cho đến khi gần với giá trị gợi ý. Điều chỉnh những thay đổi lớn nhất trước, và dừng lại khi mũi tên hiện 'Đã khớp'."
+        }
+      }
+    }
+  }
+}

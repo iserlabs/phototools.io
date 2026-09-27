@@ -4,10 +4,6 @@
       "name": "Simulator Bidang Pandang",
       "description": "Bandingkan bidang pandang pada berbagai panjang fokus dan ukuran sensor"
     },
-    "color-scheme-generator": {
-      "name": "Generator Skema Warna",
-      "description": "Buat palet warna untuk sesi pemotretan"
-    },
     "exposure-simulator": {
       "name": "Simulator Segitiga Eksposur",
       "description": "Lihat bagaimana apertur, kecepatan rana, dan ISO berinteraksi"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Cheat Sheet Fotografi",
       "description": "Cheat sheet pengaturan kamera untuk skenario pemotretan umum — dapat diunduh dan dicetak"
+    },
+    "color-analyzer": {
+      "name": "Penganalisis Warna",
+      "description": "Ambil sampel warna dalam foto, baca harmoninya, dan lihat ke arah mana setiap warna harus digeser"
     }
   }
 }

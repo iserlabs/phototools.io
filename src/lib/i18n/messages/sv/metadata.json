@@ -38,10 +38,6 @@
       "title": "Sensorstorleksjämförelse",
       "description": "Jämför sensorstorlekar från mellanformat till mobiltelefoner. Overlay, sida vid sida och pixeltäthet med verkliga kameramodeller."
     },
-    "color-scheme-generator": {
-      "title": "Färgpalettgenerator",
-      "description": "Skapa färgpaletter för fotografering med komplementära, analoga, triadiska och tetradiska färgharmonier. Interaktiv färgcirkel med färgplockning från foto."
-    },
     "frame-studio": {
       "title": "Kompositionsstudio",
       "description": "Beskär, rama in och komponera foton med kompositionsrutnät. Körs helt i webbläsaren — dina foton lämnar aldrig din enhet."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Färganalysator: läs av färgharmonin i vilket foto som helst",
+      "description": "Gratis färganalysator och färgschemagenerator för foton. Prova färger från ditt foto, placera dem på ett färghjul, hitta den närmaste färgharmonin och få graderingsvägledning per färg. 100 % i din webbläsare."
     }
   }
 }

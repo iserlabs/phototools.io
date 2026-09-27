@@ -38,10 +38,6 @@
       "title": "Sensor Size Comparison",
       "description": "Compare camera sensor sizes from medium format to smartphone. See overlay, side-by-side, and pixel density views with real camera models."
     },
-    "color-scheme-generator": {
-      "title": "Color Scheme Generator",
-      "description": "Generate color palettes for photography using complementary, analogous, triadic, and tetradic color harmonies. Interactive color wheel with photo picker."
-    },
     "frame-studio": {
       "title": "Frame Studio",
       "description": "Crop, frame, and compose photos with grid overlays. 100% client-side — your photos never leave your device."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "Photography Guides — Techniques, Gear & Editing",
       "description": "Free in-depth photography guides: shooting techniques, gear-buying advice, and editing walkthroughs — gear-neutral and paired with interactive tools."
+    },
+    "color-analyzer": {
+      "title": "Color Analyzer: read the color harmony in any photo",
+      "description": "Free photo color analyzer and color scheme generator. Sample colors from your photo, plot them on a color wheel, find the closest color harmony, and get per-color grading guidance. 100% in your browser."
     }
   }
 }

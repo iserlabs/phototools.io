@@ -4,10 +4,6 @@
       "name": "視角模擬器",
       "description": "比較不同焦距與感光元件尺寸下的視角差異"
     },
-    "color-scheme-generator": {
-      "name": "配色方案產生器",
-      "description": "為攝影拍攝規劃配色方案"
-    },
     "exposure-simulator": {
       "name": "曝光三角模擬器",
       "description": "親身感受光圈、快門速度與 ISO 如何相互影響"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "攝影速查表",
       "description": "常見拍攝場景的相機設定速查表 — 可下載、可列印"
+    },
+    "color-analyzer": {
+      "name": "色彩分析器",
+      "description": "取樣照片中的顏色，解讀其配色關係，並查看每種顏色該如何調整"
     }
   }
 }

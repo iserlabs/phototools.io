@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "A legtöbb fotó már tartalmaz egy színkapcsolatot — csak még nem látod. Ejts ide egy fotót, koppints a fontos színekre, és a kör megmutatja, hogyan viszonyulnak egymáshoz. Válaszd ki a kívánt harmóniát, és az eszköz megmondja, melyik irányba told el az egyes színeket.",
+      "deeper": [
+        {
+          "heading": "A négylépéses módszer",
+          "text": "Szándék (mit érezzen a néző), Elemzés (milyen színek vannak valójában a képen), Színválasztás (melyik harmónia illik ehhez a hangulathoz), Átalakítás (told el a csúszkákat a kör által mutatott irányba). A szerkesztés az utolsó lépés. A színezéssel kapcsolatos frusztráció nagy része abból ered, hogy rögtön a negyedik lépéssel kezdik."
+        },
+        {
+          "heading": "A kör leolvasása",
+          "text": "Minden minta árnyalat (szög) és telítettség (a középponttól való távolság) szerint van ábrázolva. A Természetes nézet a valódi telítettséget mutatja, a Tiszta árnyalatok minden pontot a szélre told, hogy a szögek nyilvánvalóak legyenek, a Harmónia-útmutató pedig hozzáadja a célpozíciókat és nyilakat a kiválasztott harmóniához."
+        },
+        {
+          "heading": "Legjobb egyezés",
+          "text": "Az eszköz minden harmónia-sablont elforgat a mintáidhoz legjobban illeszkedő pozícióba, és megméri az átlagos árnyalathibát, a sablon rekeszközeihez normalizálva, hogy a négyrekeszes harmóniák ne nyerjenek automatikusan. A győztes megkapja a jelvényt; te döntöd el, használod-e."
+        },
+        {
+          "heading": "Zárolások és viszonyítási pontok",
+          "text": "Zárolj egy mintát, hogy viszonyítási ponttá tedd: a harmónia e köré az árnyalat köré forog, és minden más színt ehhez viszonyítva ítél meg. Használd azt a színt, amit nem fogsz módosítani — általában a bőrt vagy egy márkaszínt. Zárolás nélkül az eszköz a legkisebb teljes hibájú elforgatást választja."
+        },
+        {
+          "heading": "Semleges színek",
+          "text": "A szürkéknek, a majdnem feketéknek és a majdnem fehéreknek nincs megbízható árnyalatuk, ezért a középpontba kerülnek, és kimaradnak az egyezésből. A hangulat szempontjából még mindig számítanak, de az árnyalatuk csúszkán való eltolása többnyire csak színezetet ad hozzá."
+        },
+        {
+          "heading": "Miért HSL, és nem percepciós kör",
+          "text": "Ez a kör a HSL modellt használja, ugyanazt, mint az Adobe Color és a Lightroom HSL panelje, így az itt leolvasott irány ugyanaz, amit ott is eltolsz. Nem percepciósan egyenletes: a sárga keskeny sávot foglal el, a kék pedig széleset, így egy 20°-os elmozdulás egyes tartományokban nagyobbnak tűnik, mint másokban. Egy percepciós kör őszintébb lenne, de nem illeszkedne a szerkesztőeszközökhöz."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Harmónia típusa",
+          "description": "A geometriai kapcsolat, amire törekszel: komplementer, osztott komplementer, analóg, triadikus, tetradikus, monokróm vagy a saját, egyéni célértékeid."
+        },
+        {
+          "label": "Minták",
+          "description": "Milyen színeket választottál mintázásra. Azt mintázd, ami a kép szempontjából számít, nem azt, ami a legnagyobb. Öt-hat pont általában elmondja a teljes történetet."
+        },
+        {
+          "label": "Viszonyítási pont",
+          "description": "A zárolt minta, amely körül a harmónia forog. Zárolás nélkül a legjobban illeszkedő elforgatást használja."
+        },
+        {
+          "label": "Elmozdulás",
+          "description": "Az árnyalat előjeles elforgatása a mintától a célértékéig. Az Összhangban 8°-on belül van, az enyhe elmozdulás 25°-on belül, minden ennél nagyobb nagy elmozdulás."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Mintázd azokat a színeket, amelyeket valóban színezni fogsz: ég, bőr, a domináns tárgy, egy árnyék. Hagyd ki a spekuláris fényeket és a mély árnyékokat — semlegesként jelennek meg."
+        },
+        {
+          "text": "Az osztott komplementer a nyugodt, álomszerű választás az utazós és utcai munkákhoz. A komplementer tisztább és ütősebb. A triadikus szándékosan kicsit nyugtalanító."
+        },
+        {
+          "text": "Kezdd az Automatikus kiválasztással, majd told el vagy töröld a pontokat. A domináns kromatikus klasztereket találja meg, amelyek gyakran nem azok a színek, amelyek a legjobban számítanak neked."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Harmónia típusa",
+          "definition": "Az árnyalatok közti célkapcsolat. Komplementer (szemközti), Osztott komplementer (szemközti ± szög), Analóg (szomszédos), Triadikus (120°-onként), Tetradikus (két komplementer pár), Monokróm (egy árnyalat), Egyéni (saját célértékek)."
+        },
+        "Key Color": {
+          "term": "Kulcsszín",
+          "definition": "Betöltött fotó nélkül az a szín, amely köré a harmónia épül. Húzd a kört, vagy használd a csúszkákat."
+        },
+        "Hue": {
+          "term": "Színárnyalat",
+          "definition": "A szín szöge a körön fokban: 0° a piros, 120° a zöld, 240° a kék."
+        },
+        "Saturation": {
+          "term": "Telítettség",
+          "definition": "A szín intenzitása 0%-tól (szürke) 100%-ig (teljesen élénk). A középponttól való távolság."
+        },
+        "Lightness": {
+          "term": "Világosság",
+          "definition": "Fényesség 0%-tól (fekete) 100%-ig (fehér). 50%-nál látod a tiszta színt."
+        },
+        "Split Angle": {
+          "term": "Osztási szög",
+          "definition": "Milyen messze van a két osztott komplementer szín a közvetlen komplementertől."
+        },
+        "Spread": {
+          "term": "Szórás",
+          "definition": "Milyen messze vannak az analóg színek a viszonyítási árnyalattól."
+        },
+        "Lock": {
+          "term": "Zárolás",
+          "definition": "Viszonyítási ponttá teszi a mintát. A harmónia ehhez az árnyalathoz forog, és a többi minta ehhez képest van megítélve. Csak egy minta zárolható."
+        },
+        "Closest fit": {
+          "term": "Legjobb egyezés",
+          "definition": "Az a harmónia, amelynek legjobb elforgatása a legalacsonyabb normalizált árnyalathibát adja a mintáid között. Legalább két kromatikus mintát igényel."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "210°-on lemintáztál egy kék eget és 25°-on egy narancssárga falat. Melyik harmóniához állnak már a legközelebb?",
+          "hint": "Nézd meg a köztük lévő szöget.",
+          "successMessage": "Így van. A 185°-os különbség szinte tökéletes komplementer pár; a fal enyhe eltolása befejezi.",
+          "failureMessage": "A körülbelül 180°-ra lévő két szín komplementer. Az analóg színek nagyjából 60°-on belül vannak egymástól.",
+          "options": [
+            {
+              "label": "Komplementer"
+            },
+            {
+              "label": "Analóg"
+            },
+            {
+              "label": "Triadikus"
+            }
+          ]
+        },
+        {
+          "scenario": "Egy fotón három minta van 40°-on, 60°-on és 85°-on. Melyik harmónia ez?",
+          "hint": "Mindegyik szomszédos a körön.",
+          "successMessage": "Helyes. Az egymáshoz körülbelül 60°-on belül eső árnyalatok analóg harmóniát alkotnak.",
+          "failureMessage": "Az egymáshoz közel eső árnyalatok analógok — ez a nyugodt és egységes választás.",
+          "options": [
+            {
+              "label": "Komplementer"
+            },
+            {
+              "label": "Analóg"
+            },
+            {
+              "label": "Tetradikus"
+            }
+          ]
+        },
+        {
+          "scenario": "Álomszerű, nyugodt utcai fotót szeretnél, de megtartanád a kontrasztot. Melyik harmóniát válaszd?",
+          "hint": "Gondolj a komplementer két szomszédjára a komplementer helyett.",
+          "successMessage": "Igen. Az osztott komplementer megőrzi a feszültséget a közvetlen ellentét élessége nélkül.",
+          "failureMessage": "Az osztott komplementer a nyugodt, mégis kontrasztos választás. A triadikus inkább energikusnak vagy nyugtalanítónak hat.",
+          "options": [
+            {
+              "label": "Osztott komplementer"
+            },
+            {
+              "label": "Triadikus"
+            },
+            {
+              "label": "Analóg"
+            }
+          ]
+        },
+        {
+          "scenario": "Egy minta Enyhe elmozdulás rózsaszín felé jelzést mutat −15°-os deltával. Mit teszel a Lightroom HSL paneljében?",
+          "hint": "Az irányt jelző szó megmondja, merre told, a mérték pedig, hogy mennyire.",
+          "successMessage": "Így van. Told a szín Színárnyalat csúszkáját rózsaszín felé, amíg a kártya Összhangban jelzést nem mutat.",
+          "failureMessage": "Told az árnyalatot a megnevezett irányba (rózsaszín) kis mértékben; a 15°-os változás enyhe elmozdulás, nem nagy elmozdulás.",
+          "options": [
+            {
+              "label": "Told el kicsit az árnyalatot rózsaszín felé"
+            },
+            {
+              "label": "Csökkentsd a telítettséget"
+            },
+            {
+              "label": "Told el az árnyalatot zöld felé"
+            }
+          ]
+        },
+        {
+          "scenario": "Két minta ugyanazon az árnyalaton van, de az egyik zárolva van. Melyik körül forog a harmónia?",
+          "hint": "Csak egy minta lehet a viszonyítási pont.",
+          "successMessage": "Így van. A zárolt minta a viszonyítási pont; a másikat az arra épülő sablonhoz viszonyítva ítéli meg.",
+          "failureMessage": "A zárolt minta mindig a viszonyítási pont. Zárolás nélkül a legjobban illeszkedő elforgatást használja.",
+          "options": [
+            {
+              "label": "A zárolt minta"
+            },
+            {
+              "label": "Az elsőként elhelyezett minta"
+            },
+            {
+              "label": "A legtelítettebb minta"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

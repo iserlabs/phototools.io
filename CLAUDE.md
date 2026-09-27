@@ -44,7 +44,7 @@ All source code lives under `src/`, with `@/` aliased to `src/` in tsconfig.json
 - **Tool Registry**: `src/lib/data/tools.ts` defines all tools with slug, name, description, `dev`/`prod` status fields (`'live'`/`'draft'`/`'disabled'`), and category. `getLiveTools()` returns live tools. `getVisibleTools()` returns live + draft. `getToolBySlug()` looks up by slug. `getAllTools()` returns all tools regardless of status.
 - **Education System**: `src/lib/data/education/` contains per-tool education skeletons (non-translatable data: IDs, difficulty levels, correct answers, option values). All translatable education text lives in `src/lib/i18n/messages/en/education/*.json`. `LearnPanel` and `ChallengeCard` render by combining skeleton data with translations.
 - **Pure Math Modules**: `src/lib/math/` contains pure functions for FOV, DOF, exposure (including shader math for CoC, motion blur, noise), diffraction (incl. Airy disk + aperture verdict), panorama (frame count, rotation increment, stitched size), star trails, color (color.ts, color-harmony.ts, color-hsl.ts, color-kelvin.ts), histogram, compression, frame (frame.ts, frame-border.ts, frame-texture.ts), and grid (grid.ts, grid-basic.ts, grid-golden.ts) calculations. Each has co-located `.test.ts` files. TDD approach — math is tested independently from UI.
-- **Data**: `src/lib/data/` centralizes all pure data. Shared data files (with tests): tool registry, education skeletons, sensors, focal lengths, scenes, glossary, camera settings (apertures/shutter speeds/ISOs), ND filters, white balance presets, FAQ. Per-tool data files: `frameStudio.ts`, `exposureScenes.ts`, `fovSimulator.ts`, `colorSchemeGenerator.ts`, `exifViewer.ts`, `starTrailCalculator.ts`, `dofSimulator.ts`, `hyperfocalSimulator.ts`, `perspectiveCompression.ts`, `equivalentSettings.ts`, `focusStacking.ts`, `shutterCount.ts` (shutter-life ratings + per-brand metadata support), `cameraReleases.ts` (model → release year / rated actuations), `cheatSheet.ts`.
+- **Data**: `src/lib/data/` centralizes all pure data. Shared data files (with tests): tool registry, education skeletons, sensors, focal lengths, scenes, glossary, camera settings (apertures/shutter speeds/ISOs), ND filters, white balance presets, FAQ. Per-tool data files: `frameStudio.ts`, `exposureScenes.ts`, `fovSimulator.ts`, `colorAnalyzer.ts`, `exifViewer.ts`, `starTrailCalculator.ts`, `dofSimulator.ts`, `hyperfocalSimulator.ts`, `perspectiveCompression.ts`, `equivalentSettings.ts`, `focusStacking.ts`, `shutterCount.ts` (shutter-life ratings + per-brand metadata support), `cameraReleases.ts` (model → release year / rated actuations), `cheatSheet.ts`.
 
 ## Key Directories
 
@@ -288,7 +288,7 @@ Playwright integration tests live in `src/e2e/` and run against a production bui
 src/e2e/
   smoke/all-pages.spec.ts        Parameterized smoke tests for all pages (200 status, no console errors, content rendering, no desktop scroll)
   tools/fov-simulator.spec.ts    FOV Simulator interaction tests
-  tools/color-scheme.spec.ts     Color Scheme Generator interaction tests
+  tools/color-analyzer.spec.ts   Color Analyzer interaction tests
   tools/sensor-size.spec.ts      Sensor Size Comparison interaction tests
   tools/star-trail.spec.ts       Star Trail Calculator interaction tests
   tools/white-balance.spec.ts    White Balance Visualizer interaction tests

@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "De fleste bilder inneholder allerede et fargeforhold; du kan bare ikke se det ennå. Slipp et bilde, trykk på fargene som betyr noe, og hjulet viser hvordan de forholder seg til hverandre. Velg harmonien du vil ha, så forteller verktøyet deg hvilken vei du skal skyve hver farge.",
+      "deeper": [
+        {
+          "heading": "Firetrinnsmetoden",
+          "text": "Hensikt (hva betrakteren skal føle), Analyse (hvilke farger som faktisk er i bildet), Fargevalg (hvilken harmoni som passer den følelsen), Transformasjon (flytte glidebryterne i retningen hjulet viser). Redigering kommer sist. Det meste av frustrasjonen med fargegradering kommer fra å starte på trinn fire."
+        },
+        {
+          "heading": "Å lese hjulet",
+          "text": "Hver prøve plottes etter fargetone (vinkel) og metning (avstand fra sentrum). Visningen Naturlig viser den faktiske metningen, Rene fargetoner skyver hvert punkt mot kanten slik at vinklene blir tydelige, og Harmoniguide legger til målposisjonene og piler for den valgte harmonien."
+        },
+        {
+          "heading": "Beste treff",
+          "text": "Verktøyet roterer hver harmonimal til posisjonen som best matcher prøvene dine, og måler det gjennomsnittlige fargetonefeilet, normalisert etter malens plassavstand slik at firepunktsharmonier ikke vinner som standard. Vinneren får merket; du velger om du vil bruke den."
+        },
+        {
+          "heading": "Låser og ankre",
+          "text": "Lås en prøve for å gjøre den til ankeret: harmonien roterer rundt den fargetonen, og hver annen farge vurderes opp mot den. Bruk det for fargen du ikke skal endre, som oftest hudtone eller en merkevarefarge. Uten lås velger verktøyet rotasjonen med lavest total feil."
+        },
+        {
+          "heading": "Nøytrale",
+          "text": "Grå, nesten-svarte og nesten-hvite toner har ingen pålitelig fargetone, så de plottes i sentrum og holdes utenfor tilpasningen. De betyr fortsatt noe for stemningen, men å flytte fargetonen deres på en glidebryter legger mest til en fargeskjevhet."
+        },
+        {
+          "heading": "Hvorfor HSL og ikke et perseptuelt hjul",
+          "text": "Dette hjulet bruker HSL, samme modell som Adobe Color og HSL-panelet i Lightroom, så retningen du leser her, er retningen du skyver der. Det er ikke perseptuelt ensartet: gult opptar et smalt bånd og blått et bredt, så en justering på 20° ser større ut i noen områder enn andre. Et perseptuelt hjul ville vært mer ærlig, men ville ikke matchet redigeringsverktøyene."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Harmonitype",
+          "description": "Det geometriske forholdet du sikter mot: komplementær, delt komplementær, analog, triadisk, tetradisk, monokrom, eller dine egne tilpassede mål."
+        },
+        {
+          "label": "Prøver",
+          "description": "Hvilke farger du valgte å ta prøve av. Ta prøve av det som betyr noe for bildet, ikke det som er størst. Fem til seks punkter forteller som regel hele historien."
+        },
+        {
+          "label": "Anker",
+          "description": "Den låste prøven som harmonien roterer rundt. Uten lås brukes den best tilpassede rotasjonen."
+        },
+        {
+          "label": "Justering",
+          "description": "Den fortegnsbestemte fargetonerotasjonen fra en prøve til målet. På linje er innenfor 8°, en liten justering innenfor 25°, alt mer er et stort skift."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Ta prøve av fargene du faktisk skal gradere: himmel, hud, det dominerende objektet, en skygge. Hopp over speilblanke høylys og dype skygger; de leses som nøytrale."
+        },
+        {
+          "text": "Delt komplementær er det rolige, drømmende valget for reise- og gatefoto. Komplementær er renere og mer slående. Triadisk virker bevisst litt urolig."
+        },
+        {
+          "text": "Bruk automatisk valg for å starte, flytt eller slett deretter punkter. Det finner de dominerende kromatiske klyngene, som ofte ikke er fargene du bryr deg mest om."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Harmonitype",
+          "definition": "Målforholdet mellom fargetoner. Komplementær (motsatt), Delt komplementær (motsatt ± vinkel), Analog (naboer), Triadisk (120° fra hverandre), Tetradisk (to komplementære par), Monokrom (én fargetone), Tilpasset (dine egne mål)."
+        },
+        "Key Color": {
+          "term": "Nøkkelfarge",
+          "definition": "Uten et innlastet bilde, fargen harmonien bygges rundt. Dra på hjulet, eller bruk glidebryterne."
+        },
+        "Hue": {
+          "term": "Fargetone",
+          "definition": "Fargevinkelen på hjulet i grader: 0° er rødt, 120° er grønt, 240° er blått."
+        },
+        "Saturation": {
+          "term": "Metning",
+          "definition": "Fargeintensitet fra 0 % (grå) til 100 % (helt levende). Avstand fra hjulets sentrum."
+        },
+        "Lightness": {
+          "term": "Lyshet",
+          "definition": "Lysstyrke fra 0 % (svart) til 100 % (hvit). Ved 50 % ser du den rene fargen."
+        },
+        "Split Angle": {
+          "term": "Delingsvinkel",
+          "definition": "Hvor langt de to delte komplementærfargene ligger fra den direkte komplementærfargen."
+        },
+        "Spread": {
+          "term": "Spredning",
+          "definition": "Hvor langt de analoge fargene ligger fra ankerfargetonen."
+        },
+        "Lock": {
+          "term": "Lås",
+          "definition": "Gjør en prøve til ankeret. Harmonien roterer til den fargetonen, og andre prøver vurderes opp mot den. Bare én prøve kan låses."
+        },
+        "Closest fit": {
+          "term": "Beste treff",
+          "definition": "Harmonien hvis beste rotasjon har det laveste normaliserte fargetonefeilet på tvers av prøvene dine. Krever minst to kromatiske prøver."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Du tok en prøve av en blå himmel ved 210° og en oransje vegg ved 25°. Hvilken harmoni er de allerede nærmest?",
+          "hint": "Sjekk vinkelen mellom dem.",
+          "successMessage": "Riktig. 185° fra hverandre er et nesten perfekt komplementært par; en liten justering av veggen fullfører det.",
+          "failureMessage": "To farger omtrent 180° fra hverandre er komplementære. Analoge farger ligger innenfor omtrent 60° av hverandre.",
+          "options": [
+            {
+              "label": "Komplementær"
+            },
+            {
+              "label": "Analog"
+            },
+            {
+              "label": "Triadisk"
+            }
+          ]
+        },
+        {
+          "scenario": "Et bilde har tre prøver ved 40°, 60° og 85°. Hvilken harmoni er dette?",
+          "hint": "De er alle naboer på hjulet.",
+          "successMessage": "Riktig. Nabofargetoner innenfor omtrent 60° danner en analog harmoni.",
+          "failureMessage": "Fargetoner som alle ligger nær hverandre, er analoge, det rolige og enhetlige valget.",
+          "options": [
+            {
+              "label": "Komplementær"
+            },
+            {
+              "label": "Analog"
+            },
+            {
+              "label": "Tetradisk"
+            }
+          ]
+        },
+        {
+          "scenario": "Du vil ha et drømmende, rolig gatebilde, men beholde litt kontrast. Hvilken harmoni bør du velge?",
+          "hint": "Tenk på de to naboene til komplementærfargen i stedet for komplementærfargen selv.",
+          "successMessage": "Ja. Delt komplementær beholder spenning uten hardheten til en direkte motsetning.",
+          "failureMessage": "Delt komplementær er det rolige, men kontrastfylte valget. Triadisk har en tendens til å føles energisk eller urovekkende.",
+          "options": [
+            {
+              "label": "Delt komplementær"
+            },
+            {
+              "label": "Triadisk"
+            },
+            {
+              "label": "Analog"
+            }
+          ]
+        },
+        {
+          "scenario": "En prøve viser Liten justering mot rosa med en delta på −15°. Hva gjør du i Lightrooms HSL-panel?",
+          "hint": "Retningsordet forteller hvor du skal skyve, størrelsen forteller hvor langt.",
+          "successMessage": "Riktig. Flytt Fargetone-glidebryteren til den fargen mot rosa til kortet viser På linje.",
+          "failureMessage": "Skyv fargetonen i den angitte retningen (rosa) med en liten mengde; en endring på 15° er en liten justering, ikke et stort skift.",
+          "options": [
+            {
+              "label": "Flytte fargetonen litt mot rosa"
+            },
+            {
+              "label": "Avmette den"
+            },
+            {
+              "label": "Flytte fargetonen mot grønt"
+            }
+          ]
+        },
+        {
+          "scenario": "To prøver deler samme fargetone, men én er låst. Hvilken roterer harmonien rundt?",
+          "hint": "Bare én prøve kan være ankeret.",
+          "successMessage": "Riktig. Den låste prøven er ankeret; den andre vurderes opp mot malen som er bygget på den.",
+          "failureMessage": "Den låste prøven er alltid ankeret. Uten lås brukes den best tilpassede rotasjonen.",
+          "options": [
+            {
+              "label": "Den låste prøven"
+            },
+            {
+              "label": "Den først plasserte prøven"
+            },
+            {
+              "label": "Den mest mettede prøven"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

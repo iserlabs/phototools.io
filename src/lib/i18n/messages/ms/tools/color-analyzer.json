@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Skema Warna",
+      "complementary": "Komplementari",
+      "splitComplementary": "Split Komplementari",
+      "analogous": "Analogus",
+      "triadic": "Triadik",
+      "tetradic": "Tetradik",
+      "monochromatic": "Monokromatik",
+      "custom": "Tersuai",
+      "closestFit": "Harmoni Terdekat",
+      "closestSentence": "Foto anda paling hampir dengan {harmony} (purata {degrees}° berbeza). Ketik untuk guna.",
+      "keyColor": "Warna Utama",
+      "hue": "Hue:",
+      "saturation": "Saturation:",
+      "lightness": "Lightness:",
+      "splitAngle": "Sudut split:",
+      "spread": "Sebaran:",
+      "rectangleWidth": "Lebar segi empat tepat:",
+      "square": "(segi empat sama)",
+      "samples": "Sampel",
+      "lock": "Kunci warna ini sebagai sauh",
+      "unlock": "Buka kunci",
+      "removeSample": "Buang sampel",
+      "labelPlaceholder": "Label",
+      "neutralNotScored": "Neutral, tidak dinilai",
+      "suggested": "Dicadangkan",
+      "autoPick": "Pilih automatik 5",
+      "changePhoto": "Tukar foto",
+      "capReached": "Maksimum {cap} sampel. Buang satu untuk tambah yang lain.",
+      "markerLabel": "Sampel {n}: {label}",
+      "dropPhotoPrompt": "Lepaskan foto di sini atau klik untuk melayari. Foto kekal dalam pelayar anda.",
+      "decodeError": "Fail itu tidak dapat dibaca. Cuba JPEG atau PNG.",
+      "canvasLabel": "Foto. Klik untuk menambah titik sampel.",
+      "viewNatural": "Semula jadi",
+      "viewPure": "Hue tulen",
+      "viewGuide": "Panduan harmoni",
+      "viewHint": {
+        "key": "Seret titik untuk tetapkan warna utama. Lepaskan foto untuk analisis warna sebenar sebaliknya.",
+        "natural": "Menunjukkan warna pada saturation sebenar. Tukar tab untuk baca harmoni.",
+        "pure": "Semua hue ditolak ke tepi roda supaya sudut antara warna mudah dibaca.",
+        "guide": "Bentuk putus-putus ialah kedudukan sasaran. Anak panah tunjuk arah setiap warna patut digerakkan."
+      },
+      "nudge": {
+        "aligned": "Sejajar",
+        "slight": "Sedikit gerak ke arah {color}",
+        "big": "Gerak besar ke arah {color}"
+      },
+      "names": {
+        "red": "Merah",
+        "vermilion": "Merah jingga",
+        "orange": "Jingga",
+        "amber": "Kuning ambar",
+        "yellow": "Kuning",
+        "lime": "Hijau limau",
+        "chartreuse": "Hijau kekuningan",
+        "leaf-green": "Hijau daun",
+        "green": "Hijau",
+        "jade": "Hijau jed",
+        "spring-green": "Hijau muda",
+        "mint": "Hijau mint",
+        "cyan": "Biru kehijauan",
+        "sky-blue": "Biru langit",
+        "azure": "Biru nilam",
+        "cobalt": "Biru kobalt",
+        "blue": "Biru",
+        "indigo": "Nila",
+        "violet": "Ungu muda",
+        "purple": "Ungu",
+        "magenta": "Magenta",
+        "fuchsia": "Merah jambu keunguan",
+        "pink": "Merah jambu",
+        "rose": "Merah mawar",
+        "gray": "Kelabu",
+        "black": "Hitam",
+        "white": "Putih"
+      },
+      "keyColorLabel": "Warna utama — klik untuk salin hex",
+      "clickToCopyHex": "Klik untuk salin hex",
+      "copiedExcl": "Disalin!",
+      "copyColors": "Salin warna",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Salin kod hex",
+      "copyCssVariables": "Salin pemboleh ubah CSS",
+      "copyRgbValues": "Salin nilai RGB",
+      "suggestions": {
+        "complementary": {
+          "warm": "Sesuai untuk: potret matahari terbenam yang hangat dengan kontras bayang sejuk",
+          "cool": "Sesuai untuk: tangkapan blue hour beraura suram dengan pencahayaan aksen hangat",
+          "default": "Sesuai untuk: komposisi kontras tinggi dengan ketegangan visual yang kuat"
+        },
+        "splitComplementary": {
+          "warm": "Sesuai untuk: suasana tenang dan seakan mimpi yang kekal berkontras tanpa terasa keras",
+          "cool": "Sesuai untuk: adegan jalan dan perjalanan sejuk dengan dua aksen hangat",
+          "default": "Sesuai untuk: bingkai seimbang dengan kepelbagaian tanpa pertentangan terus"
+        },
+        "analogous": {
+          "warm": "Sesuai untuk: landskap golden hour dengan rona hangat yang padu",
+          "cool": "Sesuai untuk: adegan air tenang dan fotografi waktu senja",
+          "default": "Sesuai untuk: tangkapan alam yang harmoni dengan peralihan warna yang lancar"
+        },
+        "triadic": {
+          "warm": "Sesuai untuk: kerja editorial berani dengan tenaga merah, kuning dan biru",
+          "cool": "Sesuai untuk: bingkai ceria yang sedikit menggusarkan dengan tiga warna kuat",
+          "default": "Sesuai untuk: kerja editorial yang rancak dan potret kreatif yang berani"
+        },
+        "tetradic": {
+          "warm": "Sesuai untuk: adegan kaya berlapis dengan dua pasang warna komplementari",
+          "cool": "Sesuai untuk: landskap bandar yang kompleks dengan sumber cahaya sejuk dan hangat",
+          "default": "Sesuai untuk: susun atur editorial yang kaya dan komposisi pelbagai subjek yang kompleks"
+        },
+        "monochromatic": {
+          "warm": "Sesuai untuk: rona hangat yang tenang dan padu daripada satu hue",
+          "cool": "Sesuai untuk: adegan sejuk minimum yang tenang berasaskan satu hue",
+          "default": "Sesuai untuk: imej minimum dan padu yang bergantung pada terang dan gelap"
+        },
+        "custom": {
+          "warm": "Seret sasaran putus-putus untuk reka hubungan warna anda sendiri",
+          "cool": "Seret sasaran putus-putus untuk reka hubungan warna anda sendiri",
+          "default": "Seret sasaran putus-putus untuk reka hubungan warna anda sendiri"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Apa itu harmoni warna dalam fotografi?",
+          "answer": "Harmoni warna ialah hubungan antara hue dalam bingkai yang kelihatan sengaja diatur: dua warna yang bertentangan (komplementari), warna yang bersebelahan pada roda (analogus), atau tiga warna berjarak sama (triadik). Foto jarang bermula dengan harmoni yang bersih, tetapi selalunya hanya terpisah satu pelarasan kecil daripadanya."
+        },
+        "complementary-vs-analogous": {
+          "question": "Bagaimana saya boleh baca harmoni yang sudah ada dalam foto saya?",
+          "answer": "Ambil sampel beberapa titik penting (langit, kulit, pintu merah itu) dan lihat di mana ia jatuh pada roda. Dua titik yang lebih kurang bertentangan ialah pasangan komplementari; kelompok dalam lingkungan 60° ialah analogus. Lencana 'Harmoni Terdekat' buat perbandingan ini untuk anda merentasi keenam-enam harmoni."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Bagaimana saya guna warna yang dicadangkan dalam Lightroom atau Photoshop?",
+          "answer": "Setiap sampel tunjukkan arah (ke arah pink, ke arah teal) dan hex yang dicadangkan pada saturation dan lightness yang sama. Dalam panel HSL Lightroom atau Point Color, atau Hue/Saturation Photoshop, tolak hue warna itu ke arah yang ditunjukkan sehingga hampir dengan nilai yang dicadangkan. Laraskan perubahan terbesar dahulu, dan berhenti apabila anak panah tunjuk 'Sejajar'."
+        }
+      }
+    }
+  }
+}

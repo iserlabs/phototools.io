@@ -4,10 +4,6 @@
       "name": "Bildwinkel-Simulator",
       "description": "Vergleiche den Bildwinkel bei verschiedenen Brennweiten und Sensorgrößen"
     },
-    "color-scheme-generator": {
-      "name": "Farbschema-Generator",
-      "description": "Erstelle Farbpaletten für Fotoshootings"
-    },
     "exposure-simulator": {
       "name": "Belichtungsdreieck-Simulator",
       "description": "Sieh, wie Blende, Verschlusszeit und ISO zusammenwirken"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Fotografie-Spickzettel",
       "description": "Spickzettel mit Kameraeinstellungen für gängige Aufnahmesituationen — zum Herunterladen und Ausdrucken"
+    },
+    "color-analyzer": {
+      "name": "Farbanalysator",
+      "description": "Probiere die Farben in einem Foto, lies die Harmonie ab und sieh, in welche Richtung du jede schieben solltest"
     }
   }
 }

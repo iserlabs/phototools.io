@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "Większość zdjęć już zawiera relację kolorów — po prostu jeszcze jej nie widzisz. Upuść zdjęcie, dotknij kolorów, które mają znaczenie, a koło pokaże, jak się do siebie odnoszą. Wybierz harmonię, której chcesz, a narzędzie powie Ci, w którą stronę przesunąć każdy kolor.",
+      "deeper": [
+        {
+          "heading": "Metoda czterech kroków",
+          "text": "Intencja (co ma poczuć widz), Analiza (jakie kolory rzeczywiście są w kadrze), Wybór koloru (jaka harmonia pasuje do tego nastroju), Transformacja (przesuń suwaki w kierunku, który pokazuje koło). Edycja jest na końcu. Większość frustracji związanych z korekcją kolorów bierze się ze startu od razu od kroku czwartego."
+        },
+        {
+          "heading": "Odczytywanie koła",
+          "text": "Każda próbka jest naniesiona według odcienia (kąt) i nasycenia (odległość od środka). Widok Naturalny pokazuje rzeczywiste nasycenie, Czyste odcienie przesuwa każdą kropkę na obrzeże, aby kąty były oczywiste, a Przewodnik harmonii dodaje docelowe pozycje i strzałki dla wybranej harmonii."
+        },
+        {
+          "heading": "Najlepsze dopasowanie",
+          "text": "Narzędzie obraca każdy szablon harmonii do pozycji najlepiej pasującej do Twoich próbek i mierzy średni błąd odcienia, znormalizowany według rozstawu slotów szablonu, aby harmonie z czterema slotami nie wygrywały domyślnie. Zwycięzca otrzymuje odznakę; to Ty decydujesz, czy jej użyć."
+        },
+        {
+          "heading": "Blokady i punkty odniesienia",
+          "text": "Zablokuj próbkę, aby uczynić ją punktem odniesienia: harmonia obraca się wokół tego odcienia, a każdy inny kolor jest oceniany względem niego. Użyj tego dla koloru, którego nie zmienisz — zwykle skóry lub koloru marki. Bez blokady narzędzie wybiera obrót z najmniejszym łącznym błędem."
+        },
+        {
+          "heading": "Kolory neutralne",
+          "text": "Szarości, prawie czernie i prawie biele nie mają wiarygodnego odcienia, więc lądują w środku i są pomijane w dopasowaniu. Nadal mają znaczenie dla nastroju, ale przesuwanie ich odcienia na suwaku zwykle tylko dodaje przebarwienie."
+        },
+        {
+          "heading": "Dlaczego HSL, a nie koło percepcyjne",
+          "text": "To koło używa modelu HSL, tego samego, co Adobe Color i panel HSL w Lightroomie, więc kierunek, który tu odczytujesz, jest tym samym kierunkiem, w który przesuniesz tam. Nie jest ono percepcyjnie jednolite: żółty zajmuje wąskie pasmo, a niebieski szerokie, więc przesunięcie o 20° wygląda inaczej w różnych obszarach. Koło percepcyjne byłoby uczciwsze, ale nie pasowałoby do narzędzi do edycji."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Typ harmonii",
+          "description": "Geometryczna relacja, do której dążysz: dopełniająca, rozszczepiona dopełniająca, analogiczna, triadyczna, tetradyczna, monochromatyczna lub Twoje własne, niestandardowe cele."
+        },
+        {
+          "label": "Próbki",
+          "description": "Które kolory zdecydowałeś się pobrać. Próbkuj to, co ma znaczenie dla zdjęcia, a nie to, co jest największe. Pięć do sześciu punktów zwykle opowiada całą historię."
+        },
+        {
+          "label": "Punkt odniesienia",
+          "description": "Zablokowana próbka, wokół której obraca się harmonia. Bez blokady używany jest obrót najlepiej dopasowany."
+        },
+        {
+          "label": "Przesunięcie",
+          "description": "Kierunkowy obrót odcienia od próbki do jej celu. Wyrównany oznacza w granicach 8°, lekkie przesunięcie w granicach 25°, wszystko powyżej to duża zmiana."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Próbkuj kolory, które faktycznie będziesz korygować: niebo, skórę, dominujący obiekt, cień. Pomiń światła specularne i głębokie cienie — wypadają jako neutralne."
+        },
+        {
+          "text": "Rozszczepiony dopełniający to spokojny, senny wybór do fotografii podróżniczej i ulicznej. Dopełniający jest czystszy i mocniejszy. Triadyczny jest celowo trochę niepokojący."
+        },
+        {
+          "text": "Użyj Wybierz automatycznie, aby zacząć, a potem przesuwaj lub usuwaj punkty. Znajduje on dominujące skupiska chromatyczne, które często nie są kolorami, na których najbardziej Ci zależy."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Typ harmonii",
+          "definition": "Docelowa relacja między odcieniami. Dopełniająca (przeciwna), Rozszczepiona dopełniająca (przeciwna ± kąt), Analogiczna (sąsiedzi), Triadyczna (co 120°), Tetradyczna (dwie pary dopełniające), Monochromatyczna (jeden odcień), Niestandardowa (Twoje własne cele)."
+        },
+        "Key Color": {
+          "term": "Kolor kluczowy",
+          "definition": "Bez wczytanego zdjęcia — kolor, wokół którego budowana jest harmonia. Przeciągnij koło lub użyj suwaków."
+        },
+        "Hue": {
+          "term": "Odcień",
+          "definition": "Kąt koloru na kole w stopniach: 0° to czerwony, 120° to zielony, 240° to niebieski."
+        },
+        "Saturation": {
+          "term": "Nasycenie",
+          "definition": "Intensywność koloru od 0% (szary) do 100% (w pełni żywy). Odległość od środka koła."
+        },
+        "Lightness": {
+          "term": "Jasność",
+          "definition": "Jasność od 0% (czarny) do 100% (biały). Przy 50% widzisz czysty kolor."
+        },
+        "Split Angle": {
+          "term": "Kąt rozszczepienia",
+          "definition": "Jak daleko od bezpośredniego dopełnienia leżą dwa kolory rozszczepionego schematu dopełniającego."
+        },
+        "Spread": {
+          "term": "Rozpiętość",
+          "definition": "Jak daleko od odcienia punktu odniesienia leżą kolory analogiczne."
+        },
+        "Lock": {
+          "term": "Blokada",
+          "definition": "Czyni próbkę punktem odniesienia. Harmonia obraca się do tego odcienia, a inne próbki są oceniane względem niego. Zablokowana może być tylko jedna próbka."
+        },
+        "Closest fit": {
+          "term": "Najlepsze dopasowanie",
+          "definition": "Harmonia, której najlepszy obrót ma najniższy znormalizowany błąd odcienia dla Twoich próbek. Wymaga co najmniej dwóch próbek chromatycznych."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Pobrałeś próbkę niebieskiego nieba przy 210° i pomarańczowej ściany przy 25°. Jakiej harmonii są już najbliżej?",
+          "hint": "Sprawdź kąt między nimi.",
+          "successMessage": "Zgadza się. 185° różnicy to niemal idealna para dopełniająca; małe przesunięcie ściany dopełnia całość.",
+          "failureMessage": "Dwa kolory oddalone o około 180° są dopełniające. Kolory analogiczne leżą w granicach około 60° od siebie.",
+          "options": [
+            {
+              "label": "Dopełniający"
+            },
+            {
+              "label": "Analogiczny"
+            },
+            {
+              "label": "Triadyczny"
+            }
+          ]
+        },
+        {
+          "scenario": "Zdjęcie ma trzy próbki przy 40°, 60° i 85°. Jaka to harmonia?",
+          "hint": "Wszystkie są sąsiadami na kole.",
+          "successMessage": "Prawidłowo. Sąsiadujące odcienie w granicach około 60° tworzą harmonię analogiczną.",
+          "failureMessage": "Odcienie leżące blisko siebie są analogiczne — to spokojna i spójna opcja.",
+          "options": [
+            {
+              "label": "Dopełniający"
+            },
+            {
+              "label": "Analogiczny"
+            },
+            {
+              "label": "Tetradyczny"
+            }
+          ]
+        },
+        {
+          "scenario": "Chcesz senne, spokojne zdjęcie uliczne, ale z zachowaniem kontrastu. Którą harmonię wybrać?",
+          "hint": "Pomyśl o dwóch sąsiadach dopełnienia zamiast o samym dopełnieniu.",
+          "successMessage": "Tak. Rozszczepiony dopełniający zachowuje napięcie bez ostrości bezpośredniego przeciwieństwa.",
+          "failureMessage": "Rozszczepiony dopełniający to spokojna, ale kontrastowa opcja. Triadyczny bywa bardziej energiczny lub niepokojący.",
+          "options": [
+            {
+              "label": "Rozszczepiony dopełniający"
+            },
+            {
+              "label": "Triadyczny"
+            },
+            {
+              "label": "Analogiczny"
+            }
+          ]
+        },
+        {
+          "scenario": "Próbka pokazuje Lekkie przesunięcie w stronę różu z deltą −15°. Co robisz w panelu HSL Lightrooma?",
+          "hint": "Słowo kierunkowe mówi, w którą stronę przesunąć, a wielkość — jak daleko.",
+          "successMessage": "Zgadza się. Przesuń suwak Odcień tego koloru w stronę różu, aż karta pokaże Wyrównany.",
+          "failureMessage": "Przesuń odcień w nazwanym kierunku (róż) o niewielką wartość; zmiana o 15° to lekkie przesunięcie, nie duża zmiana.",
+          "options": [
+            {
+              "label": "Lekko przesuń odcień w stronę różu"
+            },
+            {
+              "label": "Zmniejsz nasycenie"
+            },
+            {
+              "label": "Przesuń odcień w stronę zieleni"
+            }
+          ]
+        },
+        {
+          "scenario": "Dwie próbki mają ten sam odcień, ale jedna jest zablokowana. Wokół której obraca się harmonia?",
+          "hint": "Tylko jedna próbka może być punktem odniesienia.",
+          "successMessage": "Zgadza się. Zablokowana próbka jest punktem odniesienia; druga jest oceniana względem zbudowanego na niej szablonu.",
+          "failureMessage": "Zablokowana próbka zawsze jest punktem odniesienia. Bez blokady używany jest obrót najlepiej dopasowany.",
+          "options": [
+            {
+              "label": "Zablokowana próbka"
+            },
+            {
+              "label": "Pierwsza umieszczona próbka"
+            },
+            {
+              "label": "Najbardziej nasycona próbka"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

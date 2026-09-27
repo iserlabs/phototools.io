@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "配色",
+      "complementary": "補色",
+      "splitComplementary": "分裂補色",
+      "analogous": "類似色",
+      "triadic": "三色配色",
+      "tetradic": "四色配色",
+      "monochromatic": "単色配色",
+      "custom": "カスタム",
+      "closestFit": "最も近い調和",
+      "closestSentence": "この写真に最も近いのは{harmony}です（平均{degrees}°のずれ）。タップして使用。",
+      "keyColor": "キーカラー",
+      "hue": "色相:",
+      "saturation": "彩度:",
+      "lightness": "明度:",
+      "splitAngle": "分裂角度:",
+      "spread": "広がり:",
+      "rectangleWidth": "長方形の幅:",
+      "square": "（正方形）",
+      "samples": "サンプル",
+      "lock": "この色をアンカーとして固定",
+      "unlock": "ロック解除",
+      "removeSample": "サンプルを削除",
+      "labelPlaceholder": "ラベル",
+      "neutralNotScored": "ニュートラル、採点対象外",
+      "suggested": "おすすめ",
+      "autoPick": "自動選択 5点",
+      "changePhoto": "写真を変更",
+      "capReached": "{cap}件が上限です。追加するには1件削除してください。",
+      "markerLabel": "サンプル{n}: {label}",
+      "dropPhotoPrompt": "写真をドロップするか、クリックして選択してください。ブラウザ内に保存されます。",
+      "decodeError": "このファイルを読み込めませんでした。JPEGまたはPNGをお試しください。",
+      "canvasLabel": "写真。クリックしてサンプルポイントを追加します。",
+      "viewNatural": "ナチュラル",
+      "viewPure": "純色相",
+      "viewGuide": "調和ガイド",
+      "viewHint": {
+        "key": "ドットをドラッグしてキーカラーを設定します。写真をドロップすると実際の色を分析できます。",
+        "natural": "実際の彩度で色を表示しています。タブを切り替えて調和を確認してください。",
+        "pure": "色相環の端に色を寄せ、色同士の角度を読み取りやすくしています。",
+        "guide": "破線の図形が目標位置です。矢印は各色をどちらへ動かすべきかを示します。"
+      },
+      "nudge": {
+        "aligned": "整合済み",
+        "slight": "{color}へわずかに調整",
+        "big": "{color}へ大きくシフト"
+      },
+      "names": {
+        "red": "赤",
+        "vermilion": "朱色",
+        "orange": "オレンジ",
+        "amber": "琥珀色",
+        "yellow": "黄色",
+        "lime": "ライムグリーン",
+        "chartreuse": "黄緑",
+        "leaf-green": "若草色",
+        "green": "緑",
+        "jade": "翡翠色",
+        "spring-green": "萌黄色",
+        "mint": "ミントグリーン",
+        "cyan": "シアン",
+        "sky-blue": "空色",
+        "azure": "紺碧",
+        "cobalt": "コバルトブルー",
+        "blue": "青",
+        "indigo": "藍色",
+        "violet": "すみれ色",
+        "purple": "紫",
+        "magenta": "マゼンタ",
+        "fuchsia": "フクシア",
+        "pink": "ピンク",
+        "rose": "バラ色",
+        "gray": "グレー",
+        "black": "黒",
+        "white": "白"
+      },
+      "keyColorLabel": "キーカラー — クリックでHexをコピー",
+      "clickToCopyHex": "クリックでHexをコピー",
+      "copiedExcl": "コピーしました！",
+      "copyColors": "色をコピー",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Hexコードをコピー",
+      "copyCssVariables": "CSS変数をコピー",
+      "copyRgbValues": "RGB値をコピー",
+      "suggestions": {
+        "complementary": {
+          "warm": "おすすめ: 暖色系の夕日ポートレートと冷たいシャドウのコントラスト",
+          "cool": "おすすめ: ブルーアワーのムーディーな撮影と暖色アクセントライティング",
+          "default": "おすすめ: 強い視覚的緊張感のあるハイコントラストな構図"
+        },
+        "splitComplementary": {
+          "warm": "おすすめ: 硬さを抑えつつコントラストを保った、夢見るような穏やかな雰囲気",
+          "cool": "おすすめ: 2つの暖色アクセントを添えたクールな街並みや旅の情景",
+          "default": "おすすめ: 直接的な対立のない、バラエティ豊かでバランスの取れたフレーム"
+        },
+        "analogous": {
+          "warm": "おすすめ: 統一された暖色トーンのゴールデンアワー風景",
+          "cool": "おすすめ: 穏やかな水辺のシーンとトワイライト写真",
+          "default": "おすすめ: 滑らかな色の遷移を持つ調和的な自然写真"
+        },
+        "triadic": {
+          "warm": "おすすめ: 赤・黄・青のエネルギーを活かした大胆なエディトリアル作品",
+          "cool": "おすすめ: 3つの強い色が織りなす、鮮やかで少し落ち着かないフレーム",
+          "default": "おすすめ: 鮮やかなエディトリアルワークと大胆なクリエイティブポートレート"
+        },
+        "tetradic": {
+          "warm": "おすすめ: 2組の補色ペアによる豊かで重層的なシーン",
+          "cool": "おすすめ: 冷暖の光源が混在する複雑な都市風景",
+          "default": "おすすめ: 豊かなエディトリアルレイアウトと複数の被写体を含む構図"
+        },
+        "monochromatic": {
+          "warm": "おすすめ: 1つの色相から生まれる静かで統一感のある暖色トーン",
+          "cool": "おすすめ: 1つの色相を基にした落ち着いたミニマルな寒色シーン",
+          "default": "おすすめ: 明暗を活かしたミニマルで統一感のある写真"
+        },
+        "custom": {
+          "warm": "破線のターゲットをドラッグして、色同士の独自の関係をデザインしましょう",
+          "cool": "破線のターゲットをドラッグして、色同士の独自の関係をデザインしましょう",
+          "default": "破線のターゲットをドラッグして、色同士の独自の関係をデザインしましょう"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "写真における色彩調和とは何ですか？",
+          "answer": "色彩調和とは、フレーム内の色相同士が意図的に見える関係のことです。色相環で正反対に位置する2色（補色）、隣り合う色（類似色）、均等に3つ並んだ色（三色配色）などがあります。写真が最初からきれいな調和を持っていることは稀ですが、たいていはほんの少しの調整でそこに近づきます。"
+        },
+        "complementary-vs-analogous": {
+          "question": "自分の写真にすでにある調和をどう読み取ればいいですか？",
+          "answer": "重要な数点（空、肌、1つの赤いドアなど）をサンプリングし、色相環上のどこに位置するか見てみましょう。ほぼ正反対にある2つの点は補色のペアで、約60°以内にまとまっている点は類似色です。「最も近い調和」バッジが、この比較を6つの調和すべてについて自動で行ってくれます。"
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "LightroomやPhotoshopでおすすめの色をどう使えばいいですか？",
+          "answer": "各サンプルには方向（ピンクへ、ティールへ）と、同じ彩度・明度でのおすすめHexが表示されます。LightroomのHSLパネルやPoint Color、あるいはPhotoshopの色相・彩度で、その色の色相を示された方向へ、提案値付近に達するまで動かしましょう。最も大きな調整から始め、矢印が「整合済み」になったら止めます。"
+        }
+      }
+    }
+  }
+}

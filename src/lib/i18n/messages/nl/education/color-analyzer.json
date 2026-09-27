@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "De meeste foto's bevatten al een kleurrelatie; je kunt hem alleen nog niet zien. Sleep een foto hierheen, tik op de kleuren die ertoe doen, en het wiel toont hoe ze zich tot elkaar verhouden. Kies de harmonie die je wilt en de tool vertelt je welke kant je elke kleur op moet duwen.",
+      "deeper": [
+        {
+          "heading": "De vierstappenmethode",
+          "text": "Intentie (wat moet de kijker voelen), Analyse (welke kleuren zitten er echt in het beeld), Kleurkeuze (welke harmonie past bij dat gevoel), Transformatie (de schuifregelaars in de richting bewegen die het wiel toont). Bewerken komt als laatste. De meeste frustratie met color grading komt doordat je bij stap vier begint."
+        },
+        {
+          "heading": "Het wiel aflezen",
+          "text": "Elk staal wordt uitgezet op tint (hoek) en verzadiging (afstand tot het midden). De weergave Natuurlijk toont de werkelijke verzadiging, Pure tinten duwt elk punt naar de rand zodat de hoeken duidelijk zijn, en Harmoniegids voegt de doelposities en pijlen toe voor de gekozen harmonie."
+        },
+        {
+          "heading": "Beste overeenkomst",
+          "text": "De tool draait elke harmoniesjabloon naar de positie die het beste bij je stalen past en meet de gemiddelde tintfout, genormaliseerd naar de spreiding van de sjabloonposities zodat harmonieën met vier posities niet standaard winnen. De winnaar krijgt het label; jij kiest of je hem gebruikt."
+        },
+        {
+          "heading": "Vergrendelen en ankers",
+          "text": "Vergrendel een staal om er het anker van te maken: de harmonie draait rond die tint en elke andere kleur wordt daaraan afgemeten. Gebruik dit voor de kleur die je niet gaat veranderen, meestal huid of een merkkleur. Zonder vergrendeling kiest de tool de rotatie met de kleinste totale fout."
+        },
+        {
+          "heading": "Neutralen",
+          "text": "Grijstinten, bijna-zwart en bijna-wit hebben geen betrouwbare tint, dus ze komen in het midden terecht en blijven buiten de vergelijking. Ze tellen nog wel mee voor de sfeer, maar het verschuiven van hun tint met een schuifregelaar voegt vooral een kleurzweem toe."
+        },
+        {
+          "heading": "Waarom HSL en geen perceptueel wiel",
+          "text": "Dit wiel gebruikt HSL, hetzelfde model als Adobe Color en het HSL-paneel van Lightroom, dus de richting die je hier afleest is de richting die je daar duwt. Het is niet perceptueel uniform: geel neemt een smalle band in en blauw een brede, dus een verschuiving van 20° lijkt in sommige gebieden groter dan in andere. Een perceptueel wiel zou eerlijker zijn, maar zou niet overeenkomen met de bewerkingstools."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Harmonietype",
+          "description": "De geometrische relatie waar je naar streeft: complementair, gesplitst complementair, analoog, triadisch, tetradisch, monochroom, of je eigen aangepaste doelen."
+        },
+        {
+          "label": "Stalen",
+          "description": "Welke kleuren je hebt gekozen om te bemonsteren. Bemonster wat ertoe doet voor het beeld, niet wat het grootst is. Vijf tot zes punten vertellen meestal het hele verhaal."
+        },
+        {
+          "label": "Anker",
+          "description": "Het vergrendelde staal waar de harmonie omheen draait. Zonder vergrendeling wordt de best passende rotatie gebruikt."
+        },
+        {
+          "label": "Verschuiving",
+          "description": "De ondertekende tintrotatie van een staal naar zijn doel. Uitgelijnd is binnen 8°, een kleine verschuiving binnen 25°, alles daarboven is een grote verschuiving."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Bemonster de kleuren die je echt gaat graderen: lucht, huid, het dominante object, een schaduw. Sla spiegelende hooglichten en diepe schaduwen over; die lezen als neutraal."
+        },
+        {
+          "text": "Gesplitst complementair is de rustige, dromerige keuze voor reis- en straatwerk. Complementair is strakker en pittiger. Triadisch voelt bewust een beetje onrustig aan."
+        },
+        {
+          "text": "Gebruik automatisch kiezen om te beginnen, verplaats of verwijder daarna punten. Het vindt de dominante chromatische clusters, wat vaak niet de kleuren zijn waar het je het meest om gaat."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Harmonietype",
+          "definition": "De doelrelatie tussen tinten. Complementair (tegenover elkaar), Gesplitst complementair (tegenover ± hoek), Analoog (buren), Triadisch (120° uit elkaar), Tetradisch (twee complementaire paren), Monochroom (één tint), Aangepast (je eigen doelen)."
+        },
+        "Key Color": {
+          "term": "Sleutelkleur",
+          "definition": "Zonder geladen foto de kleur waar de harmonie omheen wordt opgebouwd. Sleep op het wiel of gebruik de schuifregelaars."
+        },
+        "Hue": {
+          "term": "Tint",
+          "definition": "De kleurhoek op het wiel in graden: 0° is rood, 120° is groen, 240° is blauw."
+        },
+        "Saturation": {
+          "term": "Verzadiging",
+          "definition": "Kleurintensiteit van 0% (grijs) tot 100% (volledig levendig). Afstand tot het midden van het wiel."
+        },
+        "Lightness": {
+          "term": "Lichtheid",
+          "definition": "Helderheid van 0% (zwart) tot 100% (wit). Bij 50% zie je de zuivere kleur."
+        },
+        "Split Angle": {
+          "term": "Splitshoek",
+          "definition": "Hoe ver de twee gesplitst-complementaire kleuren van het directe complement af liggen."
+        },
+        "Spread": {
+          "term": "Spreiding",
+          "definition": "Hoe ver de analoge kleuren van de ankertint af liggen."
+        },
+        "Lock": {
+          "term": "Vergrendelen",
+          "definition": "Maakt een staal het anker. De harmonie draait naar die tint en andere stalen worden daaraan afgemeten. Er kan maar één staal vergrendeld zijn."
+        },
+        "Closest fit": {
+          "term": "Beste overeenkomst",
+          "definition": "De harmonie waarvan de beste rotatie de laagste genormaliseerde tintfout heeft over je stalen. Vereist minstens twee chromatische stalen."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Je hebt een blauwe lucht bemonsterd op 210° en een oranje muur op 25°. Welke harmonie ligt daar al het dichtst bij?",
+          "hint": "Controleer de hoek ertussen.",
+          "successMessage": "Klopt. 185° verschil is een bijna perfect complementair paar; een kleine verschuiving van de muur maakt het af.",
+          "failureMessage": "Twee kleuren die ongeveer 180° uit elkaar liggen zijn complementair. Analoge kleuren liggen binnen ongeveer 60° van elkaar.",
+          "options": [
+            {
+              "label": "Complementair"
+            },
+            {
+              "label": "Analoog"
+            },
+            {
+              "label": "Triadisch"
+            }
+          ]
+        },
+        {
+          "scenario": "Een foto heeft drie stalen op 40°, 60° en 85°. Welke harmonie is dit?",
+          "hint": "Ze zijn allemaal buren op het wiel.",
+          "successMessage": "Klopt. Aangrenzende tinten binnen ongeveer 60° vormen een analoge harmonie.",
+          "failureMessage": "Tinten die allemaal dicht bij elkaar liggen zijn analoog, de rustige en eenduidige optie.",
+          "options": [
+            {
+              "label": "Complementair"
+            },
+            {
+              "label": "Analoog"
+            },
+            {
+              "label": "Tetradisch"
+            }
+          ]
+        },
+        {
+          "scenario": "Je wilt een dromerige, rustige straatfoto maar toch wat contrast behouden. Welke harmonie moet je kiezen?",
+          "hint": "Denk aan de twee buren van het complement in plaats van het complement zelf.",
+          "successMessage": "Ja. Gesplitst complementair houdt spanning zonder de hardheid van een direct tegengestelde kleur.",
+          "failureMessage": "Gesplitst complementair is de rustige maar contrastrijke optie. Triadisch voelt eerder energiek of onrustig aan.",
+          "options": [
+            {
+              "label": "Gesplitst complementair"
+            },
+            {
+              "label": "Triadisch"
+            },
+            {
+              "label": "Analoog"
+            }
+          ]
+        },
+        {
+          "scenario": "Een staal toont Kleine verschuiving richting roze met een delta van −15°. Wat doe je in het HSL-paneel van Lightroom?",
+          "hint": "Het richtingswoord vertelt waarheen je moet duwen, de grootte vertelt hoever.",
+          "successMessage": "Klopt. Verplaats de Tint-schuifregelaar van die kleur richting roze totdat de kaart Uitgelijnd toont.",
+          "failureMessage": "Duw de tint een klein stukje in de aangegeven richting (roze); een verandering van 15° is een kleine verschuiving, geen grote.",
+          "options": [
+            {
+              "label": "Tint licht verschuiven richting roze"
+            },
+            {
+              "label": "Kleur ontzadigen"
+            },
+            {
+              "label": "Tint verschuiven richting groen"
+            }
+          ]
+        },
+        {
+          "scenario": "Twee stalen delen dezelfde tint, maar één is vergrendeld. Rond welke draait de harmonie?",
+          "hint": "Er kan maar één staal het anker zijn.",
+          "successMessage": "Klopt. Het vergrendelde staal is het anker; het andere wordt beoordeeld aan het sjabloon dat daarop is gebouwd.",
+          "failureMessage": "Het vergrendelde staal is altijd het anker. Zonder vergrendeling wordt de best passende rotatie gebruikt.",
+          "options": [
+            {
+              "label": "Het vergrendelde staal"
+            },
+            {
+              "label": "Het eerst geplaatste staal"
+            },
+            {
+              "label": "Het meest verzadigde staal"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

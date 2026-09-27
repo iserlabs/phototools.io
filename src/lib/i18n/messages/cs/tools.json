@@ -4,10 +4,6 @@
       "name": "Simulátor zorného úhlu",
       "description": "Porovnej zorný úhel u různých ohniskových vzdáleností a velikostí snímače"
     },
-    "color-scheme-generator": {
-      "name": "Generátor barevných palet",
-      "description": "Sestav si barevné palety pro focení"
-    },
     "exposure-simulator": {
       "name": "Simulátor expozičního trojúhelníku",
       "description": "Uvidíš, jak spolu souvisí clona, expoziční čas a ISO"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Fotografický tahák",
       "description": "Taháky s nastavením fotoaparátu pro běžné situace — ke stažení i k vytištění"
+    },
+    "color-analyzer": {
+      "name": "Analyzátor barev",
+      "description": "Nasnímejte barvy z fotky, přečtěte jejich harmonii a zjistěte, kterým směrem každou z nich posunout"
     }
   }
 }

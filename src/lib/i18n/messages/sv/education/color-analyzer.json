@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "De flesta foton innehåller redan ett färgförhållande; du kan bara inte se det än. Släpp ett foto, tryck på de färger som spelar roll, och hjulet visar hur de förhåller sig till varandra. Välj den harmoni du vill ha så visar verktyget åt vilket håll du ska knuffa varje färg.",
+      "deeper": [
+        {
+          "heading": "Fyrstegsmetoden",
+          "text": "Avsikt (vad betraktaren ska känna), Analys (vilka färger som faktiskt finns i bilden), Färgval (vilken harmoni som passar den känslan), Transformation (flytta reglagen i den riktning hjulet visar). Redigeringen kommer sist. Det mesta av frustrationen med färggradering kommer från att börja på steg fyra."
+        },
+        {
+          "heading": "Läsa hjulet",
+          "text": "Varje prov placeras efter nyans (vinkel) och mättnad (avstånd från centrum). Vyn Naturlig visar den verkliga mättnaden, Rena nyanser skjuter varje punkt mot kanten så att vinklarna blir tydliga, och Harmoniguide lägger till målpositioner och pilar för den valda harmonin."
+        },
+        {
+          "heading": "Bästa matchning",
+          "text": "Verktyget roterar varje harmonimall till den position som bäst matchar dina prover och mäter det genomsnittliga nyansfelet, normaliserat efter mallens platsavstånd så att fyrplatsharmonier inte vinner per automatik. Vinnaren får märket; du väljer om du vill använda den."
+        },
+        {
+          "heading": "Lås och ankare",
+          "text": "Lås ett prov för att göra det till ankaret: harmonin roterar kring den nyansen och varje annan färg bedöms mot den. Använd det för färgen du inte ska ändra, oftast hudton eller en varumärkesfärg. Utan lås väljer verktyget rotationen med lägst totalt fel."
+        },
+        {
+          "heading": "Neutrala färger",
+          "text": "Grå, nästan-svarta och nästan-vita toner har ingen pålitlig nyans, så de hamnar i centrum och lämnas utanför matchningen. De spelar ändå roll för stämningen, men att flytta deras nyans med ett reglage lägger mest till en färgskiftning."
+        },
+        {
+          "heading": "Varför HSL och inte ett perceptuellt hjul",
+          "text": "Det här hjulet använder HSL, samma modell som Adobe Color och Lightrooms HSL-panel, så riktningen du läser här är riktningen du knuffar där. Det är inte perceptuellt enhetligt: gult upptar ett smalt band och blått ett brett, så en justering på 20° ser större ut i vissa områden än andra. Ett perceptuellt hjul vore mer ärligt men skulle inte matcha redigeringsverktygen."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Harmonityp",
+          "description": "Den geometriska relation du siktar på: komplementär, delad komplementär, analog, triadisk, tetradisk, monokromatisk, eller dina egna anpassade mål."
+        },
+        {
+          "label": "Prover",
+          "description": "Vilka färger du valde att prova. Prova det som spelar roll för bilden, inte det som är störst. Fem till sex punkter berättar oftast hela historien."
+        },
+        {
+          "label": "Ankare",
+          "description": "Det låsta provet som harmonin roterar kring. Utan lås används den bäst matchande rotationen."
+        },
+        {
+          "label": "Justering",
+          "description": "Den signerade nyansrotationen från ett prov till dess mål. I linje är inom 8°, en liten justering inom 25°, allt mer är en stor förskjutning."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Prova de färger du faktiskt kommer att gradera: himmel, hud, det dominerande objektet, en skugga. Hoppa över spekulära högdagrar och djupa skuggor; de läses som neutrala."
+        },
+        {
+          "text": "Delad komplementär är det lugna, drömska valet för resor och gatufoto. Komplementär är renare och mer slående. Triadisk är avsiktligt lite oroande."
+        },
+        {
+          "text": "Använd automatiskt val för att börja, flytta eller ta sedan bort punkter. Det hittar de dominerande kromatiska klustren, som ofta inte är de färger du bryr dig mest om."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Harmonityp",
+          "definition": "Målrelationen mellan nyanser. Komplementär (motsatt), Delad komplementär (motsatt ± vinkel), Analog (grannar), Triadisk (120° isär), Tetradisk (två komplementära par), Monokromatisk (en nyans), Anpassad (dina egna mål)."
+        },
+        "Key Color": {
+          "term": "Nyckelfärg",
+          "definition": "Utan inläst foto, färgen som harmonin byggs kring. Dra på hjulet eller använd reglagen."
+        },
+        "Hue": {
+          "term": "Nyans",
+          "definition": "Färgvinkeln på hjulet i grader: 0° är rött, 120° är grönt, 240° är blått."
+        },
+        "Saturation": {
+          "term": "Mättnad",
+          "definition": "Färgintensitet från 0 % (grått) till 100 % (helt levande). Avstånd från hjulets centrum."
+        },
+        "Lightness": {
+          "term": "Ljushet",
+          "definition": "Ljusstyrka från 0 % (svart) till 100 % (vitt). Vid 50 % ser du den rena färgen."
+        },
+        "Split Angle": {
+          "term": "Delningsvinkel",
+          "definition": "Hur långt de två delade komplementärfärgerna sitter från den direkta komplementet."
+        },
+        "Spread": {
+          "term": "Spridning",
+          "definition": "Hur långt de analoga färgerna sitter från ankarnyansen."
+        },
+        "Lock": {
+          "term": "Lås",
+          "definition": "Gör ett prov till ankaret. Harmonin roterar till den nyansen och andra prover bedöms mot den. Endast ett prov kan låsas."
+        },
+        "Closest fit": {
+          "term": "Bästa matchning",
+          "definition": "Harmonin vars bästa rotation har det lägsta normaliserade nyansfelet över dina prover. Kräver minst två kromatiska prover."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Du provade en blå himmel vid 210° och en orange vägg vid 25°. Vilken harmoni ligger de redan närmast?",
+          "hint": "Kontrollera vinkeln mellan dem.",
+          "successMessage": "Rätt. 185° isär är ett nästan perfekt komplementärt par; en liten justering av väggen fullbordar det.",
+          "failureMessage": "Två färger cirka 180° isär är komplementära. Analoga färger ligger inom ungefär 60° från varandra.",
+          "options": [
+            {
+              "label": "Komplementär"
+            },
+            {
+              "label": "Analog"
+            },
+            {
+              "label": "Triadisk"
+            }
+          ]
+        },
+        {
+          "scenario": "Ett foto har tre prover vid 40°, 60° och 85°. Vilken harmoni är detta?",
+          "hint": "De är alla grannar på hjulet.",
+          "successMessage": "Korrekt. Grannyanser inom cirka 60° bildar en analog harmoni.",
+          "failureMessage": "Nyanser som alla ligger nära varandra är analoga, det lugna och enhetliga alternativet.",
+          "options": [
+            {
+              "label": "Komplementär"
+            },
+            {
+              "label": "Analog"
+            },
+            {
+              "label": "Tetradisk"
+            }
+          ]
+        },
+        {
+          "scenario": "Du vill ha ett drömskt, lugnt gatufoto men behålla lite kontrast. Vilken harmoni bör du välja?",
+          "hint": "Tänk på komplementets två grannar istället för själva komplementet.",
+          "successMessage": "Ja. Delad komplementär behåller spänning utan hårdheten hos en direkt motsats.",
+          "failureMessage": "Delad komplementär är det lugna men kontrastrika alternativet. Triadisk tenderar att kännas energiskt eller oroande.",
+          "options": [
+            {
+              "label": "Delad komplementär"
+            },
+            {
+              "label": "Triadisk"
+            },
+            {
+              "label": "Analog"
+            }
+          ]
+        },
+        {
+          "scenario": "Ett prov visar Liten justering mot rosa med ett delta på −15°. Vad gör du i Lightrooms HSL-panel?",
+          "hint": "Riktningsordet visar var du ska knuffa, storleken visar hur långt.",
+          "successMessage": "Rätt. Flytta det färgens Nyans-reglage mot rosa tills kortet visar I linje.",
+          "failureMessage": "Knuffa nyansen i den angivna riktningen (rosa) en liten mängd; en ändring på 15° är en liten justering, inte en stor förskjutning.",
+          "options": [
+            {
+              "label": "Flytta nyansen lite mot rosa"
+            },
+            {
+              "label": "Avmätta den"
+            },
+            {
+              "label": "Flytta nyansen mot grönt"
+            }
+          ]
+        },
+        {
+          "scenario": "Två prover delar samma nyans men ett är låst. Vilket roterar harmonin kring?",
+          "hint": "Endast ett prov kan vara ankaret.",
+          "successMessage": "Korrekt. Det låsta provet är ankaret; det andra bedöms mot mallen som byggts på det.",
+          "failureMessage": "Det låsta provet är alltid ankaret. Utan lås används den bäst matchande rotationen.",
+          "options": [
+            {
+              "label": "Det låsta provet"
+            },
+            {
+              "label": "Det första provet som placerades"
+            },
+            {
+              "label": "Det mest mättade provet"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "Většina fotek už obsahuje barevný vztah — jen ho zatím nevidíte. Přetáhněte fotku, klepněte na barvy, na kterých záleží, a kruh ukáže, jak spolu souvisí. Vyberte harmonii, kterou chcete, a nástroj vám řekne, kterým směrem posunout každou barvu.",
+      "deeper": [
+        {
+          "heading": "Metoda čtyř kroků",
+          "text": "Záměr (co má divák cítit), Analýza (jaké barvy jsou skutečně ve snímku), Volba barvy (jaká harmonie danému pocitu odpovídá), Transformace (posuňte posuvníky směrem, který ukazuje kruh). Editace je až poslední. Většina frustrace z barevného ladění pramení ze začínání rovnou u čtvrtého kroku."
+        },
+        {
+          "heading": "Čtení kruhu",
+          "text": "Každý vzorek je vynesen podle odstínu (úhel) a sytosti (vzdálenost od středu). Přirozený pohled ukazuje skutečnou sytost, Čisté odstíny posunou každý bod k okraji, aby byly úhly zřejmé, a Průvodce harmonií přidá cílové pozice a šipky pro zvolenou harmonii."
+        },
+        {
+          "heading": "Nejbližší shoda",
+          "text": "Nástroj otočí každou šablonu harmonie do pozice, která nejlépe odpovídá vašim vzorkům, a změří průměrnou chybu odstínu, normalizovanou podle rozestupu pozic šablony, aby čtyřpozicové harmonie automaticky nevyhrávaly. Vítěz získá odznak; je na vás, zda ho použijete."
+        },
+        {
+          "heading": "Zámky a kotvy",
+          "text": "Uzamknutím vzorku z něj uděláte kotvu: harmonie se otáčí kolem tohoto odstínu a každá další barva je posuzována vůči němu. Použijte to pro barvu, kterou nebudete měnit — obvykle pleť nebo barvu značky. Bez zámku nástroj zvolí otočení s nejmenší celkovou chybou."
+        },
+        {
+          "heading": "Neutrální barvy",
+          "text": "Šedé, téměř černé a téměř bílé barvy nemají spolehlivý odstín, takže se vynesou do středu a jsou z hodnocení shody vynechány. Pro náladu snímku stále záleží, ale posouvání jejich odstínu na posuvníku většinou jen přidá barevný nádech."
+        },
+        {
+          "heading": "Proč HSL, a ne percepční kruh",
+          "text": "Tento kruh používá HSL, stejný model jako Adobe Color a panel HSL v Lightroomu, takže směr, který zde čtete, je tentýž směr, který tam posunete. Není percepčně jednotný: žlutá zabírá úzké pásmo a modrá široké, takže posun o 20° vypadá v různých oblastech různě velký. Percepční kruh by byl poctivější, ale neodpovídal by editačním nástrojům."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Typ harmonie",
+          "description": "Geometrický vztah, o který usilujete: komplementární, dělený komplementární, analogický, triadický, tetradický, monochromatický nebo vaše vlastní cíle."
+        },
+        {
+          "label": "Vzorky",
+          "description": "Které barvy jste se rozhodli vzorkovat. Vzorkujte to, na čem u snímku záleží, ne to, co je největší. Pět až šest bodů obvykle vypoví celý příběh."
+        },
+        {
+          "label": "Kotva",
+          "description": "Uzamčený vzorek, kolem kterého se harmonie otáčí. Bez zámku se použije nejlépe padnoucí otočení."
+        },
+        {
+          "label": "Posun",
+          "description": "Znaménkové otočení odstínu od vzorku k jeho cíli. Sladěno je do 8°, mírný posun do 25°, cokoli víc je velký posun."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Vzorkujte barvy, které budete skutečně upravovat: oblohu, pleť, dominantní objekt, stín. Vynechte zrcadlové lesky a hluboké stíny — ty vyjdou jako neutrální."
+        },
+        {
+          "text": "Dělený komplementární je klidná, snová volba pro cestovatelskou a pouliční tvorbu. Komplementární je čistší a úderný. Triadický je záměrně trochu neklidný."
+        },
+        {
+          "text": "Nejprve použijte Automatický výběr a pak body přesouvejte nebo mažte. Najde dominantní chromatické shluky, což často nejsou barvy, na kterých vám nejvíc záleží."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Typ harmonie",
+          "definition": "Cílový vztah mezi odstíny. Komplementární (protilehlý), Dělený komplementární (protilehlý ± úhel), Analogický (sousedé), Triadický (po 120°), Tetradický (dva komplementární páry), Monochromatický (jeden odstín), Vlastní (vaše vlastní cíle)."
+        },
+        "Key Color": {
+          "term": "Základní barva",
+          "definition": "Bez načtené fotky barva, kolem které je harmonie postavena. Přetáhněte kruh nebo použijte posuvníky."
+        },
+        "Hue": {
+          "term": "Odstín",
+          "definition": "Úhel barvy na kruhu ve stupních: 0° je červená, 120° je zelená, 240° je modrá."
+        },
+        "Saturation": {
+          "term": "Sytost",
+          "definition": "Intenzita barvy od 0 % (šedá) do 100 % (plně sytá). Vzdálenost od středu kruhu."
+        },
+        "Lightness": {
+          "term": "Světlost",
+          "definition": "Jas od 0 % (černá) do 100 % (bílá). Při 50 % vidíte čistou barvu."
+        },
+        "Split Angle": {
+          "term": "Úhel dělení",
+          "definition": "Jak daleko od přímého komplementu leží obě barvy děleného komplementárního schématu."
+        },
+        "Spread": {
+          "term": "Rozsah",
+          "definition": "Jak daleko od kotevního odstínu leží analogické barvy."
+        },
+        "Lock": {
+          "term": "Zámek",
+          "definition": "Udělá ze vzorku kotvu. Harmonie se otočí k tomuto odstínu a ostatní vzorky jsou posuzovány vůči němu. Uzamčen může být jen jeden vzorek."
+        },
+        "Closest fit": {
+          "term": "Nejbližší shoda",
+          "definition": "Harmonie, jejíž nejlepší otočení má nejnižší normalizovanou chybu odstínu napříč vašimi vzorky. Vyžaduje aspoň dva chromatické vzorky."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Nasnímali jste modrou oblohu při 210° a oranžovou zeď při 25°. Které harmonii jsou už nejblíž?",
+          "hint": "Zkontrolujte úhel mezi nimi.",
+          "successMessage": "Správně. Rozdíl 185° je téměř dokonalý komplementární pár; malý posun zdi to dokoná.",
+          "failureMessage": "Dvě barvy vzdálené asi 180° jsou komplementární. Analogické barvy leží zhruba do 60° od sebe.",
+          "options": [
+            {
+              "label": "Komplementární"
+            },
+            {
+              "label": "Analogický"
+            },
+            {
+              "label": "Triadický"
+            }
+          ]
+        },
+        {
+          "scenario": "Fotka má tři vzorky při 40°, 60° a 85°. Jaká je to harmonie?",
+          "hint": "Všechny jsou na kruhu sousedy.",
+          "successMessage": "Správně. Sousedící odstíny do zhruba 60° tvoří analogickou harmonii.",
+          "failureMessage": "Odstíny, které jsou si všechny blízko, jsou analogické — klidná a jednotná volba.",
+          "options": [
+            {
+              "label": "Komplementární"
+            },
+            {
+              "label": "Analogický"
+            },
+            {
+              "label": "Tetradický"
+            }
+          ]
+        },
+        {
+          "scenario": "Chcete snovou, klidnou pouliční fotku, ale se zachováním kontrastu. Kterou harmonii zvolit?",
+          "hint": "Myslete na dva sousedy komplementu místo na komplement samotný.",
+          "successMessage": "Ano. Dělený komplementární udrží napětí bez tvrdosti přímého protikladu.",
+          "failureMessage": "Dělený komplementární je klidná, ale kontrastní volba. Triadický bývá energičtější nebo neklidnější.",
+          "options": [
+            {
+              "label": "Dělený komplementární"
+            },
+            {
+              "label": "Triadický"
+            },
+            {
+              "label": "Analogický"
+            }
+          ]
+        },
+        {
+          "scenario": "Vzorek ukazuje Mírný posun směrem k růžové s deltou −15°. Co uděláte v panelu HSL Lightroomu?",
+          "hint": "Slovo směru říká, kam posunout, velikost říká, jak daleko.",
+          "successMessage": "Správně. Posuňte posuvník Odstín této barvy směrem k růžové, dokud karta neukáže Sladěno.",
+          "failureMessage": "Posuňte odstín uvedeným směrem (růžová) o malou hodnotu; změna o 15° je mírný posun, ne velký posun.",
+          "options": [
+            {
+              "label": "Mírně posunout odstín k růžové"
+            },
+            {
+              "label": "Snížit sytost"
+            },
+            {
+              "label": "Posunout odstín k zelené"
+            }
+          ]
+        },
+        {
+          "scenario": "Dva vzorky sdílejí stejný odstín, ale jeden je uzamčen. Kolem kterého se harmonie otáčí?",
+          "hint": "Kotvou může být jen jeden vzorek.",
+          "successMessage": "Správně. Uzamčený vzorek je kotva; druhý je posuzován vůči šabloně postavené na něm.",
+          "failureMessage": "Uzamčený vzorek je vždy kotva. Bez zámku se použije nejlépe padnoucí otočení.",
+          "options": [
+            {
+              "label": "Uzamčený vzorek"
+            },
+            {
+              "label": "První umístěný vzorek"
+            },
+            {
+              "label": "Nejvíce sytý vzorek"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

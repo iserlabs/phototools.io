@@ -38,10 +38,6 @@
       "title": "Sensorstørrelse-sammenligning",
       "description": "Sammenlign kamerasensorer fra mellemformat til smartphone. Se overlay, side om side og pixeltæthed for rigtige kameramodeller."
     },
-    "color-scheme-generator": {
-      "title": "Farvepalet-generator",
-      "description": "Lav farvepaletter til dine billeder med komplementære, analoge, triadiske og tetradiske farveharmonier. Interaktiv farvecirkel med pipette til at hente farver fra fotos."
-    },
     "frame-studio": {
       "title": "Komposition Studio",
       "description": "Beskær, indram og komponér fotos med kompositionsguider. Alt foregår i browseren — dine billeder forlader aldrig din enhed."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Farveanalysator: aflæs farveharmonien i ethvert foto",
+      "description": "Gratis fotofarveanalysator og farveskemagenerator. Tag prøver af farverne fra dit foto, placer dem på et farvehjul, find den nærmeste farveharmoni, og få graderingsvejledning for hver farve. 100 % i din browser."
     }
   }
 }

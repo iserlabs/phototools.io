@@ -1,0 +1,44 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "Most photos already contain a color relationship; you just cannot see it yet. Drop a photo, tap the colors that matter, and the wheel shows how they relate. Pick the harmony you want and the tool tells you which way to push each color.",
+      "deeper": [
+        { "heading": "The four-step method", "text": "Intention (what should the viewer feel), Analysis (which colors are actually in the frame), Color Choice (which harmony fits that feeling), Transformation (move the sliders in the direction the wheel shows). Editing comes last. Most frustration with color grading comes from starting at step four." },
+        { "heading": "Reading the wheel", "text": "Each sample is plotted by hue (angle) and saturation (distance from the center). Natural view shows true saturation, Pure hues pushes every dot to the rim so the angles are obvious, and Harmony guide adds the target positions and arrows for the harmony you picked." },
+        { "heading": "Closest fit", "text": "The tool rotates each harmony template to the position that best matches your samples and measures the average hue error, normalized by the template's slot spacing so four-slot harmonies do not win by default. The winner gets the badge; you choose whether to use it." },
+        { "heading": "Locks and anchors", "text": "Lock a sample to make it the anchor: the harmony rotates around that hue and every other color is judged against it. Use it for the color you will not change, usually skin or a brand color. With no lock the tool picks the rotation with the smallest total error." },
+        { "heading": "Neutrals", "text": "Grays, near-blacks and near-whites have no reliable hue, so they plot at the center and are left out of the fit. They still matter for the mood, but nudging their hue in a slider mostly adds a color cast." },
+        { "heading": "Why HSL and not a perceptual wheel", "text": "This wheel uses HSL, the same model as Adobe Color and Lightroom's HSL panel, so the direction you read here is the direction you push there. It is not perceptually uniform: yellow occupies a thin band and blue a wide one, so a 20° nudge looks bigger in some regions than others. A perceptual wheel would be more honest but would not match the editing tools." }
+      ],
+      "keyFactors": [
+        { "label": "Harmony Type", "description": "The geometric relationship you are aiming for: complementary, split-complementary, analogous, triadic, tetradic, monochromatic, or your own custom targets." },
+        { "label": "Samples", "description": "Which colors you chose to sample. Sample what matters to the picture, not what is largest. Five to six points usually tell the whole story." },
+        { "label": "Anchor", "description": "The locked sample the harmony rotates around. Without a lock the best-fit rotation is used." },
+        { "label": "Nudge", "description": "The signed hue rotation from a sample to its target. Aligned is within 8°, a slight nudge within 25°, anything more is a big shift." }
+      ],
+      "tips": [
+        { "text": "Sample the colors you will actually grade: sky, skin, the dominant object, a shadow. Skip specular highlights and deep shadows; they read as neutral." },
+        { "text": "Split-complementary is the calm, dreamy choice for travel and street work. Complementary is cleaner and punchier. Triadic is deliberately a little unsettling." },
+        { "text": "Use Auto-pick to start, then move or delete points. It finds the dominant chromatic clusters, which are often not the colors you care about most." }
+      ],
+      "tooltips": {
+        "Harmony Type": { "term": "Harmony Type", "definition": "The target relationship between hues. Complementary (opposite), Split Complementary (opposite ± angle), Analogous (neighbors), Triadic (120° apart), Tetradic (two complementary pairs), Monochromatic (one hue), Custom (your own targets)." },
+        "Key Color": { "term": "Key Color", "definition": "With no photo loaded, the color the harmony is built around. Drag the wheel or use the sliders." },
+        "Hue": { "term": "Hue", "definition": "The color angle on the wheel in degrees: 0° is red, 120° is green, 240° is blue." },
+        "Saturation": { "term": "Saturation", "definition": "Color intensity from 0% (gray) to 100% (fully vivid). Distance from the wheel's center." },
+        "Lightness": { "term": "Lightness", "definition": "Brightness from 0% (black) to 100% (white). At 50% you see the pure color." },
+        "Split Angle": { "term": "Split Angle", "definition": "How far the two split-complementary colors sit from the direct complement." },
+        "Spread": { "term": "Spread", "definition": "How far the analogous colors sit from the anchor hue." },
+        "Lock": { "term": "Lock", "definition": "Makes a sample the anchor. The harmony rotates to that hue and other samples are judged against it. Only one sample can be locked." },
+        "Closest fit": { "term": "Closest fit", "definition": "The harmony whose best rotation has the lowest normalized hue error across your samples. Needs at least two chromatic samples." }
+      },
+      "challenges": [
+        { "scenario": "You sampled a blue sky at 210° and an orange wall at 25°. Which harmony are they already closest to?", "hint": "Check the angle between them.", "successMessage": "Right. 185° apart is a near-perfect complementary pair; a small nudge to the wall finishes it.", "failureMessage": "Two colors about 180° apart are complementary. Analogous colors sit within roughly 60° of each other.", "options": [ { "label": "Complementary" }, { "label": "Analogous" }, { "label": "Triadic" } ] },
+        { "scenario": "A photo has three samples at 40°, 60° and 85°. What harmony is this?", "hint": "They are all neighbors on the wheel.", "successMessage": "Correct. Neighboring hues within about 60° form an analogous harmony.", "failureMessage": "Hues that are all close together are analogous, the calm and unified option.", "options": [ { "label": "Complementary" }, { "label": "Analogous" }, { "label": "Tetradic" } ] },
+        { "scenario": "You want a dreamy, calm street photo but keep some contrast. Which harmony should you pick?", "hint": "Think of the complement's two neighbors instead of the complement itself.", "successMessage": "Yes. Split-complementary keeps tension without the harshness of a direct opposite.", "failureMessage": "Split complementary is the calm-but-contrasty option. Triadic tends to feel energetic or unsettling.", "options": [ { "label": "Split Complementary" }, { "label": "Triadic" }, { "label": "Analogous" } ] },
+        { "scenario": "A sample reads Slight nudge toward pink with a delta of −15°. In Lightroom's HSL panel, what do you do?", "hint": "The direction word tells you where to push, the size tells you how far.", "successMessage": "Right. Move that color's Hue slider toward pink until the card reads Aligned.", "failureMessage": "Push the hue in the direction named (pink) by a small amount; a 15° change is a slight nudge, not a big shift.", "options": [ { "label": "Shift the hue slightly toward pink" }, { "label": "Desaturate it" }, { "label": "Shift the hue toward green" } ] },
+        { "scenario": "Two samples share the same hue but one is locked. Which one does the harmony rotate around?", "hint": "Only one sample can be the anchor.", "successMessage": "Correct. The locked sample is the anchor; the other is judged against the template built on it.", "failureMessage": "The locked sample is always the anchor. With no lock, the best-fit rotation is used.", "options": [ { "label": "The locked sample" }, { "label": "The first sample placed" }, { "label": "The most saturated sample" } ] }
+      ]
+    }
+  }
+}

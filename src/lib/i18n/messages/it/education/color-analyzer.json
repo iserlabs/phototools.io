@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "La maggior parte delle foto contiene già una relazione cromatica; semplicemente non riesci ancora a vederla. Trascina una foto, tocca i colori che contano, e la ruota mostra come si relazionano. Scegli l'armonia che vuoi e lo strumento ti dice in che direzione spingere ogni colore.",
+      "deeper": [
+        {
+          "heading": "Il metodo in quattro passi",
+          "text": "Intenzione (cosa deve provare chi guarda), Analisi (quali colori sono realmente nell'inquadratura), Scelta del colore (quale armonia si adatta a quella sensazione), Trasformazione (spostare i cursori nella direzione indicata dalla ruota). La modifica viene per ultima. Gran parte della frustrazione con la color grading nasce dall'iniziare dal quarto passo."
+        },
+        {
+          "heading": "Leggere la ruota",
+          "text": "Ogni campione è posizionato in base a tonalità (angolo) e saturazione (distanza dal centro). La vista Naturale mostra la saturazione reale, Tonalità pure spinge ogni punto verso il bordo così gli angoli sono evidenti, e Guida all'armonia aggiunge le posizioni target e le frecce per l'armonia scelta."
+        },
+        {
+          "heading": "Corrispondenza migliore",
+          "text": "Lo strumento ruota ogni modello di armonia nella posizione che meglio corrisponde ai tuoi campioni e misura l'errore medio di tonalità, normalizzato in base alla spaziatura degli slot del modello così le armonie a quattro slot non vincono di default. Il vincitore ottiene il badge; decidi tu se usarlo."
+        },
+        {
+          "heading": "Blocchi e ancoraggi",
+          "text": "Blocca un campione per renderlo l'ancoraggio: l'armonia ruota attorno a quella tonalità e ogni altro colore viene giudicato rispetto ad essa. Usalo per il colore che non cambierai, di solito la pelle o un colore del brand. Senza blocco, lo strumento sceglie la rotazione con l'errore totale più basso."
+        },
+        {
+          "heading": "Neutri",
+          "text": "Grigi, quasi-neri e quasi-bianchi non hanno una tonalità affidabile, quindi si posizionano al centro e restano esclusi dal calcolo. Contano comunque per l'atmosfera, ma spostare la loro tonalità con un cursore aggiunge principalmente una dominante di colore."
+        },
+        {
+          "heading": "Perché HSL e non una ruota percettiva",
+          "text": "Questa ruota usa HSL, lo stesso modello di Adobe Color e del pannello HSL di Lightroom, quindi la direzione che leggi qui è quella da spingere lì. Non è percettivamente uniforme: il giallo occupa una banda stretta e il blu una larga, quindi uno spostamento di 20° appare più grande in alcune zone che in altre. Una ruota percettiva sarebbe più onesta ma non corrisponderebbe agli strumenti di modifica."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Tipo di armonia",
+          "description": "La relazione geometrica a cui punti: complementare, complementare diviso, analogo, triadico, tetradico, monocromatico, o i tuoi obiettivi personalizzati."
+        },
+        {
+          "label": "Campioni",
+          "description": "Quali colori hai scelto di campionare. Campiona ciò che conta per l'immagine, non ciò che è più grande. Cinque o sei punti di solito raccontano tutta la storia."
+        },
+        {
+          "label": "Ancoraggio",
+          "description": "Il campione bloccato attorno a cui ruota l'armonia. Senza blocco viene usata la rotazione che si adatta meglio."
+        },
+        {
+          "label": "Spostamento",
+          "description": "La rotazione di tonalità con segno da un campione al suo target. Allineato è entro 8°, uno spostamento leggero entro 25°, tutto il resto è un grande spostamento."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Campiona i colori che modificherai davvero: cielo, pelle, l'oggetto dominante, un'ombra. Salta le luci speculari e le ombre profonde; si leggono come neutre."
+        },
+        {
+          "text": "Complementare diviso è la scelta calma e sognante per viaggio e street. Complementare è più pulito e d'impatto. Triadico è volutamente un po' inquietante."
+        },
+        {
+          "text": "Usa la selezione automatica per iniziare, poi sposta o elimina punti. Trova i cluster cromatici dominanti, che spesso non sono i colori a cui tieni di più."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Tipo di armonia",
+          "definition": "La relazione target tra le tonalità. Complementare (opposta), Complementare diviso (opposta ± angolo), Analogo (vicine), Triadico (120° di distanza), Tetradico (due coppie complementari), Monocromatico (una tonalità), Personalizzato (i tuoi obiettivi)."
+        },
+        "Key Color": {
+          "term": "Colore chiave",
+          "definition": "Senza una foto caricata, il colore attorno a cui è costruita l'armonia. Trascina sulla ruota o usa i cursori."
+        },
+        "Hue": {
+          "term": "Tonalità",
+          "definition": "L'angolo di colore sulla ruota in gradi: 0° è rosso, 120° è verde, 240° è blu."
+        },
+        "Saturation": {
+          "term": "Saturazione",
+          "definition": "Intensità del colore da 0% (grigio) a 100% (pienamente vivido). Distanza dal centro della ruota."
+        },
+        "Lightness": {
+          "term": "Luminosità",
+          "definition": "Luminosità da 0% (nero) a 100% (bianco). Al 50% vedi il colore puro."
+        },
+        "Split Angle": {
+          "term": "Angolo di divisione",
+          "definition": "Quanto distano i due colori complementari divisi dal complemento diretto."
+        },
+        "Spread": {
+          "term": "Ampiezza",
+          "definition": "Quanto distano i colori analoghi dalla tonalità di ancoraggio."
+        },
+        "Lock": {
+          "term": "Blocca",
+          "definition": "Rende un campione l'ancoraggio. L'armonia ruota su quella tonalità e gli altri campioni vengono giudicati rispetto ad essa. Può essere bloccato un solo campione."
+        },
+        "Closest fit": {
+          "term": "Corrispondenza migliore",
+          "definition": "L'armonia la cui rotazione migliore ha l'errore di tonalità normalizzato più basso sui tuoi campioni. Richiede almeno due campioni cromatici."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Hai campionato un cielo blu a 210° e un muro arancione a 25°. A quale armonia sono già più vicini?",
+          "hint": "Controlla l'angolo tra di loro.",
+          "successMessage": "Esatto. 185° di distanza è una coppia complementare quasi perfetta; un piccolo spostamento del muro la completa.",
+          "failureMessage": "Due colori distanti circa 180° sono complementari. I colori analoghi si trovano entro circa 60° l'uno dall'altro.",
+          "options": [
+            {
+              "label": "Complementare"
+            },
+            {
+              "label": "Analogo"
+            },
+            {
+              "label": "Triadico"
+            }
+          ]
+        },
+        {
+          "scenario": "Una foto ha tre campioni a 40°, 60° e 85°. Che armonia è?",
+          "hint": "Sono tutti vicini sulla ruota.",
+          "successMessage": "Corretto. Tonalità vicine entro circa 60° formano un'armonia analoga.",
+          "failureMessage": "Tonalità tutte vicine tra loro sono analoghe, l'opzione calma e unificata.",
+          "options": [
+            {
+              "label": "Complementare"
+            },
+            {
+              "label": "Analogo"
+            },
+            {
+              "label": "Tetradico"
+            }
+          ]
+        },
+        {
+          "scenario": "Vuoi una foto di strada sognante e calma ma mantenendo un po' di contrasto. Quale armonia dovresti scegliere?",
+          "hint": "Pensa ai due vicini del complemento invece del complemento stesso.",
+          "successMessage": "Sì. Complementare diviso mantiene tensione senza la durezza di un opposto diretto.",
+          "failureMessage": "Complementare diviso è l'opzione calma ma con contrasto. Triadico tende a risultare energico o inquietante.",
+          "options": [
+            {
+              "label": "Complementare diviso"
+            },
+            {
+              "label": "Triadico"
+            },
+            {
+              "label": "Analogo"
+            }
+          ]
+        },
+        {
+          "scenario": "Un campione indica Leggero spostamento verso il rosa con un delta di −15°. Nel pannello HSL di Lightroom, cosa fai?",
+          "hint": "La parola di direzione indica dove spingere, la dimensione indica quanto.",
+          "successMessage": "Esatto. Sposta il cursore Tonalità di quel colore verso il rosa finché la scheda non indica Allineato.",
+          "failureMessage": "Spingi la tonalità nella direzione indicata (rosa) di una piccola quantità; un cambiamento di 15° è uno spostamento leggero, non un grande spostamento.",
+          "options": [
+            {
+              "label": "Spostare leggermente la tonalità verso il rosa"
+            },
+            {
+              "label": "Desaturarlo"
+            },
+            {
+              "label": "Spostare la tonalità verso il verde"
+            }
+          ]
+        },
+        {
+          "scenario": "Due campioni condividono la stessa tonalità ma uno è bloccato. Attorno a quale ruota l'armonia?",
+          "hint": "Solo un campione può essere l'ancoraggio.",
+          "successMessage": "Corretto. Il campione bloccato è l'ancoraggio; l'altro viene giudicato rispetto al modello costruito su di esso.",
+          "failureMessage": "Il campione bloccato è sempre l'ancoraggio. Senza blocco, viene usata la rotazione che si adatta meglio.",
+          "options": [
+            {
+              "label": "Il campione bloccato"
+            },
+            {
+              "label": "Il primo campione posizionato"
+            },
+            {
+              "label": "Il campione più saturo"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

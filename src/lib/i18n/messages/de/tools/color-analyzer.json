@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Farbharmonie",
+      "complementary": "Komplementär",
+      "splitComplementary": "Split-Komplementär",
+      "analogous": "Analog",
+      "triadic": "Triadisch",
+      "tetradic": "Tetradisch",
+      "monochromatic": "Monochromatisch",
+      "custom": "Benutzerdefiniert",
+      "closestFit": "Beste Übereinstimmung",
+      "closestSentence": "Dein Foto kommt {harmony} am nächsten (im Schnitt {degrees}° Abweichung). Tippen, um es zu übernehmen.",
+      "keyColor": "Schlüsselfarbe",
+      "hue": "Farbton:",
+      "saturation": "Sättigung:",
+      "lightness": "Helligkeit:",
+      "splitAngle": "Spaltwinkel:",
+      "spread": "Streuung:",
+      "rectangleWidth": "Rechteckbreite:",
+      "square": "(quadratisch)",
+      "samples": "Proben",
+      "lock": "Diese Farbe als Anker sperren",
+      "unlock": "Entsperren",
+      "removeSample": "Probe entfernen",
+      "labelPlaceholder": "Bezeichnung",
+      "neutralNotScored": "Neutral, nicht bewertet",
+      "suggested": "Vorgeschlagen",
+      "autoPick": "5 automatisch wählen",
+      "changePhoto": "Foto wechseln",
+      "capReached": "Maximal {cap} Proben. Entferne eine, um eine weitere hinzuzufügen.",
+      "markerLabel": "Probe {n}: {label}",
+      "dropPhotoPrompt": "Foto hier ablegen oder klicken zum Durchsuchen. Es bleibt in deinem Browser.",
+      "decodeError": "Die Datei konnte nicht gelesen werden. Versuch es mit einem JPEG oder PNG.",
+      "canvasLabel": "Foto. Klicke, um einen Messpunkt hinzuzufügen.",
+      "viewNatural": "Natürlich",
+      "viewPure": "Reine Farbtöne",
+      "viewGuide": "Harmonie-Hilfe",
+      "viewHint": {
+        "key": "Ziehe den Punkt, um eine Schlüsselfarbe festzulegen. Lege stattdessen ein Foto ab, um echte Farben zu analysieren.",
+        "natural": "Zeigt die Farben in ihrer tatsächlichen Sättigung. Wechsle die Ansicht, um die Harmonie abzulesen.",
+        "pure": "Farbtöne werden an den Rand geschoben, damit die Winkel zwischen den Farben leicht abzulesen sind.",
+        "guide": "Gestrichelte Formen zeigen die Zielpositionen. Pfeile zeigen, in welche Richtung sich jede Farbe bewegen sollte."
+      },
+      "nudge": {
+        "aligned": "Ausgerichtet",
+        "slight": "Leichte Verschiebung Richtung {color}",
+        "big": "Starke Verschiebung Richtung {color}"
+      },
+      "names": {
+        "red": "Rot",
+        "vermilion": "Zinnoberrot",
+        "orange": "Orange",
+        "amber": "Bernstein",
+        "yellow": "Gelb",
+        "lime": "Limette",
+        "chartreuse": "Chartreuse",
+        "leaf-green": "Blattgrün",
+        "green": "Grün",
+        "jade": "Jade",
+        "spring-green": "Frühlingsgrün",
+        "mint": "Minze",
+        "cyan": "Cyan",
+        "sky-blue": "Himmelblau",
+        "azure": "Azurblau",
+        "cobalt": "Kobaltblau",
+        "blue": "Blau",
+        "indigo": "Indigo",
+        "violet": "Violett",
+        "purple": "Lila",
+        "magenta": "Magenta",
+        "fuchsia": "Fuchsia",
+        "pink": "Pink",
+        "rose": "Rosa",
+        "gray": "Grau",
+        "black": "Schwarz",
+        "white": "Weiß"
+      },
+      "keyColorLabel": "Schlüsselfarbe — klicken zum Kopieren des Hex-Werts",
+      "clickToCopyHex": "Klicken zum Kopieren des Hex-Werts",
+      "copiedExcl": "Kopiert!",
+      "copyColors": "Farben kopieren",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Hex-Codes kopieren",
+      "copyCssVariables": "CSS-Variablen kopieren",
+      "copyRgbValues": "RGB-Werte kopieren",
+      "suggestions": {
+        "complementary": {
+          "warm": "Ideal für: warme Sonnenuntergangs-Porträts mit kühlem Schattenkontrast",
+          "cool": "Ideal für: stimmungsvolle Blaue-Stunde-Aufnahmen mit warmem Akzentlicht",
+          "default": "Ideal für: kontrastreiche Kompositionen mit starker visueller Spannung"
+        },
+        "splitComplementary": {
+          "warm": "Ideal für: verträumte, ruhige Looks mit Kontrast ohne Härte",
+          "cool": "Ideal für: kühle Street- und Reiseszenen mit zwei warmen Akzenten",
+          "default": "Ideal für: ausgewogene Bilder mit Abwechslung ohne direkten Gegensatz"
+        },
+        "analogous": {
+          "warm": "Ideal für: Landschaften zur goldenen Stunde mit einheitlichen warmen Tönen",
+          "cool": "Ideal für: ruhige Wasserszenen und Dämmerungsfotografie",
+          "default": "Ideal für: harmonische Naturaufnahmen mit weichen Farbübergängen"
+        },
+        "triadic": {
+          "warm": "Ideal für: kräftige Editorial-Arbeiten mit der Energie von Rot, Gelb und Blau",
+          "cool": "Ideal für: lebendige, leicht unruhige Bilder mit drei kräftigen Farben",
+          "default": "Ideal für: lebendige Editorial-Arbeiten und mutige kreative Porträts"
+        },
+        "tetradic": {
+          "warm": "Ideal für: satte, vielschichtige Szenen mit zwei Komplementärpaaren",
+          "cool": "Ideal für: komplexe Stadtlandschaften mit kühlen und warmen Lichtquellen",
+          "default": "Ideal für: satte Editorial-Layouts und Kompositionen mit mehreren Motiven"
+        },
+        "monochromatic": {
+          "warm": "Ideal für: ruhige, stimmige warme Töne aus einem einzigen Farbton",
+          "cool": "Ideal für: ruhige, minimalistische kühle Szenen auf Basis eines Farbtons",
+          "default": "Ideal für: minimalistische, einheitliche Bilder, die auf Licht und Schatten setzen"
+        },
+        "custom": {
+          "warm": "Ziehe die gestrichelten Zielpunkte, um deine eigene Beziehung zwischen den Farben zu gestalten",
+          "cool": "Ziehe die gestrichelten Zielpunkte, um deine eigene Beziehung zwischen den Farben zu gestalten",
+          "default": "Ziehe die gestrichelten Zielpunkte, um deine eigene Beziehung zwischen den Farben zu gestalten"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Was ist Farbharmonie in der Fotografie?",
+          "answer": "Farbharmonie ist eine Beziehung zwischen den Farbtönen in einem Bild, die bewusst wirkt: zwei gegenüberliegende Farben (komplementär), Nachbarn auf dem Farbkreis (analog) oder drei gleichmäßig verteilte (triadisch). Fotos starten selten mit einer sauberen Harmonie, sind aber meist nur eine kleine Verschiebung davon entfernt."
+        },
+        "complementary-vs-analogous": {
+          "question": "Wie lese ich die Harmonie ab, die bereits in meinem Foto steckt?",
+          "answer": "Nimm ein paar wichtige Punkte als Probe (Himmel, Haut, die eine rote Tür) und schau, wo sie im Farbkreis landen. Zwei Punkte, die sich ungefähr gegenüberliegen, bilden ein Komplementärpaar; eine Gruppe innerhalb von etwa 60° ist analog. Das Abzeichen „Beste Übereinstimmung“ übernimmt diesen Vergleich für dich über alle sechs Harmonien hinweg."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Wie nutze ich die vorgeschlagenen Farben in Lightroom oder Photoshop?",
+          "answer": "Jede Probe zeigt eine Richtung (Richtung Pink, Richtung Petrol) und einen vorgeschlagenen Hex-Wert bei gleicher Sättigung und Helligkeit. Schiebe im HSL-Panel oder bei Point Color von Lightroom bzw. bei Farbton/Sättigung in Photoshop den Farbton dieser Farbe in die gezeigte Richtung, bis er in die Nähe des vorgeschlagenen Werts kommt. Bewege zuerst die größten Verschiebungen und höre auf, sobald der Pfeil „Ausgerichtet“ anzeigt."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "Kebanyakan foto sudah ada hubungan warna; anda cuma belum nampak lagi. Lepaskan foto, ketik warna yang penting, dan roda akan tunjukkan bagaimana ia berkait. Pilih harmoni yang anda mahu dan alat ini akan beritahu ke arah mana setiap warna patut digerakkan.",
+      "deeper": [
+        {
+          "heading": "Kaedah empat langkah",
+          "text": "Niat (apa patut dirasai oleh penonton), Analisis (warna apa yang sebenarnya ada dalam bingkai), Pilihan Warna (harmoni mana sesuai dengan perasaan itu), Transformasi (gerakkan slaid ke arah yang ditunjukkan roda). Penyuntingan sentiasa di langkah terakhir. Kebanyakan kekecewaan dengan color grading berpunca daripada terus mula di langkah keempat."
+        },
+        {
+          "heading": "Membaca roda warna",
+          "text": "Setiap sampel diplot mengikut hue (sudut) dan saturation (jarak dari pusat). Paparan Semula Jadi tunjukkan saturation sebenar, Hue Tulen tolak setiap titik ke tepi supaya sudut jelas, dan Panduan Harmoni tambah kedudukan sasaran dan anak panah untuk harmoni yang anda pilih."
+        },
+        {
+          "heading": "Harmoni Terdekat",
+          "text": "Alat ini putarkan setiap templat harmoni ke kedudukan yang paling sesuai dengan sampel anda, kemudian ukur purata ralat hue, dinormalisasikan mengikut jarak slot templat supaya harmoni empat slot tidak menang secara automatik. Pemenang dapat lencana; sama ada nak guna atau tidak terpulang kepada anda."
+        },
+        {
+          "heading": "Kunci dan sauh",
+          "text": "Kunci satu sampel untuk jadikan ia sauh: harmoni berputar mengelilingi hue itu dan semua warna lain dinilai berdasarkannya. Guna untuk warna yang anda tidak akan tukar, biasanya warna kulit atau warna jenama. Tanpa kunci, alat ini automatik pilih putaran dengan jumlah ralat paling kecil."
+        },
+        {
+          "heading": "Warna neutral",
+          "text": "Kelabu, hampir hitam dan hampir putih tiada hue yang boleh dipercayai, jadi ia diplot di pusat dan tidak dimasukkan dalam padanan. Ia tetap penting untuk mood, tetapi menggerakkan hue-nya dengan slaid selalunya cuma tambah kesan warna asing."
+        },
+        {
+          "heading": "Kenapa HSL, bukan roda perseptual",
+          "text": "Roda ini guna model HSL, model yang sama dengan Adobe Color dan panel HSL Lightroom, jadi arah yang anda baca di sini ialah arah yang anda perlu gerak di sana. Ia tidak seragam secara perseptual: kuning menduduki jalur yang sempit dan biru menduduki jalur yang luas, jadi pelarasan 20° yang sama kelihatan lebih besar di sesetengah kawasan berbanding yang lain. Roda perseptual mungkin lebih jujur, tetapi tidak akan sepadan dengan alat penyuntingan."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Jenis Harmoni",
+          "description": "Hubungan geometri yang anda sasarkan: komplementari, split-komplementari, analogus, triadik, tetradik, monokromatik, atau sasaran tersuai anda sendiri."
+        },
+        {
+          "label": "Sampel",
+          "description": "Warna yang anda pilih untuk disampel. Sampelkan warna yang penting untuk gambar, bukan yang paling luas. Biasanya lima hingga enam titik sudah cukup ceritakan keseluruhannya."
+        },
+        {
+          "label": "Sauh",
+          "description": "Sampel terkunci yang menjadi pusat putaran harmoni. Tanpa kunci, putaran yang paling sesuai digunakan."
+        },
+        {
+          "label": "Pelarasan",
+          "description": "Putaran hue bertanda daripada sampel ke sasarannya. Dalam 8° bermaksud sejajar, dalam 25° bermaksud sedikit gerak, lebih daripada itu bermaksud gerak besar."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Sampelkan warna yang anda benar-benar akan grading: langit, kulit, objek dominan, bayang. Langkau sorotan specular dan bayang gelap; kedua-duanya dibaca sebagai neutral."
+        },
+        {
+          "text": "Split-komplementari ialah pilihan tenang dan seakan mimpi untuk foto perjalanan dan jalanan. Komplementari lebih bersih dan berkuasa. Triadik sengaja terasa sedikit menggusarkan."
+        },
+        {
+          "text": "Guna Pilih Automatik untuk mula, kemudian gerakkan atau buang titik. Ia cari kluster kromatik dominan, yang selalunya bukan warna yang paling anda ambil berat."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Jenis Harmoni",
+          "definition": "Hubungan sasaran antara hue. Komplementari (bertentangan), Split Komplementari (bertentangan ± sudut), Analogus (bersebelahan), Triadik (berjarak 120°), Tetradik (dua pasang komplementari), Monokromatik (satu hue), Tersuai (sasaran anda sendiri)."
+        },
+        "Key Color": {
+          "term": "Warna Utama",
+          "definition": "Apabila tiada foto dimuatkan, ini ialah warna tempat harmoni dibina. Seret roda atau guna slaid."
+        },
+        "Hue": {
+          "term": "Hue",
+          "definition": "Sudut warna pada roda dalam darjah: 0° ialah merah, 120° ialah hijau, 240° ialah biru."
+        },
+        "Saturation": {
+          "term": "Saturation",
+          "definition": "Keamatan warna dari 0% (kelabu) hingga 100% (sepenuhnya cerah). Jarak dari pusat roda."
+        },
+        "Lightness": {
+          "term": "Lightness",
+          "definition": "Kecerahan dari 0% (hitam) hingga 100% (putih). Pada 50% anda nampak warna tulen."
+        },
+        "Split Angle": {
+          "term": "Sudut Split",
+          "definition": "Sejauh mana kedua-dua warna split-komplementari berada daripada komplemen terusnya."
+        },
+        "Spread": {
+          "term": "Sebaran",
+          "definition": "Sejauh mana warna analogus berada daripada hue sauh."
+        },
+        "Lock": {
+          "term": "Kunci",
+          "definition": "Jadikan satu sampel sebagai sauh. Harmoni berputar ke hue itu dan sampel lain dinilai berdasarkannya. Hanya satu sampel boleh dikunci."
+        },
+        "Closest fit": {
+          "term": "Harmoni Terdekat",
+          "definition": "Harmoni yang putaran terbaiknya mempunyai ralat hue ternormalisasi paling rendah dalam kalangan sampel anda. Perlukan sekurang-kurangnya dua sampel kromatik."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Anda sampelkan langit biru pada 210° dan dinding jingga pada 25°. Kedua-duanya paling hampir dengan harmoni apa?",
+          "hint": "Semak sudut antara kedua-duanya.",
+          "successMessage": "Betul. Perbezaan 185° hampir menjadi pasangan komplementari yang sempurna; sedikit pelarasan pada dinding akan menyempurnakannya.",
+          "failureMessage": "Dua warna yang berjarak lebih kurang 180° ialah komplementari. Warna analogus berada dalam lingkungan 60° antara satu sama lain.",
+          "options": [
+            {
+              "label": "Komplementari"
+            },
+            {
+              "label": "Analogus"
+            },
+            {
+              "label": "Triadik"
+            }
+          ]
+        },
+        {
+          "scenario": "Satu foto ada tiga sampel pada 40°, 60° dan 85°. Ini harmoni apa?",
+          "hint": "Kesemuanya bersebelahan pada roda.",
+          "successMessage": "Betul. Hue yang bersebelahan dalam lingkungan 60° membentuk harmoni analogus.",
+          "failureMessage": "Hue yang berdekatan semuanya analogus, pilihan yang tenang dan padu.",
+          "options": [
+            {
+              "label": "Komplementari"
+            },
+            {
+              "label": "Analogus"
+            },
+            {
+              "label": "Tetradik"
+            }
+          ]
+        },
+        {
+          "scenario": "Anda mahukan foto jalanan yang tenang dan seakan mimpi tetapi kekal berkontras. Harmoni mana patut dipilih?",
+          "hint": "Fikir tentang dua jiran komplemen, bukan komplemen itu sendiri.",
+          "successMessage": "Betul. Split-komplementari kekalkan ketegangan tanpa kekerasan bertentangan terus.",
+          "failureMessage": "Split komplementari ialah pilihan tenang tetapi masih berkontras. Triadik cenderung terasa bertenaga atau sedikit menggusarkan.",
+          "options": [
+            {
+              "label": "Split Komplementari"
+            },
+            {
+              "label": "Triadik"
+            },
+            {
+              "label": "Analogus"
+            }
+          ]
+        },
+        {
+          "scenario": "Satu sampel tunjukkan 'Sedikit gerak ke arah pink' dengan beza −15°. Dalam panel HSL Lightroom, apa patut anda buat?",
+          "hint": "Perkataan arah beritahu ke mana nak tolak, saiznya beritahu sejauh mana.",
+          "successMessage": "Betul. Gerakkan slaid Hue warna itu ke arah pink sehingga kad tunjuk 'Sejajar'.",
+          "failureMessage": "Tolak hue ke arah yang ditunjukkan (pink) sedikit sahaja; perubahan 15° ialah gerak kecil, bukan gerak besar.",
+          "options": [
+            {
+              "label": "Gerak hue sedikit ke arah pink"
+            },
+            {
+              "label": "Kurangkan saturation"
+            },
+            {
+              "label": "Gerak hue ke arah hijau"
+            }
+          ]
+        },
+        {
+          "scenario": "Dua sampel ada hue yang sama tetapi hanya satu dikunci. Harmoni akan berputar mengelilingi yang mana?",
+          "hint": "Hanya satu sampel boleh jadi sauh.",
+          "successMessage": "Betul. Sampel yang dikunci ialah sauh; yang satu lagi dinilai berdasarkan templat yang dibina atasnya.",
+          "failureMessage": "Sampel yang dikunci sentiasa jadi sauh. Tanpa kunci, putaran yang paling sesuai digunakan.",
+          "options": [
+            {
+              "label": "Sampel yang dikunci"
+            },
+            {
+              "label": "Sampel yang diletak dahulu"
+            },
+            {
+              "label": "Sampel dengan saturation paling tinggi"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

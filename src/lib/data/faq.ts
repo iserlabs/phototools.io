@@ -17,7 +17,7 @@ export const TOOL_FAQS: ToolFaqs[] = [
     ],
   },
   {
-    slug: 'color-scheme-generator',
+    slug: 'color-analyzer',
     questions: [
       { id: 'what-is-color-harmony' },
       { id: 'complementary-vs-analogous' },

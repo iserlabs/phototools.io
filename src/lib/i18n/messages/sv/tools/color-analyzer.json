@@ -1,0 +1,142 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Färgharmoni",
+      "complementary": "Komplementär",
+      "splitComplementary": "Delad komplementär",
+      "analogous": "Analog",
+      "triadic": "Triadisk",
+      "tetradic": "Tetradisk",
+      "monochromatic": "Monokromatisk",
+      "custom": "Anpassad",
+      "closestFit": "Bästa matchning",
+      "closestSentence": "Ditt foto ligger närmast {harmony} (i snitt {degrees}° avvikelse). Tryck för att använda den.",
+      "keyColor": "Nyckelfärg",
+      "hue": "Nyans:",
+      "saturation": "Mättnad:",
+      "lightness": "Ljushet:",
+      "splitAngle": "Delningsvinkel:",
+      "spread": "Spridning:",
+      "rectangleWidth": "Rektangelbredd:",
+      "square": "(kvadrat)",
+      "samples": "Prover",
+      "lock": "Lås den här färgen som ankare",
+      "unlock": "Lås upp",
+      "removeSample": "Ta bort prov",
+      "labelPlaceholder": "Etikett",
+      "neutralNotScored": "Neutral, inte poängsatt",
+      "suggested": "Föreslagen",
+      "autoPick": "Välj 5 automatiskt",
+      "changePhoto": "Byt foto",
+      "capReached": "Max {cap} prover. Ta bort ett för att lägga till ett till.",
+      "markerLabel": "Prov {n}: {label}",
+      "dropPhotoPrompt": "Släpp ett foto eller klicka för att bläddra. Det stannar i din webbläsare.",
+      "decodeError": "Filen kunde inte läsas. Prova en JPEG eller PNG.",
+      "canvasLabel": "Foto. Klicka för att lägga till en provpunkt.",
+      "viewNatural": "Naturlig",
+      "viewPure": "Rena nyanser",
+      "viewGuide": "Harmoniguide",
+      "viewHint": {
+        "key": "Dra punkten för att ställa in en nyckelfärg. Släpp istället ett foto för att analysera riktiga färger.",
+        "natural": "Visar färgerna i sin verkliga mättnad. Byt flik för att läsa av harmonin.",
+        "pure": "Nyanser skjuts ut mot kanten så att vinklarna mellan färgerna är lätta att läsa.",
+        "guide": "Streckade former är målpositionerna. Pilar visar åt vilket håll varje färg bör flyttas."
+      },
+      "nudge": {
+        "aligned": "I linje",
+        "slight": "Liten justering mot {color}",
+        "big": "Stor förskjutning mot {color}"
+      },
+      "names": {
+        "red": "Röd",
+        "vermilion": "Cinnoberröd",
+        "orange": "Orange",
+        "amber": "Bärnsten",
+        "yellow": "Gul",
+        "lime": "Lime",
+        "chartreuse": "Chartreuse",
+        "leaf-green": "Bladgrön",
+        "green": "Grön",
+        "jade": "Jade",
+        "spring-green": "Vårgrön",
+        "mint": "Mint",
+        "cyan": "Cyan",
+        "sky-blue": "Himmelsblå",
+        "azure": "Azurblå",
+        "cobalt": "Koboltblå",
+        "blue": "Blå",
+        "indigo": "Indigo",
+        "violet": "Violett",
+        "purple": "Lila",
+        "magenta": "Magenta",
+        "fuchsia": "Fuchsia",
+        "pink": "Rosa",
+        "rose": "Gammelrosa",
+        "gray": "Grå",
+        "black": "Svart",
+        "white": "Vit"
+      },
+      "keyColorLabel": "Nyckelfärg — klicka för att kopiera hex",
+      "clickToCopyHex": "Klicka för att kopiera hex",
+      "copiedExcl": "Kopierad!",
+      "copyColors": "Kopiera färger",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Kopiera hex-koder",
+      "copyCssVariables": "Kopiera CSS-variabler",
+      "copyRgbValues": "Kopiera RGB-värden",
+      "suggestions": {
+        "complementary": {
+          "warm": "Perfekt för: varma solnedgångsporträtt med kallt skuggkontrast",
+          "cool": "Perfekt för: stämningsfulla blå timmen-bilder med varmt accentljus",
+          "default": "Perfekt för: kontrastrika kompositioner med stark visuell spänning"
+        },
+        "splitComplementary": {
+          "warm": "Perfekt för: drömska, lugna looks med kontrast utan hårdhet",
+          "cool": "Perfekt för: kalla gatu- och resemotiv med två varma accenter",
+          "default": "Perfekt för: balanserade bilder med variation utan direkt motsats"
+        },
+        "analogous": {
+          "warm": "Perfekt för: gyllene timmen-landskap med enhetliga varma toner",
+          "cool": "Perfekt för: stillsamma vattenscener och skymningsfotografering",
+          "default": "Perfekt för: harmoniska naturbilder med mjuka färgövergångar"
+        },
+        "triadic": {
+          "warm": "Perfekt för: djärvt redaktionellt arbete med energin från rött, gult och blått",
+          "cool": "Perfekt för: levande, lätt oroande bilder med tre starka färger",
+          "default": "Perfekt för: levande redaktionellt arbete och djärva kreativa porträtt"
+        },
+        "tetradic": {
+          "warm": "Perfekt för: rika, lagerdelade scener med två komplementära par",
+          "cool": "Perfekt för: komplexa stadsvyer med kalla och varma ljuskällor",
+          "default": "Perfekt för: rika redaktionella layouter och kompositioner med flera motiv"
+        },
+        "monochromatic": {
+          "warm": "Perfekt för: lugna, sammanhållna varma toner från en enda nyans",
+          "cool": "Perfekt för: lugna, minimala kalla scener byggda på en enda nyans",
+          "default": "Perfekt för: minimala, enhetliga bilder som bygger på ljus och skugga"
+        },
+        "custom": {
+          "warm": "Dra i de streckade målen för att skapa ditt eget förhållande mellan färgerna",
+          "cool": "Dra i de streckade målen för att skapa ditt eget förhållande mellan färgerna",
+          "default": "Dra i de streckade målen för att skapa ditt eget förhållande mellan färgerna"
+        }
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Vad är färgharmoni inom fotografi?",
+          "answer": "Färgharmoni är ett förhållande mellan nyanserna i en bild som uppfattas som medvetet: två färger mitt emot varandra (komplementära), grannar på hjulet (analoga), eller tre jämnt fördelade (triadiska). Foton börjar sällan med en ren harmoni, men de är oftast bara en liten justering därifrån."
+        },
+        "complementary-vs-analogous": {
+          "question": "Hur läser jag av harmonin som redan finns i mitt foto?",
+          "answer": "Ta prov på några punkter som spelar roll (himlen, huden, den där röda dörren) och se var de hamnar på hjulet. Två punkter ungefär mitt emot varandra är ett komplementärt par; ett kluster inom cirka 60° är analogt. Märket „Bästa matchning” gör den här jämförelsen åt dig över alla sex harmonier."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Hur använder jag de föreslagna färgerna i Lightroom eller Photoshop?",
+          "answer": "Varje prov visar en riktning (mot rosa, mot petrol) och ett föreslaget hexvärde med samma mättnad och ljushet. I Lightrooms HSL-panel eller Point Color, eller i Photoshops Nyans/Mättnad, flyttar du den färgens nyans i den visade riktningen tills den hamnar nära det föreslagna värdet. Gör de största förskjutningarna först och sluta när pilen visar I linje."
+        }
+      }
+    }
+  }
+}

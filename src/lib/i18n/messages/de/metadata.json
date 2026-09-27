@@ -38,10 +38,6 @@
       "title": "Sensorgrößen-Vergleich",
       "description": "Vergleiche Kamera-Sensorgrößen vom Mittelformat bis zum Smartphone. Überlagerungs-, Nebeneinander- und Pixeldichte-Ansichten mit echten Kameramodellen."
     },
-    "color-scheme-generator": {
-      "title": "Farbschema-Generator",
-      "description": "Erstelle Farbpaletten für die Fotografie mit komplementären, analogen, triadischen und tetradischen Farbharmonien. Interaktives Farbrad mit Foto-Pipette."
-    },
     "frame-studio": {
       "title": "Rahmen-Studio",
       "description": "Fotos zuschneiden, rahmen und mit Rasterüberlagerungen komponieren. 100 % clientseitig — deine Fotos verlassen nie dein Gerät."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Farbanalysator: die Farbharmonie in jedem Foto ablesen",
+      "description": "Kostenloser Foto-Farbanalysator und Farbschema-Generator. Probiere Farben aus deinem Foto, trage sie in einen Farbkreis ein, finde die beste Farbharmonie und erhalte Bearbeitungshinweise für jede Farbe. 100 % in deinem Browser."
     }
   }
 }

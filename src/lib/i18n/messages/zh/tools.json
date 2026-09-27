@@ -4,10 +4,6 @@
       "name": "视场角模拟器",
       "description": "比较不同焦距和传感器尺寸下的视场角"
     },
-    "color-scheme-generator": {
-      "name": "配色方案生成器",
-      "description": "为摄影拍摄创建色彩调色板"
-    },
     "exposure-simulator": {
       "name": "曝光三角模拟器",
       "description": "查看光圈、快门速度和 ISO 如何相互影响"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "摄影速查表",
       "description": "常见拍摄场景的相机设置速查表 — 可下载、可打印"
+    },
+    "color-analyzer": {
+      "name": "色彩分析器",
+      "description": "取样照片中的颜色，解读其配色关系，并查看每种颜色该如何调整"
     }
   }
 }

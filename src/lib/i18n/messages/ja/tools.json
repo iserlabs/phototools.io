@@ -4,10 +4,6 @@
       "name": "画角シミュレーター",
       "description": "焦点距離とセンサーサイズによる画角の違いを比較"
     },
-    "color-scheme-generator": {
-      "name": "配色ジェネレーター",
-      "description": "撮影用のカラーパレットを作成"
-    },
     "exposure-simulator": {
       "name": "露出トライアングルシミュレーター",
       "description": "絞り、シャッタースピード、ISO感度の相互作用を確認"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "撮影設定チートシート",
       "description": "よくある撮影シーン別のカメラ設定チートシート — ダウンロード・印刷可能"
+    },
+    "color-analyzer": {
+      "name": "カラーアナライザー",
+      "description": "写真の色をサンプリングして配色の調和を読み取り、各色をどちらへ調整すべきか確認できます"
     }
   }
 }

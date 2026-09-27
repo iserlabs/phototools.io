@@ -38,10 +38,6 @@
       "title": "Perbandingan Saiz Sensor",
       "description": "Bandingkan saiz sensor kamera dari format sederhana hingga telefon pintar. Lihat paparan tindanan, bersebelahan dan ketumpatan piksel dengan model kamera sebenar."
     },
-    "color-scheme-generator": {
-      "title": "Penjana Palet Warna",
-      "description": "Jana palet warna untuk fotografi menggunakan harmoni warna komplementari, analogus, triadik dan tetradik. Roda warna interaktif dengan pemilih foto."
-    },
     "frame-studio": {
       "title": "Studio Bingkai",
       "description": "Potong, bingkai dan susun foto dengan tindanan grid. 100% di sebelah klien — foto anda tidak pernah meninggalkan peranti anda."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Penganalisis Warna: baca harmoni warna dalam mana-mana foto",
+      "description": "Penganalisis warna foto dan penjana skema warna percuma. Sampelkan warna daripada foto anda, plot pada roda warna, cari harmoni warna terdekat, dan dapatkan panduan grading bagi setiap warna. 100% dalam pelayar anda."
     }
   }
 }

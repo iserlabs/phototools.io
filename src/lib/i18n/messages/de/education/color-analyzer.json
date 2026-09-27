@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "Die meisten Fotos enthalten bereits eine Farbbeziehung — du kannst sie nur noch nicht sehen. Lege ein Foto ab, tippe auf die Farben, die zählen, und der Farbkreis zeigt, wie sie zusammenhängen. Wähle die gewünschte Harmonie, und das Tool sagt dir, in welche Richtung du jede Farbe schieben musst.",
+      "deeper": [
+        {
+          "heading": "Die Vier-Schritte-Methode",
+          "text": "Absicht (was soll der Betrachter fühlen), Analyse (welche Farben sind wirklich im Bild), Farbwahl (welche Harmonie passt zu diesem Gefühl), Umsetzung (die Regler in die vom Farbkreis gezeigte Richtung bewegen). Die Bearbeitung kommt zuletzt. Die meiste Frustration bei der Farbbearbeitung entsteht, weil man bei Schritt vier anfängt."
+        },
+        {
+          "heading": "Den Farbkreis lesen",
+          "text": "Jede Probe wird nach Farbton (Winkel) und Sättigung (Abstand vom Zentrum) eingezeichnet. Die Ansicht „Natürlich“ zeigt die tatsächliche Sättigung, „Reine Farbtöne“ schiebt jeden Punkt an den Rand, damit die Winkel eindeutig sind, und „Harmonie-Hilfe“ ergänzt die Zielpositionen und Pfeile für die gewählte Harmonie."
+        },
+        {
+          "heading": "Beste Übereinstimmung",
+          "text": "Das Tool dreht jede Harmonie-Vorlage in die Position, die am besten zu deinen Proben passt, und misst den durchschnittlichen Farbtonfehler, normiert nach dem Abstand der Vorlagen-Slots, damit vierteilige Harmonien nicht automatisch gewinnen. Der Gewinner erhält das Abzeichen; du entscheidest, ob du ihn nutzt."
+        },
+        {
+          "heading": "Sperren und Anker",
+          "text": "Sperre eine Probe, um sie zum Anker zu machen: Die Harmonie dreht sich um diesen Farbton, und jede andere Farbe wird daran gemessen. Nutze das für die Farbe, die du nicht ändern wirst, meist Hautton oder eine Markenfarbe. Ohne Sperre wählt das Tool die Drehung mit dem geringsten Gesamtfehler."
+        },
+        {
+          "heading": "Neutrale Farben",
+          "text": "Grau-, Fast-Schwarz- und Fast-Weiß-Töne haben keinen zuverlässigen Farbton, deshalb landen sie im Zentrum und bleiben bei der Anpassung außen vor. Sie zählen weiterhin für die Stimmung, aber eine Verschiebung ihres Farbtons am Regler fügt meist nur einen Farbstich hinzu."
+        },
+        {
+          "heading": "Warum HSL und kein Wahrnehmungskreis",
+          "text": "Dieser Farbkreis nutzt HSL, dasselbe Modell wie Adobe Color und das HSL-Panel von Lightroom, sodass die hier abgelesene Richtung auch dort die richtige ist. Er ist nicht wahrnehmungsgleichmäßig: Gelb nimmt ein schmales Band ein, Blau ein breites, sodass eine Verschiebung um 20° in manchen Bereichen größer wirkt als in anderen. Ein Wahrnehmungskreis wäre ehrlicher, würde aber nicht zu den Bearbeitungswerkzeugen passen."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Harmonietyp",
+          "description": "Die geometrische Beziehung, die du anstrebst: komplementär, split-komplementär, analog, triadisch, tetradisch, monochromatisch oder deine eigenen benutzerdefinierten Ziele."
+        },
+        {
+          "label": "Proben",
+          "description": "Welche Farben du zum Probieren ausgewählt hast. Nimm Proben von dem, was für das Bild zählt, nicht von dem, was am größten ist. Fünf bis sechs Punkte erzählen meist die ganze Geschichte."
+        },
+        {
+          "label": "Anker",
+          "description": "Die gesperrte Probe, um die sich die Harmonie dreht. Ohne Sperre wird die beste Drehung verwendet."
+        },
+        {
+          "label": "Verschiebung",
+          "description": "Die vorzeichenbehaftete Farbtondrehung von einer Probe zu ihrem Ziel. Ausgerichtet bedeutet innerhalb von 8°, eine leichte Verschiebung innerhalb von 25°, alles darüber ist eine starke Verschiebung."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Probiere die Farben, die du tatsächlich bearbeiten wirst: Himmel, Haut, das dominante Objekt, einen Schatten. Überspringe Glanzlichter und tiefe Schatten; sie wirken neutral."
+        },
+        {
+          "text": "Split-Komplementär ist die ruhige, verträumte Wahl für Reise- und Street-Fotografie. Komplementär ist klarer und knalliger. Triadisch wirkt bewusst etwas unruhig."
+        },
+        {
+          "text": "Nutze „5 automatisch wählen“ als Start, dann verschiebe oder lösche Punkte. Es findet die dominanten Farbcluster, die oft nicht die Farben sind, auf die es dir am meisten ankommt."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Harmonietyp",
+          "definition": "Die angestrebte Beziehung zwischen Farbtönen. Komplementär (gegenüberliegend), Split-Komplementär (gegenüber ± Winkel), Analog (Nachbarn), Triadisch (120° auseinander), Tetradisch (zwei Komplementärpaare), Monochromatisch (ein Farbton), Benutzerdefiniert (eigene Ziele)."
+        },
+        "Key Color": {
+          "term": "Schlüsselfarbe",
+          "definition": "Ohne geladenes Foto die Farbe, um die die Harmonie herum aufgebaut wird. Ziehe am Farbkreis oder nutze die Regler."
+        },
+        "Hue": {
+          "term": "Farbton",
+          "definition": "Der Farbwinkel auf dem Kreis in Grad: 0° ist Rot, 120° ist Grün, 240° ist Blau."
+        },
+        "Saturation": {
+          "term": "Sättigung",
+          "definition": "Farbintensität von 0 % (Grau) bis 100 % (voll leuchtend). Abstand vom Zentrum des Kreises."
+        },
+        "Lightness": {
+          "term": "Helligkeit",
+          "definition": "Helligkeit von 0 % (Schwarz) bis 100 % (Weiß). Bei 50 % siehst du die reine Farbe."
+        },
+        "Split Angle": {
+          "term": "Spaltwinkel",
+          "definition": "Wie weit die beiden Split-Komplementärfarben vom direkten Komplement entfernt liegen."
+        },
+        "Spread": {
+          "term": "Streuung",
+          "definition": "Wie weit die analogen Farben vom Anker-Farbton entfernt liegen."
+        },
+        "Lock": {
+          "term": "Sperren",
+          "definition": "Macht eine Probe zum Anker. Die Harmonie dreht sich auf diesen Farbton, andere Proben werden daran gemessen. Nur eine Probe kann gesperrt sein."
+        },
+        "Closest fit": {
+          "term": "Beste Übereinstimmung",
+          "definition": "Die Harmonie, deren beste Drehung den geringsten normierten Farbtonfehler über deine Proben hat. Braucht mindestens zwei bunte Proben."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Du hast einen blauen Himmel bei 210° und eine orangefarbene Wand bei 25° als Probe genommen. Welcher Harmonie sind sie bereits am nächsten?",
+          "hint": "Prüfe den Winkel zwischen ihnen.",
+          "successMessage": "Richtig. 185° Abstand ist ein nahezu perfektes Komplementärpaar; eine kleine Verschiebung der Wand vollendet es.",
+          "failureMessage": "Zwei Farben, die etwa 180° auseinanderliegen, sind komplementär. Analoge Farben liegen innerhalb von etwa 60° zueinander.",
+          "options": [
+            {
+              "label": "Komplementär"
+            },
+            {
+              "label": "Analog"
+            },
+            {
+              "label": "Triadisch"
+            }
+          ]
+        },
+        {
+          "scenario": "Ein Foto hat drei Proben bei 40°, 60° und 85°. Welche Harmonie ist das?",
+          "hint": "Sie sind alle Nachbarn auf dem Farbkreis.",
+          "successMessage": "Richtig. Benachbarte Farbtöne innerhalb von etwa 60° bilden eine analoge Harmonie.",
+          "failureMessage": "Farbtöne, die alle nah beieinander liegen, sind analog — die ruhige, einheitliche Option.",
+          "options": [
+            {
+              "label": "Komplementär"
+            },
+            {
+              "label": "Analog"
+            },
+            {
+              "label": "Tetradisch"
+            }
+          ]
+        },
+        {
+          "scenario": "Du möchtest ein verträumtes, ruhiges Street-Foto, aber etwas Kontrast behalten. Welche Harmonie solltest du wählen?",
+          "hint": "Denk an die beiden Nachbarn des Komplements statt an das Komplement selbst.",
+          "successMessage": "Ja. Split-Komplementär behält Spannung ohne die Härte eines direkten Gegensatzes.",
+          "failureMessage": "Split-Komplementär ist die ruhige, aber kontrastreiche Option. Triadisch wirkt eher energiegeladen oder unruhig.",
+          "options": [
+            {
+              "label": "Split-Komplementär"
+            },
+            {
+              "label": "Triadisch"
+            },
+            {
+              "label": "Analog"
+            }
+          ]
+        },
+        {
+          "scenario": "Eine Probe zeigt „Leichte Verschiebung Richtung Pink“ mit einem Delta von −15°. Was tust du im HSL-Panel von Lightroom?",
+          "hint": "Das Richtungswort zeigt, wohin du schieben sollst, die Größe zeigt, wie weit.",
+          "successMessage": "Richtig. Bewege den Farbton-Regler dieser Farbe Richtung Pink, bis die Karte „Ausgerichtet“ anzeigt.",
+          "failureMessage": "Schiebe den Farbton in die genannte Richtung (Pink) um einen kleinen Betrag; eine Änderung um 15° ist eine leichte Verschiebung, keine starke.",
+          "options": [
+            {
+              "label": "Farbton leicht Richtung Pink verschieben"
+            },
+            {
+              "label": "Entsättigen"
+            },
+            {
+              "label": "Farbton Richtung Grün verschieben"
+            }
+          ]
+        },
+        {
+          "scenario": "Zwei Proben haben denselben Farbton, aber eine ist gesperrt. Um welche dreht sich die Harmonie?",
+          "hint": "Nur eine Probe kann der Anker sein.",
+          "successMessage": "Richtig. Die gesperrte Probe ist der Anker; die andere wird an der darauf aufgebauten Vorlage gemessen.",
+          "failureMessage": "Die gesperrte Probe ist immer der Anker. Ohne Sperre wird die beste Drehung verwendet.",
+          "options": [
+            {
+              "label": "Die gesperrte Probe"
+            },
+            {
+              "label": "Die zuerst platzierte Probe"
+            },
+            {
+              "label": "Die am stärksten gesättigte Probe"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

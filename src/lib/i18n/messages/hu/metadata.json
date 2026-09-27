@@ -38,10 +38,6 @@
       "title": "Érzékelőméret-összehasonlítás",
       "description": "Hasonlítsd össze a kameraérzékelőket a közepes formátumtól az okostelefonig. Átfedéses, egymás melletti és pixelsűrűség-nézet, valódi kameramodellekkel."
     },
-    "color-scheme-generator": {
-      "title": "Színpaletta-generátor",
-      "description": "Állíts össze fotós színpalettákat komplementer, analóg, triadikus és tetradikus harmóniák alapján. Interaktív színkör fotóválasztóval."
-    },
     "frame-studio": {
       "title": "Kompozíciós stúdió",
       "description": "Vágj, keretezz és komponálj fotókat rács-segédvonalakkal. 100%-ban a böngészőben — a fotóid ki sem kerülnek az eszközödről."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Színelemző: olvasd le bármely fotó színharmóniáját",
+      "description": "Ingyenes fotó-színelemző és színséma-generátor. Mintázd le egy fotó színeit, ábrázold őket egy színkörön, találd meg a legközelebbi színharmóniát, és kapj színenkénti szerkesztési útmutatást. 100%-ban a böngésződben."
     }
   }
 }

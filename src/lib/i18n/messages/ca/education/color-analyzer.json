@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "La majoria de fotos ja contenen una relació de colors — simplement encara no la veus. Deixa anar una foto, toca els colors que importen, i la roda et mostrarà com es relacionen. Tria l'harmonia que vulguis i l'eina et dirà cap a quina banda empènyer cada color.",
+      "deeper": [
+        {
+          "heading": "El mètode de quatre passos",
+          "text": "Intenció (què hauria de sentir l'espectador), Anàlisi (quins colors hi ha realment a la imatge), Elecció de color (quina harmonia s'ajusta a aquesta sensació), Transformació (mou els controls lliscants en la direcció que mostra la roda). L'edició va al final. La major part de la frustració amb la gradació de color ve de començar directament pel quart pas."
+        },
+        {
+          "heading": "Llegir la roda",
+          "text": "Cada mostra es representa segons el to (angle) i la saturació (distància des del centre). La vista Natural mostra la saturació real, Tons purs empeny cada punt cap a la vora perquè els angles siguin evidents, i Guia d'harmonia afegeix les posicions objectiu i les fletxes per a l'harmonia escollida."
+        },
+        {
+          "heading": "Millor coincidència",
+          "text": "L'eina gira cada plantilla d'harmonia a la posició que millor s'ajusta a les teves mostres i mesura l'error mitjà de to, normalitzat segons l'espaiat de posicions de la plantilla, perquè les harmonies de quatre posicions no guanyin per defecte. La guanyadora rep la insígnia; tu decideixes si l'utilitzes."
+        },
+        {
+          "heading": "Bloquejos i referències",
+          "text": "Bloqueja una mostra per convertir-la en referència: l'harmonia gira al voltant d'aquest to i cada altre color es jutja en relació amb ell. Fes-ho servir per al color que no canviaràs, normalment la pell o un color de marca. Sense bloqueig, l'eina tria la rotació amb l'error total més petit."
+        },
+        {
+          "heading": "Colors neutres",
+          "text": "Els grisos, els gairebé negres i els gairebé blancs no tenen un to fiable, així que es representen al centre i queden fora de la coincidència. Encara importen per a l'ambient, però moure el seu to en un control lliscant sobretot afegeix una dominant de color."
+        },
+        {
+          "heading": "Per què HSL i no una roda perceptiva",
+          "text": "Aquesta roda utilitza el model HSL, el mateix que Adobe Color i el panell HSL del Lightroom, així que la direcció que llegeixes aquí és la mateixa que empenyeràs allà. No és perceptivament uniforme: el groc ocupa una banda estreta i el blau una d'ampla, així que un ajust de 20° sembla més gran en unes zones que en unes altres. Una roda perceptiva seria més honesta, però no coincidiria amb les eines d'edició."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Tipus d'harmonia",
+          "description": "La relació geomètrica que busques: complementària, complementària dividida, anàloga, triàdica, tetràdica, monocromàtica o els teus propis objectius personalitzats."
+        },
+        {
+          "label": "Mostres",
+          "description": "Quins colors has decidit mostrejar. Mostreja allò que importa per a la imatge, no el que és més gran. Cinc o sis punts solen explicar tota la història."
+        },
+        {
+          "label": "Referència",
+          "description": "La mostra bloquejada al voltant de la qual gira l'harmonia. Sense bloqueig, s'utilitza la rotació que millor s'ajusta."
+        },
+        {
+          "label": "Ajust",
+          "description": "La rotació de to amb signe des d'una mostra fins al seu objectiu. Alineat vol dir dins de 8°, un ajust petit dins de 25°, qualsevol cosa més és un gran canvi."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Mostreja els colors que realment graduaràs: el cel, la pell, l'objecte dominant, una ombra. Salta't els brillants especulars i les ombres profundes — es llegeixen com a neutres."
+        },
+        {
+          "text": "El complementari dividit és l'opció tranquil·la i onírica per al treball de viatges i de carrer. El complementari és més net i contundent. El triàdic és deliberadament una mica inquietant."
+        },
+        {
+          "text": "Utilitza la Tria automàtica per començar, i després mou o elimina punts. Troba els grups cromàtics dominants, que sovint no són els colors que més t'importen."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Tipus d'harmonia",
+          "definition": "La relació objectiu entre tons. Complementària (oposada), Complementària dividida (oposada ± angle), Anàloga (veïnes), Triàdica (cada 120°), Tetràdica (dues parelles complementàries), Monocromàtica (un sol to), Personalitzada (els teus propis objectius)."
+        },
+        "Key Color": {
+          "term": "Color clau",
+          "definition": "Sense cap foto carregada, el color al voltant del qual es construeix l'harmonia. Arrossega la roda o utilitza els controls lliscants."
+        },
+        "Hue": {
+          "term": "To",
+          "definition": "L'angle del color a la roda en graus: 0° és vermell, 120° és verd, 240° és blau."
+        },
+        "Saturation": {
+          "term": "Saturació",
+          "definition": "La intensitat del color, del 0% (gris) al 100% (totalment viu). Distància des del centre de la roda."
+        },
+        "Lightness": {
+          "term": "Lluminositat",
+          "definition": "La brillantor, del 0% (negre) al 100% (blanc). Al 50% veus el color pur."
+        },
+        "Split Angle": {
+          "term": "Angle de divisió",
+          "definition": "A quina distància de la complementària directa se situen els dos colors de l'esquema complementari dividit."
+        },
+        "Spread": {
+          "term": "Amplada",
+          "definition": "A quina distància del to de referència se situen els colors anàlegs."
+        },
+        "Lock": {
+          "term": "Bloqueig",
+          "definition": "Converteix una mostra en referència. L'harmonia gira cap a aquest to i les altres mostres es jutgen en relació amb ell. Només es pot bloquejar una mostra."
+        },
+        "Closest fit": {
+          "term": "Millor coincidència",
+          "definition": "L'harmonia la millor rotació de la qual té l'error de to normalitzat més baix entre les teves mostres. Necessita com a mínim dues mostres cromàtiques."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Has mostrejat un cel blau a 210° i una paret taronja a 25°. A quina harmonia ja són més properes?",
+          "hint": "Comprova l'angle entre elles.",
+          "successMessage": "Correcte. Una diferència de 185° és una parella complementària gairebé perfecta; un petit ajust de la paret ho completa.",
+          "failureMessage": "Dos colors separats per uns 180° són complementaris. Els colors anàlegs se situen dins d'uns 60° l'un de l'altre.",
+          "options": [
+            {
+              "label": "Complementari"
+            },
+            {
+              "label": "Anàleg"
+            },
+            {
+              "label": "Triàdic"
+            }
+          ]
+        },
+        {
+          "scenario": "Una foto té tres mostres a 40°, 60° i 85°. Quina harmonia és aquesta?",
+          "hint": "Totes són veïnes a la roda.",
+          "successMessage": "Correcte. Els tons veïns dins d'uns 60° formen una harmonia anàloga.",
+          "failureMessage": "Els tons que estan tots a prop els uns dels altres són anàlegs — l'opció tranquil·la i unificada.",
+          "options": [
+            {
+              "label": "Complementari"
+            },
+            {
+              "label": "Anàleg"
+            },
+            {
+              "label": "Tetràdic"
+            }
+          ]
+        },
+        {
+          "scenario": "Vols una foto de carrer onírica i tranquil·la però mantenint-hi contrast. Quina harmonia hauries de triar?",
+          "hint": "Pensa en els dos veïns de la complementària en lloc de la complementària mateixa.",
+          "successMessage": "Sí. La complementària dividida manté la tensió sense la duresa d'una oposició directa.",
+          "failureMessage": "La complementària dividida és l'opció tranquil·la però amb contrast. La triàdica sol semblar més energètica o inquietant.",
+          "options": [
+            {
+              "label": "Complementari dividit"
+            },
+            {
+              "label": "Triàdic"
+            },
+            {
+              "label": "Anàleg"
+            }
+          ]
+        },
+        {
+          "scenario": "Una mostra mostra Petit ajust cap al rosa amb un delta de −15°. Què fas al panell HSL del Lightroom?",
+          "hint": "La paraula de direcció et diu cap a on empènyer, la magnitud et diu fins a quin punt.",
+          "successMessage": "Correcte. Mou el control lliscant To d'aquell color cap al rosa fins que la targeta mostri Alineat.",
+          "failureMessage": "Empeny el to en la direcció indicada (rosa) una quantitat petita; un canvi de 15° és un petit ajust, no un gran canvi.",
+          "options": [
+            {
+              "label": "Ajusta lleugerament el to cap al rosa"
+            },
+            {
+              "label": "Redueix la saturació"
+            },
+            {
+              "label": "Empeny el to cap al verd"
+            }
+          ]
+        },
+        {
+          "scenario": "Dues mostres comparteixen el mateix to, però una està bloquejada. Al voltant de quina gira l'harmonia?",
+          "hint": "Només una mostra pot ser la referència.",
+          "successMessage": "Correcte. La mostra bloquejada és la referència; l'altra es jutja en relació amb la plantilla construïda sobre ella.",
+          "failureMessage": "La mostra bloquejada sempre és la referència. Sense bloqueig, s'utilitza la rotació que millor s'ajusta.",
+          "options": [
+            {
+              "label": "La mostra bloquejada"
+            },
+            {
+              "label": "La primera mostra col·locada"
+            },
+            {
+              "label": "La mostra més saturada"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

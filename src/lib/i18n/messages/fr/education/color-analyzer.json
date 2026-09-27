@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "La plupart des photos contiennent déjà une relation de couleurs ; vous ne la voyez simplement pas encore. Déposez une photo, touchez les couleurs qui comptent, et le cercle chromatique montre comment elles se rapportent entre elles. Choisissez l'harmonie que vous voulez et l'outil vous indique dans quel sens pousser chaque couleur.",
+      "deeper": [
+        {
+          "heading": "La méthode en quatre étapes",
+          "text": "Intention (ce que le spectateur doit ressentir), Analyse (quelles couleurs sont réellement dans le cadre), Choix des couleurs (quelle harmonie correspond à ce ressenti), Transformation (déplacer les curseurs dans la direction indiquée par le cercle). La retouche vient en dernier. La plupart des frustrations en étalonnage colorimétrique viennent du fait de commencer par l'étape quatre."
+        },
+        {
+          "heading": "Lire le cercle",
+          "text": "Chaque échantillon est placé selon sa teinte (angle) et sa saturation (distance au centre). La vue Naturel affiche la saturation réelle, Teintes pures pousse chaque point vers le bord pour que les angles soient évidents, et Guide d'harmonie ajoute les positions cibles et les flèches pour l'harmonie choisie."
+        },
+        {
+          "heading": "Meilleure correspondance",
+          "text": "L'outil fait pivoter chaque modèle d'harmonie vers la position qui correspond le mieux à vos échantillons et mesure l'erreur de teinte moyenne, normalisée selon l'espacement des points du modèle afin que les harmonies à quatre points ne gagnent pas par défaut. Le gagnant reçoit le badge ; c'est à vous de choisir de l'utiliser."
+        },
+        {
+          "heading": "Verrous et ancres",
+          "text": "Verrouillez un échantillon pour en faire l'ancre : l'harmonie pivote autour de cette teinte et chaque autre couleur est jugée par rapport à elle. Utilisez-le pour la couleur que vous ne changerez pas, généralement la peau ou une couleur de marque. Sans verrou, l'outil choisit la rotation avec l'erreur totale la plus faible."
+        },
+        {
+          "heading": "Neutres",
+          "text": "Les gris, les presque-noirs et les presque-blancs n'ont pas de teinte fiable, ils se placent donc au centre et sont exclus de la correspondance. Ils comptent toujours pour l'ambiance, mais pousser leur teinte sur un curseur ajoute surtout une dominante colorée."
+        },
+        {
+          "heading": "Pourquoi HSL et non un cercle perceptuel",
+          "text": "Ce cercle utilise le modèle HSL, le même qu'Adobe Color et le panneau HSL de Lightroom, donc la direction que vous lisez ici est celle que vous pousserez là-bas. Il n'est pas perceptuellement uniforme : le jaune occupe une bande étroite et le bleu une large, donc un ajustement de 20° paraît plus important dans certaines zones que dans d'autres. Un cercle perceptuel serait plus honnête mais ne correspondrait pas aux outils de retouche."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Type d'harmonie",
+          "description": "La relation géométrique que vous visez : complémentaire, complémentaire divisée, analogue, triadique, tétradique, monochrome, ou vos propres cibles personnalisées."
+        },
+        {
+          "label": "Échantillons",
+          "description": "Les couleurs que vous avez choisi d'échantillonner. Échantillonnez ce qui compte pour l'image, pas ce qui est le plus grand. Cinq à six points racontent généralement toute l'histoire."
+        },
+        {
+          "label": "Ancre",
+          "description": "L'échantillon verrouillé autour duquel l'harmonie pivote. Sans verrou, la rotation la mieux ajustée est utilisée."
+        },
+        {
+          "label": "Ajustement",
+          "description": "La rotation de teinte signée d'un échantillon vers sa cible. Aligné signifie moins de 8°, un léger ajustement moins de 25°, tout le reste est un grand décalage."
+        }
+      ],
+      "tips": [
+        {
+          "text": "Échantillonnez les couleurs que vous allez réellement étalonner : le ciel, la peau, l'objet dominant, une ombre. Évitez les hautes lumières spéculaires et les ombres profondes ; elles se lisent comme neutres."
+        },
+        {
+          "text": "Complémentaire divisée est le choix calme et rêveur pour le voyage et la rue. Complémentaire est plus net et plus percutant. Triadique est délibérément un peu dérangeant."
+        },
+        {
+          "text": "Utilisez la sélection automatique pour commencer, puis déplacez ou supprimez des points. Elle trouve les groupes chromatiques dominants, qui ne sont souvent pas les couleurs qui comptent le plus pour vous."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Type d'harmonie",
+          "definition": "La relation cible entre les teintes. Complémentaire (opposée), Complémentaire divisée (opposée ± angle), Analogue (voisines), Triadique (120° d'écart), Tétradique (deux paires complémentaires), Monochrome (une teinte), Personnalisé (vos propres cibles)."
+        },
+        "Key Color": {
+          "term": "Couleur clé",
+          "definition": "Sans photo chargée, la couleur autour de laquelle l'harmonie est construite. Faites glisser sur le cercle ou utilisez les curseurs."
+        },
+        "Hue": {
+          "term": "Teinte",
+          "definition": "L'angle de couleur sur le cercle en degrés : 0° est rouge, 120° est vert, 240° est bleu."
+        },
+        "Saturation": {
+          "term": "Saturation",
+          "definition": "Intensité de la couleur de 0 % (gris) à 100 % (pleinement vive). Distance au centre du cercle."
+        },
+        "Lightness": {
+          "term": "Luminosité",
+          "definition": "Luminosité de 0 % (noir) à 100 % (blanc). À 50 %, vous voyez la couleur pure."
+        },
+        "Split Angle": {
+          "term": "Angle de division",
+          "definition": "À quelle distance les deux couleurs complémentaires divisées se situent du complément direct."
+        },
+        "Spread": {
+          "term": "Écart",
+          "definition": "À quelle distance les couleurs analogues se situent de la teinte d'ancrage."
+        },
+        "Lock": {
+          "term": "Verrouiller",
+          "definition": "Fait d'un échantillon l'ancre. L'harmonie pivote vers cette teinte et les autres échantillons sont jugés par rapport à elle. Un seul échantillon peut être verrouillé."
+        },
+        "Closest fit": {
+          "term": "Meilleure correspondance",
+          "definition": "L'harmonie dont la meilleure rotation a l'erreur de teinte normalisée la plus faible sur vos échantillons. Nécessite au moins deux échantillons chromatiques."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Vous avez échantillonné un ciel bleu à 210° et un mur orange à 25°. De quelle harmonie sont-ils déjà le plus proches ?",
+          "hint": "Vérifiez l'angle entre eux.",
+          "successMessage": "Exact. 185° d'écart, c'est une paire complémentaire presque parfaite ; un léger ajustement du mur suffit à la compléter.",
+          "failureMessage": "Deux couleurs séparées d'environ 180° sont complémentaires. Les couleurs analogues se situent à environ 60° l'une de l'autre.",
+          "options": [
+            {
+              "label": "Complémentaire"
+            },
+            {
+              "label": "Analogue"
+            },
+            {
+              "label": "Triadique"
+            }
+          ]
+        },
+        {
+          "scenario": "Une photo a trois échantillons à 40°, 60° et 85°. Quelle harmonie est-ce ?",
+          "hint": "Ce sont toutes des voisines sur le cercle.",
+          "successMessage": "Correct. Des teintes voisines à environ 60° forment une harmonie analogue.",
+          "failureMessage": "Des teintes toutes proches les unes des autres sont analogues, l'option calme et unifiée.",
+          "options": [
+            {
+              "label": "Complémentaire"
+            },
+            {
+              "label": "Analogue"
+            },
+            {
+              "label": "Tétradique"
+            }
+          ]
+        },
+        {
+          "scenario": "Vous voulez une photo de rue rêveuse et calme tout en gardant du contraste. Quelle harmonie choisir ?",
+          "hint": "Pensez aux deux voisines du complément plutôt qu'au complément lui-même.",
+          "successMessage": "Oui. Complémentaire divisée garde de la tension sans la dureté d'un opposé direct.",
+          "failureMessage": "Complémentaire divisée est l'option calme mais contrastée. Triadique tend à paraître énergique ou dérangeante.",
+          "options": [
+            {
+              "label": "Complémentaire divisée"
+            },
+            {
+              "label": "Triadique"
+            },
+            {
+              "label": "Analogue"
+            }
+          ]
+        },
+        {
+          "scenario": "Un échantillon indique « Léger ajustement vers le rose » avec un delta de −15°. Dans le panneau HSL de Lightroom, que faites-vous ?",
+          "hint": "Le mot de direction indique où pousser, la taille indique jusqu'où.",
+          "successMessage": "Exact. Déplacez le curseur Teinte de cette couleur vers le rose jusqu'à ce que la carte indique Aligné.",
+          "failureMessage": "Poussez la teinte dans la direction indiquée (rose) d'une petite quantité ; un changement de 15° est un léger ajustement, pas un grand décalage.",
+          "options": [
+            {
+              "label": "Déplacer légèrement la teinte vers le rose"
+            },
+            {
+              "label": "Désaturer"
+            },
+            {
+              "label": "Déplacer la teinte vers le vert"
+            }
+          ]
+        },
+        {
+          "scenario": "Deux échantillons partagent la même teinte mais l'un est verrouillé. Autour duquel l'harmonie pivote-t-elle ?",
+          "hint": "Un seul échantillon peut être l'ancre.",
+          "successMessage": "Correct. L'échantillon verrouillé est l'ancre ; l'autre est jugé par rapport au modèle construit sur celui-ci.",
+          "failureMessage": "L'échantillon verrouillé est toujours l'ancre. Sans verrou, la rotation la mieux ajustée est utilisée.",
+          "options": [
+            {
+              "label": "L'échantillon verrouillé"
+            },
+            {
+              "label": "Le premier échantillon placé"
+            },
+            {
+              "label": "L'échantillon le plus saturé"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

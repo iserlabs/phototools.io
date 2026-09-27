@@ -1,0 +1,187 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "Karamihan sa mga litrato ay may color relationship na — hindi mo lang ito nakikita agad. Mag-drop ng litrato, i-tap ang mga kulay na importante, at ipapakita ng wheel kung paano sila related. Piliin ang harmony na gusto mo at sasabihin sa iyo ng tool kung saang direction dapat itulak ang bawat kulay.",
+      "deeper": [
+        {
+          "heading": "Ang four-step method",
+          "text": "Intention (ano ang dapat maramdaman ng tumitingin), Analysis (anong mga kulay talaga ang nasa frame), Color Choice (aling harmony ang bagay sa feeling na iyon), Transformation (igalaw ang sliders papunta sa direction na ipinapakita ng wheel). Nasa huli ang editing. Karamihan sa frustration sa color grading ay nanggagaling sa pagsisimula agad sa step four."
+        },
+        {
+          "heading": "Pagbasa sa wheel",
+          "text": "Bawat sample ay naka-plot base sa hue (angle) at saturation (distance mula sa center). Ipinapakita ng Natural view ang totoong saturation, itinutulak ng Pure Hues ang bawat dot papunta sa gilid para malinaw ang mga angle, at nagdadagdag ang Harmony Guide ng target positions at arrows para sa napili mong harmony."
+        },
+        {
+          "heading": "Closest Fit",
+          "text": "Ina-rotate ng tool na ito ang bawat harmony template papunta sa position na pinaka-match sa mga sample mo, at sinusukat ang average hue error, na naka-normalize base sa slot spacing ng template para hindi automatic na mananalo ang four-slot harmonies. Nakukuha ng nanalo ang badge; ikaw ang bahalang gumamit nito o hindi."
+        },
+        {
+          "heading": "Lock at Anchor",
+          "text": "I-lock ang isang sample para gawing anchor ito: umiikot ang harmony sa paligid ng hue na iyon at ang lahat ng ibang kulay ay hinahatulan base rito. Gamitin ito sa kulay na hindi mo babaguhin, kadalasan ang skin o brand color. Kapag walang lock, awtomatikong pipiliin ng tool ang rotation na may pinakamaliit na total error."
+        },
+        {
+          "heading": "Mga Neutral",
+          "text": "Walang reliable na hue ang grays, malapit-itim, at malapit-puti, kaya naka-plot sila sa center at hindi kasama sa fit. Importante pa rin sila sa mood, pero ang paggalaw ng hue nila gamit ang slider ay kadalasang nagdadagdag lang ng color cast."
+        },
+        {
+          "heading": "Bakit HSL at hindi perceptual wheel",
+          "text": "Gumagamit ang wheel na ito ng HSL, ang parehong model ng Adobe Color at ng HSL panel ng Lightroom, kaya ang direction na binabasa mo dito ay ang parehong direction na itutulak mo doon. Hindi ito perceptually uniform: nasa manipis na band lang ang dilaw at malawak naman sa asul, kaya ang parehong 20° na tweak ay mukhang mas malaki sa ibang region kumpara sa iba. Mas honest siguro ang perceptual wheel, pero hindi ito magma-match sa mga editing tools."
+        }
+      ],
+      "keyFactors": [
+        {
+          "label": "Harmony Type",
+          "description": "Ang geometric relationship na tinatarget mo: complementary, split-complementary, analogous, triadic, tetradic, monochromatic, o ang sarili mong custom targets."
+        },
+        {
+          "label": "Mga Sample",
+          "description": "Ang mga kulay na pinili mong i-sample. I-sample ang mahalaga sa litrato, hindi ang pinakamalaki. Karaniwang lima hanggang anim na points na lang ang kaya nang magsabi ng buong kwento."
+        },
+        {
+          "label": "Anchor",
+          "description": "Ang naka-lock na sample kung saan umiikot ang harmony. Kapag walang lock, ginagamit ang best-fit rotation."
+        },
+        {
+          "label": "Nudge",
+          "description": "Ang signed hue rotation mula sa sample papunta sa target nito. Aligned kapag nasa loob ng 8°, slight nudge kapag nasa loob ng 25°, at big shift na kapag mas malaki pa."
+        }
+      ],
+      "tips": [
+        {
+          "text": "I-sample ang mga kulay na talagang gi-grade mo: langit, skin, dominant object, shadow. Laktawan ang specular highlights at deep shadows; nababasa sila bilang neutral."
+        },
+        {
+          "text": "Ang Split-complementary ang calm, dreamy na choice para sa travel at street work. Mas clean at punchy ang Complementary. Sadyang medyo unsettling ang Triadic."
+        },
+        {
+          "text": "Gamitin ang Auto-pick para makapagsimula, tapos igalaw o i-delete ang mga points. Naghahanap ito ng dominant chromatic clusters, na kadalasang hindi ang mga kulay na pinaka-importante sa iyo."
+        }
+      ],
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Harmony Type",
+          "definition": "Ang target na relationship sa pagitan ng mga hue. Complementary (kasalungat), Split Complementary (kasalungat ± angle), Analogous (magkatabi), Triadic (120° ang layo), Tetradic (dalawang complementary pair), Monochromatic (isang hue), Custom (sarili mong targets)."
+        },
+        "Key Color": {
+          "term": "Key Color",
+          "definition": "Kapag walang na-load na litrato, ito ang kulay kung saan naka-base ang harmony. I-drag ang wheel o gamitin ang sliders."
+        },
+        "Hue": {
+          "term": "Hue",
+          "definition": "Ang angle ng kulay sa wheel sa degrees: 0° ay red, 120° ay green, 240° ay blue."
+        },
+        "Saturation": {
+          "term": "Saturation",
+          "definition": "Intensity ng kulay mula 0% (gray) hanggang 100% (fully vivid). Distance mula sa center ng wheel."
+        },
+        "Lightness": {
+          "term": "Lightness",
+          "definition": "Brightness mula 0% (black) hanggang 100% (white). Sa 50% makikita mo ang pure color."
+        },
+        "Split Angle": {
+          "term": "Split Angle",
+          "definition": "Gaano kalayo ang dalawang split-complementary colors mula sa direct complement."
+        },
+        "Spread": {
+          "term": "Spread",
+          "definition": "Gaano kalayo ang analogous colors mula sa anchor hue."
+        },
+        "Lock": {
+          "term": "Lock",
+          "definition": "Ginagawang anchor ang isang sample. Umiikot ang harmony papunta sa hue na iyon at hinahatulan ang ibang samples base rito. Isang sample lang ang pwedeng ma-lock."
+        },
+        "Closest fit": {
+          "term": "Closest Fit",
+          "definition": "Ang harmony na may pinakamababang normalized hue error sa best rotation nito sa mga sample mo. Kailangan ng hindi bababa sa dalawang chromatic samples."
+        }
+      },
+      "challenges": [
+        {
+          "scenario": "Nag-sample ka ng blue sky sa 210° at orange wall sa 25°. Alin sa mga harmony ang pinakamalapit dito?",
+          "hint": "I-check ang angle sa pagitan nila.",
+          "successMessage": "Tama. Ang 185° na layo ay halos perfect complementary pair na; isang maliit na nudge sa wall ang magpapatapos nito.",
+          "failureMessage": "Dalawang kulay na mga 180° ang layo ay complementary. Nasa loob ng 60° ang layo ng mga analogous colors sa isa't isa.",
+          "options": [
+            {
+              "label": "Complementary"
+            },
+            {
+              "label": "Analogous"
+            },
+            {
+              "label": "Triadic"
+            }
+          ]
+        },
+        {
+          "scenario": "May tatlong sample ang isang litrato sa 40°, 60°, at 85°. Anong harmony ito?",
+          "hint": "Magkakatabi silang lahat sa wheel.",
+          "successMessage": "Tama. Ang mga hue na magkatabi sa loob ng 60° ay bumubuo ng analogous harmony.",
+          "failureMessage": "Ang mga hue na magkalapit ay lahat analogous, ang calm at unified na choice.",
+          "options": [
+            {
+              "label": "Complementary"
+            },
+            {
+              "label": "Analogous"
+            },
+            {
+              "label": "Tetradic"
+            }
+          ]
+        },
+        {
+          "scenario": "Gusto mo ng dreamy, calm na street photo pero may konting contrast pa rin. Anong harmony ang dapat piliin?",
+          "hint": "Isipin ang dalawang katabi ng complement, hindi ang complement mismo.",
+          "successMessage": "Tama. Napapanatili ng Split-complementary ang tension nang walang harshness ng direktang kasalungat.",
+          "failureMessage": "Ang Split complementary ang calm-but-contrasty na choice. Kadalasang energetic o medyo unsettling ang Triadic.",
+          "options": [
+            {
+              "label": "Split Complementary"
+            },
+            {
+              "label": "Triadic"
+            },
+            {
+              "label": "Analogous"
+            }
+          ]
+        },
+        {
+          "scenario": "May sample na nagsasabing 'Slight nudge toward pink' na may delta na −15°. Sa HSL panel ng Lightroom, ano ang gagawin mo?",
+          "hint": "Sinasabi ng direction word kung saan itutulak, at sinasabi ng size kung gaano kalayo.",
+          "successMessage": "Tama. Igalaw ang Hue slider ng kulay na iyon papunta sa pink hanggang sabihin ng card na 'Aligned'.",
+          "failureMessage": "Itulak ang hue papunta sa direction na nakasaad (pink) nang kaunti lang; slight nudge ang 15° na change, hindi big shift.",
+          "options": [
+            {
+              "label": "Bahagyang itulak ang hue papunta sa pink"
+            },
+            {
+              "label": "Bawasan ang saturation"
+            },
+            {
+              "label": "Itulak ang hue papunta sa green"
+            }
+          ]
+        },
+        {
+          "scenario": "Magkapareho ang hue ng dalawang sample pero isa lang ang naka-lock. Saan umiikot ang harmony?",
+          "hint": "Isang sample lang ang pwedeng maging anchor.",
+          "successMessage": "Tama. Ang naka-lock na sample ang anchor; ang isa ay hinahatulan base sa template na binuo dito.",
+          "failureMessage": "Ang naka-lock na sample ay palaging anchor. Kapag walang lock, ginagamit ang best-fit rotation.",
+          "options": [
+            {
+              "label": "Ang naka-lock na sample"
+            },
+            {
+              "label": "Ang unang inilagay na sample"
+            },
+            {
+              "label": "Ang pinaka-saturated na sample"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
