@@ -1,24 +1,81 @@
 {
   "toolUI": {
     "color-analyzer": {
-      "colorScheme": "Väriteema",
-      "complementary": "Komplementti",
+      "colorScheme": "Väriharmonia",
+      "complementary": "Komplementaarinen",
+      "splitComplementary": "Jaettu komplementaarinen",
       "analogous": "Analoginen",
       "triadic": "Triadinen",
-      "splitComplementary": "Jaettu komplementti",
       "tetradic": "Tetradinen",
+      "monochromatic": "Monokromaattinen",
+      "custom": "Mukautettu",
+      "closestFit": "Lähin osuma",
+      "closestSentence": "Kuvasi on lähimpänä harmoniaa {harmony} (keskipoikkeama {degrees}°). Napauta käyttääksesi sitä.",
       "keyColor": "Avainväri",
       "hue": "Sävy:",
-      "saturation": "Värikylläisyys:",
+      "saturation": "Kylläisyys:",
       "lightness": "Vaaleus:",
       "splitAngle": "Jakokulma:",
-      "spread": "Levitys:",
+      "spread": "Leviäminen:",
       "rectangleWidth": "Suorakulmion leveys:",
       "square": "(neliö)",
-      "pickFromPhoto": "Poimi kuvasta",
-      "dropPhotoPrompt": "Pudota kuva tähän tai selaa klikkaamalla",
-      "keyColorLabel": "Avainväri — kopioi hex klikkaamalla",
-      "clickToCopyHex": "Kopioi hex klikkaamalla",
+      "samples": "Näytteet",
+      "lock": "Lukitse tämä väri ankkuriksi",
+      "unlock": "Poista lukitus",
+      "removeSample": "Poista näyte",
+      "labelPlaceholder": "Nimike",
+      "neutralNotScored": "Neutraali, ei pisteytetä",
+      "suggested": "Ehdotettu",
+      "autoPick": "Valitse 5 automaattisesti",
+      "changePhoto": "Vaihda kuva",
+      "capReached": "Enintään {cap} näytettä. Poista yksi lisätäksesi toisen.",
+      "markerLabel": "Näyte {n}: {label}",
+      "dropPhotoPrompt": "Pudota kuva tähän tai napsauta selataksesi. Se pysyy selaimessasi.",
+      "viewNatural": "Luonnollinen",
+      "viewPure": "Puhtaat sävyt",
+      "viewGuide": "Harmoniaopas",
+      "viewHint": {
+        "key": "Vedä pistettä asettaaksesi avainvärin. Pudota sen sijaan kuva analysoidaksesi todellisia värejä.",
+        "natural": "Näyttää värit niiden todellisella kylläisyydellä. Vaihda välilehteä lukeaksesi harmonian.",
+        "pure": "Sävyt työnnetään reunaan, jotta värien väliset kulmat on helppo lukea.",
+        "guide": "Katkoviivamuodot ovat tavoiteasennot. Nuolet näyttävät, mihin suuntaan kunkin värin tulisi siirtyä."
+      },
+      "nudge": {
+        "aligned": "Kohdallaan",
+        "slight": "Pieni siirtymä väriin {color}",
+        "big": "Suuri siirtymä väriin {color}"
+      },
+      "names": {
+        "red": "Punainen",
+        "vermilion": "Sinooperinpunainen",
+        "orange": "Oranssi",
+        "amber": "Meripihka",
+        "yellow": "Keltainen",
+        "lime": "Limetti",
+        "chartreuse": "Chartreuse",
+        "leaf-green": "Lehdenvihreä",
+        "green": "Vihreä",
+        "jade": "Jade",
+        "spring-green": "Kevätvihreä",
+        "mint": "Minttu",
+        "cyan": "Syaani",
+        "sky-blue": "Taivaansininen",
+        "azure": "Atsuurinsininen",
+        "cobalt": "Koboltinsininen",
+        "blue": "Sininen",
+        "indigo": "Indigo",
+        "violet": "Violetti",
+        "purple": "Purppura",
+        "magenta": "Magenta",
+        "fuchsia": "Fuksia",
+        "pink": "Pinkki",
+        "rose": "Vanharoosa",
+        "gray": "Harmaa",
+        "black": "Musta",
+        "white": "Valkoinen"
+      },
+      "keyColorLabel": "Avainväri — napsauta kopioidaksesi hex-koodin",
+      "clickToCopyHex": "Napsauta kopioidaksesi hex-koodin",
       "copiedExcl": "Kopioitu!",
       "copyColors": "Kopioi värit",
       "hexFormat": "Hex",
@@ -27,43 +84,55 @@
       "copyHexCodes": "Kopioi hex-koodit",
       "copyCssVariables": "Kopioi CSS-muuttujat",
       "copyRgbValues": "Kopioi RGB-arvot",
-      "pickColorFromPhoto": "Poimi väri kuvasta",
-      "close": "Sulje",
-      "dropPhotoOrBrowse": "Pudota kuva tähän tai selaa klikkaamalla",
-      "tapToChoose": "Valitse kuva napauttamalla",
-      "tapToSample": "Napauta kuvaa mistä kohtaa tahansa poimiaksesi värin",
-      "changePhoto": "Vaihda kuva",
-      "privacyNote": "Kuvasi pysyy selaimessasi — mitään ei lähetetä palvelimelle",
       "suggestions": {
         "complementary": {
-          "warm": "Hyvä: lämpimät auringonlaskumuotokuvat viileän varjokontrastin kanssa",
-          "cool": "Hyvä: tunnelmalliset siniseen hetkeen sijoittuvat kuvat lämpimällä korostusvalolla",
-          "default": "Hyvä: voimakaskontrastiset sommitelmat, joissa on vahva visuaalinen jännite"
+          "warm": "Sopii hyvin: lämpimiin auringonlaskumuotokuviin, joissa on viileä varjokontrasti",
+          "cool": "Sopii hyvin: tunnelmallisiin sinisen hetken kuviin, joissa on lämmin korostusvalo",
+          "default": "Sopii hyvin: kontrastisiin sommitelmiin, joissa on vahva visuaalinen jännite"
+        },
+        "splitComplementary": {
+          "warm": "Sopii hyvin: uneliaisiin, rauhallisiin tunnelmiin, joissa säilyy kontrasti ilman kovuutta",
+          "cool": "Sopii hyvin: viileisiin katu- ja matkakuviin, joissa on kaksi lämmintä korostusta",
+          "default": "Sopii hyvin: tasapainoisiin kuviin, joissa on vaihtelua eikä suoraa vastakohtaa"
         },
         "analogous": {
-          "warm": "Hyvä: kultaisen hetken maisemat yhtenäisillä lämpimillä sävyillä",
-          "cool": "Hyvä: rauhalliset vesinäkymät ja hämäräkuvaus",
-          "default": "Hyvä: sopusointuiset luontokuvat pehmeillä värisiirtymillä"
+          "warm": "Sopii hyvin: kultaisen hetken maisemiin, joissa on yhtenäiset lämpimät sävyt",
+          "cool": "Sopii hyvin: rauhallisiin vesimaisemiin ja hämärän valokuvaukseen",
+          "default": "Sopii hyvin: harmonisiin luontokuviin, joissa on pehmeät värisiirtymät"
         },
-        "triadic": "Käytä: eloisiin editoriaalikuviin ja rohkeisiin luoviin muotokuviin",
-        "splitComplementary": {
-          "warm": "Käytä: kontrastoiviin vaatetuksiin luonnontaustaa vasten",
-          "default": "Käytä: tasapainoiseen tuotekuvaukseen, jossa on visuaalista vaihtelua"
+        "triadic": {
+          "warm": "Sopii hyvin: rohkeaan editoriaaliseen työhön punaisen, keltaisen ja sinisen energialla",
+          "cool": "Sopii hyvin: eläviin, hieman levottomiin kuviin, joissa on kolme vahvaa väriä",
+          "default": "Sopii hyvin: eläväiseen editoriaaliseen työhön ja rohkeisiin luoviin muotokuviin"
         },
-        "tetradic": "Käytä: rikkaisiin editoriaalisommitelmiin ja useamman kohteen kuviin"
+        "tetradic": {
+          "warm": "Sopii hyvin: rikkaisiin, kerroksellisiin kuviin, joissa on kaksi komplementaarista paria",
+          "cool": "Sopii hyvin: monimutkaisiin kaupunkimaisemiin, joissa on viileitä ja lämpimiä valonlähteitä",
+          "default": "Sopii hyvin: rikkaisiin editoriaalisiin asetteluihin ja moniaiheisiin sommitelmiin"
+        },
+        "monochromatic": {
+          "warm": "Sopii hyvin: rauhallisiin, yhtenäisiin lämpimiin sävyihin yhdestä värisävystä",
+          "cool": "Sopii hyvin: rauhallisiin, minimalistisiin viileisiin kuviin, jotka rakentuvat yhdelle värisävylle",
+          "default": "Sopii hyvin: minimalistisiin, yhtenäisiin kuviin, jotka nojaavat valoon ja varjoon"
+        },
+        "custom": {
+          "warm": "Vedä katkoviivakohteita suunnitellaksesi omanlaisesi suhteen värien välille",
+          "cool": "Vedä katkoviivakohteita suunnitellaksesi omanlaisesi suhteen värien välille",
+          "default": "Vedä katkoviivakohteita suunnitellaksesi omanlaisesi suhteen värien välille"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
           "question": "Mitä väriharmonia tarkoittaa valokuvauksessa?",
-          "answer": "Väriharmonia tarkoittaa esteettisesti miellyttäviä väriyhdistelmiä, jotka perustuvat värien sijaintiin väripyörällä. Sopusointuiset värit tuovat kuvaan visuaalista tasapainoa ja voivat välittää tiettyä tunnelmaa."
+          "answer": "Väriharmonia on kuvan sävyjen välinen suhde, joka vaikuttaa tarkoitukselliselta: kaksi vastakkaista väriä (komplementaarinen), naapurit värikehällä (analoginen) tai kolme tasaisin välein sijoitettua (triadinen). Kuvat harvoin lähtevät liikkeelle puhtaasta harmoniasta, mutta ne ovat yleensä vain pienen siirtymän päässä siitä."
         },
         "complementary-vs-analogous": {
-          "question": "Mikä ero on komplementti- ja analogisilla väreillä?",
-          "answer": "Komplementtivärit ovat väripyörän vastakkaisilla puolilla (esim. sininen ja oranssi) ja tuottavat voimakkaan kontrastin. Analogiset värit ovat vierekkäin (esim. sininen, sinivihreä ja vihreä) ja luovat sopusointuisemman, yhtenäisen tunnelman."
+          "question": "Miten luen kuvassani jo olevan harmonian?",
+          "answer": "Ota näytteitä muutamasta tärkeästä kohdasta (taivas, iho, se yksi punainen ovi) ja katso, mihin ne osuvat kehällä. Kaksi suunnilleen vastakkaista pistettä muodostavat komplementaarisen parin; noin 60°:n sisällä oleva ryhmä on analoginen. Merkki „Lähin osuma” tekee tämän vertailun puolestasi kaikkien kuuden harmonian kesken."
         },
         "how-to-use-color-schemes-photography": {
-          "question": "Miten käytän väripaletteja valokuvauksessa?",
-          "answer": "Suunnittele kuvaus paletin ympärille — valitse vaatetus, kuvauspaikka ja rekvisiitta niin, että ne sopivat palettiin. Korosta palettia jälkikäsittelyssä värisävytyksen avulla. Väripaletit auttavat luomaan yhtenäisen visuaalisen ilmeen koko kuvasarjaan."
+          "question": "Miten käytän ehdotettuja värejä Lightroomissa tai Photoshopissa?",
+          "answer": "Jokainen näyte näyttää suunnan (kohti pinkkiä, kohti sinivihreää) ja ehdotetun hex-arvon samalla kylläisyydellä ja vaaleudella. Työnnä Lightroomin HSL-paneelissa tai Point Colorissa, tai Photoshopin Sävy/Kylläisyys-työkalussa kyseisen värin sävyä näytettyyn suuntaan, kunnes se osuu lähelle ehdotettua arvoa. Tee ensin suurimmat siirtymät ja lopeta, kun nuoli näyttää Kohdallaan."
         }
       }
     }

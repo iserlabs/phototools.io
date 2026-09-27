@@ -1,70 +1,70 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "Kleurharmonie gaat over het kiezen van kleuren die goed bij elkaar passen. Net als muzikale akkoorden creëren bepaalde kleurcombinaties aangename visuele relaties. Fotografen gebruiken kleurharmonie om garderobe, setontwerp en zelfs de timing van buitenopnames te plannen om het juiste palet uit de natuur te halen.",
-      "deeper": {
-        "0": {
-          "heading": "Het kleurenwiel",
-          "text": "De theorie van kleurharmonie is geworteld in het kleurenwiel, dat kleurtonen in een cirkel rangschikt op basis van hun golflengteverhoudingen. Het HSL-model (Hue, Saturation, Lightness) is direct gekoppeld aan het wiel: tint is de hoek (0–360°), verzadiging is de afstand tot het midden, en lichtheid bepaalt de helderheid. In fotografie verschijnen deze relaties van nature — het gouden uur produceert analoge warme tinten, terwijl een rode schuur tegen groene velden complementair is."
+      "beginner": "De meeste foto's bevatten al een kleurrelatie; je kunt hem alleen nog niet zien. Sleep een foto hierheen, tik op de kleuren die ertoe doen, en het wiel toont hoe ze zich tot elkaar verhouden. Kies de harmonie die je wilt en de tool vertelt je welke kant je elke kleur op moet duwen.",
+      "deeper": [
+        {
+          "heading": "De vierstappenmethode",
+          "text": "Intentie (wat moet de kijker voelen), Analyse (welke kleuren zitten er echt in het beeld), Kleurkeuze (welke harmonie past bij dat gevoel), Transformatie (de schuifregelaars in de richting bewegen die het wiel toont). Bewerken komt als laatste. De meeste frustratie met color grading komt doordat je bij stap vier begint."
         },
-        "1": {
-          "heading": "Complementair",
-          "text": "Twee kleuren die recht tegenover elkaar op het wiel staan (180° uit elkaar), zoals blauw en oranje of rood en groen. Dit creëert maximaal contrast en visuele energie. Geweldig om een onderwerp te laten opvallen tegen een achtergrond — denk aan portretten tijdens het gouden uur waar warme huidtinten contrasteren met een koele blauwe hemel."
+        {
+          "heading": "Het wiel aflezen",
+          "text": "Elk staal wordt uitgezet op tint (hoek) en verzadiging (afstand tot het midden). De weergave Natuurlijk toont de werkelijke verzadiging, Pure tinten duwt elk punt naar de rand zodat de hoeken duidelijk zijn, en Harmoniegids voegt de doelposities en pijlen toe voor de gekozen harmonie."
         },
-        "2": {
-          "heading": "Analoog",
-          "text": "Drie kleuren die buren zijn op het wiel, doorgaans binnen een spreiding van 30–60°. Ze produceren vloeiende, samenhangende paletten met laag contrast. Ideaal voor landschappen en stemmingsfotografie — herfstkleuren vormen een natuurlijk analoog palet van rood, oranje en geel."
+        {
+          "heading": "Beste overeenkomst",
+          "text": "De tool draait elke harmoniesjabloon naar de positie die het beste bij je stalen past en meet de gemiddelde tintfout, genormaliseerd naar de spreiding van de sjabloonposities zodat harmonieën met vier posities niet standaard winnen. De winnaar krijgt het label; jij kiest of je hem gebruikt."
         },
-        "3": {
-          "heading": "Triadisch",
-          "text": "Drie kleuren op gelijke afstand van 120° op het wiel, zoals rood, geel en blauw. Triadische schema's voelen evenwichtig en levendig aan zonder de spanning van complementair contrast. Gebruik één dominante kleur en de andere twee als accenten voor het sterkste resultaat."
+        {
+          "heading": "Vergrendelen en ankers",
+          "text": "Vergrendel een staal om er het anker van te maken: de harmonie draait rond die tint en elke andere kleur wordt daaraan afgemeten. Gebruik dit voor de kleur die je niet gaat veranderen, meestal huid of een merkkleur. Zonder vergrendeling kiest de tool de rotatie met de kleinste totale fout."
         },
-        "4": {
-          "heading": "Gesplitst complementair",
-          "text": "Een variatie op complementair waarbij de twee buren van de tegenovergestelde kleur worden gebruikt in plaats van de directe tegenpool. Dit behoudt het hoge contrast van complementair maar vermindert de visuele spanning, waardoor het veelzijdiger en vergevingsgezinder is. Een populaire keuze voor gestileerde portretsessies."
+        {
+          "heading": "Neutralen",
+          "text": "Grijstinten, bijna-zwart en bijna-wit hebben geen betrouwbare tint, dus ze komen in het midden terecht en blijven buiten de vergelijking. Ze tellen nog wel mee voor de sfeer, maar het verschuiven van hun tint met een schuifregelaar voegt vooral een kleurzweem toe."
         },
-        "5": {
-          "heading": "Tetradisch (dubbel complementair)",
-          "text": "Vier kleuren die een rechthoek vormen op het wiel — in feite twee complementaire paren. Dit biedt het rijkste, meest complexe palet maar vereist zorgvuldige balans. Laat één kleur domineren en gebruik de andere als ondersteunende accenten om een chaotische uitstraling te voorkomen."
+        {
+          "heading": "Waarom HSL en geen perceptueel wiel",
+          "text": "Dit wiel gebruikt HSL, hetzelfde model als Adobe Color en het HSL-paneel van Lightroom, dus de richting die je hier afleest is de richting die je daar duwt. Het is niet perceptueel uniform: geel neemt een smalle band in en blauw een brede, dus een verschuiving van 20° lijkt in sommige gebieden groter dan in andere. Een perceptueel wiel zou eerlijker zijn, maar zou niet overeenkomen met de bewerkingstools."
         }
-      },
-      "keyFactors": {
-        "0": {
+      ],
+      "keyFactors": [
+        {
           "label": "Harmonietype",
-          "description": "De geometrische relatie tussen kleuren op het wiel: complementair, analoog, triadisch, gesplitst complementair of tetradisch."
+          "description": "De geometrische relatie waar je naar streeft: complementair, gesplitst complementair, analoog, triadisch, tetradisch, monochroom, of je eigen aangepaste doelen."
         },
-        "1": {
-          "label": "Tint",
-          "description": "De basiskleurtoonhoek op het wiel (0-360 graden). Dit is het uitgangspunt voor alle harmonieberekeningen."
+        {
+          "label": "Stalen",
+          "description": "Welke kleuren je hebt gekozen om te bemonsteren. Bemonster wat ertoe doet voor het beeld, niet wat het grootst is. Vijf tot zes punten vertellen meestal het hele verhaal."
         },
-        "2": {
-          "label": "Verzadiging",
-          "description": "Hoe levendig of gedempt de kleuren zijn. Lagere verzadiging produceert pasteltinten en aardetinten; hogere verzadiging geeft gedurfde, levendige paletten."
+        {
+          "label": "Anker",
+          "description": "Het vergrendelde staal waar de harmonie omheen draait. Zonder vergrendeling wordt de best passende rotatie gebruikt."
         },
-        "3": {
-          "label": "Lichtheid",
-          "description": "Bepaalt de helderheid. Het aanpassen van lichtheid kan dezelfde tint er compleet anders laten uitzien — donker marineblauw versus hemelsblauw zijn dezelfde tint bij verschillende lichtheid."
+        {
+          "label": "Verschuiving",
+          "description": "De ondertekende tintrotatie van een staal naar zijn doel. Uitgelijnd is binnen 8°, een kleine verschuiving binnen 25°, alles daarboven is een grote verschuiving."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "Kies voor portretsessies een complementair of gesplitst complementair palet, en laat je onderwerp de hoofdkleur dragen terwijl de achtergrond de contrasterende tint biedt. Blauw/oranje (portretten bij het gouden uur) is een klassiek voorbeeld."
+      ],
+      "tips": [
+        {
+          "text": "Bemonster de kleuren die je echt gaat gradeeren: lucht, huid, het dominante object, een schaduw. Sla spiegelende hooglichten en diepe schaduwen over; die lezen als neutraal."
         },
-        "1": {
-          "text": "Gebruik analoge harmonie voor landschappen — de natuur werkt al in analoge paletten. Stem je garderobe-advies of rekwisietkeuzes af op de dominante natuurlijke tinten."
+        {
+          "text": "Gesplitst complementair is de rustige, dromerige keuze voor reis- en straatwerk. Complementair is strakker en pittiger. Triadisch voelt bewust een beetje onrustig aan."
         },
-        "2": {
-          "text": "Verlaag de verzadiging naar 30-50% om te bekijken hoe kleuren eruitzien in een meer gedempte, redactionele stijl. Hoge verzadiging werkt voor commercieel en mode, maar lagere verzadiging voelt vaak verfijnder aan."
+        {
+          "text": "Gebruik automatisch kiezen om te beginnen, verplaats of verwijder daarna punten. Het vindt de dominante chromatische clusters, wat vaak niet de kleuren zijn waar het je het meest om gaat."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
           "term": "Harmonietype",
-          "definition": "Het kleurrelatiepatroon: Complementair (tegenover), Analoog (buren), Triadisch (driehoek), Gesplitst Complementair (verschoven tegenover), of Tetradisch (vierhoek-rechthoek)."
+          "definition": "De doelrelatie tussen tinten. Complementair (tegenover elkaar), Gesplitst complementair (tegenover ± hoek), Analoog (buren), Triadisch (120° uit elkaar), Tetradisch (twee complementaire paren), Monochroom (één tint), Aangepast (je eigen doelen)."
         },
         "Key Color": {
-          "term": "Hoofdkleur",
-          "definition": "De dominante kleur in je palet. Alle andere harmoniekleuren worden berekend ten opzichte van deze uitgangstint."
+          "term": "Sleutelkleur",
+          "definition": "Zonder geladen foto de kleur waar de harmonie omheen wordt opgebouwd. Sleep op het wiel of gebruik de schuifregelaars."
         },
         "Hue": {
           "term": "Tint",
@@ -72,108 +72,116 @@
         },
         "Saturation": {
           "term": "Verzadiging",
-          "definition": "Kleurintensiteit van 0% (grijs) tot 100% (volledig levendig). Bepaalt hoe gedurfd of gedempt het gehele palet eruitziet."
+          "definition": "Kleurintensiteit van 0% (grijs) tot 100% (volledig levendig). Afstand tot het midden van het wiel."
         },
         "Lightness": {
           "term": "Lichtheid",
-          "definition": "Helderheid van 0% (zwart) tot 100% (wit). Bij 50% zie je de pure kleur; eronder is donkerder, erboven is lichter."
+          "definition": "Helderheid van 0% (zwart) tot 100% (wit). Bij 50% zie je de zuivere kleur."
         },
         "Split Angle": {
-          "term": "Splithoek",
-          "definition": "Hoe ver de twee gesplitst-complementaire kleuren van de directe tegenpool af staan. Bredere hoeken geven meer contrast."
+          "term": "Splitshoek",
+          "definition": "Hoe ver de twee gesplitst-complementaire kleuren van het directe complement af liggen."
         },
         "Spread": {
           "term": "Spreiding",
-          "definition": "Hoe ver de analoge kleuren van de hoofdtint af staan. Smalle spreiding geeft subtiele variatie; brede spreiding verhoogt de diversiteit."
+          "definition": "Hoe ver de analoge kleuren van de ankertint af liggen."
+        },
+        "Lock": {
+          "term": "Vergrendelen",
+          "definition": "Maakt een staal het anker. De harmonie draait naar die tint en andere stalen worden daaraan afgemeten. Er kan maar één staal vergrendeld zijn."
+        },
+        "Closest fit": {
+          "term": "Beste overeenkomst",
+          "definition": "De harmonie waarvan de beste rotatie de laagste genormaliseerde tintfout heeft over je stalen. Vereist minstens twee chromatische stalen."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Je wilt maximaal contrast tussen twee kleuren voor een gewaagd grafisch portret. Welk harmonietype geeft je de meeste visuele spanning?",
-          "hint": "Kleuren die recht tegenover elkaar op het wiel staan, creëren het sterkste contrast.",
-          "successMessage": "Correct! Complementaire kleuren staan 180 graden uit elkaar en produceren het hoogste contrast — perfect voor opvallende, pakkende composities.",
-          "failureMessage": "Complementaire harmonie plaatst kleuren recht tegenover elkaar op het wiel, wat maximaal visueel contrast creëert.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "Je hebt een blauwe lucht bemonsterd op 210° en een oranje muur op 25°. Welke harmonie ligt daar al het dichtst bij?",
+          "hint": "Controleer de hoek ertussen.",
+          "successMessage": "Klopt. 185° verschil is een bijna perfect complementair paar; een kleine verschuiving van de muur maakt het af.",
+          "failureMessage": "Twee kleuren die ongeveer 180° uit elkaar liggen zijn complementair. Analoge kleuren liggen binnen ongeveer 60° van elkaar.",
+          "options": [
+            {
               "label": "Complementair"
             },
-            "1": {
+            {
               "label": "Analoog"
             },
-            "2": {
+            {
               "label": "Triadisch"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Je plant een shoot tijdens het gouden uur en wilt warme, samenhangende tinten. Welk harmonietype houdt kleuren dicht bij elkaar op het wiel?",
-          "hint": "Dit type gebruikt naburige tinten voor een vloeiend, samenhangend gevoel.",
-          "successMessage": "Juist! Analoge harmonie gebruikt aangrenzende kleuren, wat je een warm, samenhangend palet geeft dat perfect is voor het gouden uur.",
-          "failureMessage": "Analoge harmonie houdt alle kleuren als buren op het wiel — ideaal voor samenhangende warme of koele paletten.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Een foto heeft drie stalen op 40°, 60° en 85°. Welke harmonie is dit?",
+          "hint": "Ze zijn allemaal buren op het wiel.",
+          "successMessage": "Klopt. Aangrenzende tinten binnen ongeveer 60° vormen een analoge harmonie.",
+          "failureMessage": "Tinten die allemaal dicht bij elkaar liggen zijn analoog, de rustige en eenduidige optie.",
+          "options": [
+            {
               "label": "Complementair"
             },
-            "1": {
+            {
               "label": "Analoog"
             },
-            "2": {
+            {
               "label": "Tetradisch"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "Een klant wilt een portret met contrast maar niet zo intens als puur complementair. Welk harmonietype verzacht de tegenstelling terwijl het visuele interesse behoudt?",
-          "hint": "Dit type gebruikt twee kleuren nabij het complement in plaats van de directe tegenpool.",
-          "successMessage": "Uitstekend! Gesplitst complementair behoudt het contrast van complementair maar splitst de tegenovergestelde kleur in twee flankerende tinten, wat een minder schril maar nog steeds dynamisch palet oplevert.",
-          "failureMessage": "Gesplitst complementair is het antwoord — het vervangt de enkele tegenovergestelde kleur door twee buren van die tegenpool, waardoor het contrast wordt verzacht terwijl visuele energie behouden blijft.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Je wilt een dromerige, rustige straatfoto maar toch wat contrast behouden. Welke harmonie moet je kiezen?",
+          "hint": "Denk aan de twee buren van het complement in plaats van het complement zelf.",
+          "successMessage": "Ja. Gesplitst complementair houdt spanning zonder de hardheid van een direct tegengestelde kleur.",
+          "failureMessage": "Gesplitst complementair is de rustige maar contrastrijke optie. Triadisch voelt eerder energiek of onrustig aan.",
+          "options": [
+            {
               "label": "Gesplitst complementair"
             },
-            "1": {
+            {
               "label": "Triadisch"
             },
-            "2": {
+            {
               "label": "Analoog"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "Je stelt de hoofdkleur in op oranje (tint ~30 graden) met complementaire harmonie. Welke kleur wordt het complement?",
-          "hint": "Complementair betekent 180 graden tegenover op het wiel.",
-          "successMessage": "Correct! 30° + 180° = 210°, wat in het blauwe bereik valt. Oranje en blauw is een van de meest geliefde complementaire paren in fotografie.",
-          "failureMessage": "180° optellen bij oranje (30°) geeft 210°, wat blauw is. Het oranje-blauwe complementaire paar is een fotografie-klassieker.",
-          "options": {
-            "0": {
-              "label": "Blauw (~210°)"
+        {
+          "scenario": "Een staal toont Kleine verschuiving richting roze met een delta van −15°. Wat doe je in het HSL-paneel van Lightroom?",
+          "hint": "Het richtingswoord vertelt waarheen je moet duwen, de grootte vertelt hoever.",
+          "successMessage": "Klopt. Verplaats de Tint-schuifregelaar van die kleur richting roze totdat de kaart Uitgelijnd toont.",
+          "failureMessage": "Duw de tint een klein stukje in de aangegeven richting (roze); een verandering van 15° is een kleine verschuiving, geen grote.",
+          "options": [
+            {
+              "label": "Tint licht verschuiven richting roze"
             },
-            "1": {
-              "label": "Groen (~150°)"
+            {
+              "label": "Kleur ontzadigen"
             },
-            "2": {
-              "label": "Rood (~0°)"
+            {
+              "label": "Tint verschuiven richting groen"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Je bent art director van een mode-editorial en hebt een vierkleuren-palet nodig dat zowel warme als koele tinten biedt met hoge visuele rijkdom. Welk harmonietype geeft je vier kleuren, en wat is de belangrijkste uitdaging bij het gebruik ervan?",
-          "hint": "De vierkleuren-harmonie vormt een rechthoek op het wiel.",
-          "successMessage": "Juist! Tetradische harmonie geeft vier kleuren die een rechthoek op het wiel vormen. De belangrijkste uitdaging is balans — met vier uitgesproken tinten moet er één domineren terwijl de andere als accent dienen. Zonder hiërarchie voelt het beeld chaotisch aan.",
-          "failureMessage": "Tetradisch (dubbel complementair) biedt vier kleuren in een rechthoekige rangschikking. De uitdaging is dat vier sterke tinten om aandacht strijden — je moet één dominante kleur aanwijzen en de andere als accenten gebruiken.",
-          "options": {
-            "0": {
-              "label": "Tetradisch — de uitdaging is het behouden van visuele hiërarchie tussen vier tinten"
+        {
+          "scenario": "Twee stalen delen dezelfde tint, maar één is vergrendeld. Rond welke draait de harmonie?",
+          "hint": "Er kan maar één staal het anker zijn.",
+          "successMessage": "Klopt. Het vergrendelde staal is het anker; het andere wordt beoordeeld aan het sjabloon dat daarop is gebouwd.",
+          "failureMessage": "Het vergrendelde staal is altijd het anker. Zonder vergrendeling wordt de best passende rotatie gebruikt.",
+          "options": [
+            {
+              "label": "Het vergrendelde staal"
             },
-            "1": {
-              "label": "Triadisch — de uitdaging is te weinig kleuren"
+            {
+              "label": "Het eerst geplaatste staal"
             },
-            "2": {
-              "label": "Analoog — de uitdaging is gebrek aan contrast"
+            {
+              "label": "Het meest verzadigde staal"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

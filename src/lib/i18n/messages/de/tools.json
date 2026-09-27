@@ -85,8 +85,8 @@
       "description": "Spickzettel mit Kameraeinstellungen für gängige Aufnahmesituationen — zum Herunterladen und Ausdrucken"
     },
     "color-analyzer": {
-      "name": "Farbschema-Generator",
-      "description": "Erstelle Farbpaletten für Fotoshootings"
+      "name": "Farbanalysator",
+      "description": "Probiere die Farben in einem Foto, lies die Harmonie ab und sieh, in welche Richtung du jede schieben solltest"
     }
   }
 }

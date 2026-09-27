@@ -1,179 +1,187 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "Färgharmoni handlar om att välja färger som fungerar tillsammans. Precis som musikaliska ackord skapar vissa färgkombinationer tilltalande visuella relationer. Fotografer använder färgharmoni för att planera kläder, rekvisita och till och med tidpunkten för utomhustagningar, så att naturen själv bidrar med rätt palett.",
-      "deeper": {
-        "0": {
-          "heading": "Färgcirkeln",
-          "text": "Färgharmoniteorin utgår från färgcirkeln, som ordnar kulörerna efter våglängdernas förhållanden. HSL-modellen (Hue, Saturation, Lightness) motsvarar direkt cirkeln: hue är vinkeln (0–360°), saturation är avståndet från mitten och lightness styr ljusheten. I fotografi uppstår de här förhållandena naturligt — gyllene timmen ger analoga varma toner, medan en röd lada mot gröna fält är komplementär."
+      "beginner": "De flesta foton innehåller redan ett färgförhållande; du kan bara inte se det än. Släpp ett foto, tryck på de färger som spelar roll, och hjulet visar hur de förhåller sig till varandra. Välj den harmoni du vill ha så visar verktyget åt vilket håll du ska knuffa varje färg.",
+      "deeper": [
+        {
+          "heading": "Fyrstegsmetoden",
+          "text": "Avsikt (vad betraktaren ska känna), Analys (vilka färger som faktiskt finns i bilden), Färgval (vilken harmoni som passar den känslan), Transformation (flytta reglagen i den riktning hjulet visar). Redigeringen kommer sist. Det mesta av frustrationen med färggradering kommer från att börja på steg fyra."
         },
-        "1": {
-          "heading": "Komplementär",
-          "text": "Två färger som ligger rakt emot varandra på cirkeln (180° isär), till exempel blått och orange eller rött och grönt. Det ger maximal kontrast och visuell energi. Bra för att lyfta fram ett motiv mot bakgrunden — tänk porträtt i gyllene timmen där varma hudtoner kontrasterar mot en kall blå himmel."
+        {
+          "heading": "Läsa hjulet",
+          "text": "Varje prov placeras efter nyans (vinkel) och mättnad (avstånd från centrum). Vyn Naturlig visar den verkliga mättnaden, Rena nyanser skjuter varje punkt mot kanten så att vinklarna blir tydliga, och Harmoniguide lägger till målpositioner och pilar för den valda harmonin."
         },
-        "2": {
-          "heading": "Analog",
-          "text": "Tre färger som ligger intill varandra på cirkeln, vanligtvis inom 30–60°. De ger lugna, sammanhängande paletter med låg kontrast. Perfekt för landskap och stämningsbilder — höstlöv är en naturlig analog palett av rött, orange och gult."
+        {
+          "heading": "Bästa matchning",
+          "text": "Verktyget roterar varje harmonimall till den position som bäst matchar dina prover och mäter det genomsnittliga nyansfelet, normaliserat efter mallens platsavstånd så att fyrplatsharmonier inte vinner per automatik. Vinnaren får märket; du väljer om du vill använda den."
         },
-        "3": {
-          "heading": "Triadisk",
-          "text": "Tre färger jämnt fördelade med 120° mellan sig runt cirkeln, till exempel rött, gult och blått. Triadiska scheman känns balanserade och levande utan spänningen i komplementär kontrast. Låt en färg dominera och använd de andra två som accenter för starkast resultat."
+        {
+          "heading": "Lås och ankare",
+          "text": "Lås ett prov för att göra det till ankaret: harmonin roterar kring den nyansen och varje annan färg bedöms mot den. Använd det för färgen du inte ska ändra, oftast hudton eller en varumärkesfärg. Utan lås väljer verktyget rotationen med lägst totalt fel."
         },
-        "4": {
-          "heading": "Delad komplementär",
-          "text": "En variant av komplementär som använder de två grannarna till den motsatta färgen i stället för den motsatta själv. Du behåller den höga kontrasten men sänker den visuella spänningen, vilket gör den mer mångsidig och förlåtande. Ett populärt val för stylade porträttsessioner."
+        {
+          "heading": "Neutrala färger",
+          "text": "Grå, nästan-svarta och nästan-vita toner har ingen pålitlig nyans, så de hamnar i centrum och lämnas utanför matchningen. De spelar ändå roll för stämningen, men att flytta deras nyans med ett reglage lägger mest till en färgskiftning."
         },
-        "5": {
-          "heading": "Tetradisk (dubbelkomplementär)",
-          "text": "Fyra färger som bildar en rektangel på cirkeln — i praktiken två komplementära par. Det ger den rikaste, mest komplexa paletten men kräver noggrann balans. Låt en färg dominera och använd de andra som stödjande accenter så att bilden inte blir rörig."
+        {
+          "heading": "Varför HSL och inte ett perceptuellt hjul",
+          "text": "Det här hjulet använder HSL, samma modell som Adobe Color och Lightrooms HSL-panel, så riktningen du läser här är riktningen du knuffar där. Det är inte perceptuellt enhetligt: gult upptar ett smalt band och blått ett brett, så en justering på 20° ser större ut i vissa områden än andra. Ett perceptuellt hjul vore mer ärligt men skulle inte matcha redigeringsverktygen."
         }
-      },
-      "keyFactors": {
-        "0": {
+      ],
+      "keyFactors": [
+        {
           "label": "Harmonityp",
-          "description": "Det geometriska förhållandet mellan färgerna på cirkeln: komplementär, analog, triadisk, delad komplementär eller tetradisk."
+          "description": "Den geometriska relation du siktar på: komplementär, delad komplementär, analog, triadisk, tetradisk, monokromatisk, eller dina egna anpassade mål."
         },
-        "1": {
-          "label": "Kulör",
-          "description": "Basfärgens vinkel på cirkeln (0–360 grader). Det är utgångspunkten för alla harmoniberäkningar."
+        {
+          "label": "Prover",
+          "description": "Vilka färger du valde att prova. Prova det som spelar roll för bilden, inte det som är störst. Fem till sex punkter berättar oftast hela historien."
         },
-        "2": {
-          "label": "Mättnad",
-          "description": "Hur livfulla eller dämpade färgerna är. Lägre mättnad ger pasteller och jordtoner; högre mättnad ger djärva, levande paletter."
+        {
+          "label": "Ankare",
+          "description": "Det låsta provet som harmonin roterar kring. Utan lås används den bäst matchande rotationen."
         },
-        "3": {
-          "label": "Ljushet",
-          "description": "Styr ljusstyrkan. Genom att justera ljusheten kan samma kulör kännas helt annorlunda — mörkmarinblått och himmelsblått är samma kulör på olika ljushet."
+        {
+          "label": "Justering",
+          "description": "Den signerade nyansrotationen från ett prov till dess mål. I linje är inom 8°, en liten justering inom 25°, allt mer är en stor förskjutning."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "För porträttsessioner: välj en komplementär eller delat komplementär palett och låt motivet bära huvudfärgen medan bakgrunden står för den kontrasterande kulören. Blå/orange (porträtt i gyllene timmen) är ett klassiskt exempel."
+      ],
+      "tips": [
+        {
+          "text": "Prova de färger du faktiskt kommer att gradera: himmel, hud, det dominerande objektet, en skugga. Hoppa över spekulära högdagrar och djupa skuggor; de läses som neutrala."
         },
-        "1": {
-          "text": "Använd analog harmoni för landskap — naturen arbetar redan i analoga paletter. Låt kläder och rekvisita matcha de dominerande kulörerna i scenen."
+        {
+          "text": "Delad komplementär är det lugna, drömska valet för resor och gatufoto. Komplementär är renare och mer slående. Triadisk är avsiktligt lite oroande."
         },
-        "2": {
-          "text": "Dra ned mättnaden till 30–50 % för att se hur färgerna upplevs i en mer dämpad, redaktionell stil. Hög mättnad funkar för kommersiellt och mode, men lägre mättnad känns ofta mer sofistikerat."
+        {
+          "text": "Använd automatiskt val för att börja, flytta eller ta sedan bort punkter. Det hittar de dominerande kromatiska klustren, som ofta inte är de färger du bryr dig mest om."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
           "term": "Harmonityp",
-          "definition": "Mönstret för färgrelationen: komplementär (motsatt), analog (granne), triadisk (tre färger), delad komplementär (förskjutna motsatser) eller tetradisk (fyra färger i rektangel)."
+          "definition": "Målrelationen mellan nyanser. Komplementär (motsatt), Delad komplementär (motsatt ± vinkel), Analog (grannar), Triadisk (120° isär), Tetradisk (två komplementära par), Monokromatisk (en nyans), Anpassad (dina egna mål)."
         },
         "Key Color": {
-          "term": "Huvudfärg",
-          "definition": "Den dominerande färgen i paletten. Alla andra harmonifärger beräknas utifrån denna utgångskulör."
+          "term": "Nyckelfärg",
+          "definition": "Utan inläst foto, färgen som harmonin byggs kring. Dra på hjulet eller använd reglagen."
         },
         "Hue": {
-          "term": "Kulör",
-          "definition": "Färgens vinkel på cirkeln i grader: 0° är rött, 120° är grönt, 240° är blått."
+          "term": "Nyans",
+          "definition": "Färgvinkeln på hjulet i grader: 0° är rött, 120° är grönt, 240° är blått."
         },
         "Saturation": {
           "term": "Mättnad",
-          "definition": "Färgintensitet från 0 % (grått) till 100 % (helt mättat). Styr hur djärv eller dämpad hela paletten upplevs."
+          "definition": "Färgintensitet från 0 % (grått) till 100 % (helt levande). Avstånd från hjulets centrum."
         },
         "Lightness": {
           "term": "Ljushet",
-          "definition": "Ljusstyrka från 0 % (svart) till 100 % (vitt). Vid 50 % ser du den rena färgen; under är mörkare, över är ljusare."
+          "definition": "Ljusstyrka från 0 % (svart) till 100 % (vitt). Vid 50 % ser du den rena färgen."
         },
         "Split Angle": {
           "term": "Delningsvinkel",
-          "definition": "Hur långt isär de två delat komplementära färgerna är från den direkt motsatta. Större vinkel ger mer kontrast."
+          "definition": "Hur långt de två delade komplementärfärgerna sitter från den direkta komplementet."
         },
         "Spread": {
           "term": "Spridning",
-          "definition": "Hur långt isär de analoga färgerna är från huvudkulören. Smal spridning ger subtila variationer; bred spridning ger större variation."
+          "definition": "Hur långt de analoga färgerna sitter från ankarnyansen."
+        },
+        "Lock": {
+          "term": "Lås",
+          "definition": "Gör ett prov till ankaret. Harmonin roterar till den nyansen och andra prover bedöms mot den. Endast ett prov kan låsas."
+        },
+        "Closest fit": {
+          "term": "Bästa matchning",
+          "definition": "Harmonin vars bästa rotation har det lägsta normaliserade nyansfelet över dina prover. Kräver minst två kromatiska prover."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Du vill ha maximal kontrast mellan två färger för ett djärvt grafiskt porträtt. Vilken harmonityp ger mest visuell spänning?",
-          "hint": "Färger som ligger rakt emot varandra på cirkeln skapar starkast kontrast.",
-          "successMessage": "Rätt! Komplementära färger ligger 180 grader isär och ger högst kontrast — perfekt för slagkraftiga kompositioner.",
-          "failureMessage": "Komplementär harmoni placerar färgerna rakt emot varandra på cirkeln, vilket ger maximal visuell kontrast.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "Du provade en blå himmel vid 210° och en orange vägg vid 25°. Vilken harmoni ligger de redan närmast?",
+          "hint": "Kontrollera vinkeln mellan dem.",
+          "successMessage": "Rätt. 185° isär är ett nästan perfekt komplementärt par; en liten justering av väggen fullbordar det.",
+          "failureMessage": "Två färger cirka 180° isär är komplementära. Analoga färger ligger inom ungefär 60° från varandra.",
+          "options": [
+            {
               "label": "Komplementär"
             },
-            "1": {
+            {
               "label": "Analog"
             },
-            "2": {
+            {
               "label": "Triadisk"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Du planerar en fotografering i gyllene timmen och vill ha varma, sammanhängande toner. Vilken harmonityp håller färgerna nära varandra på cirkeln?",
-          "hint": "Den här typen använder grannkulörer för en jämn, enhetlig känsla.",
-          "successMessage": "Precis! Analog harmoni använder angränsande färger och ger en varm, sammanhållen palett som passar gyllene timmen.",
-          "failureMessage": "Analog harmoni håller alla färger som grannar på cirkeln — perfekt för enhetliga varma eller kalla paletter.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Ett foto har tre prover vid 40°, 60° och 85°. Vilken harmoni är detta?",
+          "hint": "De är alla grannar på hjulet.",
+          "successMessage": "Korrekt. Grannyanser inom cirka 60° bildar en analog harmoni.",
+          "failureMessage": "Nyanser som alla ligger nära varandra är analoga, det lugna och enhetliga alternativet.",
+          "options": [
+            {
               "label": "Komplementär"
             },
-            "1": {
+            {
               "label": "Analog"
             },
-            "2": {
+            {
               "label": "Tetradisk"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "En kund vill ha ett porträtt med kontrast, men inte lika starkt som ren komplementär. Vilken harmonityp mjukar upp motsatsförhållandet men behåller det visuellt intressant?",
-          "hint": "Den här typen använder två färger nära komplementet i stället för den direkta motsatsen.",
-          "successMessage": "Utmärkt! Delad komplementär behåller kontrasten från komplementär, men delar upp den motsatta färgen i två angränsande kulörer, vilket ger en mjukare men fortfarande dynamisk palett.",
-          "failureMessage": "Svaret är delad komplementär — den ersätter den ena motsatsfärgen med två grannar till motsatsen, vilket mjukar upp kontrasten utan att ta bort energin.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Du vill ha ett drömskt, lugnt gatufoto men behålla lite kontrast. Vilken harmoni bör du välja?",
+          "hint": "Tänk på komplementets två grannar istället för själva komplementet.",
+          "successMessage": "Ja. Delad komplementär behåller spänning utan hårdheten hos en direkt motsats.",
+          "failureMessage": "Delad komplementär är det lugna men kontrastrika alternativet. Triadisk tenderar att kännas energiskt eller oroande.",
+          "options": [
+            {
               "label": "Delad komplementär"
             },
-            "1": {
+            {
               "label": "Triadisk"
             },
-            "2": {
+            {
               "label": "Analog"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "Du sätter huvudfärgen till orange (kulör ~30 grader) med komplementär harmoni. Vilken färg blir komplementet?",
-          "hint": "Komplementär betyder 180 grader rakt emot på cirkeln.",
-          "successMessage": "Rätt! 30° + 180° = 210°, vilket hamnar i det blå området. Orange och blått är ett av fotografins mest älskade komplementära par.",
-          "failureMessage": "Lägger du 180° till orange (30°) får du 210°, alltså blått. Orange–blått-paret är en klassiker i fotografi.",
-          "options": {
-            "0": {
-              "label": "Blå (~210°)"
+        {
+          "scenario": "Ett prov visar Liten justering mot rosa med ett delta på −15°. Vad gör du i Lightrooms HSL-panel?",
+          "hint": "Riktningsordet visar var du ska knuffa, storleken visar hur långt.",
+          "successMessage": "Rätt. Flytta det färgens Nyans-reglage mot rosa tills kortet visar I linje.",
+          "failureMessage": "Knuffa nyansen i den angivna riktningen (rosa) en liten mängd; en ändring på 15° är en liten justering, inte en stor förskjutning.",
+          "options": [
+            {
+              "label": "Flytta nyansen lite mot rosa"
             },
-            "1": {
-              "label": "Grön (~150°)"
+            {
+              "label": "Avmätta den"
             },
-            "2": {
-              "label": "Röd (~0°)"
+            {
+              "label": "Flytta nyansen mot grönt"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Du art-regisserar en moderedaktionell och behöver en fyra-färgers palett med både varma och kalla toner och hög visuell rikedom. Vilken harmonityp ger fyra färger, och vad är den största utmaningen?",
-          "hint": "Fyra-färgers harmonin bildar en rektangel på cirkeln.",
-          "successMessage": "Rätt! Tetradisk harmoni ger fyra färger som bildar en rektangel på cirkeln. Största utmaningen är balansen — med fyra distinkta kulörer måste en dominera medan de andra är accenter. Utan hierarki blir bilden rörig.",
-          "failureMessage": "Tetradisk (dubbelkomplementär) ger fyra färger i en rektangel. Utmaningen är att fyra starka kulörer konkurrerar om uppmärksamheten — du behöver peka ut en dominant färg och låta de andra vara accenter.",
-          "options": {
-            "0": {
-              "label": "Tetradisk — utmaningen är att hålla visuell hierarki bland fyra kulörer"
+        {
+          "scenario": "Två prover delar samma nyans men ett är låst. Vilket roterar harmonin kring?",
+          "hint": "Endast ett prov kan vara ankaret.",
+          "successMessage": "Korrekt. Det låsta provet är ankaret; det andra bedöms mot mallen som byggts på det.",
+          "failureMessage": "Det låsta provet är alltid ankaret. Utan lås används den bäst matchande rotationen.",
+          "options": [
+            {
+              "label": "Det låsta provet"
             },
-            "1": {
-              "label": "Triadisk — utmaningen är att det finns för få färger"
+            {
+              "label": "Det första provet som placerades"
             },
-            "2": {
-              "label": "Analog — utmaningen är bristen på kontrast"
+            {
+              "label": "Det mest mättade provet"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

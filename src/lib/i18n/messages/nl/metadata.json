@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Kleurenschemagenerator",
-      "description": "Genereer kleurenpaletten voor fotografie met complementaire, analoge, triadische en tetradische kleurharmonieën. Interactief kleurenwiel met fotokiezer."
+      "title": "Kleuranalysator: lees de kleurharmonie in elke foto af",
+      "description": "Gratis kleuranalysator en kleurenschemagenerator voor foto's. Bemonster kleuren uit je foto, zet ze uit op een kleurenwiel, vind de dichtstbijzijnde kleurharmonie en krijg per-kleur gradingadvies. 100% in je browser."
     }
   }
 }

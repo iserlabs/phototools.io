@@ -85,8 +85,8 @@
       "description": "Fusklappar med kamerainställningar för vanliga fotosituationer — att ladda ner och skriva ut"
     },
     "color-analyzer": {
-      "name": "Färgpalettgenerator",
-      "description": "Bygg färgpaletter för dina fotograferingar"
+      "name": "Färganalysator",
+      "description": "Prova färgerna i ett foto, läs av harmonin och se åt vilket håll du ska knuffa var och en"
     }
   }
 }

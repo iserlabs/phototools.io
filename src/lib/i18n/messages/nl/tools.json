@@ -85,8 +85,8 @@
       "description": "Spiekbriefjes met camera-instellingen voor veelvoorkomende scenario's — te downloaden en te printen"
     },
     "color-analyzer": {
-      "name": "Kleurenschemagenerator",
-      "description": "Stel kleurenpaletten samen voor fotoshoots"
+      "name": "Kleuranalysator",
+      "description": "Bemonster de kleuren in een foto, lees de harmonie af en zie welke kant je elke kleur op moet duwen"
     }
   }
 }

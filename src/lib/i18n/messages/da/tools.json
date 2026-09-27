@@ -85,8 +85,8 @@
       "description": "Huskesedler med kameraindstillinger til almindelige fotosituationer — kan downloades og printes"
     },
     "color-analyzer": {
-      "name": "Farvepalet-generator",
-      "description": "Byg farvepaletter til dine billeder"
+      "name": "Farveanalysator",
+      "description": "Tag prøver af farverne i et foto, aflæs harmonien, og se hvilken vej du skal skubbe hver enkelt"
     }
   }
 }

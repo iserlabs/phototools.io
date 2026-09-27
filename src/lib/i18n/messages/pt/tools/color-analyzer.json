@@ -1,24 +1,81 @@
 {
   "toolUI": {
     "color-analyzer": {
-      "colorScheme": "Esquema de Cores",
+      "colorScheme": "Harmonia de cores",
       "complementary": "Complementar",
+      "splitComplementary": "Complementar dividido",
       "analogous": "Análogo",
       "triadic": "Triádico",
-      "splitComplementary": "Complementar Dividido",
       "tetradic": "Tetrádico",
-      "keyColor": "Cor-Chave",
+      "monochromatic": "Monocromático",
+      "custom": "Personalizado",
+      "closestFit": "Melhor correspondência",
+      "closestSentence": "Sua foto está mais próxima de {harmony} (desvio médio de {degrees}°). Toque para usá-la.",
+      "keyColor": "Cor-chave",
       "hue": "Matiz:",
       "saturation": "Saturação:",
       "lightness": "Luminosidade:",
       "splitAngle": "Ângulo de divisão:",
-      "spread": "Extensão:",
+      "spread": "Dispersão:",
       "rectangleWidth": "Largura do retângulo:",
       "square": "(quadrado)",
-      "pickFromPhoto": "Selecionar da Foto",
-      "dropPhotoPrompt": "Arraste uma foto aqui ou clique para procurar",
-      "keyColorLabel": "Cor-chave — clique para copiar hex",
-      "clickToCopyHex": "Clique para copiar hex",
+      "samples": "Amostras",
+      "lock": "Bloquear esta cor como âncora",
+      "unlock": "Desbloquear",
+      "removeSample": "Remover amostra",
+      "labelPlaceholder": "Rótulo",
+      "neutralNotScored": "Neutro, não pontuado",
+      "suggested": "Sugerido",
+      "autoPick": "Escolher 5 automaticamente",
+      "changePhoto": "Trocar foto",
+      "capReached": "Máximo de {cap} amostras. Remova uma para adicionar outra.",
+      "markerLabel": "Amostra {n}: {label}",
+      "dropPhotoPrompt": "Solte uma foto ou clique para procurar. Ela permanece no seu navegador.",
+      "viewNatural": "Natural",
+      "viewPure": "Matizes puros",
+      "viewGuide": "Guia de harmonia",
+      "viewHint": {
+        "key": "Arraste o ponto para definir uma cor-chave. Solte uma foto para analisar cores reais em vez disso.",
+        "natural": "Mostra as cores na saturação real delas. Mude de aba para ler a harmonia.",
+        "pure": "Os matizes são empurrados para a borda para que os ângulos entre as cores fiquem fáceis de ler.",
+        "guide": "Formas tracejadas são as posições-alvo. Setas mostram para que lado cada cor deve se mover."
+      },
+      "nudge": {
+        "aligned": "Alinhado",
+        "slight": "Pequeno ajuste em direção a {color}",
+        "big": "Grande mudança em direção a {color}"
+      },
+      "names": {
+        "red": "Vermelho",
+        "vermilion": "Vermelhão",
+        "orange": "Laranja",
+        "amber": "Âmbar",
+        "yellow": "Amarelo",
+        "lime": "Verde-limão",
+        "chartreuse": "Verde-chartreuse",
+        "leaf-green": "Verde-folha",
+        "green": "Verde",
+        "jade": "Jade",
+        "spring-green": "Verde-primavera",
+        "mint": "Menta",
+        "cyan": "Ciano",
+        "sky-blue": "Azul-celeste",
+        "azure": "Azul",
+        "cobalt": "Cobalto",
+        "blue": "Azul-royal",
+        "indigo": "Índigo",
+        "violet": "Violeta",
+        "purple": "Púrpura",
+        "magenta": "Magenta",
+        "fuchsia": "Fúcsia",
+        "pink": "Rosa",
+        "rose": "Rosa-antigo",
+        "gray": "Cinza",
+        "black": "Preto",
+        "white": "Branco"
+      },
+      "keyColorLabel": "Cor-chave — clique para copiar o hex",
+      "clickToCopyHex": "Clique para copiar o hex",
       "copiedExcl": "Copiado!",
       "copyColors": "Copiar cores",
       "hexFormat": "Hex",
@@ -27,43 +84,55 @@
       "copyHexCodes": "Copiar códigos hex",
       "copyCssVariables": "Copiar variáveis CSS",
       "copyRgbValues": "Copiar valores RGB",
-      "pickColorFromPhoto": "Selecionar cor da foto",
-      "close": "Fechar",
-      "dropPhotoOrBrowse": "Arraste uma foto aqui ou clique para procurar",
-      "tapToChoose": "Toque para escolher uma foto",
-      "tapToSample": "Toque em qualquer lugar da foto para amostrar a cor",
-      "changePhoto": "Trocar foto",
-      "privacyNote": "Sua foto permanece no seu navegador — nada é enviado",
       "suggestions": {
         "complementary": {
-          "warm": "Ótimo para: retratos de pôr do sol quente com contraste de sombras frias",
-          "cool": "Ótimo para: fotos de hora azul com iluminação de acento quente",
+          "warm": "Ótimo para: retratos de pôr do sol quentes com contraste de sombras frias",
+          "cool": "Ótimo para: fotos de hora azul climáticas com luz de destaque quente",
           "default": "Ótimo para: composições de alto contraste com forte tensão visual"
         },
-        "analogous": {
-          "warm": "Ótimo para: paisagens na hora dourada com tons quentes unificados",
-          "cool": "Ótimo para: cenas serenas de água e fotografia no crepúsculo",
-          "default": "Ótimo para: fotos harmoniosas da natureza com transições suaves de cor"
-        },
-        "triadic": "Use para: trabalho editorial vibrante e retratos criativos ousados",
         "splitComplementary": {
-          "warm": "Use para: vestuário contrastante contra cenário natural",
-          "default": "Use para: fotografia de produto equilibrada com variedade visual"
+          "warm": "Ótimo para: climas sonhadores e calmos que mantêm contraste sem dureza",
+          "cool": "Ótimo para: cenas de rua e viagem frias com dois destaques quentes",
+          "default": "Ótimo para: enquadramentos equilibrados com variedade e sem oposição direta"
         },
-        "tetradic": "Use para: layouts editoriais ricos e composições complexas com múltiplos assuntos"
+        "analogous": {
+          "warm": "Ótimo para: paisagens de hora dourada com tons quentes unificados",
+          "cool": "Ótimo para: cenas de água serenas e fotografia no crepúsculo",
+          "default": "Ótimo para: fotos de natureza harmoniosas com transições de cor suaves"
+        },
+        "triadic": {
+          "warm": "Ótimo para: trabalho editorial ousado com a energia do vermelho, amarelo e azul",
+          "cool": "Ótimo para: imagens vibrantes e um pouco inquietantes com três cores fortes",
+          "default": "Ótimo para: trabalho editorial vibrante e retratos criativos ousados"
+        },
+        "tetradic": {
+          "warm": "Ótimo para: cenas ricas e em camadas com dois pares complementares",
+          "cool": "Ótimo para: paisagens urbanas complexas com fontes de luz frias e quentes",
+          "default": "Ótimo para: layouts editoriais ricos e composições com múltiplos assuntos"
+        },
+        "monochromatic": {
+          "warm": "Ótimo para: tons quentes tranquilos e coesos a partir de um único matiz",
+          "cool": "Ótimo para: cenas frias calmas e minimalistas construídas sobre um único matiz",
+          "default": "Ótimo para: imagens minimalistas e unificadas que se apoiam em luz e sombra"
+        },
+        "custom": {
+          "warm": "Arraste os alvos tracejados para criar sua própria relação entre as cores",
+          "cool": "Arraste os alvos tracejados para criar sua própria relação entre as cores",
+          "default": "Arraste os alvos tracejados para criar sua própria relação entre as cores"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
           "question": "O que é harmonia de cores na fotografia?",
-          "answer": "Harmonia de cores refere-se a combinações de cores esteticamente agradáveis baseadas em suas posições no círculo cromático. Cores harmoniosas criam equilíbrio visual e podem evocar estados de espírito específicos em suas fotografias."
+          "answer": "Harmonia de cores é uma relação entre os matizes de uma cena que parece deliberada: duas cores opostas (complementar), vizinhas na roda (análoga) ou três distribuídas uniformemente (triádica). As fotos raramente começam com uma harmonia perfeita, mas geralmente estão a um pequeno ajuste de distância de uma."
         },
         "complementary-vs-analogous": {
-          "question": "Qual é a diferença entre cores complementares e análogas?",
-          "answer": "Cores complementares ficam em lados opostos do círculo cromático (como azul e laranja) e criam alto contraste. Cores análogas ficam lado a lado (como azul, azul-esverdeado e verde) e criam uma sensação mais harmoniosa e unificada."
+          "question": "Como leio a harmonia que já existe na minha foto?",
+          "answer": "Colete amostras de alguns pontos importantes (céu, pele, aquela porta vermelha) e veja onde eles caem na roda. Dois pontos aproximadamente opostos formam um par complementar; um grupo dentro de cerca de 60° é análogo. O selo «Melhor correspondência» faz essa comparação para você nas seis harmonias."
         },
         "how-to-use-color-schemes-photography": {
-          "question": "Como uso esquemas de cores na fotografia?",
-          "answer": "Planeje suas sessões em torno de uma paleta de cores — escolha vestuário, locações e acessórios que combinem com seu esquema. Na pós-produção, use a gradação de cores para enfatizar a paleta escolhida. Esquemas de cores ajudam a criar uma identidade visual consistente em uma série de fotos."
+          "question": "Como uso as cores sugeridas no Lightroom ou Photoshop?",
+          "answer": "Cada amostra mostra uma direção (em direção ao rosa, em direção ao azul-petróleo) e um hex sugerido com a mesma saturação e luminosidade. No painel HSL ou Point Color do Lightroom, ou em Matiz/Saturação do Photoshop, mova o matiz dessa cor na direção mostrada até chegar perto do valor sugerido. Faça primeiro as maiores mudanças e pare quando a seta mostrar Alinhado."
         }
       }
     }

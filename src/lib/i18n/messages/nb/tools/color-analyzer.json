@@ -1,13 +1,17 @@
 {
   "toolUI": {
     "color-analyzer": {
-      "colorScheme": "Fargeskjema",
-      "complementary": "Komplementære",
-      "analogous": "Analoge",
-      "triadic": "Triadisk",
+      "colorScheme": "Fargeharmoni",
+      "complementary": "Komplementær",
       "splitComplementary": "Delt komplementær",
+      "analogous": "Analog",
+      "triadic": "Triadisk",
       "tetradic": "Tetradisk",
-      "keyColor": "Hovedfarge",
+      "monochromatic": "Monokrom",
+      "custom": "Tilpasset",
+      "closestFit": "Beste treff",
+      "closestSentence": "Bildet ditt ligger nærmest {harmony} (gjennomsnittlig avvik på {degrees}°). Trykk for å bruke den.",
+      "keyColor": "Nøkkelfarge",
       "hue": "Fargetone:",
       "saturation": "Metning:",
       "lightness": "Lyshet:",
@@ -15,55 +19,120 @@
       "spread": "Spredning:",
       "rectangleWidth": "Rektangelbredde:",
       "square": "(kvadrat)",
-      "pickFromPhoto": "Plukk fra bilde",
-      "dropPhotoPrompt": "Slipp et bilde her, eller klikk for å bla",
-      "keyColorLabel": "Hovedfarge — klikk for å kopiere hex",
+      "samples": "Prøver",
+      "lock": "Lås denne fargen som anker",
+      "unlock": "Lås opp",
+      "removeSample": "Fjern prøve",
+      "labelPlaceholder": "Etikett",
+      "neutralNotScored": "Nøytral, ikke vurdert",
+      "suggested": "Foreslått",
+      "autoPick": "Velg 5 automatisk",
+      "changePhoto": "Bytt bilde",
+      "capReached": "Maks {cap} prøver. Fjern én for å legge til en til.",
+      "markerLabel": "Prøve {n}: {label}",
+      "dropPhotoPrompt": "Slipp et bilde, eller klikk for å bla gjennom. Det blir liggende i nettleseren din.",
+      "viewNatural": "Naturlig",
+      "viewPure": "Rene fargetoner",
+      "viewGuide": "Harmoniguide",
+      "viewHint": {
+        "key": "Dra prikken for å angi en nøkkelfarge. Slipp i stedet et bilde for å analysere ekte farger.",
+        "natural": "Viser fargene med sin faktiske metning. Bytt fane for å lese harmonien.",
+        "pure": "Fargetoner skyves ut mot kanten, slik at vinklene mellom fargene er lette å lese.",
+        "guide": "Stiplede former er målposisjonene. Piler viser hvilken vei hver farge bør flyttes."
+      },
+      "nudge": {
+        "aligned": "På linje",
+        "slight": "Liten justering mot {color}",
+        "big": "Stort skift mot {color}"
+      },
+      "names": {
+        "red": "Rød",
+        "vermilion": "Sinoberrød",
+        "orange": "Oransje",
+        "amber": "Rav",
+        "yellow": "Gul",
+        "lime": "Lime",
+        "chartreuse": "Chartreuse",
+        "leaf-green": "Bladgrønn",
+        "green": "Grønn",
+        "jade": "Jade",
+        "spring-green": "Vårgrønn",
+        "mint": "Mint",
+        "cyan": "Cyan",
+        "sky-blue": "Himmelblå",
+        "azure": "Asurblå",
+        "cobalt": "Koboltblå",
+        "blue": "Blå",
+        "indigo": "Indigo",
+        "violet": "Fiolett",
+        "purple": "Lilla",
+        "magenta": "Magenta",
+        "fuchsia": "Fuksia",
+        "pink": "Rosa",
+        "rose": "Gammelrosa",
+        "gray": "Grå",
+        "black": "Svart",
+        "white": "Hvit"
+      },
+      "keyColorLabel": "Nøkkelfarge — klikk for å kopiere hex",
       "clickToCopyHex": "Klikk for å kopiere hex",
       "copiedExcl": "Kopiert!",
-      "copyColors": "Kopier farger",
+      "copyColors": "Kopiér farger",
       "hexFormat": "Hex",
       "cssFormat": "CSS",
       "rgbFormat": "RGB",
-      "copyHexCodes": "Kopier hex-koder",
-      "copyCssVariables": "Kopier CSS-variabler",
-      "copyRgbValues": "Kopier RGB-verdier",
-      "pickColorFromPhoto": "Plukk farge fra bilde",
-      "close": "Lukk",
-      "dropPhotoOrBrowse": "Slipp et bilde her, eller klikk for å bla",
-      "tapToChoose": "Trykk for å velge et bilde",
-      "tapToSample": "Trykk hvor som helst i bildet for å plukke farge",
-      "changePhoto": "Bytt bilde",
-      "privacyNote": "Bildet ditt blir i nettleseren — ingenting lastes opp",
+      "copyHexCodes": "Kopiér hex-koder",
+      "copyCssVariables": "Kopiér CSS-variabler",
+      "copyRgbValues": "Kopiér RGB-verdier",
       "suggestions": {
         "complementary": {
-          "warm": "Passer til: varme solnedgangsportretter med kjølig skyggekontrast",
-          "cool": "Passer til: stemningsfulle bilder i den blå timen med varme lysaksenter",
-          "default": "Passer til: kontrastrike komposisjoner med sterk visuell spenning"
+          "warm": "Perfekt for: varme solnedgangsportretter med kaldt skyggekontrast",
+          "cool": "Perfekt for: stemningsfulle blåtimen-bilder med varmt aksentlys",
+          "default": "Perfekt for: kontrastrike komposisjoner med sterk visuell spenning"
+        },
+        "splitComplementary": {
+          "warm": "Perfekt for: drømmende, rolige looks som beholder kontrast uten hardhet",
+          "cool": "Perfekt for: kjølige gate- og reisescener med to varme aksenter",
+          "default": "Perfekt for: balanserte bilder med variasjon og ingen direkte motsetning"
         },
         "analogous": {
-          "warm": "Passer til: landskap i gylden time med samstemte varme toner",
-          "cool": "Passer til: rolige vannmotiver og skumringsfoto",
-          "default": "Passer til: harmoniske naturbilder med myke fargeoverganger"
+          "warm": "Perfekt for: landskap i den gylne timen med enhetlige varme toner",
+          "cool": "Perfekt for: rolige vannscener og skumringsfotografering",
+          "default": "Perfekt for: harmoniske naturbilder med myke fargeoverganger"
         },
-        "triadic": "Passer til: livlig redaksjonelt arbeid og dristige, kreative portretter",
-        "splitComplementary": {
-          "warm": "Passer til: klær som står i kontrast til et naturlig bakteppe",
-          "default": "Passer til: balansert produktfotografi med visuell variasjon"
+        "triadic": {
+          "warm": "Perfekt for: dristig redaksjonelt arbeid med energien fra rødt, gult og blått",
+          "cool": "Perfekt for: levende, litt urovekkende bilder med tre sterke farger",
+          "default": "Perfekt for: levende redaksjonelt arbeid og dristige kreative portretter"
         },
-        "tetradic": "Passer til: rike redaksjonelle oppsett og sammensatte komposisjoner med flere motiver"
+        "tetradic": {
+          "warm": "Perfekt for: rike, lagdelte scener med to komplementære par",
+          "cool": "Perfekt for: komplekse bybilder med kalde og varme lyskilder",
+          "default": "Perfekt for: rike redaksjonelle oppsett og komposisjoner med flere motiver"
+        },
+        "monochromatic": {
+          "warm": "Perfekt for: rolige, sammenhengende varme toner fra én fargetone",
+          "cool": "Perfekt for: rolige, minimale kalde scener bygget på én fargetone",
+          "default": "Perfekt for: minimalistiske, enhetlige bilder som bygger på lys og skygge"
+        },
+        "custom": {
+          "warm": "Dra de stiplede målene for å designe ditt eget forhold mellom fargene",
+          "cool": "Dra de stiplede målene for å designe ditt eget forhold mellom fargene",
+          "default": "Dra de stiplede målene for å designe ditt eget forhold mellom fargene"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
           "question": "Hva er fargeharmoni i fotografi?",
-          "answer": "Fargeharmoni handler om estetisk tiltalende fargekombinasjoner basert på fargenes plassering på fargehjulet. Harmoniske farger skaper visuell balanse og kan fremkalle bestemte stemninger i bildene dine."
+          "answer": "Fargeharmoni er et forhold mellom fargetonene i et bilde som virker bevisst: to farger rett overfor hverandre (komplementære), naboer på hjulet (analoge), eller tre jevnt fordelt (triadiske). Bilder starter sjelden med en ren harmoni, men er som regel bare et lite skyv unna en."
         },
         "complementary-vs-analogous": {
-          "question": "Hva er forskjellen på komplementære og analoge farger?",
-          "answer": "Komplementære farger ligger rett overfor hverandre på fargehjulet (som blå og oransje) og gir høy kontrast. Analoge farger ligger ved siden av hverandre (som blå, blågrønn og grønn) og gir et mer harmonisk og samstemt uttrykk."
+          "question": "Hvordan leser jeg harmonien som allerede finnes i bildet mitt?",
+          "answer": "Ta prøver av noen punkter som betyr noe (himmelen, huden, den ene røde døren) og se hvor de havner på hjulet. To punkter omtrent rett overfor hverandre er et komplementært par; en klynge innenfor omtrent 60° er analog. Merket «Beste treff» gjør denne sammenligningen for deg på tvers av alle seks harmoniene."
         },
         "how-to-use-color-schemes-photography": {
-          "question": "Hvordan bruker jeg fargeskjemaer i fotografi?",
-          "answer": "Planlegg fotograferingen rundt en fargepalett — velg klær, steder og rekvisitter som passer skjemaet. I etterarbeidet kan du bruke fargegrading til å fremheve paletten. Fargeskjemaer hjelper deg å bygge en helhetlig visuell identitet gjennom en hel bildeserie."
+          "question": "Hvordan bruker jeg de foreslåtte fargene i Lightroom eller Photoshop?",
+          "answer": "Hver prøve viser en retning (mot rosa, mot petroleumsblå) og en foreslått hex-verdi med samme metning og lyshet. I Lightrooms HSL-panel eller Point Color, eller i Photoshops Fargetone/Metning, skyver du den fargens fargetone i vist retning til den havner nær den foreslåtte verdien. Flytt de største skiftene først, og stopp når pilen viser På linje."
         }
       }
     }

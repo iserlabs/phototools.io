@@ -85,8 +85,8 @@
       "description": "Jukselapper med kamerainnstillinger for vanlige fotosituasjoner — til nedlasting og utskrift"
     },
     "color-analyzer": {
-      "name": "Fargeskjema-generator",
-      "description": "Bygg fargepaletter til fotograferingen"
+      "name": "Fargeanalysator",
+      "description": "Ta prøve av fargene i et bilde, les harmonien og se hvilken vei du bør skyve hver av dem"
     }
   }
 }

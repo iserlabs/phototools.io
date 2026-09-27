@@ -1,179 +1,187 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "L'harmonie des couleurs consiste à choisir des couleurs qui vont bien ensemble. Tout comme les accords musicaux, certaines combinaisons de couleurs créent des relations visuelles agréables. Les photographes utilisent l'harmonie des couleurs pour planifier les tenues, les décors, et même le moment des séances en extérieur pour obtenir la bonne palette de la nature.",
-      "deeper": {
-        "0": {
-          "heading": "La roue chromatique",
-          "text": "La théorie de l'harmonie des couleurs est ancrée dans la roue chromatique, qui dispose les teintes en cercle selon leurs relations de longueur d'onde. Le modèle TSL (Teinte, Saturation, Luminosité) correspond directement à la roue : la teinte est l'angle (0-360°), la saturation est la distance au centre, et la luminosité contrôle la clarté. En photographie, ces relations apparaissent naturellement — l'heure dorée produit des tons chauds analogues, tandis qu'une grange rouge devant des champs verts est complémentaire."
+      "beginner": "La plupart des photos contiennent déjà une relation de couleurs ; vous ne la voyez simplement pas encore. Déposez une photo, touchez les couleurs qui comptent, et le cercle chromatique montre comment elles se rapportent entre elles. Choisissez l'harmonie que vous voulez et l'outil vous indique dans quel sens pousser chaque couleur.",
+      "deeper": [
+        {
+          "heading": "La méthode en quatre étapes",
+          "text": "Intention (ce que le spectateur doit ressentir), Analyse (quelles couleurs sont réellement dans le cadre), Choix des couleurs (quelle harmonie correspond à ce ressenti), Transformation (déplacer les curseurs dans la direction indiquée par le cercle). La retouche vient en dernier. La plupart des frustrations en étalonnage colorimétrique viennent du fait de commencer par l'étape quatre."
         },
-        "1": {
-          "heading": "Complémentaire",
-          "text": "Deux couleurs situées directement à l'opposé l'une de l'autre sur la roue (180° d'écart), comme le bleu et l'orange ou le rouge et le vert. Cela crée un contraste maximal et une énergie visuelle. Excellent pour faire ressortir un sujet sur un fond — pense aux portraits à l'heure dorée où les tons chauds de la peau contrastent avec un ciel bleu frais."
+        {
+          "heading": "Lire le cercle",
+          "text": "Chaque échantillon est placé selon sa teinte (angle) et sa saturation (distance au centre). La vue Naturel affiche la saturation réelle, Teintes pures pousse chaque point vers le bord pour que les angles soient évidents, et Guide d'harmonie ajoute les positions cibles et les flèches pour l'harmonie choisie."
         },
-        "2": {
-          "heading": "Analogue",
-          "text": "Trois couleurs voisines sur la roue, typiquement dans un intervalle de 30-60°. Elles produisent des palettes lisses et cohérentes avec peu de contraste. Idéal pour les paysages et le travail d'ambiance — le feuillage d'automne est une palette analogue naturelle de rouges, oranges et jaunes."
+        {
+          "heading": "Meilleure correspondance",
+          "text": "L'outil fait pivoter chaque modèle d'harmonie vers la position qui correspond le mieux à vos échantillons et mesure l'erreur de teinte moyenne, normalisée selon l'espacement des points du modèle afin que les harmonies à quatre points ne gagnent pas par défaut. Le gagnant reçoit le badge ; c'est à vous de choisir de l'utiliser."
         },
-        "3": {
-          "heading": "Triadique",
-          "text": "Trois couleurs espacées uniformément à 120° d'intervalle sur la roue, comme le rouge, le jaune et le bleu. Les schémas triadiques paraissent équilibrés et vibrants sans la tension du contraste complémentaire. Utilise une couleur dominante et les deux autres comme accents pour les meilleurs résultats."
+        {
+          "heading": "Verrous et ancres",
+          "text": "Verrouillez un échantillon pour en faire l'ancre : l'harmonie pivote autour de cette teinte et chaque autre couleur est jugée par rapport à elle. Utilisez-le pour la couleur que vous ne changerez pas, généralement la peau ou une couleur de marque. Sans verrou, l'outil choisit la rotation avec l'erreur totale la plus faible."
         },
-        "4": {
-          "heading": "Complémentaire divisé",
-          "text": "Une variation du complémentaire qui utilise les deux voisins de la couleur opposée au lieu de l'opposé direct. Cela garde le fort contraste du complémentaire mais réduit la tension visuelle, le rendant plus polyvalent et tolérant. Un choix populaire pour les séances portrait stylisées."
+        {
+          "heading": "Neutres",
+          "text": "Les gris, les presque-noirs et les presque-blancs n'ont pas de teinte fiable, ils se placent donc au centre et sont exclus de la correspondance. Ils comptent toujours pour l'ambiance, mais pousser leur teinte sur un curseur ajoute surtout une dominante colorée."
         },
-        "5": {
-          "heading": "Tétradique (double complémentaire)",
-          "text": "Quatre couleurs formant un rectangle sur la roue — essentiellement deux paires complémentaires. Cela offre la palette la plus riche et la plus complexe mais nécessite un équilibrage soigneux. Laisse une couleur dominer et utilise les autres comme accents pour éviter un aspect chaotique."
+        {
+          "heading": "Pourquoi HSL et non un cercle perceptuel",
+          "text": "Ce cercle utilise le modèle HSL, le même qu'Adobe Color et le panneau HSL de Lightroom, donc la direction que vous lisez ici est celle que vous pousserez là-bas. Il n'est pas perceptuellement uniforme : le jaune occupe une bande étroite et le bleu une large, donc un ajustement de 20° paraît plus important dans certaines zones que dans d'autres. Un cercle perceptuel serait plus honnête mais ne correspondrait pas aux outils de retouche."
         }
-      },
-      "keyFactors": {
-        "0": {
+      ],
+      "keyFactors": [
+        {
           "label": "Type d'harmonie",
-          "description": "La relation géométrique entre les couleurs sur la roue : complémentaire, analogue, triadique, complémentaire divisé ou tétradique."
+          "description": "La relation géométrique que vous visez : complémentaire, complémentaire divisée, analogue, triadique, tétradique, monochrome, ou vos propres cibles personnalisées."
         },
-        "1": {
-          "label": "Teinte",
-          "description": "L'angle de la couleur de base sur la roue (0-360 degrés). C'est le point de départ de tous les calculs d'harmonie."
+        {
+          "label": "Échantillons",
+          "description": "Les couleurs que vous avez choisi d'échantillonner. Échantillonnez ce qui compte pour l'image, pas ce qui est le plus grand. Cinq à six points racontent généralement toute l'histoire."
         },
-        "2": {
-          "label": "Saturation",
-          "description": "L'intensité des couleurs. Une faible saturation produit des pastels et des tons terre ; une forte saturation donne des palettes vives et vibrantes."
+        {
+          "label": "Ancre",
+          "description": "L'échantillon verrouillé autour duquel l'harmonie pivote. Sans verrou, la rotation la mieux ajustée est utilisée."
         },
-        "3": {
-          "label": "Luminosité",
-          "description": "Contrôle la clarté. Ajuster la luminosité peut rendre la même teinte complètement différente — bleu marine foncé vs bleu ciel sont la même teinte à des luminosités différentes."
+        {
+          "label": "Ajustement",
+          "description": "La rotation de teinte signée d'un échantillon vers sa cible. Aligné signifie moins de 8°, un léger ajustement moins de 25°, tout le reste est un grand décalage."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "Pour les séances portrait, choisis une palette complémentaire ou complémentaire divisée, puis habille ton sujet de la couleur clé tandis que l'arrière-plan fournit la teinte contrastante. Bleu/orange (portraits à l'heure dorée) est un exemple classique."
+      ],
+      "tips": [
+        {
+          "text": "Échantillonnez les couleurs que vous allez réellement étalonner : le ciel, la peau, l'objet dominant, une ombre. Évitez les hautes lumières spéculaires et les ombres profondes ; elles se lisent comme neutres."
         },
-        "1": {
-          "text": "Utilise l'harmonie analogue pour les paysages — la nature fonctionne déjà en palettes analogues. Accorde tes conseils vestimentaires ou choix d'accessoires aux teintes naturelles dominantes."
+        {
+          "text": "Complémentaire divisée est le choix calme et rêveur pour le voyage et la rue. Complémentaire est plus net et plus percutant. Triadique est délibérément un peu dérangeant."
         },
-        "2": {
-          "text": "Réduis la saturation à 30-50 % pour prévisualiser comment les couleurs apparaîtront dans un style plus atténué et éditorial. La forte saturation fonctionne pour le commercial et la mode, mais une saturation plus basse paraît souvent plus sophistiquée."
+        {
+          "text": "Utilisez la sélection automatique pour commencer, puis déplacez ou supprimez des points. Elle trouve les groupes chromatiques dominants, qui ne sont souvent pas les couleurs qui comptent le plus pour vous."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
           "term": "Type d'harmonie",
-          "definition": "Le motif de relation colorimétrique : Complémentaire (opposés), Analogue (voisins), Triadique (trois voies), Complémentaire divisé (opposés décalés), ou Tétradique (rectangle à quatre voies)."
+          "definition": "La relation cible entre les teintes. Complémentaire (opposée), Complémentaire divisée (opposée ± angle), Analogue (voisines), Triadique (120° d'écart), Tétradique (deux paires complémentaires), Monochrome (une teinte), Personnalisé (vos propres cibles)."
         },
         "Key Color": {
           "term": "Couleur clé",
-          "definition": "La couleur dominante de ta palette. Toutes les autres couleurs d'harmonie sont calculées par rapport à cette teinte de départ."
+          "definition": "Sans photo chargée, la couleur autour de laquelle l'harmonie est construite. Faites glisser sur le cercle ou utilisez les curseurs."
         },
         "Hue": {
           "term": "Teinte",
-          "definition": "L'angle de la couleur sur la roue en degrés : 0° est rouge, 120° est vert, 240° est bleu."
+          "definition": "L'angle de couleur sur le cercle en degrés : 0° est rouge, 120° est vert, 240° est bleu."
         },
         "Saturation": {
           "term": "Saturation",
-          "definition": "L'intensité de la couleur de 0 % (gris) à 100 % (entièrement vif). Contrôle l'aspect audacieux ou atténué de toute la palette."
+          "definition": "Intensité de la couleur de 0 % (gris) à 100 % (pleinement vive). Distance au centre du cercle."
         },
         "Lightness": {
           "term": "Luminosité",
-          "definition": "La clarté de 0 % (noir) à 100 % (blanc). À 50 % on voit la couleur pure ; en dessous c'est plus sombre, au-dessus plus clair."
+          "definition": "Luminosité de 0 % (noir) à 100 % (blanc). À 50 %, vous voyez la couleur pure."
         },
         "Split Angle": {
           "term": "Angle de division",
-          "definition": "L'écart entre les deux couleurs complémentaires divisées et l'opposé direct. Des angles plus larges donnent plus de contraste."
+          "definition": "À quelle distance les deux couleurs complémentaires divisées se situent du complément direct."
         },
         "Spread": {
-          "term": "Étendue",
-          "definition": "L'écart entre les couleurs analogues et la teinte clé. Un écart étroit donne une variation subtile ; un large écart augmente la diversité."
+          "term": "Écart",
+          "definition": "À quelle distance les couleurs analogues se situent de la teinte d'ancrage."
+        },
+        "Lock": {
+          "term": "Verrouiller",
+          "definition": "Fait d'un échantillon l'ancre. L'harmonie pivote vers cette teinte et les autres échantillons sont jugés par rapport à elle. Un seul échantillon peut être verrouillé."
+        },
+        "Closest fit": {
+          "term": "Meilleure correspondance",
+          "definition": "L'harmonie dont la meilleure rotation a l'erreur de teinte normalisée la plus faible sur vos échantillons. Nécessite au moins deux échantillons chromatiques."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Tu veux un contraste maximal entre deux couleurs pour un portrait graphique audacieux. Quel type d'harmonie donne la plus forte tension visuelle ?",
-          "hint": "Les couleurs directement à l'opposé l'une de l'autre sur la roue créent le contraste le plus fort.",
-          "successMessage": "Correct ! Les couleurs complémentaires sont à 180 degrés d'écart et produisent le plus fort contraste — parfait pour des compositions audacieuses et accrocheuses.",
-          "failureMessage": "L'harmonie complémentaire place les couleurs directement à l'opposé sur la roue, créant un contraste visuel maximal.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "Vous avez échantillonné un ciel bleu à 210° et un mur orange à 25°. De quelle harmonie sont-ils déjà le plus proches ?",
+          "hint": "Vérifiez l'angle entre eux.",
+          "successMessage": "Exact. 185° d'écart, c'est une paire complémentaire presque parfaite ; un léger ajustement du mur suffit à la compléter.",
+          "failureMessage": "Deux couleurs séparées d'environ 180° sont complémentaires. Les couleurs analogues se situent à environ 60° l'une de l'autre.",
+          "options": [
+            {
               "label": "Complémentaire"
             },
-            "1": {
+            {
               "label": "Analogue"
             },
-            "2": {
+            {
               "label": "Triadique"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Tu prépares une séance à l'heure dorée et tu veux des tons chauds et cohérents. Quel type d'harmonie garde les couleurs proches sur la roue ?",
-          "hint": "Ce type utilise des teintes voisines pour un rendu lisse et unifié.",
-          "successMessage": "Exact ! L'harmonie analogue utilise des couleurs adjacentes, te donnant une palette chaude et cohérente parfaite pour l'heure dorée.",
-          "failureMessage": "L'harmonie analogue garde toutes les couleurs comme voisines sur la roue — idéale pour des palettes chaudes ou froides unifiées.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Une photo a trois échantillons à 40°, 60° et 85°. Quelle harmonie est-ce ?",
+          "hint": "Ce sont toutes des voisines sur le cercle.",
+          "successMessage": "Correct. Des teintes voisines à environ 60° forment une harmonie analogue.",
+          "failureMessage": "Des teintes toutes proches les unes des autres sont analogues, l'option calme et unifiée.",
+          "options": [
+            {
               "label": "Complémentaire"
             },
-            "1": {
+            {
               "label": "Analogue"
             },
-            "2": {
+            {
               "label": "Tétradique"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "Un client veut un portrait avec du contraste mais pas aussi intense qu'un complémentaire pur. Quel type d'harmonie adoucit l'opposition tout en gardant l'intérêt visuel ?",
-          "hint": "Ce type utilise deux couleurs proches du complément au lieu de l'opposé direct.",
-          "successMessage": "Excellent ! Le complémentaire divisé garde le contraste du complémentaire mais divise la couleur opposée en deux teintes voisines, produisant une palette moins brutale mais toujours dynamique.",
-          "failureMessage": "Le Complémentaire divisé est la réponse — il remplace la couleur unique opposée par deux voisins de l'opposé, adoucissant le contraste tout en maintenant l'énergie visuelle.",
-          "options": {
-            "0": {
-              "label": "Complémentaire divisé"
+        {
+          "scenario": "Vous voulez une photo de rue rêveuse et calme tout en gardant du contraste. Quelle harmonie choisir ?",
+          "hint": "Pensez aux deux voisines du complément plutôt qu'au complément lui-même.",
+          "successMessage": "Oui. Complémentaire divisée garde de la tension sans la dureté d'un opposé direct.",
+          "failureMessage": "Complémentaire divisée est l'option calme mais contrastée. Triadique tend à paraître énergique ou dérangeante.",
+          "options": [
+            {
+              "label": "Complémentaire divisée"
             },
-            "1": {
+            {
               "label": "Triadique"
             },
-            "2": {
+            {
               "label": "Analogue"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "Tu règles la couleur clé sur orange (teinte ~30 degrés) avec une harmonie complémentaire. Quelle couleur sera le complément ?",
-          "hint": "Complémentaire signifie 180 degrés à l'opposé sur la roue.",
-          "successMessage": "Correct ! 30° + 180° = 210°, ce qui tombe dans la plage du bleu. Orange et bleu est l'une des paires complémentaires les plus appréciées en photographie.",
-          "failureMessage": "En ajoutant 180° à l'orange (30°) on obtient 210°, qui est le bleu. La paire complémentaire orange-bleu est un classique de la photographie.",
-          "options": {
-            "0": {
-              "label": "Bleu (~210°)"
+        {
+          "scenario": "Un échantillon indique « Léger ajustement vers le rose » avec un delta de −15°. Dans le panneau HSL de Lightroom, que faites-vous ?",
+          "hint": "Le mot de direction indique où pousser, la taille indique jusqu'où.",
+          "successMessage": "Exact. Déplacez le curseur Teinte de cette couleur vers le rose jusqu'à ce que la carte indique Aligné.",
+          "failureMessage": "Poussez la teinte dans la direction indiquée (rose) d'une petite quantité ; un changement de 15° est un léger ajustement, pas un grand décalage.",
+          "options": [
+            {
+              "label": "Déplacer légèrement la teinte vers le rose"
             },
-            "1": {
-              "label": "Vert (~150°)"
+            {
+              "label": "Désaturer"
             },
-            "2": {
-              "label": "Rouge (~0°)"
+            {
+              "label": "Déplacer la teinte vers le vert"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Tu diriges artistiquement un éditorial de mode et tu as besoin d'une palette à quatre couleurs qui offre à la fois des tons chauds et froids avec une grande richesse visuelle. Quel type d'harmonie te donne quatre couleurs, et quel est le principal défi ?",
-          "hint": "L'harmonie à quatre couleurs forme un rectangle sur la roue.",
-          "successMessage": "Exact ! L'harmonie tétradique donne quatre couleurs formant un rectangle sur la roue. Le principal défi est l'équilibre — avec quatre teintes distinctes, une doit dominer tandis que les autres accentuent. Sans hiérarchie, l'image paraît chaotique.",
-          "failureMessage": "Le tétradique (double complémentaire) fournit quatre couleurs en arrangement rectangulaire. Le défi est que quatre teintes fortes se disputent l'attention — tu dois désigner une couleur dominante et utiliser les autres comme accents.",
-          "options": {
-            "0": {
-              "label": "Tétradique — le défi est de maintenir une hiérarchie visuelle entre quatre teintes"
+        {
+          "scenario": "Deux échantillons partagent la même teinte mais l'un est verrouillé. Autour duquel l'harmonie pivote-t-elle ?",
+          "hint": "Un seul échantillon peut être l'ancre.",
+          "successMessage": "Correct. L'échantillon verrouillé est l'ancre ; l'autre est jugé par rapport au modèle construit sur celui-ci.",
+          "failureMessage": "L'échantillon verrouillé est toujours l'ancre. Sans verrou, la rotation la mieux ajustée est utilisée.",
+          "options": [
+            {
+              "label": "L'échantillon verrouillé"
             },
-            "1": {
-              "label": "Triadique — le défi est d'avoir trop peu de couleurs"
+            {
+              "label": "Le premier échantillon placé"
             },
-            "2": {
-              "label": "Analogue — le défi est le manque de contraste"
+            {
+              "label": "L'échantillon le plus saturé"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

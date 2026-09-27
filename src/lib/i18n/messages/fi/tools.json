@@ -85,8 +85,8 @@
       "description": "Kamera-asetusten muistilistat yleisiin kuvaustilanteisiin — ladattavat ja tulostettavat"
     },
     "color-analyzer": {
-      "name": "Väripalettigeneraattori",
-      "description": "Luo väripaletteja kuvauksia varten"
+      "name": "Värianalysaattori",
+      "description": "Ota näytteitä kuvan väreistä, lue sen harmonia ja katso, mihin suuntaan kutakin tulisi työntää"
     }
   }
 }

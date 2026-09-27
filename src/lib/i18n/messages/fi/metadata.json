@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Väripalettigeneraattori",
-      "description": "Luo valokuvaukseen väripaletteja komplementti-, analogisen, triadisen ja tetradisen väriharmonian avulla. Interaktiivinen väripyörä ja värien poiminta kuvasta."
+      "title": "Värianalysaattori: lue minkä tahansa kuvan väriharmonia",
+      "description": "Ilmainen kuvien värianalysaattori ja väripalettigeneraattori. Ota näytteitä kuvasi väreistä, aseta ne väriympyrälle, löydä lähin väriharmonia ja saa gradointiohjeet jokaiselle värille. 100 % selaimessasi."
     }
   }
 }

@@ -1,69 +1,138 @@
 {
   "toolUI": {
     "color-analyzer": {
-      "colorScheme": "Kleurenschema",
+      "colorScheme": "Kleurharmonie",
       "complementary": "Complementair",
+      "splitComplementary": "Gesplitst complementair",
       "analogous": "Analoog",
       "triadic": "Triadisch",
-      "splitComplementary": "Gesplitst complementair",
       "tetradic": "Tetradisch",
-      "keyColor": "Hoofdkleur",
+      "monochromatic": "Monochroom",
+      "custom": "Aangepast",
+      "closestFit": "Beste overeenkomst",
+      "closestSentence": "Je foto komt het dichtst bij {harmony} (gemiddeld {degrees}° verschil). Tik om het te gebruiken.",
+      "keyColor": "Sleutelkleur",
       "hue": "Tint:",
       "saturation": "Verzadiging:",
       "lightness": "Lichtheid:",
-      "splitAngle": "Splithoek:",
+      "splitAngle": "Splitshoek:",
       "spread": "Spreiding:",
       "rectangleWidth": "Rechthoekbreedte:",
       "square": "(vierkant)",
-      "pickFromPhoto": "Kies uit foto",
-      "dropPhotoPrompt": "Sleep een foto hierheen of klik om te bladeren",
-      "keyColorLabel": "Hoofdkleur — klik om hex te kopiëren",
-      "clickToCopyHex": "Klik om hex te kopiëren",
+      "samples": "Stalen",
+      "lock": "Vergrendel deze kleur als anker",
+      "unlock": "Ontgrendelen",
+      "removeSample": "Staal verwijderen",
+      "labelPlaceholder": "Label",
+      "neutralNotScored": "Neutraal, niet gescoord",
+      "suggested": "Voorgesteld",
+      "autoPick": "Automatisch 5 kiezen",
+      "changePhoto": "Foto wijzigen",
+      "capReached": "Maximaal {cap} stalen. Verwijder er een om een andere toe te voegen.",
+      "markerLabel": "Staal {n}: {label}",
+      "dropPhotoPrompt": "Sleep een foto hierheen of klik om te bladeren. Ze blijft in je browser.",
+      "viewNatural": "Natuurlijk",
+      "viewPure": "Pure tinten",
+      "viewGuide": "Harmoniegids",
+      "viewHint": {
+        "key": "Sleep het punt om een sleutelkleur in te stellen. Sleep in plaats daarvan een foto hierheen om echte kleuren te analyseren.",
+        "natural": "Toont de kleuren met hun werkelijke verzadiging. Wissel van tabblad om de harmonie af te lezen.",
+        "pure": "Tinten worden naar de rand geduwd zodat de hoeken tussen kleuren makkelijk af te lezen zijn.",
+        "guide": "Gestippelde vormen zijn de doelposities. Pijlen tonen in welke richting elke kleur moet bewegen."
+      },
+      "nudge": {
+        "aligned": "Uitgelijnd",
+        "slight": "Kleine verschuiving richting {color}",
+        "big": "Grote verschuiving richting {color}"
+      },
+      "names": {
+        "red": "Rood",
+        "vermilion": "Vermiljoen",
+        "orange": "Oranje",
+        "amber": "Amber",
+        "yellow": "Geel",
+        "lime": "Limoen",
+        "chartreuse": "Chartreuse",
+        "leaf-green": "Bladgroen",
+        "green": "Groen",
+        "jade": "Jade",
+        "spring-green": "Lentegroen",
+        "mint": "Mint",
+        "cyan": "Cyaan",
+        "sky-blue": "Hemelsblauw",
+        "azure": "Azuurblauw",
+        "cobalt": "Kobaltblauw",
+        "blue": "Blauw",
+        "indigo": "Indigo",
+        "violet": "Violet",
+        "purple": "Paars",
+        "magenta": "Magenta",
+        "fuchsia": "Fuchsia",
+        "pink": "Roze",
+        "rose": "Oudroze",
+        "gray": "Grijs",
+        "black": "Zwart",
+        "white": "Wit"
+      },
+      "keyColorLabel": "Sleutelkleur — klik om de hex-code te kopiëren",
+      "clickToCopyHex": "Klik om de hex-code te kopiëren",
       "copiedExcl": "Gekopieerd!",
       "copyColors": "Kleuren kopiëren",
       "hexFormat": "Hex",
       "cssFormat": "CSS",
       "rgbFormat": "RGB",
-      "copyHexCodes": "Hexcodes kopiëren",
+      "copyHexCodes": "Hex-codes kopiëren",
       "copyCssVariables": "CSS-variabelen kopiëren",
       "copyRgbValues": "RGB-waarden kopiëren",
-      "pickColorFromPhoto": "Kleur kiezen uit foto",
-      "close": "Sluiten",
-      "dropPhotoOrBrowse": "Sleep een foto hierheen of klik om te bladeren",
-      "tapToChoose": "Tik om een foto te kiezen",
-      "tapToSample": "Tik ergens op de foto om die kleur te bemonsteren",
-      "changePhoto": "Foto wijzigen",
-      "privacyNote": "Je foto blijft in je browser — er wordt niets geüpload",
       "suggestions": {
         "complementary": {
-          "warm": "Geschikt voor: warme zonsondergangportretten met koel schaduwcontrast",
-          "cool": "Geschikt voor: sfeervolle blauwe-uur-opnames met warme accentverlichting",
-          "default": "Geschikt voor: composities met hoog contrast en sterke visuele spanning"
+          "warm": "Ideaal voor: warme zonsondergangportretten met koel schaduwcontrast",
+          "cool": "Ideaal voor: sfeervolle blue-hour-opnames met warm accentlicht",
+          "default": "Ideaal voor: contrastrijke composities met sterke visuele spanning"
+        },
+        "splitComplementary": {
+          "warm": "Ideaal voor: dromerige, rustige looks met contrast zonder hardheid",
+          "cool": "Ideaal voor: koele straat- en reisscènes met twee warme accenten",
+          "default": "Ideaal voor: uitgebalanceerde beelden met variatie zonder directe tegenstelling"
         },
         "analogous": {
-          "warm": "Geschikt voor: gouden-uurlandschappen met samenhangende warme tinten",
-          "cool": "Geschikt voor: serene waterscènes en schemerfotografie",
-          "default": "Geschikt voor: harmonieuze natuurfoto's met vloeiende kleurovergangen"
+          "warm": "Ideaal voor: landschappen tijdens het gouden uur met eenduidige warme tinten",
+          "cool": "Ideaal voor: rustige waterscènes en schemerfotografie",
+          "default": "Ideaal voor: harmonieuze natuurfoto's met vloeiende kleurovergangen"
         },
-        "triadic": "Gebruik voor: levendige redactionele fotografie en gedurfde creatieve portretten",
-        "splitComplementary": {
-          "warm": "Gebruik voor: contrasterende garderobe tegen een natuurlijk decor",
-          "default": "Gebruik voor: uitgebalanceerde productfotografie met visuele variatie"
+        "triadic": {
+          "warm": "Ideaal voor: gedurfd redactioneel werk met de energie van rood, geel en blauw",
+          "cool": "Ideaal voor: levendige, licht onrustige beelden met drie sterke kleuren",
+          "default": "Ideaal voor: levendig redactioneel werk en gedurfde creatieve portretten"
         },
-        "tetradic": "Gebruik voor: rijke redactionele lay-outs en complexe composities met meerdere onderwerpen"
+        "tetradic": {
+          "warm": "Ideaal voor: rijke, gelaagde scènes met twee complementaire paren",
+          "cool": "Ideaal voor: complexe stadsgezichten met koele en warme lichtbronnen",
+          "default": "Ideaal voor: rijke redactionele lay-outs en composities met meerdere onderwerpen"
+        },
+        "monochromatic": {
+          "warm": "Ideaal voor: rustige, samenhangende warme tinten uit één kleurtoon",
+          "cool": "Ideaal voor: kalme, minimale koele scènes gebouwd op één kleurtoon",
+          "default": "Ideaal voor: minimale, eenduidige beelden die leunen op licht en schaduw"
+        },
+        "custom": {
+          "warm": "Sleep de gestippelde doelen om je eigen relatie tussen kleuren te ontwerpen",
+          "cool": "Sleep de gestippelde doelen om je eigen relatie tussen kleuren te ontwerpen",
+          "default": "Sleep de gestippelde doelen om je eigen relatie tussen kleuren te ontwerpen"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
-          "question": "Wat is kleurharmonie in fotografie?",
-          "answer": "Kleurharmonie verwijst naar esthetisch aangename kleurcombinaties op basis van hun positie op het kleurenwiel. Harmonieuze kleuren creëren visuele balans en kunnen specifieke stemmingen oproepen in je foto's."
+          "question": "Wat is kleurharmonie in de fotografie?",
+          "answer": "Kleurharmonie is een relatie tussen de tinten in een beeld die doelbewust aanvoelt: twee kleuren tegenover elkaar (complementair), buren op het kleurenwiel (analoog), of drie gelijk verdeeld (triadisch). Foto's beginnen zelden met een zuivere harmonie, maar zitten er meestal maar een kleine verschuiving vandaan."
         },
         "complementary-vs-analogous": {
-          "question": "Wat is het verschil tussen complementaire en analoge kleuren?",
-          "answer": "Complementaire kleuren liggen tegenover elkaar op het kleurenwiel (zoals blauw en oranje) en creëren een hoog contrast. Analoge kleuren liggen naast elkaar (zoals blauw, blauwgroen en groen) en creëren een meer harmonieus, samenhangend gevoel."
+          "question": "Hoe lees ik de harmonie af die al in mijn foto zit?",
+          "answer": "Neem een paar belangrijke punten als staal (lucht, huid, die ene rode deur) en kijk waar ze op het wiel terechtkomen. Twee punten die ongeveer tegenover elkaar liggen, vormen een complementair paar; een cluster binnen ongeveer 60° is analoog. Het label „Beste overeenkomst” doet deze vergelijking voor je over alle zes harmonieën."
         },
         "how-to-use-color-schemes-photography": {
-          "question": "Hoe gebruik ik kleurenschema's in fotografie?",
-          "answer": "Plan je fotoshoots rond een kleurenpalet — kies garderobe, locaties en rekwisieten die passen bij je schema. Bij nabewerking kun je kleurcorrectie gebruiken om het gekozen palet te benadrukken. Kleurenschema's helpen bij het creëren van een consistente visuele identiteit in een fotoserie."
+          "question": "Hoe gebruik ik de voorgestelde kleuren in Lightroom of Photoshop?",
+          "answer": "Elk staal toont een richting (richting roze, richting blauwgroen) en een voorgestelde hex-code bij dezelfde verzadiging en lichtheid. Duw in het HSL-paneel of Point Color van Lightroom, of bij Tint/Verzadiging van Photoshop, de tint van die kleur in de getoonde richting totdat hij bij de voorgestelde waarde uitkomt. Verplaats eerst de grootste verschuivingen en stop zodra de pijl „Uitgelijnd” aangeeft."
         }
       }
     }
