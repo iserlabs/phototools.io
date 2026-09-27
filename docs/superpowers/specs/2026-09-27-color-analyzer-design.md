@@ -82,7 +82,8 @@ template to that hue. Two samples may map to the same slot.
 **Sidebar**, top to bottom: `ToolActions` (copy image, share); harmony picker
 with the five existing types plus **monochromatic** and **custom**, with a
 "Closest fit" badge on the detected harmony (§6); the existing "Great for…"
-suggestion line; the sample list, one `SampleCard` per sample with swatch,
+suggestion line, keyed on the harmony and the warm/cool side of the **anchor
+hue** (the key hue when there are no samples); the sample list, one `SampleCard` per sample with swatch,
 label, hex (tap to copy), H/S/L, lock toggle, and in guide view the nudge line
 ("Aligned", "Slight nudge toward pink", "Big shift toward teal") with a
 suggested hex swatch. Samples are measured, not edited: only label and
@@ -132,7 +133,9 @@ HarmonyType  'complementary' | 'analogous' | 'triadic' | 'split-complementary'
 ## 5. Sampling pipeline (`useSampling.ts`)
 
 - Decode with `createImageBitmap(file, { imageOrientation: 'from-image',
-  resizeWidth })` to at most 1600px on the long edge, inside try/catch. On
+  resizeWidth | resizeHeight })` to at most 1600px on the long edge (whichever
+  axis is longer gets the constraint; the other follows the aspect ratio),
+  inside try/catch. On
   failure (older Safari rejects the options) fall back to `<img>` decode and
   `drawImage` scaling; current browsers honour EXIF orientation on `<img>` by
   default. Unsupported formats (HEIC in Chrome) surface the existing
@@ -196,9 +199,14 @@ names from `src/lib/math/color-name.ts`: `hueBand(h, s, l)` → key.
 **Auto-pick** (`src/lib/math/color-cluster.ts`). `dominantColors(pixels, k =
 5)`: the analysis canvas downscaled to 64px wide, k-means in RGB, k-means++
 seeding from a fixed-seed mulberry32 PRNG, 12 iterations, empty clusters
-dropped (result may be fewer than k). For each cluster return the grid pixel
-nearest its centroid, mapped to image-relative x, y. Those go through the
-normal sampling path (5×5 average, neutral check).
+dropped (result may be fewer than k). **Chromatic first:** clustering runs over
+pixels that pass the neutral test (S ≥ 8%, 8% ≤ L ≤ 94%); only when fewer than
+5% of pixels are chromatic does it run over all pixels. Otherwise shadows and
+highlights, which dominate most photos, would seed the wheel with grays. For
+each cluster return the grid pixel nearest its centroid, mapped to
+image-relative x, y. Those go through the normal sampling path (5×5 average,
+neutral check). Auto-pick **replaces** the current sample set; samples are
+cheap to place and nothing else depends on them, so no confirmation.
 
 **Wheel geometry** stays in `drawWheel.ts`: sample at (hue, saturation) in
 natural view, (hue, 100) in pure view; target at (targetHue, same radius);
