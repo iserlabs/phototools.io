@@ -55,6 +55,7 @@ export function ColorAnalyzer() {
 
   // ── photo + samples ─────────────────────────────────────────────────
   const [photo, setPhoto] = useState<AnalysisPhoto | null>(null)
+  const [decodeFailed, setDecodeFailed] = useState(false)
   const [state, dispatch] = useReducer(sampleReducer, EMPTY_STATE)
   const { samples, selectedId, customTargets } = state
   const hasSamples = samples.length > 0
@@ -75,8 +76,12 @@ export function ColorAnalyzer() {
     try {
       const decoded = await decodeToAnalysisCanvas(file)
       setPhoto(decoded)
+      setDecodeFailed(false)
       dispatch({ type: 'clear' })
-    } catch { /* FileDropZone already filtered non-images; a decode failure leaves the pane empty */ }
+    } catch {
+      // FileDropZone filters by MIME type, but a HEIC/corrupt file can still fail to decode
+      setDecodeFailed(true)
+    }
   }, [])
 
   const addSample = useCallback((x: number, y: number) => {
@@ -89,7 +94,8 @@ export function ColorAnalyzer() {
 
   const moveSample = useCallback((id: string, x: number, y: number) => {
     if (!photo) return
-    dispatch({ type: 'move', id, x, y, color: sampleAt(photo, x, y) })
+    const cx = Math.min(1, Math.max(0, x)), cy = Math.min(1, Math.max(0, y))
+    dispatch({ type: 'move', id, x: cx, y: cy, color: sampleAt(photo, cx, cy) })
   }, [photo])
 
   const autoPick = useCallback(() => {
@@ -221,8 +227,8 @@ export function ColorAnalyzer() {
         <PaletteBar swatches={palette} />
         <div className={styles.centerRow}>
           <PhotoPane
-            photo={photo} samples={samples} selectedId={selectedId} canAdd={samples.length < SAMPLE_CAP}
-            labels={{ drop: tk('dropPhotoPrompt'), change: tk('changePhoto'), autoPick: tk('autoPick'), capReached: t('capReached', { cap: SAMPLE_CAP }),
+            photo={photo} samples={samples} selectedId={selectedId} canAdd={samples.length < SAMPLE_CAP} decodeFailed={decodeFailed}
+            labels={{ drop: tk('dropPhotoPrompt'), decodeError: tk('decodeError'), canvasLabel: tk('canvasLabel'), change: tk('changePhoto'), autoPick: tk('autoPick'), capReached: t('capReached', { cap: SAMPLE_CAP }),
               marker: (n, label) => t('markerLabel', { n, label }), remove: tk('removeSample') }}
             onFile={onFile} onAdd={addSample} onMove={moveSample}
             onSelect={(id) => dispatch({ type: 'select', id })} onRemove={(id) => dispatch({ type: 'remove', id })}

@@ -40,4 +40,18 @@ describe('SampleMarkers', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Remove sample' }))
     expect(onRemove).toHaveBeenCalledWith('a')
   })
+
+  it('pressing a marker focuses it and Delete/Backspace removes it', () => {
+    const onRemove = vi.fn()
+    render(<SampleMarkers {...base} onRemove={onRemove} onDragStart={(_id, e) => e.preventDefault()}
+      samples={[sample('a', 0.5, 0.5), sample('b', 0.2, 0.2)]} selectedId="a" />)
+    const m = screen.getByRole('button', { name: 'Sample 1: blue' })
+    expect(m).toHaveAttribute('tabindex', '0')
+    fireEvent.pointerDown(m)
+    expect(m).toHaveFocus()
+    fireEvent.keyDown(m, { key: 'Delete' })
+    expect(onRemove).toHaveBeenCalledWith('a')
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Sample 2: blue' }), { key: 'Backspace' })
+    expect(onRemove).toHaveBeenCalledWith('b')
+  })
 })

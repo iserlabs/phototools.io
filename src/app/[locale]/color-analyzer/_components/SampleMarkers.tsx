@@ -31,8 +31,16 @@ export function SampleMarkers({ samples, selectedId, width, height, markerLabel,
               style={{ left, top, backgroundColor: `rgb(${s.rgb.r}, ${s.rgb.g}, ${s.rgb.b})` }}
               aria-label={markerLabel(i + 1, s.label)}
               aria-pressed={selected}
+              tabIndex={0}
               onClick={() => onSelect(s.id)}
-              onPointerDown={(e) => onDragStart(s.id, e)}
+              onPointerDown={(e) => {
+                onDragStart(s.id, e)
+                // the drag handler preventDefaults pointerdown, which also blocks focus; focus explicitly so Delete works
+                e.currentTarget.focus({ preventScroll: true })
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Delete' || e.key === 'Backspace') { e.preventDefault(); onRemove(s.id) }
+              }}
             >
               {i + 1}
             </button>

@@ -52,23 +52,31 @@ async function decodeWithImg(file: File): Promise<{ img: HTMLImageElement; url: 
  * side. Decodes once via <img> to learn the oriented dimensions (naturalWidth/
  * naturalHeight already reflect EXIF orientation in current browsers), then
  * prefers a single resized createImageBitmap decode of the file; falls back to
- * drawing the same <img> (scaled) if createImageBitmap fails, so the file is
- * never decoded twice.
+ * drawing the same <img> (scaled) if createImageBitmap fails or returns a
+ * bitmap that ignored the resize/orientation options, so the file is never
+ * decoded twice. The canvas is always sized from the computed `size`.
  */
 export async function decodeToAnalysisCanvas(file: File, maxLongEdge = ANALYSIS_LONG_EDGE): Promise<AnalysisPhoto> {
   const { img, url } = await decodeWithImg(file)
   try {
     const size = fitSize(img.naturalWidth, img.naturalHeight, maxLongEdge)
-    let source: ImageBitmap | HTMLImageElement
-    let w = size.width, h = size.height
+    const { width: w, height: h } = size
+    let source: ImageBitmap | HTMLImageElement = img
     try {
-      source = await createImageBitmap(file, {
+      const bitmap = await createImageBitmap(file, {
         imageOrientation: 'from-image',
         resizeWidth: size.width,
         resizeHeight: size.height,
         resizeQuality: 'high',
       })
-      w = source.width; h = source.height
+      // Browsers disagree on how resizeWidth/Height combine with EXIF orientation
+      // (WPT interop issue #1390), so a bitmap can come back unrotated or unscaled.
+      // If its aspect or size doesn't match what <img> reported, draw the <img> instead.
+      const aspect = size.width / size.height
+      const wrongAspect = Math.abs(bitmap.width / bitmap.height - aspect) > 0.01 * aspect
+      const tooBig = Math.max(bitmap.width, bitmap.height) > maxLongEdge
+      if (wrongAspect || tooBig) bitmap.close()
+      else source = bitmap
     } catch {
       source = img
     }

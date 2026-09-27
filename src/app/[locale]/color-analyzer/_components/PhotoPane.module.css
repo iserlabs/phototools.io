@@ -1,5 +1,6 @@
-.pane { position: relative; flex: 1; min-width: 0; min-height: 0; background: var(--surface-2, #111); border-right: 1px solid var(--border); touch-action: none; overflow: hidden; }
-.dropWrap { position: absolute; inset: 16px; display: flex; align-items: center; justify-content: center; }
+.pane { position: relative; flex: 1; min-width: 0; min-height: 0; background: var(--surface-2, #111); border-right: 1px solid var(--border); overflow: hidden; }
+.dropWrap { position: absolute; inset: 16px; display: flex; flex-direction: column; gap: 8px; align-items: center; justify-content: center; }
+.decodeError { margin: 0; color: var(--danger, #ef4444); font-size: 13px; text-align: center; }
 .imageBox { position: absolute; }
 .image { display: block; cursor: crosshair; }
 .markers { position: absolute; inset: 0; pointer-events: none; }

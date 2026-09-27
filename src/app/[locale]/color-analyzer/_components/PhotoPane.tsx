@@ -12,7 +12,8 @@ export interface PhotoPaneProps {
   samples: Sample[]
   selectedId: string | null
   canAdd: boolean
-  labels: { drop: string; change: string; autoPick: string; capReached: string; marker: (n: number, label: string) => string; remove: string }
+  decodeFailed: boolean
+  labels: { drop: string; decodeError: string; canvasLabel: string; change: string; autoPick: string; capReached: string; marker: (n: number, label: string) => string; remove: string }
   onFile: (file: File) => void
   onAdd: (x01: number, y01: number) => void
   onMove: (id: string, x01: number, y01: number) => void
@@ -130,7 +131,10 @@ export function PhotoPane(p: PhotoPaneProps) {
   if (!p.photo) {
     return (
       <div className={styles.pane} ref={paneRef}>
-        <div className={styles.dropWrap}><FileDropZone onFile={p.onFile} prompt={p.labels.drop} /></div>
+        <div className={styles.dropWrap}>
+          <FileDropZone onFile={p.onFile} prompt={p.labels.drop} />
+          {p.decodeFailed && <p className={styles.decodeError} role="alert">{p.labels.decodeError}</p>}
+        </div>
       </div>
     )
   }
@@ -140,7 +144,7 @@ export function PhotoPane(p: PhotoPaneProps) {
       onPointerMove={onPaneMove} onPointerUp={endDrag} onPointerCancel={endDrag} onPointerLeave={() => setLoupe(null)}>
       <div className={styles.imageBox} style={{ left: box.left, top: box.top, width: box.width, height: box.height }}>
         <canvas ref={canvasRef} className={styles.image} style={{ width: box.width, height: box.height }}
-          onClick={onCanvasClick} aria-label={p.labels.drop} />
+          onClick={onCanvasClick} aria-label={p.labels.canvasLabel} />
         <SampleMarkers samples={p.samples} selectedId={p.selectedId} width={box.width} height={box.height}
           markerLabel={p.labels.marker} removeLabel={p.labels.remove}
           onSelect={p.onSelect} onRemove={p.onRemove} onDragStart={onMarkerDragStart} />
