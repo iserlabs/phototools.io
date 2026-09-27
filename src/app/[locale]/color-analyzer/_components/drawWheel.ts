@@ -1,8 +1,5 @@
 import { hslToRgb } from '@/lib/math/color'
-
-function rgbToHex(r: number, g: number, b: number): string {
-  return '#' + [r, g, b].map((c) => c.toString(16).padStart(2, '0')).join('')
-}
+import { rgbToHex } from '@/lib/math/color-fit'
 
 export function hueToPos(hue: number, sat: number, cx: number, cy: number, radius: number) {
   const angleRad = (hue - 90) * (Math.PI / 180)
@@ -72,87 +69,89 @@ export function drawWheelPixels(
   return imageData
 }
 
-function drawDot(ctx: CanvasRenderingContext2D, x: number, y: number, hex: string, isBase: boolean, dpr: number) {
-  const dotRadius = (isBase ? 11 : 8) * dpr
+export interface WheelDot { id: string; hue: number; r: number; hex: string; index: number; isKey: boolean; neutral: boolean }
+export interface WheelTarget { id: string; hue: number; r: number; filled: boolean }
+export interface WheelArrow { fromId: string; toHue: number; toR: number }
 
-  ctx.beginPath()
-  ctx.arc(x, y, dotRadius, 0, Math.PI * 2)
-  ctx.fillStyle = hex
-  ctx.fill()
-  ctx.strokeStyle = '#ffffff'
-  ctx.lineWidth = 2.5 * dpr
-  ctx.stroke()
+function circle(ctx: CanvasRenderingContext2D, x: number, y: number, radius: number) {
+  ctx.beginPath(); ctx.arc(x, y, radius, 0, Math.PI * 2)
+}
 
-  if (isBase) {
-    ctx.beginPath()
-    ctx.arc(x, y, dotRadius + 4 * dpr, 0, Math.PI * 2)
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)'
-    ctx.lineWidth = 1.5 * dpr
-    ctx.stroke()
+function drawNumberedDot(ctx: CanvasRenderingContext2D, x: number, y: number, dot: WheelDot, selected: boolean, dpr: number) {
+  const radius = (dot.isKey ? 12 : 10) * dpr
+  circle(ctx, x, y, radius)
+  ctx.fillStyle = dot.hex; ctx.fill()
+  ctx.lineWidth = (selected ? 3 : 2) * dpr
+  ctx.strokeStyle = selected ? '#ffd166' : '#ffffff'; ctx.stroke()
+  if (dot.isKey) {
+    circle(ctx, x, y, radius + 4 * dpr)
+    ctx.lineWidth = 1.5 * dpr; ctx.strokeStyle = 'rgba(255,255,255,0.6)'; ctx.stroke()
   }
+  ctx.fillStyle = '#ffffff'
+  ctx.font = `bold ${10 * dpr}px system-ui, sans-serif`
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
+  ctx.strokeStyle = 'rgba(0,0,0,0.7)'; ctx.lineWidth = 3 * dpr
+  ctx.strokeText(String(dot.index), x, y)
+  ctx.fillText(String(dot.index), x, y)
 }
 
-interface MonoPoint {
-  h: number
-  s: number
-  l: number
+function drawArrow(ctx: CanvasRenderingContext2D, x0: number, y0: number, x1: number, y1: number, dpr: number) {
+  const angle = Math.atan2(y1 - y0, x1 - x0)
+  const head = 8 * dpr
+  const shorten = 12 * dpr   // stop before the target circle
+  const ex = x1 - Math.cos(angle) * shorten
+  const ey = y1 - Math.sin(angle) * shorten
+  ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(ex, ey)
+  ctx.strokeStyle = 'rgba(255,255,255,0.9)'; ctx.lineWidth = 1.5 * dpr; ctx.setLineDash([]); ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(ex, ey)
+  ctx.lineTo(ex - head * Math.cos(angle - Math.PI / 6), ey - head * Math.sin(angle - Math.PI / 6))
+  ctx.lineTo(ex - head * Math.cos(angle + Math.PI / 6), ey - head * Math.sin(angle + Math.PI / 6))
+  ctx.closePath(); ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.fill()
 }
 
-export function drawOverlay(
+/**
+ * Draws targets (dashed), arrows (dot → target), numbered sample dots, and the
+ * key dot (no-sample mode). Call after drawWheelPixels on the same context.
+ */
+export function drawAnalyzerOverlay(
   ctx: CanvasRenderingContext2D,
   canvasPixels: number,
-  harmonyHues: number[],
-  saturation: number,
-  lightness: number,
   dpr: number,
-  baseIndex: number,
-  monochromaticPoints: MonoPoint[] | undefined,
+  o: { dots: WheelDot[]; targets: WheelTarget[]; arrows: WheelArrow[]; keyDot: WheelDot | null; selectedId: string | null; lightness: number },
 ) {
-  const cx = canvasPixels / 2
-  const cy = canvasPixels / 2
-  const r = cx
+  const cx = canvasPixels / 2, cy = canvasPixels / 2, R = cx
+  const dotById = new Map(o.dots.map((d) => [d.id, d]))
 
-  if (monochromaticPoints && monochromaticPoints.length > 0) {
-    const monoPoints = monochromaticPoints.map((p) => {
-      const pos = hueToPos(p.h, p.s, cx, cy, r)
-      return { ...pos, ...p }
-    })
-
-    const outermost = monoPoints.reduce((a, b) =>
-      Math.hypot(a.x - cx, a.y - cy) > Math.hypot(b.x - cx, b.y - cy) ? a : b
-    )
-    ctx.beginPath()
-    ctx.moveTo(cx, cy)
-    ctx.lineTo(outermost.x, outermost.y)
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)'
-    ctx.lineWidth = 1.5 * dpr
-    ctx.stroke()
-
-    monoPoints.forEach((p, i) => {
-      const rgb = hslToRgb(p.h, p.s, p.l)
-      const hex = rgbToHex(rgb.r, rgb.g, rgb.b)
-      drawDot(ctx, p.x, p.y, hex, i === baseIndex, dpr)
-    })
-    return
+  // spokes + dashed targets
+  for (const t of o.targets) {
+    const pos = hueToPos(t.hue, t.r, cx, cy, R)
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(pos.x, pos.y)
+    ctx.strokeStyle = 'rgba(255,255,255,0.3)'; ctx.lineWidth = 1 * dpr; ctx.setLineDash([]); ctx.stroke()
+    circle(ctx, pos.x, pos.y, 10 * dpr)
+    if (!t.filled) {
+      const rgb = hslToRgb(t.hue, t.r, o.lightness)
+      ctx.fillStyle = rgbToHex(rgb.r, rgb.g, rgb.b) + '99'; ctx.fill()
+    }
+    ctx.setLineDash([4 * dpr, 3 * dpr]); ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 1.5 * dpr; ctx.stroke()
+    ctx.setLineDash([])
   }
 
-  const points = harmonyHues.map((h) => {
-    const pos = hueToPos(h, saturation, cx, cy, r)
-    return { ...pos, hue: h }
-  })
+  for (const a of o.arrows) {
+    const from = dotById.get(a.fromId)
+    if (!from) continue
+    const p0 = hueToPos(from.hue, from.r, cx, cy, R)
+    const p1 = hueToPos(a.toHue, a.toR, cx, cy, R)
+    drawArrow(ctx, p0.x, p0.y, p1.x, p1.y, dpr)
+  }
 
-  points.forEach((p) => {
-    ctx.beginPath()
-    ctx.moveTo(cx, cy)
-    ctx.lineTo(p.x, p.y)
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)'
-    ctx.lineWidth = 1.5 * dpr
-    ctx.stroke()
-  })
+  for (const d of o.dots) {
+    const pos = d.neutral ? { x: cx, y: cy } : hueToPos(d.hue, d.r, cx, cy, R)
+    drawNumberedDot(ctx, pos.x, pos.y, d, d.id === o.selectedId, dpr)
+  }
 
-  points.forEach((p, i) => {
-    const rgb = hslToRgb(p.hue, saturation, lightness)
-    const hex = rgbToHex(rgb.r, rgb.g, rgb.b)
-    drawDot(ctx, p.x, p.y, hex, i === baseIndex, dpr)
-  })
+  if (o.keyDot) {
+    const pos = hueToPos(o.keyDot.hue, o.keyDot.r, cx, cy, R)
+    drawNumberedDot(ctx, pos.x, pos.y, o.keyDot, false, dpr)
+  }
 }

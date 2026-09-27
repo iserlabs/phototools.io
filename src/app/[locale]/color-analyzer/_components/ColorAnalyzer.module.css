@@ -378,3 +378,7 @@
     justify-content: center;
   }
 }
+
+.viewToggle { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--border); border-radius: 999px; margin: 8px auto 0; }
+.viewBtn { border: 0; background: transparent; color: var(--text-muted); padding: 6px 14px; border-radius: 999px; font: inherit; font-size: 12px; cursor: pointer; }
+.viewBtnActive { background: var(--accent); color: #fff; }

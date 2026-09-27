@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
-import styles from './ColorHarmony.module.css'
+import styles from './ColorAnalyzer.module.css'
 
 interface Swatch {
   hue: number
