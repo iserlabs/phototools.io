@@ -54,6 +54,25 @@
 | `src/lib/i18n/messages/*/tools/color-analyzer.json`, `education/color-analyzer.json` | strings |
 | `src/e2e/tools/color-analyzer.spec.ts`, `src/e2e/fixtures/color-blocks.jpg` | e2e |
 
+## Execution waves (parallel agents)
+
+Two chains run side by side after Task 1. Each parallel task runs in its **own git worktree on a branch off the latest `feat/color-analyzer`** and is merged back when its reviewer passes it; the next wave starts from the merged branch. Within a wave, tasks never write the same file.
+
+| Wave | Code chain | Copy chain | Why safe |
+|---|---|---|---|
+| 0 | Task 1 | — | everything lands on the new slug |
+| 1 | Task 2 | Task 13 | T13 touches `en/messages`, `tools.ts` (name/description), `education/content-color-fov.ts`, `faq.ts`; T2 touches only `colorAnalyzer.ts` |
+| 2 | Task 3 ‖ Task 5? no — Task 3 alone | Task 14 (six locale batches can themselves run as 3 parallel agents: `[de fr es it pt]+[nl sv da nb fi]`, `[pl cs hu ro uk]+[ru tr el ca]`, `[ja ko zh zh-TW]+[hi bn th vi id ms fil]`) | T5 needs `isNeutral` from T3 |
+| 3 | Task 4 ‖ Task 5 | (copy chain done) | both depend only on T2/T3 |
+| 4 | Task 6 ‖ Task 8 | | T6 needs T5; T8 needs T4 and tears down the old component |
+| 5 | Task 7 | | needs T6's `SampledColor` |
+| 6 | Task 9 ‖ Task 10 ‖ Task 11 | | after T8's teardown no shared file remains; only T10 appends to `ColorAnalyzer.module.css` |
+| 7 | Task 12 | | needs 8–11 |
+| 8 | Task 15 | | needs 12–14 |
+| 9 | Task 16 | | |
+
+Rules for every agent while the copy chain is in flight: run **scoped** vitest paths and `npm run type-check`, never bare `npm test` (`translations.test.ts` is red between Task 13 and the last Task 14 batch). Task 16 runs the full suite.
+
 ---
 
 ### Task 1: Mechanical rename to `color-analyzer` (no behaviour change)
@@ -1483,7 +1502,9 @@ git commit -m "feat(color-analyzer): sample state reducer with exclusive lock an
 
 **Files:**
 - Create: `src/app/[locale]/color-analyzer/_components/wheelHit.ts`, `wheelHit.test.ts`
-- Modify: `drawWheel.ts` (keep `hueToPos`, `drawWheelPixels`; replace `drawOverlay` with `drawAnalyzerOverlay`), `useWheelPointer.ts` (rewrite), `ColorWheel.tsx` (rewrite)
+- Modify: `drawWheel.ts` (keep `hueToPos`, `drawWheelPixels`; replace `drawOverlay` with `drawAnalyzerOverlay`), `useWheelPointer.ts` (rewrite), `ColorWheel.tsx` (rewrite), `PaletteBar.tsx` + `buildColorExport.ts` (import paths only), `page.tsx`
+- Create: `ColorAnalyzer.module.css` (copy of the old module + view toggle rules), `ColorAnalyzer.tsx` (placeholder)
+- Delete: `ColorHarmony.tsx`, `ColorHarmony.module.css`, `colorHarmonyHelpers.ts`, `ColorSidebar.tsx`, `PhotoPicker.tsx`, `PhotoPicker.module.css`, `DropZone.tsx`, `useMagnifier.ts`
 
 **Interfaces:**
 - Consumes: `hueToPos` (existing), `rgbToHex` from `@/lib/math/color-fit`, `hslToRgb`.
@@ -1869,7 +1890,28 @@ export function WheelViewToggle({ view, onChange, labels }: { view: WheelView; o
 .viewBtn { border: 0; background: transparent; color: var(--text-muted); padding: 6px 14px; border-radius: 999px; font: inherit; font-size: 12px; cursor: pointer; }
 .viewBtnActive { background: var(--accent); color: #fff; }
 ```
-The old `ColorHarmony.tsx` still imports `ColorWheel` with the old props and will not type-check until Task 12 replaces it. To keep the branch buildable between tasks, in this step also change `ColorHarmony.tsx`'s `<ColorWheel …/>` usage to `{/* replaced in Task 12 */}` and delete its now-unused imports/handlers (`wheelRef` may stay). The page will render without a wheel until Task 12; that is acceptable on a feature branch.
+**Tear down the old component now**, so Tasks 9, 10 and 11 can run in parallel without touching a shared file:
+
+```bash
+cd ~/workspace/iserlabs/applications/photo-tools
+D="src/app/[locale]/color-analyzer/_components"
+git rm -q "$D/ColorHarmony.tsx" "$D/ColorHarmony.module.css" "$D/colorHarmonyHelpers.ts" "$D/ColorSidebar.tsx" \
+          "$D/PhotoPicker.tsx" "$D/PhotoPicker.module.css" "$D/DropZone.tsx" "$D/useMagnifier.ts"
+```
+Then:
+- `PaletteBar.tsx`: change the CSS import to `./ColorAnalyzer.module.css` (nothing else; Task 11 rewrites it).
+- `buildColorExport.ts`: change the first two imports to `import { HARMONY_KEYS, type HarmonyType } from '@/lib/data/colorAnalyzer'` (Task 11 rewrites the rest).
+- Create the placeholder state owner `ColorAnalyzer.tsx` (Task 12 replaces it):
+```tsx
+'use client'
+import { ToolHeading } from '@/components/shared/ToolHeading'
+export function ColorAnalyzer() {
+  return <div><ToolHeading slug="color-analyzer" /></div>
+}
+```
+- `page.tsx`: `import { ColorAnalyzer } from './_components/ColorAnalyzer'` and render `<ColorAnalyzer />` instead of `<ColorHarmony />`.
+
+The page renders empty until Task 12; that is acceptable on a feature branch.
 
 - [ ] **Step 8: Type-check and run the tool's tests**
 
@@ -1879,7 +1921,7 @@ Expected: clean; PASS.
 - [ ] **Step 9: Commit**
 
 ```bash
-git add "src/app/[locale]/color-analyzer/_components/"
+git add -A "src/app/[locale]/color-analyzer/"
 git commit -m "feat(color-analyzer): wheel overlay with numbered dots, dashed targets and arrows; pointer hook for select/key/custom drag"
 ```
 
@@ -1889,7 +1931,7 @@ git commit -m "feat(color-analyzer): wheel overlay with numbered dots, dashed ta
 
 **Files:**
 - Create: `src/app/[locale]/color-analyzer/_components/PhotoPane.tsx`, `SampleMarkers.tsx`, `PhotoPane.module.css`, `SampleMarkers.test.tsx`
-- Delete: `PhotoPicker.tsx`, `PhotoPicker.module.css`, `DropZone.tsx`, `useMagnifier.ts` (their roles move here)
+- (The old `PhotoPicker`, `DropZone`, `useMagnifier` were deleted in Task 8; their roles move here.)
 
 **Interfaces:**
 - Consumes: `FileDropZone` from `@/components/shared/FileDropZone`; `AnalysisPhoto` from `./useSampling`; `Sample` from `./analyzerState`.
@@ -2213,14 +2255,9 @@ export function PhotoPane(p: PhotoPaneProps) {
 @media (max-width: 1023px) { .pane { min-height: 260px; border-right: 0; border-bottom: 1px solid var(--border); } }
 ```
 
-- [ ] **Step 6: Delete the superseded files and fix imports**
+- [ ] **Step 6: Confirm nothing else references the old picker**
 
-```bash
-cd ~/workspace/iserlabs/applications/photo-tools
-git rm -q "src/app/[locale]/color-analyzer/_components/PhotoPicker.tsx" "src/app/[locale]/color-analyzer/_components/PhotoPicker.module.css" \
-          "src/app/[locale]/color-analyzer/_components/DropZone.tsx" "src/app/[locale]/color-analyzer/_components/useMagnifier.ts"
-```
-In `ColorHarmony.tsx` remove the `PhotoPicker` import and the `{showPhotoPicker && …}` block (Task 12 deletes the whole file).
+Run: `grep -rn "PhotoPicker\|useMagnifier\|DropZone'" "src/app/[locale]/color-analyzer"` — expected: no output.
 
 - [ ] **Step 7: Type-check and test**
 
@@ -2242,7 +2279,7 @@ Both components take their strings through a `labels` prop so they test without 
 
 **Files:**
 - Create: `src/app/[locale]/color-analyzer/_components/SampleCard.tsx`, `AnalyzerSidebar.tsx`, `AnalyzerSidebar.test.tsx`
-- Delete: `ColorSidebar.tsx`
+- (The old `ColorSidebar.tsx` was deleted in Task 8.)
 
 **Interfaces:**
 - Consumes: `Sample` from `./analyzerState`; `FitResult` from `@/lib/math/color-fit`; `HARMONY_KEYS`, `HarmonyType`, `TemplateHarmony` from data; `ToolActions` from shared.
@@ -2614,12 +2651,9 @@ Append to `ColorAnalyzer.module.css`:
 .suggestedSwatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: middle; border: 1px solid rgba(255,255,255,.25); }
 ```
 
-- [ ] **Step 5: Delete `ColorSidebar.tsx`, stub its use in `ColorHarmony.tsx`**
+- [ ] **Step 5: Confirm nothing references the old sidebar**
 
-```bash
-git rm -q "src/app/[locale]/color-analyzer/_components/ColorSidebar.tsx"
-```
-In `ColorHarmony.tsx` remove the `ColorSidebar` import and JSX (Task 12 deletes the file).
+Run: `grep -rn "ColorSidebar" src` — expected: no output.
 
 - [ ] **Step 6: Run tests and type-check**
 
@@ -2765,14 +2799,14 @@ export function buildColorExportCanvas(o: {
 }
 ```
 
-- [ ] **Step 3: Leave `colorHarmonyHelpers.ts` in place for now**
+- [ ] **Step 3: Confirm no stale imports**
 
-`ColorHarmony.tsx` still imports it. Task 12 Step 4 deletes both files together so type-check stays green at every commit.
+Run: `grep -rn "colorHarmonyHelpers" src` — expected: no output (deleted in Task 8).
 
 - [ ] **Step 4: Type-check**
 
 Run: `npm run type-check`
-Expected: clean (PaletteBar/buildColorExport are only imported by `ColorHarmony.tsx`; update its two call sites to the new signatures or comment them out with `// replaced in Task 12`).
+Expected: clean (nothing imports `PaletteBar`/`buildColorExport` yet; Task 12 wires them).
 
 - [ ] **Step 5: Commit**
 
@@ -2788,7 +2822,7 @@ git commit -m "feat(color-analyzer): palette bar on PaletteSwatch and PNG export
 **Files:**
 - Create: `src/app/[locale]/color-analyzer/_components/ColorAnalyzer.tsx`
 - Modify: `ColorAnalyzer.module.css` (layout), `src/app/[locale]/color-analyzer/page.tsx`
-- Delete: `ColorHarmony.tsx`, `ColorHarmony.module.css`, `colorHarmonyHelpers.ts`
+- Replace: the Task 8 placeholder `ColorAnalyzer.tsx`
 
 **Interfaces:**
 - Consumes everything from Tasks 2–11. i18n keys under `toolUI.color-analyzer` (existing ones now; new ones added in Task 13 — until then `t()` returns the key path, which is fine on the branch).
@@ -3067,13 +3101,11 @@ Keep the existing `.wrapper`, `.sidebar`, `.rightSide`, `.paletteBar*`, `.field`
 
 - [ ] **Step 3: Wire the page**
 
-`src/app/[locale]/color-analyzer/page.tsx`: replace the `ColorHarmony` import/usage with `ColorAnalyzer` from `./_components/ColorAnalyzer`; `getTranslations('metadata.color-analyzer')` and `getAlternates('/color-analyzer', …)` were already rewritten by Task 1.
+`src/app/[locale]/color-analyzer/page.tsx` already imports `ColorAnalyzer` (Task 8 placeholder); no change needed.
 
-- [ ] **Step 4: Delete the old owner**
+- [ ] **Step 4: Confirm the old owner is gone**
 
-```bash
-git rm -q "src/app/[locale]/color-analyzer/_components/ColorHarmony.tsx" "src/app/[locale]/color-analyzer/_components/ColorHarmony.module.css" "src/app/[locale]/color-analyzer/_components/colorHarmonyHelpers.ts"
-```
+Run: `grep -rn "ColorHarmony" src` — expected: only the `ColorHarmony` icon function in `ToolIcon.tsx`.
 
 - [ ] **Step 5: Type-check, lint, unit tests, and a manual pass**
 
@@ -3095,7 +3127,7 @@ Manual checklist (desktop 1440 and 1280, then a 390px phone emulation):
 
 ```bash
 git add -A "src/app/[locale]/color-analyzer/"
-git commit -m "feat(color-analyzer): state owner wiring photo pane, wheel, sidebar and palette; retire ColorHarmony"
+git commit -m "feat(color-analyzer): state owner wiring photo pane, wheel, sidebar and palette"
 ```
 
 ---
