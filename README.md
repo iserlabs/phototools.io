@@ -19,7 +19,7 @@ All image processing happens client-side. Photos you load into the EXIF Viewer, 
 | Tool | Description |
 |------|-------------|
 | **[FOV Simulator](https://www.phototools.io/fov-simulator)** | Compare field of view across up to four lens/sensor combinations overlaid on real-world scenes. Plan lens purchases and understand how focal length and sensor size affect framing. |
-| **[Color Scheme Generator](https://www.phototools.io/color-scheme-generator)** | Build harmonious color palettes using complementary, analogous, triadic, split-complementary, and tetradic relationships. Pick colors from uploaded photos or the color wheel. |
+| **[Color Analyzer](https://www.phototools.io/color-analyzer)** | Sample colors from a photo and read the harmony against complementary, analogous, triadic, split-complementary, and tetradic relationships. Pick colors from uploaded photos or the color wheel. |
 | **[Star Trail Calculator](https://www.phototools.io/star-trail-calculator)** | Calculate maximum exposure for pinpoint stars (500 Rule and NPF Rule). Plan star trail stacking sessions with frame count and duration estimates. Animated sky preview. |
 | **[White Balance Visualizer](https://www.phototools.io/white-balance-visualizer)** | See how color temperature (1000K–12000K) shifts the look of scenes. Compare presets from Candle to Blue Sky, or upload your own photo for a live WebGL preview. |
 | **[Sensor Size Comparison](https://www.phototools.io/sensor-size-comparison)** | Visually compare sensor sizes from medium format to smartphone. Overlay, side-by-side, and pixel density modes with resolution data and popular camera models. |

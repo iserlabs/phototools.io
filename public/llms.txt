@@ -11,7 +11,7 @@ PhotoTools provides educational tools for photographers covering field of view, 
 ### Visualizers
 
 - [Field-of-View Simulator](https://www.phototools.io/en/fov-simulator): Compare field of view across focal lengths and sensor sizes
-- [Color Scheme Generator](https://www.phototools.io/en/color-scheme-generator): Build color palettes for photography shoots
+- [Color Analyzer](https://www.phototools.io/en/color-analyzer): Sample the colors in a photo, read its harmony, and see which way to push each one
 - [Star Trail Calculator](https://www.phototools.io/en/star-trail-calculator): Calculate max exposure for sharp stars or plan star trail shots
 - [White Balance Visualizer](https://www.phototools.io/en/white-balance-visualizer): See how color temperature affects your photos
 - [Sensor Size Comparison](https://www.phototools.io/en/sensor-size-comparison): Compare camera sensor sizes visually
