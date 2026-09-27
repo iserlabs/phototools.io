@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useCallback } from 'react'
-import { hitTest, pointerToPolar, type WheelPoint } from './wheelHit'
+import { resolvePress, pointerToPolar, type WheelPoint } from './wheelHit'
 
 const HIT_RADIUS = 16
 
@@ -43,12 +43,9 @@ export function useWheelPointer(
       o.onKeyChange(polar.hue, polar.r)
       return
     }
-    const dot = hitTest(o.dots, px, py, cx, cy, R, HIT_RADIUS)
-    if (dot) { o.onSelectDot(dot); return }
-    if (o.customDraggable) {
-      const target = hitTest(o.targets, px, py, cx, cy, R, HIT_RADIUS)
-      if (target) dragRef.current = { kind: 'target', id: target }
-    }
+    const press = resolvePress(o.dots, o.targets, o.customDraggable, px, py, cx, cy, R, HIT_RADIUS)
+    if (press.select) o.onSelectDot(press.select)
+    if (press.dragTarget) dragRef.current = { kind: 'target', id: press.dragTarget }
   }, [canvasRef, geom, o])
 
   const onPointerMove = useCallback((e: React.PointerEvent<HTMLCanvasElement>) => {

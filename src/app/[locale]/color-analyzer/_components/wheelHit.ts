@@ -21,3 +21,23 @@ export function hitTest(points: WheelPoint[], px: number, py: number, cx: number
   }
   return best
 }
+
+export type PressAction = { select: string | null; dragTarget: string | null }
+
+/**
+ * What a press on the wheel does outside key mode. Dots are hit first; in custom
+ * mode a custom target shares its sample's id and sits under that dot in guide
+ * view, so pressing the dot both selects it and starts dragging its target.
+ */
+export function resolvePress(
+  dots: WheelPoint[], targets: WheelPoint[], customDraggable: boolean,
+  px: number, py: number, cx: number, cy: number, radius: number, hitRadius: number,
+): PressAction {
+  const dot = hitTest(dots, px, py, cx, cy, radius, hitRadius)
+  if (dot) {
+    const dragTarget = customDraggable && targets.some((t) => t.id === dot) ? dot : null
+    return { select: dot, dragTarget }
+  }
+  if (!customDraggable) return { select: null, dragTarget: null }
+  return { select: null, dragTarget: hitTest(targets, px, py, cx, cy, radius, hitRadius) }
+}

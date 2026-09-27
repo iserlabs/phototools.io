@@ -142,10 +142,11 @@ export function ColorAnalyzer() {
   const arrows: WheelArrow[] = useMemo(() => {
     if (!hasSamples || view !== 'guide') return []
     return fit.results.filter((r) => r.band !== 'aligned').map((r) => {
+      // Land on the dashed target circle: templates draw targets at the fill S; custom at the sample's own S.
       const s = samples.find((x) => x.id === r.id)!
-      return { fromId: r.id, toHue: r.targetHue, toR: s.hsl.s }
+      return { fromId: r.id, toHue: r.targetHue, toR: harmony === 'custom' ? s.hsl.s : fill.s }
     })
-  }, [hasSamples, view, fit, samples])
+  }, [hasSamples, view, fit, samples, harmony, fill.s])
 
   // ── strings ─────────────────────────────────────────────────────────
   const tk = (k: string) => t(k as Parameters<typeof t>[0])

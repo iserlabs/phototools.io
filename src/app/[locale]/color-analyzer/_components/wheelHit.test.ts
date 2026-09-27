@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { pointerToPolar, hitTest, type WheelPoint } from './wheelHit'
+import { pointerToPolar, hitTest, resolvePress, type WheelPoint } from './wheelHit'
 import { hueToPos } from './drawWheel'
 
 const cx = 100, cy = 100, R = 100
@@ -32,5 +32,24 @@ describe('hitTest', () => {
   })
   it('returns null when nothing is within hitRadius', () => {
     expect(hitTest(pts, cx, cy, cx, cy, R, 12)).toBeNull()
+  })
+})
+
+describe('resolvePress', () => {
+  // In guide view a custom target shares its sample's id and sits right under the dot.
+  const dots: WheelPoint[] = [{ id: 's1', hue: 40, r: 70 }]
+  const targets: WheelPoint[] = [{ id: 's1', hue: 40, r: 70 }]
+  const on = hueToPos(40, 70, cx, cy, R)
+
+  it('a press on a dot in custom mode selects it and starts dragging its target', () => {
+    expect(resolvePress(dots, targets, true, on.x, on.y, cx, cy, R, 16)).toEqual({ select: 's1', dragTarget: 's1' })
+  })
+  it('outside custom mode a dot press only selects', () => {
+    expect(resolvePress(dots, targets, false, on.x, on.y, cx, cy, R, 16)).toEqual({ select: 's1', dragTarget: null })
+  })
+  it('a press on a bare custom target starts dragging it', () => {
+    const t2: WheelPoint[] = [{ id: 's1', hue: 200, r: 70 }]
+    const pos = hueToPos(200, 70, cx, cy, R)
+    expect(resolvePress(dots, t2, true, pos.x, pos.y, cx, cy, R, 16)).toEqual({ select: null, dragTarget: 's1' })
   })
 })
