@@ -23,6 +23,7 @@ export interface AnalyzerSidebarProps {
   buildExportCanvas: () => void
   harmony: HarmonyType
   onHarmony: (h: HarmonyType) => void
+  onClosestFit: (h: TemplateHarmony) => void
   harmonyLabels: Record<HarmonyType, string>
   closestFit: { type: TemplateHarmony; meanError: number } | null
   labels: { colorScheme: string; closestFit: string; closestSentence: string | null; suggestion: string; samplesHeading: string; splitAngle: string; spread: string; rectangleWidth: string; square: string }
@@ -87,7 +88,7 @@ export function AnalyzerSidebar(p: AnalyzerSidebarProps) {
           ))}
         </div>
         {p.closestFit && labels.closestSentence && (
-          <button type="button" className={styles.closestFit} onClick={() => p.onHarmony(p.closestFit!.type)}>
+          <button type="button" className={styles.closestFit} onClick={() => p.onClosestFit(p.closestFit!.type)}>
             <strong>{labels.closestFit}</strong> {labels.closestSentence}
           </button>
         )}

@@ -25,7 +25,7 @@ const harmonyLabels = { complementary: 'Complementary', 'split-complementary': '
 function sidebarProps(over: Partial<AnalyzerSidebarProps> = {}): AnalyzerSidebarProps {
   return {
     toolSlug: 'color-analyzer', exportCanvasRef: createRef<HTMLCanvasElement>(), buildExportCanvas: vi.fn(),
-    harmony: 'complementary', onHarmony: vi.fn(), harmonyLabels, closestFit: null,
+    harmony: 'complementary', onHarmony: vi.fn(), onClosestFit: vi.fn(), harmonyLabels, closestFit: null,
     labels: { colorScheme: 'Color scheme', closestFit: 'Closest fit', closestSentence: null, suggestion: 'Great for: x', samplesHeading: 'Samples', splitAngle: 'Split angle:', spread: 'Spread:', rectangleWidth: 'Rectangle width:', square: '(square)' },
     params: { splitAngle: 30, analogousSpread: 30, tetradicOffset: 60 }, onParams: vi.fn(),
     keyCard: null, sampleCards: [],
@@ -90,14 +90,15 @@ describe('AnalyzerSidebar', () => {
     expect(screen.queryByText('Key Color')).toBeNull()
   })
 
-  it('harmony buttons call onHarmony and the closest-fit badge selects that harmony', () => {
-    const onHarmony = vi.fn()
-    render(<AnalyzerSidebar {...sidebarProps({ onHarmony, closestFit: { type: 'triadic', meanError: 9 },
+  it('harmony buttons call onHarmony and the closest-fit control calls onClosestFit', () => {
+    const onHarmony = vi.fn(), onClosestFit = vi.fn()
+    render(<AnalyzerSidebar {...sidebarProps({ onHarmony, onClosestFit, closestFit: { type: 'triadic', meanError: 9 },
       labels: { ...sidebarProps().labels, closestSentence: 'Your photo is closest to triadic (mean 9° off)' } })} />)
     fireEvent.click(screen.getByRole('button', { name: 'Analogous' }))
     expect(onHarmony).toHaveBeenCalledWith('analogous')
     fireEvent.click(screen.getByRole('button', { name: /Closest fit/ }))
-    expect(onHarmony).toHaveBeenCalledWith('triadic')
+    expect(onClosestFit).toHaveBeenCalledWith('triadic')
+    expect(onHarmony).toHaveBeenCalledTimes(1)
     expect(screen.getByText('Your photo is closest to triadic (mean 9° off)')).toBeInTheDocument()
   })
 

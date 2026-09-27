@@ -8,7 +8,7 @@ import { ToolHeading } from '@/components/shared/ToolHeading'
 import { useQueryInit, useToolQuerySync, intParam, strParam } from '@/lib/utils/querySync'
 import { useToolSession } from '@/lib/analytics/hooks/useToolSession'
 import { hslToRgb, rgbToHsl } from '@/lib/math/color'
-import { HARMONY_KEYS, SAMPLE_CAP, type HarmonyType } from '@/lib/data/colorAnalyzer'
+import { HARMONY_KEYS, SAMPLE_CAP, type HarmonyType, type TemplateHarmony } from '@/lib/data/colorAnalyzer'
 import { colorNameKey, directionBandKey } from '@/lib/math/color-name'
 import { fitHarmony, rankHarmonies, buildPalette, rgbToHex, type FitSample, type HarmonyParams } from '@/lib/math/color-fit'
 import type { WheelDot, WheelTarget, WheelArrow } from './drawWheel'
@@ -64,6 +64,12 @@ export function ColorAnalyzer() {
   const setHarmony = useCallback((h: HarmonyType) => {
     trackParam({ param_name: 'harmony', param_value: h, input_type: 'select' })
     if (h === 'custom') dispatch({ type: 'resetCustomTargets' })
+    setHarmonyState(h)
+  }, [trackParam])
+
+  // Closest fit is always a template harmony, so no custom-target reset; tracked as its own event.
+  const applyClosestFit = useCallback((h: TemplateHarmony) => {
+    trackParam({ param_name: 'closest_fit', param_value: h, input_type: 'button' })
     setHarmonyState(h)
   }, [trackParam])
 
@@ -204,7 +210,7 @@ export function ColorAnalyzer() {
       <ToolHeading slug={SLUG} />
       <AnalyzerSidebar
         toolSlug={SLUG} exportCanvasRef={exportCanvasRef} buildExportCanvas={buildExportCanvas}
-        harmony={harmony} onHarmony={setHarmony} harmonyLabels={harmonyLabels}
+        harmony={harmony} onHarmony={setHarmony} onClosestFit={applyClosestFit} harmonyLabels={harmonyLabels}
         closestFit={closest ? { type: closest.type, meanError: closest.meanError } : null}
         labels={{
           colorScheme: tk('colorScheme'), closestFit: tk('closestFit'),
