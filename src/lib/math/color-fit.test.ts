@@ -126,6 +126,10 @@ describe('rankHarmonies', () => {
     expect(ranked.find((r) => r.type === 'tetradic')!.normalizedError)
       .toBeGreaterThan(ranked[0].normalizedError)
   })
+  it('breaks a tie in favour of fewer slots', () => {
+    const same = [s('a', 120), s('b', 120)]
+    expect(rankHarmonies(same, P)[0].type).toBe('monochromatic')
+  })
   it('returns an empty list with fewer than two scorable samples', () => {
     expect(rankHarmonies([s('a', 10)], P)).toEqual([])
     expect(rankHarmonies([s('a', 10), s('g', 0, 0, 50, true)], P)).toEqual([])

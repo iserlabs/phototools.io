@@ -168,9 +168,11 @@ export function rankHarmonies(samples: FitSample[], p: HarmonyParams) {
   return TEMPLATE_HARMONIES
     .map((type) => {
       const fit = fitHarmony(scorable, type, p, { fallbackHue: 0 })
-      return { type, meanError: fit.meanError, normalizedError: fit.normalizedError }
+      return { type, meanError: fit.meanError, normalizedError: fit.normalizedError, slots: fit.slots.length }
     })
-    .sort((a, b) => a.normalizedError - b.normalizedError)
+    // On a tie the simpler harmony (fewer slots) wins
+    .sort((a, b) => a.normalizedError - b.normalizedError || a.slots - b.slots)
+    .map(({ type, meanError, normalizedError }) => ({ type, meanError, normalizedError }))
 }
 
 function swatch(hue: number, s: number, l: number, sampleId: string | null, isKey: boolean): PaletteSwatch {
