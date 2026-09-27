@@ -1,179 +1,187 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "Hài hòa màu sắc là về việc chọn các màu trông đẹp cùng nhau. Giống như các hợp âm trong âm nhạc, một số tổ hợp màu tạo ra các mối quan hệ thị giác dễ chịu. Nhiếp ảnh gia sử dụng hài hòa màu để lên kế hoạch trang phục, thiết kế bối cảnh, và thậm chí chọn thời điểm chụp ngoài trời để có bảng màu phù hợp từ thiên nhiên.",
-      "deeper": {
-        "0": {
-          "heading": "Vòng tròn màu",
-          "text": "Lý thuyết hài hòa màu bắt nguồn từ vòng tròn màu, sắp xếp các sắc độ theo hình tròn dựa trên mối quan hệ bước sóng. Mô hình HSL (Sắc độ, Độ bão hòa, Độ sáng) ánh xạ trực tiếp vào vòng tròn: sắc độ là góc (0–360°), độ bão hòa là khoảng cách từ tâm, và độ sáng kiểm soát mức sáng. Trong nhiếp ảnh, những mối quan hệ này xuất hiện tự nhiên — giờ vàng tạo ra tông ấm tương tự, trong khi chuồng đỏ trước đồng cỏ xanh là bổ sung."
+      "beginner": "Hầu hết các bức ảnh đã chứa sẵn một mối quan hệ màu sắc; bạn chỉ chưa nhìn thấy nó thôi. Thả một tấm ảnh vào, chạm vào những màu quan trọng, và vòng tròn sẽ cho thấy chúng liên quan với nhau ra sao. Chọn kiểu hài hòa bạn muốn và công cụ sẽ cho biết nên đẩy mỗi màu theo hướng nào.",
+      "deeper": [
+        {
+          "heading": "Phương pháp bốn bước",
+          "text": "Ý định (người xem nên cảm nhận điều gì), Phân tích (thực sự có những màu nào trong khung hình), Chọn màu (kiểu hài hòa nào phù hợp với cảm xúc đó), Biến đổi (di chuyển thanh trượt theo hướng vòng tròn chỉ ra). Chỉnh sửa luôn đến sau cùng. Phần lớn sự khó chịu khi chỉnh màu đến từ việc bắt đầu ngay ở bước bốn."
         },
-        "1": {
-          "heading": "Bổ sung",
-          "text": "Hai màu nằm đối diện nhau trên vòng tròn (cách nhau 180°), chẳng hạn như xanh dương và cam hoặc đỏ và xanh lá. Điều này tạo ra sự tương phản và năng lượng thị giác tối đa. Tuyệt vời để làm nổi bật chủ thể so với hậu cảnh — hãy nghĩ đến chân dung giờ vàng nơi tông da ấm tương phản với bầu trời xanh mát."
+        {
+          "heading": "Đọc vòng tròn màu",
+          "text": "Mỗi mẫu màu được vẽ theo sắc độ (góc) và độ bão hòa (khoảng cách từ tâm). Chế độ xem Tự nhiên hiển thị độ bão hòa thực, Sắc độ thuần đẩy mọi chấm ra rìa để góc rõ ràng hơn, và Hướng dẫn hài hòa thêm vị trí mục tiêu và mũi tên cho kiểu hài hòa bạn chọn."
         },
-        "2": {
-          "heading": "Tương tự",
-          "text": "Ba màu là hàng xóm trên vòng tròn, thường trong phạm vi 30–60°. Chúng tạo ra bảng màu mượt mà, gắn kết với độ tương phản thấp. Lý tưởng cho phong cảnh và tác phẩm tạo tâm trạng — lá mùa thu là bảng màu tương tự tự nhiên gồm đỏ, cam và vàng."
+        {
+          "heading": "Hài hòa gần nhất",
+          "text": "Công cụ này xoay từng mẫu hài hòa đến vị trí khớp nhất với mẫu màu của bạn, rồi đo sai số sắc độ trung bình, được chuẩn hóa theo khoảng cách giữa các vị trí của mẫu để kiểu hài hòa bốn vị trí không mặc nhiên thắng. Kiểu thắng cuộc nhận huy hiệu; việc sử dụng hay không là do bạn quyết định."
         },
-        "3": {
-          "heading": "Tam giác",
-          "text": "Ba màu cách đều nhau 120° trên vòng tròn, chẳng hạn đỏ, vàng và xanh dương. Phối màu tam giác mang lại cảm giác cân bằng và sống động mà không có sự căng thẳng của tương phản bổ sung. Sử dụng một màu chủ đạo và hai màu còn lại làm điểm nhấn để có kết quả mạnh mẽ nhất."
+        {
+          "heading": "Khóa và điểm neo",
+          "text": "Khóa một mẫu màu để biến nó thành điểm neo: sự hài hòa xoay quanh sắc độ đó và mọi màu khác được đánh giá dựa trên nó. Dùng cho màu bạn sẽ không thay đổi, thường là màu da hoặc màu thương hiệu. Nếu không khóa, công cụ tự chọn phép xoay có tổng sai số nhỏ nhất."
         },
-        "4": {
-          "heading": "Bổ sung tách",
-          "text": "Biến thể của bổ sung sử dụng hai hàng xóm của màu đối diện thay vì chính màu đối diện. Điều này giữ nguyên sự tương phản cao của bổ sung nhưng giảm căng thẳng thị giác, làm cho nó linh hoạt hơn và dễ sử dụng hơn. Lựa chọn phổ biến cho các buổi chụp chân dung có phong cách."
+        {
+          "heading": "Màu trung tính",
+          "text": "Xám, gần đen và gần trắng không có sắc độ đáng tin cậy, nên chúng được vẽ ở tâm và bị loại khỏi phép khớp. Chúng vẫn quan trọng với không khí chung, nhưng chỉnh sắc độ của chúng bằng thanh trượt phần lớn chỉ thêm một ám màu."
         },
-        "5": {
-          "heading": "Tứ giác (Bổ sung kép)",
-          "text": "Bốn màu tạo thành hình chữ nhật trên vòng tròn — về cơ bản là hai cặp bổ sung. Điều này cung cấp bảng màu phong phú và phức tạp nhất nhưng đòi hỏi cân bằng cẩn thận. Hãy để một màu chiếm ưu thế và sử dụng các màu khác làm điểm nhấn hỗ trợ để tránh giao diện hỗn loạn."
+        {
+          "heading": "Vì sao dùng HSL thay vì vòng tròn theo cảm nhận",
+          "text": "Vòng tròn này dùng mô hình HSL, giống mô hình trong Adobe Color và bảng HSL của Lightroom, nên hướng bạn đọc ở đây chính là hướng bạn cần đẩy ở đó. Nó không đồng đều theo cảm nhận: vàng chiếm một dải hẹp còn xanh dương chiếm một dải rộng, nên cùng một mức chỉnh 20° lại trông lớn hơn ở vùng này so với vùng khác. Một vòng tròn theo cảm nhận có thể trung thực hơn, nhưng sẽ không khớp với các công cụ chỉnh sửa."
         }
-      },
-      "keyFactors": {
-        "0": {
-          "label": "Loại hài hòa",
-          "description": "Mối quan hệ hình học giữa các màu trên vòng tròn: bổ sung, tương tự, tam giác, bổ sung tách hoặc tứ giác."
+      ],
+      "keyFactors": [
+        {
+          "label": "Kiểu hài hòa",
+          "description": "Mối quan hệ hình học bạn đang hướng tới: bổ sung, bổ sung tách, tương tự, tam giác, tứ giác, đơn sắc, hoặc mục tiêu tùy chỉnh của riêng bạn."
         },
-        "1": {
-          "label": "Sắc độ",
-          "description": "Góc màu cơ bản trên vòng tròn (0-360 độ). Đây là điểm xuất phát cho tất cả tính toán hài hòa."
+        {
+          "label": "Mẫu màu",
+          "description": "Những màu bạn chọn để lấy mẫu. Hãy lấy mẫu những gì quan trọng với bức ảnh, không phải phần lớn nhất. Thường năm đến sáu điểm đã đủ kể hết câu chuyện."
         },
-        "2": {
-          "label": "Độ bão hòa",
-          "description": "Mức độ sống động hoặc dịu của màu. Độ bão hòa thấp hơn tạo tông pastel và tông đất; độ bão hòa cao hơn cho bảng màu đậm, rực rỡ."
+        {
+          "label": "Điểm neo",
+          "description": "Mẫu màu bị khóa mà sự hài hòa xoay quanh. Nếu không khóa, phép xoay khớp tốt nhất sẽ được dùng."
         },
-        "3": {
-          "label": "Độ sáng",
-          "description": "Kiểm soát mức sáng. Điều chỉnh độ sáng có thể làm cùng một sắc độ cảm thấy hoàn toàn khác — xanh hải quân đậm và xanh trời là cùng sắc độ ở các mức sáng khác nhau."
+        {
+          "label": "Điều chỉnh",
+          "description": "Lượng xoay sắc độ có dấu từ mẫu màu đến mục tiêu của nó. Trong 8° là đã khớp, trong 25° là điều chỉnh nhẹ, hơn thế là dịch chuyển lớn."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "Cho buổi chụp chân dung, chọn bảng màu bổ sung hoặc bổ sung tách, sau đó để chủ thể mặc màu chính trong khi hậu cảnh cung cấp sắc độ tương phản. Xanh dương/cam (chân dung giờ vàng) là ví dụ kinh điển."
+      ],
+      "tips": [
+        {
+          "text": "Lấy mẫu những màu bạn thực sự sẽ chỉnh: bầu trời, da, vật thể chủ đạo, bóng đổ. Bỏ qua vùng sáng phản chiếu và bóng tối sâu; chúng được coi là trung tính."
         },
-        "1": {
-          "text": "Sử dụng hài hòa tương tự cho phong cảnh — thiên nhiên đã hoạt động theo bảng màu tương tự. Kết hợp gợi ý trang phục hoặc lựa chọn phụ kiện với các sắc độ tự nhiên chủ đạo."
+        {
+          "text": "Bổ sung tách là lựa chọn tĩnh lặng, mộng mơ cho ảnh du lịch và đường phố. Bổ sung sạch sẽ và mạnh mẽ hơn. Tam giác cố ý tạo cảm giác hơi bất an."
         },
-        "2": {
-          "text": "Giảm độ bão hòa xuống 30-50% để xem trước cách màu sẽ trông trong phong cách biên tập dịu hơn. Độ bão hòa cao phù hợp cho thương mại và thời trang, nhưng độ bão hòa thấp hơn thường cảm thấy tinh tế hơn."
+        {
+          "text": "Dùng chọn tự động để bắt đầu, sau đó di chuyển hoặc xóa các điểm. Nó tìm các cụm màu chủ đạo, thường không phải là những màu bạn quan tâm nhất."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
-          "term": "Loại hài hòa",
-          "definition": "Mẫu mối quan hệ màu: Bổ sung (đối diện), Tương tự (hàng xóm), Tam giác (ba chiều), Bổ sung tách (đối diện lệch), hoặc Tứ giác (hình chữ nhật bốn chiều)."
+          "term": "Kiểu hài hòa",
+          "definition": "Mối quan hệ mục tiêu giữa các sắc độ. Bổ sung (đối diện), Bổ sung tách (đối diện ± góc), Tương tự (lân cận), Tam giác (cách nhau 120°), Tứ giác (hai cặp bổ sung), Đơn sắc (một sắc độ), Tùy chỉnh (mục tiêu của riêng bạn)."
         },
         "Key Color": {
           "term": "Màu chính",
-          "definition": "Màu chủ đạo trong bảng màu của bạn. Tất cả các màu hài hòa khác được tính toán tương đối với sắc độ xuất phát này."
+          "definition": "Khi chưa tải ảnh, đây là màu mà sự hài hòa được xây dựng xung quanh. Kéo vòng tròn hoặc dùng thanh trượt."
         },
         "Hue": {
           "term": "Sắc độ",
-          "definition": "Góc màu trên vòng tròn tính bằng độ: 0° là đỏ, 120° là xanh lá, 240° là xanh dương."
+          "definition": "Góc của màu trên vòng tròn, tính bằng độ: 0° là đỏ, 120° là xanh lục, 240° là xanh dương."
         },
         "Saturation": {
           "term": "Độ bão hòa",
-          "definition": "Cường độ màu từ 0% (xám) đến 100% (hoàn toàn rực rỡ). Kiểm soát mức đậm hoặc dịu của toàn bộ bảng màu."
+          "definition": "Cường độ màu từ 0% (xám) đến 100% (hoàn toàn rực rỡ). Là khoảng cách từ tâm vòng tròn."
         },
         "Lightness": {
           "term": "Độ sáng",
-          "definition": "Mức sáng từ 0% (đen) đến 100% (trắng). Ở 50% bạn thấy màu thuần; bên dưới tối hơn, bên trên sáng hơn."
+          "definition": "Độ sáng từ 0% (đen) đến 100% (trắng). Ở 50% bạn thấy màu thuần."
         },
         "Split Angle": {
           "term": "Góc tách",
-          "definition": "Khoảng cách giữa hai màu bổ sung tách so với đối diện trực tiếp. Góc rộng hơn cho nhiều tương phản hơn."
+          "definition": "Hai màu bổ sung tách cách màu bổ sung trực tiếp bao xa."
         },
         "Spread": {
           "term": "Độ rộng",
-          "definition": "Khoảng cách các màu tương tự so với sắc độ chính. Độ rộng hẹp cho biến thể tinh tế; rộng hơn tăng sự đa dạng."
+          "definition": "Các màu tương tự cách sắc độ neo bao xa."
+        },
+        "Lock": {
+          "term": "Khóa",
+          "definition": "Biến một mẫu màu thành điểm neo. Sự hài hòa xoay đến sắc độ đó và các mẫu khác được đánh giá dựa trên nó. Mỗi lần chỉ khóa được một mẫu."
+        },
+        "Closest fit": {
+          "term": "Hài hòa gần nhất",
+          "definition": "Kiểu hài hòa có phép xoay tốt nhất mang sai số sắc độ đã chuẩn hóa thấp nhất trong các mẫu màu của bạn. Cần ít nhất hai mẫu màu có sắc độ."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Bạn muốn tương phản tối đa giữa hai màu cho bức chân dung đồ họa đậm. Loại hài hòa nào cho bạn nhiều căng thẳng thị giác nhất?",
-          "hint": "Các màu đối diện trực tiếp trên vòng tròn tạo ra tương phản mạnh nhất.",
-          "successMessage": "Chính xác! Màu bổ sung nằm cách nhau 180 độ và tạo ra tương phản cao nhất — hoàn hảo cho bố cục đậm, bắt mắt.",
-          "failureMessage": "Hài hòa bổ sung đặt các màu đối diện trực tiếp trên vòng tròn, tạo ra tương phản thị giác tối đa.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "Bạn lấy mẫu bầu trời xanh ở 210° và bức tường cam ở 25°. Chúng gần nhất với kiểu hài hòa nào?",
+          "hint": "Kiểm tra góc giữa chúng.",
+          "successMessage": "Đúng. Cách nhau 185° gần như là một cặp bổ sung hoàn hảo; chỉ cần chỉnh nhẹ bức tường là xong.",
+          "failureMessage": "Hai màu cách nhau khoảng 180° là bổ sung. Màu tương tự nằm trong khoảng 60° với nhau.",
+          "options": [
+            {
               "label": "Bổ sung"
             },
-            "1": {
+            {
               "label": "Tương tự"
             },
-            "2": {
+            {
               "label": "Tam giác"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Bạn đang lên kế hoạch chụp giờ vàng và muốn tông ấm, gắn kết. Loại hài hòa nào giữ các màu gần nhau trên vòng tròn?",
-          "hint": "Loại này sử dụng các sắc độ hàng xóm cho cảm giác mượt mà, thống nhất.",
-          "successMessage": "Đúng! Hài hòa tương tự sử dụng các màu liền kề, cho bạn bảng màu ấm, gắn kết hoàn hảo cho giờ vàng.",
-          "failureMessage": "Hài hòa tương tự giữ tất cả các màu là hàng xóm trên vòng tròn — lý tưởng cho bảng màu ấm hoặc mát thống nhất.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Một bức ảnh có ba mẫu ở 40°, 60° và 85°. Đây là kiểu hài hòa nào?",
+          "hint": "Chúng đều là lân cận trên vòng tròn.",
+          "successMessage": "Đúng. Các sắc độ lân cận trong khoảng 60° tạo thành một hài hòa tương tự.",
+          "failureMessage": "Các sắc độ gần nhau đều là tương tự, lựa chọn tĩnh lặng và thống nhất.",
+          "options": [
+            {
               "label": "Bổ sung"
             },
-            "1": {
+            {
               "label": "Tương tự"
             },
-            "2": {
+            {
               "label": "Tứ giác"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "Khách hàng muốn chân dung có tương phản nhưng không mãnh liệt như bổ sung thuần. Loại hài hòa nào làm dịu sự đối lập trong khi vẫn giữ sự hấp dẫn thị giác?",
-          "hint": "Loại này sử dụng hai màu gần bổ sung thay vì đối diện trực tiếp.",
-          "successMessage": "Xuất sắc! Bổ sung tách giữ tương phản của bổ sung nhưng chia màu đối diện thành hai sắc độ lân cận, tạo ra bảng màu ít chói mắt nhưng vẫn sống động.",
-          "failureMessage": "Bổ sung tách là đáp án — nó thay thế màu đối diện duy nhất bằng hai hàng xóm của màu đối diện, làm dịu tương phản trong khi duy trì năng lượng thị giác.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Bạn muốn một bức ảnh đường phố mộng mơ, tĩnh lặng nhưng vẫn giữ chút tương phản. Nên chọn kiểu hài hòa nào?",
+          "hint": "Hãy nghĩ đến hai màu lân cận của màu bổ sung thay vì chính màu bổ sung.",
+          "successMessage": "Đúng. Bổ sung tách giữ được sự căng thẳng mà không gắt như đối diện trực tiếp.",
+          "failureMessage": "Bổ sung tách là lựa chọn tĩnh lặng nhưng vẫn tương phản. Tam giác thường có xu hướng năng động hoặc hơi bất an.",
+          "options": [
+            {
               "label": "Bổ sung tách"
             },
-            "1": {
+            {
               "label": "Tam giác"
             },
-            "2": {
+            {
               "label": "Tương tự"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "Bạn đặt màu chính là cam (sắc độ ~30 độ) với hài hòa bổ sung. Màu bổ sung sẽ là gì?",
-          "hint": "Bổ sung nghĩa là đối diện 180 độ trên vòng tròn.",
-          "successMessage": "Chính xác! 30° + 180° = 210°, nằm trong phạm vi xanh dương. Cam và xanh dương là một trong những cặp bổ sung được yêu thích nhất trong nhiếp ảnh.",
-          "failureMessage": "Cộng 180° vào cam (30°) cho 210°, đó là xanh dương. Cặp bổ sung cam-xanh dương là kinh điển trong nhiếp ảnh.",
-          "options": {
-            "0": {
-              "label": "Xanh dương (~210°)"
+        {
+          "scenario": "Một mẫu màu hiện 'Điều chỉnh nhẹ về phía hồng' với độ lệch −15°. Trong bảng HSL của Lightroom, bạn nên làm gì?",
+          "hint": "Từ chỉ hướng cho biết đẩy về đâu, con số cho biết đẩy bao xa.",
+          "successMessage": "Đúng. Di chuyển thanh trượt Sắc độ của màu đó về phía hồng cho đến khi thẻ hiện 'Đã khớp'.",
+          "failureMessage": "Đẩy sắc độ theo hướng được nêu (hồng) một chút; thay đổi 15° là điều chỉnh nhẹ, không phải dịch chuyển lớn.",
+          "options": [
+            {
+              "label": "Đẩy sắc độ nhẹ về phía hồng"
             },
-            "1": {
-              "label": "Xanh lá (~150°)"
+            {
+              "label": "Giảm độ bão hòa"
             },
-            "2": {
-              "label": "Đỏ (~0°)"
+            {
+              "label": "Đẩy sắc độ về phía xanh lục"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Bạn đang chỉ đạo nghệ thuật cho bộ ảnh thời trang biên tập và cần bảng bốn màu cung cấp cả tông ấm và lạnh với sự phong phú thị giác cao. Loại hài hòa nào cho bạn bốn màu, và thách thức chính khi sử dụng nó là gì?",
-          "hint": "Hài hòa bốn màu tạo thành hình chữ nhật trên vòng tròn.",
-          "successMessage": "Đúng! Hài hòa tứ giác cho bốn màu tạo thành hình chữ nhật trên vòng tròn. Thách thức chính là cân bằng — với bốn sắc độ riêng biệt, một màu nên chiếm ưu thế trong khi các màu khác làm điểm nhấn. Không có thứ bậc, ảnh sẽ cảm thấy hỗn loạn.",
-          "failureMessage": "Tứ giác (bổ sung kép) cung cấp bốn màu trong sắp xếp hình chữ nhật. Thách thức là bốn sắc độ mạnh cạnh tranh sự chú ý — bạn cần chỉ định một màu chủ đạo và sử dụng các màu khác làm điểm nhấn.",
-          "options": {
-            "0": {
-              "label": "Tứ giác — thách thức là duy trì thứ bậc thị giác giữa bốn sắc độ"
+        {
+          "scenario": "Hai mẫu màu có cùng sắc độ nhưng chỉ một mẫu bị khóa. Sự hài hòa sẽ xoay quanh mẫu nào?",
+          "hint": "Chỉ một mẫu màu có thể là điểm neo.",
+          "successMessage": "Đúng. Mẫu bị khóa là điểm neo; mẫu còn lại được đánh giá dựa trên mẫu hài hòa xây trên nó.",
+          "failureMessage": "Mẫu bị khóa luôn là điểm neo. Nếu không khóa, phép xoay khớp tốt nhất sẽ được dùng.",
+          "options": [
+            {
+              "label": "Mẫu màu bị khóa"
             },
-            "1": {
-              "label": "Tam giác — thách thức là có quá ít màu"
+            {
+              "label": "Mẫu màu đặt đầu tiên"
             },
-            "2": {
-              "label": "Tương tự — thách thức là thiếu tương phản"
+            {
+              "label": "Mẫu màu bão hòa nhất"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Tagabuo ng Color Scheme",
-      "description": "Gumawa ng color palette para sa photography gamit ang complementary, analogous, triadic, at tetradic na color harmonies. Interactive color wheel na may photo picker."
+      "title": "Color Analyzer: basahin ang color harmony ng kahit anong litrato",
+      "description": "Libreng photo color analyzer at color scheme generator. I-sample ang mga kulay mula sa litrato mo, i-plot sa color wheel, hanapin ang pinakamalapit na color harmony, at makakuha ng grading guidance per kulay. 100% sa browser mo."
     }
   }
 }

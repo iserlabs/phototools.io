@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Penjana Palet Warna",
-      "description": "Jana palet warna untuk fotografi menggunakan harmoni warna komplementari, analogus, triadik dan tetradik. Roda warna interaktif dengan pemilih foto."
+      "title": "Penganalisis Warna: baca harmoni warna dalam mana-mana foto",
+      "description": "Penganalisis warna foto dan penjana skema warna percuma. Sampelkan warna daripada foto anda, plot pada roda warna, cari harmoni warna terdekat, dan dapatkan panduan grading bagi setiap warna. 100% dalam pelayar anda."
     }
   }
 }

@@ -85,8 +85,8 @@
       "description": "Bảng tra cứu thiết lập máy ảnh cho những tình huống chụp thường gặp — tải về và in được"
     },
     "color-analyzer": {
-      "name": "Tạo phối màu",
-      "description": "Xây dựng bảng màu cho các buổi chụp ảnh"
+      "name": "Bộ phân tích màu",
+      "description": "Lấy mẫu màu trong ảnh, đọc sự hài hòa màu sắc, và xem nên đẩy mỗi màu theo hướng nào"
     }
   }
 }
