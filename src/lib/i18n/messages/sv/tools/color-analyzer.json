@@ -31,6 +31,8 @@
       "capReached": "Max {cap} prover. Ta bort ett för att lägga till ett till.",
       "markerLabel": "Prov {n}: {label}",
       "dropPhotoPrompt": "Släpp ett foto eller klicka för att bläddra. Det stannar i din webbläsare.",
+      "decodeError": "Filen kunde inte läsas. Prova en JPEG eller PNG.",
+      "canvasLabel": "Foto. Klicka för att lägga till en provpunkt.",
       "viewNatural": "Naturlig",
       "viewPure": "Rena nyanser",
       "viewGuide": "Harmoniguide",

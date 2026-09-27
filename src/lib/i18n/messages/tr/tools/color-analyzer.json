@@ -31,6 +31,8 @@
       "capReached": "En fazla {cap} örnek. Bir tane daha eklemek için birini kaldırın.",
       "markerLabel": "Örnek {n}: {label}",
       "dropPhotoPrompt": "Bir fotoğraf sürükleyin veya göz atmak için tıklayın. Tarayıcınızda kalır.",
+      "decodeError": "Bu dosya okunamadı. Bir JPEG veya PNG deneyin.",
+      "canvasLabel": "Fotoğraf. Örnek noktası eklemek için tıklayın.",
       "viewNatural": "Doğal",
       "viewPure": "Saf Tonlar",
       "viewGuide": "Uyum Kılavuzu",

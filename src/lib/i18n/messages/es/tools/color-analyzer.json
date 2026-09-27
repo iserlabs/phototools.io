@@ -31,6 +31,8 @@
       "capReached": "Máximo {cap} muestras. Elimina una para añadir otra.",
       "markerLabel": "Muestra {n}: {label}",
       "dropPhotoPrompt": "Suelta una foto o haz clic para explorar. Se queda en tu navegador.",
+      "decodeError": "No se pudo leer ese archivo. Prueba con un JPEG o un PNG.",
+      "canvasLabel": "Foto. Haz clic para añadir un punto de muestra.",
       "viewNatural": "Natural",
       "viewPure": "Matices puros",
       "viewGuide": "Guía de armonía",

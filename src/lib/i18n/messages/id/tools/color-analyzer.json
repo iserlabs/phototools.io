@@ -31,6 +31,8 @@
       "capReached": "Maksimal {cap} sampel. Hapus satu untuk menambah yang lain.",
       "markerLabel": "Sampel {n}: {label}",
       "dropPhotoPrompt": "Letakkan foto atau klik untuk menjelajah. Foto tetap ada di browser Anda.",
+      "decodeError": "File itu tidak dapat dibaca. Coba JPEG atau PNG.",
+      "canvasLabel": "Foto. Klik untuk menambahkan titik sampel.",
       "viewNatural": "Alami",
       "viewPure": "Hue murni",
       "viewGuide": "Panduan harmoni",

@@ -31,6 +31,8 @@
       "capReached": "Tối đa {cap} mẫu màu. Hãy xóa một mẫu để thêm mẫu khác.",
       "markerLabel": "Mẫu {n}: {label}",
       "dropPhotoPrompt": "Thả ảnh vào đây hoặc nhấn để duyệt. Ảnh chỉ ở lại trong trình duyệt của bạn.",
+      "decodeError": "Không thể đọc tệp đó. Hãy thử ảnh JPEG hoặc PNG.",
+      "canvasLabel": "Ảnh. Nhấn để thêm điểm lấy mẫu.",
       "viewNatural": "Tự nhiên",
       "viewPure": "Sắc độ thuần",
       "viewGuide": "Hướng dẫn hài hòa",

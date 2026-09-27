@@ -31,6 +31,8 @@
       "capReached": "Legfeljebb {cap} minta. Távolíts el egyet, hogy másikat adhass hozzá.",
       "markerLabel": "{n}. minta: {label}",
       "dropPhotoPrompt": "Húzz ide egy fotót, vagy kattints a tallózáshoz. A böngésződben marad.",
+      "decodeError": "A fájlt nem sikerült beolvasni. Próbálkozz JPEG vagy PNG fájllal.",
+      "canvasLabel": "Fotó. Kattints egy mintavételi pont hozzáadásához.",
       "viewNatural": "Természetes",
       "viewPure": "Tiszta árnyalatok",
       "viewGuide": "Harmónia-útmutató",

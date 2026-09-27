@@ -31,6 +31,8 @@
       "capReached": "Massimo {cap} campioni. Rimuovine uno per aggiungerne un altro.",
       "markerLabel": "Campione {n}: {label}",
       "dropPhotoPrompt": "Trascina una foto o fai clic per sfogliare. Rimane nel tuo browser.",
+      "decodeError": "Impossibile leggere il file. Prova con un JPEG o un PNG.",
+      "canvasLabel": "Foto. Fai clic per aggiungere un punto di campionamento.",
       "viewNatural": "Naturale",
       "viewPure": "Tonalità pure",
       "viewGuide": "Guida all'armonia",

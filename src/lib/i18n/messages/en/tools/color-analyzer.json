@@ -31,6 +31,8 @@
       "capReached": "{cap} samples max. Remove one to add another.",
       "markerLabel": "Sample {n}: {label}",
       "dropPhotoPrompt": "Drop a photo or click to browse. It stays in your browser.",
+      "decodeError": "That file couldn't be read. Try a JPEG or PNG.",
+      "canvasLabel": "Photo. Click to add a sample point.",
       "viewNatural": "Natural",
       "viewPure": "Pure hues",
       "viewGuide": "Harmony guide",

@@ -31,6 +31,8 @@
       "capReached": "Maks. {cap} prøver. Fjern en for at tilføje en mere.",
       "markerLabel": "Prøve {n}: {label}",
       "dropPhotoPrompt": "Slip et foto, eller klik for at gennemse. Det bliver i din browser.",
+      "decodeError": "Filen kunne ikke læses. Prøv en JPEG eller PNG.",
+      "canvasLabel": "Foto. Klik for at tilføje et prøvepunkt.",
       "viewNatural": "Naturlig",
       "viewPure": "Rene nuancer",
       "viewGuide": "Harmoniguide",

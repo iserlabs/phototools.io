@@ -31,6 +31,8 @@
       "capReached": "{cap}件が上限です。追加するには1件削除してください。",
       "markerLabel": "サンプル{n}: {label}",
       "dropPhotoPrompt": "写真をドロップするか、クリックして選択してください。ブラウザ内に保存されます。",
+      "decodeError": "このファイルを読み込めませんでした。JPEGまたはPNGをお試しください。",
+      "canvasLabel": "写真。クリックしてサンプルポイントを追加します。",
       "viewNatural": "ナチュラル",
       "viewPure": "純色相",
       "viewGuide": "調和ガイド",

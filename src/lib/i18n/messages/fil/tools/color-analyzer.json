@@ -31,6 +31,8 @@
       "capReached": "{cap} sample ang max. Mag-alis ng isa para makadagdag pa.",
       "markerLabel": "Sample {n}: {label}",
       "dropPhotoPrompt": "I-drop ang litrato o i-click para mag-browse. Nananatili ito sa browser mo.",
+      "decodeError": "Hindi mabasa ang file na iyon. Subukan ang JPEG o PNG.",
+      "canvasLabel": "Litrato. I-click para magdagdag ng sample point.",
       "viewNatural": "Natural",
       "viewPure": "Pure Hues",
       "viewGuide": "Harmony Guide",

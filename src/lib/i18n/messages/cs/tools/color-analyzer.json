@@ -31,6 +31,8 @@
       "capReached": "Maximálně {cap} vzorků. Jeden odeberte, chcete-li přidat další.",
       "markerLabel": "Vzorek {n}: {label}",
       "dropPhotoPrompt": "Přetáhněte sem fotku nebo klikněte pro výběr. Zůstane ve vašem prohlížeči.",
+      "decodeError": "Soubor se nepodařilo načíst. Zkuste JPEG nebo PNG.",
+      "canvasLabel": "Fotka. Kliknutím přidáte vzorkovací bod.",
       "viewNatural": "Přirozený",
       "viewPure": "Čisté odstíny",
       "viewGuide": "Průvodce harmonií",

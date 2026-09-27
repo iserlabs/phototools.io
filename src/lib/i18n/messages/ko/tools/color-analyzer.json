@@ -31,6 +31,8 @@
       "capReached": "최대 {cap}개까지 가능합니다. 추가하려면 하나를 삭제하세요.",
       "markerLabel": "샘플 {n}: {label}",
       "dropPhotoPrompt": "사진을 끌어다 놓거나 클릭하여 찾아보세요. 브라우저 안에만 저장됩니다.",
+      "decodeError": "파일을 읽을 수 없습니다. JPEG 또는 PNG 파일을 사용해 보세요.",
+      "canvasLabel": "사진. 클릭하여 샘플 지점을 추가하세요.",
       "viewNatural": "자연스러운",
       "viewPure": "순수 색조",
       "viewGuide": "조화 가이드",

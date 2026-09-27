@@ -31,6 +31,8 @@
       "capReached": "Maximum {cap} mostre. Elimină una pentru a adăuga alta.",
       "markerLabel": "Mostra {n}: {label}",
       "dropPhotoPrompt": "Trage o fotografie aici sau apasă pentru a răsfoi. Rămâne în browserul tău.",
+      "decodeError": "Fișierul nu a putut fi citit. Încearcă un JPEG sau PNG.",
+      "canvasLabel": "Fotografie. Apasă pentru a adăuga un punct de eșantionare.",
       "viewNatural": "Natural",
       "viewPure": "Nuanțe pure",
       "viewGuide": "Ghid de armonie",

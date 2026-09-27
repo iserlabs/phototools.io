@@ -31,6 +31,8 @@
       "capReached": "Maximal {cap} Proben. Entferne eine, um eine weitere hinzuzufügen.",
       "markerLabel": "Probe {n}: {label}",
       "dropPhotoPrompt": "Foto hier ablegen oder klicken zum Durchsuchen. Es bleibt in deinem Browser.",
+      "decodeError": "Die Datei konnte nicht gelesen werden. Versuch es mit einem JPEG oder PNG.",
+      "canvasLabel": "Foto. Klicke, um einen Messpunkt hinzuzufügen.",
       "viewNatural": "Natürlich",
       "viewPure": "Reine Farbtöne",
       "viewGuide": "Harmonie-Hilfe",

@@ -31,6 +31,8 @@
       "capReached": "取樣點最多{cap}個，請先移除一個才能新增。",
       "markerLabel": "取樣點{n}：{label}",
       "dropPhotoPrompt": "拖放照片或點擊瀏覽。照片只會留在您的瀏覽器中。",
+      "decodeError": "無法讀取該檔案。請試試 JPEG 或 PNG。",
+      "canvasLabel": "照片。點擊新增取樣點。",
       "viewNatural": "自然",
       "viewPure": "純色相",
       "viewGuide": "配色指南",

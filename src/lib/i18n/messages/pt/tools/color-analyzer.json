@@ -31,6 +31,8 @@
       "capReached": "Máximo de {cap} amostras. Remova uma para adicionar outra.",
       "markerLabel": "Amostra {n}: {label}",
       "dropPhotoPrompt": "Solte uma foto ou clique para procurar. Ela permanece no seu navegador.",
+      "decodeError": "Não foi possível ler esse arquivo. Tente um JPEG ou PNG.",
+      "canvasLabel": "Foto. Clique para adicionar um ponto de amostra.",
       "viewNatural": "Natural",
       "viewPure": "Matizes puros",
       "viewGuide": "Guia de harmonia",

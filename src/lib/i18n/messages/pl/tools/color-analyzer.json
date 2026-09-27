@@ -31,6 +31,8 @@
       "capReached": "Maksymalnie {cap} próbek. Usuń jedną, aby dodać kolejną.",
       "markerLabel": "Próbka {n}: {label}",
       "dropPhotoPrompt": "Upuść zdjęcie lub kliknij, aby przeglądać. Pozostaje w Twojej przeglądarce.",
+      "decodeError": "Nie udało się odczytać pliku. Spróbuj JPEG lub PNG.",
+      "canvasLabel": "Zdjęcie. Kliknij, aby dodać punkt próbki.",
       "viewNatural": "Naturalny",
       "viewPure": "Czyste odcienie",
       "viewGuide": "Przewodnik harmonii",

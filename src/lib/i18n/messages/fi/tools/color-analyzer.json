@@ -31,6 +31,8 @@
       "capReached": "Enintään {cap} näytettä. Poista yksi lisätäksesi toisen.",
       "markerLabel": "Näyte {n}: {label}",
       "dropPhotoPrompt": "Pudota kuva tähän tai napsauta selataksesi. Se pysyy selaimessasi.",
+      "decodeError": "Tiedostoa ei voitu lukea. Kokeile JPEG- tai PNG-kuvaa.",
+      "canvasLabel": "Kuva. Lisää näytepiste napsauttamalla.",
       "viewNatural": "Luonnollinen",
       "viewPure": "Puhtaat sävyt",
       "viewGuide": "Harmoniaopas",

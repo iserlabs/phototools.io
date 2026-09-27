@@ -31,6 +31,8 @@
       "capReached": "Màxim {cap} mostres. Elimina'n una per afegir-ne una altra.",
       "markerLabel": "Mostra {n}: {label}",
       "dropPhotoPrompt": "Arrossega una foto o fes clic per examinar. Es queda al teu navegador.",
+      "decodeError": "No s'ha pogut llegir el fitxer. Prova amb un JPEG o un PNG.",
+      "canvasLabel": "Foto. Fes clic per afegir un punt de mostra.",
       "viewNatural": "Natural",
       "viewPure": "Tons purs",
       "viewGuide": "Guia d'harmonia",

@@ -31,6 +31,8 @@
       "capReached": "Maximum {cap} échantillons. Supprimez-en un pour en ajouter un autre.",
       "markerLabel": "Échantillon {n} : {label}",
       "dropPhotoPrompt": "Déposez une photo ou cliquez pour parcourir. Elle reste dans votre navigateur.",
+      "decodeError": "Impossible de lire ce fichier. Essayez un JPEG ou un PNG.",
+      "canvasLabel": "Photo. Cliquez pour ajouter un point d'échantillonnage.",
       "viewNatural": "Naturel",
       "viewPure": "Teintes pures",
       "viewGuide": "Guide d'harmonie",

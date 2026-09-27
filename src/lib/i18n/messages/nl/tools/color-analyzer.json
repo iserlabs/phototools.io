@@ -31,6 +31,8 @@
       "capReached": "Maximaal {cap} stalen. Verwijder er een om een andere toe te voegen.",
       "markerLabel": "Staal {n}: {label}",
       "dropPhotoPrompt": "Sleep een foto hierheen of klik om te bladeren. Ze blijft in je browser.",
+      "decodeError": "Dat bestand kon niet worden gelezen. Probeer een JPEG of PNG.",
+      "canvasLabel": "Foto. Klik om een meetpunt toe te voegen.",
       "viewNatural": "Natuurlijk",
       "viewPure": "Pure tinten",
       "viewGuide": "Harmoniegids",
