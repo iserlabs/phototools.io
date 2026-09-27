@@ -80,6 +80,7 @@ describe('AnalyzerSidebar', () => {
       labels: { keyColor: 'Key Color', hue: 'Hue:', saturation: 'Saturation:', lightness: 'Lightness:' } } })} />)
     expect(screen.getByText('Key Color')).toBeInTheDocument()
     expect(screen.getAllByRole('slider')).toHaveLength(3)
+    expect(screen.getByRole('slider', { name: 'Hue:' })).toBeInTheDocument()
     expect(screen.queryByRole('list')).toBeNull()
   })
 

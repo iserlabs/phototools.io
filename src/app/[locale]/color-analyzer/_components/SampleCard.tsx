@@ -43,7 +43,7 @@ export function SampleCard(p: SampleCardProps) {
   }, [hex])
 
   const onKeyDown = useCallback((e: React.KeyboardEvent<HTMLLIElement>) => {
-    if ((e.target as HTMLElement).tagName === 'INPUT' && e.key !== 'Escape') return
+    if ((e.target as HTMLElement).tagName === 'INPUT') return
     switch (e.key) {
       case 'Delete':
       case 'Backspace':

@@ -36,7 +36,7 @@ function Slider({ label, value, unit, min, max, onChange }: { label: string; val
   return (
     <div className={styles.field}>
       <span className={styles.label}>{label} <span className={styles.value}>{value}{unit}</span></span>
-      <input type="range" className={styles.slider} min={min} max={max} step={1} value={value} onChange={(e) => onChange(Number(e.target.value))} />
+      <input type="range" className={styles.slider} aria-label={label} min={min} max={max} step={1} value={value} onChange={(e) => onChange(Number(e.target.value))} />
     </div>
   )
 }
