@@ -1,5 +1,4 @@
-import type { HarmonyType } from './colorHarmonyHelpers'
-import { HARMONY_KEYS } from './colorHarmonyHelpers'
+import { HARMONY_KEYS, type HarmonyType } from '@/lib/data/colorAnalyzer'
 
 interface Swatch {
   hue: number

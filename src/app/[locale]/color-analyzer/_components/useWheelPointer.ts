@@ -1,124 +1,74 @@
 'use client'
 
 import { useRef, useCallback } from 'react'
-import { hueToPos } from './drawWheel'
+import { hitTest, pointerToPolar, type WheelPoint } from './wheelHit'
 
-interface MonoPoint {
-  h: number
-  s: number
-  l: number
-}
+const HIT_RADIUS = 16
 
-const NODE_HIT_RADIUS = 16
+type DragMode = null | { kind: 'key' } | { kind: 'target'; id: string }
 
 export function useWheelPointer(
   canvasRef: React.RefObject<HTMLCanvasElement | null>,
-  harmonyHues: number[],
-  saturation: number,
-  draggableNodes: number[],
-  monochromaticPoints: MonoPoint[] | undefined,
-  onHueChange: (hue: number) => void,
-  onSaturationChange: (saturation: number) => void,
-  onSecondaryDrag: (nodeIndex: number, hue: number) => void,
-  onMonoDrag?: (nodeIndex: number, saturation: number) => void,
+  o: {
+    keyMode: boolean                     // no samples: whole wheel drags the key
+    dots: WheelPoint[]
+    targets: WheelPoint[]
+    customDraggable: boolean
+    onKeyChange: (hue: number, s: number) => void
+    onSelectDot: (id: string) => void
+    onCustomTargetDrag: (id: string, hue: number) => void
+  },
 ) {
-  const rafRef = useRef<number>(0)
-  const dragModeRef = useRef<null | 'wheel' | number>(null)
+  const rafRef = useRef(0)
+  const dragRef = useRef<DragMode>(null)
 
-  const getAngleFromPointer = useCallback((clientX: number, clientY: number): { angle: number; dist: number } => {
-    const canvas = canvasRef.current
-    if (!canvas) return { angle: 0, dist: 0 }
+  const geom = useCallback((e: { clientX: number; clientY: number }) => {
+    const canvas = canvasRef.current!
     const rect = canvas.getBoundingClientRect()
-    const x = clientX - rect.left - rect.width / 2
-    const y = clientY - rect.top - rect.height / 2
-    const dist = Math.sqrt(x * x + y * y)
-    let angle = Math.atan2(x, -y) * (180 / Math.PI)
-    if (angle < 0) angle += 360
-    return { angle, dist }
+    const px = e.clientX - rect.left, py = e.clientY - rect.top
+    const cx = rect.width / 2, cy = rect.height / 2
+    return { px, py, cx, cy, R: rect.width / 2 }
   }, [canvasRef])
-
-  const hitTestNode = useCallback((clientX: number, clientY: number): number | null => {
-    const canvas = canvasRef.current
-    if (!canvas) return null
-    const rect = canvas.getBoundingClientRect()
-    const cssRadius = rect.width / 2
-
-    for (const nodeIdx of draggableNodes) {
-      let pos: { x: number; y: number }
-      if (monochromaticPoints && monochromaticPoints[nodeIdx]) {
-        const mp = monochromaticPoints[nodeIdx]
-        pos = hueToPos(mp.h, mp.s, rect.width / 2, rect.height / 2, cssRadius)
-      } else {
-        const h = harmonyHues[nodeIdx]
-        if (h === undefined) continue
-        pos = hueToPos(h, saturation, rect.width / 2, rect.height / 2, cssRadius)
-      }
-      const dx = (clientX - rect.left) - pos.x
-      const dy = (clientY - rect.top) - pos.y
-      if (Math.sqrt(dx * dx + dy * dy) < NODE_HIT_RADIUS) {
-        return nodeIdx
-      }
-    }
-    return null
-  }, [canvasRef, draggableNodes, harmonyHues, saturation, monochromaticPoints])
 
   const onPointerDown = useCallback((e: React.PointerEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current
     if (!canvas) return
-
-    const rect = canvas.getBoundingClientRect()
-    const x = e.clientX - rect.left - rect.width / 2
-    const y = e.clientY - rect.top - rect.height / 2
-    const dist = Math.sqrt(x * x + y * y)
-    if (dist > rect.width / 2) return
-
+    const { px, py, cx, cy, R } = geom(e)
+    const polar = pointerToPolar(px, py, cx, cy, R)
+    if (!polar.inside) return
     canvas.setPointerCapture(e.pointerId)
 
-    const hitNode = hitTestNode(e.clientX, e.clientY)
-    if (hitNode !== null) {
-      dragModeRef.current = hitNode
+    if (o.keyMode) {
+      dragRef.current = { kind: 'key' }
+      o.onKeyChange(polar.hue, polar.r)
       return
     }
-
-    dragModeRef.current = 'wheel'
-    const { angle } = getAngleFromPointer(e.clientX, e.clientY)
-    onHueChange(Math.round(angle) % 360)
-    const maxDist = rect.width / 2
-    onSaturationChange(Math.round(Math.min(dist / maxDist, 1) * 100))
-  }, [canvasRef, hitTestNode, getAngleFromPointer, onHueChange, onSaturationChange])
+    const dot = hitTest(o.dots, px, py, cx, cy, R, HIT_RADIUS)
+    if (dot) { o.onSelectDot(dot); return }
+    if (o.customDraggable) {
+      const target = hitTest(o.targets, px, py, cx, cy, R, HIT_RADIUS)
+      if (target) dragRef.current = { kind: 'target', id: target }
+    }
+  }, [canvasRef, geom, o])
 
   const onPointerMove = useCallback((e: React.PointerEvent<HTMLCanvasElement>) => {
-    if (dragModeRef.current === null) return
+    const mode = dragRef.current
+    if (!mode) return
     if (rafRef.current) cancelAnimationFrame(rafRef.current)
-
+    const { clientX, clientY } = e
     rafRef.current = requestAnimationFrame(() => {
-      const { angle, dist } = getAngleFromPointer(e.clientX, e.clientY)
-      const canvas = canvasRef.current
-      if (!canvas) return
-
-      if (dragModeRef.current === 'wheel') {
-        onHueChange(Math.round(angle) % 360)
-        const maxDist = canvas.getBoundingClientRect().width / 2
-        onSaturationChange(Math.round(Math.min(dist / maxDist, 1) * 100))
-      } else if (typeof dragModeRef.current === 'number') {
-        if (monochromaticPoints && onMonoDrag) {
-          const maxDist = canvas.getBoundingClientRect().width / 2
-          const newSat = Math.round(Math.min(dist / maxDist, 1) * 100)
-          onMonoDrag(dragModeRef.current, newSat)
-        } else {
-          onSecondaryDrag(dragModeRef.current, Math.round(angle) % 360)
-        }
-      }
+      if (!canvasRef.current) return
+      const { px, py, cx, cy, R } = geom({ clientX, clientY })
+      const polar = pointerToPolar(px, py, cx, cy, R)
+      if (mode.kind === 'key') o.onKeyChange(polar.hue, polar.r)
+      else o.onCustomTargetDrag(mode.id, polar.hue)
     })
-  }, [canvasRef, getAngleFromPointer, onHueChange, onSaturationChange, onSecondaryDrag, monochromaticPoints, onMonoDrag])
+  }, [canvasRef, geom, o])
 
   const onPointerUp = useCallback(() => {
-    dragModeRef.current = null
-    if (rafRef.current) {
-      cancelAnimationFrame(rafRef.current)
-      rafRef.current = 0
-    }
+    dragRef.current = null
+    if (rafRef.current) { cancelAnimationFrame(rafRef.current); rafRef.current = 0 }
   }, [])
 
-  return { dragModeRef, onPointerDown, onPointerMove, onPointerUp }
+  return { onPointerDown, onPointerMove, onPointerUp }
 }
