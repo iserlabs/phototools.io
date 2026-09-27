@@ -6,7 +6,7 @@ import type { ToolDef, ToolStatus } from '@/lib/types'
 // other server contexts where the locale-aware translations are not loaded.
 export const TOOLS: ToolDef[] = [
   { slug: 'fov-simulator', name: 'Field-of-View Simulator', description: 'Compare field of view across focal lengths and sensor sizes', dev: 'live', prod: 'live', category: 'visualizer' },
-  { slug: 'color-analyzer', name: 'Color Scheme Generator', description: 'Build color palettes for photography shoots', dev: 'live', prod: 'live', category: 'visualizer' },
+  { slug: 'color-analyzer', name: 'Color Analyzer', description: 'Sample the colors in a photo, read its harmony, and see which way to push each one', dev: 'live', prod: 'live', category: 'visualizer' },
   { slug: 'exposure-simulator', name: 'Exposure Triangle Simulator', description: 'See how aperture, shutter speed, and ISO interact', dev: 'live', prod: 'draft', category: 'visualizer' },
   { slug: 'dof-simulator', name: 'Depth-of-Field Simulator', description: 'Visualize how aperture, focal length, and distance affect background blur', dev: 'live', prod: 'draft', category: 'visualizer' },
   { slug: 'focus-stacking-calculator', name: 'Focus Stacking Calculator', description: 'Plan focus stacks with exact focus distances, shot counts, and macro rail steps', dev: 'live', prod: 'draft', category: 'calculator' },
