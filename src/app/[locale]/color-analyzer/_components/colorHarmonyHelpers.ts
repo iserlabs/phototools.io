@@ -15,6 +15,7 @@ export function getHarmonyHues(hue: number, type: HarmonyType, splitAngle: numbe
     case 'triadic': return triadic(hue)
     case 'split-complementary': return splitComplementary(hue, splitAngle)
     case 'tetradic': return tetradic(hue, tetradicOffset)
+    case 'monochromatic': case 'custom': return [hue]
   }
 }
 
@@ -43,5 +44,7 @@ export function getSuggestion(hue: number, type: HarmonyType): string {
       return 'suggestions.splitComplementary.default'
     case 'tetradic':
       return 'suggestions.tetradic'
+    default:
+      return 'suggestions.triadic'
   }
 }
