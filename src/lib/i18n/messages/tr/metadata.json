@@ -38,10 +38,6 @@
       "title": "Sensör Boyutu Karşılaştırma",
       "description": "Orta formattan akıllı telefona kamera sensör boyutlarını karşılaştırın. Gerçek kamera modelleriyle üst üste, yan yana ve piksel yoğunluğu görünümlerini inceleyin."
     },
-    "color-scheme-generator": {
-      "title": "Renk Şeması Üreteci",
-      "description": "Tamamlayıcı, analog, triadik ve tetradik renk uyumlarını kullanarak fotoğrafçılık için renk paletleri oluşturun. Fotoğraf seçicili interaktif renk çarkı."
-    },
     "frame-studio": {
       "title": "Çerçeve Stüdyosu",
       "description": "Fotoğrafları kırpın, çerçeveleyin ve ızgara kaplamaları ile düzenleyin. %100 istemci tarafı — fotoğraflarınız cihazınızdan asla ayrılmaz."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Renk Şeması Üreteci",
+      "description": "Tamamlayıcı, analog, triadik ve tetradik renk uyumlarını kullanarak fotoğrafçılık için renk paletleri oluşturun. Fotoğraf seçicili interaktif renk çarkı."
     }
   }
 }

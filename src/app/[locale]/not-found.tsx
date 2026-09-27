@@ -6,7 +6,7 @@ import styles from './not-found.module.css'
 export default function NotFoundPage() {
   const t = useTranslations('common.notFound')
   const toolsT = useTranslations('tools')
-  const popularSlugs = ['fov-simulator', 'color-scheme-generator', 'exif-viewer', 'star-trail-calculator']
+  const popularSlugs = ['fov-simulator', 'color-analyzer', 'exif-viewer', 'star-trail-calculator']
   const tools = getLiveTools().filter((tool) => popularSlugs.includes(tool.slug))
 
   return (

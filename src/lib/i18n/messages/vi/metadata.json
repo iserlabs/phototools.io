@@ -38,10 +38,6 @@
       "title": "So sánh kích thước cảm biến",
       "description": "So sánh kích thước cảm biến máy ảnh từ medium format đến smartphone. Xem chồng lớp, cạnh nhau và mật độ điểm ảnh với các mẫu máy ảnh thực tế."
     },
-    "color-scheme-generator": {
-      "title": "Tạo phối màu",
-      "description": "Tạo bảng màu cho nhiếp ảnh sử dụng hài hòa màu bổ sung, tương tự, tam giác và tứ giác. Vòng tròn màu tương tác với công cụ chọn màu từ ảnh."
-    },
     "frame-studio": {
       "title": "Studio bố cục",
       "description": "Cắt, đóng khung và bố cục ảnh với các lưới hỗ trợ. 100% phía máy khách — ảnh của bạn không bao giờ rời khỏi thiết bị."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Tạo phối màu",
+      "description": "Tạo bảng màu cho nhiếp ảnh sử dụng hài hòa màu bổ sung, tương tự, tam giác và tứ giác. Vòng tròn màu tương tác với công cụ chọn màu từ ảnh."
     }
   }
 }

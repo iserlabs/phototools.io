@@ -1,0 +1,179 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "Renk uyumu, birbirine iyi görünen renkler seçmekle ilgilidir. Tıpkı müzik akorları gibi, belirli renk kombinasyonları hoş görsel ilişkiler yaratır. Fotoğrafçılar, kıyafet planlaması, set tasarımı ve hatta doğadan doğru paleti elde etmek için açık hava çekimlerinin zamanlamasında renk uyumunu kullanır.",
+      "deeper": {
+        "0": {
+          "heading": "Renk Çarkı",
+          "text": "Renk uyumu teorisi, tonları dalga boyu ilişkilerine göre bir daire içinde düzenleyen renk çarkına dayanır. HSL (Ton, Doygunluk, Açıklık) modeli doğrudan çarka karşılık gelir: ton, açıdır (0–360°), doygunluk merkezden uzaklıktır ve açıklık parlaklığı kontrol eder. Fotoğrafçılıkta bu ilişkiler doğal olarak ortaya çıkar — altın saat analog sıcak tonlar üretirken, yeşil tarlalar önündeki kırmızı bir ahır tamamlayıcı bir örnektir."
+        },
+        "1": {
+          "heading": "Tamamlayıcı",
+          "text": "Çarkta birbirinin tam karşısında (180° arayla) duran iki renk; mavi ve turuncu veya kırmızı ve yeşil gibi. Bu, maksimum kontrast ve görsel enerji yaratır. Bir konunun arka plandan öne çıkmasını sağlamak için harikadır — sıcak ten tonlarının soğuk mavi gökyüzüyle kontrast oluşturduğu altın saat portreleri gibi."
+        },
+        "2": {
+          "heading": "Analog",
+          "text": "Çarkta komşu olan, genellikle 30–60° yayılım içindeki üç renk. Düşük kontrastlı, yumuşak ve uyumlu paletler üretirler. Manzara ve atmosfer odaklı çalışmalar için idealdir — sonbahar yaprakları kırmızı, turuncu ve sarıların doğal analog paletidir."
+        },
+        "3": {
+          "heading": "Triadik",
+          "text": "Çarkta 120° aralıklarla eşit olarak yerleştirilmiş üç renk; kırmızı, sarı ve mavi gibi. Triadik şemalar, tamamlayıcı kontrastın gerilimi olmadan dengeli ve canlı hissettirir. En güçlü sonuçlar için bir baskın renk ve diğer ikisini aksan olarak kullanın."
+        },
+        "4": {
+          "heading": "Bölünmüş Tamamlayıcı",
+          "text": "Karşıt rengin kendisi yerine iki komşusunu kullanan tamamlayıcı yöntemin bir varyasyonu. Tamamlayıcının yüksek kontrastını korurken görsel gerilimi azaltır, daha çok yönlü ve hoşgörülü kılar. Stüdyo portre seansları için popüler bir seçimdir."
+        },
+        "5": {
+          "heading": "Tetradik (Çift Tamamlayıcı)",
+          "text": "Çarkta bir dikdörtgen oluşturan dört renk — temelde iki tamamlayıcı çift. En zengin, en karmaşık paleti sunar ancak dikkatli denge gerektirir. Kaotik bir görünümden kaçınmak için bir rengin baskın olmasına izin verin ve diğerlerini destekleyici aksanlar olarak kullanın."
+        }
+      },
+      "keyFactors": {
+        "0": {
+          "label": "Uyum Türü",
+          "description": "Çarktaki renkler arasındaki geometrik ilişki: tamamlayıcı, analog, triadik, bölünmüş tamamlayıcı veya tetradik."
+        },
+        "1": {
+          "label": "Ton",
+          "description": "Çarktaki temel renk açısı (0-360 derece). Tüm uyum hesaplamaları için başlangıç noktasıdır."
+        },
+        "2": {
+          "label": "Doygunluk",
+          "description": "Renklerin ne kadar canlı veya mat olduğu. Düşük doygunluk pastel ve toprak tonları üretir; yüksek doygunluk cesur, canlı paletler verir."
+        },
+        "3": {
+          "label": "Açıklık",
+          "description": "Parlaklığı kontrol eder. Açıklığı ayarlamak aynı tonu tamamen farklı hissettirebilir — koyu lacivert ile gök mavisi aynı tonun farklı açıklıklardaki halidir."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Portre seansları için tamamlayıcı veya bölünmüş tamamlayıcı bir palet seçin, ardından konunuzun anahtar rengi giymesini sağlayın ve arka plan zıt tonu versin. Mavi/turuncu (altın saat portreleri) klasik bir örnektir."
+        },
+        "1": {
+          "text": "Manzaralar için analog uyum kullanın — doğa zaten analog paletlerle çalışır. Kıyafet tavsiyenizi veya aksesuar seçimlerinizi baskın doğal tonlarla eşleştirin."
+        },
+        "2": {
+          "text": "Renklerin daha mat, editöryal bir tarzda nasıl görüneceğini önizlemek için doygunluğu %30-50'ye düşürün. Yüksek doygunluk ticari ve moda için işe yarar, ancak düşük doygunluk genellikle daha sofistike hissettirir."
+        }
+      },
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Uyum Türü",
+          "definition": "Renk ilişki deseni: Tamamlayıcı (karşıt), Analog (komşu), Triadik (üçlü), Bölünmüş Tamamlayıcı (ötelenmiş karşıtlar) veya Tetradik (dörtlü dikdörtgen)."
+        },
+        "Key Color": {
+          "term": "Anahtar Renk",
+          "definition": "Paletinizdeki baskın renk. Diğer tüm uyum renkleri bu başlangıç tonuna göre hesaplanır."
+        },
+        "Hue": {
+          "term": "Ton",
+          "definition": "Çarktaki derece cinsinden renk açısı: 0° kırmızı, 120° yeşil, 240° mavidir."
+        },
+        "Saturation": {
+          "term": "Doygunluk",
+          "definition": "%0 (gri) ile %100 (tamamen canlı) arasında renk yoğunluğu. Tüm paletin ne kadar cesur veya mat görüneceğini kontrol eder."
+        },
+        "Lightness": {
+          "term": "Açıklık",
+          "definition": "%0 (siyah) ile %100 (beyaz) arasında parlaklık. %50'de saf rengi görürsünüz; altı daha koyu, üstü daha açıktır."
+        },
+        "Split Angle": {
+          "term": "Bölünme Açısı",
+          "definition": "İki bölünmüş tamamlayıcı rengin doğrudan karşıttan ne kadar uzak olduğu. Daha geniş açılar daha fazla kontrast verir."
+        },
+        "Spread": {
+          "term": "Yayılım",
+          "definition": "Analog renklerin anahtar tondan ne kadar uzak olduğu. Dar yayılım ince varyasyon verir; geniş yayılım çeşitliliği artırır."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Cesur bir grafik portre için iki renk arasında maksimum kontrast istiyorsunuz. Hangi uyum türü size en fazla görsel gerilim verir?",
+          "hint": "Çarkta birbirinin tam karşısındaki renkler en güçlü kontrastı yaratır.",
+          "successMessage": "Doğru! Tamamlayıcı renkler 180 derece arayla durur ve en yüksek kontrastı üretir — cesur, dikkat çekici kompozisyonlar için mükemmeldir.",
+          "failureMessage": "Tamamlayıcı uyum renkleri çarkta birbirinin tam karşısına yerleştirir ve maksimum görsel kontrast yaratır.",
+          "options": {
+            "0": {
+              "label": "Tamamlayıcı"
+            },
+            "1": {
+              "label": "Analog"
+            },
+            "2": {
+              "label": "Triadik"
+            }
+          }
+        },
+        "1": {
+          "scenario": "Altın saat çekimi planlıyorsunuz ve sıcak, uyumlu tonlar istiyorsunuz. Hangi uyum türü renkleri çarkta birbirine yakın tutar?",
+          "hint": "Bu tür, yumuşak ve birleşik bir his için komşu tonları kullanır.",
+          "successMessage": "Doğru! Analog uyum birbirine komşu renkleri kullanır ve altın saat için mükemmel, sıcak ve uyumlu bir palet verir.",
+          "failureMessage": "Analog uyum tüm renkleri çarkta komşu tutar — birleşik sıcak veya soğuk paletler için idealdir.",
+          "options": {
+            "0": {
+              "label": "Tamamlayıcı"
+            },
+            "1": {
+              "label": "Analog"
+            },
+            "2": {
+              "label": "Tetradik"
+            }
+          }
+        },
+        "2": {
+          "scenario": "Bir müşteri kontrast içeren ama saf tamamlayıcı kadar yoğun olmayan bir portre istiyor. Hangi uyum türü görsel ilgiyi korurken karşıtlığı yumuşatır?",
+          "hint": "Bu tür, doğrudan karşıt yerine karşıtın iki komşusunu kullanır.",
+          "successMessage": "Mükemmel! Bölünmüş tamamlayıcı, tamamlayıcının kontrastını korur ancak karşıt rengi iki yandaki tonlarla bölerek daha az sarsıcı ama yine dinamik bir palet üretir.",
+          "failureMessage": "Bölünmüş Tamamlayıcı cevaptır — tek karşıt rengi karşıtın iki komşusuyla değiştirerek görsel enerjiyi korurken kontrastı yumuşatır.",
+          "options": {
+            "0": {
+              "label": "Bölünmüş Tamamlayıcı"
+            },
+            "1": {
+              "label": "Triadik"
+            },
+            "2": {
+              "label": "Analog"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Anahtar rengi turuncu (ton ~30 derece) olarak ve tamamlayıcı uyum ile ayarlıyorsunuz. Tamamlayıcı renk ne olacak?",
+          "hint": "Tamamlayıcı, çarkta 180 derece karşı demektir.",
+          "successMessage": "Doğru! 30° + 180° = 210°, bu mavi aralığına denk gelir. Turuncu ve mavi, fotoğrafçılığın en sevilen tamamlayıcı çiftlerinden biridir.",
+          "failureMessage": "Turuncuya (30°) 180° eklemek 210° verir, bu mavidir. Turuncu-mavi tamamlayıcı çifti fotoğrafçılığın vazgeçilmezlerindendir.",
+          "options": {
+            "0": {
+              "label": "Mavi (~210°)"
+            },
+            "1": {
+              "label": "Yeşil (~150°)"
+            },
+            "2": {
+              "label": "Kırmızı (~0°)"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Bir moda editöryal çekimi sanat yönetiyorsunuz ve hem sıcak hem soğuk tonlar ile yüksek görsel zenginlik sunan dört renkli bir palete ihtiyacınız var. Hangi uyum türü dört renk verir ve bunu kullanırken ana zorluk nedir?",
+          "hint": "Dört renkli uyum çarkta bir dikdörtgen oluşturur.",
+          "successMessage": "Doğru! Tetradik uyum çarkta bir dikdörtgen oluşturan dört renk verir. Ana zorluk dengedir — dört belirgin ton ile biri baskın olmalı diğerleri aksan olarak kullanılmalıdır. Hiyerarşi olmadan görüntü kaotik hisseder.",
+          "failureMessage": "Tetradik (çift tamamlayıcı) dikdörtgen düzeninde dört renk sağlar. Zorluk, dört güçlü tonun dikkat için yarışmasıdır — bir baskın renk belirleyip diğerlerini aksan olarak kullanmanız gerekir.",
+          "options": {
+            "0": {
+              "label": "Tetradik — zorluk dört ton arasında görsel hiyerarşi korumaktır"
+            },
+            "1": {
+              "label": "Triadik — zorluk çok az renk olmasıdır"
+            },
+            "2": {
+              "label": "Analog — zorluk kontrast eksikliğidir"
+            }
+          }
+        }
+      }
+    }
+  }
+}

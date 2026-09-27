@@ -4,10 +4,6 @@
       "name": "Billedvinkel-simulator",
       "description": "Sammenlign billedvinkel på tværs af brændvidder og sensorstørrelser"
     },
-    "color-scheme-generator": {
-      "name": "Farvepalet-generator",
-      "description": "Byg farvepaletter til dine billeder"
-    },
     "exposure-simulator": {
       "name": "Eksponeringstrekantsimulator",
       "description": "Se hvordan blænde, lukkertid og ISO spiller sammen"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Foto-huskeseddel",
       "description": "Huskesedler med kameraindstillinger til almindelige fotosituationer — kan downloades og printes"
+    },
+    "color-analyzer": {
+      "name": "Farvepalet-generator",
+      "description": "Byg farvepaletter til dine billeder"
     }
   }
 }

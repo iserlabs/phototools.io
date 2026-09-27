@@ -1,0 +1,71 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Color Scheme",
+      "complementary": "Complementary",
+      "analogous": "Analogous",
+      "triadic": "Triadic",
+      "splitComplementary": "Split Complementary",
+      "tetradic": "Tetradic",
+      "keyColor": "Key Color",
+      "hue": "Hue:",
+      "saturation": "Saturation:",
+      "lightness": "Lightness:",
+      "splitAngle": "Split angle:",
+      "spread": "Spread:",
+      "rectangleWidth": "Rectangle width:",
+      "square": "(square)",
+      "pickFromPhoto": "Pick from Photo",
+      "dropPhotoPrompt": "Drop a photo here or click to browse",
+      "keyColorLabel": "Key color — click to copy hex",
+      "clickToCopyHex": "Click to copy hex",
+      "copiedExcl": "Copied!",
+      "copyColors": "Copy colors",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Copy hex codes",
+      "copyCssVariables": "Copy CSS variables",
+      "copyRgbValues": "Copy RGB values",
+      "pickColorFromPhoto": "Pick color from photo",
+      "close": "Close",
+      "dropPhotoOrBrowse": "Drop a photo here or click to browse",
+      "tapToChoose": "Tap to choose a photo",
+      "tapToSample": "Tap anywhere on the photo to sample that color",
+      "changePhoto": "Change photo",
+      "privacyNote": "Your photo stays in your browser — nothing is uploaded",
+      "suggestions": {
+        "complementary": {
+          "warm": "Great for: warm sunset portraits with cool shadow contrast",
+          "cool": "Great for: moody blue-hour shots with warm accent lighting",
+          "default": "Great for: high-contrast compositions with strong visual tension"
+        },
+        "analogous": {
+          "warm": "Great for: golden hour landscapes with unified warm tones",
+          "cool": "Great for: serene water scenes and twilight photography",
+          "default": "Great for: harmonious nature shots with smooth color transitions"
+        },
+        "triadic": "Use for: vibrant editorial work and bold creative portraits",
+        "splitComplementary": {
+          "warm": "Use for: contrasting wardrobe against a natural backdrop",
+          "default": "Use for: balanced product photography with visual variety"
+        },
+        "tetradic": "Use for: rich editorial layouts and complex multi-subject compositions"
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "What is color harmony in photography?",
+          "answer": "Color harmony refers to aesthetically pleasing color combinations based on their positions on the color wheel. Harmonious colors create visual balance and can evoke specific moods in your photographs."
+        },
+        "complementary-vs-analogous": {
+          "question": "What is the difference between complementary and analogous colors?",
+          "answer": "Complementary colors sit opposite each other on the color wheel (like blue and orange) and create high contrast. Analogous colors sit next to each other (like blue, blue-green, and green) and create a more harmonious, unified feel."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "How do I use color schemes in photography?",
+          "answer": "Plan your shoots around a color palette — choose wardrobe, locations, and props that match your scheme. In post-processing, use color grading to emphasize your chosen palette. Color schemes help create a consistent visual identity across a photo series."
+        }
+      }
+    }
+  }
+}

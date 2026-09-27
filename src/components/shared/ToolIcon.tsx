@@ -280,7 +280,7 @@ function CheatSheetIcon(p: IconProps) {
 
 const ICON_MAP: Record<string, (props: IconProps) => React.JSX.Element> = {
   'fov-simulator': FovSimulator,
-  'color-scheme-generator': ColorHarmony,
+  'color-analyzer': ColorHarmony,
   'exposure-simulator': ExposureSimulator,
   'dof-simulator': DofCalculator,
   'focus-stacking-calculator': FocusStackingCalc,

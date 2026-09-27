@@ -1,0 +1,179 @@
+{
+  "education": {
+    "color-analyzer": {
+      "beginner": "La armonía del color consiste en escoger colores que combinen bien entre sí. Igual que ocurre con los acordes musicales, ciertas combinaciones de color generan relaciones visuales agradables. Los fotógrafos recurren a la armonía del color para planificar el vestuario, el atrezo e incluso la hora a la que se hace una sesión al aire libre, buscando que la naturaleza les regale la paleta adecuada.",
+      "deeper": {
+        "0": {
+          "heading": "La rueda de color",
+          "text": "La teoría de la armonía del color se basa en la rueda de color, que organiza los tonos en un círculo según sus relaciones de longitud de onda. El modelo HSL (Tono, Saturación, Luminosidad) se mapea directamente a la rueda: el tono es el ángulo (0–360°), la saturación es la distancia desde el centro, y la luminosidad controla el brillo. En fotografía, estas relaciones aparecen naturalmente — la hora dorada produce tonos cálidos análogos, mientras que un granero rojo contra campos verdes es complementario."
+        },
+        "1": {
+          "heading": "Complementario",
+          "text": "Dos colores que se sitúan directamente opuestos en la rueda (180° de separación), como azul y naranja o rojo y verde. Esto crea el máximo contraste y energía visual. Ideal para hacer que un sujeto destaque del fondo — piensa en retratos de hora dorada donde los tonos cálidos de la piel contrastan con un cielo azul frío."
+        },
+        "2": {
+          "heading": "Análogo",
+          "text": "Tres colores que son vecinos en la rueda, generalmente dentro de un rango de 30–60°. Producen paletas suaves y cohesivas con bajo contraste. Ideal para paisajes y trabajo enfocado en el ambiente — el follaje otoñal es una paleta análoga natural de rojos, naranjas y amarillos."
+        },
+        "3": {
+          "heading": "Triádico",
+          "text": "Tres colores equidistantes a intervalos de 120° alrededor de la rueda, como rojo, amarillo y azul. Los esquemas triádicos se sienten equilibrados y vibrantes sin la tensión del contraste complementario. Usa un color dominante y los otros dos como acentos para los mejores resultados."
+        },
+        "4": {
+          "heading": "Complementario dividido",
+          "text": "Una variación del complementario que usa los dos vecinos del color opuesto en lugar del opuesto mismo. Esto mantiene el alto contraste del complementario pero reduce la tensión visual, haciéndolo más versátil e indulgente. Una opción popular para sesiones de retratos con estilismo."
+        },
+        "5": {
+          "heading": "Tetrádico (Doble complementario)",
+          "text": "Cuatro colores formando un rectángulo en la rueda — esencialmente dos pares complementarios. Esto ofrece la paleta más rica y compleja pero requiere un equilibrio cuidadoso. Deja que un color domine y usa los demás como acentos de soporte para evitar un aspecto caótico."
+        }
+      },
+      "keyFactors": {
+        "0": {
+          "label": "Tipo de armonía",
+          "description": "La relación geométrica entre colores en la rueda: complementario, análogo, triádico, complementario dividido o tetrádico."
+        },
+        "1": {
+          "label": "Tono",
+          "description": "El ángulo del color base en la rueda (0-360 grados). Este es el punto de partida para todos los cálculos de armonía."
+        },
+        "2": {
+          "label": "Saturación",
+          "description": "Cuán vívidos o apagados son los colores. Menor saturación produce pasteles y tonos tierra; mayor saturación da paletas audaces y vibrantes."
+        },
+        "3": {
+          "label": "Luminosidad",
+          "description": "Controla el brillo. Ajustar la luminosidad puede hacer que el mismo tono se sienta completamente diferente — azul marino oscuro vs. azul cielo son el mismo tono a diferente luminosidad."
+        }
+      },
+      "tips": {
+        "0": {
+          "text": "Para sesiones de retratos, elige una paleta complementaria o complementaria dividida, luego haz que tu sujeto vista el color clave mientras el fondo proporciona el tono contrastante. Azul/naranja (retratos de hora dorada) es un ejemplo clásico."
+        },
+        "1": {
+          "text": "Usa armonía análoga para paisajes — la naturaleza ya trabaja en paletas análogas. Ajusta tus sugerencias de vestuario o elecciones de accesorios a los tonos naturales dominantes."
+        },
+        "2": {
+          "text": "Reduce la saturación al 30-50% para previsualizar cómo se verán los colores en un estilo editorial más apagado. La alta saturación funciona para comercial y moda, pero la menor saturación a menudo se siente más sofisticada."
+        }
+      },
+      "tooltips": {
+        "Harmony Type": {
+          "term": "Tipo de armonía",
+          "definition": "El patrón de relación de color: Complementario (opuesto), Análogo (vecinos), Triádico (tres direcciones), Complementario dividido (opuestos desplazados) o Tetrádico (rectángulo de cuatro)."
+        },
+        "Key Color": {
+          "term": "Color clave",
+          "definition": "El color dominante en tu paleta. Todos los demás colores de armonía se calculan en relación a este tono inicial."
+        },
+        "Hue": {
+          "term": "Tono",
+          "definition": "El ángulo del color en la rueda en grados: 0° es rojo, 120° es verde, 240° es azul."
+        },
+        "Saturation": {
+          "term": "Saturación",
+          "definition": "Intensidad del color del 0% (gris) al 100% (completamente vívido). Controla cuán audaz o apagada aparece toda la paleta."
+        },
+        "Lightness": {
+          "term": "Luminosidad",
+          "definition": "Brillo del 0% (negro) al 100% (blanco). Al 50% ves el color puro; por debajo es más oscuro, por encima más claro."
+        },
+        "Split Angle": {
+          "term": "Ángulo de división",
+          "definition": "Cuán separados están los dos colores complementarios divididos del opuesto directo. Ángulos más amplios dan más contraste."
+        },
+        "Spread": {
+          "term": "Dispersión",
+          "definition": "Cuán separados están los colores análogos del tono clave. Dispersión estrecha da variación sutil; dispersión amplia aumenta la diversidad."
+        }
+      },
+      "challenges": {
+        "0": {
+          "scenario": "Quieres el máximo contraste entre dos colores para un retrato gráfico audaz. ¿Qué tipo de armonía te da la mayor tensión visual?",
+          "hint": "Los colores directamente opuestos en la rueda crean el contraste más fuerte.",
+          "successMessage": "¡Correcto! Los colores complementarios están a 180 grados de separación y producen el mayor contraste — perfecto para composiciones audaces y llamativas.",
+          "failureMessage": "La armonía complementaria coloca los colores directamente opuestos en la rueda, creando el máximo contraste visual.",
+          "options": {
+            "0": {
+              "label": "Complementario"
+            },
+            "1": {
+              "label": "Análogo"
+            },
+            "2": {
+              "label": "Triádico"
+            }
+          }
+        },
+        "1": {
+          "scenario": "Estás planificando una sesión de hora dorada y quieres tonos cálidos y cohesivos. ¿Qué tipo de armonía mantiene los colores cercanos en la rueda?",
+          "hint": "Este tipo usa tonos vecinos para una sensación suave y unificada.",
+          "successMessage": "¡Correcto! La armonía análoga usa colores adyacentes, dándote una paleta cálida y cohesiva perfecta para la hora dorada.",
+          "failureMessage": "La armonía análoga mantiene todos los colores como vecinos en la rueda — ideal para paletas cálidas o frías unificadas.",
+          "options": {
+            "0": {
+              "label": "Complementario"
+            },
+            "1": {
+              "label": "Análogo"
+            },
+            "2": {
+              "label": "Tetrádico"
+            }
+          }
+        },
+        "2": {
+          "scenario": "Un cliente quiere un retrato con contraste pero no tan intenso como el complementario puro. ¿Qué tipo de armonía suaviza la oposición manteniendo el interés visual?",
+          "hint": "Este tipo usa dos colores cerca del complemento en lugar del opuesto directo.",
+          "successMessage": "¡Excelente! El complementario dividido mantiene el contraste del complementario pero divide el color opuesto en dos tonos flanqueantes, produciendo una paleta menos discordante pero aún dinámica.",
+          "failureMessage": "El complementario dividido es la respuesta — reemplaza el único color opuesto con dos vecinos del opuesto, suavizando el contraste mientras mantiene la energía visual.",
+          "options": {
+            "0": {
+              "label": "Complementario dividido"
+            },
+            "1": {
+              "label": "Triádico"
+            },
+            "2": {
+              "label": "Análogo"
+            }
+          }
+        },
+        "3": {
+          "scenario": "Configuras el color clave en naranja (tono ~30 grados) con armonía complementaria. ¿De qué color será el complemento?",
+          "hint": "Complementario significa 180 grados opuesto en la rueda.",
+          "successMessage": "¡Correcto! 30° + 180° = 210°, que cae en el rango del azul. Naranja y azul es uno de los pares complementarios más queridos en fotografía.",
+          "failureMessage": "Sumando 180° al naranja (30°) da 210°, que es azul. El par complementario naranja-azul es un clásico de la fotografía.",
+          "options": {
+            "0": {
+              "label": "Azul (~210°)"
+            },
+            "1": {
+              "label": "Verde (~150°)"
+            },
+            "2": {
+              "label": "Rojo (~0°)"
+            }
+          }
+        },
+        "4": {
+          "scenario": "Estás dirigiendo artísticamente un editorial de moda y necesitas una paleta de cuatro colores que proporcione tanto tonos cálidos como fríos con gran riqueza visual. ¿Qué tipo de armonía te da cuatro colores, y cuál es el principal desafío al usarla?",
+          "hint": "La armonía de cuatro colores forma un rectángulo en la rueda.",
+          "successMessage": "¡Correcto! La armonía tetrádica da cuatro colores formando un rectángulo en la rueda. El principal desafío es el equilibrio — con cuatro tonos distintos, uno debe dominar mientras los demás acentúan. Sin jerarquía, la imagen se siente caótica.",
+          "failureMessage": "Tetrádico (doble complementario) proporciona cuatro colores en disposición rectangular. El desafío es que cuatro tonos fuertes compiten por atención — necesitas designar un color dominante y usar los demás como acentos.",
+          "options": {
+            "0": {
+              "label": "Tetrádico — el desafío es mantener la jerarquía visual entre cuatro tonos"
+            },
+            "1": {
+              "label": "Triádico — el desafío es tener muy pocos colores"
+            },
+            "2": {
+              "label": "Análogo — el desafío es la falta de contraste"
+            }
+          }
+        }
+      }
+    }
+  }
+}

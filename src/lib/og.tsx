@@ -4,7 +4,7 @@ import { OgBackground, OgDiamonds, OgBranding, OgAccentLine } from './og-layout'
 
 const TOOL_EMOJIS: Record<string, string> = {
   'fov-simulator': '🔭',
-  'color-scheme-generator': '🎨',
+  'color-analyzer': '🎨',
   'exposure-simulator': '📸',
   'dof-simulator': '🌿',
   'hyperfocal-simulator': '🎯',

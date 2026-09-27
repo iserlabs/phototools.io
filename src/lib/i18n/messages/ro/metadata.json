@@ -38,10 +38,6 @@
       "title": "Comparație dimensiuni senzor",
       "description": "Compară dimensiunile senzorilor de cameră, de la format mediu până la smartphone. Vizualizare suprapusă, alăturată și cu densitate de pixeli, cu modele reale."
     },
-    "color-scheme-generator": {
-      "title": "Generator de palete de culori",
-      "description": "Generează palete de culori pentru fotografie folosind armonii complementare, analoge, triadice și tetradice. Roată de culori interactivă cu selector din fotografie."
-    },
     "frame-studio": {
       "title": "Studio de încadrare",
       "description": "Decupează, încadrează și compune fotografii cu grile de ghidaj. 100% în browser — fotografiile tale nu părăsesc dispozitivul."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Generator de palete de culori",
+      "description": "Generează palete de culori pentru fotografie folosind armonii complementare, analoge, triadice și tetradice. Roată de culori interactivă cu selector din fotografie."
     }
   }
 }

@@ -1,0 +1,71 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Színséma",
+      "complementary": "Komplementer",
+      "analogous": "Analóg",
+      "triadic": "Triadikus",
+      "splitComplementary": "Osztott komplementer",
+      "tetradic": "Tetradikus",
+      "keyColor": "Kulcsszín",
+      "hue": "Színárnyalat:",
+      "saturation": "Telítettség:",
+      "lightness": "Világosság:",
+      "splitAngle": "Osztott szög:",
+      "spread": "Terjedés:",
+      "rectangleWidth": "Téglalap szélesség:",
+      "square": "(négyzet)",
+      "pickFromPhoto": "Szín a fotóból",
+      "dropPhotoPrompt": "Húzz ide egy fotót, vagy kattints a tallózáshoz",
+      "keyColorLabel": "Kulcsszín — kattints a hex másolásához",
+      "clickToCopyHex": "Kattints a hex másolásához",
+      "copiedExcl": "Kimásolva!",
+      "copyColors": "Színek másolása",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Hex kódok másolása",
+      "copyCssVariables": "CSS változók másolása",
+      "copyRgbValues": "RGB értékek másolása",
+      "pickColorFromPhoto": "Szín kiválasztása fotóból",
+      "close": "Bezárás",
+      "dropPhotoOrBrowse": "Húzz ide egy fotót, vagy kattints a tallózáshoz",
+      "tapToChoose": "Koppints egy fotó kiválasztásához",
+      "tapToSample": "Koppints bárhová a fotón, hogy mintavételezd azt a színt",
+      "changePhoto": "Fotó cseréje",
+      "privacyNote": "A fotód a böngésződben marad — semmi sem kerül feltöltésre",
+      "suggestions": {
+        "complementary": {
+          "warm": "Jó választás: meleg naplementés portrékhoz hűvös árnyékkontraszttal",
+          "cool": "Jó választás: hangulatos kék órás felvételekhez meleg akcentfénnyel",
+          "default": "Jó választás: nagy kontrasztú, erős vizuális feszültségű kompozíciókhoz"
+        },
+        "analogous": {
+          "warm": "Jó választás: arany órás tájképekhez, egységes meleg tónusokkal",
+          "cool": "Jó választás: nyugodt vízi jelenetekhez és szürkületi fotózáshoz",
+          "default": "Jó választás: harmonikus természetfotókhoz, lágy színátmenetekkel"
+        },
+        "triadic": "Jó választás: élénk szerkesztői munkához és merész kreatív portrékhoz",
+        "splitComplementary": {
+          "warm": "Jó választás: kontrasztos ruha és természetes háttér összehangolásához",
+          "default": "Jó választás: kiegyensúlyozott termékfotózáshoz, változatos vizuális hatással"
+        },
+        "tetradic": "Jó választás: gazdag szerkesztői elrendezésekhez és összetett, több témás kompozíciókhoz"
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Mi a színharmónia a fotózásban?",
+          "answer": "A színharmónia olyan esztétikailag kellemes színkombinációkat jelent, amelyek a színkörön elfoglalt helyük alapján illenek össze. A harmonikus színek vizuális egyensúlyt teremtenek, és meghatározott hangulatot adhatnak a fotóidnak."
+        },
+        "complementary-vs-analogous": {
+          "question": "Mi a különbség a komplementer és az analóg színek között?",
+          "answer": "A komplementer színek a színkörön egymással szemben állnak (pl. kék és narancs), és erős kontrasztot adnak. Az analóg színek egymás mellett helyezkednek el (pl. kék, kékeszöld és zöld), és harmonikusabb, egységesebb hangulatot keltenek."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Hogyan használjam a színsémákat a fotózásban?",
+          "answer": "Tervezd a fotózást egy színpaletta köré: válassz hozzá illő ruhát, helyszínt és kellékeket. Utómunkában színkorrekcióval emeld ki a választott palettát. A színsémák segítenek egységes vizuális világot adni egy fotósorozatnak."
+        }
+      }
+    }
+  }
+}

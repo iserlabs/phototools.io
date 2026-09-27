@@ -1,0 +1,71 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "配色",
+      "complementary": "補色",
+      "analogous": "類似色",
+      "triadic": "三色配色",
+      "splitComplementary": "分裂補色",
+      "tetradic": "四色配色",
+      "keyColor": "キーカラー",
+      "hue": "色相:",
+      "saturation": "彩度:",
+      "lightness": "明度:",
+      "splitAngle": "分裂角度:",
+      "spread": "広がり:",
+      "rectangleWidth": "長方形の幅:",
+      "square": "（正方形）",
+      "pickFromPhoto": "写真から選択",
+      "dropPhotoPrompt": "写真をここにドロップするか、クリックして選択",
+      "keyColorLabel": "キーカラー — クリックでHexをコピー",
+      "clickToCopyHex": "クリックでHexをコピー",
+      "copiedExcl": "コピーしました！",
+      "copyColors": "色をコピー",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Hexコードをコピー",
+      "copyCssVariables": "CSS変数をコピー",
+      "copyRgbValues": "RGB値をコピー",
+      "pickColorFromPhoto": "写真から色を選択",
+      "close": "閉じる",
+      "dropPhotoOrBrowse": "写真をここにドロップするか、クリックして選択",
+      "tapToChoose": "タップして写真を選択",
+      "tapToSample": "写真のどこかをタップしてその色をサンプリング",
+      "changePhoto": "写真を変更",
+      "privacyNote": "写真はブラウザ内に留まります — アップロードされません",
+      "suggestions": {
+        "complementary": {
+          "warm": "おすすめ: 暖色系の夕日ポートレートと冷たいシャドウのコントラスト",
+          "cool": "おすすめ: ブルーアワーのムーディーな撮影と暖色アクセントライティング",
+          "default": "おすすめ: 強い視覚的緊張感のあるハイコントラストな構図"
+        },
+        "analogous": {
+          "warm": "おすすめ: 統一された暖色トーンのゴールデンアワー風景",
+          "cool": "おすすめ: 穏やかな水辺のシーンとトワイライト写真",
+          "default": "おすすめ: 滑らかな色の遷移を持つ調和的な自然写真"
+        },
+        "triadic": "用途: 鮮やかなエディトリアルワークと大胆なクリエイティブポートレート",
+        "splitComplementary": {
+          "warm": "用途: 自然な背景に対するコントラストのある衣装",
+          "default": "用途: 視覚的バリエーションのあるバランスの取れたプロダクト写真"
+        },
+        "tetradic": "用途: 豊かなエディトリアルレイアウトと複雑なマルチサブジェクト構図"
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "写真における色彩調和とは何ですか？",
+          "answer": "色彩調和とは、色相環上の位置関係に基づく美的に心地よい色の組み合わせのことです。調和のとれた色はビジュアルバランスを生み出し、写真に特定の雰囲気を喚起することができます。"
+        },
+        "complementary-vs-analogous": {
+          "question": "補色と類似色の違いは何ですか？",
+          "answer": "補色は色相環の反対側に位置する色（青とオレンジなど）で、高いコントラストを生み出します。類似色は隣り合う色（青、青緑、緑など）で、より調和のとれた統一感のある印象を作ります。"
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "写真撮影で配色をどう活用すればいいですか？",
+          "answer": "カラーパレットを中心に撮影を計画しましょう。衣装、ロケーション、小道具をスキームに合わせて選びます。後処理では、カラーグレーディングを使って選んだパレットを強調します。配色は写真シリーズ全体で一貫したビジュアルアイデンティティを作るのに役立ちます。"
+        }
+      }
+    }
+  }
+}

@@ -4,10 +4,6 @@
       "name": "Mô phỏng góc nhìn",
       "description": "So sánh góc nhìn giữa các tiêu cự và kích thước cảm biến"
     },
-    "color-scheme-generator": {
-      "name": "Tạo phối màu",
-      "description": "Xây dựng bảng màu cho các buổi chụp ảnh"
-    },
     "exposure-simulator": {
       "name": "Mô phỏng tam giác phơi sáng",
       "description": "Xem cách khẩu độ, tốc độ màn trập và ISO tương tác với nhau"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Bảng tra cứu nhanh nhiếp ảnh",
       "description": "Bảng tra cứu thiết lập máy ảnh cho những tình huống chụp thường gặp — tải về và in được"
+    },
+    "color-analyzer": {
+      "name": "Tạo phối màu",
+      "description": "Xây dựng bảng màu cho các buổi chụp ảnh"
     }
   }
 }

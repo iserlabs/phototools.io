@@ -4,10 +4,6 @@
       "name": "Synsfelt-simulator",
       "description": "Sammenlign synsfelt på tvers av brennvidder og sensorstørrelser"
     },
-    "color-scheme-generator": {
-      "name": "Fargeskjema-generator",
-      "description": "Bygg fargepaletter til fotograferingen"
-    },
     "exposure-simulator": {
       "name": "Eksponeringstriangel-simulator",
       "description": "Se hvordan blender, lukkertid og ISO spiller sammen"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Foto-jukselapp",
       "description": "Jukselapper med kamerainnstillinger for vanlige fotosituasjoner — til nedlasting og utskrift"
+    },
+    "color-analyzer": {
+      "name": "Fargeskjema-generator",
+      "description": "Bygg fargepaletter til fotograferingen"
     }
   }
 }

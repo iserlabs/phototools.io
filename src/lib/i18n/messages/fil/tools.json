@@ -4,10 +4,6 @@
       "name": "Simulator ng Field-of-View",
       "description": "Ikumpara ang field of view sa iba't ibang focal length at sensor size"
     },
-    "color-scheme-generator": {
-      "name": "Tagabuo ng Color Scheme",
-      "description": "Gumawa ng color palette para sa iyong photo shoot"
-    },
     "exposure-simulator": {
       "name": "Simulator ng Exposure Triangle",
       "description": "Tingnan kung paano magkakaugnay ang aperture, shutter speed, at ISO"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Photography Cheat Sheet",
       "description": "Mga cheat sheet ng camera setting para sa mga karaniwang shooting scenario — nada-download at napi-print"
+    },
+    "color-analyzer": {
+      "name": "Tagabuo ng Color Scheme",
+      "description": "Gumawa ng color palette para sa iyong photo shoot"
     }
   }
 }

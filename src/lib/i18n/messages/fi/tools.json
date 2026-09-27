@@ -4,10 +4,6 @@
       "name": "Kuvakulmasimulaattori",
       "description": "Vertaa kuvakulmaa eri polttoväleillä ja kennoilla"
     },
-    "color-scheme-generator": {
-      "name": "Väripalettigeneraattori",
-      "description": "Luo väripaletteja kuvauksia varten"
-    },
     "exposure-simulator": {
       "name": "Valotuskolmion simulaattori",
       "description": "Näe, miten aukko, suljinaika ja ISO vaikuttavat toisiinsa"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Valokuvauksen muistilista",
       "description": "Kamera-asetusten muistilistat yleisiin kuvaustilanteisiin — ladattavat ja tulostettavat"
+    },
+    "color-analyzer": {
+      "name": "Väripalettigeneraattori",
+      "description": "Luo väripaletteja kuvauksia varten"
     }
   }
 }

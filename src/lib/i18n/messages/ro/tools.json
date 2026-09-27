@@ -4,10 +4,6 @@
       "name": "Simulator câmp vizual",
       "description": "Compară unghiul de vizualizare între distanțe focale și dimensiuni de senzor"
     },
-    "color-scheme-generator": {
-      "name": "Generator de palete de culori",
-      "description": "Construiește palete de culori pentru sesiuni foto"
-    },
     "exposure-simulator": {
       "name": "Simulator triunghiul expunerii",
       "description": "Vezi cum interacționează diafragma, timpul de expunere și ISO"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Fișă de setări foto",
       "description": "Fișe cu setări de aparat pentru scenarii de fotografiere obișnuite — descărcabile și imprimabile"
+    },
+    "color-analyzer": {
+      "name": "Generator de palete de culori",
+      "description": "Construiește palete de culori pentru sesiuni foto"
     }
   }
 }

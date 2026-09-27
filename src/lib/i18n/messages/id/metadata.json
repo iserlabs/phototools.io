@@ -38,10 +38,6 @@
       "title": "Perbandingan Ukuran Sensor",
       "description": "Bandingkan ukuran sensor kamera dari medium format hingga smartphone. Lihat tampilan overlay, berdampingan, dan kepadatan piksel dengan model kamera nyata."
     },
-    "color-scheme-generator": {
-      "title": "Generator Skema Warna",
-      "description": "Buat palet warna untuk fotografi menggunakan harmoni warna komplementer, analogus, triadik, dan tetradik. Roda warna interaktif dengan pemilih warna dari foto."
-    },
     "frame-studio": {
       "title": "Studio Bingkai",
       "description": "Potong, bingkai, dan komposisikan foto dengan overlay grid. 100% di sisi klien — foto Anda tidak pernah meninggalkan perangkat."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Generator Skema Warna",
+      "description": "Buat palet warna untuk fotografi menggunakan harmoni warna komplementer, analogus, triadik, dan tetradik. Roda warna interaktif dengan pemilih warna dari foto."
     }
   }
 }

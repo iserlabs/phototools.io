@@ -1,7 +1,7 @@
 import type { ToolEducationSkeleton } from './types'
 
 export const COLOR_SCHEME_SKELETON: ToolEducationSkeleton = {
-  slug: 'color-scheme-generator',
+  slug: 'color-analyzer',
   deeperSections: 6,
   keyFactorCount: 4,
   tipCount: 3,

@@ -38,10 +38,6 @@
       "title": "Sensorstørrelse-sammenligning",
       "description": "Sammenlign kamerasensorer fra mellomformat til mobil. Se overlegg, side ved side og pikseltetthet med ekte kameramodeller."
     },
-    "color-scheme-generator": {
-      "title": "Fargeskjema-generator",
-      "description": "Lag fargepaletter til fotografi med komplementære, analoge, triadiske og tetradiske kombinasjoner. Interaktivt fargehjul med bildeprøver."
-    },
     "frame-studio": {
       "title": "Komposisjonsstudio",
       "description": "Beskjær, ramm inn og komponer bilder med rutenett. 100 % i nettleseren — bildene dine forlater aldri enheten."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Fargeskjema-generator",
+      "description": "Lag fargepaletter til fotografi med komplementære, analoge, triadiske og tetradiske kombinasjoner. Interaktivt fargehjul med bildeprøver."
     }
   }
 }

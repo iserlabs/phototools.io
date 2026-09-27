@@ -4,10 +4,6 @@
       "name": "Simulateur de champ de vision",
       "description": "Compare le champ de vision selon les focales et les tailles de capteur"
     },
-    "color-scheme-generator": {
-      "name": "Générateur de palette de couleurs",
-      "description": "Crée des palettes de couleurs pour tes séances photo"
-    },
     "exposure-simulator": {
       "name": "Simulateur du triangle d'exposition",
       "description": "Comprends l'interaction entre ouverture, vitesse d'obturation et ISO"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Aide-mémoire photo",
       "description": "Fiches de réglages photo pour les scénarios courants — téléchargeables et imprimables"
+    },
+    "color-analyzer": {
+      "name": "Générateur de palette de couleurs",
+      "description": "Crée des palettes de couleurs pour tes séances photo"
     }
   }
 }

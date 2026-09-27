@@ -15,7 +15,7 @@ import { EXPOSURE_SCENES } from '@/lib/data/exposureScenes'
 import { ASPECT_RATIOS, TEXTURES } from '@/lib/data/frameStudio'
 import { TEXTURE_PRESETS } from '@/lib/math/frame-texture'
 import { WB_PRESETS } from '@/lib/data/whiteBalance'
-import { HARMONY_KEYS } from '@/lib/data/colorSchemeGenerator'
+import { HARMONY_KEYS } from '@/lib/data/colorAnalyzer'
 import { locales, defaultLocale, localeNames, localeOpenGraph, localeFlags } from '@/lib/i18n/routing'
 
 describe('FOV calculations with real sensor data', () => {

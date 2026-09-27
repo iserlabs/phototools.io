@@ -1,0 +1,71 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Phối màu",
+      "complementary": "Bổ sung",
+      "analogous": "Tương tự",
+      "triadic": "Tam giác",
+      "splitComplementary": "Bổ sung tách",
+      "tetradic": "Tứ giác",
+      "keyColor": "Màu chính",
+      "hue": "Sắc độ:",
+      "saturation": "Độ bão hòa:",
+      "lightness": "Độ sáng:",
+      "splitAngle": "Góc tách:",
+      "spread": "Độ rộng:",
+      "rectangleWidth": "Chiều rộng hình chữ nhật:",
+      "square": "(vuông)",
+      "pickFromPhoto": "Chọn từ ảnh",
+      "dropPhotoPrompt": "Thả ảnh vào đây hoặc nhấn để duyệt",
+      "keyColorLabel": "Màu chính — nhấn để sao chép mã hex",
+      "clickToCopyHex": "Nhấn để sao chép mã hex",
+      "copiedExcl": "Đã sao chép!",
+      "copyColors": "Sao chép màu",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Sao chép mã hex",
+      "copyCssVariables": "Sao chép biến CSS",
+      "copyRgbValues": "Sao chép giá trị RGB",
+      "pickColorFromPhoto": "Chọn màu từ ảnh",
+      "close": "Đóng",
+      "dropPhotoOrBrowse": "Thả ảnh vào đây hoặc nhấn để duyệt",
+      "tapToChoose": "Nhấn để chọn ảnh",
+      "tapToSample": "Nhấn vào bất kỳ đâu trên ảnh để lấy mẫu màu đó",
+      "changePhoto": "Đổi ảnh",
+      "privacyNote": "Ảnh của bạn ở lại trình duyệt — không tải lên đâu cả",
+      "suggestions": {
+        "complementary": {
+          "warm": "Tuyệt vời cho: chân dung hoàng hôn ấm với tương phản bóng mát",
+          "cool": "Tuyệt vời cho: ảnh giờ xanh u ám với ánh sáng điểm nhấn ấm",
+          "default": "Tuyệt vời cho: bố cục tương phản cao với căng thẳng thị giác mạnh"
+        },
+        "analogous": {
+          "warm": "Tuyệt vời cho: phong cảnh giờ vàng với tông ấm thống nhất",
+          "cool": "Tuyệt vời cho: cảnh nước yên bình và nhiếp ảnh chạng vạng",
+          "default": "Tuyệt vời cho: ảnh thiên nhiên hài hòa với chuyển tiếp màu mượt"
+        },
+        "triadic": "Dùng cho: công việc biên tập sống động và chân dung sáng tạo đậm",
+        "splitComplementary": {
+          "warm": "Dùng cho: trang phục tương phản trên nền thiên nhiên",
+          "default": "Dùng cho: nhiếp ảnh sản phẩm cân bằng với đa dạng thị giác"
+        },
+        "tetradic": "Dùng cho: bố cục biên tập phong phú và bố cục đa chủ thể phức tạp"
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Sự hài hòa màu sắc trong nhiếp ảnh là gì?",
+          "answer": "Sự hài hòa màu sắc đề cập đến các kết hợp màu đẹp mắt dựa trên vị trí của chúng trên vòng tròn màu. Các màu hài hòa tạo ra sự cân bằng thị giác và có thể gợi lên tâm trạng cụ thể trong ảnh của bạn."
+        },
+        "complementary-vs-analogous": {
+          "question": "Sự khác biệt giữa màu bổ sung và màu tương tự là gì?",
+          "answer": "Màu bổ sung nằm đối diện nhau trên vòng tròn màu (như xanh dương và cam) và tạo ra tương phản cao. Màu tương tự nằm cạnh nhau (như xanh dương, xanh dương-lục và xanh lục) và tạo ra cảm giác hài hòa, thống nhất hơn."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Làm thế nào để sử dụng phối màu trong nhiếp ảnh?",
+          "answer": "Lên kế hoạch chụp ảnh xung quanh một bảng màu — chọn trang phục, địa điểm và đạo cụ phù hợp với phối màu của bạn. Trong hậu kỳ, sử dụng chỉnh màu để nhấn mạnh bảng màu đã chọn. Phối màu giúp tạo ra bản sắc thị giác nhất quán trong toàn bộ series ảnh."
+        }
+      }
+    }
+  }
+}

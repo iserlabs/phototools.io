@@ -11,6 +11,10 @@ export const staticRedirects: Redirect[] = [
     destination: '/:slug',
     permanent: true,
   },
+  // 2026-09: Color Scheme Generator was rebuilt and renamed to Color Analyzer.
+  // Config redirects run before the locale proxy, so cover both shapes.
+  { source: '/color-scheme-generator', destination: '/color-analyzer', permanent: true },
+  { source: '/:locale/color-scheme-generator', destination: '/:locale/color-analyzer', permanent: true },
   // Old domain redirect
   {
     source: '/',

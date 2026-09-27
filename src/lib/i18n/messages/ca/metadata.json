@@ -38,10 +38,6 @@
       "title": "Comparador de mides de sensor",
       "description": "Compara les mides de sensor de càmera des del mitjà format fins al mòbil. Vista superposada, costat a costat i densitat de píxels amb models reals de càmera."
     },
-    "color-scheme-generator": {
-      "title": "Generador de paletes de colors",
-      "description": "Genera paletes de colors per a fotografia amb harmonies complementàries, anàlogues, triàdiques i tetràdiques. Roda de color interactiva amb selector des de foto."
-    },
     "frame-studio": {
       "title": "Estudi d'enquadrament",
       "description": "Retalla, emmarca i composa fotos amb graelles superposades. 100% al navegador — les teves fotos no surten mai del teu dispositiu."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Generador de paletes de colors",
+      "description": "Genera paletes de colors per a fotografia amb harmonies complementàries, anàlogues, triàdiques i tetràdiques. Roda de color interactiva amb selector des de foto."
     }
   }
 }

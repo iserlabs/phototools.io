@@ -38,10 +38,6 @@
       "title": "Comparação de Tamanho de Sensor",
       "description": "Compare tamanhos de sensor de câmeras do formato médio ao smartphone. Veja sobreposição, lado a lado e densidade de pixels com modelos reais de câmeras."
     },
-    "color-scheme-generator": {
-      "title": "Gerador de Esquema de Cores",
-      "description": "Gere paletas de cores para fotografia usando harmonias complementares, análogas, triádicas e tetrádicas. Roda de cores interativa com seletor de fotos."
-    },
     "frame-studio": {
       "title": "Estúdio de Enquadramento",
       "description": "Corte, emoldure e componha fotos com grades de composição. 100% no navegador — suas fotos nunca saem do seu dispositivo."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Gerador de Esquema de Cores",
+      "description": "Gere paletas de cores para fotografia usando harmonias complementares, análogas, triádicas e tetrádicas. Roda de cores interativa com seletor de fotos."
     }
   }
 }

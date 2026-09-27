@@ -38,10 +38,6 @@
       "title": "Confronto dimensioni sensore",
       "description": "Confronta le dimensioni dei sensori dal medio formato allo smartphone. Visualizzazioni in sovrapposizione, affiancamento e densità pixel con modelli di fotocamere reali."
     },
-    "color-scheme-generator": {
-      "title": "Generatore di schemi colore",
-      "description": "Genera palette di colori per la fotografia usando armonie complementari, analoghe, triadiche e tetradiche. Ruota cromatica interattiva con selettore da foto."
-    },
     "frame-studio": {
       "title": "Studio di inquadratura",
       "description": "Ritaglia, incornicia e componi le foto con griglie di composizione. 100% lato client — le tue foto non lasciano mai il tuo dispositivo."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Generatore di schemi colore",
+      "description": "Genera palette di colori per la fotografia usando armonie complementari, analoghe, triadiche e tetradiche. Ruota cromatica interattiva con selettore da foto."
     }
   }
 }

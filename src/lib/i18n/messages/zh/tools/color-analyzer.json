@@ -1,0 +1,71 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "配色方案",
+      "complementary": "互补色",
+      "analogous": "类比色",
+      "triadic": "三色配色",
+      "splitComplementary": "分裂互补色",
+      "tetradic": "四色配色",
+      "keyColor": "关键色",
+      "hue": "色相：",
+      "saturation": "饱和度：",
+      "lightness": "明度：",
+      "splitAngle": "分裂角度：",
+      "spread": "展开度：",
+      "rectangleWidth": "矩形宽度：",
+      "square": "（正方形）",
+      "pickFromPhoto": "从照片取色",
+      "dropPhotoPrompt": "将照片拖放到此处或点击浏览",
+      "keyColorLabel": "关键色 — 点击复制十六进制值",
+      "clickToCopyHex": "点击复制十六进制值",
+      "copiedExcl": "已复制！",
+      "copyColors": "复制颜色",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "复制十六进制颜色码",
+      "copyCssVariables": "复制 CSS 变量",
+      "copyRgbValues": "复制 RGB 值",
+      "pickColorFromPhoto": "从照片中取色",
+      "close": "关闭",
+      "dropPhotoOrBrowse": "将照片拖放到此处或点击浏览",
+      "tapToChoose": "点击选择照片",
+      "tapToSample": "点击照片上的任意位置以取样该颜色",
+      "changePhoto": "更换照片",
+      "privacyNote": "您的照片保留在浏览器中 — 不会上传任何内容",
+      "suggestions": {
+        "complementary": {
+          "warm": "适合：暖色日落人像搭配冷色阴影对比",
+          "cool": "适合：蓝色时刻的冷调拍摄搭配暖色点缀灯光",
+          "default": "适合：高对比度构图搭配强烈视觉张力"
+        },
+        "analogous": {
+          "warm": "适合：黄金时刻风光搭配统一暖色调",
+          "cool": "适合：宁静水面场景和暮色摄影",
+          "default": "适合：和谐的自然照片搭配平滑的色彩过渡"
+        },
+        "triadic": "适用于：充满活力的编辑作品和大胆的创意人像",
+        "splitComplementary": {
+          "warm": "适用于：自然背景下的对比服装搭配",
+          "default": "适用于：平衡的产品摄影搭配视觉多样性"
+        },
+        "tetradic": "适用于：丰富的编辑版面和复杂的多主体构图"
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "摄影中的色彩和谐是什么？",
+          "answer": "色彩和谐是指基于色轮上位置关系的美学色彩组合。和谐的色彩能创造视觉平衡，并在照片中唤起特定的情绪。"
+        },
+        "complementary-vs-analogous": {
+          "question": "互补色和类比色有什么区别？",
+          "answer": "互补色位于色轮的对面（如蓝色和橙色），能创造高对比度。类比色相邻排列（如蓝色、蓝绿色和绿色），能创造更和谐、统一的感觉。"
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "如何在摄影中使用配色方案？",
+          "answer": "围绕色彩方案规划拍摄——选择与方案匹配的服装、场地和道具。在后期处理中，使用色彩分级来强调所选色彩方案。配色方案有助于在一组照片中创建一致的视觉风格。"
+        }
+      }
+    }
+  }
+}

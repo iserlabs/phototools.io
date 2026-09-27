@@ -1,0 +1,71 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Esquema de colors",
+      "complementary": "Complementari",
+      "analogous": "Anàleg",
+      "triadic": "Triàdic",
+      "splitComplementary": "Complementari dividit",
+      "tetradic": "Tetràdic",
+      "keyColor": "Color clau",
+      "hue": "To:",
+      "saturation": "Saturació:",
+      "lightness": "Lluminositat:",
+      "splitAngle": "Angle de divisió:",
+      "spread": "Amplada:",
+      "rectangleWidth": "Amplada del rectangle:",
+      "square": "(quadrat)",
+      "pickFromPhoto": "Tria des d'una foto",
+      "dropPhotoPrompt": "Arrossega una foto aquí o fes clic per examinar",
+      "keyColorLabel": "Color clau — fes clic per copiar l'hex",
+      "clickToCopyHex": "Fes clic per copiar l'hex",
+      "copiedExcl": "Copiat!",
+      "copyColors": "Copia els colors",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Copia els codis hex",
+      "copyCssVariables": "Copia les variables CSS",
+      "copyRgbValues": "Copia els valors RGB",
+      "pickColorFromPhoto": "Tria el color des d'una foto",
+      "close": "Tanca",
+      "dropPhotoOrBrowse": "Arrossega una foto aquí o fes clic per examinar",
+      "tapToChoose": "Toca per triar una foto",
+      "tapToSample": "Toca qualsevol punt de la foto per mostrejar aquell color",
+      "changePhoto": "Canvia la foto",
+      "privacyNote": "La teva foto es queda al navegador — no es puja res",
+      "suggestions": {
+        "complementary": {
+          "warm": "Ideal per a: retrats càlids de posta amb contrast d'ombra freda",
+          "cool": "Ideal per a: preses atmosfèriques de l'hora blava amb il·luminació càlida d'accent",
+          "default": "Ideal per a: composicions d'alt contrast amb tensió visual forta"
+        },
+        "analogous": {
+          "warm": "Ideal per a: paisatges de l'hora daurada amb tons càlids unificats",
+          "cool": "Ideal per a: escenes d'aigua serenes i fotografia de crepuscle",
+          "default": "Ideal per a: preses naturals harmonioses amb transicions de color suaus"
+        },
+        "triadic": "Fes servir per a: treball editorial vibrant i retrats creatius atrevits",
+        "splitComplementary": {
+          "warm": "Fes servir per a: vestuari contrastat sobre un fons natural",
+          "default": "Fes servir per a: fotografia de producte equilibrada amb varietat visual"
+        },
+        "tetradic": "Fes servir per a: maquetacions editorials riques i composicions complexes amb diversos subjectes"
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Què és l'harmonia de colors en fotografia?",
+          "answer": "L'harmonia de colors són combinacions de colors agradables estèticament basades en les seves posicions a la roda de color. Els colors harmoniosos creen equilibri visual i poden evocar estats d'ànim concrets en les teves fotografies."
+        },
+        "complementary-vs-analogous": {
+          "question": "Quina diferència hi ha entre els colors complementaris i els anàlegs?",
+          "answer": "Els colors complementaris es troben oposats a la roda de color (com el blau i el taronja) i creen un contrast alt. Els colors anàlegs es troben l'un al costat de l'altre (com el blau, el blau-verd i el verd) i creen una sensació més harmoniosa i unificada."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Com faig servir els esquemes de color en fotografia?",
+          "answer": "Planifica les teves sessions al voltant d'una paleta de colors — tria vestuari, localitzacions i atrezzo que encaixin amb l'esquema. En postproducció, fes servir el color grading per emfasitzar la paleta triada. Els esquemes de colors ajuden a crear una identitat visual coherent en una sèrie de fotos."
+        }
+      }
+    }
+  }
+}

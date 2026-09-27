@@ -4,10 +4,6 @@
       "name": "Beeldhoeksimulator",
       "description": "Vergelijk de beeldhoek bij verschillende brandpuntsafstanden en sensorformaten"
     },
-    "color-scheme-generator": {
-      "name": "Kleurenschemagenerator",
-      "description": "Stel kleurenpaletten samen voor fotoshoots"
-    },
     "exposure-simulator": {
       "name": "Belichtingsdriehoeksimulator",
       "description": "Bekijk hoe diafragma, sluitertijd en ISO samenwerken"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Fotografie-spiekbriefje",
       "description": "Spiekbriefjes met camera-instellingen voor veelvoorkomende scenario's — te downloaden en te printen"
+    },
+    "color-analyzer": {
+      "name": "Kleurenschemagenerator",
+      "description": "Stel kleurenpaletten samen voor fotoshoots"
     }
   }
 }

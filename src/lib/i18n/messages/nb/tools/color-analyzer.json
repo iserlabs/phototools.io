@@ -1,0 +1,71 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Fargeskjema",
+      "complementary": "Komplementære",
+      "analogous": "Analoge",
+      "triadic": "Triadisk",
+      "splitComplementary": "Delt komplementær",
+      "tetradic": "Tetradisk",
+      "keyColor": "Hovedfarge",
+      "hue": "Fargetone:",
+      "saturation": "Metning:",
+      "lightness": "Lyshet:",
+      "splitAngle": "Delingsvinkel:",
+      "spread": "Spredning:",
+      "rectangleWidth": "Rektangelbredde:",
+      "square": "(kvadrat)",
+      "pickFromPhoto": "Plukk fra bilde",
+      "dropPhotoPrompt": "Slipp et bilde her, eller klikk for å bla",
+      "keyColorLabel": "Hovedfarge — klikk for å kopiere hex",
+      "clickToCopyHex": "Klikk for å kopiere hex",
+      "copiedExcl": "Kopiert!",
+      "copyColors": "Kopier farger",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Kopier hex-koder",
+      "copyCssVariables": "Kopier CSS-variabler",
+      "copyRgbValues": "Kopier RGB-verdier",
+      "pickColorFromPhoto": "Plukk farge fra bilde",
+      "close": "Lukk",
+      "dropPhotoOrBrowse": "Slipp et bilde her, eller klikk for å bla",
+      "tapToChoose": "Trykk for å velge et bilde",
+      "tapToSample": "Trykk hvor som helst i bildet for å plukke farge",
+      "changePhoto": "Bytt bilde",
+      "privacyNote": "Bildet ditt blir i nettleseren — ingenting lastes opp",
+      "suggestions": {
+        "complementary": {
+          "warm": "Passer til: varme solnedgangsportretter med kjølig skyggekontrast",
+          "cool": "Passer til: stemningsfulle bilder i den blå timen med varme lysaksenter",
+          "default": "Passer til: kontrastrike komposisjoner med sterk visuell spenning"
+        },
+        "analogous": {
+          "warm": "Passer til: landskap i gylden time med samstemte varme toner",
+          "cool": "Passer til: rolige vannmotiver og skumringsfoto",
+          "default": "Passer til: harmoniske naturbilder med myke fargeoverganger"
+        },
+        "triadic": "Passer til: livlig redaksjonelt arbeid og dristige, kreative portretter",
+        "splitComplementary": {
+          "warm": "Passer til: klær som står i kontrast til et naturlig bakteppe",
+          "default": "Passer til: balansert produktfotografi med visuell variasjon"
+        },
+        "tetradic": "Passer til: rike redaksjonelle oppsett og sammensatte komposisjoner med flere motiver"
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "Hva er fargeharmoni i fotografi?",
+          "answer": "Fargeharmoni handler om estetisk tiltalende fargekombinasjoner basert på fargenes plassering på fargehjulet. Harmoniske farger skaper visuell balanse og kan fremkalle bestemte stemninger i bildene dine."
+        },
+        "complementary-vs-analogous": {
+          "question": "Hva er forskjellen på komplementære og analoge farger?",
+          "answer": "Komplementære farger ligger rett overfor hverandre på fargehjulet (som blå og oransje) og gir høy kontrast. Analoge farger ligger ved siden av hverandre (som blå, blågrønn og grønn) og gir et mer harmonisk og samstemt uttrykk."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "Hvordan bruker jeg fargeskjemaer i fotografi?",
+          "answer": "Planlegg fotograferingen rundt en fargepalett — velg klær, steder og rekvisitter som passer skjemaet. I etterarbeidet kan du bruke fargegrading til å fremheve paletten. Fargeskjemaer hjelper deg å bygge en helhetlig visuell identitet gjennom en hel bildeserie."
+        }
+      }
+    }
+  }
+}

@@ -38,10 +38,6 @@
       "title": "Comparaison des tailles de capteur",
       "description": "Compare les tailles de capteur du moyen format au smartphone. Affichage en superposition, côte à côte et en densité de pixels avec de vrais modèles d'appareils."
     },
-    "color-scheme-generator": {
-      "title": "Générateur de palette de couleurs",
-      "description": "Génère des palettes de couleurs pour la photographie avec les harmonies complémentaire, analogue, triadique et tétradique. Roue chromatique interactive avec pipette photo."
-    },
     "frame-studio": {
       "title": "Studio de cadrage",
       "description": "Recadre, encadre et compose tes photos avec des grilles de composition. 100 % côté client — tes photos ne quittent jamais ton appareil."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Générateur de palette de couleurs",
+      "description": "Génère des palettes de couleurs pour la photographie avec les harmonies complémentaire, analogue, triadique et tétradique. Roue chromatique interactive avec pipette photo."
     }
   }
 }

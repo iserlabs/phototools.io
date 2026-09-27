@@ -1,0 +1,71 @@
+{
+  "toolUI": {
+    "color-analyzer": {
+      "colorScheme": "Esquema de color",
+      "complementary": "Complementario",
+      "analogous": "Análogo",
+      "triadic": "Triádico",
+      "splitComplementary": "Complementario dividido",
+      "tetradic": "Tetrádico",
+      "keyColor": "Color clave",
+      "hue": "Tono:",
+      "saturation": "Saturación:",
+      "lightness": "Luminosidad:",
+      "splitAngle": "Ángulo de división:",
+      "spread": "Dispersión:",
+      "rectangleWidth": "Ancho del rectángulo:",
+      "square": "(cuadrado)",
+      "pickFromPhoto": "Elegir de foto",
+      "dropPhotoPrompt": "Arrastra una foto aquí o haz clic para explorar",
+      "keyColorLabel": "Color clave — haz clic para copiar hex",
+      "clickToCopyHex": "Haz clic para copiar hex",
+      "copiedExcl": "¡Copiado!",
+      "copyColors": "Copiar colores",
+      "hexFormat": "Hex",
+      "cssFormat": "CSS",
+      "rgbFormat": "RGB",
+      "copyHexCodes": "Copiar códigos hex",
+      "copyCssVariables": "Copiar variables CSS",
+      "copyRgbValues": "Copiar valores RGB",
+      "pickColorFromPhoto": "Elegir color de foto",
+      "close": "Cerrar",
+      "dropPhotoOrBrowse": "Arrastra una foto aquí o haz clic para explorar",
+      "tapToChoose": "Toca para elegir una foto",
+      "tapToSample": "Toca cualquier parte de la foto para muestrear ese color",
+      "changePhoto": "Cambiar foto",
+      "privacyNote": "Tu foto se queda en tu navegador — nada se sube",
+      "suggestions": {
+        "complementary": {
+          "warm": "Ideal para: retratos cálidos de atardecer con contraste de sombras frías",
+          "cool": "Ideal para: tomas con ambiente de hora azul con acentos de luz cálida",
+          "default": "Ideal para: composiciones de alto contraste con fuerte tensión visual"
+        },
+        "analogous": {
+          "warm": "Ideal para: paisajes de hora dorada con tonos cálidos unificados",
+          "cool": "Ideal para: escenas serenas de agua y fotografía crepuscular",
+          "default": "Ideal para: fotografía de naturaleza armoniosa con transiciones de color suaves"
+        },
+        "triadic": "Usar para: trabajo editorial vibrante y retratos creativos audaces",
+        "splitComplementary": {
+          "warm": "Usar para: vestuario contrastante contra un fondo natural",
+          "default": "Usar para: fotografía de producto equilibrada con variedad visual"
+        },
+        "tetradic": "Usar para: maquetaciones editoriales ricas y composiciones complejas con múltiples sujetos"
+      },
+      "faq": {
+        "what-is-color-harmony": {
+          "question": "¿Qué es la armonía de color en fotografía?",
+          "answer": "La armonía de color se refiere a combinaciones de colores estéticamente agradables basadas en sus posiciones en el círculo cromático. Los colores armoniosos crean equilibrio visual y pueden evocar estados de ánimo específicos en tus fotografías."
+        },
+        "complementary-vs-analogous": {
+          "question": "¿Cuál es la diferencia entre colores complementarios y análogos?",
+          "answer": "Los colores complementarios están opuestos en el círculo cromático (como azul y naranja) y crean alto contraste. Los colores análogos están uno al lado del otro (como azul, azul verdoso y verde) y crean una sensación más armoniosa y unificada."
+        },
+        "how-to-use-color-schemes-photography": {
+          "question": "¿Cómo uso los esquemas de color en fotografía?",
+          "answer": "Planifica tus sesiones en torno a una paleta de colores: elige vestuario, ubicaciones y accesorios que coincidan con tu esquema. En el posprocesado, usa la graduación de color para enfatizar tu paleta elegida. Los esquemas de color ayudan a crear una identidad visual consistente en una serie de fotos."
+        }
+      }
+    }
+  }
+}

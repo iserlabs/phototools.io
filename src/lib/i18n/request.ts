@@ -8,7 +8,7 @@ const CORE_FILES = ['common', 'home', 'tools', 'glossary', 'about', 'contact', '
 const TOOL_SLUGS = [
   'dof-simulator', 'fov-simulator', 'exposure-simulator', 'frame-studio',
   'star-trail-calculator', 'white-balance-visualizer', 'hyperfocal-simulator',
-  'shutter-speed-visualizer', 'sensor-size-comparison', 'color-scheme-generator',
+  'shutter-speed-visualizer', 'sensor-size-comparison', 'color-analyzer',
   'perspective-compression-simulator', 'exif-viewer', 'nd-filter-calculator',
   'histogram', 'focus-stacking-calculator', 'equivalent-settings-calculator',
   'megapixels-size-visualizer', 'shutter-count-checker', 'camera-health-checker',

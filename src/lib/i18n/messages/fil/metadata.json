@@ -38,10 +38,6 @@
       "title": "Paghahambing ng Sensor Size",
       "description": "Ikumpara ang mga camera sensor size mula medium format hanggang smartphone. Tingnan sa overlay, side-by-side, at pixel density views gamit ang totoong camera models."
     },
-    "color-scheme-generator": {
-      "title": "Tagabuo ng Color Scheme",
-      "description": "Gumawa ng color palette para sa photography gamit ang complementary, analogous, triadic, at tetradic na color harmonies. Interactive color wheel na may photo picker."
-    },
     "frame-studio": {
       "title": "Studio ng Frame",
       "description": "I-crop, i-frame, at i-compose ang mga litrato gamit ang grid overlays. 100% client-side — hindi umaalis sa device mo ang mga litrato."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Tagabuo ng Color Scheme",
+      "description": "Gumawa ng color palette para sa photography gamit ang complementary, analogous, triadic, at tetradic na color harmonies. Interactive color wheel na may photo picker."
     }
   }
 }

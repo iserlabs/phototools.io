@@ -38,10 +38,6 @@
       "title": "Kennokokojen vertailu",
       "description": "Vertaa kameroiden kennokokoja keskiformaatista älypuhelimeen. Tarkastele kuvia päällekkäin, rinnakkain tai pikselitiheytenä oikeilla kameramalleilla."
     },
-    "color-scheme-generator": {
-      "title": "Väripalettigeneraattori",
-      "description": "Luo valokuvaukseen väripaletteja komplementti-, analogisen, triadisen ja tetradisen väriharmonian avulla. Interaktiivinen väripyörä ja värien poiminta kuvasta."
-    },
     "frame-studio": {
       "title": "Sommittelustudio",
       "description": "Rajaa, kehystä ja sommittele kuvia apuviivoilla. 100 % selaimessa — kuvasi eivät poistu laitteeltasi."
@@ -117,6 +113,10 @@
     "guides": {
       "title": "",
       "description": ""
+    },
+    "color-analyzer": {
+      "title": "Väripalettigeneraattori",
+      "description": "Luo valokuvaukseen väripaletteja komplementti-, analogisen, triadisen ja tetradisen väriharmonian avulla. Interaktiivinen väripyörä ja värien poiminta kuvasta."
     }
   }
 }

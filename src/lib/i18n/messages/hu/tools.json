@@ -4,10 +4,6 @@
       "name": "Látószög-szimulátor",
       "description": "Hasonlítsd össze a látószögeket különböző gyújtótávolságokon és érzékelőméreteken"
     },
-    "color-scheme-generator": {
-      "name": "Színpaletta-generátor",
-      "description": "Állíts össze színpalettákat a fotózásaidhoz"
-    },
     "exposure-simulator": {
       "name": "Expozíciós háromszög szimulátor",
       "description": "Nézd meg, hogyan dolgozik együtt a rekesz, a záridő és az ISO"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Fotós puska",
       "description": "Kamerabeállítási puskák gyakori fotózási helyzetekhez — letölthetők és nyomtathatók"
+    },
+    "color-analyzer": {
+      "name": "Színpaletta-generátor",
+      "description": "Állíts össze színpalettákat a fotózásaidhoz"
     }
   }
 }

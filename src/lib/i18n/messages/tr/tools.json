@@ -4,10 +4,6 @@
       "name": "Görüş Alanı Simülatörü",
       "description": "Farklı odak uzaklıkları ve sensör boyutlarında görüş alanını karşılaştırın"
     },
-    "color-scheme-generator": {
-      "name": "Renk Şeması Üreteci",
-      "description": "Fotoğraf çekimleri için renk paletleri oluşturun"
-    },
     "exposure-simulator": {
       "name": "Pozlama Üçgeni Simülatörü",
       "description": "Diyafram, enstantane hızı ve ISO'nun etkileşimini görün"
@@ -87,6 +83,10 @@
     "photography-cheat-sheet": {
       "name": "Fotoğrafçılık Kopya Kağıdı",
       "description": "Yaygın çekim senaryoları için kamera ayarı kopya kağıtları — indirilebilir ve yazdırılabilir"
+    },
+    "color-analyzer": {
+      "name": "Renk Şeması Üreteci",
+      "description": "Fotoğraf çekimleri için renk paletleri oluşturun"
     }
   }
 }
