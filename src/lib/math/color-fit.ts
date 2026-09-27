@@ -88,10 +88,19 @@ function searchAnchor(template: number[], hues: number[]): number {
   let best = 0
   let bestSum = Infinity
   let bestMax = Infinity
+  let bestAnchorDist = Infinity
+  const anchorRef = hues[0]
   for (let a = 0; a < 360; a++) {
     const { sum, max } = errorForAnchor(a, template, hues)
-    if (sum < bestSum - 1e-9 || (Math.abs(sum - bestSum) <= 1e-9 && max < bestMax)) {
-      best = a; bestSum = sum; bestMax = max
+    const anchorDist = circularDistance(a, anchorRef)
+    const sumTied = Math.abs(sum - bestSum) <= 1e-9
+    const maxTied = sumTied && Math.abs(max - bestMax) <= 1e-9
+    if (
+      sum < bestSum - 1e-9 ||
+      (sumTied && max < bestMax) ||
+      (maxTied && anchorDist < bestAnchorDist)
+    ) {
+      best = a; bestSum = sum; bestMax = max; bestAnchorDist = anchorDist
     }
   }
   return best

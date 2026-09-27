@@ -46,9 +46,15 @@ describe('nudgeBand', () => {
 describe('fitHarmony', () => {
   it('recovers the rotation of a perfect complementary pair', () => {
     const fit = fitHarmony([s('a', 200), s('b', 20)], 'complementary', P, { fallbackHue: 0 })
-    expect([200, 20]).toContain(fit.anchorHue)
+    expect(fit.anchorHue).toBe(200)
     expect(fit.meanError).toBe(0)
     expect(fit.results.every((r) => r.band === 'aligned')).toBe(true)
+  })
+
+  it('anchors a lone sample on itself rather than its complement', () => {
+    const fit = fitHarmony([s('a', 200)], 'complementary', P, { fallbackHue: 0 })
+    expect(fit.anchorHue).toBe(200)
+    expect(fit.slots[0].sampleIds).toEqual(['a'])
   })
 
   it('scores a near miss with signed deltas and bands', () => {
@@ -130,15 +136,10 @@ describe('buildPalette', () => {
   it('fills empty slots at the fill S/L and marks the key', () => {
     const samples = [s('a', 200, 40, 30)]
     const fit = fitHarmony(samples, 'complementary', P, { fallbackHue: 0 })
-    // With a single scorable sample the anchor search has two equally-good
-    // rotations (200 and 20, its complement); the forward degree scan's
-    // tie-break (lowest `a` wins) deterministically picks 20 as the anchor,
-    // so the sample lands in the non-key slot at 200 and the key slot (20)
-    // is the empty one filled at fill S/L. See task-4-report.md for detail.
     const pal = buildPalette(fit, samples, 'complementary', { s: 40, l: 30 })
     expect(pal).toHaveLength(2)
-    expect(pal[0]).toMatchObject({ hue: 20, s: 40, l: 30, sampleId: null, isKey: true })
-    expect(pal[1]).toMatchObject({ hue: 200, s: 40, l: 30, sampleId: 'a', isKey: false })
+    expect(pal[0]).toMatchObject({ hue: 200, s: 40, l: 30, sampleId: 'a', isKey: true })
+    expect(pal[1]).toMatchObject({ hue: 20, s: 40, l: 30, sampleId: null, isKey: false })
   })
   it('uses the assigned sample actual colour for a filled slot', () => {
     const samples = [s('a', 200, 40, 30), s('b', 25, 80, 60)]
