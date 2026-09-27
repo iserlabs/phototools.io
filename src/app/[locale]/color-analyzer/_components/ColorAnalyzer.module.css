@@ -105,13 +105,12 @@
 }
 
 /* Main area: color wheel centered */
-.mainArea {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 0;
-  padding: 24px;
+.centerRow { flex: 1; display: flex; min-height: 0; min-width: 0; }
+.wheelColumn { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; flex-shrink: 0; }
+.wheelHint { margin: 6px 0 0; font-size: 11px; color: var(--text-muted); text-align: center; max-width: 440px; font-style: italic; }
+@media (max-width: 1023px) {
+  .centerRow { flex-direction: column; }
+  .wheelColumn { padding: 12px 0; }
 }
 
 /* Sidebar controls */
@@ -345,11 +344,6 @@
     justify-content: center;
     margin-left: 0;
     margin-top: 2px;
-  }
-
-  .mainArea {
-    order: 2;
-    padding: 16px;
   }
 
   .slider {
