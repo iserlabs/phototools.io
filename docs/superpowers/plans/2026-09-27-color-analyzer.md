@@ -62,7 +62,7 @@ Two chains run side by side after Task 1. Each parallel task runs in its **own g
 |---|---|---|---|
 | 0 | Task 1 | — | everything lands on the new slug |
 | 1 | Task 2 | Task 13 | T13 touches `en/messages`, `tools.ts` (name/description), `education/content-color-fov.ts`, `faq.ts`; T2 touches only `colorAnalyzer.ts` |
-| 2 | Task 3 ‖ Task 5? no — Task 3 alone | Task 14 (six locale batches can themselves run as 3 parallel agents: `[de fr es it pt]+[nl sv da nb fi]`, `[pl cs hu ro uk]+[ru tr el ca]`, `[ja ko zh zh-TW]+[hi bn th vi id ms fil]`) | T5 needs `isNeutral` from T3 |
+| 2 | Task 3 | Task 14 (six locale batches can themselves run as 3 parallel agents: `[de fr es it pt]+[nl sv da nb fi]`, `[pl cs hu ro uk]+[ru tr el ca]`, `[ja ko zh zh-TW]+[hi bn th vi id ms fil]`) | T5 needs `isNeutral` from T3 |
 | 3 | Task 4 ‖ Task 5 | (copy chain done) | both depend only on T2/T3 |
 | 4 | Task 6 ‖ Task 8 | | T6 needs T5; T8 needs T4 and tears down the old component |
 | 5 | Task 7 | | needs T6's `SampledColor` |
