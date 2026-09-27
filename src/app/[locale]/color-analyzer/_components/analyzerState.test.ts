@@ -66,4 +66,35 @@ describe('sampleReducer', () => {
   it('clear returns EMPTY_STATE', () => {
     expect(sampleReducer(add(EMPTY_STATE, 'a'), { type: 'clear' })).toEqual(EMPTY_STATE)
   })
+
+  it('unlocking one sample does not clear another sample\'s lock', () => {
+    let s = add(add(EMPTY_STATE, 'a'), 'b')
+    s = sampleReducer(s, { type: 'lock', id: 'b', locked: true })
+    s = sampleReducer(s, { type: 'lock', id: 'a', locked: false })
+    expect(s.samples.map((x) => x.locked)).toEqual([false, true])
+  })
+
+  it('setCustomTarget wraps hues: 370 → 10 and −10 → 350', () => {
+    let s = add(EMPTY_STATE, 'a')
+    s = sampleReducer(s, { type: 'setCustomTarget', id: 'a', hue: 370 })
+    expect(s.customTargets['a']).toBe(10)
+    s = sampleReducer(s, { type: 'setCustomTarget', id: 'a', hue: -10 })
+    expect(s.customTargets['a']).toBe(350)
+  })
+
+  it('replaceAll with 10 samples keeps only the first 8', () => {
+    const samples: Sample[] = Array.from({ length: 10 }, (_, i) => ({
+      id: `s${i}`,
+      x: 0.5,
+      y: 0.5,
+      ...color(i * 10),
+      label: 'test',
+      locked: true,
+    }))
+    let s = EMPTY_STATE
+    s = sampleReducer(s, { type: 'replaceAll', samples })
+    expect(s.samples).toHaveLength(SAMPLE_CAP)
+    expect(s.samples.map((x) => x.id)).toEqual(['s0', 's1', 's2', 's3', 's4', 's5', 's6', 's7'])
+    expect(s.samples.every((x) => !x.locked)).toBe(true)
+  })
 })

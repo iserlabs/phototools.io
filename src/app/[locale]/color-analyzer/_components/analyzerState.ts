@@ -52,7 +52,13 @@ export function sampleReducer(state: SampleState, action: SampleAction): SampleS
     case 'select':
       return { ...state, selectedId: action.id }
     case 'lock':
-      return { ...state, samples: state.samples.map((s) => ({ ...s, locked: s.id === action.id ? action.locked : false })) }
+      return {
+        ...state,
+        samples: state.samples.map((s) =>
+          s.id === action.id ? { ...s, locked: action.locked }
+          : action.locked ? { ...s, locked: false } : s,
+        ),
+      }
     case 'remove': {
       const customTargets = { ...state.customTargets }
       delete customTargets[action.id]
