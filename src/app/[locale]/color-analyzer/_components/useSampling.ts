@@ -31,52 +31,52 @@ function fitSize(w: number, h: number, maxLongEdge: number): { width: number; he
   return { width: Math.max(1, Math.round(w * scale)), height: Math.max(1, Math.round(h * scale)) }
 }
 
-async function decodeWithImg(file: File): Promise<HTMLImageElement> {
+async function decodeWithImg(file: File): Promise<{ img: HTMLImageElement; url: string }> {
   const url = URL.createObjectURL(file)
-  try {
-    const img = new Image()
-    await new Promise<void>((resolve, reject) => {
-      img.onload = () => resolve()
-      img.onerror = () => reject(new Error('unsupported image'))
-      img.src = url
-    })
-    return img
-  } finally {
-    URL.revokeObjectURL(url)
-  }
+  const img = new Image()
+  await new Promise<void>((resolve, reject) => {
+    img.onload = () => resolve()
+    img.onerror = () => reject(new Error('unsupported image'))
+    img.src = url
+  })
+  return { img, url }
 }
 
 /**
  * Decode a File to an offscreen canvas no larger than maxLongEdge on its long
- * side. Prefers createImageBitmap with EXIF orientation + resize; falls back to
- * an <img> decode (which also honours EXIF orientation in current browsers).
+ * side. Decodes once via <img> to learn the oriented dimensions (naturalWidth/
+ * naturalHeight already reflect EXIF orientation in current browsers), then
+ * prefers a single resized createImageBitmap decode of the file; falls back to
+ * drawing the same <img> (scaled) if createImageBitmap fails, so the file is
+ * never decoded twice.
  */
 export async function decodeToAnalysisCanvas(file: File, maxLongEdge = ANALYSIS_LONG_EDGE): Promise<AnalysisPhoto> {
-  let source: ImageBitmap | HTMLImageElement
-  let w: number, h: number
+  const { img, url } = await decodeWithImg(file)
   try {
-    const probe = await createImageBitmap(file, { imageOrientation: 'from-image' })
-    const size = fitSize(probe.width, probe.height, maxLongEdge)
-    probe.close()
-    source = await createImageBitmap(file, {
-      imageOrientation: 'from-image',
-      resizeWidth: size.width,
-      resizeHeight: size.height,
-      resizeQuality: 'high',
-    })
-    w = source.width; h = source.height
-  } catch {
-    const img = await decodeWithImg(file)
     const size = fitSize(img.naturalWidth, img.naturalHeight, maxLongEdge)
-    source = img; w = size.width; h = size.height
+    let source: ImageBitmap | HTMLImageElement
+    let w = size.width, h = size.height
+    try {
+      source = await createImageBitmap(file, {
+        imageOrientation: 'from-image',
+        resizeWidth: size.width,
+        resizeHeight: size.height,
+        resizeQuality: 'high',
+      })
+      w = source.width; h = source.height
+    } catch {
+      source = img
+    }
+    const canvas = document.createElement('canvas')
+    canvas.width = w; canvas.height = h
+    const ctx = canvas.getContext('2d', { willReadFrequently: true })
+    if (!ctx) throw new Error('no 2d context')
+    ctx.drawImage(source, 0, 0, w, h)
+    if ('close' in source) source.close()
+    return { canvas, width: w, height: h }
+  } finally {
+    URL.revokeObjectURL(url)
   }
-  const canvas = document.createElement('canvas')
-  canvas.width = w; canvas.height = h
-  const ctx = canvas.getContext('2d', { willReadFrequently: true })
-  if (!ctx) throw new Error('no 2d context')
-  ctx.drawImage(source, 0, 0, w, h)
-  if ('close' in source) source.close()
-  return { canvas, width: w, height: h }
 }
 
 export function sampleAt(photo: AnalysisPhoto, x01: number, y01: number): SampledColor {
