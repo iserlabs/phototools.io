@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Generador de paletes de colors",
-      "description": "Genera paletes de colors per a fotografia amb harmonies complementàries, anàlogues, triàdiques i tetràdiques. Roda de color interactiva amb selector des de foto."
+      "title": "Analitzador de colors: llegeix l'harmonia de colors de qualsevol foto",
+      "description": "Analitzador de colors de fotos gratuït i generador d'esquemes de colors. Mostreja els colors de la teva foto, representa'ls en una roda de colors, troba l'harmonia de colors més propera i obtén orientació de gradació per a cada color. 100% al teu navegador."
     }
   }
 }

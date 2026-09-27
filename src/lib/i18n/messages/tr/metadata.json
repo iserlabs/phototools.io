@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Renk Şeması Üreteci",
-      "description": "Tamamlayıcı, analog, triadik ve tetradik renk uyumlarını kullanarak fotoğrafçılık için renk paletleri oluşturun. Fotoğraf seçicili interaktif renk çarkı."
+      "title": "Renk Analiz Aracı: herhangi bir fotoğraftaki renk uyumunu okuyun",
+      "description": "Ücretsiz fotoğraf renk analiz aracı ve renk şeması üreteci. Fotoğrafınızdaki renkleri örnekleyin, bunları bir renk çemberine yerleştirin, en yakın renk uyumunu bulun ve renk başına gradeleme rehberliği alın. %100 tarayıcınızda."
     }
   }
 }

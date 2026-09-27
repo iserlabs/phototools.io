@@ -1,70 +1,70 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "L'harmonia de colors tracta d'escollir colors que quedin bé junts. Com passa amb els acords musicals, certes combinacions de colors creen relacions visuals agradables. Els fotògrafs fan servir l'harmonia de colors per planificar el vestuari, l'escenografia i fins i tot el moment del dia per aconseguir la paleta adequada.",
-      "deeper": {
-        "0": {
-          "heading": "La roda de color",
-          "text": "La teoria de l'harmonia de colors parteix de la roda de color, que ordena els tons en un cercle segons les relacions entre les seves longituds d'ona. El model HSL (to, saturació, lluminositat) s'hi projecta directament: el to és l'angle (0–360°), la saturació és la distància des del centre i la lluminositat controla la brillantor. En fotografia, aquestes relacions apareixen de manera natural — l'hora daurada produeix tons càlids anàlegs, mentre que un graner vermell davant d'un camp verd és complementari."
+      "beginner": "La majoria de fotos ja contenen una relació de colors — simplement encara no la veus. Deixa anar una foto, toca els colors que importen, i la roda et mostrarà com es relacionen. Tria l'harmonia que vulguis i l'eina et dirà cap a quina banda empènyer cada color.",
+      "deeper": [
+        {
+          "heading": "El mètode de quatre passos",
+          "text": "Intenció (què hauria de sentir l'espectador), Anàlisi (quins colors hi ha realment a la imatge), Elecció de color (quina harmonia s'ajusta a aquesta sensació), Transformació (mou els controls lliscants en la direcció que mostra la roda). L'edició va al final. La major part de la frustració amb la gradació de color ve de començar directament pel quart pas."
         },
-        "1": {
-          "heading": "Complementaris",
-          "text": "Dos colors que es troben directament oposats a la roda (a 180°), com el blau i el taronja o el vermell i el verd. Això crea el màxim contrast i energia visual. Excel·lent per fer que un subjecte destaqui contra el fons — pensa en retrats a l'hora daurada on els tons càlids de la pell contrasten amb un cel blau i fred."
+        {
+          "heading": "Llegir la roda",
+          "text": "Cada mostra es representa segons el to (angle) i la saturació (distància des del centre). La vista Natural mostra la saturació real, Tons purs empeny cada punt cap a la vora perquè els angles siguin evidents, i Guia d'harmonia afegeix les posicions objectiu i les fletxes per a l'harmonia escollida."
         },
-        "2": {
-          "heading": "Anàlegs",
-          "text": "Tres colors veïns a la roda, normalment dins d'un rang de 30–60°. Produeixen paletes suaus i cohesives amb poc contrast. Ideals per a paisatges i treballs atmosfèrics — el fullatge de tardor és una paleta anàloga natural de vermells, taronges i grocs."
+        {
+          "heading": "Millor coincidència",
+          "text": "L'eina gira cada plantilla d'harmonia a la posició que millor s'ajusta a les teves mostres i mesura l'error mitjà de to, normalitzat segons l'espaiat de posicions de la plantilla, perquè les harmonies de quatre posicions no guanyin per defecte. La guanyadora rep la insígnia; tu decideixes si l'utilitzes."
         },
-        "3": {
-          "heading": "Triàdics",
-          "text": "Tres colors separats uniformement a 120° al voltant de la roda, com el vermell, el groc i el blau. Els esquemes triàdics se senten equilibrats i vibrants sense la tensió del contrast complementari. Per obtenir els millors resultats, fes servir un color dominant i els altres dos com a accents."
+        {
+          "heading": "Bloquejos i referències",
+          "text": "Bloqueja una mostra per convertir-la en referència: l'harmonia gira al voltant d'aquest to i cada altre color es jutja en relació amb ell. Fes-ho servir per al color que no canviaràs, normalment la pell o un color de marca. Sense bloqueig, l'eina tria la rotació amb l'error total més petit."
         },
-        "4": {
-          "heading": "Complementari dividit",
-          "text": "Una variació del complementari que utilitza els dos veïns del color oposat en comptes del mateix oposat. Manté el contrast alt del complementari però redueix la tensió visual, cosa que el fa més versàtil i indulgent. Una opció popular per a sessions de retrat estilitzades."
+        {
+          "heading": "Colors neutres",
+          "text": "Els grisos, els gairebé negres i els gairebé blancs no tenen un to fiable, així que es representen al centre i queden fora de la coincidència. Encara importen per a l'ambient, però moure el seu to en un control lliscant sobretot afegeix una dominant de color."
         },
-        "5": {
-          "heading": "Tetràdic (doble complementari)",
-          "text": "Quatre colors que formen un rectangle a la roda — essencialment, dues parelles complementàries. Ofereix la paleta més rica i complexa però demana un equilibri acurat. Deixa que un color domini i fes servir els altres com a accents de suport per evitar un aspecte caòtic."
+        {
+          "heading": "Per què HSL i no una roda perceptiva",
+          "text": "Aquesta roda utilitza el model HSL, el mateix que Adobe Color i el panell HSL del Lightroom, així que la direcció que llegeixes aquí és la mateixa que empenyeràs allà. No és perceptivament uniforme: el groc ocupa una banda estreta i el blau una d'ampla, així que un ajust de 20° sembla més gran en unes zones que en unes altres. Una roda perceptiva seria més honesta, però no coincidiria amb les eines d'edició."
         }
-      },
-      "keyFactors": {
-        "0": {
+      ],
+      "keyFactors": [
+        {
           "label": "Tipus d'harmonia",
-          "description": "La relació geomètrica entre colors a la roda: complementari, anàleg, triàdic, complementari dividit o tetràdic."
+          "description": "La relació geomètrica que busques: complementària, complementària dividida, anàloga, triàdica, tetràdica, monocromàtica o els teus propis objectius personalitzats."
         },
-        "1": {
-          "label": "To",
-          "description": "L'angle del color base a la roda (0–360 graus). És el punt de partida de tots els càlculs d'harmonia."
+        {
+          "label": "Mostres",
+          "description": "Quins colors has decidit mostrejar. Mostreja allò que importa per a la imatge, no el que és més gran. Cinc o sis punts solen explicar tota la història."
         },
-        "2": {
-          "label": "Saturació",
-          "description": "Com de vius o apagats són els colors. Una saturació baixa produeix pastels i tons terrosos; una saturació alta dona paletes vibrants."
+        {
+          "label": "Referència",
+          "description": "La mostra bloquejada al voltant de la qual gira l'harmonia. Sense bloqueig, s'utilitza la rotació que millor s'ajusta."
         },
-        "3": {
-          "label": "Lluminositat",
-          "description": "Controla la brillantor. Ajustar la lluminositat pot fer que el mateix to sembli completament diferent — un blau marí fosc i un blau cel són el mateix to amb lluminositats diferents."
+        {
+          "label": "Ajust",
+          "description": "La rotació de to amb signe des d'una mostra fins al seu objectiu. Alineat vol dir dins de 8°, un ajust petit dins de 25°, qualsevol cosa més és un gran canvi."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "Per a sessions de retrat, tria una paleta complementària o complementària dividida, i fes que el subjecte porti el color clau mentre el fons aporta el to contrastat. Blau/taronja (retrats a l'hora daurada) n'és un exemple clàssic."
+      ],
+      "tips": [
+        {
+          "text": "Mostreja els colors que realment graduaràs: el cel, la pell, l'objecte dominant, una ombra. Salta't els brillants especulars i les ombres profundes — es llegeixen com a neutres."
         },
-        "1": {
-          "text": "Fes servir harmonies anàlogues per a paisatge — la natura ja treballa amb paletes anàlogues. Ajusta el vestuari o els props als tons naturals dominants."
+        {
+          "text": "El complementari dividit és l'opció tranquil·la i onírica per al treball de viatges i de carrer. El complementari és més net i contundent. El triàdic és deliberadament una mica inquietant."
         },
-        "2": {
-          "text": "Redueix la saturació a 30-50% per veure com queden els colors amb un estil més apagat i editorial. La saturació alta funciona per a comercial i moda, però una saturació més baixa sol sentir-se més sofisticada."
+        {
+          "text": "Utilitza la Tria automàtica per començar, i després mou o elimina punts. Troba els grups cromàtics dominants, que sovint no són els colors que més t'importen."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
           "term": "Tipus d'harmonia",
-          "definition": "El patró de relació entre colors: complementari (oposats), anàleg (veïns), triàdic (tres punts), complementari dividit (oposats desplaçats) o tetràdic (rectangle de quatre)."
+          "definition": "La relació objectiu entre tons. Complementària (oposada), Complementària dividida (oposada ± angle), Anàloga (veïnes), Triàdica (cada 120°), Tetràdica (dues parelles complementàries), Monocromàtica (un sol to), Personalitzada (els teus propis objectius)."
         },
         "Key Color": {
           "term": "Color clau",
-          "definition": "El color dominant de la teva paleta. La resta de colors de l'harmonia es calculen a partir d'aquest to de partida."
+          "definition": "Sense cap foto carregada, el color al voltant del qual es construeix l'harmonia. Arrossega la roda o utilitza els controls lliscants."
         },
         "Hue": {
           "term": "To",
@@ -72,108 +72,116 @@
         },
         "Saturation": {
           "term": "Saturació",
-          "definition": "Intensitat del color, del 0% (gris) al 100% (totalment viu). Controla com de marcada o apagada sembla tota la paleta."
+          "definition": "La intensitat del color, del 0% (gris) al 100% (totalment viu). Distància des del centre de la roda."
         },
         "Lightness": {
           "term": "Lluminositat",
-          "definition": "Brillantor, del 0% (negre) al 100% (blanc). Al 50% veus el color pur; per sota és més fosc, per sobre més clar."
+          "definition": "La brillantor, del 0% (negre) al 100% (blanc). Al 50% veus el color pur."
         },
         "Split Angle": {
           "term": "Angle de divisió",
-          "definition": "Com de separats estan els dos colors complementaris dividits respecte a l'oposat directe. Els angles més amples donen més contrast."
+          "definition": "A quina distància de la complementària directa se situen els dos colors de l'esquema complementari dividit."
         },
         "Spread": {
           "term": "Amplada",
-          "definition": "Com de separats estan els colors anàlegs respecte al to clau. Una amplada petita dona variacions subtils; una d'ampla augmenta la diversitat."
+          "definition": "A quina distància del to de referència se situen els colors anàlegs."
+        },
+        "Lock": {
+          "term": "Bloqueig",
+          "definition": "Converteix una mostra en referència. L'harmonia gira cap a aquest to i les altres mostres es jutgen en relació amb ell. Només es pot bloquejar una mostra."
+        },
+        "Closest fit": {
+          "term": "Millor coincidència",
+          "definition": "L'harmonia la millor rotació de la qual té l'error de to normalitzat més baix entre les teves mostres. Necessita com a mínim dues mostres cromàtiques."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Vols el màxim contrast entre dos colors per a un retrat gràfic i impactant. Quin tipus d'harmonia et dona més tensió visual?",
-          "hint": "Els colors directament oposats a la roda creen el contrast més fort.",
-          "successMessage": "Correcte! Els colors complementaris estan a 180 graus de distància i produeixen el màxim contrast — perfectes per a composicions arriscades i cridaneres.",
-          "failureMessage": "L'harmonia complementària situa els colors directament oposats a la roda, creant el màxim contrast visual.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "Has mostrejat un cel blau a 210° i una paret taronja a 25°. A quina harmonia ja són més properes?",
+          "hint": "Comprova l'angle entre elles.",
+          "successMessage": "Correcte. Una diferència de 185° és una parella complementària gairebé perfecta; un petit ajust de la paret ho completa.",
+          "failureMessage": "Dos colors separats per uns 180° són complementaris. Els colors anàlegs se situen dins d'uns 60° l'un de l'altre.",
+          "options": [
+            {
               "label": "Complementari"
             },
-            "1": {
+            {
               "label": "Anàleg"
             },
-            "2": {
+            {
               "label": "Triàdic"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Planifiques una sessió a l'hora daurada i vols tons càlids i cohesius. Quina harmonia manté els colors pròxims a la roda?",
-          "hint": "Aquest tipus fa servir tons veïns per aconseguir una sensació unificada i suau.",
-          "successMessage": "Exacte! L'harmonia anàloga fa servir colors adjacents, donant una paleta càlida i cohesiva perfecta per a l'hora daurada.",
-          "failureMessage": "L'harmonia anàloga manté tots els colors com a veïns a la roda — ideal per a paletes unificades càlides o fredes.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Una foto té tres mostres a 40°, 60° i 85°. Quina harmonia és aquesta?",
+          "hint": "Totes són veïnes a la roda.",
+          "successMessage": "Correcte. Els tons veïns dins d'uns 60° formen una harmonia anàloga.",
+          "failureMessage": "Els tons que estan tots a prop els uns dels altres són anàlegs — l'opció tranquil·la i unificada.",
+          "options": [
+            {
               "label": "Complementari"
             },
-            "1": {
+            {
               "label": "Anàleg"
             },
-            "2": {
+            {
               "label": "Tetràdic"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "Un client vol un retrat amb contrast però no tan intens com el complementari pur. Quina harmonia suavitza l'oposició mantenint l'interès visual?",
-          "hint": "Aquest tipus utilitza dos colors propers al complementari enlloc del directament oposat.",
-          "successMessage": "Excel·lent! El complementari dividit manté el contrast del complementari però parteix el color oposat en dos tons flanquejants, produint una paleta menys agressiva però igualment dinàmica.",
-          "failureMessage": "El complementari dividit és la resposta — substitueix l'únic color oposat per dos veïns de l'oposat, suavitzant el contrast sense perdre energia visual.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Vols una foto de carrer onírica i tranquil·la però mantenint-hi contrast. Quina harmonia hauries de triar?",
+          "hint": "Pensa en els dos veïns de la complementària en lloc de la complementària mateixa.",
+          "successMessage": "Sí. La complementària dividida manté la tensió sense la duresa d'una oposició directa.",
+          "failureMessage": "La complementària dividida és l'opció tranquil·la però amb contrast. La triàdica sol semblar més energètica o inquietant.",
+          "options": [
+            {
               "label": "Complementari dividit"
             },
-            "1": {
+            {
               "label": "Triàdic"
             },
-            "2": {
+            {
               "label": "Anàleg"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "Estableixes el color clau a taronja (to aproximat de 30 graus) amb harmonia complementària. Quin color tindrà el complementari?",
-          "hint": "Complementari vol dir a 180 graus d'oposició a la roda.",
-          "successMessage": "Correcte! 30° + 180° = 210°, que cau en el rang del blau. El taronja i el blau és una de les parelles complementàries més estimades en fotografia.",
-          "failureMessage": "Sumar 180° al taronja (30°) dona 210°, que és blau. La parella taronja-blau és un clàssic fotogràfic.",
-          "options": {
-            "0": {
-              "label": "Blau (~210°)"
+        {
+          "scenario": "Una mostra mostra Petit ajust cap al rosa amb un delta de −15°. Què fas al panell HSL del Lightroom?",
+          "hint": "La paraula de direcció et diu cap a on empènyer, la magnitud et diu fins a quin punt.",
+          "successMessage": "Correcte. Mou el control lliscant To d'aquell color cap al rosa fins que la targeta mostri Alineat.",
+          "failureMessage": "Empeny el to en la direcció indicada (rosa) una quantitat petita; un canvi de 15° és un petit ajust, no un gran canvi.",
+          "options": [
+            {
+              "label": "Ajusta lleugerament el to cap al rosa"
             },
-            "1": {
-              "label": "Verd (~150°)"
+            {
+              "label": "Redueix la saturació"
             },
-            "2": {
-              "label": "Vermell (~0°)"
+            {
+              "label": "Empeny el to cap al verd"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Estàs dirigint art per a un editorial de moda i necessites una paleta de quatre colors que aporti tons càlids i freds amb molta riquesa visual. Quina harmonia et dona quatre colors, i quin és el principal repte a l'hora d'utilitzar-la?",
-          "hint": "L'harmonia de quatre colors forma un rectangle a la roda.",
-          "successMessage": "Exacte! L'harmonia tetràdica dona quatre colors formant un rectangle a la roda. El repte principal és l'equilibri — amb quatre tons diferents, un ha de dominar mentre la resta fan d'accent. Sense jerarquia, la imatge se sent caòtica.",
-          "failureMessage": "La tetràdica (doble complementària) aporta quatre colors en disposició rectangular. El repte és que quatre tons forts competeixen per l'atenció — cal designar un color dominant i fer servir els altres com a accents.",
-          "options": {
-            "0": {
-              "label": "Tetràdica — el repte és mantenir la jerarquia visual entre quatre tons"
+        {
+          "scenario": "Dues mostres comparteixen el mateix to, però una està bloquejada. Al voltant de quina gira l'harmonia?",
+          "hint": "Només una mostra pot ser la referència.",
+          "successMessage": "Correcte. La mostra bloquejada és la referència; l'altra es jutja en relació amb la plantilla construïda sobre ella.",
+          "failureMessage": "La mostra bloquejada sempre és la referència. Sense bloqueig, s'utilitza la rotació que millor s'ajusta.",
+          "options": [
+            {
+              "label": "La mostra bloquejada"
             },
-            "1": {
-              "label": "Triàdica — el repte és tenir massa pocs colors"
+            {
+              "label": "La primera mostra col·locada"
             },
-            "2": {
-              "label": "Anàloga — el repte és la manca de contrast"
+            {
+              "label": "La mostra més saturada"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

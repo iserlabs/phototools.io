@@ -85,8 +85,8 @@
       "description": "Kamerabeállítási puskák gyakori fotózási helyzetekhez — letölthetők és nyomtathatók"
     },
     "color-analyzer": {
-      "name": "Színpaletta-generátor",
-      "description": "Állíts össze színpalettákat a fotózásaidhoz"
+      "name": "Színelemző",
+      "description": "Mintázd le egy fotó színeit, olvasd le a harmóniájukat, és nézd meg, melyik irányba told el mindegyiket"
     }
   }
 }

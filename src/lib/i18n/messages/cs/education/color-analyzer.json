@@ -1,179 +1,187 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "Barevná harmonie je o výběru barev, které spolu dobře vypadají. Stejně jako hudební akordy i určité kombinace barev vytvářejí příjemné vizuální vztahy. Fotografové používají barevnou harmonii při plánování oblečení, výpravy i načasování focení v přírodě, aby z ní získali správnou paletu.",
-      "deeper": {
-        "0": {
-          "heading": "Barevné kolo",
-          "text": "Teorie barevné harmonie vychází z barevného kola, které řadí odstíny do kruhu podle jejich vlnové délky. Model HSL (odstín, sytost, světlost) přímo odpovídá kolu: odstín je úhel (0–360°), sytost je vzdálenost od středu a světlost určuje jas. Ve fotografii se tyto vztahy objevují přirozeně — zlatá hodina dává analogické teplé tóny, zatímco červená stodola na pozadí zelených polí je komplementární."
+      "beginner": "Většina fotek už obsahuje barevný vztah — jen ho zatím nevidíte. Přetáhněte fotku, klepněte na barvy, na kterých záleží, a kruh ukáže, jak spolu souvisí. Vyberte harmonii, kterou chcete, a nástroj vám řekne, kterým směrem posunout každou barvu.",
+      "deeper": [
+        {
+          "heading": "Metoda čtyř kroků",
+          "text": "Záměr (co má divák cítit), Analýza (jaké barvy jsou skutečně ve snímku), Volba barvy (jaká harmonie danému pocitu odpovídá), Transformace (posuňte posuvníky směrem, který ukazuje kruh). Editace je až poslední. Většina frustrace z barevného ladění pramení ze začínání rovnou u čtvrtého kroku."
         },
-        "1": {
-          "heading": "Komplementární",
-          "text": "Dvě barvy ležící na kole přímo proti sobě (180° od sebe), jako modrá a oranžová nebo červená a zelená. Vytvářejí maximální kontrast a vizuální energii. Skvěle fungují, když chceš subjekt oddělit od pozadí — typickým příkladem jsou portréty za zlaté hodiny, kde se teplé tóny pleti dostávají do kontrastu s chladnou modrou oblohou."
+        {
+          "heading": "Čtení kruhu",
+          "text": "Každý vzorek je vynesen podle odstínu (úhel) a sytosti (vzdálenost od středu). Přirozený pohled ukazuje skutečnou sytost, Čisté odstíny posunou každý bod k okraji, aby byly úhly zřejmé, a Průvodce harmonií přidá cílové pozice a šipky pro zvolenou harmonii."
         },
-        "2": {
-          "heading": "Analogické",
-          "text": "Tři barvy ležící na kole vedle sebe, typicky v rozpětí 30–60°. Dávají plynulé, soudržné palety s nízkým kontrastem. Ideální pro krajiny a náladové fotky — podzimní listí je přirozená analogická paleta červených, oranžových a žlutých tónů."
+        {
+          "heading": "Nejbližší shoda",
+          "text": "Nástroj otočí každou šablonu harmonie do pozice, která nejlépe odpovídá vašim vzorkům, a změří průměrnou chybu odstínu, normalizovanou podle rozestupu pozic šablony, aby čtyřpozicové harmonie automaticky nevyhrávaly. Vítěz získá odznak; je na vás, zda ho použijete."
         },
-        "3": {
-          "heading": "Triadické",
-          "text": "Tři barvy rozmístěné po 120° kolem kola, například červená, žlutá a modrá. Triadická schémata působí vyváženě a živě, bez napětí komplementárního kontrastu. Nejsilnější jsou, když jednu barvu použiješ jako dominantní a zbylé dvě jako akcenty."
+        {
+          "heading": "Zámky a kotvy",
+          "text": "Uzamknutím vzorku z něj uděláte kotvu: harmonie se otáčí kolem tohoto odstínu a každá další barva je posuzována vůči němu. Použijte to pro barvu, kterou nebudete měnit — obvykle pleť nebo barvu značky. Bez zámku nástroj zvolí otočení s nejmenší celkovou chybou."
         },
-        "4": {
-          "heading": "Dělené komplementární",
-          "text": "Varianta komplementární harmonie, která místo protilehlé barvy používá její dva sousedy. Zachovává si vysoký kontrast komplementární dvojice, ale snižuje vizuální napětí, takže je univerzálnější a odpouští víc chyb. Oblíbená volba pro stylizované portrétní sezóny."
+        {
+          "heading": "Neutrální barvy",
+          "text": "Šedé, téměř černé a téměř bílé barvy nemají spolehlivý odstín, takže se vynesou do středu a jsou z hodnocení shody vynechány. Pro náladu snímku stále záleží, ale posouvání jejich odstínu na posuvníku většinou jen přidá barevný nádech."
         },
-        "5": {
-          "heading": "Tetradické (dvojitě komplementární)",
-          "text": "Čtyři barvy, které na kole tvoří obdélník — v podstatě dvě komplementární dvojice. Nabízí nejbohatší a nejsložitější paletu, ale vyžaduje pečlivou rovnováhu. Nech jednu barvu dominovat a ostatní použij jako podpůrné akcenty, jinak bude výsledek působit chaoticky."
+        {
+          "heading": "Proč HSL, a ne percepční kruh",
+          "text": "Tento kruh používá HSL, stejný model jako Adobe Color a panel HSL v Lightroomu, takže směr, který zde čtete, je tentýž směr, který tam posunete. Není percepčně jednotný: žlutá zabírá úzké pásmo a modrá široké, takže posun o 20° vypadá v různých oblastech různě velký. Percepční kruh by byl poctivější, ale neodpovídal by editačním nástrojům."
         }
-      },
-      "keyFactors": {
-        "0": {
+      ],
+      "keyFactors": [
+        {
           "label": "Typ harmonie",
-          "description": "Geometrický vztah mezi barvami na kole: komplementární, analogické, triadické, dělené komplementární nebo tetradické."
+          "description": "Geometrický vztah, o který usilujete: komplementární, dělený komplementární, analogický, triadický, tetradický, monochromatický nebo vaše vlastní cíle."
         },
-        "1": {
-          "label": "Odstín",
-          "description": "Úhel základní barvy na kole (0–360°). Je výchozím bodem pro všechny výpočty harmonie."
+        {
+          "label": "Vzorky",
+          "description": "Které barvy jste se rozhodli vzorkovat. Vzorkujte to, na čem u snímku záleží, ne to, co je největší. Pět až šest bodů obvykle vypoví celý příběh."
         },
-        "2": {
-          "label": "Sytost",
-          "description": "Jak živé nebo tlumené barvy jsou. Nižší sytost dává pastely a zemité tóny, vyšší sytost výrazné a živé palety."
+        {
+          "label": "Kotva",
+          "description": "Uzamčený vzorek, kolem kterého se harmonie otáčí. Bez zámku se použije nejlépe padnoucí otočení."
         },
-        "3": {
-          "label": "Světlost",
-          "description": "Ovládá jas. Změna světlosti dokáže stejný odstín zcela proměnit — tmavě modrá a blankytně modrá mají stejný odstín, ale jinou světlost."
+        {
+          "label": "Posun",
+          "description": "Znaménkové otočení odstínu od vzorku k jeho cíli. Sladěno je do 8°, mírný posun do 25°, cokoli víc je velký posun."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "Na portrétní focení vyber komplementární nebo dělenou komplementární paletu — hlavní model ať má oblečení v základní barvě a pozadí ať dodá protilehlý odstín. Klasikou je modrá/oranžová (portréty za zlaté hodiny)."
+      ],
+      "tips": [
+        {
+          "text": "Vzorkujte barvy, které budete skutečně upravovat: oblohu, pleť, dominantní objekt, stín. Vynechte zrcadlové lesky a hluboké stíny — ty vyjdou jako neutrální."
         },
-        "1": {
-          "text": "Pro krajinu použij analogickou harmonii — příroda už v analogických paletách funguje sama. Doporučení k oblečení nebo rekvizitám slaď s dominantními přírodními tóny."
+        {
+          "text": "Dělený komplementární je klidná, snová volba pro cestovatelskou a pouliční tvorbu. Komplementární je čistší a úderný. Triadický je záměrně trochu neklidný."
         },
-        "2": {
-          "text": "Sniž sytost na 30–50 %, abys viděl, jak budou barvy vypadat v tlumenějším, editoriálním stylu. Vysoká sytost se hodí na komerční a módní fotografii, zatímco nižší sytost často působí sofistikovaněji."
+        {
+          "text": "Nejprve použijte Automatický výběr a pak body přesouvejte nebo mažte. Najde dominantní chromatické shluky, což často nejsou barvy, na kterých vám nejvíc záleží."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
           "term": "Typ harmonie",
-          "definition": "Vzor barevného vztahu: komplementární (protilehlé), analogické (sousední), triadické (tři barvy), dělené komplementární (posunuté protilehlé) nebo tetradické (čtyři barvy ve tvaru obdélníku)."
+          "definition": "Cílový vztah mezi odstíny. Komplementární (protilehlý), Dělený komplementární (protilehlý ± úhel), Analogický (sousedé), Triadický (po 120°), Tetradický (dva komplementární páry), Monochromatický (jeden odstín), Vlastní (vaše vlastní cíle)."
         },
         "Key Color": {
           "term": "Základní barva",
-          "definition": "Dominantní barva tvé palety. Všechny ostatní barvy harmonie se počítají právě od tohoto výchozího odstínu."
+          "definition": "Bez načtené fotky barva, kolem které je harmonie postavena. Přetáhněte kruh nebo použijte posuvníky."
         },
         "Hue": {
           "term": "Odstín",
-          "definition": "Úhel barvy na kole ve stupních: 0° je červená, 120° zelená, 240° modrá."
+          "definition": "Úhel barvy na kruhu ve stupních: 0° je červená, 120° je zelená, 240° je modrá."
         },
         "Saturation": {
           "term": "Sytost",
-          "definition": "Intenzita barvy od 0 % (šedá) do 100 % (plně syté). Určuje, jak výrazně nebo tlumeně bude vypadat celá paleta."
+          "definition": "Intenzita barvy od 0 % (šedá) do 100 % (plně sytá). Vzdálenost od středu kruhu."
         },
         "Lightness": {
           "term": "Světlost",
-          "definition": "Jas od 0 % (černá) do 100 % (bílá). Při 50 % vidíš čistou barvu; níž je tmavší, výš je světlejší."
+          "definition": "Jas od 0 % (černá) do 100 % (bílá). Při 50 % vidíte čistou barvu."
         },
         "Split Angle": {
           "term": "Úhel dělení",
-          "definition": "Jak daleko od sebe jsou obě dělené komplementární barvy vzdálené od přímé protilehlé. Širší úhly znamenají větší kontrast."
+          "definition": "Jak daleko od přímého komplementu leží obě barvy děleného komplementárního schématu."
         },
         "Spread": {
           "term": "Rozsah",
-          "definition": "Jak daleko jsou analogické barvy od základního odstínu. Úzký rozsah dává jemnou variaci, široký zvyšuje pestrost."
+          "definition": "Jak daleko od kotevního odstínu leží analogické barvy."
+        },
+        "Lock": {
+          "term": "Zámek",
+          "definition": "Udělá ze vzorku kotvu. Harmonie se otočí k tomuto odstínu a ostatní vzorky jsou posuzovány vůči němu. Uzamčen může být jen jeden vzorek."
+        },
+        "Closest fit": {
+          "term": "Nejbližší shoda",
+          "definition": "Harmonie, jejíž nejlepší otočení má nejnižší normalizovanou chybu odstínu napříč vašimi vzorky. Vyžaduje aspoň dva chromatické vzorky."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Chceš maximální kontrast mezi dvěma barvami pro výrazný grafický portrét. Který typ harmonie ti dá největší vizuální napětí?",
-          "hint": "Barvy přímo proti sobě na barevném kole vytvářejí nejsilnější kontrast.",
-          "successMessage": "Správně! Komplementární barvy leží 180 stupňů od sebe a dávají nejvyšší kontrast — ideální pro výrazné, nepřehlédnutelné kompozice.",
-          "failureMessage": "Komplementární harmonie umísťuje barvy přímo proti sobě na kole a vytváří maximální vizuální kontrast.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "Nasnímali jste modrou oblohu při 210° a oranžovou zeď při 25°. Které harmonii jsou už nejblíž?",
+          "hint": "Zkontrolujte úhel mezi nimi.",
+          "successMessage": "Správně. Rozdíl 185° je téměř dokonalý komplementární pár; malý posun zdi to dokoná.",
+          "failureMessage": "Dvě barvy vzdálené asi 180° jsou komplementární. Analogické barvy leží zhruba do 60° od sebe.",
+          "options": [
+            {
               "label": "Komplementární"
             },
-            "1": {
-              "label": "Analogické"
+            {
+              "label": "Analogický"
             },
-            "2": {
-              "label": "Triadické"
+            {
+              "label": "Triadický"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Plánuješ focení za zlaté hodiny a chceš teplé, soudržné tóny. Který typ harmonie udrží barvy blízko u sebe na kole?",
-          "hint": "Tento typ využívá sousední odstíny, aby vznikl plynulý a sjednocený pocit.",
-          "successMessage": "Přesně tak! Analogická harmonie používá sousední barvy, což ti dává teplou a soudržnou paletu jako stvořenou pro zlatou hodinu.",
-          "failureMessage": "Analogická harmonie drží všechny barvy jako sousedy na kole — ideální pro jednotné teplé nebo chladné palety.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Fotka má tři vzorky při 40°, 60° a 85°. Jaká je to harmonie?",
+          "hint": "Všechny jsou na kruhu sousedy.",
+          "successMessage": "Správně. Sousedící odstíny do zhruba 60° tvoří analogickou harmonii.",
+          "failureMessage": "Odstíny, které jsou si všechny blízko, jsou analogické — klidná a jednotná volba.",
+          "options": [
+            {
               "label": "Komplementární"
             },
-            "1": {
-              "label": "Analogické"
+            {
+              "label": "Analogický"
             },
-            "2": {
-              "label": "Tetradické"
+            {
+              "label": "Tetradický"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "Klient chce portrét s kontrastem, ale ne tak intenzivním jako u čisté komplementární. Který typ harmonie změkčí protiklad, ale udrží vizuální zajímavost?",
-          "hint": "Tento typ místo přímo protilehlé barvy používá dvě barvy vedle ní.",
-          "successMessage": "Výborně! Dělená komplementární si zachovává kontrast komplementární, ale rozděluje protilehlou barvu na dva sousední odstíny — výsledek je méně dráždivý, ale stále dynamický.",
-          "failureMessage": "Správná odpověď je dělená komplementární — nahrazuje jedinou protilehlou barvu jejími dvěma sousedy, čímž kontrast změkčí a zároveň si udržuje vizuální energii.",
-          "options": {
-            "0": {
-              "label": "Dělená komplementární"
+        {
+          "scenario": "Chcete snovou, klidnou pouliční fotku, ale se zachováním kontrastu. Kterou harmonii zvolit?",
+          "hint": "Myslete na dva sousedy komplementu místo na komplement samotný.",
+          "successMessage": "Ano. Dělený komplementární udrží napětí bez tvrdosti přímého protikladu.",
+          "failureMessage": "Dělený komplementární je klidná, ale kontrastní volba. Triadický bývá energičtější nebo neklidnější.",
+          "options": [
+            {
+              "label": "Dělený komplementární"
             },
-            "1": {
-              "label": "Triadická"
+            {
+              "label": "Triadický"
             },
-            "2": {
-              "label": "Analogická"
+            {
+              "label": "Analogický"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "Nastavil sis základní barvu oranžovou (odstín ~30°) s komplementární harmonií. Jaká bude doplňková barva?",
-          "hint": "Komplementární znamená 180° proti na kole.",
-          "successMessage": "Správně! 30° + 180° = 210°, což spadá do rozsahu modré. Oranžová a modrá je jedna z nejoblíbenějších komplementárních dvojic ve fotografii.",
-          "failureMessage": "Přičtením 180° k oranžové (30°) dostaneš 210°, tedy modrou. Dvojice oranžová-modrá je ve fotografii klasikou.",
-          "options": {
-            "0": {
-              "label": "Modrá (~210°)"
+        {
+          "scenario": "Vzorek ukazuje Mírný posun směrem k růžové s deltou −15°. Co uděláte v panelu HSL Lightroomu?",
+          "hint": "Slovo směru říká, kam posunout, velikost říká, jak daleko.",
+          "successMessage": "Správně. Posuňte posuvník Odstín této barvy směrem k růžové, dokud karta neukáže Sladěno.",
+          "failureMessage": "Posuňte odstín uvedeným směrem (růžová) o malou hodnotu; změna o 15° je mírný posun, ne velký posun.",
+          "options": [
+            {
+              "label": "Mírně posunout odstín k růžové"
             },
-            "1": {
-              "label": "Zelená (~150°)"
+            {
+              "label": "Snížit sytost"
             },
-            "2": {
-              "label": "Červená (~0°)"
+            {
+              "label": "Posunout odstín k zelené"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Jako art director připravuješ módní editorial a potřebuješ čtyřbarevnou paletu s teplými i chladnými tóny a vysokou vizuální bohatostí. Jaký typ harmonie dává čtyři barvy, a co je u něj hlavní výzva?",
-          "hint": "Čtyřbarevná harmonie tvoří na kole obdélník.",
-          "successMessage": "Přesně! Tetradická harmonie dává čtyři barvy tvořící obdélník na kole. Hlavní výzvou je rovnováha — u čtyř výrazných odstínů musí jeden dominovat a ostatní fungovat jako akcenty. Bez této hierarchie bude snímek působit chaoticky.",
-          "failureMessage": "Tetradická (dvojitě komplementární) nabízí čtyři barvy v obdélníkovém uspořádání. Problém je, že si čtyři silné odstíny konkurují — musíš určit jeden dominantní a zbylé použít jako akcenty.",
-          "options": {
-            "0": {
-              "label": "Tetradická — výzvou je udržet vizuální hierarchii mezi čtyřmi odstíny"
+        {
+          "scenario": "Dva vzorky sdílejí stejný odstín, ale jeden je uzamčen. Kolem kterého se harmonie otáčí?",
+          "hint": "Kotvou může být jen jeden vzorek.",
+          "successMessage": "Správně. Uzamčený vzorek je kotva; druhý je posuzován vůči šabloně postavené na něm.",
+          "failureMessage": "Uzamčený vzorek je vždy kotva. Bez zámku se použije nejlépe padnoucí otočení.",
+          "options": [
+            {
+              "label": "Uzamčený vzorek"
             },
-            "1": {
-              "label": "Triadická — výzvou je příliš málo barev"
+            {
+              "label": "První umístěný vzorek"
             },
-            "2": {
-              "label": "Analogická — výzvou je nedostatek kontrastu"
+            {
+              "label": "Nejvíce sytý vzorek"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

@@ -1,12 +1,16 @@
 {
   "toolUI": {
     "color-analyzer": {
-      "colorScheme": "Schemă de culori",
+      "colorScheme": "Armonie de culori",
       "complementary": "Complementar",
+      "splitComplementary": "Complementar divizat",
       "analogous": "Analog",
       "triadic": "Triadic",
-      "splitComplementary": "Complementar divizat",
       "tetradic": "Tetradic",
+      "monochromatic": "Monocromatic",
+      "custom": "Personalizat",
+      "closestFit": "Cea mai apropiată potrivire",
+      "closestSentence": "Fotografia ta este cea mai apropiată de {harmony} (abatere medie de {degrees}°). Atinge pentru a o folosi.",
       "keyColor": "Culoare principală",
       "hue": "Nuanță:",
       "saturation": "Saturație:",
@@ -15,8 +19,61 @@
       "spread": "Distanță:",
       "rectangleWidth": "Lățime dreptunghi:",
       "square": "(pătrat)",
-      "pickFromPhoto": "Alege din fotografie",
-      "dropPhotoPrompt": "Trage o fotografie aici sau apasă pentru a răsfoi",
+      "samples": "Mostre",
+      "lock": "Blochează această culoare ca reper",
+      "unlock": "Deblochează",
+      "removeSample": "Elimină mostra",
+      "labelPlaceholder": "Etichetă",
+      "neutralNotScored": "Neutră, nepunctată",
+      "suggested": "Sugerat",
+      "autoPick": "Alege automat 5",
+      "changePhoto": "Schimbă fotografia",
+      "capReached": "Maximum {cap} mostre. Elimină una pentru a adăuga alta.",
+      "markerLabel": "Mostra {n}: {label}",
+      "dropPhotoPrompt": "Trage o fotografie aici sau apasă pentru a răsfoi. Rămâne în browserul tău.",
+      "viewNatural": "Natural",
+      "viewPure": "Nuanțe pure",
+      "viewGuide": "Ghid de armonie",
+      "viewHint": {
+        "key": "Trage punctul pentru a stabili o culoare principală. Sau adaugă o fotografie pentru a analiza culorile reale.",
+        "natural": "Arată culorile la saturația lor reală. Schimbă fila pentru a citi armonia.",
+        "pure": "Nuanțele sunt împinse spre margine, astfel încât unghiurile dintre culori sunt ușor de citit.",
+        "guide": "Formele punctate sunt pozițiile țintă. Săgețile arată în ce direcție ar trebui să se miște fiecare culoare."
+      },
+      "nudge": {
+        "aligned": "Aliniat",
+        "slight": "Ajustare ușoară spre {color}",
+        "big": "Schimbare mare spre {color}"
+      },
+      "names": {
+        "red": "roșu",
+        "vermilion": "vermillon",
+        "orange": "portocaliu",
+        "amber": "chihlimbariu",
+        "yellow": "galben",
+        "lime": "verde-lime",
+        "chartreuse": "galben-verzui",
+        "leaf-green": "verde-frunză",
+        "green": "verde",
+        "jade": "verde-jad",
+        "spring-green": "verde-primăvăratic",
+        "mint": "verde-mentă",
+        "cyan": "cian",
+        "sky-blue": "albastru-cer",
+        "azure": "azuriu",
+        "cobalt": "albastru-cobalt",
+        "blue": "albastru",
+        "indigo": "indigo",
+        "violet": "violet",
+        "purple": "mov",
+        "magenta": "magenta",
+        "fuchsia": "fucsia",
+        "pink": "roz",
+        "rose": "trandafiriu",
+        "gray": "gri",
+        "black": "negru",
+        "white": "alb"
+      },
       "keyColorLabel": "Culoare principală — apasă pentru a copia hex",
       "clickToCopyHex": "Apasă pentru a copia hex",
       "copiedExcl": "Copiat!",
@@ -27,43 +84,55 @@
       "copyHexCodes": "Copiază codurile hex",
       "copyCssVariables": "Copiază variabilele CSS",
       "copyRgbValues": "Copiază valorile RGB",
-      "pickColorFromPhoto": "Alege o culoare din fotografie",
-      "close": "Închide",
-      "dropPhotoOrBrowse": "Trage o fotografie aici sau apasă pentru a răsfoi",
-      "tapToChoose": "Atinge pentru a alege o fotografie",
-      "tapToSample": "Atinge oriunde pe fotografie pentru a preleva culoarea",
-      "changePhoto": "Schimbă fotografia",
-      "privacyNote": "Fotografia ta rămâne în browser — nu se încarcă nimic pe server",
       "suggestions": {
         "complementary": {
-          "warm": "Excelent pentru: portrete calde la apus, cu contrast de umbre reci",
-          "cool": "Excelent pentru: cadre în ora albastră cu lumini calde de accent",
-          "default": "Excelent pentru: compoziții cu contrast ridicat și tensiune vizuală puternică"
+          "warm": "Excelent pentru: portrete calde la apus cu contrast rece în umbre",
+          "cool": "Excelent pentru: cadre cu atmosferă din ora albastră, cu accent cald de lumină",
+          "default": "Excelent pentru: compoziții cu contrast puternic și tensiune vizuală intensă"
+        },
+        "splitComplementary": {
+          "warm": "Excelent pentru: cadre visătoare și calme, care păstrează contrastul fără asprime",
+          "cool": "Excelent pentru: scene stradale și de călătorie reci, cu două accente calde",
+          "default": "Excelent pentru: cadre echilibrate, cu varietate, fără opoziție directă"
         },
         "analogous": {
-          "warm": "Excelent pentru: peisaje în ora de aur cu tonuri calde unitare",
-          "cool": "Excelent pentru: scene liniștite cu apă și fotografie la amurg",
-          "default": "Excelent pentru: cadre armonioase din natură, cu tranziții cromatice line"
+          "warm": "Excelent pentru: peisaje la ora de aur, cu tonuri calde unitare",
+          "cool": "Excelent pentru: scene liniștite cu apă și fotografie de amurg",
+          "default": "Excelent pentru: cadre de natură armonioase, cu tranziții line de culoare"
         },
-        "triadic": "Folosește pentru: lucrări editoriale vibrante și portrete creative îndrăznețe",
-        "splitComplementary": {
-          "warm": "Folosește pentru: garderobă contrastantă pe un fundal natural",
-          "default": "Folosește pentru: fotografie de produs echilibrată, cu varietate vizuală"
+        "triadic": {
+          "warm": "Excelent pentru: lucrări editoriale îndrăznețe, cu energia roșului, galbenului și albastrului",
+          "cool": "Excelent pentru: cadre vibrante, ușor tulburătoare, cu trei culori puternice",
+          "default": "Excelent pentru: lucrări editoriale vibrante și portrete creative îndrăznețe"
         },
-        "tetradic": "Folosește pentru: layout-uri editoriale bogate și compoziții complexe, cu mai multe subiecte"
+        "tetradic": {
+          "warm": "Excelent pentru: scene bogate, stratificate, cu două perechi complementare",
+          "cool": "Excelent pentru: peisaje urbane complexe, cu surse de lumină reci și calde",
+          "default": "Excelent pentru: layouturi editoriale bogate și compoziții cu mai multe subiecte"
+        },
+        "monochromatic": {
+          "warm": "Excelent pentru: tonuri calde liniștite și coerente, dintr-o singură nuanță",
+          "cool": "Excelent pentru: scene reci, calme și minimaliste, construite pe o singură nuanță",
+          "default": "Excelent pentru: imagini minimaliste și unitare, bazate pe lumină și umbră"
+        },
+        "custom": {
+          "warm": "Trage țintele punctate pentru a-ți crea propria relație între culori",
+          "cool": "Trage țintele punctate pentru a-ți crea propria relație între culori",
+          "default": "Trage țintele punctate pentru a-ți crea propria relație între culori"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
-          "question": "Ce este armonia culorilor în fotografie?",
-          "answer": "Armonia culorilor înseamnă combinații cromatice plăcute estetic, alese după poziția lor pe roata culorilor. Culorile armonioase creează echilibru vizual și pot evoca anumite stări în fotografiile tale."
+          "question": "Ce este armonia de culori în fotografie?",
+          "answer": "Armonia de culori este o relație între nuanțele dintr-un cadru care pare intenționată: două culori opuse una alteia (complementare), vecine pe cerc (analoage) sau trei distribuite uniform (triadice). Fotografiile pornesc rareori de la o armonie perfectă, dar de obicei sunt la un mic pas distanță de una."
         },
         "complementary-vs-analogous": {
-          "question": "Care este diferența dintre culorile complementare și cele analoge?",
-          "answer": "Culorile complementare stau față în față pe roata culorilor (cum sunt albastrul și portocaliul) și creează contrast puternic. Culorile analoge stau una lângă alta (ca albastru, albastru-verzui și verde) și dau un aspect mai armonios, mai unitar."
+          "question": "Cum citesc armonia care există deja în fotografia mea?",
+          "answer": "Ia mostre din câteva puncte importante (cerul, pielea, ușa aceea roșie) și vezi unde ajung pe cerc. Două puncte aflate aproximativ una în fața celeilalte formează o pereche complementară; un grup restrâns la aproximativ 60° este analog. Insigna Cea mai apropiată potrivire face această comparație pentru tine, pentru toate cele șase armonii."
         },
         "how-to-use-color-schemes-photography": {
-          "question": "Cum folosesc schemele de culori în fotografie?",
-          "answer": "Planifică-ți sesiunile pornind de la o paletă — alege garderoba, locația și recuzita care se potrivesc cu schema ta. În post-procesare, folosește color grading ca să accentuezi paleta aleasă. Schemele de culori te ajută să obții o identitate vizuală unitară într-o serie de fotografii."
+          "question": "Cum folosesc culorile sugerate în Lightroom sau Photoshop?",
+          "answer": "Fiecare mostră arată o direcție (spre roz, spre turcoaz) și un cod hex sugerat, la aceeași saturație și luminozitate. În panoul HSL sau Point Color din Lightroom, ori în Nuanță/Saturație din Photoshop, împinge nuanța acelei culori în direcția indicată, până ajunge aproape de valoarea sugerată. Fă întâi cele mai mari ajustări și oprește-te când săgeata arată Aliniat."
         }
       }
     }

@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Színpaletta-generátor",
-      "description": "Állíts össze fotós színpalettákat komplementer, analóg, triadikus és tetradikus harmóniák alapján. Interaktív színkör fotóválasztóval."
+      "title": "Színelemző: olvasd le bármely fotó színharmóniáját",
+      "description": "Ingyenes fotó-színelemző és színséma-generátor. Mintázd le egy fotó színeit, ábrázold őket egy színkörön, találd meg a legközelebbi színharmóniát, és kapj színenkénti szerkesztési útmutatást. 100%-ban a böngésződben."
     }
   }
 }

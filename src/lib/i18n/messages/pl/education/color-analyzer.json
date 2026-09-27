@@ -1,70 +1,70 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "Harmonia kolorów polega na wybieraniu barw, które dobrze ze sobą wyglądają. Podobnie jak akordy muzyczne, pewne kombinacje kolorów tworzą przyjemne relacje wizualne. Fotografowie wykorzystują harmonię kolorów do planowania garderoby, scenografii, a nawet czasu sesji plenerowych, aby uchwycić odpowiednią paletę z natury.",
-      "deeper": {
-        "0": {
-          "heading": "Koło barw",
-          "text": "Teoria harmonii kolorów opiera się na kole barw, które rozmieszcza odcienie w okręgu na podstawie ich relacji długości fal. Model HSL (odcień, nasycenie, jasność) mapuje się bezpośrednio na koło: odcień to kąt (0–360°), nasycenie to odległość od środka, a jasność kontroluje jaskrawość. W fotografii te relacje pojawiają się naturalnie — złota godzina wytwarza analogiczne ciepłe tony, a czerwona stodoła na tle zielonych pól to schemat dopełniający."
+      "beginner": "Większość zdjęć już zawiera relację kolorów — po prostu jeszcze jej nie widzisz. Upuść zdjęcie, dotknij kolorów, które mają znaczenie, a koło pokaże, jak się do siebie odnoszą. Wybierz harmonię, której chcesz, a narzędzie powie Ci, w którą stronę przesunąć każdy kolor.",
+      "deeper": [
+        {
+          "heading": "Metoda czterech kroków",
+          "text": "Intencja (co ma poczuć widz), Analiza (jakie kolory rzeczywiście są w kadrze), Wybór koloru (jaka harmonia pasuje do tego nastroju), Transformacja (przesuń suwaki w kierunku, który pokazuje koło). Edycja jest na końcu. Większość frustracji związanych z korekcją kolorów bierze się ze startu od razu od kroku czwartego."
         },
-        "1": {
-          "heading": "Dopełniający",
-          "text": "Dwa kolory leżące naprzeciwko siebie na kole (180° od siebie), takie jak niebieski i pomarańczowy lub czerwony i zielony. Tworzy to maksymalny kontrast i energię wizualną. Świetne do wyróżnienia obiektu na tle — pomyśl o portretach o złotej godzinie, gdzie ciepłe tony skóry kontrastują z chłodnym niebieskim niebem."
+        {
+          "heading": "Odczytywanie koła",
+          "text": "Każda próbka jest naniesiona według odcienia (kąt) i nasycenia (odległość od środka). Widok Naturalny pokazuje rzeczywiste nasycenie, Czyste odcienie przesuwa każdą kropkę na obrzeże, aby kąty były oczywiste, a Przewodnik harmonii dodaje docelowe pozycje i strzałki dla wybranej harmonii."
         },
-        "2": {
-          "heading": "Analogiczny",
-          "text": "Trzy kolory sąsiadujące na kole, zwykle w zakresie 30–60°. Tworzą gładkie, spójne palety o niskim kontraście. Idealne do krajobrazów i prac kreujących nastrój — jesienne liście to naturalna analogiczna paleta czerwieni, pomarańczy i żółci."
+        {
+          "heading": "Najlepsze dopasowanie",
+          "text": "Narzędzie obraca każdy szablon harmonii do pozycji najlepiej pasującej do Twoich próbek i mierzy średni błąd odcienia, znormalizowany według rozstawu slotów szablonu, aby harmonie z czterema slotami nie wygrywały domyślnie. Zwycięzca otrzymuje odznakę; to Ty decydujesz, czy jej użyć."
         },
-        "3": {
-          "heading": "Triadyczny",
-          "text": "Trzy kolory równomiernie rozmieszczone w odstępach 120° wokół koła, takie jak czerwony, żółty i niebieski. Schematy triadyczne sprawiają wrażenie zrównoważonych i żywych bez napięcia kontrastu dopełniającego. Użyj jednego dominującego koloru, a dwóch pozostałych jako akcentów, aby uzyskać najlepsze rezultaty."
+        {
+          "heading": "Blokady i punkty odniesienia",
+          "text": "Zablokuj próbkę, aby uczynić ją punktem odniesienia: harmonia obraca się wokół tego odcienia, a każdy inny kolor jest oceniany względem niego. Użyj tego dla koloru, którego nie zmienisz — zwykle skóry lub koloru marki. Bez blokady narzędzie wybiera obrót z najmniejszym łącznym błędem."
         },
-        "4": {
-          "heading": "Rozszczepiony dopełniający",
-          "text": "Wariant schematu dopełniającego, który zamiast koloru przeciwnego używa dwóch sąsiadów tego koloru. Zachowuje wysoki kontrast schematu dopełniającego, ale zmniejsza napięcie wizualne, czyniąc go bardziej wszechstronnym i wybaczającym. Popularny wybór na stylizowane sesje portretowe."
+        {
+          "heading": "Kolory neutralne",
+          "text": "Szarości, prawie czernie i prawie biele nie mają wiarygodnego odcienia, więc lądują w środku i są pomijane w dopasowaniu. Nadal mają znaczenie dla nastroju, ale przesuwanie ich odcienia na suwaku zwykle tylko dodaje przebarwienie."
         },
-        "5": {
-          "heading": "Tetradyczny (podwójny dopełniający)",
-          "text": "Cztery kolory tworzące prostokąt na kole — zasadniczo dwie pary dopełniające. Oferuje najbogatszą, najbardziej złożoną paletę, ale wymaga starannego balansu. Niech jeden kolor dominuje, a pozostałe pełnią rolę akcentów wspierających, aby uniknąć chaotycznego wyglądu."
+        {
+          "heading": "Dlaczego HSL, a nie koło percepcyjne",
+          "text": "To koło używa modelu HSL, tego samego, co Adobe Color i panel HSL w Lightroomie, więc kierunek, który tu odczytujesz, jest tym samym kierunkiem, w który przesuniesz tam. Nie jest ono percepcyjnie jednolite: żółty zajmuje wąskie pasmo, a niebieski szerokie, więc przesunięcie o 20° wygląda inaczej w różnych obszarach. Koło percepcyjne byłoby uczciwsze, ale nie pasowałoby do narzędzi do edycji."
         }
-      },
-      "keyFactors": {
-        "0": {
+      ],
+      "keyFactors": [
+        {
           "label": "Typ harmonii",
-          "description": "Geometryczna relacja między kolorami na kole: dopełniający, analogiczny, triadyczny, rozszczepiony dopełniający lub tetradyczny."
+          "description": "Geometryczna relacja, do której dążysz: dopełniająca, rozszczepiona dopełniająca, analogiczna, triadyczna, tetradyczna, monochromatyczna lub Twoje własne, niestandardowe cele."
         },
-        "1": {
-          "label": "Odcień",
-          "description": "Podstawowy kąt koloru na kole (0-360 stopni). To punkt wyjścia dla wszystkich obliczeń harmonii."
+        {
+          "label": "Próbki",
+          "description": "Które kolory zdecydowałeś się pobrać. Próbkuj to, co ma znaczenie dla zdjęcia, a nie to, co jest największe. Pięć do sześciu punktów zwykle opowiada całą historię."
         },
-        "2": {
-          "label": "Nasycenie",
-          "description": "Jak żywe lub stonowane są kolory. Niższe nasycenie daje pastele i kolory ziemiste; wyższe nasycenie daje odważne, żywe palety."
+        {
+          "label": "Punkt odniesienia",
+          "description": "Zablokowana próbka, wokół której obraca się harmonia. Bez blokady używany jest obrót najlepiej dopasowany."
         },
-        "3": {
-          "label": "Jasność",
-          "description": "Kontroluje jaskrawość. Regulacja jasności może sprawić, że ten sam odcień będzie wyglądał zupełnie inaczej — ciemny granat i błękit nieba to ten sam odcień przy różnej jasności."
+        {
+          "label": "Przesunięcie",
+          "description": "Kierunkowy obrót odcienia od próbki do jej celu. Wyrównany oznacza w granicach 8°, lekkie przesunięcie w granicach 25°, wszystko powyżej to duża zmiana."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "Na sesje portretowe wybierz paletę dopełniającą lub rozszczepioną dopełniającą, a następnie niech model założy kluczowy kolor, podczas gdy tło zapewni kontrastujący odcień. Niebieski/pomarańczowy (portrety o złotej godzinie) to klasyczny przykład."
+      ],
+      "tips": [
+        {
+          "text": "Próbkuj kolory, które faktycznie będziesz korygować: niebo, skórę, dominujący obiekt, cień. Pomiń światła specularne i głębokie cienie — wypadają jako neutralne."
         },
-        "1": {
-          "text": "Dla krajobrazów użyj harmonii analogicznej — natura już funkcjonuje w analogicznych paletach. Dopasuj porady dotyczące garderoby lub wybór rekwizytów do dominujących naturalnych odcieni."
+        {
+          "text": "Rozszczepiony dopełniający to spokojny, senny wybór do fotografii podróżniczej i ulicznej. Dopełniający jest czystszy i mocniejszy. Triadyczny jest celowo trochę niepokojący."
         },
-        "2": {
-          "text": "Zmniejsz nasycenie do 30-50%, aby zobaczyć podgląd, jak kolory będą wyglądać w bardziej stonowanym, editorialowym stylu. Wysokie nasycenie sprawdza się w fotografii komercyjnej i modowej, ale niższe nasycenie często wydaje się bardziej wyrafinowane."
+        {
+          "text": "Użyj Wybierz automatycznie, aby zacząć, a potem przesuwaj lub usuwaj punkty. Znajduje on dominujące skupiska chromatyczne, które często nie są kolorami, na których najbardziej Ci zależy."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
           "term": "Typ harmonii",
-          "definition": "Wzorzec relacji kolorów: dopełniający (przeciwny), analogiczny (sąsiedzi), triadyczny (trójkąt), rozszczepiony dopełniający (przesunięte przeciwne) lub tetradyczny (czterokąt)."
+          "definition": "Docelowa relacja między odcieniami. Dopełniająca (przeciwna), Rozszczepiona dopełniająca (przeciwna ± kąt), Analogiczna (sąsiedzi), Triadyczna (co 120°), Tetradyczna (dwie pary dopełniające), Monochromatyczna (jeden odcień), Niestandardowa (Twoje własne cele)."
         },
         "Key Color": {
           "term": "Kolor kluczowy",
-          "definition": "Dominujący kolor w palecie. Wszystkie inne kolory harmonii są obliczane względem tego odcienia wyjściowego."
+          "definition": "Bez wczytanego zdjęcia — kolor, wokół którego budowana jest harmonia. Przeciągnij koło lub użyj suwaków."
         },
         "Hue": {
           "term": "Odcień",
@@ -72,108 +72,116 @@
         },
         "Saturation": {
           "term": "Nasycenie",
-          "definition": "Intensywność koloru od 0% (szary) do 100% (w pełni żywy). Kontroluje, jak odważna lub stonowana jest cała paleta."
+          "definition": "Intensywność koloru od 0% (szary) do 100% (w pełni żywy). Odległość od środka koła."
         },
         "Lightness": {
           "term": "Jasność",
-          "definition": "Jaskrawość od 0% (czarny) do 100% (biały). Przy 50% widzisz czysty kolor; poniżej jest ciemniej, powyżej jaśniej."
+          "definition": "Jasność od 0% (czarny) do 100% (biały). Przy 50% widzisz czysty kolor."
         },
         "Split Angle": {
           "term": "Kąt rozszczepienia",
-          "definition": "Jak daleko od siebie są dwa kolory rozszczepionego schematu dopełniającego od bezpośredniego przeciwnego. Szersze kąty dają większy kontrast."
+          "definition": "Jak daleko od bezpośredniego dopełnienia leżą dwa kolory rozszczepionego schematu dopełniającego."
         },
         "Spread": {
           "term": "Rozpiętość",
-          "definition": "Jak daleko od kluczowego odcienia znajdują się kolory analogiczne. Wąska rozpiętość daje subtelne różnice; szeroka rozpiętość zwiększa różnorodność."
+          "definition": "Jak daleko od odcienia punktu odniesienia leżą kolory analogiczne."
+        },
+        "Lock": {
+          "term": "Blokada",
+          "definition": "Czyni próbkę punktem odniesienia. Harmonia obraca się do tego odcienia, a inne próbki są oceniane względem niego. Zablokowana może być tylko jedna próbka."
+        },
+        "Closest fit": {
+          "term": "Najlepsze dopasowanie",
+          "definition": "Harmonia, której najlepszy obrót ma najniższy znormalizowany błąd odcienia dla Twoich próbek. Wymaga co najmniej dwóch próbek chromatycznych."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Chcesz uzyskać maksymalny kontrast między dwoma kolorami dla odważnego portretu graficznego. Który typ harmonii daje największe napięcie wizualne?",
-          "hint": "Kolory leżące bezpośrednio naprzeciwko siebie na kole tworzą najsilniejszy kontrast.",
-          "successMessage": "Prawidłowo! Kolory dopełniające leżą 180 stopni od siebie i dają najwyższy kontrast — idealne do odważnych, przyciągających wzrok kompozycji.",
-          "failureMessage": "Harmonia dopełniająca umieszcza kolory bezpośrednio naprzeciwko na kole, tworząc maksymalny kontrast wizualny.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "Pobrałeś próbkę niebieskiego nieba przy 210° i pomarańczowej ściany przy 25°. Jakiej harmonii są już najbliżej?",
+          "hint": "Sprawdź kąt między nimi.",
+          "successMessage": "Zgadza się. 185° różnicy to niemal idealna para dopełniająca; małe przesunięcie ściany dopełnia całość.",
+          "failureMessage": "Dwa kolory oddalone o około 180° są dopełniające. Kolory analogiczne leżą w granicach około 60° od siebie.",
+          "options": [
+            {
               "label": "Dopełniający"
             },
-            "1": {
+            {
               "label": "Analogiczny"
             },
-            "2": {
+            {
               "label": "Triadyczny"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Planujesz sesję o złotej godzinie i chcesz ciepłe, spójne tony. Który typ harmonii utrzymuje kolory blisko siebie na kole?",
-          "hint": "Ten typ używa sąsiednich odcieni dla gładkiego, jednolitego wrażenia.",
-          "successMessage": "Zgadza się! Harmonia analogiczna używa sąsiednich kolorów, dając ciepłą, spójną paletę idealną na złotą godzinę.",
-          "failureMessage": "Harmonia analogiczna utrzymuje wszystkie kolory jako sąsiadów na kole — idealna do jednolitych ciepłych lub chłodnych palet.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Zdjęcie ma trzy próbki przy 40°, 60° i 85°. Jaka to harmonia?",
+          "hint": "Wszystkie są sąsiadami na kole.",
+          "successMessage": "Prawidłowo. Sąsiadujące odcienie w granicach około 60° tworzą harmonię analogiczną.",
+          "failureMessage": "Odcienie leżące blisko siebie są analogiczne — to spokojna i spójna opcja.",
+          "options": [
+            {
               "label": "Dopełniający"
             },
-            "1": {
+            {
               "label": "Analogiczny"
             },
-            "2": {
+            {
               "label": "Tetradyczny"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "Klient chce portretu z kontrastem, ale nie tak intensywnym jak czysty schemat dopełniający. Który typ harmonii łagodzi opozycję, zachowując zainteresowanie wizualne?",
-          "hint": "Ten typ używa dwóch kolorów bliskich dopełnieniu zamiast bezpośredniego przeciwnego.",
-          "successMessage": "Doskonale! Rozszczepiony dopełniający zachowuje kontrast schematu dopełniającego, ale rozdziela przeciwny kolor na dwa flankujące odcienie, dając mniej rażącą, ale wciąż dynamiczną paletę.",
-          "failureMessage": "Rozszczepiony dopełniający to odpowiedź — zastępuje pojedynczy przeciwny kolor dwoma sąsiadami przeciwnego, łagodząc kontrast przy zachowaniu energii wizualnej.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Chcesz senne, spokojne zdjęcie uliczne, ale z zachowaniem kontrastu. Którą harmonię wybrać?",
+          "hint": "Pomyśl o dwóch sąsiadach dopełnienia zamiast o samym dopełnieniu.",
+          "successMessage": "Tak. Rozszczepiony dopełniający zachowuje napięcie bez ostrości bezpośredniego przeciwieństwa.",
+          "failureMessage": "Rozszczepiony dopełniający to spokojna, ale kontrastowa opcja. Triadyczny bywa bardziej energiczny lub niepokojący.",
+          "options": [
+            {
               "label": "Rozszczepiony dopełniający"
             },
-            "1": {
+            {
               "label": "Triadyczny"
             },
-            "2": {
+            {
               "label": "Analogiczny"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "Ustawiasz kolor kluczowy na pomarańczowy (odcień ~30 stopni) z harmonią dopełniającą. Jaki kolor będzie dopełnieniem?",
-          "hint": "Dopełniający oznacza 180 stopni naprzeciwko na kole.",
-          "successMessage": "Prawidłowo! 30° + 180° = 210°, co odpowiada zakresowi niebieskiego. Pomarańczowy i niebieski to jedna z najbardziej lubianych par dopełniających w fotografii.",
-          "failureMessage": "Dodanie 180° do pomarańczowego (30°) daje 210°, czyli niebieski. Para dopełniająca pomarańczowy-niebieski to klasyka fotografii.",
-          "options": {
-            "0": {
-              "label": "Niebieski (~210°)"
+        {
+          "scenario": "Próbka pokazuje Lekkie przesunięcie w stronę różu z deltą −15°. Co robisz w panelu HSL Lightrooma?",
+          "hint": "Słowo kierunkowe mówi, w którą stronę przesunąć, a wielkość — jak daleko.",
+          "successMessage": "Zgadza się. Przesuń suwak Odcień tego koloru w stronę różu, aż karta pokaże Wyrównany.",
+          "failureMessage": "Przesuń odcień w nazwanym kierunku (róż) o niewielką wartość; zmiana o 15° to lekkie przesunięcie, nie duża zmiana.",
+          "options": [
+            {
+              "label": "Lekko przesuń odcień w stronę różu"
             },
-            "1": {
-              "label": "Zielony (~150°)"
+            {
+              "label": "Zmniejsz nasycenie"
             },
-            "2": {
-              "label": "Czerwony (~0°)"
+            {
+              "label": "Przesuń odcień w stronę zieleni"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Prowadzisz sesję edytorialną modową i potrzebujesz czterokolorowej palety z ciepłymi i chłodnymi tonami o dużym bogactwie wizualnym. Który typ harmonii daje cztery kolory i jakie jest główne wyzwanie przy jego stosowaniu?",
-          "hint": "Czterokolorowa harmonia tworzy prostokąt na kole.",
-          "successMessage": "Zgadza się! Harmonia tetradyczna daje cztery kolory tworzące prostokąt na kole. Głównym wyzwaniem jest zachowanie równowagi — przy czterech odrębnych odcieniach jeden powinien dominować, a pozostałe akcentować. Bez hierarchii obraz wydaje się chaotyczny.",
-          "failureMessage": "Tetradyczny (podwójny dopełniający) zapewnia cztery kolory w prostokątnym układzie. Wyzwaniem jest to, że cztery silne odcienie konkurują o uwagę — trzeba wyznaczyć jeden dominujący kolor i używać pozostałych jako akcentów.",
-          "options": {
-            "0": {
-              "label": "Tetradyczny — wyzwaniem jest utrzymanie wizualnej hierarchii wśród czterech odcieni"
+        {
+          "scenario": "Dwie próbki mają ten sam odcień, ale jedna jest zablokowana. Wokół której obraca się harmonia?",
+          "hint": "Tylko jedna próbka może być punktem odniesienia.",
+          "successMessage": "Zgadza się. Zablokowana próbka jest punktem odniesienia; druga jest oceniana względem zbudowanego na niej szablonu.",
+          "failureMessage": "Zablokowana próbka zawsze jest punktem odniesienia. Bez blokady używany jest obrót najlepiej dopasowany.",
+          "options": [
+            {
+              "label": "Zablokowana próbka"
             },
-            "1": {
-              "label": "Triadyczny — wyzwaniem jest zbyt mała liczba kolorów"
+            {
+              "label": "Pierwsza umieszczona próbka"
             },
-            "2": {
-              "label": "Analogiczny — wyzwaniem jest brak kontrastu"
+            {
+              "label": "Najbardziej nasycona próbka"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

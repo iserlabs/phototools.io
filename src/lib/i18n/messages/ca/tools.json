@@ -85,8 +85,8 @@
       "description": "Fulls de referència amb ajustos de càmera per a escenaris habituals — descarregables i imprimibles"
     },
     "color-analyzer": {
-      "name": "Generador de paletes de colors",
-      "description": "Crea paletes de colors per a les teves sessions fotogràfiques"
+      "name": "Analitzador de colors",
+      "description": "Mostreja els colors d'una foto, llegeix la seva harmonia i descobreix cap a quina banda empènyer cadascun"
     }
   }
 }

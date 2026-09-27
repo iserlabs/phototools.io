@@ -1,24 +1,81 @@
 {
   "toolUI": {
     "color-analyzer": {
-      "colorScheme": "Színséma",
+      "colorScheme": "Színharmónia",
       "complementary": "Komplementer",
+      "splitComplementary": "Osztott komplementer",
       "analogous": "Analóg",
       "triadic": "Triadikus",
-      "splitComplementary": "Osztott komplementer",
       "tetradic": "Tetradikus",
+      "monochromatic": "Monokróm",
+      "custom": "Egyéni",
+      "closestFit": "Legjobb egyezés",
+      "closestSentence": "A fotód a legközelebb a(z) {harmony} harmóniához áll (átlagosan {degrees}° eltéréssel). Koppints, hogy használd.",
       "keyColor": "Kulcsszín",
       "hue": "Színárnyalat:",
       "saturation": "Telítettség:",
       "lightness": "Világosság:",
-      "splitAngle": "Osztott szög:",
-      "spread": "Terjedés:",
-      "rectangleWidth": "Téglalap szélesség:",
+      "splitAngle": "Osztási szög:",
+      "spread": "Szórás:",
+      "rectangleWidth": "Téglalap szélessége:",
       "square": "(négyzet)",
-      "pickFromPhoto": "Szín a fotóból",
-      "dropPhotoPrompt": "Húzz ide egy fotót, vagy kattints a tallózáshoz",
-      "keyColorLabel": "Kulcsszín — kattints a hex másolásához",
-      "clickToCopyHex": "Kattints a hex másolásához",
+      "samples": "Minták",
+      "lock": "Zárold ezt a színt viszonyítási pontként",
+      "unlock": "Feloldás",
+      "removeSample": "Minta eltávolítása",
+      "labelPlaceholder": "Címke",
+      "neutralNotScored": "Semleges, nincs pontozva",
+      "suggested": "Javasolt",
+      "autoPick": "5 automatikus kiválasztása",
+      "changePhoto": "Fotó cseréje",
+      "capReached": "Legfeljebb {cap} minta. Távolíts el egyet, hogy másikat adhass hozzá.",
+      "markerLabel": "{n}. minta: {label}",
+      "dropPhotoPrompt": "Húzz ide egy fotót, vagy kattints a tallózáshoz. A böngésződben marad.",
+      "viewNatural": "Természetes",
+      "viewPure": "Tiszta árnyalatok",
+      "viewGuide": "Harmónia-útmutató",
+      "viewHint": {
+        "key": "Húzd a pontot a kulcsszín beállításához. Vagy ejts ide egy fotót, hogy inkább a valódi színeket elemezd.",
+        "natural": "A színeket a valódi telítettségükön mutatja. Válts fület a harmónia leolvasásához.",
+        "pure": "Az árnyalatok a szélre tolva, így a színek közti szögek könnyen leolvashatók.",
+        "guide": "A szaggatott alakzatok a célpozíciók. A nyilak mutatják, melyik irányba kell tolni az egyes színeket."
+      },
+      "nudge": {
+        "aligned": "Összhangban",
+        "slight": "Enyhe elmozdulás {color} felé",
+        "big": "Nagy elmozdulás {color} felé"
+      },
+      "names": {
+        "red": "piros",
+        "vermilion": "cinóbervörös",
+        "orange": "narancssárga",
+        "amber": "borostyán",
+        "yellow": "sárga",
+        "lime": "lime",
+        "chartreuse": "sárgászöld",
+        "leaf-green": "levélzöld",
+        "green": "zöld",
+        "jade": "jádezöld",
+        "spring-green": "tavaszzöld",
+        "mint": "mentazöld",
+        "cyan": "ciánkék",
+        "sky-blue": "égszínkék",
+        "azure": "azúrkék",
+        "cobalt": "kobaltkék",
+        "blue": "kék",
+        "indigo": "indigó",
+        "violet": "ibolya",
+        "purple": "bíbor",
+        "magenta": "magenta",
+        "fuchsia": "fukszia",
+        "pink": "rózsaszín",
+        "rose": "rózsa",
+        "gray": "szürke",
+        "black": "fekete",
+        "white": "fehér"
+      },
+      "keyColorLabel": "Kulcsszín — kattints a hex kód másolásához",
+      "clickToCopyHex": "Kattints a hex kód másolásához",
       "copiedExcl": "Kimásolva!",
       "copyColors": "Színek másolása",
       "hexFormat": "Hex",
@@ -27,43 +84,55 @@
       "copyHexCodes": "Hex kódok másolása",
       "copyCssVariables": "CSS változók másolása",
       "copyRgbValues": "RGB értékek másolása",
-      "pickColorFromPhoto": "Szín kiválasztása fotóból",
-      "close": "Bezárás",
-      "dropPhotoOrBrowse": "Húzz ide egy fotót, vagy kattints a tallózáshoz",
-      "tapToChoose": "Koppints egy fotó kiválasztásához",
-      "tapToSample": "Koppints bárhová a fotón, hogy mintavételezd azt a színt",
-      "changePhoto": "Fotó cseréje",
-      "privacyNote": "A fotód a böngésződben marad — semmi sem kerül feltöltésre",
       "suggestions": {
         "complementary": {
-          "warm": "Jó választás: meleg naplementés portrékhoz hűvös árnyékkontraszttal",
-          "cool": "Jó választás: hangulatos kék órás felvételekhez meleg akcentfénnyel",
-          "default": "Jó választás: nagy kontrasztú, erős vizuális feszültségű kompozíciókhoz"
+          "warm": "Kiváló: meleg naplementés portrékhoz hűvös árnyékkontraszttal",
+          "cool": "Kiváló: hangulatos kék órás felvételekhez meleg fényakcentussal",
+          "default": "Kiváló: erős kontrasztú kompozíciókhoz komoly vizuális feszültséggel"
+        },
+        "splitComplementary": {
+          "warm": "Kiváló: álomszerű, nyugodt hangulathoz, amely megőrzi a kontrasztot élesség nélkül",
+          "cool": "Kiváló: hűvös utcai és utazós jelenetekhez két meleg akcenttel",
+          "default": "Kiváló: kiegyensúlyozott képekhez változatossággal, közvetlen ellentét nélkül"
         },
         "analogous": {
-          "warm": "Jó választás: arany órás tájképekhez, egységes meleg tónusokkal",
-          "cool": "Jó választás: nyugodt vízi jelenetekhez és szürkületi fotózáshoz",
-          "default": "Jó választás: harmonikus természetfotókhoz, lágy színátmenetekkel"
+          "warm": "Kiváló: aranyórás tájképekhez egységes meleg tónusokkal",
+          "cool": "Kiváló: nyugodt vízi jelenetekhez és szürkületi fotózáshoz",
+          "default": "Kiváló: harmonikus természetfotókhoz, lágy színátmenetekkel"
         },
-        "triadic": "Jó választás: élénk szerkesztői munkához és merész kreatív portrékhoz",
-        "splitComplementary": {
-          "warm": "Jó választás: kontrasztos ruha és természetes háttér összehangolásához",
-          "default": "Jó választás: kiegyensúlyozott termékfotózáshoz, változatos vizuális hatással"
+        "triadic": {
+          "warm": "Kiváló: merész szerkesztőségi munkákhoz, piros, sárga és kék energiájával",
+          "cool": "Kiváló: élénk, kissé nyugtalanító képekhez három erős színnel",
+          "default": "Kiváló: élénk szerkesztőségi munkákhoz és merész, kreatív portrékhoz"
         },
-        "tetradic": "Jó választás: gazdag szerkesztői elrendezésekhez és összetett, több témás kompozíciókhoz"
+        "tetradic": {
+          "warm": "Kiváló: gazdag, rétegzett jelenetekhez két komplementer párral",
+          "cool": "Kiváló: összetett városképekhez hűvös és meleg fényforrásokkal",
+          "default": "Kiváló: gazdag szerkesztőségi elrendezésekhez és több témás kompozíciókhoz"
+        },
+        "monochromatic": {
+          "warm": "Kiváló: csendes, egységes meleg tónusokhoz egyetlen árnyalatból",
+          "cool": "Kiváló: nyugodt, minimalista hűvös jelenetekhez egyetlen árnyalatból",
+          "default": "Kiváló: minimalista, egységes képekhez, amelyek a fényre és árnyékra épülnek"
+        },
+        "custom": {
+          "warm": "Húzd a szaggatott célpontokat, hogy megtervezd a színek közti saját kapcsolatot",
+          "cool": "Húzd a szaggatott célpontokat, hogy megtervezd a színek közti saját kapcsolatot",
+          "default": "Húzd a szaggatott célpontokat, hogy megtervezd a színek közti saját kapcsolatot"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
           "question": "Mi a színharmónia a fotózásban?",
-          "answer": "A színharmónia olyan esztétikailag kellemes színkombinációkat jelent, amelyek a színkörön elfoglalt helyük alapján illenek össze. A harmonikus színek vizuális egyensúlyt teremtenek, és meghatározott hangulatot adhatnak a fotóidnak."
+          "answer": "A színharmónia a kép árnyalatai közti kapcsolat, amely szándékoltnak hat: két egymással szemközti szín (komplementer), a köríven szomszédos színek (analóg), vagy három egyenletesen elosztott szín (triadikus). A fotók ritkán indulnak tiszta harmóniával, de általában csak egy apró lépésre vannak tőle."
         },
         "complementary-vs-analogous": {
-          "question": "Mi a különbség a komplementer és az analóg színek között?",
-          "answer": "A komplementer színek a színkörön egymással szemben állnak (pl. kék és narancs), és erős kontrasztot adnak. Az analóg színek egymás mellett helyezkednek el (pl. kék, kékeszöld és zöld), és harmonikusabb, egységesebb hangulatot keltenek."
+          "question": "Hogyan olvassam le a fotómon már meglévő harmóniát?",
+          "answer": "Mintázz le néhány fontos pontot (ég, bőr, az az egy piros ajtó), és nézd meg, hova esnek a köríven. Két, egymással nagyjából szemközti pont komplementer pár; egy körülbelül 60°-os klaszter analóg. A Legjobb egyezés jelvény elvégzi neked ezt az összehasonlítást mind a hat harmónia között."
         },
         "how-to-use-color-schemes-photography": {
-          "question": "Hogyan használjam a színsémákat a fotózásban?",
-          "answer": "Tervezd a fotózást egy színpaletta köré: válassz hozzá illő ruhát, helyszínt és kellékeket. Utómunkában színkorrekcióval emeld ki a választott palettát. A színsémák segítenek egységes vizuális világot adni egy fotósorozatnak."
+          "question": "Hogyan használjam a javasolt színeket a Lightroomban vagy a Photoshopban?",
+          "answer": "Minden minta megmutat egy irányt (rózsaszín felé, pávakék felé) és egy javasolt hex kódot ugyanazon a telítettségen és világosságon. A Lightroom HSL paneljében vagy a Point Color eszközzel, illetve a Photoshop Színezet/Telítettség eszközével told az adott szín árnyalatát a jelzett irányba, amíg a javasolt érték közelébe nem ér. Először a legnagyobb elmozdulásokat végezd el, és állj meg, amikor a nyíl Összhangban jelzést mutat."
         }
       }
     }

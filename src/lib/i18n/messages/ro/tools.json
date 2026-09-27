@@ -85,8 +85,8 @@
       "description": "Fișe cu setări de aparat pentru scenarii de fotografiere obișnuite — descărcabile și imprimabile"
     },
     "color-analyzer": {
-      "name": "Generator de palete de culori",
-      "description": "Construiește palete de culori pentru sesiuni foto"
+      "name": "Analizator de culori",
+      "description": "Eșantionează culorile dintr-o fotografie, citește-le armonia și vezi în ce direcție să împingi fiecare culoare"
     }
   }
 }
