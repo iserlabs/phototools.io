@@ -1,47 +1,17 @@
 import type { ToolEducationSkeleton } from './types'
 
-export const COLOR_SCHEME_SKELETON: ToolEducationSkeleton = {
+export const COLOR_ANALYZER_SKELETON: ToolEducationSkeleton = {
   slug: 'color-analyzer',
   deeperSections: 6,
   keyFactorCount: 4,
   tipCount: 3,
-  tooltipKeys: ['Harmony Type', 'Key Color', 'Hue', 'Saturation', 'Lightness', 'Split Angle', 'Spread'],
+  tooltipKeys: ['Harmony Type', 'Key Color', 'Hue', 'Saturation', 'Lightness', 'Split Angle', 'Spread', 'Lock', 'Closest fit'],
   challenges: [
-    {
-      id: 'ch-beginner-1',
-      difficulty: 'beginner',
-      targetField: 'harmonyType',
-      optionValues: ['complementary', 'analogous', 'triadic'],
-      correctOption: 'complementary',
-    },
-    {
-      id: 'ch-beginner-2',
-      difficulty: 'beginner',
-      targetField: 'harmonyType',
-      optionValues: ['complementary', 'analogous', 'tetradic'],
-      correctOption: 'analogous',
-    },
-    {
-      id: 'ch-intermediate-1',
-      difficulty: 'intermediate',
-      targetField: 'harmonyType',
-      optionValues: ['split-complementary', 'triadic', 'analogous'],
-      correctOption: 'split-complementary',
-    },
-    {
-      id: 'ch-intermediate-2',
-      difficulty: 'intermediate',
-      targetField: 'complementColor',
-      optionValues: ['blue', 'green', 'red'],
-      correctOption: 'blue',
-    },
-    {
-      id: 'ch-advanced-1',
-      difficulty: 'advanced',
-      targetField: 'harmonyType',
-      optionValues: ['tetradic', 'triadic', 'analogous'],
-      correctOption: 'tetradic',
-    },
+    { id: 'ca-beginner-1', difficulty: 'beginner', targetField: 'harmonyType', optionValues: ['complementary', 'analogous', 'triadic'], correctOption: 'complementary' },
+    { id: 'ca-beginner-2', difficulty: 'beginner', targetField: 'harmonyType', optionValues: ['complementary', 'analogous', 'tetradic'], correctOption: 'analogous' },
+    { id: 'ca-intermediate-1', difficulty: 'intermediate', targetField: 'harmonyType', optionValues: ['split-complementary', 'triadic', 'analogous'], correctOption: 'split-complementary' },
+    { id: 'ca-intermediate-2', difficulty: 'intermediate', targetField: 'nudge', optionValues: ['hue-pink', 'desaturate', 'hue-green'], correctOption: 'hue-pink' },
+    { id: 'ca-advanced-1', difficulty: 'advanced', targetField: 'anchor', optionValues: ['locked', 'first', 'saturated'], correctOption: 'locked' },
   ],
 }
 

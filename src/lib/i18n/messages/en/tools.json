@@ -85,8 +85,8 @@
       "description": "Camera settings cheat sheets for common shooting scenarios — downloadable and printable"
     },
     "color-analyzer": {
-      "name": "Color Scheme Generator",
-      "description": "Build color palettes for photography shoots"
+      "name": "Color Analyzer",
+      "description": "Sample the colors in a photo, read its harmony, and see which way to push each one"
     }
   }
 }

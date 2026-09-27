@@ -115,8 +115,8 @@
       "description": "Free in-depth photography guides: shooting techniques, gear-buying advice, and editing walkthroughs — gear-neutral and paired with interactive tools."
     },
     "color-analyzer": {
-      "title": "Color Scheme Generator",
-      "description": "Generate color palettes for photography using complementary, analogous, triadic, and tetradic color harmonies. Interactive color wheel with photo picker."
+      "title": "Color Analyzer: read the color harmony in any photo",
+      "description": "Free photo color analyzer and color scheme generator. Sample colors from your photo, plot them on a color wheel, find the closest color harmony, and get per-color grading guidance. 100% in your browser."
     }
   }
 }
