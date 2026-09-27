@@ -2,20 +2,14 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
+import type { PaletteSwatch } from '@/lib/math/color-fit'
 import styles from './ColorAnalyzer.module.css'
 
-interface Swatch {
-  hue: number
-  rgb: { r: number; g: number; b: number }
-  hex: string
-}
-
 interface PaletteBarProps {
-  swatches: Swatch[]
-  baseIndex: number
+  swatches: PaletteSwatch[]
 }
 
-export function PaletteBar({ swatches, baseIndex }: PaletteBarProps) {
+export function PaletteBar({ swatches }: PaletteBarProps) {
   const t = useTranslations('toolUI.color-analyzer')
   const [copiedHex, setCopiedHex] = useState<string | null>(null)
   const [copiedFormat, setCopiedFormat] = useState<string | null>(null)
@@ -61,11 +55,11 @@ export function PaletteBar({ swatches, baseIndex }: PaletteBarProps) {
     <div className={styles.paletteBar}>
       {swatches.map((s, i) => (
         <button
-          key={i}
-          className={`${styles.paletteBarSwatch} ${i === baseIndex ? styles.paletteBarSwatchKey : ''}`}
+          key={`${s.sampleId ?? 'slot'}-${i}`}
+          className={`${styles.paletteBarSwatch} ${s.isKey ? styles.paletteBarSwatchKey : ''}`}
           style={{ backgroundColor: s.hex }}
           onClick={() => copyHex(s.hex)}
-          title={i === baseIndex ? t('keyColorLabel') : t('clickToCopyHex')}
+          title={s.isKey ? t('keyColorLabel') : t('clickToCopyHex')}
         >
           <div className={styles.paletteBarInfo}>
             <span className={styles.paletteBarHex}>
