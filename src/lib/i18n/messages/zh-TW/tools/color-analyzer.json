@@ -3,7 +3,7 @@
     "color-analyzer": {
       "colorScheme": "配色方案",
       "complementary": "互補色",
-      "splitComplementary": "分裂互補",
+      "splitComplementary": "分裂互補色",
       "analogous": "類比色",
       "triadic": "三等分配色",
       "tetradic": "四等分配色",
