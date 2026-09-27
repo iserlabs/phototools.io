@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Gerador de Esquema de Cores",
-      "description": "Gere paletas de cores para fotografia usando harmonias complementares, análogas, triádicas e tetrádicas. Roda de cores interativa com seletor de fotos."
+      "title": "Analisador de Cor: leia a harmonia de cores em qualquer foto",
+      "description": "Analisador de cores e gerador de esquemas de cores gratuito. Colete amostras das cores da sua foto, posicione-as em uma roda de cores, encontre a harmonia de cores mais próxima e obtenha orientação de gradação para cada cor. 100% no seu navegador."
     }
   }
 }

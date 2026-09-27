@@ -85,8 +85,8 @@
       "description": "Hojas de referencia con ajustes de cámara para escenarios habituales — descargables e imprimibles"
     },
     "color-analyzer": {
-      "name": "Generador de esquemas de color",
-      "description": "Crea paletas de colores para sesiones fotográficas"
+      "name": "Analizador de color",
+      "description": "Muestrea los colores de una foto, lee su armonía y descubre hacia dónde empujar cada una"
     }
   }
 }

@@ -1,69 +1,138 @@
 {
   "toolUI": {
     "color-analyzer": {
-      "colorScheme": "Palette de couleurs",
+      "colorScheme": "Harmonie des couleurs",
       "complementary": "Complémentaire",
+      "splitComplementary": "Complémentaire divisée",
       "analogous": "Analogue",
       "triadic": "Triadique",
-      "splitComplementary": "Complémentaire divisé",
       "tetradic": "Tétradique",
+      "monochromatic": "Monochrome",
+      "custom": "Personnalisé",
+      "closestFit": "Meilleure correspondance",
+      "closestSentence": "Votre photo est la plus proche de {harmony} (écart moyen de {degrees}°). Appuyez pour l'utiliser.",
       "keyColor": "Couleur clé",
       "hue": "Teinte :",
       "saturation": "Saturation :",
       "lightness": "Luminosité :",
       "splitAngle": "Angle de division :",
-      "spread": "Étendue :",
+      "spread": "Écart :",
       "rectangleWidth": "Largeur du rectangle :",
       "square": "(carré)",
-      "pickFromPhoto": "Choisir depuis une photo",
-      "dropPhotoPrompt": "Dépose une photo ici ou clique pour parcourir",
-      "keyColorLabel": "Couleur clé — clique pour copier le hex",
-      "clickToCopyHex": "Clique pour copier le hex",
+      "samples": "Échantillons",
+      "lock": "Verrouiller cette couleur comme ancre",
+      "unlock": "Déverrouiller",
+      "removeSample": "Supprimer l'échantillon",
+      "labelPlaceholder": "Étiquette",
+      "neutralNotScored": "Neutre, non noté",
+      "suggested": "Suggéré",
+      "autoPick": "Choisir 5 automatiquement",
+      "changePhoto": "Changer de photo",
+      "capReached": "Maximum {cap} échantillons. Supprimez-en un pour en ajouter un autre.",
+      "markerLabel": "Échantillon {n} : {label}",
+      "dropPhotoPrompt": "Déposez une photo ou cliquez pour parcourir. Elle reste dans votre navigateur.",
+      "viewNatural": "Naturel",
+      "viewPure": "Teintes pures",
+      "viewGuide": "Guide d'harmonie",
+      "viewHint": {
+        "key": "Faites glisser le point pour définir une couleur clé. Déposez plutôt une photo pour analyser de vraies couleurs.",
+        "natural": "Affiche les couleurs à leur saturation réelle. Changez d'onglet pour lire l'harmonie.",
+        "pure": "Les teintes sont poussées vers le bord pour que les angles entre les couleurs soient faciles à lire.",
+        "guide": "Les formes en pointillés indiquent les positions cibles. Les flèches montrent dans quelle direction chaque couleur doit se déplacer."
+      },
+      "nudge": {
+        "aligned": "Aligné",
+        "slight": "Léger ajustement vers {color}",
+        "big": "Grand décalage vers {color}"
+      },
+      "names": {
+        "red": "Rouge",
+        "vermilion": "Vermillon",
+        "orange": "Orange",
+        "amber": "Ambre",
+        "yellow": "Jaune",
+        "lime": "Citron vert",
+        "chartreuse": "Chartreuse",
+        "leaf-green": "Vert feuille",
+        "green": "Vert",
+        "jade": "Jade",
+        "spring-green": "Vert printemps",
+        "mint": "Menthe",
+        "cyan": "Cyan",
+        "sky-blue": "Bleu ciel",
+        "azure": "Azur",
+        "cobalt": "Cobalt",
+        "blue": "Bleu",
+        "indigo": "Indigo",
+        "violet": "Violet",
+        "purple": "Pourpre",
+        "magenta": "Magenta",
+        "fuchsia": "Fuchsia",
+        "pink": "Rose",
+        "rose": "Vieux rose",
+        "gray": "Gris",
+        "black": "Noir",
+        "white": "Blanc"
+      },
+      "keyColorLabel": "Couleur clé — cliquez pour copier le code hexadécimal",
+      "clickToCopyHex": "Cliquez pour copier le code hexadécimal",
       "copiedExcl": "Copié !",
       "copyColors": "Copier les couleurs",
       "hexFormat": "Hex",
       "cssFormat": "CSS",
-      "rgbFormat": "RVB",
+      "rgbFormat": "RGB",
       "copyHexCodes": "Copier les codes hex",
       "copyCssVariables": "Copier les variables CSS",
-      "copyRgbValues": "Copier les valeurs RVB",
-      "pickColorFromPhoto": "Choisir une couleur depuis une photo",
-      "close": "Fermer",
-      "dropPhotoOrBrowse": "Dépose une photo ici ou clique pour parcourir",
-      "tapToChoose": "Appuie pour choisir une photo",
-      "tapToSample": "Appuie n'importe où sur la photo pour échantillonner cette couleur",
-      "changePhoto": "Changer de photo",
-      "privacyNote": "Ta photo reste dans ton navigateur — rien n'est envoyé",
+      "copyRgbValues": "Copier les valeurs RGB",
       "suggestions": {
         "complementary": {
-          "warm": "Idéal pour : portraits au coucher de soleil avec des ombres froides contrastantes",
-          "cool": "Idéal pour : photos moody à l'heure bleue avec un éclairage d'accent chaud",
+          "warm": "Idéal pour : portraits de coucher de soleil chauds avec un contraste d'ombres froides",
+          "cool": "Idéal pour : prises de vue à l'heure bleue, ambiance feutrée, avec un éclairage d'accent chaud",
           "default": "Idéal pour : compositions à fort contraste avec une forte tension visuelle"
         },
-        "analogous": {
-          "warm": "Idéal pour : paysages à l'heure dorée avec des tons chauds unifiés",
-          "cool": "Idéal pour : scènes d'eau sereines et photographie au crépuscule",
-          "default": "Idéal pour : photos nature harmonieuses avec des transitions de couleur douces"
-        },
-        "triadic": "Utiliser pour : travail éditorial vibrant et portraits créatifs audacieux",
         "splitComplementary": {
-          "warm": "Utiliser pour : tenues contrastantes sur fond naturel",
-          "default": "Utiliser pour : photographie de produit équilibrée avec variété visuelle"
+          "warm": "Idéal pour : ambiances rêveuses et calmes qui gardent du contraste sans dureté",
+          "cool": "Idéal pour : scènes de rue et de voyage froides avec deux accents chauds",
+          "default": "Idéal pour : cadrages équilibrés, variés, sans opposition directe"
         },
-        "tetradic": "Utiliser pour : mises en page éditoriales riches et compositions multi-sujets complexes"
+        "analogous": {
+          "warm": "Idéal pour : paysages à l'heure dorée aux tons chauds unifiés",
+          "cool": "Idéal pour : scènes d'eau sereines et photographie au crépuscule",
+          "default": "Idéal pour : photos de nature harmonieuses aux transitions de couleurs douces"
+        },
+        "triadic": {
+          "warm": "Idéal pour : travail éditorial audacieux avec l'énergie du rouge, du jaune et du bleu",
+          "cool": "Idéal pour : images vibrantes, légèrement dérangeantes, à trois couleurs fortes",
+          "default": "Idéal pour : travail éditorial vibrant et portraits créatifs audacieux"
+        },
+        "tetradic": {
+          "warm": "Idéal pour : scènes riches et superposées avec deux paires complémentaires",
+          "cool": "Idéal pour : paysages urbains complexes avec sources de lumière froides et chaudes",
+          "default": "Idéal pour : mises en page éditoriales riches et compositions à plusieurs sujets"
+        },
+        "monochromatic": {
+          "warm": "Idéal pour : tons chauds calmes et cohérents issus d'une seule teinte",
+          "cool": "Idéal pour : scènes froides calmes et minimales construites sur une seule teinte",
+          "default": "Idéal pour : images minimales et unifiées qui misent sur la lumière et l'ombre"
+        },
+        "custom": {
+          "warm": "Faites glisser les cibles en pointillés pour créer votre propre relation entre les couleurs",
+          "cool": "Faites glisser les cibles en pointillés pour créer votre propre relation entre les couleurs",
+          "default": "Faites glisser les cibles en pointillés pour créer votre propre relation entre les couleurs"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
           "question": "Qu'est-ce que l'harmonie des couleurs en photographie ?",
-          "answer": "L'harmonie des couleurs désigne des combinaisons agréables à l'œil, fondées sur la position des couleurs sur le cercle chromatique. Les couleurs harmonieuses créent un équilibre visuel et peuvent installer une ambiance précise dans tes photos."
+          "answer": "L'harmonie des couleurs est une relation entre les teintes d'une image qui paraît volontaire : deux couleurs opposées (complémentaires), voisines sur le cercle chromatique (analogues), ou trois réparties de façon égale (triadiques). Les photos partent rarement d'une harmonie parfaite, mais elles n'en sont généralement qu'à un petit ajustement près."
         },
         "complementary-vs-analogous": {
-          "question": "Quelle différence entre les couleurs complémentaires et analogues ?",
-          "answer": "Les complémentaires sont opposées sur le cercle chromatique (comme le bleu et l'orange) et créent un fort contraste. Les analogues sont voisines (comme le bleu, le bleu-vert et le vert) et donnent un rendu plus doux et unifié."
+          "question": "Comment lire l'harmonie déjà présente dans ma photo ?",
+          "answer": "Échantillonnez quelques points importants (le ciel, la peau, cette porte rouge) et regardez où ils se placent sur le cercle. Deux points à peu près opposés forment une paire complémentaire ; un groupe dans un rayon d'environ 60° est analogue. Le badge « Meilleure correspondance » fait cette comparaison pour vous sur les six harmonies."
         },
         "how-to-use-color-schemes-photography": {
-          "question": "Comment utiliser les palettes de couleurs en photographie ?",
-          "answer": "Prépare tes séances autour d'une palette : choisis la garde-robe, les lieux et les accessoires en cohérence avec ta combinaison de couleurs. En post-traitement, sers-toi de l'étalonnage pour appuyer la palette choisie. Une palette aide à donner une identité visuelle cohérente à une série de photos."
+          "question": "Comment utiliser les couleurs suggérées dans Lightroom ou Photoshop ?",
+          "answer": "Chaque échantillon indique une direction (vers le rose, vers le bleu sarcelle) et un code hexadécimal suggéré à la même saturation et luminosité. Dans le panneau HSL ou Point Color de Lightroom, ou dans Teinte/Saturation de Photoshop, poussez la teinte de cette couleur dans la direction indiquée jusqu'à ce qu'elle atteigne la valeur suggérée. Effectuez d'abord les plus grands ajustements et arrêtez-vous quand la flèche indique Aligné."
         }
       }
     }

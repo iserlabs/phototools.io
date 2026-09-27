@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Fargeskjema-generator",
-      "description": "Lag fargepaletter til fotografi med komplementære, analoge, triadiske og tetradiske kombinasjoner. Interaktivt fargehjul med bildeprøver."
+      "title": "Fargeanalysator: les fargeharmonien i ethvert bilde",
+      "description": "Gratis fotofargeanalysator og fargeskjemagenerator. Ta prøve av fargene fra bildet ditt, plasser dem på et fargehjul, finn den nærmeste fargeharmonien, og få graderingsveiledning per farge. 100 % i nettleseren din."
     }
   }
 }

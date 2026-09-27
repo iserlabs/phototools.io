@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Farbschema-Generator",
-      "description": "Erstelle Farbpaletten für die Fotografie mit komplementären, analogen, triadischen und tetradischen Farbharmonien. Interaktives Farbrad mit Foto-Pipette."
+      "title": "Farbanalysator: die Farbharmonie in jedem Foto ablesen",
+      "description": "Kostenloser Foto-Farbanalysator und Farbschema-Generator. Probiere Farben aus deinem Foto, trage sie in einen Farbkreis ein, finde die beste Farbharmonie und erhalte Bearbeitungshinweise für jede Farbe. 100 % in deinem Browser."
     }
   }
 }

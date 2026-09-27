@@ -1,179 +1,187 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "Harmonia de cores é sobre escolher cores que combinam bem juntas. Assim como acordes musicais, certas combinações de cores criam relações visuais agradáveis. Fotógrafos usam harmonia de cores para planejar vestuário, cenografia e até o horário de sessões ao ar livre para obter a paleta certa da natureza.",
-      "deeper": {
-        "0": {
-          "heading": "A Roda de Cores",
-          "text": "A teoria de harmonia de cores é enraizada na roda de cores, que organiza matizes em um círculo baseado em suas relações de comprimento de onda. O modelo HSL (Matiz, Saturação, Luminosidade) mapeia diretamente para a roda: matiz é o ângulo (0–360°), saturação é a distância do centro, e luminosidade controla o brilho. Na fotografia, essas relações aparecem naturalmente — a hora dourada produz tons quentes análogos, enquanto um celeiro vermelho contra campos verdes é complementar."
+      "beginner": "A maioria das fotos já contém uma relação de cores; você só ainda não consegue ver. Solte uma foto, toque nas cores que importam, e a roda mostra como elas se relacionam. Escolha a harmonia que quiser e a ferramenta diz para que lado empurrar cada cor.",
+      "deeper": [
+        {
+          "heading": "O método de quatro passos",
+          "text": "Intenção (o que o espectador deve sentir), Análise (quais cores realmente estão na cena), Escolha de cor (qual harmonia combina com essa sensação), Transformação (mover os controles deslizantes na direção que a roda mostra). A edição vem por último. A maior parte da frustração com color grading vem de começar pelo quarto passo."
         },
-        "1": {
-          "heading": "Complementar",
-          "text": "Duas cores que estão diretamente opostas na roda (180° de distância), como azul e laranja ou vermelho e verde. Isso cria máximo contraste e energia visual. Ótimo para destacar um assunto contra um fundo — pense em retratos na hora dourada onde tons de pele quentes contrastam com um céu azul frio."
+        {
+          "heading": "Lendo a roda",
+          "text": "Cada amostra é plotada por matiz (ângulo) e saturação (distância do centro). A vista Natural mostra a saturação real, Matizes puros empurra cada ponto para a borda para que os ângulos fiquem óbvios, e Guia de harmonia adiciona as posições-alvo e setas para a harmonia escolhida."
         },
-        "2": {
-          "heading": "Análogo",
-          "text": "Três cores que são vizinhas na roda, tipicamente dentro de uma extensão de 30–60°. Produzem paletas suaves e coesas com baixo contraste. Ideal para paisagens e trabalho focado em atmosfera — folhagem de outono é uma paleta análoga natural de vermelhos, laranjas e amarelos."
+        {
+          "heading": "Melhor correspondência",
+          "text": "A ferramenta gira cada modelo de harmonia para a posição que melhor corresponde às suas amostras e mede o erro médio de matiz, normalizado pelo espaçamento dos pontos do modelo para que harmonias de quatro pontos não vençam por padrão. O vencedor recebe o selo; você decide se vai usá-lo."
         },
-        "3": {
-          "heading": "Triádico",
-          "text": "Três cores uniformemente espaçadas em intervalos de 120° ao redor da roda, como vermelho, amarelo e azul. Esquemas triádicos parecem equilibrados e vibrantes sem a tensão do contraste complementar. Use uma cor dominante e as outras duas como acentos para os melhores resultados."
+        {
+          "heading": "Bloqueios e âncoras",
+          "text": "Bloqueie uma amostra para torná-la a âncora: a harmonia gira em torno desse matiz e cada outra cor é julgada em relação a ele. Use para a cor que você não vai mudar, geralmente a pele ou uma cor de marca. Sem bloqueio, a ferramenta escolhe a rotação com o menor erro total."
         },
-        "4": {
-          "heading": "Complementar Dividido",
-          "text": "Uma variação do complementar que usa os dois vizinhos da cor oposta em vez da oposta em si. Isso mantém o alto contraste do complementar, mas reduz a tensão visual, deixando o esquema mais versátil e fácil de usar. Uma escolha popular para sessões de retrato produzidas."
+        {
+          "heading": "Neutros",
+          "text": "Cinzas, quase-pretos e quase-brancos não têm um matiz confiável, então ficam plotados no centro e ficam de fora do ajuste. Ainda importam para o clima, mas mover o matiz deles em um controle deslizante geralmente só adiciona um desvio de cor."
         },
-        "5": {
-          "heading": "Tetrádico (Duplo Complementar)",
-          "text": "Quatro cores formando um retângulo na roda — essencialmente dois pares complementares. Isso oferece a paleta mais rica e complexa, mas requer equilíbrio cuidadoso. Deixe uma cor dominar e use as outras como apoio para evitar um visual caótico."
+        {
+          "heading": "Por que HSL e não uma roda perceptual",
+          "text": "Esta roda usa HSL, o mesmo modelo do Adobe Color e do painel HSL do Lightroom, então a direção que você lê aqui é a direção que você empurra lá. Não é perceptualmente uniforme: o amarelo ocupa uma faixa estreita e o azul uma larga, então um ajuste de 20° parece maior em algumas regiões do que em outras. Uma roda perceptual seria mais honesta, mas não corresponderia às ferramentas de edição."
         }
-      },
-      "keyFactors": {
-        "0": {
-          "label": "Tipo de Harmonia",
-          "description": "A relação geométrica entre cores na roda: complementar, análogo, triádico, complementar dividido ou tetrádico."
+      ],
+      "keyFactors": [
+        {
+          "label": "Tipo de harmonia",
+          "description": "A relação geométrica que você busca: complementar, complementar dividida, análoga, triádica, tetrádica, monocromática, ou seus próprios alvos personalizados."
         },
-        "1": {
-          "label": "Matiz",
-          "description": "O ângulo da cor base na roda (0-360 graus). Este é o ponto de partida para todos os cálculos de harmonia."
+        {
+          "label": "Amostras",
+          "description": "Quais cores você escolheu amostrar. Amostre o que importa para a imagem, não o que é maior. Cinco a seis pontos geralmente contam toda a história."
         },
-        "2": {
-          "label": "Saturação",
-          "description": "Quão vívidas ou suaves as cores são. Saturação menor produz tons pastel e terrosos; saturação maior dá paletas ousadas e vibrantes."
+        {
+          "label": "Âncora",
+          "description": "A amostra bloqueada em torno da qual a harmonia gira. Sem bloqueio, é usada a rotação de melhor ajuste."
         },
-        "3": {
-          "label": "Luminosidade",
-          "description": "Controla o brilho. Ajustar a luminosidade pode fazer o mesmo matiz parecer completamente diferente — azul marinho escuro vs. azul céu são o mesmo matiz em diferentes luminosidades."
+        {
+          "label": "Ajuste",
+          "description": "A rotação de matiz com sinal de uma amostra até seu alvo. Alinhado é dentro de 8°, um pequeno ajuste dentro de 25°, qualquer coisa além disso é uma grande mudança."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "Para sessões de retrato, escolha uma paleta complementar ou complementar dividida, depois faça seu assunto vestir a cor-chave enquanto o fundo fornece o matiz contrastante. Azul/laranja (retratos na hora dourada) é um exemplo clássico."
+      ],
+      "tips": [
+        {
+          "text": "Amostre as cores que você realmente vai graduar: céu, pele, o objeto dominante, uma sombra. Pule realces especulares e sombras profundas; eles se leem como neutros."
         },
-        "1": {
-          "text": "Use harmonia análoga para paisagens — a natureza já trabalha em paletas análogas. Combine suas sugestões de vestuário ou escolhas de adereços com os matizes naturais dominantes."
+        {
+          "text": "Complementar dividida é a escolha calma e sonhadora para viagem e fotografia de rua. Complementar é mais limpa e impactante. Triádica é deliberadamente um pouco inquietante."
         },
-        "2": {
-          "text": "Reduza a saturação para 30-50% para visualizar como as cores ficarão em um estilo mais suave e editorial. Alta saturação funciona para comercial e moda, mas saturação mais baixa frequentemente parece mais sofisticada."
+        {
+          "text": "Use a escolha automática para começar, depois mova ou exclua pontos. Ela encontra os agrupamentos cromáticos dominantes, que muitas vezes não são as cores com que você mais se importa."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
-          "term": "Tipo de Harmonia",
-          "definition": "O padrão de relação de cores: Complementar (opostas), Análogo (vizinhas), Triádico (três vias), Complementar Dividido (opostas compensadas), ou Tetrádico (retângulo de quatro vias)."
+          "term": "Tipo de harmonia",
+          "definition": "A relação-alvo entre matizes. Complementar (oposta), Complementar dividida (oposta ± ângulo), Análoga (vizinhas), Triádica (120° de distância), Tetrádica (dois pares complementares), Monocromática (um matiz), Personalizada (seus próprios alvos)."
         },
         "Key Color": {
-          "term": "Cor-Chave",
-          "definition": "A cor dominante na sua paleta. Todas as outras cores de harmonia são calculadas em relação a este matiz inicial."
+          "term": "Cor-chave",
+          "definition": "Sem foto carregada, a cor em torno da qual a harmonia é construída. Arraste na roda ou use os controles deslizantes."
         },
         "Hue": {
           "term": "Matiz",
-          "definition": "O ângulo da cor na roda em graus: 0° é vermelho, 120° é verde, 240° é azul."
+          "definition": "O ângulo de cor na roda em graus: 0° é vermelho, 120° é verde, 240° é azul."
         },
         "Saturation": {
           "term": "Saturação",
-          "definition": "Intensidade da cor de 0% (cinza) a 100% (totalmente vívida). Controla quão ousada ou suave toda a paleta aparece."
+          "definition": "Intensidade de cor de 0% (cinza) a 100% (totalmente vívido). Distância do centro da roda."
         },
         "Lightness": {
           "term": "Luminosidade",
-          "definition": "Brilho de 0% (preto) a 100% (branco). Em 50% você vê a cor pura; abaixo é mais escuro, acima é mais claro."
+          "definition": "Brilho de 0% (preto) a 100% (branco). Em 50% você vê a cor pura."
         },
         "Split Angle": {
-          "term": "Ângulo de Divisão",
-          "definition": "Quão distantes estão as duas cores complementares divididas da direta oposta. Ângulos mais amplos dão mais contraste."
+          "term": "Ângulo de divisão",
+          "definition": "A que distância as duas cores complementares divididas ficam do complemento direto."
         },
         "Spread": {
-          "term": "Extensão",
-          "definition": "Quão distantes as cores análogas estão do matiz-chave. Extensão estreita dá variação sutil; extensão ampla aumenta a diversidade."
+          "term": "Dispersão",
+          "definition": "A que distância as cores análogas ficam do matiz âncora."
+        },
+        "Lock": {
+          "term": "Bloquear",
+          "definition": "Torna uma amostra a âncora. A harmonia gira para esse matiz e as outras amostras são julgadas em relação a ele. Apenas uma amostra pode ser bloqueada."
+        },
+        "Closest fit": {
+          "term": "Melhor correspondência",
+          "definition": "A harmonia cuja melhor rotação tem o menor erro de matiz normalizado entre suas amostras. Precisa de pelo menos duas amostras cromáticas."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Você quer máximo contraste entre duas cores para um retrato gráfico ousado. Qual tipo de harmonia dá a maior tensão visual?",
-          "hint": "Cores diretamente opostas na roda criam o contraste mais forte.",
-          "successMessage": "Correto! Cores complementares ficam a 180 graus de distância e produzem o maior contraste — perfeito para composições ousadas e chamativas.",
-          "failureMessage": "Harmonia complementar posiciona cores diretamente opostas na roda, criando máximo contraste visual.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "Você amostrou um céu azul a 210° e uma parede laranja a 25°. De qual harmonia eles já estão mais próximos?",
+          "hint": "Verifique o ângulo entre eles.",
+          "successMessage": "Isso mesmo. 185° de distância é um par complementar quase perfeito; um pequeno ajuste na parede completa.",
+          "failureMessage": "Duas cores a cerca de 180° de distância são complementares. Cores análogas ficam a cerca de 60° uma da outra.",
+          "options": [
+            {
               "label": "Complementar"
             },
-            "1": {
-              "label": "Análogo"
+            {
+              "label": "Análoga"
             },
-            "2": {
-              "label": "Triádico"
+            {
+              "label": "Triádica"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Você está planejando uma sessão na hora dourada e quer tons quentes e coesos. Qual tipo de harmonia mantém cores próximas na roda?",
-          "hint": "Este tipo usa matizes vizinhos para um visual suave e unificado.",
-          "successMessage": "Certo! Harmonia análoga usa cores adjacentes, dando uma paleta quente e coesa perfeita para a hora dourada.",
-          "failureMessage": "Harmonia análoga mantém todas as cores como vizinhas na roda — ideal para paletas unificadas quentes ou frias.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Uma foto tem três amostras a 40°, 60° e 85°. Que harmonia é essa?",
+          "hint": "São todas vizinhas na roda.",
+          "successMessage": "Correto. Matizes vizinhos dentro de cerca de 60° formam uma harmonia análoga.",
+          "failureMessage": "Matizes que estão todos próximos uns dos outros são análogos, a opção calma e unificada.",
+          "options": [
+            {
               "label": "Complementar"
             },
-            "1": {
-              "label": "Análogo"
+            {
+              "label": "Análoga"
             },
-            "2": {
-              "label": "Tetrádico"
+            {
+              "label": "Tetrádica"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "Um cliente quer um retrato com contraste mas não tão intenso quanto complementar puro. Qual tipo de harmonia suaviza a oposição mantendo interesse visual?",
-          "hint": "Este tipo usa duas cores perto do complemento em vez da oposta direta.",
-          "successMessage": "Excelente! Complementar dividido mantém o contraste do complementar mas divide a cor oposta em dois matizes flanqueadores, produzindo uma paleta menos abrupta mas ainda dinâmica.",
-          "failureMessage": "Complementar Dividido é a resposta — substitui a única cor oposta por duas vizinhas da oposta, suavizando o contraste enquanto mantém energia visual.",
-          "options": {
-            "0": {
-              "label": "Complementar Dividido"
+        {
+          "scenario": "Você quer uma foto de rua sonhadora e calma, mas mantendo algum contraste. Qual harmonia você deveria escolher?",
+          "hint": "Pense nas duas vizinhas do complemento em vez do complemento em si.",
+          "successMessage": "Isso. Complementar dividida mantém tensão sem a dureza de um oposto direto.",
+          "failureMessage": "Complementar dividida é a opção calma mas com contraste. Triádica tende a parecer energética ou inquietante.",
+          "options": [
+            {
+              "label": "Complementar dividida"
             },
-            "1": {
-              "label": "Triádico"
+            {
+              "label": "Triádica"
             },
-            "2": {
-              "label": "Análogo"
+            {
+              "label": "Análoga"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "Você define a cor-chave como laranja (matiz ~30 graus) com harmonia complementar. Qual cor será o complemento?",
-          "hint": "Complementar significa 180 graus oposta na roda.",
-          "successMessage": "Correto! 30° + 180° = 210°, que cai na faixa do azul. Laranja e azul é um dos pares complementares mais amados da fotografia.",
-          "failureMessage": "Somando 180° ao laranja (30°) dá 210°, que é azul. O par complementar laranja-azul é um clássico da fotografia.",
-          "options": {
-            "0": {
-              "label": "Azul (~210°)"
+        {
+          "scenario": "Uma amostra mostra Pequeno ajuste em direção a rosa com um delta de −15°. No painel HSL do Lightroom, o que você faz?",
+          "hint": "A palavra de direção diz para onde empurrar, o tamanho diz o quanto.",
+          "successMessage": "Isso mesmo. Mova o controle deslizante de Matiz dessa cor em direção ao rosa até o cartão mostrar Alinhado.",
+          "failureMessage": "Empurre o matiz na direção indicada (rosa) em uma pequena quantidade; uma mudança de 15° é um pequeno ajuste, não uma grande mudança.",
+          "options": [
+            {
+              "label": "Mover o matiz um pouco em direção ao rosa"
             },
-            "1": {
-              "label": "Verde (~150°)"
+            {
+              "label": "Dessaturá-lo"
             },
-            "2": {
-              "label": "Vermelho (~0°)"
+            {
+              "label": "Mover o matiz em direção ao verde"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Você está dirigindo a arte de um editorial de moda e precisa de uma paleta de quatro cores que forneça tons quentes e frios com alta riqueza visual. Qual tipo de harmonia dá quatro cores, e qual é o principal desafio ao usá-lo?",
-          "hint": "A harmonia de quatro cores forma um retângulo na roda.",
-          "successMessage": "Certo! Harmonia tetrádica dá quatro cores formando um retângulo na roda. O principal desafio é equilíbrio — com quatro matizes distintos, um deve dominar enquanto os outros acentuam. Sem hierarquia, a imagem parece caótica.",
-          "failureMessage": "Tetrádico (duplo complementar) fornece quatro cores em arranjo retangular. O desafio é que quatro matizes fortes competem por atenção — você precisa designar uma cor dominante e usar as outras como acentos.",
-          "options": {
-            "0": {
-              "label": "Tetrádico — desafio é manter hierarquia visual entre quatro matizes"
+        {
+          "scenario": "Duas amostras compartilham o mesmo matiz, mas uma está bloqueada. Em torno de qual a harmonia gira?",
+          "hint": "Apenas uma amostra pode ser a âncora.",
+          "successMessage": "Correto. A amostra bloqueada é a âncora; a outra é julgada em relação ao modelo construído sobre ela.",
+          "failureMessage": "A amostra bloqueada é sempre a âncora. Sem bloqueio, é usada a rotação de melhor ajuste.",
+          "options": [
+            {
+              "label": "A amostra bloqueada"
             },
-            "1": {
-              "label": "Triádico — desafio é ter poucas cores"
+            {
+              "label": "A primeira amostra colocada"
             },
-            "2": {
-              "label": "Análogo — desafio é falta de contraste"
+            {
+              "label": "A amostra mais saturada"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

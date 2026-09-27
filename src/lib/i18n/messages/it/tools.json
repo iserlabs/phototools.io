@@ -85,8 +85,8 @@
       "description": "Schede di impostazioni per gli scenari di scatto più comuni — scaricabili e stampabili"
     },
     "color-analyzer": {
-      "name": "Generatore di schemi colore",
-      "description": "Crea palette di colori per sessioni fotografiche"
+      "name": "Analizzatore del colore",
+      "description": "Campiona i colori di una foto, leggi la sua armonia e scopri in che direzione spingere ciascuno"
     }
   }
 }

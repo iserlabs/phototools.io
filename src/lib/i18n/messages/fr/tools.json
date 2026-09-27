@@ -85,8 +85,8 @@
       "description": "Fiches de réglages photo pour les scénarios courants — téléchargeables et imprimables"
     },
     "color-analyzer": {
-      "name": "Générateur de palette de couleurs",
-      "description": "Crée des palettes de couleurs pour tes séances photo"
+      "name": "Analyseur de couleurs",
+      "description": "Échantillonnez les couleurs d'une photo, lisez son harmonie et voyez dans quel sens pousser chacune"
     }
   }
 }

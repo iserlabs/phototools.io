@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Generatore di schemi colore",
-      "description": "Genera palette di colori per la fotografia usando armonie complementari, analoghe, triadiche e tetradiche. Ruota cromatica interattiva con selettore da foto."
+      "title": "Analizzatore del colore: leggi l'armonia dei colori in qualsiasi foto",
+      "description": "Analizzatore di colore e generatore di schemi cromatici gratuito. Campiona i colori dalla tua foto, posizionali su una ruota dei colori, trova l'armonia cromatica più vicina e ottieni indicazioni di color grading per ogni colore. 100% nel tuo browser."
     }
   }
 }

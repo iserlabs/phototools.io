@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Générateur de palette de couleurs",
-      "description": "Génère des palettes de couleurs pour la photographie avec les harmonies complémentaire, analogue, triadique et tétradique. Roue chromatique interactive avec pipette photo."
+      "title": "Analyseur de couleurs : lisez l'harmonie des couleurs de n'importe quelle photo",
+      "description": "Analyseur de couleurs et générateur de palettes gratuit. Échantillonnez les couleurs de votre photo, placez-les sur un cercle chromatique, trouvez l'harmonie de couleurs la plus proche et obtenez des conseils d'étalonnage pour chaque couleur. 100 % dans votre navigateur."
     }
   }
 }

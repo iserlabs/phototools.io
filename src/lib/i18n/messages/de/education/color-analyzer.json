@@ -1,179 +1,187 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "Farbharmonie beschäftigt sich mit der Wahl von Farben, die gut zusammenpassen. Ähnlich wie musikalische Akkorde erzeugen bestimmte Farbkombinationen angenehme visuelle Beziehungen. Fotografen nutzen Farbharmonie, um Garderobe, Setdesign und sogar den Zeitpunkt von Außenaufnahmen zu planen, um die richtige Palette aus der Natur zu erhalten.",
-      "deeper": {
-        "0": {
-          "heading": "Das Farbrad",
-          "text": "Die Farbharmonie-Theorie basiert auf dem Farbrad, das Farbtöne in einem Kreis basierend auf ihren Wellenlängenbeziehungen anordnet. Das HSL-Modell (Farbton, Sättigung, Helligkeit) bildet direkt auf das Rad ab: Der Farbton ist der Winkel (0–360°), die Sättigung ist der Abstand zum Zentrum, und die Helligkeit steuert die Leuchtdichte. In der Fotografie treten diese Beziehungen natürlich auf — die Goldene Stunde produziert analoge warme Töne, während eine rote Scheune vor grünen Feldern komplementär ist."
+      "beginner": "Die meisten Fotos enthalten bereits eine Farbbeziehung — du kannst sie nur noch nicht sehen. Lege ein Foto ab, tippe auf die Farben, die zählen, und der Farbkreis zeigt, wie sie zusammenhängen. Wähle die gewünschte Harmonie, und das Tool sagt dir, in welche Richtung du jede Farbe schieben musst.",
+      "deeper": [
+        {
+          "heading": "Die Vier-Schritte-Methode",
+          "text": "Absicht (was soll der Betrachter fühlen), Analyse (welche Farben sind wirklich im Bild), Farbwahl (welche Harmonie passt zu diesem Gefühl), Umsetzung (die Regler in die vom Farbkreis gezeigte Richtung bewegen). Die Bearbeitung kommt zuletzt. Die meiste Frustration bei der Farbbearbeitung entsteht, weil man bei Schritt vier anfängt."
         },
-        "1": {
-          "heading": "Komplementär",
-          "text": "Zwei Farben, die direkt gegenüber auf dem Rad liegen (180° voneinander entfernt), wie Blau und Orange oder Rot und Grün. Dies erzeugt maximalen Kontrast und visuelle Energie. Ideal, um ein Motiv vom Hintergrund abzuheben — denke an Porträts zur Goldenen Stunde, bei denen warme Hauttöne mit einem kühlen blauen Himmel kontrastieren."
+        {
+          "heading": "Den Farbkreis lesen",
+          "text": "Jede Probe wird nach Farbton (Winkel) und Sättigung (Abstand vom Zentrum) eingezeichnet. Die Ansicht „Natürlich“ zeigt die tatsächliche Sättigung, „Reine Farbtöne“ schiebt jeden Punkt an den Rand, damit die Winkel eindeutig sind, und „Harmonie-Hilfe“ ergänzt die Zielpositionen und Pfeile für die gewählte Harmonie."
         },
-        "2": {
-          "heading": "Analog",
-          "text": "Drei Farben, die Nachbarn auf dem Rad sind, typischerweise innerhalb eines Bereichs von 30–60°. Sie erzeugen glatte, zusammenhängende Paletten mit geringem Kontrast. Ideal für Landschaften und stimmungsgetriebene Arbeiten — Herbstlaub ist eine natürliche analoge Palette aus Rot-, Orange- und Gelbtönen."
+        {
+          "heading": "Beste Übereinstimmung",
+          "text": "Das Tool dreht jede Harmonie-Vorlage in die Position, die am besten zu deinen Proben passt, und misst den durchschnittlichen Farbtonfehler, normiert nach dem Abstand der Vorlagen-Slots, damit vierteilige Harmonien nicht automatisch gewinnen. Der Gewinner erhält das Abzeichen; du entscheidest, ob du ihn nutzt."
         },
-        "3": {
-          "heading": "Triadisch",
-          "text": "Drei Farben, gleichmäßig in 120°-Abständen um das Rad verteilt, wie Rot, Gelb und Blau. Triadische Schemata wirken ausgewogen und lebhaft ohne die Spannung des komplementären Kontrasts. Verwende eine dominante Farbe und die anderen zwei als Akzente für die stärksten Ergebnisse."
+        {
+          "heading": "Sperren und Anker",
+          "text": "Sperre eine Probe, um sie zum Anker zu machen: Die Harmonie dreht sich um diesen Farbton, und jede andere Farbe wird daran gemessen. Nutze das für die Farbe, die du nicht ändern wirst, meist Hautton oder eine Markenfarbe. Ohne Sperre wählt das Tool die Drehung mit dem geringsten Gesamtfehler."
         },
-        "4": {
-          "heading": "Gespalten Komplementär",
-          "text": "Eine Variante von Komplementär, die die beiden Nachbarn der Gegenfarbe statt der Gegenfarbe selbst verwendet. Dies behält den hohen Kontrast von Komplementär bei, reduziert aber die visuelle Spannung, was es vielseitiger und nachsichtiger macht. Eine beliebte Wahl für gestylte Porträt-Sessions."
+        {
+          "heading": "Neutrale Farben",
+          "text": "Grau-, Fast-Schwarz- und Fast-Weiß-Töne haben keinen zuverlässigen Farbton, deshalb landen sie im Zentrum und bleiben bei der Anpassung außen vor. Sie zählen weiterhin für die Stimmung, aber eine Verschiebung ihres Farbtons am Regler fügt meist nur einen Farbstich hinzu."
         },
-        "5": {
-          "heading": "Tetradisch (Doppelt Komplementär)",
-          "text": "Vier Farben, die ein Rechteck auf dem Rad bilden — im Grunde zwei komplementäre Paare. Dies bietet die reichste, komplexeste Palette, erfordert aber sorgfältige Balance. Lass eine Farbe dominieren und verwende die anderen als unterstützende Akzente, um einen chaotischen Look zu vermeiden."
+        {
+          "heading": "Warum HSL und kein Wahrnehmungskreis",
+          "text": "Dieser Farbkreis nutzt HSL, dasselbe Modell wie Adobe Color und das HSL-Panel von Lightroom, sodass die hier abgelesene Richtung auch dort die richtige ist. Er ist nicht wahrnehmungsgleichmäßig: Gelb nimmt ein schmales Band ein, Blau ein breites, sodass eine Verschiebung um 20° in manchen Bereichen größer wirkt als in anderen. Ein Wahrnehmungskreis wäre ehrlicher, würde aber nicht zu den Bearbeitungswerkzeugen passen."
         }
-      },
-      "keyFactors": {
-        "0": {
+      ],
+      "keyFactors": [
+        {
           "label": "Harmonietyp",
-          "description": "Die geometrische Beziehung zwischen Farben auf dem Rad: komplementär, analog, triadisch, gespalten komplementär oder tetradisch."
+          "description": "Die geometrische Beziehung, die du anstrebst: komplementär, split-komplementär, analog, triadisch, tetradisch, monochromatisch oder deine eigenen benutzerdefinierten Ziele."
         },
-        "1": {
-          "label": "Farbton",
-          "description": "Der Basisfarbwinkel auf dem Rad (0-360 Grad). Dies ist der Ausgangspunkt für alle Harmonie-Berechnungen."
+        {
+          "label": "Proben",
+          "description": "Welche Farben du zum Probieren ausgewählt hast. Nimm Proben von dem, was für das Bild zählt, nicht von dem, was am größten ist. Fünf bis sechs Punkte erzählen meist die ganze Geschichte."
         },
-        "2": {
-          "label": "Sättigung",
-          "description": "Wie lebhaft oder gedämpft die Farben sind. Geringere Sättigung ergibt Pastelltöne und Erdtöne; höhere Sättigung gibt kräftige, lebhafte Paletten."
+        {
+          "label": "Anker",
+          "description": "Die gesperrte Probe, um die sich die Harmonie dreht. Ohne Sperre wird die beste Drehung verwendet."
         },
-        "3": {
-          "label": "Helligkeit",
-          "description": "Steuert die Leuchtdichte. Die Anpassung der Helligkeit kann den gleichen Farbton völlig anders wirken lassen — dunkles Marineblau vs. Himmelblau sind der gleiche Farbton bei unterschiedlicher Helligkeit."
+        {
+          "label": "Verschiebung",
+          "description": "Die vorzeichenbehaftete Farbtondrehung von einer Probe zu ihrem Ziel. Ausgerichtet bedeutet innerhalb von 8°, eine leichte Verschiebung innerhalb von 25°, alles darüber ist eine starke Verschiebung."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "Für Porträt-Sessions wähle eine komplementäre oder gespalten komplementäre Palette und lass dein Motiv die Schlüsselfarbe tragen, während der Hintergrund den kontrastierenden Farbton liefert. Blau/Orange (Porträts zur Goldenen Stunde) ist ein klassisches Beispiel."
+      ],
+      "tips": [
+        {
+          "text": "Probiere die Farben, die du tatsächlich bearbeiten wirst: Himmel, Haut, das dominante Objekt, einen Schatten. Überspringe Glanzlichter und tiefe Schatten; sie wirken neutral."
         },
-        "1": {
-          "text": "Verwende analoge Harmonie für Landschaften — die Natur arbeitet bereits in analogen Paletten. Passe deine Garderobeberatung oder Requisiten-Auswahl an die dominanten natürlichen Farbtöne an."
+        {
+          "text": "Split-Komplementär ist die ruhige, verträumte Wahl für Reise- und Street-Fotografie. Komplementär ist klarer und knalliger. Triadisch wirkt bewusst etwas unruhig."
         },
-        "2": {
-          "text": "Reduziere die Sättigung auf 30-50 %, um zu sehen, wie die Farben in einem gedämpfteren, editorialen Stil aussehen würden. Hohe Sättigung funktioniert für Werbung und Mode, aber niedrigere Sättigung wirkt oft anspruchsvoller."
+        {
+          "text": "Nutze „5 automatisch wählen“ als Start, dann verschiebe oder lösche Punkte. Es findet die dominanten Farbcluster, die oft nicht die Farben sind, auf die es dir am meisten ankommt."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
           "term": "Harmonietyp",
-          "definition": "Das Farbbeziehungsmuster: Komplementär (gegenüber), Analog (Nachbarn), Triadisch (dreiteilig), Gespalten Komplementär (versetzte Gegenfarben) oder Tetradisch (Vierer-Rechteck)."
+          "definition": "Die angestrebte Beziehung zwischen Farbtönen. Komplementär (gegenüberliegend), Split-Komplementär (gegenüber ± Winkel), Analog (Nachbarn), Triadisch (120° auseinander), Tetradisch (zwei Komplementärpaare), Monochromatisch (ein Farbton), Benutzerdefiniert (eigene Ziele)."
         },
         "Key Color": {
           "term": "Schlüsselfarbe",
-          "definition": "Die dominante Farbe in deiner Palette. Alle anderen Harmoniefarben werden relativ zu diesem Ausgangsfarbton berechnet."
+          "definition": "Ohne geladenes Foto die Farbe, um die die Harmonie herum aufgebaut wird. Ziehe am Farbkreis oder nutze die Regler."
         },
         "Hue": {
           "term": "Farbton",
-          "definition": "Der Farbwinkel auf dem Rad in Grad: 0° ist Rot, 120° ist Grün, 240° ist Blau."
+          "definition": "Der Farbwinkel auf dem Kreis in Grad: 0° ist Rot, 120° ist Grün, 240° ist Blau."
         },
         "Saturation": {
           "term": "Sättigung",
-          "definition": "Farbintensität von 0 % (grau) bis 100 % (voll lebhaft). Steuert, wie kräftig oder gedämpft die gesamte Palette erscheint."
+          "definition": "Farbintensität von 0 % (Grau) bis 100 % (voll leuchtend). Abstand vom Zentrum des Kreises."
         },
         "Lightness": {
           "term": "Helligkeit",
-          "definition": "Leuchtdichte von 0 % (schwarz) bis 100 % (weiß). Bei 50 % siehst du die reine Farbe; darunter ist dunkler, darüber ist heller."
+          "definition": "Helligkeit von 0 % (Schwarz) bis 100 % (Weiß). Bei 50 % siehst du die reine Farbe."
         },
         "Split Angle": {
           "term": "Spaltwinkel",
-          "definition": "Wie weit die beiden gespalten komplementären Farben von der direkten Gegenfarbe entfernt sind. Breitere Winkel geben mehr Kontrast."
+          "definition": "Wie weit die beiden Split-Komplementärfarben vom direkten Komplement entfernt liegen."
         },
         "Spread": {
           "term": "Streuung",
-          "definition": "Wie weit die analogen Farben vom Schlüsselfarbton entfernt sind. Enge Streuung gibt subtile Variation; breite Streuung erhöht die Vielfalt."
+          "definition": "Wie weit die analogen Farben vom Anker-Farbton entfernt liegen."
+        },
+        "Lock": {
+          "term": "Sperren",
+          "definition": "Macht eine Probe zum Anker. Die Harmonie dreht sich auf diesen Farbton, andere Proben werden daran gemessen. Nur eine Probe kann gesperrt sein."
+        },
+        "Closest fit": {
+          "term": "Beste Übereinstimmung",
+          "definition": "Die Harmonie, deren beste Drehung den geringsten normierten Farbtonfehler über deine Proben hat. Braucht mindestens zwei bunte Proben."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Du möchtest maximalen Kontrast zwischen zwei Farben für ein kühnes grafisches Porträt. Welcher Harmonietyp erzeugt die meiste visuelle Spannung?",
-          "hint": "Farben direkt gegenüber auf dem Rad erzeugen den stärksten Kontrast.",
-          "successMessage": "Richtig! Komplementärfarben liegen 180 Grad auseinander und erzeugen den höchsten Kontrast — perfekt für kühne, aufmerksamkeitsstarke Kompositionen.",
-          "failureMessage": "Komplementäre Harmonie platziert Farben direkt gegenüber auf dem Rad und erzeugt maximalen visuellen Kontrast.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "Du hast einen blauen Himmel bei 210° und eine orangefarbene Wand bei 25° als Probe genommen. Welcher Harmonie sind sie bereits am nächsten?",
+          "hint": "Prüfe den Winkel zwischen ihnen.",
+          "successMessage": "Richtig. 185° Abstand ist ein nahezu perfektes Komplementärpaar; eine kleine Verschiebung der Wand vollendet es.",
+          "failureMessage": "Zwei Farben, die etwa 180° auseinanderliegen, sind komplementär. Analoge Farben liegen innerhalb von etwa 60° zueinander.",
+          "options": [
+            {
               "label": "Komplementär"
             },
-            "1": {
+            {
               "label": "Analog"
             },
-            "2": {
+            {
               "label": "Triadisch"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Du planst ein Shooting zur Goldenen Stunde und möchtest warme, zusammenhängende Töne. Welcher Harmonietyp hält Farben nah beieinander auf dem Rad?",
-          "hint": "Dieser Typ verwendet benachbarte Farbtöne für ein glattes, einheitliches Gefühl.",
-          "successMessage": "Richtig! Analoge Harmonie verwendet nebeneinanderliegende Farben und ergibt eine warme, zusammenhängende Palette, perfekt für die Goldene Stunde.",
-          "failureMessage": "Analoge Harmonie hält alle Farben als Nachbarn auf dem Rad — ideal für einheitliche warme oder kühle Paletten.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Ein Foto hat drei Proben bei 40°, 60° und 85°. Welche Harmonie ist das?",
+          "hint": "Sie sind alle Nachbarn auf dem Farbkreis.",
+          "successMessage": "Richtig. Benachbarte Farbtöne innerhalb von etwa 60° bilden eine analoge Harmonie.",
+          "failureMessage": "Farbtöne, die alle nah beieinander liegen, sind analog — die ruhige, einheitliche Option.",
+          "options": [
+            {
               "label": "Komplementär"
             },
-            "1": {
+            {
               "label": "Analog"
             },
-            "2": {
+            {
               "label": "Tetradisch"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "Ein Kunde möchte ein Porträt mit Kontrast, aber nicht so intensiv wie rein komplementär. Welcher Harmonietyp mildert den Gegensatz, behält aber visuelles Interesse bei?",
-          "hint": "Dieser Typ verwendet zwei Farben nahe der Komplementärfarbe statt der direkten Gegenfarbe.",
-          "successMessage": "Ausgezeichnet! Gespalten Komplementär behält den Kontrast von Komplementär bei, spaltet aber die Gegenfarbe in zwei flankierende Farbtöne auf und erzeugt eine weniger grelle, aber dennoch dynamische Palette.",
-          "failureMessage": "Gespalten Komplementär ist die Antwort — es ersetzt die einzelne Gegenfarbe durch zwei Nachbarn der Gegenfarbe, was den Kontrast mildert, aber die visuelle Energie beibehält.",
-          "options": {
-            "0": {
-              "label": "Gespalten Komplementär"
+        {
+          "scenario": "Du möchtest ein verträumtes, ruhiges Street-Foto, aber etwas Kontrast behalten. Welche Harmonie solltest du wählen?",
+          "hint": "Denk an die beiden Nachbarn des Komplements statt an das Komplement selbst.",
+          "successMessage": "Ja. Split-Komplementär behält Spannung ohne die Härte eines direkten Gegensatzes.",
+          "failureMessage": "Split-Komplementär ist die ruhige, aber kontrastreiche Option. Triadisch wirkt eher energiegeladen oder unruhig.",
+          "options": [
+            {
+              "label": "Split-Komplementär"
             },
-            "1": {
+            {
               "label": "Triadisch"
             },
-            "2": {
+            {
               "label": "Analog"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "Du stellst die Schlüsselfarbe auf Orange (Farbton ~30 Grad) mit komplementärer Harmonie ein. Welche Farbe wird die Komplementärfarbe sein?",
-          "hint": "Komplementär bedeutet 180 Grad gegenüber auf dem Rad.",
-          "successMessage": "Richtig! 30° + 180° = 210°, was im Blaubereich liegt. Orange und Blau ist eines der beliebtesten Komplementärpaare in der Fotografie.",
-          "failureMessage": "Addiere 180° zu Orange (30°), das ergibt 210°, also Blau. Das Orange-Blau-Komplementärpaar ist ein Klassiker der Fotografie.",
-          "options": {
-            "0": {
-              "label": "Blau (~210°)"
+        {
+          "scenario": "Eine Probe zeigt „Leichte Verschiebung Richtung Pink“ mit einem Delta von −15°. Was tust du im HSL-Panel von Lightroom?",
+          "hint": "Das Richtungswort zeigt, wohin du schieben sollst, die Größe zeigt, wie weit.",
+          "successMessage": "Richtig. Bewege den Farbton-Regler dieser Farbe Richtung Pink, bis die Karte „Ausgerichtet“ anzeigt.",
+          "failureMessage": "Schiebe den Farbton in die genannte Richtung (Pink) um einen kleinen Betrag; eine Änderung um 15° ist eine leichte Verschiebung, keine starke.",
+          "options": [
+            {
+              "label": "Farbton leicht Richtung Pink verschieben"
             },
-            "1": {
-              "label": "Grün (~150°)"
+            {
+              "label": "Entsättigen"
             },
-            "2": {
-              "label": "Rot (~0°)"
+            {
+              "label": "Farbton Richtung Grün verschieben"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Du leitest ein Mode-Editorial und brauchst eine Vier-Farben-Palette, die sowohl warme als auch kühle Töne mit hoher visueller Reichhaltigkeit bietet. Welcher Harmonietyp gibt dir vier Farben, und was ist die größte Herausforderung bei seiner Verwendung?",
-          "hint": "Die Vier-Farben-Harmonie bildet ein Rechteck auf dem Rad.",
-          "successMessage": "Richtig! Tetradische Harmonie gibt vier Farben, die ein Rechteck auf dem Rad bilden. Die größte Herausforderung ist die Balance — bei vier verschiedenen Farbtönen sollte einer dominieren, während die anderen als Akzente dienen. Ohne Hierarchie wirkt das Bild chaotisch.",
-          "failureMessage": "Tetradisch (doppelt komplementär) bietet vier Farben in einer rechteckigen Anordnung. Die Herausforderung ist, dass vier starke Farbtöne um Aufmerksamkeit konkurrieren — du musst eine dominante Farbe bestimmen und die anderen als Akzente verwenden.",
-          "options": {
-            "0": {
-              "label": "Tetradisch — Herausforderung ist die visuelle Hierarchie unter vier Farbtönen"
+        {
+          "scenario": "Zwei Proben haben denselben Farbton, aber eine ist gesperrt. Um welche dreht sich die Harmonie?",
+          "hint": "Nur eine Probe kann der Anker sein.",
+          "successMessage": "Richtig. Die gesperrte Probe ist der Anker; die andere wird an der darauf aufgebauten Vorlage gemessen.",
+          "failureMessage": "Die gesperrte Probe ist immer der Anker. Ohne Sperre wird die beste Drehung verwendet.",
+          "options": [
+            {
+              "label": "Die gesperrte Probe"
             },
-            "1": {
-              "label": "Triadisch — Herausforderung sind zu wenige Farben"
+            {
+              "label": "Die zuerst platzierte Probe"
             },
-            "2": {
-              "label": "Analog — Herausforderung ist fehlender Kontrast"
+            {
+              "label": "Die am stärksten gesättigte Probe"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

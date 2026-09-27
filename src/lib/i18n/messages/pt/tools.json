@@ -85,8 +85,8 @@
       "description": "Folhas de referência com configurações de câmera para cenários comuns — para baixar e imprimir"
     },
     "color-analyzer": {
-      "name": "Gerador de Esquema de Cores",
-      "description": "Crie paletas de cores para sessões fotográficas"
+      "name": "Analisador de Cor",
+      "description": "Colete amostras das cores de uma foto, leia sua harmonia e veja para que lado empurrar cada uma"
     }
   }
 }
