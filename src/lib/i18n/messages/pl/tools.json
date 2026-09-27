@@ -85,8 +85,8 @@
       "description": "Ściągi z ustawieniami aparatu na typowe sytuacje zdjęciowe — do pobrania i wydruku"
     },
     "color-analyzer": {
-      "name": "Generator schematów kolorów",
-      "description": "Twórz palety kolorów do sesji fotograficznych"
+      "name": "Analizator kolorów",
+      "description": "Pobieraj próbki kolorów ze zdjęcia, odczytaj ich harmonię i zobacz, w którą stronę przesunąć każdy z nich"
     }
   }
 }

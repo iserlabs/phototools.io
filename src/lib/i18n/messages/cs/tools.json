@@ -85,8 +85,8 @@
       "description": "Taháky s nastavením fotoaparátu pro běžné situace — ke stažení i k vytištění"
     },
     "color-analyzer": {
-      "name": "Generátor barevných palet",
-      "description": "Sestav si barevné palety pro focení"
+      "name": "Analyzátor barev",
+      "description": "Nasnímejte barvy z fotky, přečtěte jejich harmonii a zjistěte, kterým směrem každou z nich posunout"
     }
   }
 }

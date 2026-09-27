@@ -1,179 +1,187 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "Armonia culorilor înseamnă să alegi culori care merg bine împreună. La fel ca acordurile din muzică, anumite combinații cromatice creează relații vizuale plăcute. Fotografii folosesc armonia culorilor ca să-și planifice garderoba, decorul și chiar momentul sesiunilor în exterior, ca să obțină paleta potrivită din natură.",
-      "deeper": {
-        "0": {
-          "heading": "Roata culorilor",
-          "text": "Teoria armoniei culorilor pornește de la roata culorilor, care așază nuanțele în cerc după relațiile dintre lungimile lor de undă. Modelul HSL (Hue, Saturation, Lightness) se mapează direct pe roată: nuanța e unghiul (0–360°), saturația e distanța față de centru, iar luminozitatea (lightness) arată cât de aproape e culoarea de alb sau negru. În fotografie, aceste relații apar natural — ora de aur produce tonuri calde analoge, iar un hambar roșu pe un câmp verde este o combinație complementară."
+      "beginner": "Majoritatea fotografiilor conțin deja o relație de culori — doar că încă nu o vezi. Adaugă o fotografie, atinge culorile importante, iar cercul îți arată cum se relaționează. Alege armonia dorită, iar instrumentul îți spune în ce direcție să împingi fiecare culoare.",
+      "deeper": [
+        {
+          "heading": "Metoda în patru pași",
+          "text": "Intenție (ce ar trebui să simtă privitorul), Analiză (ce culori sunt de fapt în cadru), Alegerea culorii (ce armonie se potrivește acelei stări), Transformare (mișcă glisoarele în direcția indicată de cerc). Editarea vine ultima. Cea mai mare parte a frustrării legate de gradarea culorilor vine din pornirea direct de la pasul patru."
         },
-        "1": {
-          "heading": "Complementar",
-          "text": "Două culori care stau exact față în față pe roată (la 180°), cum sunt albastrul și portocaliul sau roșul și verdele. Creează contrastul maxim și o energie vizuală puternică. Perfect ca să scoți subiectul în evidență pe fundal — gândește-te la portretele din ora de aur, unde tonurile calde ale pielii contrastează cu albastrul rece al cerului."
+        {
+          "heading": "Citirea cercului",
+          "text": "Fiecare mostră este plasată după nuanță (unghi) și saturație (distanța față de centru). Vizualizarea Natural arată saturația reală, Nuanțe pure împinge fiecare punct spre margine pentru ca unghiurile să fie evidente, iar Ghid de armonie adaugă pozițiile țintă și săgețile pentru armonia aleasă."
         },
-        "2": {
-          "heading": "Analog",
-          "text": "Trei culori vecine pe roată, de obicei pe un interval de 30–60°. Dau palete fluide, unitare, cu contrast scăzut. Ideale pentru peisaj și lucrări atmosferice — frunzele de toamnă formează o paletă analogă naturală, de roșu, portocaliu și galben."
+        {
+          "heading": "Cea mai apropiată potrivire",
+          "text": "Instrumentul rotește fiecare șablon de armonie la poziția care se potrivește cel mai bine mostrelor tale și măsoară eroarea medie de nuanță, normalizată în funcție de spațierea pozițiilor șablonului, astfel încât armoniile cu patru poziții să nu câștige implicit. Câștigătoarea primește insigna; tu decizi dacă o folosești."
         },
-        "3": {
-          "heading": "Triadic",
-          "text": "Trei culori distanțate uniform la 120° pe roată, de exemplu roșu, galben și albastru. Schemele triadice par echilibrate și vibrante, fără tensiunea contrastului complementar. Pentru cele mai puternice rezultate, folosește o culoare dominantă și pe celelalte două ca accente."
+        {
+          "heading": "Blocări și repere",
+          "text": "Blochează o mostră pentru a o transforma în reper: armonia se rotește în jurul acelei nuanțe, iar fiecare altă culoare este evaluată în raport cu ea. Folosește asta pentru culoarea pe care nu o vei schimba — de obicei pielea sau o culoare de brand. Fără blocare, instrumentul alege rotația cu cea mai mică eroare totală."
         },
-        "4": {
-          "heading": "Complementar divizat",
-          "text": "O variantă a schemei complementare care folosește cele două culori vecine cu opusul direct, în loc de opusul însuși. Păstrează contrastul puternic al complementarei, dar reduce tensiunea vizuală, fiind mai versatilă și mai iertătoare. O alegere populară pentru sesiunile de portret stilizate."
+        {
+          "heading": "Culori neutre",
+          "text": "Griurile, aproape-negrele și aproape-albele nu au o nuanță de încredere, așa că sunt plasate în centru și excluse din potrivire. Contează în continuare pentru atmosferă, dar mișcarea nuanței lor pe un glisor adaugă în principal o dominantă de culoare."
         },
-        "5": {
-          "heading": "Tetradic (dublu complementar)",
-          "text": "Patru culori care formează un dreptunghi pe roată — practic două perechi complementare. Oferă cea mai bogată și mai complexă paletă, dar cere un echilibru atent. Lasă o culoare să domine și folosește-le pe celelalte ca accente, ca să eviți un aspect haotic."
+        {
+          "heading": "De ce HSL, și nu un cerc perceptual",
+          "text": "Acest cerc folosește HSL, același model ca Adobe Color și panoul HSL din Lightroom, așa că direcția pe care o citești aici este aceeași pe care o vei împinge acolo. Nu este uniform din punct de vedere perceptual: galbenul ocupă o bandă îngustă, iar albastrul una largă, astfel încât o ajustare de 20° pare mai mare în unele zone decât în altele. Un cerc perceptual ar fi mai onest, dar nu s-ar potrivi cu instrumentele de editare."
         }
-      },
-      "keyFactors": {
-        "0": {
+      ],
+      "keyFactors": [
+        {
           "label": "Tip de armonie",
-          "description": "Relația geometrică dintre culorile de pe roată: complementar, analog, triadic, complementar divizat sau tetradic."
+          "description": "Relația geometrică pe care o urmărești: complementară, complementară divizată, analoagă, triadică, tetradică, monocromatică sau propriile tale ținte personalizate."
         },
-        "1": {
-          "label": "Nuanță (Hue)",
-          "description": "Unghiul de bază al culorii pe roată (0-360°). Este punctul de plecare pentru toate calculele de armonie."
+        {
+          "label": "Mostre",
+          "description": "Ce culori ai ales să eșantionezi. Eșantionează ce contează pentru imagine, nu ce este cel mai mare. Cinci-șase puncte spun de obicei toată povestea."
         },
-        "2": {
-          "label": "Saturație",
-          "description": "Cât de vii sau de stinse sunt culorile. Saturația mică dă pasteluri și tonuri pământii, iar saturația mare dă palete îndrăznețe și vibrante."
+        {
+          "label": "Reper",
+          "description": "Mostra blocată în jurul căreia se rotește armonia. Fără blocare, se folosește rotația cea mai potrivită."
         },
-        "3": {
-          "label": "Luminozitate (Lightness)",
-          "description": "Controlează cât de deschisă sau închisă e culoarea. O schimbare de luminozitate poate face aceeași nuanță să pară complet diferită — bleumarinul și albastrul de cer au aceeași nuanță, dar luminozități diferite."
+        {
+          "label": "Ajustare",
+          "description": "Rotația cu semn a nuanței de la o mostră la ținta ei. Aliniat înseamnă în limita a 8°, o ajustare ușoară în limita a 25°, orice mai mult este o schimbare mare."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "Pentru sesiunile de portret, alege o paletă complementară sau complementar divizată, apoi îmbracă subiectul în culoarea principală și lasă fundalul să aducă nuanța contrastantă. Albastru/portocaliu (portretele din ora de aur) este exemplul clasic."
+      ],
+      "tips": [
+        {
+          "text": "Eșantionează culorile pe care chiar le vei grada: cerul, pielea, obiectul dominant, o umbră. Sari peste reflexiile speculare și umbrele adânci — acestea apar ca neutre."
         },
-        "1": {
-          "text": "Folosește armonia analogă pentru peisaje — natura lucrează deja în palete analoge. Potrivește garderoba sau recuzita cu nuanțele naturale dominante."
+        {
+          "text": "Complementar divizat este alegerea calmă și visătoare pentru fotografia de călătorie și stradală. Complementar este mai curat și mai puternic. Triadic este intenționat un pic tulburător."
         },
-        "2": {
-          "text": "Scade saturația la 30-50% ca să previzualizezi cum vor arăta culorile într-un stil editorial, mai stins. Saturația mare merge pentru comercial și fashion, dar o saturație joasă pare adesea mai rafinată."
+        {
+          "text": "Folosește Alegere automată pentru a începe, apoi mută sau șterge punctele. Găsește clusterele cromatice dominante, care adesea nu sunt culorile care contează cel mai mult pentru tine."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
           "term": "Tip de armonie",
-          "definition": "Tiparul relației cromatice: Complementar (opus), Analog (vecini), Triadic (trei căi), Complementar divizat (opuse decalate) sau Tetradic (dreptunghi cu patru culori)."
+          "definition": "Relația țintă dintre nuanțe. Complementară (opusă), Complementară divizată (opusă ± unghi), Analoagă (vecine), Triadică (la 120° distanță), Tetradică (două perechi complementare), Monocromatică (o nuanță), Personalizată (propriile ținte)."
         },
         "Key Color": {
           "term": "Culoare principală",
-          "definition": "Culoarea dominantă din paletă. Toate celelalte culori ale armoniei se calculează pornind de la această nuanță."
+          "definition": "Fără o fotografie încărcată, culoarea în jurul căreia este construită armonia. Trage pe cerc sau folosește glisoarele."
         },
         "Hue": {
-          "term": "Nuanță (Hue)",
-          "definition": "Unghiul culorii pe roată, în grade: 0° este roșu, 120° este verde, 240° este albastru."
+          "term": "Nuanță",
+          "definition": "Unghiul culorii pe cerc, în grade: 0° este roșu, 120° este verde, 240° este albastru."
         },
         "Saturation": {
           "term": "Saturație",
-          "definition": "Intensitatea culorii, de la 0% (gri) la 100% (saturată maxim). Controlează cât de îndrăzneață sau de stinsă pare întreaga paletă."
+          "definition": "Intensitatea culorii, de la 0% (gri) la 100% (complet vie). Distanța față de centrul cercului."
         },
         "Lightness": {
-          "term": "Luminozitate (Lightness)",
-          "definition": "De la 0% (negru) la 100% (alb). La 50% vezi culoarea pură; sub — mai închisă, peste — mai deschisă."
+          "term": "Luminozitate",
+          "definition": "Strălucirea, de la 0% (negru) la 100% (alb). La 50% vezi culoarea pură."
         },
         "Split Angle": {
           "term": "Unghi de divizare",
-          "definition": "Cât de departe sunt cele două culori complementar divizate față de opusul direct. Unghiurile mai mari dau mai mult contrast."
+          "definition": "Cât de departe se află cele două culori complementare divizate față de complementara directă."
         },
         "Spread": {
           "term": "Distanță",
-          "definition": "Cât de depărtate sunt culorile analoge față de nuanța principală. Distanțele mici dau variații subtile, iar cele mari cresc diversitatea."
+          "definition": "Cât de departe se află culorile analoage față de nuanța de referință."
+        },
+        "Lock": {
+          "term": "Blocare",
+          "definition": "Transformă o mostră în reper. Armonia se rotește la acea nuanță, iar celelalte mostre sunt evaluate în raport cu ea. Poate fi blocată o singură mostră."
+        },
+        "Closest fit": {
+          "term": "Cea mai apropiată potrivire",
+          "definition": "Armonia a cărei rotație optimă are cea mai mică eroare normalizată de nuanță pentru mostrele tale. Necesită cel puțin două mostre cromatice."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Vrei contrast maxim între două culori pentru un portret grafic, îndrăzneț. Ce tip de armonie îți dă cea mai multă tensiune vizuală?",
-          "hint": "Culorile direct opuse pe roată creează cel mai puternic contrast.",
-          "successMessage": "Corect! Culorile complementare stau la 180° una față de alta și produc cel mai mare contrast — perfect pentru compoziții îndrăznețe, care atrag privirea.",
-          "failureMessage": "Armonia complementară așază culorile față în față pe roată și creează contrastul vizual maxim.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "Ai eșantionat un cer albastru la 210° și un perete portocaliu la 25°. De ce armonie sunt deja cele mai apropiate?",
+          "hint": "Verifică unghiul dintre ele.",
+          "successMessage": "Corect. O diferență de 185° este o pereche complementară aproape perfectă; o mică ajustare a peretelui o finalizează.",
+          "failureMessage": "Două culori aflate la aproximativ 180° distanță sunt complementare. Culorile analoage se află la aproximativ 60° una de alta.",
+          "options": [
+            {
               "label": "Complementar"
             },
-            "1": {
+            {
               "label": "Analog"
             },
-            "2": {
+            {
               "label": "Triadic"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Planifici o sesiune în ora de aur și vrei tonuri calde, unitare. Ce tip de armonie ține culorile aproape unele de altele pe roată?",
-          "hint": "Acest tip folosește nuanțe vecine pentru un aspect fluid, unitar.",
-          "successMessage": "Exact! Armonia analogă folosește culori vecine și îți dă o paletă caldă, unitară, perfectă pentru ora de aur.",
-          "failureMessage": "Armonia analogă păstrează toate culorile vecine pe roată — ideală pentru palete unitare, calde sau reci.",
-          "options": {
-            "0": {
+        {
+          "scenario": "O fotografie are trei mostre la 40°, 60° și 85°. Ce armonie este aceasta?",
+          "hint": "Toate sunt vecine pe cerc.",
+          "successMessage": "Corect. Nuanțele vecine, în limita a 60°, formează o armonie analoagă.",
+          "failureMessage": "Nuanțele aflate toate aproape una de alta sunt analoage — opțiunea calmă și unitară.",
+          "options": [
+            {
               "label": "Complementar"
             },
-            "1": {
+            {
               "label": "Analog"
             },
-            "2": {
+            {
               "label": "Tetradic"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "Un client vrea un portret cu contrast, dar nu la fel de puternic ca cel al unei armonii complementare pure. Ce tip de armonie atenuează opoziția, dar păstrează interesul vizual?",
-          "hint": "Acest tip folosește două culori apropiate de complementară, în loc de opusul direct.",
-          "successMessage": "Excelent! Complementar divizat păstrează contrastul complementarei, dar împarte culoarea opusă în două nuanțe care o flanchează, rezultând o paletă mai puțin agresivă, dar tot dinamică.",
-          "failureMessage": "Complementar divizat este răspunsul — înlocuiește singura culoare opusă cu două vecine ale ei, atenuând contrastul, dar păstrând energia vizuală.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Vrei o fotografie stradală visătoare și calmă, dar cu ceva contrast păstrat. Ce armonie ar trebui să alegi?",
+          "hint": "Gândește-te la cei doi vecini ai complementarei, în loc de complementara însăși.",
+          "successMessage": "Da. Complementar divizat păstrează tensiunea fără asprimea unei opoziții directe.",
+          "failureMessage": "Complementar divizat este opțiunea calmă, dar contrastantă. Triadic tinde să pară energic sau tulburător.",
+          "options": [
+            {
               "label": "Complementar divizat"
             },
-            "1": {
+            {
               "label": "Triadic"
             },
-            "2": {
+            {
               "label": "Analog"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "Setezi culoarea principală pe portocaliu (nuanță ~30°) cu armonie complementară. Care va fi culoarea complementară?",
-          "hint": "Complementar înseamnă la 180° opus pe roată.",
-          "successMessage": "Corect! 30° + 180° = 210°, care cade în zona albastrului. Portocaliu și albastru este una dintre cele mai îndrăgite perechi complementare din fotografie.",
-          "failureMessage": "Adunând 180° la portocaliu (30°) obții 210°, adică albastru. Perechea portocaliu-albastru este un clasic al fotografiei.",
-          "options": {
-            "0": {
-              "label": "Albastru (~210°)"
+        {
+          "scenario": "O mostră arată Ajustare ușoară spre roz cu o deltă de −15°. Ce faci în panoul HSL din Lightroom?",
+          "hint": "Cuvântul de direcție îți spune unde să împingi, mărimea îți spune cât de departe.",
+          "successMessage": "Corect. Mișcă glisorul de Nuanță al acelei culori spre roz, până când cardul arată Aliniat.",
+          "failureMessage": "Împinge nuanța în direcția numită (roz) cu o valoare mică; o schimbare de 15° este o ajustare ușoară, nu o schimbare mare.",
+          "options": [
+            {
+              "label": "Ajustează ușor nuanța spre roz"
             },
-            "1": {
-              "label": "Verde (~150°)"
+            {
+              "label": "Redu saturația"
             },
-            "2": {
-              "label": "Roșu (~0°)"
+            {
+              "label": "Împinge nuanța spre verde"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Ești art director pentru un editorial de modă și ai nevoie de o paletă de patru culori care să aducă atât tonuri calde, cât și reci, cu bogăție vizuală. Ce tip de armonie îți dă patru culori și care e provocarea principală când o folosești?",
-          "hint": "Armonia cu patru culori formează un dreptunghi pe roată.",
-          "successMessage": "Exact! Armonia tetradică îți dă patru culori care formează un dreptunghi pe roată. Principala provocare este echilibrul — cu patru nuanțe distincte, una ar trebui să domine, iar celelalte să accentueze. Fără ierarhie, imaginea pare haotică.",
-          "failureMessage": "Tetradic (dublu complementar) oferă patru culori în aranjament dreptunghiular. Provocarea e că patru nuanțe puternice concurează pentru atenție — trebuie să desemnezi o culoare dominantă și să le folosești pe celelalte ca accente.",
-          "options": {
-            "0": {
-              "label": "Tetradic — provocarea este menținerea ierarhiei vizuale între patru nuanțe"
+        {
+          "scenario": "Două mostre au aceeași nuanță, dar una este blocată. În jurul căreia se rotește armonia?",
+          "hint": "O singură mostră poate fi reperul.",
+          "successMessage": "Corect. Mostra blocată este reperul; cealaltă este evaluată în raport cu șablonul construit pe ea.",
+          "failureMessage": "Mostra blocată este întotdeauna reperul. Fără blocare, se folosește rotația cea mai potrivită.",
+          "options": [
+            {
+              "label": "Mostra blocată"
             },
-            "1": {
-              "label": "Triadic — provocarea este că are prea puține culori"
+            {
+              "label": "Prima mostră plasată"
             },
-            "2": {
-              "label": "Analog — provocarea este lipsa de contrast"
+            {
+              "label": "Cea mai saturată mostră"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

@@ -1,70 +1,70 @@
 {
   "education": {
     "color-analyzer": {
-      "beginner": "A színharmónia arról szól, hogy olyan színeket válassz, amik jól mutatnak együtt. Mint a zenei akkordoknál, bizonyos színkombinációk kellemes vizuális összhangot teremtenek. A fotósok a színharmóniát használják, amikor ruhát, díszletet vagy akár a kültéri felvételek időzítését tervezik, hogy a természettől megkapják a megfelelő palettát.",
-      "deeper": {
-        "0": {
-          "heading": "A színkör",
-          "text": "A színharmónia elmélete a színkörön alapul, ami a színárnyalatokat körben, hullámhosszuk szerinti kapcsolataik alapján rendezi el. A HSL (színárnyalat, telítettség, világosság) modell közvetlenül ráillik a körre: a hue a szög (0–360°), a saturation a középponttól való távolság, a lightness pedig a fényesség. A fotózásban ezek a kapcsolatok magától is megjelennek — az arany óra meleg analóg tónusokat ad, egy piros pajta egy zöld mező előtt viszont komplementer páros."
+      "beginner": "A legtöbb fotó már tartalmaz egy színkapcsolatot — csak még nem látod. Ejts ide egy fotót, koppints a fontos színekre, és a kör megmutatja, hogyan viszonyulnak egymáshoz. Válaszd ki a kívánt harmóniát, és az eszköz megmondja, melyik irányba told el az egyes színeket.",
+      "deeper": [
+        {
+          "heading": "A négylépéses módszer",
+          "text": "Szándék (mit érezzen a néző), Elemzés (milyen színek vannak valójában a képen), Színválasztás (melyik harmónia illik ehhez a hangulathoz), Átalakítás (told el a csúszkákat a kör által mutatott irányba). A szerkesztés az utolsó lépés. A színezéssel kapcsolatos frusztráció nagy része abból ered, hogy rögtön a negyedik lépéssel kezdik."
         },
-        "1": {
-          "heading": "Komplementer",
-          "text": "Két szín, ami a színkörön pontosan egymással szemben helyezkedik el (180°-ra egymástól), például a kék és a narancs, vagy a piros és a zöld. Ez adja a legnagyobb kontrasztot és a legerősebb vizuális energiát. Kiváló, ha azt szeretnéd, hogy a téma kiugorjon a háttérből — gondolj az arany órás portrékra, ahol a meleg bőrtónus a hűvös kék éggel ütközik."
+        {
+          "heading": "A kör leolvasása",
+          "text": "Minden minta árnyalat (szög) és telítettség (a középponttól való távolság) szerint van ábrázolva. A Természetes nézet a valódi telítettséget mutatja, a Tiszta árnyalatok minden pontot a szélre told, hogy a szögek nyilvánvalóak legyenek, a Harmónia-útmutató pedig hozzáadja a célpozíciókat és nyilakat a kiválasztott harmóniához."
         },
-        "2": {
-          "heading": "Analóg",
-          "text": "Három szín, amelyek a körön szomszédosak, jellemzően 30–60°-os tartományban. Lágy, egységes palettát adnak alacsony kontraszttal. Ideális tájképhez és hangulatos képekhez — az őszi lombkorona természetes analóg paletta, a pirost, a narancsot és a sárgát vegyíti."
+        {
+          "heading": "Legjobb egyezés",
+          "text": "Az eszköz minden harmónia-sablont elforgat a mintáidhoz legjobban illeszkedő pozícióba, és megméri az átlagos árnyalathibát, a sablon rekeszközeihez normalizálva, hogy a négyrekeszes harmóniák ne nyerjenek automatikusan. A győztes megkapja a jelvényt; te döntöd el, használod-e."
         },
-        "3": {
-          "heading": "Triadikus",
-          "text": "Három szín, amelyek 120°-os lépésekben, egyenletesen oszlanak el a körön, például a piros, a sárga és a kék. A triadikus séma kiegyensúlyozott és élénk, a komplementer feszültsége nélkül. Akkor adja a legerősebb eredményt, ha az egyik színt dominánsként használod, a másik kettőt pedig akcentként."
+        {
+          "heading": "Zárolások és viszonyítási pontok",
+          "text": "Zárolj egy mintát, hogy viszonyítási ponttá tedd: a harmónia e köré az árnyalat köré forog, és minden más színt ehhez viszonyítva ítél meg. Használd azt a színt, amit nem fogsz módosítani — általában a bőrt vagy egy márkaszínt. Zárolás nélkül az eszköz a legkisebb teljes hibájú elforgatást választja."
         },
-        "4": {
-          "heading": "Osztott komplementer",
-          "text": "A komplementer változata, amely a szemben lévő szín helyett annak két szomszédját veszi. Megtartja a komplementer erős kontrasztját, de enyhíti a vizuális feszültséget — így sokoldalúbb és megbocsátóbb. Stílusos portrésorozatokhoz népszerű választás."
+        {
+          "heading": "Semleges színek",
+          "text": "A szürkéknek, a majdnem feketéknek és a majdnem fehéreknek nincs megbízható árnyalatuk, ezért a középpontba kerülnek, és kimaradnak az egyezésből. A hangulat szempontjából még mindig számítanak, de az árnyalatuk csúszkán való eltolása többnyire csak színezetet ad hozzá."
         },
-        "5": {
-          "heading": "Tetradikus (dupla komplementer)",
-          "text": "Négy szín, amely téglalapot alkot a színkörön — lényegében két komplementer pár. Ez adja a leggazdagabb, legösszetettebb palettát, de gondos egyensúlyt igényel. Hagyd, hogy egy szín domináljon, a többit pedig kísérő akcentként használd, különben a kép kaotikussá válik."
+        {
+          "heading": "Miért HSL, és nem percepciós kör",
+          "text": "Ez a kör a HSL modellt használja, ugyanazt, mint az Adobe Color és a Lightroom HSL panelje, így az itt leolvasott irány ugyanaz, amit ott is eltolsz. Nem percepciósan egyenletes: a sárga keskeny sávot foglal el, a kék pedig széleset, így egy 20°-os elmozdulás egyes tartományokban nagyobbnak tűnik, mint másokban. Egy percepciós kör őszintébb lenne, de nem illeszkedne a szerkesztőeszközökhöz."
         }
-      },
-      "keyFactors": {
-        "0": {
+      ],
+      "keyFactors": [
+        {
           "label": "Harmónia típusa",
-          "description": "A színek geometriai kapcsolata a körön: komplementer, analóg, triadikus, osztott komplementer vagy tetradikus."
+          "description": "A geometriai kapcsolat, amire törekszel: komplementer, osztott komplementer, analóg, triadikus, tetradikus, monokróm vagy a saját, egyéni célértékeid."
         },
-        "1": {
-          "label": "Színárnyalat (hue)",
-          "description": "A kiindulási szín szöge a körön (0–360 fok). Ez a kiindulópontja minden harmóniaszámításnak."
+        {
+          "label": "Minták",
+          "description": "Milyen színeket választottál mintázásra. Azt mintázd, ami a kép szempontjából számít, nem azt, ami a legnagyobb. Öt-hat pont általában elmondja a teljes történetet."
         },
-        "2": {
-          "label": "Telítettség",
-          "description": "Mennyire élénkek vagy fakók a színek. Alacsonyabb telítettség pasztell és földszíneket ad, magasabb pedig merész, élénk palettákat."
+        {
+          "label": "Viszonyítási pont",
+          "description": "A zárolt minta, amely körül a harmónia forog. Zárolás nélkül a legjobban illeszkedő elforgatást használja."
         },
-        "3": {
-          "label": "Világosság",
-          "description": "A fényességet szabályozza. A világosság állítása ugyanazt a színárnyalatot teljesen másképp mutathatja — a sötét tengerészkék és az égkék ugyanaz a hue, csak más világossággal."
+        {
+          "label": "Elmozdulás",
+          "description": "Az árnyalat előjeles elforgatása a mintától a célértékéig. Az Összhangban 8°-on belül van, az enyhe elmozdulás 25°-on belül, minden ennél nagyobb nagy elmozdulás."
         }
-      },
-      "tips": {
-        "0": {
-          "text": "Portréfotózáshoz válassz komplementer vagy osztott komplementer palettát — a téma viselje a kulcsszínt, a háttér pedig adja a kontrasztot. A kék/narancs (arany órás portrék) klasszikus példa."
+      ],
+      "tips": [
+        {
+          "text": "Mintázd azokat a színeket, amelyeket valóban színezni fogsz: ég, bőr, a domináns tárgy, egy árnyék. Hagyd ki a spekuláris fényeket és a mély árnyékokat — semlegesként jelennek meg."
         },
-        "1": {
-          "text": "Tájképhez használj analóg harmóniát — a természet amúgy is analóg palettákkal dolgozik. Igazítsd a ruhát vagy a kellékeket a domináns természetes színárnyalatokhoz."
+        {
+          "text": "Az osztott komplementer a nyugodt, álomszerű választás az utazós és utcai munkákhoz. A komplementer tisztább és ütősebb. A triadikus szándékosan kicsit nyugtalanító."
         },
-        "2": {
-          "text": "Húzd le a telítettséget 30–50%-ra, hogy lásd, milyen a visszafogottabb, szerkesztőibb stílus. A magas telítettség reklám- és divatfotózáshoz jó, de az alacsonyabb gyakran kifinomultabb."
+        {
+          "text": "Kezdd az Automatikus kiválasztással, majd told el vagy töröld a pontokat. A domináns kromatikus klasztereket találja meg, amelyek gyakran nem azok a színek, amelyek a legjobban számítanak neked."
         }
-      },
+      ],
       "tooltips": {
         "Harmony Type": {
           "term": "Harmónia típusa",
-          "definition": "A színkapcsolat mintázata: komplementer (ellentétes), analóg (szomszédos), triadikus (három irányú), osztott komplementer (eltolt ellentét) vagy tetradikus (négy irányú téglalap)."
+          "definition": "Az árnyalatok közti célkapcsolat. Komplementer (szemközti), Osztott komplementer (szemközti ± szög), Analóg (szomszédos), Triadikus (120°-onként), Tetradikus (két komplementer pár), Monokróm (egy árnyalat), Egyéni (saját célértékek)."
         },
         "Key Color": {
           "term": "Kulcsszín",
-          "definition": "A paletta domináns színe. Minden további harmóniaszín ehhez képest van kiszámítva."
+          "definition": "Betöltött fotó nélkül az a szín, amely köré a harmónia épül. Húzd a kört, vagy használd a csúszkákat."
         },
         "Hue": {
           "term": "Színárnyalat",
@@ -72,108 +72,116 @@
         },
         "Saturation": {
           "term": "Telítettség",
-          "definition": "A színintenzitás 0% (szürke) és 100% (teljesen élénk) között. A paletta merészségét vagy visszafogottságát szabályozza."
+          "definition": "A szín intenzitása 0%-tól (szürke) 100%-ig (teljesen élénk). A középponttól való távolság."
         },
         "Lightness": {
           "term": "Világosság",
-          "definition": "Fényesség 0% (fekete) és 100% (fehér) között. 50%-on a tiszta színt látod; alatta sötétebb, fölötte világosabb."
+          "definition": "Fényesség 0%-tól (fekete) 100%-ig (fehér). 50%-nál látod a tiszta színt."
         },
         "Split Angle": {
-          "term": "Osztott szög",
-          "definition": "Mennyire van egymástól a két osztott komplementer szín a közvetlen ellentéttől. A nagyobb szög erősebb kontrasztot ad."
+          "term": "Osztási szög",
+          "definition": "Milyen messze van a két osztott komplementer szín a közvetlen komplementertől."
         },
         "Spread": {
-          "term": "Terjedés",
-          "definition": "Mennyire vannak egymástól az analóg színek a kulcsszínhez képest. Szűk terjedés finom variációt, széles terjedés nagyobb változatosságot ad."
+          "term": "Szórás",
+          "definition": "Milyen messze vannak az analóg színek a viszonyítási árnyalattól."
+        },
+        "Lock": {
+          "term": "Zárolás",
+          "definition": "Viszonyítási ponttá teszi a mintát. A harmónia ehhez az árnyalathoz forog, és a többi minta ehhez képest van megítélve. Csak egy minta zárolható."
+        },
+        "Closest fit": {
+          "term": "Legjobb egyezés",
+          "definition": "Az a harmónia, amelynek legjobb elforgatása a legalacsonyabb normalizált árnyalathibát adja a mintáid között. Legalább két kromatikus mintát igényel."
         }
       },
-      "challenges": {
-        "0": {
-          "scenario": "Két szín közötti maximális kontrasztot szeretnél egy merész grafikus portréhoz. Melyik harmóniatípus adja a legnagyobb vizuális feszültséget?",
-          "hint": "A közvetlenül egymással szemben lévő színek adják a legerősebb kontrasztot.",
-          "successMessage": "Jó! A komplementer színek 180 fokra vannak egymástól, és a legnagyobb kontrasztot adják — tökéletes merész, figyelemfelkeltő kompozíciókhoz.",
-          "failureMessage": "A komplementer harmónia a színeket közvetlenül egymással szembe helyezi a körön, ami a maximális vizuális kontrasztot adja.",
-          "options": {
-            "0": {
+      "challenges": [
+        {
+          "scenario": "210°-on lemintáztál egy kék eget és 25°-on egy narancssárga falat. Melyik harmóniához állnak már a legközelebb?",
+          "hint": "Nézd meg a köztük lévő szöget.",
+          "successMessage": "Így van. A 185°-os különbség szinte tökéletes komplementer pár; a fal enyhe eltolása befejezi.",
+          "failureMessage": "A körülbelül 180°-ra lévő két szín komplementer. Az analóg színek nagyjából 60°-on belül vannak egymástól.",
+          "options": [
+            {
               "label": "Komplementer"
             },
-            "1": {
+            {
               "label": "Analóg"
             },
-            "2": {
+            {
               "label": "Triadikus"
             }
-          }
+          ]
         },
-        "1": {
-          "scenario": "Arany órás fotózásra készülsz, és meleg, egységes tónusokat szeretnél. Melyik harmóniatípus tartja közel egymáshoz a színeket a körön?",
-          "hint": "Ez a típus szomszédos színárnyalatokat használ lágy, egységes hatáshoz.",
-          "successMessage": "Pontosan! Az analóg harmónia szomszédos színeket használ, így meleg, egységes palettát ad, ami ideális az arany órához.",
-          "failureMessage": "Az analóg harmónia a színeket szomszédosan tartja a körön — ideális egységes meleg vagy hűvös palettákhoz.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Egy fotón három minta van 40°-on, 60°-on és 85°-on. Melyik harmónia ez?",
+          "hint": "Mindegyik szomszédos a körön.",
+          "successMessage": "Helyes. Az egymáshoz körülbelül 60°-on belül eső árnyalatok analóg harmóniát alkotnak.",
+          "failureMessage": "Az egymáshoz közel eső árnyalatok analógok — ez a nyugodt és egységes választás.",
+          "options": [
+            {
               "label": "Komplementer"
             },
-            "1": {
+            {
               "label": "Analóg"
             },
-            "2": {
+            {
               "label": "Tetradikus"
             }
-          }
+          ]
         },
-        "2": {
-          "scenario": "Egy ügyfél olyan portrét kér, ami kontrasztos, de nem annyira intenzív, mint a tiszta komplementer. Melyik harmóniatípus tompítja az ellentétet, miközben megtartja a vizuális érdekességet?",
-          "hint": "Ez a típus a közvetlen ellentét helyett annak két szomszédját használja.",
-          "successMessage": "Kiváló! Az osztott komplementer megtartja a komplementer kontrasztot, de az ellentétes színt két szomszédos árnyalatra osztja, így a paletta kevésbé rikító, de még mindig dinamikus.",
-          "failureMessage": "A megoldás az osztott komplementer — az egyetlen ellentétes színt annak két szomszédjára cseréli, tompítva a kontrasztot, miközben megtartja a vizuális energiát.",
-          "options": {
-            "0": {
+        {
+          "scenario": "Álomszerű, nyugodt utcai fotót szeretnél, de megtartanád a kontrasztot. Melyik harmóniát válaszd?",
+          "hint": "Gondolj a komplementer két szomszédjára a komplementer helyett.",
+          "successMessage": "Igen. Az osztott komplementer megőrzi a feszültséget a közvetlen ellentét élessége nélkül.",
+          "failureMessage": "Az osztott komplementer a nyugodt, mégis kontrasztos választás. A triadikus inkább energikusnak vagy nyugtalanítónak hat.",
+          "options": [
+            {
               "label": "Osztott komplementer"
             },
-            "1": {
+            {
               "label": "Triadikus"
             },
-            "2": {
+            {
               "label": "Analóg"
             }
-          }
+          ]
         },
-        "3": {
-          "scenario": "A kulcsszínt narancsra állítod (hue ~30 fok) komplementer harmóniával. Milyen szín lesz a komplementer?",
-          "hint": "A komplementer 180 fokra van szemben a körön.",
-          "successMessage": "Jó! 30° + 180° = 210°, ami a kék tartományba esik. A narancs és a kék a fotózás egyik legkedveltebb komplementer párosa.",
-          "failureMessage": "180°-ot hozzáadva a narancshoz (30°) 210° jön ki, ami kék. A narancs-kék komplementer páros a fotózás klasszikusa.",
-          "options": {
-            "0": {
-              "label": "Kék (~210°)"
+        {
+          "scenario": "Egy minta Enyhe elmozdulás rózsaszín felé jelzést mutat −15°-os deltával. Mit teszel a Lightroom HSL paneljében?",
+          "hint": "Az irányt jelző szó megmondja, merre told, a mérték pedig, hogy mennyire.",
+          "successMessage": "Így van. Told a szín Színárnyalat csúszkáját rózsaszín felé, amíg a kártya Összhangban jelzést nem mutat.",
+          "failureMessage": "Told az árnyalatot a megnevezett irányba (rózsaszín) kis mértékben; a 15°-os változás enyhe elmozdulás, nem nagy elmozdulás.",
+          "options": [
+            {
+              "label": "Told el kicsit az árnyalatot rózsaszín felé"
             },
-            "1": {
-              "label": "Zöld (~150°)"
+            {
+              "label": "Csökkentsd a telítettséget"
             },
-            "2": {
-              "label": "Piros (~0°)"
+            {
+              "label": "Told el az árnyalatot zöld felé"
             }
-          }
+          ]
         },
-        "4": {
-          "scenario": "Egy divatszerkesztői képet rendezel, és négyszínű palettát szeretnél, ami meleg és hűvös tónust is ad nagy vizuális gazdagsággal. Melyik harmóniatípus ad négy színt, és mi a fő kihívása?",
-          "hint": "A négyszínű harmónia téglalapot alkot a körön.",
-          "successMessage": "Pontosan! A tetradikus harmónia négy színt ad, amik téglalapot alkotnak a körön. A fő kihívás az egyensúly — négy eltérő színárnyalattal egyiknek dominálnia kell, a többinek pedig akcentként kell működnie. Hierarchia nélkül a kép kaotikus lesz.",
-          "failureMessage": "A tetradikus (dupla komplementer) négy színt ad téglalapban. A kihívás az, hogy négy erős színárnyalat verseng a figyelemért — ki kell jelölnöd egy dominánst, a többit akcentnek használni.",
-          "options": {
-            "0": {
-              "label": "Tetradikus — a négy árnyalat közötti vizuális hierarchia megtartása"
+        {
+          "scenario": "Két minta ugyanazon az árnyalaton van, de az egyik zárolva van. Melyik körül forog a harmónia?",
+          "hint": "Csak egy minta lehet a viszonyítási pont.",
+          "successMessage": "Így van. A zárolt minta a viszonyítási pont; a másikat az arra épülő sablonhoz viszonyítva ítéli meg.",
+          "failureMessage": "A zárolt minta mindig a viszonyítási pont. Zárolás nélkül a legjobban illeszkedő elforgatást használja.",
+          "options": [
+            {
+              "label": "A zárolt minta"
             },
-            "1": {
-              "label": "Triadikus — a túl kevés szín a probléma"
+            {
+              "label": "Az elsőként elhelyezett minta"
             },
-            "2": {
-              "label": "Analóg — a kontraszt hiánya a probléma"
+            {
+              "label": "A legtelítettebb minta"
             }
-          }
+          ]
         }
-      }
+      ]
     }
   }
 }

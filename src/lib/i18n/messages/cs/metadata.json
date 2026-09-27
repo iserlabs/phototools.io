@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Generátor barevných palet",
-      "description": "Generuj barevné palety pro fotografy pomocí komplementárních, analogických, triadických a tetradických harmonií. Interaktivní barevné kolo s výběrem z fotky."
+      "title": "Analyzátor barev: přečtěte barevnou harmonii na jakékoli fotce",
+      "description": "Bezplatný analyzátor barev fotografií a generátor barevných schémat. Nasnímejte barvy z fotky, vyneste je na barevný kruh, najděte nejbližší barevnou harmonii a získejte návod na úpravu jednotlivých barev. 100% ve vašem prohlížeči."
     }
   }
 }

@@ -1,12 +1,16 @@
 {
   "toolUI": {
     "color-analyzer": {
-      "colorScheme": "Schemat kolorów",
+      "colorScheme": "Harmonia kolorów",
       "complementary": "Dopełniający",
+      "splitComplementary": "Rozszczepiony dopełniający",
       "analogous": "Analogiczny",
       "triadic": "Triadyczny",
-      "splitComplementary": "Rozszczepiony dopełniający",
       "tetradic": "Tetradyczny",
+      "monochromatic": "Monochromatyczny",
+      "custom": "Niestandardowy",
+      "closestFit": "Najlepsze dopasowanie",
+      "closestSentence": "Twoje zdjęcie jest najbliższe schematowi {harmony} (średnio {degrees}° odchylenia). Dotknij, aby go użyć.",
       "keyColor": "Kolor kluczowy",
       "hue": "Odcień:",
       "saturation": "Nasycenie:",
@@ -15,8 +19,61 @@
       "spread": "Rozpiętość:",
       "rectangleWidth": "Szerokość prostokąta:",
       "square": "(kwadrat)",
-      "pickFromPhoto": "Pobierz ze zdjęcia",
-      "dropPhotoPrompt": "Upuść zdjęcie tutaj lub kliknij, aby przeglądać",
+      "samples": "Próbki",
+      "lock": "Zablokuj ten kolor jako punkt odniesienia",
+      "unlock": "Odblokuj",
+      "removeSample": "Usuń próbkę",
+      "labelPlaceholder": "Etykieta",
+      "neutralNotScored": "Neutralny, nie punktowany",
+      "suggested": "Sugerowany",
+      "autoPick": "Wybierz automatycznie 5",
+      "changePhoto": "Zmień zdjęcie",
+      "capReached": "Maksymalnie {cap} próbek. Usuń jedną, aby dodać kolejną.",
+      "markerLabel": "Próbka {n}: {label}",
+      "dropPhotoPrompt": "Upuść zdjęcie lub kliknij, aby przeglądać. Pozostaje w Twojej przeglądarce.",
+      "viewNatural": "Naturalny",
+      "viewPure": "Czyste odcienie",
+      "viewGuide": "Przewodnik harmonii",
+      "viewHint": {
+        "key": "Przeciągnij kropkę, aby ustawić kolor kluczowy. Upuść zdjęcie, aby zamiast tego analizować rzeczywiste kolory.",
+        "natural": "Pokazuje kolory w ich rzeczywistym nasyceniu. Przełącz zakładki, aby odczytać harmonię.",
+        "pure": "Odcienie przesunięte na obrzeże, dzięki czemu kąty między kolorami są łatwe do odczytania.",
+        "guide": "Przerywane kształty to docelowe pozycje. Strzałki pokazują, w którą stronę powinien przesunąć się każdy kolor."
+      },
+      "nudge": {
+        "aligned": "Wyrównany",
+        "slight": "Lekkie przesunięcie w stronę {color}",
+        "big": "Duża zmiana w stronę {color}"
+      },
+      "names": {
+        "red": "czerwony",
+        "vermilion": "cynobrowy",
+        "orange": "pomarańczowy",
+        "amber": "bursztynowy",
+        "yellow": "żółty",
+        "lime": "limonkowy",
+        "chartreuse": "żółtozielony",
+        "leaf-green": "zielony liść",
+        "green": "zielony",
+        "jade": "nefrytowy",
+        "spring-green": "wiosenna zieleń",
+        "mint": "miętowy",
+        "cyan": "cyjan",
+        "sky-blue": "błękit nieba",
+        "azure": "lazurowy",
+        "cobalt": "kobaltowy",
+        "blue": "niebieski",
+        "indigo": "indygo",
+        "violet": "fioletowy",
+        "purple": "purpurowy",
+        "magenta": "magenta",
+        "fuchsia": "fuksjowy",
+        "pink": "różowy",
+        "rose": "różany",
+        "gray": "szary",
+        "black": "czarny",
+        "white": "biały"
+      },
       "keyColorLabel": "Kolor kluczowy — kliknij, aby skopiować hex",
       "clickToCopyHex": "Kliknij, aby skopiować hex",
       "copiedExcl": "Skopiowano!",
@@ -27,43 +84,55 @@
       "copyHexCodes": "Kopiuj kody hex",
       "copyCssVariables": "Kopiuj zmienne CSS",
       "copyRgbValues": "Kopiuj wartości RGB",
-      "pickColorFromPhoto": "Pobierz kolor ze zdjęcia",
-      "close": "Zamknij",
-      "dropPhotoOrBrowse": "Upuść zdjęcie tutaj lub kliknij, aby przeglądać",
-      "tapToChoose": "Dotknij, aby wybrać zdjęcie",
-      "tapToSample": "Dotknij dowolne miejsce na zdjęciu, aby pobrać kolor",
-      "changePhoto": "Zmień zdjęcie",
-      "privacyNote": "Twoje zdjęcie pozostaje w przeglądarce — nic nie jest przesyłane",
       "suggestions": {
         "complementary": {
-          "warm": "Świetne do: ciepłych portretów o zachodzie z chłodnym kontrastem cieni",
-          "cool": "Świetne do: nastrojowych ujęć niebieskiej godziny z ciepłym akcentem oświetlenia",
-          "default": "Świetne do: kompozycji o wysokim kontraście z silnym napięciem wizualnym"
+          "warm": "Świetne do: ciepłych portretów o zachodzie słońca z chłodnym kontrastem cieni",
+          "cool": "Świetne do: nastrojowych ujęć o niebieskiej godzinie z ciepłym akcentem światła",
+          "default": "Świetne do: kompozycji o wysokim kontraście i silnym napięciu wizualnym"
+        },
+        "splitComplementary": {
+          "warm": "Świetne do: sennych, spokojnych kadrów, które zachowują kontrast bez ostrości",
+          "cool": "Świetne do: chłodnych scen miejskich i podróżniczych z dwoma ciepłymi akcentami",
+          "default": "Świetne do: zrównoważonych kadrów z różnorodnością bez bezpośredniego przeciwieństwa"
         },
         "analogous": {
-          "warm": "Świetne do: krajobrazów złotej godziny z jednolitymi ciepłymi tonami",
+          "warm": "Świetne do: krajobrazów o złotej godzinie z jednolitymi ciepłymi tonami",
           "cool": "Świetne do: spokojnych scen wodnych i fotografii o zmierzchu",
-          "default": "Świetne do: harmonijnych ujęć natury z gładkimi przejściami kolorów"
+          "default": "Świetne do: harmonijnych ujęć natury z płynnymi przejściami kolorów"
         },
-        "triadic": "Używaj do: żywych prac edytorialnych i odważnych kreatywnych portretów",
-        "splitComplementary": {
-          "warm": "Używaj do: kontrastującej garderoby na tle natury",
-          "default": "Używaj do: wyważonej fotografii produktowej z wizualną różnorodnością"
+        "triadic": {
+          "warm": "Świetne do: odważnych prac edytorialnych z energią czerwieni, żółci i błękitu",
+          "cool": "Świetne do: żywych, lekko niepokojących kadrów z trzema mocnymi kolorami",
+          "default": "Świetne do: żywych prac edytorialnych i odważnych, kreatywnych portretów"
         },
-        "tetradic": "Używaj do: bogatych układów edytorialnych i złożonych kompozycji wieloobiektowych"
+        "tetradic": {
+          "warm": "Świetne do: bogatych, warstwowych scen z dwiema parami dopełniającymi",
+          "cool": "Świetne do: złożonych pejzaży miejskich z chłodnymi i ciepłymi źródłami światła",
+          "default": "Świetne do: bogatych układów edytorialnych i kompozycji z wieloma obiektami"
+        },
+        "monochromatic": {
+          "warm": "Świetne do: cichych, spójnych ciepłych tonów opartych na jednym odcieniu",
+          "cool": "Świetne do: spokojnych, minimalistycznych chłodnych scen opartych na jednym odcieniu",
+          "default": "Świetne do: minimalistycznych, spójnych obrazów opartych na świetle i cieniu"
+        },
+        "custom": {
+          "warm": "Przeciągnij przerywane cele, aby zaprojektować własną relację między kolorami",
+          "cool": "Przeciągnij przerywane cele, aby zaprojektować własną relację między kolorami",
+          "default": "Przeciągnij przerywane cele, aby zaprojektować własną relację między kolorami"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
           "question": "Czym jest harmonia kolorów w fotografii?",
-          "answer": "Harmonia kolorów odnosi się do estetycznie przyjemnych kombinacji kolorów opartych na ich pozycjach na kole barw. Harmonijne kolory tworzą równowagę wizualną i mogą wywoływać określone nastroje na zdjęciach."
+          "answer": "Harmonia kolorów to relacja między odcieniami w kadrze, która wygląda na zamierzoną: dwa kolory leżące naprzeciwko siebie (dopełniające), sąsiadujące na kole (analogiczne) lub trzy równomiernie rozłożone (triadyczne). Zdjęcia rzadko zaczynają się od czystej harmonii, ale zwykle dzieli je od niej tylko jedno małe przesunięcie."
         },
         "complementary-vs-analogous": {
-          "question": "Jaka jest różnica między kolorami dopełniającymi a analogicznymi?",
-          "answer": "Kolory dopełniające leżą naprzeciwko siebie na kole barw (jak niebieski i pomarańczowy) i tworzą wysoki kontrast. Kolory analogiczne leżą obok siebie (jak niebieski, niebiesko-zielony i zielony) i tworzą bardziej harmonijne, spójne wrażenie."
+          "question": "Jak odczytać harmonię, która już jest na moim zdjęciu?",
+          "answer": "Pobierz próbki z kilku ważnych miejsc (niebo, skóra, te jedne czerwone drzwi) i sprawdź, gdzie lądują na kole. Dwie kropki leżące mniej więcej naprzeciwko siebie to para dopełniająca; skupisko w zakresie około 60° to układ analogiczny. Odznaka Najlepsze dopasowanie robi to porównanie za Ciebie dla wszystkich sześciu harmonii."
         },
         "how-to-use-color-schemes-photography": {
-          "question": "Jak stosować schematy kolorów w fotografii?",
-          "answer": "Planuj sesje wokół palety kolorów — wybieraj garderobę, lokalizacje i rekwizyty pasujące do schematu. W postprodukcji używaj korekcji kolorów, aby podkreślić wybraną paletę. Schematy kolorów pomagają tworzyć spójną tożsamość wizualną w całej serii zdjęć."
+          "question": "Jak wykorzystać sugerowane kolory w Lightroomie lub Photoshopie?",
+          "answer": "Każda próbka pokazuje kierunek (w stronę różu, w stronę morskiej zieleni) i sugerowany kod hex przy tym samym nasyceniu i jasności. W panelu HSL Lightrooma lub Point Color, albo w Odcień/Nasycenie Photoshopa, przesuń odcień tego koloru we wskazanym kierunku, aż zbliży się do sugerowanej wartości. Najpierw wprowadzaj największe zmiany i zatrzymaj się, gdy strzałka pokaże Wyrównany."
         }
       }
     }

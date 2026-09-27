@@ -85,8 +85,8 @@
       "description": "Yaygın çekim senaryoları için kamera ayarı kopya kağıtları — indirilebilir ve yazdırılabilir"
     },
     "color-analyzer": {
-      "name": "Renk Şeması Üreteci",
-      "description": "Fotoğraf çekimleri için renk paletleri oluşturun"
+      "name": "Renk Analiz Aracı",
+      "description": "Bir fotoğraftaki renkleri örnekleyin, uyumlarını okuyun ve her birini hangi yöne itmeniz gerektiğini görün"
     }
   }
 }

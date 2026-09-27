@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Generator de palete de culori",
-      "description": "Generează palete de culori pentru fotografie folosind armonii complementare, analoge, triadice și tetradice. Roată de culori interactivă cu selector din fotografie."
+      "title": "Analizator de culori: citește armonia de culori din orice fotografie",
+      "description": "Analizator gratuit de culori pentru fotografii și generator de scheme de culori. Eșantionează culorile din fotografia ta, plasează-le pe un cerc cromatic, găsește cea mai apropiată armonie de culori și primește îndrumări de gradare pentru fiecare culoare. 100% în browserul tău."
     }
   }
 }

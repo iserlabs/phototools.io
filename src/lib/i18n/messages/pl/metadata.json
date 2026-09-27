@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Generator schematów kolorów",
-      "description": "Generuj palety kolorów do fotografii, używając dopełniających, analogicznych, triadycznych i tetradycznych harmonii kolorów. Interaktywne koło barw z próbnikiem ze zdjęcia."
+      "title": "Analizator kolorów: odczytaj harmonię kolorów na dowolnym zdjęciu",
+      "description": "Darmowy analizator kolorów zdjęć i generator schematów kolorów. Pobieraj próbki kolorów ze zdjęcia, nanieś je na koło kolorów, znajdź najbliższą harmonię kolorów i uzyskaj wskazówki korekcji dla każdego koloru. 100% w Twojej przeglądarce."
     }
   }
 }
