@@ -3,10 +3,14 @@
     "color-analyzer": {
       "colorScheme": "配色方案",
       "complementary": "互補色",
+      "splitComplementary": "分裂互補",
       "analogous": "類比色",
       "triadic": "三等分配色",
-      "splitComplementary": "分裂互補",
       "tetradic": "四等分配色",
+      "monochromatic": "單色配色",
+      "custom": "自訂",
+      "closestFit": "最接近的和諧",
+      "closestSentence": "您的照片最接近{harmony}（平均偏差{degrees}°）。點一下即可套用。",
       "keyColor": "主色",
       "hue": "色相：",
       "saturation": "飽和度：",
@@ -15,55 +19,120 @@
       "spread": "色相跨度：",
       "rectangleWidth": "矩形寬度：",
       "square": "（正方形）",
-      "pickFromPhoto": "從照片取色",
-      "dropPhotoPrompt": "將照片拖曳至此或點擊瀏覽",
-      "keyColorLabel": "主色 — 點擊可複製色碼",
-      "clickToCopyHex": "點擊複製 Hex 色碼",
+      "samples": "取樣點",
+      "lock": "將此顏色鎖定為基準色",
+      "unlock": "解除鎖定",
+      "removeSample": "移除取樣點",
+      "labelPlaceholder": "標籤",
+      "neutralNotScored": "中性色，不列入評分",
+      "suggested": "建議",
+      "autoPick": "自動選取5個",
+      "changePhoto": "更換照片",
+      "capReached": "取樣點最多{cap}個，請先移除一個才能新增。",
+      "markerLabel": "取樣點{n}：{label}",
+      "dropPhotoPrompt": "拖放照片或點擊瀏覽。照片只會留在您的瀏覽器中。",
+      "viewNatural": "自然",
+      "viewPure": "純色相",
+      "viewGuide": "配色指南",
+      "viewHint": {
+        "key": "拖曳圓點以設定主色。拖入照片即可分析實際顏色。",
+        "natural": "以實際飽和度顯示顏色。切換分頁即可檢視配色關係。",
+        "pure": "將所有色相推到色輪邊緣，方便判讀顏色之間的角度。",
+        "guide": "虛線圖形為目標位置，箭頭指出每種顏色應移動的方向。"
+      },
+      "nudge": {
+        "aligned": "已對齊",
+        "slight": "朝{color}微調",
+        "big": "朝{color}大幅偏移"
+      },
+      "names": {
+        "red": "紅色",
+        "vermilion": "朱紅",
+        "orange": "橙色",
+        "amber": "琥珀色",
+        "yellow": "黃色",
+        "lime": "萊姆綠",
+        "chartreuse": "黃綠色",
+        "leaf-green": "葉綠色",
+        "green": "綠色",
+        "jade": "翡翠綠",
+        "spring-green": "嫩綠",
+        "mint": "薄荷綠",
+        "cyan": "青色",
+        "sky-blue": "天藍色",
+        "azure": "蔚藍",
+        "cobalt": "鈷藍",
+        "blue": "藍色",
+        "indigo": "靛藍",
+        "violet": "紫羅蘭色",
+        "purple": "紫色",
+        "magenta": "洋紅",
+        "fuchsia": "桃紅",
+        "pink": "粉紅色",
+        "rose": "玫瑰紅",
+        "gray": "灰色",
+        "black": "黑色",
+        "white": "白色"
+      },
+      "keyColorLabel": "主色 — 點擊複製Hex值",
+      "clickToCopyHex": "點擊複製Hex值",
       "copiedExcl": "已複製！",
-      "copyColors": "複製色彩",
+      "copyColors": "複製顏色",
       "hexFormat": "Hex",
       "cssFormat": "CSS",
       "rgbFormat": "RGB",
-      "copyHexCodes": "複製 Hex 色碼",
-      "copyCssVariables": "複製 CSS 變數",
-      "copyRgbValues": "複製 RGB 值",
-      "pickColorFromPhoto": "從照片取色",
-      "close": "關閉",
-      "dropPhotoOrBrowse": "將照片拖曳至此或點擊瀏覽",
-      "tapToChoose": "點擊選擇照片",
-      "tapToSample": "點擊照片任何位置即可取樣該顏色",
-      "changePhoto": "更換照片",
-      "privacyNote": "您的照片只會留在瀏覽器內 — 不會上傳到任何地方",
+      "copyHexCodes": "複製Hex色碼",
+      "copyCssVariables": "複製CSS變數",
+      "copyRgbValues": "複製RGB值",
       "suggestions": {
         "complementary": {
-          "warm": "適合：溫暖的夕陽人像搭配冷色陰影對比",
-          "cool": "適合：藍色時刻的情緒拍攝搭配暖色點綴光",
-          "default": "適合：具強烈視覺張力的高對比構圖"
+          "warm": "適合：暖色調夕陽人像，搭配冷色調陰影對比",
+          "cool": "適合：藍調時刻的氛圍拍攝，搭配暖色點綴光",
+          "default": "適合：視覺張力強烈的高對比構圖"
+        },
+        "splitComplementary": {
+          "warm": "適合：夢幻寧靜的畫面，在不顯生硬的情況下保留對比",
+          "cool": "適合：冷色調的街拍與旅拍場景，搭配兩處暖色點綴",
+          "default": "適合：富有變化又不直接對立的平衡畫面"
         },
         "analogous": {
-          "warm": "適合：黃金時刻的風景，色調統一偏暖",
-          "cool": "適合：寧靜的水景與黃昏攝影",
-          "default": "適合：色彩過渡平順的自然系作品"
+          "warm": "適合：色調統一的暖色黃金時刻風景",
+          "cool": "適合：寧靜的水景與暮色攝影",
+          "default": "適合：色彩過渡柔和、和諧統一的自然攝影"
         },
-        "triadic": "適用：色彩鮮明的編輯作品與大膽的創意人像",
-        "splitComplementary": {
-          "warm": "適用：與自然背景對比的服裝造型",
-          "default": "適用：具視覺層次的平衡商品攝影"
+        "triadic": {
+          "warm": "適合：以紅黃藍能量呈現的大膽編輯作品",
+          "cool": "適合：三種強烈色彩帶來的鮮明且略帶不安感的畫面",
+          "default": "適合：色彩鮮明的編輯作品與大膽的創意人像"
         },
-        "tetradic": "適用：豐富的編輯版面與複雜的多主體構圖"
+        "tetradic": {
+          "warm": "適合：兩組互補色對帶來的豐富層次場景",
+          "cool": "適合：冷暖光源交織的複雜城市景觀",
+          "default": "適合：豐富的編輯版面與複雜的多主體構圖"
+        },
+        "monochromatic": {
+          "warm": "適合：源自單一色相、寧靜統一的暖色調",
+          "cool": "適合：以單一色相為基礎的沉靜極簡冷色場景",
+          "default": "適合：依靠明暗表現的極簡統一影像"
+        },
+        "custom": {
+          "warm": "拖曳虛線目標點，設計專屬於您的色彩關係",
+          "cool": "拖曳虛線目標點，設計專屬於您的色彩關係",
+          "default": "拖曳虛線目標點，設計專屬於您的色彩關係"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
           "question": "攝影中的色彩和諧是什麼？",
-          "answer": "色彩和諧指的是根據色環位置所形成、視覺上令人愉悅的配色。和諧的色彩能創造視覺平衡，也能在照片中喚起特定的情緒氛圍。"
+          "answer": "色彩和諧是指畫面中色相之間呈現出刻意安排感的關係：色輪上正相對的兩種顏色（互補色）、相鄰的顏色（類比色），或均勻分布的三種顏色（三等分配色）。照片很少一開始就具備乾淨的和諧關係，但通常只需稍作調整即可接近。"
         },
         "complementary-vs-analogous": {
-          "question": "互補色與類比色有什麼差別？",
-          "answer": "互補色位於色環的兩端（例如藍與橘），對比強烈。類比色則彼此相鄰（例如藍、藍綠、綠），帶來更和諧、一致的感受。"
+          "question": "該如何解讀照片中已經存在的色彩關係？",
+          "answer": "取樣幾個重要的點（天空、膚色、那扇紅色的門），觀察它們在色輪上的位置。兩個點大致相對即為互補色對；若聚集在約60°範圍內則為類比色。「最接近的和諧」徽章會自動為您在全部六種配色中完成這項比較。"
         },
         "how-to-use-color-schemes-photography": {
-          "question": "攝影中該如何運用配色方案？",
-          "answer": "以配色方案規劃拍攝 — 選擇符合該方案的服裝、場地與道具。後製時透過色彩分級強調選定的配色。配色方案有助於為整組系列作品建立一致的視覺識別。"
+          "question": "該如何在Lightroom或Photoshop中運用建議顏色？",
+          "answer": "每個取樣點都會顯示一個方向（偏向粉紅色、偏向藍綠色）以及相同飽和度、亮度下的建議Hex值。在Lightroom的HSL面板或Point Color中，或在Photoshop的色相/飽和度中，依顯示的方向調整該顏色的色相，直到接近建議值。先調整幅度最大的，當箭頭顯示「已對齊」時停止。"
         }
       }
     }

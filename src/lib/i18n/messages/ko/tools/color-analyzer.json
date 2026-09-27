@@ -3,23 +3,80 @@
     "color-analyzer": {
       "colorScheme": "배색",
       "complementary": "보색",
+      "splitComplementary": "분할 보색",
       "analogous": "유사색",
       "triadic": "삼색 조화",
-      "splitComplementary": "분할 보색",
       "tetradic": "사색 조화",
+      "monochromatic": "단색 조화",
+      "custom": "사용자 지정",
+      "closestFit": "가장 가까운 조화",
+      "closestSentence": "이 사진은 {harmony}에 가장 가깝습니다 (평균 {degrees}° 차이). 탭하여 사용하세요.",
       "keyColor": "핵심 색상",
       "hue": "색조:",
       "saturation": "채도:",
       "lightness": "명도:",
       "splitAngle": "분할 각도:",
       "spread": "간격:",
-      "rectangleWidth": "직사각형 폭:",
+      "rectangleWidth": "사각형 너비:",
       "square": "(정사각형)",
-      "pickFromPhoto": "사진에서 선택",
-      "dropPhotoPrompt": "사진을 여기에 놓거나 클릭하여 찾아보기",
+      "samples": "샘플",
+      "lock": "이 색상을 기준점으로 고정",
+      "unlock": "잠금 해제",
+      "removeSample": "샘플 삭제",
+      "labelPlaceholder": "라벨",
+      "neutralNotScored": "중립색, 채점 제외",
+      "suggested": "추천",
+      "autoPick": "자동 선택 5개",
+      "changePhoto": "사진 변경",
+      "capReached": "최대 {cap}개까지 가능합니다. 추가하려면 하나를 삭제하세요.",
+      "markerLabel": "샘플 {n}: {label}",
+      "dropPhotoPrompt": "사진을 끌어다 놓거나 클릭하여 찾아보세요. 브라우저 안에만 저장됩니다.",
+      "viewNatural": "자연스러운",
+      "viewPure": "순수 색조",
+      "viewGuide": "조화 가이드",
+      "viewHint": {
+        "key": "점을 드래그하여 핵심 색상을 설정하세요. 사진을 넣으면 실제 색상을 분석합니다.",
+        "natural": "실제 채도로 색상을 표시합니다. 탭을 전환해 조화를 확인하세요.",
+        "pure": "색상 간 각도를 읽기 쉽도록 모든 색조를 테두리까지 밀어냈습니다.",
+        "guide": "점선 도형이 목표 위치입니다. 화살표는 각 색상을 어느 방향으로 옮겨야 하는지 보여줍니다."
+      },
+      "nudge": {
+        "aligned": "정렬됨",
+        "slight": "{color} 방향으로 약간 조정",
+        "big": "{color} 방향으로 크게 이동"
+      },
+      "names": {
+        "red": "빨강",
+        "vermilion": "다홍색",
+        "orange": "주황",
+        "amber": "호박색",
+        "yellow": "노랑",
+        "lime": "라임색",
+        "chartreuse": "연두",
+        "leaf-green": "풀색",
+        "green": "초록",
+        "jade": "옥색",
+        "spring-green": "새싹색",
+        "mint": "민트색",
+        "cyan": "시안",
+        "sky-blue": "하늘색",
+        "azure": "짙은 하늘색",
+        "cobalt": "코발트블루",
+        "blue": "파랑",
+        "indigo": "남색",
+        "violet": "제비꽃색",
+        "purple": "보라",
+        "magenta": "마젠타",
+        "fuchsia": "푸크시아",
+        "pink": "분홍",
+        "rose": "장미색",
+        "gray": "회색",
+        "black": "검정",
+        "white": "흰색"
+      },
       "keyColorLabel": "핵심 색상 — 클릭하여 Hex 복사",
       "clickToCopyHex": "클릭하여 Hex 복사",
-      "copiedExcl": "복사 완료!",
+      "copiedExcl": "복사했습니다!",
       "copyColors": "색상 복사",
       "hexFormat": "Hex",
       "cssFormat": "CSS",
@@ -27,43 +84,55 @@
       "copyHexCodes": "Hex 코드 복사",
       "copyCssVariables": "CSS 변수 복사",
       "copyRgbValues": "RGB 값 복사",
-      "pickColorFromPhoto": "사진에서 색상 선택",
-      "close": "닫기",
-      "dropPhotoOrBrowse": "사진을 여기에 놓거나 클릭하여 찾아보기",
-      "tapToChoose": "탭하여 사진 선택",
-      "tapToSample": "사진의 아무 곳이나 탭하여 색상을 추출하세요",
-      "changePhoto": "사진 변경",
-      "privacyNote": "사진은 브라우저에 머무릅니다 — 업로드되지 않습니다",
       "suggestions": {
         "complementary": {
-          "warm": "적합: 차가운 그림자 대비가 있는 따뜻한 석양 인물 사진",
-          "cool": "적합: 따뜻한 포인트 조명이 있는 무디한 블루 아워 촬영",
-          "default": "적합: 강한 시각적 긴장감이 있는 고대비 구도"
+          "warm": "추천: 따뜻한 노을 인물 사진과 차가운 그림자의 대비",
+          "cool": "추천: 따뜻한 포인트 조명을 더한 무드 있는 블루 아워 촬영",
+          "default": "추천: 강한 시각적 긴장감을 주는 고대비 구도"
+        },
+        "splitComplementary": {
+          "warm": "추천: 거칠지 않으면서 대비를 유지하는 몽환적이고 차분한 분위기",
+          "cool": "추천: 두 가지 따뜻한 포인트를 더한 차가운 거리·여행 사진",
+          "default": "추천: 직접적인 대립 없이 다양성과 균형을 갖춘 구도"
         },
         "analogous": {
-          "warm": "적합: 통일된 따뜻한 톤의 골든 아워 풍경",
-          "cool": "적합: 고요한 물가 장면과 황혼 사진",
-          "default": "적합: 부드러운 색상 전환이 있는 조화로운 자연 사진"
+          "warm": "추천: 통일된 따뜻한 톤의 골든 아워 풍경",
+          "cool": "추천: 고요한 물가 풍경과 트와일라잇 사진",
+          "default": "추천: 부드러운 색상 전환이 있는 조화로운 자연 사진"
         },
-        "triadic": "적합: 생동감 있는 에디토리얼 작업과 대담한 창작 인물 사진",
-        "splitComplementary": {
-          "warm": "적합: 자연 배경에 대비되는 의상",
-          "default": "적합: 시각적 다양성이 있는 균형 잡힌 제품 사진"
+        "triadic": {
+          "warm": "추천: 빨강, 노랑, 파랑의 에너지를 살린 대담한 에디토리얼 작업",
+          "cool": "추천: 세 가지 강한 색이 만드는 생동감 있고 살짝 불안정한 구도",
+          "default": "추천: 생동감 있는 에디토리얼 작업과 대담한 창작 인물 사진"
         },
-        "tetradic": "적합: 풍부한 에디토리얼 레이아웃과 복잡한 다중 피사체 구도"
+        "tetradic": {
+          "warm": "추천: 두 쌍의 보색이 만드는 풍부하고 겹겹이 쌓인 장면",
+          "cool": "추천: 차갑고 따뜻한 광원이 섞인 복잡한 도시 풍경",
+          "default": "추천: 풍부한 에디토리얼 레이아웃과 다중 피사체 구도"
+        },
+        "monochromatic": {
+          "warm": "추천: 하나의 색조에서 나오는 조용하고 통일된 따뜻한 톤",
+          "cool": "추천: 하나의 색조를 바탕으로 한 차분하고 미니멀한 차가운 장면",
+          "default": "추천: 빛과 그림자에 기대는 미니멀하고 통일된 이미지"
+        },
+        "custom": {
+          "warm": "점선 목표점을 드래그해 색상 간의 나만의 관계를 직접 디자인하세요",
+          "cool": "점선 목표점을 드래그해 색상 간의 나만의 관계를 직접 디자인하세요",
+          "default": "점선 목표점을 드래그해 색상 간의 나만의 관계를 직접 디자인하세요"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
-          "question": "사진에서 색상 조화란 무엇인가요?",
-          "answer": "색상 조화란 색상환에서의 위치에 기반한 미학적으로 만족스러운 색상 조합을 의미합니다. 조화로운 색상은 시각적 균형을 만들고 사진에서 특정 분위기를 이끌어낼 수 있습니다."
+          "question": "사진에서 색채 조화란 무엇인가요?",
+          "answer": "색채 조화란 프레임 속 색조들이 의도적으로 보이게 만드는 관계입니다. 서로 정반대에 있는 두 색(보색), 색상환에서 이웃한 색(유사색), 균등하게 세 개가 배치된 색(삼색 조화) 등이 있습니다. 사진이 처음부터 깔끔한 조화를 이루는 경우는 드물지만, 보통은 아주 조금만 조정하면 그 조화에 다다를 수 있습니다."
         },
         "complementary-vs-analogous": {
-          "question": "보색과 유사색의 차이점은 무엇인가요?",
-          "answer": "보색은 색상환에서 서로 반대편에 위치한 색(파란색과 주황색 등)으로 높은 대비를 만듭니다. 유사색은 서로 인접한 색(파란색, 청록색, 녹색 등)으로 더 조화롭고 통일된 느낌을 만듭니다."
+          "question": "내 사진에 이미 있는 조화를 어떻게 읽어낼 수 있나요?",
+          "answer": "중요한 몇 지점(하늘, 피부, 빨간 문 하나)을 샘플링하고 색상환의 어디에 위치하는지 살펴보세요. 거의 정반대에 있는 두 점은 보색 쌍이고, 약 60° 이내에 모여 있으면 유사색입니다. '가장 가까운 조화' 배지가 여섯 가지 조화 전체에 걸쳐 이 비교를 대신 해줍니다."
         },
         "how-to-use-color-schemes-photography": {
-          "question": "사진에서 배색을 어떻게 활용하나요?",
-          "answer": "컬러 팔레트를 중심으로 촬영을 계획하세요 — 의상, 장소, 소품을 배색에 맞게 선택합니다. 후보정에서 색보정을 사용하여 선택한 팔레트를 강조하세요. 배색은 사진 시리즈 전체에 일관된 시각적 정체성을 만드는 데 도움이 됩니다."
+          "question": "Lightroom이나 Photoshop에서 추천 색상을 어떻게 활용하나요?",
+          "answer": "각 샘플은 방향(핑크 쪽으로, 틸 쪽으로)과 동일한 채도·명도에서의 추천 Hex 값을 보여줍니다. Lightroom의 HSL 패널이나 Point Color, 또는 Photoshop의 색조/채도에서 해당 색의 색조를 표시된 방향으로 추천 값 근처까지 옮기세요. 가장 큰 변화가 필요한 것부터 먼저 조정하고, 화살표가 '정렬됨'으로 바뀌면 멈추세요."
         }
       }
     }

@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Generator Skema Warna",
-      "description": "Buat palet warna untuk fotografi menggunakan harmoni warna komplementer, analogus, triadik, dan tetradik. Roda warna interaktif dengan pemilih warna dari foto."
+      "title": "Penganalisis Warna: membaca harmoni warna di foto apa pun",
+      "description": "Penganalisis warna foto dan generator skema warna gratis. Ambil sampel warna dari foto Anda, plot ke roda warna, temukan harmoni warna terdekat, dan dapatkan panduan grading per warna. 100% di browser Anda."
     }
   }
 }

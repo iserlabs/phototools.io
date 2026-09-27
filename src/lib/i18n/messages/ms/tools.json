@@ -85,8 +85,8 @@
       "description": "Helaian rujukan tetapan kamera untuk senario penggambaran biasa — boleh dimuat turun dan dicetak"
     },
     "color-analyzer": {
-      "name": "Penjana Palet Warna",
-      "description": "Bina palet warna untuk sesi fotografi anda"
+      "name": "Penganalisis Warna",
+      "description": "Sampelkan warna dalam foto, baca harmoninya, dan lihat ke arah mana setiap warna patut digerakkan"
     }
   }
 }

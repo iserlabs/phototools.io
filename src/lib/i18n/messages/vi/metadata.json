@@ -115,8 +115,8 @@
       "description": ""
     },
     "color-analyzer": {
-      "title": "Tạo phối màu",
-      "description": "Tạo bảng màu cho nhiếp ảnh sử dụng hài hòa màu bổ sung, tương tự, tam giác và tứ giác. Vòng tròn màu tương tác với công cụ chọn màu từ ảnh."
+      "title": "Bộ phân tích màu: đọc sự hài hòa màu sắc trong bất kỳ bức ảnh nào",
+      "description": "Công cụ phân tích màu ảnh và tạo phối màu miễn phí. Lấy mẫu màu từ ảnh của bạn, vẽ chúng lên vòng tròn màu, tìm sự hài hòa màu gần nhất, và nhận hướng dẫn chỉnh màu cho từng màu. Xử lý 100% ngay trong trình duyệt của bạn."
     }
   }
 }

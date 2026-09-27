@@ -3,10 +3,14 @@
     "color-analyzer": {
       "colorScheme": "配色方案",
       "complementary": "互补色",
+      "splitComplementary": "分裂互补色",
       "analogous": "类比色",
       "triadic": "三色配色",
-      "splitComplementary": "分裂互补色",
       "tetradic": "四色配色",
+      "monochromatic": "单色配色",
+      "custom": "自定义",
+      "closestFit": "最接近的和谐",
+      "closestSentence": "您的照片最接近{harmony}（平均偏差{degrees}°）。点击使用。",
       "keyColor": "关键色",
       "hue": "色相：",
       "saturation": "饱和度：",
@@ -15,55 +19,120 @@
       "spread": "展开度：",
       "rectangleWidth": "矩形宽度：",
       "square": "（正方形）",
-      "pickFromPhoto": "从照片取色",
-      "dropPhotoPrompt": "将照片拖放到此处或点击浏览",
-      "keyColorLabel": "关键色 — 点击复制十六进制值",
-      "clickToCopyHex": "点击复制十六进制值",
+      "samples": "取样点",
+      "lock": "将此颜色锁定为基准色",
+      "unlock": "解锁",
+      "removeSample": "移除取样点",
+      "labelPlaceholder": "标签",
+      "neutralNotScored": "中性色，不计入评分",
+      "suggested": "推荐",
+      "autoPick": "自动选取5个",
+      "changePhoto": "更换照片",
+      "capReached": "最多{cap}个取样点。移除一个才能添加新的。",
+      "markerLabel": "取样点{n}：{label}",
+      "dropPhotoPrompt": "拖放照片或点击浏览。照片仅保留在您的浏览器中。",
+      "viewNatural": "自然",
+      "viewPure": "纯色相",
+      "viewGuide": "配色指南",
+      "viewHint": {
+        "key": "拖动圆点设置关键色。拖入照片可分析真实颜色。",
+        "natural": "以实际饱和度显示颜色。切换标签页查看配色关系。",
+        "pure": "将所有色相推到色轮边缘，方便读取颜色之间的角度。",
+        "guide": "虚线图形是目标位置，箭头指示每种颜色应移动的方向。"
+      },
+      "nudge": {
+        "aligned": "已对齐",
+        "slight": "向{color}微调",
+        "big": "向{color}大幅偏移"
+      },
+      "names": {
+        "red": "红色",
+        "vermilion": "朱红",
+        "orange": "橙色",
+        "amber": "琥珀色",
+        "yellow": "黄色",
+        "lime": "青柠绿",
+        "chartreuse": "黄绿色",
+        "leaf-green": "叶绿色",
+        "green": "绿色",
+        "jade": "翡翠绿",
+        "spring-green": "嫩绿",
+        "mint": "薄荷绿",
+        "cyan": "青色",
+        "sky-blue": "天蓝色",
+        "azure": "蔚蓝",
+        "cobalt": "钴蓝",
+        "blue": "蓝色",
+        "indigo": "靛蓝",
+        "violet": "紫罗兰色",
+        "purple": "紫色",
+        "magenta": "品红",
+        "fuchsia": "紫红",
+        "pink": "粉色",
+        "rose": "玫瑰红",
+        "gray": "灰色",
+        "black": "黑色",
+        "white": "白色"
+      },
+      "keyColorLabel": "关键色 — 点击复制Hex值",
+      "clickToCopyHex": "点击复制Hex值",
       "copiedExcl": "已复制！",
       "copyColors": "复制颜色",
       "hexFormat": "Hex",
       "cssFormat": "CSS",
       "rgbFormat": "RGB",
-      "copyHexCodes": "复制十六进制颜色码",
-      "copyCssVariables": "复制 CSS 变量",
-      "copyRgbValues": "复制 RGB 值",
-      "pickColorFromPhoto": "从照片中取色",
-      "close": "关闭",
-      "dropPhotoOrBrowse": "将照片拖放到此处或点击浏览",
-      "tapToChoose": "点击选择照片",
-      "tapToSample": "点击照片上的任意位置以取样该颜色",
-      "changePhoto": "更换照片",
-      "privacyNote": "您的照片保留在浏览器中 — 不会上传任何内容",
+      "copyHexCodes": "复制Hex代码",
+      "copyCssVariables": "复制CSS变量",
+      "copyRgbValues": "复制RGB值",
       "suggestions": {
         "complementary": {
-          "warm": "适合：暖色日落人像搭配冷色阴影对比",
-          "cool": "适合：蓝色时刻的冷调拍摄搭配暖色点缀灯光",
-          "default": "适合：高对比度构图搭配强烈视觉张力"
+          "warm": "推荐用于：暖色调夕阳人像搭配冷色调阴影对比",
+          "cool": "推荐用于：蓝调时刻的氛围感拍摄，搭配暖色点缀光",
+          "default": "推荐用于：具有强烈视觉张力的高对比构图"
+        },
+        "splitComplementary": {
+          "warm": "推荐用于：梦幻宁静的画面，在不显生硬的情况下保留对比",
+          "cool": "推荐用于：冷色调的街拍与旅拍场景，搭配两处暖色点缀",
+          "default": "推荐用于：富有变化又不直接对立的平衡画面"
         },
         "analogous": {
-          "warm": "适合：黄金时刻风光搭配统一暖色调",
-          "cool": "适合：宁静水面场景和暮色摄影",
-          "default": "适合：和谐的自然照片搭配平滑的色彩过渡"
+          "warm": "推荐用于：色调统一的暖色黄金时刻风光",
+          "cool": "推荐用于：宁静的水景与暮色摄影",
+          "default": "推荐用于：色彩过渡柔和、和谐统一的自然摄影"
         },
-        "triadic": "适用于：充满活力的编辑作品和大胆的创意人像",
-        "splitComplementary": {
-          "warm": "适用于：自然背景下的对比服装搭配",
-          "default": "适用于：平衡的产品摄影搭配视觉多样性"
+        "triadic": {
+          "warm": "推荐用于：以红黄蓝能量呈现的大胆编辑类作品",
+          "cool": "推荐用于：三种强烈色彩带来的鲜活且略带不安感的画面",
+          "default": "推荐用于：充满活力的编辑作品和大胆的创意人像"
         },
-        "tetradic": "适用于：丰富的编辑版面和复杂的多主体构图"
+        "tetradic": {
+          "warm": "推荐用于：两组互补色对带来的丰富层次场景",
+          "cool": "推荐用于：冷暖光源交织的复杂城市景观",
+          "default": "推荐用于：丰富的编辑版面与多主体构图"
+        },
+        "monochromatic": {
+          "warm": "推荐用于：源自单一色相、宁静统一的暖色调",
+          "cool": "推荐用于：以单一色相为基础的冷静极简冷色场景",
+          "default": "推荐用于：依靠明暗表现的极简统一影像"
+        },
+        "custom": {
+          "warm": "拖动虚线目标点，设计属于您自己的色彩关系",
+          "cool": "拖动虚线目标点，设计属于您自己的色彩关系",
+          "default": "拖动虚线目标点，设计属于您自己的色彩关系"
+        }
       },
       "faq": {
         "what-is-color-harmony": {
           "question": "摄影中的色彩和谐是什么？",
-          "answer": "色彩和谐是指基于色轮上位置关系的美学色彩组合。和谐的色彩能创造视觉平衡，并在照片中唤起特定的情绪。"
+          "answer": "色彩和谐是指画面中色相之间呈现出刻意安排感的关系：色轮上正相对的两种颜色（互补色）、相邻的颜色（类比色），或均匀分布的三种颜色（三色配色）。照片很少一开始就具备干净的和谐关系，但通常只需稍作调整即可接近。"
         },
         "complementary-vs-analogous": {
-          "question": "互补色和类比色有什么区别？",
-          "answer": "互补色位于色轮的对面（如蓝色和橙色），能创造高对比度。类比色相邻排列（如蓝色、蓝绿色和绿色），能创造更和谐、统一的感觉。"
+          "question": "如何解读照片中已经存在的色彩关系？",
+          "answer": "取样几个重要的点（天空、皮肤、那扇红色的门），观察它们在色轮上的位置。两个点大致相对即为互补色对；若聚集在约60°范围内则为类比色。“最接近的和谐”标签会自动为您在全部六种配色中完成这项比较。"
         },
         "how-to-use-color-schemes-photography": {
-          "question": "如何在摄影中使用配色方案？",
-          "answer": "围绕色彩方案规划拍摄——选择与方案匹配的服装、场地和道具。在后期处理中，使用色彩分级来强调所选色彩方案。配色方案有助于在一组照片中创建一致的视觉风格。"
+          "question": "如何在Lightroom或Photoshop中使用推荐颜色？",
+          "answer": "每个取样点都会显示一个方向（偏向粉色、偏向青绿色）和相同饱和度、明度下的建议Hex值。在Lightroom的HSL面板或Point Color中，或在Photoshop的色相/饱和度中，按显示的方向调整该颜色的色相，直到接近建议值。先调整幅度最大的，当箭头显示“已对齐”时停止。"
         }
       }
     }
