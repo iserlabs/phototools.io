@@ -34,11 +34,16 @@ function fitSize(w: number, h: number, maxLongEdge: number): { width: number; he
 async function decodeWithImg(file: File): Promise<{ img: HTMLImageElement; url: string }> {
   const url = URL.createObjectURL(file)
   const img = new Image()
-  await new Promise<void>((resolve, reject) => {
-    img.onload = () => resolve()
-    img.onerror = () => reject(new Error('unsupported image'))
-    img.src = url
-  })
+  try {
+    await new Promise<void>((resolve, reject) => {
+      img.onload = () => resolve()
+      img.onerror = () => reject(new Error('unsupported image'))
+      img.src = url
+    })
+  } catch (err) {
+    URL.revokeObjectURL(url)
+    throw err
+  }
   return { img, url }
 }
 
