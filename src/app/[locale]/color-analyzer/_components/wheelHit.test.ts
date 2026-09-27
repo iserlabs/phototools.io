@@ -47,6 +47,10 @@ describe('resolvePress', () => {
   it('outside custom mode a dot press only selects', () => {
     expect(resolvePress(dots, targets, false, on.x, on.y, cx, cy, R, 16)).toEqual({ select: 's1', dragTarget: null })
   })
+  it('a dot pressed while its target sits at another hue only selects', () => {
+    const moved: WheelPoint[] = [{ id: 's1', hue: 200, r: 70 }]
+    expect(resolvePress(dots, moved, true, on.x, on.y, cx, cy, R, 16)).toEqual({ select: 's1', dragTarget: null })
+  })
   it('a press on a bare custom target starts dragging it', () => {
     const t2: WheelPoint[] = [{ id: 's1', hue: 200, r: 70 }]
     const pos = hueToPos(200, 70, cx, cy, R)

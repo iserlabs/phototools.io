@@ -46,7 +46,6 @@ describe('SampleMarkers', () => {
     render(<SampleMarkers {...base} onRemove={onRemove} onDragStart={(_id, e) => e.preventDefault()}
       samples={[sample('a', 0.5, 0.5), sample('b', 0.2, 0.2)]} selectedId="a" />)
     const m = screen.getByRole('button', { name: 'Sample 1: blue' })
-    expect(m).toHaveAttribute('tabindex', '0')
     fireEvent.pointerDown(m)
     expect(m).toHaveFocus()
     fireEvent.keyDown(m, { key: 'Delete' })

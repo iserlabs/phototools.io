@@ -31,7 +31,6 @@ export function SampleMarkers({ samples, selectedId, width, height, markerLabel,
               style={{ left, top, backgroundColor: `rgb(${s.rgb.r}, ${s.rgb.g}, ${s.rgb.b})` }}
               aria-label={markerLabel(i + 1, s.label)}
               aria-pressed={selected}
-              tabIndex={0}
               onClick={() => onSelect(s.id)}
               onPointerDown={(e) => {
                 onDragStart(s.id, e)
