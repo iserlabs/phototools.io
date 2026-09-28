@@ -140,6 +140,8 @@ jobs:
         timeout-minutes: 20
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Alternative to an API key: a Claude subscription token from `claude setup-token`.
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           MODEL: ${{ github.event.client_payload.model }}
           PM: ${{ steps.pm.outputs.pm }}
           S_TEST: ${{ steps.pm.outputs.test }}
