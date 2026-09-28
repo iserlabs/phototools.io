@@ -1,0 +1,460 @@
+# Managed by iserlabs/hub — standard-sync canon (managed/sentry-autofix.yml).
+# Do NOT edit in this repo; change it in iserlabs/hub and let standard-sync push it.
+# Spec: hub docs/superpowers/specs/2026-09-17-fleet-observability-autofix-design.md §4.3.
+#
+# Three jobs, on separate runners, so agent-written code never shares a runner with a
+# credential that can push:
+#   agent  — runs Claude Code headless against a checkout that CANNOT push (no App
+#            token is ever minted in this job). Uploads its collected diff as an artifact.
+#   push   — downloads that artifact, clones `main` fresh with a freshly minted App
+#            token, re-runs the hazard check AUTHORITATIVELY from the clone's own copy
+#            of the checker (never trusting anything the agent job produced or touched),
+#            applies, commits, and pushes.
+#   revert — unrelated to the above; reverts a prior auto-fix commit.
+name: Sentry auto-fix
+
+on:
+  repository_dispatch:
+    types: [sentry-autofix, sentry-autofix-revert]
+
+permissions:
+  contents: read
+
+env:
+  RUN_ID: ${{ github.event.client_payload.runId }}
+  RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+jobs:
+  agent:
+    if: github.event.action == 'sentry-autofix'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    concurrency:
+      group: sentry-autofix-fix
+      cancel-in-progress: false
+    outputs:
+      outcome: ${{ steps.outcome.outputs.outcome }}
+    steps:
+      - name: Mask the run token
+        env:
+          T: ${{ github.event.client_payload.token }}
+        run: echo "::add-mask::$T"
+
+      # No App token is minted in this job at all. `${{ github.token }}` (the default,
+      # low-privilege GITHUB_TOKEN) fetches main; persist-credentials: false means
+      # nothing pushable is ever written to .git/config in this tree.
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 50
+          token: ${{ github.token }}
+          persist-credentials: false
+
+      - name: Copy the checker out of the tree
+        run: |
+          mkdir -p .autofix
+          echo "agent-error" > .autofix/fail-reason
+          # Advisory only in this job (see "Hazard stop" below) — still run from a copy
+          # in $RUNNER_TEMP, never the working-tree file the agent could have edited.
+          cp managed/autofix-check.mjs "$RUNNER_TEMP/autofix-check.mjs"
+
+      - name: Detect package manager and scripts
+        id: pm
+        run: |
+          if [ -f pnpm-lock.yaml ]; then
+            PM=pnpm
+          elif [ -f yarn.lock ]; then
+            PM=yarn
+          elif [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            PM=npm
+          else
+            echo "agent-error" > .autofix/fail-reason
+            echo "no lockfile"
+            exit 1
+          fi
+          echo "pm=$PM" >> "$GITHUB_OUTPUT"
+          BERRY=false
+          if [ "$PM" = "yarn" ] && [ -f .yarnrc.yml ]; then BERRY=true; fi
+          echo "berry=$BERRY" >> "$GITHUB_OUTPUT"
+          node -e '
+            const s = require("./package.json").scripts || {};
+            const pick = (...names) => names.find((n) => s[n]) || "";
+            const out = [
+              "test=" + pick("test"),
+              "typecheck=" + pick("typecheck", "type-check", "check"),
+            ];
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, out.join("\n") + "\n");
+          '
+
+      # pnpm isn't bundled with Node; Yarn Berry (packageManager: yarn@4+) also needs
+      # corepack active to honour that field. Classic Yarn and npm ship with Node already.
+      - name: Enable corepack for pnpm/yarn berry
+        if: steps.pm.outputs.pm == 'pnpm' || steps.pm.outputs.berry == 'true'
+        run: corepack enable
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: ${{ steps.pm.outputs.pm }}
+
+      - name: Install (lockfile)
+        run: |
+          case "${{ steps.pm.outputs.pm }}" in
+            pnpm) pnpm install --frozen-lockfile ;;
+            yarn)
+              if [ -f .yarnrc.yml ]; then yarn install --immutable; else yarn install --frozen-lockfile; fi
+              ;;
+            *) npm ci ;;
+          esac
+
+      - name: Report working
+        env:
+          RUN_TOKEN: ${{ github.event.client_payload.token }}
+          HUB_URL: ${{ github.event.client_payload.hub }}
+        run: |
+          curl -sS --fail-with-body --retry 3 --retry-all-errors --retry-delay 2 \
+            -X POST "$HUB_URL/api/autofix/runs/$RUN_ID/status" \
+            -H "Authorization: Bearer $RUN_TOKEN" -H "Content-Type: application/json" \
+            -d "{\"state\":\"working\",\"workflowRunUrl\":\"$RUN_URL\"}" \
+            || echo "::warning::working report failed"
+
+      - name: Fetch the briefing from the hub
+        env:
+          RUN_TOKEN: ${{ github.event.client_payload.token }}
+          HUB_URL: ${{ github.event.client_payload.hub }}
+        run: |
+          curl -sS --fail-with-body --retry 3 --retry-all-errors --retry-delay 2 \
+            "$HUB_URL/api/autofix/runs/$RUN_ID/context" \
+            -H "Authorization: Bearer $RUN_TOKEN" -o .autofix/context.md
+          echo "briefing: $(wc -c < .autofix/context.md) bytes"
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      # Only Read/Edit/Write/Grep/Glob plus the repo's own test/typecheck commands —
+      # exact commands, no wildcard, no lint. RUN_TOKEN/HUB_URL are never in this step's
+      # env: this tree can neither push nor talk to the hub.
+      - name: Run the agent
+        timeout-minutes: 20
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Alternative to an API key: a Claude subscription token from `claude setup-token`.
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          MODEL: ${{ github.event.client_payload.model }}
+          PM: ${{ steps.pm.outputs.pm }}
+          S_TEST: ${{ steps.pm.outputs.test }}
+          S_TYPECHECK: ${{ steps.pm.outputs.typecheck }}
+          DISABLE_AUTOUPDATER: "1"
+        run: |
+          ALLOWED="Read,Edit,Write,Grep,Glob"
+          [ -n "$S_TEST" ] && ALLOWED="$ALLOWED,Bash($PM run $S_TEST)"
+          [ -n "$S_TYPECHECK" ] && ALLOWED="$ALLOWED,Bash($PM run $S_TYPECHECK)"
+          echo "allowed tools: $ALLOWED"
+          cat > .autofix/schema.json <<'JSON'
+          {"type":"object","additionalProperties":false,
+           "required":["outcome","rootCause","whatChanged","why","tests","leftAlone"],
+           "properties":{"outcome":{"type":"string","enum":["fixed","not-our-code","gave-up"]},
+             "rootCause":{"type":"string"},"whatChanged":{"type":"string"},"why":{"type":"string"},
+             "tests":{"type":"string"},"leftAlone":{"type":"string"},"reason":{"type":"string"}}}
+          JSON
+          set +e
+          cat .autofix/context.md | claude \
+            -p "The briefing for this run is on stdin. Follow the rules in your system prompt and fix the root cause." \
+            --append-system-prompt "$(cat managed/autofix-prompt.md)" \
+            --model "${MODEL:-claude-opus-5}" --max-turns 40 --permission-mode dontAsk \
+            --allowedTools "$ALLOWED" --output-format json \
+            --json-schema "$(cat .autofix/schema.json)" > .autofix/result.json 2> .autofix/agent.log
+          echo "claude exit: $?"
+          set -e
+          node -e '
+            const fs = require("fs");
+            let r = {};
+            try { r = JSON.parse(fs.readFileSync(".autofix/result.json", "utf8")); } catch {}
+            const report = r.structured_output || { outcome: "gave-up", rootCause: "", whatChanged: "", why: "", tests: "", leftAlone: "", reason: "agent produced no structured report" };
+            fs.writeFileSync(".autofix/report.json", JSON.stringify(report));
+            const n = Number(r.total_cost_usd);
+            const cost = Number.isFinite(n) && n > 0 ? n : 0;
+            fs.writeFileSync(".autofix/cost.txt", String(cost));
+            console.log("outcome:", report.outcome, "cost:", cost);
+          '
+
+      - name: Outcome gate
+        id: outcome
+        run: |
+          OUTCOME=$(node -p 'require("./.autofix/report.json").outcome')
+          echo "outcome=$OUTCOME" >> "$GITHUB_OUTPUT"
+          if [ "$OUTCOME" != "fixed" ]; then echo "$OUTCOME" > .autofix/fail-reason; echo "agent outcome: $OUTCOME"; exit 1; fi
+
+      - name: Collect changes
+        id: changes
+        run: |
+          git add -A -- . ':!.autofix'
+          git status --porcelain -- . ':!.autofix' > .autofix/status.txt
+          git diff --cached --binary -- . ':!.autofix' > .autofix/diff.patch
+          COUNT=$(grep -c . .autofix/status.txt || true)
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          if [ "$COUNT" = "0" ]; then echo "gave-up" > .autofix/fail-reason; echo "agent changed nothing"; exit 1; fi
+
+      # Advisory only: fails fast and saves CI minutes when the agent obviously broke a
+      # rule, but it is NOT the authority — the push job re-checks from a clean clone
+      # using its own copy of the checker, since this tree's checker (even the
+      # $RUNNER_TEMP copy) ran alongside agent-written code for the rest of this job.
+      - name: Hazard stop (advisory)
+        run: |
+          echo "hazard-stop" > .autofix/fail-reason
+          node "$RUNNER_TEMP/autofix-check.mjs" .autofix/status.txt .autofix/diff.patch
+          echo "agent-error" > .autofix/fail-reason
+
+      - name: Typecheck + tests
+        env:
+          PM: ${{ steps.pm.outputs.pm }}
+          S_TEST: ${{ steps.pm.outputs.test }}
+          S_TYPECHECK: ${{ steps.pm.outputs.typecheck }}
+        run: |
+          if [ -z "$S_TEST" ] && [ -z "$S_TYPECHECK" ]; then
+            echo "hazard-stop" > .autofix/fail-reason
+            echo "no test or typecheck script — refusing to push unverified"
+            exit 1
+          fi
+          echo "tests-red" > .autofix/fail-reason
+          [ -n "$S_TYPECHECK" ] && $PM run "$S_TYPECHECK" 2>&1 | tee -a .autofix/log.txt
+          [ -n "$S_TEST" ] && $PM run "$S_TEST" 2>&1 | tee -a .autofix/log.txt
+          echo "agent-error" > .autofix/fail-reason
+        shell: bash -eo pipefail {0}
+
+      # include-hidden-files: true is required — .autofix/ is a dot-directory, and
+      # upload-artifact@v4 silently skips hidden paths by default (every run would
+      # upload an empty artifact and every download in the push job would find nothing).
+      - name: Upload the collected changes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: autofix-${{ github.event.client_payload.runId }}-${{ github.run_attempt }}
+          path: .autofix/
+          retention-days: 7
+          include-hidden-files: true
+          if-no-files-found: error
+
+      - name: Report failure to the hub
+        if: failure() || cancelled()
+        env:
+          RUN_TOKEN: ${{ github.event.client_payload.token }}
+          HUB_URL: ${{ github.event.client_payload.hub }}
+        run: |
+          REASON=$(cat .autofix/fail-reason 2>/dev/null || echo agent-error)
+          LOG=$(tail -c 3500 .autofix/log.txt 2>/dev/null; tail -c 500 .autofix/agent.log 2>/dev/null)
+          BODY=$(node -e 'console.log(JSON.stringify({ state: "failed", reason: process.argv[1], log: process.argv[2], workflowRunUrl: process.env.RUN_URL }))' "$REASON" "$LOG")
+          curl -sS --fail-with-body --retry 3 --retry-all-errors --retry-delay 2 \
+            -X POST "$HUB_URL/api/autofix/runs/$RUN_ID/status" \
+            -H "Authorization: Bearer $RUN_TOKEN" -H "Content-Type: application/json" -d "$BODY"
+
+      # continue-on-error: true — a hub hiccup on this report must not fail the job:
+      # that would flip `needs.agent.result` to failure and block the push job even
+      # though the fix itself is good and already uploaded.
+      - name: Send the agent report
+        if: always()
+        continue-on-error: true
+        env:
+          RUN_TOKEN: ${{ github.event.client_payload.token }}
+          HUB_URL: ${{ github.event.client_payload.hub }}
+        run: |
+          [ -f .autofix/report.json ] || exit 0
+          BODY=$(node -e '
+            const fs = require("fs");
+            const report = JSON.parse(fs.readFileSync(".autofix/report.json", "utf8"));
+            const n = Number(fs.readFileSync(".autofix/cost.txt", "utf8"));
+            const costUsd = Number.isFinite(n) && n > 0 ? n : 0;
+            console.log(JSON.stringify({ state: "report", report, costUsd }));
+          ')
+          curl -sS --fail-with-body --retry 3 --retry-all-errors --retry-delay 2 \
+            -X POST "$HUB_URL/api/autofix/runs/$RUN_ID/status" \
+            -H "Authorization: Bearer $RUN_TOKEN" -H "Content-Type: application/json" -d "$BODY"
+
+  push:
+    needs: agent
+    if: needs.agent.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: sentry-autofix-push
+      cancel-in-progress: false
+    steps:
+      - name: Mask the run token
+        env:
+          T: ${{ github.event.client_payload.token }}
+        run: echo "::add-mask::$T"
+
+      - name: Download the collected changes
+        uses: actions/download-artifact@v4
+        with:
+          name: autofix-${{ github.event.client_payload.runId }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/autofix
+
+      # The artifact is agent-controlled: a forged pushed.json or fail-reason in it must
+      # never reach the failure step below. This job only ever trusts a pushed.json it
+      # writes itself, later in "Push from a clean clone".
+      - name: Discard any agent-controlled result markers
+        run: |
+          rm -f "$RUNNER_TEMP/autofix/pushed.json" "$RUNNER_TEMP/autofix/fail-reason"
+          echo agent-error > "$RUNNER_TEMP/autofix/fail-reason"
+
+      # The App token is minted only in this job, which never runs agent-written code.
+      - name: Mint App installation token
+        id: app
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.ISERLABS_APP_ID }}
+          private-key: ${{ secrets.ISERLABS_APP_PRIVATE_KEY }}
+
+      - name: Push from a clean clone
+        id: push
+        env:
+          APP_TOKEN: ${{ steps.app.outputs.token }}
+          RUN_TOKEN: ${{ github.event.client_payload.token }}
+          HUB_URL: ${{ github.event.client_payload.hub }}
+          PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/push"
+          cd "$RUNNER_TEMP/push"
+          git clone --depth 50 --branch main "https://x-access-token:${APP_TOKEN}@github.com/${{ github.repository }}.git" .
+
+          # Copy the checker out BEFORE apply: the working-tree copy could itself be
+          # patched by the diff we're about to apply, and we must not let a hazardous
+          # diff neuter the very check meant to catch it.
+          cp managed/autofix-check.mjs "$RUNNER_TEMP/autofix-check.mjs"
+
+          BASE=$(git rev-parse HEAD)
+          # A pre-apply copy: the DEPLOY prediction always runs the script as it stood
+          # before this patch touched anything (scripts/ci/ is blocked, but this is
+          # belt-and-suspenders — some repos have no such script at all).
+          cp scripts/ci/vercel-ignore.sh "$RUNNER_TEMP/vercel-ignore.sh" 2>/dev/null || true
+
+          echo "rebase-conflict" > "$RUNNER_TEMP/autofix/fail-reason"
+          git -c core.hooksPath=/dev/null apply --index "$RUNNER_TEMP/autofix/diff.patch"
+
+          # Authoritative check: never the artifact's status.txt/diff.patch (agent-
+          # controlled — a forged status.txt could hide a blocked-path edit). Re-derive
+          # both from the clone's own index, now that the patch is actually applied there.
+          echo "hazard-stop" > "$RUNNER_TEMP/autofix/fail-reason"
+          git status --porcelain > "$RUNNER_TEMP/verify-status.txt"
+          git diff --cached > "$RUNNER_TEMP/verify-diff.patch"
+          node "$RUNNER_TEMP/autofix-check.mjs" "$RUNNER_TEMP/verify-status.txt" "$RUNNER_TEMP/verify-diff.patch"
+
+          git config user.name "iserlabs-hub[bot]"
+          git config user.email "iserlabs-hub[bot]@users.noreply.github.com"
+          echo "agent-error" > "$RUNNER_TEMP/autofix/fail-reason"
+          # Agent-written text: strip [ and ] so no [skip ci]/[build]-style directive can be
+          # injected into the subject, and collapse whitespace.
+          SUBJECT=$(node -p 'require(process.env.RUNNER_TEMP + "/autofix/report.json").whatChanged.split("\n")[0].replace(/[\[\]]/g, "").replace(/\s+/g, " ").trim().slice(0, 60)')
+          ISSUES=$(node -p 'JSON.parse(process.env.PAYLOAD).issueIds.join(", ")')
+          git -c core.hooksPath=/dev/null commit -q --no-verify \
+            -m "fix: ${SUBJECT:-auto-fix}" \
+            -m "Auto-fix run $RUN_ID for Sentry issue(s) $ISSUES." \
+            -m "Agent: Claude Code (headless) via iserlabs/hub. Report in the run's Discord thread."
+
+          SHA=$(git rev-parse HEAD)
+          DEPLOY=true
+          if [ -f "$RUNNER_TEMP/vercel-ignore.sh" ]; then
+            if VERCEL_ENV=production VERCEL_GIT_PREVIOUS_SHA="$BASE" VERCEL_GIT_COMMIT_SHA="$SHA" bash "$RUNNER_TEMP/vercel-ignore.sh"; then DEPLOY=false; fi
+          fi
+          FILES=$(git diff --name-only "$BASE" HEAD | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>console.log(JSON.stringify(s.trim().split("\n").filter(Boolean))))')
+
+          node -e '
+            const fs = require("fs");
+            const body = {
+              state: "pushed",
+              sha: process.argv[1],
+              files: JSON.parse(process.argv[2]),
+              deploy: process.argv[3] === "true",
+              workflowRunUrl: process.env.RUN_URL,
+            };
+            fs.writeFileSync(process.env.RUNNER_TEMP + "/autofix/pushed.json", JSON.stringify(body));
+          ' "$SHA" "$FILES" "$DEPLOY"
+          git -c core.hooksPath=/dev/null push -q origin HEAD:main || { rm -f "$RUNNER_TEMP/autofix/pushed.json"; echo agent-error > "$RUNNER_TEMP/autofix/fail-reason"; exit 1; }
+          echo "pushed $SHA deploy=$DEPLOY"
+
+          curl -sS --fail-with-body --retry 3 --retry-all-errors --retry-delay 2 \
+            -X POST "$HUB_URL/api/autofix/runs/$RUN_ID/status" \
+            -H "Authorization: Bearer $RUN_TOKEN" -H "Content-Type: application/json" \
+            -d "@$RUNNER_TEMP/autofix/pushed.json"
+          echo "done" > "$RUNNER_TEMP/autofix/fail-reason"
+
+      # If the push already landed (pushed.json exists), re-report that instead of a
+      # synthetic "failed" — a curl hiccup after a successful push must not read as a
+      # lost fix.
+      - name: Report failure to the hub
+        if: failure() || cancelled()
+        env:
+          RUN_TOKEN: ${{ github.event.client_payload.token }}
+          HUB_URL: ${{ github.event.client_payload.hub }}
+        run: |
+          if [ -f "$RUNNER_TEMP/autofix/pushed.json" ]; then
+            curl -sS --fail-with-body --retry 3 --retry-all-errors --retry-delay 2 \
+              -X POST "$HUB_URL/api/autofix/runs/$RUN_ID/status" \
+              -H "Authorization: Bearer $RUN_TOKEN" -H "Content-Type: application/json" \
+              -d "@$RUNNER_TEMP/autofix/pushed.json"
+          else
+            REASON=$(cat "$RUNNER_TEMP/autofix/fail-reason" 2>/dev/null || echo agent-error)
+            [ "$REASON" = "done" ] && REASON=agent-error
+            LOG=$(tail -c 3500 "$RUNNER_TEMP/autofix/log.txt" 2>/dev/null; tail -c 500 "$RUNNER_TEMP/autofix/agent.log" 2>/dev/null)
+            BODY=$(node -e 'console.log(JSON.stringify({ state: "failed", reason: process.argv[1], log: process.argv[2], workflowRunUrl: process.env.RUN_URL }))' "$REASON" "$LOG")
+            curl -sS --fail-with-body --retry 3 --retry-all-errors --retry-delay 2 \
+              -X POST "$HUB_URL/api/autofix/runs/$RUN_ID/status" \
+              -H "Authorization: Bearer $RUN_TOKEN" -H "Content-Type: application/json" -d "$BODY"
+          fi
+
+  revert:
+    if: github.event.action == 'sentry-autofix-revert'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: sentry-autofix-revert
+      cancel-in-progress: false
+    steps:
+      - name: Mask the run token
+        env:
+          T: ${{ github.event.client_payload.token }}
+        run: echo "::add-mask::$T"
+
+      - name: Mint App installation token
+        id: app
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.ISERLABS_APP_ID }}
+          private-key: ${{ secrets.ISERLABS_APP_PRIVATE_KEY }}
+
+      # No actions/checkout: the clean clone in $RUNNER_TEMP below is the checkout.
+      - name: Revert and push
+        id: revert
+        env:
+          APP_TOKEN: ${{ steps.app.outputs.token }}
+          RUN_TOKEN: ${{ github.event.client_payload.token }}
+          HUB_URL: ${{ github.event.client_payload.hub }}
+          TARGET: ${{ github.event.client_payload.sha }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/push"
+          cd "$RUNNER_TEMP/push"
+          git clone --depth 50 --branch main "https://x-access-token:${APP_TOKEN}@github.com/${{ github.repository }}.git" .
+          git config user.name "iserlabs-hub[bot]"
+          git config user.email "iserlabs-hub[bot]@users.noreply.github.com"
+          git revert --no-commit "$TARGET"
+          git -c core.hooksPath=/dev/null commit -q --no-verify -m "revert: auto-fix ${TARGET:0:8} (production build failed)"
+          git -c core.hooksPath=/dev/null push -q origin HEAD:main
+          SHA=$(git rev-parse HEAD)
+          curl -sS --fail-with-body --retry 3 --retry-all-errors --retry-delay 2 \
+            -X POST "$HUB_URL/api/autofix/runs/$RUN_ID/status" \
+            -H "Authorization: Bearer $RUN_TOKEN" -H "Content-Type: application/json" \
+            -d "{\"state\":\"failed\",\"reason\":\"reverted\",\"sha\":\"$SHA\",\"workflowRunUrl\":\"$RUN_URL\"}"
+
+      - name: Report revert failure
+        if: failure() || cancelled()
+        env:
+          RUN_TOKEN: ${{ github.event.client_payload.token }}
+          HUB_URL: ${{ github.event.client_payload.hub }}
+        run: |
+          curl -sS --fail-with-body --retry 3 --retry-all-errors --retry-delay 2 \
+            -X POST "$HUB_URL/api/autofix/runs/$RUN_ID/status" \
+            -H "Authorization: Bearer $RUN_TOKEN" -H "Content-Type: application/json" \
+            -d "{\"state\":\"failed\",\"reason\":\"revert-failed\",\"workflowRunUrl\":\"$RUN_URL\"}"
