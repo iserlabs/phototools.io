@@ -322,6 +322,13 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 
+/* While a native modal <dialog> is open, keep the page behind it from
+   scrolling (mobile pages scroll; the !important beats the rule above). */
+html:has(dialog:modal),
+html:has(dialog:modal) body {
+  overflow: hidden !important;
+}
+
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

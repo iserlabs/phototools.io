@@ -4,6 +4,7 @@ import { useRef, useCallback, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { getPixelColor, useMagnifier } from './useMagnifier'
 import { DropZone } from './DropZone'
+import { ModalDialog } from '@/components/shared/ModalDialog'
 import styles from './PhotoPicker.module.css'
 
 interface PhotoPickerProps {
@@ -65,14 +66,6 @@ export function PhotoPicker({ onColorPick, onClose, initialFile }: PhotoPickerPr
     return () => window.removeEventListener('resize', handleResize)
   }, [drawImage])
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
-    }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [onClose])
-
   const handlePointerDown = useCallback(
     (e: React.PointerEvent<HTMLCanvasElement>) => {
       e.preventDefault()
@@ -105,47 +98,39 @@ export function PhotoPicker({ onColorPick, onClose, initialFile }: PhotoPickerPr
   const imageLoaded = imageRef.current !== null
 
   return (
-    <div
-      className={styles.overlay}
-      onClick={onClose}
-      role="dialog"
-      aria-modal="true"
-      aria-label={t('pickColorFromPhoto')}
-    >
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.header}>
-          <h3 className={styles.title}>{t('pickColorFromPhoto')}</h3>
-          <button className={styles.closeBtn} onClick={onClose} aria-label={t('close')}>&times;</button>
-        </div>
-
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          style={{ display: 'none' }}
-          onChange={(e) => { const f = e.target.files?.[0]; if (f) loadFile(f) }}
-        />
-
-        {!imageLoaded && <DropZone onFile={loadFile} />}
-
-        <div className={styles.canvasWrapper} style={{ display: imageLoaded ? 'flex' : 'none' }}>
-          <canvas
-            ref={canvasRef}
-            className={styles.canvas}
-            onPointerMove={handlePointerMove}
-            onPointerLeave={handlePointerLeave}
-            onPointerDown={handlePointerDown}
-          />
-        </div>
-
-        {imageLoaded && (
-          <button className={styles.changeLink} onClick={handleChangePhoto}>
-            {t('changePhoto')}
-          </button>
-        )}
-
-        <p className={styles.privacy}>{t('privacyNote')}</p>
+    <ModalDialog className={styles.modal} aria-label={t('pickColorFromPhoto')} onClose={onClose}>
+      <div className={styles.header}>
+        <h3 className={styles.title}>{t('pickColorFromPhoto')}</h3>
+        <button type="button" className={styles.closeBtn} onClick={onClose} aria-label={t('close')}>&times;</button>
       </div>
+
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        style={{ display: 'none' }}
+        onChange={(e) => { const f = e.target.files?.[0]; if (f) loadFile(f) }}
+      />
+
+      {!imageLoaded && <DropZone onFile={loadFile} />}
+
+      <div className={styles.canvasWrapper} style={{ display: imageLoaded ? 'flex' : 'none' }}>
+        <canvas
+          ref={canvasRef}
+          className={styles.canvas}
+          onPointerMove={handlePointerMove}
+          onPointerLeave={handlePointerLeave}
+          onPointerDown={handlePointerDown}
+        />
+      </div>
+
+      {imageLoaded && (
+        <button type="button" className={styles.changeLink} onClick={handleChangePhoto}>
+          {t('changePhoto')}
+        </button>
+      )}
+
+      <p className={styles.privacy}>{t('privacyNote')}</p>
 
       {magnifier && (
         <>
@@ -160,6 +145,6 @@ export function PhotoPicker({ onColorPick, onClose, initialFile }: PhotoPickerPr
           </div>
         </>
       )}
-    </div>
+    </ModalDialog>
   )
 }

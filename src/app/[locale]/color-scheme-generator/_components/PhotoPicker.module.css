@@ -1,26 +1,27 @@
-/* Modal overlay */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 200;
-}
-
-/* Modal content */
+/* Native modal <dialog>: the UA centers it in the top layer (margin: auto). */
 .modal {
   background: var(--bg-secondary);
+  color: var(--text-primary);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
   width: min(90vw, 900px);
+  max-width: none;
   max-height: 90vh;
+  overflow: visible;
+  overscroll-behavior: contain;
+}
+
+/* Only lay out while open — the UA's `dialog:not([open]) { display: none }`
+   must keep winning before showModal() runs. */
+.modal[open] {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  position: relative;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.75);
 }
 
 /* Header row */

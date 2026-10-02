@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useRef, type RefObject } from 'react'
+import { useState, useCallback, type RefObject } from 'react'
 import { toast } from 'sonner'
 import { useTranslations } from 'next-intl'
 import { ShareModal } from './ShareModal'
@@ -22,18 +22,9 @@ export function ToolActions({ toolName, toolSlug, onReset, canvasRef, imageFilen
   const toolsT = useTranslations('tools')
   const resolvedName = toolName ?? toolsT(`${toolSlug}.name`)
   const [showShare, setShowShare] = useState(false)
-  // ShareModal is conditionally rendered (unmounted on close) rather than
-  // toggling Radix's own `open` state, so Radix has no registered
-  // Dialog.Trigger to fall back to and drops close-focus to <body>. Track
-  // whichever button actually opened it (Share's no-navigator.share
-  // fallback, or Embed) and hand it to ShareModal's onCloseAutoFocus so
-  // keyboard/screen-reader users land back where they started.
-  const shareTriggerRef = useRef<HTMLElement | null>(null)
-
-  const openShare = useCallback(() => {
-    shareTriggerRef.current = document.activeElement as HTMLElement | null
-    setShowShare(true)
-  }, [])
+  // ShareModal is conditionally rendered (unmounted on close); its native
+  // <dialog> wrapper (ModalDialog) refocuses whichever button opened it.
+  const openShare = useCallback(() => setShowShare(true), [])
 
   const closeShare = useCallback(() => {
     setShowShare(false)
@@ -113,7 +104,6 @@ export function ToolActions({ toolName, toolSlug, onReset, canvasRef, imageFilen
           toolName={resolvedName}
           toolSlug={toolSlug}
           onClose={closeShare}
-          triggerRef={shareTriggerRef}
         />
       )}
     </>

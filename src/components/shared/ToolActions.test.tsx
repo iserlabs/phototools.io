@@ -3,12 +3,10 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { ToolActions } from './ToolActions'
 
-// ShareModal renders `<Dialog.Root open>` with no `Dialog.Trigger` (it's
-// conditionally mounted/unmounted by ToolActions rather than driven by
-// Radix's own `open` state), so Radix's internal onCloseAutoFocus has no
-// registered trigger to fall back to and drops focus to <body>. ToolActions
-// captures document.activeElement at open time and hands it to ShareModal's
-// onCloseAutoFocus so it wins the race against Radix's own restoration.
+// ShareModal is a native modal <dialog> (via ModalDialog) that ToolActions
+// mounts/unmounts rather than opening/closing in place, so the browser's own
+// close-time focus restoration never runs. ModalDialog remembers the element
+// that had focus when it opened and refocuses it after unmount.
 // This test guards that wiring: it must fail if either half is reverted.
 
 const messages = {
