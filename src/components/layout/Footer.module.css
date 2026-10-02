@@ -10,6 +10,7 @@
 
 .infoRow {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
@@ -61,4 +62,17 @@
   height: 12px;
   background: var(--border);
   flex-shrink: 0;
+}
+
+/* Long locales (de, fil, el, …) don't fit one line on phones: the row wraps,
+   and the dividers are dropped since they'd dangle at wrapped line ends. */
+@media (max-width: 1023px) {
+  .infoRow {
+    gap: 4px var(--space-md);
+  }
+
+  .link::after,
+  .separator {
+    display: none;
+  }
 }
