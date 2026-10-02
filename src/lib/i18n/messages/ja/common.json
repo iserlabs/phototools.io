@@ -120,6 +120,10 @@
       "backHome": "ホームに戻る",
       "popularTools": "人気のツール"
     },
+    "underConstruction": {
+      "badge": "準備中",
+      "message": "このツールは現在ゼロから作り直しています。しばらくしてからまたお越しください。"
+    },
     "breadcrumb": {
       "home": "ホーム"
     },

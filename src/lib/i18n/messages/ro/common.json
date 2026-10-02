@@ -120,6 +120,10 @@
       "backHome": "Înapoi la pagina principală",
       "popularTools": "Unelte populare"
     },
+    "underConstruction": {
+      "badge": "În construcție",
+      "message": "Reconstruim acest instrument de la zero. Revino în curând."
+    },
     "breadcrumb": {
       "home": "Acasă"
     },

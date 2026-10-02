@@ -120,6 +120,10 @@
       "backHome": "홈으로 돌아가기",
       "popularTools": "인기 도구"
     },
+    "underConstruction": {
+      "badge": "준비 중",
+      "message": "이 도구를 처음부터 다시 만들고 있습니다. 곧 다시 방문해 주세요."
+    },
     "breadcrumb": {
       "home": "홈"
     },

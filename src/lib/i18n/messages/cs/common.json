@@ -120,6 +120,10 @@
       "backHome": "Zpět na úvod",
       "popularTools": "Oblíbené nástroje"
     },
+    "underConstruction": {
+      "badge": "Ve výstavbě",
+      "message": "Tento nástroj od základu přestavujeme. Brzy se vrať."
+    },
     "breadcrumb": {
       "home": "Úvod"
     },

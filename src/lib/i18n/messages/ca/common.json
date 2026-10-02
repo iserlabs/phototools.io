@@ -120,6 +120,10 @@
       "backHome": "Torna a l'inici",
       "popularTools": "Eines populars"
     },
+    "underConstruction": {
+      "badge": "En construcció",
+      "message": "Estem reconstruint aquesta eina des de zero. Torna aviat."
+    },
     "breadcrumb": {
       "home": "Inici"
     },

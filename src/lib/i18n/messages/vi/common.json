@@ -120,6 +120,10 @@
       "backHome": "Về trang chủ",
       "popularTools": "Công cụ phổ biến"
     },
+    "underConstruction": {
+      "badge": "Đang xây dựng",
+      "message": "Chúng tôi đang xây dựng lại công cụ này từ đầu. Hãy quay lại sau nhé."
+    },
     "breadcrumb": {
       "home": "Trang chủ"
     },

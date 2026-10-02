@@ -120,6 +120,10 @@
       "backHome": "Tilbake til forsiden",
       "popularTools": "Populære verktøy"
     },
+    "underConstruction": {
+      "badge": "Under arbeid",
+      "message": "Vi bygger dette verktøyet opp på nytt fra bunnen av. Kom tilbake snart."
+    },
     "breadcrumb": {
       "home": "Hjem"
     },

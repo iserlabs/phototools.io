@@ -120,6 +120,10 @@
       "backHome": "Vissza a főoldalra",
       "popularTools": "Népszerű eszközök"
     },
+    "underConstruction": {
+      "badge": "Fejlesztés alatt",
+      "message": "Ezt az eszközt az alapoktól újraépítjük. Nézz vissza hamarosan!"
+    },
     "breadcrumb": {
       "home": "Főoldal"
     },

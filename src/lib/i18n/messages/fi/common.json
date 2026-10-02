@@ -120,6 +120,10 @@
       "backHome": "Takaisin etusivulle",
       "popularTools": "Suositut työkalut"
     },
+    "underConstruction": {
+      "badge": "Rakenteilla",
+      "message": "Rakennamme tämän työkalun uudelleen alusta alkaen. Palaa pian takaisin."
+    },
     "breadcrumb": {
       "home": "Etusivu"
     },

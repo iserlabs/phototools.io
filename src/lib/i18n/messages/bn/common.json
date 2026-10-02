@@ -120,6 +120,10 @@
       "backHome": "হোমে ফিরে যাও",
       "popularTools": "জনপ্রিয় টুলস"
     },
+    "underConstruction": {
+      "badge": "নির্মাণাধীন",
+      "message": "আমরা এই টুলটি একদম নতুন করে তৈরি করছি। শীঘ্রই আবার দেখো।"
+    },
     "breadcrumb": {
       "home": "হোম"
     },

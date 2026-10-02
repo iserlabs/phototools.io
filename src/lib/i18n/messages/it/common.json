@@ -120,6 +120,10 @@
       "backHome": "Torna alla home",
       "popularTools": "Strumenti popolari"
     },
+    "underConstruction": {
+      "badge": "In costruzione",
+      "message": "Stiamo ricostruendo questo strumento da zero. Torna presto."
+    },
     "breadcrumb": {
       "home": "Home"
     },

@@ -120,6 +120,10 @@
       "backHome": "Ana Sayfaya Dön",
       "popularTools": "Popüler Araçlar"
     },
+    "underConstruction": {
+      "badge": "Yapım aşamasında",
+      "message": "Bu aracı sıfırdan yeniden geliştiriyoruz. Yakında tekrar göz at."
+    },
     "breadcrumb": {
       "home": "Ana Sayfa"
     },
