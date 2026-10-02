@@ -76,7 +76,8 @@ export default async function GuidePage({ params }: { params: Promise<{ locale: 
               alt={guide.heroImage.alt}
               width={1600}
               height={900}
-              priority
+              loading="eager"
+              fetchPriority="high"
               sizes="(max-width: 1023px) 100vw, 800px"
               className={styles.hero}
             />
