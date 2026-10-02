@@ -1,3 +1,5 @@
+import { roundRectPath } from './round-rect'
+
 export async function copyCanvasToClipboard(canvas: HTMLCanvasElement, filename = 'image.png'): Promise<boolean> {
   try {
     // Create an offscreen canvas to apply the watermark without affecting the original
@@ -37,8 +39,7 @@ export async function copyCanvasToClipboard(canvas: HTMLCanvasElement, filename 
 
     // Draw semi-transparent background pill
     ctx.fillStyle = isDark ? 'rgba(0, 0, 0, 0.75)' : 'rgba(255, 255, 255, 0.85)'
-    ctx.beginPath()
-    ctx.roundRect(bgX, bgY, bgWidth, bgHeight, fontSize * 0.3)
+    roundRectPath(ctx, bgX, bgY, bgWidth, bgHeight, fontSize * 0.3)
     ctx.fill()
 
     // Optional: add a very subtle border in light mode so it doesn't bleed into pure white backgrounds

@@ -1,4 +1,5 @@
 import type { TexturePreset } from '@/app/[locale]/frame-studio/_components/types'
+import { roundRectPath } from '@/lib/utils/round-rect'
 
 interface TextureConfig {
   baseColor: [number, number, number]
@@ -27,8 +28,7 @@ export function drawTextureBorder(
 
   if (cornerRadius > 0) {
     ctx.save()
-    ctx.beginPath()
-    ctx.roundRect(0, 0, canvasW, canvasH, cornerRadius)
+    roundRectPath(ctx, 0, 0, canvasW, canvasH, cornerRadius)
     ctx.clip()
     ctx.drawImage(pattern as HTMLCanvasElement, 0, 0)
     ctx.restore()

@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useCallback } from 'react'
+import { roundRectPath } from '@/lib/utils/round-rect'
 import { calcFOV, calcCropRatio, calcFrameWidth, calcEquivFocalLength } from '@/lib/math/fov'
 import { getSensor } from '@/lib/data/sensors'
 import { SCENES } from '@/lib/data/scenes'
@@ -181,7 +182,7 @@ function drawLensLabels(ctx: CanvasRenderingContext2D, rects: Rect[], lenses: Le
       else { tx = r.x + 8 * dpr; ty = r.y + 18 * dpr + reverseIdx * (pillH + 2 * dpr) }
       const pillX = tx - padX; const pillY = ty - textH - padY + 2 * dpr; const pillW = textW + padX * 2
       r.pill = { x: pillX, y: pillY, w: pillW, h: pillH }
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.6)'; ctx.beginPath(); ctx.roundRect(pillX, pillY, pillW, pillH, 4 * dpr); ctx.fill()
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.6)'; roundRectPath(ctx, pillX, pillY, pillW, pillH, 4 * dpr); ctx.fill()
       ctx.fillStyle = r.color; ctx.fillText(text, tx, ty)
     }
   }
@@ -200,7 +201,7 @@ function drawWiderLabels(ctx: CanvasRenderingContext2D, rects: Rect[], widerIndi
     const px = (ctx.canvas.width - pillW) / 2
     const py = 16 * dpr + yOffset
     ctx.fillStyle = 'rgba(0, 0, 0, 0.6)'
-    ctx.beginPath(); ctx.roundRect(px, py, pillW, pillH, 4 * dpr); ctx.fill()
+    roundRectPath(ctx, px, py, pillW, pillH, 4 * dpr); ctx.fill()
     ctx.fillStyle = r.color
     ctx.fillText(text, px + padX, py + padY + fontSize * 0.8)
     yOffset += pillH + 4 * dpr
