@@ -33,7 +33,7 @@ CHANGED="$(git diff --name-only "$BASE" HEAD 2>/dev/null || true)"
 
 # 4) Inert allow-list ONLY. Never list content dirs (src/content/**, app pages, public/**).
 DEPLOYABLE="$(printf '%s\n' "$CHANGED" \
-  | grep -vE '(^|/)(README|CLAUDE|AGENTS)\.md$|^docs/|^\.github/|^scripts/ci/|\.(test|spec)\.[jt]sx?$|^\.editorconfig$|^\.vscode/' \
+  | grep -vE '(^|/)(README|CLAUDE|AGENTS)\.md$|^docs/|^\.github/|^scripts/ci/|\.(test|spec)\.[jt]sx?$|^\.editorconfig$|^\.vscode/|^\.claude/|^\.agents/' \
   || true)"
 [ -z "$DEPLOYABLE" ] && { echo "skip: only inert paths changed"; exit 0; }
 

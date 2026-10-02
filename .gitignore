@@ -35,7 +35,14 @@ test-results/
 .husky/_/
 
 # Claude / Superpowers
-.claude/
+.claude/*
+# ...except the hub-managed modern-web-guidance skill + rule
+!.claude/rules/
+.claude/rules/*
+!.claude/rules/modern-web-guidance.md
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/modern-web-guidance/
 .superpowers/
 .worktrees/
 .agents/
