@@ -1,7 +1,8 @@
+import { roundRectPath } from '@/lib/utils/round-rect'
 import type { MegapixelPreset, UnitSystem, AspectRatio } from '@/lib/types'
 import { mpToPixelDimensions } from '@/lib/math/resolution'
 import { printSizeMm } from '@/lib/math/megapixel'
-import { drawRect, rgba, roundRect } from './drawHelpers'
+import { drawRect, rgba } from './drawHelpers'
 
 export function drawOverlay(
   ctx: CanvasRenderingContext2D,
@@ -129,7 +130,7 @@ function drawOverlayDesktopLabels(
     ctx.fill()
 
     // Pill background
-    roundRect(ctx, pillX, labelY, pillW, pillH, 4)
+    roundRectPath(ctx, pillX, labelY, pillW, pillH, 4)
     ctx.fillStyle = rgba(mp.color, 0.18)
     ctx.fill()
 

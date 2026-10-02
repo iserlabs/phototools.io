@@ -1,5 +1,6 @@
+import { roundRectPath } from '@/lib/utils/round-rect'
 import type { ResolvedSensor } from './sensorSizeTypes'
-import { rgba, roundRect, hoverDim } from './sensorSizeHelpers'
+import { rgba, hoverDim } from './sensorSizeHelpers'
 
 export function drawOverlayMobileLabels(
   ctx: CanvasRenderingContext2D,
@@ -22,7 +23,7 @@ export function drawOverlayMobileLabels(
 
     ctx.save()
     ctx.globalAlpha = a * dim
-    roundRect(ctx, pillX, labelY, pillW, pillH, 3)
+    roundRectPath(ctx, pillX, labelY, pillW, pillH, 3)
     ctx.fillStyle = rgba(s.color, 0.15)
     ctx.fill()
     ctx.beginPath()
@@ -80,7 +81,7 @@ export function drawOverlayDesktopLabels(
     ctx.fillStyle = rgba(s.color, 0.5)
     ctx.fill()
 
-    roundRect(ctx, pillX, labelY, pillW, pillH, 3)
+    roundRectPath(ctx, pillX, labelY, pillW, pillH, 3)
     ctx.fillStyle = rgba(s.color, 0.15)
     ctx.fill()
 
