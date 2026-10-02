@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import * as Sentry from '@sentry/nextjs'
 import styles from './LightroomCatalogAnalyzer.module.css'
 import { classifyReadError, describeError } from './readError'
+import { buttonKeyHandlers } from '@/lib/utils/buttonKeys'
 
 interface FilePickerProps {
   /** Hands the picked File to the analyzer, which streams it to the worker.
@@ -102,7 +103,7 @@ export function FilePicker({ onFile }: FilePickerProps) {
         role="button"
         tabIndex={0}
         aria-label={t('filePicker.ariaLabel')}
-        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onClick() }}
+        {...buttonKeyHandlers(onClick)}
       >
         <input
           ref={inputRef}
