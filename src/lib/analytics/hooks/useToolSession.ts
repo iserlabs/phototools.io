@@ -29,7 +29,15 @@ export function useToolSession() {
   }, [])
 
   useEffect(() => {
+    // `pagehide` (not `beforeunload`) is the reliable end-of-page signal: it
+    // also fires on mobile tab discards/app switches that skip unload events,
+    // and unlike unload-style listeners it never blocks the back/forward
+    // cache. A bfcache restore (`pageshow` with persisted) starts a new
+    // session so the same visit isn't summarised twice.
+    let sent = false
     function sendSummary() {
+      if (sent) return
+      sent = true
       const duration = Math.round((Date.now() - startTimeRef.current) / 1000)
       dispatch('tool_session_summary', {
         duration_seconds: duration,
@@ -40,14 +48,19 @@ export function useToolSession() {
       })
     }
 
-    function handleBeforeUnload() {
-      sendSummary()
+    function handlePageShow(e: PageTransitionEvent) {
+      if (!e.persisted) return
+      sent = false
+      startTimeRef.current = Date.now()
+      interactionCountRef.current = 0
     }
 
-    window.addEventListener('beforeunload', handleBeforeUnload)
+    window.addEventListener('pagehide', sendSummary)
+    window.addEventListener('pageshow', handlePageShow)
 
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload)
+      window.removeEventListener('pagehide', sendSummary)
+      window.removeEventListener('pageshow', handlePageShow)
       sendSummary()
     }
   }, [])

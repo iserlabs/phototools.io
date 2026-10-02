@@ -53,3 +53,34 @@ describe('useToolSession', () => {
     }))
   })
 })
+
+describe('useToolSession — page lifecycle', () => {
+  beforeEach(() => vi.clearAllMocks())
+
+  function summaryCalls() {
+    return vi.mocked(dispatch).mock.calls.filter(([name]) => name === 'tool_session_summary')
+  }
+
+  it('sends the summary on pagehide, once, without a beforeunload listener', () => {
+    const addSpy = vi.spyOn(window, 'addEventListener')
+    const { unmount } = renderHook(() => useToolSession())
+    expect(addSpy.mock.calls.map(([type]) => String(type))).not.toContain('beforeunload')
+
+    window.dispatchEvent(new Event('pagehide'))
+    expect(summaryCalls()).toHaveLength(1)
+
+    unmount()
+    expect(summaryCalls()).toHaveLength(1)
+  })
+
+  it('starts a fresh session after a back/forward cache restore', () => {
+    const { unmount } = renderHook(() => useToolSession())
+    window.dispatchEvent(new Event('pagehide'))
+    const restored = new Event('pageshow') as PageTransitionEvent
+    Object.defineProperty(restored, 'persisted', { value: true })
+    window.dispatchEvent(restored)
+    window.dispatchEvent(new Event('pagehide'))
+    expect(summaryCalls()).toHaveLength(2)
+    unmount()
+  })
+})
