@@ -1,6 +1,7 @@
 import type { Page } from '@playwright/test'
 import { test, expect } from '@playwright/test'
 import { readFileSync } from 'node:fs'
+import { getToolBySlug } from '../../lib/data/tools'
 
 const URL = '/en/dof-simulator'
 
@@ -67,6 +68,10 @@ const fallbackBlur = (page: Page) =>
   page.locator('img[class*="fallbackImg"]').first().evaluate((el) => (el as HTMLElement).style.filter)
 
 test.describe('DOF Simulator', () => {
+  // e2e runs against a production build, where a 'draft' DOF page serves the
+  // UnderConstruction placeholder instead of the simulator.
+  test.skip(getToolBySlug('dof-simulator')?.prod !== 'live', 'DOF simulator is under construction in prod')
+
   test('loads with viewport surface (canvas or no-WebGL fallback) and clean console', async ({ page }) => {
     const errors: string[] = []
     page.on('console', (m) => {

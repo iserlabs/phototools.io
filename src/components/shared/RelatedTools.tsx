@@ -9,9 +9,11 @@ import styles from './RelatedTools.module.css'
 interface RelatedToolsProps {
   currentSlug: string
   variant?: 'block' | 'inline'
+  /** Heading element; pass 'h2' when the section sits directly under the page h1. */
+  headingAs?: 'h2' | 'h3'
 }
 
-export function RelatedTools({ currentSlug, variant = 'block' }: RelatedToolsProps) {
+export function RelatedTools({ currentSlug, variant = 'block', headingAs: Heading = 'h3' }: RelatedToolsProps) {
   const t = useTranslations('common.relatedTools')
   const toolsT = useTranslations('tools')
   const current = getToolBySlug(currentSlug)
@@ -29,7 +31,7 @@ export function RelatedTools({ currentSlug, variant = 'block' }: RelatedToolsPro
 
   return (
     <section className={sectionClass} aria-label={t('title')}>
-      <h3 className={styles.heading}>{t('title')}</h3>
+      <Heading className={styles.heading}>{t('title')}</Heading>
       <div className={listClass}>
         {related.map((tool) => (
           <Link key={tool.slug} href={`/${tool.slug}`} prefetch={false} className={cardClass}>

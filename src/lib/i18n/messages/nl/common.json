@@ -120,6 +120,10 @@
       "backHome": "Terug naar home",
       "popularTools": "Populaire tools"
     },
+    "underConstruction": {
+      "badge": "In aanbouw",
+      "message": "We bouwen deze tool helemaal opnieuw op. Kom snel terug."
+    },
     "breadcrumb": {
       "home": "Home"
     },

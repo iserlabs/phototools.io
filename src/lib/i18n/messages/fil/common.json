@@ -120,6 +120,10 @@
       "backHome": "Bumalik sa Home",
       "popularTools": "Popular na Tools"
     },
+    "underConstruction": {
+      "badge": "Ginagawa pa",
+      "message": "Binubuo naming muli ang tool na ito mula sa simula. Bumalik ka ulit sa lalong madaling panahon."
+    },
     "breadcrumb": {
       "home": "Home"
     },

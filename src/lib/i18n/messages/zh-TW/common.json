@@ -120,6 +120,10 @@
       "backHome": "返回首頁",
       "popularTools": "熱門工具"
     },
+    "underConstruction": {
+      "badge": "建置中",
+      "message": "我們正在從頭重建此工具，敬請期待。"
+    },
     "breadcrumb": {
       "home": "首頁"
     },

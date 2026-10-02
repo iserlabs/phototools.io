@@ -120,6 +120,10 @@
       "backHome": "Kembali ke Laman Utama",
       "popularTools": "Alat Popular"
     },
+    "underConstruction": {
+      "badge": "Dalam pembinaan",
+      "message": "Kami sedang membina semula alat ini dari awal. Kembali lagi tidak lama lagi."
+    },
     "breadcrumb": {
       "home": "Laman Utama"
     },
