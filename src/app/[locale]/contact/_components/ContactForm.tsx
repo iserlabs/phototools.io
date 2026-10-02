@@ -67,6 +67,8 @@ export function ContactForm() {
           type="text"
           id="name"
           name="name"
+          autoComplete="name"
+          enterKeyHint="next"
           required
           maxLength={100}
           className={styles.input}
@@ -80,6 +82,8 @@ export function ContactForm() {
           type="email"
           id="email"
           name="email"
+          autoComplete="email"
+          enterKeyHint="next"
           required
           className={styles.input}
           placeholder={t('emailPlaceholder')}
@@ -92,6 +96,7 @@ export function ContactForm() {
           type="text"
           id="subject"
           name="subject"
+          enterKeyHint="next"
           required
           maxLength={200}
           className={styles.input}

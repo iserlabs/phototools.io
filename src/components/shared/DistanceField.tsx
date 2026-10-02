@@ -85,6 +85,8 @@ export function DistanceField({
             ref={inputRef}
             className={controlStyles.editableInput}
             type="number"
+            inputMode="decimal"
+            enterKeyHint="done"
             value={draft}
             min={min}
             max={max}

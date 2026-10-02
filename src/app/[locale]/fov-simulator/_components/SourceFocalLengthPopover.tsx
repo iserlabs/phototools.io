@@ -52,6 +52,8 @@ export function SourceFocalLengthPopover({ value, exifDetected, onChange }: Sour
           <div className={styles.popoverRow}>
             <input
               type="number"
+              inputMode="numeric"
+              enterKeyHint="done"
               className={styles.popoverInput}
               value={draft}
               onChange={(e) => setDraft(e.target.value)}

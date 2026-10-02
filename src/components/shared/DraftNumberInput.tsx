@@ -28,6 +28,7 @@ export function DraftNumberInput({ value, min, max, step, onChange, className, '
   return (
     <input
       type="number"
+      inputMode="decimal"
       className={className}
       min={min}
       max={max}
