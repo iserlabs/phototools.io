@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useCallback, useId } from 'react'
 import { useTranslations } from 'next-intl'
 import styles from './SourceFocalLengthPopover.module.css'
 
@@ -15,6 +15,8 @@ export function SourceFocalLengthPopover({ value, exifDetected, onChange }: Sour
   const [open, setOpen] = useState(false)
   const [draft, setDraft] = useState(String(value ?? ''))
   const wrapRef = useRef<HTMLDivElement>(null)
+  const badgeRef = useRef<HTMLButtonElement>(null)
+  const panelId = useId()
 
   useEffect(() => { setDraft(String(value ?? '')) }, [value])
 
@@ -23,8 +25,17 @@ export function SourceFocalLengthPopover({ value, exifDetected, onChange }: Sour
     const handler = (e: MouseEvent) => {
       if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false)
     }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return
+      setOpen(false)
+      badgeRef.current?.focus()
+    }
     document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', handler)
+      document.removeEventListener('keydown', onKey)
+    }
   }, [open])
 
   const apply = useCallback(() => {
@@ -41,13 +52,20 @@ export function SourceFocalLengthPopover({ value, exifDetected, onChange }: Sour
 
   return (
     <div className={styles.wrap} ref={wrapRef}>
-      <button type="button" className={styles.badge} onClick={() => setOpen((v) => !v)}>
+      <button
+        ref={badgeRef}
+        type="button"
+        className={styles.badge}
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={open ? panelId : undefined}
+      >
         {value
           ? <><span>{t('sourceFocalLength')}:</span> <span className={styles.badgeValue}>{t('focalLengthMm', { value })}</span></>
           : <span>{t('setFocalLength')}</span>}
       </button>
       {open && (
-        <div className={styles.popover}>
+        <div id={panelId} className={styles.popover}>
           <div className={styles.popoverNote}>{note}</div>
           <div className={styles.popoverRow}>
             <input
@@ -55,6 +73,7 @@ export function SourceFocalLengthPopover({ value, exifDetected, onChange }: Sour
               inputMode="numeric"
               enterKeyHint="done"
               className={styles.popoverInput}
+              aria-label={t('sourceFocalLength')}
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
               onKeyDown={(e) => { if (e.key === 'Enter') apply() }}
