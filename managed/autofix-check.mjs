@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// biome-ignore-all lint: vendored canon from iserlabs/hub — linted and tested there
 // Managed by iserlabs/hub (managed/autofix-check.mjs). Do NOT edit here.
 // The workflow's hazard stop (spec §4.3): blocked paths, 200-line ceiling, no suppression.
 // Zero dependencies so every fleet repo can run it. The workflow runs this from a copy in
@@ -76,8 +77,7 @@ const SECRET_PATTERNS = [
   [/AKIA[0-9A-Z]{16}/, "AWS access key ID"],
 ];
 
-const CAPTURE =
-  /\b(captureException|captureRequestError|captureMessage|captureEvent)\b/;
+const CAPTURE = /\b(capture(Exception|RequestError|Message|Event))\b/;
 const SENTRY_INIT = /\bSentry\.init\b/;
 
 const EMPTY_CATCH_PATTERNS = [
@@ -93,9 +93,8 @@ const EMPTY_CATCH_PATTERNS = [
  * by `:`) is left alone.
  */
 function stripComments(text) {
-  return text
-    .replace(/\/\*[\s\S]*?\*\//g, "")
-    .replace(/(^|[\s{;,(])\/\/.*$/gm, "$1");
+  const noBlocks = text.replace(/\/\*[\s\S]*?\*\//g, "");
+  return noBlocks.replace(/(^|[\s{;,(])\/\/.*$/gm, "$1");
 }
 
 /**
@@ -191,40 +190,50 @@ export function checkChanges({ status, diff }) {
   const files = entries.map((e) => e.path);
   for (const { path, removed: isRemoved } of entries) {
     const hit = BLOCKED.find((re) => re.test(path));
-    if (hit) reasons.push(`blocked path: ${path} (${hit.source})`);
-    if (isRemoved && DELETED_ERROR_REPORTING_FILE.test(path))
+    if (hit) {
+      reasons.push(`blocked path: ${path} (${hit.source})`);
+    }
+    if (isRemoved && DELETED_ERROR_REPORTING_FILE.test(path)) {
       reasons.push(`removed error reporting: ${path} deleted`);
+    }
   }
-  for (const p of binaryChangePaths(diff))
+  for (const p of binaryChangePaths(diff)) {
     reasons.push(p ? `binary change: ${p}` : "binary change");
-  for (const p of specialModePaths(diff))
-    reasons.push(
-      p ? `symlink or submodule change: ${p}` : "symlink or submodule change",
-    );
+  }
+  for (const p of specialModePaths(diff)) {
+    const what = "symlink or submodule change";
+    reasons.push(p ? `${what}: ${p}` : what);
+  }
   const { added, removed } = addedAndRemoved(diff);
   const changedLines = added.length + removed.length;
-  if (changedLines > DIFF_CEILING)
-    reasons.push(
-      `${changedLines} changed lines exceeds the ceiling of ${DIFF_CEILING}`,
-    );
-  for (const [re, label] of SUPPRESSION_ADDED)
-    if (added.some((l) => re.test(l)))
+  if (changedLines > DIFF_CEILING) {
+    const n = changedLines;
+    reasons.push(`${n} changed lines exceeds the ceiling of ${DIFF_CEILING}`);
+  }
+  for (const [re, label] of SUPPRESSION_ADDED) {
+    if (added.some((l) => re.test(l))) {
       reasons.push(`suppression added: ${label}`);
-  if (hasEmptyCatch(added))
+    }
+  }
+  if (hasEmptyCatch(added)) {
     reasons.push("suppression added: empty catch block");
-  for (const [re, label] of SECRET_PATTERNS)
-    if (added.some((l) => re.test(l)))
+  }
+  for (const [re, label] of SECRET_PATTERNS) {
+    if (added.some((l) => re.test(l))) {
       reasons.push(`secret-like content added: ${label}`);
+    }
+  }
   const removedCaptures = removed.filter((l) => CAPTURE.test(l)).length;
   const addedCaptures = added.filter((l) => CAPTURE.test(l)).length;
-  if (removedCaptures > addedCaptures)
-    reasons.push(
-      `removed error reporting: ${removedCaptures - addedCaptures} capture call(s) deleted`,
-    );
+  if (removedCaptures > addedCaptures) {
+    const n = removedCaptures - addedCaptures;
+    reasons.push(`removed error reporting: ${n} capture call(s) deleted`);
+  }
   const removedInit = removed.some((l) => SENTRY_INIT.test(l));
   const addedInit = added.some((l) => SENTRY_INIT.test(l));
-  if (removedInit && !addedInit)
+  if (removedInit && !addedInit) {
     reasons.push("removed error reporting: Sentry.init");
+  }
   return { ok: reasons.length === 0, reasons, changedLines, files };
 }
 
