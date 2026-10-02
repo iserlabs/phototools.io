@@ -350,7 +350,7 @@ jobs:
           SUBJECT=$(node -p 'require(process.env.RUNNER_TEMP + "/autofix/report.json").whatChanged.split("\n")[0].replace(/[\[\]]/g, "").replace(/\s+/g, " ").trim().slice(0, 60)')
           ISSUES=$(node -p 'JSON.parse(process.env.PAYLOAD).issueIds.join(", ")')
           git -c core.hooksPath=/dev/null commit -q --no-verify \
-            -m "fix: ${SUBJECT:-auto-fix}" \
+            -m "$(printf '%s' "${SUBJECT:-auto-fix}" | grep -qE '^[a-z]+(\([^)]*\))?!?: ' && printf '%s' "$SUBJECT" || printf 'fix: %s' "${SUBJECT:-auto-fix}")" \
             -m "Auto-fix run $RUN_ID for Sentry issue(s) $ISSUES." \
             -m "Agent: Claude Code (headless) via iserlabs/hub. Report in the run's Discord thread."
 
