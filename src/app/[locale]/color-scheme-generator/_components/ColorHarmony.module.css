@@ -2,6 +2,7 @@
 .wrapper {
   display: flex;
   height: calc(100vh - 44px);
+  height: calc(100dvh - 44px);
   overflow: hidden;
 }
 

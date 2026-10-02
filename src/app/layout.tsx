@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: langInitScript }}
         />
       </head>
-      <body style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+      <body style={{ display: 'flex', flexDirection: 'column', height: '100dvh' }}>
         {children}
       </body>
     </html>

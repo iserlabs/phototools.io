@@ -307,6 +307,7 @@
     width: 100%;
     grid-template-columns: 1fr;
     max-height: calc(100vh - 44px);
+    max-height: calc(100dvh - 44px);
     overflow-y: auto;
     border-radius: 0;
   }
