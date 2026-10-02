@@ -1,6 +1,7 @@
+import { roundRectPath } from '@/lib/utils/round-rect'
 import type { ResolvedSensor } from './sensorSizeTypes'
 import { POPULAR_MODELS } from '@/lib/data/sensors'
-import { rgba, roundRect } from './sensorSizeHelpers'
+import { rgba } from './sensorSizeHelpers'
 
 function drawSideBySideRow(
   ctx: CanvasRenderingContext2D,
@@ -46,11 +47,11 @@ function drawSideBySideRow(
     ctx.save()
     ctx.globalAlpha = a
 
-    roundRect(ctx, rx, ry, rw, rh, r)
+    roundRectPath(ctx, rx, ry, rw, rh, r)
     ctx.fillStyle = rgba(s.color, 0.12)
     ctx.fill()
 
-    roundRect(ctx, rx, ry, rw, rh, r)
+    roundRectPath(ctx, rx, ry, rw, rh, r)
     ctx.strokeStyle = rgba(s.color, 0.7)
     ctx.lineWidth = 1.5
     ctx.stroke()

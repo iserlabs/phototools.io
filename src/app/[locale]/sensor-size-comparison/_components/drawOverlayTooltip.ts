@@ -1,7 +1,7 @@
+import { roundRectPath } from '@/lib/utils/round-rect'
 import type { ResolvedSensor, SensorRect } from './sensorSizeTypes'
 import type { CanvasPalette } from './canvasPalette'
 import { calcCropFactor } from '@/lib/data/sensors'
-import { roundRect } from './sensorSizeHelpers'
 
 /**
  * Pill tooltip near the hovered rect's top edge, shown for every hovered
@@ -42,7 +42,7 @@ export function drawHoverTooltip(
   ctx.save()
   ctx.globalAlpha = alpha
   ctx.fillStyle = palette.tooltipBg
-  roundRect(ctx, tx, ty, tw, th, 5)
+  roundRectPath(ctx, tx, ty, tw, th, 5)
   ctx.fill()
 
   const dotCx = tx + sidePad + dotR

@@ -1,6 +1,7 @@
+import { roundRectPath } from '@/lib/utils/round-rect'
 import type { ResolvedSensor, SensorRect } from './sensorSizeTypes'
 import type { CanvasPalette } from './canvasPalette'
-import { rgba, roundRect, hoverDim } from './sensorSizeHelpers'
+import { rgba, hoverDim } from './sensorSizeHelpers'
 import { drawOverlayMobileLabels, drawOverlayDesktopLabels } from './drawOverlayLabels'
 import { drawHoverTooltip } from './drawOverlayTooltip'
 
@@ -49,10 +50,10 @@ export function drawOverlay(
 
     ctx.save()
     ctx.globalAlpha = a * dim
-    roundRect(ctx, x, y, rw, rh, r)
+    roundRectPath(ctx, x, y, rw, rh, r)
     ctx.fillStyle = rgba(s.color, isHovered ? 0.16 : 0.08)
     ctx.fill()
-    roundRect(ctx, x, y, rw, rh, r)
+    roundRectPath(ctx, x, y, rw, rh, r)
     ctx.strokeStyle = rgba(s.color, 0.7)
     ctx.lineWidth = isHovered ? 2.5 : 1.5
     ctx.stroke()

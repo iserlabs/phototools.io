@@ -1,6 +1,7 @@
+import { roundRectPath } from '@/lib/utils/round-rect'
 import type { ResolvedSensor } from './sensorSizeTypes'
 import { pixelPitch } from '@/lib/math/diffraction'
-import { rgba, roundRect } from './sensorSizeHelpers'
+import { rgba } from './sensorSizeHelpers'
 
 export function drawPixelGrid(
   ctx: CanvasRenderingContext2D,
@@ -19,7 +20,7 @@ export function drawPixelGrid(
   const gridOffX = rx + (sensorPxW - actualGridW) / 2
   const gridOffY = ry + (sensorPxH - actualGridH) / 2
 
-  roundRect(ctx, rx, ry, sensorPxW, sensorPxH, 3)
+  roundRectPath(ctx, rx, ry, sensorPxW, sensorPxH, 3)
   ctx.fillStyle = rgba(s.color, 0.06)
   ctx.fill()
 
@@ -57,7 +58,7 @@ export function drawPixelGrid(
     }
   }
 
-  roundRect(ctx, rx, ry, sensorPxW, sensorPxH, 3)
+  roundRectPath(ctx, rx, ry, sensorPxW, sensorPxH, 3)
   ctx.strokeStyle = rgba(s.color, 0.6)
   ctx.lineWidth = 1.5
   ctx.stroke()
