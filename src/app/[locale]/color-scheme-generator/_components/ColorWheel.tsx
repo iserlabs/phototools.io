@@ -1,6 +1,7 @@
 'use client'
 
-import { useRef, useEffect, useCallback, useState, useImperativeHandle, forwardRef } from 'react'
+import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 'react'
+import { useMediaQuery } from '@/lib/utils/useMediaQuery'
 import { drawWheelPixels, drawOverlay } from './drawWheel'
 import { useWheelPointer } from './useWheelPointer'
 import ch from './ColorHarmony.module.css'
@@ -27,12 +28,7 @@ interface ColorWheelProps {
 
 const DESKTOP_SIZE = 440
 const MOBILE_SIZE = 280
-const BREAKPOINT = 1024
-
-function getCanvasSize(): number {
-  if (typeof window === 'undefined') return DESKTOP_SIZE
-  return window.innerWidth < BREAKPOINT ? MOBILE_SIZE : DESKTOP_SIZE
-}
+const MOBILE_QUERY = '(max-width: 1023px)'
 
 export interface ColorWheelHandle {
   getCanvas(): HTMLCanvasElement | null
@@ -55,19 +51,12 @@ export const ColorWheel = forwardRef<ColorWheelHandle, ColorWheelProps>(function
   useImperativeHandle(ref, () => ({
     getCanvas: () => canvasRef.current,
   }))
-  const [size, setSize] = useState(DESKTOP_SIZE)
+  const size = useMediaQuery(MOBILE_QUERY) ? MOBILE_SIZE : DESKTOP_SIZE
 
   const { dragModeRef, onPointerDown, onPointerMove, onPointerUp } = useWheelPointer(
     canvasRef, harmonyHues, saturation, draggableNodes, monochromaticPoints,
     onHueChange, onSaturationChange, onSecondaryDrag, onMonoDrag,
   )
-
-  useEffect(() => {
-    function handleResize() { setSize(getCanvasSize()) }
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
 
   const dpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1
   const canvasPixels = size * dpr
