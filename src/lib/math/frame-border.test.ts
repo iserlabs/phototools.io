@@ -89,7 +89,7 @@ describe('drawSolidBorder', () => {
     const ctx = mockCtx()
     drawSolidBorder(ctx, 2020, 1180, '#333333', 12)
     expect(ctx.beginPath).toHaveBeenCalled()
-    expect(ctx.roundRect).toHaveBeenCalledWith(0, 0, 2020, 1180, 12)
+    expect(ctx.roundRect).toHaveBeenCalledWith(0, 0, 2020, 1180, [12])
     expect(ctx.fill).toHaveBeenCalled()
     expect(ctx.fillRect).not.toHaveBeenCalled()
   })
@@ -157,7 +157,7 @@ describe('drawGradientBorder', () => {
     const ctx = mockCtx()
     drawGradientBorder(ctx, 1920, 1080, '#ff0000', '#0000ff', 'top', 20)
     expect(ctx.beginPath).toHaveBeenCalled()
-    expect(ctx.roundRect).toHaveBeenCalledWith(0, 0, 1920, 1080, 20)
+    expect(ctx.roundRect).toHaveBeenCalledWith(0, 0, 1920, 1080, [20])
     expect(ctx.fill).toHaveBeenCalled()
     expect(ctx.fillRect).not.toHaveBeenCalled()
   })
@@ -184,7 +184,7 @@ describe('drawInnerMat', () => {
     expect(ctx.beginPath).toHaveBeenCalled()
     // adjusted radius = max(0, 20 - 50/2) = max(0, -5) = 0
     // Actually the code uses cornerRadius - borderWidth / 2 = 20 - 25 = -5 -> clamped to 0
-    expect(ctx.roundRect).toHaveBeenCalledWith(50, 50, 1920, 1080, 0)
+    expect(ctx.roundRect).toHaveBeenCalledWith(50, 50, 1920, 1080, [0])
     expect(ctx.fill).toHaveBeenCalled()
   })
 
@@ -192,7 +192,7 @@ describe('drawInnerMat', () => {
     const ctx = mockCtx()
     drawInnerMat(ctx, 840, 640, 20, 30, 5, '#dddddd')
     // adjusted radius = max(0, 30 - 20/2) = max(0, 20) = 20
-    expect(ctx.roundRect).toHaveBeenCalledWith(20, 20, 800, 600, 20)
+    expect(ctx.roundRect).toHaveBeenCalledWith(20, 20, 800, 600, [20])
   })
 
   it('sets the correct mat color', () => {
@@ -227,7 +227,7 @@ describe('drawShadow', () => {
     const ctx = mockCtx()
     drawShadow(ctx, 2020, 1180, 50, 15, defaultOptions)
     expect(ctx.beginPath).toHaveBeenCalled()
-    expect(ctx.roundRect).toHaveBeenCalledWith(0, 0, 2020, 1180, 15)
+    expect(ctx.roundRect).toHaveBeenCalledWith(0, 0, 2020, 1180, [15])
     expect(ctx.fill).toHaveBeenCalled()
     expect(ctx.fillRect).not.toHaveBeenCalled()
   })

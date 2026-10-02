@@ -1,4 +1,5 @@
 import type { GradientDirection } from '@/app/[locale]/frame-studio/_components/types'
+import { roundRectPath } from '@/lib/utils/round-rect'
 
 export function computeExportDimensions(
   imageW: number,
@@ -22,8 +23,7 @@ export function drawSolidBorder(
 ): void {
   ctx.fillStyle = color
   if (cornerRadius > 0) {
-    ctx.beginPath()
-    ctx.roundRect(0, 0, canvasW, canvasH, cornerRadius)
+    roundRectPath(ctx, 0, 0, canvasW, canvasH, cornerRadius)
     ctx.fill()
   } else {
     ctx.fillRect(0, 0, canvasW, canvasH)
@@ -56,8 +56,7 @@ export function drawGradientBorder(
   ctx.fillStyle = gradient
 
   if (cornerRadius > 0) {
-    ctx.beginPath()
-    ctx.roundRect(0, 0, canvasW, canvasH, cornerRadius)
+    roundRectPath(ctx, 0, 0, canvasW, canvasH, cornerRadius)
     ctx.fill()
   } else {
     ctx.fillRect(0, 0, canvasW, canvasH)
@@ -95,8 +94,7 @@ export function drawInnerMat(
   const h = canvasH - borderWidth * 2
 
   if (cornerRadius > 0) {
-    ctx.beginPath()
-    ctx.roundRect(x, y, w, h, Math.max(0, cornerRadius - borderWidth / 2))
+    roundRectPath(ctx, x, y, w, h, Math.max(0, cornerRadius - borderWidth / 2))
     ctx.fill()
   } else {
     ctx.fillRect(x, y, w, h)
@@ -118,8 +116,7 @@ export function drawShadow(
   ctx.shadowOffsetY = options.offsetY
   ctx.fillStyle = 'rgba(0,0,0,0)'
   if (cornerRadius > 0) {
-    ctx.beginPath()
-    ctx.roundRect(0, 0, canvasW, canvasH, cornerRadius)
+    roundRectPath(ctx, 0, 0, canvasW, canvasH, cornerRadius)
     ctx.fill()
   } else {
     ctx.fillRect(0, 0, canvasW, canvasH)

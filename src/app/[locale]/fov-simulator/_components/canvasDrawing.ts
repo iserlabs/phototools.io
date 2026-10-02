@@ -1,4 +1,5 @@
 import type { Rect } from './canvasTypes'
+import { roundRectPath } from '@/lib/utils/round-rect'
 import { FRAMING_GUIDES, MIN_HIT_SIZE } from './canvasTypes'
 
 export function drawFramingGuides(
@@ -45,8 +46,7 @@ export function drawFramingGuides(
 
     ctx.setLineDash([])
     ctx.fillStyle = 'rgba(0, 0, 0, 0.55)'
-    ctx.beginPath()
-    ctx.roundRect(labelX, labelY - labelH + 2 * dpr, labelW, labelH, 3 * dpr)
+    roundRectPath(ctx, labelX, labelY - labelH + 2 * dpr, labelW, labelH, 3 * dpr)
     ctx.fill()
 
     ctx.fillStyle = 'rgba(255, 255, 255, 0.9)'

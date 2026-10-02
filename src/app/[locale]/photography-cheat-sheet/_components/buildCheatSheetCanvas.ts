@@ -1,3 +1,5 @@
+import { roundRectPath } from '@/lib/utils/round-rect'
+
 /**
  * Draw a shareable cheat-sheet card onto a canvas (1080×1350, 4:5 — prints
  * cleanly and posts well). All strings arrive pre-translated; canvas text
@@ -89,8 +91,7 @@ export function buildCheatSheetCanvas(canvas: HTMLCanvasElement, data: CheatShee
   const tipsTop = y
   ctx.fillStyle = CARD
   const tipsHeight = H - tipsTop - PAD - 60
-  ctx.beginPath()
-  ctx.roundRect(PAD, tipsTop, W - PAD * 2, tipsHeight, 16)
+  roundRectPath(ctx, PAD, tipsTop, W - PAD * 2, tipsHeight, 16)
   ctx.fill()
   ctx.strokeStyle = BORDER
   ctx.stroke()

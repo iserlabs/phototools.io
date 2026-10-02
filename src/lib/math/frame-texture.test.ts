@@ -236,7 +236,7 @@ describe('drawTextureBorder', () => {
     drawTextureBorder(ctx, 800, 600, 'canvas', 16)
     expect(ctx.save).toHaveBeenCalled()
     expect(ctx.beginPath).toHaveBeenCalled()
-    expect(ctx.roundRect).toHaveBeenCalledWith(0, 0, 800, 600, 16)
+    expect(ctx.roundRect).toHaveBeenCalledWith(0, 0, 800, 600, [16])
     expect(ctx.clip).toHaveBeenCalled()
     expect(ctx.drawImage).toHaveBeenCalled()
     expect(ctx.restore).toHaveBeenCalled()
