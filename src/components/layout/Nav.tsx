@@ -76,7 +76,11 @@ export function Nav({ theme, onThemeChange, hasGuides = false }: NavProps) {
       }
     }
     function handleEscape(e: KeyboardEvent) {
-      if (e.key === 'Escape') setToolsOpen(false)
+      if (e.key !== 'Escape') return
+      // Return focus to the Tools button if it was inside the open menu.
+      const wrapper = toolsRef.current
+      if (wrapper?.contains(document.activeElement)) wrapper.querySelector('button')?.focus()
+      setToolsOpen(false)
     }
     document.addEventListener('mousedown', handleClickOutside)
     document.addEventListener('keydown', handleEscape)
