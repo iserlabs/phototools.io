@@ -3,6 +3,8 @@
 import { useRef, useEffect, useImperativeHandle, type Ref } from 'react'
 import { type Star, STAR_COUNT, ANIM_DURATION, generateStars } from './starDrawing'
 import { drawSharpScene, drawTrailsScene } from './starScenes'
+import { useIsRendered } from '@/lib/utils/useIsRendered'
+import { useMediaQuery } from '@/lib/utils/useMediaQuery'
 import css from './StarTrailCalculator.module.css'
 
 export interface StarTrailCanvasHandle {
@@ -34,6 +36,11 @@ export function StarTrailCanvas({
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animRef = useRef<number>(0)
   const startTimeRef = useRef<number>(0)
+  // The trails loop runs forever: pause it while the canvas area is scrolled
+  // off-screen (mobile), and show the finished trails instead of animating
+  // for users who prefer reduced motion.
+  const isRendered = useIsRendered(canvasRef, { parent: true })
+  const reduceMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
 
   useImperativeHandle(ref, () => ({
     canvas: canvasRef.current,
@@ -78,6 +85,12 @@ export function StarTrailCanvas({
       return
     }
 
+    if (reduceMotion) {
+      drawTrailsScene(ctx, size, size, 1, STARS, latitude, totalExposure)
+      return
+    }
+    if (!isRendered) return
+
     startTimeRef.current = 0
     const animate = (timestamp: number) => {
       if (!startTimeRef.current) startTimeRef.current = timestamp
@@ -95,7 +108,7 @@ export function StarTrailCanvas({
     return () => {
       if (animRef.current) cancelAnimationFrame(animRef.current)
     }
-  }, [mode, latitude, maxExposure500, maxExposureNPF, exposurePerFrame, totalExposure])
+  }, [mode, latitude, maxExposure500, maxExposureNPF, exposurePerFrame, totalExposure, isRendered, reduceMotion])
 
   return (
     <canvas
