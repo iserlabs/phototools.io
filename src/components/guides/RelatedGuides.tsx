@@ -16,7 +16,7 @@ export function RelatedGuides({ slugs, locale }: RelatedGuidesProps) {
   return (
     <section className={styles.section}>
       <h2 className={styles.heading}>{t('relatedGuides')}</h2>
-      <ul className={styles.list}>
+      <ul role="list" className={styles.list}>
         {guides.map(({ slug, guide }) => (
           <li key={slug}>
             <Link href={`/guides/${slug}`} prefetch={false} className={styles.link}>

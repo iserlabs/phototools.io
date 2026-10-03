@@ -82,6 +82,10 @@ export function SearchCombobox<T extends { id: string }>({
       e.preventDefault()
       setHighlight((h) => Math.max(h - 1, 0))
     } else if (e.key === 'Enter') {
+      // An IME (Japanese, Chinese, Korean) uses Enter to confirm the conversion; that
+      // Enter must not pick a result. keyCode 229 catches older Safari, which reset
+      // isComposing before this keydown (mwg: ime-safe-enter-submit).
+      if (e.nativeEvent.isComposing || e.nativeEvent.keyCode === 229) return
       if (open && highlight >= 0 && filtered[highlight]) {
         e.preventDefault()
         selectItem(filtered[highlight])

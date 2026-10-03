@@ -29,7 +29,16 @@ export function useToolSession() {
   }, [])
 
   useEffect(() => {
+    // `pagehide` (not `beforeunload`) marks the end of the page: it fires on
+    // every unload, including when the page enters the back/forward cache,
+    // and unlike `beforeunload` it never makes the page bfcache-ineligible
+    // (Firefox). A bfcache restore (`pageshow` with persisted) starts a new
+    // session so the same visit isn't summarised twice. (Mobile app switches
+    // that later discard the tab fire neither event.)
+    let sent = false
     function sendSummary() {
+      if (sent) return
+      sent = true
       const duration = Math.round((Date.now() - startTimeRef.current) / 1000)
       dispatch('tool_session_summary', {
         duration_seconds: duration,
@@ -40,14 +49,19 @@ export function useToolSession() {
       })
     }
 
-    function handleBeforeUnload() {
-      sendSummary()
+    function handlePageShow(e: PageTransitionEvent) {
+      if (!e.persisted) return
+      sent = false
+      startTimeRef.current = Date.now()
+      interactionCountRef.current = 0
     }
 
-    window.addEventListener('beforeunload', handleBeforeUnload)
+    window.addEventListener('pagehide', sendSummary)
+    window.addEventListener('pageshow', handlePageShow)
 
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload)
+      window.removeEventListener('pagehide', sendSummary)
+      window.removeEventListener('pageshow', handlePageShow)
       sendSummary()
     }
   }, [])

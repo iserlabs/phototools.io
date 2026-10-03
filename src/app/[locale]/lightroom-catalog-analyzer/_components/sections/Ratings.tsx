@@ -54,7 +54,7 @@ export function Ratings() {
       </figure>
 
       <h3>{t('colorLabels')}</h3>
-      <ul style={{ display: 'flex', flexWrap: 'wrap', gap: 8, listStyle: 'none', padding: 0 }}>
+      <ul role="list" style={{ display: 'flex', flexWrap: 'wrap', gap: 8, listStyle: 'none', padding: 0 }}>
         {r.colorLabels.map((cl) => (
           <li key={cl.label} style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
             <span

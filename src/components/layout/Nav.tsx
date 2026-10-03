@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useId } from 'react'
 import { Link, usePathname } from '@/lib/i18n/navigation'
 import { useTranslations } from 'next-intl'
 import { getLiveTools } from '@/lib/data/tools'
@@ -44,6 +44,7 @@ export function Nav({ theme, onThemeChange, hasGuides = false }: NavProps) {
   const CATEGORY_LABELS = useCategoryLabels()
   const [toolsOpen, setToolsOpen] = useState(false)
   const toolsRef = useRef<HTMLDivElement>(null)
+  const megaMenuId = useId()
   const canHover = useCanHover()
   const pathname = usePathname()
   const tools = getLiveTools()
@@ -75,7 +76,11 @@ export function Nav({ theme, onThemeChange, hasGuides = false }: NavProps) {
       }
     }
     function handleEscape(e: KeyboardEvent) {
-      if (e.key === 'Escape') setToolsOpen(false)
+      if (e.key !== 'Escape') return
+      // Return focus to the Tools button if it was inside the open menu.
+      const wrapper = toolsRef.current
+      if (wrapper?.contains(document.activeElement)) wrapper.querySelector('button')?.focus()
+      setToolsOpen(false)
     }
     document.addEventListener('mousedown', handleClickOutside)
     document.addEventListener('keydown', handleEscape)
@@ -106,12 +111,13 @@ export function Nav({ theme, onThemeChange, hasGuides = false }: NavProps) {
               trackMobileMenuToggle({ action: next ? 'open' : 'close' })
             }}
             aria-expanded={toolsOpen}
-            aria-haspopup="true"
+            aria-controls={toolsOpen ? megaMenuId : undefined}
           >
             {t('tools')} {toolsOpen ? '\u25B2' : '\u25BC'}
           </button>
           {toolsOpen && (
             <div
+              id={megaMenuId}
               className={`${styles.megaMenu} ${styles.megaMenuOpen} ${styles.megaMenuAnimated}`}
               style={{ '--mega-cols': grouped.length } as React.CSSProperties}
             >

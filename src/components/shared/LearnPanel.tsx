@@ -6,6 +6,7 @@ import { Link } from '@/lib/i18n/navigation'
 import { getSkeletonBySlug, isChallengeComplete, clearChallengeProgressForTool } from '@/lib/data/education'
 import { trackLearnPanelOpen, trackLearnPanelSectionView, trackToolGuideClick } from '@/lib/analytics'
 import { useScrollDepth } from '@/lib/analytics/hooks/useScrollDepth'
+import { useMediaQuery } from '@/lib/utils/useMediaQuery'
 import { ChallengeCard, ChallengeNavDot } from './ChallengeCard'
 import { FaqSection } from './FaqSection'
 import { RelatedTools } from './RelatedTools'
@@ -22,20 +23,13 @@ export function LearnPanel({ slug, closable = false, guides = [] }: LearnPanelPr
   const et = useTranslations(`education.${slug}`)
   const skel = getSkeletonBySlug(slug)
   const [collapsed, setCollapsed] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
+  const isMobile = useMediaQuery('(max-width: 1023px)')
   const [challengeIndex, setChallengeIndex] = useState(0)
   const [completedIds, setCompletedIds] = useState<Set<string>>(new Set())
   const scrollRef = useScrollDepth({ event: 'learn_panel_scroll_depth' })
 
   useEffect(() => {
     trackLearnPanelSectionView({ section: 'beginner' })
-  }, [])
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth <= 1023)
-    check()
-    window.addEventListener('resize', check)
-    return () => window.removeEventListener('resize', check)
   }, [])
 
   useEffect(() => {
@@ -154,7 +148,7 @@ export function LearnPanel({ slug, closable = false, guides = [] }: LearnPanelPr
       {guides.length > 0 && (
         <section className={styles.section}>
           <h3 className={styles.sectionTitle}>{t('guidesTitle')}</h3>
-          <ul className={styles.guidesList}>
+          <ul role="list" className={styles.guidesList}>
             {guides.map((guide) => (
               <li key={guide.slug}>
                 <Link

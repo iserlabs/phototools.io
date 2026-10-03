@@ -1,29 +1,34 @@
 'use client'
 
-import { useState, useCallback, useEffect, useRef, type RefObject } from 'react'
-import { toast } from 'sonner'
+import { useState, useCallback, useEffect, useId, useRef } from 'react'
+import { toast, Toaster } from 'sonner'
 import { useTranslations } from 'next-intl'
-import * as Dialog from '@radix-ui/react-dialog'
 import { trackShareClick } from '@/lib/analytics'
+import { useTheme } from '@/components/layout/ThemeProvider'
+import { ModalDialog } from './ModalDialog'
 import styles from './ShareModal.module.css'
 
 interface ShareModalProps {
   toolName: string
   toolSlug: string
   onClose: () => void
-  /**
-   * Element to refocus once the dialog closes. This modal is conditionally
-   * rendered by its parent (unmounted on close) rather than driven by
-   * Radix's own `open` state, so Radix's default close-focus restoration has
-   * no trigger element to fall back to and drops focus to <body>. Passing
-   * the trigger through explicitly and restoring it via `onCloseAutoFocus`
-   * (rather than a plain effect) ensures it wins the race against Radix's
-   * own focus handling instead of being overwritten by it.
-   */
-  triggerRef?: RefObject<HTMLElement | null>
 }
 
-export function ShareModal({ toolName, toolSlug, onClose, triggerRef }: ShareModalProps) {
+// The page-level <Toaster> sits below the modal <dialog>'s top layer (and its
+// backdrop), so toasts raised from inside the dialog go to a Toaster rendered
+// inside it.
+const TOASTER_ID = 'share-modal'
+
+const FIELDS = [
+  { key: 'link', label: 'directLink' },
+  { key: 'markdown', label: 'markdown' },
+  { key: 'bbcode', label: 'bbcode' },
+  { key: 'iframe', label: 'htmlEmbed' },
+] as const
+
+export function ShareModal({ toolName, toolSlug, onClose }: ShareModalProps) {
+  const titleId = useId()
+  const { theme } = useTheme()
   const t = useTranslations('common.share')
   const tToast = useTranslations('common.toast')
   const [copied, setCopied] = useState<string | null>(null)
@@ -56,72 +61,31 @@ export function ShareModal({ toolName, toolSlug, onClose, triggerRef }: ShareMod
     trackShareClick({ method: methodMap[key] || 'copy-link' })
     navigator.clipboard.writeText(text).then(() => {
       setCopied(key)
-      toast(tToast('copied'))
+      toast(tToast('copied'), { toasterId: TOASTER_ID })
       if (copyTimerRef.current) clearTimeout(copyTimerRef.current)
       copyTimerRef.current = setTimeout(() => setCopied(null), 2000)
     })
   }, [tToast])
 
   return (
-    <Dialog.Root open onOpenChange={(open) => { if (!open) onClose() }}>
-      <Dialog.Portal>
-        <Dialog.Overlay className={styles.overlay} />
-        <Dialog.Content
-          className={styles.modal}
-          aria-describedby={undefined}
-          onCloseAutoFocus={(e) => {
-            if (triggerRef?.current) {
-              e.preventDefault()
-              triggerRef.current.focus()
-            }
-          }}
-        >
-          <div className={styles.header}>
-            <Dialog.Title className={styles.title}>{t('title')}</Dialog.Title>
-            <Dialog.Close className={styles.closeBtn} aria-label={t('closeModal')}>&times;</Dialog.Close>
-          </div>
+    <ModalDialog className={styles.modal} aria-labelledby={titleId} onClose={onClose}>
+      <div className={styles.header}>
+        <h2 id={titleId} className={styles.title}>{t('title')}</h2>
+        <button type="button" className={styles.closeBtn} onClick={onClose} aria-label={t('closeModal')}>&times;</button>
+      </div>
 
-          <div className={styles.section}>
-            <label>{t('directLink')}</label>
-            <div className={styles.row}>
-              <input type="text" readOnly value={snippets.link} />
-              <button onClick={() => copy('link', snippets.link)}>
-                {copied === 'link' ? t('copied') : t('copy')}
-              </button>
-            </div>
+      {FIELDS.map(({ key, label }) => (
+        <div key={key} className={styles.section}>
+          <label htmlFor={`${titleId}-${key}`}>{t(label)}</label>
+          <div className={styles.row}>
+            <input id={`${titleId}-${key}`} type="text" readOnly value={snippets[key]} />
+            <button type="button" onClick={() => copy(key, snippets[key])}>
+              {copied === key ? t('copied') : t('copy')}
+            </button>
           </div>
-
-          <div className={styles.section}>
-            <label>{t('markdown')}</label>
-            <div className={styles.row}>
-              <input type="text" readOnly value={snippets.markdown} />
-              <button onClick={() => copy('markdown', snippets.markdown)}>
-                {copied === 'markdown' ? t('copied') : t('copy')}
-              </button>
-            </div>
-          </div>
-
-          <div className={styles.section}>
-            <label>{t('bbcode')}</label>
-            <div className={styles.row}>
-              <input type="text" readOnly value={snippets.bbcode} />
-              <button onClick={() => copy('bbcode', snippets.bbcode)}>
-                {copied === 'bbcode' ? t('copied') : t('copy')}
-              </button>
-            </div>
-          </div>
-
-          <div className={styles.section}>
-            <label>{t('htmlEmbed')}</label>
-            <div className={styles.row}>
-              <input type="text" readOnly value={snippets.iframe} />
-              <button onClick={() => copy('iframe', snippets.iframe)}>
-                {copied === 'iframe' ? t('copied') : t('copy')}
-              </button>
-            </div>
-          </div>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+        </div>
+      ))}
+      <Toaster id={TOASTER_ID} theme={theme} position="bottom-center" />
+    </ModalDialog>
   )
 }

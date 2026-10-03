@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from 'react'
 import { useTranslations } from 'next-intl'
 import { trackFileUpload } from '@/lib/analytics'
 import styles from './FileDropZone.module.css'
+import { buttonKeyHandlers } from '@/lib/utils/buttonKeys'
 
 interface FileDropZoneProps {
   onFile: (file: File) => void
@@ -87,9 +88,7 @@ export function FileDropZone({ onFile, prompt: promptText, accept = 'image/*' }:
       role="button"
       tabIndex={0}
       aria-label={fileName ? t('selectedFile', { fileName }) : t('dropPrompt')}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') handleClick()
-      }}
+      {...buttonKeyHandlers(handleClick)}
     >
       <input
         ref={inputRef}

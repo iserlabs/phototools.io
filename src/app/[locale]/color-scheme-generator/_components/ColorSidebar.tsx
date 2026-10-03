@@ -64,6 +64,7 @@ export function ColorSidebar(props: ColorSidebarProps) {
             onFocus={() => setHexDraft(baseHex)}
             onBlur={() => setHexDraft(null)}
             className={styles.hexInput} spellCheck={false} maxLength={7}
+            autoComplete="off" autoCapitalize="off" enterKeyHint="done"
           />
         </div>
       </div>

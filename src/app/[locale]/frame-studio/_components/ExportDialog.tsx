@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useId } from 'react'
 import * as Sentry from '@sentry/nextjs'
 import { useTranslations } from 'next-intl'
 import { computeExportDimensions, drawSolidBorder, drawGradientBorder, drawTextureBorder, drawInnerMat, drawShadow } from '@/lib/math/frame'
@@ -13,6 +13,7 @@ import {
 } from '@/lib/math/grid'
 import type { FrameConfig, CropState, GridType, GridOptions } from './types'
 import { thicknessToPx } from './types'
+import { ModalDialog } from '@/components/shared/ModalDialog'
 import styles from './ExportDialog.module.css'
 
 interface ExportDialogProps {
@@ -85,6 +86,7 @@ export function ExportDialog({
   const [includeGrid, setIncludeGrid] = useState(false)
   const [exporting, setExporting] = useState(false)
   const [closing, setClosing] = useState(false)
+  const titleId = useId()
 
   const handleClose = useCallback(() => { setClosing(true); setTimeout(onClose, 150) }, [onClose])
 
@@ -167,27 +169,31 @@ export function ExportDialog({
     } finally { setExporting(false) }
   }, [image, crop, frameConfig, includeGrid, activeGrids, gridOptions, gridOffset, gridDisplaySize, originalFile, originalMimeType, exifSegments, onClose])
 
+  // Cancel plays the exit animation before unmounting; Esc, the back gesture
+  // and backdrop clicks close the native <dialog> immediately (ModalDialog).
   return (
-    <div className={`${styles.overlay} ${closing ? styles.closing : ''}`} onClick={handleClose}>
-      <div className={styles.dialog} onClick={(e) => e.stopPropagation()}>
-        <h3 className={styles.title}>{t('exportPhoto')}</h3>
-        <div className={styles.info}>
-          <span>{t('format')} {originalMimeType.split('/')[1]?.toUpperCase() ?? 'PNG'}</span>
-          <span>{t('quality')} {t('qualityMaximum')}</span>
-        </div>
-        {activeGrids.length > 0 && (
-          <label className={styles.toggle}>
-            <input type="checkbox" checked={includeGrid} onChange={(e) => setIncludeGrid(e.target.checked)} />
-            <span>{t('includeGridOverlay')}</span>
-          </label>
-        )}
-        <div className={styles.actions}>
-          <button className={styles.cancelBtn} onClick={handleClose}>{t('cancel')}</button>
-          <button className={styles.exportBtn} onClick={handleExport} disabled={exporting}>
-            {exporting ? t('exporting') : t('download')}
-          </button>
-        </div>
+    <ModalDialog
+      className={`${styles.dialog} ${closing ? styles.closing : ''}`}
+      aria-labelledby={titleId}
+      onClose={onClose}
+    >
+      <h3 id={titleId} className={styles.title}>{t('exportPhoto')}</h3>
+      <div className={styles.info}>
+        <span>{t('format')} {originalMimeType.split('/')[1]?.toUpperCase() ?? 'PNG'}</span>
+        <span>{t('quality')} {t('qualityMaximum')}</span>
       </div>
-    </div>
+      {activeGrids.length > 0 && (
+        <label className={styles.toggle}>
+          <input type="checkbox" checked={includeGrid} onChange={(e) => setIncludeGrid(e.target.checked)} />
+          <span>{t('includeGridOverlay')}</span>
+        </label>
+      )}
+      <div className={styles.actions}>
+        <button type="button" className={styles.cancelBtn} onClick={handleClose}>{t('cancel')}</button>
+        <button type="button" className={styles.exportBtn} onClick={handleExport} disabled={exporting}>
+          {exporting ? t('exporting') : t('download')}
+        </button>
+      </div>
+    </ModalDialog>
   )
 }

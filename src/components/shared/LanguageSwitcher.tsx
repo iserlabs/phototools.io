@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useId } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname, useRouter } from '@/lib/i18n/navigation'
 import { locales, localeNames, localeFlags } from '@/lib/i18n/routing'
@@ -15,6 +15,8 @@ export function LanguageSwitcher() {
   const t = useTranslations('common.language')
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const listId = useId()
   const sortedLocales = [...locales].sort((a, b) => localeNames[a].localeCompare(localeNames[b]))
   const COLUMNS = 3
   const rowsPerColumn = Math.ceil(sortedLocales.length / COLUMNS)
@@ -26,7 +28,10 @@ export function LanguageSwitcher() {
       }
     }
     function handleEscape(e: KeyboardEvent) {
-      if (e.key === 'Escape') setOpen(false)
+      if (e.key !== 'Escape') return
+      // Return focus to the trigger if it was inside the open list.
+      if (ref.current?.contains(document.activeElement)) triggerRef.current?.focus()
+      setOpen(false)
     }
     document.addEventListener('mousedown', handleClickOutside)
     document.addEventListener('keydown', handleEscape)
@@ -44,11 +49,15 @@ export function LanguageSwitcher() {
 
   return (
     <div className={styles.wrapper} ref={ref}>
+      {/* Disclosure button + list of plain buttons: no listbox/option roles,
+          which would promise arrow-key navigation this widget doesn't have. */}
       <button
+        ref={triggerRef}
+        type="button"
         className={styles.trigger}
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        aria-haspopup="listbox"
+        aria-controls={open ? listId : undefined}
         aria-label={t('change')}
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -60,14 +69,17 @@ export function LanguageSwitcher() {
       </button>
       {open && (
         <ul
+          id={listId}
           className={styles.dropdown}
-          role="listbox"
           aria-label={t('select')}
           style={{ gridTemplateRows: `repeat(${rowsPerColumn}, 36px)` }}
         >
           {sortedLocales.map((l) => (
-            <li key={l} role="option" aria-selected={l === locale}>
+            <li key={l}>
               <button
+                type="button"
+                lang={l}
+                aria-current={l === locale ? 'true' : undefined}
                 className={`${styles.option} ${l === locale ? styles.optionActive : ''}`}
                 onClick={() => switchLocale(l)}
               >

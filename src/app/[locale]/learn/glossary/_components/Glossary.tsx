@@ -78,6 +78,8 @@ export function Glossary() {
       <input
         className={styles.search}
         type="text"
+        enterKeyHint="search"
+        autoComplete="off"
         placeholder={t('searchPlaceholder')}
         aria-label={t('searchAriaLabel')}
         value={query}

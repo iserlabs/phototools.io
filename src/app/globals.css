@@ -26,6 +26,10 @@ input[type='number'] {
 
 :root,
 [data-theme='dark'] {
+  /* Native UI (scrollbars, form controls, date/number pickers, canvas) must
+     match the active palette — dark is the site default. */
+  color-scheme: dark;
+
   /* Colors — Warm Amber on neutral black */
   --bg-primary: #0d0d0d;
   --bg-secondary: #161616;
@@ -83,6 +87,7 @@ input[type='number'] {
 }
 
 [data-theme='light'] {
+  color-scheme: light;
   --bg-primary: #fafafa;
   --bg-secondary: #ffffff;
   --bg-surface: #ffffff;
@@ -107,6 +112,15 @@ body {
   color: var(--text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Balanced headings; orphan-avoiding body copy (progressive enhancement). */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p, li, blockquote, dd {
+  text-wrap: pretty;
 }
 
 /* Thin custom scrollbars — visible but unobtrusive */
@@ -231,6 +245,12 @@ input[type="range"]::-moz-range-thumb {
   overflow: hidden;
 }
 
+/* It takes focus only as the skip link's target (tabindex -1); no ring around the
+   whole page for that. */
+#main-content:focus {
+  outline: none;
+}
+
 .skip-to-content {
   position: absolute;
   left: -9999px;
@@ -317,9 +337,17 @@ input[type="range"]::-moz-range-thumb {
   html, body {
     height: auto !important;
     min-height: 100vh;
+    min-height: 100dvh;
     overflow-x: hidden;
     overflow-y: auto !important;
   }
+}
+
+/* While a native modal <dialog> is open, keep the page behind it from
+   scrolling (mobile pages scroll; the !important beats the rule above). */
+html:has(dialog:modal),
+html:has(dialog:modal) body {
+  overflow: hidden !important;
 }
 
 /* Reduce motion for users who prefer it */

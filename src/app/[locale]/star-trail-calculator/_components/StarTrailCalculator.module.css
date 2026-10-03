@@ -151,6 +151,10 @@
   padding: 24px;
   min-height: 0;
   overflow: hidden;
+  /* Lets StarTrailCanvas pause its animation loop while this area is
+     off-screen (contentvisibilityautostatechange); the size is remembered. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 300px;
 }
 
 .starCanvas {

@@ -55,10 +55,12 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form} data-ph-no-capture>
-      {/* Honeypot — hidden from humans and screen readers */}
-      <div className={styles.honeypot} aria-hidden="true">
+      {/* Honeypot — hidden from humans and screen readers. `inert` takes the whole
+          wrapper (label included) out of the accessibility tree, the tab order and
+          pointer reach; the field still submits, so bots that fill it are caught. */}
+      <div className={styles.honeypot} inert>
         <label htmlFor="website">{t('honeypotLabel')}</label>
-        <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+        <input type="text" id="website" name="website" autoComplete="off" />
       </div>
 
       <div className={styles.field}>
@@ -67,6 +69,8 @@ export function ContactForm() {
           type="text"
           id="name"
           name="name"
+          autoComplete="name"
+          enterKeyHint="next"
           required
           maxLength={100}
           className={styles.input}
@@ -80,6 +84,8 @@ export function ContactForm() {
           type="email"
           id="email"
           name="email"
+          autoComplete="email"
+          enterKeyHint="next"
           required
           className={styles.input}
           placeholder={t('emailPlaceholder')}
@@ -92,6 +98,7 @@ export function ContactForm() {
           type="text"
           id="subject"
           name="subject"
+          enterKeyHint="next"
           required
           maxLength={200}
           className={styles.input}

@@ -82,13 +82,13 @@ test.describe('Color Scheme Generator', () => {
     await fileInput.setInputFiles(path.resolve(__dirname, '../fixtures/test-image.jpg'))
 
     // Photo picker modal should open
-    const modal = page.locator('[role="dialog"][aria-label="Pick color from photo"]')
+    const modal = page.locator('dialog[aria-label="Pick color from photo"]')
     await expect(modal).toBeVisible()
 
     // Wait for the image to load onto the canvas
     await page.waitForFunction(
       () => {
-        const c = document.querySelector('[role="dialog"] canvas') as HTMLCanvasElement
+        const c = document.querySelector('dialog[open] canvas') as HTMLCanvasElement
         return c && c.width > 0 && c.height > 0
       },
       { timeout: 5000 },
@@ -97,7 +97,7 @@ test.describe('Color Scheme Generator', () => {
     // Canvas wrapper is hidden (imageLoaded is ref-based, no re-render).
     // Force the wrapper visible so we can click the canvas normally.
     await page.evaluate(() => {
-      const wrapper = document.querySelector('[role="dialog"] [class*="canvasWrapper"]') as HTMLElement
+      const wrapper = document.querySelector('dialog[open] [class*="canvasWrapper"]') as HTMLElement
       if (wrapper) wrapper.style.display = 'flex'
     })
 

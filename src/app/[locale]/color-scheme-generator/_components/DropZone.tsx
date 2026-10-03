@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback } from 'react'
 import { useTranslations } from 'next-intl'
 import styles from './PhotoPicker.module.css'
+import { buttonKeyHandlers } from '@/lib/utils/buttonKeys'
 
 interface DropZoneProps {
   onFile: (file: File) => void
@@ -60,9 +61,7 @@ export function DropZone({ onFile }: DropZoneProps) {
         role="button"
         tabIndex={0}
         aria-label={t('dropPhotoOrBrowse')}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') handleClick()
-        }}
+        {...buttonKeyHandlers(handleClick)}
       >
         <span className={styles.dropIcon}>📷</span>
         <span className={styles.dropPrompt}>{t('dropPhotoOrBrowse')}</span>

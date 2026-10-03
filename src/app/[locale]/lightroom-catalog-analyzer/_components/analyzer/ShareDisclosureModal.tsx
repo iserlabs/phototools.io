@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useCallback } from 'react'
-import * as Dialog from '@radix-ui/react-dialog'
+import { useState, useCallback, useId } from 'react'
 import { useTranslations } from 'next-intl'
 import type { InsightBlob } from '@/lib/lrcat/types'
 import { createShare, ShareError, type CreateShareResult, type ExpiresIn } from './share-client'
+import { ModalDialog } from '@/components/shared/ModalDialog'
 import styles from './ShareDisclosureModal.module.css'
 
 interface Props {
@@ -21,6 +21,7 @@ const OPTIONS: Array<{ value: ExpiresIn; key: 'expires24h' | 'expires7d' | 'expi
 
 export function ShareDisclosureModal({ blob, onClose, onCreated }: Props) {
   const t = useTranslations('toolUI.lightroom-catalog-analyzer.share')
+  const titleId = useId()
   const [expiresIn, setExpiresIn] = useState<ExpiresIn>('30d')
   const [busy, setBusy] = useState(false)
   const [errorKey, setErrorKey] = useState<string | null>(null)
@@ -40,49 +41,44 @@ export function ShareDisclosureModal({ blob, onClose, onCreated }: Props) {
   }, [blob, expiresIn, onCreated])
 
   return (
-    <Dialog.Root open onOpenChange={(open) => { if (!open) onClose() }}>
-      <Dialog.Portal>
-        <Dialog.Overlay className={styles.overlay} />
-        <Dialog.Content className={styles.modal} aria-describedby={undefined}>
-          <Dialog.Title className={styles.title}>{t('disclosure.title')}</Dialog.Title>
+    <ModalDialog className={styles.modal} aria-labelledby={titleId} onClose={onClose}>
+      <h2 id={titleId} className={styles.title}>{t('disclosure.title')}</h2>
 
-          <div className={styles.section}>
-            <p className={styles.heading}>{t('disclosure.uploadedHeading')}</p>
-            <p>{t('disclosure.uploaded')}</p>
-          </div>
-          <div className={styles.section}>
-            <p className={styles.heading}>{t('disclosure.notUploadedHeading')}</p>
-            <p>{t('disclosure.notUploaded')}</p>
-          </div>
+      <div className={styles.section}>
+        <p className={styles.heading}>{t('disclosure.uploadedHeading')}</p>
+        <p>{t('disclosure.uploaded')}</p>
+      </div>
+      <div className={styles.section}>
+        <p className={styles.heading}>{t('disclosure.notUploadedHeading')}</p>
+        <p>{t('disclosure.notUploaded')}</p>
+      </div>
 
-          <fieldset className={styles.expiry}>
-            <legend className={styles.heading}>{t('disclosure.expiresLabel')}</legend>
-            {OPTIONS.map((o) => (
-              <label key={o.value}>
-                <input
-                  type="radio"
-                  name="lrcat-share-expiry"
-                  value={o.value}
-                  checked={expiresIn === o.value}
-                  onChange={() => setExpiresIn(o.value)}
-                />
-                <span>{t(`disclosure.${o.key}`)}</span>
-              </label>
-            ))}
-          </fieldset>
+      <fieldset className={styles.expiry}>
+        <legend className={styles.heading}>{t('disclosure.expiresLabel')}</legend>
+        {OPTIONS.map((o) => (
+          <label key={o.value}>
+            <input
+              type="radio"
+              name="lrcat-share-expiry"
+              value={o.value}
+              checked={expiresIn === o.value}
+              onChange={() => setExpiresIn(o.value)}
+            />
+            <span>{t(`disclosure.${o.key}`)}</span>
+          </label>
+        ))}
+      </fieldset>
 
-          {errorKey && <p className={styles.error} role="alert">{t(`errors.${errorKey}`)}</p>}
+      {errorKey && <p className={styles.error} role="alert">{t(`errors.${errorKey}`)}</p>}
 
-          <div className={styles.actions}>
-            <button type="button" className={styles.cancel} onClick={onClose}>
-              {t('disclosure.cancel')}
-            </button>
-            <button type="button" className={styles.create} onClick={onCreate} disabled={busy}>
-              {busy ? t('disclosure.creating') : t('disclosure.create')}
-            </button>
-          </div>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+      <div className={styles.actions}>
+        <button type="button" className={styles.cancel} onClick={onClose}>
+          {t('disclosure.cancel')}
+        </button>
+        <button type="button" className={styles.create} onClick={onCreate} disabled={busy}>
+          {busy ? t('disclosure.creating') : t('disclosure.create')}
+        </button>
+      </div>
+    </ModalDialog>
   )
 }

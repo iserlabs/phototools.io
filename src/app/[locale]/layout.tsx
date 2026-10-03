@@ -128,6 +128,8 @@ export default async function LocaleLayout({ children, params }: Props) {
             <ViewTransition>
               <div
                 id="main-content"
+                /* Focusable target so the skip link moves focus, not just the scroll. */
+                tabIndex={-1}
                 className={
                   locale === 'ja' ? notoSansJP.variable :
                   locale === 'bn' ? notoSansBengali.variable :

@@ -30,7 +30,7 @@ export function YearInReviewSparklines({ block }: { block: YearInReviewBlock }) 
       </div>
       <div>
         <div style={MUTED_LABEL}>{t('topGearShare')}</div>
-        <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 4 }}>
+        <ul role="list" style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 4 }}>
           {block.topGearShare.slice(0, 5).map((g) => (
             <li key={g.gear} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <span style={PILL}>{g.gear}</span>

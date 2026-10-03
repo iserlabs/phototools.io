@@ -106,7 +106,7 @@ export function CheatSheetTool() {
             </dl>
             <div className={styles.tipsBox}>
               <h3 className={styles.tipsTitle}>{t('tipsTitle')}</h3>
-              <ul className={styles.tipsList}>
+              <ul role="list" className={styles.tipsList}>
                 {tips.map((tip, i) => (
                   <li key={i} className={styles.tip}>{tip}</li>
                 ))}
