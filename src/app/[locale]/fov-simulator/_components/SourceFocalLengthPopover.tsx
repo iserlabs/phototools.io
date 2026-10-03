@@ -27,8 +27,10 @@ export function SourceFocalLengthPopover({ value, exifDetected, onChange }: Sour
     }
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'Escape') return
+      // Only pull focus back to the badge if it was inside the popover —
+      // never steal it from wherever the user has moved on to.
+      if (wrapRef.current?.contains(document.activeElement)) badgeRef.current?.focus()
       setOpen(false)
-      badgeRef.current?.focus()
     }
     document.addEventListener('mousedown', handler)
     document.addEventListener('keydown', onKey)
