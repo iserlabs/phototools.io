@@ -169,7 +169,7 @@ jobs:
 
       - name: Upload the collected changes
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: autofix-${{ github.event.client_payload.runId }}-${{ github.run_attempt }}
           path: .autofix/
@@ -253,7 +253,7 @@ jobs:
             -o "$RUNNER_TEMP/signatures.json" || echo '"unavailable"' > "$RUNNER_TEMP/signatures.json"  # fail closed: never "[]"
 
       - name: Download the candidate
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: autofix-${{ github.event.client_payload.runId }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/autofix
@@ -331,7 +331,7 @@ jobs:
       # Only runs when the Verdict step above didn't exit(1) (mode push or pr) — push needs
       # the failing stage's evidence for the PR body (spec §3.3), never trusting the artifact.
       - name: Upload the verdict
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: autofix-verdict-${{ github.event.client_payload.runId }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/verdict.json
@@ -366,13 +366,13 @@ jobs:
         run: echo "::add-mask::$T"
 
       - name: Download the collected changes
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: autofix-${{ github.event.client_payload.runId }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/autofix
 
       - name: Download the verdict
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: autofix-verdict-${{ github.event.client_payload.runId }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/verdict
@@ -384,7 +384,7 @@ jobs:
 
       - name: Mint App installation token
         id: app
-        uses: actions/create-github-app-token@v2
+        uses: actions/create-github-app-token@v3
         with:
           app-id: ${{ secrets.ISERLABS_APP_ID }}
           private-key: ${{ secrets.ISERLABS_APP_PRIVATE_KEY }}
@@ -539,7 +539,7 @@ jobs:
 
       - name: Mint App installation token
         id: app
-        uses: actions/create-github-app-token@v2
+        uses: actions/create-github-app-token@v3
         with:
           app-id: ${{ secrets.ISERLABS_APP_ID }}
           private-key: ${{ secrets.ISERLABS_APP_PRIVATE_KEY }}
