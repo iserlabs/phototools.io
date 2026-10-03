@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useCallback, useEffect, useId, useRef } from 'react'
-import { toast } from 'sonner'
+import { toast, Toaster } from 'sonner'
 import { useTranslations } from 'next-intl'
 import { trackShareClick } from '@/lib/analytics'
+import { useTheme } from '@/components/layout/ThemeProvider'
 import { ModalDialog } from './ModalDialog'
 import styles from './ShareModal.module.css'
 
@@ -12,6 +13,11 @@ interface ShareModalProps {
   toolSlug: string
   onClose: () => void
 }
+
+// The page-level <Toaster> sits below the modal <dialog>'s top layer (and its
+// backdrop), so toasts raised from inside the dialog go to a Toaster rendered
+// inside it.
+const TOASTER_ID = 'share-modal'
 
 const FIELDS = [
   { key: 'link', label: 'directLink' },
@@ -22,6 +28,7 @@ const FIELDS = [
 
 export function ShareModal({ toolName, toolSlug, onClose }: ShareModalProps) {
   const titleId = useId()
+  const { theme } = useTheme()
   const t = useTranslations('common.share')
   const tToast = useTranslations('common.toast')
   const [copied, setCopied] = useState<string | null>(null)
@@ -54,7 +61,7 @@ export function ShareModal({ toolName, toolSlug, onClose }: ShareModalProps) {
     trackShareClick({ method: methodMap[key] || 'copy-link' })
     navigator.clipboard.writeText(text).then(() => {
       setCopied(key)
-      toast(tToast('copied'))
+      toast(tToast('copied'), { toasterId: TOASTER_ID })
       if (copyTimerRef.current) clearTimeout(copyTimerRef.current)
       copyTimerRef.current = setTimeout(() => setCopied(null), 2000)
     })
@@ -78,6 +85,7 @@ export function ShareModal({ toolName, toolSlug, onClose }: ShareModalProps) {
           </div>
         </div>
       ))}
+      <Toaster id={TOASTER_ID} theme={theme} position="bottom-center" />
     </ModalDialog>
   )
 }
