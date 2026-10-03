@@ -148,7 +148,7 @@ export function LearnPanel({ slug, closable = false, guides = [] }: LearnPanelPr
       {guides.length > 0 && (
         <section className={styles.section}>
           <h3 className={styles.sectionTitle}>{t('guidesTitle')}</h3>
-          <ul className={styles.guidesList}>
+          <ul role="list" className={styles.guidesList}>
             {guides.map((guide) => (
               <li key={guide.slug}>
                 <Link

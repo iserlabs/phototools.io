@@ -22,7 +22,7 @@ export function MobileSectionDropdown() {
         {SECTION_GROUPS.map(({ group, sections }) => (
           <section key={group} className={styles.mobileGroup}>
             <h3 className={styles.mobileGroupHeader}>{t(`group.${group}` as const)}</h3>
-            <ul className={styles.mobileGroupList}>
+            <ul role="list" className={styles.mobileGroupList}>
               {sections.map((id) => (
                 <li key={id}>
                   <a

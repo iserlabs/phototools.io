@@ -78,7 +78,7 @@ export function ActiveFilterPills() {
   return (
     <div className={styles.wrapper}>
       <span className={styles.label}>{t('activeFilters')}</span>
-      <ul className={styles.list}>
+      <ul role="list" className={styles.list}>
         {pills.map((p) => (
           <li key={p.key} className={styles.pill}>
             <span>{p.label}</span>

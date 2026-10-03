@@ -48,7 +48,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </div>
           <div className={styles.sidebarSection}>
             <h3>{t('sidebar.helpfulLinksTitle')}</h3>
-            <ul className={styles.sidebarLinks}>
+            <ul role="list" className={styles.sidebarLinks}>
               <li>
                 <Link href="/learn/glossary" className={styles.sidebarLink}>
                   {t('sidebar.glossaryLink')}
