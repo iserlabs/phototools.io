@@ -245,6 +245,12 @@ input[type="range"]::-moz-range-thumb {
   overflow: hidden;
 }
 
+/* It takes focus only as the skip link's target (tabindex -1); no ring around the
+   whole page for that. */
+#main-content:focus {
+  outline: none;
+}
+
 .skip-to-content {
   position: absolute;
   left: -9999px;
