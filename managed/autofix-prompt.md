@@ -12,7 +12,7 @@ Your job: **fix the root cause of the reported issue(s) only**, prove it, and re
 3. **Ceiling: 200 changed lines** across the diff. Beyond that, stop with `gave-up`.
 4. **No suppression as a fix.** Do not add `ignoreErrors`, `beforeSend`, `@ts-nocheck`, `enabled: false`, `sampleRate: 0`, empty `catch` blocks (including `.catch(() => {})`), `@ts-ignore`, `@ts-expect-error`, `biome-ignore`, or `eslint-disable`, and do not remove any `captureException` / `captureRequestError` / error reporting. Never put secrets or keys in the diff. Handle the condition properly instead.
 5. **Not our code?** If the error is caused by something this repo cannot fix — a third-party outage, a browser extension, a bot, CMS content, a user's network — do not change anything: stop with outcome `not-our-code` and a one-paragraph reason. The hub suppresses that fingerprint.
-6. **Tests.** If the repo has a test suite and the fix is unit-testable, add or extend a test that fails before and passes after. The only shell commands you are allowed are the exact `<pm> run test` and `<pm> run typecheck` commands the workflow detected for this repo — no lint, no arguments, no other script. Run them before you finish.
+6. **Prove it.** The workflow only pushes a fix it can prove: build, typecheck and tests green, **and a new test that fails on the base commit with the reported error and passes with your fix**. Add a test that **reproduces the Sentry exception** (same error type and message) by calling code that **already exists on the base commit** — the original call path, not a helper you introduce (a test of a new helper fails on base with an import error, which is not proof). Only add tests: never edit or delete existing assertions, never add `.skip`/`.only`/`.todo` or snapshots. Run `sh .autofix/prove.sh` (exact command, no arguments) to check yourself; it prints the first failing stage. The only other shell commands allowed are the exact `<pm> run test` and `<pm> run typecheck` commands. If the bug genuinely cannot be exercised from a unit test (browser-only rendering, timing, a third-party runtime), finish your fix and report outcome `untestable` with the reason — a human will review it as a PR.
 7. **No git, no network, no installs.** The workflow commits and pushes. You only edit files and run the allowed scripts.
 8. Read `CLAUDE.md` / `AGENTS.md` at the repo root first if present; follow the project's conventions.
 
@@ -22,13 +22,14 @@ Your job: **fix the root cause of the reported issue(s) only**, prove it, and re
 - Reproduce mentally or with a test. Fix the cause. Keep the diff minimal.
 - Run typecheck and tests. If they fail because of your change, fix or revert your change; never weaken a test to pass.
 - On attempt two: the briefing shows the prior diff's intent. Do not repeat it. Find what it missed.
+- After each attempt the workflow re-runs the proof itself. If it fails you will receive a "Workflow verification result" naming the failed stage — fix exactly that and report again.
 
 ## Report (this is your only output — the workflow reads it as JSON via the provided schema)
 
-- `outcome`: `fixed` | `not-our-code` | `gave-up`
+- `outcome`: `fixed` | `not-our-code` | `gave-up` | `untestable`
 - `rootCause`: what was actually wrong, in one or two sentences.
 - `whatChanged`: files and the change, briefly. First line ≤ 60 chars: it becomes the commit subject.
 - `why`: why this fixes the cause (not the symptom).
 - `tests`: tests added/updated and what you ran, with results.
 - `leftAlone`: anything you noticed but deliberately did not touch.
-- `reason`: only for `not-our-code` / `gave-up` — the explanation.
+- `reason`: only for `not-our-code` / `gave-up` / `untestable` — the explanation.

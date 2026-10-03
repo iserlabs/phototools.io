@@ -179,6 +179,59 @@ function specialModePaths(diff) {
   return [...paths];
 }
 
+/** Files the proof treats as tests. */
+export const TEST_FILE = /\.(test|spec)\.[cm]?[jt]sx?$/;
+const ASSERTION =
+  /\b(expect|assert)\b|\.(toBe|toEqual|toStrictEqual|toThrow|toMatch|toContain|toHaveBeenCalled)\w*\(/;
+const WEAKENER =
+  /\.(skip|only|todo)\s*\(|\.(skipIf|runIf)\s*\(|\bx(it|test|describe)\s*\(|\bf(it|describe)\s*\(/;
+const SNAPSHOT_ASSERT =
+  /\.toMatch(Inline)?Snapshot\s*\(|\.toMatchFileSnapshot\s*\(/;
+const SNAPSHOT_FILE = /(^|\/)__snapshots__\/|\.snap$/;
+const IN_SOURCE = /import\.meta\.vitest/;
+
+/** Per-file added/removed lines from a unified diff. */
+function perFile(diff) {
+  const files = new Map();
+  let cur = null;
+  for (const line of diff.split("\n")) {
+    const h = line.match(DIFF_GIT_HEADER);
+    if (h) {
+      cur = { added: [], removed: [] };
+      files.set(h[1], cur);
+      continue;
+    }
+    if (!cur || line.startsWith("+++") || line.startsWith("---")) continue;
+    if (line.startsWith("+")) cur.added.push(line.slice(1));
+    else if (line.startsWith("-")) cur.removed.push(line.slice(1));
+  }
+  return files;
+}
+
+/**
+ * Spec §2.1: the diff may only ADD tests. Violations do not make the change hazardous —
+ * they make it unprovable, so the run goes to the PR path instead of `main`.
+ */
+export function checkTestIntegrity({ status, diff }) {
+  const reasons = [];
+  const isNew = new Map(
+    statusEntries(status).map((e) => [e.path, /A|\?/.test(e.code)]),
+  );
+  for (const [path, { added, removed }] of perFile(diff)) {
+    if (SNAPSHOT_FILE.test(path)) reasons.push(`snapshot changed: ${path}`);
+    if (added.some((l) => IN_SOURCE.test(l)))
+      reasons.push(`in-source test: ${path}`);
+    if (!TEST_FILE.test(path)) continue;
+    if (!isNew.get(path) && removed.some((l) => ASSERTION.test(l)))
+      reasons.push(`existing assertion changed: ${path}`);
+    if (added.some((l) => WEAKENER.test(l)))
+      reasons.push(`skip/only/todo added: ${path}`);
+    if (added.some((l) => SNAPSHOT_ASSERT.test(l)))
+      reasons.push(`snapshot assertion added: ${path}`);
+  }
+  return { ok: reasons.length === 0, reasons };
+}
+
 function hasEmptyCatch(added) {
   const text = stripComments(added.join("\n"));
   return EMPTY_CATCH_PATTERNS.some((re) => re.test(text));
@@ -254,14 +307,23 @@ function isEntryModule() {
 }
 const invokedDirectly = isEntryModule();
 if (invokedDirectly) {
-  const [statusFile, diffFile] = process.argv.slice(2);
-  const result = checkChanges({
+  const args = process.argv.slice(2);
+  const integrity = args.includes("--integrity");
+  const [statusFile, diffFile] = args.filter((a) => a !== "--integrity");
+  const input = {
     status: readFileSync(statusFile, "utf8"),
     diff: readFileSync(diffFile, "utf8"),
-  });
+  };
+  const result = checkChanges(input);
   console.log(
     `autofix-check: ${result.files.length} file(s), ${result.changedLines} changed line(s)`,
   );
   for (const r of result.reasons) console.log(`  ✗ ${r}`);
-  process.exit(result.ok ? 0 : 1);
+  if (!result.ok) process.exit(1);
+  if (integrity) {
+    const ti = checkTestIntegrity(input);
+    for (const r of ti.reasons) console.log(`  ⚠ integrity: ${r}`);
+    if (!ti.ok) process.exit(3);
+  }
+  process.exit(0);
 }
