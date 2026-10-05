@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// biome-ignore-all format: vendored canon — fleet repos' Biome configs differ (line width); formatted in iserlabs/hub
 // biome-ignore-all lint: vendored canon from iserlabs/hub — linted and tested there
 // Managed by iserlabs/hub (managed/autofix-loop.mjs). Do NOT edit here.
 // Drives proof rounds (spec §3.1): agent round → authoritative-in-job proof → resume with evidence.

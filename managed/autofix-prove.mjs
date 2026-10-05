@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// biome-ignore-all format: vendored canon — fleet repos' Biome configs differ (line width); formatted in iserlabs/hub
 // biome-ignore-all lint: vendored canon from iserlabs/hub — linted and tested there
 // Managed by iserlabs/hub (managed/autofix-prove.mjs). Do NOT edit here.
 // The proof (spec §2): hazard → typecheck → build → tests → red-on-base. Zero dependencies.
