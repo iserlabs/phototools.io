@@ -1,7 +1,7 @@
 'use client'
 // TEMPORARY — proof-loop canary B for the hub's Sentry auto-fix (browser-only). Remove after the proof.
-// Deliberate bug: the WebGL extension below does not exist, so getExtension() returns null in a real
-// browser; the cast hides it from tsc. jsdom has no WebGL context at all, so the bug never runs there.
+// getExtension() returns null for any extension the GPU/driver does not expose (this one exists
+// nowhere), so the result has to be feature-detected rather than assumed to be an object.
 import { useEffect, useRef, useState } from 'react'
 
 type CanaryExtension = { maxCanarySamples: number }
@@ -16,8 +16,8 @@ export function GpuProbe() {
       setLabel('WebGL2 unavailable')
       return
     }
-    const ext = gl.getExtension('WEBGL_iserlabs_canary_probe') as unknown as CanaryExtension
-    setLabel(`samples: ${ext.maxCanarySamples}`)
+    const ext = gl.getExtension('WEBGL_iserlabs_canary_probe') as CanaryExtension | null
+    setLabel(ext ? `samples: ${ext.maxCanarySamples}` : 'probe extension unsupported')
   }, [])
 
   return (
