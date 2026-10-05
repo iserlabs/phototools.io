@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+// biome-ignore-all format: vendored canon — fleet repos' Biome configs differ (line width); formatted in iserlabs/hub
 // biome-ignore-all lint: vendored canon from iserlabs/hub — linted and tested there
 // Managed by iserlabs/hub (managed/autofix-check.mjs). Do NOT edit here.
 // The workflow's hazard stop (spec §4.3): blocked paths, 200-line ceiling, no suppression.
