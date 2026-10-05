@@ -46,7 +46,7 @@ jobs:
           T: ${{ github.event.client_payload.token }}
         run: echo "::add-mask::$T"
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 50
@@ -228,7 +228,7 @@ jobs:
           T: ${{ github.event.client_payload.token }}
         run: echo "::add-mask::$T"
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 50
