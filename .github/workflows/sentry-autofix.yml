@@ -85,7 +85,7 @@ jobs:
         if: steps.pm.outputs.pm == 'pnpm' || steps.pm.outputs.berry == 'true'
         run: corepack enable
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: ${{ steps.pm.outputs.pm }}
@@ -279,7 +279,7 @@ jobs:
         if: steps.pm.outputs.pm == 'pnpm' || steps.pm.outputs.berry == 'true'
         run: corepack enable
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: ${{ steps.pm.outputs.pm }}
