@@ -110,6 +110,54 @@ describe('IGNORE_SENTRY_ERRORS', () => {
         'Error',
         'ResizeObserver loop completed with undelivered notifications.',
       ],
+      // gtag.js's own measurement beacons failing (ad blocker, privacy
+      // extension, offline). Sentry's fetch instrumentation appends the request
+      // host to the browser's network-failure message, so the value names the
+      // vendor (issues 7799120710 / 7799120686 / 7799120786).
+      [
+        'gtag beacon blocked, Chromium wording (7799120710)',
+        'TypeError',
+        'Failed to fetch (www.google-analytics.com)',
+      ],
+      [
+        'gtag beacon blocked, regional collection host',
+        'TypeError',
+        'Failed to fetch (region1.google-analytics.com)',
+      ],
+      [
+        'gtag beacon blocked, WebKit wording',
+        'TypeError',
+        'Load failed (www.google-analytics.com)',
+      ],
+      [
+        'gtag beacon blocked, Gecko wording',
+        'TypeError',
+        'NetworkError when attempting to fetch resource. (www.google-analytics.com)',
+      ],
+      [
+        'gtag request to the tag-manager host blocked',
+        'TypeError',
+        'Failed to fetch (www.googletagmanager.com)',
+      ],
+      [
+        'gtag request to the GA4 collection host blocked',
+        'TypeError',
+        'Failed to fetch (analytics.google.com)',
+      ],
+      // WebKit's wording of the hidden-document view-transition skip, which
+      // React's exact-match allowlist misses (issue 7756075157). Sentry
+      // reports a stackless DOMException as `Error` with `Name: message`, so
+      // both shapes are covered.
+      [
+        'WebKit hidden-document view-transition skip, DOMException shape (7756075157)',
+        'Error',
+        'InvalidStateError: Transition was aborted because of invalid state. Document hidden',
+      ],
+      [
+        'WebKit hidden-document view-transition skip, typed shape',
+        'InvalidStateError',
+        'Transition was aborted because of invalid state. Document hidden',
+      ],
     ]
 
     it.each(noise)('drops: %s', (_name, type, value) => {
@@ -129,6 +177,15 @@ describe('IGNORE_SENTRY_ERRORS', () => {
       ['old-browser optional chaining in our bundle', 'SyntaxError', "Unexpected token '.'"],
       ['genuine async syntax error in our bundle', 'SyntaxError', "Unexpected identifier 'await'"],
       ['network failure', 'Error', 'Failed to fetch'],
+      // The gtag filter keys on the Google Analytics HOST Sentry appends —
+      // failed fetches to our own origin or any other vendor keep reporting,
+      // and look-alike hosts can't borrow the suffix.
+      ['failed fetch to our own origin', 'TypeError', 'Failed to fetch (www.phototools.io)'],
+      ['failed fetch to our own API, WebKit wording', 'TypeError', 'Load failed (www.phototools.io)'],
+      ['failed fetch to PostHog', 'TypeError', 'Failed to fetch (us.i.posthog.com)'],
+      ['look-alike host prefix', 'TypeError', 'Failed to fetch (notgoogle-analytics.com)'],
+      ['look-alike host suffix', 'TypeError', 'Failed to fetch (www.google-analytics.com.example.net)'],
+      ['bare WebKit network failure', 'TypeError', 'Load failed'],
       ['unrelated React error', 'Error', 'Minified React error #418'],
       // A non-Error rejection carrying an actual VALUE may point at app code
       // rejecting with a string/object — only the bare `undefined` shape is
@@ -385,6 +442,35 @@ describe('isForeignScriptEvent', () => {
       expect(isForeignScriptEvent(makeGlobalHandlerEvent(ONREJECTION, 'Error', 'La'))).toBe(true)
     })
 
+    // PHOTOTOOLS-17 regression (2026-10-24, release 91c46fa0): the same
+    // injected recursion, now in a V8 browser (no trailing period), thrown
+    // inside a callback the page handed to a Sentry-wrapped browser API.
+    // browserApiErrors captures it with its own mechanism and suppresses the
+    // duplicate onerror report, so the event never carries global_handlers.
+    // A stack overflow fills V8's 10-frame stack limit with the recursing
+    // function, so every frame is the same sourceless location.
+    const recursingFrames = Array.from({ length: 10 }, () => ({ filename: 'undefined', lineno: 199, colno: 363 }))
+
+    it.each([
+      'auto.browser.browserapierrors.setTimeout',
+      'auto.browser.browserapierrors.setInterval',
+      'auto.browser.browserapierrors.requestAnimationFrame',
+      'auto.browser.browserapierrors.handleEvent',
+      'auto.browser.browserapierrors.addEventListener',
+      'auto.browser.browserapierrors.xhr.onreadystatechange',
+    ])('PHOTOTOOLS-17 regression: sourceless RangeError raised through %s', (mechanism) => {
+      const event = makeGlobalHandlerEvent(mechanism, 'RangeError', 'Maximum call stack size exceeded', recursingFrames)
+      expect(isForeignScriptEvent(event)).toBe(true)
+    })
+
+    it('V8 <anonymous> frames raised through a wrapped timer', () => {
+      const event = makeGlobalHandlerEvent('auto.browser.browserapierrors.setTimeout', 'RangeError', 'Maximum call stack size exceeded', [
+        { filename: '<anonymous>', function: 'n', lineno: 199, colno: 363 },
+        { filename: '<anonymous>', function: 'n', lineno: 199, colno: 363 },
+      ])
+      expect(isForeignScriptEvent(event)).toBe(true)
+    })
+
     it('raw (pre-normalization) document URL is treated the same as app:///', () => {
       const event = makeGlobalHandlerEvent(ONERROR, 'Error', 'pa', [
         { filename: 'https://www.phototools.io/en/exposure-simulator', lineno: 415, colno: 45 },
@@ -400,6 +486,27 @@ describe('isForeignScriptEvent', () => {
         { filename: 'app:///_next/static/immutable/chunks/0k5f-ok8pxuvq.js', function: 'r', lineno: 1, colno: 8812 },
       ])
       expect(isForeignScriptEvent(event)).toBe(false)
+    })
+
+    it('a stack overflow in our own chunk raised through a wrapped browser API', () => {
+      const ours = { filename: 'app:///_next/static/immutable/chunks/0k5f-ok8pxuvq.js', function: 'r', lineno: 1, colno: 8812 }
+      const event = makeGlobalHandlerEvent('auto.browser.browserapierrors.requestAnimationFrame', 'RangeError', 'Maximum call stack size exceeded', [ours, ours])
+      expect(isForeignScriptEvent(event)).toBe(false)
+    })
+
+    it('a wrapped-API event with even one frame from our bundle', () => {
+      const event = makeGlobalHandlerEvent('auto.browser.browserapierrors.handleEvent', 'TypeError', 'boom', [
+        { filename: 'undefined', lineno: 199 },
+        { filename: 'https://www.phototools.io/_next/static/chunks/15996ofnfz0ei.js', function: 'onClick', lineno: 1, colno: 22 },
+      ])
+      expect(isForeignScriptEvent(event)).toBe(false)
+    })
+
+    it('other auto-instrumentation mechanisms, and handled wrapped-API events, are out of scope', () => {
+      const sourceless = [{ filename: 'undefined', lineno: 199, colno: 363 }]
+      const value = 'Maximum call stack size exceeded'
+      expect(isForeignScriptEvent(makeGlobalHandlerEvent('auto.http.client.fetch', 'RangeError', value, sourceless))).toBe(false)
+      expect(isForeignScriptEvent(makeGlobalHandlerEvent('auto.browser.browserapierrors.setTimeout', 'RangeError', value, sourceless, true))).toBe(false)
     })
 
     it('a mixed stack with even one frame from our bundle', () => {
