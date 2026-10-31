@@ -130,6 +130,23 @@ export const IGNORE_SENTRY_ERRORS: (string | RegExp)[] = [
   // that is not a bug to page for.
   'ResizeObserver loop limit exceeded',
   'ResizeObserver loop completed with undelivered notifications',
+  // gtag.js's own measurement beacons failing to send — an ad blocker, a
+  // privacy extension wrapping `fetch` (the `hook.js` frames), or a dropped
+  // connection (issues 7799120710 / 7799120686 / 7799120786). We never fetch
+  // these hosts ourselves; only the gtag.js that AnalyticsProvider loads does.
+  // Sentry's fetch instrumentation (`enhanceFetchErrorMessages`, default
+  // 'always') rewrites exactly the three engines' network-failure messages to
+  // `<message> (<request host>)`, so the host is the request target and a
+  // stable vendor marker. Anchored on the WHOLE message so a bare `Failed to
+  // fetch` and failed fetches to any other host, ours included, keep reporting.
+  /^(?:TypeError: )?(?:Failed to fetch|Load failed|NetworkError when attempting to fetch resource\.) \((?:[\w-]+\.)*(?:google-analytics\.com|googletagmanager\.com|analytics\.google\.com)\)$/,
+  // WebKit's wording of the hidden-document view-transition skip (issue
+  // 7756075157), the same condition as Gecko's PHOTOTOOLS-V above. React's
+  // allowlist compares by EXACT equality to "Transition was aborted because of
+  // invalid state", so WebKit's ". Document hidden" suffix slips past it into
+  // `reportError()`. Anchored on the suffix: the bare message is already
+  // swallowed by React, and other abort reasons keep reporting.
+  /Transition was aborted because of invalid state\. Document hidden/,
 ]
 
 // Client-side Sentry `denyUrls` patterns — drop any event whose throwing frame
@@ -217,9 +234,18 @@ export function isBotAutomationEvent(event: FrameCarryingEvent): boolean {
 // HTML document is emitted as ONE line — so a frame attributed to the document
 // past line 1 is provably not one of our inline scripts. Frames from our own
 // bundle always name a `.js` file, so a stack with even one of those is kept,
-// and only events raised through the browser's global handlers are eligible:
-// anything our code captured explicitly reports whatever its frames look like.
-const GLOBAL_HANDLER_MECHANISM = /^auto\.browser\.global_handlers\./
+// and only uncaught events are eligible: anything our code captured explicitly
+// reports whatever its frames look like.
+//
+// "Uncaught" covers two SDK channels. The global onerror/onunhandledrejection
+// handlers are the obvious one. The other is browserApiErrors: Sentry wraps
+// setTimeout / setInterval / requestAnimationFrame / addEventListener /
+// XHR callbacks in the page's main world (an injected script's callbacks
+// included), captures a throw there as `auto.browser.browserapierrors.*`
+// (handled: false), and suppresses the duplicate onerror report. PHOTOTOOLS-17
+// regressed through that channel on 2026-10-24: three V8 events of the same
+// sourceless recursion that the global-handler-only check never examined.
+const UNCAUGHT_MECHANISM = /^auto\.browser\.(?:global_handlers|browserapierrors)\./
 const NO_SOURCE_FILENAMES = new Set(['', 'undefined', 'null', '[native code]', '<anonymous>', 'native code'])
 const SCRIPT_FILE = /\.[cm]?js(?:[?#]|$)/i
 // A frameless throw whose whole message is one minified identifier (`La`,
@@ -254,10 +280,10 @@ function isSourcelessFrame(frame: SentryFrame): boolean {
 export function isForeignScriptEvent(event: ExceptionCarryingEvent): boolean {
   const values = event.exception?.values ?? []
   if (values.length === 0) return false
-  const viaGlobalHandler = values.every(
-    (value) => value.mechanism?.handled === false && GLOBAL_HANDLER_MECHANISM.test(value.mechanism.type ?? ''),
+  const uncaught = values.every(
+    (value) => value.mechanism?.handled === false && UNCAUGHT_MECHANISM.test(value.mechanism.type ?? ''),
   )
-  if (!viaGlobalHandler) return false
+  if (!uncaught) return false
 
   const frames = values.flatMap((value) => value.stacktrace?.frames ?? [])
   if (frames.length > 0) return frames.every(isSourcelessFrame)
