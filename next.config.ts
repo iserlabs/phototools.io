@@ -2,7 +2,7 @@ import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
 import bundleAnalyzer from '@next/bundle-analyzer'
 import createMDX from '@next/mdx'
-import { withSentryConfig } from '@sentry/nextjs'
+import { withSentryConfig } from '@sentry/nextjs/config'
 import { staticRedirects } from './src/lib/i18n/redirects'
 
 const withNextIntl = createNextIntlPlugin('./src/lib/i18n/request.ts')
