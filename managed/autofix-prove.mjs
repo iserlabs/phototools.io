@@ -424,7 +424,10 @@ if (isEntryModule()) {
   // A stale --out from a previous round must never be read as this round's verdict —
   // delete it before anything else can fail, so a crash below can't leave it in place.
   const out = val("--out");
-  if (out && existsSync(out)) rmSync(out, { force: true });
+  // `--out -` puts the verdict JSON alone on stdout (logs go to stderr), so a caller running
+  // prove under the sandbox user can capture it into a file the sandbox cannot write.
+  const toStdout = out === "-";
+  if (out && !toStdout && existsSync(out)) rmSync(out, { force: true });
   let result;
   try {
     // The workflow writes the JSON string "unavailable" (or nothing) when the hub could not
@@ -456,10 +459,13 @@ if (isEntryModule()) {
       candidate: false,
     };
   }
-  if (out) writeFileSync(out, JSON.stringify(result));
-  console.log(
+  // fd 1 written synchronously: process.exit() below must not truncate a piped stdout.
+  if (toStdout) writeFileSync(1, JSON.stringify(result));
+  else if (out) writeFileSync(out, JSON.stringify(result));
+  const log = toStdout ? console.error : console.log;
+  log(
     `autofix-prove: ${result.proven ? `PROVEN (${result.strength})` : `not proven — stage ${result.stage}`}`,
   );
-  if (!result.proven) console.log(result.evidence);
+  if (!result.proven) log(result.evidence);
   process.exit(0);
 }
