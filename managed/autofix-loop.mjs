@@ -3,7 +3,7 @@
 // Managed by iserlabs/hub (managed/autofix-loop.mjs). Do NOT edit here.
 // Drives proof rounds (spec §3.1): agent round → authoritative-in-job proof → resume with evidence.
 import { spawnSync } from "node:child_process";
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import {
   appendFileSync,
   copyFileSync,
@@ -39,7 +39,9 @@ export function failReasonFor(p) {
 
 /** No tokens reach git when it touches the agent's tree — same keep-list as
  * autofix-prove.mjs's cleanEnv(). Agent-written code must never see RUN_TOKEN/HUB_URL
- * via a `core.fsmonitor`/`filter.*.clean` hook that git ends up executing. */
+ * via a `core.fsmonitor`/`filter.*.clean` hook that git ends up executing.
+ * @param {Record<string, string | undefined>} source
+ * @returns {Record<string, string>} */
 export function scrubbedEnv(source) {
   const keep = [
     "PATH",
@@ -49,9 +51,97 @@ export function scrubbedEnv(source) {
     "COREPACK_HOME",
     "npm_config_cache",
   ];
+  /** @type {Record<string, string>} */
   const env = { CI: "1" };
-  for (const k of keep) if (source[k]) env[k] = source[k];
+  for (const k of keep) {
+    const v = source[k];
+    if (v) env[k] = v;
+  }
   return env;
+}
+
+/**
+ * Everything agent-controlled (claude, its tools, the code it writes, git on its tree)
+ * runs as a separate unprivileged user. That user can't read this process's
+ * /proc/<pid>/environ (RUN_TOKEN, HUB_URL) or write the runner-owned trusted files. The
+ * workflow kills that user's processes before any later token-bearing step. With no user
+ * (local runs, tests) it spawns directly.
+ * @param {string} user
+ * @param {Record<string, string>} env
+ * @param {string} cmd
+ * @param {string[]} args
+ * @param {number} [timeoutMs] enforced by `timeout -k` inside sudo: spawnSync's own
+ *   timeout only signals sudo, and the relay to the child is not something to rely on.
+ * @returns {{ cmd: string, args: string[], env: Record<string, string> }}
+ */
+export function sandboxSpawn(user, env, cmd, args, timeoutMs) {
+  if (!user) return { cmd, args, env };
+  const pairs = Object.entries(env).map(([k, v]) => `${k}=${v}`);
+  const limit = timeoutMs
+    ? ["timeout", "-k", "10", String(Math.ceil(timeoutMs / 1000))]
+    : [];
+  return {
+    cmd: "sudo",
+    args: ["-n", "-u", user, "--", "env", "-i", ...pairs, ...limit, cmd, ...args],
+    // sudo itself only needs PATH to resolve; the child gets exactly `pairs`.
+    env: { PATH: env.PATH ?? "/usr/bin:/bin" },
+  };
+}
+
+/** Kills every process of the sandbox user (run before each proof, so nothing the
+ * agent left running can touch the tree or the trusted files while prove runs).
+ * @param {string} user
+ * @returns {{ cmd: string, args: string[] } | null} */
+export function sandboxKill(user) {
+  if (!user) return null;
+  return { cmd: "sudo", args: ["-n", "pkill", "-KILL", "-u", user] };
+}
+
+/** Kills the sandbox user's processes until pgrep finds none. Returns false if any
+ * survive or the check itself fails (fail closed: the caller must not proceed as if
+ * the sandbox were empty). Always kills once before the first check.
+ * pgrep runs without sudo (listing processes needs no privilege, and sudo's own failure
+ * exits 1, which would read as "empty"). Only pgrep's exact exit 1 means "no process".
+ * @param {string} user
+ * @param {(cmd: string, args: string[]) => number | null} run exit status (null: no status)
+ * @returns {boolean} */
+export function killUntilEmpty(user, run) {
+  if (!user) return true;
+  const k = sandboxKill(user);
+  for (let i = 0; i < 20; i++) {
+    if (k) run(k.cmd, k.args);
+    const status = run("pgrep", ["-u", user]);
+    if (status === 1) return true; // no process left
+    if (status !== 0) return false; // pgrep failed: unknown, so not empty
+  }
+  return false;
+}
+
+/** What claude needs: the scrubbed keep-list plus its own credentials, never a hub,
+ * Actions or GitHub token. HOME is the sandbox user's own home when sandboxed.
+ * @param {Record<string, string | undefined>} source
+ * @param {string | undefined} sandboxHome
+ * @returns {Record<string, string>} */
+export function agentEnvFor(source, sandboxHome) {
+  const env = scrubbedEnv(source);
+  for (const k of [
+    "ANTHROPIC_API_KEY",
+    "CLAUDE_CODE_OAUTH_TOKEN",
+    "DISABLE_AUTOUPDATER",
+  ]) {
+    const v = source[k];
+    if (v) env[k] = v;
+  }
+  if (sandboxHome) env.HOME = sandboxHome;
+  return env;
+}
+
+/** Trusted files whose hash no longer matches what the loop recorded at start.
+ * @param {Record<string, string | null>} expected
+ * @param {(path: string) => string | null} hashOf
+ * @returns {string[]} */
+export function changedTrusted(expected, hashOf) {
+  return Object.keys(expected).filter((p) => hashOf(p) !== expected[p]);
 }
 
 export const INCOMPLETE_PROMPT =
@@ -193,15 +283,43 @@ if (isEntryModule()) {
   const schema = readFileSync(".autofix/schema.json", "utf8");
   const systemPrompt = readFileSync("managed/autofix-prompt.md", "utf8");
   const context = readFileSync(".autofix/context.md", "utf8");
-  // The agent never sees the run token or hub URL.
-  const agentEnv = { ...E };
-  for (const k of [
-    "RUN_TOKEN",
-    "HUB_URL",
-    "ACTIONS_RUNTIME_TOKEN",
-    "ACTIONS_ID_TOKEN_REQUEST_TOKEN",
-  ])
-    delete agentEnv[k];
+  // The agent never sees the run token or hub URL, and (sandboxed) runs as another user.
+  const SANDBOX = E.SANDBOX_USER || "";
+  const agentEnv = agentEnvFor(E, E.SANDBOX_HOME);
+  const toolEnv = { ...scrubbedEnv(E), ...(E.SANDBOX_HOME ? { HOME: E.SANDBOX_HOME } : {}) };
+  // Sandboxed processes reach the tree only through its bind mount (the runner's home and
+  // temp dir are 0700), so they start there; relative paths resolve to the same files.
+  const sandboxCwd = SANDBOX && E.SANDBOX_TREE ? E.SANDBOX_TREE : undefined;
+  // The sandbox can't read $RUNNER_TEMP, so it runs prove from the runner-owned .autofix copy.
+  const PROVE = SANDBOX ? ".autofix/autofix-prove.mjs" : `${T}/autofix-prove.mjs`;
+  // Fail closed: if anything the agent started survives, the round is not proven.
+  const killSandbox = () => {
+    // A spawn error or signal leaves status null, which killUntilEmpty treats as failure.
+    const run = (cmd, args) => {
+      const r = spawnSync(cmd, args, { encoding: "utf8" });
+      return r.error ? null : r.status;
+    };
+    if (!killUntilEmpty(SANDBOX, run))
+      throw new Error("sandboxed processes survived the kill");
+  };
+  // Trusted files are runner-owned and read-only; a changed hash means something got
+  // around that, so the round is not proven and the loop says why.
+  const TRUSTED = [
+    `${T}/autofix-prove.mjs`,
+    `${T}/autofix-check.mjs`,
+    ".autofix/prove.sh",
+    ".autofix/autofix-prove.mjs",
+    ".autofix/autofix-check.mjs",
+    ".autofix/signatures.json",
+  ];
+  const hashOf = (p) => {
+    try {
+      return createHash("sha256").update(readFileSync(p)).digest("hex");
+    } catch {
+      return null;
+    }
+  };
+  const trustedAtStart = Object.fromEntries(TRUSTED.map((p) => [p, hashOf(p)]));
 
   const claude = async ({ prompt, resume, remainingUsd, round, timeoutMs }) => {
     // A first round gets a known session id, so a round killed by the timeout (no JSON
@@ -228,14 +346,19 @@ if (isEntryModule()) {
       "--json-schema",
       schema,
     ];
-    const r = spawnSync("claude", args, {
+    const s = sandboxSpawn(SANDBOX, agentEnv, "claude", args, timeoutMs);
+    const r = spawnSync(s.cmd, s.args, {
       input: resume ? "" : context,
-      env: agentEnv,
+      env: s.env,
+      cwd: sandboxCwd,
       encoding: "utf8",
       maxBuffer: 64 * 1024 * 1024,
-      timeout: timeoutMs,
+      // Backstop only: `timeout` inside the sandbox fires first.
+      timeout: timeoutMs + 30_000,
     });
-    const timedOut = r.error?.code === "ETIMEDOUT";
+    // `timeout` exits 124 (TERM) or 137 (KILL after -k) when it stops the round.
+    const timedOut =
+      r.error?.code === "ETIMEDOUT" || r.status === 124 || r.status === 137;
     writeFileSync(
       ".autofix/agent.log",
       `${timedOut ? `[round ${round}: timed out after ${Math.round(timeoutMs / 60_000)} min]\n` : ""}${r.stderr ?? ""}`,
@@ -266,21 +389,39 @@ if (isEntryModule()) {
     // Spec §5: a crashed/killed proof round counts as not proven — never lets an
     // exception escape and discard an earlier round's already-recorded candidate.
     try {
-      rmSync(`${T}/prove.json`, { force: true });
-      spawnSync(
+      // Nothing the agent left running may act while the trusted files are checked or
+      // while prove reads them.
+      killSandbox();
+      const moved = changedTrusted(trustedAtStart, hashOf);
+      if (moved.length)
+        throw new Error(`trusted files changed during the run: ${moved.join(", ")}`);
+      // Agent-written tests run inside prove, so prove runs sandboxed with the scrubbed env
+      // and hands its verdict back on stdout (never a file the sandbox could rewrite).
+      const s = sandboxSpawn(
+        SANDBOX,
+        toolEnv,
         "node",
         [
-          `${T}/autofix-prove.mjs`,
+          PROVE,
           "--base",
           E.BASE_SHA,
           "--signatures",
           ".autofix/signatures.json",
           "--out",
-          `${T}/prove.json`,
+          "-",
         ],
-        { stdio: "inherit", env: E, timeout: timeoutMs },
+        timeoutMs,
       );
-      const verdict = readFileSync(`${T}/prove.json`, "utf8");
+      const p = spawnSync(s.cmd, s.args, {
+        stdio: ["ignore", "pipe", "inherit"],
+        env: s.env,
+        cwd: sandboxCwd,
+        encoding: "utf8",
+        maxBuffer: 16 * 1024 * 1024,
+        timeout: timeoutMs + 30_000,
+      });
+      killSandbox();
+      const verdict = p.stdout ?? "";
       writeFileSync(`.autofix/round-${round}.json`, verdict);
       return JSON.parse(verdict);
     } catch (e) {
@@ -310,19 +451,36 @@ if (isEntryModule()) {
   ];
   const snapshot = (n) => {
     try {
-      spawnSync("git", [...NO_HOOKS, "add", "-A", "--", ".", ":!.autofix"], {
+      // git on the agent's tree runs sandboxed too: the agent owns .git, so a filter or
+      // fsmonitor entry it planted must never execute as this (token-holding) user.
+      const add = sandboxSpawn(SANDBOX, toolEnv, "git", [
+        ...NO_HOOKS,
+        "add",
+        "-A",
+        "--",
+        ".",
+        ":!.autofix",
+      ]);
+      spawnSync(add.cmd, add.args, {
         encoding: "utf8",
-        env: scrubbedEnv(E),
+        env: add.env,
+        cwd: sandboxCwd,
       });
-      const d = spawnSync(
-        "git",
-        [...NO_HOOKS, "diff", "--cached", "--binary", "--", ".", ":!.autofix"],
-        {
-          encoding: "utf8",
-          maxBuffer: 64 * 1024 * 1024,
-          env: scrubbedEnv(E),
-        },
-      );
+      const diff = sandboxSpawn(SANDBOX, toolEnv, "git", [
+        ...NO_HOOKS,
+        "diff",
+        "--cached",
+        "--binary",
+        "--",
+        ".",
+        ":!.autofix",
+      ]);
+      const d = spawnSync(diff.cmd, diff.args, {
+        encoding: "utf8",
+        maxBuffer: 64 * 1024 * 1024,
+        env: diff.env,
+        cwd: sandboxCwd,
+      });
       writeFileSync(`.autofix/round-${n}.patch`, d.stdout ?? "");
       return true;
     } catch (e) {
