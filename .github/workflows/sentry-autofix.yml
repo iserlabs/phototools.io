@@ -64,6 +64,9 @@ jobs:
           # The agent's own advisory prove tool (fast: no build). Exact command for the allowlist.
           cp managed/autofix-check.mjs managed/autofix-prove.mjs .autofix/
           echo "BASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          # A corepack cache outside the runner's (later 0700) home that the sandbox user can read.
+          sudo install -d -o "$(id -un)" -m 0755 /opt/corepack
+          echo "COREPACK_HOME=/opt/corepack" >> "$GITHUB_ENV"
 
       - name: Detect package manager and scripts
         id: pm
@@ -88,7 +91,8 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-          cache: ${{ steps.pm.outputs.pm }}
+          # No dependency caching here. The sandbox user owns node_modules (hardlinked into the
+          # store), and a store saved after the agent touched it would reach other workflows.
 
       - name: Install (lockfile)
         run: |
@@ -125,6 +129,37 @@ jobs:
       - name: Install Claude Code
         run: npm install -g @anthropic-ai/claude-code
 
+      # Everything agent-controlled runs as `autofix`, an unprivileged user:
+      # - It can't read the token-holding processes' /proc environ (RUN_TOKEN, HUB_URL).
+      # - The runner's home and temp dir (event payload, file commands, scripts) are 0700;
+      #   the sandbox reaches the tree only through a bind mount at /srv/autofix-tree.
+      # - It owns everything in the tree except .autofix (prove.sh, signatures, checker
+      #   copies), which stays runner-owned and read-only; the tree root is runner-owned
+      #   and sticky (1777), so the agent can add files but never rename .autofix away.
+      - name: Sandbox the agent
+        env:
+          PM: ${{ steps.pm.outputs.pm }}
+        run: |
+          sudo useradd --create-home --shell /bin/bash autofix
+          cp -a .git "$RUNNER_TEMP/git.trusted"
+          chmod 0700 "$HOME" "$RUNNER_TEMP"
+          sudo mkdir -p /srv/autofix-tree
+          sudo mount --bind "$GITHUB_WORKSPACE" /srv/autofix-tree
+          find . -mindepth 1 -maxdepth 1 ! -name .autofix -exec sudo chown -R autofix: {} +
+          sudo chown -R "$(id -un)": .autofix
+          chmod 0755 .autofix
+          chmod 0444 .autofix/prove.sh .autofix/autofix-prove.mjs .autofix/autofix-check.mjs .autofix/signatures.json
+          chmod 1777 "$GITHUB_WORKSPACE"
+          if [ -d "$COREPACK_HOME" ]; then chmod -R a+rX "$COREPACK_HOME"; fi
+          # Guards: the sandbox must not reach the event payload (it holds the run token) or
+          # the runner temp dir. `! cmd` would not trip `set -e`, hence the explicit ifs.
+          if sudo -n -u autofix test -r "$GITHUB_EVENT_PATH"; then echo "::error::sandbox can read the event payload"; exit 1; fi
+          if sudo -n -u autofix test -x "$RUNNER_TEMP"; then echo "::error::sandbox can enter RUNNER_TEMP"; exit 1; fi
+          # Smoke test: the toolchain works for the sandbox user from the mounted tree.
+          cd /srv/autofix-tree
+          sudo -n -u autofix -- env -i PATH="$PATH" HOME=/home/autofix CI=1 COREPACK_HOME="$COREPACK_HOME" \
+            sh -c 'node --version && "$1" --version && claude --version && git status --short >/dev/null' _ "$PM"
+
       # The loop step holds RUN_TOKEN to heartbeat; it strips RUN_TOKEN/HUB_URL from the
       # agent's environment, and the proof runs agent code under a scrubbed env.
       # continue-on-error: the loop checkpoints .autofix/loop.json after every round, so a
@@ -145,6 +180,9 @@ jobs:
           S_TEST: ${{ steps.pm.outputs.test }}
           S_TYPECHECK: ${{ steps.pm.outputs.typecheck }}
           DISABLE_AUTOUPDATER: "1"
+          SANDBOX_USER: autofix
+          SANDBOX_HOME: /home/autofix
+          SANDBOX_TREE: /srv/autofix-tree
         run: |
           ALLOWED="Read,Edit,Write,Grep,Glob,Bash(sh .autofix/prove.sh)"
           [ -n "$S_TEST" ] && ALLOWED="$ALLOWED,Bash($PM run $S_TEST)"
@@ -158,6 +196,28 @@ jobs:
              "tests":{"type":"string"},"leftAlone":{"type":"string"},"reason":{"type":"string"}}}
           JSON
           node "$RUNNER_TEMP/autofix-loop.mjs"
+
+      # Nothing the agent started may outlive the loop into a later (token-bearing) step:
+      # kill until none survive (a double fork can escape one pass), then hand the tree back
+      # to the runner with a .git/config the agent never touched (later git, e.g. the
+      # checkout post step, must not read agent-written config).
+      - name: Stop sandboxed processes
+        if: always()
+        run: |
+          # Fail closed: only pgrep's exit 1 means "none left"; 0 = still running, else unknown.
+          for i in $(seq 1 20); do
+            sudo pkill -KILL -u autofix || true
+            s=0; pgrep -u autofix >/dev/null || s=$?
+            [ "$s" -eq 0 ] || break
+            sleep 0.5
+          done
+          s=0; pgrep -u autofix >/dev/null || s=$?
+          if [ "$s" -ne 1 ]; then echo "::error::sandboxed processes survived or pgrep failed ($s)"; exit 1; fi
+          sudo umount /srv/autofix-tree || true
+          sudo chown -R "$(id -un)": "$GITHUB_WORKSPACE"
+          chmod 0755 "$GITHUB_WORKSPACE"
+          sudo rm -rf .git
+          cp -a "$RUNNER_TEMP/git.trusted" .git
 
       - name: Outcome gate
         id: outcome
@@ -244,6 +304,8 @@ jobs:
         run: |
           cp managed/autofix-check.mjs managed/autofix-prove.mjs "$RUNNER_TEMP/"
           echo "BASE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          sudo install -d -o "$(id -un)" -m 0755 /opt/corepack
+          echo "COREPACK_HOME=/opt/corepack" >> "$GITHUB_ENV"
 
       - name: Heartbeat and fetch signatures
         env:
@@ -282,7 +344,8 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-          cache: ${{ steps.pm.outputs.pm }}
+          # No dependency caching here. The sandbox user owns node_modules (hardlinked into the
+          # store), and a store saved after the agent touched it would reach other workflows.
 
       - name: Install (lockfile)
         run: |
@@ -295,13 +358,45 @@ jobs:
       - name: Apply the candidate
         run: git -c core.hooksPath=/dev/null apply --index "$RUNNER_TEMP/autofix/candidate.patch"
 
-      # env -i: agent-written code does not inherit $GITHUB_OUTPUT/$GITHUB_ENV paths or runtime
-      # tokens. It raises the bar; it is not a sandbox (spec §3.2 "Honest limit").
+      # Agent-written code runs inside prove, so prove runs as the unprivileged `autofix` user
+      # with env -i: no $GITHUB_OUTPUT/$GITHUB_ENV paths, no runtime tokens, no access to the
+      # runner user's processes, home or temp dir (0700; the tree comes in via a bind mount).
+      # The checkers and signatures are root-owned and read-only in /opt/autofix. The verdict
+      # comes back on stdout into a runner-owned file, and the sandbox is killed until empty.
+      # Honest limit (spec §3.2): this protects the hub token and the runner. It does not make
+      # the proof unforgeable: test code runs inside the same process tree as the test runner
+      # and could lie about its own results. The hazard and integrity checks and the PR path
+      # remain the defence against a malicious fix.
       - name: Prove (authoritative)
         run: |
-          env -i PATH="$PATH" HOME="$HOME" CI=1 \
-            node "$RUNNER_TEMP/autofix-prove.mjs" --base "$BASE_SHA" \
-            --signatures "$RUNNER_TEMP/signatures.json" --repeat-green 2 --out "$RUNNER_TEMP/verdict.json"
+          sudo useradd --create-home --shell /bin/bash autofix
+          cp -a .git "$RUNNER_TEMP/git.trusted"
+          sudo install -d -o root -g root -m 0755 /opt/autofix
+          sudo install -m 0444 -o root -g root "$RUNNER_TEMP/autofix-prove.mjs" "$RUNNER_TEMP/autofix-check.mjs" "$RUNNER_TEMP/signatures.json" /opt/autofix/
+          chmod 0700 "$HOME" "$RUNNER_TEMP"
+          sudo mkdir -p /srv/autofix-tree
+          sudo mount --bind "$GITHUB_WORKSPACE" /srv/autofix-tree
+          sudo chown -R autofix: "$GITHUB_WORKSPACE"
+          if [ -d "$COREPACK_HOME" ]; then chmod -R a+rX "$COREPACK_HOME"; fi
+          if sudo -n -u autofix test -r "$GITHUB_EVENT_PATH"; then echo "::error::sandbox can read the event payload"; exit 1; fi
+          cd /srv/autofix-tree
+          sudo -n -u autofix env -i PATH="$PATH" HOME=/home/autofix CI=1 COREPACK_HOME="$COREPACK_HOME" \
+            timeout -k 10 1500 node /opt/autofix/autofix-prove.mjs --base "$BASE_SHA" \
+            --signatures /opt/autofix/signatures.json --repeat-green 2 --out - > "$RUNNER_TEMP/verdict.json" || true
+          # Fail closed: only pgrep's exit 1 means "none left"; 0 = still running, else unknown.
+          for i in $(seq 1 20); do
+            sudo pkill -KILL -u autofix || true
+            s=0; pgrep -u autofix >/dev/null || s=$?
+            [ "$s" -eq 0 ] || break
+            sleep 0.5
+          done
+          s=0; pgrep -u autofix >/dev/null || s=$?
+          if [ "$s" -ne 1 ]; then echo "::error::sandboxed processes survived or pgrep failed ($s)"; exit 1; fi
+          cd "$GITHUB_WORKSPACE"
+          sudo umount /srv/autofix-tree || true
+          sudo chown -R "$(id -un)": "$GITHUB_WORKSPACE"
+          sudo rm -rf .git
+          cp -a "$RUNNER_TEMP/git.trusted" .git
 
       - name: Verdict
         id: verdict
