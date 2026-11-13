@@ -34,8 +34,10 @@ jobs:
       - run: npx playwright install --with-deps chromium firefox
       - run: npx playwright test
 
+      # Also on success: a test that failed and then passed on retry ("flaky")
+      # leaves the job green, and its first-failure trace is the only evidence.
       - uses: actions/upload-artifact@v4
-        if: failure()
+        if: ${{ !cancelled() }}
         with:
           name: playwright-report
           path: playwright-report/

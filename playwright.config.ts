@@ -11,7 +11,9 @@ export default defineConfig({
     : [['html', { open: 'never' }]],
   use: {
     baseURL: process.env.BASE_URL ?? 'http://localhost:3200',
-    trace: 'on-first-retry',
+    // Trace the first run and keep it only if that run fails, so a flaky test
+    // (fails, then passes on retry) still leaves a trace of the failure.
+    trace: 'retain-on-first-failure',
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
   },

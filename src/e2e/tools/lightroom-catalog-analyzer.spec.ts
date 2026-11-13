@@ -187,7 +187,10 @@ test.describe('Lightroom Catalog Analyzer — demo flow', () => {
     await expect(page.locator(SEC('overview')).first()).toBeVisible({ timeout: DEMO_TIMEOUT })
     await expect(page.getByText(/^Date 2024-01-01 – 2024-12-31$/).first())
       .toBeAttached({ timeout: 10_000 })
-    await page.getByRole('button', { name: /^Reset$/ }).first().click({ force: true })
+    // A real, actionability-checked click. `force: true` used to skip the
+    // hit-target check, so a click landing while the page was mid-transition
+    // went to <html> and Reset never ran (the CI flake).
+    await page.getByRole('button', { name: /^Reset$/ }).first().click()
 
     await expect(async () => {
       const url = page.url()
