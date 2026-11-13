@@ -39,13 +39,12 @@ test.describe('View transitions', () => {
     const panel = page.locator('[class*="sidebar"]').first()
     const aperture = panel.locator('input[type="range"]').first()
 
-    await aperture.fill('0')
-    await expect(panel.getByText('Very Shallow')).toBeVisible()
-
-    // The moment the debounced URL write for ?ai=0 lands, change the slider
-    // again from inside the page — the exact window that used to swallow it.
+    // Arm BEFORE the first change: the moment the debounced URL write for
+    // ?ai=0 lands, change the slider again from inside the page — the exact
+    // window that used to swallow input. (Arming after the fill raced the
+    // 250 ms debounce on a slow runner.)
     await page.evaluate(() => {
-      const w = window as unknown as { __onUrlWrite?: (url: string) => void }
+      const w = window as unknown as { __onUrlWrite?: (url: string) => void; __secondChange?: string }
       w.__onUrlWrite = (url) => {
         if (!url.includes('ai=0')) return
         w.__onUrlWrite = undefined
@@ -54,11 +53,22 @@ test.describe('View transitions', () => {
           Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')!.set!.call(el, '8')
           el.dispatchEvent(new Event('input', { bubbles: true }))
           el.dispatchEvent(new Event('change', { bubbles: true }))
+          w.__secondChange = el.value
         }, 4)
       }
     })
 
-    await expect(panel.getByText('Very Deep')).toBeVisible()
+    await aperture.fill('0')
+    await expect(panel.getByText('Very Shallow')).toBeVisible()
+
+    // Each stage asserted on its own so a failure names the mechanism.
+    await expect
+      .poll(() => page.evaluate(() => (window as unknown as { __secondChange?: string }).__secondChange), {
+        message: 'the in-page change after the URL write ran',
+      })
+      .toBe('8')
+    expect(await vtCount(page), 'URL-sync write started a view transition').toBe(0)
+    await expect(panel.getByText('Very Deep'), 'input after the URL write was dropped').toBeVisible()
     await expect(page).toHaveURL(/ai=8/)
     expect(await vtCount(page)).toBe(0)
   })
