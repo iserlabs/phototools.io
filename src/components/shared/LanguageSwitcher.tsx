@@ -6,6 +6,7 @@ import { usePathname, useRouter } from '@/lib/i18n/navigation'
 import { locales, localeNames, localeFlags } from '@/lib/i18n/routing'
 import type { Locale } from '@/lib/i18n/routing'
 import { trackLanguageSwitch } from '@/lib/analytics'
+import { PAGE_NAV_TRANSITION } from '@/lib/viewTransitions'
 import styles from './LanguageSwitcher.module.css'
 
 export function LanguageSwitcher() {
@@ -43,7 +44,7 @@ export function LanguageSwitcher() {
 
   function switchLocale(newLocale: Locale) {
     trackLanguageSwitch({ from_locale: locale, to_locale: newLocale })
-    router.replace(pathname, { locale: newLocale })
+    router.replace(pathname, { locale: newLocale, transitionTypes: [PAGE_NAV_TRANSITION] })
     setOpen(false)
   }
 

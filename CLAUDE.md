@@ -330,6 +330,8 @@ gets smoke coverage automatically — no edit needed there when adding a tool.
 - **i18n translated text**: UI labels come from `next-intl` message files (`src/lib/i18n/messages/en/`). If a placeholder or label changes, check the translation JSON, not just the component source.
 - **Select elements use value, not label**: For `<select>` dropdowns (e.g. sensor picker), use `selectOption('value_id')` not `selectOption({ label: '...' })`.
 - **Don't index controls positionally**: a sidebar with several `<select>`s breaks the moment one is added or reordered. Scope by the visible label instead — `sidebar.locator('[class*="field"]').filter({ has: page.locator('label:text-is("Rows")') }).locator('select')`. (Labels aren't wired with `htmlFor`/`id`, so `getByLabel` won't work.)
+- **Never `click({ force: true })`**: it skips the hit-target check, so a click that lands while the page is mid-transition or mid-layout-shift hits `<html>` and silently does nothing. Fix the real actionability problem instead.
+- **View Transitions are navigation-only**: the layout's `<ViewTransition>` animates only transitions typed `page-nav` (`src/lib/viewTransitions.ts`; the i18n `Link` and the language switcher add it). Don't make it untyped again: Next turns every tool's URL-sync `replaceState` into a router transition, and input is dropped while a document view transition runs (the Nov 2026 cross-test e2e flakes). `src/e2e/smoke/view-transitions.spec.ts` guards this.
 - **Range inputs need an explicit event**: `fill()` alone may not trigger React state; follow with `dispatchEvent('input')`, then assert via `expect.poll` since the recompute is async.
 
 ### CI

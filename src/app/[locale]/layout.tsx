@@ -14,6 +14,7 @@ import { routing, localeOpenGraph } from '@/lib/i18n/routing'
 import type { Locale } from '@/lib/i18n/routing'
 import { getCookieyesId } from '@/lib/ads'
 import { hasVisibleGuides } from '@/lib/guides/content'
+import { PAGE_NAV_TRANSITION } from '@/lib/viewTransitions'
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
@@ -125,7 +126,10 @@ export default async function LocaleLayout({ children, params }: Props) {
         <AnalyticsProvider>
           <JsonLd />
           <ThemeProvider hasGuides={hasVisibleGuides()}>
-            <ViewTransition>
+            {/* Animate page navigations only. Untyped transitions (the router
+                restore behind every tool's URL-sync replaceState) must not
+                start a view transition: input is dropped while one runs. */}
+            <ViewTransition default={{ [PAGE_NAV_TRANSITION]: 'auto', default: 'none' }}>
               <div
                 id="main-content"
                 /* Focusable target so the skip link moves focus, not just the scroll. */
